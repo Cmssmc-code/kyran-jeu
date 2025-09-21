@@ -114,15 +114,11 @@ header .btn {
   box-shadow: var(--shadow);
   transition: transform .25s, box-shadow .25s;
 }
-
 header .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(204,153,0,.35);
 }
-
-header .btn:active {
-  transform: scale(0.97);
-}
+header .btn:active { transform: scale(0.97); }
 
 /* =======================
    HERO
@@ -349,51 +345,35 @@ footer a:hover{color:#fff}
    RESPONSIVE <=900px
    ======================= */
 @media (max-width:900px){
-  header{height:auto;padding:10px 15px}
-  .logo{font-size:22px}
-  .nav{justify-content:flex-end}
-  .nav ul{
-    position:fixed;top:64px;left:0;right:0;z-index:9998;
-    flex-direction:column;gap:18px;
-    max-height:0;overflow:hidden;
-    padding:0;background:linear-gradient(180deg,#fff,#f9f9f9);
-    transition:max-height var(--speed) ease,padding var(--speed) ease,box-shadow var(--speed) ease;
+  /* Header en 3 colonnes */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 10px 12px;
+    height: auto;
   }
-  body.menu-open .nav ul{
-    max-height:480px;padding:20px 20px 24px;
-    border-bottom:1px solid #eee;box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+  .logo {
+    justify-self: start;
+    font-size: 22px;
   }
-  .nav ul li a{
-    display:block;
-    padding:14px;
-    font-size:1.15rem;
-    text-align:center;
-    border-radius:8px;
-    transition:background 0.25s;
+
+  .nav-toggle {
+    justify-self: center;
+    margin: 0;
   }
-  .nav ul li a:hover,
-  .nav ul li a[aria-current="page"] {
-    background:#f6f6f6;
-    color:var(--gold);
-    font-weight:700;
+
+  header .btn {
+    justify-self: end;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    white-space: nowrap;
   }
-  .nav-toggle{
-    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;
-    width:42px;height:42px;background:#fff;border:1px solid #ccc;border-radius:8px;
-    cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.1);margin-left:auto;
-  }
-  .nav-toggle span{width:26px;height:3px;background:#111;border-radius:2px;transition:.25s}
-  body.menu-open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}
-  body.menu-open .nav-toggle span:nth-child(2){opacity:0}
-  body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
-  .nav > .btn{display:none}
-  .backdrop{
-    position:fixed;left:0;right:0;top:64px;bottom:0;
-    background:rgba(0,0,0,.28);opacity:0;pointer-events:none;
-    transition:opacity .25s;z-index:9997;
-  }
-  body.menu-open .backdrop{opacity:1;pointer-events:auto}
-  body.menu-open{overflow:hidden}
+
+  /* Masquer la nav horizontale sur mobile */
+  .nav { display: none; }
 
   /* Hero */
   section{padding:40px 15px}

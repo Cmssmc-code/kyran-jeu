@@ -15,14 +15,14 @@
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
-    <nav aria-label="Navigation principale">
-  <ul id="menu-principal">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="#video">Vidéo</a></li>
-    <li><a href="#decouvrir">Découvrir</a></li>
-    <li><a href="#regles" aria-current="page">Règles</a></li>
-  </ul>
-</nav>
+      <nav aria-label="Navigation principale">
+        <ul id="menu-principal">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#video">Vidéo</a></li>
+          <li><a href="#decouvrir">Découvrir</a></li>
+          <li><a href="#regles" aria-current="page">Règles</a></li>
+        </ul>
+      </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
@@ -58,15 +58,15 @@
       <div class="grid grid-3">
         <div class="card">
           <h3>👥 Joueurs</h3>
-          <p>De 3 à 6 joueurs, idéal entre amis ou en famille.</p>
+          <p>3 à 6 joueurs.</p>
         </div>
         <div class="card">
           <h3>⏳ Durée</h3>
-          <p>Des parties rapides d’environ 45 minutes.</p>
+          <p>Environ 45 minutes.</p>
         </div>
         <div class="card">
           <h3>🎂 Âge</h3>
-          <p>À partir de 7 ans. Accessible aux plus jeunes joueurs.</p>
+          <p>À partir de 8 ans.</p>
         </div>
       </div>
     </div>
@@ -80,58 +80,69 @@
 
       <article class="card" style="text-align:left;max-width:900px;margin:auto">
         <h3 style="color:var(--gold)">🎯 Objectif</h3>
-        <p>KYRAN est un jeu de plis pour 3 à 6 joueurs. À chaque manche, on prédit combien de plis on va gagner. 
-        Si la prédiction est juste, on garde ses vies, sinon on en perd. 
-        Le dernier avec des vies devient le <strong>Maître des Mystiques</strong>.</p>
+        <p>KYRAN est un jeu de plis pour 3 à 6 joueurs. À chaque manche, on prédit combien de plis on va gagner, puis on joue ses cartes (nombres ou pouvoirs spéciaux). Si la prédiction est juste, on garde ses vies, sinon on en perd. Le joueur qui a le plus de vie à la fin devient <strong>Maître des Mystiques</strong>.</p>
 
         <h3 style="color:var(--gold);margin-top:20px">🧩 Mise en place</h3>
         <ul>
-          <li>Mélangez les 36 cartes Nombre et les cartes Pouvoir.</li>
-          <li>Chaque joueur reçoit 5 cartes Vie empilées (de 5 à 1), face visible.</li>
-          <li>La carte Mystique est placée à part.</li>
+          <li>Mélangez les cartes Nombre (1 à 36) et les cartes aux effets spéciaux ensemble.</li>
+          <li>Pour <strong>3 et 4 joueurs</strong> : prendre uniquement <em>Clairvoyance Antique</em> (11), <em>Sceau du Destin</em> (27), <em>Bénédiction des Ancêtres</em> (20), <em>Voile du Néant</em> (3) et la carte <em>Mystique</em>.</li>
+          <li>Pour <strong>5 et 6 joueurs</strong> : prendre <strong>toutes</strong> les cartes Pouvoir et la carte Mystique.</li>
+          <li>Chaque joueur reçoit un paquet de 5 cartes Vie, empilées devant lui de manière décroissante : la carte 5 étoiles au-dessus, puis 4, 3, 2 et enfin 1 étoile en bas. Ces cartes restent toujours visibles par tous.</li>
         </ul>
 
         <h3 style="color:var(--gold);margin-top:20px">🎮 Déroulement d’une partie</h3>
-        <p>Les manches s’enchaînent jusqu’à ce qu’un joueur perde toutes ses vies. Distribution : 7 → 6 → 5 → 4 → 3 → 2, puis une <em>manche Mystique</em> à 1 carte. Le donneur change à chaque manche.</p>
+        <p>Le jeu se déroule en plusieurs manches jusqu'à ce qu'un joueur ait perdu toutes ses vies. Le nombre de cartes distribuées diminue progressivement : <strong>7 → 6 → 5 → 4 → 3 → 2</strong>, puis une <em>manche Mystique</em> à 1 carte. Le donneur change chaque tour dans le sens des aiguilles d'une montre. Une fois ce cycle terminé, un nouveau cycle recommence à 7 cartes.</p>
 
         <h4 style="margin-top:10px">1) Phase de paris</h4>
         <ul>
-          <li>Chaque joueur annonce son nombre de plis visé.</li>
-          <li><strong>Règle :</strong> la somme des paris ≠ nombre total de plis ; le dernier joueur doit s’ajuster.</li>
+          <li>En commençant à gauche du donneur, chacun annonce à voix haute combien de plis il pense gagner.</li>
+          <li><strong>Règle :</strong> la somme des paris ne doit pas être égale au nombre total de plis. Le dernier joueur doit s’ajuster si nécessaire.</li>
+          <li><em>Ex :</em> Dans une manche à 5 cartes, trois joueurs ont parié 1, 2 et 1. Le dernier joueur ne peut pas dire 1 car cela ferait 5 plis annoncés ; il peut dire 0, 2, 3, 4 ou 5.</li>
         </ul>
 
         <h4 style="margin-top:10px">2) Phase des plis</h4>
         <ul>
-          <li>Chacun joue une carte à son tour. Les Pouvoirs s’activent immédiatement.</li>
-          <li>La carte la plus haute remporte le pli. En cas d’égalité, le Pouvoir l’emporte.</li>
-          <li>Le gagnant du pli entame le suivant.</li>
+          <li>Chaque joueur pose une carte à tour de rôle.</li>
+          <li>Les cartes Pouvoir s’activent immédiatement et valent la valeur affichée en bas de la carte.</li>
+          <li>La carte la plus haute remporte le pli.</li>
+          <li>En cas d’égalité entre une carte Nombre et une carte Pouvoir, la carte Pouvoir remporte le pli.</li>
+          <li>Le premier joueur est celui à gauche du donneur ; ensuite, le gagnant de chaque pli entame le suivant.</li>
         </ul>
 
-        <h4 style="margin-top:10px">3) Résolution</h4>
+        <h4 style="margin-top:10px">3) Phase de résolution</h4>
         <ul>
-          <li>✅ Pari réussi : aucune vie perdue.</li>
-          <li>❌ Pari raté : perte de vies égale à l’écart entre pari et plis réellement remportés.</li>
+          <li>✅ <strong>Pari réussi</strong> → aucune vie perdue.</li>
+          <li>❌ <strong>Pari perdu</strong> → perte de cartes Vie égale à la différence entre le pari et le nombre de plis réellement remportés.</li>
+          <li><em>Ex :</em> Un joueur parie 3 plis mais n'en remporte qu'1 → perte de 2 cartes Vie.</li>
         </ul>
 
-        <h3 style="color:var(--gold);margin-top:20px">🌀 Manche Mystique</h3>
+        <h3 style="color:var(--gold);margin-top:20px">🌀 La manche Mystique</h3>
         <ul>
-          <li>1 carte par joueur, placée sur le front sans la regarder.</li>
-          <li>Annoncez “je gagne” ou “je ne gagne pas”.</li>
-          <li>La carte Mystique vaut 37 si pari = “je gagne”, sinon 0.</li>
-          <li>❌ Pari perdu : perte d’1 vie.</li>
+          <li>Chaque joueur pioche 1 carte et la place contre son front (visible par tous les autres mais pas par lui-même).</li>
+          <li><strong>Phase de paris :</strong> chaque joueur parie s’il va gagner ou non le pli.</li>
+          <li><strong>Phase du pli :</strong> tous jouent en même temps, <strong>sans</strong> activer les effets des cartes Pouvoir. La carte Mystique vaut 37 si son propriétaire a annoncé qu’il fait le pli, sinon 0 s’il a annoncé qu’il ne le fait pas.</li>
+          <li>En cas d’égalité, la carte Pouvoir remporte le pli.</li>
+          <li><strong>Résolution :</strong> ✅ pari réussi → aucune vie perdue ; ❌ pari perdu → perte d’1 vie. <em>Ex :</em> il pensait ne pas gagner le pli mais le remporte → il perd 1 vie.</li>
         </ul>
 
-        <h3 style="color:var(--gold);margin-top:20px">✨ Cartes spéciales</h3>
-        <p><strong>Carte Mystique :</strong> hors manche Mystique, elle vaut 0 ou 37 selon votre choix.</p>
+        <h3 style="color:var(--gold);margin-top:20px">🏁 Fin du jeu</h3>
         <ul>
-          <li><strong>Clairvoyance Antique</strong> — Regardez secrètement la carte la plus forte d’un joueur. Valeur : 1 ou 23.</li>
-          <li><strong>Sceau du Destin</strong> — Piochez et forcez un joueur à jouer sa carte. Valeur : 4 ou 27.</li>
-          <li><strong>Bénédiction des Ancêtres</strong> — Un joueur joue immédiatement sa plus faible carte. Valeur : 9 ou 20.</li>
-          <li><strong>Voile du Néant</strong> — Échangez la valeur de votre carte avec une déjà posée. Valeur : 3 ou 34.</li>
+          <li>Le premier joueur à perdre toutes ses cartes Vie est déclaré <strong>perdant</strong> et le jeu s’arrête.</li>
+          <li>Le joueur possédant le plus grand nombre de cartes Vie restantes est déclaré <strong>Maître des Mystiques</strong>.</li>
+        </ul>
+
+        <h3 style="color:var(--gold);margin-top:20px">✨ Cartes à effets spéciaux</h3>
+        <p><strong>Carte Mystique</strong> — Lorsqu’elle est jouée hors manche Mystique, le joueur choisit librement de lui attribuer la valeur <strong>0</strong> ou <strong>37</strong> au moment de la poser. Elle est la carte la plus forte du jeu.</p>
+        <p><strong>Cartes Pouvoir</strong> — Toujours gagnantes en cas d’égalité avec une carte Nombre.</p>
+        <ul>
+          <li><strong>Clairvoyance Antique</strong> : Regarde secrètement la carte avec la valeur la plus forte du joueur de ton choix.</li>
+          <li><strong>Sceau du Destin</strong> : Pioche une carte au hasard dans la main d’un joueur, qu’il doit jouer immédiatement.<br><em>✧ Si tu es le dernier à jouer ce tour, l’effet est annulé.</em></li>
+          <li><strong>Bénédiction des Ancêtres</strong> : Cible un joueur qui doit immédiatement jouer sa carte la plus faible.<br><em>✧ Si tu es le dernier à jouer ce tour, l’effet est annulé.</em></li>
+          <li><strong>Voile du Néant</strong> : Échange si tu le souhaites la valeur de ta carte avec une autre carte déjà posée ce tour-ci par un adversaire.<br><em>✧ Si tu es le premier à jouer ce tour, l’effet est annulé.</em><br><em>✧ Si tu échanges avec la carte Mystique, tu prends la valeur déjà définie pendant le tour.</em></li>
         </ul>
 
         <h3 style="color:var(--gold);margin-top:20px">🧘 Variante</h3>
-        <p>Pour une première partie ou plus de simplicité, jouez sans les cartes Pouvoir ni la carte Mystique.</p>
+        <p>Pour une première partie ou plus de simplicité, jouez sans carte Pouvoir ni carte Mystique.</p>
       </article>
     </div>
   </section>
@@ -152,14 +163,26 @@
       const body = document.body;
       const backdrop = document.querySelector('.backdrop');
 
-      function closeMenu(){body.classList.remove('menu-open');if(navToggle)navToggle.setAttribute('aria-expanded','false');if(backdrop)backdrop.hidden=true;}
-      function openMenu(){body.classList.add('menu-open');if(navToggle)navToggle.setAttribute('aria-expanded','true');if(backdrop)backdrop.hidden=false;}
+      function closeMenu(){
+        body.classList.remove('menu-open');
+        if(navToggle) navToggle.setAttribute('aria-expanded','false');
+        if(backdrop) backdrop.hidden = true;
+      }
+      function openMenu(){
+        body.classList.add('menu-open');
+        if(navToggle) navToggle.setAttribute('aria-expanded','true');
+        if(backdrop) backdrop.hidden = false;
+      }
 
-      if(navToggle){navToggle.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu();});}
+      if(navToggle){
+        navToggle.addEventListener('click',()=>{
+          body.classList.contains('menu-open') ? closeMenu() : openMenu();
+        });
+      }
       if(backdrop){backdrop.addEventListener('click',closeMenu);}
-      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
       document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
-      window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
+      window.addEventListener('resize',()=>{if(window.innerWidth>900) closeMenu();});
     })();
   </script>
 </body>

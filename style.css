@@ -103,7 +103,7 @@ header{
 .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav-toggle{display:none}
 
-/* Bouton Acheter (header) */
+/* Bouton Acheter (header desktop) */
 header .btn {
   padding: .8rem 1.2rem;
   font-size: 1rem;
@@ -114,10 +114,7 @@ header .btn {
   box-shadow: var(--shadow);
   transition: transform .25s, box-shadow .25s;
 }
-header .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(204,153,0,.35);
-}
+header .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(204,153,0,.35); }
 header .btn:active { transform: scale(0.97); }
 
 /* =======================
@@ -204,7 +201,7 @@ section{padding:60px 0;scroll-margin-top:72px}
   display:grid;place-items:center;font-size:22px;
   background:linear-gradient(180deg,#fffbe9,#ffe6aa);
   border:1px solid #f2cd6e;
-  box-shadow:0 6px 16px rgba(204,153,0,.15);
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
 }
 .feature-primary{background:linear-gradient(180deg,#ffffff,#f9f7ff);border:1px solid #e8e2ff}
 .info-panel{
@@ -226,7 +223,7 @@ section{padding:60px 0;scroll-margin-top:72px}
 }
 
 /* =======================
-   RÈGLES (lisibilité)
+   RÈGLES
    ======================= */
 #regles article {
   line-height: 1.7;
@@ -243,54 +240,26 @@ section{padding:60px 0;scroll-margin-top:72px}
   border-left: 4px solid var(--gold);
   padding-left: 8px;
 }
-#regles h4 {
-  margin-top: 18px;
-  margin-bottom: 8px;
-  font-size: 1.15rem;
-  color: var(--dark);
-}
-#regles ul {
-  margin: 10px 0 20px 20px;
-  padding-left: 10px;
-}
-#regles ul li {
-  margin-bottom: 8px;
-}
-#regles ul li::marker {
-  color: var(--gold);
-}
+#regles h4 { margin-top:18px;margin-bottom:8px;font-size:1.15rem;color:var(--dark) }
+#regles ul { margin:10px 0 20px 20px;padding-left:10px }
+#regles ul li { margin-bottom:8px }
+#regles ul li::marker { color:var(--gold) }
 #regles p em {
-  background: #fdf8e6;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-style: normal;
-  color: var(--dark);
+  background:#fdf8e6;padding:2px 4px;border-radius:4px;
+  font-style:normal;color:var(--dark);
 }
-
-/* Bloc exemple / note harmonisé */
-.rule-note {
-  background: #f9f9f9;
-  border-left: 4px solid var(--gold);
-  padding: 12px 16px;
-  margin: 14px 0;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.6;
+.rule-note{
+  background:#f9f9f9;border-left:4px solid var(--gold);
+  padding:12px 16px;margin:14px 0;border-radius:6px;
+  font-size:.95rem;color:var(--text);line-height:1.6;
 }
-.rule-note strong { font-weight: 600; }
 
 /* =======================
    QUOTES
    ======================= */
 .quote{
-  background:#fff;
-  border:1px solid #eee;
-  border-left:4px solid var(--gold);
-  border-radius:10px;
-  padding:18px;
-  text-align:left;
-  animation:fadeUp .6s ease both;
+  background:#fff;border:1px solid #eee;border-left:4px solid var(--gold);
+  border-radius:10px;padding:18px;text-align:left;animation:fadeUp .6s ease both;
 }
 .quote strong{display:block;margin-top:8px;color:#333}
 
@@ -298,24 +267,16 @@ section{padding:60px 0;scroll-margin-top:72px}
    CTA
    ======================= */
 .cta-wide{
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:16px;
+  background:#fff;border:1px solid #ddd;border-radius:16px;
   display:flex;gap:18px;align-items:center;justify-content:space-between;
-  padding:20px;
-  box-shadow:var(--shadow);
-  flex-wrap:wrap;
-  animation:fadeUp .6s ease both;
+  padding:20px;box-shadow:var(--shadow);flex-wrap:wrap;animation:fadeUp .6s ease both;
 }
 
 /* =======================
    FOOTER
    ======================= */
 footer {
-  background:#111;
-  color:#eee;
-  padding:25px 20px 15px;
-  font-size:.85rem;
+  background:#111;color:#eee;padding:25px 20px 15px;font-size:.85rem;
 }
 footer a{color:#bbb;text-decoration:none;transition:color .2s}
 footer a:hover{color:#fff}
@@ -342,28 +303,26 @@ footer a:hover{color:#fff}
 }
 
 /* =======================
-   RESPONSIVE TABLETTE 600–900px
+   TABLETTE 600–900px
    ======================= */
 @media (min-width:600px) and (max-width:900px){
-  /* Univers : 2 colonnes équilibrées */
   .universe-grid{grid-template-columns:1fr 1fr;gap:24px}
-  /* Infos rapides plus denses */
   .info-panel{padding:22px;border-radius:18px}
   .bullet-list li{padding:12px 0}
   .chip-row{justify-content:flex-start}
 }
 
 /* =======================
-   RESPONSIVE <=900px
+   MOBILE & TABLETTE <=900px
    ======================= */
 @media (max-width:900px){
-  /* Header hauteur fixe + grille interne réelle */
+  /* header compact et net */
   header{height:64px;padding:0 12px}
   .container.nav{
     display:grid;
     grid-template-columns:1fr auto 1fr;
     align-items:center;
-    column-gap:10px;
+    column-gap:12px;
     width:100%;
   }
   .logo{justify-self:start;font-size:22px}
@@ -372,27 +331,33 @@ footer a:hover{color:#fff}
     display:flex;
     justify-self:center;
     width:40px;height:40px;
-    border:1px solid #ccc;border-radius:8px;
+    border:1px solid #d8d8d8;border-radius:10px;
     background:#fff;
     flex-direction:column;gap:6px;
     align-items:center;justify-content:center;
-    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
   }
   .nav-toggle span{width:22px;height:3px;background:#111;border-radius:2px;transition:.25s}
   body.menu-open .nav-toggle span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   body.menu-open .nav-toggle span:nth-child(2){opacity:0}
   body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-  /* Bouton du header non étiré */
+  /* pill button dans le header uniquement */
   header .cta{justify-self:end}
   header .cta .btn{
-    width:auto;
-    padding:.55rem .9rem;
+    display:inline-flex;align-items:center;gap:.45rem;
+    padding:.5rem 1rem;
     font-size:.9rem;
-    border-radius:8px;
+    border-radius:999px;               /* pill */
+    line-height:1;
+    background:linear-gradient(180deg,var(--gold),var(--gold-2));
+    border:1px solid rgba(0,0,0,.06);
+    box-shadow:0 4px 12px rgba(204,153,0,.25);
+    max-width:46vw;                    /* évite le dépassement */
+    white-space:nowrap;
   }
 
-  /* Menu mobile déroulant (garde le système existant) */
+  /* menu mobile déroulant inchangé */
   .nav ul{
     position:fixed;top:64px;left:0;right:0;z-index:9998;
     flex-direction:column;gap:18px;
@@ -414,34 +379,31 @@ footer a:hover{color:#fff}
   body.menu-open .backdrop{opacity:1;pointer-events:auto}
   body.menu-open{overflow:hidden}
 
-  /* Sections */
+  /* sections */
   section{padding:40px 15px}
   .hero{padding:60px 20px}
   .hero h1{font-size:clamp(30px,9vw,52px);line-height:1.2}
   .hero p{font-size:1rem;padding:0 8px}
 
-  /* Grilles */
+  /* grilles */
   .grid-3,.grid-4{grid-template-columns:1fr}
   .card{margin:10px 0;padding:26px 20px}
 
-  /* Infos rapides (panel latéral) */
+  /* bloc infos rapides latéral */
   .universe-grid{grid-template-columns:1fr;gap:20px}
   .info-panel{
     border-radius:18px;padding:20px;
     box-shadow:0 10px 24px rgba(0,0,0,.08);
   }
-  .bullet-list li{
-    padding:12px 0;border-bottom:1px dashed #eee;
-  }
+  .bullet-list li{padding:12px 0;border-bottom:1px dashed #eee}
   .bullet-list li:last-child{border-bottom:none}
   .chip-row{justify-content:center}
 
-  /* CTA génériques */
+  /* CTA globaux en pleine largeur, sauf celui du header */
   .btn{width:100%;text-align:center;font-size:1.1rem;padding:1rem}
-  /* Empêche l’élargissement du bouton du header par la règle ci-dessus */
-  header .cta .btn{width:auto;padding:.55rem .9rem;font-size:.9rem}
+  header .cta .btn{width:auto} /* ne touche pas le pill */
 
-  /* Footer */
+  /* footer */
   footer{text-align:center;padding:30px 15px}
   .footer-grid{grid-template-columns:1fr;gap:28px}
   .footer-col p{font-size:.95rem}

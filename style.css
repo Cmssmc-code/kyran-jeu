@@ -342,52 +342,104 @@ footer a:hover{color:#fff}
 }
 
 /* =======================
+   RESPONSIVE TABLETTE 600–900px
+   ======================= */
+@media (min-width:600px) and (max-width:900px){
+  /* Univers : 2 colonnes équilibrées */
+  .universe-grid{grid-template-columns:1fr 1fr;gap:24px}
+  /* Infos rapides plus denses */
+  .info-panel{padding:22px;border-radius:18px}
+  .bullet-list li{padding:12px 0}
+  .chip-row{justify-content:flex-start}
+}
+
+/* =======================
    RESPONSIVE <=900px
    ======================= */
 @media (max-width:900px){
-  /* Header en 3 colonnes */
-  header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 10px 12px;
-    height: auto;
+  /* Header hauteur fixe + grille interne réelle */
+  header{height:64px;padding:0 12px}
+  .container.nav{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    column-gap:10px;
+    width:100%;
+  }
+  .logo{justify-self:start;font-size:22px}
+
+  .nav-toggle{
+    display:flex;
+    justify-self:center;
+    width:40px;height:40px;
+    border:1px solid #ccc;border-radius:8px;
+    background:#fff;
+    flex-direction:column;gap:6px;
+    align-items:center;justify-content:center;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+  }
+  .nav-toggle span{width:22px;height:3px;background:#111;border-radius:2px;transition:.25s}
+  body.menu-open .nav-toggle span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  body.menu-open .nav-toggle span:nth-child(2){opacity:0}
+  body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+  /* Bouton du header non étiré */
+  header .cta{justify-self:end}
+  header .cta .btn{
+    width:auto;
+    padding:.55rem .9rem;
+    font-size:.9rem;
+    border-radius:8px;
   }
 
-  .logo {
-    justify-self: start;
-    font-size: 22px;
+  /* Menu mobile déroulant (garde le système existant) */
+  .nav ul{
+    position:fixed;top:64px;left:0;right:0;z-index:9998;
+    flex-direction:column;gap:18px;
+    max-height:0;overflow:hidden;
+    padding:0;background:#fff;
+    transition:max-height var(--speed) ease,padding var(--speed) ease,box-shadow var(--speed) ease;
   }
-
-  .nav-toggle {
-    justify-self: center;
-    margin: 0;
+  body.menu-open .nav ul{
+    max-height:480px;padding:20px 20px 24px;
+    border-bottom:1px solid #eee;box-shadow:0 10px 24px rgba(0,0,0,.08);
   }
-
-  header .btn {
-    justify-self: end;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    border-radius: 8px;
-    white-space: nowrap;
+  .nav ul li a{display:block;padding:14px;font-size:1.1rem;text-align:center;border-radius:8px}
+  .nav > .btn{display:none}
+  .backdrop{
+    position:fixed;left:0;right:0;top:64px;bottom:0;
+    background:rgba(0,0,0,.28);opacity:0;pointer-events:none;
+    transition:opacity .25s;z-index:9997;
   }
+  body.menu-open .backdrop{opacity:1;pointer-events:auto}
+  body.menu-open{overflow:hidden}
 
-  /* Masquer la nav horizontale sur mobile */
-  .nav { display: none; }
-
-  /* Hero */
+  /* Sections */
   section{padding:40px 15px}
   .hero{padding:60px 20px}
   .hero h1{font-size:clamp(30px,9vw,52px);line-height:1.2}
   .hero p{font-size:1rem;padding:0 8px}
 
-  /* Cartes */
+  /* Grilles */
   .grid-3,.grid-4{grid-template-columns:1fr}
   .card{margin:10px 0;padding:26px 20px}
 
-  /* CTA */
+  /* Infos rapides (panel latéral) */
+  .universe-grid{grid-template-columns:1fr;gap:20px}
+  .info-panel{
+    border-radius:18px;padding:20px;
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+  }
+  .bullet-list li{
+    padding:12px 0;border-bottom:1px dashed #eee;
+  }
+  .bullet-list li:last-child{border-bottom:none}
+  .chip-row{justify-content:center}
+
+  /* CTA génériques */
   .btn{width:100%;text-align:center;font-size:1.1rem;padding:1rem}
-  .cta-wide{flex-direction:column;text-align:center;gap:20px}
+  /* Empêche l’élargissement du bouton du header par la règle ci-dessus */
+  header .cta .btn{width:auto;padding:.55rem .9rem;font-size:.9rem}
 
   /* Footer */
   footer{text-align:center;padding:30px 15px}

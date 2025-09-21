@@ -44,10 +44,16 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 16px;
+  padding:0 20px;
   background:#fff;
   border-bottom:1px solid #ddd;
   z-index:10000;
+}
+.container.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
 }
 .logo{
   font-family:"Bebas Neue",sans-serif;
@@ -58,13 +64,11 @@ header{
 }
 .logo strong{color:var(--gold)}
 .nav{
-  display:flex;
-  align-items:center;
-  gap:40px;
   flex:1;
-  justify-content:flex-end;
+  display:flex;
+  justify-content:center;
 }
-.nav ul{display:flex;gap:20px;list-style:none}
+.nav ul{display:flex;gap:30px;list-style:none}
 .nav a{font-weight:600;color:var(--dark)}
 .nav-toggle{display:none}
 

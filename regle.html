@@ -8,6 +8,49 @@
   <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 🎨 Footer Apple-like compact */
+    footer {
+      background: #111;
+      color: #eee;
+      padding: 25px 20px 15px;
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .footer-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .footer-col p {
+      margin: 4px 0;
+      line-height: 1.4;
+    }
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 20px auto 0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+      color: #888;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -56,18 +99,9 @@
       <h2 class="section-title">Découvrez KYRAN</h2>
       <p class="section-sub">Un jeu simple à apprendre, mais profond et stratégique.</p>
       <div class="grid grid-3">
-        <div class="card">
-          <h3>👥 Joueurs</h3>
-          <p>3 à 6 joueurs.</p>
-        </div>
-        <div class="card">
-          <h3>⏳ Durée</h3>
-          <p>Environ 45 minutes.</p>
-        </div>
-        <div class="card">
-          <h3>🎂 Âge</h3>
-          <p>À partir de 8 ans.</p>
-        </div>
+        <div class="card"><h3>👥 Joueurs</h3><p>3 à 6 joueurs.</p></div>
+        <div class="card"><h3>⏳ Durée</h3><p>Environ 45 minutes.</p></div>
+        <div class="card"><h3>🎂 Âge</h3><p>À partir de 8 ans.</p></div>
       </div>
     </div>
   </section>
@@ -149,10 +183,26 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="container" style="max-width:800px;margin:auto">
-      <p><strong>Kyran®</strong> est une marque déposée. ©2025 Corentin SENCE – Tous droits réservés.</p>
-      <p>Contact : <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a><br>Site sans cookies de suivi.</p>
-      <p style="margin-top:20px;font-size:0.85rem;color:#777">Numéro d'immatriculation au registre : <strong>FR464679_12GNOH</strong></p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>KYRAN</h4>
+        <p>Un jeu de plis stratégique et convivial.<br>Devenez le <strong>Maître des Mystiques</strong>.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+        <p style="color:#aaa">Site sans cookies</p>
+      </div>
+      <div class="footer-col">
+        <h4>Illustrations</h4>
+        <p>Créa by Floh<br><a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
+        <p style="color:#aaa">Ressources ©Freepik</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p><strong>Kyran®</strong> — ©2025 Corentin SENCE. Tous droits réservés.</p>
+      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
     </div>
   </footer>
 
@@ -163,26 +213,14 @@
       const body = document.body;
       const backdrop = document.querySelector('.backdrop');
 
-      function closeMenu(){
-        body.classList.remove('menu-open');
-        if(navToggle) navToggle.setAttribute('aria-expanded','false');
-        if(backdrop) backdrop.hidden = true;
-      }
-      function openMenu(){
-        body.classList.add('menu-open');
-        if(navToggle) navToggle.setAttribute('aria-expanded','true');
-        if(backdrop) backdrop.hidden = false;
-      }
+      function closeMenu(){body.classList.remove('menu-open');if(navToggle)navToggle.setAttribute('aria-expanded','false');if(backdrop)backdrop.hidden=true;}
+      function openMenu(){body.classList.add('menu-open');if(navToggle)navToggle.setAttribute('aria-expanded','true');if(backdrop)backdrop.hidden=false;}
 
-      if(navToggle){
-        navToggle.addEventListener('click',()=>{
-          body.classList.contains('menu-open') ? closeMenu() : openMenu();
-        });
-      }
+      if(navToggle){navToggle.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu();});}
       if(backdrop){backdrop.addEventListener('click',closeMenu);}
-      document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
       document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
-      window.addEventListener('resize',()=>{if(window.innerWidth>900) closeMenu();});
+      window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
     })();
   </script>
 </body>

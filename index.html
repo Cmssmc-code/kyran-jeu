@@ -8,6 +8,49 @@
   <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 🎨 Footer Apple-like compact */
+    footer {
+      background: #111;
+      color: #eee;
+      padding: 25px 20px 15px;
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    .footer-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .footer-col p {
+      margin: 4px 0;
+      line-height: 1.4;
+    }
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 20px auto 0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+      color: #888;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,7 +60,7 @@
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
-          <li><a href="#video">🎥 Découvrez</a></li>
+          <li><a href="#video">🎥 Bande annonce</a></li>
           <li><a href="#univers">Découvrir</a></li>
           <li><a href="regle.html">Règles</a></li>
         </ul>
@@ -152,10 +195,26 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="container" style="max-width:800px;margin:auto">
-      <p><strong>Kyran®</strong> est une marque déposée. ©2025 Corentin SENCE – Tous droits réservés.</p>
-      <p>Contact : <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a><br>Site sans cookies de suivi.</p>
-      <p style="margin-top:20px;font-size:0.85rem;color:#777">Numéro d'immatriculation au registre : <strong>FR464679_12GNOH</strong></p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>KYRAN</h4>
+        <p>Un jeu de plis stratégique et convivial.<br>Devenez le <strong>Maître des Mystiques</strong>.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+        <p style="color:#aaa">Site sans cookies</p>
+      </div>
+      <div class="footer-col">
+        <h4>Illustrations</h4>
+        <p>Créa by Floh<br><a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
+        <p style="color:#aaa">Ressources ©Freepik</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p><strong>Kyran®</strong> — ©2025 Corentin SENCE. Tous droits réservés.</p>
+      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
     </div>
   </footer>
 

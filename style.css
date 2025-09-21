@@ -1,4 +1,4 @@
-:root{
+:root {
   --gold:#cc9900;
   --gold-2:#b38600;
   --light:#f6f7fa;
@@ -43,6 +43,8 @@ header{
   height:64px;
   display:flex;
   align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
   background:#fff;
   border-bottom:1px solid #ddd;
   z-index:10000;
@@ -50,10 +52,7 @@ header{
 .nav{
   display:flex;
   align-items:center;
-  justify-content:center; /* Centré sur PC */
-  height:100%;
-  width:100%;
-  gap:40px; /* espace entre logo, menu, bouton */
+  gap:40px;
 }
 .nav ul{display:flex;gap:20px;list-style:none}
 .nav a{font-weight:600;color:var(--dark)}
@@ -232,6 +231,22 @@ footer a{color:var(--gold)}
 
 /* ======= RESPONSIVE ======= */
 @media (max-width:900px){
+  header{
+    height:auto;
+    flex-direction:row;
+    justify-content:space-between;
+    padding:10px 15px;
+  }
+
+  .logo {
+    font-size:22px;
+  }
+
+  .nav {
+    flex:1;
+    justify-content:flex-end;
+  }
+
   .nav ul{
     position:fixed;
     top:64px;left:0;right:0;z-index:9998;
@@ -266,9 +281,7 @@ footer a{color:var(--gold)}
     border-radius:8px;
     cursor:pointer;
     box-shadow:0 2px 6px rgba(0,0,0,.1);
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
+    position:relative;
   }
   .nav-toggle span{width:26px;height:3px;background:#111;border-radius:2px;transition:.25s}
   body.menu-open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}

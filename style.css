@@ -44,20 +44,28 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 20px;
+  padding:0 16px;
   background:#fff;
   border-bottom:1px solid #ddd;
   z-index:10000;
 }
+.logo{
+  font-family:"Bebas Neue",sans-serif;
+  letter-spacing:.1em;
+  font-size:26px;
+  color:var(--dark);
+  flex-shrink:0;
+}
+.logo strong{color:var(--gold)}
 .nav{
   display:flex;
   align-items:center;
   gap:40px;
+  flex:1;
+  justify-content:flex-end;
 }
 .nav ul{display:flex;gap:20px;list-style:none}
 .nav a{font-weight:600;color:var(--dark)}
-.logo{font-family:"Bebas Neue",sans-serif;letter-spacing:.1em;font-size:26px;color:var(--dark)}
-.logo strong{color:var(--gold)}
 .nav-toggle{display:none}
 
 /* HERO */
@@ -233,8 +241,6 @@ footer a{color:var(--gold)}
 @media (max-width:900px){
   header{
     height:auto;
-    flex-direction:row;
-    justify-content:space-between;
     padding:10px 15px;
   }
 
@@ -243,7 +249,6 @@ footer a{color:var(--gold)}
   }
 
   .nav {
-    flex:1;
     justify-content:flex-end;
   }
 
@@ -282,8 +287,14 @@ footer a{color:var(--gold)}
     cursor:pointer;
     box-shadow:0 2px 6px rgba(0,0,0,.1);
     position:relative;
+    margin-left:auto;
   }
-  .nav-toggle span{width:26px;height:3px;background:#111;border-radius:2px;transition:.25s}
+  .nav-toggle span{
+    width:26px;height:3px;
+    background:#111;
+    border-radius:2px;
+    transition:.25s;
+  }
   body.menu-open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}
   body.menu-open .nav-toggle span:nth-child(2){opacity:0}
   body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}

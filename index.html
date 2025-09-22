@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="prefetch" href="regle.html" as="document">
 
-  <!-- Garde 1 seul bouton sur PC, déplace le CTA dans le menu en mobile -->
+  <!-- Header mobile identique à regle.html -->
   <style>
     .mobile-cta{display:none}
     @media (max-width:900px){
@@ -26,10 +26,10 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (structure copiée de regle.html) -->
   <header>
     <div class="container nav">
-      <!-- Logo (PC: à gauche / Mobile: centré via CSS inline ci-dessus) -->
+      <!-- Logo -->
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
 
       <!-- Navigation -->
@@ -43,12 +43,12 @@
         </ul>
       </nav>
 
-      <!-- Burger (caché par défaut dans style.css, forçé visible en mobile via CSS inline) -->
+      <!-- Burger (mobile) -->
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- CTA (visible uniquement sur PC) -->
+      <!-- CTA (PC uniquement) -->
       <div class="cta">
         <a class="btn" href="#">🛒 Commander</a>
       </div>
@@ -200,4 +200,42 @@
       <div class="footer-col">
         <h4>Illustrations</h4>
         <p>Créa by Floh<br><a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
-        <p style="color:#aaa">Ressources © Freepik
+        <p style="color:#aaa">Ressources © Freepik</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p><strong>Kyran®</strong> — ©2025 Corentin SENCE. Tous droits réservés.</p>
+      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    (function(){
+      const navToggle = document.querySelector('.nav-toggle');
+      const body = document.body;
+      const backdrop = document.querySelector('.backdrop');
+
+      function closeMenu(){
+        body.classList.remove('menu-open');
+        if(navToggle) navToggle.setAttribute('aria-expanded','false');
+        if(backdrop) backdrop.hidden = true;
+      }
+      function openMenu(){
+        body.classList.add('menu-open');
+        if(navToggle) navToggle.setAttribute('aria-expanded','true');
+        if(backdrop) backdrop.hidden = false;
+      }
+
+      if(navToggle){
+        navToggle.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu();});
+      }
+      if(backdrop){backdrop.addEventListener('click',closeMenu);}
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+      document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
+      matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
+    })();
+  </script>
+</body>
+</html>

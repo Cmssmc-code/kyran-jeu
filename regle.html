@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="prefetch" href="index.html" as="document">
 
-  <!-- Header mobile identique à index.html -->
+  <!-- Forcer le comportement mobile identique à index.html -->
   <style>
     .mobile-cta{display:none}
     @media (max-width:900px){
@@ -26,13 +26,10 @@
 </head>
 <body>
 
-  <!-- HEADER (même structure que index.html) -->
+  <!-- HEADER (PC inchangé / Mobile: CTA déplacé dans le menu) -->
   <header>
     <div class="container nav">
-      <!-- Logo -->
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
-
-      <!-- Navigation -->
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
@@ -43,13 +40,9 @@
           <li class="mobile-cta"><a class="btn" href="#">🛒 Commander</a></li>
         </ul>
       </nav>
-
-      <!-- Burger (mobile) -->
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
-
-      <!-- CTA (PC uniquement) -->
       <div class="cta">
         <a class="btn" href="#">🛒 Commander</a>
       </div>
@@ -96,7 +89,7 @@
       </div>
     </section>
 
-    <!-- RÈGLES COMPLÈTES (texte conservé) -->
+    <!-- RÈGLES COMPLÈTES (texte inchangé) -->
     <section id="regles">
       <div class="container">
         <h2 class="section-title">📜 Règles complètes</h2>

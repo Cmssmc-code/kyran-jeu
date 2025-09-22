@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (identique à index.html) -->
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
@@ -30,7 +30,7 @@
         <span></span><span></span><span></span>
       </button>
       <div class="cta">
-        <a class="btn" href="#">🛒 Acheter</a>
+        <a class="btn" href="#">🛒 Commander</a>
       </div>
     </div>
     <div class="backdrop" hidden></div>
@@ -82,6 +82,7 @@
         <p class="section-sub">Référence officielle pour vos parties</p>
 
         <article class="card">
+          <!-- Texte des règles inchangé -->
           <h3>🎯 Objectif</h3>
           <p>KYRAN est un jeu de plis pour 3 à 6 joueurs. À chaque manche, on prédit combien de plis on va gagner, puis on joue ses cartes (nombres ou pouvoirs spéciaux). Si la prédiction est juste, on garde ses vies, sinon on en perd. Le joueur qui a le plus de vie à la fin devient <strong>Maître des Mystiques</strong>.</p>
 
@@ -185,19 +186,19 @@
   <!-- JS -->
   <script>
     (function(){
-      const navToggle = document.querySelector('.nav-toggle');
-      const body = document.body;
-      const backdrop = document.querySelector('.backdrop');
+      const navToggle=document.querySelector('.nav-toggle');
+      const body=document.body;
+      const backdrop=document.querySelector('.backdrop');
 
       function closeMenu(){
         body.classList.remove('menu-open');
         if(navToggle) navToggle.setAttribute('aria-expanded','false');
-        if(backdrop) backdrop.hidden = true;
+        if(backdrop) backdrop.hidden=true;
       }
       function openMenu(){
         body.classList.add('menu-open');
         if(navToggle) navToggle.setAttribute('aria-expanded','true');
-        if(backdrop) backdrop.hidden = false;
+        if(backdrop) backdrop.hidden=false;
       }
 
       if(navToggle){
@@ -206,7 +207,7 @@
       if(backdrop){backdrop.addEventListener('click',closeMenu);}
       document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
       document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
-      matchMedia('(min-width: 901px)').addEventListener('change', e => { if(e.matches) closeMenu(); });
+      matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
     })();
   </script>
 </body>

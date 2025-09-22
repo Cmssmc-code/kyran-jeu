@@ -24,7 +24,7 @@ body{
   font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   background:linear-gradient(180deg,var(--light) 0%,var(--light-2) 100%);
   color:var(--text);line-height:1.6;
-  padding-top:64px; /* espace pour le header fixe */
+  padding-top:64px;
   overflow-x:hidden;-webkit-tap-highlight-color:transparent;
 }
 main{display:block}
@@ -54,7 +54,7 @@ a{color:inherit;text-decoration:none}
 .btn:active{transform:scale(.97)}
 
 /* =======================
-   HEADER (desktop)
+   HEADER (desktop inchangé)
    ======================= */
 header{
   position:fixed;inset:0 0 auto 0;height:64px;
@@ -93,7 +93,7 @@ header{
   border:1px solid #d8d8d8;border-radius:10px;background:#fff;
   flex-direction:column;gap:6px;align-items:center;justify-content:center;
   cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.08);
-  z-index:10002; /* au-dessus du menu déroulant */
+  z-index:10002;
 }
 .nav-toggle span{width:24px;height:3px;background:#000;border-radius:2px;transition:.25s}
 body.menu-open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}
@@ -254,48 +254,79 @@ footer a:hover{color:#fff}
 
 /* =======================
    MOBILE/TABLETTE (<=900px)
-   Header robuste : burger | logo | CTA
+   Header robuste
    ======================= */
 @media (max-width:900px){
-  /* Grille à 3 colonnes : bouton burger fixe, logo flexible, CTA largeur auto */
   .container.nav{
-    display:grid;
-    grid-template-columns:48px 1fr max-content;
-    align-items:center;gap:8px;width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    width:100%;
     padding:0 10px;
   }
-  .nav-toggle{display:flex;grid-column:1;justify-self:start}
+
+  /* Burger gauche */
+  .nav-toggle{display:flex;flex:0 0 44px;height:40px}
+
+  /* Logo centré */
   .logo{
-    grid-column:2;justify-self:center;text-align:center;
-    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  }
-  header .cta{grid-column:3;justify-self:end}
-  header .cta .btn{
-    height:40px;padding:0 12px;font-size:.95rem; /* lisible mais compacte */
-    max-width:none; /* toujours 100% visible */
+    flex:1;
+    order:2;
+    text-align:center;
+    margin:0 8px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
 
-  /* Menu déroulant (sous le header) */
+  /* Bouton à droite */
+  header .cta{
+    flex:0 0 auto;
+    order:3;
+  }
+  header .cta .btn{
+    font-size:.9rem;
+    padding:0 12px;
+    height:40px;
+    max-width:36vw;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  /* Menu déroulant */
+  .nav{display:none}
   .nav ul{
-    position:fixed;top:64px;left:0;right:0;z-index:10000;
-    flex-direction:column;gap:18px;max-height:0;overflow:hidden;padding:0;background:#fff;
+    position:fixed;top:64px;left:0;right:0;
+    flex-direction:column;
+    gap:18px;
+    max-height:0;overflow:hidden;
+    padding:0;background:#fff;
+    align-items:center;text-align:center;
     transition:max-height .3s ease,padding .3s ease,box-shadow .3s ease;
-    align-items:center;justify-content:center;text-align:center;
+    z-index:10000;
   }
   body.menu-open .nav ul{
-    max-height:480px;padding:20px 20px 24px;border-bottom:1px solid #eee;box-shadow:0 10px 24px rgba(0,0,0,.08);
+    max-height:480px;
+    padding:20px 20px 24px;
+    border-bottom:1px solid #eee;
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
   }
   .nav ul li{width:100%}
   .nav ul a{display:block;width:100%;padding:.7rem 0}
 
-  /* Voile */
+  /* Backdrop */
   .backdrop{
-    position:fixed;left:0;right:0;top:64px;bottom:0;background:rgba(0,0,0,.28);
-    opacity:0;pointer-events:none;transition:opacity .25s;z-index:9998;
+    position:fixed;left:0;right:0;top:64px;bottom:0;
+    background:rgba(0,0,0,.28);
+    opacity:0;pointer-events:none;
+    transition:opacity .25s;
+    z-index:9998;
   }
   body.menu-open .backdrop{opacity:1;pointer-events:auto}
 
-  /* Layout sections */
+  /* Sections */
   section{padding:40px 15px}
   .hero{padding:60px 20px}
   .hero h1{font-size:clamp(30px,9vw,52px);line-height:1.2}

@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KYRAN – Maître des Mystiques | Jeu de plis stratégique</title>
-  <meta name="description" content="KYRAN est un jeu de plis rapide et accessible pour 3 à 6 joueurs. Pariez, bluffez et maîtrisez le timing pour devenir le Maître des Mystiques. Découvrez l’univers, le matériel et les avis." />
+  <title>KYRAN – Jeu de plis stratégique | Pari, bluff et timing (3 à 6 joueurs)</title>
+  <meta name="description" content="KYRAN est un jeu de plis rapide et malin pour 3 à 6 joueurs. Pariez, bluffez et maîtrisez le timing pour devenir le Maître des Mystiques. Règles et bande-annonce." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://kyran-jeu.fr/" />
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/" />
+
+  <!-- Favicons (à adapter si nécessaire) -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KYRAN – Jeu de plis stratégique (3 à 6 joueurs)" />
+  <meta property="og:description" content="Un jeu de plis rapide et accessible. Pariez, bluffez et devenez le Maître des Mystiques." />
+  <meta property="og:url" content="https://kyran-jeu.fr/" />
+  <meta property="og:image" content="https://kyran-jeu.fr/images/kyran-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KYRAN – Jeu de plis stratégique" />
+  <meta name="twitter:description" content="Pari, bluff, timing : maîtrisez vos plis et protégez vos vies." />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/images/kyran-preview.jpg" />
+
+  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <link rel="prefetch" href="regle.html" as="document">
 
-  <!-- Header mobile identique à regle.html -->
+  <!-- Accessibilité (ne change pas le rendu visuel) -->
   <style>
+    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
     .mobile-cta{display:none}
     @media (max-width:900px){
       header .cta{display:none}
@@ -23,14 +47,37 @@
       .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
     }
   </style>
+
+  <!-- Données structurées (BoardGame) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BoardGame",
+    "name":"KYRAN",
+    "inLanguage":"fr-FR",
+    "description":"Jeu de plis rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing.",
+    "numberOfPlayers":{
+      "@type":"QuantitativeValue",
+      "minValue":3,
+      "maxValue":6
+    },
+    "timeRequired":"PT45M",
+    "audience":{"@type":"PeopleAudience","suggestedMinAge":8},
+    "brand":{"@type":"Brand","name":"Kyran"},
+    "image":"https://kyran-jeu.fr/images/kyran-box.jpg",
+    "url":"https://kyran-jeu.fr/"
+  }
+  </script>
 </head>
 <body>
 
-  <!-- HEADER (structure copiée de regle.html) -->
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
+
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <!-- Logo -->
-      <a href="index.html" class="logo">KY<strong>RAN</strong></a>
+      <a href="index.html" class="logo" aria-label="KYRAN — Accueil">KY<strong>RAN</strong></a>
 
       <!-- Navigation -->
       <nav aria-label="Navigation principale">
@@ -56,7 +103,7 @@
     <div class="backdrop" hidden></div>
   </header>
 
-  <main>
+  <main id="contenu-principal">
     <!-- HERO -->
     <section class="hero">
       <div class="container">
@@ -102,15 +149,15 @@
               </div>
             </article>
             <div class="feature-pair" style="margin-top:18px">
-              <article class="feature-card"><div class="feature-icon" aria-hidden="true">⚡</div><div><h4>Rapide</h4><p>Installation rapide, parties nerveuses (~45 min).</p></div></article>
-              <article class="feature-card"><div class="feature-icon" aria-hidden="true">🧠</div><div><h4>Malin</h4><p>Lecture d’adversaires, bluff et stratégie : tout y est.</p></div></article>
+              <article class="feature-card"><div class="feature-icon" aria-hidden="true">⚡</div><div><h3>Rapide</h3><p>Installation rapide, parties nerveuses (~45 min).</p></div></article>
+              <article class="feature-card"><div class="feature-icon" aria-hidden="true">🧠</div><div><h3>Malin</h3><p>Lecture d’adversaires, bluff et stratégie : tout y est.</p></div></article>
             </div>
             <article class="feature-card" style="margin-top:18px">
               <div class="feature-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
-              <div><h4>Convivial</h4><p>3 à 6 joueurs, idéal entre amis ou en famille.</p></div>
+              <div><h3>Convivial</h3><p>3 à 6 joueurs, idéal entre amis ou en famille.</p></div>
             </article>
           </div>
-          <aside class="info-panel">
+          <aside class="info-panel" aria-label="Informations rapides">
             <h3>Infos rapides</h3>
             <ul class="bullet-list">
               <li>👥 <strong>3–6 joueurs</strong></li>
@@ -118,10 +165,10 @@
               <li>🎂 <strong>À partir de 8 ans</strong></li>
               <li>🪄 Cartes spéciales et bluff</li>
             </ul>
-            <div class="chip-row">
-              <span class="chip">Univers mystique</span>
-              <span class="chip">Haute rejouabilité</span>
-              <span class="chip">Règles simples</span>
+            <div class="chip-row" role="list">
+              <span class="chip" role="listitem">Univers mystique</span>
+              <span class="chip" role="listitem">Haute rejouabilité</span>
+              <span class="chip" role="listitem">Règles simples</span>
             </div>
           </aside>
         </div>
@@ -185,7 +232,7 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (inchangé) -->
   <footer>
     <div class="footer-grid">
       <div class="footer-col">

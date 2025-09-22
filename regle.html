@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Règles du jeu – KYRAN</title>
-  <meta name="description" content="Toutes les règles officielles du jeu KYRAN. Découvrez comment jouer, la manche mystique, les cartes spéciales et des exemples concrets." />
+  <title>Règles officielles KYRAN – Comment jouer (3–6 joueurs) | Vidéo + explications</title>
+  <meta name="description" content="Toutes les règles officielles de KYRAN : mise en place, phases de jeu, manche mystique et cartes spéciales. Vidéo explicative et exemples concrets pour jouer sans hésiter." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://kyran-jeu.fr/regle.html" />
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/regle.html" />
+
+  <!-- Favicons (à adapter si besoin) -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Règles officielles de KYRAN – Comment jouer" />
+  <meta property="og:description" content="Apprenez à jouer à KYRAN : mise en place, paris, plis, résolution et manche mystique. Vidéo + exemples." />
+  <meta property="og:url" content="https://kyran-jeu.fr/regle.html" />
+  <meta property="og:image" content="https://kyran-jeu.fr/images/kyran-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Règles officielles KYRAN – Comment jouer" />
+  <meta name="twitter:description" content="Guide complet des règles : mise en place, déroulement, cartes spéciales et variante." />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/images/kyran-preview.jpg" />
+
+  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="prefetch" href="index.html" as="document">
 
-  <!-- Forcer le comportement mobile identique à index.html -->
+  <!-- Accessibilité + mobile (aucun impact visuel) -->
   <style>
+    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
     .mobile-cta{display:none}
     @media (max-width:900px){
       header .cta{display:none}
@@ -23,13 +47,60 @@
       .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
     }
   </style>
+
+  <!-- Données structurées : fil d’Ariane + HowTo (règles) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://kyran-jeu.fr/"},
+      {"@type":"ListItem","position":2,"name":"Règles","item":"https://kyran-jeu.fr/regle.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"Règles officielles de KYRAN",
+    "inLanguage":"fr-FR",
+    "description":"Guide pas-à-pas pour apprendre à jouer à KYRAN (3 à 6 joueurs) : mise en place, paris, plis, résolution et manche mystique.",
+    "totalTime":"PT45M",
+    "supply":[
+      {"@type":"HowToSupply","name":"36 cartes Nombre"},
+      {"@type":"HowToSupply","name":"8 cartes Pouvoir"},
+      {"@type":"HowToSupply","name":"1 carte Mystique"},
+      {"@type":"HowToSupply","name":"6 paquets de 5 cartes Vie"}
+    ],
+    "tool":[{"@type":"HowToTool","name":"Table de jeu"}],
+    "step":[
+      {"@type":"HowToStep","name":"Mise en place","text":"Mélangez cartes Nombre et Pouvoir. À 3–4 joueurs, utilisez : Clairvoyance Antique (11), Sceau du Destin (27), Bénédiction des Ancêtres (20), Voile du Néant (3) et la carte Mystique. À 5–6 joueurs, prenez toutes les cartes Pouvoir et la carte Mystique. Donnez à chacun 5 cartes Vie visibles (5 à 1 étoiles)."},
+      {"@type":"HowToStep","name":"Phase de paris","text":"Dans l’ordre du tour, chaque joueur annonce le nombre de plis qu’il compte gagner. La somme des paris ne doit pas égaler le nombre total de plis ; le dernier s’ajuste."},
+      {"@type":"HowToStep","name":"Phase des plis","text":"Chacun joue une carte. Les Pouvoirs s’activent et valent la valeur affichée. La carte la plus haute remporte le pli. En cas d’égalité Nombre vs Pouvoir, le Pouvoir l’emporte."},
+      {"@type":"HowToStep","name":"Phase de résolution","text":"Si le pari est réussi, aucune vie perdue. Sinon, perdez un nombre de cartes Vie égal à l’écart entre pari et plis gagnés."},
+      {"@type":"HowToStep","name":"Manche Mystique","text":"Chaque joueur pioche 1 carte contre son front. Paris sur gagner/ne pas gagner. Tous jouent simultanément sans activer les Pouvoirs. La Mystique vaut 37 si on a parié gagner, sinon 0. Égalité : les Pouvoirs l’emportent. Pari perdu : -1 vie."},
+      {"@type":"HowToStep","name":"Fin de jeu","text":"Le premier à perdre toutes ses vies est perdant ; celui qui en a le plus devient Maître des Mystiques."}
+    ],
+    "video":{
+      "@type":"VideoObject",
+      "name":"Règles du jeu KYRAN (vidéo)",
+      "description":"Comprenez les règles de KYRAN en 5 minutes.",
+      "thumbnailUrl":"https://kyran-jeu.fr/images/kyran-preview.jpg",
+      "uploadDate":"2025-01-01",
+      "embedUrl":"https://www.youtube.com/embed/jj0ChLVTpaA"
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
 
   <!-- HEADER (PC inchangé / Mobile: CTA déplacé dans le menu) -->
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">KY<strong>RAN</strong></a>
+      <a href="index.html" class="logo" aria-label="KYRAN — Accueil">KY<strong>RAN</strong></a>
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
@@ -50,7 +121,7 @@
     <div class="backdrop" hidden></div>
   </header>
 
-  <main>
+  <main id="contenu-principal">
     <!-- HERO -->
     <section class="hero">
       <div class="container">
@@ -172,7 +243,7 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (inchangé) -->
   <footer>
     <div class="footer-grid">
       <div class="footer-col">

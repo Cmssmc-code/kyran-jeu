@@ -53,6 +53,11 @@ a{color:inherit;text-decoration:none}
 .btn:hover::after{animation:shimmer .9s ease}
 .btn:active{transform:scale(.97)}
 
+/* === Forcer le CTA du burger (dans le menu) en blanc === */
+header nav .btn,
+header nav .btn:hover,
+header nav .btn:focus{ color:#fff !important; }
+
 /* =======================
    HEADER
    ======================= */

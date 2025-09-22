@@ -1,0 +1,6 @@
+# Autoriser l’exploration
+User-agent: *
+Allow: /
+
+# Plan du site
+Sitemap: https://kyran-jeu.fr/sitemap.xml

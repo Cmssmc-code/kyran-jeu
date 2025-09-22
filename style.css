@@ -54,7 +54,7 @@ a{color:inherit;text-decoration:none}
 .btn:active{transform:scale(.97)}
 
 /* =======================
-   HEADER (desktop inchangé)
+   HEADER
    ======================= */
 header{
   position:fixed;inset:0 0 auto 0;height:64px;
@@ -87,7 +87,7 @@ header{
 .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav ul a:hover,.nav ul a:focus{color:var(--gold)}
 
-/* Burger (caché desktop) */
+/* Burger */
 .nav-toggle{
   display:none;position:relative;width:40px;height:40px;
   border:1px solid #d8d8d8;border-radius:10px;background:#fff;
@@ -100,7 +100,7 @@ body.menu-open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45
 body.menu-open .nav-toggle span:nth-child(2){opacity:0}
 body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
 
-/* CTA header */
+/* CTA (desktop seulement) */
 header .cta{position:relative;z-index:10001}
 header .cta .btn{
   display:inline-flex;align-items:center;justify-content:center;height:40px;
@@ -254,46 +254,30 @@ footer a:hover{color:#fff}
 
 /* =======================
    MOBILE/TABLETTE (<=900px)
-   Header robuste
    ======================= */
 @media (max-width:900px){
   .container.nav{
+    position:relative;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    width:100%;
+    justify-content:flex-start;
+    height:64px;
     padding:0 10px;
   }
 
   /* Burger gauche */
-  .nav-toggle{display:flex;flex:0 0 44px;height:40px}
+  .nav-toggle{display:flex;flex:0 0 44px;height:40px;z-index:10002}
 
   /* Logo centré */
   .logo{
-    flex:1;
-    order:2;
-    text-align:center;
-    margin:0 8px;
+    position:absolute;
+    left:50%;transform:translateX(-50%);
+    text-align:center;font-size:24px;
     white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
   }
 
-  /* Bouton à droite */
-  header .cta{
-    flex:0 0 auto;
-    order:3;
-  }
-  header .cta .btn{
-    font-size:.9rem;
-    padding:0 12px;
-    height:40px;
-    max-width:36vw;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
+  /* Masquer bouton Commander du header */
+  header .cta{display:none}
 
   /* Menu déroulant */
   .nav{display:none}

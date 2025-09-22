@@ -11,10 +11,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="prefetch" href="index.html" as="document">
+
+  <!-- Forcer le comportement mobile identique à index.html -->
+  <style>
+    .mobile-cta{display:none}
+    @media (max-width:900px){
+      header .cta{display:none}
+      .mobile-cta{display:list-item}
+      .nav-toggle{display:flex}
+      .container.nav{position:relative}
+      .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER (identique à index.html) -->
+  <!-- HEADER (PC inchangé / Mobile: CTA déplacé dans le menu) -->
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">KY<strong>RAN</strong></a>
@@ -24,6 +36,8 @@
           <li><a href="#video">🎥 Règle en vidéo</a></li>
           <li><a href="#decouvrir">Découvrir</a></li>
           <li><a href="#regles" aria-current="page">Règles</a></li>
+          <!-- CTA visible uniquement dans le menu burger en mobile -->
+          <li class="mobile-cta"><a class="btn" href="#">🛒 Commander</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
@@ -75,14 +89,13 @@
       </div>
     </section>
 
-    <!-- RÈGLES COMPLÈTES -->
+    <!-- RÈGLES COMPLÈTES (texte inchangé) -->
     <section id="regles">
       <div class="container">
         <h2 class="section-title">📜 Règles complètes</h2>
         <p class="section-sub">Référence officielle pour vos parties</p>
 
         <article class="card">
-          <!-- Texte des règles inchangé -->
           <h3>🎯 Objectif</h3>
           <p>KYRAN est un jeu de plis pour 3 à 6 joueurs. À chaque manche, on prédit combien de plis on va gagner, puis on joue ses cartes (nombres ou pouvoirs spéciaux). Si la prédiction est juste, on garde ses vies, sinon on en perd. Le joueur qui a le plus de vie à la fin devient <strong>Maître des Mystiques</strong>.</p>
 

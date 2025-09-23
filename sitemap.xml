@@ -4,7 +4,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
 >
-  <!-- Accueil (priorité max) -->
+  <!-- Accueil -->
   <url>
     <loc>https://kyran-jeu.fr/</loc>
     <lastmod>2025-09-23</lastmod>
@@ -13,11 +13,21 @@
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>KYRAN – jeu de cartes</image:title>
-      <image:caption>Site officiel de KYRAN</image:caption>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://kyran-jeu.fr/logo.png</video:thumbnail_loc>
+      <!-- Option: meilleure miniature YouTube
+           https://i.ytimg.com/vi/jj0ChLVTpaA/hqdefault.jpg -->
+      <video:title>Bande-annonce du jeu KYRAN</video:title>
+      <video:description>Présentation rapide de KYRAN : univers, objectifs et aperçu des règles.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/jj0ChLVTpaA</video:player_loc>
+      <video:publication_date>2025-01-01T10:00:00+01:00</video:publication_date>
+      <video:duration>300</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 
-  <!-- Règles (indexable mais moins prioritaire) -->
+  <!-- Règles -->
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
     <lastmod>2025-09-23</lastmod>
@@ -32,7 +42,8 @@
       <video:title>Règles du jeu KYRAN</video:title>
       <video:description>Comprenez les règles en 5 minutes : mise en place, paris, plis, manche mystique.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/jj0ChLVTpaA</video:player_loc>
-      <video:publication_date>2025-01-01</video:publication_date>
+      <video:publication_date>2025-01-01T10:00:00+01:00</video:publication_date>
+      <video:duration>300</video:duration>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>

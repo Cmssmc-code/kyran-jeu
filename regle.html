@@ -59,16 +59,31 @@
     "name":"KYRAN",
     "inLanguage":"fr-FR",
     "description":"Jeu de société stratégique et rapide pour 3 à 6 joueurs mêlant pari, bluff et timing.",
-    "numberOfPlayers":{
-      "@type":"QuantitativeValue",
-      "minValue":3,
-      "maxValue":6
-    },
+    "numberOfPlayers":{"@type":"QuantitativeValue","minValue":3,"maxValue":6},
     "timeRequired":"PT45M",
     "audience":{"@type":"PeopleAudience","suggestedMinAge":8},
     "brand":{"@type":"Brand","name":"Kyran"},
     "image":"https://kyran-jeu.fr/logo.png",
     "url":"https://kyran-jeu.fr/"
+  }
+  </script>
+
+  <!-- Données structurées (VideoObject) : ajout de uploadDate avec fuseau -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"VideoObject",
+    "name":"Règles du jeu KYRAN",
+    "description":"Comprenez tout en 5 minutes : mise en place, paris, plis et manche mystique.",
+    "thumbnailUrl":"https://kyran-jeu.fr/logo.png",
+    "embedUrl":"https://www.youtube.com/embed/jj0ChLVTpaA",
+    "uploadDate":"2025-01-01T10:00:00+01:00",
+    "duration":"PT5M",
+    "publisher":{
+      "@type":"Organization",
+      "name":"KYRAN",
+      "logo":{"@type":"ImageObject","url":"https://kyran-jeu.fr/logo.png","width":512,"height":512}
+    }
   }
   </script>
 </head>
@@ -133,7 +148,7 @@
         <p class="section-sub">Un jeu simple à apprendre, mais profond et stratégique.</p>
         <div class="grid grid-3">
           <div class="card"><h3>👥 Joueurs</h3><p>3 à 6 joueurs.</p></div>
-          <div class="card"><h3>⏳ Durée</h3><p>Environ 45 minutes.</p></div>
+          <div class="card"><h3>⏳ Durée</h3><p>~30 minutes.</p></div>
           <div class="card"><h3>🎂 Âge</h3><p>À partir de 8 ans.</p></div>
         </div>
       </div>

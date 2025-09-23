@@ -1,14 +1,6 @@
-# robots.txt pour https://kyran-jeu.fr/
-# Optimisé SEO – donne priorité à l'accueil
+# robots.txt — kyran-jeu.fr
 
 User-agent: *
-# Autoriser l'ensemble du site
 Allow: /
 
-# Éviter l'indexation de fichiers inutiles
-Disallow: /style.css
-Disallow: /favicon.ico
-Disallow: /logo.png
-
-# Déclaration du sitemap (important pour Google et Bing)
 Sitemap: https://kyran-jeu.fr/sitemap.xml

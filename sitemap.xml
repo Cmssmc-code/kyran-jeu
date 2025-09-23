@@ -4,37 +4,33 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
 >
-  <!-- Accueil -->
+  <!-- Accueil (prioritÈ max) -->
   <url>
     <loc>https://kyran-jeu.fr/</loc>
-    <lastmod>2025-09-22</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>1.00</priority>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/images/kyran-preview.jpg</image:loc>
-      <image:title>KYRAN ‚Äì jeu de plis strat√©gique</image:title>
-      <image:caption>D√©fiez votre intuition et devenez le Ma√Ætre des Mystiques</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/images/kyran-box.jpg</image:loc>
-      <image:title>Bo√Æte du jeu KYRAN</image:title>
+      <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
+      <image:title>KYRAN ñ jeu de cartes</image:title>
+      <image:caption>Site officiel de KYRAN</image:caption>
     </image:image>
   </url>
 
-  <!-- R√®gles -->
+  <!-- RËgles (indexable mais moins prioritaire) -->
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2025-09-22</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.50</priority>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/images/kyran-preview.jpg</image:loc>
-      <image:title>R√®gles officielles de KYRAN</image:title>
+      <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
+      <image:title>RËgles officielles de KYRAN</image:title>
     </image:image>
     <video:video>
-      <video:thumbnail_loc>https://kyran-jeu.fr/images/kyran-preview.jpg</video:thumbnail_loc>
-      <video:title>R√®gles du jeu KYRAN</video:title>
-      <video:description>Comprenez les r√®gles de KYRAN en 5 minutes : mise en place, paris, plis, manche mystique.</video:description>
+      <video:thumbnail_loc>https://kyran-jeu.fr/logo.png</video:thumbnail_loc>
+      <video:title>RËgles du jeu KYRAN</video:title>
+      <video:description>Comprenez les rËgles en 5 minutes : mise en place, paris, plis, manche mystique.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/jj0ChLVTpaA</video:player_loc>
       <video:publication_date>2025-01-01</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>

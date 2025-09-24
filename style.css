@@ -90,13 +90,19 @@ header{
 }
 .container.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
 
-/* Logo */
+/* Logo (texte remplacé par image) */
 .logo{
-  font-family:"Bebas Neue",sans-serif;letter-spacing:.1em;font-size:26px;line-height:1;
-  color:var(--dark);transition:transform .25s;flex-shrink:0
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
 }
-.logo strong{color:var(--gold)}
-.logo:hover{transform:scale(1.05)}
+.logo img{
+  height:48px; /* taille du logo, modifiable */
+  width:auto;
+  display:block;
+  transition:transform .25s;
+}
+.logo img:hover{transform:scale(1.05)}
 
 /* Nav desktop */
 .nav{flex:1;display:flex;justify-content:center}
@@ -298,9 +304,9 @@ footer a:hover{color:#fff}
   .logo{
     position:absolute;
     left:50%;transform:translateX(-50%);
-    text-align:center;font-size:28px;
-    white-space:nowrap;
+    text-align:center;
   }
+  .logo img{height:44px}
 
   /* Masquer bouton Commander du header */
   header .cta{display:none}

@@ -108,7 +108,7 @@
     <div class="container nav">
       <!-- Logo -->
       <a href="index.html" class="logo" aria-label="KYRAN — Accueil">
-        <img src="logo.png" alt="Logo KYRAN">
+        <img src="logo.png" alt="Logo KYRAN" loading="eager" decoding="async">
       </a>
 
       <!-- Navigation -->
@@ -160,6 +160,10 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
+        <!-- Bouton ajouté sous la vidéo -->
+        <p style="text-align:center; margin-top:18px">
+          <a class="btn" href="regle.html">📘 Voir les règles complètes</a>
+        </p>
       </div>
     </section>
 
@@ -229,7 +233,9 @@
           <div class="card"><h3>2) Jouez</h3><p>Jouez une carte à tour de rôle. La plus forte l’emporte.</p></div>
           <div class="card"><h3>3) Ajustez</h3><p>Réussissez vos paris pour garder vos vies, sinon vous en perdez.</p></div>
         </div>
-        <p style="text-align:center;margin-top:14px"><a class="btn" href="regle.html">📘 Lire les règles complètes</a></p>
+        <p style="text-align:center;margin-top:14px">
+          <a class="btn" href="regle.html">📘 Voir les règles complètes</a>
+        </p>
       </div>
     </section>
 
@@ -309,6 +315,7 @@
         navToggle.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu();});
       }
       if(backdrop){backdrop.addEventListener('click',closeMenu);}
+
       document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
       document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
       matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)closeMenu();});

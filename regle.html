@@ -3,153 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Title SEO -->
-  <title>KYRAN – Jeu de société stratégique (3–6 joueurs) | Règles + Vidéo</title>
-
-  <!-- Meta description -->
-  <meta name="description" content="KYRAN est un jeu de société stratégique et rapide pour 3 à 6 joueurs. Découvrez les règles officielles, la vidéo explicative et devenez le Maître des Mystiques." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="canonical" href="https://kyran-jeu.fr/regle.html" />
-  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/regle.html" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="KYRAN" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="KYRAN – Jeu de société stratégique (3–6 joueurs)" />
-  <meta property="og:description" content="Défiez votre intuition et découvrez les règles officielles de KYRAN, le jeu de société rapide et stratégique." />
-  <meta property="og:url" content="https://kyran-jeu.fr/regle.html" />
-  <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KYRAN – Jeu de société stratégique" />
-  <meta name="twitter:description" content="Découvrez les règles officielles et la vidéo explicative de KYRAN. Un jeu rapide et stratégique pour 3 à 6 joueurs." />
-  <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
-
-  <!-- Fonts & CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <title>KYRAN – Règles Officielles</title>
+  <meta name="description" content="Règles officielles complètes du jeu KYRAN." />
   <link rel="stylesheet" href="style.css">
-  <link rel="prefetch" href="regle.html" as="document">
-
-  <!-- Accessibilité -->
-  <style>
-    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
-    .mobile-cta{display:none}
-    @media (max-width:900px){
-      header .cta{display:none}
-      .mobile-cta{display:list-item}
-      .nav-toggle{display:flex}
-      .container.nav{position:relative}
-      .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
-    }
-  </style>
-
-  <!-- Données structurées (BoardGame) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BoardGame",
-    "name":"KYRAN",
-    "inLanguage":"fr-FR",
-    "description":"Jeu de société stratégique et rapide pour 3 à 6 joueurs mêlant pari, bluff et timing.",
-    "numberOfPlayers":{"@type":"QuantitativeValue","minValue":3,"maxValue":6},
-    "timeRequired":"PT45M",
-    "audience":{"@type":"PeopleAudience","suggestedMinAge":8},
-    "brand":{"@type":"Brand","name":"Kyran"},
-    "image":"https://kyran-jeu.fr/logo.png",
-    "url":"https://kyran-jeu.fr/regle.html"
-  }
-  </script>
-
-  <!-- Données structurées (VideoObject) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"VideoObject",
-    "name":"Règles du jeu KYRAN",
-    "description":"Comprenez tout en 5 minutes : mise en place, paris, plis et manche mystique.",
-    "thumbnailUrl":"https://kyran-jeu.fr/logo.png",
-    "embedUrl":"https://www.youtube.com/embed/jj0ChLVTpaA",
-    "uploadDate":"2025-01-01T10:00:00+01:00",
-    "duration":"PT5M",
-    "publisher":{
-      "@type":"Organization",
-      "name":"KYRAN",
-      "logo":{"@type":"ImageObject","url":"https://kyran-jeu.fr/logo.png","width":512,"height":512}
-    }
-  }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
-
-  <!-- HEADER (PC inchangé / Mobile: CTA déplacé dans le menu) -->
   <header>
     <div class="container nav">
       <a href="index.html" class="logo" aria-label="KYRAN — Accueil">
         <img src="logo.png" alt="Logo KYRAN">
       </a>
-      <nav aria-label="Navigation principale">
+      <nav>
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="#video">🎥 Règle en vidéo</a></li>
-          <li><a href="#decouvrir">Découvrir</a></li>
-          <li><a href="#regles" aria-current="page">Règles</a></li>
-          <!-- CTA visible uniquement dans le menu burger en mobile -->
-          <li class="mobile-cta"><a class="btn" href="#">🛒 Bientôt disponible</a></li>
+          <li><a href="#regles" aria-current="page">Règles écrites</a></li>
         </ul>
       </nav>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="cta">
-        <a class="btn" href="#">🛒 Bientôt disponible</a>
-      </div>
+      <div class="cta"><a class="btn" href="#">Bientôt disponible</a></div>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-    <div class="backdrop" hidden></div>
   </header>
 
-  <main id="contenu-principal">
-    <!-- HERO -->
+  <main>
     <section class="hero">
       <div class="container">
-        <h1><span class="accent">Règles</span> officielles<br>de <span class="accent">KYRAN</span></h1>
-        <p>Tout ce qu’il faut pour jouer sans hésiter : mise en place, manches, pouvoirs et manche mystique.</p>
+        <h1>Règles <span class="accent">Officielles</span></h1>
+        <p>Référence officielle pour vos parties de KYRAN.</p>
       </div>
     </section>
 
-    <!-- VIDÉO -->
     <section id="video">
       <div class="container">
         <h2 class="section-title">🎥 Règles en vidéo</h2>
         <p class="section-sub">Comprenez tout en 5 minutes.</p>
-        <div class="video">
+        <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/jj0ChLVTpaA"
             title="Règles du jeu KYRAN"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <!-- APERÇU -->
-    <section id="decouvrir">
+    <section>
       <div class="container">
-        <h2 class="section-title">Découvrez KYRAN</h2>
-        <p class="section-sub">Un jeu simple à apprendre, mais profond et stratégique.</p>
         <div class="grid grid-3">
           <div class="card"><h3>👥 Joueurs</h3><p>3 à 6 joueurs.</p></div>
           <div class="card"><h3>⏳ Durée</h3><p>~30 minutes.</p></div>
@@ -158,13 +60,10 @@
       </div>
     </section>
 
-    <!-- RÈGLES COMPLÈTES (texte inchangé) -->
     <section id="regles">
       <div class="container">
-        <h2 class="section-title">📜 Règles complètes</h2>
-        <p class="section-sub">Référence officielle pour vos parties</p>
-
         <article class="card">
+          
           <h3>🎯 Objectif</h3>
           <p>KYRAN est un jeu de plis pour 3 à 6 joueurs. À chaque manche, on prédit combien de plis on va gagner, puis on joue ses cartes (nombres ou pouvoirs spéciaux). Si la prédiction est juste, on garde ses vies, sinon on en perd. Le joueur qui a le plus de vie à la fin devient <strong>Maître des Mystiques</strong>.</p>
 
@@ -241,57 +140,33 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
-      <div class="footer-col">
-        <h4>KYRAN – Accueil officiel</h4>
-        <p>Un jeu de cartes rapide et convivial. Retrouvez ici la vidéo, les règles et la boutique.</p>
+      <div>
+        <h4>KYRAN – Site officiel</h4>
+        <p>Jeu de cartes rapide et convivial. Vidéo, règles et infos.</p>
         <p><a href="index.html">Retour à l’accueil</a></p>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Contact</h4>
         <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
-        <p style="color:#aaa">Site sans cookies</p>
       </div>
-      <div class="footer-col">
-        <h4>Illustrations</h4>
-        <p>Créa by Floh<br><a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
-        <p style="color:#aaa">Ressources © Freepik</p>
+      <div>
+        <h4>Crédits</h4>
+        <p>Illustrations : Créa by Floh</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p><strong>Kyran®</strong> — ©2025 Corentin SENCE. Tous droits réservés.</p>
-      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
+      <p>Kyran® — © 2025 Corentin SENCE. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
-    (function(){
-      const navToggle=document.querySelector('.nav-toggle');
-      const body=document.body;
-      const backdrop=document.querySelector('.backdrop');
-
-      function closeMenu(){
-        body.classList.remove('menu-open');
-        if(navToggle) navToggle.setAttribute('aria-expanded','false');
-        if(backdrop) backdrop.hidden=true;
-      }
-      function openMenu(){
-        body.classList.add('menu-open');
-        if(navToggle) navToggle.setAttribute('aria-expanded','true');
-        if(backdrop) backdrop.hidden=false;
-      }
-
-      if(navToggle){
-        navToggle.addEventListener('click',()=>{body.classList.contains('menu-open')?closeMenu():openMenu();});
-      }
-      if(backdrop){backdrop.addEventListener('click',closeMenu);}
-      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-      document.querySelectorAll('header nav a').forEach(a=>a.addEventListener('click',closeMenu));
-      matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
-    })();
+    const toggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+    if(toggle){
+        toggle.addEventListener('click', () => body.classList.toggle('menu-open'));
+    }
   </script>
 </body>
 </html>

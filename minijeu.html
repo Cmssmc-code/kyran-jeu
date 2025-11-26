@@ -6,7 +6,7 @@
 
   <title>KYRAN – Mini jeu mystique | Site officiel</title>
 
-  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis, utilise la carte Mystique et teste l esprit du jeu directement sur le site officiel." />
+  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis, utilise la carte Mystique 37 et teste l esprit du jeu directement sur le site officiel." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
@@ -132,19 +132,19 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:16px;
-      min-height:190px;
+      gap:18px;
+      min-height:230px;
       background:rgba(0,0,0,0.25);
       border-radius:12px;
-      padding:10px;
+      padding:14px 10px;
       flex-wrap:nowrap;
       overflow-x:auto;
     }
     #game-app .hand-area::-webkit-scrollbar{display:none;}
 
     #game-app .card{
-      width:120px;
-      height:170px;
+      width:140px;
+      height:210px;
       border-radius:12px;
       overflow:hidden;
       background:#000;
@@ -196,8 +196,8 @@
       padding:16px;
     }
     #game-app .slot{
-      width:120px;
-      height:170px;
+      width:140px;
+      height:210px;
       border-radius:12px;
       border:2px dashed rgba(212,175,55,0.35);
       display:flex;
@@ -206,7 +206,6 @@
       transition:0.2s;
     }
 
-    /* Animation carte déposée au centre, plus lente */
     #game-app .card-slot-player{
       animation:cardDropPlayer 0.5s ease-out;
       transform-origin:50% 100%;
@@ -286,14 +285,14 @@
 
     #game-app .preview-cards-container{
       display:flex;
-      gap:14px;
+      gap:16px;
       justify-content:center;
       flex-wrap:wrap;
-      margin:10px 0 6px 0;
+      margin:14px 0 8px 0;
     }
     #game-app .preview-card{
-      width:110px;
-      height:155px;
+      width:125px;
+      height:185px;
       border-radius:12px;
       background:#000;
       border:2px solid rgba(212,175,55,0.3);
@@ -370,19 +369,19 @@
         gap:16px;
       }
       #game-app .card{
-        width:100px;
-        height:145px;
+        width:120px;
+        height:180px;
       }
       #game-app .slot{
-        width:100px;
-        height:145px;
+        width:120px;
+        height:180px;
       }
       #game-app .preview-card{
-        width:95px;
-        height:135px;
+        width:110px;
+        height:165px;
       }
       #game-app .hand-area{
-        min-height:170px;
+        min-height:220px;
       }
       #game-app .round-toast{
         bottom:10px;
@@ -422,7 +421,7 @@
     <section class="hero hero-mini-jeu">
       <div class="container">
         <h1><span class="accent">MINI JEU</span> KYRAN</h1>
-        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique !</p>
+        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique 37 qui peut valoir 0 ou 37 selon ton choix.</p>
         <div class="hero-actions">
           <button class="btn" id="start-game-btn">Lancer une partie</button>
         </div>
@@ -432,7 +431,7 @@
     <section id="mini-jeu-section">
       <div class="container" style="display:flex;justify-content:center;">
         <!-- Musique ambiance -->
-        <audio id="bgm" src="Ambiance.mp3" loop></audio>
+        <audio id="bgm" src="Ambiance.mp3" preload="auto" loop></audio>
 
         <div id="game-app">
           <div class="game-header">
@@ -457,7 +456,7 @@
             <div id="player-hand" class="hand-area"></div>
           </div>
 
-          <!-- Overlay pari (désactivé par défaut) -->
+          <!-- Overlay pari -->
           <div id="bet-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Phase de Pari</h2>
@@ -477,7 +476,8 @@
           <div id="mystic-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Carte Mystique</h2>
-              <p>Tu viens de choisir la carte Mystique, décide si elle vaut 0 ou 37 pour ce pli.</p>
+              <p>La carte 37 est mystique. Tu peux decider qu elle vaut 0 ou 37 pour ce pli.</p>
+              <p>Choisis sa puissance. Visuellement, elle reste la carte mystique.</p>
               <div class="bet-buttons">
                 <button onclick="chooseMystic(0)">0</button>
                 <button onclick="chooseMystic(37)">37</button>
@@ -496,7 +496,7 @@
             </div>
           </div>
 
-          <!-- Toast de pli gagné / perdu -->
+          <!-- Toast pli -->
           <div id="round-toast" class="round-toast" aria-live="polite"></div>
         </div>
       </div>
@@ -543,13 +543,13 @@
     })();
   </script>
 
-  <!-- Musique ambiance déclenchée au premier clic -->
+  <!-- Musique ambiance déclenchée au premier clic dans la page mini-jeu -->
   <script>
     document.addEventListener("click", () => {
       const audio = document.getElementById("bgm");
       if(audio && audio.paused){
         audio.volume = 0.25;
-        audio.play();
+        audio.play().catch(()=>{});
       }
     });
   </script>
@@ -731,7 +731,7 @@
         aiCard.classList.add("card-slot-ai");
         ui.slotAI.appendChild(aiCard);
         resolveRound(state.lastPlayedValue,aiVal);
-      },1000); // IA un peu plus lente
+      },1000);
     }
 
     function resolveRound(p,ai){
@@ -766,7 +766,7 @@
         state.turn="player";
         showStatus("A toi de jouer");
         renderHands();
-      },1100); // petite pause avant le pli suivant
+      },1100);
     }
 
     function endGame(){

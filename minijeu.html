@@ -49,7 +49,7 @@
   <!-- Styles spécifiques mini jeu -->
   <style>
     #mini-jeu-section {
-      padding: 60px 0;
+      padding: 40px 0;
       scroll-margin-top: 80px;
     }
 
@@ -74,16 +74,16 @@
 
     #game-app{
       width:100%;
-      max-width:650px;
-      margin:0 auto 40px auto;
+      max-width:700px;
+      margin:0 auto 32px auto;
       background:rgba(15,23,42,0.6);
       border-radius:20px;
       border:1px solid rgba(212,175,55,0.25);
       box-shadow:0 20px 50px rgba(0,0,0,0.5);
-      padding:18px;
+      padding:14px;
       display:flex;
       flex-direction:column;
-      gap:16px;
+      gap:12px;
       position:relative;
       overflow:hidden;
     }
@@ -92,7 +92,7 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:8px;
+      gap:6px;
     }
     #game-app .game-logo{
       font-family:'Bebas Neue',sans-serif;
@@ -106,7 +106,7 @@
       gap:18px;
       font-size:0.95rem;
       background:rgba(0,0,0,0.4);
-      padding:8px 18px;
+      padding:6px 18px;
       border-radius:40px;
       border:1px solid rgba(212,175,55,0.25);
     }
@@ -125,32 +125,35 @@
     #game-app .game-zones{
       display:flex;
       flex-direction:column;
-      gap:16px;
+      gap:10px;
     }
 
+    /* Zones de main, hauteur adaptée à la hauteur de l ecran */
     #game-app .hand-area{
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:18px;
-      min-height:230px;
+      gap:14px;
+      min-height:min(220px,30vh);
       background:rgba(0,0,0,0.25);
       border-radius:12px;
-      padding:14px 10px;
+      padding:8px 6px;
       flex-wrap:nowrap;
       overflow-x:auto;
     }
     #game-app .hand-area::-webkit-scrollbar{display:none;}
 
-    #game-app .card{
-      width:140px;
-      height:210px;
+    /* Cartes et slots: largeur liée au viewport, toujours 3 cartes visibles sur la ligne */
+    #game-app .card,
+    #game-app .slot{
+      width:min(140px,26vw);
+      aspect-ratio:3/4;
       border-radius:12px;
       overflow:hidden;
       background:#000;
       border:2px solid rgba(212,175,55,0.3);
       cursor:pointer;
-      transition:0.2s;
+      transition:0.25s;
       flex:0 0 auto;
     }
     #game-app .card-face,
@@ -168,18 +171,18 @@
       justify-content:center;
       align-items:center;
       font-family:'Bebas Neue';
-      font-size:2.6rem;
+      font-size:2.2rem;
       color:var(--gold);
       background:linear-gradient(135deg,var(--midnight),#1e293b);
     }
     #game-app .playable:hover{
-      transform:translateY(-10px) scale(1.05);
+      transform:translateY(-8px) scale(1.05);
       border-color:var(--gold);
       box-shadow:0 8px 24px rgba(212,175,55,0.4);
     }
 
     #game-app .card-enter{
-      animation:cardEnter 0.3s ease-out;
+      animation:cardEnter 0.35s ease-out;
     }
     @keyframes cardEnter{
       0%{opacity:0;transform:translateY(8px) scale(0.96);}
@@ -190,28 +193,20 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:40px;
+      gap:24px;
       background:rgba(0,0,0,0.3);
       border-radius:12px;
-      padding:16px;
-    }
-    #game-app .slot{
-      width:140px;
-      height:210px;
-      border-radius:12px;
-      border:2px dashed rgba(212,175,55,0.35);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      transition:0.2s;
+      padding:10px;
+      flex-wrap:wrap;
     }
 
+    /* Animation dépose */
     #game-app .card-slot-player{
-      animation:cardDropPlayer 0.5s ease-out;
+      animation:cardDropPlayer 0.7s ease-out;
       transform-origin:50% 100%;
     }
     #game-app .card-slot-ai{
-      animation:cardDropAi 0.5s ease-out;
+      animation:cardDropAi 0.7s ease-out;
       transform-origin:50% 0%;
     }
     @keyframes cardDropPlayer{
@@ -224,7 +219,7 @@
     }
 
     #game-app .slot-win{
-      animation:slotWin 0.7s ease-out;
+      animation:slotWin 0.9s ease-out;
     }
     @keyframes slotWin{
       0%{box-shadow:0 0 0 rgba(212,175,55,0);border-color:rgba(212,175,55,0.4);}
@@ -234,16 +229,17 @@
 
     #game-app #game-status{
       font-family:'Bebas Neue';
-      font-size:2.4rem;
+      font-size:2.1rem;
       color:var(--gold);
       opacity:0.85;
-      animation:vsPulse 2.4s infinite ease-in-out;
+      animation:vsPulse 2.6s infinite ease-in-out;
     }
     @keyframes vsPulse{
       0%,100%{transform:scale(1);text-shadow:0 0 6px rgba(212,175,55,0.5);}
       50%{transform:scale(1.08);text-shadow:0 0 14px rgba(255,230,150,0.9);}
     }
 
+    /* Overlays */
     #game-app .overlay{
       position:fixed;
       top:0;
@@ -285,18 +281,19 @@
 
     #game-app .preview-cards-container{
       display:flex;
-      gap:16px;
+      gap:12px;
       justify-content:center;
       flex-wrap:wrap;
       margin:14px 0 8px 0;
     }
     #game-app .preview-card{
-      width:125px;
-      height:185px;
+      width:min(120px,24vw);
+      aspect-ratio:3/4;
       border-radius:12px;
       background:#000;
       border:2px solid rgba(212,175,55,0.3);
       box-shadow:0 0 15px rgba(0,0,0,0.4);
+      flex:0 0 auto;
     }
 
     #game-app .bet-buttons{
@@ -324,7 +321,7 @@
     }
 
     #game-app .mystic-glow{
-      animation:mystglow 1.8s infinite ease-in-out;
+      animation:mystglow 1.9s infinite ease-in-out;
       box-shadow:0 0 18px rgba(212,175,55,0.7),0 0 30px rgba(255,220,120,0.4);
       border-color:var(--gold) !important;
     }
@@ -337,7 +334,7 @@
     #game-app .round-toast{
       position:absolute;
       left:50%;
-      bottom:14px;
+      bottom:10px;
       transform:translateX(-50%);
       background:rgba(15,23,42,0.96);
       padding:6px 16px;
@@ -350,7 +347,7 @@
       white-space:nowrap;
     }
     #game-app .round-toast.show{
-      animation:toastPop 1.6s ease-out;
+      animation:toastPop 1.9s ease-out;
     }
     @keyframes toastPop{
       0%{opacity:0;transform:translate(-50%,10px) scale(0.95);}
@@ -359,32 +356,50 @@
       100%{opacity:0;transform:translate(-50%,0) scale(0.97);}
     }
 
+    /* Adaptation mobile: cartes un peu plus petites, mais toujours toutes visibles */
     @media(max-width:600px){
       #game-app{
-        padding:14px;
-        gap:12px;
+        padding:12px;
+        gap:10px;
       }
       #game-app .battle-area{
-        flex-direction:column;
         gap:16px;
       }
-      #game-app .card{
-        width:120px;
-        height:180px;
+      #game-app .hand-area{
+        min-height:min(200px,32vh);
       }
+      #game-app .card,
       #game-app .slot{
-        width:120px;
-        height:180px;
+        width:min(115px,28vw);
       }
       #game-app .preview-card{
-        width:110px;
-        height:165px;
+        width:min(105px,26vw);
       }
+    }
+
+    /* Si l ecran n est pas très haut: on réduit légèrement les cartes pour tout faire tenir */
+    @media(max-height:750px){
       #game-app .hand-area{
-        min-height:220px;
+        min-height:min(190px,28vh);
       }
-      #game-app .round-toast{
-        bottom:10px;
+      #game-app .card,
+      #game-app .slot{
+        width:min(120px,24vw);
+      }
+      #game-app .preview-card{
+        width:min(105px,22vw);
+      }
+    }
+    @media(max-height:650px){
+      #game-app .hand-area{
+        min-height:min(170px,26vh);
+      }
+      #game-app .card,
+      #game-app .slot{
+        width:min(110px,22vw);
+      }
+      #game-app .preview-card{
+        width:min(98px,20vw);
       }
     }
   </style>
@@ -543,7 +558,7 @@
     })();
   </script>
 
-  <!-- Musique ambiance déclenchée au premier clic dans la page mini-jeu -->
+  <!-- Musique ambiance -->
   <script>
     document.addEventListener("click", () => {
       const audio = document.getElementById("bgm");
@@ -731,7 +746,7 @@
         aiCard.classList.add("card-slot-ai");
         ui.slotAI.appendChild(aiCard);
         resolveRound(state.lastPlayedValue,aiVal);
-      },1000);
+      },1500);
     }
 
     function resolveRound(p,ai){
@@ -766,7 +781,7 @@
         state.turn="player";
         showStatus("A toi de jouer");
         renderHands();
-      },1100);
+      },1400);
     }
 
     function endGame(){
@@ -790,7 +805,6 @@
       ui.roundToast.classList.add("show");
     }
 
-    // Bouton "Lancer une partie"
     const startBtn=document.getElementById("start-game-btn");
     if(startBtn){
       startBtn.addEventListener("click",()=>{

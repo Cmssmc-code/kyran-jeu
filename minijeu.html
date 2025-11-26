@@ -6,7 +6,7 @@
 
   <title>KYRAN – Mini jeu mystique | Site officiel</title>
 
-  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis, utilise la carte Mystique 37 et teste l esprit du jeu directement sur le site officiel." />
+  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis, utilise la carte Mystique et teste l esprit du jeu directement sur le site officiel." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="KYRAN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="KYRAN – Mini jeu mystique" />
-  <meta property="og:description" content="Teste le mini jeu KYRAN et deviens le Maître des Mystiques." />
+  <meta property="og:description" content="Teste le mini jeu KYRAN et deviens le Maitre des Mystiques." />
   <meta property="og:url" content="https://kyran-jeu.fr/minijeu.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -33,7 +33,7 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Styles accessibilité / header comme sur l accueil -->
+  <!-- Accessibilité / header -->
   <style>
     .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
@@ -46,24 +46,35 @@
     }
   </style>
 
-  <!-- Styles spécifiques au mini jeu, scoppés sur #game-app -->
+  <!-- Styles spécifiques mini jeu -->
   <style>
     #mini-jeu-section {
       padding: 60px 0;
       scroll-margin-top: 80px;
     }
 
-    #mini-jeu-section .section-title {
-      margin-bottom: 8px;
+    .hero-mini-jeu h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-align: center;
     }
-
-    #mini-jeu-section .section-sub {
-      margin-bottom: 28px;
+    .hero-mini-jeu h1 .accent {
+      margin-right: 0.35em;
+    }
+    .hero-mini-jeu p {
+      max-width: 760px;
+      margin: 18px auto 16px;
+      text-align: center;
+    }
+    .hero-mini-jeu .hero-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
     }
 
     #game-app{
       width:100%;
-      max-width:580px;
+      max-width:650px;
       margin:0 auto 40px auto;
       background:rgba(15,23,42,0.6);
       border-radius:20px;
@@ -74,6 +85,7 @@
       flex-direction:column;
       gap:16px;
       position:relative;
+      overflow:hidden;
     }
 
     #game-app .game-header{
@@ -84,7 +96,7 @@
     }
     #game-app .game-logo{
       font-family:'Bebas Neue',sans-serif;
-      font-size:2.4rem;
+      font-size:2.6rem;
       color:var(--gold);
       text-shadow:0 0 12px rgba(212,175,55,0.5);
     }
@@ -113,27 +125,27 @@
     #game-app .game-zones{
       display:flex;
       flex-direction:column;
-      gap:12px;
+      gap:16px;
     }
 
     #game-app .hand-area{
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:12px;
-      min-height:120px;
+      gap:16px;
+      min-height:190px;
       background:rgba(0,0,0,0.25);
       border-radius:12px;
-      padding:8px;
+      padding:10px;
       flex-wrap:nowrap;
       overflow-x:auto;
     }
     #game-app .hand-area::-webkit-scrollbar{display:none;}
 
     #game-app .card{
-      width:90px;
-      height:124px;
-      border-radius:10px;
+      width:120px;
+      height:170px;
+      border-radius:12px;
       overflow:hidden;
       background:#000;
       border:2px solid rgba(212,175,55,0.3);
@@ -156,7 +168,7 @@
       justify-content:center;
       align-items:center;
       font-family:'Bebas Neue';
-      font-size:2.4rem;
+      font-size:2.6rem;
       color:var(--gold);
       background:linear-gradient(135deg,var(--midnight),#1e293b);
     }
@@ -167,7 +179,7 @@
     }
 
     #game-app .card-enter{
-      animation:cardEnter 0.25s ease-out;
+      animation:cardEnter 0.3s ease-out;
     }
     @keyframes cardEnter{
       0%{opacity:0;transform:translateY(8px) scale(0.96);}
@@ -178,15 +190,15 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:32px;
+      gap:40px;
       background:rgba(0,0,0,0.3);
       border-radius:12px;
-      padding:14px;
+      padding:16px;
     }
     #game-app .slot{
-      width:90px;
-      height:124px;
-      border-radius:10px;
+      width:120px;
+      height:170px;
+      border-radius:12px;
       border:2px dashed rgba(212,175,55,0.35);
       display:flex;
       justify-content:center;
@@ -194,8 +206,26 @@
       transition:0.2s;
     }
 
+    /* Animation carte déposée au centre, plus lente */
+    #game-app .card-slot-player{
+      animation:cardDropPlayer 0.5s ease-out;
+      transform-origin:50% 100%;
+    }
+    #game-app .card-slot-ai{
+      animation:cardDropAi 0.5s ease-out;
+      transform-origin:50% 0%;
+    }
+    @keyframes cardDropPlayer{
+      0%{opacity:0;transform:translateY(40px) scale(0.8) rotate(-2deg);}
+      100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
+    }
+    @keyframes cardDropAi{
+      0%{opacity:0;transform:translateY(-40px) scale(0.8) rotate(2deg);}
+      100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
+    }
+
     #game-app .slot-win{
-      animation:slotWin 0.6s ease-out;
+      animation:slotWin 0.7s ease-out;
     }
     @keyframes slotWin{
       0%{box-shadow:0 0 0 rgba(212,175,55,0);border-color:rgba(212,175,55,0.4);}
@@ -205,10 +235,10 @@
 
     #game-app #game-status{
       font-family:'Bebas Neue';
-      font-size:2.3rem;
+      font-size:2.4rem;
       color:var(--gold);
       opacity:0.85;
-      animation:vsPulse 2.2s infinite ease-in-out;
+      animation:vsPulse 2.4s infinite ease-in-out;
     }
     @keyframes vsPulse{
       0%,100%{transform:scale(1);text-shadow:0 0 6px rgba(212,175,55,0.5);}
@@ -256,15 +286,15 @@
 
     #game-app .preview-cards-container{
       display:flex;
-      gap:12px;
+      gap:14px;
       justify-content:center;
       flex-wrap:wrap;
       margin:10px 0 6px 0;
     }
     #game-app .preview-card{
-      width:82px;
-      height:116px;
-      border-radius:10px;
+      width:110px;
+      height:155px;
+      border-radius:12px;
       background:#000;
       border:2px solid rgba(212,175,55,0.3);
       box-shadow:0 0 15px rgba(0,0,0,0.4);
@@ -305,6 +335,31 @@
       100%{transform:scale(1);box-shadow:0 0 18px rgba(212,175,55,0.6);}
     }
 
+    #game-app .round-toast{
+      position:absolute;
+      left:50%;
+      bottom:14px;
+      transform:translateX(-50%);
+      background:rgba(15,23,42,0.96);
+      padding:6px 16px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,0.5);
+      font-size:0.9rem;
+      color:var(--gold);
+      opacity:0;
+      pointer-events:none;
+      white-space:nowrap;
+    }
+    #game-app .round-toast.show{
+      animation:toastPop 1.6s ease-out;
+    }
+    @keyframes toastPop{
+      0%{opacity:0;transform:translate(-50%,10px) scale(0.95);}
+      15%{opacity:1;transform:translate(-50%,0) scale(1);}
+      80%{opacity:1;}
+      100%{opacity:0;transform:translate(-50%,0) scale(0.97);}
+    }
+
     @media(max-width:600px){
       #game-app{
         padding:14px;
@@ -315,16 +370,22 @@
         gap:16px;
       }
       #game-app .card{
-        width:80px;
-        height:110px;
+        width:100px;
+        height:145px;
       }
       #game-app .slot{
-        width:80px;
-        height:110px;
+        width:100px;
+        height:145px;
       }
       #game-app .preview-card{
-        width:76px;
-        height:108px;
+        width:95px;
+        height:135px;
+      }
+      #game-app .hand-area{
+        min-height:170px;
+      }
+      #game-app .round-toast{
+        bottom:10px;
       }
     }
   </style>
@@ -342,9 +403,9 @@
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="regle.html">Règles du jeu</a></li>
+          <li><a href="regle.html">Regles du jeu</a></li>
           <li><a href="minijeu.html" aria-current="page">Mini jeu</a></li>
-          <li class="mobile-cta"><a class="btn" href="#">Bientôt disponible</a></li>
+          <li class="mobile-cta"><a class="btn" href="#">Bientot disponible</a></li>
         </ul>
       </nav>
 
@@ -352,16 +413,19 @@
         <span></span><span></span><span></span>
       </button>
 
-      <div class="cta"><a class="btn" href="#">Bientôt disponible</a></div>
+      <div class="cta"><a class="btn" href="#">Bientot disponible</a></div>
     </div>
     <div class="backdrop" hidden></div>
   </header>
 
   <main id="contenu-principal">
-    <section class="hero">
+    <section class="hero hero-mini-jeu">
       <div class="container">
-        <h1><span class="accent">Mini jeu</span> KYRAN</h1>
-        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique 37 qui peut valoir 0 ou 37 selon ton choix.</p>
+        <h1><span class="accent">MINI JEU</span> KYRAN</h1>
+        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique !</p>
+        <div class="hero-actions">
+          <button class="btn" id="start-game-btn">Lancer une partie</button>
+        </div>
       </div>
     </section>
 
@@ -379,7 +443,7 @@
             </div>
           </div>
 
-          <div class="status-message" id="status-msg">Prépare-toi à parier...</div>
+          <div class="status-message" id="status-msg">Clique sur "Lancer une partie" pour commencer.</div>
 
           <div class="game-zones">
             <div id="ai-hand" class="hand-area"></div>
@@ -393,8 +457,8 @@
             <div id="player-hand" class="hand-area"></div>
           </div>
 
-          <!-- PARI -->
-          <div id="bet-overlay" class="overlay active">
+          <!-- Overlay pari (désactivé par défaut) -->
+          <div id="bet-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Phase de Pari</h2>
               <p>Voici tes cartes. Analyse-les et annonce le nombre de plis que tu penses gagner sur cette manche.</p>
@@ -409,12 +473,11 @@
             </div>
           </div>
 
-          <!-- MYSTIQUE -->
+          <!-- Overlay mystique -->
           <div id="mystic-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Carte Mystique</h2>
-              <p>La carte 37 est mystique. Tu peux décider qu'elle vaut 0 ou 37 pour ce pli.</p>
-              <p>Choisis sa puissance. Visuellement, elle reste la carte mystique.</p>
+              <p>Tu viens de choisir la carte Mystique, décide si elle vaut 0 ou 37 pour ce pli.</p>
               <div class="bet-buttons">
                 <button onclick="chooseMystic(0)">0</button>
                 <button onclick="chooseMystic(37)">37</button>
@@ -422,7 +485,7 @@
             </div>
           </div>
 
-          <!-- FIN -->
+          <!-- Overlay fin -->
           <div id="end-overlay" class="overlay">
             <div class="overlay-inner">
               <h2 id="end-title"></h2>
@@ -432,6 +495,9 @@
               </div>
             </div>
           </div>
+
+          <!-- Toast de pli gagné / perdu -->
+          <div id="round-toast" class="round-toast" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -441,8 +507,8 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h4>KYRAN – Site officiel</h4>
-        <p>Jeu de cartes rapide et convivial. Vidéo, règles, mini jeu et infos.</p>
-        <p><a href="index.html">Retour à l accueil</a></p>
+        <p>Jeu de cartes rapide et convivial. Video, regles, mini jeu et infos.</p>
+        <p><a href="index.html">Retour a l accueil</a></p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -451,17 +517,17 @@
       </div>
       <div class="footer-col">
         <h4>Illustrations</h4>
-        <p>Créa by Floh — <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
+        <p>Crea by Floh — <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
         <p style="color:#aaa">Ressources © Freepik</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p><strong>Kyran®</strong> — © 2025 Corentin SENCE. Tous droits réservés.</p>
+      <p><strong>Kyran®</strong> — © 2025 Corentin SENCE. Tous droits reserves.</p>
       <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
     </div>
   </footer>
 
-  <!-- Script burger identique à l accueil -->
+  <!-- Script burger -->
   <script>
     (function(){
       const navToggle=document.querySelector('.nav-toggle');
@@ -514,7 +580,8 @@
       endMsg:document.getElementById("end-msg"),
       uiBet:document.getElementById("ui-bet"),
       uiWins:document.getElementById("ui-wins"),
-      statusMsg:document.getElementById("status-msg")
+      statusMsg:document.getElementById("status-msg"),
+      roundToast:document.getElementById("round-toast")
     };
 
     function createDeck(){
@@ -540,12 +607,13 @@
       ui.uiBet.textContent="?";
       ui.uiWins.textContent="0";
       ui.endOverlay.classList.remove("active");
-      ui.betOverlay.classList.add("active");
       ui.mysticOverlay.classList.remove("active");
-      showStatus("Analyse tes cartes et fais ton pari");
 
+      showStatus("Analyse tes cartes et fais ton pari");
       renderPreview();
       renderHands();
+
+      ui.betOverlay.classList.add("active");
     }
 
     function renderPreview(){
@@ -621,7 +689,7 @@
       ui.uiBet.textContent=n;
       ui.betOverlay.classList.remove("active");
       state.turn="player";
-      showStatus("Joue ta première carte");
+      showStatus("Joue ta premiere carte");
       renderHands();
     }
 
@@ -645,31 +713,44 @@
     function placePlayerCard(realValue,isMystic){
       const displayVal=isMystic?37:realValue;
       ui.slotP.innerHTML="";
-      ui.slotP.appendChild(createCard(displayVal,false));
+      const cardEl=createCard(displayVal,false);
+      cardEl.classList.add("card-slot-player");
+      ui.slotP.appendChild(cardEl);
 
       state.lastPlayedValue=realValue;
 
       state.turn="resolving";
       renderHands();
-      showStatus("L IA réfléchit...");
+      showStatus("L IA reflechit...");
 
       setTimeout(()=>{
         const aiIndex=Math.floor(Math.random()*state.aiHand.length);
         const aiVal=state.aiHand.splice(aiIndex,1)[0];
         ui.slotAI.innerHTML="";
-        ui.slotAI.appendChild(createCard(aiVal,false));
+        const aiCard=createCard(aiVal,false);
+        aiCard.classList.add("card-slot-ai");
+        ui.slotAI.appendChild(aiCard);
         resolveRound(state.lastPlayedValue,aiVal);
-      },700);
+      },1000); // IA un peu plus lente
     }
 
     function resolveRound(p,ai){
-      const playerWin = p>ai;
-      if(playerWin) state.wins++;
+      const playerWin = p > ai;
+
+      if(playerWin){
+        state.wins++;
+        showRoundToast("Tu gagnes le pli.");
+        showStatus("Tu remportes ce pli.");
+      } else {
+        showRoundToast("Tu perds le pli.");
+        showStatus("Pli perdu, surveille ton pari.");
+      }
+
       ui.uiWins.textContent=state.wins;
       state.round++;
 
       if(playerWin) ui.slotP.classList.add("slot-win");
-      else if(p<ai) ui.slotAI.classList.add("slot-win");
+      else ui.slotAI.classList.add("slot-win");
 
       setTimeout(()=>{
         ui.slotP.classList.remove("slot-win");
@@ -685,12 +766,12 @@
         state.turn="player";
         showStatus("A toi de jouer");
         renderHands();
-      },800);
+      },1100); // petite pause avant le pli suivant
     }
 
     function endGame(){
       const ok=state.wins===state.bet;
-      ui.endTitle.textContent=ok?"PARI RÉUSSI":"DESTIN PERDU";
+      ui.endTitle.textContent=ok?"PARI REUSSI":"DESTIN PERDU";
       ui.endMsg.textContent=ok
         ? "Bravo, tu as parfaitement tenu ton pari."
         : "Tu n as pas atteint ton pari cette fois. Tu peux retenter ta chance.";
@@ -701,7 +782,25 @@
       ui.statusMsg.textContent=t;
     }
 
-    initGame();
+    function showRoundToast(msg){
+      if(!ui.roundToast) return;
+      ui.roundToast.textContent=msg;
+      ui.roundToast.classList.remove("show");
+      void ui.roundToast.offsetWidth;
+      ui.roundToast.classList.add("show");
+    }
+
+    // Bouton "Lancer une partie"
+    const startBtn=document.getElementById("start-game-btn");
+    if(startBtn){
+      startBtn.addEventListener("click",()=>{
+        initGame();
+        const section=document.getElementById("mini-jeu-section");
+        if(section && section.scrollIntoView){
+          section.scrollIntoView({behavior:"smooth"});
+        }
+      });
+    }
   </script>
 </body>
 </html>

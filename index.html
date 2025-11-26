@@ -43,9 +43,6 @@
       header .cta{display:none}
       .mobile-cta{display:list-item}
       .nav-toggle{display:flex}
-      .container.nav{position:relative}
-      /* On masque le logo sur mobile pour centrer l'attention sur le menu ouvert */
-      /* .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center} */
     }
   </style>
 
@@ -155,43 +152,31 @@
       <div class="container">
         <h2 class="section-title">Pourquoi KYRAN</h2>
         <p class="section-sub">Rythme tendu. Décisions qui comptent.</p>
-        <div class="universe-grid">
-          <div>
-            <article class="feature-card feature-primary">
-              <div class="feature-icon">🎯</div>
-              <div>
-                <h3>Objectif</h3>
-                <p>Parie tes plis, remporte-les au bon moment et protège tes vies.</p>
-                <p class="muted">Les Pouvoirs peuvent tout changer d’un coup.</p>
-              </div>
-            </article>
-
-            <div class="feature-pair" style="margin-top:18px">
-              <article class="feature-card"><div class="feature-icon">⚡</div><div><h3>Rapide</h3><p>Mise en place simple. Parties de 30 min.</p></div></article>
-              <article class="feature-card"><div class="feature-icon">🧠</div><div><h3>Malin</h3><p>Lecture d’adversaires, bluff et timing.</p></div></article>
-            </div>
-
-            <article class="feature-card" style="margin-top:18px">
-              <div class="feature-icon">👨‍👩‍👧‍👦</div>
-              <div><h3>Convivial</h3><p>3 à 6 joueurs. Famille et amis.</p></div>
-            </article>
+        
+        <div class="grid grid-3"> 
+          <div class="card">
+            <h3>Objectif</h3>
+            <p>Parie tes plis, remporte-les au bon moment et protège tes vies. Les Pouvoirs peuvent tout changer d’un coup.</p>
           </div>
-
-          <aside class="info-panel">
-            <h3>Infos rapides</h3>
-            <ul class="bullet-list">
-              <li>👥 <strong>3–6 joueurs</strong></li>
-              <li>⏱️ <strong>~30 min</strong></li>
-              <li>🎂 <strong>8 ans et +</strong></li>
-              <li>🪄 Pouvoirs + bluff</li>
-            </ul>
-            <div class="chip-row">
-              <span class="chip">Univers mystique</span>
-              <span class="chip">Haute rejouabilité</span>
-              <span class="chip">Règles simples</span>
-            </div>
-          </aside>
+          <div class="card">
+            <h3>Rapide & Malin</h3>
+            <p>Mise en place simple (30 min). Lecture d’adversaires, bluff et timing sont clés.</p>
+          </div>
+          <div class="card">
+            <h3>Convivial</h3>
+            <p>Jeu parfait pour la famille et les amis (3 à 6 joueurs).</p>
+          </div>
         </div>
+
+        <aside class="card" style="margin-top:30px; max-width: 400px; margin-left: auto; margin-right: auto; text-align:center;">
+          <h3>Infos rapides</h3>
+          <ul style="list-style:none; padding:0; display:flex; justify-content: space-around; flex-wrap: wrap; font-size: 0.95rem;">
+            <li style="margin: 5px 10px;">👥 <strong>3–6 joueurs</strong></li>
+            <li style="margin: 5px 10px;">⏱️ <strong>~30 min</strong></li>
+            <li style="margin: 5px 10px;">🎂 <strong>8 ans et +</strong></li>
+            <li style="margin: 5px 10px;">🪄 Pouvoirs & Bluff</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -228,9 +213,9 @@
         <h2 class="section-title">Ils ont adoré</h2>
         <p class="section-sub">Retours de parties</p>
         <div class="grid grid-3">
-          <div class="card">« Simple à expliquer, mais les paris surprennent vite. » <strong>— Léo</strong></div>
-          <div class="card">« Du bluff, des rires… et une Mystique qui renverse tout. » <strong>— Amélie</strong></div>
-          <div class="card">« À 6, ça tourne nickel. On enchaîne. » <strong>— Karim</strong></div>
+          <div class="card">« Simple à expliquer, mais les paris surprennent vite. » <strong class="accent" style="display:block; margin-top:10px">— Léo</strong></div>
+          <div class="card">« Du bluff, des rires… et une Mystique qui renverse tout. » <strong class="accent" style="display:block; margin-top:10px">— Amélie</strong></div>
+          <div class="card">« À 6, ça tourne nickel. On enchaîne. » <strong class="accent" style="display:block; margin-top:10px">— Karim</strong></div>
         </div>
       </div>
     </section>

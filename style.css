@@ -175,12 +175,13 @@ em { color: var(--gold-light); font-style: normal; font-weight: 600; }
 strong { color: #fff; }
 
 /* Vidéo Container */
-.video-container {
+/* CORRECTION: Ajout de .video pour centrer la vidéo sur regle.html */
+.video-container, .video {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
   border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
   box-shadow: var(--shadow); max-width: 900px; margin: 0 auto;
 }
-.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.video-container iframe, .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* =======================
    FOOTER

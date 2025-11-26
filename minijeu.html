@@ -6,7 +6,7 @@
 
   <title>KYRAN – Mini jeu mystique | Site officiel</title>
 
-  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis, utilise la carte Mystique 37 et teste l esprit du jeu directement sur le site officiel." />
+  <meta name="description" content="Mini jeu KYRAN en ligne. Parie tes plis et teste l esprit du jeu directement sur le site officiel." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
@@ -24,7 +24,7 @@
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="KYRAN – Mini jeu mystique" />
-  <meta name="twitter:description" content="Parie tes plis et joue la carte Mystique 37 en ligne." />
+  <meta name="twitter:description" content="Parie tes plis et teste la carte Mystique en ligne." />
   <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,26 +33,58 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Accessibilité / header -->
   <style>
+    /* Variables du jeu */
+    :root {
+      --gold: #D4AF37;
+      --midnight: #080B14;
+      --gold-glow-low: rgba(212, 175, 55, 0.7);
+      --gold-glow-high: rgba(255, 230, 150, 1);
+      --transition-duration: 0.3s; /* Durée unique pour la fluidité */
+    }
+
+    /* Accessibilité / header */
     .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
+    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10005}
     .mobile-cta{display:none}
     @media (max-width:900px){
       header .cta{display:none}
       .mobile-cta{display:list-item}
       .nav-toggle{display:flex}
     }
-  </style>
 
-  <!-- Styles spécifiques mini jeu -->
-  <style>
+    header {
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10002;
+    }
+      
     #mini-jeu-section {
       padding: 40px 0;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 80px; /* Assure que le header ne recouvre pas la section au scroll */
     }
 
+    /* CONTENEUR PRINCIPAL */
+    #game-app{
+      width:100%;
+      max-width:700px;
+      margin:0 auto 32px auto;
+      background:rgba(15,23,42,0.9);
+      border-radius:20px;
+      border:1px solid rgba(212,175,55,0.4);
+      box-shadow:0 18px 50px rgba(0, 0, 0, 0.95), 0 0 60px rgba(212, 175, 55, 0.3);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      position:relative;
+      /* overflow:hidden; */ /* Enlevé pour ne pas couper les ombres si elles débordent */
+    }
+
+    /* Styles généraux du jeu */
     .hero-mini-jeu h1 {
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -71,23 +103,6 @@
       justify-content:center;
       margin-top:10px;
     }
-
-    #game-app{
-      width:100%;
-      max-width:700px;
-      margin:0 auto 32px auto;
-      background:rgba(15,23,42,0.6);
-      border-radius:20px;
-      border:1px solid rgba(212,175,55,0.25);
-      box-shadow:0 20px 50px rgba(0,0,0,0.5);
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      position:relative;
-      overflow:hidden;
-    }
-
     #game-app .game-header{
       display:flex;
       flex-direction:column;
@@ -111,7 +126,6 @@
       border:1px solid rgba(212,175,55,0.25);
     }
     #game-app .score-board strong{color:var(--gold);}
-
     #game-app .status-message{
       text-align:center;
       color:var(--gold);
@@ -120,41 +134,36 @@
       padding:8px;
       border-radius:10px;
       font-size:0.95rem;
+      min-height: 40px; /* Ajouté pour stabilité visuelle */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
+    .status-reflecting {animation: reflectPulse 1.8s infinite ease-in-out;}
+    @keyframes reflectPulse {
+      0%, 100% {opacity: 1; border-color: rgba(212,175,55,0.3);}
+      50% {opacity: 0.8; border-color: var(--gold);}
+    }
     #game-app .game-zones{
       display:flex;
       flex-direction:column;
       gap:10px;
     }
-
-    /* Zones de main, hauteur adaptée à la hauteur de l ecran */
-    #game-app .hand-area{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:14px;
-      min-height:min(220px,30vh);
-      background:rgba(0,0,0,0.25);
-      border-radius:12px;
-      padding:8px 6px;
-      flex-wrap:nowrap;
-      overflow-x:auto;
-    }
-    #game-app .hand-area::-webkit-scrollbar{display:none;}
-
-    /* Cartes et slots: largeur liée au viewport, toujours 3 cartes visibles sur la ligne */
+    
+    /* Cartes & Slots (Réactivité améliorée) */
     #game-app .card,
     #game-app .slot{
-      width:min(140px,26vw);
+      /* Utilisation de min() pour la réactivité, 140px max, 26vw sur petit écran */
+      width: min(140px, 26vw); 
       aspect-ratio:3/4;
       border-radius:12px;
       overflow:hidden;
-      background:#000;
-      border:2px solid rgba(212,175,55,0.3);
+      background:linear-gradient(145deg, #0f172a, #020617);
+      border:3px solid rgba(212,175,55,0.5);
       cursor:pointer;
-      transition:0.25s;
+      transition:transform var(--transition-duration), box-shadow var(--transition-duration);
       flex:0 0 auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.8), inset 0 0 8px rgba(255, 255, 200, 0.1); 
     }
     #game-app .card-face,
     #game-app .card-back{
@@ -164,7 +173,7 @@
       background-position:center;
     }
     #game-app .card-back{
-      background-image:url("back.jpg");
+      background-image:url("back.jpg"); /* Assurez-vous que cette image existe */
     }
     #game-app .fallback{
       display:flex;
@@ -176,37 +185,50 @@
       background:linear-gradient(135deg,var(--midnight),#1e293b);
     }
     #game-app .playable:hover{
-      transform:translateY(-8px) scale(1.05);
+      transform:translateY(-12px) scale(1.05); /* Animation plus douce */
       border-color:var(--gold);
-      box-shadow:0 8px 24px rgba(212,175,55,0.4);
+      box-shadow:0 12px 40px rgba(212,175,55,0.7), inset 0 0 10px rgba(0,0,0,0.9);
     }
-
     #game-app .card-enter{
-      animation:cardEnter 0.35s ease-out;
+      animation:cardEnter var(--transition-duration) ease-out;
     }
     @keyframes cardEnter{
       0%{opacity:0;transform:translateY(8px) scale(0.96);}
       100%{opacity:1;transform:translateY(0) scale(1);}
     }
-
+    /* Zones de cartes */
+    #game-app .hand-area{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px; /* Réduction du gap pour les petits écrans */
+      min-height:min(220px,30vh);
+      background:rgba(0,0,0,0.35);
+      border-radius:12px;
+      padding:8px;
+      flex-wrap:nowrap;
+      overflow-x:auto; /* Permet le scroll horizontal si trop de cartes */
+    }
+    #game-app .hand-area::-webkit-scrollbar{display:none;}
+    
+    /* BATTLE AREA */
     #game-app .battle-area{
       display:flex;
       justify-content:center;
       align-items:center;
       gap:24px;
-      background:rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #020617, #0f172a);
       border-radius:12px;
       padding:10px;
       flex-wrap:wrap;
+      border: 3px double rgba(212, 175, 55, 0.6);
     }
-
-    /* Animation dépose */
     #game-app .card-slot-player{
-      animation:cardDropPlayer 0.7s ease-out;
+      animation:cardDropPlayer var(--transition-duration) ease-out;
       transform-origin:50% 100%;
     }
     #game-app .card-slot-ai{
-      animation:cardDropAi 0.7s ease-out;
+      animation:cardDropAi var(--transition-duration) ease-out;
       transform-origin:50% 0%;
     }
     @keyframes cardDropPlayer{
@@ -217,7 +239,6 @@
       0%{opacity:0;transform:translateY(-40px) scale(0.8) rotate(2deg);}
       100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
     }
-
     #game-app .slot-win{
       animation:slotWin 0.9s ease-out;
     }
@@ -226,7 +247,6 @@
       40%{box-shadow:0 0 26px rgba(212,175,55,0.9);border-color:var(--gold);transform:scale(1.05);}
       100%{box-shadow:0 0 0 rgba(212,175,55,0);border-color:rgba(212,175,55,0.4);transform:scale(1);}
     }
-
     #game-app #game-status{
       font-family:'Bebas Neue';
       font-size:2.1rem;
@@ -239,25 +259,25 @@
       50%{transform:scale(1.08);text-shadow:0 0 14px rgba(255,230,150,0.9);}
     }
 
-    /* Overlays */
+    /* Overlays (Centrage et Z-index stabilisés) */
     #game-app .overlay{
-      position:fixed;
+      position:fixed; /* Correction essentielle pour le responsive et le centrage */
       top:0;
       left:0;
       width:100vw;
       height:100vh;
-      background:rgba(2,6,23,0.96);
+      background:rgba(2,6,23,0.98); 
       display:flex;
       flex-direction:column;
-      justify-content:center;
-      align-items:center;
+      justify-content:center; /* Centrage vertical */
+      align-items:center; /* Centrage horizontal */
       opacity:0;
       pointer-events:none;
-      transition:opacity 0.25s ease-out;
+      transition:opacity var(--transition-duration) ease-out;
       padding:20px;
       text-align:center;
-      z-index:1000;
-      overflow:auto;
+      z-index:10003; 
+      overflow-y:auto; /* Permet le scroll vertical si le contenu est grand sur petit écran */
     }
     #game-app .overlay.active{
       opacity:1;
@@ -265,7 +285,10 @@
     }
     #game-app .overlay-inner{
       max-width:480px;
+      width: 100%;
       margin:auto;
+      padding: 20px;
+      box-sizing: border-box;
     }
     #game-app .overlay h2{
       font-family:'Bebas Neue';
@@ -278,30 +301,32 @@
       margin-bottom:8px;
       font-size:0.98rem;
     }
-
-    #game-app .preview-cards-container{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin:14px 0 8px 0;
+    
+    /* PREVIEW CARDS (Réactivité fine pour le pari) */
+    #game-app .preview-cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 8px; /* Réduit le gap */
+      margin: 20px 0 30px 0;
+      flex-wrap: nowrap;
+      padding: 0 5px;
+      overflow-x: auto;
     }
-    #game-app .preview-card{
-      width:min(120px,24vw);
-      aspect-ratio:3/4;
-      border-radius:12px;
-      background:#000;
-      border:2px solid rgba(212,175,55,0.3);
-      box-shadow:0 0 15px rgba(0,0,0,0.4);
-      flex:0 0 auto;
+    #game-app .preview-card {
+      width: min(100px, 18vw); /* Plus petit pour mieux tenir sur mobile */
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+      flex: 0 0 auto;
     }
 
+    /* Bet Buttons Styling */
     #game-app .bet-buttons{
       display:flex;
-      gap:10px;
+      gap:15px;
       flex-wrap:wrap;
       justify-content:center;
-      margin-top:8px;
+      margin-top:20px;
     }
     #game-app .bet-buttons button{
       padding:8px 20px;
@@ -312,10 +337,12 @@
       font-family:'Bebas Neue';
       font-size:1.4rem;
       cursor:pointer;
-      transition:0.2s;
+      transition:transform 0.1s, box-shadow 0.1s;
       min-width:56px;
     }
     #game-app .bet-buttons button:hover{
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.5);
       background:var(--gold);
       color:#000;
     }
@@ -331,32 +358,34 @@
       100%{transform:scale(1);box-shadow:0 0 18px rgba(212,175,55,0.6);}
     }
 
+    /* TOAST (Animation fluide) */
     #game-app .round-toast{
-      position:absolute;
+      position:fixed; 
       left:50%;
-      bottom:10px;
-      transform:translateX(-50%);
-      background:rgba(15,23,42,0.96);
-      padding:6px 16px;
-      border-radius:999px;
-      border:1px solid rgba(212,175,55,0.5);
-      font-size:0.9rem;
-      color:var(--gold);
+      top:50%; 
+      transform:translate(-50%, -50%) scale(0.7); /* Démarre plus petit */
       opacity:0;
-      pointer-events:none;
+      transition:opacity var(--transition-duration) ease-out, transform var(--transition-duration) ease-out;
+      z-index: 10004;
+      background:rgba(15,23,42,0.96);
+      padding:8px 20px;
+      border-radius:999px;
+      border:2px solid rgba(212,175,55,0.5);
+      font-size:1.1rem;
+      color:var(--gold);
       white-space:nowrap;
     }
     #game-app .round-toast.show{
-      animation:toastPop 1.9s ease-out;
+      animation:toastPop 3s ease-out;
     }
     @keyframes toastPop{
-      0%{opacity:0;transform:translate(-50%,10px) scale(0.95);}
-      15%{opacity:1;transform:translate(-50%,0) scale(1);}
-      80%{opacity:1;}
-      100%{opacity:0;transform:translate(-50%,0) scale(0.97);}
+      0%{opacity:0; transform:translate(-50%, -50%) scale(0.7);}
+      10%{opacity:1; transform:translate(-50%, -50%) scale(1.05);}
+      80%{opacity:1; transform:translate(-50%, -50%) scale(1.05);}
+      100%{opacity:0; transform:translate(-50%, -50%) scale(0.98);}
     }
-
-    /* Adaptation mobile: cartes un peu plus petites, mais toujours toutes visibles */
+    
+    /* Adaptation mobile et hauteur */
     @media(max-width:600px){
       #game-app{
         padding:12px;
@@ -376,8 +405,6 @@
         width:min(105px,26vw);
       }
     }
-
-    /* Si l ecran n est pas très haut: on réduit légèrement les cartes pour tout faire tenir */
     @media(max-height:750px){
       #game-app .hand-area{
         min-height:min(190px,28vh);
@@ -436,7 +463,7 @@
     <section class="hero hero-mini-jeu">
       <div class="container">
         <h1><span class="accent">MINI JEU</span> KYRAN</h1>
-        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique 37 qui peut valoir 0 ou 37 selon ton choix.</p>
+        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique qui peut valoir 0 ou 37 selon ton choix.</p>
         <div class="hero-actions">
           <button class="btn" id="start-game-btn">Lancer une partie</button>
         </div>
@@ -445,7 +472,6 @@
 
     <section id="mini-jeu-section">
       <div class="container" style="display:flex;justify-content:center;">
-        <!-- Musique ambiance -->
         <audio id="bgm" src="Ambiance.mp3" preload="auto" loop></audio>
 
         <div id="game-app">
@@ -471,7 +497,6 @@
             <div id="player-hand" class="hand-area"></div>
           </div>
 
-          <!-- Overlay pari -->
           <div id="bet-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Phase de Pari</h2>
@@ -487,12 +512,10 @@
             </div>
           </div>
 
-          <!-- Overlay mystique -->
           <div id="mystic-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Carte Mystique</h2>
-              <p>La carte 37 est mystique. Tu peux decider qu elle vaut 0 ou 37 pour ce pli.</p>
-              <p>Choisis sa puissance. Visuellement, elle reste la carte mystique.</p>
+              <p>Tu viens de jouer la carte Mystique, choisis si elle vaut 0 ou 37 !<p> 
               <div class="bet-buttons">
                 <button onclick="chooseMystic(0)">0</button>
                 <button onclick="chooseMystic(37)">37</button>
@@ -500,18 +523,17 @@
             </div>
           </div>
 
-          <!-- Overlay fin -->
           <div id="end-overlay" class="overlay">
             <div class="overlay-inner">
               <h2 id="end-title"></h2>
               <p id="end-msg"></p>
               <div class="bet-buttons">
                 <button onclick="initGame()">Rejouer</button>
+                <button onclick="window.location.href='index.html'">Quitter</button>
               </div>
             </div>
           </div>
 
-          <!-- Toast pli -->
           <div id="round-toast" class="round-toast" aria-live="polite"></div>
         </div>
       </div>
@@ -542,7 +564,6 @@
     </div>
   </footer>
 
-  <!-- Script burger -->
   <script>
     (function(){
       const navToggle=document.querySelector('.nav-toggle');
@@ -557,8 +578,6 @@
       matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
     })();
   </script>
-
-  <!-- Musique ambiance -->
   <script>
     document.addEventListener("click", () => {
       const audio = document.getElementById("bgm");
@@ -569,7 +588,6 @@
     });
   </script>
 
-  <!-- Logique du mini jeu -->
   <script>
     let state = {
       deck:[],
@@ -605,6 +623,16 @@
       d.push(37);
       return d.sort(()=>Math.random()-.5);
     }
+    
+    // NOUVELLES FONCTIONS DE GESTION DU SCROLL
+    function blockBodyScroll() {
+      // Pour éviter les barres de défilement multiples et les décalages du contenu fixe
+      document.body.style.overflow = 'hidden';
+    }
+
+    function unblockBodyScroll() {
+      document.body.style.overflow = '';
+    }
 
     function initGame(){
       state.deck=createDeck();
@@ -617,18 +645,22 @@
       state.pendingMystic=null;
       state.lastPlayedValue=null;
 
+      // Réinitialisation visuelle complète et sécurité
       ui.slotP.innerHTML="";
       ui.slotAI.innerHTML="";
       ui.uiBet.textContent="?";
       ui.uiWins.textContent="0";
       ui.endOverlay.classList.remove("active");
       ui.mysticOverlay.classList.remove("active");
-
+      
+      // Assurer que le scroll est débloqué avant l'initialisation et bloqué après l'affichage de l'overlay de pari.
+      unblockBodyScroll(); 
       showStatus("Analyse tes cartes et fais ton pari");
       renderPreview();
       renderHands();
 
       ui.betOverlay.classList.add("active");
+      blockBodyScroll(); // BLOQUE le scroll du body quand l'overlay est actif
     }
 
     function renderPreview(){
@@ -703,6 +735,7 @@
       state.bet=n;
       ui.uiBet.textContent=n;
       ui.betOverlay.classList.remove("active");
+      unblockBodyScroll(); // DEBLOQUE le scroll du body après le pari
       state.turn="player";
       showStatus("Joue ta premiere carte");
       renderHands();
@@ -715,6 +748,7 @@
       if(val===37){
         state.pendingMystic=true;
         ui.mysticOverlay.classList.add("active");
+        blockBodyScroll(); // BLOQUE le scroll du body
         return;
       }
       placePlayerCard(val,false);
@@ -722,8 +756,43 @@
 
     function chooseMystic(v){
       ui.mysticOverlay.classList.remove("active");
+      unblockBodyScroll(); // DEBLOQUE le scroll du body
       placePlayerCard(v,true);
     }
+
+    // LOGIQUE IA STRATEGIQUE
+    function determineAiPlay(playerCard) {
+      const sortedHand = [...state.aiHand].sort((a, b) => a - b); 
+      const remainingRounds = 3 - state.round;
+      const aiCurrentWins = state.round - state.wins; 
+      const playerBet = state.bet;
+      const aiBet = 3 - playerBet; 
+
+      // Cas où l'IA peut perdre une carte faible
+      const losingCards = sortedHand.filter(c => c < playerCard);
+      
+      // Cas où l'IA doit gagner
+      const aiNeedsWin = aiCurrentWins < aiBet && remainingRounds > 0 && remainingRounds - aiCurrentWins >= aiBet - aiCurrentWins;
+      
+      // Les cartes gagnantes de l'IA
+      const winningCards = sortedHand.filter(c => c > playerCard);
+
+      // 1. Si l'IA DOIT gagner pour atteindre son pari (ou si le joueur a joué faible)
+      if (aiNeedsWin && winningCards.length > 0) {
+        return winningCards[0]; // Joue la carte gagnante la plus faible
+      }
+
+      // 2. Si l'IA peut perdre une carte faible SANS compromettre son pari
+      if (!aiNeedsWin && losingCards.length > 0) {
+          return losingCards[losingCards.length - 1]; // Joue la carte perdante la plus forte (pour se débarrasser de cartes fortes inutiles)
+      }
+      
+      // 3. Cas par défaut (aucune carte gagnante/perdante n'est trouvée pour la stratégie idéale)
+      // Si l'IA doit gagner mais n'a pas de carte plus forte, elle joue la plus faible pour minimiser la perte.
+      // Si l'IA n'a que des cartes gagnantes, elle joue la plus faible pour la préserver si possible.
+      return sortedHand[0]; 
+    }
+
 
     function placePlayerCard(realValue,isMystic){
       const displayVal=isMystic?37:realValue;
@@ -737,14 +806,26 @@
       state.turn="resolving";
       renderHands();
       showStatus("L IA reflechit...");
+      ui.statusMsg.classList.add("status-reflecting");
 
       setTimeout(()=>{
-        const aiIndex=Math.floor(Math.random()*state.aiHand.length);
-        const aiVal=state.aiHand.splice(aiIndex,1)[0];
+        const aiVal = determineAiPlay(state.lastPlayedValue);
+        
+        const aiIndex = state.aiHand.indexOf(aiVal);
+        // Suppression de la carte de l'IA (sécurisée)
+        if(aiIndex === -1){
+             // Si la carte n'est pas trouvée (cas rare), on retire la première carte par défaut pour continuer
+            state.aiHand.shift(); 
+        } else {
+            state.aiHand.splice(aiIndex,1); 
+        }
+        
         ui.slotAI.innerHTML="";
         const aiCard=createCard(aiVal,false);
         aiCard.classList.add("card-slot-ai");
         ui.slotAI.appendChild(aiCard);
+
+        ui.statusMsg.classList.remove("status-reflecting");
         resolveRound(state.lastPlayedValue,aiVal);
       },1500);
     }
@@ -754,10 +835,10 @@
 
       if(playerWin){
         state.wins++;
-        showRoundToast("Tu gagnes le pli.");
+        showRoundToast("TU GAGNES LE PLI !");
         showStatus("Tu remportes ce pli.");
       } else {
-        showRoundToast("Tu perds le pli.");
+        showRoundToast("PLI PERDU.");
         showStatus("Pli perdu, surveille ton pari.");
       }
 
@@ -768,16 +849,16 @@
       else ui.slotAI.classList.add("slot-win");
 
       setTimeout(()=>{
-        ui.slotP.classList.remove("slot-win");
-        ui.slotAI.classList.remove("slot-win");
+        ui.slotP.innerHTML="";
+        ui.slotAI.innerHTML="";
 
         if(state.round>=3){
           endGame();
           return;
         }
 
-        ui.slotP.innerHTML="";
-        ui.slotAI.innerHTML="";
+        ui.slotP.classList.remove("slot-win");
+        ui.slotAI.classList.remove("slot-win");
         state.turn="player";
         showStatus("A toi de jouer");
         renderHands();
@@ -788,9 +869,10 @@
       const ok=state.wins===state.bet;
       ui.endTitle.textContent=ok?"PARI REUSSI":"DESTIN PERDU";
       ui.endMsg.textContent=ok
-        ? "Bravo, tu as parfaitement tenu ton pari."
+        ? "Bravo, tu as parfaitement tenu ton pari. Es-tu prêt pour un vrai défi ?"
         : "Tu n as pas atteint ton pari cette fois. Tu peux retenter ta chance.";
       ui.endOverlay.classList.add("active");
+      blockBodyScroll(); // BLOQUE le scroll du body à la fin de la partie
     }
 
     function showStatus(t){
@@ -800,8 +882,11 @@
     function showRoundToast(msg){
       if(!ui.roundToast) return;
       ui.roundToast.textContent=msg;
+      
+      // Nouvelle gestion de l'animation: Reset + Play
       ui.roundToast.classList.remove("show");
-      void ui.roundToast.offsetWidth;
+      ui.roundToast.style.opacity = '0';
+      void ui.roundToast.offsetWidth; // Force le repaint pour le reset
       ui.roundToast.classList.add("show");
     }
 

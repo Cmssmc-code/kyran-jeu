@@ -198,16 +198,52 @@ footer a:hover { color: var(--gold); }
    MOBILE
    ======================= */
 @media (max-width: 900px) {
+  /* Masque le bouton d'action sur mobile */
   header .cta { display: none; }
-  .nav-toggle { display: flex; }
-  .nav { display: none; } 
   
-  body.menu-open .nav {
-    display: flex; position: fixed; top: 70px; left: 0; right: 0;
+  /* Affiche le bouton burger */
+  .nav-toggle { display: flex; }
+  
+  /* Masque la navigation principale par défaut */
+  .nav nav { display: none; } 
+  
+  /* -------------------
+     Ouverture du menu (body.menu-open)
+     ------------------- */
+  
+  /* Masque le logo quand le menu est ouvert */
+  body.menu-open .logo { display: none; }
+  
+  /* Afficher la navigation */
+  body.menu-open .nav nav {
+    display: flex; 
+    position: fixed; top: 70px; left: 0; right: 0;
     background: var(--midnight); flex-direction: column;
-    padding: 20px; border-bottom: 1px solid var(--gold);
+    padding: 20px 0; 
+    border-bottom: 1px solid var(--gold);
     box-shadow: 0 10px 40px rgba(0,0,0,0.9); z-index: 999;
   }
-  body.menu-open .nav ul { flex-direction: column; gap: 20px; text-align: center; width: 100%; }
+  
+  /* Style des liens ouverts */
+  body.menu-open .nav ul { 
+    flex-direction: column; gap: 20px; 
+    text-align: center; width: 100%; 
+    padding: 0 20px;
+  }
+  
+  /* Animation Burger -> X */
+  /* Cacher la barre du milieu */
+  body.menu-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  /* Rotation de la barre du haut */
+  body.menu-open .nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  /* Rotation de la barre du bas */
+  body.menu-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
   .hero h1 { font-size: 3rem; }
 }

@@ -127,13 +127,16 @@
     .opponents-container {
       display: flex;
       width: 100%;
-      height: 140px;
+      /* Enlève la hauteur fixe pour laisser le contenu s'adapter aux 100% de largeur sur mobile */
+      min-height: 140px; 
       border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+      /* NOUVEAU: Permet aux colonnes de passer à la ligne sur mobile */
+      flex-wrap: wrap; 
     }
 
     /* Mains individuelles des IA */
     #game-app .hand-area-ai {
-      flex: 1;
+      flex: 1; /* Chaque IA prend 50% de la largeur sur PC */
       display: flex; justify-content: center; align-items: center; gap: 5px;
       background: rgba(0,0,0,0.2);
       padding: 5px;
@@ -170,9 +173,11 @@
     #game-app #player-hand::-webkit-scrollbar{display:none;}
 
     /* --- STYLE DES CARTES --- */
+    
     #game-app .card,
     #game-app .slot {
-        width: min(95px, 20vw);
+        /* Taille légèrement réduite pour assurer que 3 cartes rentrent sur mobile */
+        width: min(90px, 20vw);
         aspect-ratio: 3/4;
         border-radius: 10px;
         background: linear-gradient(145deg, #0f172a, #020617);
@@ -198,15 +203,14 @@
     }
     #game-app .card-back { background-image: url("back.jpg"); }
 
-    /* La classe playable est ajoutée/retirée selon le tour */
-    #game-app .playable { cursor: pointer; }
     #game-app .playable:hover {
         transform: translateY(-10px);
         border-color: var(--gold);
         box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        cursor: pointer;
         transition: transform 0.2s;
     }
-    /* Les cartes non jouables sont grisées */
+
     #game-app .not-playable { opacity: 0.6; cursor: default; }
 
     #game-app .card-played {
@@ -267,10 +271,42 @@
     #game-app #game-status{ font-family:'Bebas Neue'; font-size:2rem; color:var(--gold); opacity:0.6; }
     #game-app .mystic-glow { box-shadow: 0 0 15px var(--gold); border-color: #fff; }
 
-    /* MOBILE */
+    /* --- MEDIA QUERY: MOBILE SPECIFIC ADJUSTMENTS --- */
     @media(max-width:600px){
-      #game-app .battle-area { height: 180px; gap: 6px; }
-      #game-app .card, #game-app .slot { width: min(85px, 26vw); }
+      
+      /* Empilement des mains IA */
+      .opponents-container {
+        flex-direction: column; /* Passe de rangée à colonne */
+        min-height: auto;
+        padding-bottom: 0;
+      }
+      
+      /* Chaque main IA prend 100% de la largeur */
+      #game-app .hand-area-ai {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 10px 5px;
+      }
+      
+      /* La dernière main IA n'a pas de bordure basse */
+      #ai2-hand { 
+        border-bottom: none; 
+      }
+      
+      /* Le séparateur entre le container IA et la battle area est remonté */
+      #game-app .game-zones > .opponents-container {
+         border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+      }
+      
+      /* Ajustement pour que 3 cartes Battle tiennent mieux */
+      #game-app .battle-area { 
+        height: 160px; /* Réduit la hauteur pour gagner de la place */
+        gap: 5px; 
+      }
+      #game-app .card, #game-app .slot { 
+        width: min(80px, 26vw); /* Encore plus petit pour tenir */
+      }
     }
   </style>
 </head>
@@ -453,7 +489,7 @@
       deck:[], 
       pHand:[], ai1Hand:[], ai2Hand:[], 
       bet:null, wins:0, round:0, 
-      turn:"betting", leader:'player', // 'player', 'ai1', 'ai2'
+      turn:"betting", leader:'player', 
       pendingMystic:null, 
       playedCards: { p:null, ai1:null, ai2:null }
     };
@@ -491,7 +527,7 @@
       state.ai2Hand=[state.deck.pop(),state.deck.pop(),state.deck.pop()];
       
       state.bet=null; state.wins=0; state.round=0; state.turn="betting"; 
-      state.leader = 'player'; // Le joueur commence toujours la première manche
+      state.leader = 'player';
       state.playedCards = { p:null, ai1:null, ai2:null };
 
       ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
@@ -518,8 +554,7 @@
       ui.pHand.innerHTML="";
       state.pHand.forEach((v,i)=>{
         const c=createCard(v,false);
-        // On ne peut cliquer que si c'est le tour du joueur (turn)
-        if(state.turn==="player"){
+        if(state.turn==="player" && (state.playedCards.p === null)) { // Seulement si c'est ton tour et que tu n'as pas déjà joué
           c.classList.add("playable");
           c.onclick=()=>playCard(i);
         } else {
@@ -528,11 +563,9 @@
         ui.pHand.appendChild(c);
       });
       
-      // Main IA 1
+      // Mains IA 
       ui.ai1Hand.innerHTML='<span class="ai-label">IA 1</span>';
       state.ai1Hand.forEach(()=>{ ui.ai1Hand.appendChild(createCard(0,true)); });
-      
-      // Main IA 2
       ui.ai2Hand.innerHTML='<span class="ai-label">IA 2</span>';
       state.ai2Hand.forEach(()=>{ ui.ai2Hand.appendChild(createCard(0,true)); });
     }
@@ -577,34 +610,33 @@
       startRound();
     }
 
-    // Fonction centrale pour démarrer/gérer le début du pli selon le leader
     function startRound() {
         state.playedCards = { p:null, ai1:null, ai2:null };
         ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
         
-        // C'est ici que la magie de l'ordre dynamique opère
+        state.turn = 'resolving'; // Bloque le joueur par défaut
+
         if(state.leader === 'player') {
             state.turn = 'player';
             showStatus("C'est à toi de commencer !");
-            renderHands(); // Débloque les cartes du joueur
+            renderHands();
         } 
         else if(state.leader === 'ai1') {
-            state.turn = 'ai1';
-            showStatus("IA 1 a la main...");
-            renderHands(); // Bloque les cartes du joueur
+            showStatus("IA 1 a la main et réfléchit...");
+            renderHands(); 
+            ui.statusMsg.classList.add("status-reflecting");
             setTimeout(() => run_Sequence_A1_Lead(), 1500);
         } 
         else if(state.leader === 'ai2') {
-            state.turn = 'ai2';
-            showStatus("IA 2 a la main...");
-            renderHands(); // Bloque les cartes du joueur
+            showStatus("IA 2 a la main et réfléchit...");
+            renderHands(); 
+            ui.statusMsg.classList.add("status-reflecting");
             setTimeout(() => run_Sequence_A2_Lead(), 1500);
         }
     }
+    
+    // --- SEQUENCE DE JEU ---
 
-    /* --- SEQUENCES DE JEU (Les 3 cas de figure) --- */
-
-    // CAS 1 : JOUEUR COMMENCE (Déclenché par le clic du joueur)
     function playCard(i){
       if(state.turn!=="player") return;
       const val=state.pHand.splice(i,1)[0];
@@ -623,143 +655,147 @@
 
     function playerPlaysCard(realValue, isMystic){
         const displayVal = isMystic ? 37 : realValue;
-        placeCardInSlot(ui.slotP, displayVal, 'player');
+        placeCardInSlot(ui.slotP, displayVal);
         state.playedCards.p = realValue;
 
-        // Si le joueur est Leader, on enchaîne sur IA 1 puis IA 2
+        state.turn = 'resolving'; // Bloque l'input immédiatement
+        renderHands(); 
+        ui.statusMsg.classList.add("status-reflecting");
+
         if(state.leader === 'player') {
-            state.turn = 'ai1';
             showStatus("IA 1 réfléchit...");
-            renderHands(); // Bloque le jeu
-            setTimeout(() => {
-                // IA 1 joue contre le joueur
-                const ai1Val = playAiTurn('ai1', state.ai1Hand, state.playedCards.p);
-                state.playedCards.ai1 = ai1Val;
-                showStatus("IA 2 réfléchit...");
-                
-                setTimeout(() => {
-                    // IA 2 joue contre le max(P, A1)
-                    const currentMax = Math.max(state.playedCards.p, state.playedCards.ai1);
-                    const ai2Val = playAiTurn('ai2', state.ai2Hand, currentMax);
-                    state.playedCards.ai2 = ai2Val;
-                    resolveRound();
-                }, 1500);
-            }, 1500);
+            setTimeout(() => run_Sequence_P_Lead_A1(), 1500);
         }
-        // Si le joueur jouait en 2ème (après IA 2 qui était leader : A2 -> P -> A1)
         else if(state.leader === 'ai2') {
-            state.turn = 'ai1';
             showStatus("IA 1 réfléchit...");
-            renderHands();
-            setTimeout(() => {
-                const currentMax = Math.max(state.playedCards.ai2, state.playedCards.p);
-                const ai1Val = playAiTurn('ai1', state.ai1Hand, currentMax);
-                state.playedCards.ai1 = ai1Val;
-                resolveRound();
-            }, 1500);
+            setTimeout(() => run_Sequence_A2_P_A1_Cont(), 1500);
         }
-        // Si le joueur jouait en 3ème (après IA 1 qui était leader : A1 -> A2 -> P)
-        else if(state.leader === 'ai1') {
+        else if(state.leader === 'ai1') { // Joueur est en 3ème position
             resolveRound();
         }
     }
-
-    // CAS 2 : IA 1 COMMENCE
-    function run_Sequence_A1_Lead() {
-        // IA 1 joue (contre rien, donc joue sa plus petite)
-        const ai1Val = playAiTurn('ai1', state.ai1Hand, 0);
-        state.playedCards.ai1 = ai1Val;
-        
-        state.turn = 'ai2';
-        showStatus("IA 2 réfléchit...");
-        
-        setTimeout(() => {
-            // IA 2 joue contre IA 1
-            const ai2Val = playAiTurn('ai2', state.ai2Hand, state.playedCards.ai1);
-            state.playedCards.ai2 = ai2Val;
-            
-            // C'est au tour du joueur (en dernier)
-            state.turn = 'player';
-            showStatus("À toi de jouer (tu es le dernier !)");
-            renderHands(); // DÉBLOQUE le joueur
-        }, 1500);
-    }
-
-    // CAS 3 : IA 2 COMMENCE
-    function run_Sequence_A2_Lead() {
-        // IA 2 joue
-        const ai2Val = playAiTurn('ai2', state.ai2Hand, 0);
-        state.playedCards.ai2 = ai2Val;
-
-        // C'est au tour du joueur (en deuxième)
-        state.turn = 'player';
-        showStatus("À toi de jouer !");
-        renderHands(); // DÉBLOQUE le joueur
-        // La suite (IA 1) sera déclenchée par playerPlaysCard -> else if(leader === 'ai2')
-    }
-
-    /* --- UTILITAIRES DE JEU --- */
-
-    function playAiTurn(who, hand, tableMax) {
-        // Stratégie simple : battre le max si possible, sinon jeter la plus petite
+    
+    // UTILS IA
+    function getAiCard(hand, tableMax){
         const sorted = [...hand].sort((a,b)=>a-b);
-        let valToPlay = sorted[0]; // Par défaut la plus petite
-        
-        if(tableMax > 0) {
-            const winners = sorted.filter(c => c > tableMax);
-            if(winners.length > 0) valToPlay = winners[0];
-        }
+        if(tableMax === 0) return sorted[0];
 
-        // Retrait de la main
-        const idx = hand.indexOf(valToPlay);
-        if(idx !== -1) hand.splice(idx,1);
-
-        // Affichage
-        const displayVal = (valToPlay===37) ? 37 : valToPlay;
-        const slot = (who === 'ai1') ? ui.slotAI1 : ui.slotAI2;
-        placeCardInSlot(slot, displayVal, who);
+        const winners = sorted.filter(c => c > tableMax);
+        if(winners.length > 0) return winners[0]; 
         
-        // Retourne la vraie valeur (si 37 mystique IA, on considère qu'elle vaut 37 pour simplifier)
-        return (valToPlay===37) ? 37 : valToPlay;
+        return sorted[0];
     }
-
-    function placeCardInSlot(slotElement, val, who) {
+    
+    function placeCardInSlot(slotElement, val){
         slotElement.innerHTML="";
         const cardEl=createCard(val,false);
-        cardEl.classList.remove("playable", "card-enter"); 
+        cardEl.classList.remove("playable", "card-enter", "not-playable"); 
         cardEl.classList.add("card-played"); 
         slotElement.appendChild(cardEl);
     }
 
+    // --- LOGIQUES SPÉCIFIQUES AUX LEADERS ---
+    
+    // P -> A1 -> A2 (Après que P ait joué)
+    function run_Sequence_P_Lead_A1() {
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, state.playedCards.p);
+        state.playedCards.ai1 = ai1Val;
+        showStatus("IA 2 réfléchit...");
+
+        setTimeout(() => {
+            const currentMax = Math.max(state.playedCards.p, state.playedCards.ai1);
+            const ai2Val = playAiTurn('ai2', state.ai2Hand, currentMax);
+            state.playedCards.ai2 = ai2Val;
+            resolveRound();
+        }, 1500);
+    }
+    
+    // A1 -> A2 -> P (AI1 commence)
+    function run_Sequence_A1_Lead() {
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, 0); // Contre 0
+        state.playedCards.ai1 = ai1Val;
+        showStatus("IA 2 réfléchit...");
+
+        setTimeout(() => {
+            const ai2Val = playAiTurn('ai2', state.ai2Hand, state.playedCards.ai1); // Contre IA1
+            state.playedCards.ai2 = ai2Val;
+
+            state.turn = 'player';
+            ui.statusMsg.classList.remove("status-reflecting");
+            showStatus("C'est ton tour ! (tu es le dernier)");
+            renderHands();
+        }, 1500);
+    }
+
+    // A2 -> P -> A1 (AI2 commence)
+    function run_Sequence_A2_Lead() {
+        const ai2Val = playAiTurn('ai2', state.ai2Hand, 0); // Contre 0
+        state.playedCards.ai2 = ai2Val;
+        
+        state.turn = 'player';
+        ui.statusMsg.classList.remove("status-reflecting");
+        showStatus("C'est ton tour !");
+        renderHands();
+    }
+    
+    // Suite A2 -> P -> A1 (Après que P ait joué)
+    function run_Sequence_A2_P_A1_Cont() {
+        const currentMax = Math.max(state.playedCards.ai2, state.playedCards.p);
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, currentMax); // Contre max(A2, P)
+        state.playedCards.ai1 = ai1Val;
+        resolveRound();
+    }
+
+    function playAiTurn(who, hand, tableMax) {
+        const valToPlay = getAiCard(hand, tableMax);
+        const idx = hand.indexOf(valToPlay);
+        if(idx !== -1) hand.splice(idx,1);
+
+        const displayVal = (valToPlay===37) ? 37 : valToPlay;
+        const slot = (who === 'ai1') ? ui.slotAI1 : ui.slotAI2;
+        placeCardInSlot(slot, displayVal);
+        
+        return (valToPlay===37) ? 37 : valToPlay;
+    }
+
+
     function resolveRound(){
+      ui.statusMsg.classList.remove("status-reflecting");
+
       const p = state.playedCards.p;
       const ai1 = state.playedCards.ai1;
       const ai2 = state.playedCards.ai2;
       
       const maxVal = Math.max(p, ai1, ai2);
+      let winner = '';
       
-      // Détermination du nouveau Leader
       if(p === maxVal){
         state.wins++;
-        state.leader = 'player';
-        showRoundToast("TU GAGNES LE PLI !");
-        showStatus("Bravo ! Tu gardes la main.");
+        winner = 'player';
       } else if (ai1 === maxVal) {
-        state.leader = 'ai1';
-        showRoundToast("IA 1 GAGNE.");
-        showStatus("IA 1 prend la main.");
+        winner = 'ai1';
       } else {
-        state.leader = 'ai2';
-        showRoundToast("IA 2 GAGNE.");
-        showStatus("IA 2 prend la main.");
+        winner = 'ai2';
       }
       
+      state.leader = winner; // Définit le leader pour le tour suivant
+      
+      // Mise à jour de l'UI et du toast
       ui.uiWins.textContent=state.wins;
+      if(winner === 'player') {
+          showRoundToast("TU GAGNES LE PLI !");
+          showStatus("Bravo ! Tu gardes la main.");
+      } else {
+          showRoundToast("PLI PERDU.");
+          showStatus(`${winner.toUpperCase()} prend la main.`);
+      }
+      
       state.round++;
 
       setTimeout(()=>{
+        // Nettoyage des slots et fin de partie
         if(state.round>=3){ endGame(); return; }
-        startRound(); // Lance le tour suivant avec le nouveau leader
+        startRound(); 
       },2500);
     }
 

@@ -37,9 +37,9 @@
     /* Variables du jeu */
     :root {
       --gold: #D4AF37;
+      --blood-red: #ff3333;
       --midnight: #080B14;
       --gold-glow-low: rgba(212, 175, 55, 0.7);
-      --gold-glow-high: rgba(255, 230, 150, 1);
       --transition-duration: 0.3s;
     }
 
@@ -127,16 +127,14 @@
     .opponents-container {
       display: flex;
       width: 100%;
-      /* Enlève la hauteur fixe pour laisser le contenu s'adapter aux 100% de largeur sur mobile */
       min-height: 140px; 
       border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-      /* NOUVEAU: Permet aux colonnes de passer à la ligne sur mobile */
       flex-wrap: wrap; 
     }
 
     /* Mains individuelles des IA */
     #game-app .hand-area-ai {
-      flex: 1; /* Chaque IA prend 50% de la largeur sur PC */
+      flex: 1; 
       display: flex; justify-content: center; align-items: center; gap: 5px;
       background: rgba(0,0,0,0.2);
       padding: 5px;
@@ -173,10 +171,8 @@
     #game-app #player-hand::-webkit-scrollbar{display:none;}
 
     /* --- STYLE DES CARTES --- */
-    
     #game-app .card,
     #game-app .slot {
-        /* Taille légèrement réduite pour assurer que 3 cartes rentrent sur mobile */
         width: min(90px, 20vw);
         aspect-ratio: 3/4;
         border-radius: 10px;
@@ -254,6 +250,46 @@
     }
     #game-app .bet-buttons button:hover{ background:var(--gold); color:#000; }
 
+    /* ANIMATION PENALITÉ DE VIE (NOUVEAU) */
+    #life-penalty-box {
+        margin: 20px 0;
+        min-height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .life-text {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3rem;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .life-text.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .life-text.damage {
+        color: var(--blood-red);
+        text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);
+        animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    .life-text.perfect {
+        color: var(--gold);
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-1px, 0, 0) scale(1.1); }
+      20%, 80% { transform: translate3d(2px, 0, 0) scale(1.1); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0) scale(1.1); }
+      40%, 60% { transform: translate3d(4px, 0, 0) scale(1.1); }
+    }
+
     /* TOAST */
     #game-app .round-toast{
       position:fixed; left:50%; top:50%; transform:translate(-50%, -50%) scale(0.7);
@@ -273,15 +309,12 @@
 
     /* --- MEDIA QUERY: MOBILE SPECIFIC ADJUSTMENTS --- */
     @media(max-width:600px){
-      
-      /* Empilement des mains IA */
       .opponents-container {
-        flex-direction: column; /* Passe de rangée à colonne */
+        flex-direction: column; 
         min-height: auto;
         padding-bottom: 0;
       }
       
-      /* Chaque main IA prend 100% de la largeur */
       #game-app .hand-area-ai {
         width: 100%;
         border-right: none;
@@ -289,23 +322,18 @@
         padding: 10px 5px;
       }
       
-      /* La dernière main IA n'a pas de bordure basse */
-      #ai2-hand { 
-        border-bottom: none; 
-      }
+      #ai2-hand { border-bottom: none; }
       
-      /* Le séparateur entre le container IA et la battle area est remonté */
       #game-app .game-zones > .opponents-container {
          border-bottom: 2px solid rgba(212, 175, 55, 0.3);
       }
       
-      /* Ajustement pour que 3 cartes Battle tiennent mieux */
       #game-app .battle-area { 
-        height: 160px; /* Réduit la hauteur pour gagner de la place */
+        height: 160px; 
         gap: 5px; 
       }
       #game-app .card, #game-app .slot { 
-        width: min(80px, 26vw); /* Encore plus petit pour tenir */
+        width: min(80px, 26vw);
       }
     }
   </style>
@@ -423,6 +451,11 @@
             <div class="overlay-inner">
               <h2 id="end-title"></h2>
               <p id="end-msg"></p>
+              
+              <div id="life-penalty-box">
+                  <div id="life-penalty-text" class="life-text"></div>
+              </div>
+
               <div class="bet-buttons">
                 <button onclick="initGame()">Rejouer</button>
                 <button onclick="window.location.href='index.html'">Quitter</button>
@@ -506,6 +539,7 @@
       endOverlay:document.getElementById("end-overlay"),
       endTitle:document.getElementById("end-title"),
       endMsg:document.getElementById("end-msg"),
+      lifePenaltyText:document.getElementById("life-penalty-text"), // Nouveau
       uiBet:document.getElementById("ui-bet"),
       uiWins:document.getElementById("ui-wins"),
       statusMsg:document.getElementById("status-msg"),
@@ -532,7 +566,11 @@
 
       ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
       ui.uiBet.textContent="?"; ui.uiWins.textContent="0";
-      ui.endOverlay.classList.remove("active"); ui.mysticOverlay.classList.remove("active");
+      
+      // Reset UI fin
+      ui.endOverlay.classList.remove("active"); 
+      ui.mysticOverlay.classList.remove("active");
+      ui.lifePenaltyText.classList.remove("visible", "damage", "perfect");
       
       unblockBodyScroll(); 
       showStatus("Analyse tes cartes et fais ton pari");
@@ -554,7 +592,7 @@
       ui.pHand.innerHTML="";
       state.pHand.forEach((v,i)=>{
         const c=createCard(v,false);
-        if(state.turn==="player" && (state.playedCards.p === null)) { // Seulement si c'est ton tour et que tu n'as pas déjà joué
+        if(state.turn==="player" && (state.playedCards.p === null)) { 
           c.classList.add("playable");
           c.onclick=()=>playCard(i);
         } else {
@@ -614,7 +652,7 @@
         state.playedCards = { p:null, ai1:null, ai2:null };
         ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
         
-        state.turn = 'resolving'; // Bloque le joueur par défaut
+        state.turn = 'resolving';
 
         if(state.leader === 'player') {
             state.turn = 'player';
@@ -658,7 +696,7 @@
         placeCardInSlot(ui.slotP, displayVal);
         state.playedCards.p = realValue;
 
-        state.turn = 'resolving'; // Bloque l'input immédiatement
+        state.turn = 'resolving';
         renderHands(); 
         ui.statusMsg.classList.add("status-reflecting");
 
@@ -670,7 +708,7 @@
             showStatus("IA 1 réfléchit...");
             setTimeout(() => run_Sequence_A2_P_A1_Cont(), 1500);
         }
-        else if(state.leader === 'ai1') { // Joueur est en 3ème position
+        else if(state.leader === 'ai1') { 
             resolveRound();
         }
     }
@@ -694,9 +732,8 @@
         slotElement.appendChild(cardEl);
     }
 
-    // --- LOGIQUES SPÉCIFIQUES AUX LEADERS ---
+    // --- LOGIQUES IA ---
     
-    // P -> A1 -> A2 (Après que P ait joué)
     function run_Sequence_P_Lead_A1() {
         const ai1Val = playAiTurn('ai1', state.ai1Hand, state.playedCards.p);
         state.playedCards.ai1 = ai1Val;
@@ -710,14 +747,13 @@
         }, 1500);
     }
     
-    // A1 -> A2 -> P (AI1 commence)
     function run_Sequence_A1_Lead() {
-        const ai1Val = playAiTurn('ai1', state.ai1Hand, 0); // Contre 0
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, 0); 
         state.playedCards.ai1 = ai1Val;
         showStatus("IA 2 réfléchit...");
 
         setTimeout(() => {
-            const ai2Val = playAiTurn('ai2', state.ai2Hand, state.playedCards.ai1); // Contre IA1
+            const ai2Val = playAiTurn('ai2', state.ai2Hand, state.playedCards.ai1);
             state.playedCards.ai2 = ai2Val;
 
             state.turn = 'player';
@@ -727,9 +763,8 @@
         }, 1500);
     }
 
-    // A2 -> P -> A1 (AI2 commence)
     function run_Sequence_A2_Lead() {
-        const ai2Val = playAiTurn('ai2', state.ai2Hand, 0); // Contre 0
+        const ai2Val = playAiTurn('ai2', state.ai2Hand, 0);
         state.playedCards.ai2 = ai2Val;
         
         state.turn = 'player';
@@ -738,10 +773,9 @@
         renderHands();
     }
     
-    // Suite A2 -> P -> A1 (Après que P ait joué)
     function run_Sequence_A2_P_A1_Cont() {
         const currentMax = Math.max(state.playedCards.ai2, state.playedCards.p);
-        const ai1Val = playAiTurn('ai1', state.ai1Hand, currentMax); // Contre max(A2, P)
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, currentMax); 
         state.playedCards.ai1 = ai1Val;
         resolveRound();
     }
@@ -778,9 +812,7 @@
         winner = 'ai2';
       }
       
-      state.leader = winner; // Définit le leader pour le tour suivant
-      
-      // Mise à jour de l'UI et du toast
+      state.leader = winner; 
       ui.uiWins.textContent=state.wins;
       if(winner === 'player') {
           showRoundToast("TU GAGNES LE PLI !");
@@ -793,18 +825,39 @@
       state.round++;
 
       setTimeout(()=>{
-        // Nettoyage des slots et fin de partie
         if(state.round>=3){ endGame(); return; }
         startRound(); 
       },2500);
     }
 
+    // --- FIN DE PARTIE & CALCUL VIE (MODIFIÉ) ---
     function endGame(){
-      const ok=state.wins===state.bet;
-      ui.endTitle.textContent=ok?"PARI RÉUSSI":"PARI PERDU";
-      ui.endMsg.textContent=ok
+      const diff = Math.abs(state.bet - state.wins);
+      const isPerfect = diff === 0;
+
+      ui.endTitle.textContent = isPerfect ? "PARI RÉUSSI" : "ÉCART D'ANALYSE";
+
+      // Gestion des pluriels pour le message de description
+      const textBet = state.bet > 1 ? 'plis' : 'pli';
+      
+      ui.endMsg.textContent = isPerfect
         ? "Incroyable ! Tu as tenu ton pari face à deux adversaires."
-        : "Dommage... Tes adversaires ont déjoué tes plans.";
+        : `Tu as parié ${state.bet} ${textBet}, mais tu en as fait ${state.wins}.`;
+
+      // Animation et Texte de vie
+      ui.lifePenaltyText.className = "life-text"; 
+      void ui.lifePenaltyText.offsetWidth; 
+
+      if (isPerfect) {
+        ui.lifePenaltyText.textContent = "0 VIE PERDUE";
+        ui.lifePenaltyText.classList.add("visible", "perfect");
+      } else {
+        // Gestion des pluriels pour les vies perdues (diff > 1 = pluriel)
+        const textLife = diff > 1 ? "VIES PERDUES" : "VIE PERDUE";
+        ui.lifePenaltyText.textContent = `-${diff} ${textLife}`;
+        ui.lifePenaltyText.classList.add("visible", "damage");
+      }
+
       ui.endOverlay.classList.add("active");
       blockBodyScroll(); 
     }

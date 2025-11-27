@@ -40,7 +40,7 @@
       --midnight: #080B14;
       --gold-glow-low: rgba(212, 175, 55, 0.7);
       --gold-glow-high: rgba(255, 230, 150, 1);
-      --transition-duration: 0.3s; /* Durée unique pour la fluidité */
+      --transition-duration: 0.3s;
     }
 
     /* Accessibilité / header */
@@ -64,7 +64,7 @@
       
     #mini-jeu-section {
       padding: 40px 0;
-      scroll-margin-top: 80px; /* Assure que le header ne recouvre pas la section au scroll */
+      scroll-margin-top: 80px;
     }
 
     /* CONTENEUR PRINCIPAL */
@@ -72,362 +72,205 @@
       width:100%;
       max-width:700px;
       margin:0 auto 32px auto;
-      background:rgba(15,23,42,0.9);
+      background:rgba(15,23,42,0.95);
       border-radius:20px;
-      border:1px solid rgba(212,175,55,0.4);
-      box-shadow:0 18px 50px rgba(0, 0, 0, 0.95), 0 0 60px rgba(212, 175, 55, 0.3);
+      box-shadow:0 18px 50px rgba(0, 0, 0, 0.95), 0 0 60px rgba(212, 175, 55, 0.15);
       padding:14px;
       display:flex;
       flex-direction:column;
       gap:12px;
       position:relative;
-      /* overflow:hidden; */ /* Enlevé pour ne pas couper les ombres si elles débordent */
+      box-sizing: border-box;
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
-    /* Styles généraux du jeu */
-    .hero-mini-jeu h1 {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      text-align: center;
-    }
-    .hero-mini-jeu h1 .accent {
-      margin-right: 0.35em;
-    }
-    .hero-mini-jeu p {
-      max-width: 760px;
-      margin: 18px auto 16px;
-      text-align: center;
-    }
-    .hero-mini-jeu .hero-actions{
-      display:flex;
-      justify-content:center;
-      margin-top:10px;
-    }
-    #game-app .game-header{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:6px;
-    }
-    #game-app .game-logo{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:2.6rem;
-      color:var(--gold);
-      text-shadow:0 0 12px rgba(212,175,55,0.5);
-    }
+    /* Styles généraux */
+    .hero-mini-jeu h1 { text-transform: uppercase; letter-spacing: 0.12em; text-align: center; }
+    .hero-mini-jeu h1 .accent { margin-right: 0.35em; }
+    .hero-mini-jeu p { max-width: 760px; margin: 18px auto 16px; text-align: center; }
+    .hero-mini-jeu .hero-actions{ display:flex; justify-content:center; margin-top:10px; }
+    
+    #game-app .game-header{ display:flex; flex-direction:column; align-items:center; gap:6px; padding-bottom: 5px; }
+    #game-app .game-logo{ font-family:'Bebas Neue',sans-serif; font-size:2.6rem; color:var(--gold); text-shadow:0 0 12px rgba(212,175,55,0.5); }
+    
     #game-app .score-board{
-      display:flex;
-      justify-content:center;
-      gap:18px;
-      font-size:0.95rem;
-      background:rgba(0,0,0,0.4);
-      padding:6px 18px;
-      border-radius:40px;
-      border:1px solid rgba(212,175,55,0.25);
+      display:flex; justify-content:center; gap:18px; font-size:0.95rem;
+      background:rgba(0,0,0,0.4); padding:6px 18px; border-radius:40px; border:1px solid rgba(212,175,55,0.25);
     }
     #game-app .score-board strong{color:var(--gold);}
+    
     #game-app .status-message{
-      text-align:center;
-      color:var(--gold);
-      background:rgba(212,175,55,0.1);
-      border:1px solid rgba(212,175,55,0.3);
-      padding:8px;
-      border-radius:10px;
-      font-size:0.95rem;
-      min-height: 40px; /* Ajouté pour stabilité visuelle */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align:center; color:var(--gold); background:rgba(212,175,55,0.1);
+      border:1px solid rgba(212,175,55,0.3); padding:8px; border-radius:10px;
+      font-size:0.95rem; min-height: 40px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 5px;
     }
     .status-reflecting {animation: reflectPulse 1.8s infinite ease-in-out;}
     @keyframes reflectPulse {
       0%, 100% {opacity: 1; border-color: rgba(212,175,55,0.3);}
       50% {opacity: 0.8; border-color: var(--gold);}
     }
-    #game-app .game-zones{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    
-    /* Cartes & Slots (Réactivité améliorée) */
-    #game-app .card,
-    #game-app .slot{
-      /* Utilisation de min() pour la réactivité, 140px max, 26vw sur petit écran */
-      width: min(140px, 26vw); 
-      aspect-ratio:3/4;
-      border-radius:12px;
-      overflow:hidden;
-      background:linear-gradient(145deg, #0f172a, #020617);
-      border:3px solid rgba(212,175,55,0.5);
-      cursor:pointer;
-      transition:transform var(--transition-duration), box-shadow var(--transition-duration);
-      flex:0 0 auto;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.8), inset 0 0 8px rgba(255, 255, 200, 0.1); 
-    }
-    #game-app .card-face,
-    #game-app .card-back{
-      width:100%;
-      height:100%;
-      background-size:cover;
-      background-position:center;
-    }
-    #game-app .card-back{
-      background-image:url("back.jpg"); /* Assurez-vous que cette image existe */
-    }
-    #game-app .fallback{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-family:'Bebas Neue';
-      font-size:2.2rem;
-      color:var(--gold);
-      background:linear-gradient(135deg,var(--midnight),#1e293b);
-    }
-    #game-app .playable:hover{
-      transform:translateY(-12px) scale(1.05); /* Animation plus douce */
-      border-color:var(--gold);
-      box-shadow:0 12px 40px rgba(212,175,55,0.7), inset 0 0 10px rgba(0,0,0,0.9);
-    }
-    #game-app .card-enter{
-      animation:cardEnter var(--transition-duration) ease-out;
-    }
-    @keyframes cardEnter{
-      0%{opacity:0;transform:translateY(8px) scale(0.96);}
-      100%{opacity:1;transform:translateY(0) scale(1);}
-    }
-    /* Zones de cartes */
-    #game-app .hand-area{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:8px; /* Réduction du gap pour les petits écrans */
-      min-height:min(220px,30vh);
-      background:rgba(0,0,0,0.35);
-      border-radius:12px;
-      padding:8px;
-      flex-wrap:nowrap;
-      overflow-x:auto; /* Permet le scroll horizontal si trop de cartes */
-    }
-    #game-app .hand-area::-webkit-scrollbar{display:none;}
-    
-    /* BATTLE AREA */
-    #game-app .battle-area{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:24px;
-      background: linear-gradient(135deg, #020617, #0f172a);
-      border-radius:12px;
-      padding:10px;
-      flex-wrap:wrap;
-      border: 3px double rgba(212, 175, 55, 0.6);
-    }
-    #game-app .card-slot-player{
-      animation:cardDropPlayer var(--transition-duration) ease-out;
-      transform-origin:50% 100%;
-    }
-    #game-app .card-slot-ai{
-      animation:cardDropAi var(--transition-duration) ease-out;
-      transform-origin:50% 0%;
-    }
-    @keyframes cardDropPlayer{
-      0%{opacity:0;transform:translateY(40px) scale(0.8) rotate(-2deg);}
-      100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
-    }
-    @keyframes cardDropAi{
-      0%{opacity:0;transform:translateY(-40px) scale(0.8) rotate(2deg);}
-      100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
-    }
-    #game-app .slot-win{
-      animation:slotWin 0.9s ease-out;
-    }
-    @keyframes slotWin{
-      0%{box-shadow:0 0 0 rgba(212,175,55,0);border-color:rgba(212,175,55,0.4);}
-      40%{box-shadow:0 0 26px rgba(212,175,55,0.9);border-color:var(--gold);transform:scale(1.05);}
-      100%{box-shadow:0 0 0 rgba(212,175,55,0);border-color:rgba(212,175,55,0.4);transform:scale(1);}
-    }
-    #game-app #game-status{
-      font-family:'Bebas Neue';
-      font-size:2.1rem;
-      color:var(--gold);
-      opacity:0.85;
-      animation:vsPulse 2.6s infinite ease-in-out;
-    }
-    @keyframes vsPulse{
-      0%,100%{transform:scale(1);text-shadow:0 0 6px rgba(212,175,55,0.5);}
-      50%{transform:scale(1.08);text-shadow:0 0 14px rgba(255,230,150,0.9);}
+
+    /* --- LE PLATEAU MONOBLOC (3 JOUEURS) --- */
+    #game-app .game-zones {
+      display: flex;
+      flex-direction: column;
+      gap: 0; 
+      border: 3px double rgba(212, 175, 55, 0.8);
+      border-radius: 16px;
+      overflow: hidden; 
+      background: rgba(2, 6, 23, 0.4);
+      margin-top: 5px;
     }
 
-    /* Overlays (Centrage et Z-index stabilisés) */
-    #game-app .overlay{
-      position:fixed; /* Correction essentielle pour le responsive et le centrage */
-      top:0;
-      left:0;
-      width:100vw;
-      height:100vh;
-      background:rgba(2,6,23,0.98); 
-      display:flex;
-      flex-direction:column;
-      justify-content:center; /* Centrage vertical */
-      align-items:center; /* Centrage horizontal */
-      opacity:0;
-      pointer-events:none;
-      transition:opacity var(--transition-duration) ease-out;
-      padding:20px;
-      text-align:center;
-      z-index:10003; 
-      overflow-y:auto; /* Permet le scroll vertical si le contenu est grand sur petit écran */
-    }
-    #game-app .overlay.active{
-      opacity:1;
-      pointer-events:auto;
-    }
-    #game-app .overlay-inner{
-      max-width:480px;
+    /* Container pour les mains des adversaires (Haut) */
+    .opponents-container {
+      display: flex;
       width: 100%;
-      margin:auto;
-      padding: 20px;
-      box-sizing: border-box;
+      height: 140px;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.3);
     }
-    #game-app .overlay h2{
-      font-family:'Bebas Neue';
-      color:var(--gold);
-      font-size:2.3rem;
-      margin-bottom:10px;
-      text-shadow:0 0 15px rgba(212,175,55,0.4);
+
+    /* Mains individuelles des IA */
+    #game-app .hand-area-ai {
+      flex: 1;
+      display: flex; justify-content: center; align-items: center; gap: 5px;
+      background: rgba(0,0,0,0.2);
+      padding: 5px;
+      position: relative;
     }
-    #game-app .overlay p{
-      margin-bottom:8px;
-      font-size:0.98rem;
-    }
+    #ai1-hand { border-right: 1px solid rgba(212, 175, 55, 0.2); }
     
-    /* PREVIEW CARDS (Réactivité fine pour le pari) */
-    #game-app .preview-cards-container {
+    .ai-label {
+      position: absolute; top: 5px; font-size: 0.7rem; color: rgba(212,175,55,0.5); font-family: sans-serif; text-transform: uppercase;
+    }
+    #ai1-hand .ai-label { left: 10px; }
+    #ai2-hand .ai-label { right: 10px; }
+
+    /* Zone Combat (Milieu) - 3 SLOTS */
+    #game-app .battle-area {
+      background: linear-gradient(135deg, #020617, #0f172a);
+      height: 220px; 
       display: flex;
       justify-content: center;
-      gap: 8px; /* Réduit le gap */
-      margin: 20px 0 30px 0;
-      flex-wrap: nowrap;
-      padding: 0 5px;
+      align-items: center; 
+      padding: 10px;
+      gap: 15px;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* Zone Main Joueur (Bas) */
+    #game-app #player-hand {
+      padding: 10px;
+      background: rgba(0,0,0,0.2);
+      min-height: 140px;
+      display:flex; justify-content:center; align-items:center; gap:8px;
       overflow-x: auto;
     }
-    #game-app .preview-card {
-      width: min(100px, 18vw); /* Plus petit pour mieux tenir sur mobile */
-      aspect-ratio: 3/4;
-      border-radius: 8px;
-      border: 2px solid var(--gold);
-      flex: 0 0 auto;
+    #game-app #player-hand::-webkit-scrollbar{display:none;}
+
+    /* --- STYLE DES CARTES --- */
+    #game-app .card,
+    #game-app .slot {
+        width: min(95px, 20vw);
+        aspect-ratio: 3/4;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #0f172a, #020617);
+        border: 2px solid rgba(212,175,55,0.5);
+        position: relative;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* Bet Buttons Styling */
-    #game-app .bet-buttons{
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:20px;
+    #game-app .slot {
+        border: 2px dashed rgba(212, 175, 55, 0.3);
+        background: transparent;
+        display: flex; justify-content: center; align-items: center;
     }
+    .slot-wrapper { display: flex; flex-direction: column; align-items: center; gap: 5px; height: 100%; justify-content: center; }
+    .slot-label { font-size: 0.7rem; color: rgba(212,175,55,0.4); font-family: sans-serif; }
+
+    #game-app .card-face,
+    #game-app .card-back {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background-size: cover; background-position: center; background-repeat: no-repeat;
+        border-radius: 8px;
+    }
+    #game-app .card-back { background-image: url("back.jpg"); }
+
+    /* La classe playable est ajoutée/retirée selon le tour */
+    #game-app .playable { cursor: pointer; }
+    #game-app .playable:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        transition: transform 0.2s;
+    }
+    /* Les cartes non jouables sont grisées */
+    #game-app .not-playable { opacity: 0.6; cursor: default; }
+
+    #game-app .card-played {
+        width: 100%; height: 100%;
+        animation: cardEnter 0.3s ease-out;
+    }
+
+    @keyframes cardEnter{ from{opacity:0; transform:scale(0.8);} to{opacity:1; transform:scale(1);} }
+
+    #game-app .card-enter{ animation: cardEnter 0.3s ease-out; }
+
+    #game-app .fallback{
+        width: 100%; height: 100%;
+        display: flex; justify-content: center; align-items: center;
+        font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--gold);
+        background: #1e293b;
+    }
+
+    /* --- OVERLAYS --- */
+    #game-app .overlay{
+      position:fixed; top:0; left:0; width:100vw; height:100vh;
+      background:rgba(2,6,23,0.98); 
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      opacity:0; pointer-events:none; transition:opacity var(--transition-duration) ease-out;
+      padding:20px; text-align:center; z-index:10003; overflow-y:auto; 
+    }
+    #game-app .overlay.active{ opacity:1; pointer-events:auto; }
+    #game-app .overlay-inner{ max-width:480px; width: 100%; margin:auto; padding: 20px; box-sizing: border-box; }
+    #game-app .overlay h2{ font-family:'Bebas Neue'; color:var(--gold); font-size:2.3rem; margin-bottom:10px; }
+    
+    #game-app .preview-cards-container { display: flex; justify-content: center; gap: 8px; margin: 20px 0 30px 0; }
+    #game-app .preview-card { 
+        width: min(90px, 18vw); aspect-ratio: 3/4; border-radius: 8px; border: 2px solid var(--gold); 
+        background-size: cover; background-position: center;
+    }
+
+    #game-app .bet-buttons{ display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
     #game-app .bet-buttons button{
-      padding:8px 20px;
-      border:2px solid var(--gold);
-      border-radius:8px;
-      background:transparent;
-      color:var(--gold);
-      font-family:'Bebas Neue';
-      font-size:1.4rem;
-      cursor:pointer;
-      transition:transform 0.1s, box-shadow 0.1s;
-      min-width:56px;
+      padding:8px 20px; border:2px solid var(--gold); border-radius:8px; background:transparent;
+      color:var(--gold); font-family:'Bebas Neue'; font-size:1.4rem; cursor:pointer;
     }
-    #game-app .bet-buttons button:hover{
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.5);
-      background:var(--gold);
-      color:#000;
-    }
+    #game-app .bet-buttons button:hover{ background:var(--gold); color:#000; }
 
-    #game-app .mystic-glow{
-      animation:mystglow 1.9s infinite ease-in-out;
-      box-shadow:0 0 18px rgba(212,175,55,0.7),0 0 30px rgba(255,220,120,0.4);
-      border-color:var(--gold) !important;
-    }
-    @keyframes mystglow{
-      0%{transform:scale(1);box-shadow:0 0 18px rgba(212,175,55,0.6);}
-      50%{transform:scale(1.06);box-shadow:0 0 36px rgba(255,225,150,0.9);}
-      100%{transform:scale(1);box-shadow:0 0 18px rgba(212,175,55,0.6);}
-    }
-
-    /* TOAST (Animation fluide) */
+    /* TOAST */
     #game-app .round-toast{
-      position:fixed; 
-      left:50%;
-      top:50%; 
-      transform:translate(-50%, -50%) scale(0.7); /* Démarre plus petit */
-      opacity:0;
-      transition:opacity var(--transition-duration) ease-out, transform var(--transition-duration) ease-out;
-      z-index: 10004;
-      background:rgba(15,23,42,0.96);
-      padding:8px 20px;
-      border-radius:999px;
-      border:2px solid rgba(212,175,55,0.5);
-      font-size:1.1rem;
-      color:var(--gold);
-      white-space:nowrap;
+      position:fixed; left:50%; top:50%; transform:translate(-50%, -50%) scale(0.7);
+      opacity:0; z-index: 10004; background:rgba(15,23,42,0.96); padding:8px 20px;
+      border-radius:999px; border:2px solid rgba(212,175,55,0.5); font-size:1.1rem; color:var(--gold);
     }
-    #game-app .round-toast.show{
-      animation:toastPop 3s ease-out;
-    }
+    #game-app .round-toast.show{ animation:toastPop 2.5s ease-out; }
     @keyframes toastPop{
       0%{opacity:0; transform:translate(-50%, -50%) scale(0.7);}
       10%{opacity:1; transform:translate(-50%, -50%) scale(1.05);}
       80%{opacity:1; transform:translate(-50%, -50%) scale(1.05);}
       100%{opacity:0; transform:translate(-50%, -50%) scale(0.98);}
     }
-    
-    /* Adaptation mobile et hauteur */
+
+    #game-app #game-status{ font-family:'Bebas Neue'; font-size:2rem; color:var(--gold); opacity:0.6; }
+    #game-app .mystic-glow { box-shadow: 0 0 15px var(--gold); border-color: #fff; }
+
+    /* MOBILE */
     @media(max-width:600px){
-      #game-app{
-        padding:12px;
-        gap:10px;
-      }
-      #game-app .battle-area{
-        gap:16px;
-      }
-      #game-app .hand-area{
-        min-height:min(200px,32vh);
-      }
-      #game-app .card,
-      #game-app .slot{
-        width:min(115px,28vw);
-      }
-      #game-app .preview-card{
-        width:min(105px,26vw);
-      }
-    }
-    @media(max-height:750px){
-      #game-app .hand-area{
-        min-height:min(190px,28vh);
-      }
-      #game-app .card,
-      #game-app .slot{
-        width:min(120px,24vw);
-      }
-      #game-app .preview-card{
-        width:min(105px,22vw);
-      }
-    }
-    @media(max-height:650px){
-      #game-app .hand-area{
-        min-height:min(170px,26vh);
-      }
-      #game-app .card,
-      #game-app .slot{
-        width:min(110px,22vw);
-      }
-      #game-app .preview-card{
-        width:min(98px,20vw);
-      }
+      #game-app .battle-area { height: 180px; gap: 6px; }
+      #game-app .card, #game-app .slot { width: min(85px, 26vw); }
     }
   </style>
 </head>
@@ -463,7 +306,7 @@
     <section class="hero hero-mini-jeu">
       <div class="container">
         <h1><span class="accent">MINI JEU</span> KYRAN</h1>
-        <p>Teste une version simplifiée de KYRAN. Parie tes plis, joue tes cartes et utilise la carte Mystique qui peut valoir 0 ou 37 selon ton choix.</p>
+        <p>Teste une version simplifiée de KYRAN à 3 joueurs. Parie tes plis, joue tes cartes et défie deux IA !</p>
         <div class="hero-actions">
           <button class="btn" id="start-game-btn">Lancer une partie</button>
         </div>
@@ -486,12 +329,29 @@
           <div class="status-message" id="status-msg">Clique sur "Lancer une partie" pour commencer.</div>
 
           <div class="game-zones">
-            <div id="ai-hand" class="hand-area"></div>
+            
+            <div class="opponents-container">
+                <div id="ai1-hand" class="hand-area-ai">
+                    <span class="ai-label">IA 1</span>
+                </div>
+                <div id="ai2-hand" class="hand-area-ai">
+                    <span class="ai-label">IA 2</span>
+                </div>
+            </div>
 
             <div class="battle-area">
-              <div><div class="slot" id="slot-ai"></div></div>
-              <div id="game-status">VS</div>
-              <div><div class="slot" id="slot-player"></div></div>
+              <div class="slot-wrapper">
+                  <div class="slot" id="slot-ai1"></div>
+                  <span class="slot-label">IA 1</span>
+              </div>
+              <div class="slot-wrapper">
+                  <div class="slot" id="slot-ai2"></div>
+                   <span class="slot-label">IA 2</span>
+              </div>
+              <div class="slot-wrapper">
+                  <div class="slot" id="slot-player"></div>
+                   <span class="slot-label">TOI</span>
+              </div>
             </div>
 
             <div id="player-hand" class="hand-area"></div>
@@ -500,7 +360,7 @@
           <div id="bet-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Phase de Pari</h2>
-              <p>Voici tes cartes. Analyse-les et annonce le nombre de plis que tu penses gagner sur cette manche.</p>
+              <p>Voici tes cartes. Tes adversaires (IA 1 et IA 2) sont prêts.</p>
               <div id="preview-cards" class="preview-cards-container"></div>
               <p>Combien de plis penses-tu gagner ?</p>
               <div class="bet-buttons">
@@ -515,7 +375,7 @@
           <div id="mystic-overlay" class="overlay">
             <div class="overlay-inner">
               <h2>Carte Mystique</h2>
-              <p>Tu viens de jouer la carte Mystique, choisis si elle vaut 0 ou 37 !<p> 
+              <p>Tu viens de jouer la carte Mystique, choisis sa valeur !<p> 
               <div class="bet-buttons">
                 <button onclick="chooseMystic(0)">0</button>
                 <button onclick="chooseMystic(37)">37</button>
@@ -590,22 +450,21 @@
 
   <script>
     let state = {
-      deck:[],
-      pHand:[],
-      aiHand:[],
-      bet:null,
-      wins:0,
-      round:0,
-      turn:"betting",
-      pendingMystic:null,
-      lastPlayedValue:null
+      deck:[], 
+      pHand:[], ai1Hand:[], ai2Hand:[], 
+      bet:null, wins:0, round:0, 
+      turn:"betting", leader:'player', // 'player', 'ai1', 'ai2'
+      pendingMystic:null, 
+      playedCards: { p:null, ai1:null, ai2:null }
     };
 
     const ui = {
       pHand:document.getElementById("player-hand"),
-      aiHand:document.getElementById("ai-hand"),
+      ai1Hand:document.getElementById("ai1-hand"),
+      ai2Hand:document.getElementById("ai2-hand"),
       slotP:document.getElementById("slot-player"),
-      slotAI:document.getElementById("slot-ai"),
+      slotAI1:document.getElementById("slot-ai1"),
+      slotAI2:document.getElementById("slot-ai2"),
       betOverlay:document.getElementById("bet-overlay"),
       mysticOverlay:document.getElementById("mystic-overlay"),
       endOverlay:document.getElementById("end-overlay"),
@@ -618,49 +477,34 @@
     };
 
     function createDeck(){
-      let d=[];
-      for(let i=1;i<=36;i++) d.push(i);
-      d.push(37);
+      let d=[]; for(let i=1;i<=36;i++) d.push(i); d.push(37);
       return d.sort(()=>Math.random()-.5);
     }
     
-    // NOUVELLES FONCTIONS DE GESTION DU SCROLL
-    function blockBodyScroll() {
-      // Pour éviter les barres de défilement multiples et les décalages du contenu fixe
-      document.body.style.overflow = 'hidden';
-    }
-
-    function unblockBodyScroll() {
-      document.body.style.overflow = '';
-    }
+    function blockBodyScroll() { document.body.style.overflow = 'hidden'; }
+    function unblockBodyScroll() { document.body.style.overflow = ''; }
 
     function initGame(){
       state.deck=createDeck();
       state.pHand=[state.deck.pop(),state.deck.pop(),state.deck.pop()].sort((a,b)=>a-b);
-      state.aiHand=[state.deck.pop(),state.deck.pop(),state.deck.pop()];
-      state.bet=null;
-      state.wins=0;
-      state.round=0;
-      state.turn="betting";
-      state.pendingMystic=null;
-      state.lastPlayedValue=null;
-
-      // Réinitialisation visuelle complète et sécurité
-      ui.slotP.innerHTML="";
-      ui.slotAI.innerHTML="";
-      ui.uiBet.textContent="?";
-      ui.uiWins.textContent="0";
-      ui.endOverlay.classList.remove("active");
-      ui.mysticOverlay.classList.remove("active");
+      state.ai1Hand=[state.deck.pop(),state.deck.pop(),state.deck.pop()];
+      state.ai2Hand=[state.deck.pop(),state.deck.pop(),state.deck.pop()];
       
-      // Assurer que le scroll est débloqué avant l'initialisation et bloqué après l'affichage de l'overlay de pari.
+      state.bet=null; state.wins=0; state.round=0; state.turn="betting"; 
+      state.leader = 'player'; // Le joueur commence toujours la première manche
+      state.playedCards = { p:null, ai1:null, ai2:null };
+
+      ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
+      ui.uiBet.textContent="?"; ui.uiWins.textContent="0";
+      ui.endOverlay.classList.remove("active"); ui.mysticOverlay.classList.remove("active");
+      
       unblockBodyScroll(); 
       showStatus("Analyse tes cartes et fais ton pari");
       renderPreview();
       renderHands();
 
       ui.betOverlay.classList.add("active");
-      blockBodyScroll(); // BLOQUE le scroll du body quand l'overlay est actif
+      blockBodyScroll(); 
     }
 
     function renderPreview(){
@@ -670,44 +514,45 @@
     }
 
     function renderHands(){
+      // Main du joueur
       ui.pHand.innerHTML="";
       state.pHand.forEach((v,i)=>{
         const c=createCard(v,false);
+        // On ne peut cliquer que si c'est le tour du joueur (turn)
         if(state.turn==="player"){
           c.classList.add("playable");
           c.onclick=()=>playCard(i);
+        } else {
+          c.classList.add("not-playable");
         }
         ui.pHand.appendChild(c);
       });
-      renderAIHand();
-    }
-
-    function renderAIHand(){
-      ui.aiHand.innerHTML="";
-      state.aiHand.forEach(()=>{
-        ui.aiHand.appendChild(createCard(0,true));
-      });
+      
+      // Main IA 1
+      ui.ai1Hand.innerHTML='<span class="ai-label">IA 1</span>';
+      state.ai1Hand.forEach(()=>{ ui.ai1Hand.appendChild(createCard(0,true)); });
+      
+      // Main IA 2
+      ui.ai2Hand.innerHTML='<span class="ai-label">IA 2</span>';
+      state.ai2Hand.forEach(()=>{ ui.ai2Hand.appendChild(createCard(0,true)); });
     }
 
     function createCard(val,back){
       const d=document.createElement("div");
-      d.className="card card-enter";
-
+      d.className="card";
       if(val===37 && !back) d.classList.add("mystic-glow");
-
       const face=document.createElement("div");
       face.className=back?"card-back":"card-face";
-
       if(!back){
         const img=new Image();
         img.onload=()=>face.style.backgroundImage=`url(card-${val}.jpg)`;
         img.onerror=()=>{
-          face.classList.add("fallback");
+          face.style.backgroundColor="#1e293b";
+          face.className="card-face fallback";
           face.textContent=val;
         };
         img.src=`card-${val}.jpg`;
       }
-
       d.appendChild(face);
       return d;
     }
@@ -716,177 +561,226 @@
       const d=document.createElement("div");
       d.className="preview-card";
       if(val===37) d.classList.add("mystic-glow");
-
-      const face=document.createElement("div");
-      face.className="card-face";
       const img=new Image();
-      img.onload=()=>face.style.backgroundImage=`url(card-${val}.jpg)`;
-      img.onerror=()=>{
-        face.classList.add("fallback");
-        face.textContent=val;
-      };
+      img.onload=()=>d.style.backgroundImage=`url(card-${val}.jpg)`;
+      img.onerror=()=>{ d.style.backgroundColor="#1e293b"; d.textContent=val; d.style.color="white"; d.style.display="flex"; d.style.justifyContent="center"; d.style.alignItems="center"; };
       img.src=`card-${val}.jpg`;
-      d.appendChild(face);
+      d.style.backgroundSize="cover";
       return d;
     }
 
     function setBet(n){
       if(state.bet!==null) return;
-      state.bet=n;
-      ui.uiBet.textContent=n;
+      state.bet=n; ui.uiBet.textContent=n;
       ui.betOverlay.classList.remove("active");
-      unblockBodyScroll(); // DEBLOQUE le scroll du body après le pari
-      state.turn="player";
-      showStatus("Joue ta premiere carte");
-      renderHands();
+      unblockBodyScroll(); 
+      startRound();
     }
 
+    // Fonction centrale pour démarrer/gérer le début du pli selon le leader
+    function startRound() {
+        state.playedCards = { p:null, ai1:null, ai2:null };
+        ui.slotP.innerHTML=""; ui.slotAI1.innerHTML=""; ui.slotAI2.innerHTML="";
+        
+        // C'est ici que la magie de l'ordre dynamique opère
+        if(state.leader === 'player') {
+            state.turn = 'player';
+            showStatus("C'est à toi de commencer !");
+            renderHands(); // Débloque les cartes du joueur
+        } 
+        else if(state.leader === 'ai1') {
+            state.turn = 'ai1';
+            showStatus("IA 1 a la main...");
+            renderHands(); // Bloque les cartes du joueur
+            setTimeout(() => run_Sequence_A1_Lead(), 1500);
+        } 
+        else if(state.leader === 'ai2') {
+            state.turn = 'ai2';
+            showStatus("IA 2 a la main...");
+            renderHands(); // Bloque les cartes du joueur
+            setTimeout(() => run_Sequence_A2_Lead(), 1500);
+        }
+    }
+
+    /* --- SEQUENCES DE JEU (Les 3 cas de figure) --- */
+
+    // CAS 1 : JOUEUR COMMENCE (Déclenché par le clic du joueur)
     function playCard(i){
       if(state.turn!=="player") return;
       const val=state.pHand.splice(i,1)[0];
-
       if(val===37){
         state.pendingMystic=true;
         ui.mysticOverlay.classList.add("active");
-        blockBodyScroll(); // BLOQUE le scroll du body
-        return;
+        blockBodyScroll(); return;
       }
-      placePlayerCard(val,false);
+      playerPlaysCard(val, false);
     }
 
     function chooseMystic(v){
       ui.mysticOverlay.classList.remove("active");
-      unblockBodyScroll(); // DEBLOQUE le scroll du body
-      placePlayerCard(v,true);
+      unblockBodyScroll(); playerPlaysCard(v, true);
     }
 
-    // LOGIQUE IA STRATEGIQUE
-    function determineAiPlay(playerCard) {
-      const sortedHand = [...state.aiHand].sort((a, b) => a - b); 
-      const remainingRounds = 3 - state.round;
-      const aiCurrentWins = state.round - state.wins; 
-      const playerBet = state.bet;
-      const aiBet = 3 - playerBet; 
+    function playerPlaysCard(realValue, isMystic){
+        const displayVal = isMystic ? 37 : realValue;
+        placeCardInSlot(ui.slotP, displayVal, 'player');
+        state.playedCards.p = realValue;
 
-      // Cas où l'IA peut perdre une carte faible
-      const losingCards = sortedHand.filter(c => c < playerCard);
-      
-      // Cas où l'IA doit gagner
-      const aiNeedsWin = aiCurrentWins < aiBet && remainingRounds > 0 && remainingRounds - aiCurrentWins >= aiBet - aiCurrentWins;
-      
-      // Les cartes gagnantes de l'IA
-      const winningCards = sortedHand.filter(c => c > playerCard);
-
-      // 1. Si l'IA DOIT gagner pour atteindre son pari (ou si le joueur a joué faible)
-      if (aiNeedsWin && winningCards.length > 0) {
-        return winningCards[0]; // Joue la carte gagnante la plus faible
-      }
-
-      // 2. Si l'IA peut perdre une carte faible SANS compromettre son pari
-      if (!aiNeedsWin && losingCards.length > 0) {
-          return losingCards[losingCards.length - 1]; // Joue la carte perdante la plus forte (pour se débarrasser de cartes fortes inutiles)
-      }
-      
-      // 3. Cas par défaut (aucune carte gagnante/perdante n'est trouvée pour la stratégie idéale)
-      // Si l'IA doit gagner mais n'a pas de carte plus forte, elle joue la plus faible pour minimiser la perte.
-      // Si l'IA n'a que des cartes gagnantes, elle joue la plus faible pour la préserver si possible.
-      return sortedHand[0]; 
-    }
-
-
-    function placePlayerCard(realValue,isMystic){
-      const displayVal=isMystic?37:realValue;
-      ui.slotP.innerHTML="";
-      const cardEl=createCard(displayVal,false);
-      cardEl.classList.add("card-slot-player");
-      ui.slotP.appendChild(cardEl);
-
-      state.lastPlayedValue=realValue;
-
-      state.turn="resolving";
-      renderHands();
-      showStatus("L IA reflechit...");
-      ui.statusMsg.classList.add("status-reflecting");
-
-      setTimeout(()=>{
-        const aiVal = determineAiPlay(state.lastPlayedValue);
-        
-        const aiIndex = state.aiHand.indexOf(aiVal);
-        // Suppression de la carte de l'IA (sécurisée)
-        if(aiIndex === -1){
-             // Si la carte n'est pas trouvée (cas rare), on retire la première carte par défaut pour continuer
-            state.aiHand.shift(); 
-        } else {
-            state.aiHand.splice(aiIndex,1); 
+        // Si le joueur est Leader, on enchaîne sur IA 1 puis IA 2
+        if(state.leader === 'player') {
+            state.turn = 'ai1';
+            showStatus("IA 1 réfléchit...");
+            renderHands(); // Bloque le jeu
+            setTimeout(() => {
+                // IA 1 joue contre le joueur
+                const ai1Val = playAiTurn('ai1', state.ai1Hand, state.playedCards.p);
+                state.playedCards.ai1 = ai1Val;
+                showStatus("IA 2 réfléchit...");
+                
+                setTimeout(() => {
+                    // IA 2 joue contre le max(P, A1)
+                    const currentMax = Math.max(state.playedCards.p, state.playedCards.ai1);
+                    const ai2Val = playAiTurn('ai2', state.ai2Hand, currentMax);
+                    state.playedCards.ai2 = ai2Val;
+                    resolveRound();
+                }, 1500);
+            }, 1500);
         }
-        
-        ui.slotAI.innerHTML="";
-        const aiCard=createCard(aiVal,false);
-        aiCard.classList.add("card-slot-ai");
-        ui.slotAI.appendChild(aiCard);
-
-        ui.statusMsg.classList.remove("status-reflecting");
-        resolveRound(state.lastPlayedValue,aiVal);
-      },1500);
+        // Si le joueur jouait en 2ème (après IA 2 qui était leader : A2 -> P -> A1)
+        else if(state.leader === 'ai2') {
+            state.turn = 'ai1';
+            showStatus("IA 1 réfléchit...");
+            renderHands();
+            setTimeout(() => {
+                const currentMax = Math.max(state.playedCards.ai2, state.playedCards.p);
+                const ai1Val = playAiTurn('ai1', state.ai1Hand, currentMax);
+                state.playedCards.ai1 = ai1Val;
+                resolveRound();
+            }, 1500);
+        }
+        // Si le joueur jouait en 3ème (après IA 1 qui était leader : A1 -> A2 -> P)
+        else if(state.leader === 'ai1') {
+            resolveRound();
+        }
     }
 
-    function resolveRound(p,ai){
-      const playerWin = p > ai;
+    // CAS 2 : IA 1 COMMENCE
+    function run_Sequence_A1_Lead() {
+        // IA 1 joue (contre rien, donc joue sa plus petite)
+        const ai1Val = playAiTurn('ai1', state.ai1Hand, 0);
+        state.playedCards.ai1 = ai1Val;
+        
+        state.turn = 'ai2';
+        showStatus("IA 2 réfléchit...");
+        
+        setTimeout(() => {
+            // IA 2 joue contre IA 1
+            const ai2Val = playAiTurn('ai2', state.ai2Hand, state.playedCards.ai1);
+            state.playedCards.ai2 = ai2Val;
+            
+            // C'est au tour du joueur (en dernier)
+            state.turn = 'player';
+            showStatus("À toi de jouer (tu es le dernier !)");
+            renderHands(); // DÉBLOQUE le joueur
+        }, 1500);
+    }
 
-      if(playerWin){
+    // CAS 3 : IA 2 COMMENCE
+    function run_Sequence_A2_Lead() {
+        // IA 2 joue
+        const ai2Val = playAiTurn('ai2', state.ai2Hand, 0);
+        state.playedCards.ai2 = ai2Val;
+
+        // C'est au tour du joueur (en deuxième)
+        state.turn = 'player';
+        showStatus("À toi de jouer !");
+        renderHands(); // DÉBLOQUE le joueur
+        // La suite (IA 1) sera déclenchée par playerPlaysCard -> else if(leader === 'ai2')
+    }
+
+    /* --- UTILITAIRES DE JEU --- */
+
+    function playAiTurn(who, hand, tableMax) {
+        // Stratégie simple : battre le max si possible, sinon jeter la plus petite
+        const sorted = [...hand].sort((a,b)=>a-b);
+        let valToPlay = sorted[0]; // Par défaut la plus petite
+        
+        if(tableMax > 0) {
+            const winners = sorted.filter(c => c > tableMax);
+            if(winners.length > 0) valToPlay = winners[0];
+        }
+
+        // Retrait de la main
+        const idx = hand.indexOf(valToPlay);
+        if(idx !== -1) hand.splice(idx,1);
+
+        // Affichage
+        const displayVal = (valToPlay===37) ? 37 : valToPlay;
+        const slot = (who === 'ai1') ? ui.slotAI1 : ui.slotAI2;
+        placeCardInSlot(slot, displayVal, who);
+        
+        // Retourne la vraie valeur (si 37 mystique IA, on considère qu'elle vaut 37 pour simplifier)
+        return (valToPlay===37) ? 37 : valToPlay;
+    }
+
+    function placeCardInSlot(slotElement, val, who) {
+        slotElement.innerHTML="";
+        const cardEl=createCard(val,false);
+        cardEl.classList.remove("playable", "card-enter"); 
+        cardEl.classList.add("card-played"); 
+        slotElement.appendChild(cardEl);
+    }
+
+    function resolveRound(){
+      const p = state.playedCards.p;
+      const ai1 = state.playedCards.ai1;
+      const ai2 = state.playedCards.ai2;
+      
+      const maxVal = Math.max(p, ai1, ai2);
+      
+      // Détermination du nouveau Leader
+      if(p === maxVal){
         state.wins++;
+        state.leader = 'player';
         showRoundToast("TU GAGNES LE PLI !");
-        showStatus("Tu remportes ce pli.");
+        showStatus("Bravo ! Tu gardes la main.");
+      } else if (ai1 === maxVal) {
+        state.leader = 'ai1';
+        showRoundToast("IA 1 GAGNE.");
+        showStatus("IA 1 prend la main.");
       } else {
-        showRoundToast("PLI PERDU.");
-        showStatus("Pli perdu, surveille ton pari.");
+        state.leader = 'ai2';
+        showRoundToast("IA 2 GAGNE.");
+        showStatus("IA 2 prend la main.");
       }
-
+      
       ui.uiWins.textContent=state.wins;
       state.round++;
 
-      if(playerWin) ui.slotP.classList.add("slot-win");
-      else ui.slotAI.classList.add("slot-win");
-
       setTimeout(()=>{
-        ui.slotP.innerHTML="";
-        ui.slotAI.innerHTML="";
-
-        if(state.round>=3){
-          endGame();
-          return;
-        }
-
-        ui.slotP.classList.remove("slot-win");
-        ui.slotAI.classList.remove("slot-win");
-        state.turn="player";
-        showStatus("A toi de jouer");
-        renderHands();
-      },1400);
+        if(state.round>=3){ endGame(); return; }
+        startRound(); // Lance le tour suivant avec le nouveau leader
+      },2500);
     }
 
     function endGame(){
       const ok=state.wins===state.bet;
-      ui.endTitle.textContent=ok?"PARI REUSSI":"DESTIN PERDU";
+      ui.endTitle.textContent=ok?"PARI RÉUSSI":"PARI PERDU";
       ui.endMsg.textContent=ok
-        ? "Bravo, tu as parfaitement tenu ton pari. Es-tu prêt pour un vrai défi ?"
-        : "Tu n as pas atteint ton pari cette fois. Tu peux retenter ta chance.";
+        ? "Incroyable ! Tu as tenu ton pari face à deux adversaires."
+        : "Dommage... Tes adversaires ont déjoué tes plans.";
       ui.endOverlay.classList.add("active");
-      blockBodyScroll(); // BLOQUE le scroll du body à la fin de la partie
+      blockBodyScroll(); 
     }
 
-    function showStatus(t){
-      ui.statusMsg.textContent=t;
-    }
+    function showStatus(t){ ui.statusMsg.textContent=t; }
 
     function showRoundToast(msg){
       if(!ui.roundToast) return;
       ui.roundToast.textContent=msg;
-      
-      // Nouvelle gestion de l'animation: Reset + Play
       ui.roundToast.classList.remove("show");
       ui.roundToast.style.opacity = '0';
-      void ui.roundToast.offsetWidth; // Force le repaint pour le reset
+      void ui.roundToast.offsetWidth; 
       ui.roundToast.classList.add("show");
     }
 
@@ -895,9 +789,7 @@
       startBtn.addEventListener("click",()=>{
         initGame();
         const section=document.getElementById("mini-jeu-section");
-        if(section && section.scrollIntoView){
-          section.scrollIntoView({behavior:"smooth"});
-        }
+        if(section && section.scrollIntoView){ section.scrollIntoView({behavior:"smooth"}); }
       });
     }
   </script>

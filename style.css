@@ -1,22 +1,24 @@
 /* =======================
-   VARIABLES & AMBIANCE KYRAN
+   1. VARIABLES & AMBIANCE KYRAN
    ======================= */
 :root {
   --gold: #d4af37;       /* Or antique */
   --gold-light: #f3e5ab; /* Or pâle */
   --midnight: #0f172a;   /* Bleu nuit profond */
   --void: #020617;       /* Noir quasi total */
-  --mystic: #4f46e5;     /* Violet/Indigo magique */
+  --mystic: #4f46e5;     /* Violet/Indigo magique (touches subtiles) */
   --text-main: #e2e8f0;  /* Blanc cassé pour lisibilité */
   --text-muted: #94a3b8; /* Gris bleuté */
+  
   --card-bg: rgba(30, 41, 59, 0.7); /* Effet verre fumé */
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   --glow: 0 0 15px rgba(212, 175, 55, 0.3);
+  
   --speed: 0.3s;
 }
 
 /* =======================
-   RESET & BASE
+   2. RESET & BASE
    ======================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -29,7 +31,7 @@ body {
     radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 70px;
+  padding-top: 70px; /* Espace pour le header fixe */
   overflow-x: hidden;
 }
 
@@ -38,11 +40,11 @@ img { max-width: 100%; height: auto; display: block; }
 .accent { color: var(--gold); }
 
 /* =======================
-   HEADER
+   3. HEADER & NAVIGATION
    ======================= */
 header {
   position: fixed; inset: 0 0 auto 0; height: 70px;
-  background: rgba(2, 6, 23, 0.85);
+  background: rgba(2, 6, 23, 0.95); /* Plus opaque pour lisibilité */
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000; display: flex; align-items: center;
@@ -61,7 +63,7 @@ header {
   color: var(--gold); text-shadow: 0 0 8px rgba(212,175,55,0.4); 
 }
 
-/* Burger Menu */
+/* Burger Menu Trigger */
 .nav-toggle {
   display: none; flex-direction: column; gap: 6px;
   background: transparent; border: 1px solid rgba(255,255,255,0.2);
@@ -71,7 +73,7 @@ header {
 .nav-toggle span { width: 24px; height: 2px; background: var(--gold); transition: var(--speed); }
 
 /* =======================
-   BOUTONS
+   4. BOUTONS
    ======================= */
 .btn {
   display: inline-block; padding: 0.8rem 1.8rem;
@@ -89,26 +91,11 @@ header {
 }
 
 /* =======================
-   HERO SECTION
-   ======================= */
-.hero {
-  text-align: center; padding: 100px 0 60px;
-  position: relative; overflow: hidden;
-}
-.hero h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(42px, 8vw, 80px);
-  line-height: 1; margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-.hero p {
-  font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px;
-}
-
-/* =======================
-   UI & CARTES (Glassmorphism)
+   5. UI GENERALE & CARTES
    ======================= */
 section { padding: 60px 0; scroll-margin-top: 80px; }
+
+/* Titres de section */
 .section-title {
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(32px, 5vw, 48px); text-align: center;
@@ -120,11 +107,12 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
 }
 .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
 
+/* Grilles */
 .grid { display: grid; gap: 24px; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Style générique des blocs (Cartes, Règles, Avis) */
+/* Cartes Glassmorphism */
 .card, .feature-card, .quote, .cta-wide {
   background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -141,28 +129,35 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
 .card h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 8px; font-family: "Bebas Neue"; letter-spacing: 1px; }
 .card p { font-size: 0.95rem; color: var(--text-muted); }
 
+/* Hero Section */
+.hero {
+  text-align: center; padding: 100px 0 60px;
+  position: relative; overflow: hidden;
+}
+.hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(42px, 8vw, 80px);
+  line-height: 1; margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+.hero p {
+  font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px;
+}
+
 /* =======================
-   SPÉCIFIQUE : PAGE RÈGLES
+   6. PAGE RÈGLES
    ======================= */
 #regles article { max-width: 840px; margin: auto; text-align: left; }
-
-/* Titres dans les règles */
 #regles h3 {
   font-family: "Bebas Neue", sans-serif; font-size: 1.8rem; letter-spacing: 1px;
   color: var(--gold); border-bottom: 1px solid rgba(212,175,55,0.2);
   padding-bottom: 8px; margin: 40px 0 20px;
 }
-#regles h4 {
-  font-size: 1.2rem; color: #fff; margin: 25px 0 12px; font-weight: 600;
-}
-/* Listes dans les règles */
+#regles h4 { font-size: 1.2rem; color: #fff; margin: 25px 0 12px; font-weight: 600; }
 #regles ul { padding-left: 20px; margin-bottom: 20px; list-style: none; }
 #regles ul li { position: relative; margin-bottom: 10px; padding-left: 15px; color: var(--text-muted); }
-#regles ul li::before {
-  content: "•"; color: var(--gold); font-weight: bold; position: absolute; left: 0;
-}
+#regles ul li::before { content: "•"; color: var(--gold); font-weight: bold; position: absolute; left: 0; }
 
-/* Note importante (ex: Règle du pari) */
 .rule-note {
   background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold);
   padding: 16px; border-radius: 0 8px 8px 0; margin: 20px 0;
@@ -170,12 +165,7 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
 }
 .rule-note strong { color: var(--gold-light); }
 
-/* Emphase sur les noms de cartes */
-em { color: var(--gold-light); font-style: normal; font-weight: 600; }
-strong { color: #fff; }
-
 /* Vidéo Container */
-/* CORRECTION: Ajout de .video pour centrer la vidéo sur regle.html */
 .video-container, .video {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
   border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
@@ -184,7 +174,67 @@ strong { color: #fff; }
 .video-container iframe, .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* =======================
-   FOOTER
+   7. PAGE DOSSIER PRESSE (NOUVEAU)
+   ======================= */
+
+/* Liste Fiche Technique (propre et alignée) */
+.tech-list {
+  list-style: none; padding: 0; margin-top: 15px;
+}
+.tech-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between;
+  font-size: 0.95rem; color: var(--text-muted);
+}
+.tech-list li strong {
+  color: var(--gold); font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.5px; font-weight: 400; font-size: 1.1rem;
+}
+
+/* Liste détaillée des Pouvoirs */
+.power-list {
+  list-style: none; padding: 0;
+}
+.power-list li {
+  margin-bottom: 25px; padding-left: 20px;
+  border-left: 3px solid rgba(212, 175, 55, 0.4);
+}
+.power-list li:last-child { margin-bottom: 0; }
+.power-list strong {
+  display: block; color: var(--gold);
+  font-family: "Bebas Neue", sans-serif; font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.power-list em {
+  font-size: 0.85rem; color: var(--text-muted);
+  font-style: italic; display: block; margin-top: 5px;
+}
+
+/* Timeline Verticale (Genèse) */
+.timeline {
+  list-style: none; padding: 0; margin-top: 25px;
+  position: relative; border-left: 2px solid rgba(255, 255, 255, 0.1);
+  margin-left: 10px;
+}
+.timeline li {
+  position: relative; padding-left: 30px; margin-bottom: 30px;
+  color: var(--text-muted); font-size: 0.95rem;
+}
+.timeline li:last-child { margin-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; left: -6px; top: 5px;
+  width: 10px; height: 10px; background: var(--gold);
+  border-radius: 50%; box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.timeline strong {
+  display: block; color: #fff;
+  font-family: "Bebas Neue", sans-serif; font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+/* =======================
+   8. FOOTER
    ======================= */
 footer {
   background: #020617; border-top: 1px solid rgba(255,255,255,0.05);
@@ -196,55 +246,34 @@ footer a:hover { color: var(--gold); }
 .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.6; }
 
 /* =======================
-   MOBILE
+   9. MOBILE & RESPONSIVE
    ======================= */
 @media (max-width: 900px) {
-  /* Masque le bouton d'action sur mobile */
   header .cta { display: none; }
-  
-  /* Affiche le bouton burger */
   .nav-toggle { display: flex; }
-  
-  /* Masque la navigation principale par défaut */
   .nav nav { display: none; } 
   
-  /* -------------------
-     Ouverture du menu (body.menu-open)
-     ------------------- */
-  
-  /* Masque le logo quand le menu est ouvert */
+  /* Menu Ouvert */
   body.menu-open .logo { display: none; }
   
-  /* Afficher la navigation */
   body.menu-open .nav nav {
-    display: flex; 
-    position: fixed; top: 70px; left: 0; right: 0;
+    display: flex; position: fixed; top: 70px; left: 0; right: 0;
     background: var(--midnight); flex-direction: column;
-    padding: 20px 0; 
-    border-bottom: 1px solid var(--gold);
+    padding: 20px 0; border-bottom: 1px solid var(--gold);
     box-shadow: 0 10px 40px rgba(0,0,0,0.9); z-index: 999;
   }
   
-  /* Style des liens ouverts */
   body.menu-open .nav ul { 
     flex-direction: column; gap: 20px; 
-    text-align: center; width: 100%; 
-    padding: 0 20px;
+    text-align: center; width: 100%; padding: 0 20px;
   }
   
-  /* Animation Burger -> X */
-  /* Cacher la barre du milieu */
-  body.menu-open .nav-toggle span:nth-child(2) {
-    opacity: 0;
-  }
-  /* Rotation de la barre du haut */
-  body.menu-open .nav-toggle span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  /* Rotation de la barre du bas */
-  body.menu-open .nav-toggle span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+  /* Animation Burger */
+  body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   
   .hero h1 { font-size: 3rem; }
+  
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }

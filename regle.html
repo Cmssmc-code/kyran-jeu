@@ -40,7 +40,7 @@
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
     .mobile-cta{display:none}
-    .video iframe {position:absolute; top:0; left:0; width:100%; height:100%;}
+    /* La vidéo est gérée par .video-container dans style.css maintenant */
     @media (max-width:900px){
       header .cta{display:none}
       .mobile-cta{display:list-item}
@@ -109,7 +109,7 @@
         <h2 class="section-title">🎥 Regles en video</h2>
         <p class="section-sub">Comprenez tout en 5 minutes.</p>
 
-        <div class="video">
+        <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/jj0ChLVTpaA"
             title="Regles du jeu KYRAN"
@@ -266,4 +266,5 @@
     })();
   </script>
 </body>
-</html>
+                                                            </html>
+                                                            

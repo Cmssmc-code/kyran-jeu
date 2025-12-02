@@ -4,21 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <title>KYRAN – Mini Jeu</title>
+  <title>KYRAN – Le Jeu (Version beta)</title>
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="style.css" />
-
   <style>
     /* =========================================
-       CSS COMPLET ET CORRIGÉ (JEU + UI)
+       CSS COMPLET (JEU + UI + CORRECTIFS)
        ========================================= */
-    
-    /* Reset local pour éviter les bugs de layout */
     :root {
       --gold: #d4af37;
       --gold-dark: #b8860b;
@@ -34,16 +30,16 @@
       background-color: var(--dark-bg);
       font-family: 'Poppins', sans-serif;
       color: #fff;
+      overflow-x: hidden; /* Évite le scroll horizontal mobile */
     }
 
-    /* HEADER & NAV (Style basique inclus pour que ce soit joli même sans ton style.css) */
-    header { padding: 15px 0; background: rgba(0,0,0,0.5); position: relative; z-index: 100; }
+    /* HEADER */
+    header { padding: 15px 0; background: rgba(0,0,0,0.5); position: relative; z-index: 50; }
     .container { width: 90%; max-width: 1200px; margin: 0 auto; }
     .nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 40px; width: auto; }
     .logo { text-decoration: none; font-family: 'Bebas Neue'; font-size: 1.5rem; color: #fff; letter-spacing: 2px; }
-    
-    /* WRAPPER PRINCIPAL DU JEU */
+
+    /* WRAPPER PRINCIPAL */
     #game-wrapper {
       width: 100%; 
       max-width: 900px; 
@@ -53,12 +49,12 @@
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.8);
       position: relative; 
-      overflow: hidden; /* Coupe tout ce qui dépasse */
+      overflow: hidden; 
       min-height: 650px; 
       display: flex; 
       flex-direction: column; 
       justify-content: space-between;
-      isolation: isolate; /* Crée un nouveau contexte d'empilement (CRUCIAL) */
+      isolation: isolate; 
       user-select: none;
     }
 
@@ -67,7 +63,7 @@
       position: absolute; 
       inset: 0; 
       background: rgba(2,6,23,0.98); 
-      z-index: 9999; /* Toujours tout en haut */
+      z-index: 9999; /* Très haut pour garantir le clic */
       display: none; 
       flex-direction: column; 
       justify-content: center; 
@@ -195,14 +191,19 @@
       text-shadow: 0 2px 5px rgba(0,0,0,0.8); z-index: 2;
     }
     
-    /* Carte Mystique */
+    /* Carte Mystique (37) */
     .card.is-mystic .card-inner { border-color: var(--gold); background: radial-gradient(circle, rgba(212,175,55,0.2), #000); }
     .card.is-mystic .card-val { color: var(--gold); }
 
-    /* Face Cachée (Dos de carte) */
+    /* Face Cachée (Dos de carte - Correction JPG) */
     .card.face-down .card-inner {
-      /* IMPORTANT: Met ici le chemin vers ton image "dos.jpg" */
-      background-image: url('dos.jpg'), repeating-linear-gradient(45deg, #0f172a, #0f172a 5px, #1e293b 5px, #1e293b 10px);
+      /* Fallback CSS pattern si l'image ne charge pas */
+      background-color: #0f172a;
+      background-image: 
+        url('dos.jpg'), /* Essaie de charger l'image */
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 10px),
+        radial-gradient(circle at center, #1e293b, #020617);
+      background-size: cover, auto, auto;
       border: 2px solid rgba(255,255,255,0.1);
     }
 
@@ -265,11 +266,9 @@
 <body>
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">
-        <img src="logo.png" alt="KYRAN" style="max-height:40px;" onerror="this.style.display='none'; this.parentElement.innerHTML='KYRAN'">
-      </a>
+      <a href="#" class="logo">KYRAN</a>
       <nav style="display:flex; gap:20px;">
-        <a href="index.html" style="color:#fff; text-decoration:none; font-size:0.9rem;">Accueil</a>
+        <span style="color:#fff; font-size:0.9rem;">Bêta v1.0</span>
       </nav>
     </div>
   </header>
@@ -278,7 +277,7 @@
     <section style="text-align:center; padding: 20px 0;">
       <div class="container">
         <h1 style="font-family:'Bebas Neue'; font-size:2.5rem; margin:0; line-height:1;">DÉFIE LES <span style="color:var(--gold)">MAÎTRES</span></h1>
-        <p style="color:var(--text-mute); font-size:0.9rem;">Jeu tactique. 3 à 6 joueurs.</p>
+        <p style="color:var(--text-mute); font-size:0.9rem;">Jeu de stratégie. 3 à 6 joueurs.</p>
       </div>
     </section>
 
@@ -298,7 +297,7 @@
           </div>
 
           <div class="player-zone">
-            <div id="status-msg" class="status-bar">Chargement...</div>
+            <div id="status-msg" class="status-bar">En attente...</div>
             <div class="player-stats">
               <span>PARI: <b id="ui-bet">-</b></span>
               <span>PLIS: <b id="ui-tricks">0</b></span>
@@ -331,24 +330,24 @@
           </div>
 
           <div id="ov-bet" class="game-overlay">
-            <div class="ov-title">OBJECTIF</div>
-            <p class="ov-sub" id="bet-msg">Combien de plis vas-tu gagner ?</p>
-            <div id="bet-preview" style="display:flex; justify-content:center; gap:8px; margin-bottom:25px; flex-wrap:wrap;"></div>
+            <div class="ov-title">TON PARI</div>
+            <p class="ov-sub">Combien de plis penses-tu gagner avec cette main ?</p>
+            <div id="bet-preview" style="display:flex; justify-content:center; gap:5px; margin-bottom:20px; min-height:60px;"></div>
             <div class="btn-row" id="bet-btns" style="flex-wrap:wrap; max-width:500px;"></div>
           </div>
 
           <div id="ov-mystic" class="game-overlay">
-            <div class="ov-title">MYSTIQUE !</div>
-            <p class="ov-sub">Cette carte change de valeur.</p>
+            <div class="ov-title">CARTE MYSTIQUE</div>
+            <p class="ov-sub">Tu as joué le 37. Quelle valeur lui donner ?</p>
             <div class="btn-row">
-              <button class="choice-btn" onclick="resolveMystic(0)">0 (Faible)</button>
-              <button class="choice-btn selected" onclick="resolveMystic(37)">37 (Fort)</button>
+              <button class="choice-btn" onclick="resolveMysticChoice(0)">0 (Faible)</button>
+              <button class="choice-btn selected" onclick="resolveMysticChoice(37)">37 (Fort)</button>
             </div>
           </div>
 
           <div id="ov-end" class="game-overlay">
             <div class="ov-title" id="end-title">FIN</div>
-            <p class="ov-sub" id="end-msg" style="font-size:1.4rem; color:#fff; font-weight:bold;"></p>
+            <p class="ov-sub" id="end-msg" style="font-size:1.2rem; color:#fff; font-weight:bold;"></p>
             <div class="btn-row">
               <button class="choice-btn" onclick="showSetup()">MENU</button>
               <button class="action-btn" onclick="initGame()">REJOUER</button>
@@ -367,13 +366,23 @@
 
   <script>
     /* =========================================
-       LOGIQUE JEU (Robuste)
+       LOGIQUE JEU (CORRIGÉE & COMPLÈTE)
        ========================================= */
     
     const CFG = { players: 3, mode: 'normal' };
-    const STATE = { deck: [], players: [], round: 1, maxRounds: 3, turnOrder: [], playedCards: [], userLock: false };
+    const STATE = { 
+        deck: [], 
+        players: [], 
+        round: 1, 
+        maxRounds: 3, 
+        turnOrder: [], 
+        tableCards: [], 
+        userLock: false,
+        startPlayerIndex: 0,
+        pendingMystic: null // Pour stocker l'état du choix du 37
+    };
     
-    // Configure ici les images des bots si tu en as (ex: img: "titan.jpg")
+    // Bots avec images (si vide, on utilise l'emoji + couleur par défaut)
     const BOTS = [
       {name:"Titan", e:"🛡️", img:""}, 
       {name:"Loki", e:"🎭", img:""}, 
@@ -402,27 +411,48 @@
     /* --- INIT GAME --- */
     function initGame() {
       hideAllOverlays();
-      // Deck 1-37
+      // Deck 1 à 37
       STATE.deck = Array.from({length:37}, (_,i)=>i+1).sort(()=>Math.random()-.5);
-      STATE.players = []; STATE.round = 1; STATE.maxRounds = (CFG.mode === 'mystic') ? 1 : 3;
+      STATE.players = []; 
+      STATE.round = 1; 
+      STATE.maxRounds = 3;
+      STATE.startPlayerIndex = Math.floor(Math.random() * CFG.players);
 
-      // Joueur (ID 0)
-      STATE.players.push({id:0, name:"TOI", isAi:false, hand:[], bet:0, tricks:0});
+      // Création Humain (ID 0)
+      STATE.players.push({id:0, name:"TOI", isAi:false, hand:[], bet:0, tricks:0, score:0});
       
-      // Bots
+      // Création Bots
       for(let i=1; i<CFG.players; i++) {
         let b = BOTS[i-1];
-        STATE.players.push({id:i, name:b.name, emoji:b.e, img:b.img, isAi:true, hand:[], bet:0, tricks:0});
+        STATE.players.push({id:i, name:b.name, emoji:b.e, img:b.img, isAi:true, hand:[], bet:0, tricks:0, score:0});
       }
 
+      startRound();
+    }
+
+    function startRound() {
+      // Reset variables de manche
+      STATE.tableCards = [];
+      STATE.deck = Array.from({length:37}, (_,i)=>i+1).sort(()=>Math.random()-.5);
+      STATE.players.forEach(p => { 
+        p.hand = []; 
+        p.tricks = 0; 
+        p.bet = -1; // -1 = pas encore parié
+      });
+      
       // Distribution
-      let count = (CFG.mode === 'mystic') ? 1 : 3;
+      // Manche 1: 5 cartes, Manche 2: 7 cartes, Manche 3: 9 cartes (exemple)
+      let cardsCount = 4 + STATE.round; 
+      
       STATE.players.forEach(p => {
-        for(let k=0; k<count; k++) p.hand.push(STATE.deck.pop());
-        if(!p.isAi && CFG.mode === 'normal') p.hand.sort((a,b)=>a-b);
+        for(let k=0; k<cardsCount; k++) {
+            if(STATE.deck.length > 0) p.hand.push(STATE.deck.pop());
+        }
+        if(!p.isAi) p.hand.sort((a,b)=>a-b);
       });
 
       renderBoard();
+      updateStatus("Fais ton pari !");
       openBetting();
     }
 
@@ -432,27 +462,28 @@
       const slotArea = document.getElementById('slots-area');
       oppArea.innerHTML = ''; slotArea.innerHTML = '';
 
+      // Affichage Bots
       for(let i=1; i<STATE.players.length; i++) {
         let p = STATE.players[i];
-        let bgStyle = p.img ? `background-image:url('${p.img}');` : '';
+        // Fallback image : si vide, on met une couleur sombre
+        let bgStyle = p.img ? `background-image:url('${p.img}');` : 'background: #1e293b;';
         let content = p.img ? '' : p.emoji;
 
-        // Avatar
         oppArea.innerHTML += `
           <div class="opponent" id="opp-${p.id}">
             <div class="avatar" style="${bgStyle}">${content}
-              <div class="opp-badge" id="badge-${p.id}">?</div>
+              <div class="opp-badge" id="badge-${p.id}">${p.bet >= 0 ? p.bet : '?'}</div>
             </div>
             <div class="opp-name">${p.name}</div>
           </div>`;
         
-        // Slot
         slotArea.innerHTML += `
           <div class="slot">
             <div id="slot-${p.id}" style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;"></div>
             <div class="slot-label">${p.name}</div>
           </div>`;
       }
+
       // Slot Joueur
       slotArea.innerHTML += `
         <div class="slot" style="border-color:#d4af37">
@@ -463,7 +494,7 @@
       updateHUD();
     }
 
-    function createCardHTML(val, faceDown, playable, idx) {
+    function createCardHTML(val, faceDown, playable, indexInHand) {
       let div = document.createElement('div');
       div.className = `card ${val===37?'is-mystic':''} ${faceDown?'face-down':'face-up'} ${playable?'playable':''}`;
       
@@ -476,27 +507,5 @@
       }
       div.appendChild(inner);
       
-      if(playable) {
-        div.addEventListener('click', function(e) { 
-          e.stopPropagation(); 
-          playCardHuman(idx, val); 
-        });
-      }
-      return div;
-    }
-
-    function updateHUD() {
-      document.getElementById('ui-round').innerText = `${STATE.round}/${STATE.maxRounds}`;
-      document.getElementById('ui-tricks').innerText = STATE.players[0].tricks;
-      document.getElementById('ui-bet').innerText = STATE.players[0].bet;
-      
-      const hd = document.getElementById('my-hand');
-      hd.innerHTML = '';
-      STATE.players[0].hand.forEach((val, idx) => {
-        let hidden = (CFG.mode === 'mystic');
-        hd.appendChild(createCardHTML(val, hidden, true, idx));
-      });
-    }
-
-    /* --- BETTING --- */
-    function ope
+      if(playable && !faceDown) {
+        div

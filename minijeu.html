@@ -2,28 +2,20 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>KYRAN – Le Jeu Complet</title>
-  <meta name="description" content="Jeu complet KYRAN. Enchaînez 7 manches, survivez à la mort subite et remportez la victoire finale." />
-  <meta name="robots" content="noindex" /> 
+  <title>KYRAN - Jeu complet en ligne</title>
+  <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
-  
-  <link rel="icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-
-    /* Isolation du mini jeu pour ne pas casser style.css */
-
     #game-app * {
-      box-sizing: border-box !important;
+      box-sizing: border-box;
       font-family: inherit;
     }
-
-    /* Empêche style.css d'agir sur .k-card */
     .k-card,
     .k-card * {
       all: unset;
@@ -36,23 +28,24 @@
       --card-height: 114px;
       --card-width-mob: 60px;
       --card-height-mob: 86px;
+      --gold: #d4af37;
     }
 
     #game-app {
-      position: relative;
       width: 100%;
       max-width: 900px;
       margin: 120px auto 40px;
       padding: 20px;
       background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
-      border: 1px solid rgba(212,175,55,0.3);
+      border: 1px solid rgba(212, 175, 55, 0.35);
       border-radius: 20px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      overflow: hidden;
-      min-height: 750px;
+      min-height: 760px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
     }
 
     .game-header {
@@ -60,871 +53,1367 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      margin-bottom: 10px;
-      z-index: 2;
-      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .game-logo {
-      font-family: 'Bebas Neue';
+      font-family: "Bebas Neue", system-ui, sans-serif;
       font-size: 2rem;
       color: var(--gold);
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(212,175,55,0.3);
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
     }
 
     .round-indicator {
-      background: rgba(255,255,255,0.05);
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(15, 23, 42, 0.8);
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e5e7eb;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .lives-container {
-      display: flex;
-      gap: 4px;
-      justify-content: center;
-      margin-top: 5px;
-      height: 20px;
+    .tutorial-pill {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+      z-index: 4100;
     }
-
-    .star {
-      color: #334155;
-      font-size: 1rem;
-      transition: all 0.4s;
+    .tutorial-pill button {
+      border: none;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
     }
-
-    .star.active {
-      color: var(--gold);
-      transform: scale(1.1);
-      text-shadow: 0 0 8px rgba(212,175,55,0.6);
+    .tutorial-pill button.tuto-on {
+      background: rgba(22, 163, 74, 0.18);
+      color: #bbf7d0;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+    }
+    .tutorial-pill button.tuto-off {
+      background: rgba(148, 163, 184, 0.18);
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     .opponents-zone {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
-      padding: 10px 0;
-      min-height: 110px;
+      padding: 10px 0 4px;
+      min-height: 95px;
     }
 
     .opponent {
-      position: relative;
       width: 90px;
       text-align: center;
-      transition: opacity 0.5s;
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      position: relative;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .opponent.eliminated {
+      opacity: 0.35;
     }
 
-    .opponent.active-turn .avatar {
-      border-color: var(--gold);
-      box-shadow: 0 0 20px var(--gold);
-      transform: scale(1.05);
-    }
-
-    .avatar {
+    .opponent .avatar {
       width: 56px;
       height: 56px;
-      background: #1e293b;
-      border-radius: 50%;
-      margin: 0 auto 8px;
-      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      margin: 0 auto 6px;
+      background: radial-gradient(circle at 30% 20%, #1e293b 0%, #020617 80%);
+      border: 2px solid rgba(148, 163, 184, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
       position: relative;
-      overflow: hidden;
+    }
+    .opponent.active-turn .avatar {
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .opp-name {
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+    }
+    .opp-bet-badge {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.7);
+      font-size: 0.7rem;
+      padding: 0 6px;
+      min-width: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9fafb;
     }
 
     .battle-field {
       flex-grow: 1;
-      background: rgba(255,255,255,0.03);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.05);
+      background: radial-gradient(circle at center, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.3) 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      margin: 14px 0;
+      padding: 20px 10px 28px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 15px;
-      margin: 15px 0;
+      gap: 14px;
       position: relative;
-      min-height: 200px;
+      overflow: hidden;
+    }
+    .battle-field::before {
+      content: "KYRAN";
+      position: absolute;
+      font-family: "Bebas Neue", system-ui, sans-serif;
+      font-size: 4.5rem;
+      color: rgba(15, 23, 42, 0.6);
+      letter-spacing: 0.15em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
     }
 
+    .slot-wrapper {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
     .slot {
       width: var(--card-width);
       height: var(--card-height);
-      border: 2px dashed rgba(255,255,255,0.1);
-      border-radius: 8px;
+      border-radius: 10px;
+      border: 2px dashed rgba(148, 163, 184, 0.5);
       display: flex;
-      justify-content: center;
       align-items: center;
-      transition: all 0.3s;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3));
       position: relative;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
-
     .slot.winner-glow {
+      border-style: solid;
       border-color: var(--gold);
-      box-shadow: 0 0 25px rgba(212,175,55,0.7);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.8);
+      transform: translateY(-2px) scale(1.03);
     }
-
     .slot-label {
-      position: absolute;
-      bottom: -25px;
-      width: 120%;
-      left: -10%;
-      text-align: center;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
+      margin-top: 4px;
       font-size: 0.7rem;
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(226, 232, 240, 0.7);
+    }
+    .slot-label.me {
+      color: var(--gold);
     }
 
     .player-zone {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding-top: 12px;
+      color: #e5e7eb;
       text-align: center;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    .my-hand {
+    #player-status {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #94a3b8;
+      min-height: 22px;
+      transition: color 0.15s ease;
+    }
+
+    .my-info-bar {
       display: flex;
       justify-content: center;
-      gap: -10px;
-      padding: 15px 10px;
-      margin-top: 10px;
+      gap: 28px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-size: 0.82rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+    }
+    .stat-value {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .stat-value.gold {
+      color: var(--gold);
+    }
+
+    #my-hand {
+      display: flex;
+      justify-content: center;
+      gap: -12px;
+      padding: 14px 8px 10px;
       min-height: 130px;
       overflow-x: auto;
       position: relative;
+      scroll-behavior: smooth;
     }
 
-    /* Main désactivée + feedback visuel */
+    #my-hand::-webkit-scrollbar {
+      height: 4px;
+    }
+    #my-hand::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.7);
+    }
+    #my-hand::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.8);
+      border-radius: 999px;
+    }
 
-    .my-hand.disabled .k-card {
-      opacity: 0.35 !important;
+    #my-hand.disabled .k-card {
+      opacity: 0.35;
       filter: grayscale(100%);
-      cursor: default !important;
+      cursor: default;
       transform: none !important;
     }
-
-    .my-hand.disabled::after {
-      content: "Patiente...";
+    #my-hand.disabled::after {
+      content: "Patiente, les Mystiques jouent...";
       position: absolute;
-      top: 45%;
+      top: 48%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(0,0,0,0.6);
-      padding: 8px 14px;
-      border-radius: 10px;
-      color: var(--gold);
-      font-family: 'Bebas Neue';
-      font-size: 1.1rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+      pointer-events: none;
     }
 
-    @keyframes handPulse {
-      0% { box-shadow: 0 0 5px rgba(212,175,55,0.3); }
-      50% { box-shadow: 0 0 18px rgba(212,175,55,0.7); }
-      100% { box-shadow: 0 0 5px rgba(212,175,55,0.3); }
+    #my-hand.active {
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
     }
-
-    .my-hand.active {
-      animation: handPulse 1.4s ease-in-out infinite;
-    }
-
-    /* Cartes du mini jeu */
 
     .k-card {
-      width: var(--card-width);
-      height: var(--card-height);
-      background: #0f172a;
-      border-radius: 8px;
-      position: relative;
-      box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
-      cursor: default;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+  width: var(--card-width);
+  height: var(--card-height);
+  background: #020617;
+  border-radius: 10px;
+  box-shadow: -4px 6px 14px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  margin-right: -26px;
+  z-index: 1;            /* AJOUTE CETTE LIGNE */
+}
+
+.k-card:hover {
+  transform: translateY(-4px);
+  box-shadow: -4px 10px 18px rgba(0, 0, 0, 0.8);
+  z-index: 20;           /* AJOUTE CETTE LIGNE */
+}
 
     .k-inner {
       width: 100%;
       height: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       position: relative;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #1e293b;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top, #1e293b, #020617);
     }
-
     .k-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.2s ease;
       z-index: 2;
     }
-
     .k-img.loaded {
       opacity: 1;
     }
-
     .k-fallback {
-      width: 100%;
-      height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
+      inset: 0;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: white;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      justify-content: center;
+      color: #f9fafb;
+      font-size: 2rem;
+      font-family: "Bebas Neue", system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      z-index: 1;
+      background: radial-gradient(circle at 25% 0%, #1e293b, #020617);
     }
 
     .card-played {
-      animation: dropIn 0.4s forwards;
-      width: var(--card-width);
-      height: var(--card-height);
-      z-index: 10;
+      animation: dropIn 0.25s ease-out forwards;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.8);
     }
-
     @keyframes dropIn {
-      0% { transform: scale(1.5) rotate(15deg) translateY(-50px); opacity: 0; }
-      100% { transform: scale(1.1) rotate(0deg) translateY(0); opacity: 1; }
+      0% { transform: translateY(-20px) scale(1.15); opacity: 0; }
+      100% { transform: translateY(0) scale(1.02); opacity: 1; }
     }
 
     .game-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(2, 6, 23, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 5000 !important;
+      background: rgba(2, 6, 23, 0.95);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.2s ease;
+      z-index: 4000;
       padding: 20px;
       text-align: center;
     }
-
     .game-overlay.active {
       opacity: 1;
       pointer-events: auto;
     }
 
-    @media (max-width: 600px) {
+    #setup-overlay { z-index: 4010; }
+    #bet-overlay { z-index: 4020; }
+    #mystic-choice-overlay { z-index: 4030; }
+    #end-overlay { z-index: 4040; }
+    #tutorial-overlay { z-index: 5000; }
+
+    .overlay-title {
+      font-family: "Bebas Neue", system-ui, sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.18em;
+      color: #f9fafb;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .overlay-sub {
+      max-width: 520px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .overlay-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: none;
+      padding: 9px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.7);
+    }
+    .btn:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      box-shadow: none;
+    }
+    .btn-secondary:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #cbd5f5;
+      box-shadow: none;
+    }
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .tuto-highlight {
+      position: relative;
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.9), 0 0 16px rgba(212, 175, 55, 0.9);
+    }
+
+    .buy-cta {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+    .buy-cta strong {
+      color: var(--gold);
+    }
+    .buy-cta button[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
       #game-app {
-        padding: 10px;
-        border-radius: 0;
         margin-top: 100px;
+        padding: 14px 10px 18px;
+        border-radius: 0;
       }
-      .k-card,
-      .slot,
-      .card-played {
+      .game-header {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+      .tutorial-pill {
+        top: 8px;
+        right: 10px;
+        font-size: 0.7rem;
+      }
+      .my-info-bar {
+        gap: 20px;
+      }
+      .slot {
         width: var(--card-width-mob);
         height: var(--card-height-mob);
       }
+      .k-card {
+        width: var(--card-width-mob);
+        height: var(--card-height-mob);
+        margin-right: -20px;
+      }
     }
 
+    @media (max-width: 480px) {
+      .overlay-sub {
+        font-size: 0.9rem;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .overlay-actions {
+        width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="KYRAN">
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul id="menu-principal">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="regle.html">Règles</a></li>
+        <li><a href="minijeu.html" aria-current="page" class="accent">Jeu complet</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <header>
-    <div class="container nav">
-      <a href="index.html" class="logo">
-        <img src="logo.png" alt="KYRAN">
-      </a>
-      <nav aria-label="Navigation">
-        <ul id="menu-principal">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="regle.html">Règles</a></li>
-          <li><a href="minijeu.html" aria-current="page" class="accent">Jeu Complet</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<main>
+  <section style="padding:40px 0;">
+    <div class="container">
+      <div id="game-app">
 
-  <main>
-    <section id="mini-jeu-section" style="padding: 40px 0;">
-      <div class="container">
-        
-        <div id="game-app">
+        <div class="tutorial-pill">
+          Tutoriel
+          <button id="tuto-toggle-btn" class="tuto-on BETA" type="button">ON</button>
+          <button id="tuto-replay-btn" class="tuto-off BETA" type="button">Rejouer</button>
+        </div>
 
-          <div class="game-header">
-            <div class="game-logo">KYRAN</div>
-            <div class="round-indicator" id="round-display">MANCHE 1</div>
-          </div>
+        <div class="game-header">
+          <div class="game-logo">KYRAN</div>
+          <div class="round-indicator" id="round-display">Manche 1</div>
+        </div>
 
-          <div id="opponents-zone" class="opponents-zone"></div>
+        <div id="opponents-zone" class="opponents-zone"></div>
 
-          <div id="battle-field" class="battle-field">
-            <div style="color:rgba(255,255,255,0.03);
-                        font-family:'Bebas Neue';
-                        font-size:5rem;
-                        position:absolute;
-                        pointer-events:none;
-                        z-index:0;">KYRAN</div>
-          </div>
+        <div id="battle-field" class="battle-field"></div>
 
-          <div class="player-zone">
-            <div id="player-status" style="height:20px; color:#94a3b8; font-size:0.9rem; font-weight:600; margin-bottom:5px;">En attente...</div>
-            <div class="lives-container" id="my-lives"></div>
+        <div class="player-zone">
+          <div id="player-status">En attente de la mise en place...</div>
+          <div id="my-lives" class="lives-container"></div>
 
-            <div class="my-info-bar" style="display:flex; justify-content:center; gap:40px; margin-top:10px;">
-              <div class="stat-box">
-                <div class="stat-label">Mon Pari</div>
-                <div class="stat-value gold" id="my-bet-display">-</div>
-              </div>
-
-              <div class="stat-box">
-                <div class="stat-label">Plis Gagnés</div>
-                <div class="stat-value" id="my-tricks-display">0</div>
-              </div>
+          <div class="my-info-bar">
+            <div>
+              <div class="stat-label">Mon pari</div>
+              <div id="my-bet-display" class="stat-value gold">-</div>
             </div>
-
-            <div id="my-hand" class="my-hand"></div>
-          </div>
-
-          <!-- Overlays -->
-          <div id="setup-overlay" class="game-overlay active">
-            <div class="overlay-title">NOUVELLE PARTIE</div>
-            <div class="overlay-sub">
-              Survivez à 7 manches.<br>
-              <span style="color:#ef4444; font-weight:bold;">MORT SUBITE :</span> 0 vie = Élimination immédiate.
-            </div>
-
-            <div style="margin:20px 0; width:100%;">
-              <label style="color:var(--gold); display:block; margin-bottom:15px; font-weight:600;">JOUEURS</label>
-              <div style="display:flex; gap:15px; justify-content:center;">
-                <button class="btn" onclick="setPlayers(3); startGame()">3</button>
-                <button class="btn" onclick="setPlayers(4); startGame()">4</button>
-                <button class="btn" onclick="setPlayers(5); startGame()">5</button>
-                <button class="btn" onclick="setPlayers(6); startGame()">6</button>
-              </div>
+            <div>
+              <div class="stat-label">Plis gagnés</div>
+              <div id="my-tricks-display" class="stat-value">0</div>
             </div>
           </div>
 
-          <div id="bet-overlay" class="game-overlay">
-            <div class="overlay-title">FAITES VOS JEUX</div>
-            <div class="overlay-sub" id="bet-instruction">Pari ?</div>
-            <div id="bet-hand-preview" style="display:flex; gap:5px; justify-content:center; margin-bottom:30px;"></div>
-            <div id="bet-buttons-container" class="bet-grid" style="width:100%; max-width:450px;"></div>
+          <div id="my-hand" class="my-hand"></div>
+        </div>
+
+        <div id="setup-overlay" class="game-overlay active">
+          <div class="overlay-title">Lancer une partie (BETA)</div>
+          <div class="overlay-sub">
+            Choisis ton mode de jeu, puis le nombre de joueurs virtuels.<br>
+            Le mode tutoriel t'explique pas a pas les règles et les choix.
           </div>
 
-          <div id="mystic-choice-overlay" class="game-overlay" style="z-index:6000;">
-            <div class="overlay-title" style="margin-bottom:20px;">CARTE MYSTIQUE</div>
-            <div class="overlay-sub">Choisissez la valeur.</div>
-            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
-              <button class="btn" style="width:100px; height:100px; border-radius:50%;" onclick="resolveMysticChoice(0)">0</button>
-              <button class="btn" style="width:100px; height:100px; border-radius:50%;" onclick="resolveMysticChoice(37)">37</button>
+          <div style="margin-bottom:18px;">
+            <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin-bottom:6px;">
+              Nombre de joueurs
+            </div>
+            <div class="overlay-actions">
+              <button class="btn-secondary btn" type="button" onclick="setPlayers(3)">3 joueurs</button>
+              <button class="btn-secondary btn" type="button" onclick="setPlayers(4)">4 joueurs</button>
+              <button class="btn-secondary btn" type="button" onclick="setPlayers(5)">5 joueurs</button>
+              <button class="btn-secondary btn" type="button" onclick="setPlayers(6)">6 joueurs</button>
             </div>
           </div>
 
-          <div id="end-overlay" class="game-overlay">
-            <div class="overlay-title" id="end-title">FIN DE MANCHE</div>
-            <div id="end-summary" style="margin-bottom:30px; font-size:1.1rem; color:#fff;"></div>
-            <button class="btn" id="next-round-btn" onclick="nextRoundSetup()">SUIVANT</button>
+          <div>
+            <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin-bottom:6px;">
+              Mode de jeu
+            </div>
+            <div class="overlay-actions">
+              <button class="btn" type="button" onclick="startGame(true)">Mode tutoriel</button>
+              <button class="btn btn-secondary" type="button" onclick="startGame(false)">Mode classique</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="bet-overlay" class="game-overlay">
+          <div class="overlay-title">Fais ton pari</div>
+          <div id="bet-instruction" class="overlay-sub">
+            Regarde ta main et choisis combien de plis tu penses gagner sur cette manche.
+          </div>
+          <div id="bet-hand-preview" style="display:flex; gap:6px; justify-content:center; margin-bottom:20px; flex-wrap:wrap;"></div>
+          <div id="bet-buttons-container" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+        </div>
+
+        <div id="mystic-choice-overlay" class="game-overlay">
+          <div class="overlay-title">Carte mystique</div>
+          <div class="overlay-sub">
+            Tu viens de jouer la carte Mystique.<br>
+            Choisis si elle vaut 0 ou 37 pour ce pli.
+          </div>
+          <div class="overlay-actions">
+            <button class="btn" type="button" onclick="resolveMysticChoice(0)">La faire chuter a 0</button>
+            <button class="btn" type="button" onclick="resolveMysticChoice(37)">La faire briller a 37</button>
+          </div>
+        </div>
+
+        <div id="end-overlay" class="game-overlay">
+          <div id="end-title" class="overlay-title">Fin de manche</div>
+          <div id="end-summary" class="overlay-sub"></div>
+
+          <div id="buy-cta" class="buy-cta" style="display:none;">
+            <p>Le jeu t'a plu ?</p>
+            <p><strong>Bientot disponible en version physique.</strong></p>
+            <button class="btn" type="button" disabled>Acheter la version physique</button>
           </div>
 
+          <div class="overlay-actions" style="margin-top:18px;">
+            <button id="next-round-btn" class="btn" type="button">Manche suivante</button>
+            <button class="btn btn-secondary" type="button" onclick="restartGameWithTutorial()">Rejouer avec tutoriel</button>
+          </div>
+        </div>
+
+        <div id="tutorial-overlay" class="game-overlay">
+          <div id="tutorial-title" class="overlay-title">Tutoriel</div>
+          <div id="tutorial-text" class="overlay-sub"></div>
+          <div class="overlay-actions">
+            <button class="btn" type="button" onclick="closeTutorialStep()">Continuer</button>
+            <button class="btn btn-secondary" type="button" onclick="disableTutorialFromOverlay()">Desactiver le tutoriel</button>
+            <button class="btn btn-ghost" type="button" onclick="restartTutorial()">Rejouer le tutoriel</button>
+          </div>
         </div>
 
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
 <script>
-
-  const ROUNDS_CONFIG = [7,6,5,4,3,2,1];
+  const ROUNDS = [7, 6, 5, 4, 3, 2, 1];
 
   const GAME = {
     playersCount: 4,
     roundIndex: 0,
     deck: [],
     players: [],
-    turnOrder: [],
-    currentTrickCards: [],
-    nextTrickLeader: 0,
-    tempMysticData: null,
+    trickCards: [],
+    nextLeader: 0,
     isMysticRound: false,
+    tempMysticData: null,
     currentTurn: null
   };
 
-  const AI_PERSONAS = [
-    { name: "Oraculus", emoji: "🔮", style: "balanced" },
-    { name: "Titan", emoji: "🛡️", style: "aggressive" },
-    { name: "Viper", emoji: "🐍", style: "tricky" },
-    { name: "Loki", emoji: "🎭", style: "chaotic" },
-    { name: "Gaia", emoji: "🌿", style: "passive" }
+  const AI_PROFILES = [
+    { name: "Oraculus", emoji: "🔮" },
+    { name: "Titan", emoji: "🛡️" },
+    { name: "Viper", emoji: "🐍" },
+    { name: "Loki", emoji: "🎭" },
+    { name: "Gaia", emoji: "🌿" }
   ];
+
+  let tutorialEnabled = true;
+  let tutorialVisited = new Set();
+  let currentHighlightSelectors = [];
+
+  const TUTORIAL_CONTENT = {
+    intro: {
+      title: "Bienvenue dans KYRAN",
+      text: "Ton objectif est simple : survivre a 7 manches. A chaque manche, tu prevois combien de plis tu vas gagner. Si ton pari tombe juste, tu gardes tes vies. Sinon, tu en perds.",
+      highlight: ["#game-app"]
+    },
+    bet: {
+      title: "Parier tes plis",
+      text: "Voici ta main et les boutons de pari. Plus tes cartes sont fortes, plus tu peux viser haut. Mais si tu surestimes tes forces, tu perdras des vies.",
+      highlight: ["#bet-hand-preview", "#bet-buttons-container"]
+    },
+    play: {
+      title: "Jouer une carte",
+      text: "Clique sur une carte de ta main pour la jouer. La carte Mystique (M) peut valoir 0 ou 37, ce qui te permet de sauver ou d'achever un pli.",
+      highlight: ["#my-hand"]
+    },
+    trick: {
+      title: "Comprendre un pli",
+      text: "La carte la plus forte remporte le pli. Suis qui gagne pour savoir si ton pari est bien parti ou non.",
+      highlight: ["#battle-field"]
+    },
+    roundEnd: {
+      title: "Fin de manche",
+      text: "On compare ton pari au nombre de plis que tu as vraiment gagnes. Chaque ecart te retire autant de vies. Survis manche apres manche.",
+      highlight: ["#end-summary"]
+    },
+    mystic: {
+      title: "Manche mystique",
+      text: "Derniere manche : une seule carte en main. Tout se joue sur un pli final. Observe comment les vies evoluent.",
+      highlight: ["#round-display"]
+    },
+    gameEnd: {
+      title: "Fin de la partie",
+      text: "Tu connais maintenant la logique du jeu. Si KYRAN t'a plu en ligne, pense a surveiller la sortie de la version physique.",
+      highlight: ["#buy-cta", "#end-summary"]
+    }
+  };
 
   function setPlayers(n) {
     GAME.playersCount = n;
   }
 
-  // Shuffle amélioré (Fisher-Yates + double mélange)
+  function shuffleDeck(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
   function createDeck() {
     const d = [];
-    for (let i=1; i<=36; i++) d.push(i);
+    for (let i = 1; i <= 36; i++) d.push(i);
     d.push(37);
-
-    for (let i=d.length-1; i>0; i--) {
-      const j = Math.floor(Math.random() * (i+1));
-      [d[i], d[j]] = [d[j], d[i]];
-    }
-
-    for (let k=0; k<2; k++) {
-      for (let i=d.length-1; i>0; i--) {
-        const j = Math.floor(Math.random() * (i+1));
-        [d[i], d[j]] = [d[j], d[i]];
-      }
-    }
+    shuffleDeck(d);
+    shuffleDeck(d);
     return d;
   }
 
-  // Création des cartes .k-card
-
-  function createCardElement(val, isBack) {
-    const el = document.createElement('div');
-    el.className = 'k-card';
-
-    const inner = document.createElement('div');
-    inner.className = 'k-inner';
-
-    const img = document.createElement('img');
-    img.className = 'k-img';
-
-    const fallback = document.createElement('div');
-    fallback.className = 'k-fallback';
+  function createCardElement(value, isBack) {
+    const card = document.createElement("div");
+    card.className = "k-card";
+    const inner = document.createElement("div");
+    inner.className = "k-inner";
+    const img = document.createElement("img");
+    img.className = "k-img";
+    const fallback = document.createElement("div");
+    fallback.className = "k-fallback";
 
     if (isBack) {
-      fallback.innerHTML = '<img src="logo.png" style="width:60%; opacity:0.8;">';
-      img.src = 'back.jpg';
+      fallback.innerHTML = '<img src="logo.png" alt="Dos de carte" style="width:60%; opacity:0.9;">';
+      img.src = "back.jpg";
     } else {
-      fallback.innerHTML = `
-        <div style="font-size:2rem; font-family:'Bebas Neue';">${val === 37 ? 'M' : val}</div>
-      `;
-      img.src = `card-${val}.jpg`;
+      fallback.textContent = value === 37 ? "M" : String(value);
+      img.src = "card-" + value + ".jpg";
     }
 
-    img.onload = () => img.classList.add('loaded');
+    img.onload = () => img.classList.add("loaded");
     img.onerror = () => {};
 
     inner.appendChild(fallback);
     inner.appendChild(img);
-    el.appendChild(inner);
-
-    return el;
+    card.appendChild(inner);
+    return card;
   }
 
-  function startGame() {
-    document.querySelectorAll('.game-overlay').forEach(o => o.classList.remove('active'));
+  function startGame(withTutorial) {
+    tutorialEnabled = withTutorial;
+    tutorialVisited.clear();
+    clearTutorialHighlight();
+    updateTutorialPill();
+
+    document.querySelectorAll(".game-overlay").forEach(o => o.classList.remove("active"));
+    document.getElementById("setup-overlay").classList.remove("active");
+
     GAME.roundIndex = 0;
     GAME.players = [];
-    GAME.nextTrickLeader = 0;
+    GAME.nextLeader = 0;
 
-    GAME.players.push({ id:0, name:'TOI', type:'human', lives:5, hand:[], tricks:0, bet:0, alive:true });
+    GAME.players.push({
+      id: 0,
+      name: "Toi",
+      emoji: null,
+      lives: 5,
+      hand: [],
+      tricks: 0,
+      bet: 0,
+      isAI: false,
+      alive: true
+    });
 
-    let personas = [...AI_PERSONAS].sort(() => Math.random() - .5);
-    for (let i=1; i<GAME.playersCount; i++) {
-      let p = personas[i-1];
-      GAME.players.push({ id:i, name:p.name, emoji:p.emoji, persona:p, type:'ai', lives:5, hand:[], tricks:0, bet:0, alive:true });
+    let pool = [...AI_PROFILES];
+    shuffleDeck(pool);
+    for (let i = 1; i < GAME.playersCount; i++) {
+      const p = pool[i - 1];
+      GAME.players.push({
+        id: i,
+        name: p.name,
+        emoji: p.emoji,
+        lives: 5,
+        hand: [],
+        tricks: 0,
+        bet: 0,
+        isAI: true,
+        alive: true
+      });
+    }
+
+    if (tutorialEnabled) {
+      triggerTutorial("intro");
     }
 
     startRound();
   }
 
-  function startRound() {
-    let nb = ROUNDS_CONFIG[GAME.roundIndex];
-    GAME.isMysticRound = (GAME.roundIndex === ROUNDS_CONFIG.length - 1);
+  function restartGameWithTutorial() {
+    location.reload();
+  }
 
+  function startRound() {
+    const cardsThisRound = ROUNDS[GAME.roundIndex];
+    GAME.isMysticRound = GAME.roundIndex === ROUNDS.length - 1;
     GAME.deck = createDeck();
 
     GAME.players.forEach(p => {
       p.hand = [];
       p.tricks = 0;
       p.bet = 0;
-      if (p.alive) {
-        for (let i=0; i<nb; i++) p.hand.push(GAME.deck.pop());
-        if (p.id===0 && !GAME.isMysticRound) p.hand.sort((a,b)=>a-b);
+      if (!p.alive) return;
+      for (let i = 0; i < cardsThisRound; i++) {
+        p.hand.push(GAME.deck.pop());
+      }
+      if (p.id === 0 && !GAME.isMysticRound) {
+        p.hand.sort((a, b) => a - b);
       }
     });
 
-    document.getElementById('round-display').innerText =
-      GAME.isMysticRound
-      ? 'MYSTIQUE'
-      : `MANCHE ${GAME.roundIndex+1}`;
+    document.getElementById("round-display").textContent =
+      GAME.isMysticRound ? "Manche mystique" : "Manche " + (GAME.roundIndex + 1);
 
-    document.getElementById('my-tricks-display').innerText = '0';
-    document.getElementById('my-bet-display').innerText = '-';
+    document.getElementById("my-tricks-display").textContent = "0";
+    document.getElementById("my-bet-display").textContent = "-";
 
-    renderTableSetup();
-    startBettingPhase();
+    renderTable();
+    startBetting();
+
+    if (GAME.isMysticRound && tutorialEnabled) {
+      triggerTutorial("mystic");
+    }
   }
 
-  function renderTableSetup() {
-    const opp = document.getElementById('opponents-zone');
-    opp.innerHTML = '';
+  function renderTable() {
+    const oppZone = document.getElementById("opponents-zone");
+    const battle = document.getElementById("battle-field");
+    oppZone.innerHTML = "";
+    battle.innerHTML = "";
 
-    const bf = document.getElementById('battle-field');
-    bf.innerHTML = `
-      <div style="color:rgba(255,255,255,0.03);
-                  font-family:'Bebas Neue';
-                  font-size:5rem;
-                  position:absolute;
-                  pointer-events:none;">KYRAN</div>`;
+    const centerLabel = document.createElement("div");
+    centerLabel.style.position = "absolute";
+    centerLabel.style.inset = "0";
+    centerLabel.style.pointerEvents = "none";
+    battle.appendChild(centerLabel);
 
     renderLives(0);
 
-    for (let i=1; i<GAME.players.length; i++) {
-      let p = GAME.players[i];
-      let div = document.createElement('div');
-      div.className = p.alive ? 'opponent' : 'opponent eliminated';
-      div.style.opacity = p.alive ? 1 : 0.3;
-      div.id = 'opp-'+p.id;
+    for (let i = 1; i < GAME.players.length; i++) {
+      const p = GAME.players[i];
+      const opp = document.createElement("div");
+      opp.className = "opponent" + (p.alive ? "" : " eliminated");
+      opp.id = "opp-" + p.id;
 
-      div.innerHTML = `
-        <div class="chat-bubble" id="bubble-${p.id}"></div>
-        <div class="avatar">${p.emoji}<div class="opp-bet-badge" id="badge-${p.id}">?</div></div>
+      opp.innerHTML = `
+        <div class="avatar">
+          ${p.emoji || ""}
+          <div class="opp-bet-badge" id="badge-${p.id}">?</div>
+        </div>
         <div class="opp-name">${p.name}</div>
         <div class="lives-container" id="lives-${p.id}"></div>
       `;
-      opp.appendChild(div);
+      oppZone.appendChild(opp);
       renderLives(p.id);
 
-      let wrapper = document.createElement('div');
-      wrapper.innerHTML = `
+      const wrap = document.createElement("div");
+      wrap.className = "slot-wrapper";
+      wrap.innerHTML = `
         <div class="slot" id="slot-${p.id}"></div>
         <div class="slot-label">${p.name}</div>
       `;
-      bf.appendChild(wrapper);
+      battle.appendChild(wrap);
     }
 
-    let my = document.createElement('div');
-    my.innerHTML = `
+    const wrapMe = document.createElement("div");
+    wrapMe.className = "slot-wrapper";
+    wrapMe.innerHTML = `
       <div class="slot" id="slot-0"></div>
-      <div class="slot-label" style="color:var(--gold)">TOI</div>
+      <div class="slot-label me">Toi</div>
     `;
-    bf.appendChild(my);
+    battle.appendChild(wrapMe);
   }
 
-  function renderLives(id) {
-    let p = GAME.players[id];
-    let target = id===0 ? document.getElementById('my-lives') : document.getElementById('lives-'+id);
-    let out = '';
-    for (let i=0; i<5; i++) out += `<span class="star ${i<p.lives?'active':''}">★</span>`;
-    target.innerHTML = out;
+  function renderLives(pid) {
+    const p = GAME.players[pid];
+    const target = pid === 0 ? document.getElementById("my-lives") : document.getElementById("lives-" + pid);
+    if (!target) return;
+    let html = "";
+    for (let i = 0; i < 5; i++) {
+      html += '<span class="star ' + (i < p.lives ? "active" : "") + '">★</span>';
+    }
+    target.innerHTML = html;
   }
-
-  /* Gestion main activée / désactivée */
 
   function disablePlayerHand() {
-    document.getElementById('my-hand').classList.add('disabled');
+    document.getElementById("my-hand").classList.add("disabled");
   }
 
   function enablePlayerHand() {
-    document.getElementById('my-hand').classList.remove('disabled');
+    document.getElementById("my-hand").classList.remove("disabled");
   }
 
-  /* Phase de paris */
+  function estimateCardScore(value) {
+    if (value === 37) return 8;
+    if (value >= 30) return 3.5;
+    if (value >= 24) return 2.8;
+    if (value >= 18) return 2.1;
+    if (value >= 12) return 1.5;
+    if (value >= 6) return 1.0;
+    return 0.5;
+  }
 
-  function startBettingPhase() {
-    const overlay = document.getElementById('bet-overlay');
-    const cont = document.getElementById('bet-buttons-container');
-    const prev = document.getElementById('bet-hand-preview');
-    cont.innerHTML = '';
-    prev.innerHTML = '';
+  function estimateBet(hand) {
+    const n = hand.length;
+    if (n === 0) return 0;
+    let score = 0;
+    hand.forEach(v => {
+      score += estimateCardScore(v);
+    });
+    let expectedTricks = score / 3.8;
+    let noise = (Math.random() - 0.5) * 0.6;
+    let bet = Math.round(expectedTricks + noise);
+    if (bet < 0) bet = 0;
+    if (bet > n) bet = n;
+    return bet;
+  }
 
-    let nb = ROUNDS_CONFIG[GAME.roundIndex];
+  function startBetting() {
+    const betOverlay = document.getElementById("bet-overlay");
+    const betPreview = document.getElementById("bet-hand-preview");
+    const betButtons = document.getElementById("bet-buttons-container");
+    betPreview.innerHTML = "";
+    betButtons.innerHTML = "";
+
+    const cardsThisRound = ROUNDS[GAME.roundIndex];
 
     if (GAME.isMysticRound) {
       GAME.players.forEach(p => {
-        if (p.id!==0 && p.alive) {
-          let card = createCardElement(p.hand[0], false);
-          prev.appendChild(card);
+        if (p.id !== 0 && p.alive && p.hand[0] != null) {
+          betPreview.appendChild(createCardElement(p.hand[0], false));
         }
       });
-      let my = createCardElement(0, true);
-      prev.appendChild(my);
+      const myBack = createCardElement(0, true);
+      betPreview.appendChild(myBack);
     } else {
       GAME.players[0].hand.forEach(v => {
-        let c = createCardElement(v, false);
-        prev.appendChild(c);
+        betPreview.appendChild(createCardElement(v, false));
       });
     }
 
-    for (let i=0; i<=nb; i++) {
-      let btn = document.createElement('button');
-      btn.className = 'btn';
-      btn.textContent = i;
-      btn.onclick = () => confirmBet(i);
-      cont.appendChild(btn);
+    for (let i = 0; i <= cardsThisRound; i++) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "btn btn-secondary";
+      b.textContent = i;
+      b.onclick = () => confirmBet(i);
+      betButtons.appendChild(b);
     }
 
     GAME.players.forEach(p => {
-      if (p.type==='ai' && p.alive) {
-        let strength = evaluateHand(p.hand, nb);
-        let variance = (Math.random() * 0.4) - 0.2;
-        let target = Math.round((strength + variance) * nb);
-        p.bet = Math.max(0, Math.min(target, nb));
-        document.getElementById('badge-'+p.id).innerText = p.bet;
-      }
+      if (!p.isAI || !p.alive) return;
+      p.bet = estimateBet(p.hand);
+      const badge = document.getElementById("badge-" + p.id);
+      if (badge) badge.textContent = p.bet;
     });
 
-    overlay.classList.add('active');
+    betOverlay.classList.add("active");
+
+    if (tutorialEnabled && GAME.roundIndex === 0) {
+      triggerTutorial("bet");
+    }
   }
 
-  function evaluateHand(hand, total) {
-    let pts = 0;
-    hand.forEach(c => {
-      if (c===37) pts+=10;
-      else if (c>30) pts+=4;
-      else if (c>20) pts+=2;
-      else if (c<5) pts+=0.5;
-    });
-    return Math.min(pts / (total*3.5), 1);
-  }
-
-  function confirmBet(v) {
-    GAME.players[0].bet = v;
-    document.getElementById('my-bet-display').innerText = v;
-    document.getElementById('bet-overlay').classList.remove('active');
+  function confirmBet(value) {
+    GAME.players[0].bet = value;
+    document.getElementById("my-bet-display").textContent = String(value);
+    document.getElementById("bet-overlay").classList.remove("active");
     startTrick();
   }
 
-  /* Tour par tour */
+  function updateHandUI() {
+    const hand = document.getElementById("my-hand");
+    hand.innerHTML = "";
+    GAME.players[0].hand.forEach((v, idx) => {
+      const card = createCardElement(v, GAME.isMysticRound);
+      card.onclick = () => onHumanCardClick(idx, v);
+      hand.appendChild(card);
+    });
+  }
 
   function startTrick() {
-    GAME.currentTrickCards = [];
-    document.querySelectorAll('.slot').forEach(s => {
-      s.innerHTML = '';
-      s.classList.remove('winner-glow');
-    });
-
-    GAME.turnOrder = [];
-    let start = GAME.nextTrickLeader;
-    let count = 0;
-    while ((!GAME.players[start] || !GAME.players[start].alive) && count<10) {
-      start = (start+1) % GAME.playersCount;
-      count++;
-    }
-    GAME.nextTrickLeader = start;
-
-    for (let i=0; i<GAME.playersCount; i++) {
-      let pid = (start+i) % GAME.playersCount;
-      if (GAME.players[pid].alive) GAME.turnOrder.push(pid);
-    }
-
+    GAME.trickCards = [];
+    clearSlots();
+    computeTurnOrder();
     updateHandUI();
     nextTurn();
   }
 
-  function updateHandUI() {
-    const h = document.getElementById('my-hand');
-    h.innerHTML = '';
-    GAME.players[0].hand.forEach((v,i) => {
-      let c = createCardElement(v, GAME.isMysticRound);
-      c.classList.add('playable');
-      c.onclick = () => humanPlayCard(i, v);
-      h.appendChild(c);
+  function clearSlots() {
+    document.querySelectorAll(".slot").forEach(s => {
+      s.innerHTML = "";
+      s.classList.remove("winner-glow");
     });
   }
 
+  function computeTurnOrder() {
+    const order = [];
+    let start = GAME.nextLeader;
+    let attempts = 0;
+
+    while ((!GAME.players[start] || !GAME.players[start].alive) && attempts < 10) {
+      start = (start + 1) % GAME.playersCount;
+      attempts++;
+    }
+    GAME.nextLeader = start;
+
+    for (let i = 0; i < GAME.playersCount; i++) {
+      const pid = (start + i) % GAME.playersCount;
+      const p = GAME.players[pid];
+      if (p && p.alive) order.push(pid);
+    }
+
+    GAME.turnOrder = order;
+  }
+
   async function nextTurn() {
-    if (GAME.turnOrder.length===0) {
+    if (!GAME.turnOrder || GAME.turnOrder.length === 0) {
       return resolveTrick();
     }
 
-    let pid = GAME.turnOrder.shift();
+    const pid = GAME.turnOrder.shift();
     GAME.currentTurn = pid;
 
-    document.querySelectorAll('.opponent').forEach(o => o.classList.remove('active-turn'));
-    if (pid!==0) {
-      document.getElementById('opp-'+pid).classList.add('active-turn');
+    document.querySelectorAll(".opponent").forEach(o => o.classList.remove("active-turn"));
+    if (pid !== 0) {
+      const opp = document.getElementById("opp-" + pid);
+      if (opp) opp.classList.add("active-turn");
     }
 
-    if (pid===0) {
+    if (pid === 0) {
       enablePlayerHand();
-      document.getElementById('my-hand').classList.add('active');
-      document.getElementById('player-status').innerText = "C'EST A VOUS";
-      document.getElementById('player-status').style.color = "var(--gold)";
+      document.getElementById("my-hand").classList.add("active");
+      document.getElementById("player-status").textContent = "A toi de jouer";
+
+      if (tutorialEnabled && GAME.roundIndex === 0) {
+        triggerTutorial("play");
+      }
     } else {
       disablePlayerHand();
-      document.getElementById('my-hand').classList.remove('active');
-      document.getElementById('player-status').innerText = GAME.players[pid].name + " joue...";
-      document.getElementById('player-status').style.color = "#94a3b8";
-      await new Promise(r => setTimeout(r, 600 + Math.random()*500));
+      document.getElementById("my-hand").classList.remove("active");
+      document.getElementById("player-status").textContent = GAME.players[pid].name + " joue...";
+      await new Promise(r => setTimeout(r, 450 + Math.random() * 600));
       aiPlayCard(pid);
     }
   }
 
-  function humanPlayCard(idx, v) {
+  function onHumanCardClick(index, value) {
     if (GAME.currentTurn !== 0) return;
-    if (v===37 && !GAME.isMysticRound) {
-      GAME.tempMysticData = { idx:idx, val:v };
-      document.getElementById('mystic-choice-overlay').classList.add('active');
+    if (value === 37 && !GAME.isMysticRound) {
+      GAME.tempMysticData = { index, value };
+      document.getElementById("mystic-choice-overlay").classList.add("active");
       return;
     }
-    playCardFinal(0, idx, v, v);
+    playCard(0, index, value, value);
   }
 
-  function resolveMysticChoice(v) {
-    document.getElementById('mystic-choice-overlay').classList.remove('active');
-    if (GAME.tempMysticData) {
-      playCardFinal(0, GAME.tempMysticData.idx, v, GAME.tempMysticData.val);
-      GAME.tempMysticData = null;
-    }
+  function resolveMysticChoice(effValue) {
+    document.getElementById("mystic-choice-overlay").classList.remove("active");
+    if (!GAME.tempMysticData) return;
+    const { index, value } = GAME.tempMysticData;
+    GAME.tempMysticData = null;
+    playCard(0, index, effValue, value);
   }
 
   function aiPlayCard(pid) {
-    let p = GAME.players[pid];
-    let want = p.bet > p.tricks;
-    p.hand.sort((a,b)=>a-b);
-    let card, idx;
+    const p = GAME.players[pid];
+    const wantWin = p.tricks < p.bet;
+    const hand = p.hand.slice().sort((a, b) => a - b);
 
-    if (GAME.currentTrickCards.length===0) {
-      if (want) { card = p.hand[p.hand.length-1]; idx = p.hand.length-1; }
-      else { card = p.hand[0]; idx = 0; }
-    } else {
-      let max = Math.max(...GAME.currentTrickCards.map(c => c.effVal));
-      if (want) {
-        let win = p.hand.find(c => ((c===37?37:c) > max));
-        if (win!==undefined) { card=win; idx=p.hand.indexOf(win); }
-        else { card=p.hand[0]; idx=0; }
+    let currentMax = null;
+    if (GAME.trickCards.length > 0) {
+      currentMax = Math.max(...GAME.trickCards.map(c => c.effValue));
+    }
+
+    let chosen = null;
+    let chosenIndex = -1;
+
+    function effectiveValue(card) {
+      if (card === 37) {
+        return wantWin ? 37 : 0;
+      }
+      return card;
+    }
+
+    if (currentMax == null) {
+      if (wantWin) {
+        chosen = hand[hand.length - 1];
       } else {
-        let lose = p.hand.filter(c => ((c===37?0:c) < max)).pop();
-        if (lose!==undefined) { card=lose; idx=p.hand.indexOf(lose); }
-        else { card=p.hand[p.hand.length-1]; idx=p.hand.length-1; }
+        chosen = hand[0];
+      }
+    } else {
+      if (wantWin) {
+        const candidates = hand.filter(c => effectiveValue(c) > currentMax);
+        if (candidates.length > 0) {
+          chosen = candidates[0];
+        } else {
+          chosen = hand[0];
+        }
+      } else {
+        const losing = hand.filter(c => effectiveValue(c) < currentMax);
+        if (losing.length > 0) {
+          chosen = losing[losing.length - 1];
+        } else {
+          chosen = hand[hand.length - 1];
+        }
       }
     }
 
-    let eff = card;
-    if (card===37) eff = want ? 37 : 0;
+    chosenIndex = p.hand.indexOf(chosen);
+    if (chosenIndex < 0) chosenIndex = 0;
 
-    playCardFinal(pid, idx, eff, card);
+    const eff = effectiveValue(chosen);
+    playCard(pid, chosenIndex, eff, chosen);
   }
 
-  function playCardFinal(pid, idx, effVal, displayVal) {
-    GAME.players[pid].hand.splice(idx,1);
+  function playCard(pid, handIndex, effValue, displayValue) {
+    const p = GAME.players[pid];
+    p.hand.splice(handIndex, 1);
 
-    if (pid===0) {
+    if (pid === 0) {
       updateHandUI();
-      const bf = document.getElementById('battle-field');
-      if (bf) bf.scrollIntoView({ behavior:"smooth", block:"center" });
     }
 
-    let s = document.getElementById('slot-'+pid);
-    s.innerHTML = '';
-    let c = createCardElement(displayVal, false);
-    c.classList.add('card-played');
-    s.appendChild(c);
+    const slot = document.getElementById("slot-" + pid);
+    if (slot) {
+      slot.innerHTML = "";
+      const c = createCardElement(displayValue, false);
+      c.classList.add("card-played");
+      slot.appendChild(c);
+    }
 
-    GAME.currentTrickCards.push({ pid:pid, effVal:effVal, displayVal:displayVal });
+    GAME.trickCards.push({ pid, effValue, displayValue });
     nextTurn();
   }
 
   async function resolveTrick() {
-    await new Promise(r => setTimeout(r, 800));
-
-    let w = GAME.currentTrickCards.reduce((p,c)=> c.effVal>p.effVal?c:p);
-    let wid = w.pid;
-
-    document.getElementById('slot-'+wid).classList.add('winner-glow');
-    GAME.players[wid].tricks++;
-    GAME.nextTrickLeader = wid;
-
-    document.getElementById('player-status').innerText =
-      wid===0 ? "VOUS REMPORTEZ LE PLI !" : GAME.players[wid].name + " remporte le pli";
-    document.getElementById('player-status').style.color =
-      wid===0 ? "#4ade80" : "#fff";
-
-    if (wid===0) {
-      document.getElementById('my-tricks-display').innerText = GAME.players[0].tricks;
+    if (GAME.trickCards.length === 0) {
+      startTrick();
+      return;
     }
 
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 500));
 
-    if (GAME.players[0].hand.length===0) endRoundSummary();
-    else startTrick();
+    let winner = GAME.trickCards[0];
+    for (let i = 1; i < GAME.trickCards.length; i++) {
+      if (GAME.trickCards[i].effValue > winner.effValue) {
+        winner = GAME.trickCards[i];
+      }
+    }
+
+    const wid = winner.pid;
+    const wp = GAME.players[wid];
+    wp.tricks++;
+    GAME.nextLeader = wid;
+
+    const slot = document.getElementById("slot-" + wid);
+    if (slot) slot.classList.add("winner-glow");
+
+    if (wid === 0) {
+      document.getElementById("my-tricks-display").textContent = String(wp.tricks);
+      document.getElementById("player-status").textContent = "Tu remportes le pli";
+      document.getElementById("player-status").style.color = "#4ade80";
+    } else {
+      document.getElementById("player-status").textContent = wp.name + " remporte le pli";
+      document.getElementById("player-status").style.color = "#e5e7eb";
+    }
+
+    if (tutorialEnabled && GAME.roundIndex === 0) {
+      triggerTutorial("trick");
+    }
+
+    await new Promise(r => setTimeout(r, 1000));
+
+    if (GAME.players[0].hand.length === 0) {
+      endRound();
+    } else {
+      startTrick();
+    }
   }
 
-  function endRoundSummary() {
-    let s = "<ul style='list-style:none; padding:0;'>";
-    let sudden = false;
+  function endRound() {
+    let summary = "<ul style='list-style:none; padding:0; margin:0;'>";
+    let suddenDeath = false;
 
     GAME.players.forEach(p => {
       if (!p.alive) return;
-      let diff = Math.abs(p.bet - p.tricks);
+      const diff = Math.abs(p.bet - p.tricks);
       p.lives -= diff;
-      if (p.lives<=0) { p.lives=0; p.alive=false; sudden=true; }
+      if (p.lives <= 0) {
+        p.lives = 0;
+        p.alive = false;
+        suddenDeath = true;
+      }
       renderLives(p.id);
 
-      let c = diff===0 ? "#4ade80" : "#ef4444";
-      let r = diff===0 ? "PARFAIT" : "-"+diff;
-      s += `
-        <li style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:5px;">
-          <span>${p.name} (${p.bet}/${p.tricks})</span>
-          <strong style="color:${c}">${r}</strong>
-        </li>`;
+      const color = diff === 0 ? "#4ade80" : "#f97373";
+      const label = diff === 0 ? "Pari reussi" : "-" + diff + " vie(s)";
+      summary += `
+        <li style="display:flex; justify-content:space-between; margin-bottom:6px; color:#e5e7eb; font-size:0.9rem;">
+          <span>${p.name} : ${p.tricks}/${p.bet}</span>
+          <span style="color:${color}; font-weight:600;">${label}</span>
+        </li>
+      `;
     });
 
-    s += "</ul>";
-    document.getElementById('end-summary').innerHTML = s;
+    summary += "</ul>";
+    document.getElementById("end-summary").innerHTML = summary;
 
-    let btn = document.getElementById('next-round-btn');
-    let title = document.getElementById('end-title');
+    const endOverlay = document.getElementById("end-overlay");
+    const buyCta = document.getElementById("buy-cta");
+    const nextBtn = document.getElementById("next-round-btn");
+    const endTitle = document.getElementById("end-title");
 
-    if (sudden || GAME.roundIndex >= ROUNDS_CONFIG.length-1) {
-      let max = Math.max(...GAME.players.map(p=>p.lives));
-      let winners = GAME.players.filter(p=>p.lives===max);
-      let uwin = winners.some(w=>w.id===0);
+    const isLastRound = GAME.roundIndex >= ROUNDS.length - 1;
+    const stillAlive = GAME.players.filter(p => p.alive);
 
-      if (uwin) {
-        title.innerText = "VICTOIRE";
-        document.getElementById('end-summary').innerHTML +=
-          "<div style='margin-top:20px; color:var(--gold); font-weight:bold;'>Tu es le Maitre des Mystiques</div>";
-      } else {
-        title.innerText = "PERDU";
-        document.getElementById('end-summary').innerHTML +=
-          "<div style='margin-top:20px;'>Gagnants : "+winners.map(w=>w.name).join(', ')+"</div>";
-      }
-
-      btn.innerText = "REJOUER";
-      btn.onclick = () => location.reload();
-
-    } else {
-      btn.innerText = "SUIVANT";
-      btn.onclick = nextRoundSetup;
+    if (tutorialEnabled && GAME.roundIndex === 0) {
+      triggerTutorial("roundEnd");
     }
 
-    document.getElementById('end-overlay').classList.add('active');
+    if (suddenDeath || isLastRound || stillAlive.length <= 1) {
+      const maxLives = Math.max(...GAME.players.map(p => p.lives));
+      const winners = GAME.players.filter(p => p.lives === maxLives);
+      const playerWins = winners.some(w => w.id === 0);
+
+      endTitle.textContent = playerWins ? "Victoire" : "Defaite";
+      if (tutorialEnabled) {
+        triggerTutorial("gameEnd");
+      }
+
+      buyCta.style.display = "block";
+
+      nextBtn.textContent = "Rejouer une partie";
+      nextBtn.onclick = () => location.reload();
+    } else {
+      buyCta.style.display = "none";
+      endTitle.textContent = "Fin de manche";
+      nextBtn.textContent = "Manche suivante";
+      nextBtn.onclick = () => {
+        endOverlay.classList.remove("active");
+        GAME.roundIndex++;
+        startRound();
+      };
+    }
+
+    endOverlay.classList.add("active");
   }
 
-  function nextRoundSetup() {
-    document.getElementById('end-overlay').classList.remove('active');
-    GAME.roundIndex++;
-    startRound();
+  function triggerTutorial(key) {
+    if (!tutorialEnabled) return;
+    if (tutorialVisited.has(key)) return;
+
+    const overlay = document.getElementById("tutorial-overlay");
+    if (overlay.classList.contains("active")) {
+      return;
+    }
+
+    const data = TUTORIAL_CONTENT[key];
+    if (!data) return;
+
+    tutorialVisited.add(key);
+
+    const title = document.getElementById("tutorial-title");
+    const text = document.getElementById("tutorial-text");
+
+    title.textContent = data.title;
+    text.textContent = data.text;
+
+    clearTutorialHighlight();
+    if (data.highlight && data.highlight.length) {
+      currentHighlightSelectors = data.highlight;
+      data.highlight.forEach(sel => {
+        const el = document.querySelector(sel);
+        if (el) el.classList.add("tuto-highlight");
+      });
+    }
+
+    overlay.classList.add("active");
   }
 
-  (function() {
-    const t = document.querySelector('.nav-toggle');
-    const b = document.body;
-    if (t) t.addEventListener('click', ()=> b.classList.toggle('menu-open'));
+  function clearTutorialHighlight() {
+    currentHighlightSelectors.forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) el.classList.remove("tuto-highlight");
+    });
+    currentHighlightSelectors = [];
+  }
+
+  function closeTutorialStep() {
+    document.getElementById("tutorial-overlay").classList.remove("active");
+  }
+
+  function disableTutorial() {
+    tutorialEnabled = false;
+    clearTutorialHighlight();
+    document.getElementById("tutorial-overlay").classList.remove("active");
+    updateTutorialPill();
+  }
+
+  function disableTutorialFromOverlay() {
+    disableTutorial();
+  }
+
+  function restartTutorial() {
+    tutorialEnabled = true;
+    tutorialVisited.clear();
+    clearTutorialHighlight();
+    updateTutorialPill();
+    triggerTutorial("intro");
+  }
+
+  function updateTutorialPill() {
+    const toggleBtn = document.getElementById("tuto-toggle-btn");
+    if (!toggleBtn) return;
+    if (tutorialEnabled) {
+      toggleBtn.textContent = "ON";
+      toggleBtn.classList.add("tuto-on");
+      toggleBtn.classList.remove("tuto-off");
+    } else {
+      toggleBtn.textContent = "OFF";
+      toggleBtn.classList.remove("tuto-on");
+      toggleBtn.classList.add("tuto-off");
+    }
+  }
+
+  (function setupTutorialControls() {
+    const toggleBtn = document.getElementById("tuto-toggle-btn");
+    const replayBtn = document.getElementById("tuto-replay-btn");
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        tutorialEnabled = !tutorialEnabled;
+        if (!tutorialEnabled) {
+          clearTutorialHighlight();
+          document.getElementById("tutorial-overlay").classList.remove("active");
+        }
+        updateTutorialPill();
+      });
+    }
+
+    if (replayBtn) {
+      replayBtn.addEventListener("click", () => {
+        restartTutorial();
+      });
+    }
+
+    updateTutorialPill();
   })();
 
+  (function setupNavToggle() {
+    const toggle = document.querySelector(".nav-toggle");
+    if (!toggle) return;
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("menu-open");
+    });
+  })();
 </script>
 
 </body>

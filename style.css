@@ -10,11 +10,13 @@
   --text-main: #e2e8f0;  /* Blanc cassé pour lisibilité */
   --text-muted: #94a3b8; /* Gris bleuté */
   
-  --card-bg: rgba(30, 41, 59, 0.7); /* Effet verre fumé */
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --card-bg: rgba(30, 41, 59, 0.6); /* Effet verre fumé propre */
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   --glow: 0 0 15px rgba(212, 175, 55, 0.3);
   
-  --speed: 0.3s;
+  --speed: 0.3s ease;
 }
 
 /* =======================
@@ -26,59 +28,68 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--void);
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
+  /* Fond sombre lisse et propre */
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--void) 80%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 70px; /* Espace pour le header fixe */
+  padding-top: 80px; /* Espace pour le header fixe */
   overflow-x: hidden;
 }
 
-a { color: inherit; text-decoration: none; transition: var(--speed); }
-img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--speed); }
+ul { list-style: none; }
+img { max-width: 100%; display: block; height: auto; }
 .accent { color: var(--gold); }
 
 /* =======================
-   3. HEADER & NAVIGATION
+   3. HEADER & NAVIGATION (CORRIGÉ & STABLE)
    ======================= */
 header {
-  position: fixed; inset: 0 0 auto 0; height: 70px;
-  background: rgba(2, 6, 23, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000; display: flex; align-items: center;
+  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+  background: rgba(2, 6, 23, 0.95); /* Opaque pour lisibilité */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  display: flex; align-items: center;
 }
-.container { max-width: 1100px; margin: auto; padding: 0 20px; width: 100%; }
-.container.nav { display: flex; justify-content: space-between; align-items: center; }
 
-.logo img { height: 50px; filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); }
+.container {
+  max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%;
+}
 
-.nav ul { display: flex; gap: 32px; list-style: none; }
-.nav ul a { 
-  font-weight: 500; font-size: 0.95rem; letter-spacing: 0.5px; 
-  position: relative; color: var(--text-main);
+/* Flexbox strict pour écarter Logo et Menu */
+.container.nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  height: 100%;
+}
+
+.logo { display: flex; align-items: center; z-index: 1003; }
+.logo img { height: 50px; width: auto; filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); }
+
+/* Navigation Desktop */
+.nav nav { display: block; }
+.nav ul { display: flex; gap: 32px; align-items: center; margin: 0; padding: 0; }
+
+.nav ul a {
+  font-weight: 500; font-size: 0.95rem;
+  color: var(--text-main); position: relative; padding: 5px 0;
 }
 .nav ul a:hover, .nav ul a[aria-current="page"] { 
   color: var(--gold); text-shadow: 0 0 8px rgba(212,175,55,0.4); 
 }
 
-/* Burger Menu Trigger (Style Original) */
-.nav-toggle {
-  display: none; flex-direction: column; gap: 6px;
-  background: transparent; border: 1px solid rgba(255,255,255,0.2);
-  width: 44px; height: 44px; border-radius: 8px;
-  align-items: center; justify-content: center; cursor: pointer;
-}
-.nav-toggle span { width: 24px; height: 2px; background: var(--gold); transition: var(--speed); }
+/* Burger Menu Trigger (Caché sur PC) */
+.nav-toggle { display: none; }
 
 /* =======================
-   4. BOUTONS (RETOUR AU STYLE DÉGRADÉ)
+   4. BOUTONS (STYLE PREMIUM DÉGRADÉ)
    ======================= */
 .btn {
   display: inline-block; padding: 0.8rem 1.8rem;
   background: linear-gradient(135deg, var(--gold), var(--gold-light) 40%, #b8860b);
-  color: var(--void); font-weight: 700; border-radius: 50px;
+  color: #000; font-weight: 700; border-radius: 50px;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
   border: 1px solid rgba(255,255,255,0.4);
@@ -94,7 +105,7 @@ header {
 /* =======================
    5. SECTIONS & UI
    ======================= */
-section { padding: 60px 0; scroll-margin-top: 80px; }
+section { padding: 80px 0; scroll-margin-top: 80px; }
 
 .section-title {
   font-family: "Bebas Neue", sans-serif;
@@ -107,15 +118,28 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
 }
 .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
 
-.grid { display: grid; gap: 24px; }
+.hero { text-align: center; padding: 100px 0 60px; }
+.hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1; margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+.hero p {
+  font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px;
+}
+
+/* =======================
+   6. CARTES & GRILLES
+   ======================= */
+.grid { display: grid; gap: 30px; }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Cartes */
 .card, .feature-card, .quote, .cta-wide, #regles article {
   background: var(--card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 16px; padding: 24px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
@@ -132,29 +156,13 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
 }
 .card p { font-size: 0.95rem; color: var(--text-muted); }
 
-/* Hero */
-.hero {
-  text-align: center; padding: 100px 0 60px;
-  position: relative; overflow: hidden;
-}
-.hero h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(42px, 8vw, 80px);
-  line-height: 1; margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-.hero p {
-  font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px;
-}
-
 /* =======================
-   6. ÉLÉMENTS SPÉCIFIQUES
+   7. ÉLÉMENTS SPÉCIFIQUES
    ======================= */
 /* Listes (Presse / Règles) */
-.tech-list, .power-list { list-style: none; padding: 0; margin-top: 10px; }
 .tech-list li, .power-list li {
-  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-  display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted);
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-muted); display: flex; justify-content: space-between;
 }
 .tech-list li strong, .power-list strong { color: var(--gold); font-family: "Bebas Neue"; letter-spacing: 0.5px; }
 
@@ -182,22 +190,24 @@ section { padding: 60px 0; scroll-margin-top: 80px; }
   border-bottom: 1px solid rgba(212,175,55,0.2); margin: 40px 0 20px; 
 }
 #regles ul { padding-left: 20px; list-style: none; }
-#regles ul li::before { content: "•"; color: var(--gold); font-weight: bold; position: absolute; left: 20px; }
+#regles ul li { position: relative; margin-bottom: 10px; padding-left: 15px; }
+#regles ul li::before { content: "•"; color: var(--gold); font-weight: bold; position: absolute; left: 0; }
 .rule-note { 
   background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); 
   padding: 16px; margin: 20px 0; color: var(--text-main); font-size: 0.95rem;
 }
 
-/* Video */
+/* Vidéo Container (ESSENTIEL POUR LE RESPONSIVE) */
 .video-container {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-  border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; border: 1px solid var(--border-color);
   box-shadow: var(--shadow); max-width: 900px; margin: 0 auto;
+  background: #000;
 }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* =======================
-   7. FOOTER
+   8. FOOTER
    ======================= */
 footer {
   background: #020617; border-top: 1px solid rgba(255,255,255,0.05);
@@ -209,35 +219,62 @@ footer a:hover { color: var(--gold); }
 .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.6; }
 
 /* =======================
-   8. MOBILE & RESPONSIVE (LOGIQUE ORIGINAL RESTAURÉE)
+   9. MOBILE & RESPONSIVE (CORRIGÉ & OPAQUE)
    ======================= */
 @media (max-width: 900px) {
+  /* On cache la navigation standard et le CTA header */
+  .nav nav { display: none; } 
   header .cta { display: none; }
-  .nav-toggle { display: flex; } /* On affiche le burger */
-  .nav nav { display: none; }    /* On cache le menu par défaut */
   
-  /* Menu Ouvert - Style exact du fichier original */
-  body.menu-open .logo { display: none; } /* On cache le logo quand ouvert */
-  
+  /* On affiche le burger, centré verticalement */
+  .nav-toggle {
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px;
+    background: transparent; border: 1px solid var(--border-color);
+    width: 44px; height: 44px; border-radius: 8px; cursor: pointer; 
+    z-index: 1002;
+    padding: 0;
+  }
+  .nav-toggle span {
+    display: block; width: 24px; height: 2px; background: var(--gold); 
+    transition: all 0.3s; transform-origin: center;
+  }
+
+  /* LE MENU MOBILE (PLEIN ÉCRAN OPAQUE) */
   body.menu-open .nav nav {
-    display: flex; position: fixed; top: 70px; left: 0; right: 0;
-    background: var(--midnight); flex-direction: column;
-    padding: 20px 0; border-bottom: 1px solid var(--gold);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.9); z-index: 999;
+    display: flex; /* Active le flexbox pour centrer */
+    position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
+    background-color: var(--void); /* Noir OPAQUE, pas de transparence */
+    flex-direction: column; align-items: center; justify-content: flex-start;
+    padding-top: 40px;
+    z-index: 1001;
+    border-top: 1px solid var(--border-color);
+    /* Animation d'entrée */
+    animation: slideIn 0.3s ease-out;
   }
   
-  body.menu-open .nav ul { 
-    flex-direction: column; gap: 20px; 
-    text-align: center; width: 100%; padding: 0 20px;
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
+
+  body.menu-open { overflow: hidden; } /* Bloque le scroll */
   
-  /* Animation Burger (Croix) */
-  body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  /* Liens Mobile */
+  .nav ul { flex-direction: column; gap: 30px; text-align: center; width: 100%; margin-bottom: 30px; }
+  .nav ul a { font-size: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 2px; display: block; }
+  
+  /* CTA Mobile dans le menu */
+  .mobile-cta { display: block; }
+
+  /* Animation Croix Burger */
+  body.menu-open .nav-toggle { border-color: var(--gold); }
   body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
   body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-  
-  .hero h1 { font-size: 3rem; }
+
+  /* Ajustements layout */
+  .hero h1 { font-size: 3.5rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .cta-wide { flex-direction: column; gap: 30px; }
-  .cta-wide > div { border-left: none; padding-left: 0; width: 100%; }
-}
+  .cta-wide { flex-direction: column; }
+  .cta-wide > div { width: 100%; border-left: none; padding-left: 0; border-top: 4px solid var(--gold); padding-top: 15px;}
+       }

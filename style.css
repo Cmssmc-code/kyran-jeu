@@ -1,56 +1,46 @@
 /* =======================
-   1. VARIABLES & BASE
+   1. VARIABLES
    ======================= */
 :root {
   --gold: #d4af37;
   --gold-hover: #f1c40f;
-  --void: #020617;       /* Noir profond */
-  --midnight: #0f172a;   /* Bleu nuit */
-  
-  --text-main: #f8fafc;  /* Blanc cassé */
-  --text-muted: #94a3b8; /* Gris clair */
-  
-  --card-bg: rgba(30, 41, 59, 0.7); /* Le glassmorphism original */
+  --void: #020617; /* Noir profond */
+  --card-bg: rgba(30, 41, 59, 0.6);
   --border: 1px solid rgba(255, 255, 255, 0.1);
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  
-  --speed: 0.3s ease;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
+/* =======================
+   2. BASE
+   ======================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--void);
-  /* Fond original : dégradé subtil */
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--void) 80%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 80px; /* Important pour ne pas cacher le contenu sous le header */
+  padding-top: 80px;
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; transition: var(--speed); }
-ul { list-style: none; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
 img { max-width: 100%; display: block; }
+ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
 
-/* Typo utilitaire */
-.accent { color: var(--gold); }
-.text-center { text-align: center; }
-
 /* =======================
-   2. HEADER & NAVIGATION
+   3. HEADER & NAV
    ======================= */
 header {
   position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-  background: rgba(2, 6, 23, 0.98); /* Quasi opaque pour éviter les bugs visuels */
-  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.98); /* Quasi opaque */
   border-bottom: var(--border);
-  z-index: 1000; /* Toujours au-dessus du contenu normal */
+  z-index: 1000;
   display: flex; align-items: center;
 }
 
@@ -60,117 +50,87 @@ header {
   display: flex; justify-content: space-between; align-items: center; height: 100%;
 }
 
-.logo img { 
-  height: 50px; width: auto; 
-  filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); 
-}
+.logo img { height: 45px; width: auto; }
 
 /* Menu Desktop */
-.nav ul { display: flex; gap: 32px; }
-.nav ul a { 
-  font-weight: 500; font-size: 0.95rem; color: var(--text-main); 
-  position: relative; padding: 5px 0;
-}
-.nav ul a:hover, .nav ul a[aria-current="page"] { 
-  color: var(--gold); 
-  text-shadow: 0 0 10px rgba(212,175,55,0.4);
-}
+.nav ul { display: flex; gap: 30px; }
+.nav ul a { font-weight: 500; font-size: 0.95rem; color: var(--text-muted); padding: 5px 0; }
+.nav ul a:hover, .nav ul a[aria-current="page"] { color: var(--gold); }
 
 /* Burger (Caché sur PC) */
 .nav-toggle { display: none; }
 
 /* =======================
-   3. BOUTONS (STYLE ORIGINAL)
+   4. BOUTONS (STYLE PROPRE)
    ======================= */
 .btn {
-  display: inline-block; padding: 0.8rem 1.8rem;
-  background: linear-gradient(135deg, var(--gold), #b8860b);
-  color: #000; font-weight: 700; border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: var(--gold);
+  color: #000; /* Texte noir sur or */
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 50px; /* Pillule */
   text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.25s ease;
-  /* Correctif bug clic : */
-  position: relative; z-index: 5; pointer-events: auto;
+  border: none;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn:hover {
+  background-color: var(--gold-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
 }
 
 /* =======================
-   4. UI GÉNÉRALE
+   5. SECTIONS & UI
    ======================= */
 section { padding: 80px 0; }
 
 .hero { text-align: center; padding: 100px 0 60px; }
-.hero h1 { 
-  font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); 
-  line-height: 1; margin-bottom: 20px; 
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-.hero p { 
-  font-size: 1.15rem; color: var(--text-muted); 
-  max-width: 700px; margin: 0 auto 30px; 
-}
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); line-height: 1; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 30px; }
+.accent { color: var(--gold); }
 
-.section-title { 
-  font-family: 'Bebas Neue'; font-size: 3rem; text-align: center; 
-  margin-bottom: 10px; color: #fff; letter-spacing: 1px; 
-}
+.section-title { font-family: 'Bebas Neue'; font-size: 3rem; text-align: center; margin-bottom: 10px; color: #fff; }
 .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
 
 /* Grilles */
-.grid { display: grid; gap: 24px; }
+.grid { display: grid; gap: 30px; }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Cartes (Style Original) */
+/* Cartes */
 .card, .feature-card, #regles article {
-  background: var(--card-bg); 
-  border: var(--border);
-  border-radius: 16px; padding: 24px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-  transition: var(--speed);
+  background: var(--card-bg); border: var(--border);
+  border-radius: 16px; padding: 30px; transition: 0.3s;
 }
-.card:hover { 
-  border-color: var(--gold); 
-  transform: translateY(-5px); 
-  box-shadow: 0 0 15px rgba(212,175,55,0.2);
-}
-.card h3 { 
-  color: var(--gold); font-family: 'Bebas Neue'; font-size: 1.4rem; 
-  margin-bottom: 10px; letter-spacing: 1px; 
-}
+.card:hover { border-color: var(--gold); transform: translateY(-5px); }
+.card h3 { color: var(--gold); font-family: 'Bebas Neue'; font-size: 1.5rem; margin-bottom: 10px; }
 .card p { font-size: 0.95rem; color: #cbd5e1; }
 
 /* =======================
-   5. ÉLÉMENTS SPÉCIFIQUES (Règles, Presse)
+   6. ÉLÉMENTS SPÉCIFIQUES
    ======================= */
 /* Listes */
-.tech-list, .power-list { list-style: none; padding: 0; margin-top: 10px; }
 .tech-list li, .power-list li {
   padding: 10px 0; border-bottom: var(--border);
   display: flex; justify-content: space-between; color: var(--text-muted);
 }
-.tech-list li strong { color: var(--gold); font-family: 'Bebas Neue'; letter-spacing: 1px; }
+.tech-list li strong { color: var(--text-main); font-weight: 600; font-family: 'Bebas Neue'; letter-spacing: 1px; }
 .power-list strong { color: var(--gold); display: block; font-size: 1.1rem; }
 
 /* Timeline */
-.timeline { border-left: 2px solid var(--gold); padding-left: 25px; margin-top: 20px; margin-left: 10px; }
-.timeline li { position: relative; margin-bottom: 25px; }
+.timeline { border-left: 2px solid var(--gold); padding-left: 25px; margin-top: 30px; margin-left: 10px; }
+.timeline li { position: relative; margin-bottom: 30px; }
 .timeline li::before {
   content: ''; position: absolute; left: -31px; top: 6px;
   width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
-  box-shadow: 0 0 10px var(--gold);
 }
-.timeline strong { color: #fff; font-family: 'Bebas Neue'; font-size: 1.2rem; display: block; }
+.timeline strong { color: #fff; font-family: 'Bebas Neue'; font-size: 1.2rem; display: block; margin-bottom: 5px; }
 
-/* Vidéo Responsive */
+/* Video */
 .video-container {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
   border-radius: 16px; background: #000; border: var(--border);
@@ -179,77 +139,59 @@ section { padding: 80px 0; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* Règles */
-#regles h3 { 
-  color: var(--gold); font-family: 'Bebas Neue'; font-size: 1.8rem; 
-  border-bottom: var(--border); margin: 40px 0 20px; 
-}
-.rule-note { 
-  background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); 
-  padding: 16px; margin: 20px 0; color: var(--text-main); font-size: 0.95rem;
-}
+#regles h3 { color: var(--gold); font-family: 'Bebas Neue'; font-size: 1.8rem; border-bottom: var(--border); margin: 40px 0 20px; }
+.rule-note { background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); padding: 15px; margin: 20px 0; }
 
 /* =======================
-   6. FOOTER
+   7. FOOTER
    ======================= */
 footer {
-  background: #020617; padding: 50px 20px; margin-top: 80px;
+  background: #010308; padding: 60px 20px 30px; margin-top: 80px;
   border-top: var(--border); font-size: 0.9rem; color: #64748b;
 }
-footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-size: 1.1rem; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto 40px; }
+footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-size: 1.2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto 40px; }
 .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
 
 /* =======================
-   7. MOBILE & BURGER (VERSION CORRIGÉE & OPAQUE)
+   8. MOBILE (BURGER OPAQUE)
    ======================= */
 @media (max-width: 900px) {
-  /* Cacher le menu desktop et le CTA Header */
+  /* On cache le menu desktop et le CTA */
   .nav nav, header .cta { display: none; }
   
-  /* Afficher le bouton Burger */
+  /* Bouton Burger */
   .nav-toggle {
     display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px;
-    background: transparent; border: 1px solid rgba(255,255,255,0.2);
+    background: transparent; border: var(--border);
     width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
-    z-index: 1002; /* Au-dessus du menu */
   }
   .nav-toggle span {
-    width: 24px; height: 2px; background: var(--gold); transition: var(--speed);
+    width: 24px; height: 2px; background: var(--gold); transition: 0.3s;
   }
 
-  /* LE MENU MOBILE OUVERT */
+  /* Menu Mobile Ouvert */
   body.menu-open { overflow: hidden; } /* Bloque le scroll */
   
   body.menu-open .nav nav {
-    display: flex; /* Active l'affichage */
-    position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
-    background-color: var(--void); /* Noir OPAQUE : corrige la lisibilité */
-    flex-direction: column; align-items: center; justify-content: flex-start;
-    padding-top: 40px;
-    z-index: 1001;
-    border-top: 1px solid var(--gold);
-    animation: fadeIn 0.3s ease-out;
+    display: flex; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
+    background-color: var(--void); /* Fond NOIR OPAQUE */
+    flex-direction: column; padding-top: 40px; border-top: 1px solid var(--gold);
+    z-index: 1001; animation: fadeIn 0.3s;
   }
-  
-  @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
-  /* Liens du menu mobile */
   .nav ul { flex-direction: column; gap: 30px; text-align: center; width: 100%; }
-  .nav ul a { 
-    font-size: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 1px; 
-    display: block; padding: 10px; 
-  }
+  .nav ul a { font-size: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 1px; display: block; padding: 10px; }
   
-  /* CTA Mobile */
   .mobile-cta { display: block; margin-top: 20px; }
 
-  /* Animation Croix Burger */
+  /* Croix Burger */
   body.menu-open .nav-toggle { border-color: var(--gold); }
   body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
   body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  /* Layout Mobile Général */
   .hero h1 { font-size: 3rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .cta-wide { flex-direction: column; }

@@ -16,17 +16,15 @@
 
   <style>
 
-    /* ======================================================
-       ISOLATION TOTALE DU MINI JEU POUR NE PAS TOUCHER style.css
-       ====================================================== */
+    /* Isolation du mini jeu pour ne pas casser style.css */
 
     #game-app * {
       box-sizing: border-box !important;
       font-family: inherit;
     }
 
-    /* Empêche style.css d'appliquer ses styles .card */
-    .k-card, 
+    /* Empêche style.css d'agir sur .k-card */
+    .k-card,
     .k-card * {
       all: unset;
       box-sizing: border-box;
@@ -170,6 +168,11 @@
       position: relative;
     }
 
+    .slot.winner-glow {
+      border-color: var(--gold);
+      box-shadow: 0 0 25px rgba(212,175,55,0.7);
+    }
+
     .slot-label {
       position: absolute;
       bottom: -25px;
@@ -196,11 +199,43 @@
       margin-top: 10px;
       min-height: 130px;
       overflow-x: auto;
+      position: relative;
     }
 
-    /* ========================================================
-       CARTES DU MINI JEU, CLASSE ISOLÉE .k-card
-       ======================================================== */
+    /* Main désactivée + feedback visuel */
+
+    .my-hand.disabled .k-card {
+      opacity: 0.35 !important;
+      filter: grayscale(100%);
+      cursor: default !important;
+      transform: none !important;
+    }
+
+    .my-hand.disabled::after {
+      content: "Patiente...";
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.6);
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: var(--gold);
+      font-family: 'Bebas Neue';
+      font-size: 1.1rem;
+    }
+
+    @keyframes handPulse {
+      0% { box-shadow: 0 0 5px rgba(212,175,55,0.3); }
+      50% { box-shadow: 0 0 18px rgba(212,175,55,0.7); }
+      100% { box-shadow: 0 0 5px rgba(212,175,55,0.3); }
+    }
+
+    .my-hand.active {
+      animation: handPulse 1.4s ease-in-out infinite;
+    }
+
+    /* Cartes du mini jeu */
 
     .k-card {
       width: var(--card-width);
@@ -211,6 +246,7 @@
       box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
       cursor: default;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .k-inner {
@@ -409,6 +445,7 @@
       </div>
     </section>
   </main>
+
 <script>
 
   const ROUNDS_CONFIG = [7,6,5,4,3,2,1];
@@ -422,7 +459,8 @@
     currentTrickCards: [],
     nextTrickLeader: 0,
     tempMysticData: null,
-    isMysticRound: false
+    isMysticRound: false,
+    currentTurn: null
   };
 
   const AI_PERSONAS = [
@@ -437,16 +475,27 @@
     GAME.playersCount = n;
   }
 
+  // Shuffle amélioré (Fisher-Yates + double mélange)
   function createDeck() {
-    let d = [];
+    const d = [];
     for (let i=1; i<=36; i++) d.push(i);
     d.push(37);
-    return d.sort(() => Math.random() - 0.5);
+
+    for (let i=d.length-1; i>0; i--) {
+      const j = Math.floor(Math.random() * (i+1));
+      [d[i], d[j]] = [d[j], d[i]];
+    }
+
+    for (let k=0; k<2; k++) {
+      for (let i=d.length-1; i>0; i--) {
+        const j = Math.floor(Math.random() * (i+1));
+        [d[i], d[j]] = [d[j], d[i]];
+      }
+    }
+    return d;
   }
 
-  /* ============================================================
-     CREATION DES CARTES .k-card AU LIEU DE .card
-     ============================================================ */
+  // Création des cartes .k-card
 
   function createCardElement(val, isBack) {
     const el = document.createElement('div');
@@ -480,10 +529,6 @@
 
     return el;
   }
-
-  /* =======================================================
-     DEMARRAGE
-     ======================================================= */
 
   function startGame() {
     document.querySelectorAll('.game-overlay').forEach(o => o.classList.remove('active'));
@@ -522,6 +567,9 @@
       GAME.isMysticRound
       ? 'MYSTIQUE'
       : `MANCHE ${GAME.roundIndex+1}`;
+
+    document.getElementById('my-tricks-display').innerText = '0';
+    document.getElementById('my-bet-display').innerText = '-';
 
     renderTableSetup();
     startBettingPhase();
@@ -581,9 +629,17 @@
     target.innerHTML = out;
   }
 
-  /* =======================================================
-     PARIS
-     ======================================================= */
+  /* Gestion main activée / désactivée */
+
+  function disablePlayerHand() {
+    document.getElementById('my-hand').classList.add('disabled');
+  }
+
+  function enablePlayerHand() {
+    document.getElementById('my-hand').classList.remove('disabled');
+  }
+
+  /* Phase de paris */
 
   function startBettingPhase() {
     const overlay = document.getElementById('bet-overlay');
@@ -649,9 +705,7 @@
     startTrick();
   }
 
-  /* =======================================================
-     TOUR ET JEU
-     ======================================================= */
+  /* Tour par tour */
 
   function startTrick() {
     GAME.currentTrickCards = [];
@@ -661,16 +715,16 @@
     });
 
     GAME.turnOrder = [];
-    let s = GAME.nextTrickLeader;
+    let start = GAME.nextTrickLeader;
     let count = 0;
-    while ((!GAME.players[s] || !GAME.players[s].alive) && count<10) {
-      s = (s+1) % GAME.playersCount;
+    while ((!GAME.players[start] || !GAME.players[start].alive) && count<10) {
+      start = (start+1) % GAME.playersCount;
       count++;
     }
-    GAME.nextTrickLeader = s;
+    GAME.nextTrickLeader = start;
 
     for (let i=0; i<GAME.playersCount; i++) {
-      let pid = (s+i) % GAME.playersCount;
+      let pid = (start+i) % GAME.playersCount;
       if (GAME.players[pid].alive) GAME.turnOrder.push(pid);
     }
 
@@ -690,17 +744,26 @@
   }
 
   async function nextTurn() {
-    if (GAME.turnOrder.length===0) return resolveTrick();
+    if (GAME.turnOrder.length===0) {
+      return resolveTrick();
+    }
 
     let pid = GAME.turnOrder.shift();
-    document.querySelectorAll('.opponent').forEach(o => o.classList.remove('active-turn'));
+    GAME.currentTurn = pid;
 
-    if (pid!==0) document.getElementById('opp-'+pid).classList.add('active-turn');
+    document.querySelectorAll('.opponent').forEach(o => o.classList.remove('active-turn'));
+    if (pid!==0) {
+      document.getElementById('opp-'+pid).classList.add('active-turn');
+    }
 
     if (pid===0) {
+      enablePlayerHand();
+      document.getElementById('my-hand').classList.add('active');
       document.getElementById('player-status').innerText = "C'EST A VOUS";
       document.getElementById('player-status').style.color = "var(--gold)";
     } else {
+      disablePlayerHand();
+      document.getElementById('my-hand').classList.remove('active');
       document.getElementById('player-status').innerText = GAME.players[pid].name + " joue...";
       document.getElementById('player-status').style.color = "#94a3b8";
       await new Promise(r => setTimeout(r, 600 + Math.random()*500));
@@ -709,6 +772,7 @@
   }
 
   function humanPlayCard(idx, v) {
+    if (GAME.currentTurn !== 0) return;
     if (v===37 && !GAME.isMysticRound) {
       GAME.tempMysticData = { idx:idx, val:v };
       document.getElementById('mystic-choice-overlay').classList.add('active');
@@ -755,7 +819,12 @@
 
   function playCardFinal(pid, idx, effVal, displayVal) {
     GAME.players[pid].hand.splice(idx,1);
-    if (pid===0) updateHandUI();
+
+    if (pid===0) {
+      updateHandUI();
+      const bf = document.getElementById('battle-field');
+      if (bf) bf.scrollIntoView({ behavior:"smooth", block:"center" });
+    }
 
     let s = document.getElementById('slot-'+pid);
     s.innerHTML = '';

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <title>KYRAN – Le Duel</title>
+  <title>KYRAN – Mini Jeu</title>
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
   <link rel="icon" href="favicon.ico" />
@@ -15,172 +15,171 @@
 
   <style>
     /* =========================================
-       STYLE DU JEU (UI/UX)
+       CORRECTIFS & STYLES DU JEU
        ========================================= */
+    
+    /* Conteneur Jeu */
     #game-wrapper {
-      width: 100%; max-width: 900px; margin: 0 auto;
+      width: 100%; max-width: 850px; margin: 0 auto;
       background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
       border: 1px solid rgba(212,175,55,0.3); border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-      position: relative; overflow: hidden; user-select: none;
-      min-height: 620px; display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      position: relative; overflow: hidden; /* Important pour contenir l'overlay */
+      min-height: 650px; display: flex; flex-direction: column; justify-content: space-between;
+      z-index: 1;
     }
 
-    /* HUD */
+    /* --- OVERLAYS (MENU, SETUP, ETC) --- */
+    /* Z-Index très élevé pour être sûr d'être au dessus de tout */
+    .game-overlay {
+      position: absolute; inset: 0; 
+      background: rgba(2,6,23,0.98); 
+      z-index: 900; /* Au-dessus des cartes et du reste */
+      display: none; flex-direction: column; justify-content: center; align-items: center;
+      padding: 20px; text-align: center;
+    }
+    
+    .game-overlay.active { 
+      display: flex; 
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    .ov-title { 
+      font-family: 'Bebas Neue'; font-size: 3rem; color: var(--gold); 
+      margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 20px rgba(212,175,55,0.4);
+    }
+    .ov-sub { color: #cbd5e1; margin-bottom: 30px; font-size: 1rem; max-width: 500px; line-height: 1.5; }
+
+    /* BOUTONS DE CONFIGURATION */
+    .setup-section { margin-bottom: 30px; width: 100%; max-width: 400px; }
+    .setup-label { color: #94a3b8; font-size: 0.85rem; margin-bottom: 10px; display: block; letter-spacing: 1px; }
+    
+    .btn-row { display: flex; gap: 10px; justify-content: center; }
+    
+    .choice-btn {
+      flex: 1; padding: 15px; 
+      background: rgba(255,255,255,0.05); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      color: #fff; border-radius: 12px; 
+      cursor: pointer; font-weight: 600; font-family: 'Poppins';
+      transition: all 0.2s; position: relative;
+    }
+    
+    /* État Actif/Hover des boutons */
+    .choice-btn:hover { background: rgba(255,255,255,0.1); }
+    .choice-btn.selected { 
+      background: var(--gold); color: #000; border-color: var(--gold); 
+      box-shadow: 0 0 20px rgba(212,175,55,0.4);
+    }
+
+    /* Gros Bouton d'Action */
+    .action-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+      color: #000; font-weight: 800; font-size: 1.2rem;
+      padding: 15px 50px; border-radius: 50px; border: none;
+      cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      transition: transform 0.2s; margin-top: 20px;
+    }
+    .action-btn:active { transform: scale(0.95); }
+
+    /* --- ELEMENTS DE JEU --- */
     .game-header { 
-      display: flex; justify-content: space-between; align-items: center; 
-      padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); 
-      background: rgba(0,0,0,0.3);
+      display: flex; justify-content: space-between; padding: 15px 20px; 
+      border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.2);
     }
-    .hud-title { font-family: 'Bebas Neue'; color: var(--gold); font-size: 1.5rem; letter-spacing: 2px; }
-    .hud-info { font-size: 0.9rem; color: #94a3b8; font-weight: 600; }
+    .game-title { font-family: 'Bebas Neue'; color: var(--gold); font-size: 1.5rem; }
+    .game-info { font-weight: 600; color: #94a3b8; }
 
-    /* ADVERSAIRES */
-    .opponents-row { display: flex; justify-content: center; gap: 15px; padding: 15px; flex-wrap: wrap; }
-    .opponent { width: 70px; text-align: center; position: relative; opacity: 0.6; transition: 0.3s; }
-    .opponent.active { opacity: 1; transform: scale(1.1); }
+    /* Zone Adversaires */
+    .opponents-zone { display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap; }
+    .opponent { width: 70px; text-align: center; opacity: 0.6; transition: 0.3s; position: relative; }
+    .opponent.active { opacity: 1; transform: scale(1.15); z-index: 10; }
     
     .avatar {
-      width: 45px; height: 45px; background: #1e293b; border-radius: 50%; margin: 0 auto 5px;
-      border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; position: relative;
+      width: 50px; height: 50px; background: #1e293b; border-radius: 50%; margin: 0 auto 5px;
+      border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
     }
-    .opponent.active .avatar { border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.4); }
-    .opp-name { font-size: 0.7rem; color: var(--text-main); font-weight: bold; }
-    .opp-badge { 
-      position: absolute; bottom: -5px; right: -5px; background: #000; color: var(--gold);
-      border: 1px solid var(--gold); font-size: 0.6rem; padding: 1px 4px; border-radius: 4px;
-    }
+    .opponent.active .avatar { border-color: var(--gold); box-shadow: 0 0 15px var(--gold); }
+    .opp-name { font-size: 0.75rem; color: #fff; font-weight: bold; }
+    .opp-badge { position: absolute; top: 0; right: 5px; background: var(--gold); color: #000; font-size: 0.6rem; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
 
-    /* BULLES */
-    .bubble {
-      position: absolute; top: 0; left: 50%; transform: translate(-50%, 0) scale(0);
-      background: #fff; color: #000; padding: 4px 8px; border-radius: 8px;
-      font-size: 0.65rem; font-weight: bold; z-index: 20; white-space: nowrap;
-      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none;
-    }
-    .bubble.show { transform: translate(-50%, -45px) scale(1); }
-    .bubble::after {
-      content:''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
-      border-width: 4px; border-style: solid; border-color: #fff transparent transparent transparent;
-    }
-
-    /* TAPIS */
-    .table-zone {
-      flex-grow: 1; display: flex; justify-content: center; align-items: center; gap: 10px;
-      perspective: 800px; padding: 10px;
-    }
+    /* Zone Tapis */
+    .table-zone { flex-grow: 1; display: flex; justify-content: center; align-items: center; gap: 15px; margin: 10px 0; perspective: 800px; }
     .slot {
-      width: 64px; height: 90px; border: 2px dashed rgba(255,255,255,0.1); border-radius: 8px;
+      width: 68px; height: 96px; border: 2px dashed rgba(255,255,255,0.1); border-radius: 8px;
       display: flex; justify-content: center; align-items: center; position: relative;
     }
-    .slot-label {
-      position: absolute; bottom: -20px; width: 100%; text-align: center;
-      font-size: 0.65rem; color: rgba(255,255,255,0.3); text-transform: uppercase;
-    }
+    .slot-label { position: absolute; bottom: -25px; width: 100%; text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.4); }
 
-    /* --- CARTES CSS (Design Pro) --- */
+    /* --- CARTES CSS (Design Robuste) --- */
     .card {
-      width: 64px; height: 90px; border-radius: 6px; position: relative;
-      background: #0f172a; cursor: default;
-      transition: transform 0.2s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      width: 68px; height: 96px; border-radius: 8px; position: relative;
+      background: #0f172a; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      cursor: default; transition: transform 0.2s; user-select: none;
     }
     
     .card-inner {
-      width: 100%; height: 100%; border-radius: 6px;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      border: 1px solid #334155; position: relative; overflow: hidden;
+      width: 100%; height: 100%; border-radius: 8px; border: 1px solid #334155;
+      display: flex; justify-content: center; align-items: center; overflow: hidden;
     }
 
     /* Face Visible */
-    .card.face-up .card-inner {
-      background: radial-gradient(circle, #334155 0%, #0f172a 100%);
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-    .card-val {
-      font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; z-index: 2;
-      text-shadow: 0 2px 0 rgba(0,0,0,0.5);
-    }
-    /* Décoration dorée */
-    .card.face-up .card-inner::before {
-      content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
-    }
-
+    .card.face-up .card-inner { background: radial-gradient(circle, #334155 0%, #0f172a 100%); }
+    .card-val { font-family: 'Bebas Neue'; font-size: 2.2rem; color: #fff; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+    
     /* Mystique */
-    .card.is-mystic .card-inner {
-      border-color: var(--gold); background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, #000 100%);
-    }
+    .card.is-mystic .card-inner { border-color: var(--gold); background: radial-gradient(circle, rgba(212,175,55,0.15), #000); }
     .card.is-mystic .card-val { color: var(--gold); }
 
-    /* Dos de Carte */
+    /* Dos */
     .card.face-down .card-inner {
       background: repeating-linear-gradient(45deg, #0f172a, #0f172a 5px, #1e293b 5px, #1e293b 10px);
-      border: 1px solid #334155;
     }
-    .card.face-down .card-inner::after {
-      content: 'K'; font-family: 'Bebas Neue'; font-size: 2rem; color: rgba(255,255,255,0.05);
-    }
+    .card.face-down .card-inner::after { content:'K'; font-family:'Bebas Neue'; font-size:2rem; color:rgba(255,255,255,0.05); }
 
-    /* Interactions */
+    /* Jouable */
     .card.playable { cursor: pointer; border: 1px solid var(--gold); }
-    .card.playable:active { transform: scale(0.95); }
-    .card.playable:hover { transform: translateY(-10px); box-shadow: 0 0 15px rgba(212,175,55,0.3); z-index: 10; }
+    .card.playable:hover { transform: translateY(-15px); z-index: 20; box-shadow: 0 0 25px rgba(212,175,55,0.3); }
+    .card-played { animation: playMove 0.4s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    @keyframes playMove { 0%{transform:scale(1.5);opacity:0} 100%{transform:scale(1);opacity:1} }
+
+    /* Zone Joueur */
+    .player-zone { background: rgba(0,0,0,0.3); padding: 15px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .hud-stats { 
+      display: inline-flex; gap: 20px; font-size: 0.9rem; color: #94a3b8; margin-bottom: 10px;
+      background: rgba(0,0,0,0.4); padding: 6px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .hud-stats b { color: var(--gold); margin-left: 5px; }
     
-    .card-played { animation: playAnim 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    @keyframes playAnim { 
-      0% { transform: scale(1.5) rotate(5deg); opacity: 0; } 
-      100% { transform: scale(1) rotate(0deg); opacity: 1; } 
-    }
+    .my-hand { display: flex; justify-content: center; gap: 10px; min-height: 110px; padding: 10px 0; overflow-x: auto; }
+    .status-bar { height: 20px; font-size: 0.85rem; color: var(--gold); font-weight: bold; margin-bottom: 5px; }
 
-    /* JOUEUR */
-    .player-zone { padding: 15px; text-align: center; background: rgba(0,0,0,0.3); margin-top: auto; }
-    .status-bar { height: 20px; font-size: 0.85rem; color: var(--gold); margin-bottom: 5px; font-weight: 600; }
-    
-    .player-stats {
-      display: inline-flex; gap: 15px; font-size: 0.9rem; color: #94a3b8; 
-      background: rgba(0,0,0,0.4); padding: 5px 15px; border-radius: 20px; margin-bottom: 10px;
-    }
-    .player-stats b { color: #fff; margin-left: 4px; }
-    
-    .my-hand { display: flex; justify-content: center; gap: 8px; min-height: 100px; padding: 5px; overflow-x: auto; }
-
-    /* OVERLAYS */
-    .overlay {
-      position: absolute; inset: 0; background: rgba(2,6,23,0.98); z-index: 100;
-      display: none; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center;
-    }
-    .overlay.active { display: flex; animation: fade 0.3s; }
-    @keyframes fade { from{opacity:0} to{opacity:1} }
-
-    .ov-title { font-family: 'Bebas Neue'; font-size: 2.5rem; color: var(--gold); margin-bottom: 10px; letter-spacing: 1px; }
-    .ov-sub { color: #94a3b8; margin-bottom: 20px; font-size: 0.95rem; }
-
-    .choice-grid { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
-    .choice-btn {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8;
-      padding: 10px 18px; border-radius: 8px; font-weight: 600; min-width: 50px; transition: 0.2s;
-    }
-    .choice-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
-    .choice-btn.selected { background: var(--gold); color: #000; border-color: var(--gold); }
-
-    /* TOAST */
+    /* Toast / Bulles */
     .toast {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8);
-      background: rgba(0,0,0,0.9); border: 1px solid var(--gold); color: var(--gold);
+      background: rgba(0,0,0,0.95); border: 2px solid var(--gold); color: var(--gold);
       padding: 15px 30px; border-radius: 50px; font-family: 'Bebas Neue'; font-size: 1.8rem;
-      opacity: 0; pointer-events: none; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 200;
-      white-space: nowrap; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      opacity: 0; pointer-events: none; transition: 0.3s; z-index: 500; white-space: nowrap;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
-    .toast.visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .toast.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 
-    /* Mobile Responsive */
+    .bubble {
+      position: absolute; top: -35px; left: 50%; transform: translateX(-50%) scale(0);
+      background: #fff; color: #000; padding: 5px 10px; border-radius: 10px;
+      font-size: 0.7rem; font-weight: bold; opacity: 0; transition: 0.3s; z-index: 50; white-space: nowrap;
+    }
+    .bubble.show { transform: translateX(-50%) scale(1); opacity: 1; }
+
+    /* Responsive */
     @media(max-width:600px) {
-      #game-wrapper { min-height: 550px; }
-      .card { width: 52px; height: 75px; }
-      .slot { width: 52px; height: 75px; }
-      .card-val { font-size: 1.5rem; }
+      .card, .slot { width: 55px; height: 80px; }
       .avatar { width: 40px; height: 40px; font-size: 1.2rem; }
+      #game-wrapper { min-height: 580px; }
+      .ov-title { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -206,7 +205,7 @@
     <section class="hero" style="padding-bottom: 20px;">
       <div class="container">
         <h1>DÉFIE LES <span class="accent">MAÎTRES</span></h1>
-        <p>Mini-jeu tactique. 3 à 6 joueurs. Survis aux enchères.</p>
+        <p>3 à 6 joueurs. Mode Normal ou Mystique. Tente de survivre.</p>
       </div>
     </section>
 
@@ -215,67 +214,71 @@
         <div id="game-wrapper">
           
           <div class="game-header">
-            <div class="hud-title">KYRAN</div>
-            <div class="hud-info">MANCHE <span id="ui-round" style="color:#fff">1/3</span></div>
+            <div class="game-title">KYRAN</div>
+            <div class="game-info">MANCHE <span id="ui-round" style="color:#fff">1/3</span></div>
           </div>
 
-          <div id="opponents-zone" class="opponents-row"></div>
+          <div id="opponents-zone" class="opponents-zone"></div>
 
           <div class="table-zone">
-            <div id="slots-area" class="opponents-row" style="padding:0; gap:10px;"></div>
+            <div id="slots-area" class="opponents-zone" style="border:none; padding:0; gap:10px;"></div>
           </div>
 
           <div class="player-zone">
-            <div id="game-msg" class="status-bar">Configure ta partie...</div>
-            <div class="player-stats">
+            <div id="status-msg" class="status-bar">Configure ta partie...</div>
+            <div class="hud-stats">
               <span>PARI: <b id="ui-bet">-</b></span>
               <span>PLIS: <b id="ui-tricks">0</b></span>
             </div>
             <div id="my-hand" class="my-hand"></div>
           </div>
 
-          <div id="ov-setup" class="overlay active">
+          <div id="ov-setup" class="game-overlay active">
             <div class="ov-title">CONFIGURATION</div>
             
-            <p style="color:#94a3b8; font-size:0.8rem;">JOUEURS</p>
-            <div class="choice-grid" id="grp-players">
-              <button class="choice-btn selected" onclick="setPlayers(3)">3</button>
-              <button class="choice-btn" onclick="setPlayers(4)">4</button>
-              <button class="choice-btn" onclick="setPlayers(5)">5</button>
-              <button class="choice-btn" onclick="setPlayers(6)">6</button>
+            <div class="setup-section">
+              <span class="setup-label">JOUEURS</span>
+              <div class="btn-row" id="grp-players">
+                <div class="choice-btn selected" onclick="setPlayers(3, this)">3</div>
+                <div class="choice-btn" onclick="setPlayers(4, this)">4</div>
+                <div class="choice-btn" onclick="setPlayers(5, this)">5</div>
+                <div class="choice-btn" onclick="setPlayers(6, this)">6</div>
+              </div>
             </div>
 
-            <p style="color:#94a3b8; font-size:0.8rem;">MODE</p>
-            <div class="choice-grid" id="grp-mode">
-              <button class="choice-btn selected" onclick="setMode('normal')">Normal</button>
-              <button class="choice-btn" onclick="setMode('mystic')">Mystique</button>
+            <div class="setup-section">
+              <span class="setup-label">MODE</span>
+              <div class="btn-row" id="grp-mode">
+                <div class="choice-btn selected" onclick="setMode('normal', this)">NORMAL</div>
+                <div class="choice-btn" onclick="setMode('mystic', this)">MYSTIQUE</div>
+              </div>
             </div>
 
-            <button class="btn" style="margin-top:20px; width:100%; max-width:250px;" onclick="initGame()">JOUER</button>
+            <button class="action-btn" onclick="initGame()">LANCER</button>
           </div>
 
-          <div id="ov-bet" class="overlay">
+          <div id="ov-bet" class="game-overlay">
             <div class="ov-title">TON OBJECTIF ?</div>
             <p class="ov-sub" id="bet-msg">Analyse ton jeu.</p>
-            <div id="bet-preview" style="display:flex; justify-content:center; gap:8px; margin-bottom:20px; flex-wrap:wrap;"></div>
-            <div class="choice-grid" id="bet-btns"></div>
+            <div id="bet-preview" style="display:flex; justify-content:center; gap:10px; margin-bottom:25px; flex-wrap:wrap;"></div>
+            <div class="btn-row" id="bet-btns" style="flex-wrap:wrap;"></div>
           </div>
 
-          <div id="ov-mystic" class="overlay">
+          <div id="ov-mystic" class="game-overlay">
             <div class="ov-title">MYSTIQUE !</div>
             <p class="ov-sub">Quelle valeur choisis-tu ?</p>
-            <div class="choice-grid">
-              <button class="choice-btn" onclick="resolveMystic(0)">0 (Faible)</button>
-              <button class="choice-btn selected" onclick="resolveMystic(37)">37 (Fort)</button>
+            <div class="btn-row">
+              <div class="choice-btn" onclick="resolveMystic(0)">0 (Faible)</div>
+              <div class="choice-btn selected" onclick="resolveMystic(37)">37 (Fort)</div>
             </div>
           </div>
 
-          <div id="ov-end" class="overlay">
+          <div id="ov-end" class="game-overlay">
             <div class="ov-title" id="end-title">FIN</div>
             <p class="ov-sub" id="end-msg" style="font-size:1.2rem; color:#fff;"></p>
-            <div class="choice-grid">
-              <button class="btn" onclick="showSetup()">MENU</button>
-              <button class="btn" onclick="initGame()">REJOUER</button>
+            <div class="btn-row">
+              <button class="choice-btn" onclick="showSetup()">MENU</button>
+              <button class="action-btn" onclick="initGame()">REJOUER</button>
             </div>
           </div>
 
@@ -293,9 +296,7 @@
   </footer>
 
   <script>
-    /* =========================================
-       LOGIQUE DU JEU (V5 STABLE)
-       ========================================= */
+    /* --- MOTEUR DE JEU V6 (ROBUSTE) --- */
     
     const CFG = { players: 3, mode: 'normal' };
     const STATE = { 
@@ -304,27 +305,29 @@
     };
     
     const BOTS = [
-      {name:"Titan", e:"🛡️", style:"aggro"},
-      {name:"Loki", e:"🎭", style:"random"},
-      {name:"Viper", e:"🐍", style:"smart"},
-      {name:"Oracle", e:"🔮", style:"safe"},
-      {name:"Chronos", e:"⏳", style:"smart"}
+      {name:"Titan", e:"🛡️"}, {name:"Loki", e:"🎭"}, {name:"Viper", e:"🐍"}, 
+      {name:"Oracle", e:"🔮"}, {name:"Chronos", e:"⏳"}
     ];
 
-    // UI Helpers
-    function setPlayers(n) { CFG.players = n; updateBtnGrp('grp-players', n===3?0:n-3); }
-    function setMode(m) { CFG.mode = m; updateBtnGrp('grp-mode', m==='normal'?0:1); }
-    function updateBtnGrp(id, idx) {
-      document.querySelectorAll(`#${id} .choice-btn`).forEach((b, i) => b.classList.toggle('selected', i === idx));
+    /* --- SETUP --- */
+    function setPlayers(n, btn) { 
+      CFG.players = n; updateBtns('grp-players', btn);
+    }
+    function setMode(m, btn) { 
+      CFG.mode = m; updateBtns('grp-mode', btn);
+    }
+    function updateBtns(grpId, activeBtn) {
+      document.querySelectorAll(`#${grpId} .choice-btn`).forEach(b => b.classList.remove('selected'));
+      activeBtn.classList.add('selected');
     }
     function showSetup() {
-      document.querySelectorAll('.overlay').forEach(o => o.classList.remove('active'));
+      document.querySelectorAll('.game-overlay').forEach(o => o.classList.remove('active'));
       document.getElementById('ov-setup').classList.add('active');
     }
 
-    // INIT
+    /* --- INIT --- */
     function initGame() {
-      document.querySelectorAll('.overlay').forEach(o => o.classList.remove('active'));
+      document.querySelectorAll('.game-overlay').forEach(o => o.classList.remove('active'));
       
       STATE.deck = Array.from({length:37}, (_,i)=>i+1).sort(()=>Math.random()-.5);
       STATE.players = []; 
@@ -334,18 +337,18 @@
       // J0 = Humain
       STATE.players.push({id:0, name:"TOI", isAi:false, hand:[], bet:0, tricks:0});
       
-      // IA Creation
+      // IA
       const pool = [...BOTS].sort(()=>Math.random()-.5);
       for(let i=1; i<CFG.players; i++) {
-        let b = pool[i-1] || {name:`Bot ${i}`, e:"🤖", style:"smart"};
-        STATE.players.push({id:i, name:b.name, emoji:b.e, isAi:true, hand:[], bet:0, tricks:0, style:b.style});
+        let b = pool[i-1] || {name:`Bot ${i}`, e:"🤖"};
+        STATE.players.push({id:i, name:b.name, emoji:b.e, isAi:true, hand:[], bet:0, tricks:0});
       }
 
       // Deal
       let count = (CFG.mode === 'mystic') ? 1 : 3;
       STATE.players.forEach(p => {
         for(let k=0; k<count; k++) p.hand.push(STATE.deck.pop());
-        // Sort human hand if normal mode
+        // Sort
         if(!p.isAi && CFG.mode === 'normal') p.hand.sort((a,b)=>a-b);
       });
 
@@ -363,21 +366,31 @@
         oppArea.innerHTML += `
           <div class="opponent" id="opp-${p.id}">
             <div class="bubble" id="bub-${p.id}"></div>
-            <div class="avatar">${p.emoji}<div class="opp-badge" id="badge-${p.id}">?</div></div>
+            <div class="avatar">${p.emoji}</div>
             <div class="opp-name">${p.name}</div>
+            <div class="opp-badge" id="badge-${p.id}">?</div>
           </div>`;
         
-        slotArea.innerHTML += `<div class="slot"><div id="slot-${p.id}"></div><div class="slot-label">${p.name}</div></div>`;
+        slotArea.innerHTML += `
+          <div class="slot">
+            <div id="slot-${p.id}"></div>
+            <div class="slot-label">${p.name}</div>
+          </div>`;
       }
       
-      slotArea.innerHTML += `<div class="slot" style="border-color:var(--gold)"><div id="slot-0"></div><div class="slot-label" style="color:var(--gold)">TOI</div></div>`;
+      slotArea.innerHTML += `
+        <div class="slot" style="border-color:var(--gold)">
+          <div id="slot-0"></div>
+          <div class="slot-label" style="color:var(--gold)">TOI</div>
+        </div>`;
+      
       updateHUD();
     }
 
-    // --- CARTE CSS GENERATOR ---
+    /* --- CARTE CSS GENERATOR (ZERO BUG D'IMAGE) --- */
     function createCardHTML(val, faceDown, playable, idx) {
       let div = document.createElement('div');
-      div.className = `card ${val===37?'is-mystic':''} ${faceDown?'face-down':'face-up'} ${playable?'playable':''}`;
+      div.className = `card ${playable?'playable':''} ${val===37?'is-mystic':''} ${faceDown?'face-down':'face-up'}`;
       
       let inner = document.createElement('div');
       inner.className = 'card-inner';
@@ -389,8 +402,10 @@
       div.appendChild(inner);
       
       if(playable) {
-        // Stop propagation pour éviter double clic
-        div.onclick = (e) => { e.stopPropagation(); playCardHuman(idx, val); };
+        div.onclick = (e) => { 
+          e.stopPropagation(); // Stop propagation pour éviter double trigger
+          playCardHuman(idx, val); 
+        };
       }
       return div;
     }
@@ -409,7 +424,7 @@
       });
     }
 
-    // --- BETTING ---
+    /* --- BETTING --- */
     function openBetting() {
       const ov = document.getElementById('ov-bet');
       const prev = document.getElementById('bet-preview');
@@ -419,24 +434,26 @@
 
       if(CFG.mode === 'mystic') {
         msg.innerHTML = "Mode Mystique : <strong style='color:var(--gold)'>Tu vois les autres, pas toi !</strong>";
-        // Show AI cards
         for(let i=1; i<STATE.players.length; i++) prev.appendChild(createCardHTML(STATE.players[i].hand[0], false, false));
-        // Show My Back
-        prev.appendChild(createCardHTML(0, true, false));
+        prev.appendChild(createCardHTML(0, true, false)); 
       } else {
-        msg.innerText = "Combien de plis penses-tu gagner ?";
+        msg.innerText = "Analyse ta main.";
         STATE.players[0].hand.forEach(v => prev.appendChild(createCardHTML(v, false, false)));
       }
 
       for(let i=0; i<=STATE.maxRounds; i++) {
-        btns.innerHTML += `<button class="choice-btn" onclick="confirmBet(${i})">${i}</button>`;
+        let b = document.createElement('div');
+        b.className = 'choice-btn';
+        b.innerText = i;
+        b.onclick = () => confirmBet(i);
+        btns.appendChild(b);
       }
 
-      // AI Logic
+      // IA Betting
       STATE.players.forEach(p => {
         if(p.isAi) {
-          let str = p.hand.reduce((acc,v)=>acc+(v>20||v===37?1:0),0);
-          p.bet = Math.min(str, STATE.maxRounds);
+          let strength = p.hand.reduce((acc,v)=>acc+(v>20||v===37?1:0),0);
+          p.bet = Math.min(strength, STATE.maxRounds);
           document.getElementById(`badge-${p.id}`).innerText = p.bet;
         }
       });
@@ -450,12 +467,12 @@
       startRound();
     }
 
-    // --- GAME LOOP ---
+    /* --- GAME LOOP --- */
     function startRound() {
       STATE.playedCards = [];
       document.querySelectorAll('.slot div').forEach(d => d.innerHTML = '');
       
-      STATE.turnOrder = [0]; // Humain start pour simplifier
+      STATE.turnOrder = [0]; // Humain start
       for(let i=1; i<STATE.players.length; i++) STATE.turnOrder.push(i);
       
       nextTurn();
@@ -468,26 +485,10 @@
       document.querySelectorAll('.opponent').forEach(o => o.classList.remove('active'));
 
       if(pid === 0) {
-        document.getElementById('game-msg').innerText = "À TOI DE JOUER !";
-        document.getElementById('game-msg').style.color = "var(--gold)";
+        document.getElementById('status-msg').innerText = "À TOI DE JOUER !";
+        document.getElementById('status-msg').style.color = "var(--gold)";
         STATE.userLock = false;
       } else {
         document.getElementById(`opp-${pid}`).classList.add('active');
-        document.getElementById('game-msg').innerText = `${STATE.players[pid].name} réfléchit...`;
-        document.getElementById('game-msg').style.color = "#94a3b8";
-        setTimeout(() => playAi(pid), 700);
-      }
-    }
-
-    // ACTIONS
-    let pendingIdx=null; 
-    
-    function playCardHuman(idx, val) {
-      if(STATE.userLock) return;
-      STATE.userLock = true;
-      pendingIdx = idx;
-
-      if(val === 37) {
-        if(CFG.mode === 'mystic') {
-          // Auto resolve in mystic
-          let auto = (STATE.players[0].bet > STATE.players[0].trick
+        document.getElementById('status-msg').innerText = `${STATE.players[pid].name} réfléchit...`;
+        document.getElementById('status

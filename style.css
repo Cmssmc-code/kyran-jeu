@@ -1,322 +1,243 @@
 /* =======================
-   1. VARIABLES & PALETTE
+   1. VARIABLES & AMBIANCE KYRAN
    ======================= */
 :root {
-  --gold: #d4af37;           /* Or Classique */
-  --gold-glow: #fde047;      /* Or Lumineux (Hover) */
-  --gold-dim: rgba(212, 175, 55, 0.1);
+  --gold: #d4af37;       /* Or antique */
+  --gold-light: #f3e5ab; /* Or pâle */
+  --midnight: #0f172a;   /* Bleu nuit profond */
+  --void: #020617;       /* Noir quasi total */
   
-  --bg-deep: #020617;        /* Noir Profond (Slate 950) */
-  --bg-card: rgba(30, 41, 59, 0.5); /* Gris Bleu (Slate 800) avec transparence */
+  --text-main: #e2e8f0;  /* Blanc cassé pour lisibilité */
+  --text-muted: #94a3b8; /* Gris bleuté */
   
-  --text-main: #f8fafc;      /* Blanc Cassé */
-  --text-muted: #94a3b8;     /* Gris Pierre */
+  --card-bg: rgba(30, 41, 59, 0.7); /* Effet verre fumé */
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --glow: 0 0 15px rgba(212, 175, 55, 0.3);
   
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(212, 175, 55, 0.3);
-  
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.3s;
 }
 
 /* =======================
    2. RESET & BASE
    ======================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { 
-  scroll-behavior: smooth; 
-  font-size: 16px;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-deep);
-  /* Un dégradé très subtil pour donner de la profondeur sans bruit */
-  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg-deep) 75%);
-  background-attachment: fixed;
+  background-color: var(--void);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05), transparent 25%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 80px; /* Header fixe */
+  padding-top: 70px; /* Espace pour le header fixe */
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; transition: color 0.2s var(--ease); }
-ul { list-style: none; }
-img { max-width: 100%; display: block; height: auto; }
-button { font-family: inherit; }
-
-/* Classes utilitaires */
+a { color: inherit; text-decoration: none; transition: var(--speed); }
+img { max-width: 100%; height: auto; display: block; }
 .accent { color: var(--gold); }
-.text-center { text-align: center; }
 
 /* =======================
    3. HEADER & NAVIGATION
    ======================= */
 header {
-  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(12px); /* Effet verre dépoli */
-  border-bottom: 1px solid var(--border-light);
-  z-index: 1000;
-  display: flex; align-items: center;
+  position: fixed; inset: 0 0 auto 0; height: 70px;
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000; display: flex; align-items: center;
+}
+.container { max-width: 1100px; margin: auto; padding: 0 20px; width: 100%; }
+.container.nav { display: flex; justify-content: space-between; align-items: center; }
+
+.logo img { height: 50px; filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); }
+
+.nav ul { display: flex; gap: 32px; list-style: none; }
+.nav ul a { 
+  font-weight: 500; font-size: 0.95rem; letter-spacing: 0.5px; 
+  position: relative; color: var(--text-main);
+}
+.nav ul a:hover, .nav ul a[aria-current="page"] { 
+  color: var(--gold); text-shadow: 0 0 8px rgba(212,175,55,0.4); 
 }
 
-.container {
-  max-width: 1100px; margin: 0 auto; padding: 0 24px; width: 100%;
+/* Burger Menu Trigger (Style Original) */
+.nav-toggle {
+  display: none; flex-direction: column; gap: 6px;
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  width: 44px; height: 44px; border-radius: 8px;
+  align-items: center; justify-content: center; cursor: pointer;
 }
-
-.container.nav {
-  display: flex; justify-content: space-between; align-items: center;
-}
-
-.logo img { 
-  height: 48px; 
-  transition: transform 0.3s var(--ease);
-}
-.logo:hover img { transform: scale(1.05); }
-
-.nav ul { display: flex; gap: 32px; align-items: center; }
-
-.nav ul a {
-  font-weight: 500; font-size: 0.95rem;
-  color: var(--text-muted); 
-  position: relative;
-  padding: 5px 0;
-}
-
-.nav ul a:hover, .nav ul a[aria-current="page"] {
-  color: var(--text-main);
-}
-
-/* Petit point doré sous le lien actif */
-.nav ul a::after {
-  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 0; height: 2px; background: var(--gold);
-  transition: width 0.3s var(--ease);
-}
-.nav ul a:hover::after, .nav ul a[aria-current="page"]::after { width: 100%; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--gold); transition: var(--speed); }
 
 /* =======================
-   4. BOUTONS (DESIGN PROPRE)
+   4. BOUTONS (RETOUR AU STYLE DÉGRADÉ)
    ======================= */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  background-color: var(--gold);
-  color: #0f172a; /* Texte foncé pour lisibilité max */
-  font-weight: 700;
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  border: 1px solid var(--gold);
+  display: inline-block; padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light) 40%, #b8860b);
+  color: var(--void); font-weight: 700; border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.25s ease;
   cursor: pointer;
-  transition: all 0.3s var(--ease);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
-
 .btn:hover {
-  background-color: var(--gold-glow);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
   color: #000;
 }
 
-.btn:active { transform: translateY(0); }
-
 /* =======================
-   5. SECTIONS & TITRES
+   5. SECTIONS & UI
    ======================= */
-section { padding: 80px 0; scroll-margin-top: 80px; }
-
-.hero { 
-  text-align: center; padding: 120px 0 80px; 
-}
-
-.hero h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  line-height: 1; margin-bottom: 24px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.hero p {
-  font-size: 1.25rem; color: var(--text-muted);
-  max-width: 650px; margin: 0 auto 40px;
-  font-weight: 300;
-}
+section { padding: 60px 0; scroll-margin-top: 80px; }
 
 .section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem; text-align: center;
-  margin-bottom: 12px; color: #fff;
-  letter-spacing: 2px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(32px, 5vw, 48px); text-align: center;
+  margin-bottom: 10px; letter-spacing: 1px; color: var(--text-main);
 }
-
-.section-sub {
-  text-align: center; color: var(--text-muted);
-  margin-bottom: 60px; font-size: 1.1rem;
+.section-title::after {
+  content: "✦"; display: block; color: var(--gold);
+  font-size: 20px; margin-top: 10px; opacity: 0.8;
 }
+.section-sub { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
 
-/* =======================
-   6. CARTES & GRILLES
-   ======================= */
-.grid { display: grid; gap: 30px; }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.grid { display: grid; gap: 24px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Style commun pour toutes les cartes (Info, Règles, Presse) */
-.card, .feature-card, #regles article {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
-  padding: 32px;
-  transition: all 0.3s var(--ease);
-  position: relative;
-  backdrop-filter: blur(5px);
+/* Cartes */
+.card, .feature-card, .quote, .cta-wide, #regles article {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px; padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  transition: var(--speed);
 }
-
 .card:hover, .feature-card:hover {
+  border-color: var(--gold);
   transform: translateY(-5px);
-  border-color: var(--border-gold);
-  background: rgba(30, 41, 59, 0.8);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--glow), 0 8px 30px rgba(0,0,0,0.5);
 }
-
-.card h3 {
-  color: var(--gold); font-family: 'Bebas Neue';
-  font-size: 1.6rem; margin-bottom: 12px; letter-spacing: 1px;
+.card h3 { 
+  color: var(--gold); font-size: 1.2rem; margin-bottom: 8px; 
+  font-family: "Bebas Neue"; letter-spacing: 1px; 
 }
+.card p { font-size: 0.95rem; color: var(--text-muted); }
 
-.card p {
-  font-size: 0.95rem; color: #cbd5e1; line-height: 1.7;
+/* Hero */
+.hero {
+  text-align: center; padding: 100px 0 60px;
+  position: relative; overflow: hidden;
+}
+.hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(42px, 8vw, 80px);
+  line-height: 1; margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+.hero p {
+  font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px;
 }
 
 /* =======================
-   7. MODULES SPÉCIFIQUES
+   6. ÉLÉMENTS SPÉCIFIQUES
    ======================= */
-
-/* Liste technique (Presse) */
+/* Listes (Presse / Règles) */
+.tech-list, .power-list { list-style: none; padding: 0; margin-top: 10px; }
 .tech-list li, .power-list li {
-  padding: 12px 0; border-bottom: 1px solid var(--border-light);
-  color: var(--text-muted); display: flex; justify-content: space-between;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted);
 }
-.tech-list li:last-child { border-bottom: none; }
-.tech-list li strong { color: var(--text-main); font-weight: 600; font-family: 'Bebas Neue'; letter-spacing: 1px; font-size: 1.1rem; }
+.tech-list li strong, .power-list strong { color: var(--gold); font-family: "Bebas Neue"; letter-spacing: 0.5px; }
 
-/* Liste Pouvoirs */
-.power-list strong { color: var(--gold); display: block; font-size: 1.1rem; margin-bottom: 4px; }
-.power-list em { font-size: 0.85rem; opacity: 0.8; font-style: normal; display: block; margin-bottom: 4px; }
-
-/* Timeline (Historique) */
-.timeline { 
-  border-left: 2px solid var(--gold); padding-left: 25px; margin-top: 30px; margin-left: 10px;
+/* Timeline */
+.timeline { list-style: none; padding: 0; margin-top: 15px; position: relative; }
+.timeline li {
+  position: relative; padding-left: 25px; margin-bottom: 15px;
+  color: var(--text-muted); font-size: 0.95rem;
 }
-.timeline li { position: relative; margin-bottom: 30px; }
-.timeline li:last-child { margin-bottom: 0; }
 .timeline li::before {
-  content: ''; position: absolute; left: -31px; top: 6px;
-  width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
-  box-shadow: 0 0 10px var(--gold);
+  content: ""; position: absolute; left: 6px; top: 8px;
+  width: 6px; height: 6px; background: var(--gold); border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold);
 }
-.timeline strong { color: #fff; font-family: 'Bebas Neue'; letter-spacing: 1px; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+.timeline li::after {
+  content: ""; position: absolute; left: 8px; top: 16px; bottom: -12px;
+  width: 2px; background: rgba(212, 175, 55, 0.2);
+}
+.timeline li:last-child::after { display: none; }
+.timeline strong { color: #fff; font-family: "Bebas Neue"; letter-spacing: 1px; margin-right: 5px; font-size: 1.1rem; }
 
-/* Container Vidéo */
+/* Règles */
+#regles h3 { 
+  font-family: "Bebas Neue"; font-size: 1.8rem; color: var(--gold); 
+  border-bottom: 1px solid rgba(212,175,55,0.2); margin: 40px 0 20px; 
+}
+#regles ul { padding-left: 20px; list-style: none; }
+#regles ul li::before { content: "•"; color: var(--gold); font-weight: bold; position: absolute; left: 20px; }
+.rule-note { 
+  background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); 
+  padding: 16px; margin: 20px 0; color: var(--text-main); font-size: 0.95rem;
+}
+
+/* Video */
 .video-container {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-  border-radius: 16px; background: #000; border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-lg);
+  border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow); max-width: 900px; margin: 0 auto;
 }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-/* Règles (Mise en page) */
-#regles h3 { 
-  color: var(--gold); font-family: 'Bebas Neue'; font-size: 1.8rem; 
-  border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 40px 0 20px;
-}
-#regles h4 { color: #fff; margin: 30px 0 10px; font-size: 1.2rem; }
-#regles ul { padding-left: 20px; }
-#regles li { margin-bottom: 8px; list-style-type: disc; color: var(--text-muted); }
-.rule-note { 
-  background: var(--gold-dim); border-left: 3px solid var(--gold); padding: 15px; 
-  border-radius: 4px; margin: 20px 0; color: var(--text-main); font-size: 0.9rem;
-}
-
 /* =======================
-   8. FOOTER
+   7. FOOTER
    ======================= */
 footer {
-  background: #010308; padding: 80px 24px 40px;
-  margin-top: 100px; border-top: 1px solid var(--border-light);
-  font-size: 0.9rem; color: #64748b;
+  background: #020617; border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 50px 20px; font-size: 0.9rem; color: #64748b; margin-top: 60px;
 }
-.footer-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px; max-width: 1100px; margin: 0 auto 50px;
-}
-footer h4 { 
-  color: #fff; margin-bottom: 20px; font-family: 'Bebas Neue'; 
-  font-size: 1.3rem; letter-spacing: 1px; 
-}
+footer h4 { color: #fff; margin-bottom: 12px; font-family: "Bebas Neue"; letter-spacing: 1px; font-size: 1.1rem;}
 footer a:hover { color: var(--gold); }
-.footer-bottom { 
-  text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; 
-}
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.6; }
 
 /* =======================
-   9. MOBILE & BURGER (CORRIGÉ & OPAQUE)
+   8. MOBILE & RESPONSIVE (LOGIQUE ORIGINAL RESTAURÉE)
    ======================= */
-.nav-toggle { display: none; }
-
 @media (max-width: 900px) {
-  /* On cache le bouton CTA du header sur mobile */
   header .cta { display: none; }
+  .nav-toggle { display: flex; } /* On affiche le burger */
+  .nav nav { display: none; }    /* On cache le menu par défaut */
   
-  /* Bouton Burger */
-  .nav-toggle {
-    display: flex; flex-direction: column; justify-content: center; gap: 6px;
-    background: transparent; border: 1px solid var(--border-light);
-    width: 44px; height: 44px; border-radius: 8px; cursor: pointer; z-index: 1002;
-  }
-  .nav-toggle span {
-    width: 24px; height: 2px; background: var(--gold); margin: 0 auto;
-    transition: all 0.3s var(--ease);
-  }
-
-  /* MENU MOBILE PLEIN ÉCRAN */
-  .nav nav {
-    position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
-    background-color: var(--bg-deep); /* Fond OPAQUE */
-    flex-direction: column; align-items: center; justify-content: flex-start;
-    padding-top: 40px;
-    transform: translateX(100%); transition: transform 0.3s var(--ease);
-    z-index: 1001; border-top: 1px solid var(--border-light);
-  }
-
-  body.menu-open { overflow: hidden; } /* Bloque le scroll arrière-plan */
-  body.menu-open .nav nav { transform: translateX(0); display: flex; }
+  /* Menu Ouvert - Style exact du fichier original */
+  body.menu-open .logo { display: none; } /* On cache le logo quand ouvert */
   
-  /* Liens Mobile */
-  .nav ul { flex-direction: column; gap: 30px; text-align: center; width: 100%; }
-  .nav ul a { 
-    font-size: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 2px; 
-    display: block; padding: 10px; 
+  body.menu-open .nav nav {
+    display: flex; position: fixed; top: 70px; left: 0; right: 0;
+    background: var(--midnight); flex-direction: column;
+    padding: 20px 0; border-bottom: 1px solid var(--gold);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.9); z-index: 999;
   }
   
-  .mobile-cta { display: block; margin-top: 20px; }
-
-  /* Animation Burger Croix */
-  body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  body.menu-open .nav ul { 
+    flex-direction: column; gap: 20px; 
+    text-align: center; width: 100%; padding: 0 20px;
+  }
+  
+  /* Animation Burger (Croix) */
   body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-  /* Ajustements Mobile Contenu */
-  .hero h1 { font-size: 3.5rem; }
+  
+  .hero h1 { font-size: 3rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .cta-wide { flex-direction: column; }
-  .container { padding: 0 20px; }
-   }
+  .cta-wide { flex-direction: column; gap: 30px; }
+  .cta-wide > div { border-left: none; padding-left: 0; width: 100%; }
+}

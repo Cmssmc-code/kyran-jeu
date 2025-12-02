@@ -398,7 +398,7 @@
       roundEnded: false
     };
 
-    // Messages du Sensei corrigés avec le code couleur exact
+    // Messages du Sensei
     const TUTORIAL_MSGS = {
         0: { // Manche 1 (4 cartes)
             bet: "Fie-toi aux couleurs pour évaluer ta force :<br><div class='color-guide'><span style='color:#d8b4fe'>Mauve 1-6</span> • <span style='color:#60a5fa'>Bleu 7-12</span><br><span style='color:#4ade80'>Vert 13-18</span> • <span style='color:#facc15'>Jaune 19-24</span><br><span style='color:#fb923c'>Orange 25-30</span> • <span style='color:#f87171'>Rouge 31-36</span></div>Combien de plis vas-tu gagner ?",
@@ -522,7 +522,7 @@
         div.id = "opp-" + p.id;
         div.innerHTML = `
           <div class="avatar">${p.emoji}
-            <div class="opp-bet-badge" id="badge-${p.id}" style="position:absolute; bottom:-6px; right:-6px; font-size:0.7rem; background:#020617; border-radius:999px; padding:0 6px; border:1px solid rgba(255,255,255,0.7);">?</div>
+            <div class="opp-bet-badge" id="badge-${p.id}" style="position:absolute; bottom:-6px; right:-6px; font-size:0.7rem; background:#020617; border-radius:999px; padding:0 6px; border:1px solid rgba(255,255,255,0.7); transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);">?</div>
           </div>
           <div class="opp-name" style="color:#e5e7eb; font-size:0.8rem;">${p.name}</div>
           <div class="lives-container" id="lives-${p.id}"></div>`;
@@ -616,16 +616,26 @@
         cont.appendChild(btn);
       }
 
+      // MODIFICATION : IA avec délai humain pour le pari
       GAME.players.forEach(p => {
         if (p.type === "ai" && p.alive) {
+          // Délai variable entre 1.5s et 4s + décalage par joueur
+          let thinkingTime = 1500 + (Math.random() * 2500) + (p.id * 400);
+          
           setTimeout(() => {
             let strength = evaluateHand(p.hand, nb, p);
             let variance = (Math.random() * 0.4) - 0.2;
             let target = Math.round((strength + variance) * nb);
             p.bet = Math.max(0, Math.min(target, nb));
+            
             let badge = document.getElementById("badge-" + p.id);
-            if (badge) badge.innerText = p.bet;
-          }, 300 + Math.random() * 600);
+            if (badge) {
+                badge.innerText = p.bet;
+                // Petit effet visuel
+                badge.style.transform = "scale(1.4)";
+                setTimeout(() => badge.style.transform = "scale(1)", 200);
+            }
+          }, thinkingTime);
         }
       });
       overlay.classList.add("active");
@@ -693,15 +703,24 @@
         if (opp) opp.classList.add("active-turn");
       }
       const statusEl = document.getElementById("player-status");
+      
       if (pid === 0) {
+        // C'est au joueur humain
         enablePlayerHand();
         document.getElementById("my-hand").classList.add("active");
-        statusEl.innerText = "À toi de jouer"; statusEl.style.color = "var(--gold)";
+        statusEl.innerText = "À toi de jouer"; 
+        statusEl.style.color = "var(--gold)";
       } else {
+        // C'est à l'IA
         disablePlayerHand();
         document.getElementById("my-hand").classList.remove("active");
-        statusEl.innerText = GAME.players[pid].name + " joue..."; statusEl.style.color = "#94a3b8";
-        await new Promise(r => setTimeout(r, 600));
+        statusEl.innerText = GAME.players[pid].name + " réfléchit...";
+        statusEl.style.color = "#94a3b8";
+        
+        // MODIFICATION : Délai humain variable (1.2s à 2.8s)
+        const humanDelay = 1200 + Math.random() * 1600;
+        await new Promise(r => setTimeout(r, humanDelay));
+        
         aiPlayCard(pid);
       }
     }
@@ -760,7 +779,9 @@
     }
 
     async function resolveTrick() {
-      await new Promise(r => setTimeout(r, 800));
+      // MODIFICATION : Délai d'attente (Tension) augmenté
+      await new Promise(r => setTimeout(r, 1500));
+      
       let w = GAME.currentTrickCards.reduce((p, c) => (c.effVal > p.effVal ? c : p), { effVal: -1 });
       let wid = w.pid;
       let ws = document.getElementById("slot-" + wid);
@@ -779,7 +800,8 @@
         updateTutorial("Aïe. " + GAME.players[wid].name + " l'emporte avec le " + w.displayVal + ".");
       }
 
-      await new Promise(r => setTimeout(r, 1200));
+      // MODIFICATION : Délai de lecture (Compréhension) augmenté
+      await new Promise(r => setTimeout(r, 2500));
 
       if (GAME.players[0].hand.length === 0 && !GAME.roundEnded) {
         GAME.roundEnded = true;

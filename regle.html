@@ -1,88 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>KYRAN - Règles du jeu | Site officiel</title>
+  <title>KYRAN - Jeu de societe strategique (3-6 joueurs) | Regles + video</title>
 
-  <meta name="description" content="Découvrez les règles complètes de KYRAN. Apprenez à parier, bluffer et utiliser les pouvoirs pour gagner." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="KYRAN est un jeu de societe strategique et rapide pour 3 a 6 joueurs. Decouvrez les regles officielles, la video explicative et devenez le Maitre des Mystiques." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://kyran-jeu.fr/regle.html" />
   <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/regle.html" />
 
-  <link rel="icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <meta property="og:site_name" content="KYRAN" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="KYRAN - Règles du jeu" />
-  <meta property="og:description" content="Toutes les règles pour maîtriser KYRAN." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="KYRAN - Jeu de societe strategique (3-6 joueurs)" />
+  <meta property="og:description" content="Defiez votre intuition et decouvrez les regles officielles de KYRAN, le jeu de societe rapide et strategique." />
   <meta property="og:url" content="https://kyran-jeu.fr/regle.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
-
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KYRAN - Règles du jeu" />
-  <meta name="twitter:description" content="Apprenez à jouer à KYRAN." />
+  <meta name="twitter:title" content="KYRAN - Jeu de societe strategique" />
+  <meta name="twitter:description" content="Decouvrez les regles officielles et la video explicative de KYRAN. Un jeu rapide et strategique pour 3 a 6 joueurs." />
   <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="prefetch" href="index.html" as="document" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="prefetch" href="regle.html" as="document">
+  <link rel="prefetch" href="minijeu.html" as="document">
 
   <style>
     .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
     .mobile-cta{display:none}
+    
+    /* MODIFICATION VIDEO ICI */
+    #video {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .video {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding-bottom: 56.25%; /* Ratio 16:9 */
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* FIN MODIFICATION VIDEO */
+
     @media (max-width:900px){
       header .cta{display:none}
       .mobile-cta{display:list-item}
       .nav-toggle{display:flex}
+      .container.nav{position:relative}
+      .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
     }
   </style>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Règles du jeu KYRAN",
-    "description": "Règles officielles du jeu de cartes KYRAN.",
-    "url": "https://kyran-jeu.fr/regle.html"
+    "@context":"https://schema.org",
+    "@type":"BoardGame",
+    "name":"KYRAN",
+    "inLanguage":"fr-FR",
+    "description":"Jeu de societe strategique et rapide pour 3 a 6 joueurs melant pari, bluff et timing.",
+    "numberOfPlayers":{"@type":"QuantitativeValue","minValue":3,"maxValue":6},
+    "timeRequired":"PT45M",
+    "audience":{"@type":"PeopleAudience","suggestedMinAge":8},
+    "brand":{"@type":"Brand","name":"Kyran"},
+    "image":"https://kyran-jeu.fr/logo.png",
+    "url":"https://kyran-jeu.fr/regle.html"
   }
   </script>
 </head>
-
 <body>
+
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
 
   <header>
     <div class="container nav">
       <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
-        <img src="logo.png" alt="KYRAN" loading="eager" decoding="async" />
+        <img src="logo.png" alt="Logo KYRAN">
       </a>
-
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
-          <li><a href="index.html#video">Bande-annonce</a></li>
-          <li><a href="index.html#univers">Découvrir</a></li>
-          <li><a href="regle.html" aria-current="page">Règles du jeu</a></li>
-          <li><a href="minijeu.html">Jeu en ligne</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#video">🎥 Regle en video</a></li>
+          <li><a href="#decouvrir">Decouvrir</a></li>
+          <li><a href="#regles" aria-current="page">Regles</a></li>
+          <li><a href="minijeu.html">Mini jeu tutoriel</a></li>
           <li><a href="dossier-presse.html">Espace Presse</a></li>
-          <li class="mobile-cta"><a class="btn" href="#">Bientôt disponible</a></li>
+          <li class="mobile-cta"><a class="btn" href="#">🛒 Commander</a></li>
         </ul>
       </nav>
-
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
-
-      <div class="cta"><a class="btn" href="#">Bientôt disponible</a></div>
+      <div class="cta">
+        <a class="btn" href="#">🛒 Commander</a>
+      </div>
     </div>
     <div class="backdrop" hidden></div>
   </header>
@@ -90,114 +126,105 @@
   <main id="contenu-principal">
     <section class="hero">
       <div class="container">
-        <h1><span class="accent">Défie</span> ton intuition et deviens le <span class="accent">Maître des Mystiques</span></h1>
-        <p>Jeu de cartes rapide et convivial. 3 à 6 joueurs. Environ 30 minutes. Dès 8 ans.</p>
-        <div class="cta"><a class="btn" href="#">Bientôt disponible</a></div>
+        <h1><span class="accent">Regles</span> officielles<br>de <span class="accent">KYRAN</span></h1>
+        <p>Tout ce qu'il faut pour jouer sans hesiter : mise en place, manches, pouvoirs et manche mystique.</p>
       </div>
     </section>
 
     <section id="video">
       <div class="container">
-        <h2 class="section-title">Découvre KYRAN</h2>
-        <p class="section-sub">Une bande-annonce pour entrer dans l'univers</p>
-        <div class="video-container">
+        <h2 class="section-title">🎥 Regles en video</h2>
+        <p class="section-sub">Comprenez tout en 5 minutes.</p>
+
+        <div class="video">
           <iframe
-            src="https://www.youtube.com/embed/y0YVn-lZMAc"
-            title="Bande-annonce du jeu KYRAN"
+            src="https://www.youtube.com/embed/jj0ChLVTpaA"
+            title="Regles du jeu KYRAN"
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
-        <p style="text-align:center; margin-top:18px">
-          <a class="btn" href="regle.html">Voir les règles complètes</a>
-        </p>
       </div>
     </section>
 
-    <section id="univers">
+    <section id="decouvrir">
       <div class="container">
-        <h2 class="section-title">Pourquoi KYRAN</h2>
-        <p class="section-sub">Rythme tendu. Décisions qui comptent.</p>
-
+        <h2 class="section-title">Decouvrez KYRAN</h2>
+        <p class="section-sub">Un jeu simple a apprendre, mais profond et strategique.</p>
         <div class="grid grid-3">
-          <div class="card">
-            <h3>Objectif</h3>
-            <p>Parie tes plis, remporte-les au bon moment et protège tes vies. Les Pouvoirs peuvent tout changer d'un coup.</p>
-          </div>
-          <div class="card">
-            <h3>Rapide &amp; malin</h3>
-            <p>Mise en place simple (30 min). Lecture d'adversaires, bluff et timing sont clés.</p>
-          </div>
-          <div class="card">
-            <h3>Convivial</h3>
-            <p>Jeu parfait pour la famille et les amis (3 à 6 joueurs).</p>
-          </div>
+          <div class="card"><h3>👥 Joueurs</h3><p>3 a 6 joueurs.</p></div>
+          <div class="card"><h3>⏳ Duree</h3><p>Environ 30 minutes.</p></div>
+          <div class="card"><h3>🎂 Age</h3><p>A partir de 8 ans.</p></div>
         </div>
+      </div>
+    </section>
 
-        <aside class="card" style="margin-top:30px; max-width: 400px; margin-left: auto; margin-right: auto; text-align:center;">
-          <h3>Infos rapides</h3>
-          <ul style="list-style:none; padding:0; display:flex; justify-content: space-around; flex-wrap: wrap; font-size: 0.95rem;">
-            <li style="margin: 5px 10px;">👥 <strong>3-6 joueurs</strong></li>
-            <li style="margin: 5px 10px;">⏱️ <strong>~30 min</strong></li>
-            <li style="margin: 5px 10px;">🎂 <strong>8 ans et +</strong></li>
-            <li style="margin: 5px 10px;">🪄 Pouvoirs &amp; bluff</li>
+    <section id="regles">
+      <div class="container">
+        <h2 class="section-title">📜 Regles completes</h2>
+        <p class="section-sub">Reference officielle pour vos parties</p>
+
+        <article class="card">
+          <h3>🎯 Objectif</h3>
+          <p>KYRAN est un jeu de plis pour 3 a 6 joueurs. A chaque manche, on predit combien de plis on va gagner, puis on joue ses cartes (nombres ou pouvoirs speciaux). Si la prediction est juste, on garde ses vies, sinon on en perd. Le joueur qui a le plus de vies a la fin devient <strong>Maitre des Mystiques</strong>.</p>
+
+          <h3>🧩 Mise en place</h3>
+          <ul>
+            <li>Melangez les cartes Nombre (1 a 36) et les cartes aux effets speciaux ensemble.</li>
+            <li>Pour <strong>3 et 4 joueurs</strong> : prendre uniquement <em>Clairvoyance Antique</em> (11), <em>Sceau du Destin</em> (27), <em>Benediction des Ancetres</em> (20), <em>Voile du Neant</em> (3) et la carte <em>Mystique</em>.</li>
+            <li>Pour <strong>5 et 6 joueurs</strong> : prendre <strong>toutes</strong> les cartes Pouvoir et la carte Mystique.</li>
+            <li>Chaque joueur recoit un paquet de 5 cartes Vie, empilees devant lui de maniere decroissante : la carte 5 etoiles au-dessus, puis 4, 3, 2 et enfin 1 etoile en bas. Ces cartes restent toujours visibles par tous.</li>
           </ul>
-        </aside>
-      </div>
-    </section>
 
-    <section id="contenu">
-      <div class="container">
-        <h2 class="section-title">Dans la boîte</h2>
-        <p class="section-sub">Tout pour jouer dès l'ouverture</p>
-        <div class="grid grid-4">
-          <div class="card"><h3>36 cartes Nombre</h3><p>Le cœur du jeu de plis.</p></div>
-          <div class="card"><h3>8 cartes Pouvoir</h3><p>Des effets qui renversent la partie.</p></div>
-          <div class="card"><h3>1 carte Mystique</h3><p>0 ou 37 : à jouer au bon moment.</p></div>
-          <div class="card"><h3>6 x 5 cartes Vie</h3><p>Ton capital à préserver.</p></div>
-        </div>
-      </div>
-    </section>
+          <h3>🎮 Deroulement d'une partie</h3>
+          <p>Le jeu se deroule en plusieurs manches jusqu'a ce qu'un joueur ait perdu toutes ses vies. Le nombre de cartes distribuees diminue progressivement : <strong>7 → 6 → 5 → 4 → 3 → 2</strong>, puis une <em>manche Mystique</em> a 1 carte. Le donneur change chaque tour dans le sens des aiguilles d'une montre. Une fois ce cycle termine, un nouveau cycle recommence a 7 cartes.</p>
 
-    <section id="jouer">
-      <div class="container">
-        <h2 class="section-title">Comment ça se joue</h2>
-        <p class="section-sub">Aperçu rapide - règles complètes en détail</p>
-        <div class="grid grid-3">
-          <div class="card"><h3>1) Parier</h3><p>Annonce le nombre de plis visés.</p></div>
-          <div class="card"><h3>2) Jouer</h3><p>À chaque tour, la carte la plus forte l'emporte.</p></div>
-          <div class="card"><h3>3) Ajuster</h3><p>Réussis tes paris pour garder tes vies.</p></div>
-        </div>
-        <p style="text-align:center;margin-top:14px">
-          <a class="btn" href="regle.html">Voir les règles complètes</a>
-        </p>
-      </div>
-    </section>
-
-    <section id="avis">
-      <div class="container">
-        <h2 class="section-title">Ils ont adoré</h2>
-        <p class="section-sub">Retours de parties</p>
-        <div class="grid grid-3">
-          <div class="card">"Simple à expliquer, mais les paris surprennent vite." <strong class="accent" style="display:block; margin-top:10px">- Léo</strong></div>
-          <div class="card">"Du bluff, des rires et une Mystique qui renverse tout." <strong class="accent" style="display:block; margin-top:10px">- Amélie</strong></div>
-          <div class="card">"À 6, ça tourne nickel. On enchaîne." <strong class="accent" style="display:block; margin-top:10px">- Karim</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-          <div style="flex: 1; min-width: 280px;">
-            <h3 style="margin-bottom: 5px;">Prêt à devenir le <span class="accent">Maître des Mystiques</span> ?</h3>
-            <p style="margin-bottom: 0;">Commande bientôt disponible.</p>
+          <h4>1) Phase de paris</h4>
+          <ul>
+            <li>En commencant a gauche du donneur, chacun annonce a voix haute combien de plis il pense gagner.</li>
+            <li><strong>Regle :</strong> la somme des paris ne doit pas etre egale au nombre total de plis. Le dernier joueur doit s'ajuster si necessaire.</li>
+          </ul>
+          <div class="rule-note">
+            <strong>Ex :</strong> Dans une manche a 5 cartes, trois joueurs ont parie 1, 2 et 1. Le dernier joueur ne peut pas dire 1 car cela ferait 5 plis annonces. Il peut dire 0, 2, 3, 4 ou 5.
           </div>
-          <div>
-            <a class="btn" href="#">Bientôt disponible</a>
+
+          <h4>2) Phase de jeu</h4>
+          <ul>
+            <li>Le joueur a gauche du donneur commence. Chacun joue une carte face visible, dans le sens des aiguilles d'une montre.</li>
+            <li>La carte Nombre la plus forte remporte le pli, sauf effet de carte Pouvoir ou Mystique.</li>
+            <li>Les plis remportes sont places devant le joueur qui les a gagnes.</li>
+          </ul>
+
+          <h4>3) Fin de manche</h4>
+          <ul>
+            <li>On compte les plis gagnes par chacun.</li>
+            <li><strong>Pari reussi :</strong> si un joueur a gagne exactement le nombre de plis annonces, il ne perd aucune vie.</li>
+            <li><strong>Pari rate :</strong> des qu'un joueur a gagne plus ou moins de plis que ce qu'il avait annonce, il perd 1 vie (la carte Vie du dessus).</li>
+          </ul>
+          <div class="rule-note">
+            <strong>Ex :</strong> Il pensait ne pas gagner le pli mais le remporte. Il perd 1 vie.
           </div>
-        </div>
+
+          <h3>🏁 Fin du jeu</h3>
+          <ul>
+            <li>Le premier joueur a perdre toutes ses cartes Vie est declare <strong>perdant</strong> et le jeu s'arrete.</li>
+            <li>Le joueur possedant le plus grand nombre de cartes Vie restantes est declare <strong>Maitre des Mystiques</strong>.</li>
+          </ul>
+
+          <h3>✨ Cartes aux effets speciaux</h3>
+          <p><strong>Carte Mystique</strong> - Lorsqu'elle est jouee hors manche Mystique, le joueur choisit librement de lui attribuer la valeur <strong>0</strong> ou <strong>37</strong> au moment de la poser. Elle est la carte la plus forte du jeu.</p>
+          <p><strong>Cartes Pouvoir</strong> - Toujours gagnantes en cas d'egalite avec une carte Nombre.</p>
+          <ul>
+            <li><strong>Clairvoyance Antique</strong> : regarde secretement la carte avec la valeur la plus forte du joueur de ton choix.</li>
+            <li><strong>Sceau du Destin</strong> : pioche une carte au hasard dans la main d'un joueur, qu'il doit jouer immediatement.<br><em>Si tu es le dernier a jouer ce tour, l'effet est annule.</em></li>
+            <li><strong>Benediction des Ancetres</strong> : cible un joueur qui doit immediatement jouer sa carte la plus faible.<br><em>Si tu es le dernier a jouer ce tour, l'effet est annule.</em></li>
+            <li><strong>Voile du Neant</strong> : echange si tu le souhaites la valeur de ta carte avec une autre carte deja posee ce tour-ci par un adversaire.<br><em>Si tu es le premier a jouer ce tour, l'effet est annule.</em><br><em>Si tu echanges avec la carte Mystique, tu prends la valeur deja definie pendant le tour.</em></li>
+          </ul>
+
+          <h3>🧘 Variante</h3>
+          <p>Pour une premiere partie ou plus de simplicite, jouez sans carte Pouvoir ni carte Mystique.</p>
+        </article>
       </div>
     </section>
   </main>
@@ -205,8 +232,9 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>KYRAN - Site officiel</h4>
-        <p>Jeu de cartes rapide et convivial. Vidéo, règles et infos.</p>
+        <h4>KYRAN - Accueil officiel</h4>
+        <p>Un jeu de cartes rapide et convivial. Retrouvez ici la video, les regles et la boutique.</p>
+        <p><a href="index.html">Retour a l'accueil</a></p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -215,12 +243,12 @@
       </div>
       <div class="footer-col">
         <h4>Illustrations</h4>
-        <p>Créa by Floh - <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
+        <p>Crea by Floh - <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
         <p style="color:#aaa">Ressources © Freepik</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p><strong>Kyran®</strong> - © 2025 Corentin SENCE. Tous droits réservés.</p>
+      <p><strong>Kyran®</strong> - ©2025 Corentin SENCE. Tous droits reserves.</p>
       <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
     </div>
   </footer>

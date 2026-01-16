@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -6,15 +6,17 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
-  <title>KYRAN – Le Dojo (Tutoriel)</title>
-  <meta name="description" content="Tutoriel interactif du jeu KYRAN. Apprenez les règles en jouant contre l'IA." />
+  <title>KYRAN - Le Dojo (Tutoriel Interactif)</title>
+  <meta name="description" content="Tutoriel interactif du jeu KYRAN. Apprenez les regles en jouant contre l'IA." />
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
   <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
-  
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/minijeu.html" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
@@ -24,32 +26,13 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Specific Game Styles - Inherits vars from style.css */
     :root {
       --card-width: 80px;
       --card-height: 114px;
       --card-width-mob: 60px;
       --card-height-mob: 86px;
-      --gold: #d4af37;
       --accent-blue: #38bdf8;
-    }
-
-    /* Force le header à rester au-dessus du jeu (z-index jeu = 5100) */
-    header {
-      position: fixed !important;
-      top: 0; left: 0; width: 100%;
-      z-index: 6000 !important;
-      background: rgba(2, 6, 23, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    /* Gestion du bouton mobile spécifique */
-    .mobile-cta { display: none; margin-top: 15px; }
-    @media (max-width:900px){
-      header .cta { display: none; }
-      .mobile-cta { display: list-item; }
-      .nav-toggle { display: flex; }
     }
 
     #game-app * {
@@ -76,8 +59,7 @@
       position: relative;
       width: 100%;
       max-width: 900px;
-      /* Marge haute augmentée pour éviter que le header ne cache le jeu */
-      margin: 100px auto 40px;
+      margin: 40px auto; /* Margin-top is handled by section padding + body padding */
       padding: 20px;
       background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -274,16 +256,6 @@
       margin-bottom: 22px; line-height: 1.5;
     }
 
-    .btn {
-      border-radius: 999px; border: none; padding: 12px 28px;
-      font-size: 0.95rem; font-weight: 600; text-transform: uppercase;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #0f172a; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.5);
-      transition: all 0.2s ease; letter-spacing: 0.05em; cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
-    .btn:active { transform: translateY(1px); }
-
     /* Mystique Panorama */
     .mystic-panorama {
         display: flex; justify-content: center; align-items: flex-end;
@@ -301,7 +273,7 @@
     }
 
     @media (max-width: 600px) {
-      #game-app { padding: 10px; border-radius: 0; margin-top: 100px; }
+      #game-app { padding: 10px; border-radius: 0; margin-top: 0; }
       .k-card, .slot { width: var(--card-width-mob); height: var(--card-height-mob); }
       .overlay-title { font-size: 1.8rem; }
       .mystic-panorama { gap: 8px; flex-wrap: wrap; justify-content: center;}
@@ -312,36 +284,37 @@
 </head>
 <body>
 
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
+
   <header>
     <div class="container nav">
       <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
-        <img src="logo.png" alt="KYRAN" decoding="async" />
+        <img src="logo.png" alt="Logo KYRAN">
       </a>
-      
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="regle.html#video">Vidéo</a></li>
-          <li><a href="regle.html">Règles</a></li>
+          <li><a href="regle.html#video">Video</a></li>
+          <li><a href="regle.html">Regles</a></li>
           <li><a href="minijeu.html" aria-current="page" class="accent">Jeu en ligne</a></li>
           <li><a href="dossier-presse.html">Presse</a></li>
-          
           <li class="mobile-cta">
             <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
           </li>
         </ul>
       </nav>
-
-      <button class="nav-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
-
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span><span></span><span></span>
+      </button>
       <div class="cta">
         <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
       </div>
     </div>
+    <div class="backdrop" hidden></div>
   </header>
 
   <main id="contenu-principal">
-    <section id="mini-jeu-section" style="padding: 40px 0;">
+    <section id="mini-jeu-section" style="padding-top: 40px;">
       <div class="container">
         <div id="game-app">
           <div class="game-header">
@@ -350,7 +323,7 @@
           </div>
 
           <div id="tutorial-bubble" class="tutorial-bubble">
-            Bienvenue. Ici, tu vas apprendre à maîtriser l'art du Pari.
+            Bienvenue. Ici, tu vas apprendre a maitriser l'art du Pari.
           </div>
 
           <div id="opponents-zone" class="opponents-zone"></div>
@@ -368,7 +341,7 @@
                 <div class="stat-value gold" id="my-bet-display">-</div>
               </div>
               <div class="stat-box">
-                <div class="stat-label">Plis Gagnés</div>
+                <div class="stat-label">Plis Gagnes</div>
                 <div class="stat-value" id="my-tricks-display">0</div>
               </div>
             </div>
@@ -379,11 +352,11 @@
             <div class="overlay-title">LE DOJO KYRAN</div>
             <div class="overlay-sub">
                 Ceci est une initiation interactive.<br>
-                Tu vas jouer 4 manches pour apprendre les mécaniques :<br>
-                Le Pari, la Stratégie et la manche Mystique.<br><br>
-                <em style="color:#fbbf24; font-style:normal;">Note : Ce tutoriel inclut la carte Mystique mais se joue <strong>sans les Cartes Pouvoirs</strong> (à découvrir dans la version physique) !</em>
+                Tu vas jouer 4 manches pour apprendre les mecaniques :<br>
+                Le Pari, la Strategie et la manche Mystique.<br><br>
+                <em style="color:#fbbf24; font-style:normal;">Note : Ce tutoriel inclut la carte Mystique mais se joue <strong>sans les Cartes Pouvoirs</strong> (a decouvrir dans la version physique) !</em>
             </div>
-            <button class="btn" onclick="startGame()">Entrer dans l'arène</button>
+            <button class="btn" onclick="startGame()">Entrer dans l'arene</button>
           </div>
 
           <div id="bet-overlay" class="game-overlay">
@@ -419,6 +392,30 @@
     </section>
   </main>
 
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>KYRAN - Accueil officiel</h4>
+        <p>Un jeu de cartes rapide et convivial. Retrouvez ici la video, les regles et la boutique.</p>
+        <p><a href="index.html">Retour a l'accueil</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+        <p style="color:#aaa">Site sans cookies</p>
+      </div>
+      <div class="footer-col">
+        <h4>Illustrations</h4>
+        <p>Crea by Floh - <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
+        <p style="color:#aaa">Ressources © Freepik</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>Kyran®</strong> - ©2026 Corentin SENCE. Tous droits reserves.</p>
+      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
+    </div>
+  </footer>
+
   <script>
     const ROUNDS = [4, 3, 2, 1];
     const GAME = {
@@ -437,25 +434,25 @@
 
     // Messages du Sensei
     const TUTORIAL_MSGS = {
-        0: { // Manche 1 (4 cartes)
-            bet: "Fie-toi aux couleurs pour évaluer ta force :<br><div class='color-guide'><span style='color:#d8b4fe'>Mauve 1-6</span> • <span style='color:#60a5fa'>Bleu 7-12</span><br><span style='color:#4ade80'>Vert 13-18</span> • <span style='color:#facc15'>Jaune 19-24</span><br><span style='color:#fb923c'>Orange 25-30</span> • <span style='color:#f87171'>Rouge 31-36</span></div>Combien de plis vas-tu gagner ?",
-            play: "À toi. Si tu as une carte Rouge ou Orange (forte), tu as de bonnes chances de gagner.",
-            end: "Tu as compris ? Ton pari doit égaler tes plis gagnés. Sinon, tu perds des vies."
+        0: {
+            bet: "Fie-toi aux couleurs pour evaluer ta force :<br><div class='color-guide'><span style='color:#d8b4fe'>Mauve 1-6</span> • <span style='color:#60a5fa'>Bleu 7-12</span><br><span style='color:#4ade80'>Vert 13-18</span> • <span style='color:#facc15'>Jaune 19-24</span><br><span style='color:#fb923c'>Orange 25-30</span> • <span style='color:#f87171'>Rouge 31-36</span></div>Combien de plis vas-tu gagner ?",
+            play: "A toi. Si tu as une carte Rouge ou Orange (forte), tu as de bonnes chances de gagner.",
+            end: "Tu as compris ? Ton pari doit egaler tes plis gagnes. Sinon, tu perds des vies."
         },
-        1: { // Manche 2 (3 cartes)
+        1: {
             bet: "Moins de cartes = plus de hasard. Si tu n'as que du Mauve ou du Bleu, prudence ! Parfois, il vaut mieux parier 0.",
             play: "Observe les autres. Si Titan joue une carte Rouge (forte), inutile de sacrifier ta meilleure carte si elle est plus faible.",
-            end: "Bien. La gestion de tes cartes moyennes (Vert/Jaune) est la clé de la victoire."
+            end: "Bien. La gestion de tes cartes moyennes (Vert/Jaune) est la cle de la victoire."
         },
-        2: { // Manche 3 (2 cartes)
-            bet: "Seulement 2 cartes. C'est quitte ou double. Une carte Rouge assure souvent un pli. Une Mauve assure une défaite.",
+        2: {
+            bet: "Seulement 2 cartes. C'est quitte ou double. Une carte Rouge assure souvent un pli. Une Mauve assure une defaite.",
             play: "Chaque carte compte. Une erreur ici est fatale pour ton pari.",
             end: "Il ne reste qu'une manche. La plus dangereuse..."
         },
-        3: { // Manche 4 (Mystique)
-            bet: "MANCHE MYSTIQUE ! Tu ne vois PAS ta propre carte. Regarde celles des adversaires. S'ils ont tous du Bleu (faible), la tienne est peut-être forte !",
-            play: "C'est le saut dans l'inconnu. Joue ta carte pour la découvrir.",
-            end: "L'épreuve est terminée."
+        3: {
+            bet: "MANCHE MYSTIQUE ! Tu ne vois PAS ta propre carte. Regarde celles des adversaires. S'ils ont tous du Bleu (faible), la tienne est peut-etre forte !",
+            play: "C'est le saut dans l'inconnu. Joue ta carte pour la decouvrir.",
+            end: "L'epreuve est terminee."
         }
     };
 
@@ -607,7 +604,7 @@
       if (GAME.isMysticRound) {
         title.innerText = "PARI MYSTIQUE";
         title.style.color = "var(--gold)";
-        instr.innerHTML = "<strong>CONSEIL :</strong> Tu ne vois PAS ta propre carte (c'est le dos qui est affiché).<br>Regarde les cartes adverses ci-dessous pour deviner si tu es fort ou faible.";
+        instr.innerHTML = "<strong>CONSEIL :</strong> Tu ne vois PAS ta propre carte (c'est le dos qui est affiche).<br>Regarde les cartes adverses ci-dessous pour deviner si tu es fort ou faible.";
         
         previewClassic.style.display = "none";
         mysticPanorama.style.display = "flex";
@@ -653,10 +650,8 @@
         cont.appendChild(btn);
       }
 
-      // MODIFICATION : IA avec délai humain pour le pari
       GAME.players.forEach(p => {
         if (p.type === "ai" && p.alive) {
-          // Délai variable entre 1.5s et 4s + décalage par joueur
           let thinkingTime = 1500 + (Math.random() * 2500) + (p.id * 400);
           
           setTimeout(() => {
@@ -668,7 +663,6 @@
             let badge = document.getElementById("badge-" + p.id);
             if (badge) {
                 badge.innerText = p.bet;
-                // Petit effet visuel
                 badge.style.transform = "scale(1.4)";
                 setTimeout(() => badge.style.transform = "scale(1)", 200);
             }
@@ -742,19 +736,16 @@
       const statusEl = document.getElementById("player-status");
       
       if (pid === 0) {
-        // C'est au joueur humain
         enablePlayerHand();
         document.getElementById("my-hand").classList.add("active");
-        statusEl.innerText = "À toi de jouer"; 
+        statusEl.innerText = "A toi de jouer"; 
         statusEl.style.color = "var(--gold)";
       } else {
-        // C'est à l'IA
         disablePlayerHand();
         document.getElementById("my-hand").classList.remove("active");
-        statusEl.innerText = GAME.players[pid].name + " réfléchit...";
+        statusEl.innerText = GAME.players[pid].name + " reflechit...";
         statusEl.style.color = "#94a3b8";
         
-        // MODIFICATION : Délai humain variable (1.2s à 2.8s)
         const humanDelay = 1200 + Math.random() * 1600;
         await new Promise(r => setTimeout(r, humanDelay));
         
@@ -816,7 +807,6 @@
     }
 
     async function resolveTrick() {
-      // MODIFICATION : Délai d'attente (Tension) augmenté
       await new Promise(r => setTimeout(r, 1500));
       
       let w = GAME.currentTrickCards.reduce((p, c) => (c.effVal > p.effVal ? c : p), { effVal: -1 });
@@ -831,13 +821,12 @@
       if (wid === 0) {
         document.getElementById("my-tricks-display").innerText = GAME.players[0].tricks;
         statusEl.innerText = "Tu gagnes le pli !"; statusEl.style.color = "#4ade80";
-        updateTutorial("Joli coup ! La carte " + w.displayVal + " était la plus forte.");
+        updateTutorial("Joli coup ! La carte " + w.displayVal + " etait la plus forte.");
       } else {
         statusEl.innerText = GAME.players[wid].name + " gagne."; statusEl.style.color = "#e5e7eb";
-        updateTutorial("Aïe. " + GAME.players[wid].name + " l'emporte avec le " + w.displayVal + ".");
+        updateTutorial("Aie. " + GAME.players[wid].name + " l'emporte avec le " + w.displayVal + ".");
       }
 
-      // MODIFICATION : Délai de lecture (Compréhension) augmenté
       await new Promise(r => setTimeout(r, 2500));
 
       if (GAME.players[0].hand.length === 0 && !GAME.roundEnded) {
@@ -865,7 +854,7 @@
       let btn = document.getElementById("next-round-btn");
       let title = document.getElementById("end-title");
       let resultColor = playerDiff === 0 ? "#4ade80" : "#ef4444"; 
-      let resultTitle = playerDiff === 0 ? "PARI RÉUSSI" : "PARI MANQUÉ";
+      let resultTitle = playerDiff === 0 ? "PARI REUSSI" : "PARI MANQUE";
       let diffMsg = playerDiff === 0 ? "Aucune vie perdue." : `Tu perds <strong>${playerDiff}</strong> vie(s).`;
 
       updateTutorial(TUTORIAL_MSGS[GAME.roundIndex].end);
@@ -874,7 +863,7 @@
         <div style="background:rgba(255,255,255,0.05); border-radius:12px; padding:15px; margin-bottom:20px; border:1px solid ${resultColor};">
             <div style="color:${resultColor}; font-weight:bold; font-size:1.2rem; margin-bottom:5px;">${resultTitle}</div>
             <div style="font-size:0.9rem; color:#e5e7eb;">
-                Pari: <span style="color:var(--gold); font-weight:bold;">${player.bet}</span> / Réalisé: <span style="font-weight:bold;">${player.tricks}</span>
+                Pari: <span style="color:var(--gold); font-weight:bold;">${player.bet}</span> / Realise: <span style="font-weight:bold;">${player.tricks}</span>
                 <br><span style="margin-top:5px; display:block;">${diffMsg}</span>
             </div>
         </div>`;
@@ -901,7 +890,7 @@
             document.getElementById("end-overlay").appendChild(physBtn);
         }
       } else {
-        title.innerText = "MANCHE TERMINÉE";
+        title.innerText = "MANCHE TERMINEE";
         btn.onclick = null;
         btn.onclick = function() { nextRoundSetup(); };
         btn.innerText = "Suite";
@@ -930,9 +919,42 @@
       });
     }
 
-    (function () {
-      const t = document.querySelector(".nav-toggle");
-      if (t) t.addEventListener("click", () => document.body.classList.toggle("menu-open"));
+    (function(){
+      const navToggle = document.querySelector('.nav-toggle');
+      const body = document.body;
+      const backdrop = document.querySelector('.backdrop');
+
+      function closeMenu(){
+        body.classList.remove('menu-open');
+        if (navToggle) navToggle.setAttribute('aria-expanded','false');
+        if (backdrop) backdrop.hidden = true;
+      }
+
+      function openMenu(){
+        body.classList.add('menu-open');
+        if (navToggle) navToggle.setAttribute('aria-expanded','true');
+        if (backdrop) backdrop.hidden = false;
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener('click', function(){
+          if (body.classList.contains('menu-open')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', closeMenu);
+      }
+
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') {
+          closeMenu();
+        }
+      });
     })();
   </script>
 </body>

@@ -1,18 +1,17 @@
 /* =======================
-   1. VARIABLES & AMBIANCE (Issue de style.css)
+   1. VARIABLES & AMBIANCE
    ======================= */
 :root {
   --gold: #d4af37;          /* Or antique */
-  --gold-bright: #f9d77e;   /* Or éclatant */
+  --gold-bright: #f9d77e;   /* Or eclatant */
   --gold-muted: rgba(212, 175, 55, 0.15);
   
   --void: #020617;          /* Noir quasi total */
   --midnight: #0f172a;      /* Bleu nuit */
   
-  --text-main: #f1f5f9;     /* Blanc cassé très clair */
-  --text-muted: #94a3b8;    /* Gris bleuté */
+  --text-main: #f1f5f9;     /* Blanc casse tres clair */
+  --text-muted: #94a3b8;    /* Gris bleute */
   
-  /* Glassmorphism Premium */
   --card-bg: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
   --card-border: 1px solid rgba(212, 175, 55, 0.15);
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -30,13 +29,12 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--void);
-  /* Fond texturé profond issu de style.css */
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 80px; /* Espace pour le header fixe */
   overflow-x: hidden;
 }
 
@@ -46,14 +44,14 @@ ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
 
 /* =======================
-   3. HEADER & NAV (Style Premium)
+   3. HEADER & NAV
    ======================= */
 header {
   position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-  background: rgba(2, 6, 23, 0.85); /* Plus de transparence */
-  backdrop-filter: blur(12px);      /* Effet flou */
+  background: rgba(2, 6, 23, 0.90);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 1000;
+  z-index: 6000; /* Superieur a tout, meme au jeu */
   display: flex; align-items: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
@@ -78,21 +76,38 @@ header {
   color: var(--text-main); opacity: 0.9; position: relative; padding: 5px 0;
 }
 
-/* Animation soulignement style.css */
 .nav ul a::after {
   content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
   background: var(--gold); transition: width var(--speed);
 }
-.nav ul a:hover::after, .nav ul a[aria-current="page"]::after { width: 100%; }
-.nav ul a:hover, .nav ul a[aria-current="page"] { 
+.nav ul a:hover::after, .nav ul a[aria-current="page"]::after, .nav ul a.active::after { width: 100%; }
+.nav ul a:hover, .nav ul a[aria-current="page"], .nav ul a.active { 
   color: var(--gold); text-shadow: 0 0 10px rgba(212,175,55,0.4); opacity: 1;
 }
 
-/* Burger (Caché sur PC) */
-.nav-toggle { display: none; }
+/* Bouton Burger */
+.nav-toggle { 
+  display: none; 
+  flex-direction: column; justify-content: center; align-items: center; gap: 6px;
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
+  z-index: 6001;
+}
+.nav-toggle span {
+  width: 24px; height: 2px; background: var(--gold); transition: var(--speed);
+}
+
+/* BackDrop pour mobile */
+.backdrop {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); z-index: 5999;
+}
+
+/* Mobile CTA dans le menu */
+.mobile-cta { display: none; margin-top: 15px; }
 
 /* =======================
-   4. BOUTONS (Style "Relique")
+   4. BOUTONS
    ======================= */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -100,22 +115,25 @@ header {
   color: #000;
   font-weight: 700;
   padding: 12px 30px;
-  
-  /* MODIFICATION ICI : 50px pour un bouton bien arrondi */
   border-radius: 50px; 
-  
   text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.4);
   transition: all 0.25s ease;
   position: relative; overflow: hidden;
+  text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--gold-bright) 0%, #b8860b 100%);
   box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+  color: #000;
 }
+.btn:active { transform: translateY(1px); }
+
+/* Header CTA specific */
+header .cta { display: block; }
 
 /* =======================
    5. SECTIONS & UI
@@ -136,7 +154,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 }
 .accent { color: var(--gold); }
 
-/* Titres de section */
+/* Titres */
 .section-title { 
   font-family: 'Bebas Neue'; font-size: clamp(2.5rem, 5vw, 3.5rem); 
   text-align: center; margin-bottom: 10px; color: #fff;
@@ -154,8 +172,8 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Cartes (Glassmorphism appliqué) */
-.card, .feature-card, #regles article {
+/* Cartes */
+.card, .feature-card, article {
   background: var(--card-bg);
   border: var(--card-border);
   border-radius: 16px; padding: 30px; 
@@ -177,10 +195,6 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 }
 .card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
-/* =======================
-   6. ÉLÉMENTS SPÉCIFIQUES
-   ======================= */
-
 /* Listes Techniques */
 .tech-list li, .power-list li {
   padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -189,9 +203,8 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .tech-list li strong { 
   color: var(--gold); font-weight: 400; font-family: 'Bebas Neue'; letter-spacing: 1px; font-size: 1.1rem; 
 }
-.power-list strong { color: var(--gold-bright); display: block; font-size: 1.2rem; }
 
-/* Timeline (Améliorée) */
+/* Timeline */
 .timeline { 
   border-left: 2px solid rgba(255, 255, 255, 0.1); 
   padding-left: 35px; margin-top: 30px; margin-left: 10px; 
@@ -200,7 +213,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .timeline li::before {
   content: ''; position: absolute; left: -41px; top: 6px;
   width: 10px; height: 10px; background: var(--gold); border-radius: 50%;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Lueur sur les points */
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 .timeline strong { 
   color: #fff; font-family: 'Bebas Neue'; font-size: 1.3rem; 
@@ -229,7 +242,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .rule-note strong { color: var(--gold-bright); }
 
 /* =======================
-   7. FOOTER
+   6. FOOTER
    ======================= */
 footer {
   background: #010409; padding: 60px 20px 30px; margin-top: 80px;
@@ -240,31 +253,24 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-si
 .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; opacity: 0.6; }
 
 /* =======================
-   8. MOBILE & RESPONSIVE
+   7. RESPONSIVE
    ======================= */
 @media (max-width: 900px) {
-  /* On cache le menu desktop et le CTA header */
+  /* Hide Desktop Nav & CTA */
   .nav nav, header .cta { display: none; }
   
-  /* Bouton Burger */
-  .nav-toggle {
-    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px;
-    background: transparent; border: 1px solid rgba(255,255,255,0.2);
-    width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
-  }
-  .nav-toggle span {
-    width: 24px; height: 2px; background: var(--gold); transition: var(--speed);
-  }
+  .nav-toggle { display: flex; }
 
   /* Menu Mobile Ouvert */
   body.menu-open { overflow: hidden; }
   
   body.menu-open .nav nav {
     display: flex; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
-    background-color: rgba(2, 6, 23, 0.98); /* Fond presque opaque */
+    background-color: rgba(2, 6, 23, 0.98);
     backdrop-filter: blur(15px);
     flex-direction: column; padding: 40px 20px; border-top: 1px solid rgba(212, 175, 55, 0.3);
-    z-index: 1001; animation: fadeIn 0.3s;
+    z-index: 6000; animation: fadeIn 0.3s;
+    overflow-y: auto;
   }
   @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
@@ -281,5 +287,4 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-si
 
   .hero h1 { font-size: 3.5rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .cta-wide { flex-direction: column; }
 }

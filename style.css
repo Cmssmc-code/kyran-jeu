@@ -24,7 +24,12 @@
    2. BASE & TYPOGRAPHIE
    ======================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+
+html { 
+  scroll-behavior: smooth; 
+  font-size: 16px; 
+  -webkit-text-size-adjust: 100%; /* Empeche le zoom auto bizarre sur iOS */
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -38,7 +43,30 @@ body {
   overflow-x: hidden;
 }
 
+/* UX : Selection de texte aux couleurs du jeu */
+::selection {
+  background: var(--gold);
+  color: #000;
+  text-shadow: none;
+}
+
+/* UX : Scrollbar personnalisee (Webkit) pour l'immersion */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { 
+  background: #334155; 
+  border-radius: 5px; 
+  border: 2px solid var(--void); 
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
 a { text-decoration: none; color: inherit; transition: var(--speed); }
+/* A11y : Focus visible pour navigation clavier */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 img { max-width: 100%; display: block; height: auto; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
@@ -287,4 +315,31 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-si
 
   .hero h1 { font-size: 3.5rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* =======================
+   8. MODE IMPRESSION (Regles)
+   ======================= */
+@media print {
+  header, footer, .video-container, .hero .btn, .cta, #mini-jeu-section {
+    display: none !important;
+  }
+  body { 
+    background: #fff !important; 
+    color: #000 !important; 
+    background-image: none !important;
+    padding-top: 0 !important;
+  }
+  .card, article {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    color: #000 !important;
+    break-inside: avoid;
+  }
+  h1, h2, h3, strong { color: #000 !important; text-shadow: none !important; }
+  .rule-note { border-left-color: #000 !important; background: #eee !important; color: #000 !important; }
+  a { text-decoration: underline; color: #000 !important; }
+  /* Afficher les URLs apres les liens pour reference papier */
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8rem; }
 }

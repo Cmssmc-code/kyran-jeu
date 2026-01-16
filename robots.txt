@@ -1,0 +1,7 @@
+# robots.txt — kyran-jeu.fr
+# Autoriser tous les robots a explorer tout le site pour un referencement maximal.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://kyran-jeu.fr/sitemap.xml

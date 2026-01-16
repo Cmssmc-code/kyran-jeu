@@ -7,8 +7,15 @@
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
   <title>KYRAN – Le Dojo (Tutoriel)</title>
+  <meta name="description" content="Tutoriel interactif du jeu KYRAN. Apprenez les règles en jouant contre l'IA." />
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap"
@@ -24,6 +31,25 @@
       --card-height-mob: 86px;
       --gold: #d4af37;
       --accent-blue: #38bdf8;
+    }
+
+    /* Force le header à rester au-dessus du jeu (z-index jeu = 5100) */
+    header {
+      position: fixed !important;
+      top: 0; left: 0; width: 100%;
+      z-index: 6000 !important;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Gestion du bouton mobile spécifique */
+    .mobile-cta { display: none; margin-top: 15px; }
+    @media (max-width:900px){
+      header .cta { display: none; }
+      .mobile-cta { display: list-item; }
+      .nav-toggle { display: flex; }
     }
 
     #game-app * {
@@ -50,7 +76,8 @@
       position: relative;
       width: 100%;
       max-width: 900px;
-      margin: 120px auto 40px;
+      /* Marge haute augmentée pour éviter que le header ne cache le jeu */
+      margin: 100px auto 40px;
       padding: 20px;
       background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -78,7 +105,6 @@
     }
     .tutorial-bubble strong { color: var(--accent-blue); font-weight: 700; }
     
-    /* Guide des couleurs amélioré */
     .color-guide {
         margin-top: 8px;
         font-size: 0.9rem;
@@ -285,22 +311,32 @@
   </style>
 </head>
 <body>
+
   <header>
     <div class="container nav">
       <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
         <img src="logo.png" alt="KYRAN" decoding="async" />
       </a>
+      
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
-          <li><a href="#video">Bande-annonce</a></li>
-          <li><a href="#univers">Découvrir</a></li>
-          <li><a href="regle.html">Règles du jeu</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="regle.html#video">Vidéo</a></li>
+          <li><a href="regle.html">Règles</a></li>
           <li><a href="minijeu.html" aria-current="page" class="accent">Jeu en ligne</a></li>
-          <li><a href="dossier-presse.html">Espace Presse</a></li>
-          <li class="mobile-cta"><a class="btn" href="#">Bientôt disponible</a></li>
+          <li><a href="dossier-presse.html">Presse</a></li>
+          
+          <li class="mobile-cta">
+            <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
+          </li>
         </ul>
       </nav>
+
       <button class="nav-toggle" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+
+      <div class="cta">
+        <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
+      </div>
     </div>
   </header>
 
@@ -861,7 +897,7 @@
             physBtn.id = "buy-cta-btn"; physBtn.className = "btn";
             physBtn.style.marginTop = "10px"; physBtn.style.background = "#fff"; physBtn.style.color = "#0f172a";
             physBtn.textContent = "Version Physique";
-            physBtn.onclick = () => (window.location.href = "index.html");
+            physBtn.onclick = () => (window.location.href = "https://www.amazon.fr/dp/B0G217LD87");
             document.getElementById("end-overlay").appendChild(physBtn);
         }
       } else {

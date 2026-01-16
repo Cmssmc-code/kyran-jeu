@@ -23,6 +23,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Gestion du bouton mobile identique à l'accueil */
+    .mobile-cta{display:none}
+    @media (max-width:900px){
+      header .cta{display:none}
+      .mobile-cta{display:list-item}
+      .nav-toggle{display:flex}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BoardGame",
+    "name": "KYRAN",
+    "inLanguage": "fr-FR",
+    "description": "Jeu de cartes rapide et strategique.",
+    "url": "https://kyran-jeu.fr/",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "price": "19.90",
+      "priceCurrency": "EUR",
+      "url": "https://www.amazon.fr/dp/B0G217LD87"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -37,13 +65,16 @@
           <li><a href="regle.html">Règles</a></li>
           <li><a href="minijeu.html">Mini jeu tutoriel</a></li>
           <li><a href="dossier-presse.html" aria-current="page" class="accent">Espace Presse</a></li>
+          <li class="mobile-cta">
+            <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
+          </li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
       <div class="cta">
-        <a class="btn" href="#">Bientôt disponible</a>
+        <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
       </div>
     </div>
   </header>

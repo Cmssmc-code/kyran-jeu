@@ -3,21 +3,24 @@
    ======================= */
 :root {
   --gold: #d4af37;          /* Or antique */
-  --gold-bright: #f9d77e;   /* Or eclatant */
+  --gold-bright: #fcd34d;   /* Or éclatant (plus lumineux pour le contraste) */
   --gold-muted: rgba(212, 175, 55, 0.15);
   
   --void: #020617;          /* Noir quasi total */
   --midnight: #0f172a;      /* Bleu nuit */
   
-  --text-main: #f1f5f9;     /* Blanc casse tres clair */
-  --text-muted: #94a3b8;    /* Gris bleute */
+  --text-main: #f8fafc;     /* Blanc pur pour meilleure lisibilité */
+  --text-muted: #94a3b8;    /* Gris bleuté */
   
-  --card-bg: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
-  --card-border: 1px solid rgba(212, 175, 55, 0.15);
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --glow-card: 0 0 20px rgba(212, 175, 55, 0.15);
+  /* Glassmorphism AJUSTÉ (Plus opaque pour la lisibilité) */
+  --card-bg: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
+  --card-border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure plus fine et subtile */
+  
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+  --glow-card: 0 0 25px rgba(212, 175, 55, 0.1);
   
   --speed: 0.3s ease-out;
+  --radius: 16px;
 }
 
 /* =======================
@@ -28,71 +31,63 @@
 html { 
   scroll-behavior: smooth; 
   font-size: 16px; 
-  -webkit-text-size-adjust: 100%; /* Empeche le zoom auto bizarre sur iOS */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--void);
+  /* Fond subtil conservé */
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
   color: var(--text-main);
   line-height: 1.6;
-  padding-top: 80px; /* Espace pour le header fixe */
+  /* padding-top retiré ici car géré par le composant sticky */
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
 }
 
-/* UX : Selection de texte aux couleurs du jeu */
-::selection {
-  background: var(--gold);
-  color: #000;
-  text-shadow: none;
-}
-
-/* UX : Scrollbar personnalisee (Webkit) pour l'immersion */
-::-webkit-scrollbar { width: 10px; }
+/* UX : Scrollbar */
+::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--void); }
-::-webkit-scrollbar-thumb { 
-  background: #334155; 
-  border-radius: 5px; 
-  border: 2px solid var(--void); 
-}
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; border: 2px solid var(--void); }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
 a { text-decoration: none; color: inherit; transition: var(--speed); }
-/* A11y : Focus visible pour navigation clavier */
-a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-
 img { max-width: 100%; display: block; height: auto; }
 ul { list-style: none; }
-button { font-family: inherit; cursor: pointer; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
 /* =======================
-   3. HEADER & NAV
+   3. HEADER & NAV (Compatible Web Components)
    ======================= */
+/* Correction pour le Web Component */
+kyran-header {
+  display: block;
+  position: sticky; /* Remplacer fixed par sticky pour éviter les bugs de scroll */
+  top: 0;
+  z-index: 6000;
+  width: 100%;
+}
+
 header {
-  position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-  background: rgba(2, 6, 23, 0.90);
+  width: 100%;
+  height: 80px;
+  background: rgba(2, 6, 23, 0.9); /* Plus sombre */
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 6000; /* Superieur a tout, meme au jeu */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex; align-items: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; width: 100%; }
-
-.container.nav {
-  display: flex; justify-content: space-between; align-items: center; height: 100%;
-}
+.container.nav { display: flex; justify-content: space-between; align-items: center; height: 100%; }
 
 .logo img { 
   height: 45px; width: auto; 
-  filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); 
+  filter: drop-shadow(0 0 5px rgba(212,175,55,0.2)); 
   transition: transform var(--speed);
 }
 .logo:hover img { transform: scale(1.05); }
@@ -101,15 +96,17 @@ header {
 .nav ul { display: flex; gap: 32px; }
 .nav ul a { 
   font-weight: 500; font-size: 0.95rem; letter-spacing: 0.5px;
-  color: var(--text-main); opacity: 0.9; position: relative; padding: 5px 0;
+  color: var(--text-muted); position: relative; padding: 5px 0;
 }
 
+/* Soulignement animé */
 .nav ul a::after {
   content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
   background: var(--gold); transition: width var(--speed);
 }
-.nav ul a:hover::after, .nav ul a[aria-current="page"]::after, .nav ul a.active::after { width: 100%; }
-.nav ul a:hover, .nav ul a[aria-current="page"], .nav ul a.active { 
+/* Support de la classe .active ajoutée par le JS */
+.nav ul a:hover::after, .nav ul a.active::after, .nav ul a.accent::after { width: 100%; }
+.nav ul a:hover, .nav ul a.active, .nav ul a.accent { 
   color: var(--gold); text-shadow: 0 0 10px rgba(212,175,55,0.4); opacity: 1;
 }
 
@@ -117,7 +114,7 @@ header {
 .nav-toggle { 
   display: none; 
   flex-direction: column; justify-content: center; align-items: center; gap: 6px;
-  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  background: transparent; border: 1px solid rgba(255,255,255,0.1);
   width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
   z-index: 6001;
 }
@@ -125,17 +122,15 @@ header {
   width: 24px; height: 2px; background: var(--gold); transition: var(--speed);
 }
 
-/* BackDrop pour mobile */
+/* BackDrop */
 .backdrop {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); z-index: 5999;
+  background: rgba(0,0,0,0.7); z-index: 5999;
 }
-
-/* Mobile CTA dans le menu */
 .mobile-cta { display: none; margin-top: 15px; }
 
 /* =======================
-   4. BOUTONS
+   4. BOUTONS & ANIMATIONS
    ======================= */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -146,26 +141,35 @@ header {
   border-radius: 50px; 
   text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: all 0.25s ease;
   position: relative; overflow: hidden;
-  text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--gold-bright) 0%, #b8860b 100%);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
   color: #000;
 }
 .btn:active { transform: translateY(1px); }
 
-/* Header CTA specific */
 header .cta { display: block; }
+
+/* Animation Pulse (Ajout demandé) */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+.cta-pulse {
+  animation: pulse-gold 2s infinite;
+}
 
 /* =======================
    5. SECTIONS & UI
    ======================= */
+main { flex: 1; } /* Pousse le footer en bas */
 section { padding: 80px 0; scroll-margin-top: 80px; }
 
 /* Hero */
@@ -175,6 +179,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
   font-size: clamp(3rem, 8vw, 5.5rem); 
   line-height: 1; margin-bottom: 25px; 
   text-shadow: 0 5px 30px rgba(0,0,0,0.8);
+  letter-spacing: 2px; /* Espacement Premium */
 }
 .hero p { 
   font-size: 1.2rem; color: var(--text-muted); 
@@ -186,7 +191,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .section-title { 
   font-family: 'Bebas Neue'; font-size: clamp(2.5rem, 5vw, 3.5rem); 
   text-align: center; margin-bottom: 10px; color: #fff;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
 }
 .section-title::after {
   content: "✦"; display: block; color: var(--gold);
@@ -200,28 +205,28 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Cartes */
+/* Cartes (Ajustées pour lisibilité) */
 .card, .feature-card, article {
   background: var(--card-bg);
   border: var(--card-border);
-  border-radius: 16px; padding: 30px; 
+  border-radius: var(--radius); padding: 30px; 
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px); /* Augmenté pour flouter le fond */
   transition: var(--speed);
 }
 
-.card:hover, .feature-card:hover { 
-  border-color: var(--gold); 
+.card:hover { 
+  border-color: rgba(212, 175, 55, 0.4); 
   transform: translateY(-5px); 
   box-shadow: var(--glow-card), var(--shadow-card);
 }
 
 .card h3 { 
   color: var(--gold-bright); 
-  font-family: 'Bebas Neue'; font-size: 1.5rem; letter-spacing: 1px;
+  font-family: 'Bebas Neue'; font-size: 1.6rem; letter-spacing: 1px;
   margin-bottom: 15px; 
 }
-.card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+.card p { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; }
 
 /* Listes Techniques */
 .tech-list li, .power-list li {
@@ -251,7 +256,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 /* Video */
 .video-container {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-  border-radius: 16px; background: #000; border: var(--card-border);
+  border-radius: var(--radius); background: #000; border: var(--card-border);
   box-shadow: var(--shadow-card);
   max-width: 900px; margin: 0 auto;
 }
@@ -270,10 +275,12 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .rule-note strong { color: var(--gold-bright); }
 
 /* =======================
-   6. FOOTER
+   6. FOOTER (Web Component)
    ======================= */
+kyran-footer { display: block; margin-top: auto; }
+
 footer {
-  background: #010409; padding: 60px 20px 30px; margin-top: 80px;
+  background: #010409; padding: 60px 20px 30px; 
   border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; color: #64748b;
 }
 footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-size: 1.3rem; letter-spacing: 1px; }
@@ -318,17 +325,16 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-si
 }
 
 /* =======================
-   8. MODE IMPRESSION (Regles)
+   8. MODE IMPRESSION
    ======================= */
 @media print {
-  header, footer, .video-container, .hero .btn, .cta, #mini-jeu-section {
+  kyran-header, kyran-footer, .video-container, .hero .btn, .cta, #mini-jeu-section {
     display: none !important;
   }
   body { 
     background: #fff !important; 
     color: #000 !important; 
     background-image: none !important;
-    padding-top: 0 !important;
   }
   .card, article {
     border: 1px solid #ccc !important;
@@ -337,9 +343,4 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: 'Bebas Neue'; font-si
     color: #000 !important;
     break-inside: avoid;
   }
-  h1, h2, h3, strong { color: #000 !important; text-shadow: none !important; }
-  .rule-note { border-left-color: #000 !important; background: #eee !important; color: #000 !important; }
-  a { text-decoration: underline; color: #000 !important; }
-  /* Afficher les URLs apres les liens pour reference papier */
-  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8rem; }
 }

@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -41,6 +41,8 @@
     .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
   </style>
 
+  <script src="components.js" defer></script>
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -68,33 +70,7 @@
 
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
 
-  <header>
-    <div class="container nav">
-      <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
-        <img src="logo.png" alt="Logo KYRAN">
-      </a>
-      <nav aria-label="Navigation principale">
-        <ul id="menu-principal">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="#video">Regles en video</a></li>
-          <li><a href="#decouvrir">Decouvrir</a></li>
-          <li><a href="#regles" aria-current="page" class="accent">Regles</a></li>
-          <li><a href="minijeu.html">Mini jeu tutoriel</a></li>
-          <li><a href="dossier-presse.html">Espace Presse</a></li>
-          <li class="mobile-cta">
-            <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="cta">
-        <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
-      </div>
-    </div>
-    <div class="backdrop" hidden></div>
-  </header>
+  <kyran-header active="rules"></kyran-header>
 
   <main id="contenu-principal">
     <section class="hero">
@@ -202,68 +178,6 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>KYRAN - Accueil officiel</h4>
-        <p>Un jeu de cartes rapide et convivial. Retrouvez ici la video, les regles et la boutique.</p>
-        <p><a href="index.html">Retour a l'accueil</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
-        <p style="color:#aaa">Site sans cookies</p>
-      </div>
-      <div class="footer-col">
-        <h4>Illustrations</h4>
-        <p>Crea by Floh - <a href="mailto:crea.byfloh@gmail.com">crea.byfloh@gmail.com</a></p>
-        <p style="color:#aaa">Ressources © Freepik</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p><strong>Kyran®</strong> - ©2026 Corentin SENCE. Tous droits reserves.</p>
-      <p>N° immatriculation : <strong>FR464679_12GNOH</strong></p>
-    </div>
-  </footer>
-
-  <script>
-    (function(){
-      const navToggle = document.querySelector('.nav-toggle');
-      const body = document.body;
-      const backdrop = document.querySelector('.backdrop');
-
-      function closeMenu(){
-        body.classList.remove('menu-open');
-        if (navToggle) navToggle.setAttribute('aria-expanded','false');
-        if (backdrop) backdrop.hidden = true;
-      }
-
-      function openMenu(){
-        body.classList.add('menu-open');
-        if (navToggle) navToggle.setAttribute('aria-expanded','true');
-        if (backdrop) backdrop.hidden = false;
-      }
-
-      if (navToggle) {
-        navToggle.addEventListener('click', function(){
-          if (body.classList.contains('menu-open')) {
-            closeMenu();
-          } else {
-            openMenu();
-          }
-        });
-      }
-
-      if (backdrop) {
-        backdrop.addEventListener('click', closeMenu);
-      }
-
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape') {
-          closeMenu();
-        }
-      });
-    })();
-  </script>
+  <kyran-footer></kyran-footer>
 </body>
 </html>

@@ -39,9 +39,8 @@
     .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
-    .mobile-cta{display:none}
     
-    /* MODIFICATION VIDEO ICI */
+    /* Style spécifique à cette page pour la vidéo */
     #video {
       text-align: center;
       padding: 2rem 0;
@@ -66,14 +65,13 @@
       height: 100%;
       border: none;
     }
-    /* FIN MODIFICATION VIDEO */
 
+    /* Gestion Menu Mobile identique à index.html */
+    .mobile-cta{display:none}
     @media (max-width:900px){
       header .cta{display:none}
       .mobile-cta{display:list-item}
       .nav-toggle{display:flex}
-      .container.nav{position:relative}
-      .logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
     }
   </style>
 
@@ -89,7 +87,14 @@
     "audience":{"@type":"PeopleAudience","suggestedMinAge":8},
     "brand":{"@type":"Brand","name":"Kyran"},
     "image":"https://kyran-jeu.fr/logo.png",
-    "url":"https://kyran-jeu.fr/regle.html"
+    "url":"https://kyran-jeu.fr/regle.html",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "price": "19.90",
+      "priceCurrency": "EUR",
+      "url": "https://www.amazon.fr/dp/B0G217LD87"
+    }
   }
   </script>
 </head>
@@ -105,19 +110,21 @@
       <nav aria-label="Navigation principale">
         <ul id="menu-principal">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="#video">🎥 Regle en video</a></li>
+          <li><a href="#video">Regles en video</a></li>
           <li><a href="#decouvrir">Decouvrir</a></li>
           <li><a href="#regles" aria-current="page">Regles</a></li>
           <li><a href="minijeu.html">Mini jeu tutoriel</a></li>
           <li><a href="dossier-presse.html">Espace Presse</a></li>
-          <li class="mobile-cta"><a class="btn" href="#">🛒 Commander</a></li>
+          <li class="mobile-cta">
+            <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
+          </li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
       <div class="cta">
-        <a class="btn" href="#">🛒 Commander</a>
+        <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
       </div>
     </div>
     <div class="backdrop" hidden></div>

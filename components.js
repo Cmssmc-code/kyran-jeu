@@ -13,7 +13,7 @@ class KyranHeader extends HTMLElement {
               <li><a href="index.html" class="${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
               <li><a href="regle.html" class="${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li> <li><a href="minijeu.html" class="${activePage === 'game' ? 'active' : ''}">Jouer (D&eacute;mo)</a></li> <li><a href="dossier-presse.html" class="${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               <li class="mobile-cta" style="display:none;">
-                <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander</a>
+                <a class="btn" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
               </li>
             </ul>
           </nav>
@@ -23,7 +23,7 @@ class KyranHeader extends HTMLElement {
           </button>
 
           <div class="cta">
-            <a class="btn cta-pulse" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander</a>
+            <a class="btn cta-pulse" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
           </div>
         </div>
         <div class="backdrop" hidden></div>
@@ -59,7 +59,7 @@ class KyranFooter extends HTMLElement {
           <div class="footer-col">
             <h4>Liens</h4>
             <p><a href="regle.html">R&egrave;gles du jeu</a></p> <p><a href="dossier-presse.html">Espace Presse</a></p>
-            <p><a href="mailto:contact@kyran-jeu.fr">Contact</a></p>
+            <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>
           <div class="footer-col">
             <h4>Cr&eacute;dits</h4> <p>Design : Crea by Floh</p>

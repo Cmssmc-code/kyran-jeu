@@ -275,6 +275,251 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 .rule-note strong { color: var(--gold-bright); }
 
 /* =======================
+   Amazon Store (Vitrine mise en avant)
+   ======================= */
+#amazon-store.store-featured {
+  padding: 80px 0 100px;
+  background-color: var(--void);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.amazon-store-showcase {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  padding: 40px 40px;
+  box-shadow: var(--shadow-card), var(--glow-card);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.amazon-store-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.amazon-store-visual {
+  position: relative;
+}
+
+/* Galerie : miniatures + image principale */
+.product-gallery {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.product-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.product-thumb {
+  display: block;
+  width: 68px;
+  height: 68px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.4);
+  cursor: pointer;
+  transition: border-color var(--speed), box-shadow var(--speed), background var(--speed);
+}
+
+.product-thumb:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.product-thumb.active {
+  border-color: rgba(212, 175, 55, 0.7);
+  background: rgba(15, 23, 42, 0.5);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+.product-thumb:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Image principale : pas de boîte noire, image bien intégrée */
+.product-main-wrap {
+  flex: 1;
+  min-width: 0;
+  min-height: 280px;
+  border-radius: var(--radius);
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: transparent;
+}
+
+.product-main-wrap img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 420px;
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  transition: opacity 0.2s ease;
+  border-radius: 14px;
+  box-shadow: 0 16px 48px -16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.product-main-wrap img.product-main-img-fade {
+  opacity: 0;
+}
+
+.prime-badge {
+  display: inline-block;
+  background: rgba(0, 47, 135, 0.75);
+  color: var(--gold-bright);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.prime-badge-large {
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 1px 8px rgba(0, 47, 135, 0.3);
+  opacity: 0.95;
+}
+
+.amazon-store-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.amazon-store-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.price-prime-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.amazon-store-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  color: var(--gold-bright);
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.trust-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.trust-list li::before {
+  content: "✓";
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.store-cta {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 16px 36px;
+  font-size: 0.9rem;
+}
+
+#amazon-store .btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+@media (max-width: 900px) {
+  #amazon-store.store-featured {
+    padding: 60px 0 80px;
+  }
+  .amazon-store-showcase {
+    padding: 32px 24px;
+    border-radius: var(--radius);
+  }
+  .amazon-store-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .amazon-store-visual {
+    order: 1;
+  }
+  .amazon-store-content {
+    order: 2;
+    gap: 24px;
+  }
+  .product-gallery {
+    flex-direction: column;
+  }
+  .product-thumbnails {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .product-thumb {
+    width: 56px;
+    height: 56px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .product-main-wrap {
+    min-height: 220px;
+  }
+  .product-main-wrap img {
+    max-height: 360px;
+  }
+}
+
+/* =======================
    6. FOOTER (Web Component)
    ======================= */
 kyran-footer { display: block; margin-top: auto; }

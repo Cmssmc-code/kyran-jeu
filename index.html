@@ -141,17 +141,17 @@
               <div class="product-gallery">
                 <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
                   <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
-                    <img src="images/boite-recto-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
+                    <img src="boite-recto-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
-                    <img src="images/boite-verso-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
+                    <img src="boite-verso-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie">
-                    <img src="images/jeu-kyran-ami.jpg" alt="" width="80" height="80" loading="lazy" />
+                    <img src="jeu-kyran-ami.jpg" alt="" width="80" height="80" loading="lazy" />
                   </button>
                 </div>
                 <div class="product-main-wrap">
-                  <img id="product-main-img" src="images/boite-recto-kyran.jpg" alt="Boîte KYRAN recto" loading="eager" />
+                  <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte KYRAN recto" loading="eager" />
                 </div>
               </div>
             </div>
@@ -182,9 +182,9 @@
       var mainImg = document.getElementById('product-main-img');
       if (!thumbs.length || !mainImg) return;
       var images = [
-        { src: 'images/boite-recto-kyran.jpg', alt: 'Boîte KYRAN recto' },
-        { src: 'images/boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
-        { src: 'images/jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
+        { src: 'boite-recto-kyran.jpg', alt: 'Boîte KYRAN recto' },
+        { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
+        { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
       ];
       var fadeDuration = 180;
       thumbs.forEach(function(btn, i) {

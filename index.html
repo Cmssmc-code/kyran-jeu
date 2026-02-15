@@ -73,6 +73,48 @@
       </div>
     </section>
 
+    <section id="amazon-store" class="store-featured">
+      <div class="container">
+        <h2 class="section-title">Commander <span class="accent">KYRAN</span></h2>
+        <p class="section-sub">Livraison rapide avec Amazon · Livraison Prime</p>
+        <div class="amazon-store-showcase">
+          <div class="amazon-store-grid">
+            <div class="amazon-store-visual">
+              <div class="product-gallery">
+                <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
+                  <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
+                    <img src="boite-recto-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                  <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
+                    <img src="boite-verso-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                  <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie">
+                    <img src="jeu-kyran-ami.jpg" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                </div>
+                <div class="product-main-wrap">
+                  <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte KYRAN recto" loading="eager" />
+                </div>
+              </div>
+            </div>
+            <div class="amazon-store-content">
+              <h3 class="amazon-store-title">Le Jeu de Bluff et de Stratégie</h3>
+              <div class="price-prime-block">
+                <p class="amazon-store-price">16,99€</p>
+                <p class="prime-badge prime-badge-large">Livraison Prime</p>
+              </div>
+              <ul class="trust-list">
+                <li>3 à 6 joueurs</li>
+                <li>Parties d'environ 30 min</li>
+                <li>Dès 8 ans</li>
+              </ul>
+              <a class="btn cta-pulse store-cta" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener">Commander sur Amazon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="video">
       <div class="container">
         <h2 class="section-title">La Bande-Annonce</h2>
@@ -130,48 +172,6 @@
         </div>
       </div>
     </section>
-
-    <section id="amazon-store" class="store-featured">
-      <div class="container">
-        <h2 class="section-title">Commander <span class="accent">KYRAN</span></h2>
-        <p class="section-sub">Livraison rapide avec Amazon · Livraison Prime</p>
-        <div class="amazon-store-showcase">
-          <div class="amazon-store-grid">
-            <div class="amazon-store-visual">
-              <div class="product-gallery">
-                <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
-                  <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
-                    <img src="boite-recto-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
-                  </button>
-                  <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
-                    <img src="boite-verso-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
-                  </button>
-                  <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie">
-                    <img src="jeu-kyran-ami.jpg" alt="" width="80" height="80" loading="lazy" />
-                  </button>
-                </div>
-                <div class="product-main-wrap">
-                  <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte KYRAN recto" loading="eager" />
-                </div>
-              </div>
-            </div>
-            <div class="amazon-store-content">
-              <h3 class="amazon-store-title">Le Jeu de Bluff et de Stratégie</h3>
-              <div class="price-prime-block">
-                <p class="amazon-store-price">16,99€</p>
-                <p class="prime-badge prime-badge-large">Livraison Prime</p>
-              </div>
-              <ul class="trust-list">
-                <li>3 à 6 joueurs</li>
-                <li>Parties d'environ 30 min</li>
-                <li>Dès 8 ans</li>
-              </ul>
-              <a class="btn cta-pulse store-cta" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener">Commander sur Amazon</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <kyran-footer></kyran-footer>
@@ -180,26 +180,50 @@
     (function() {
       var thumbs = document.querySelectorAll('.product-thumb');
       var mainImg = document.getElementById('product-main-img');
+      var gallery = document.querySelector('.product-gallery');
       if (!thumbs.length || !mainImg) return;
       var images = [
         { src: 'boite-recto-kyran.jpg', alt: 'Boîte KYRAN recto' },
         { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
         { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
       ];
-      var fadeDuration = 180;
+      var fadeDuration = 280;
+      var carouselInterval = 4500;
+      var currentIndex = 0;
+      var carouselTimer = null;
+
+      function setSlide(i) {
+        currentIndex = (i + images.length) % images.length;
+        thumbs.forEach(function(t, idx) {
+          t.classList.toggle('active', idx === currentIndex);
+          t.setAttribute('aria-pressed', idx === currentIndex ? 'true' : 'false');
+        });
+        mainImg.classList.add('product-main-img-fade');
+        setTimeout(function() {
+          mainImg.src = images[currentIndex].src;
+          mainImg.alt = images[currentIndex].alt;
+          mainImg.classList.remove('product-main-img-fade');
+        }, fadeDuration);
+      }
+
       thumbs.forEach(function(btn, i) {
         btn.addEventListener('click', function() {
-          thumbs.forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
-          btn.classList.add('active');
-          btn.setAttribute('aria-pressed', 'true');
-          mainImg.classList.add('product-main-img-fade');
-          setTimeout(function() {
-            mainImg.src = images[i].src;
-            mainImg.alt = images[i].alt;
-            mainImg.classList.remove('product-main-img-fade');
-          }, fadeDuration);
+          if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+          setSlide(i);
+          carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
         });
       });
+
+      if (gallery) {
+        gallery.addEventListener('mouseenter', function() {
+          if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+        });
+        gallery.addEventListener('mouseleave', function() {
+          if (!carouselTimer) carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
+        });
+      }
+
+      carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
     })();
   </script>
 </body>

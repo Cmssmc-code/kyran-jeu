@@ -302,13 +302,15 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 
 .amazon-store-visual {
   position: relative;
+  background: transparent;
 }
 
-/* Galerie : miniatures + image principale */
+/* Galerie : miniatures + image principale (fond transparent pour images PNG) */
 .product-gallery {
   display: flex;
   gap: 14px;
   align-items: flex-start;
+  background: transparent;
 }
 
 .product-thumbnails {
@@ -356,7 +358,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Image principale : pas de boîte noire, image bien intégrée */
+/* Image principale : fond transparent pour PNG, pas de blanc */
 .product-main-wrap {
   flex: 1;
   min-width: 0;
@@ -368,6 +370,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
   justify-content: center;
   padding: 20px;
   background: transparent;
+  background-color: transparent;
 }
 
 .product-main-wrap img {
@@ -380,7 +383,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
   image-rendering: auto;
   image-rendering: -webkit-optimize-contrast;
   backface-visibility: hidden;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.28s ease;
   border-radius: 14px;
   box-shadow: 0 16px 48px -16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
@@ -434,7 +437,7 @@ section { padding: 80px 0; scroll-margin-top: 80px; }
 
 .amazon-store-price {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   color: var(--gold-bright);
   letter-spacing: 2px;
   margin: 0;

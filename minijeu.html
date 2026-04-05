@@ -7,7 +7,7 @@
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   />
   <title>KYRAN - Le Dojo (Tutoriel Interactif)</title>
-  <meta name="description" content="Tutoriel interactif du jeu KYRAN. Apprenez les regles en jouant contre l'IA." />
+  <meta name="description" content="Tutoriel interactif du jeu KYRAN. Apprenez les règles en jouant contre l'IA." />
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#020617" />
   <link rel="canonical" href="https://kyran-jeu.fr/minijeu.html" />
@@ -305,7 +305,7 @@
           </div>
 
           <div id="tutorial-bubble" class="tutorial-bubble">
-            Bienvenue. Ici, tu vas apprendre a maitriser l'art du Pari.
+            Bienvenue. Ici, tu vas apprendre à maîtriser l'art du Pari.
           </div>
 
           <div id="opponents-zone" class="opponents-zone"></div>
@@ -323,7 +323,7 @@
                 <div class="stat-value gold" id="my-bet-display">-</div>
               </div>
               <div class="stat-box">
-                <div class="stat-label">Plis Gagnes</div>
+                <div class="stat-label">Plis Gagnés</div>
                 <div class="stat-value" id="my-tricks-display">0</div>
               </div>
             </div>
@@ -334,11 +334,11 @@
             <div class="overlay-title">LE DOJO KYRAN</div>
             <div class="overlay-sub">
                 Ceci est une initiation interactive.<br>
-                Tu vas jouer 4 manches pour apprendre les mecaniques :<br>
-                Le Pari, la Strategie et la manche Mystique.<br><br>
-                <em style="color:#fbbf24; font-style:normal;">Note : Ce tutoriel inclut la carte Mystique mais se joue <strong>sans les Cartes Pouvoirs</strong> (a decouvrir dans la version physique) !</em>
+                Tu vas jouer 4 manches pour apprendre les mécaniques :<br>
+                Le Pari, la Stratégie et la manche Mystique.<br><br>
+                <em style="color:#fbbf24; font-style:normal;">Note : Ce tutoriel inclut la carte Mystique mais se joue <strong>sans les Cartes Pouvoirs</strong> (à découvrir dans la version physique) !</em>
             </div>
-            <button class="btn" onclick="startGame()">Entrer dans l'arene</button>
+            <button class="btn" onclick="startGame()">Entrer dans l'arène</button>
           </div>
 
           <div id="bet-overlay" class="game-overlay">
@@ -395,24 +395,24 @@
     // Messages du Sensei
     const TUTORIAL_MSGS = {
         0: {
-            bet: "Fie-toi aux couleurs pour evaluer ta force :<br><div class='color-guide'><span style='color:#d8b4fe'>Mauve 1-6</span> • <span style='color:#60a5fa'>Bleu 7-12</span><br><span style='color:#4ade80'>Vert 13-18</span> • <span style='color:#facc15'>Jaune 19-24</span><br><span style='color:#fb923c'>Orange 25-30</span> • <span style='color:#f87171'>Rouge 31-36</span></div>Combien de plis vas-tu gagner ?",
-            play: "A toi. Si tu as une carte Rouge ou Orange (forte), tu as de bonnes chances de gagner.",
-            end: "Tu as compris ? Ton pari doit egaler tes plis gagnes. Sinon, tu perds des vies."
+            bet: "Fie-toi aux couleurs pour évaluer ta force :<br><div class='color-guide'><span style='color:#d8b4fe'>Mauve 1-6</span> • <span style='color:#60a5fa'>Bleu 7-12</span><br><span style='color:#4ade80'>Vert 13-18</span> • <span style='color:#facc15'>Jaune 19-24</span><br><span style='color:#fb923c'>Orange 25-30</span> • <span style='color:#f87171'>Rouge 31-36</span></div>Combien de plis vas-tu gagner ?",
+            play: "À toi. Si tu as une carte Rouge ou Orange (forte), tu as de bonnes chances de gagner.",
+            end: "Tu as compris ? Ton pari doit égaler tes plis gagnés. Sinon, tu perds des vies."
         },
         1: {
-            bet: "Moins de cartes = plus de hasard. Si tu n'as que du Mauve ou du Bleu, prudence ! Parfois, il vaut mieux parier 0.",
+            bet: "Moins de cartes = plus de hasard. Si tu n'as que du Mauve ou du Bleu, prudence ! Parfois, il vaut mieux parier 0.",
             play: "Observe les autres. Si Titan joue une carte Rouge (forte), inutile de sacrifier ta meilleure carte si elle est plus faible.",
-            end: "Bien. La gestion de tes cartes moyennes (Vert/Jaune) est la cle de la victoire."
+            end: "Bien. La gestion de tes cartes moyennes (Vert/Jaune) est la clé de la victoire."
         },
         2: {
-            bet: "Seulement 2 cartes. C'est quitte ou double. Une carte Rouge assure souvent un pli. Une Mauve assure une defaite.",
+            bet: "Seulement 2 cartes. C'est quitte ou double. Une carte Rouge assure souvent un pli. Une Mauve assure une défaite.",
             play: "Chaque carte compte. Une erreur ici est fatale pour ton pari.",
             end: "Il ne reste qu'une manche. La plus dangereuse..."
         },
         3: {
-            bet: "MANCHE MYSTIQUE ! Tu ne vois PAS ta propre carte. Regarde celles des adversaires. S'ils ont tous du Bleu (faible), la tienne est peut-etre forte !",
-            play: "C'est le saut dans l'inconnu. Joue ta carte pour la decouvrir.",
-            end: "L'epreuve est terminee."
+            bet: "MANCHE MYSTIQUE ! Tu ne vois PAS ta propre carte. Regarde celles des adversaires. S'ils ont tous du Bleu (faible), la tienne est peut-être forte !",
+            play: "C'est le saut dans l'inconnu. Joue ta carte pour la découvrir.",
+            end: "L'épreuve est terminée."
         }
     };
 
@@ -564,7 +564,7 @@
       if (GAME.isMysticRound) {
         title.innerText = "PARI MYSTIQUE";
         title.style.color = "var(--gold)";
-        instr.innerHTML = "<strong>CONSEIL :</strong> Tu ne vois PAS ta propre carte (c'est le dos qui est affiche).<br>Regarde les cartes adverses ci-dessous pour deviner si tu es fort ou faible.";
+        instr.innerHTML = "<strong>CONSEIL :</strong> Tu ne vois PAS ta propre carte (c'est le dos qui est affiché).<br>Regarde les cartes adverses ci-dessous pour deviner si tu es fort ou faible.";
         
         previewClassic.style.display = "none";
         mysticPanorama.style.display = "flex";
@@ -698,12 +698,12 @@
       if (pid === 0) {
         enablePlayerHand();
         document.getElementById("my-hand").classList.add("active");
-        statusEl.innerText = "A toi de jouer"; 
+        statusEl.innerText = "À toi de jouer"; 
         statusEl.style.color = "var(--gold)";
       } else {
         disablePlayerHand();
         document.getElementById("my-hand").classList.remove("active");
-        statusEl.innerText = GAME.players[pid].name + " reflechit...";
+        statusEl.innerText = GAME.players[pid].name + " réfléchit...";
         statusEl.style.color = "#94a3b8";
         
         const humanDelay = 1200 + Math.random() * 1600;
@@ -789,12 +789,12 @@
           colors: ['#d4af37', '#f9d77e'] 
         });
 
-        updateTutorial("Joli coup ! La carte " + w.displayVal + " etait la plus forte.");
+        updateTutorial("Joli coup ! La carte " + w.displayVal + " était la plus forte.");
       } else {
         statusEl.innerText = GAME.players[wid].name + " gagne."; 
         statusEl.className = "";
         statusEl.style.color = "#e5e7eb";
-        updateTutorial("Aie. " + GAME.players[wid].name + " l'emporte avec le " + w.displayVal + ".");
+        updateTutorial("Aïe. " + GAME.players[wid].name + " l'emporte avec le " + w.displayVal + ".");
       }
 
       await new Promise(r => setTimeout(r, 2500));
@@ -824,7 +824,7 @@
       let btn = document.getElementById("next-round-btn");
       let title = document.getElementById("end-title");
       let resultColor = playerDiff === 0 ? "#4ade80" : "#ef4444"; 
-      let resultTitle = playerDiff === 0 ? "PARI REUSSI" : "PARI MANQUE";
+      let resultTitle = playerDiff === 0 ? "PARI RÉUSSI" : "PARI MANQUÉ";
       let diffMsg = playerDiff === 0 ? "Aucune vie perdue." : `Tu perds <strong>${playerDiff}</strong> vie(s).`;
 
       if (playerDiff === 0) {
@@ -844,7 +844,7 @@
         <div style="background:rgba(255,255,255,0.05); border-radius:12px; padding:15px; margin-bottom:20px; border:1px solid ${resultColor};">
             <div style="color:${resultColor}; font-weight:bold; font-size:1.2rem; margin-bottom:5px;">${resultTitle}</div>
             <div style="font-size:0.9rem; color:#e5e7eb;">
-                Pari: <span style="color:var(--gold); font-weight:bold;">${player.bet}</span> / Realise: <span style="font-weight:bold;">${player.tricks}</span>
+                Pari: <span style="color:var(--gold); font-weight:bold;">${player.bet}</span> / Réalisé : <span style="font-weight:bold;">${player.tricks}</span>
                 <br><span style="margin-top:5px; display:block;">${diffMsg}</span>
             </div>
         </div>`;
@@ -871,7 +871,7 @@
             document.getElementById("end-overlay").appendChild(physBtn);
         }
       } else {
-        title.innerText = "MANCHE TERMINEE";
+        title.innerText = "MANCHE TERMINÉE";
         btn.onclick = null;
         btn.onclick = function() { nextRoundSetup(); };
         btn.innerText = "Suite";

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -7,10 +7,14 @@
   <title>KYRAN - Espace Presse & Kit Media</title>
 
   <meta name="description" content="Kit média officiel KYRAN. Communiqué, fiche technique détaillée et analyse des mécaniques de jeu (Pli, Pari, Stratégie)." />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#020617" />
+  <meta name="author" content="Corentin Sence" />
   <link rel="canonical" href="https://kyran-jeu.fr/dossier-presse.html" />
   <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/dossier-presse.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/dossier-presse.html" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -18,10 +22,19 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="KYRAN - Espace Presse" />
   <meta property="og:description" content="Kit média complet : Fiche technique et Communiqué." />
+  <meta property="og:url" content="https://kyran-jeu.fr/dossier-presse.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
+  <meta property="og:image:alt" content="Logo KYRAN – espace presse" />
   <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KYRAN - Espace Presse" />
+  <meta name="twitter:description" content="Kit média officiel : communiqué, fiche technique et mécaniques de jeu." />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
+  <meta name="twitter:image:alt" content="Logo KYRAN – espace presse" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,18 +53,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BoardGame",
-    "name": "KYRAN",
-    "inLanguage": "fr-FR",
-    "description": "Jeu de cartes rapide et stratégique.",
-    "url": "https://kyran-jeu.fr/",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "price": "16.99",
-      "priceCurrency": "EUR",
-      "url": "https://www.amazon.fr/dp/B0G217LD87"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kyran-jeu.fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Espace Presse", "item": "https://kyran-jeu.fr/dossier-presse.html"}
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://kyran-jeu.fr/dossier-presse.html#webpage",
+        "name": "Espace Presse KYRAN",
+        "url": "https://kyran-jeu.fr/dossier-presse.html",
+        "inLanguage": "fr-FR",
+        "description": "Kit média officiel KYRAN : communiqué, fiche technique et analyse des mécaniques.",
+        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"},
+        "about": {"@id": "https://kyran-jeu.fr/#boardgame"}
+      },
+      {
+        "@type": "NewsArticle",
+        "headline": "KYRAN modernise le jeu de plis avec une mécanique de pari impitoyable",
+        "datePublished": "2026-02-01",
+        "author": {"@type": "Person", "name": "Corentin Sence"},
+        "publisher": {"@id": "https://kyran-jeu.fr/#organization"},
+        "inLanguage": "fr-FR",
+        "url": "https://kyran-jeu.fr/dossier-presse.html#communique"
+      }
+    ]
   }
   </script>
 </head>

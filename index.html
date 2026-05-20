@@ -2,31 +2,49 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <!-- QR imprimé (boîte) : index.html#video → règles Ludochrono -->
+  <script>
+    (function () {
+      if (location.hash !== '#video') return;
+      var path = location.pathname.replace(/\/$/, '') || '/';
+      if (path === '/' || path.endsWith('index.html')) {
+        location.replace('regle.html#video' + location.search);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>KYRAN - Jeu de cartes (3-6 joueurs) | Site officiel</title>
 
   <meta name="description" content="Site officiel de KYRAN. Le jeu de cartes où votre intuition fait la loi. Découvrez la bande-annonce, l'univers et les règles complètes." />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#020617" />
+  <meta name="author" content="Corentin Sence" />
   <link rel="canonical" href="https://kyran-jeu.fr/" />
-  
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
   <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="KYRAN - Jeu de cartes (3-6 joueurs)" />
   <meta property="og:description" content="Défie ton intuition. Un jeu de plis impitoyable où chaque carte compte." />
   <meta property="og:url" content="https://kyran-jeu.fr/" />
-  <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
+  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:image:alt" content="Boîte du jeu de cartes KYRAN" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="KYRAN - Jeu de cartes" />
   <meta name="twitter:description" content="Un jeu rapide et malin pour 3 à 6 joueurs." />
-  <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta name="twitter:image:alt" content="Boîte du jeu de cartes KYRAN" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,37 +56,112 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BoardGame",
-    "name": "KYRAN",
-    "inLanguage": "fr-FR",
-    "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing.",
-    "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 6},
-    "timeRequired": "PT30M",
-    "audience": {"@type": "PeopleAudience", "suggestedMinAge": 8},
-    "brand": {"@type": "Brand", "name": "Kyran"},
-    "image": "https://kyran-jeu.fr/logo.png",
-    "url": "https://kyran-jeu.fr/",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "price": "17.99",
-      "priceCurrency": "EUR",
-      "url": "https://www.amazon.fr/dp/B0G217LD87"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kyran-jeu.fr/#website",
+        "name": "KYRAN",
+        "url": "https://kyran-jeu.fr/",
+        "inLanguage": "fr-FR",
+        "description": "Site officiel du jeu de cartes KYRAN.",
+        "publisher": {"@id": "https://kyran-jeu.fr/#organization"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kyran-jeu.fr/#organization",
+        "name": "KYRAN",
+        "url": "https://kyran-jeu.fr/",
+        "logo": "https://kyran-jeu.fr/logo.png",
+        "email": "contact@kyran-jeu.fr",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@kyran-jeu.fr",
+          "contactType": "customer support",
+          "availableLanguage": "French"
+        }
+      },
+      {
+        "@type": "BoardGame",
+        "@id": "https://kyran-jeu.fr/#boardgame",
+        "name": "KYRAN",
+        "inLanguage": "fr-FR",
+        "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing.",
+        "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 6},
+        "timeRequired": "PT30M",
+        "audience": {"@type": "PeopleAudience", "suggestedMinAge": 8},
+        "genre": ["Jeu de cartes", "Stratégie", "Bluff"],
+        "brand": {"@type": "Brand", "name": "KYRAN"},
+        "image": ["https://kyran-jeu.fr/boite-recto-kyran.png", "https://kyran-jeu.fr/logo.png"],
+        "url": "https://kyran-jeu.fr/",
+        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"},
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "17.99",
+          "priceCurrency": "EUR",
+          "url": "https://www.amazon.fr/dp/B0G217LD87",
+          "seller": {"@type": "Organization", "name": "Amazon"}
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Bande-annonce officielle KYRAN",
+        "description": "Plongez dans l'univers mystique du jeu de cartes KYRAN.",
+        "thumbnailUrl": "https://kyran-jeu.fr/boite-recto-kyran.png",
+        "uploadDate": "2025-01-01",
+        "embedUrl": "https://www.youtube.com/embed/y0YVn-lZMAc",
+        "contentUrl": "https://www.youtube.com/watch?v=y0YVn-lZMAc",
+        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Combien de joueurs pour KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN se joue de 3 à 6 joueurs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la durée d'une partie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Une partie dure environ 30 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À partir de quel âge peut-on jouer ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le jeu est recommandé à partir de 8 ans."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
+  <style>
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:16px;top:10px;width:auto;height:auto;background:#111;color:#fff;padding:.6rem .9rem;border-radius:8px;z-index:10003}
+  </style>
 </head>
 
 <body>
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
   <kyran-header active="home"></kyran-header>
 
-  <main>
+  <main id="contenu-principal">
     <section class="hero">
       <div class="container">
         <h1>Défie ton <span class="accent">Intuition</span></h1>
         <p>Un jeu de plis impitoyable où chaque carte compte. Pari, bluff et stratégie pour 3 à 6 joueurs.</p>
         <div style="margin-top: 30px;">
-          <a class="btn cta-pulse" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank">Commander sur Amazon</a>
+          <a class="btn cta-pulse" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Commander sur Amazon</a>
         </div>
       </div>
     </section>
@@ -108,7 +201,7 @@
                 <li>Parties d'environ 30 min</li>
                 <li>Dès 8 ans</li>
               </ul>
-              <a class="btn cta-pulse store-cta" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener">Commander sur Amazon</a>
+              <a class="btn cta-pulse store-cta" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Commander sur Amazon</a>
             </div>
           </div>
         </div>

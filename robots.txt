@@ -1,5 +1,5 @@
 # robots.txt — kyran-jeu.fr
-# Autoriser tous les robots a explorer tout le site pour un referencement maximal.
+# Toutes les pages publiques sont indexables. Le Dojo (minijeu.html) est en noindex via balise meta.
 
 User-agent: *
 Allow: /

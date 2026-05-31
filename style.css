@@ -118,6 +118,15 @@ kyran-header {
   width: 100%;
 }
 
+kyran-page-hero,
+kyran-stat-bar,
+kyran-discover-grid,
+kyran-cta-band,
+kyran-breadcrumb {
+  display: block;
+  width: 100%;
+}
+
 header {
   width: 100%;
   height: 80px;

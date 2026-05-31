@@ -17,56 +17,93 @@ class KyranHeader extends HTMLElement {
     const submenu = DISCOVER_ITEMS.map(function (item) {
       return `<li><a href="${item.href}">${item.title}<span class="sub-desc">${item.desc}</span></a></li>`;
     }).join('');
+    const drawerDiscover = DISCOVER_ITEMS.map(function (item) {
+      return `<a class="nav-drawer-link" href="${item.href}">${item.title}<span>${item.desc}</span></a>`;
+    }).join('');
 
     this.innerHTML = `
-      <header>
+      <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
             <img src="logo.png" alt="KYRAN" />
           </a>
 
-          <nav aria-label="Navigation principale">
-            <ul id="menu-principal">
-              <li><a href="index.html" class="${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
-              <li><a href="regle.html" class="${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
-              <li><a href="minijeu.html" class="${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
-              <li class="nav-dropdown">
-                <a href="jeu-apero.html" class="${discoverActive ? 'active' : ''}" aria-haspopup="true">D&eacute;couvrir</a>
+          <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
+            <ul class="nav-list" id="menu-principal">
+              <li><a href="index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
+              <li><a href="regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
+              <li><a href="minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
+              <li class="nav-dropdown nav-desktop-only">
+                <a href="jeu-apero.html" class="nav-link ${discoverActive ? 'active' : ''}" aria-haspopup="true">D&eacute;couvrir</a>
                 <ul class="nav-submenu" aria-label="Guides KYRAN">${submenu}</ul>
               </li>
-              <li><a href="dossier-presse.html" class="${activePage === 'press' ? 'active' : ''}">Presse</a></li>
-              <li class="mobile-cta" style="display:none;">
-                <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
+              <li class="nav-mobile-only">
+                <details class="nav-discover-details">
+                  <summary class="nav-discover-summary">D&eacute;couvrir</summary>
+                  <div class="nav-drawer-links">${drawerDiscover}</div>
+                </details>
               </li>
+              <li><a href="dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
             </ul>
+            <div class="nav-drawer-footer nav-mobile-only">
+              <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
+              <a class="btn btn-secondary btn-block" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram</a>
+            </div>
           </nav>
 
-          <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-
-          <div class="cta">
-            <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
+          <div class="nav-actions">
+            <div class="cta cta-desktop">
+              <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
+              <span class="nav-toggle-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
           </div>
         </div>
-        <div class="backdrop" hidden></div>
+        <div class="nav-backdrop" hidden></div>
       </header>
     `;
 
     const navToggle = this.querySelector('.nav-toggle');
+    const backdrop = this.querySelector('.nav-backdrop');
     const body = document.body;
-    const backdrop = this.querySelector('.backdrop');
-    const mobileCta = this.querySelector('.mobile-cta');
+    const closableLinks = this.querySelectorAll('.nav-link, .nav-drawer-link, .nav-drawer-footer a');
 
-    function toggleMenu() {
-      const isOpen = body.classList.toggle('menu-open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      backdrop.hidden = !isOpen;
-      if (mobileCta) mobileCta.style.display = isOpen ? 'block' : 'none';
+    function closeMenu() {
+      if (!body.classList.contains('menu-open')) return;
+      body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      backdrop.hidden = true;
     }
 
-    if (navToggle) navToggle.addEventListener('click', toggleMenu);
-    if (backdrop) backdrop.addEventListener('click', toggleMenu);
+    function openMenu() {
+      body.classList.add('menu-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Fermer le menu');
+      backdrop.hidden = false;
+    }
+
+    function toggleMenu() {
+      if (body.classList.contains('menu-open')) closeMenu();
+      else openMenu();
+    }
+
+    navToggle.addEventListener('click', toggleMenu);
+    backdrop.addEventListener('click', closeMenu);
+    closableLinks.forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) closeMenu();
+    });
   }
 }
 

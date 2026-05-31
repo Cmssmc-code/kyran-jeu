@@ -10,7 +10,7 @@
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster
    */
-  var ASSET_VERSION = '20260531';
+  var ASSET_VERSION = '20260601';
 
   var config = {
     googleSiteVerification: '',
@@ -62,3 +62,4 @@
 
   window.KYRAN_ASSET_VERSION = ASSET_VERSION;
 })();
+

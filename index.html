@@ -49,9 +49,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="seo-config.js?v=20260530"></script>
-  <link rel="stylesheet" href="style.css?v=20260530" />
-  <script src="components.js?v=20260530"></script>
+  <script src="seo-config.js?v=20260606"></script>
+  <link rel="stylesheet" href="style.css?v=20260606" />
+  <script src="blog-data.js?v=20260606"></script>
+  <script src="components.js?v=20260606"></script>
 
   <script type="application/ld+json">
   {
@@ -64,7 +65,12 @@
         "url": "https://kyran-jeu.fr/",
         "inLanguage": "fr-FR",
         "description": "Site officiel du jeu de cartes KYRAN.",
-        "publisher": {"@id": "https://kyran-jeu.fr/#organization"}
+        "publisher": {"@id": "https://kyran-jeu.fr/#organization"},
+        "hasPart": [
+          {"@type": "WebPage", "name": "Blog KYRAN — 30 sélections jeux", "url": "https://kyran-jeu.fr/blog/index.html"},
+          {"@type": "WebPage", "name": "Plan du site kyran-jeu.fr", "url": "https://kyran-jeu.fr/plan-du-site.html"},
+          {"@type": "WebPage", "name": "Règles officielles KYRAN", "url": "https://kyran-jeu.fr/regle.html"}
+        ]
       },
       {
         "@type": "Organization",
@@ -300,6 +306,20 @@
         <div class="section-divider"></div>
         <p class="section-sub">Guides pour choisir, comparer et apprendre</p>
         <kyran-discover-grid></kyran-discover-grid>
+      </div>
+    </section>
+
+    <section id="blog" class="blog-section-home">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sur le <span class="accent">blog</span></h2>
+          <div class="section-divider"></div>
+          <p>Sélections de jeux, idées cadeaux et alternatives — pour varier vos soirées.</p>
+        </div>
+        <kyran-blog-grid limit="3"></kyran-blog-grid>
+        <p class="text-link-wrap" style="text-align:center;margin-top:var(--space-4);">
+          <a class="btn btn-secondary" href="/blog/index.html">Voir tous les articles</a>
+        </p>
       </div>
     </section>
 

@@ -1,6 +1,14 @@
 const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
 const INSTAGRAM_URL = 'https://www.instagram.com/kyran.jeu/';
 const INSTAGRAM_HANDLE = '@kyran.jeu';
+const ROOT = '/';
+
+function rootPath(path) {
+  if (!path) return ROOT;
+  if (path.startsWith('http') || path.startsWith('mailto:') || path.startsWith('#')) return path;
+  if (path.startsWith('/')) return path;
+  return ROOT + path;
+}
 
 function instagramLinkHtml(className, label) {
   const linkClass = className || 'social-link social-link--instagram';
@@ -23,24 +31,34 @@ const ACTIVE_BY_PATH = {
   'tarot-africain.html': 'discover',
   'whist-moderne.html': 'discover',
   'comparatif-jeux-plis.html': 'discover',
-  'faq.html': 'discover'
+  'faq.html': 'discover',
+  'plan-du-site.html': 'discover'
 };
 
 function resolveActivePage(explicit) {
   if (explicit) return explicit;
-  var file = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var path = window.location.pathname.toLowerCase();
+  if (path.indexOf('/blog') !== -1) return 'blog';
+  var file = path.split('/').pop() || 'index.html';
   if (!file || file.endsWith('/')) file = 'index.html';
   return ACTIVE_BY_PATH[file] || '';
 }
 
 const DISCOVER_ITEMS = [
-  { href: 'jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
-  { href: 'alternative-skyjo.html', title: 'Alternative Skyjo', desc: 'Même usage, mécaniques de plis' },
-  { href: 'tarot-africain.html', title: 'Tarot Africain', desc: 'Héritage et genèse du jeu' },
-  { href: 'whist-moderne.html', title: 'Whist moderne', desc: 'Contrat, plis et pari impitoyable' },
-  { href: 'comparatif-jeux-plis.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
-  { href: 'faq.html', title: 'FAQ', desc: 'Questions fréquentes' }
+  { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
+  { href: '/alternative-skyjo.html', title: 'Alternative Skyjo', desc: 'Même usage, mécaniques de plis' },
+  { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Héritage et genèse du jeu' },
+  { href: '/whist-moderne.html', title: 'Whist moderne', desc: 'Contrat, plis et pari impitoyable' },
+  { href: '/comparatif-jeux-plis.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
+  { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' }
 ];
+
+function getBlogItemsForFooter() {
+  if (typeof BLOG_ITEMS !== 'undefined') {
+    return BLOG_ITEMS.slice(0, 5);
+  }
+  return [];
+}
 
 class KyranHeader extends HTMLElement {
   connectedCallback() {
@@ -57,15 +75,15 @@ class KyranHeader extends HTMLElement {
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
-              <img src="logo.png" alt="KYRAN" />
+            <a href="${ROOT}index.html" class="logo" aria-label="KYRAN - Accueil">
+              <img src="${ROOT}logo.png" alt="KYRAN" />
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
               <ul class="nav-list" id="menu-principal">
-                <li><a href="index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
-                <li><a href="regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
-                <li><a href="minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
+                <li><a href="${ROOT}index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
+                <li><a href="${ROOT}regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
+                <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
                 <li class="nav-dropdown nav-desktop-only">
                   <button type="button" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
                     D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
@@ -78,7 +96,8 @@ class KyranHeader extends HTMLElement {
                     <div class="nav-drawer-links">${drawerDiscover}</div>
                   </details>
                 </li>
-                <li><a href="dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
+                <li><a href="${ROOT}blog/index.html" class="nav-link ${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
+                <li><a href="${ROOT}dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
                 <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
@@ -191,6 +210,14 @@ class KyranFooter extends HTMLElement {
       return `<p><a href="${item.href}">${item.title}</a></p>`;
     }).join('');
 
+    const blogItems = getBlogItemsForFooter();
+    const blogLinks = blogItems.map(function (item) {
+      return `<p><a href="${getBlogUrl(item.slug)}">${item.title}</a></p>`;
+    }).join('');
+    const blogSection = blogLinks
+      ? `<div class="footer-col"><h4>Blog</h4>${blogLinks}<p><a href="${ROOT}blog/index.html">Tous les articles</a></p></div>`
+      : '';
+
     this.innerHTML = `
       <footer>
         <div class="footer-grid">
@@ -207,11 +234,12 @@ class KyranFooter extends HTMLElement {
             <h4>Explorer</h4>
             ${exploreLinks}
           </div>
+          ${blogSection}
           <div class="footer-col">
             <h4>Contact</h4>
-            <p><a href="regle.html">R&egrave;gles du jeu</a></p>
-            <p><a href="minijeu.html">Dojo interactif</a></p>
-            <p><a href="dossier-presse.html">Espace Presse</a></p>
+            <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
+            <p><a href="${ROOT}minijeu.html">Dojo interactif</a></p>
+            <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
             <p class="footer-contact-social">${instagramLinkHtml('social-link social-link--instagram social-link--compact')}</p>
           </div>
@@ -226,6 +254,13 @@ class KyranFooter extends HTMLElement {
             ${instagramLinkHtml('social-link social-link--instagram social-link--footer', 'Suivre @kyran.jeu sur Instagram')}
           </p>
           <p class="footer-credits">Illustrations &amp; identit&eacute; visuelle · Crea by Floh</p>
+          <p class="footer-seo-links">
+            <a href="${ROOT}plan-du-site.html">Plan du site</a>
+            <span aria-hidden="true"> · </span>
+            <a href="${ROOT}sitemap.xml">Sitemap</a>
+            <span aria-hidden="true"> · </span>
+            <a href="${ROOT}llms.txt">llms.txt</a>
+          </p>
           <p>&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
         </div>
       </footer>
@@ -244,10 +279,11 @@ class KyranBreadcrumb extends HTMLElement {
 
     const parts = items.map(function (item, index) {
       const isLast = index === items.length - 1;
-      if (isLast || !item.href) {
+      const href = item.href ? rootPath(item.href) : '';
+      if (isLast || !href) {
         return `<span class="breadcrumb-current" aria-current="page">${item.label}</span>`;
       }
-      return `<a href="${item.href}">${item.label}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
+      return `<a href="${href}">${item.label}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
     }).join('');
 
     this.innerHTML = `<nav class="breadcrumb" aria-label="Fil d'Ariane">${parts}</nav>`;
@@ -302,6 +338,128 @@ class KyranDiscoverGrid extends HTMLElement {
   }
 }
 
+class KyranBlogGrid extends HTMLElement {
+  connectedCallback() {
+    if (typeof BLOG_ITEMS === 'undefined') {
+      this.innerHTML = '';
+      return;
+    }
+
+    const limit = parseInt(this.getAttribute('limit') || '0', 10);
+    const category = this.getAttribute('category') || '';
+    let items = BLOG_ITEMS.slice();
+
+    if (category && category !== 'Tous') {
+      items = items.filter(function (item) { return item.category === category; });
+    }
+    if (limit > 0) {
+      items = items.slice(0, limit);
+    }
+
+    const cards = items.map(function (item) {
+      const gc = (item.title.match(/^(\d+)/) || [])[1] || '8';
+      return `
+        <a href="${getBlogUrl(item.slug)}" class="blog-card" data-category="${item.category}">
+          <div class="blog-card-image">
+            <img src="${item.image}" alt="${item.title}" width="400" height="225" loading="lazy" decoding="async" />
+            <span class="blog-badge">${item.category}</span>
+            <span class="blog-card-games">${gc} jeux</span>
+            <span class="blog-card-read">${item.readMinutes} min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">${formatBlogDate(item.date)}</p>
+            <h3>${item.title}</h3>
+            <p class="blog-card-excerpt">${item.excerpt}</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    this.innerHTML = `<div class="blog-grid">${cards}</div>`;
+  }
+}
+
+class KyranBlogFilters extends HTMLElement {
+  connectedCallback() {
+    if (typeof BLOG_CATEGORIES === 'undefined') return;
+
+    const pills = BLOG_CATEGORIES.map(function (cat, index) {
+      const active = index === 0 ? ' is-active' : '';
+      return `<button type="button" class="blog-filter-pill${active}" data-filter="${cat}">${cat}</button>`;
+    }).join('');
+
+    this.innerHTML = `<div class="blog-filters" role="group" aria-label="Filtrer par catégorie">${pills}</div><p class="blog-filter-count" id="blog-filter-count"></p>`;
+
+    const grid = document.querySelector('kyran-blog-grid .blog-grid');
+    const countEl = this.querySelector('#blog-filter-count');
+    if (!grid) return;
+
+    function updateCount(filter) {
+      if (!countEl) return;
+      var visible = 0;
+      grid.querySelectorAll('.blog-card').forEach(function (card) {
+        var cat = card.getAttribute('data-category');
+        if (filter === 'Tous' || cat === filter) visible++;
+      });
+      countEl.textContent = visible + ' article' + (visible > 1 ? 's' : '') + (filter !== 'Tous' ? ' · ' + filter : '');
+    }
+
+    updateCount('Tous');
+
+    this.querySelectorAll('.blog-filter-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        const filter = pill.getAttribute('data-filter');
+        pill.parentElement.querySelectorAll('.blog-filter-pill').forEach(function (p) {
+          p.classList.remove('is-active');
+        });
+        pill.classList.add('is-active');
+
+        grid.querySelectorAll('.blog-card').forEach(function (card) {
+          const cat = card.getAttribute('data-category');
+          const show = filter === 'Tous' || cat === filter;
+          card.style.display = show ? '' : 'none';
+        });
+        updateCount(filter);
+      });
+    });
+  }
+}
+
+class KyranRelatedArticles extends HTMLElement {
+  connectedCallback() {
+    const slug = this.getAttribute('slug') || '';
+    if (typeof getRelatedArticles === 'undefined') return;
+
+    const related = getRelatedArticles(slug, 3);
+    if (!related.length) {
+      this.innerHTML = '';
+      return;
+    }
+
+    const cards = related.map(function (item) {
+      return `
+        <a href="${getBlogUrl(item.slug)}" class="blog-card blog-card--compact">
+          <div class="blog-card-image">
+            <img src="${item.image}" alt="${item.title}" width="320" height="180" loading="lazy" decoding="async" />
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">${item.category} · ${item.readMinutes} min</p>
+            <h3>${item.title}</h3>
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    this.innerHTML = `
+      <section class="related-articles">
+        <h2>Articles similaires</h2>
+        <div class="blog-grid blog-grid--compact">${cards}</div>
+      </section>
+    `;
+  }
+}
+
 class KyranStatBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -327,7 +485,7 @@ class KyranCtaBand extends HTMLElement {
   connectedCallback() {
     const title = this.getAttribute('title') || 'Prêt à défier votre intuition ?';
     const text = this.getAttribute('text') || 'Commandez KYRAN ou apprenez les règles en quelques minutes.';
-    const secondaryHref = this.getAttribute('secondary-href') || 'regle.html';
+    const secondaryHref = rootPath(this.getAttribute('secondary-href') || 'regle.html');
     const secondaryLabel = this.getAttribute('secondary-label') || 'Voir les règles';
     const showDojo = this.getAttribute('show-dojo') !== 'false';
 
@@ -338,7 +496,7 @@ class KyranCtaBand extends HTMLElement {
         <div class="cta-band-actions">
           <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
-          ${showDojo ? '<a class="btn btn-secondary" href="minijeu.html">Essayer le Dojo</a>' : ''}
+          ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer le Dojo</a>' : ''}
         </div>
       </div>
     `;
@@ -350,5 +508,8 @@ customElements.define('kyran-footer', KyranFooter);
 customElements.define('kyran-breadcrumb', KyranBreadcrumb);
 customElements.define('kyran-page-hero', KyranPageHero);
 customElements.define('kyran-discover-grid', KyranDiscoverGrid);
+customElements.define('kyran-blog-grid', KyranBlogGrid);
+customElements.define('kyran-blog-filters', KyranBlogFilters);
+customElements.define('kyran-related-articles', KyranRelatedArticles);
 customElements.define('kyran-stat-bar', KyranStatBar);
 customElements.define('kyran-cta-band', KyranCtaBand);

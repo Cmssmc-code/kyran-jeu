@@ -4,10 +4,15 @@
   "description": "",
   "main": "components.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate:blog": "node scripts/build-blog-articles-data.mjs && node scripts/generate-blog.mjs && node scripts/generate-blog-infra.mjs && node scripts/generate-seo.mjs",
+    "generate:blog-data": "node scripts/build-blog-articles-data.mjs",
+    "generate:seo": "node scripts/generate-seo.mjs",
+    "images:blog": "node scripts/download-blog-images.mjs && node scripts/fetch-philibert-blog.mjs && node scripts/fix-the-game-image.mjs",
+    "images:blog:fix": "node scripts/redownload-small-images.mjs && node scripts/fetch-philibert-blog.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }

@@ -1,7 +1,21 @@
 # robots.txt — kyran-jeu.fr
-# Toutes les pages publiques sont indexables.
+# Pages publiques indexables. Ressources LLM : /llms.txt
 
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /plan-du-site.html
+Allow: /blog/
+Disallow: /404.html
+
+User-agent: GPTBot
+Allow: /llms.txt
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://kyran-jeu.fr/sitemap.xml
+
+# Plan du site : https://kyran-jeu.fr/plan-du-site.html
+# Flux RSS blog : https://kyran-jeu.fr/blog/feed.xml

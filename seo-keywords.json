@@ -1,51 +1,496 @@
 {
-  "updated": "2026-05-31",
+  "updated": "2026-06-01",
   "property": "https://kyran-jeu.fr/",
   "clusters": [
     {
       "page": "/",
-      "primary_queries": ["kyran jeu cartes", "jeu de cartes 3 joueurs", "jeu de plis"],
-      "secondary_queries": ["jeu apéro cartes", "jeu stratégie soirée"]
+      "primary_queries": [
+        "kyran jeu cartes",
+        "jeu de cartes 3 joueurs",
+        "jeu de plis"
+      ],
+      "secondary_queries": [
+        "jeu apéro cartes",
+        "jeu stratégie soirée"
+      ]
     },
     {
       "page": "/jeu-apero.html",
-      "primary_queries": ["jeu apéro cartes", "jeu de cartes apéro", "jeu soirée amis"],
-      "secondary_queries": ["jeu 30 minutes", "jeu 3 à 6 joueurs"]
+      "primary_queries": [
+        "jeu apéro cartes",
+        "jeu de cartes apéro",
+        "jeu soirée amis"
+      ],
+      "secondary_queries": [
+        "jeu 30 minutes",
+        "jeu 3 à 6 joueurs"
+      ]
     },
     {
       "page": "/alternative-skyjo.html",
-      "primary_queries": ["alternative skyjo", "jeu comme skyjo", "jeu similaire skyjo"],
-      "secondary_queries": ["skyjo vs", "jeu cartes skyjo"]
+      "primary_queries": [
+        "alternative skyjo",
+        "jeu comme skyjo",
+        "jeu similaire skyjo"
+      ],
+      "secondary_queries": [
+        "skyjo vs",
+        "jeu cartes skyjo"
+      ]
     },
     {
       "page": "/comparatif-jeux-plis.html",
-      "primary_queries": ["jeu de plis", "alternative wizard", "wizard jeu cartes"],
-      "secondary_queries": ["oh hell jeu", "comparatif jeux plis"]
+      "primary_queries": [
+        "jeu de plis",
+        "alternative wizard",
+        "wizard jeu cartes"
+      ],
+      "secondary_queries": [
+        "oh hell jeu",
+        "comparatif jeux plis"
+      ]
     },
     {
       "page": "/whist-moderne.html",
-      "primary_queries": ["whist moderne", "jeu whist cartes", "revisite whist"],
-      "secondary_queries": ["jeu de plis pari", "contrat plis"]
+      "primary_queries": [
+        "whist moderne",
+        "jeu whist cartes",
+        "revisite whist"
+      ],
+      "secondary_queries": [
+        "jeu de plis pari",
+        "contrat plis"
+      ]
     },
     {
       "page": "/tarot-africain.html",
-      "primary_queries": ["tarot africain", "whist 22", "jeu tarot africain"],
-      "secondary_queries": ["héritage tarot africain", "jeu plis traditionnel"]
+      "primary_queries": [
+        "tarot africain",
+        "whist 22",
+        "jeu tarot africain"
+      ],
+      "secondary_queries": [
+        "héritage tarot africain",
+        "jeu plis traditionnel"
+      ]
     },
     {
       "page": "/regle.html",
-      "primary_queries": ["kyran règles", "règles jeu de plis", "comment jouer kyran"],
-      "secondary_queries": ["manche mystique", "cartes pouvoir kyran"]
+      "primary_queries": [
+        "kyran règles",
+        "règles jeu de plis",
+        "comment jouer kyran"
+      ],
+      "secondary_queries": [
+        "manche mystique",
+        "cartes pouvoir kyran"
+      ]
     },
     {
       "page": "/faq.html",
-      "primary_queries": ["kyran faq", "prix kyran", "où acheter kyran"],
-      "secondary_queries": ["kyran skyjo", "kyran wizard"]
+      "primary_queries": [
+        "kyran faq",
+        "prix kyran",
+        "où acheter kyran"
+      ],
+      "secondary_queries": [
+        "kyran skyjo",
+        "kyran wizard"
+      ]
     },
     {
       "page": "/minijeu.html",
-      "primary_queries": ["apprendre kyran", "tutoriel kyran", "kyran en ligne gratuit"],
-      "secondary_queries": ["dojo kyran", "simulateur kyran"]
+      "primary_queries": [
+        "apprendre kyran",
+        "tutoriel kyran",
+        "kyran en ligne gratuit"
+      ],
+      "secondary_queries": [
+        "dojo kyran",
+        "simulateur kyran"
+      ]
+    },
+    {
+      "page": "/blog/index.html",
+      "primary_queries": [
+        "blog jeux société",
+        "sélection jeux cartes"
+      ],
+      "secondary_queries": [
+        "idées jeux soirée",
+        "conseils jeux société"
+      ]
+    },
+    {
+      "page": "/blog/jeux-comme-skyjo.html",
+      "primary_queries": [
+        "jeu comme skyjo",
+        "alternative skyjo",
+        "jeux similaires skyjo"
+      ],
+      "secondary_queries": [
+        "jeu cartes skyjo",
+        "10 jeux skyjo"
+      ]
+    },
+    {
+      "page": "/blog/meilleurs-jeux-apero.html",
+      "primary_queries": [
+        "jeu apéro cartes",
+        "meilleur jeu apéro",
+        "jeu de cartes apéro"
+      ],
+      "secondary_queries": [
+        "jeu soirée apéro",
+        "cartes apéro"
+      ]
+    },
+    {
+      "page": "/blog/jeux-soiree-amis.html",
+      "primary_queries": [
+        "jeu soirée amis",
+        "jeu entre amis",
+        "meilleur jeu soirée"
+      ],
+      "secondary_queries": [
+        "jeu société amis",
+        "soirée jeux"
+      ]
+    },
+    {
+      "page": "/blog/jeux-famille.html",
+      "primary_queries": [
+        "jeu famille société",
+        "jeu en famille",
+        "jeux familiaux"
+      ],
+      "secondary_queries": [
+        "jeu 8 ans famille",
+        "jeu parents enfants"
+      ]
+    },
+    {
+      "page": "/blog/cadeau-anniversaire.html",
+      "primary_queries": [
+        "jeu cadeau anniversaire",
+        "offrir jeu société",
+        "idée cadeau jeu"
+      ],
+      "secondary_queries": [
+        "cadeau jeu cartes",
+        "anniversaire jeu"
+      ]
+    },
+    {
+      "page": "/blog/cadeau-noel.html",
+      "primary_queries": [
+        "jeu cadeau noël",
+        "idée cadeau noël jeu",
+        "jeu société noël"
+      ],
+      "secondary_queries": [
+        "cadeau sapin jeu",
+        "noël jeux société"
+      ]
+    },
+    {
+      "page": "/blog/jeux-cartes-pas-chers.html",
+      "primary_queries": [
+        "jeu de cartes pas cher",
+        "jeux cartes petit budget",
+        "cartes pas cher"
+      ],
+      "secondary_queries": [
+        "jeu société pas cher",
+        "jeu cartes moins 20 euros"
+      ]
+    },
+    {
+      "page": "/blog/alternatives-wizard.html",
+      "primary_queries": [
+        "alternative wizard",
+        "jeu comme wizard",
+        "wizard alternative"
+      ],
+      "secondary_queries": [
+        "jeu plis wizard",
+        "remplacer wizard"
+      ]
+    },
+    {
+      "page": "/blog/alternatives-uno.html",
+      "primary_queries": [
+        "alternative uno",
+        "jeu comme uno",
+        "remplacer uno"
+      ],
+      "secondary_queries": [
+        "jeu cartes uno",
+        "mieux que uno"
+      ]
+    },
+    {
+      "page": "/blog/jeux-30-minutes.html",
+      "primary_queries": [
+        "jeu 30 minutes",
+        "jeu rapide société",
+        "jeu court"
+      ],
+      "secondary_queries": [
+        "partie rapide",
+        "jeu express"
+      ]
+    },
+    {
+      "page": "/blog/jeux-3-joueurs.html",
+      "primary_queries": [
+        "jeu 3 joueurs",
+        "meilleur jeu trois joueurs",
+        "jeu à 3"
+      ],
+      "secondary_queries": [
+        "jeu société 3",
+        "trois joueurs"
+      ]
+    },
+    {
+      "page": "/blog/jeux-bluff-pari.html",
+      "primary_queries": [
+        "jeu bluff pari",
+        "jeu de pari cartes",
+        "jeu bluff société"
+      ],
+      "secondary_queries": [
+        "pari cartes",
+        "bluff table"
+      ]
+    },
+    {
+      "page": "/blog/jeux-debutants-adultes.html",
+      "primary_queries": [
+        "jeu débutant société",
+        "premier jeu société adulte",
+        "jeu facile adulte"
+      ],
+      "secondary_queries": [
+        "découvrir jeux modernes",
+        "initiation jeux société"
+      ]
+    },
+    {
+      "page": "/blog/jeux-vacances-voyage.html",
+      "primary_queries": [
+        "jeu voyage compact",
+        "jeu vacances",
+        "jeu portable"
+      ],
+      "secondary_queries": [
+        "jeu sac voyage",
+        "jeu plage cartes"
+      ]
+    },
+    {
+      "page": "/blog/jeux-plis-comparatif.html",
+      "primary_queries": [
+        "jeu de plis comparatif",
+        "comparatif jeux plis",
+        "quel jeu de plis"
+      ],
+      "secondary_queries": [
+        "wizard oh hell",
+        "guide jeux plis"
+      ]
+    },
+    {
+      "page": "/blog/jeux-comme-dixit.html",
+      "primary_queries": [
+        "alternative dixit",
+        "jeu comme dixit",
+        "jeux similaires dixit"
+      ],
+      "secondary_queries": [
+        "jeu association images",
+        "just one dixit"
+      ]
+    },
+    {
+      "page": "/blog/jeux-comme-codenames.html",
+      "primary_queries": [
+        "alternative codenames",
+        "jeu comme codenames",
+        "jeux équipe mots"
+      ],
+      "secondary_queries": [
+        "codenames similar",
+        "jeu déduction équipe"
+      ]
+    },
+    {
+      "page": "/blog/jeux-comme-hanabi.html",
+      "primary_queries": [
+        "alternative hanabi",
+        "jeu comme hanabi",
+        "jeux coop cartes"
+      ],
+      "secondary_queries": [
+        "the mind hanabi",
+        "letter jam"
+      ]
+    },
+    {
+      "page": "/blog/jeux-coop-cartes.html",
+      "primary_queries": [
+        "jeux coopératifs cartes",
+        "jeu coop société",
+        "jeu coopératif familial"
+      ],
+      "secondary_queries": [
+        "the crew hanabi",
+        "coop cartes"
+      ]
+    },
+    {
+      "page": "/blog/jeux-duo-couples.html",
+      "primary_queries": [
+        "jeux à deux",
+        "jeu couple cartes",
+        "jeu 2 joueurs"
+      ],
+      "secondary_queries": [
+        "lost cities duo",
+        "jeu soirée deux"
+      ]
+    },
+    {
+      "page": "/blog/jeux-grands-groupes.html",
+      "primary_queries": [
+        "jeux grands groupes",
+        "jeu 8 joueurs",
+        "jeu nombreux"
+      ],
+      "secondary_queries": [
+        "6 qui prend groupe",
+        "jeu apéro nombreux"
+      ]
+    },
+    {
+      "page": "/blog/jeux-sans-elimination.html",
+      "primary_queries": [
+        "jeux sans élimination",
+        "jeu inclusif société",
+        "jeu familial sans éliminer"
+      ],
+      "secondary_queries": [
+        "jeu convivial",
+        "pas éliminé"
+      ]
+    },
+    {
+      "page": "/blog/jeux-ete-terrasse.html",
+      "primary_queries": [
+        "jeux été terrasse",
+        "jeu dehors cartes",
+        "jeu vacances été"
+      ],
+      "secondary_queries": [
+        "jeu terrasse amis",
+        "jeu extérieur"
+      ]
+    },
+    {
+      "page": "/blog/jeux-strategie-legere.html",
+      "primary_queries": [
+        "jeux stratégie légère",
+        "jeu réflexion accessible",
+        "stratégie cartes facile"
+      ],
+      "secondary_queries": [
+        "sushi go star realms",
+        "jeu tactique simple"
+      ]
+    },
+    {
+      "page": "/blog/jeux-ambiance-party.html",
+      "primary_queries": [
+        "jeux party",
+        "jeu ambiance soirée",
+        "party game français"
+      ],
+      "secondary_queries": [
+        "jeu fous rires",
+        "soirée party"
+      ]
+    },
+    {
+      "page": "/blog/jeux-comme-skull.html",
+      "primary_queries": [
+        "alternative skull",
+        "jeu comme skull",
+        "jeux bluff cartes"
+      ],
+      "secondary_queries": [
+        "coup skull",
+        "bluff léger"
+      ]
+    },
+    {
+      "page": "/blog/jeux-draft-encheres.html",
+      "primary_queries": [
+        "jeux draft cartes",
+        "jeu enchères cartes",
+        "sushi go for sale"
+      ],
+      "secondary_queries": [
+        "draft familial",
+        "enchères jeu"
+      ]
+    },
+    {
+      "page": "/blog/jeux-trahison-cachee.html",
+      "primary_queries": [
+        "jeux trahison",
+        "jeu rôle caché",
+        "saboteur bang"
+      ],
+      "secondary_queries": [
+        "jeu secret",
+        "traitre jeu cartes"
+      ]
+    },
+    {
+      "page": "/blog/jeux-classiques-modernes.html",
+      "primary_queries": [
+        "jeux classiques modernes",
+        "monopoly deal",
+        "uno moderne"
+      ],
+      "secondary_queries": [
+        "classique cartes",
+        "jeu intemporel"
+      ]
+    },
+    {
+      "page": "/blog/jeux-memoire-concentration.html",
+      "primary_queries": [
+        "jeux mémoire",
+        "jeu concentration cartes",
+        "the mind jeu"
+      ],
+      "secondary_queries": [
+        "attention jeu",
+        "mémoire familiale"
+      ]
+    },
+    {
+      "page": "/plan-du-site.html",
+      "primary_queries": [
+        "plan du site kyran",
+        "sitemap kyran jeu"
+      ],
+      "secondary_queries": [
+        "pages kyran-jeu.fr",
+        "index site jeux cartes"
+      ]
     }
   ],
   "kpis_monthly": [

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog KYRAN</title>
+    <link>https://kyran-jeu.fr/blog/index.html</link>
+    <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Tue, 30 Jun 2026 08:00:00 +0200</lastBuildDate>
+    <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://kyran-jeu.fr/logo.png</url>
+      <title>Blog KYRAN</title>
+      <link>https://kyran-jeu.fr/blog/index.html</link>
+    </image>
+    <item>
+      <title>8 jeux de mémoire et concentration</title>
+      <link>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</guid>
+      <pubDate>Tue, 30 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Pour entraîner attention et mémoire sans ennui : 8 jeux de cartes accessibles, dynamiques et rejouables.</description>
+    </item>
+    <item>
+      <title>8 classiques modernes du jeu de cartes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-classiques-modernes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-classiques-modernes.html</guid>
+      <pubDate>Sun, 28 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Des titres connus mais toujours efficaces : 8 classiques modernes pour une collection durable et polyvalente.</description>
+    </item>
+    <item>
+      <title>8 jeux de trahison cachée et bluff</title>
+      <link>https://kyran-jeu.fr/blog/jeux-trahison-cachee.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-trahison-cachee.html</guid>
+      <pubDate>Fri, 26 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Rôles secrets, accusations et coups tordus : 8 jeux de cartes pour les groupes qui aiment la tension sociale.</description>
+    </item>
+    <item>
+      <title>8 jeux de draft et enchères en cartes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-draft-encheres.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-draft-encheres.html</guid>
+      <pubDate>Wed, 24 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Draft malin, enchères tendues, décisions rapides : 8 jeux de cartes pour amateurs de choix tactiques.</description>
+    </item>
+    <item>
+      <title>8 jeux comme Skull pour fans de bluff</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-skull.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-skull.html</guid>
+      <pubDate>Mon, 22 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Vous aimez Skull ? Voici 8 alternatives centrées sur le bluff, la prise de risque et la lecture des adversaires.</description>
+    </item>
+    <item>
+      <title>8 jeux ambiance party qui marchent vraiment</title>
+      <link>https://kyran-jeu.fr/blog/jeux-ambiance-party.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-ambiance-party.html</guid>
+      <pubDate>Sat, 20 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Pour une table vivante et des fous rires rapides : 8 jeux party testés en soirée entre amis.</description>
+    </item>
+    <item>
+      <title>8 jeux de stratégie légère en cartes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-strategie-legere.html</guid>
+      <pubDate>Thu, 18 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Vous voulez réfléchir sans vous épuiser ? Voici 8 jeux de cartes stratégiques mais faciles à prendre en main.</description>
+    </item>
+    <item>
+      <title>8 jeux de cartes pour l'été en terrasse</title>
+      <link>https://kyran-jeu.fr/blog/jeux-ete-terrasse.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-ete-terrasse.html</guid>
+      <pubDate>Tue, 16 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Des jeux courts, visuels et faciles à lancer dehors : parfaits pour les soirées d&apos;été en terrasse.</description>
+    </item>
+    <item>
+      <title>8 jeux sans élimination frustrante</title>
+      <link>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-sans-elimination.html</guid>
+      <pubDate>Sun, 14 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Personne ne sort de la partie avant la fin : 8 jeux de cartes conviviaux pour garder tout le monde autour de la table.</description>
+    </item>
+    <item>
+      <title>8 jeux de cartes pour grands groupes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-grands-groupes.html</guid>
+      <pubDate>Fri, 12 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Vous êtes nombreux autour de la table ? Voici 8 jeux rapides qui tiennent la cadence sans exclure les nouveaux.</description>
+    </item>
+    <item>
+      <title>8 jeux de cartes pour duo et couples</title>
+      <link>https://kyran-jeu.fr/blog/jeux-duo-couples.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-duo-couples.html</guid>
+      <pubDate>Wed, 10 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Une sélection pensée pour jouer à deux : du duel stratégique au coopératif léger, sans parties interminables.</description>
+    </item>
+    <item>
+      <title>8 jeux coopératifs de cartes à découvrir</title>
+      <link>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-coop-cartes.html</guid>
+      <pubDate>Mon, 08 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Envie de jouer ensemble plutôt que les uns contre les autres ? Voici 8 jeux coopératifs de cartes accessibles et tendus.</description>
+    </item>
+    <item>
+      <title>8 jeux comme Hanabi en coopératif malin</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-hanabi.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-hanabi.html</guid>
+      <pubDate>Sat, 06 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Après Hanabi, testez 8 jeux coopératifs ou semi-coopératifs basés sur la communication, la mémoire et le timing.</description>
+    </item>
+    <item>
+      <title>8 jeux comme Codenames à essayer</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-codenames.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-codenames.html</guid>
+      <pubDate>Thu, 04 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Vous aimez Codenames ? Découvrez 8 jeux proches pour retrouver l&apos;esprit équipe, indices malins et tension maîtrisée.</description>
+    </item>
+    <item>
+      <title>10 jeux comme Dixit pour varier vos soirées</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-dixit.html</guid>
+      <pubDate>Tue, 02 Jun 2026 08:00:00 +0200</pubDate>
+      <description>Vous adorez Dixit ? Voici 10 jeux proches par l&apos;imagination, la déduction légère et l&apos;ambiance de table, avec KYRAN en bonus.</description>
+    </item>
+    <item>
+      <title>Guide des jeux de plis : lequel choisir ?</title>
+      <link>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</guid>
+      <pubDate>Fri, 29 May 2026 08:00:00 +0200</pubDate>
+      <description>Wizard, Oh Hell, 6 qui prend, KYRAN… Comparatif honnête de 8 jeux de plis pour trouver votre match selon votre groupe.</description>
+    </item>
+    <item>
+      <title>Jeux compacts à emporter en vacances</title>
+      <link>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</guid>
+      <pubDate>Wed, 27 May 2026 08:00:00 +0200</pubDate>
+      <description>Petit format, gros fun : 8 jeux qui tiennent dans un sac de voyage sans sacrifier l&apos;expérience. Love Letter, Dobble, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux de société pour débutants adultes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</guid>
+      <pubDate>Mon, 25 May 2026 08:00:00 +0200</pubDate>
+      <description>Vous découvrez les jeux modernes ? Huit titres accessibles pour entrer dans le hobby sans intimidation. Timeline, Dixit, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux de bluff et de pari à table</title>
+      <link>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-bluff-pari.html</guid>
+      <pubDate>Sat, 23 May 2026 08:00:00 +0200</pubDate>
+      <description>Quand mentir devient stratégie : 8 jeux où le pari et le bluff créent une tension incomparable. KYRAN, Skull, Wizard…</description>
+    </item>
+    <item>
+      <title>Meilleurs jeux de société à 3 joueurs</title>
+      <link>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-3-joueurs.html</guid>
+      <pubDate>Thu, 21 May 2026 08:00:00 +0200</pubDate>
+      <description>À trois autour de la table, le choix se réduit vite. Huit jeux qui brillent vraiment à ce format. Schotten Totten, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux rapides en 30 minutes ou moins</title>
+      <link>https://kyran-jeu.fr/blog/jeux-30-minutes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-30-minutes.html</guid>
+      <pubDate>Tue, 19 May 2026 08:00:00 +0200</pubDate>
+      <description>Pas le temps pour une épopée ? Huit jeux qui tiennent la promesse d&apos;une demi-heure max. Jungle Speed, Skyjo, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux à essayer si vous aimez Uno</title>
+      <link>https://kyran-jeu.fr/blog/alternatives-uno.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/alternatives-uno.html</guid>
+      <pubDate>Sun, 17 May 2026 08:00:00 +0200</pubDate>
+      <description>Uno vous a lassé ? Huit alternatives rapides, colorées et interactives pour vos prochaines soirées. Jungle Speed, Dobble, KYRAN…</description>
+    </item>
+    <item>
+      <title>Alternatives à Wizard pour fans de plis</title>
+      <link>https://kyran-jeu.fr/blog/alternatives-wizard.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/alternatives-wizard.html</guid>
+      <pubDate>Fri, 15 May 2026 08:00:00 +0200</pubDate>
+      <description>Vous connaissez Wizard par cœur ? Huit jeux de plis et de pari pour renouveler vos parties. KYRAN, Oh Hell, 6 qui prend…</description>
+    </item>
+    <item>
+      <title>Jeux de cartes pas chers (moins de 20 €)</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</guid>
+      <pubDate>Wed, 13 May 2026 08:00:00 +0200</pubDate>
+      <description>Huit jeux de cartes à petit prix qui valent plus que leur étiquette. Uno, Love Letter, KYRAN, Skull — qualité et rejouabilité.</description>
+    </item>
+    <item>
+      <title>Idées jeux de société pour Noël</title>
+      <link>https://kyran-jeu.fr/blog/cadeau-noel.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/cadeau-noel.html</guid>
+      <pubDate>Mon, 11 May 2026 08:00:00 +0200</pubDate>
+      <description>Sélection de jeux à glisser sous le sapin : conviviaux, beaux en boîte et jouables le soir même. Hanabi, Dixit, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux à offrir pour un anniversaire</title>
+      <link>https://kyran-jeu.fr/blog/cadeau-anniversaire.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/cadeau-anniversaire.html</guid>
+      <pubDate>Sat, 09 May 2026 08:00:00 +0200</pubDate>
+      <description>Huit idées cadeau jeu de société pour un anniversaire : du petit budget au cadeau qui marque. Dixit, Colt Express, KYRAN…</description>
+    </item>
+    <item>
+      <title>Jeux de société en famille (8 ans et +)</title>
+      <link>https://kyran-jeu.fr/blog/jeux-famille.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-famille.html</guid>
+      <pubDate>Thu, 07 May 2026 08:00:00 +0200</pubDate>
+      <description>Huit jeux où adultes et enfants jouent sur un pied d&apos;égalité — sans règles interminables ni frustration. Dixit, Hanabi, KYRAN…</description>
+    </item>
+    <item>
+      <title>Meilleurs jeux entre amis pour une soirée</title>
+      <link>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-soiree-amis.html</guid>
+      <pubDate>Tue, 05 May 2026 08:00:00 +0200</pubDate>
+      <description>De la table animée au groupe calme : 8 jeux pour une soirée entre amis qui ne traîne pas en longueur. Codenames, KYRAN, Saboteur…</description>
+    </item>
+    <item>
+      <title>Les meilleurs jeux de cartes pour apéro</title>
+      <link>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</guid>
+      <pubDate>Sun, 03 May 2026 08:00:00 +0200</pubDate>
+      <description>Huit jeux de cartes testés en apéro : durée, ambiance et facilité d&apos;explication. De Jungle Speed à KYRAN, la sélection honnête.</description>
+    </item>
+    <item>
+      <title>10 jeux de société comme Skyjo</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</guid>
+      <pubDate>Fri, 01 May 2026 08:00:00 +0200</pubDate>
+      <description>Vous adorez Skyjo ? Découvrez 10 jeux de cartes et de société pour varier vos soirées sans perdre en simplicité ni en fun.</description>
+    </item>
+  </channel>
+</rss>

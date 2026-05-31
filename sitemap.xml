@@ -6,7 +6,7 @@
 >
   <url>
     <loc>https://kyran-jeu.fr/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
     <image:image>
@@ -29,7 +29,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -52,14 +52,14 @@
 
   <url>
     <loc>https://kyran-jeu.fr/minijeu.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/jeu-apero.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -70,48 +70,393 @@
 
   <url>
     <loc>https://kyran-jeu.fr/alternative-skyjo.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/tarot-africain.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/whist-moderne.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/comparatif-jeux-plis.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/faq.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/dossier-presse.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Kit média et communiqué de presse KYRAN</image:title>
       <image:caption>Espace presse officiel du jeu KYRAN</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/plan-du-site.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/blog/index.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>10 jeux de société comme Skyjo</image:title>
+      <image:caption>Vous adorez Skyjo ? Découvrez 10 jeux de cartes et de société pour varier vos soirées sans perdre en simplicité ni en fu</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jungle-speed.jpg</image:loc>
+      <image:title>Les meilleurs jeux de cartes pour apéro</image:title>
+      <image:caption>Huit jeux de cartes testés en apéro : durée, ambiance et facilité d'explication. De Jungle Speed à KYRAN, la sélection h</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
+      <image:title>Meilleurs jeux entre amis pour une soirée</image:title>
+      <image:caption>De la table animée au groupe calme : 8 jeux pour une soirée entre amis qui ne traîne pas en longueur. Codenames, KYRAN, </image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-famille.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/dixit.jpg</image:loc>
+      <image:title>Jeux de société en famille (8 ans et +)</image:title>
+      <image:caption>Huit jeux où adultes et enfants jouent sur un pied d'égalité — sans règles interminables ni frustration. Dixit, Hanabi, </image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/cadeau-anniversaire.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
+      <image:title>Jeux à offrir pour un anniversaire</image:title>
+      <image:caption>Huit idées cadeau jeu de société pour un anniversaire : du petit budget au cadeau qui marque. Dixit, Colt Express, KYRAN</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/cadeau-noel.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/hanabi.jpg</image:loc>
+      <image:title>Idées jeux de société pour Noël</image:title>
+      <image:caption>Sélection de jeux à glisser sous le sapin : conviviaux, beaux en boîte et jouables le soir même. Hanabi, Dixit, KYRAN…</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
+      <image:title>Jeux de cartes pas chers (moins de 20 €)</image:title>
+      <image:caption>Huit jeux de cartes à petit prix qui valent plus que leur étiquette. Uno, Love Letter, KYRAN, Skull — qualité et rejouab</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
+      <image:title>Alternatives à Wizard pour fans de plis</image:title>
+      <image:caption>Vous connaissez Wizard par cœur ? Huit jeux de plis et de pari pour renouveler vos parties. KYRAN, Oh Hell, 6 qui prend…</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
+      <image:title>Jeux à essayer si vous aimez Uno</image:title>
+      <image:caption>Uno vous a lassé ? Huit alternatives rapides, colorées et interactives pour vos prochaines soirées. Jungle Speed, Dobble</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-30-minutes.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>Jeux rapides en 30 minutes ou moins</image:title>
+      <image:caption>Pas le temps pour une épopée ? Huit jeux qui tiennent la promesse d'une demi-heure max. Jungle Speed, Skyjo, KYRAN…</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/schotten-totten.jpg</image:loc>
+      <image:title>Meilleurs jeux de société à 3 joueurs</image:title>
+      <image:caption>À trois autour de la table, le choix se réduit vite. Huit jeux qui brillent vraiment à ce format. Schotten Totten, KYRAN</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/boite-recto-kyran.png</image:loc>
+      <image:title>Jeux de bluff et de pari à table</image:title>
+      <image:caption>Quand mentir devient stratégie : 8 jeux où le pari et le bluff créent une tension incomparable. KYRAN, Skull, Wizard…</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/timeline.jpg</image:loc>
+      <image:title>Jeux de société pour débutants adultes</image:title>
+      <image:caption>Vous découvrez les jeux modernes ? Huit titres accessibles pour entrer dans le hobby sans intimidation. Timeline, Dixit,</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
+      <image:title>Jeux compacts à emporter en vacances</image:title>
+      <image:caption>Petit format, gros fun : 8 jeux qui tiennent dans un sac de voyage sans sacrifier l'expérience. Love Letter, Dobble, KYR</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
+      <image:title>Guide des jeux de plis : lequel choisir ?</image:title>
+      <image:caption>Wizard, Oh Hell, 6 qui prend, KYRAN… Comparatif honnête de 8 jeux de plis pour trouver votre match selon votre groupe.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/dixit.jpg</image:loc>
+      <image:title>10 jeux comme Dixit pour varier vos soirées</image:title>
+      <image:caption>Vous adorez Dixit ? Voici 10 jeux proches par l'imagination, la déduction légère et l'ambiance de table, avec KYRAN en b</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-codenames.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
+      <image:title>8 jeux comme Codenames à essayer</image:title>
+      <image:caption>Vous aimez Codenames ? Découvrez 8 jeux proches pour retrouver l'esprit équipe, indices malins et tension maîtrisée.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-hanabi.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/hanabi.jpg</image:loc>
+      <image:title>8 jeux comme Hanabi en coopératif malin</image:title>
+      <image:caption>Après Hanabi, testez 8 jeux coopératifs ou semi-coopératifs basés sur la communication, la mémoire et le timing.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
+      <image:title>8 jeux coopératifs de cartes à découvrir</image:title>
+      <image:caption>Envie de jouer ensemble plutôt que les uns contre les autres ? Voici 8 jeux coopératifs de cartes accessibles et tendus.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-duo-couples.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/lost-cities.jpg</image:loc>
+      <image:title>8 jeux de cartes pour duo et couples</image:title>
+      <image:caption>Une sélection pensée pour jouer à deux : du duel stratégique au coopératif léger, sans parties interminables.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
+      <image:title>8 jeux de cartes pour grands groupes</image:title>
+      <image:caption>Vous êtes nombreux autour de la table ? Voici 8 jeux rapides qui tiennent la cadence sans exclure les nouveaux.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>8 jeux sans élimination frustrante</image:title>
+      <image:caption>Personne ne sort de la partie avant la fin : 8 jeux de cartes conviviaux pour garder tout le monde autour de la table.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-ete-terrasse.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jungle-speed.jpg</image:loc>
+      <image:title>8 jeux de cartes pour l'été en terrasse</image:title>
+      <image:caption>Des jeux courts, visuels et faciles à lancer dehors : parfaits pour les soirées d'été en terrasse.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/star-realms.jpg</image:loc>
+      <image:title>8 jeux de stratégie légère en cartes</image:title>
+      <image:caption>Vous voulez réfléchir sans vous épuiser ? Voici 8 jeux de cartes stratégiques mais faciles à prendre en main.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-ambiance-party.html</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/dobble.jpg</image:loc>
+      <image:title>8 jeux ambiance party qui marchent vraiment</image:title>
+      <image:caption>Pour une table vivante et des fous rires rapides : 8 jeux party testés en soirée entre amis.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-skull.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skull.jpg</image:loc>
+      <image:title>8 jeux comme Skull pour fans de bluff</image:title>
+      <image:caption>Vous aimez Skull ? Voici 8 alternatives centrées sur le bluff, la prise de risque et la lecture des adversaires.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-draft-encheres.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/for-sale.jpg</image:loc>
+      <image:title>8 jeux de draft et enchères en cartes</image:title>
+      <image:caption>Draft malin, enchères tendues, décisions rapides : 8 jeux de cartes pour amateurs de choix tactiques.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-trahison-cachee.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/saboteur.jpg</image:loc>
+      <image:title>8 jeux de trahison cachée et bluff</image:title>
+      <image:caption>Rôles secrets, accusations et coups tordus : 8 jeux de cartes pour les groupes qui aiment la tension sociale.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-classiques-modernes.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
+      <image:title>8 classiques modernes du jeu de cartes</image:title>
+      <image:caption>Des titres connus mais toujours efficaces : 8 classiques modernes pour une collection durable et polyvalente.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/the-mind.jpg</image:loc>
+      <image:title>8 jeux de mémoire et concentration</image:title>
+      <image:caption>Pour entraîner attention et mémoire sans ennui : 8 jeux de cartes accessibles, dynamiques et rejouables.</image:caption>
     </image:image>
   </url>
 </urlset>

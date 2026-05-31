@@ -46,6 +46,7 @@ html {
   scroll-behavior: smooth; 
   font-size: 16px; 
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -57,6 +58,7 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -73,7 +75,12 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-main { position: relative; z-index: 1; }
+main {
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 .skip-link {
   position: absolute;
@@ -1969,10 +1976,10 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   .sticky-toc {
     position: static;
     flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
   }
   .sticky-toc a {
     white-space: nowrap;
@@ -1989,6 +1996,12 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .compare-table-wrap::-webkit-scrollbar {
+    display: none;
+    height: 0;
   }
 
   .compare-table-wrap::after {
@@ -2330,15 +2343,14 @@ header.blog-article-hero::after {
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 100%;
+  overflow: hidden;
 }
 .blog-jump-nav__track {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 8px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  padding-bottom: 4px;
+  max-width: 100%;
 }
 .blog-jump-nav a {
   flex-shrink: 0;
@@ -3230,9 +3242,9 @@ header.blog-article-hero::after {
   .article-sidebar { position: static; }
   .article-sidebar .sticky-toc {
     flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow: visible;
   }
   .article-sidebar .sticky-toc a {
     white-space: nowrap;

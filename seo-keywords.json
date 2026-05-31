@@ -1,0 +1,23 @@
+{
+  "validatedAt": "2026-05-30",
+  "priorityQueries": [
+    { "query": "jeu apéro cartes", "page": "jeu-apero.html", "difficulty": "medium" },
+    { "query": "jeu apéro", "page": "jeu-apero.html", "difficulty": "medium" },
+    { "query": "alternative skyjo", "page": "alternative-skyjo.html", "difficulty": "medium-low" },
+    { "query": "jeu comme skyjo", "page": "alternative-skyjo.html", "difficulty": "medium-low" },
+    { "query": "tarot africain moderne", "page": "tarot-africain.html", "difficulty": "low" },
+    { "query": "jeu inspiré tarot africain", "page": "tarot-africain.html", "difficulty": "low" },
+    { "query": "whist moderne", "page": "whist-moderne.html", "difficulty": "low" },
+    { "query": "revisite whist", "page": "whist-moderne.html", "difficulty": "low" },
+    { "query": "jeu de plis", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
+    { "query": "jeu de pari cartes", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
+    { "query": "wizard alternative", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
+    { "query": "jeu de cartes", "page": "index.html", "difficulty": "high" }
+  ],
+  "kpiMonthly": [
+    "impressions par page cluster",
+    "clics organiques totaux",
+    "position moyenne sur requêtes longue traîne",
+    "taux de clic vers Amazon"
+  ]
+}

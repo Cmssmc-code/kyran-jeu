@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <!-- QR imprimé (boîte) : index.html#video → règles Ludochrono -->
+  <script>
+    (function () {
+      if (location.hash !== '#video') return;
+      var path = location.pathname.replace(/\/$/, '') || '/';
+      if (path === '/' || path.endsWith('index.html')) {
+        location.replace('regle.html#video' + location.search);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>KYRAN - Jeu de cartes (3-6 joueurs) | Site officiel</title>
+
+  <meta name="description" content="KYRAN — jeu de cartes stratégique pour apéro et soirée (3-6 joueurs, 30 min). Pari, bluff, héritier du Tarot Africain. Bande-annonce, règles et Dojo gratuit." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="author" content="Corentin Sence" />
+  <link rel="canonical" href="https://kyran-jeu.fr/" />
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KYRAN - Jeu de cartes (3-6 joueurs)" />
+  <meta property="og:description" content="Défie ton intuition. Un jeu de plis impitoyable où chaque carte compte." />
+  <meta property="og:url" content="https://kyran-jeu.fr/" />
+  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:image:alt" content="Boîte du jeu de cartes KYRAN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KYRAN - Jeu de cartes" />
+  <meta name="twitter:description" content="Un jeu rapide et malin pour 3 à 6 joueurs." />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta name="twitter:image:alt" content="Boîte du jeu de cartes KYRAN" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="seo-config.js" defer></script>
+  <script src="components.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kyran-jeu.fr/#website",
+        "name": "KYRAN",
+        "url": "https://kyran-jeu.fr/",
+        "inLanguage": "fr-FR",
+        "description": "Site officiel du jeu de cartes KYRAN.",
+        "publisher": {"@id": "https://kyran-jeu.fr/#organization"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kyran-jeu.fr/#organization",
+        "name": "KYRAN",
+        "url": "https://kyran-jeu.fr/",
+        "logo": "https://kyran-jeu.fr/logo.png",
+        "email": "contact@kyran-jeu.fr",
+        "sameAs": [
+          "https://www.instagram.com/kyran.jeu/",
+          "https://www.amazon.fr/dp/B0G217LD87"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@kyran-jeu.fr",
+          "contactType": "customer support",
+          "availableLanguage": "French"
+        }
+      },
+      {
+        "@type": "BoardGame",
+        "@id": "https://kyran-jeu.fr/#boardgame",
+        "name": "KYRAN",
+        "inLanguage": "fr-FR",
+        "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing.",
+        "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 6},
+        "timeRequired": "PT30M",
+        "audience": {"@type": "PeopleAudience", "suggestedMinAge": 8},
+        "genre": ["Jeu de cartes", "Stratégie", "Bluff", "Jeu de plis"],
+        "brand": {"@type": "Brand", "name": "KYRAN"},
+        "image": ["https://kyran-jeu.fr/boite-recto-kyran.png", "https://kyran-jeu.fr/logo.png"],
+        "sameAs": [
+          "https://www.instagram.com/kyran.jeu/",
+          "https://www.amazon.fr/dp/B0G217LD87",
+          "https://www.youtube.com/watch?v=y0YVn-lZMAc",
+          "https://www.youtube.com/watch?v=aconMJG9uSQ"
+        ],
+        "url": "https://kyran-jeu.fr/",
+        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"},
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "17.99",
+          "priceCurrency": "EUR",
+          "url": "https://www.amazon.fr/dp/B0G217LD87",
+          "seller": {"@type": "Organization", "name": "Amazon"}
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Bande-annonce officielle KYRAN",
+        "description": "Plongez dans l'univers mystique du jeu de cartes KYRAN.",
+        "thumbnailUrl": "https://kyran-jeu.fr/boite-recto-kyran.png",
+        "uploadDate": "2025-10-07T10:59:13-07:00",
+        "embedUrl": "https://www.youtube.com/embed/y0YVn-lZMAc",
+        "contentUrl": "https://www.youtube.com/watch?v=y0YVn-lZMAc",
+        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Combien de joueurs pour KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN se joue de 3 à 6 joueurs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la durée d'une partie ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Une partie dure environ 30 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À partir de quel âge peut-on jouer ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le jeu est recommandé à partir de 8 ans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "KYRAN est-il un jeu apéro ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. KYRAN dure environ 30 minutes pour 3 à 6 joueurs et convient parfaitement à un apéro ou une soirée entre amis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "KYRAN est-il une alternative à Skyjo ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour une soirée rapide oui, mais les mécaniques diffèrent : Skyjo repose sur la mémoire, KYRAN sur les plis et les paris."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "KYRAN est-il inspiré du Tarot Africain ou du Whist ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. KYRAN revisite les mécaniques traditionnelles du Tarot Africain (Whist 22) avec un système de pari modernisé pour 3 à 6 joueurs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où acheter KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN est disponible sur Amazon au prix de 17,99€ avec livraison Prime."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment apprendre les règles rapidement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Via la vidéo Ludochrono (5 minutes), les règles écrites sur regle.html ou le Dojo interactif gratuit sur minijeu.html."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
+  <kyran-header active="home"></kyran-header>
+
+  <main id="contenu-principal">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Jeu de cartes · Édition 2026</p>
+        <h1>Défie ton <span class="accent">Intuition</span></h1>
+        <p class="hero-lead">Jeu de cartes stratégique pour apéro et soirée — pari, bluff et manche Mystique pour 3 à 6 joueurs.</p>
+        <kyran-stat-bar></kyran-stat-bar>
+        <div class="hero-actions">
+          <a class="btn btn-primary cta-pulse" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Commander sur Amazon</a>
+          <a class="btn btn-secondary" href="regle.html">Découvrir les règles</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="amazon-store" class="store-featured">
+      <div class="container">
+        <h2 class="section-title">Commander <span class="accent">KYRAN</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Livraison rapide avec Amazon · Livraison Prime</p>
+        <div class="amazon-store-showcase">
+          <div class="amazon-store-grid">
+            <div class="amazon-store-visual">
+              <div class="product-gallery">
+                <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
+                  <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
+                    <img src="boite-recto-kyran.png" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                  <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
+                    <img src="boite-verso-kyran.jpg" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                  <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie">
+                    <img src="jeu-kyran-ami.jpg" alt="" width="80" height="80" loading="lazy" />
+                  </button>
+                </div>
+                <div class="product-main-wrap">
+                  <img id="product-main-img" src="boite-recto-kyran.png" alt="Boîte KYRAN recto" loading="eager" />
+                </div>
+              </div>
+            </div>
+            <div class="amazon-store-content">
+              <h3 class="amazon-store-title">Le Jeu de Bluff et de Stratégie</h3>
+              <div class="price-prime-block">
+                <p class="amazon-store-price">17,99€</p>
+                <p class="prime-badge prime-badge-large">Livraison Prime</p>
+              </div>
+              <ul class="trust-list">
+                <li>3 à 6 joueurs</li>
+                <li>Parties d'environ 30 min</li>
+                <li>Dès 8 ans</li>
+              </ul>
+              <a class="btn btn-primary store-cta" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Commander sur Amazon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2 class="section-title">La Bande-Annonce</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Plongez dans l'univers mystique en 1 minute.</p>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/y0YVn-lZMAc" 
+            title="Bande-annonce du jeu KYRAN" 
+            loading="lazy" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="heritage" class="section-alt">
+      <div class="container">
+        <h2 class="section-title">Héritage <span class="accent">Tarot Africain</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Une revisite moderne du Whist 22 et de ses mécaniques de pari</p>
+        <div class="heritage-split">
+          <div class="heritage-visual">
+            <img src="boite-verso-kyran.jpg" alt="Boîte KYRAN — univers Dark and Gold" width="480" height="480" loading="lazy" />
+          </div>
+          <div class="heritage-copy">
+            <h3>Du contrat familial au jeu de salon</h3>
+            <p>Inspiré du <strong>Tarot Africain</strong> (Whist 22), KYRAN place le pari au cœur du jeu : annoncer juste ses plis demande autant de maîtrise que les remporter.</p>
+            <p>Perdre volontairement devient une stratégie. L'univers visuel Dark &amp; Gold prolonge cette tradition avec une identité éditoriale forte.</p>
+            <a class="btn-ghost text-link" href="tarot-africain.html">Découvrir l'héritage</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="decouvrir-seo">
+      <div class="container">
+        <h2 class="section-title">Explorer <span class="accent">KYRAN</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Guides pour choisir, comparer et apprendre</p>
+        <kyran-discover-grid></kyran-discover-grid>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">Pourquoi jouer ?</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">3 raisons de l'ajouter à votre ludothèque.</p>
+        
+        <div class="grid grid-3">
+          <div class="card card-feature">
+            <span class="feature-label">01</span>
+            <h3>Tension Permanente</h3>
+            <p>Pariez vos plis au début de chaque manche. Réussir son pari sauve vos vies, le rater est fatal.</p>
+          </div>
+          <div class="card card-feature">
+            <span class="feature-label">02</span>
+            <h3>Bluff &amp; Tactique</h3>
+            <p>Utilisez les pouvoirs (Sceau, Voile, Mystique) pour renverser la table au dernier moment.</p>
+          </div>
+          <div class="card card-feature">
+            <span class="feature-label">03</span>
+            <h3>Rapide &amp; Intense</h3>
+            <p>Des parties de 30 minutes qui s'enchaînent. Idéal pour débuter ou finir une soirée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avis" class="section-alt">
+      <div class="container">
+        <h2 class="section-title">Ils ont aimé</h2>
+        <div class="section-divider"></div>
+        <div class="grid grid-3">
+          <blockquote class="card quote-card">
+            <p>Simple à expliquer, mais quelle profondeur ! On ne s'ennuie pas une seconde.</p>
+            <cite>— Léo</cite>
+          </blockquote>
+          <blockquote class="card quote-card">
+            <p>La manche Mystique à l'aveugle est un coup de génie. Fous rires garantis.</p>
+            <cite>— Amélie</cite>
+          </blockquote>
+          <blockquote class="card quote-card">
+            <p>Un must-have pour les fans de <a class="text-link" href="tarot-africain.html">Tarot Africain</a> ou de <a class="text-link" href="whist-moderne.html">Whist</a> qui veulent plus de fun.</p>
+            <cite>— Karim</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <kyran-footer></kyran-footer>
+
+  <script>
+    (function() {
+      var thumbs = document.querySelectorAll('.product-thumb');
+      var mainImg = document.getElementById('product-main-img');
+      var gallery = document.querySelector('.product-gallery');
+      if (!thumbs.length || !mainImg) return;
+      var images = [
+        { src: 'boite-recto-kyran.png', alt: 'Boîte KYRAN recto' },
+        { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
+        { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
+      ];
+      var fadeDuration = 280;
+      var carouselInterval = 4500;
+      var currentIndex = 0;
+      var carouselTimer = null;
+
+      function setSlide(i) {
+        currentIndex = (i + images.length) % images.length;
+        thumbs.forEach(function(t, idx) {
+          t.classList.toggle('active', idx === currentIndex);
+          t.setAttribute('aria-pressed', idx === currentIndex ? 'true' : 'false');
+        });
+        mainImg.classList.add('product-main-img-fade');
+        setTimeout(function() {
+          mainImg.src = images[currentIndex].src;
+          mainImg.alt = images[currentIndex].alt;
+          mainImg.classList.remove('product-main-img-fade');
+        }, fadeDuration);
+      }
+
+      thumbs.forEach(function(btn, i) {
+        btn.addEventListener('click', function() {
+          if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+          setSlide(i);
+          carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
+        });
+      });
+
+      if (gallery) {
+        gallery.addEventListener('mouseenter', function() {
+          if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+        });
+        gallery.addEventListener('mouseleave', function() {
+          if (!carouselTimer) carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
+        });
+      }
+
+      carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
+    })();
+  </script>
+</body>
+</html>

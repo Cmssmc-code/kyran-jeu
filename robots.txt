@@ -1,0 +1,7 @@
+# robots.txt — kyran-jeu.fr
+# Toutes les pages publiques sont indexables.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://kyran-jeu.fr/sitemap.xml

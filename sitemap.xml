@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+>
+  <url>
+    <loc>https://kyran-jeu.fr/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/boite-recto-kyran.png</image:loc>
+      <image:title>KYRAN – Jeu de cartes stratégique (boîte)</image:title>
+      <image:caption>Jeu de cartes KYRAN pour 3 à 6 joueurs</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://kyran-jeu.fr/boite-recto-kyran.png</video:thumbnail_loc>
+      <video:title>Bande-annonce officielle KYRAN</video:title>
+      <video:description>Découvrez l'univers sombre et doré de KYRAN, le jeu de plis et de paris pour 3 à 6 joueurs.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/y0YVn-lZMAc</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=y0YVn-lZMAc</video:content_loc>
+      <video:publication_date>2025-01-01T10:00:00+01:00</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/regle.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
+      <image:title>Règles officielles KYRAN</image:title>
+      <image:caption>Règles complètes du jeu de cartes KYRAN</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://kyran-jeu.fr/logo.png</video:thumbnail_loc>
+      <video:title>Comment jouer à KYRAN – Ludochrono</video:title>
+      <video:description>Tutoriel vidéo : mise en place, mécanique de pari et manche Mystique.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/aconMJG9uSQ</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=aconMJG9uSQ</video:content_loc>
+      <video:publication_date>2025-06-01T10:00:00+02:00</video:publication_date>
+      <video:duration>300</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/minijeu.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/jeu-apero.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/jeu-kyran-ami.jpg</image:loc>
+      <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/alternative-skyjo.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/tarot-africain.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/whist-moderne.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/comparatif-jeux-plis.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/faq.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/dossier-presse.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
+      <image:title>Kit média et communiqué de presse KYRAN</image:title>
+      <image:caption>Espace presse officiel du jeu KYRAN</image:caption>
+    </image:image>
+  </url>
+</urlset>

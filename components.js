@@ -137,11 +137,17 @@ class KyranFooter extends HTMLElement {
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
             <p><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram @kyran.jeu</a></p>
           </div>
+          <div class="footer-col">
+            <h4>Cr&eacute;dits</h4>
+            <p>Design : Crea by Floh</p>
+            <p>Auteur : Corentin Sence</p>
+          </div>
         </div>
         <div class="footer-bottom">
           <p class="footer-social">
             <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me" aria-label="KYRAN sur Instagram">Instagram</a>
           </p>
+          <p class="footer-credits">Illustrations &amp; identit&eacute; visuelle · Crea by Floh</p>
           <p>&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
         </div>
       </footer>

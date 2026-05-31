@@ -1,6 +1,0 @@
-# robots.txt — kyran-jeu.fr
-
-User-agent: *
-Allow: /
-
-Sitemap: https://kyran-jeu.fr/sitemap.xml

@@ -1,23 +1,57 @@
 {
-  "validatedAt": "2026-05-30",
-  "priorityQueries": [
-    { "query": "jeu apéro cartes", "page": "jeu-apero.html", "difficulty": "medium" },
-    { "query": "jeu apéro", "page": "jeu-apero.html", "difficulty": "medium" },
-    { "query": "alternative skyjo", "page": "alternative-skyjo.html", "difficulty": "medium-low" },
-    { "query": "jeu comme skyjo", "page": "alternative-skyjo.html", "difficulty": "medium-low" },
-    { "query": "tarot africain moderne", "page": "tarot-africain.html", "difficulty": "low" },
-    { "query": "jeu inspiré tarot africain", "page": "tarot-africain.html", "difficulty": "low" },
-    { "query": "whist moderne", "page": "whist-moderne.html", "difficulty": "low" },
-    { "query": "revisite whist", "page": "whist-moderne.html", "difficulty": "low" },
-    { "query": "jeu de plis", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
-    { "query": "jeu de pari cartes", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
-    { "query": "wizard alternative", "page": "comparatif-jeux-plis.html", "difficulty": "medium-low" },
-    { "query": "jeu de cartes", "page": "index.html", "difficulty": "high" }
+  "updated": "2026-05-31",
+  "property": "https://kyran-jeu.fr/",
+  "clusters": [
+    {
+      "page": "/",
+      "primary_queries": ["kyran jeu cartes", "jeu de cartes 3 joueurs", "jeu de plis"],
+      "secondary_queries": ["jeu apéro cartes", "jeu stratégie soirée"]
+    },
+    {
+      "page": "/jeu-apero.html",
+      "primary_queries": ["jeu apéro cartes", "jeu de cartes apéro", "jeu soirée amis"],
+      "secondary_queries": ["jeu 30 minutes", "jeu 3 à 6 joueurs"]
+    },
+    {
+      "page": "/alternative-skyjo.html",
+      "primary_queries": ["alternative skyjo", "jeu comme skyjo", "jeu similaire skyjo"],
+      "secondary_queries": ["skyjo vs", "jeu cartes skyjo"]
+    },
+    {
+      "page": "/comparatif-jeux-plis.html",
+      "primary_queries": ["jeu de plis", "alternative wizard", "wizard jeu cartes"],
+      "secondary_queries": ["oh hell jeu", "comparatif jeux plis"]
+    },
+    {
+      "page": "/whist-moderne.html",
+      "primary_queries": ["whist moderne", "jeu whist cartes", "revisite whist"],
+      "secondary_queries": ["jeu de plis pari", "contrat plis"]
+    },
+    {
+      "page": "/tarot-africain.html",
+      "primary_queries": ["tarot africain", "whist 22", "jeu tarot africain"],
+      "secondary_queries": ["héritage tarot africain", "jeu plis traditionnel"]
+    },
+    {
+      "page": "/regle.html",
+      "primary_queries": ["kyran règles", "règles jeu de plis", "comment jouer kyran"],
+      "secondary_queries": ["manche mystique", "cartes pouvoir kyran"]
+    },
+    {
+      "page": "/faq.html",
+      "primary_queries": ["kyran faq", "prix kyran", "où acheter kyran"],
+      "secondary_queries": ["kyran skyjo", "kyran wizard"]
+    },
+    {
+      "page": "/minijeu.html",
+      "primary_queries": ["apprendre kyran", "tutoriel kyran", "kyran en ligne gratuit"],
+      "secondary_queries": ["dojo kyran", "simulateur kyran"]
+    }
   ],
-  "kpiMonthly": [
-    "impressions par page cluster",
-    "clics organiques totaux",
-    "position moyenne sur requêtes longue traîne",
-    "taux de clic vers Amazon"
+  "kpis_monthly": [
+    "Impressions totales (Search Console)",
+    "Clics par page cluster",
+    "Position moyenne requêtes primaires",
+    "Pages avec 0 impression après 60 jours"
   ]
 }

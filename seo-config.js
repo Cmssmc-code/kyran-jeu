@@ -10,12 +10,23 @@
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster
    */
-  var ASSET_VERSION = '20260605';
+  var ASSET_VERSION = '20260606';
 
   var config = {
     googleSiteVerification: '',
+    bingSiteVerification: '',
     ga4MeasurementId: ''
   };
+
+  function injectDnsPrefetch() {
+    ['https://www.youtube.com', 'https://i.ytimg.com', 'https://www.google-analytics.com'].forEach(function (href) {
+      if (document.querySelector('link[rel="dns-prefetch"][href="' + href + '"]')) return;
+      var link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  }
 
   function injectFonts() {
     if (document.querySelector('link[href*="fonts.googleapis.com/css2"]')) {
@@ -39,12 +50,20 @@
   }
 
   injectFonts();
+  injectDnsPrefetch();
 
   if (config.googleSiteVerification) {
     var meta = document.createElement('meta');
     meta.name = 'google-site-verification';
     meta.content = config.googleSiteVerification;
     document.head.appendChild(meta);
+  }
+
+  if (config.bingSiteVerification) {
+    var bingMeta = document.createElement('meta');
+    bingMeta.name = 'msvalidate.01';
+    bingMeta.content = config.bingSiteVerification;
+    document.head.appendChild(bingMeta);
   }
 
   if (config.ga4MeasurementId) {

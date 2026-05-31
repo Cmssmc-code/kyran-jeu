@@ -13,6 +13,26 @@ function instagramLinkHtml(className, label) {
   );
 }
 
+const ACTIVE_BY_PATH = {
+  'index.html': 'home',
+  'regle.html': 'rules',
+  'minijeu.html': 'game',
+  'dossier-presse.html': 'press',
+  'jeu-apero.html': 'discover',
+  'alternative-skyjo.html': 'discover',
+  'tarot-africain.html': 'discover',
+  'whist-moderne.html': 'discover',
+  'comparatif-jeux-plis.html': 'discover',
+  'faq.html': 'discover'
+};
+
+function resolveActivePage(explicit) {
+  if (explicit) return explicit;
+  var file = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (!file || file.endsWith('/')) file = 'index.html';
+  return ACTIVE_BY_PATH[file] || '';
+}
+
 const DISCOVER_ITEMS = [
   { href: 'jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
   { href: 'alternative-skyjo.html', title: 'Alternative Skyjo', desc: 'Même usage, mécaniques de plis' },
@@ -24,7 +44,7 @@ const DISCOVER_ITEMS = [
 
 class KyranHeader extends HTMLElement {
   connectedCallback() {
-    const activePage = this.getAttribute('active') || '';
+    const activePage = resolveActivePage(this.getAttribute('active'));
     const discoverActive = ['discover', 'apero', 'skyjo', 'tarot', 'whist', 'plis', 'faq'].includes(activePage);
     const submenu = DISCOVER_ITEMS.map(function (item) {
       return `<li><a href="${item.href}">${item.title}<span class="sub-desc">${item.desc}</span></a></li>`;
@@ -47,10 +67,10 @@ class KyranHeader extends HTMLElement {
                 <li><a href="regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
                 <li><a href="minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
                 <li class="nav-dropdown nav-desktop-only">
-                  <a href="jeu-apero.html" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true">
+                  <button type="button" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
                     D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
-                  </a>
-                  <ul class="nav-submenu" aria-label="Guides KYRAN">${submenu}</ul>
+                  </button>
+                  <ul class="nav-submenu" id="nav-discover-menu" aria-label="Guides KYRAN">${submenu}</ul>
                 </li>
                 <li class="nav-mobile-only">
                   <details class="nav-discover-details">
@@ -84,8 +104,20 @@ class KyranHeader extends HTMLElement {
 
     const navToggle = this.querySelector('.nav-toggle');
     const backdrop = this.querySelector('.nav-backdrop');
+    const dropdown = this.querySelector('.nav-dropdown');
+    const discoverTrigger = this.querySelector('#nav-discover-trigger');
     const body = document.body;
-    const closableLinks = this.querySelectorAll('.nav-link, .nav-drawer-link, .nav-drawer-footer a');
+    const closableLinks = this.querySelectorAll('.nav-link[href], .nav-drawer-link, .nav-drawer-footer a');
+
+    function setDiscoverOpen(open) {
+      if (!dropdown || !discoverTrigger) return;
+      dropdown.classList.toggle('is-open', open);
+      discoverTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function closeDiscoverMenu() {
+      setDiscoverOpen(false);
+    }
 
     function closeMenu() {
       if (!body.classList.contains('menu-open')) return;
@@ -113,12 +145,42 @@ class KyranHeader extends HTMLElement {
       link.addEventListener('click', closeMenu);
     });
 
+    if (dropdown && discoverTrigger) {
+      var discoverCloseTimer;
+
+      dropdown.addEventListener('mouseenter', function () {
+        if (window.innerWidth <= 900) return;
+        clearTimeout(discoverCloseTimer);
+        setDiscoverOpen(true);
+      });
+
+      dropdown.addEventListener('mouseleave', function () {
+        if (window.innerWidth <= 900) return;
+        discoverCloseTimer = setTimeout(closeDiscoverMenu, 140);
+      });
+
+      discoverTrigger.addEventListener('click', function (event) {
+        if (window.innerWidth <= 900) return;
+        event.preventDefault();
+        setDiscoverOpen(!dropdown.classList.contains('is-open'));
+      });
+
+      document.addEventListener('click', function (event) {
+        if (window.innerWidth <= 900) return;
+        if (!dropdown.contains(event.target)) closeDiscoverMenu();
+      });
+    }
+
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeMenu();
+      if (event.key === 'Escape') {
+        closeDiscoverMenu();
+        closeMenu();
+      }
     });
 
     window.addEventListener('resize', function () {
       if (window.innerWidth > 900) closeMenu();
+      else closeDiscoverMenu();
     });
   }
 }

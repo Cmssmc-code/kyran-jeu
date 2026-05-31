@@ -28,7 +28,7 @@ const GAMES = {
   'saboteur.jpg': { commons: 'Saboteur_(card_game).jpg', wiki: 'Saboteur_(card_game)' },
   'bang.jpg': { commons: 'Bang!_(card_game).jpg', wiki: 'Bang!_(card_game)' },
   'colt-express.jpg': { commons: 'Colt_Express.jpg', wiki: 'Colt_Express' },
-  'the-crew.jpg': { commons: 'The_Crew_(card_game).jpg', wiki: 'The_Crew_(card_game)' },
+  'the-crew.jpg': { wiki: 'The_Crew_(card_game)' },
   'lost-cities.jpg': { commons: 'Lost_Cities_(card_game).jpg', wiki: 'Lost_Cities' },
   '6-qui-prend.jpg': { commons: '6_nimmt!_box.jpg', wiki: '6_nimmt!' },
   'oh-hell.jpg': { commons: 'Oh_hell_(card_game).jpg', wiki: 'Oh_hell' },
@@ -48,6 +48,15 @@ const GAMES = {
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
+}
+
+function isValidJpeg(dest) {
+  try {
+    const buf = readFileSync(dest);
+    return buf.length > 5000 && buf[0] === 0xff && buf[1] === 0xd8;
+  } catch {
+    return false;
+  }
 }
 
 async function apiFetch(url) {
@@ -158,9 +167,9 @@ for (const [local, config] of Object.entries(GAMES)) {
   if (existsSync(dest)) {
     try {
       const sz = readFileSync(dest).length;
-      const skip = local === 'the-game.jpg'
-        ? sz >= 50000 && sz <= 600000
-        : sz > 5000;
+      const skip = isValidJpeg(dest) && (
+        local === 'the-game.jpg' ? sz >= 50000 && sz <= 600000 : true
+      );
       if (skip) {
         console.log('SKIP', local, '(exists', Math.round(sz / 1024) + ' KB)');
         results.push({ local, status: 'SKIP', size: sz });

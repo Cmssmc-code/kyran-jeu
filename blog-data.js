@@ -224,7 +224,7 @@ const BLOG_ITEMS = [
     date: '2026-06-08',
     readMinutes: 9,
     excerpt: 'Jouer ensemble plutôt que les uns contre les autres : huit coop cartes accessibles.',
-    image: '/blog/images/the-crew.jpg',
+    image: '/blog/images/the-crew.jpg?v=20260610',
     seoQuery: 'jeux coopératifs cartes, jeux coop société',
     kyranPosition: 6,
     related: ['jeux-comme-hanabi', 'jeux-famille', 'jeux-sans-elimination']

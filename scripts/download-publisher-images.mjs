@@ -53,13 +53,15 @@ async function download(url, dest) {
   if (!res.ok) throw new Error('HTTP ' + res.status);
   const buf = Buffer.from(await res.arrayBuffer());
   if (buf.length < 4000) throw new Error('too small');
+  if (buf[0] !== 0xff || buf[1] !== 0xd8) throw new Error('not a JPEG');
   writeFileSync(dest, buf);
   return buf.length;
 }
 
 for (const [file, urls] of Object.entries(SOURCES)) {
   const dest = join(OUT, file);
-  if (existsSync(dest) && readFileSync(dest).length > 8000) {
+  const existing = existsSync(dest) ? readFileSync(dest) : null;
+  if (existing && existing.length > 8000 && existing[0] === 0xff && existing[1] === 0xd8) {
     console.log('SKIP', file);
     continue;
   }

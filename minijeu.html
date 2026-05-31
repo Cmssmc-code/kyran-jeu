@@ -2,10 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KYRAN Dojo — Apprendre le jeu de cartes en ligne (tutoriel gratuit)</title>
   <meta name="description" content="Apprenez à jouer à KYRAN gratuitement en ligne. Tutoriel interactif du jeu de plis : pari, stratégie et manche Mystique. Idéal avant votre première partie." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -37,9 +34,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="seo-config.js?v=20260606"></script>
-  <link rel="stylesheet" href="style.css?v=20260606" />
-  <script src="components.js?v=20260606"></script>
+  <script src="seo-config.js?v=20260530"></script>
+  <link rel="stylesheet" href="style.css?v=20260530" />
+  <script src="components.js?v=20260530"></script>
 
   <script type="application/ld+json">
   {
@@ -71,8 +68,11 @@
     :root {
       --card-width: 80px;
       --card-height: 114px;
+      --card-width-tab: 68px;
+      --card-height-tab: 96px;
       --card-width-mob: 60px;
       --card-height-mob: 86px;
+      --card-overlap: -26px;
       --accent-blue: #38bdf8;
     }
 
@@ -100,17 +100,25 @@
       position: relative;
       width: 100%;
       max-width: 900px;
-      margin: 40px auto; 
+      margin: 40px auto;
       padding: 20px;
       background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
       border: 1px solid rgba(212, 175, 55, 0.3);
       border-radius: 20px;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
       overflow: hidden;
-      min-height: 800px;
+      min-height: 70dvh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    .game-watermark {
+      color: rgba(255, 255, 255, 0.03);
+      font-family: "Bebas Neue", system-ui, sans-serif;
+      font-size: 5rem;
+      position: absolute;
+      pointer-events: none;
     }
 
     /* --- TUTORIAL BUBBLE --- */
@@ -225,8 +233,16 @@
     }
 
     .my-hand {
-      display: flex; justify-content: center; gap: -10px;
-      margin-top: 10px; min-height: 120px;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 0;
+      margin-top: 10px;
+      min-height: 120px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 8px 8px;
+      max-width: 100%;
     }
 
     .stat-value.gold { color: var(--gold); }
@@ -239,7 +255,7 @@
       box-shadow: -4px 6px 14px rgba(0, 0, 0, 0.6);
       cursor: pointer; position: relative; flex-shrink: 0;
       transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-      margin-right: -26px; z-index: 1;
+      margin-right: var(--card-overlap); z-index: 1;
     }
     .k-card:last-child { margin-right: 0; }
     .k-card:not(.disabled-state):hover {
@@ -312,18 +328,112 @@
         text-transform: uppercase; background: rgba(0,0,0,0.5);
         padding: 4px 8px; border-radius: 4px;
     }
+
+    .mystic-choice-buttons {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .mystic-choice-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
+
+    .my-info-bar {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
     
     /* Win Feedback Animation */
     .win-feedback { animation: winPulse 0.5s ease-out; color: #4ade80 !important; }
     @keyframes winPulse { 0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); } }
 
+    @media (max-width: 900px) {
+      #game-app {
+        margin: 20px auto;
+        padding: 14px;
+        min-height: 65dvh;
+      }
+
+      .k-card,
+      .slot {
+        width: var(--card-width-tab);
+        height: var(--card-height-tab);
+      }
+
+      :root {
+        --card-overlap: -18px;
+      }
+
+      .battle-field {
+        flex-wrap: wrap;
+        gap: 10px;
+        min-height: 150px;
+        padding: 10px;
+      }
+
+      .opponents-zone {
+        gap: 12px;
+        min-height: 80px;
+      }
+
+      .opponent {
+        width: 72px;
+      }
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+      }
+
+      .game-logo {
+        font-size: 1.6rem;
+      }
+
+      .round-indicator {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+      }
+
+      .game-watermark {
+        font-size: 3rem;
+      }
+    }
+
     @media (max-width: 600px) {
-      #game-app { padding: 10px; border-radius: 0; margin-top: 0; }
+      #game-app { padding: 10px; border-radius: 0; margin: 0; }
       .k-card, .slot { width: var(--card-width-mob); height: var(--card-height-mob); }
+      :root { --card-overlap: -14px; }
       .overlay-title { font-size: 1.8rem; }
       .mystic-panorama { gap: 8px; flex-wrap: wrap; justify-content: center;}
       .mystic-card-group.me { margin-left: 0; margin-top: 10px; width: 100%; }
       .tutorial-bubble { font-size: 0.8rem; padding: 8px 12px; }
+      .game-watermark { font-size: 2.5rem; }
+      .mystic-choice-buttons { gap: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .mystic-choice-btn {
+        width: 64px;
+        height: 64px;
+        font-size: 1.25rem;
+      }
+
+      .my-info-bar {
+        gap: 16px;
+      }
+
+      .game-overlay {
+        padding: 16px;
+      }
     }
   </style>
 </head>
@@ -366,13 +476,13 @@
           <div id="opponents-zone" class="opponents-zone"></div>
 
           <div id="battle-field" class="battle-field">
-            <div style="color:rgba(255,255,255,0.03); font-family:'Bebas Neue'; font-size:5rem; position:absolute; pointer-events:none;">KYRAN</div>
+            <div class="game-watermark">KYRAN</div>
           </div>
 
           <div class="player-zone">
             <div id="player-status" style="height: 20px; color: #94a3b8; font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;"></div>
             <div class="lives-container" id="my-lives"></div>
-            <div class="my-info-bar" style="display: flex; justify-content: center; gap: 40px; margin-top: 10px;">
+            <div class="my-info-bar">
               <div class="stat-box">
                 <div class="stat-label">Mon Pari</div>
                 <div class="stat-value gold" id="my-bet-display">-</div>
@@ -413,9 +523,9 @@
                 C'est le Joker. Elle vaut <strong>37</strong> (la plus forte) ou <strong>0</strong> (la plus faible).<br>
                 Que choisis-tu pour ce pli ?
             </div>
-            <div style="display: flex; gap: 40px;">
-              <button class="btn" style="width: 80px; height: 80px; border-radius:50%; font-size:1.5rem;" onclick="resolveMysticChoice(0)">0</button>
-              <button class="btn" style="width: 80px; height: 80px; border-radius:50%; font-size:1.5rem;" onclick="resolveMysticChoice(37)">37</button>
+            <div class="mystic-choice-buttons">
+              <button class="btn mystic-choice-btn" onclick="resolveMysticChoice(0)">0</button>
+              <button class="btn mystic-choice-btn" onclick="resolveMysticChoice(37)">37</button>
             </div>
           </div>
 
@@ -560,7 +670,7 @@
     function renderTableSetup() {
       const opp = document.getElementById("opponents-zone"); opp.innerHTML = "";
       const bf = document.getElementById("battle-field");
-      bf.innerHTML = '<div style="color:rgba(255,255,255,0.03); font-family:\'Bebas Neue\'; font-size:5rem; position:absolute; pointer-events:none;">KYRAN</div>';
+      bf.innerHTML = '<div class="game-watermark">KYRAN</div>';
       
       renderLives(0);
       for (let i = 1; i < GAME.players.length; i++) {

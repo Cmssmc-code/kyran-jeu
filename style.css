@@ -1226,7 +1226,72 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
    7. RESPONSIVE
    ======================= */
 @media (max-width: 900px) {
-  header { height: 72px; }
+  kyran-header {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  header {
+    height: calc(72px + env(safe-area-inset-top, 0));
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .nav-backdrop {
+    inset: calc(72px + env(safe-area-inset-top, 0)) 0 0 0;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    scroll-margin-top: calc(72px + env(safe-area-inset-top, 0));
+  }
+
+  .hero {
+    padding: 72px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    letter-spacing: 1px;
+  }
+
+  .hero p,
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .page-hero {
+    padding: 36px 0 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card,
+  .feature-card,
+  article {
+    padding: 20px 16px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  footer {
+    padding-bottom: calc(30px + env(safe-area-inset-bottom, 0));
+  }
 
   .nav-brand-group {
     gap: 0;
@@ -1250,12 +1315,12 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 72px;
+    top: calc(72px + env(safe-area-inset-top, 0));
     right: 0;
     width: min(340px, 100%);
-    height: calc(100dvh - 72px);
-    height: calc(100vh - 72px);
-    padding: 8px 0 24px;
+    height: calc(100dvh - 72px - env(safe-area-inset-top, 0));
+    height: calc(100vh - 72px - env(safe-area-inset-top, 0));
+    padding: 8px 0 calc(24px + env(safe-area-inset-bottom, 0));
     background: rgba(2, 6, 23, 0.98);
     border-left: 1px solid rgba(212, 175, 55, 0.12);
     box-shadow: -16px 0 48px rgba(0, 0, 0, 0.45);
@@ -1377,8 +1442,55 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .hero h1 { font-size: 3.5rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 11vw, 2.6rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .card,
+  .feature-card,
+  article {
+    padding: 16px 14px;
+  }
+
+  .quote-card {
+    padding: 28px 18px 22px;
+  }
+
+  .quote-card::before {
+    font-size: 3rem;
+  }
+
+  .store-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1180px) {
@@ -1841,7 +1953,22 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   .discover-grid { grid-template-columns: 1fr; }
   .stat-bar { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .compare-table-wrap { overflow-x: auto; }
+  .compare-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  .compare-table-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 28px;
+    background: linear-gradient(to left, rgba(15, 23, 42, 0.95), transparent);
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 600px) {

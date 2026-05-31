@@ -1,5 +1,17 @@
 const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
 const INSTAGRAM_URL = 'https://www.instagram.com/kyran.jeu/';
+const INSTAGRAM_HANDLE = '@kyran.jeu';
+
+function instagramLinkHtml(className, label) {
+  const linkClass = className || 'social-link social-link--instagram';
+  const linkLabel = label || INSTAGRAM_HANDLE;
+  return (
+    '<a class="' + linkClass + '" href="' + INSTAGRAM_URL + '" target="_blank" rel="noopener noreferrer me">' +
+      '<span class="icon-instagram" aria-hidden="true"></span>' +
+      '<span>' + linkLabel + '</span>' +
+    '</a>'
+  );
+}
 
 const DISCOVER_ITEMS = [
   { href: 'jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
@@ -50,7 +62,7 @@ class KyranHeader extends HTMLElement {
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
                 <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
-                <a class="btn btn-secondary btn-block" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram</a>
+                ${instagramLinkHtml('social-link social-link--instagram social-link--block', 'Suivre sur Instagram')}
               </div>
             </nav>
           </div>
@@ -124,6 +136,10 @@ class KyranFooter extends HTMLElement {
             <h4>KYRAN</h4>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p>Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <div class="footer-follow">
+              <p class="footer-follow-label">Suivez le jeu</p>
+              ${instagramLinkHtml('social-link social-link--instagram')}
+            </div>
           </div>
           <div class="footer-col">
             <h4>Explorer</h4>
@@ -135,7 +151,7 @@ class KyranFooter extends HTMLElement {
             <p><a href="minijeu.html">Dojo interactif</a></p>
             <p><a href="dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
-            <p><a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram @kyran.jeu</a></p>
+            <p class="footer-contact-social">${instagramLinkHtml('social-link social-link--instagram social-link--compact')}</p>
           </div>
           <div class="footer-col">
             <h4>Cr&eacute;dits</h4>
@@ -145,7 +161,7 @@ class KyranFooter extends HTMLElement {
         </div>
         <div class="footer-bottom">
           <p class="footer-social">
-            <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me" aria-label="KYRAN sur Instagram">Instagram</a>
+            ${instagramLinkHtml('social-link social-link--instagram social-link--footer', 'Suivre @kyran.jeu sur Instagram')}
           </p>
           <p class="footer-credits">Illustrations &amp; identit&eacute; visuelle · Crea by Floh</p>
           <p>&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>

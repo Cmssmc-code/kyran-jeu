@@ -11,7 +11,7 @@ import { ARTICLE_SEO, ARTICLE_ORDER } from './lib/article-seo.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, '..', 'blog');
-const CACHE = '20260606';
+const CACHE = '20260607';
 const SITE = 'https://kyran-jeu.fr';
 
 function slugify(name) {

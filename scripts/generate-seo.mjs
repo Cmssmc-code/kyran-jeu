@@ -2,7 +2,7 @@
  * Génère sitemap.xml, llms.txt et plan-du-site.html
  * Run: node scripts/generate-seo.mjs
  */
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync, readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { ARTICLES } from './blog-articles-data.mjs';
@@ -10,7 +10,7 @@ import { ARTICLE_SEO } from './lib/article-seo.mjs';
 import { STATIC_PAGES, SITE, loc } from './lib/site-urls.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CACHE = '20260606';
+const CACHE = '20260607';
 
 function escXml(s) {
   return String(s)
@@ -296,17 +296,21 @@ function bumpAssetVersions() {
   const files = [
     'index.html', 'regle.html', 'minijeu.html', 'faq.html', 'jeu-apero.html',
     'alternative-skyjo.html', 'tarot-africain.html', 'whist-moderne.html',
-    'comparatif-jeux-plis.html', 'dossier-presse.html', '404.html', 'blog/index.html'
+    'comparatif-jeux-plis.html', 'dossier-presse.html', '404.html', 'blog/index.html',
+    'plan-du-site.html'
   ];
+  try {
+    for (const name of readdirSync(join(ROOT, 'blog'))) {
+      if (name.endsWith('.html') && name !== 'index.html') files.push('blog/' + name);
+    }
+  } catch { /* no blog dir */ }
+
   for (const f of files) {
     const p = join(ROOT, f);
     try {
-      let html = readFileSync(p, 'utf8');
-      html = html.replace(/v=20260531/g, `v=${CACHE}`);
-      html = html.replace(/v=20260603/g, `v=${CACHE}`);
-      html = html.replace(/v=20260604/g, `v=${CACHE}`);
-      html = html.replace(/v=20260605/g, `v=${CACHE}`);
-      writeFileSync(p, html, 'utf8');
+      const raw = readFileSync(p, 'utf8');
+      const html = raw.replace(/v=20260\d{3}/g, `v=${CACHE}`);
+      if (html !== raw) writeFileSync(p, html, 'utf8');
     } catch { /* optional file */ }
   }
   const seoJs = readFileSync(join(ROOT, 'seo-config.js'), 'utf8')

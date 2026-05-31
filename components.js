@@ -24,36 +24,40 @@ class KyranHeader extends HTMLElement {
     this.innerHTML = `
       <header class="site-header">
         <div class="container nav">
-          <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
-            <img src="logo.png" alt="KYRAN" />
-          </a>
+          <div class="nav-brand-group">
+            <a href="index.html" class="logo" aria-label="KYRAN - Accueil">
+              <img src="logo.png" alt="KYRAN" />
+            </a>
 
-          <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
-            <ul class="nav-list" id="menu-principal">
-              <li><a href="index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
-              <li><a href="regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
-              <li><a href="minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
-              <li class="nav-dropdown nav-desktop-only">
-                <a href="jeu-apero.html" class="nav-link ${discoverActive ? 'active' : ''}" aria-haspopup="true">D&eacute;couvrir</a>
-                <ul class="nav-submenu" aria-label="Guides KYRAN">${submenu}</ul>
-              </li>
-              <li class="nav-mobile-only">
-                <details class="nav-discover-details">
-                  <summary class="nav-discover-summary">D&eacute;couvrir</summary>
-                  <div class="nav-drawer-links">${drawerDiscover}</div>
-                </details>
-              </li>
-              <li><a href="dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
-            </ul>
-            <div class="nav-drawer-footer nav-mobile-only">
-              <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
-              <a class="btn btn-secondary btn-block" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram</a>
-            </div>
-          </nav>
+            <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
+              <ul class="nav-list" id="menu-principal">
+                <li><a href="index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
+                <li><a href="regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
+                <li><a href="minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
+                <li class="nav-dropdown nav-desktop-only">
+                  <a href="jeu-apero.html" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true">
+                    D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
+                  </a>
+                  <ul class="nav-submenu" aria-label="Guides KYRAN">${submenu}</ul>
+                </li>
+                <li class="nav-mobile-only">
+                  <details class="nav-discover-details">
+                    <summary class="nav-discover-summary">D&eacute;couvrir</summary>
+                    <div class="nav-drawer-links">${drawerDiscover}</div>
+                  </details>
+                </li>
+                <li><a href="dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
+              </ul>
+              <div class="nav-drawer-footer nav-mobile-only">
+                <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
+                <a class="btn btn-secondary btn-block" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer me">Instagram</a>
+              </div>
+            </nav>
+          </div>
 
           <div class="nav-actions">
             <div class="cta cta-desktop">
-              <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
+              <a class="btn btn-header-cta" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
             </div>
             <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
               <span class="nav-toggle-lines" aria-hidden="true">

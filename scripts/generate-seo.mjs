@@ -10,7 +10,7 @@ import { ARTICLE_SEO } from './lib/article-seo.mjs';
 import { STATIC_PAGES, SITE, loc } from './lib/site-urls.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CACHE = '20260607';
+const CACHE = '20260608';
 
 function escXml(s) {
   return String(s)

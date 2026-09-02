@@ -5,7 +5,7 @@ window.KYRAN_REVIEWS_DATA = {
   "reviewsUrl": "https://www.amazon.fr/dp/B0G217LD87#customerReviews",
   "averageRating": 4.7,
   "totalReviews": 33,
-  "lastUpdated": "2026-09-02T17:33:01.354Z",
+  "lastUpdated": "2026-09-02T18:11:52.746Z",
   "reviews": [
     {
       "id": "rev_1",

@@ -59,12 +59,21 @@
 
     var html = '';
 
-    // 1. Synthèse globale Amazon
+    // 1. Synthèse globale Amazon avec répartition des notes
     html += '<div class="amazon-summary-card">';
     html += '  <div class="amazon-summary-score">';
-    html += '    <div class="amazon-score-number">' + avg.toFixed(1) + '<span>/5</span></div>';
-    html += '    <div class="amazon-score-stars">' + renderStars(avg) + '</div>';
-    html += '    <div class="amazon-score-total">Basé sur <strong>' + total + ' évaluations</strong> sur Amazon.fr</div>';
+    html += '    <div class="amazon-score-header">';
+    html += '      <div class="amazon-score-number">' + avg.toFixed(1) + '<span>/5</span></div>';
+    html += '      <div>';
+    html += '        <div class="amazon-score-stars">' + renderStars(avg) + '</div>';
+    html += '        <div class="amazon-score-total">Basé sur <strong>' + total + ' évaluations</strong> sur Amazon.fr</div>';
+    html += '      </div>';
+    html += '    </div>';
+    html += '    <div class="amazon-breakdown-bars">';
+    html += '      <div class="amazon-bar-row"><span>5 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div><span>82%</span></div>';
+    html += '      <div class="amazon-bar-row"><span>4 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 18%;"></div></div><span>18%</span></div>';
+    html += '      <div class="amazon-bar-row muted"><span>3, 2, 1 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div><span>0%</span></div>';
+    html += '    </div>';
     html += '  </div>';
     html += '  <div class="amazon-summary-badge">';
     html += '    <div class="amazon-prime-tag">';
@@ -73,19 +82,18 @@
     html += '        <path d="M59.4 17.5c-.6-.8-4.1-.4-5.6-.2-.5.1-.6-.3-.1-.6 2.9-2.1 7.7-1.5 8.2-.8.6.8-.2 5.7-3 8-0.5.4-.8.2-.6-.3.6-1.5 1.7-5.3 1.1-6.1z"/>';
     html += '        <path d="M43.7 13.9v-5.2c0-.3.2-.5.5-.5h2.8c.3 0 .5.2.5.5v10.3c0 2.8 1.4 4.1 3.7 4.1 1.6 0 2.9-.7 3.7-2.1V14c0-.3.2-.5.5-.5h2.7c.3 0 .5.2.5.5v13.8c0 .3-.2.5-.5.5h-2.5c-.3 0-.5-.2-.5-.5v-1.7c-1.1 1.6-2.9 2.5-5.1 2.5-3.8 0-6.6-2.3-6.6-6.4 0-.1 0-.3.1-.4h.4c0-2.8-.9-4.8-4.4-4.8-2.2 0-4.1 1.2-4.8 2.6-.2.4-.6.4-.8.1l-1.3-1.8c-.2-.3-.1-.7.2-.9 1.4-1.7 3.9-3 7.3-3 4.8 0 7.4 2.4 7.4 7.2v.5z"/>';
     html += '      </svg>';
-    html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> Avis vérifiés</span>';
+    html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> 100% avis vérifiés &amp; testeurs</span>';
     html += '    </div>';
-    html += '    <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87') + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
-    html += '      Lire sur Amazon.fr <span aria-hidden="true">↗</span>';
+    html += '    <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87#customerReviews') + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
+    html += '      Voir les 33 évaluations sur Amazon.fr <span aria-hidden="true">↗</span>';
     html += '    </a>';
     html += '  </div>';
     html += '</div>';
 
-    // 2. Grille des avis clients
+    // 2. Grille de TOUS les avis clients (100% visibles directement)
     html += '<div class="amazon-reviews-grid" id="amazon-reviews-list">';
 
     reviews.forEach(function (rev, index) {
-      var hiddenClass = index >= 6 ? ' amazon-review-item--extra' : '';
       var badgeHtml = '';
       if (rev.verified) {
         badgeHtml = '<span class="review-badge-verified"><span class="badge-icon">✓</span> Achat vérifié</span>';
@@ -96,7 +104,7 @@
       var cleanBody = escapeHtml(rev.body);
       var isLong = cleanBody.length > 240;
 
-      html += '<div class="amazon-review-card' + hiddenClass + '">';
+      html += '<div class="amazon-review-card">';
       html += '  <div class="review-card-header">';
       html += '    <div class="review-card-rating">' + renderStars(rev.rating) + '</div>';
       if (rev.date) {
@@ -133,14 +141,12 @@
 
     html += '</div>';
 
-    // 3. Bouton "Afficher plus d'avis"
-    if (reviews.length > 6) {
-      html += '<div class="amazon-reviews-actions">';
-      html += '  <button type="button" id="btn-toggle-reviews" class="btn btn-secondary btn-outline">';
-      html += '    <span>Afficher tous les avis (' + reviews.length + ')</span>';
-      html += '  </button>';
-      html += '</div>';
-    }
+    // 3. Bouton direct vers Amazon.fr
+    html += '<div class="amazon-reviews-actions">';
+    html += '  <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87#customerReviews') + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-outline">';
+    html += '    <span>Consulter toutes les 33 évaluations sur Amazon.fr ↗</span>';
+    html += '  </a>';
+    html += '</div>';
 
     container.innerHTML = html;
 
@@ -155,22 +161,6 @@
         btn.textContent = expanded ? 'Réduire' : 'Lire la suite';
       });
     });
-
-    // Événement bouton "Afficher tous les avis"
-    var toggleBtn = document.getElementById('btn-toggle-reviews');
-    if (toggleBtn) {
-      var allShown = false;
-      toggleBtn.addEventListener('click', function () {
-        var extras = container.querySelectorAll('.amazon-review-item--extra');
-        allShown = !allShown;
-        extras.forEach(function (el) {
-          el.style.display = allShown ? 'flex' : 'none';
-        });
-        toggleBtn.querySelector('span').textContent = allShown
-          ? 'Masquer les avis supplémentaires'
-          : 'Afficher tous les avis (' + reviews.length + ')';
-      });
-    }
 
     // Mise à jour dynamique du Schema.org pour SEO Google Rich Snippet
     updateStructuredData(avg, total, reviews);

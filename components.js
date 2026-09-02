@@ -1,5 +1,5 @@
 const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
-const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/test_3cI9AVggigTm2jy1f6aEE01';
+const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00';
 const INSTAGRAM_URL = 'https://www.instagram.com/kyran.jeu/';
 const INSTAGRAM_HANDLE = '@kyran.jeu';
 const ROOT = '/';

@@ -206,7 +206,7 @@ ${items.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a><
   <title>Plan du site — KYRAN | Toutes les pages et articles</title>
   <meta name="description" content="Plan du site kyran-jeu.fr : accueil, règles, guides jeux de plis, FAQ, blog (${ARTICLES.length} articles) et ressources SEO." />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#020617" />
+  <meta name="theme-color" content="#0d111b" />
   <link rel="canonical" href="${SITE}/plan-du-site.html" />
   <link rel="alternate" hreflang="fr-FR" href="${SITE}/plan-du-site.html" />
   <link rel="alternate" hreflang="x-default" href="${SITE}/plan-du-site.html" />

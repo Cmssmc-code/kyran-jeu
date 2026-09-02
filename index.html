@@ -18,7 +18,7 @@
 
   <meta name="description" content="KYRAN — jeu de cartes stratégique pour apéro et soirée (3-6 joueurs, 30 min). Pari, bluff, héritier du Tarot Africain. Bande-annonce, règles et Dojo gratuit." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#020617" />
+  <meta name="theme-color" content="#0d111b" />
   <meta name="author" content="Corentin Sence" />
   <link rel="canonical" href="https://kyran-jeu.fr/" />
   <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/" />
@@ -217,15 +217,70 @@
   <kyran-header></kyran-header>
 
   <main id="contenu-principal">
-    <section class="hero">
+    <section class="hero hero-ecommerce">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-row">
+            <span class="eyebrow-pill">Édition Officielle 2026</span>
+            <a href="#avis" class="hero-rating-pill" aria-label="Noté 4.7 sur 5 sur Amazon">
+              <span class="star-icon star-full">★</span>
+              <strong>4.7 / 5</strong> sur Amazon
+              <span class="rating-sub">(33 avis vérifiés)</span>
+            </a>
+          </div>
+          <h1>Défie ton <span class="accent">Intuition</span></h1>
+          <p class="hero-lead">Jeu de cartes tactique pour apéro et soirée. Pari, bluff impitoyable et manche Mystique à l'aveugle pour 3 à 6 joueurs.</p>
+          
+          <kyran-stat-bar></kyran-stat-bar>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="commander.html">Commander votre boîte — 9,99&euro;</a>
+            <a class="btn btn-secondary" href="#video">Bande-annonce (1 min)</a>
+          </div>
+
+          <p class="hero-reassurance-micro">
+            <span>📦 Expédié sous 24-48h</span>
+            <span>·</span>
+            <span>🔒 Paiement Stripe sécurisé</span>
+            <span>·</span>
+            <span>🇫🇷 Création française</span>
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-product-stage">
+            <div class="hero-card-fan">
+              <img src="card-37.jpg" alt="Carte Mystique KYRAN" class="fan-card fan-card-1" width="110" height="165" loading="eager" />
+              <img src="card-21.jpg" alt="Carte Pouvoir KYRAN" class="fan-card fan-card-2" width="110" height="165" loading="eager" />
+              <img src="card-1.jpg" alt="Carte KYRAN" class="fan-card fan-card-3" width="110" height="165" loading="eager" />
+            </div>
+            <img src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="380" height="380" fetchpriority="high" loading="eager" />
+            <div class="hero-visual-badge">
+              <span class="badge-price">9,99€</span>
+              <span class="badge-desc">Boîte complète</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
-        <p class="eyebrow">Jeu de cartes · Édition 2026</p>
-        <h1>Défie ton <span class="accent">Intuition</span></h1>
-        <p class="hero-lead">Jeu de cartes stratégique pour apéro et soirée — pari, bluff et manche Mystique pour 3 à 6 joueurs.</p>
-        <kyran-stat-bar></kyran-stat-bar>
-        <div class="hero-actions">
-          <a class="btn btn-primary cta-pulse" href="commander.html">Commander le jeu — 9,99&euro;</a>
-          <a class="btn btn-secondary" href="regle.html">Découvrir les règles</a>
+        <div class="trust-bar" role="region" aria-label="Garanties et confiance">
+          <div class="trust-bar-item">
+            <span class="trust-bar-icon" aria-hidden="true">🇫🇷</span>
+            <span>Jeu indépendant conçu &amp; édité en France</span>
+          </div>
+          <div class="trust-bar-item">
+            <span class="trust-bar-icon" aria-hidden="true">📦</span>
+            <span>Expédition suivie sous 24-48h</span>
+          </div>
+          <div class="trust-bar-item">
+            <span class="trust-bar-icon" aria-hidden="true">🔒</span>
+            <span>Paiement 100% sécurisé Stripe &amp; CB</span>
+          </div>
+          <div class="trust-bar-item">
+            <span class="trust-bar-icon" aria-hidden="true">⭐</span>
+            <span>4.7/5 sur Amazon · Avis certifiés</span>
+          </div>
         </div>
       </div>
     </section>
@@ -234,7 +289,7 @@
       <div class="container">
         <h2 class="section-title">Commander <span class="accent">KYRAN</span></h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Boutique officielle &amp; expédition suivie · Disponible aussi sur Amazon</p>
+        <p class="section-sub">Boutique officielle &amp; expédition suivie · Disponible aussi sur Amazon Prime</p>
         <div class="amazon-store-showcase">
           <div class="amazon-store-grid">
             <div class="amazon-store-visual">
@@ -256,23 +311,143 @@
               </div>
             </div>
             <div class="amazon-store-content">
-              <h3 class="amazon-store-title">Le Jeu de Bluff et de Stratégie</h3>
+              <div class="store-badge-stock">✓ En stock · Expédié sous 24-48h</div>
+              <h3 class="amazon-store-title">Boîte officielle complète · 55 cartes vernies</h3>
+              
               <div class="price-prime-block">
-                <p class="amazon-store-price">9,99€ <span style="font-size: 0.95rem; font-weight: normal; color: var(--text-muted);">(+ 3,99€ livraison)</span></p>
-                <p class="prime-badge prime-badge-large">Paiement Stripe sécurisé</p>
+                <p class="amazon-store-price">9,99€ <span style="font-size: 0.95rem; font-weight: normal; color: var(--text-muted);">(+ 3,99€ livraison suivie)</span></p>
+                <span class="trust-pill-secure">🔒 Paiement 100% sécurisé via Stripe &amp; CB</span>
               </div>
+
               <ul class="trust-list">
-                <li>3 à 6 joueurs</li>
-                <li>Parties d'environ 30 min</li>
-                <li>Dès 8 ans</li>
+                <li><strong>Format Soirée &amp; Apéro :</strong> 3 à 6 joueurs · ~30 minutes · Dès 8 ans</li>
+                <li><strong>Mécanique de Pari :</strong> Réussir son contrat sauve vos vies, le rater est fatal</li>
+                <li><strong>4 Cartes Pouvoir majeures :</strong> Sceau, Voile, Clairvoyance et Bénédiction pour renverser la table</li>
+                <li><strong>Manche Mystique à l'aveugle :</strong> Carte collée sur le front, fous rires et suspense garantis</li>
+                <li><strong>Matériel Pro &amp; Voyage :</strong> 55 cartes toilées 300g/m², boîte rigide cloche, livret officiel</li>
+                <li><strong>Dojo interactif inclus :</strong> QR code imprimé sur la boîte vers le simulateur gratuit en ligne</li>
               </ul>
-              <div style="display: flex; flex-direction: column; gap: 10px;">
-                <a class="btn btn-primary store-cta" href="commander.html">Commander en direct — 9,99&euro;</a>
-                <a class="btn btn-secondary" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; padding: 10px 20px;">Commander sur Amazon Prime</a>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px;">
+                <a class="btn btn-primary store-cta" href="commander.html">Commander votre exemplaire — 9,99&euro;</a>
+                <a class="btn btn-secondary" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer" style="font-size: 0.88rem; padding: 12px 22px;">Commander sur Amazon Prime (17,99€)</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Galerie Photos Réelles & Témoignages Amazon -->
+    <section id="game-gallery" class="section-alt">
+      <div class="container">
+        <h2 class="section-title">KYRAN en <span class="accent">Partie Réelle</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Ce que vous vivrez autour de la table : immersion, bluff et rires garantis</p>
+
+        <div class="grid grid-2" style="align-items: center; gap: 36px; margin-top: var(--space-4);">
+          <div class="game-gallery-photo-card">
+            <img src="jeu-kyran-ami.jpg" alt="Partie de jeu KYRAN entre amis avec la carte sur le front" width="600" height="400" loading="lazy" style="border-radius: var(--radius-lg, 18px); width: 100%; height: auto; display: block; box-shadow: var(--shadow-card); border: 1px solid rgba(255,255,255,0.08);" />
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
+              <em>La fameuse Manche Mystique à l'aveugle : chaque joueur place sa carte sur son front !</em>
+            </p>
+          </div>
+
+          <div class="game-gallery-quotes">
+            <div class="card quote-card" style="margin-bottom: 16px;">
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">« Ce qui m’a particulièrement plu, c’est l’ambiance générée autour de la table. Les phases de bluff, les paris ratés et certaines manches spéciales créent de nombreux moments de rire. »</p>
+              <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                <strong style="color: var(--gold-bright);">Toto</strong>
+                <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">Club des Testeurs Vine</span>
+              </cite>
+            </div>
+
+            <div class="card quote-card">
+              <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">« Les règles s'expliquent en deux minutes. Ce qui fait vraiment la différence, ce sont les cartes pouvoirs qui provoquent des retournements imprévisibles. Un futur classique de nos soirées ! »</p>
+              <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                <strong style="color: var(--gold-bright);">Patrick</strong>
+                <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">✓ Achat vérifié Amazon</span>
+              </cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comment jouer en 3 étapes -->
+    <section id="comment-jouer">
+      <div class="container">
+        <h2 class="section-title">Comment jouer en <span class="accent">3 minutes</span> ?</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Une boucle de jeu simple, addictive et impitoyable</p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-card-num">01</span>
+            <h3>Le Pari Obligatoire</h3>
+            <p>En début de manche, chaque joueur annonce le nombre exact de plis qu'il compte remporter. La somme totale des paris ne doit <em>jamais</em> égaler le nombre de plis en jeu : mathématiquement, au moins un joueur perdra !</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">02</span>
+            <h3>Le Jeu &amp; Les Pouvoirs</h3>
+            <p>Chacun abat une carte. La plus forte remporte le pli... sauf si un joueur déclenche un Pouvoir spécial ou la carte Mystique. Perdre un pli exprès pour respecter son contrat devient votre meilleure arme tactique.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card-num">03</span>
+            <h3>La Survie des Vies</h3>
+            <p>Contrat réussi ? Vous conservez vos 5 cartes Vie (étoiles). Contrat manqué ? Vous perdez 1 vie. Les manches s'accélèrent de 7 cartes jusqu'à la Manche Mystique à l'aveugle. Le dernier en vie l'emporte !</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase des 5 cartes Pouvoir & Mystique -->
+    <section id="pouvoirs-showcase" class="section-alt">
+      <div class="container">
+        <h2 class="section-title">Les Cartes &amp; <span class="accent">Pouvoirs Mystiques</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Des effets tactiques majeurs pour renverser les manches au dernier instant</p>
+
+        <div class="powers-grid">
+          <div class="power-card-item">
+            <img src="card-37.jpg" alt="Carte Mystique" class="power-card-thumb" width="130" height="195" loading="lazy" />
+            <span class="power-badge-num">Carte Suprême</span>
+            <h3>La Mystique</h3>
+            <p>Valeur 0 ou 37 choisie librement au moment de la poser. Renverse n'importe quelle carte du jeu.</p>
+          </div>
+
+          <div class="power-card-item">
+            <img src="card-27.jpg" alt="Carte Sceau du Destin" class="power-card-thumb" width="130" height="195" loading="lazy" />
+            <span class="power-badge-num">Valeur 27</span>
+            <h3>Sceau du Destin</h3>
+            <p>Piochez au hasard une carte dans la main d'un adversaire : il est forcé de la jouer immédiatement !</p>
+          </div>
+
+          <div class="power-card-item">
+            <img src="card-11.jpg" alt="Carte Clairvoyance Antique" class="power-card-thumb" width="130" height="195" loading="lazy" />
+            <span class="power-badge-num">Valeur 11</span>
+            <h3>Clairvoyance</h3>
+            <p>Regardez secrètement la carte la plus forte du joueur de votre choix pour anticiper son pari.</p>
+          </div>
+
+          <div class="power-card-item">
+            <img src="card-20.jpg" alt="Carte Bénédiction des Ancêtres" class="power-card-thumb" width="130" height="195" loading="lazy" />
+            <span class="power-badge-num">Valeur 20</span>
+            <h3>Bénédiction</h3>
+            <p>Forcez un adversaire à abattre immédiatement sa plus faible carte, ruinant son plan de jeu.</p>
+          </div>
+
+          <div class="power-card-item">
+            <img src="card-3.jpg" alt="Carte Voile du Néant" class="power-card-thumb" width="130" height="195" loading="lazy" />
+            <span class="power-badge-num">Valeur 3</span>
+            <h3>Voile du Néant</h3>
+            <p>Échangez la valeur de votre carte avec une autre carte déjà posée sur la table ce tour-ci.</p>
+          </div>
+        </div>
+
+        <p style="text-align: center; margin-top: var(--space-4);">
+          <a class="btn btn-secondary" href="regle.html#pouvoirs">Voir le livret de règles complet</a>
+        </p>
       </div>
     </section>
 
@@ -383,6 +558,16 @@
         </div>
       </div>
     </section>
+
+    <div class="container" style="margin-bottom: var(--space-6);">
+      <kyran-cta-band
+        title="Prêt à défier votre intuition ?"
+        text="Commandez votre boîte KYRAN ou essayez le tutoriel gratuit du Dojo en ligne."
+        secondary-href="minijeu.html"
+        secondary-label="Essayer le Dojo gratuit"
+        show-dojo="false"
+      ></kyran-cta-band>
+    </div>
   </main>
 
   <kyran-footer></kyran-footer>

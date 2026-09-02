@@ -112,7 +112,7 @@ class KyranHeader extends HTMLElement {
 
           <div class="nav-actions">
             <div class="cta cta-desktop">
-              <a class="btn btn-header-cta" href="${ORDER_URL}">Commander</a>
+              <a class="btn btn-header-cta" href="${ORDER_URL}">Commander · 9,99&euro;</a>
             </div>
             <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
               <span class="nav-toggle-lines" aria-hidden="true">
@@ -254,6 +254,7 @@ class KyranFooter extends HTMLElement {
           </div>
         </div>
         <div class="footer-bottom">
+          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie sous 24-48h · 🇫🇷 Édition indépendante en France</p>
           <p class="footer-social">
             ${instagramLinkHtml('social-link social-link--instagram social-link--footer', 'Suivre @kyran.jeu sur Instagram')}
           </p>

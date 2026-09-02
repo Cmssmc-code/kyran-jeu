@@ -53,6 +53,8 @@
   <link rel="stylesheet" href="style.css?v=20260610" />
   <script src="blog-data.js?v=20260610"></script>
   <script src="components.js?v=20260610"></script>
+  <script src="reviews-data.js?v=20260902"></script>
+  <script src="reviews.js?v=20260902" defer></script>
 
   <script type="application/ld+json">
   {
@@ -110,6 +112,13 @@
         ],
         "url": "https://kyran-jeu.fr/",
         "isPartOf": {"@id": "https://kyran-jeu.fr/#website"},
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "33",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock",
@@ -351,21 +360,23 @@
 
     <section id="avis" class="section-alt">
       <div class="container">
-        <h2 class="section-title">Ils ont aimé</h2>
+        <h2 class="section-title">Avis des joueurs &amp; Évaluations Amazon</h2>
         <div class="section-divider"></div>
-        <div class="grid grid-3">
-          <blockquote class="card quote-card">
-            <p>Simple à expliquer, mais quelle profondeur ! On ne s'ennuie pas une seconde.</p>
-            <cite>— Léo</cite>
-          </blockquote>
-          <blockquote class="card quote-card">
-            <p>La manche Mystique à l'aveugle est un coup de génie. Fous rires garantis.</p>
-            <cite>— Amélie</cite>
-          </blockquote>
-          <blockquote class="card quote-card">
-            <p>Un must-have pour les fans de <a class="text-link" href="tarot-africain.html">Tarot Africain</a> ou de <a class="text-link" href="whist-moderne.html">Whist</a> qui veulent plus de fun.</p>
-            <cite>— Karim</cite>
-          </blockquote>
+        <div id="amazon-reviews-widget">
+          <div class="grid grid-3">
+            <blockquote class="card quote-card">
+              <p>Simple à expliquer, mais quelle profondeur ! On ne s'ennuie pas une seconde.</p>
+              <cite>— Léo</cite>
+            </blockquote>
+            <blockquote class="card quote-card">
+              <p>La manche Mystique à l'aveugle est un coup de génie. Fous rires garantis.</p>
+              <cite>— Amélie</cite>
+            </blockquote>
+            <blockquote class="card quote-card">
+              <p>Un must-have pour les fans de <a class="text-link" href="tarot-africain.html">Tarot Africain</a> ou de <a class="text-link" href="whist-moderne.html">Whist</a> qui veulent plus de fun.</p>
+              <cite>— Karim</cite>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>

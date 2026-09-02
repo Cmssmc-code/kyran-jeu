@@ -1,0 +1,40 @@
+name: Synchronisation automatique des avis Amazon
+
+on:
+  schedule:
+    # Exécution tous les jours à 4h00 UTC
+    - cron: '0 4 * * *'
+  workflow_dispatch: # Permet de lancer manuellement depuis l'interface GitHub
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installation des dépendances
+        run: npm ci || npm install --save-dev cheerio
+
+      - name: Récupération des avis Amazon
+        run: node scripts/fetch-amazon-reviews.mjs
+
+      - name: Commit et Push si de nouveaux avis sont détectés
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add reviews-data.json reviews-data.js
+          if git diff --staged --quiet; then
+            echo "Aucune modification des avis Amazon."
+          else
+            git commit -m "chore(reviews): mise à jour automatique des avis Amazon [skip ci]"
+            git push
+          fi

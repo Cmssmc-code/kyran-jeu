@@ -470,16 +470,32 @@ class KyranStatBar extends HTMLElement {
     this.innerHTML = `
       <div class="stat-bar" role="list">
         <div class="stat-item" role="listitem">
-          <span class="stat-value">3–6</span>
-          <span class="stat-label">Joueurs</span>
+          <span class="stat-icon" aria-hidden="true">👥</span>
+          <div class="stat-text">
+            <strong class="stat-value">3–6</strong>
+            <span class="stat-label">joueurs</span>
+          </div>
         </div>
         <div class="stat-item" role="listitem">
-          <span class="stat-value">~30 min</span>
-          <span class="stat-label">Dur&eacute;e</span>
+          <span class="stat-icon" aria-hidden="true">⏱️</span>
+          <div class="stat-text">
+            <strong class="stat-value">~30 min</strong>
+            <span class="stat-label">la partie</span>
+          </div>
         </div>
         <div class="stat-item" role="listitem">
-          <span class="stat-value">8+</span>
-          <span class="stat-label">&Acirc;ge</span>
+          <span class="stat-icon" aria-hidden="true">🎂</span>
+          <div class="stat-text">
+            <strong class="stat-value">Dès 8 ans</strong>
+            <span class="stat-label">apéro & soirée</span>
+          </div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-icon" aria-hidden="true">🃏</span>
+          <div class="stat-text">
+            <strong class="stat-value">55 cartes</strong>
+            <span class="stat-label">toilées 300g</span>
+          </div>
         </div>
       </div>
     `;

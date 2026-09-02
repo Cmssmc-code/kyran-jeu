@@ -170,6 +170,8 @@
           ? 'Masquer les avis supplémentaires'
           : 'Afficher tous les avis (' + reviews.length + ')';
       });
+    }
+
     // Mise à jour dynamique du Schema.org pour SEO Google Rich Snippet
     updateStructuredData(avg, total, reviews);
   }

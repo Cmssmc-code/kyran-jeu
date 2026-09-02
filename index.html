@@ -50,11 +50,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260610"></script>
-  <link rel="stylesheet" href="style.css?v=20260902b" />
+  <link rel="stylesheet" href="style.css?v=20260610b" />
   <script src="blog-data.js?v=20260610"></script>
   <script src="components.js?v=20260610"></script>
-  <script src="reviews-data.js?v=20260902b"></script>
-  <script src="reviews.js?v=20260902b" defer></script>
+  <script src="reviews-data.js?v=20260610b"></script>
+  <script src="reviews.js?v=20260610b" defer></script>
 
   <script type="application/ld+json">
   {
@@ -119,14 +119,26 @@
           "bestRating": "5",
           "worstRating": "1"
         },
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "price": "17.99",
-          "priceCurrency": "EUR",
-          "url": "https://www.amazon.fr/dp/B0G217LD87",
-          "seller": {"@type": "Organization", "name": "Amazon"}
-        }
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Boutique officielle KYRAN",
+            "availability": "https://schema.org/InStock",
+            "price": "9.99",
+            "priceCurrency": "EUR",
+            "url": "https://kyran-jeu.fr/commander.html",
+            "seller": {"@type": "Person", "name": "Corentin Sence"}
+          },
+          {
+            "@type": "Offer",
+            "name": "Amazon France (Prime)",
+            "availability": "https://schema.org/InStock",
+            "price": "17.99",
+            "priceCurrency": "EUR",
+            "url": "https://www.amazon.fr/dp/B0G217LD87",
+            "seller": {"@type": "Organization", "name": "Amazon"}
+          }
+        ]
       },
       {
         "@type": "VideoObject",
@@ -194,7 +206,7 @@
             "name": "Où acheter KYRAN ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "KYRAN est disponible sur Amazon au prix de 17,99€ avec livraison Prime."
+              "text": "KYRAN est disponible sur la boutique officielle à 9,99€ (+ 3,99€ envoi suivi) et sur Amazon au prix de 17,99€ avec livraison Prime."
             }
           },
           {
@@ -228,8 +240,8 @@
               <span class="rating-sub">(33 avis vérifiés)</span>
             </a>
           </div>
-          <h1>Défie ton <span class="accent">Intuition</span></h1>
-          <p class="hero-lead">Le jeu de cartes d'ambiance et de tactique où réussir son pari sauve ses vies. Prise en main en 2 minutes, bluff impitoyable et la célèbre manche finale à l'aveugle la carte sur le front !</p>
+          <h1>Défiez votre <span class="accent">Intuition</span></h1>
+          <p class="hero-lead">Le jeu de cartes d'ambiance et de tactique où réussir son pari sauve ses vies. Prise en main en 2 minutes, bluff impitoyable et la célèbre manche finale à l'aveugle, jouée la carte collée sur le front&nbsp;!</p>
           
           <kyran-stat-bar></kyran-stat-bar>
 
@@ -254,7 +266,7 @@
               <img src="card-21.jpg" alt="Carte Pouvoir KYRAN" class="fan-card fan-card-2" width="135" height="205" loading="eager" />
               <img src="card-1.jpg" alt="Carte KYRAN" class="fan-card fan-card-3" width="135" height="205" loading="eager" />
             </div>
-            <img src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="380" height="380" fetchpriority="high" loading="eager" />
+            <img src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="380" height="380" fetchpriority="high" loading="eager" />
             <div class="hero-visual-badge">
               <span class="badge-price">9,99€</span>
               <span class="badge-desc">Boîte complète</span>
@@ -460,7 +472,7 @@
               <div class="product-gallery">
                 <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
                   <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
-                    <img src="boite-recto-kyran.png" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
+                    <img src="boite-recto-kyran.jpg" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
                     <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
@@ -470,7 +482,7 @@
                   </button>
                 </div>
                 <div class="product-main-wrap">
-                  <img id="product-main-img" src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
+                  <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
                 </div>
               </div>
             </div>
@@ -557,7 +569,7 @@
       var gallery = document.querySelector('.product-gallery');
       if (!thumbs.length || !mainImg) return;
       var images = [
-        { src: 'boite-recto-kyran.png', alt: 'Boîte KYRAN recto' },
+        { src: 'boite-recto-kyran.jpg', alt: 'Boîte KYRAN recto' },
         { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
         { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
       ];

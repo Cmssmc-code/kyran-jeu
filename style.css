@@ -20,7 +20,7 @@
   /* Typographie & Lisibilité chaleureuse (Stone & Espresso) */
   --text-main: #1c1917;
   --text-sub: #44403c;
-  --text-muted: #78716c;
+  --text-muted: #57534e;
 
   /* Cartes & Élévation naturelle de boîte posée */
   --card-bg: #ffffff;
@@ -1732,13 +1732,15 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     height: calc(100dvh - 72px - env(safe-area-inset-top, 0));
     height: calc(100vh - 72px - env(safe-area-inset-top, 0));
     padding: 8px 0 calc(24px + env(safe-area-inset-bottom, 0));
-    background: rgba(2, 6, 23, 0.98);
-    border-left: 1px solid rgba(212, 175, 55, 0.12);
-    box-shadow: -16px 0 48px rgba(0, 0, 0, 0.45);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid #e7e2d9;
+    box-shadow: -10px 0 40px rgba(69, 26, 3, 0.08);
     transform: translateX(100%);
     visibility: hidden;
     pointer-events: none;
-    transition: transform 0.28s ease, visibility 0.28s ease;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
     z-index: 7200;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -1760,7 +1762,7 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   }
 
   .nav-list > li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid #f1ece1;
   }
 
   .nav-list .nav-link {
@@ -1769,18 +1771,22 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.02em;
+    color: var(--text-main);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+    transition: background 0.2s, color 0.2s;
   }
 
   .nav-list .nav-link:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: #faf7f2;
+    color: var(--gold-dark);
   }
 
   .nav-list .nav-link.active {
-    color: var(--gold-bright);
-    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold-dark);
+    background: #fdf8eb;
+    border-left: 3px solid var(--gold);
     box-shadow: none;
   }
 
@@ -1796,6 +1802,11 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     font-weight: 600;
     color: var(--text-main);
     position: relative;
+    transition: background 0.2s;
+  }
+
+  .nav-discover-summary:hover {
+    background: #faf7f2;
   }
 
   .nav-discover-summary::-webkit-details-marker { display: none; }
@@ -1809,6 +1820,7 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     font-family: var(--font-display);
     font-size: 1.2rem;
     color: var(--gold);
+    transition: transform 0.2s;
   }
 
   .nav-discover-details[open] .nav-discover-summary::after {
@@ -1816,36 +1828,38 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   }
 
   .nav-drawer-links {
-    padding: 0 12px 12px 20px;
+    padding: 4px 16px 14px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
   }
 
   .nav-drawer-link {
     display: block;
-    padding: 10px 12px;
-    border-radius: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
     font-size: 0.88rem;
     font-weight: 600;
-    color: #e2e8f0;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    background: #faf7f2;
+    border: 1px solid #ede8dc;
+    transition: all 0.2s;
   }
 
   .nav-drawer-link span {
     display: block;
     margin-top: 2px;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: var(--text-muted);
   }
 
   .nav-drawer-link:hover,
   .nav-drawer-link:focus-visible {
-    color: var(--gold-bright);
-    border-color: rgba(212, 175, 55, 0.25);
-    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold-dark);
+    border-color: rgba(212, 175, 55, 0.4);
+    background: #fdf8eb;
+    transform: translateX(3px);
   }
 
   .nav-drawer-footer {
@@ -1853,10 +1867,18 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 12px;
+    border-top: 1px solid #f1ece1;
+    background: #ffffff;
   }
 
+  /* Palier Tablettes (641px à 900px) : 2 colonnes équilibrées */
+  .grid-2 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
+@media (max-width: 640px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
 
@@ -4392,6 +4414,130 @@ header.blog-article-hero::after {
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* ============================================================
+   8. ULTRA-RESPONSIVE & MOBILE / TABLETTE INTERACTIONS 2026
+   ============================================================ */
+
+/* 1. Élimination du flash de tapotement mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Micro-interactions tactiles & retour haptique visuel */
+.btn:active,
+.btn-header-cta:active,
+.sticky-buy-btn:active,
+.product-thumb:active,
+.order-qty-btn:active,
+.nav-link:active,
+.nav-toggle:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 3. Animation de pulsation douce sur la réassurance de stock */
+@keyframes stockPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25); }
+  100% { transform: scale(1); }
+}
+.store-badge-stock,
+.order-stock-badge {
+  animation: stockPulse 3.5s ease-in-out infinite;
+}
+
+/* 4. Animation d'ouverture fluide sur les accordéons */
+@keyframes accordionOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.faq-accordion details[open] .faq-answer,
+.order-faq-accordion details[open] .faq-ans {
+  animation: accordionOpen 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 5. Carrousel tactile horizontal sur mobile pour les avis clients (< 680px) */
+@media (max-width: 680px) {
+  .amazon-reviews-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 8px 4px 24px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+  .amazon-reviews-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+  .amazon-reviews-grid::-webkit-scrollbar-track {
+    background: #f1ece1;
+    border-radius: 4px;
+  }
+  .amazon-reviews-grid::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+  }
+  .amazon-review-card {
+    flex: 0 0 85% !important;
+    max-width: 320px !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+  }
+  .amazon-reviews-actions {
+    margin-top: 0.5rem;
+  }
+}
+
+/* 6. Optimisation tactile des tableaux comparatifs sur mobile */
+.compare-table-wrap {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+  border-radius: 12px;
+}
+.compare-table-wrap::-webkit-scrollbar {
+  height: 4px;
+}
+.compare-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+/* 7. Optimisation des miniatures produit sur smartphone */
+@media (max-width: 600px) {
+  .product-thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .product-thumb {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10px !important;
+  }
+  .product-main-wrap {
+    border-radius: 16px !important;
+  }
+  .hero-ecommerce .hero-actions .btn {
+    font-size: 0.95rem;
+    padding: 14px 20px;
   }
 }
 

@@ -46,9 +46,10 @@ function renderGameLinks(game) {
   const links = [];
 
   if (game.isKyran) {
-    links.push(`<a class="game-link game-link--primary" href="/regle.html">Règles officielles</a>`);
-    links.push(`<a class="game-link" href="/minijeu.html">Dojo interactif</a>`);
-    links.push(`<a class="game-link game-link--shop" href="https://www.amazon.fr/dp/B0G217LD87" rel="noopener noreferrer sponsored">Acheter sur Amazon</a>`);
+    links.push(`<a class="game-link game-link--primary" href="/commander.html">Commander (9,99€)</a>`);
+    links.push(`<a class="game-link" href="/regle.html">Règles</a>`);
+    links.push(`<a class="game-link" href="/minijeu.html">Dojo</a>`);
+    links.push(`<a class="game-link game-link--shop" href="https://www.amazon.fr/dp/B0G217LD87" rel="noopener noreferrer sponsored">Amazon (17,99€)</a>`);
   } else {
     if (meta.bgg) links.push(`<a class="game-link" href="${meta.bgg}" rel="noopener noreferrer">BoardGameGeek ↗</a>`);
     if (meta.wiki) links.push(`<a class="game-link" href="${meta.wiki}" rel="noopener noreferrer">Wikipedia ↗</a>`);

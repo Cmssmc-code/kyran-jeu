@@ -36,7 +36,10 @@ const ACTIVE_BY_PATH = {
   'whist-moderne.html': 'discover',
   'comparatif-jeux-plis.html': 'discover',
   'faq.html': 'discover',
-  'plan-du-site.html': 'discover'
+  'plan-du-site.html': 'discover',
+  'mentions-legales.html': 'legal',
+  'cgv.html': 'legal',
+  'confidentialite.html': 'legal'
 };
 
 function resolveActivePage(explicit) {
@@ -45,6 +48,9 @@ function resolveActivePage(explicit) {
   if (path.indexOf('/blog') !== -1) return 'blog';
   var file = path.split('/').pop() || 'index.html';
   if (!file || file.endsWith('/')) file = 'index.html';
+  if (!file.endsWith('.html') && ACTIVE_BY_PATH[file + '.html']) {
+    return ACTIVE_BY_PATH[file + '.html'];
+  }
   return ACTIVE_BY_PATH[file] || '';
 }
 
@@ -260,6 +266,12 @@ class KyranFooter extends HTMLElement {
           </p>
           <p class="footer-credits">Illustrations &amp; identit&eacute; visuelle · Crea by Floh</p>
           <p class="footer-seo-links">
+            <a href="${ROOT}mentions-legales.html">Mentions légales</a>
+            <span aria-hidden="true"> · </span>
+            <a href="${ROOT}cgv.html">CGV</a>
+            <span aria-hidden="true"> · </span>
+            <a href="${ROOT}confidentialite.html">Confidentialité</a>
+            <span aria-hidden="true"> · </span>
             <a href="${ROOT}plan-du-site.html">Plan du site</a>
             <span aria-hidden="true"> · </span>
             <a href="${ROOT}sitemap.xml">Sitemap</a>

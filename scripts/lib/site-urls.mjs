@@ -139,6 +139,38 @@ export const STATIC_PAGES = [
     priority: '0.55'
   },
   {
+    path: '/commander.html',
+    title: 'Commander KYRAN — Boutique officielle',
+    section: 'Boutique',
+    lastmod: '2026-09-02',
+    changefreq: 'weekly',
+    priority: '0.95'
+  },
+  {
+    path: '/mentions-legales.html',
+    title: 'Mentions légales',
+    section: 'Légal & Vente',
+    lastmod: '2026-09-02',
+    changefreq: 'yearly',
+    priority: '0.40'
+  },
+  {
+    path: '/cgv.html',
+    title: 'Conditions Générales de Vente (CGV)',
+    section: 'Légal & Vente',
+    lastmod: '2026-09-02',
+    changefreq: 'yearly',
+    priority: '0.40'
+  },
+  {
+    path: '/confidentialite.html',
+    title: 'Politique de confidentialité (RGPD)',
+    section: 'Légal & Vente',
+    lastmod: '2026-09-02',
+    changefreq: 'yearly',
+    priority: '0.40'
+  },
+  {
     path: '/blog/index.html',
     title: 'Blog KYRAN — 30 sélections jeux',
     section: 'Blog',

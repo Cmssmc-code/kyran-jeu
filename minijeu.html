@@ -436,6 +436,19 @@
         padding: 16px;
       }
     }
+
+    /* Feedback tactile mobile & tablette */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    .k-card:not(.disabled-state):active {
+      transform: translateY(-4px) scale(0.98);
+      transition: transform 0.08s ease;
+    }
+    .btn-bet:active, .mystic-choice-btn:active {
+      transform: scale(0.93) !important;
+      transition: transform 0.08s ease !important;
+    }
   </style>
 </head>
 <body>
@@ -456,7 +469,7 @@
       <div class="container dojo-intro">
         <div class="prose">
           <p class="article-lead">Le <strong>Dojo KYRAN</strong> est un tutoriel interactif pour apprendre les mécaniques avant votre première partie physique : phase de <strong>pari</strong>, gestion des <strong>plis</strong> et <strong>manche Mystique</strong> à l'aveugle.</p>
-          <p>En 4 manches guidées, vous affrontez l'IA et découvrez pourquoi KYRAN est un excellent <a class="text-link" href="jeu-apero.html">jeu de cartes pour apéro</a>. Règles complètes sur <a class="text-link" href="regle.html">regle.html</a> · <a class="text-link" href="faq.html">FAQ</a> · <a class="text-link" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">commander la version physique</a>.</p>
+          <p>En 4 manches guidées, vous affrontez l'IA et découvrez pourquoi KYRAN est un excellent <a class="text-link" href="jeu-apero.html">jeu de cartes pour apéro</a>. Règles complètes sur <a class="text-link" href="regle.html">regle.html</a> · <a class="text-link" href="faq.html">FAQ</a> · <a class="text-link" href="commander.html">commander la boîte officielle (9,99€)</a>.</p>
         </div>
       </div>
     </section>
@@ -1031,9 +1044,12 @@
         if (!document.getElementById("buy-cta-btn")) {
             let physBtn = document.createElement("button");
             physBtn.id = "buy-cta-btn"; physBtn.className = "btn";
-            physBtn.style.marginTop = "10px"; physBtn.style.background = "#fff"; physBtn.style.color = "#0f172a";
-            physBtn.textContent = "Version Physique";
-            physBtn.onclick = () => (window.location.href = "https://www.amazon.fr/dp/B0G217LD87");
+            physBtn.style.marginTop = "12px";
+            physBtn.style.background = "linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%)";
+            physBtn.style.color = "#ffffff";
+            physBtn.style.fontWeight = "600";
+            physBtn.textContent = "Commander la boîte officielle — 9,99€";
+            physBtn.onclick = () => (window.location.href = "commander.html");
             document.getElementById("end-overlay").appendChild(physBtn);
         }
       } else {

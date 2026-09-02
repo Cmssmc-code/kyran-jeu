@@ -28,18 +28,6 @@
   </url>
 
   <url>
-    <loc>https://kyran-jeu.fr/commander.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/boite-recto-kyran.png</image:loc>
-      <image:title>Commander le jeu KYRAN — Boutique officielle</image:title>
-      <image:caption>Commander la boîte officielle du jeu de cartes KYRAN</image:caption>
-    </image:image>
-  </url>
-
-  <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -132,6 +120,34 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/commander.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/mentions-legales.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/cgv.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/confidentialite.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
 
   <url>

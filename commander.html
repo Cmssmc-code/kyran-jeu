@@ -20,7 +20,7 @@
   <meta property="og:title" content="Commander KYRAN — Jeu de cartes officiel" />
   <meta property="og:description" content="Pari, bluff et manche Mystique. Commandez votre boîte KYRAN au tarif de 9,99 €. Paiement sécurisé Stripe." />
   <meta property="og:url" content="https://kyran-jeu.fr/commander.html" />
-  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.jpg" />
   <meta property="og:image:alt" content="Boîte du jeu KYRAN" />
   <meta property="product:price:amount" content="9.99" />
   <meta property="product:price:currency" content="EUR" />
@@ -91,8 +91,33 @@
     }
     @media (max-width: 900px) {
       .order-layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--space-4);
+      }
+      .order-presentation {
+        display: contents;
+      }
+      .product-gallery {
+        order: 1;
+        width: 100%;
+      }
+      .order-form-column {
+        order: 2;
+        width: 100%;
+      }
+      .product-perks {
+        order: 3;
+        width: 100%;
+        grid-template-columns: 1fr !important;
+      }
+      .order-specs {
+        order: 4;
+        width: 100%;
+      }
+      .order-faq-section {
+        order: 5;
+        width: 100%;
       }
     }
     .order-card {
@@ -140,6 +165,23 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
+    .order-delivery-estimate {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: #166534;
+    }
+    .order-delivery-estimate-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
     .order-qty-block {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -158,16 +200,16 @@
     .order-qty-controls {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
     .order-qty-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
       border: 1px solid #cbd5e1;
       background: #ffffff;
       color: var(--text-main);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -180,9 +222,9 @@
       border-color: #94a3b8;
     }
     .order-qty-val {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      min-width: 24px;
+      min-width: 28px;
       text-align: center;
       color: #0f172a;
     }
@@ -332,6 +374,214 @@
       color: #64748b;
       line-height: 1.4;
     }
+    .order-specs {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: var(--space-3);
+      margin-top: var(--space-3);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+    .order-specs h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .order-specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    .order-specs-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .order-specs-table tr:last-child {
+      border-bottom: none;
+    }
+    .order-specs-table td {
+      padding: 7px 4px;
+    }
+    .order-specs-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 45%;
+    }
+    .order-specs-table td:last-child {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .order-faq-section {
+      margin-top: var(--space-3);
+    }
+    .order-faq-section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .order-faq-accordion details {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      padding: 10px 14px;
+      font-size: 0.86rem;
+    }
+    .order-faq-accordion summary {
+      font-weight: 600;
+      color: #0f172a;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .order-faq-accordion summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+    .order-faq-accordion details[open] summary::after {
+      content: '−';
+    }
+    .order-faq-accordion .faq-ans {
+      margin-top: 8px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+    .product-main-wrap {
+      cursor: zoom-in;
+      position: relative;
+    }
+    .product-main-wrap::after {
+      content: '🔍 Cliquer pour zoomer';
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      pointer-events: none;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .product-main-wrap:hover::after {
+      opacity: 1;
+    }
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(6px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+    .lightbox-modal.is-open {
+      display: flex;
+    }
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: #ffffff;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.4);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .sticky-buy-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid #e2e8f0;
+      box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.1);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0));
+      z-index: 5000;
+      transform: translateY(120%);
+      transition: transform 0.25s ease-in-out;
+      display: block;
+    }
+    .sticky-buy-bar.is-visible {
+      transform: translateY(0);
+    }
+    .sticky-buy-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1120px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .sticky-buy-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sticky-buy-thumb {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid #e2e8f0;
+    }
+    .sticky-buy-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .sticky-buy-price {
+      font-size: 0.82rem;
+      color: var(--gold-dark);
+      font-weight: 600;
+      display: block;
+    }
+    .sticky-buy-btn {
+      padding: 11px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+      color: #ffffff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 3px 12px rgba(217, 119, 6, 0.3);
+    }
+    @media (min-width: 901px) {
+      .sticky-buy-bar {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -355,7 +605,7 @@
             <div class="product-gallery">
               <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
                 <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
-                  <img src="boite-recto-kyran.png" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
+                  <img src="boite-recto-kyran.jpg" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
                 </button>
                 <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
                   <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
@@ -364,8 +614,8 @@
                   <img src="jeu-kyran-ami.jpg" alt="Miniature partie KYRAN entre amis" width="80" height="80" loading="lazy" />
                 </button>
               </div>
-              <div class="product-main-wrap">
-                <img id="product-main-img" src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
+              <div class="product-main-wrap" id="product-main-wrap" title="Agrandir l'image">
+                <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
               </div>
             </div>
 
@@ -387,14 +637,80 @@
                 <p>Accès direct par QR code aux règles vidéo 5 min et au simulateur interactif gratuit en ligne.</p>
               </div>
             </div>
+
+            <!-- Fiche technique produit -->
+            <div class="order-specs">
+              <h3>Fiche technique &amp; Caractéristiques</h3>
+              <table class="order-specs-table">
+                <tbody>
+                  <tr>
+                    <td>Contenu</td>
+                    <td>55 cartes vernies toilées + Livret de règles</td>
+                  </tr>
+                  <tr>
+                    <td>Format boîte</td>
+                    <td>Boîte cloche rigide haute densité (11,5 × 8,5 × 2,8 cm)</td>
+                  </tr>
+                  <tr>
+                    <td>Poids</td>
+                    <td>Environ 175 g (format poche / voyage facile)</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre de joueurs</td>
+                    <td>3 à 6 joueurs</td>
+                  </tr>
+                  <tr>
+                    <td>Âge conseillé</td>
+                    <td>Dès 8 ans (ambiance apéro &amp; famille)</td>
+                  </tr>
+                  <tr>
+                    <td>Durée d'une partie</td>
+                    <td>Environ 30 minutes</td>
+                  </tr>
+                  <tr>
+                    <td>Conception</td>
+                    <td>Auteur : Corentin Sence · Illustratrice : Crea by Floh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Mini FAQ réassurance commande -->
+            <div class="order-faq-section">
+              <h3>Questions fréquentes sur votre commande</h3>
+              <div class="order-faq-accordion">
+                <details>
+                  <summary>Quels sont les délais et modes de livraison ?</summary>
+                  <div class="faq-ans">Les commandes sont préparées et expédiées sous 24 à 48h ouvrées. L'acheminement est assuré en courrier suivi postal (La Poste / Colissimo) en 2 à 4 jours ouvrés. Vous recevez votre numéro de suivi par e-mail dès expédition.</div>
+                </details>
+                <details>
+                  <summary>Quels pays sont desservis ?</summary>
+                  <div class="faq-ans">La boutique livre en France métropolitaine, en Belgique, en Suisse et au Luxembourg au tarif unique de 3,99€ en envoi suivi.</div>
+                </details>
+                <details>
+                  <summary>Comment le jeu est-il emballé et protégé ?</summary>
+                  <div class="faq-ans">Chaque boîte rigide de KYRAN est conditionnée sous protection renforcée (enveloppe matelassée bulle haute résistance ou carton) pour garantir une réception impeccable.</div>
+                </details>
+                <details>
+                  <summary>Puis-je retourner le jeu s'il ne me convient pas ?</summary>
+                  <div class="faq-ans">Oui. Vous bénéficiez du droit légal de rétractation de 14 jours dès réception de votre colis. Contactez-nous simplement à contact@kyran-jeu.fr pour les modalités de retour et de remboursement.</div>
+                </details>
+              </div>
+            </div>
           </div>
 
           <!-- Colonne Formulaire & Checkout Stripe -->
           <div class="order-form-column">
-            <div class="order-card">
+            <div class="order-card" id="order-card-box">
               <div class="order-badge-stock">✓ En stock · Expédié sous 24-48h</div>
               <h2 style="font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--text-main);">Édition Officielle KYRAN</h2>
               <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--space-3);">Jeu complet dans sa boîte rigide cloche avec cartes Pouvoir et manche Mystique.</p>
+
+              <!-- Estimation dynamique de livraison -->
+              <div class="order-delivery-estimate" id="delivery-estimate-box">
+                <span class="order-delivery-estimate-icon">🚚</span>
+                <span id="delivery-estimate-text">Expédié sous 24-48h · Livraison estimée sous 3 à 5 jours</span>
+              </div>
 
               <div class="order-price-row">
                 <span class="order-price-main" id="display-unit-price">9,99€</span>
@@ -428,8 +744,6 @@
                 id="stripe-checkout-link" 
                 href="https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00" 
                 class="order-btn-stripe"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <span>Payer en toute sécurité (Stripe)</span>
                 <span aria-hidden="true">→</span>
@@ -455,7 +769,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <span>Commander sur Amazon (Livraison Prime)</span>
+                <span>Commander sur Amazon (Livraison Prime · 17,99€)</span>
               </a>
 
               <ul class="reassurance-list">
@@ -466,6 +780,10 @@
                 <li class="reassurance-item">
                   <span class="reassurance-icon">📦</span>
                   <span>Livraison suivie (France, Belgique, Suisse, Luxembourg)</span>
+                </li>
+                <li class="reassurance-item">
+                  <span class="reassurance-icon">🛡️</span>
+                  <span>Droit de rétractation légal 14 jours satisfait ou remboursé</span>
                 </li>
                 <li class="reassurance-item">
                   <span class="reassurance-icon">✉️</span>
@@ -498,6 +816,26 @@
       secondary-label="Essayer le Dojo"
       show-dojo="false"
     ></kyran-cta-band>
+
+    <!-- Modal Lightbox Zoom -->
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Agrandissement image produit">
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fermer l'agrandissement">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="boite-recto-kyran.jpg" alt="Agrandissement produit KYRAN" />
+    </div>
+
+    <!-- Sticky Buy Bar Mobile -->
+    <aside id="sticky-buy-bar" class="sticky-buy-bar" aria-label="Barre d'achat rapide">
+      <div class="sticky-buy-inner">
+        <div class="sticky-buy-left">
+          <img src="boite-recto-kyran.jpg" alt="Miniature KYRAN" class="sticky-buy-thumb" width="42" height="42" />
+          <div>
+            <div class="sticky-buy-title">KYRAN — Édition Officielle</div>
+            <span class="sticky-buy-price">9,99€ <small style="color:var(--text-muted);font-weight:normal;">(+ 3,99€ envoi)</small></span>
+          </div>
+        </div>
+        <a href="#stripe-checkout-link" class="sticky-buy-btn" id="sticky-buy-cta">Commander</a>
+      </div>
+    </aside>
   </main>
 
   <kyran-footer></kyran-footer>
@@ -506,29 +844,104 @@
     (function () {
       var thumbs = document.querySelectorAll('.product-thumb');
       var mainImg = document.getElementById('product-main-img');
-      var images = ['boite-recto-kyran.png', 'boite-verso-kyran.jpg', 'jeu-kyran-ami.jpg'];
+      var mainWrap = document.getElementById('product-main-wrap');
+      var lightbox = document.getElementById('lightbox-modal');
+      var lightboxImg = document.getElementById('lightbox-img');
+      var lightboxClose = document.getElementById('lightbox-close');
+      var gallery = document.querySelector('.product-gallery');
+
+      var images = ['boite-recto-kyran.jpg', 'boite-verso-kyran.jpg', 'jeu-kyran-ami.jpg'];
       var alts = [
         'Boîte du jeu de cartes KYRAN — recto',
         'Boîte du jeu de cartes KYRAN — verso avec explications',
         'Partie du jeu de cartes KYRAN en cours entre amis'
       ];
+      var currentImgIndex = 0;
+
+      function selectImage(idx) {
+        currentImgIndex = (idx + images.length) % images.length;
+        if (images[currentImgIndex] && mainImg) {
+          mainImg.src = images[currentImgIndex];
+          mainImg.alt = alts[currentImgIndex] || mainImg.alt;
+          if (lightboxImg) lightboxImg.src = images[currentImgIndex];
+          thumbs.forEach(function (t, i) {
+            var isActive = i === currentImgIndex;
+            t.classList.toggle('active', isActive);
+            t.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          });
+        }
+      }
 
       thumbs.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var idx = parseInt(btn.getAttribute('data-index'), 10);
-          if (images[idx] && mainImg) {
-            mainImg.src = images[idx];
-            mainImg.alt = alts[idx] || mainImg.alt;
-            thumbs.forEach(function (t) {
-              t.classList.remove('active');
-              t.setAttribute('aria-pressed', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-pressed', 'true');
-          }
+          selectImage(idx);
         });
       });
 
+      // Swipe gestuel sur la galerie pour mobile
+      if (gallery) {
+        var touchStartX = 0;
+        var touchEndX = 0;
+        gallery.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        gallery.addEventListener('touchend', function (e) {
+          touchEndX = e.changedTouches[0].screenX;
+          var diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+              selectImage(currentImgIndex + 1); // swipe gauche -> suivant
+            } else {
+              selectImage(currentImgIndex - 1); // swipe droite -> précédent
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Lightbox Zoom
+      if (mainWrap && lightbox && lightboxImg) {
+        mainWrap.addEventListener('click', function () {
+          lightboxImg.src = mainImg.src;
+          lightboxImg.alt = mainImg.alt;
+          lightbox.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        });
+
+        function closeLightbox() {
+          lightbox.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (e) {
+          if (e.target === lightbox || e.target === lightboxClose) {
+            closeLightbox();
+          }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+            closeLightbox();
+          }
+        });
+      }
+
+      // Calcul dynamique de date de livraison estimée
+      var deliveryText = document.getElementById('delivery-estimate-text');
+      if (deliveryText) {
+        var today = new Date();
+        var minDays = 3;
+        var maxDays = 5;
+        // Ajustement si fin de semaine
+        var minDate = new Date(today.getTime() + minDays * 24 * 60 * 60 * 1000);
+        var maxDate = new Date(today.getTime() + maxDays * 24 * 60 * 60 * 1000);
+        var options = { weekday: 'short', day: 'numeric', month: 'short' };
+        var minStr = minDate.toLocaleDateString('fr-FR', options);
+        var maxStr = maxDate.toLocaleDateString('fr-FR', options);
+        deliveryText.innerHTML = 'Commandez aujourd\'hui · Livraison suivie estimée entre le <strong>' + minStr + '</strong> et le <strong>' + maxStr + '</strong>';
+      }
+
+      // Logique Quantité & Prix Stripe
       var unitPrice = 9.99;
       var shippingRate = 3.99;
       var qty = 1;
@@ -548,6 +961,10 @@
         if (stripeBtn) {
           stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + (qty > 1 ? '?quantity=' + qty : '');
         }
+        var stickyPriceEl = document.querySelector('.sticky-buy-price');
+        if (stickyPriceEl) {
+          stickyPriceEl.innerHTML = total + '&nbsp;€ <small style="color:var(--text-muted);font-weight:normal;">(' + qty + ' boîte' + (qty > 1 ? 's' : '') + ' + 3,99&nbsp;€ port)</small>';
+        }
       }
 
       if (qtyMinus && qtyPlus) {
@@ -563,6 +980,41 @@
             updateTotal();
           }
         });
+      }
+
+      // Sticky Buy Bar sur mobile avec IntersectionObserver
+      var stickyBar = document.getElementById('sticky-buy-bar');
+      var orderCard = document.getElementById('order-card-box');
+      var stickyCta = document.getElementById('sticky-buy-cta');
+
+      if (stickyBar && orderCard) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (window.innerWidth <= 900) {
+              if (entry.isIntersecting) {
+                stickyBar.classList.remove('is-visible');
+              } else {
+                var cardRect = orderCard.getBoundingClientRect();
+                if (cardRect.bottom < 0 || cardRect.top > window.innerHeight) {
+                  stickyBar.classList.add('is-visible');
+                } else {
+                  stickyBar.classList.remove('is-visible');
+                }
+              }
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(orderCard);
+
+        if (stickyCta) {
+          stickyCta.addEventListener('click', function (e) {
+            if (orderCard) {
+              e.preventDefault();
+              orderCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          });
+        }
       }
     })();
   </script>

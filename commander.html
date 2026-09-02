@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://kyran-jeu.fr/commander.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#0d111b" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="author" content="Corentin Sence" />
   <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/commander.html" />
   <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/commander.html" />
@@ -96,9 +96,9 @@
       }
     }
     .order-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
       border-radius: var(--radius-lg, 20px);
       padding: var(--space-4);
       position: sticky;
@@ -110,9 +110,9 @@
       gap: 6px;
       padding: 5px 12px;
       border-radius: 20px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #34d399;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #059669;
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: var(--space-2);
@@ -134,15 +134,15 @@
       font-family: var(--font-display);
       font-size: 3rem;
       line-height: 1;
-      color: var(--gold-bright);
+      color: var(--gold-dark);
     }
     .order-price-sub {
       color: var(--text-muted);
       font-size: 0.9rem;
     }
     .order-qty-block {
-      background: rgba(22, 28, 44, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: var(--space-2) var(--space-3);
       display: flex;
@@ -153,6 +153,7 @@
     .order-qty-label {
       font-weight: 600;
       font-size: 0.95rem;
+      color: #0f172a;
     }
     .order-qty-controls {
       display: flex;
@@ -163,8 +164,8 @@
       width: 34px;
       height: 34px;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(22, 28, 44, 0.8);
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
       color: var(--text-main);
       font-size: 1.2rem;
       cursor: pointer;
@@ -174,29 +175,30 @@
       transition: all 0.2s;
     }
     .order-qty-btn:hover {
-      background: var(--gold);
-      color: #0d111b;
-      border-color: var(--gold);
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
     }
     .order-qty-val {
       font-size: 1.15rem;
       font-weight: 700;
       min-width: 24px;
       text-align: center;
+      color: #0f172a;
     }
     .order-total-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: var(--space-2) 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
       margin-bottom: var(--space-3);
       font-size: 1.05rem;
     }
     .order-total-amount {
       font-weight: 700;
-      color: var(--gold-bright);
+      color: var(--gold-dark);
       font-size: 1.35rem;
     }
     .order-btn-stripe {
@@ -211,18 +213,18 @@
       letter-spacing: 0.02em;
       border-radius: 50px;
       background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-      color: #0d111b;
+      color: #ffffff;
       text-decoration: none;
-      box-shadow: 0 4px 16px rgba(207, 161, 82, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+      border: none;
       transition: all 0.25s ease;
       cursor: pointer;
     }
     .order-btn-stripe:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(207, 161, 82, 0.38);
-      background: linear-gradient(135deg, #f5da99 0%, #d5a550 100%);
-      color: #0d111b;
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+      background: linear-gradient(135deg, #fbbf24 0%, var(--gold-dark) 100%);
+      color: #ffffff;
     }
     .order-badges-payment {
       display: flex;
@@ -235,14 +237,14 @@
       font-size: 0.8rem;
     }
     .order-payment-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
       border-radius: 6px;
       padding: 4px 10px;
       font-size: 0.75rem;
       letter-spacing: 0.3px;
       font-weight: 500;
-      color: var(--text-sub);
+      color: #475569;
     }
     .order-divider {
       position: relative;
@@ -256,11 +258,11 @@
       top: 50%;
       width: 100%;
       height: 1px;
-      background: rgba(255, 255, 255, 0.08);
+      background: #e2e8f0;
     }
     .order-divider span {
       position: relative;
-      background: #121828;
+      background: #ffffff;
       padding: 0 14px;
       color: var(--text-muted);
       font-size: 0.82rem;
@@ -275,8 +277,8 @@
       width: 100%;
       padding: 12px 20px;
       border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(22, 28, 44, 0.5);
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
       color: var(--text-main);
       text-decoration: none;
       font-size: 0.9rem;
@@ -284,15 +286,15 @@
       transition: all 0.2s;
     }
     .order-amazon-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-      color: #fff;
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
     }
     .reassurance-list {
       list-style: none;
       margin-top: var(--space-4);
       padding-top: var(--space-3);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid #e2e8f0;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -314,19 +316,20 @@
       margin-top: var(--space-4);
     }
     .perk-box {
-      background: rgba(22, 28, 44, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: var(--space-2) var(--space-3);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
     }
     .perk-box h4 {
       font-size: 0.92rem;
-      color: var(--gold-bright);
+      color: #0f172a;
       margin-bottom: 4px;
     }
     .perk-box p {
       font-size: 0.82rem;
-      color: var(--text-muted);
+      color: #64748b;
       line-height: 1.4;
     }
   </style>

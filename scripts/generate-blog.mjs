@@ -321,7 +321,7 @@ function renderArticle(article) {
   <meta name="description" content="${article.description}" />
   ${keywords ? `<meta name="keywords" content="${keywords}" />` : ''}
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#0d111b" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="${url}" />
   <link rel="alternate" hreflang="fr-FR" href="${url}" />
   <link rel="alternate" hreflang="x-default" href="${url}" />

@@ -1,7 +1,9 @@
 const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
+const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/test_3cI9AVggigTm2jy1f6aEE01';
 const INSTAGRAM_URL = 'https://www.instagram.com/kyran.jeu/';
 const INSTAGRAM_HANDLE = '@kyran.jeu';
 const ROOT = '/';
+const ORDER_URL = rootPath('commander.html');
 
 function rootPath(path) {
   if (!path) return ROOT;
@@ -23,6 +25,8 @@ function instagramLinkHtml(className, label) {
 
 const ACTIVE_BY_PATH = {
   'index.html': 'home',
+  'commander.html': 'order',
+  'merci.html': 'order',
   'regle.html': 'rules',
   'minijeu.html': 'game',
   'dossier-presse.html': 'press',
@@ -100,7 +104,7 @@ class KyranHeader extends HTMLElement {
                 <li><a href="${ROOT}dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
-                <a class="btn btn-primary btn-block" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
+                <a class="btn btn-primary btn-block" href="${ORDER_URL}">Commander — 9,99&euro;</a>
                 ${instagramLinkHtml('social-link social-link--instagram social-link--block', 'Suivre sur Instagram')}
               </div>
             </nav>
@@ -108,7 +112,7 @@ class KyranHeader extends HTMLElement {
 
           <div class="nav-actions">
             <div class="cta cta-desktop">
-              <a class="btn btn-header-cta" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander</a>
+              <a class="btn btn-header-cta" href="${ORDER_URL}">Commander</a>
             </div>
             <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
               <span class="nav-toggle-lines" aria-hidden="true">
@@ -494,7 +498,7 @@ class KyranCtaBand extends HTMLElement {
         <h2>${title}</h2>
         <p>${text}</p>
         <div class="cta-band-actions">
-          <a class="btn btn-primary" href="${AMAZON_URL}" target="_blank" rel="noopener noreferrer">Commander — 17,99&euro;</a>
+          <a class="btn btn-primary" href="${ORDER_URL}">Commander — 9,99&euro;</a>
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
           ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer le Dojo</a>' : ''}
         </div>

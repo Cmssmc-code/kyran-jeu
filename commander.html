@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commander KYRAN — Jeu de cartes officiel | 9,99 €</title>
+  <meta name="description" content="Commandez le jeu de cartes KYRAN en ligne au tarif de 9,99 €. Édition officielle 55 cartes avec règles et boîte rigide. Livraison suivie à 3,99 €. Paiement sécurisé par Stripe." />
+  <link rel="canonical" href="https://kyran-jeu.fr/commander.html" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="author" content="Corentin Sence" />
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/commander.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/commander.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:site_name" content="KYRAN" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="Commander KYRAN — Jeu de cartes officiel" />
+  <meta property="og:description" content="Pari, bluff et manche Mystique. Commandez votre boîte KYRAN au tarif de 9,99 €. Paiement sécurisé Stripe." />
+  <meta property="og:url" content="https://kyran-jeu.fr/commander.html" />
+  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:image:alt" content="Boîte du jeu KYRAN" />
+  <meta property="product:price:amount" content="9.99" />
+  <meta property="product:price:currency" content="EUR" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="seo-config.js?v=20260610"></script>
+  <link rel="stylesheet" href="style.css?v=20260610" />
+  <script src="components.js?v=20260610"></script>
+  <script src="reviews-data.js?v=20260902"></script>
+  <script src="reviews.js?v=20260902" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kyran-jeu.fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Commander", "item": "https://kyran-jeu.fr/commander.html"}
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://kyran-jeu.fr/commander.html#product",
+        "name": "KYRAN — Jeu de cartes",
+        "image": "https://kyran-jeu.fr/boite-recto-kyran.png",
+        "description": "Jeu de cartes stratégique pour 3 à 6 joueurs. 55 cartes vernies, livret de règles officielles et boîte rigide.",
+        "brand": {
+          "@type": "Brand",
+          "name": "KYRAN"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "33",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "9.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://kyran-jeu.fr/commander.html",
+          "seller": {
+            "@type": "Person",
+            "name": "Corentin Sence"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .order-section {
+      padding: var(--space-5) 0 var(--space-7);
+    }
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .order-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+    }
+    .order-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.08);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      position: sticky;
+      top: 100px;
+    }
+    .order-badge-stock {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #4ade80;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    .order-badge-stock::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    .order-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: var(--space-3);
+    }
+    .order-price-main {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--gold-bright);
+    }
+    .order-price-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .order-qty-block {
+      background: rgba(2, 6, 23, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: var(--space-2) var(--space-3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-3);
+    }
+    .order-qty-label {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .order-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .order-qty-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-main);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .order-qty-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+    .order-qty-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      min-width: 24px;
+      text-align: center;
+    }
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-2) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: var(--space-3);
+      font-size: 1.05rem;
+    }
+    .order-total-amount {
+      font-weight: 700;
+      color: var(--gold-bright);
+      font-size: 1.35rem;
+    }
+    .order-btn-stripe {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, #d4af37 100%);
+      color: #020617;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .order-btn-stripe:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
+      color: #000;
+    }
+    .order-badges-payment {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: var(--space-3);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .order-payment-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .order-divider {
+      position: relative;
+      text-align: center;
+      margin: var(--space-4) 0;
+    }
+    .order-divider::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .order-divider span {
+      position: relative;
+      background: #090e1f;
+      padding: 0 14px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .order-amazon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .order-amazon-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+    }
+    .reassurance-list {
+      list-style: none;
+      margin-top: var(--space-4);
+      padding-top: var(--space-3);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reassurance-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .reassurance-icon {
+      font-size: 1.1rem;
+    }
+    .product-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .perk-box {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: var(--space-2) var(--space-3);
+    }
+    .perk-box h4 {
+      font-size: 0.92rem;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+    .perk-box p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
+  <kyran-header active="order"></kyran-header>
+
+  <main id="contenu-principal">
+    <kyran-page-hero
+      eyebrow="Boutique officielle · Commande directe"
+      title="Commander <span class=&quot;accent&quot;>KYRAN</span>"
+      subtitle="Recevez la boîte officielle du jeu de cartes tactique. Paiement sécurisé et expédition suivie."
+      breadcrumb='[{"label":"Accueil","href":"/index.html"},{"label":"Commander"}]'
+    ></kyran-page-hero>
+
+    <section class="order-section">
+      <div class="container">
+        <div class="order-layout">
+          
+          <!-- Colonne Visuel & Détails -->
+          <div class="order-presentation">
+            <div class="product-gallery">
+              <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
+                <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
+                  <img src="boite-recto-kyran.png" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
+                  <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie">
+                  <img src="jeu-kyran-ami.jpg" alt="Miniature partie KYRAN entre amis" width="80" height="80" loading="lazy" />
+                </button>
+              </div>
+              <div class="product-main-wrap">
+                <img id="product-main-img" src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
+              </div>
+            </div>
+
+            <div class="product-perks">
+              <div class="perk-box">
+                <h4>55 Cartes Finition Pro</h4>
+                <p>Cartes toilées haute résistance et vernis soigné pour des milliers de parties.</p>
+              </div>
+              <div class="perk-box">
+                <h4>3 à 6 Joueurs</h4>
+                <p>Format idéal pour soirées apéro, week-ends et tournois entre amis.</p>
+              </div>
+              <div class="perk-box">
+                <h4>Règles Officielles Incluses</h4>
+                <p>Livret complet en français avec exemples illustrés et variantes tactiques.</p>
+              </div>
+              <div class="perk-box">
+                <h4>Dojo d'entraînement</h4>
+                <p>Accès au tutoriel interactif en ligne pour apprendre à jouer en 5 minutes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne Formulaire & Checkout Stripe -->
+          <div class="order-form-column">
+            <div class="order-card">
+              <div class="order-badge-stock">En stock — Expédié sous 24-48h</div>
+              <h2 style="font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 1px; margin-bottom: 8px;">Édition Officielle KYRAN</h2>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--space-3);">Jeu complet dans sa boîte rigide avec cartes Pouvoir et manche Mystique.</p>
+
+              <div class="order-price-row">
+                <span class="order-price-main" id="display-unit-price">9,99€</span>
+                <span class="order-price-sub">TTC · Frais de port : 3,99€</span>
+              </div>
+
+              <div class="order-qty-block">
+                <span class="order-qty-label">Quantité :</span>
+                <div class="order-qty-controls">
+                  <button type="button" class="order-qty-btn" id="qty-minus" aria-label="Diminuer la quantité">-</button>
+                  <span class="order-qty-val" id="qty-count">1</span>
+                  <button type="button" class="order-qty-btn" id="qty-plus" aria-label="Augmenter la quantité">+</button>
+                </div>
+              </div>
+
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; display: flex; justify-content: space-between;">
+                <span>Sous-total jeu :</span>
+                <span id="display-subtotal" style="color: var(--text-main); font-weight: 600;">9,99€</span>
+              </div>
+              <div style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <span>Livraison suivie (2-4 jours) :</span>
+                <span style="color: var(--text-main); font-weight: 600;">3,99€</span>
+              </div>
+
+              <div class="order-total-row">
+                <span>Total TTC :</span>
+                <span class="order-total-amount" id="display-total-price">13,98€</span>
+              </div>
+
+              <a 
+                id="stripe-checkout-link" 
+                href="https://buy.stripe.com/test_3cI9AVggigTm2jy1f6aEE01" 
+                class="order-btn-stripe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Payer en toute sécurité (Stripe)</span>
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <div class="order-badges-payment">
+                <span class="order-payment-pill">Carte Bancaire</span>
+                <span class="order-payment-pill">Visa</span>
+                <span class="order-payment-pill">Mastercard</span>
+                <span class="order-payment-pill">Apple Pay</span>
+                <span class="order-payment-pill">Google Pay</span>
+              </div>
+
+              <div class="order-divider">
+                <span>ou</span>
+              </div>
+
+              <div id="amazon-order-badge" class="amazon-order-badge"></div>
+
+              <a 
+                href="https://www.amazon.fr/dp/B0G217LD87" 
+                class="order-amazon-btn"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <span>Commander sur Amazon (Livraison Prime)</span>
+              </a>
+
+              <ul class="reassurance-list">
+                <li class="reassurance-item">
+                  <span class="reassurance-icon">🔒</span>
+                  <span>Paiement sécurisé chiffré SSL 256-bit par Stripe</span>
+                </li>
+                <li class="reassurance-item">
+                  <span class="reassurance-icon">📦</span>
+                  <span>Livraison suivie (France, Belgique, Suisse, Luxembourg)</span>
+                </li>
+                <li class="reassurance-item">
+                  <span class="reassurance-icon">✉️</span>
+                  <span>Support direct par email : contact@kyran-jeu.fr</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <kyran-cta-band
+      title="Besoin d'un aperçu avant d'acheter ?"
+      text="Testez les mécaniques de pli et de pari en 4 manches sur notre dojo interactif gratuit."
+      secondary-href="minijeu.html"
+      secondary-label="Essayer le Dojo"
+      show-dojo="false"
+    ></kyran-cta-band>
+  </main>
+
+  <kyran-footer></kyran-footer>
+
+  <script>
+    (function () {
+      var thumbs = document.querySelectorAll('.product-thumb');
+      var mainImg = document.getElementById('product-main-img');
+      var images = ['boite-recto-kyran.png', 'boite-verso-kyran.jpg', 'jeu-kyran-ami.jpg'];
+      var alts = [
+        'Boîte du jeu de cartes KYRAN — recto',
+        'Boîte du jeu de cartes KYRAN — verso avec explications',
+        'Partie du jeu de cartes KYRAN en cours entre amis'
+      ];
+
+      thumbs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = parseInt(btn.getAttribute('data-index'), 10);
+          if (images[idx] && mainImg) {
+            mainImg.src = images[idx];
+            mainImg.alt = alts[idx] || mainImg.alt;
+            thumbs.forEach(function (t) {
+              t.classList.remove('active');
+              t.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+          }
+        });
+      });
+
+      var unitPrice = 9.99;
+      var shippingRate = 3.99;
+      var qty = 1;
+      var qtyMinus = document.getElementById('qty-minus');
+      var qtyPlus = document.getElementById('qty-plus');
+      var qtyVal = document.getElementById('qty-count');
+      var displaySubtotal = document.getElementById('display-subtotal');
+      var displayTotal = document.getElementById('display-total-price');
+
+      function updateTotal() {
+        qtyVal.textContent = qty;
+        var subtotal = (unitPrice * qty).toFixed(2).replace('.', ',');
+        if (displaySubtotal) displaySubtotal.textContent = subtotal + '€';
+        var total = (unitPrice * qty + shippingRate).toFixed(2).replace('.', ',');
+        displayTotal.textContent = total + '€';
+      }
+
+      if (qtyMinus && qtyPlus) {
+        qtyMinus.addEventListener('click', function () {
+          if (qty > 1) {
+            qty--;
+            updateTotal();
+          }
+        });
+        qtyPlus.addEventListener('click', function () {
+          if (qty < 10) {
+            qty++;
+            updateTotal();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

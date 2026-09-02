@@ -4200,6 +4200,47 @@ header.blog-article-hero::after {
   margin: 0;
 }
 
+/* --- Galerie Partie Réelle & Ambiance --- */
+.game-gallery-photo-card {
+  position: relative;
+  border-radius: var(--radius-lg, 24px);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(69, 26, 3, 0.08);
+  border: 1px solid #e7e2d9;
+  background: #ffffff;
+  padding: 14px;
+}
+.game-gallery-photo-card img {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.game-gallery-photo-caption {
+  font-size: 0.86rem;
+  color: var(--text-sub);
+  margin-top: 12px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}
+.game-gallery-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.game-gallery-quotes .quote-card {
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-radius: var(--radius-lg, 20px);
+  padding: 24px 28px;
+  box-shadow: 0 4px 16px rgba(69, 26, 3, 0.04);
+}
+.game-gallery-quotes .quote-card::before {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .steps-grid {
     grid-template-columns: 1fr;

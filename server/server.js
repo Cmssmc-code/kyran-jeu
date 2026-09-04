@@ -10,6 +10,21 @@ const SENDER_EMAIL = process.env.SENDER_EMAIL || 'contact@majordia.fr';
 const SENDER_NAME = process.env.SENDER_NAME || 'KYRAN';
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
 
+// Cache d'idempotence anti-doublon (mémoire vive 24h)
+const processedEventIds = new Map();
+
+function isAlreadyProcessed(id) {
+  if (!id) return false;
+  const now = Date.now();
+  // Nettoyage périodique des événements de plus de 24h
+  for (const [key, time] of processedEventIds.entries()) {
+    if (now - time > 86400000) processedEventIds.delete(key);
+  }
+  if (processedEventIds.has(id)) return true;
+  processedEventIds.set(id, now);
+  return false;
+}
+
 function verifyStripeSignature(payload, signatureHeader, secret) {
   if (!signatureHeader || !secret) return false;
   const parts = signatureHeader.split(',');
@@ -26,7 +41,7 @@ function verifyStripeSignature(payload, signatureHeader, secret) {
 
   const currentTime = Math.floor(Date.now() / 1000);
   if (Math.abs(currentTime - parseInt(timestamp, 10)) > 600) {
-    console.warn('Webhook timestamp trop vieux (replay attack)');
+    console.warn('Webhook timestamp expiré (replay attack)');
     return false;
   }
 
@@ -39,35 +54,44 @@ function verifyStripeSignature(payload, signatureHeader, secret) {
   return signatures.some(sig => sig === expectedSignature);
 }
 
-async function sendEmail({ to, subject, html }) {
+async function sendEmail({ to, subject, html, text }) {
   if (!RESEND_API_KEY) {
-    console.warn('⚠️ RESEND_API_KEY non configurée. Email simulé pour :', to);
-    return;
+    console.warn('⚠️ RESEND_API_KEY absente. Simulation envoi à :', to);
+    return { simulated: true };
   }
 
-  console.log(`✉️ Envoi email à ${to} via Resend...`);
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${RESEND_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-      to: [to],
-      reply_to: REPLY_TO_EMAIL,
-      subject,
-      html
-    })
-  });
+  console.log(`✉️ Envoi email transactionnel à ${to}...`);
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-  const resJson = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    throw new Error(`Erreur Resend (${res.status}): ${resJson.message || JSON.stringify(resJson)}`);
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
+        to: [to],
+        reply_to: REPLY_TO_EMAIL,
+        subject,
+        html,
+        text: text || undefined
+      }),
+      signal: controller.signal
+    });
+
+    const resJson = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(`Erreur Resend (${res.status}): ${resJson.message || JSON.stringify(resJson)}`);
+    }
+
+    console.log(`✅ Email délivré à ${to} (Resend ID: ${resJson.id})`);
+    return resJson;
+  } finally {
+    clearTimeout(timeoutId);
   }
-
-  console.log(`✅ Email délivré à ${to} (ID: ${resJson.id})`);
-  return resJson;
 }
 
 async function handleOrderCompleted(session) {
@@ -107,7 +131,7 @@ async function handleOrderCompleted(session) {
     country: shipping.address.country === 'FR' ? 'France' : shipping.address.country
   } : null;
 
-  const html = renderOrderEmail({
+  const { html, text } = renderOrderEmail({
     customerName,
     orderId: session.id,
     quantity,
@@ -120,8 +144,9 @@ async function handleOrderCompleted(session) {
 
   await sendEmail({
     to: customerEmail,
-    subject: '🃏 Confirmation de votre commande KYRAN !',
-    html
+    subject: 'Confirmation de commande KYRAN',
+    html,
+    text
   });
 }
 
@@ -138,29 +163,32 @@ async function handleChargeRefunded(charge) {
     ? (charge.amount_refunded / 100).toFixed(2).replace('.', ',') + ' €'
     : '13,98 €';
 
-  const html = renderRefundEmail({
+  const { html, text } = renderRefundEmail({
     customerName,
     orderId: charge.id,
     refundAmount,
-    reason: charge.refunds?.data?.[0]?.reason || 'Rétractation / Demande client'
+    reason: charge.refunds?.data?.[0]?.reason || 'Demande client'
   });
 
   await sendEmail({
     to: customerEmail,
-    subject: 'Remboursement de votre commande KYRAN',
-    html
+    subject: 'Remboursement commande KYRAN',
+    html,
+    text
   });
 }
 
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
-  // Health check
+  // Health check & monitoring
   if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/health')) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
       status: 'ok',
       service: 'kyran-stripe-webhook-server',
+      version: '1.2.0',
+      idempotencyCacheSize: processedEventIds.size,
       hasResendKey: Boolean(RESEND_API_KEY),
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       senderEmail: SENDER_EMAIL,
@@ -169,11 +197,23 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // Route expédition
-  if (req.method === 'POST' && url.pathname === '/api/shipping') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', async () => {
+  // Protection taille de charge utile (max 1 Mo)
+  let rawBody = '';
+  let bodySize = 0;
+  req.on('data', chunk => {
+    bodySize += chunk.length;
+    if (bodySize > 1048576) {
+      res.writeHead(413, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Payload too large' }));
+      req.destroy();
+    } else {
+      rawBody += chunk;
+    }
+  });
+
+  req.on('end', async () => {
+    // Route Expédition manuelle ou script CLI
+    if (req.method === 'POST' && url.pathname === '/api/shipping') {
       try {
         const authHeader = req.headers['authorization'] || '';
         const token = authHeader.replace(/^Bearer\s+/i, '').trim();
@@ -185,14 +225,14 @@ const server = http.createServer(async (req, res) => {
           return;
         }
 
-        const data = JSON.parse(body);
+        const data = JSON.parse(rawBody || '{}');
         if (!data.customerEmail) {
           res.writeHead(400, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ error: 'customerEmail requis' }));
           return;
         }
 
-        const html = renderShippingEmail({
+        const { html, text } = renderShippingEmail({
           customerName: data.customerName || 'Cher joueur',
           orderId: data.orderId || '',
           carrier: data.carrier || 'La Poste (Courrier Suivi)',
@@ -203,8 +243,9 @@ const server = http.createServer(async (req, res) => {
 
         await sendEmail({
           to: data.customerEmail,
-          subject: '📦 Votre jeu KYRAN a été expédié !',
-          html
+          subject: 'Votre jeu KYRAN a été expédié',
+          html,
+          text
         });
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -213,20 +254,16 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: err.message }));
       }
-    });
-    return;
-  }
+      return;
+    }
 
-  // Webhook Stripe
-  if (req.method === 'POST' && (url.pathname === '/webhook' || url.pathname === '/')) {
-    let rawBody = '';
-    req.on('data', chunk => { rawBody += chunk; });
-    req.on('end', async () => {
+    // Route Webhook Stripe
+    if (req.method === 'POST' && (url.pathname === '/webhook' || url.pathname === '/')) {
       const signature = req.headers['stripe-signature'];
       if (STRIPE_WEBHOOK_SECRET) {
         const valid = verifyStripeSignature(rawBody, signature, STRIPE_WEBHOOK_SECRET);
         if (!valid) {
-          console.error('Signature Stripe invalide');
+          console.error('Signature Stripe invalide rejetée');
           res.writeHead(400, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ error: 'Invalid Stripe signature' }));
           return;
@@ -239,6 +276,14 @@ const server = http.createServer(async (req, res) => {
       } catch (err) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Invalid JSON' }));
+        return;
+      }
+
+      // Idempotence : évite double envoi si Stripe relance
+      if (event.id && isAlreadyProcessed(event.id)) {
+        console.log(`ℹ️ Événement Stripe ${event.id} déjà traité (idempotence).`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ received: true, deduplicated: true }));
         return;
       }
 
@@ -261,14 +306,14 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: err.message }));
       }
-    });
-    return;
-  }
+      return;
+    }
 
-  res.writeHead(404, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({ error: 'Not Found' }));
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Not Found' }));
+  });
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 Serveur KYRAN Webhook actif sur le port ${PORT}`);
+  console.log(`🚀 Serveur KYRAN Webhook actif sur port ${PORT}`);
 });

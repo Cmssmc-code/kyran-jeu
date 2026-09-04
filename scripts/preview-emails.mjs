@@ -11,11 +11,11 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // 1. Commande
-const orderHtml = renderOrderEmail({
+const { html: orderHtml } = renderOrderEmail({
   customerName: 'Alexandre Dupont',
   orderId: 'cs_live_a1b2c3d4e5f6g7h8',
   quantity: 1,
-  unitPrice: '9,99 €',
+  subtotalAmount: '9,99 €',
   shippingCost: '3,99 €',
   totalAmount: '13,98 €',
   shippingAddress: {
@@ -30,7 +30,7 @@ const orderHtml = renderOrderEmail({
 fs.writeFileSync(path.join(outputDir, 'order-confirmation.html'), orderHtml, 'utf8');
 
 // 2. Expédition
-const shippingHtml = renderShippingEmail({
+const { html: shippingHtml } = renderShippingEmail({
   customerName: 'Alexandre Dupont',
   orderId: 'cs_live_a1b2c3d4e5f6g7h8',
   carrier: 'La Poste (Courrier Suivi)',
@@ -41,7 +41,7 @@ const shippingHtml = renderShippingEmail({
 fs.writeFileSync(path.join(outputDir, 'shipping-notification.html'), shippingHtml, 'utf8');
 
 // 3. Remboursement
-const refundHtml = renderRefundEmail({
+const { html: refundHtml } = renderRefundEmail({
   customerName: 'Alexandre Dupont',
   orderId: 're_3Mbcdef12345678',
   refundAmount: '13,98 €',
@@ -49,7 +49,4 @@ const refundHtml = renderRefundEmail({
 });
 fs.writeFileSync(path.join(outputDir, 'refund-confirmation.html'), refundHtml, 'utf8');
 
-console.log('✅ 3 aperçus HTML générés avec succès dans :', outputDir);
-console.log(' - order-confirmation.html');
-console.log(' - shipping-notification.html');
-console.log(' - refund-confirmation.html');
+console.log('✅ 3 aperçus HTML épurés générés dans :', outputDir);

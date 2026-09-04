@@ -1,19 +1,78 @@
-import { renderOrderEmail, renderRefundEmail } from './templates.js';
+import { renderOrderEmail, renderRefundEmail, renderShippingEmail } from './templates.js';
 
 /**
  * Cloudflare Worker pour Webhook Stripe KYRAN
  * - Écoute checkout.session.completed -> Envoi email de confirmation avec récap & Dojo
  * - Écoute charge.refunded -> Envoi email de remboursement
- * - Utilise l'API Resend (ou tout provider compatible) pour délivrabilité maximale
+ * - Endpoint POST /api/shipping -> Envoi email d'expédition de commande
+ * - Utilise l'API Resend pour délivrabilité maximale
  */
 
 export default {
   async fetch(request, env) {
-    // Health check
-    if (request.method === 'GET') {
-      return new Response(JSON.stringify({ status: 'ok', service: 'kyran-stripe-webhook' }), {
+    const url = new URL(request.url);
+
+    // Health check et diagnostic
+    if (request.method === 'GET' && (url.pathname === '/' || url.pathname === '/health')) {
+      return new Response(JSON.stringify({
+        status: 'ok',
+        service: 'kyran-stripe-webhook',
+        hasResendKey: Boolean(env.RESEND_API_KEY),
+        hasStripeWebhookSecret: Boolean(env.STRIPE_WEBHOOK_SECRET),
+        senderEmail: env.SENDER_EMAIL || 'contact@kyran-jeu.fr'
+      }), {
         headers: { 'Content-Type': 'application/json' }
       });
+    }
+
+    // Endpoint manuel sécurisé d'expédition
+    if (request.method === 'POST' && url.pathname === '/api/shipping') {
+      const authHeader = request.headers.get('authorization') || '';
+      const token = authHeader.replace(/^Bearer\s+/i, '').trim();
+      const expectedToken = env.ADMIN_SECRET || env.STRIPE_WEBHOOK_SECRET;
+
+      if (expectedToken && token !== expectedToken) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+
+      try {
+        const data = await request.json();
+        if (!data.customerEmail) {
+          return new Response(JSON.stringify({ error: 'customerEmail requis' }), {
+            status: 400,
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+
+        const html = renderShippingEmail({
+          customerName: data.customerName || 'Cher joueur',
+          orderId: data.orderId || '',
+          carrier: data.carrier || 'La Poste (Courrier Suivi)',
+          trackingNumber: data.trackingNumber || '',
+          trackingUrl: data.trackingUrl || '',
+          estimatedDelivery: data.estimatedDelivery || '2 à 4 jours ouvrés'
+        });
+
+        await sendEmail({
+          to: data.customerEmail,
+          subject: '📦 Votre jeu KYRAN a été expédié !',
+          html,
+          env
+        });
+
+        return new Response(JSON.stringify({ success: true, sentTo: data.customerEmail }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      } catch (err) {
+        return new Response(JSON.stringify({ error: err.message }), {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
     }
 
     if (request.method !== 'POST') {
@@ -55,7 +114,7 @@ export default {
         }
 
         default:
-          console.log(`Événement non géré : ${event.type}`);
+          console.log(`Événement Stripe ignoré : ${event.type}`);
       }
 
       return new Response(JSON.stringify({ received: true }), {
@@ -84,13 +143,25 @@ async function handleOrderCompleted(session, env) {
     return;
   }
 
-  // Calcul du montant total en euros
-  const totalAmount = session.amount_total
+  // Calculs monétaires précis
+  const totalAmount = session.amount_total != null
     ? (session.amount_total / 100).toFixed(2).replace('.', ',') + ' €'
     : '13,98 €';
 
+  const shippingCents = session.total_details?.amount_shipping != null
+    ? session.total_details.amount_shipping
+    : (session.shipping_cost?.amount_total != null ? session.shipping_cost.amount_total : 399);
+  const shippingCost = (shippingCents / 100).toFixed(2).replace('.', ',') + ' €';
+
+  const subtotalCents = session.amount_subtotal != null
+    ? session.amount_subtotal
+    : (session.amount_total != null ? session.amount_total - shippingCents : 999);
+  const subtotalAmount = (subtotalCents / 100).toFixed(2).replace('.', ',') + ' €';
+
   // Quantité (déduite ou par défaut 1)
-  const quantity = session.metadata?.quantity ? parseInt(session.metadata.quantity, 10) : 1;
+  const quantity = session.metadata?.quantity
+    ? parseInt(session.metadata.quantity, 10)
+    : (Math.max(1, Math.round(subtotalCents / 999)) || 1);
 
   // Adresse d'expédition
   const shipping = session.shipping_details || session.customer_details;
@@ -107,7 +178,9 @@ async function handleOrderCompleted(session, env) {
     customerName,
     orderId: session.id,
     quantity,
+    subtotalAmount,
     totalAmount,
+    shippingCost,
     shippingAddress,
     estimatedDelivery: '3 à 5 jours ouvrés'
   });

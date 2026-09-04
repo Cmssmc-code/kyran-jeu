@@ -77,11 +77,13 @@ export function renderOrderEmail({
   orderId = '',
   quantity = 1,
   unitPrice = '9,99 €',
-  shippingCost = '3,99 €',
-  totalAmount = '13,98 €',
+  subtotalAmount = null,
+  shippingCost = 'Calculé',
+  totalAmount = '9,99 €',
   shippingAddress = null,
   estimatedDelivery = '3 à 5 jours ouvrés'
 }) {
+  const finalSubtotal = subtotalAmount || unitPrice;
   const addressBlock = shippingAddress ? `
     <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; margin-top: 20px; font-size: 13px; line-height: 1.6; color: #334155;">
       <strong style="color: #0f172a; font-size: 13px; display: block; margin-bottom: 4px;">📍 Adresse de livraison :</strong>
@@ -123,7 +125,7 @@ export function renderOrderEmail({
           ${quantity}
         </td>
         <td align="right" style="padding: 16px; border-top: 1px solid #e2e8f0; font-size: 14px; color: #0f172a; font-weight: 600;">
-          ${unitPrice}
+          ${finalSubtotal}
         </td>
       </tr>
       <tr>

@@ -54,9 +54,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904c" />
+  <link rel="stylesheet" href="style.css?v=20260904d" />
   <script src="blog-data.js?v=20260904"></script>
-  <script src="components.js?v=20260904b"></script>
+  <script src="components.js?v=20260904c"></script>
   <script src="reviews-data.js?v=20260904"></script>
   <script src="reviews.js?v=20260904" defer></script>
 
@@ -237,15 +237,15 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge-row">
-            <span class="eyebrow-pill">🃏 Édition 2026 · Jeu de Cartes</span>
-            <a href="#avis" class="hero-rating-pill" aria-label="Noté 4.7 sur 5 sur Amazon">
-              <span class="star-icon star-full">★</span>
-              <strong>4.7 / 5</strong> sur Amazon
-              <span class="rating-sub">(33 avis vérifiés)</span>
+            <a href="#avis" class="hero-trust-tag" aria-label="Noté 4.7 sur 5 sur Amazon (33 avis vérifiés)">
+              <span class="trust-stars" aria-hidden="true">★★★★★</span>
+              <strong class="trust-score">4.7 / 5</strong>
+              <span class="trust-source">sur Amazon (33 avis)</span>
+              <span class="trust-badge-pill">Édition 2026</span>
             </a>
           </div>
           <h1>Défiez votre <span class="accent">Intuition</span></h1>
-          <p class="hero-lead">Un jeu de cartes rapide mêlant plis, paris et bluff. Règles expliquées en 2 minutes, parties de 30 minutes, et une manche finale délirante jouée la carte collée sur le front&nbsp;!</p>
+          <p class="hero-lead">Un jeu de cartes rapide mêlant plis, paris et bluff. Règles en 2 minutes, parties intenses de 30 minutes, et manche finale délirante jouée la carte collée sur le front&nbsp;!</p>
           
           <kyran-stat-bar></kyran-stat-bar>
 
@@ -253,7 +253,7 @@
             <div class="hero-price-tag">
               <span class="hero-price-current">9,99€</span>
               <span class="hero-price-old">17,99€</span>
-              <span class="hero-discount-pill">-44% DIRECT CRÉATEUR</span>
+              <span class="hero-discount-pill">Prix direct créateur</span>
             </div>
             <div class="hero-actions">
               <a class="btn btn-primary btn-hero-cta" href="commander.html">
@@ -262,24 +262,26 @@
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-                <span>Commander KYRAN · 9,99&euro;</span>
+                <span>Commander le jeu</span>
               </a>
-              <a class="btn btn-secondary" href="#game-gallery">Découvrir l'ambiance</a>
+              <a class="btn btn-secondary btn-hero-sec" href="regle.html#video">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Règles vidéo (5 min)</span>
+              </a>
             </div>
           </div>
 
-          <p class="hero-reassurance-micro">
-            <span><svg viewBox="0 0 3 2" width="16" height="11" style="vertical-align:middle;margin-right:5px;border-radius:2px;box-shadow:0 0 1px rgba(0,0,0,0.3);display:inline-block;" aria-hidden="true"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>Édition française</span>
-            <span>·</span>
-            <span>📦 Expédié sous 24-48h</span>
-            <span>·</span>
-            <span>🔒 Paiement Stripe sécurisé</span>
-          </p>
+          <div class="hero-reassurance-micro">
+            <span class="reassurance-item"><svg viewBox="0 0 3 2" width="15" height="10" style="vertical-align:baseline;display:inline-block;border-radius:1px;box-shadow:0 0 1px rgba(0,0,0,0.3);margin-right:4px;" aria-hidden="true"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>Édition française</span>
+            <span class="reassurance-dot">·</span>
+            <span class="reassurance-item">📦 Expédié sous 24-48h</span>
+            <span class="reassurance-dot">·</span>
+            <span class="reassurance-item">🔒 Paiement Stripe sécurisé</span>
+          </div>
         </div>
 
         <div class="hero-visual">
           <div class="hero-product-stage">
-            <span class="hero-ludic-sticker" aria-hidden="true">★ Pépite Soirée</span>
             <div class="hero-card-fan">
               <img src="carte-mystique.webp" alt="Carte Mystique KYRAN" class="fan-card fan-card-1" width="138" height="210" loading="eager" title="La Mystique (Val. 0 ou 37)" />
               <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin KYRAN" class="fan-card fan-card-2" width="138" height="210" loading="eager" title="Sceau du Destin (Pouvoir)" />
@@ -289,11 +291,7 @@
               <source srcset="boite-recto-kyran.webp" type="image/webp" />
               <img src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="370" height="530" fetchpriority="high" loading="eager" />
             </picture>
-            <div class="hero-visual-badge">
-              <span class="badge-stock-dot"></span>
-              <span class="badge-price">9,99€</span>
-              <span class="badge-desc">En stock · Édition 2026</span>
-            </div>
+            <div class="hero-stage-shadow" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -302,7 +300,7 @@
         <div class="trust-bar" role="region" aria-label="Garanties et confiance">
           <div class="trust-bar-item">
             <span class="trust-bar-icon" aria-hidden="true">
-              <svg viewBox="0 0 3 2" width="20" height="14" style="border-radius:2px;box-shadow:0 0 1px rgba(0,0,0,0.25);display:block;"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>
+              <svg viewBox="0 0 3 2" width="18" height="12" style="border-radius:2px;box-shadow:0 0 1px rgba(0,0,0,0.25);display:block;"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>
             </span>
             <span><strong>Conçu &amp; édité en France</strong></span>
           </div>
@@ -315,7 +313,7 @@
             <span><strong>Boîte rigide</strong> · Cartes toilées</span>
           </div>
           <div class="trust-bar-item">
-            <span class="trust-bar-icon" aria-hidden="true">🛡️</span>
+            <span class="trust-bar-icon" aria-hidden="true">🚚</span>
             <span><strong>Expédié sous 24-48h</strong> · Suivi La Poste</span>
           </div>
         </div>

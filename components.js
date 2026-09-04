@@ -84,8 +84,8 @@ class KyranHeader extends HTMLElement {
     this.innerHTML = `
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
         <div class="container announcement-content">
-          <span class="announcement-pill">Offre Direct Créateur</span>
-          <span class="announcement-text">📦 <strong>Expédié sous 24-48h</strong> · Suivi La Poste · <strong>9,99€</strong> <span class="announcement-strikethrough">17,99€</span> (Économisez 8€)</span>
+          <span class="announcement-pill">Offre atelier</span>
+          <span class="announcement-text">Jeu complet <strong>9,99€</strong> au lieu de 17,99€ · Expédié sous 24-48h suivie</span>
           <a href="${ORDER_URL}" class="announcement-link">Commander &rarr;</a>
         </div>
       </div>
@@ -128,14 +128,13 @@ class KyranHeader extends HTMLElement {
 
           <div class="nav-actions">
             <div class="cta cta-desktop">
-              <a class="btn btn-header-cta" href="${ORDER_URL}" aria-label="Commander le jeu KYRAN au prix de 9,99€">
+              <a class="btn btn-header-cta" href="${ORDER_URL}" aria-label="Commander le jeu KYRAN">
                 <svg class="cart-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="9" cy="21" r="1"></circle>
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
                 <span>Commander</span>
-                <span class="header-cta-badge">9,99€</span>
               </a>
             </div>
             <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
@@ -531,31 +530,22 @@ class KyranStatBar extends HTMLElement {
       <div class="stat-bar" role="list">
         <div class="stat-item" role="listitem">
           <span class="stat-icon" aria-hidden="true">👥</span>
-          <div class="stat-text">
-            <strong class="stat-value">3–6</strong>
-            <span class="stat-label">joueurs</span>
-          </div>
+          <span class="stat-value">3–6 joueurs</span>
         </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
         <div class="stat-item" role="listitem">
           <span class="stat-icon" aria-hidden="true">⏱️</span>
-          <div class="stat-text">
-            <strong class="stat-value">~30 min</strong>
-            <span class="stat-label">la partie</span>
-          </div>
+          <span class="stat-value">30 min</span>
         </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
         <div class="stat-item" role="listitem">
           <span class="stat-icon" aria-hidden="true">🎂</span>
-          <div class="stat-text">
-            <strong class="stat-value">Dès 8 ans</strong>
-            <span class="stat-label">apéro & soirée</span>
-          </div>
+          <span class="stat-value">Dès 8 ans</span>
         </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
         <div class="stat-item" role="listitem">
           <span class="stat-icon" aria-hidden="true">🃏</span>
-          <div class="stat-text">
-            <strong class="stat-value">55 cartes</strong>
-            <span class="stat-label">toilées 300g</span>
-          </div>
+          <span class="stat-value">55 cartes toilées</span>
         </div>
       </div>
     `;

@@ -130,7 +130,7 @@ class KyranHeader extends HTMLElement {
         <div class="nav-backdrop" hidden></div>
       </header>
 
-      <nav class="mobile-bottom-nav" style="display:none;" aria-label="Navigation rapide mobile">
+      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
         <a href="${ROOT}index.html" class="mobile-nav-tab ${activePage === 'home' ? 'active' : ''}">
           <span class="mobile-nav-icon" aria-hidden="true">🃏</span>
           <span class="mobile-nav-label">Accueil</span>

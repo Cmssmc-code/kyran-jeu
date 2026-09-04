@@ -305,6 +305,11 @@
     }
     .game-overlay.active { opacity: 1; pointer-events: auto; }
 
+    #bet-overlay {
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(8px);
+    }
+
     .overlay-title {
       font-family: "Bebas Neue", system-ui; font-size: 2.2rem;
       color: #f9fafb; margin-bottom: 12px; letter-spacing: 0.1em;
@@ -1030,6 +1035,7 @@
 
       if (sudden || GAME.roundIndex >= ROUNDS.length - 1) {
         let sorted = GAME.players.slice().sort((a, b) => b.lives - a.lives);
+        let isWinner = sorted[0].id === 0;
         let scoreHTML = '<ul style="list-style:none; padding:0; margin:0 0 15px 0;">';
         sorted.forEach(p => {
           let color = p.id === 0 ? "var(--gold)" : "#fff";
@@ -1037,20 +1043,34 @@
               <span style="color:${color};">${p.name}</span><span>${p.lives} ★</span></li>`;
         });
         scoreHTML += "</ul>";
-        summaryEl.innerHTML += scoreHTML;
-        title.innerText = "FIN DU JEU";
-        btn.innerText = "Rejouer le tuto"; btn.onclick = () => location.reload();
+
+        let rewardHTML = `
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.3); border-radius: 14px; padding: 14px; margin-top: 14px; display: flex; align-items: center; gap: 14px; text-align: left;">
+            <img src="boite-recto-kyran.webp" alt="Boîte KYRAN" width="60" height="60" style="border-radius: 8px; object-fit: contain; flex-shrink: 0;" />
+            <div>
+              <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem;">${isWinner ? '🏆 Bravo ! Prêt pour la vraie table ?' : 'Prêt pour votre revanche entre amis ?'}</div>
+              <div style="font-size: 0.78rem; color: #cbd5e1; margin-top: 2px;">55 cartes toilées, les 4 Pouvoirs et la Manche Mystique sur le front !</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--gold); margin-top: 3px;">9,99€ <span style="font-size:0.72rem; font-weight:normal; color:#94a3b8;">· Expédition suivie sous 24-48h</span></div>
+            </div>
+          </div>
+        `;
+
+        summaryEl.innerHTML += scoreHTML + rewardHTML;
+        title.innerText = isWinner ? "VICTOIRE AU DOJO !" : "FIN DU DOJO";
+        btn.innerText = "Commander la boîte officielle — 9,99€";
+        btn.onclick = () => (window.location.href = "commander.html");
         
-        if (!document.getElementById("buy-cta-btn")) {
-            let physBtn = document.createElement("button");
-            physBtn.id = "buy-cta-btn"; physBtn.className = "btn";
-            physBtn.style.marginTop = "12px";
-            physBtn.style.background = "linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%)";
-            physBtn.style.color = "#ffffff";
-            physBtn.style.fontWeight = "600";
-            physBtn.textContent = "Commander la boîte officielle — 9,99€";
-            physBtn.onclick = () => (window.location.href = "commander.html");
-            document.getElementById("end-overlay").appendChild(physBtn);
+        var replayBtn = document.getElementById("replay-btn");
+        if (!replayBtn) {
+          replayBtn = document.createElement("button");
+          replayBtn.id = "replay-btn";
+          replayBtn.className = "btn btn-secondary";
+          replayBtn.style.marginTop = "10px";
+          replayBtn.style.padding = "10px 20px";
+          replayBtn.style.fontSize = "0.85rem";
+          replayBtn.textContent = "Rejouer le tutoriel";
+          replayBtn.onclick = () => location.reload();
+          document.getElementById("end-overlay").appendChild(replayBtn);
         }
       } else {
         title.innerText = "MANCHE TERMINÉE";

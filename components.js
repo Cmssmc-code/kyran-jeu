@@ -527,25 +527,53 @@ class KyranRelatedArticles extends HTMLElement {
 class KyranStatBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <div class="stat-bar" role="list">
-        <div class="stat-item" role="listitem">
-          <span class="stat-icon" aria-hidden="true">👥</span>
-          <span class="stat-value">3–6 joueurs</span>
+      <div class="stat-bar stat-bar--specs" role="list" aria-label="Caractéristiques du jeu">
+        <div class="stat-cell" role="listitem">
+          <svg class="stat-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <div class="stat-info">
+            <span class="stat-num">3–6</span>
+            <span class="stat-desc">Joueurs</span>
+          </div>
         </div>
-        <span class="stat-sep" aria-hidden="true">·</span>
-        <div class="stat-item" role="listitem">
-          <span class="stat-icon" aria-hidden="true">⏱️</span>
-          <span class="stat-value">30 min</span>
+
+        <div class="stat-cell" role="listitem">
+          <svg class="stat-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <div class="stat-info">
+            <span class="stat-num">30 min</span>
+            <span class="stat-desc">Partie</span>
+          </div>
         </div>
-        <span class="stat-sep" aria-hidden="true">·</span>
-        <div class="stat-item" role="listitem">
-          <span class="stat-icon" aria-hidden="true">🎂</span>
-          <span class="stat-value">Dès 8 ans</span>
+
+        <div class="stat-cell" role="listitem">
+          <svg class="stat-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+          <div class="stat-info">
+            <span class="stat-num">8 ans +</span>
+            <span class="stat-desc">Âge</span>
+          </div>
         </div>
-        <span class="stat-sep" aria-hidden="true">·</span>
-        <div class="stat-item" role="listitem">
-          <span class="stat-icon" aria-hidden="true">🃏</span>
-          <span class="stat-value">55 cartes toilées</span>
+
+        <div class="stat-cell" role="listitem">
+          <svg class="stat-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="13" height="17" rx="2"></rect>
+            <path d="M7 5V3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2"></path>
+          </svg>
+          <div class="stat-info">
+            <span class="stat-num">55 cartes</span>
+            <span class="stat-desc">Toilées 300g</span>
+          </div>
         </div>
       </div>
     `;

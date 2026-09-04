@@ -2802,50 +2802,89 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   font-style: italic;
 }
 
-/* Stat-bar unifiée & fluide */
+/* Stat-bar — Spécifications officielles jeu (Board Game Specs) */
 .stat-bar {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(231, 226, 217, 0.95);
-  border-radius: 999px;
-  padding: 8px 20px;
+  width: 100%;
+  max-width: 530px;
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-radius: 14px;
+  padding: 10px 0;
   margin: 0 0 var(--space-3);
-  box-shadow: 0 2px 12px rgba(69, 26, 3, 0.03);
+  box-shadow: 0 2px 10px rgba(69, 26, 3, 0.03);
 }
-.stat-bar .stat-item {
-  display: inline-flex;
+
+.stat-bar--specs .stat-cell {
+  display: flex;
   align-items: center;
-  gap: 7px;
-  white-space: nowrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px 8px;
+  position: relative;
 }
-.stat-bar .stat-icon {
-  font-size: 1rem;
-  line-height: 1;
+
+.stat-bar--specs .stat-cell:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: #ede7dc;
 }
-.stat-bar .stat-value {
+
+.stat-bar--specs .stat-svg {
+  color: var(--gold-dark);
+  flex-shrink: 0;
+  stroke-width: 2.2;
+}
+
+.stat-bar--specs .stat-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.stat-bar--specs .stat-num {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.82rem;
-  color: #292524;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: #1c1917;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
-.stat-bar .stat-sep {
-  color: #d6d3d1;
-  font-weight: 700;
-  font-size: 0.85rem;
+
+.stat-bar--specs .stat-desc {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #78716c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-  .stat-bar {
-    border-radius: 16px;
-    padding: 10px 14px;
-    gap: 8px 12px;
-    justify-content: center;
+  .stat-bar--specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 0;
+    padding: 12px 6px;
+    border-radius: 14px;
+  }
+  .stat-bar--specs .stat-cell {
+    justify-content: flex-start;
+    padding: 4px 16px;
+  }
+  .stat-bar--specs .stat-cell:nth-child(2)::after {
+    display: none;
+  }
+  .stat-bar--specs .stat-cell:nth-child(1)::after,
+  .stat-bar--specs .stat-cell:nth-child(3)::after {
+    height: 70%;
   }
 }
 

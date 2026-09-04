@@ -108,19 +108,20 @@
         order: 1;
         width: 100%;
       }
-      .order-form-column {
+      .product-chips {
         order: 2;
         width: 100%;
       }
-      .product-perks {
+      .order-form-column {
         order: 3;
         width: 100%;
       }
-      .order-specs {
+      .order-content-box {
         order: 4;
         width: 100%;
       }
-      .order-faq-section {
+      .order-specs-accordion,
+      .order-specs {
         order: 5;
         width: 100%;
       }
@@ -209,7 +210,7 @@
       align-items: center;
       gap: 12px;
       font-size: 0.88rem;
-      color: #334155;
+      color: var(--text-sub);
       line-height: 1.5;
     }
     .order-delivery-estimate-icon {
@@ -281,25 +282,24 @@
     }
 
     .order-content-box {
-      background: #ffffff;
-      border: 1px solid #e7e2d9;
-      border-radius: 18px;
-      padding: 18px 22px;
-      margin-top: 24px;
-      box-shadow: 0 4px 16px -2px rgba(69, 26, 3, 0.04);
+      background: #faf7f2;
+      border: 1px solid #ede7dc;
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-top: 20px;
     }
     .order-content-title {
       font-family: var(--font-body);
-      font-size: 0.96rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .order-content-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 0.88rem;
+      gap: 8px;
+      font-size: 0.85rem;
       color: var(--text-sub);
     }
     .order-content-list li {
@@ -307,9 +307,15 @@
       align-items: center;
       gap: 10px;
     }
-    .order-content-list li span {
-      font-size: 1.1rem;
+    .order-content-list li span:first-child {
+      font-size: 1.05rem;
       flex-shrink: 0;
+    }
+    .order-content-list li span:last-child {
+      font-size: 0.84rem;
+      flex: 1;
+      min-width: 0;
+      line-height: 1.4;
     }
 
     .order-qty-block {
@@ -336,7 +342,7 @@
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #d6cebf;
       background: #ffffff;
       color: var(--text-main);
       font-size: 1.3rem;
@@ -441,31 +447,18 @@
       transition: transform 0.06s ease, box-shadow 0.06s ease;
     }
 
-    .order-badges-payment {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 14px;
+    .order-payment-line {
+      text-align: center;
+      margin: 12px 0 0;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      font-size: 0.8rem;
-    }
-    .order-payment-pill {
-      background: #faf7f2;
-      border: 1px solid #ede7dc;
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 0.74rem;
-      letter-spacing: 0.02em;
-      font-weight: 600;
-      color: #64748b;
+      letter-spacing: 0.01em;
     }
 
     .order-divider {
       position: relative;
       text-align: center;
-      margin: 22px 0 16px;
+      margin: 16px 0 12px;
     }
     .order-divider::before {
       content: '';
@@ -479,9 +472,9 @@
     .order-divider span {
       position: relative;
       background: #ffffff;
-      padding: 0 16px;
+      padding: 0 12px;
       color: #94a3b8;
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -490,88 +483,67 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
-      padding: 13px 22px;
+      padding: 10px 18px;
       border-radius: 999px;
       border: 1px solid #e2dcd0;
-      background: #faf7f2;
-      color: var(--text-main);
+      background: transparent;
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       font-weight: 600;
-      transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
     }
     .order-amazon-btn:hover {
-      background: #ffffff;
-      border-color: #f59e0b;
-      color: #b45309;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15);
+      background: #faf7f2;
+      border-color: var(--gold-border);
+      color: var(--text-main);
     }
     .order-amazon-btn:active {
       transform: translateY(1px);
-      transition: transform 0.06s ease;
     }
 
     .reassurance-list {
       list-style: none;
-      margin-top: 24px;
-      padding-top: 18px;
+      margin-top: 18px;
+      padding-top: 14px;
       border-top: 1px solid #f1ece1;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 10px;
     }
     .reassurance-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.86rem;
+      gap: 6px;
+      font-size: 0.78rem;
       color: var(--text-sub);
-      line-height: 1.45;
-    }
-    .reassurance-icon {
-      font-size: 1.15rem;
-      flex-shrink: 0;
+      line-height: 1.35;
     }
 
-    /* Points forts du produit (Perks) : module épuré */
-    .product-perks {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 28px;
+
+    /* Chips produit compacts sous la galerie */
+    .product-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
     }
-    @media (max-width: 600px) {
-      .product-perks {
-        grid-template-columns: 1fr;
-      }
-    }
-    .perk-box {
-      background: #ffffff;
+    .product-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #faf7f2;
       border: 1px solid #e7e2d9;
-      border-radius: 18px;
-      padding: 20px 22px;
-      box-shadow: 0 4px 18px -2px rgba(69, 26, 3, 0.03);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-    .perk-box:hover {
-      transform: translateY(-2px);
-      border-color: var(--gold-bright);
-    }
-    .perk-box h4 {
-      font-size: 0.98rem;
-      color: var(--text-main);
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-    .perk-box p {
-      font-size: 0.86rem;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: var(--text-sub);
-      line-height: 1.6;
-      margin: 0;
+      white-space: nowrap;
     }
+
 
     /* Fiche technique / Specs */
     .order-specs {
@@ -614,57 +586,7 @@
       font-weight: 600;
     }
 
-    /* Accordéon FAQ de commande */
-    .order-faq-section {
-      margin-top: 28px;
-    }
-    .order-faq-section h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-      color: var(--text-main);
-      margin-bottom: 14px;
-    }
-    .order-faq-accordion details {
-      background: #ffffff;
-      border: 1px solid #e7e2d9;
-      border-radius: 14px;
-      margin-bottom: 10px;
-      padding: 14px 18px;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 8px rgba(69, 26, 3, 0.02);
-      transition: all 0.2s ease;
-    }
-    .order-faq-accordion details[open] {
-      border-color: var(--gold-border);
-      background: #fffdfa;
-    }
-    .order-faq-accordion summary {
-      font-weight: 600;
-      color: var(--text-main);
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .order-faq-accordion summary::-webkit-details-marker { display: none; }
-    .order-faq-accordion summary::after {
-      content: '+';
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--gold-dark);
-      transition: transform 0.2s;
-    }
-    .order-faq-accordion details[open] summary::after {
-      content: '−';
-    }
-    .order-faq-accordion .faq-ans {
-      margin-top: 10px;
-      color: var(--text-sub);
-      line-height: 1.65;
-    }
+
 
     /* Galerie & Zoom */
     .product-gallery {
@@ -917,24 +839,11 @@
               </div>
             </div>
 
-            <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les points forts</span></div></div>
-            <div class="product-perks">
-              <div class="perk-box">
-                <h4>✨ 55 Cartes qualité pro</h4>
-                <p>Cartes toilées et vernies 300g/m², solides et agréables en main.</p>
-              </div>
-              <div class="perk-box">
-                <h4>⚡ 4 Cartes Pouvoir</h4>
-                <p>Pour piéger vos adversaires et changer le cours de la manche.</p>
-              </div>
-              <div class="perk-box">
-                <h4>🎭 Manche sur le front</h4>
-                <p>Carte collée sur le front : les autres voient votre jeu, mais pas vous.</p>
-              </div>
-              <div class="perk-box">
-                <h4>📱 Règles en vidéo</h4>
-                <p>QR code sur la boîte pour apprendre à jouer en 5 minutes chrono.</p>
-              </div>
+            <div class="product-chips">
+              <span class="product-chip">✨ 55 cartes 300g</span>
+              <span class="product-chip">⚡ 4 Pouvoirs</span>
+              <span class="product-chip">🎭 Manche front</span>
+              <span class="product-chip">📱 Règles QR</span>
             </div>
 
             <!-- Contenu du jeu -->
@@ -987,28 +896,7 @@
               </div>
             </details>
 
-            <!-- Mini FAQ réassurance commande -->
-            <div class="order-faq-section">
-              <h3>Questions fréquentes</h3>
-              <div class="order-faq-accordion">
-                <details>
-                  <summary>Quels sont les délais et modes de livraison ?</summary>
-                  <div class="faq-ans">Expédition sous 24 à 48h par La Poste avec numéro de suivi. Livraison chez vous en 2 à 4 jours ouvrés. Vous recevez le lien de suivi par e-mail dès le départ de votre colis.</div>
-                </details>
-                <details>
-                  <summary>Quels pays sont desservis ?</summary>
-                  <div class="faq-ans">France métropolitaine, Belgique, Suisse et Luxembourg (frais de port calculés lors du paiement selon l'adresse).</div>
-                </details>
-                <details>
-                  <summary>Comment le jeu est-il protégé pour le transport ?</summary>
-                  <div class="faq-ans">Chaque boîte est emballée sous protection renforcée (enveloppe matelassée à bulles ou carton) pour arriver en parfait état.</div>
-                </details>
-                <details>
-                  <summary>Puis-je retourner le jeu s'il ne me convient pas ?</summary>
-                  <div class="faq-ans">Oui. Vous avez 14 jours après réception pour changer d'avis. Écrivez-nous à contact@kyran-jeu.fr pour les modalités de retour et de remboursement.</div>
-                </details>
-              </div>
-            </div>
+
           </div>
 
           <!-- Colonne Formulaire & Checkout Stripe -->
@@ -1087,13 +975,8 @@
                 🔒 Votre adresse de livraison sera demandée à l'étape suivante (paiement Stripe sécurisé)
               </p>
 
-              <div class="order-badges-payment">
-                <span class="order-payment-pill">Carte Bancaire</span>
-                <span class="order-payment-pill">Visa</span>
-                <span class="order-payment-pill">Mastercard</span>
-                <span class="order-payment-pill">Apple Pay</span>
-                <span class="order-payment-pill">Google Pay</span>
-              </div>
+
+              <p class="order-payment-line">🔒 Stripe sécurisé · CB · Visa · Apple Pay · Google Pay</p>
 
               <div class="order-divider">
                 <span>ou</span>
@@ -1103,30 +986,18 @@
 
               <a 
                 href="https://www.amazon.fr/dp/B0G217LD87" 
-                class="order-amazon-btn"
+                class="order-amazon-btn order-amazon-btn--ghost"
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <span>Commander sur Amazon (Livraison Prime · 17,99€)</span>
+                <span>Amazon · Livraison Prime · 17,99€</span>
               </a>
 
               <ul class="reassurance-list">
-                <li class="reassurance-item">
-                  <span class="reassurance-icon">🔒</span>
-                  <span><strong>Paiement 100% sécurisé</strong> par carte bancaire</span>
-                </li>
-                <li class="reassurance-item">
-                  <span class="reassurance-icon">📦</span>
-                  <span><strong>Expédié sous 24 à 48h</strong> avec numéro de suivi</span>
-                </li>
-                <li class="reassurance-item">
-                  <span class="reassurance-icon">🛡️</span>
-                  <span><strong>14 jours</strong> pour changer d'avis et être remboursé</span>
-                </li>
-                <li class="reassurance-item">
-                  <span class="reassurance-icon">✉️</span>
-                  <span><strong>Une question ?</strong> Réponse rapide à contact@kyran-jeu.fr</span>
-                </li>
+                <li class="reassurance-item">🔒 <span><strong>Paiement sécurisé</strong></span></li>
+                <li class="reassurance-item">📦 <span><strong>Expédié 24-48h</strong> · suivi</span></li>
+                <li class="reassurance-item">🛡️ <span><strong>14j</strong> pour changer d'avis</span></li>
+                <li class="reassurance-item">✉️ <span>contact@kyran-jeu.fr</span></li>
               </ul>
             </div>
           </div>

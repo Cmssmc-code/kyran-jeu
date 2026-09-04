@@ -82,6 +82,13 @@ class KyranHeader extends HTMLElement {
     }).join('');
 
     this.innerHTML = `
+      <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
+        <div class="container announcement-content">
+          <span class="announcement-pill">Offre Direct Créateur</span>
+          <span class="announcement-text">📦 <strong>Expédié sous 24-48h</strong> · Suivi La Poste · <strong>9,99€</strong> <span class="announcement-strikethrough">17,99€</span> (Économisez 8€)</span>
+          <a href="${ORDER_URL}" class="announcement-link">Commander &rarr;</a>
+        </div>
+      </div>
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
@@ -110,7 +117,9 @@ class KyranHeader extends HTMLElement {
                 <li><a href="${ROOT}dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
-                <a class="btn btn-primary btn-block" href="${ORDER_URL}">Commander — 9,99&euro;</a>
+                <a class="btn btn-primary btn-block" href="${ORDER_URL}">
+                  <span>🛒 Commander — 9,99&euro;</span>
+                </a>
                 ${instagramLinkHtml('social-link social-link--instagram social-link--block', 'Suivre sur Instagram')}
               </div>
             </nav>
@@ -118,7 +127,15 @@ class KyranHeader extends HTMLElement {
 
           <div class="nav-actions">
             <div class="cta cta-desktop">
-              <a class="btn btn-header-cta" href="${ORDER_URL}">Commander · 9,99&euro;</a>
+              <a class="btn btn-header-cta" href="${ORDER_URL}">
+                <svg class="cart-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Commander</span>
+                <span class="header-cta-badge">9,99€</span>
+              </a>
             </div>
             <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
               <span class="nav-toggle-lines" aria-hidden="true">

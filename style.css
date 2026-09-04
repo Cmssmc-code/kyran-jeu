@@ -143,6 +143,70 @@ kyran-breadcrumb {
   width: 100%;
 }
 
+/* =======================
+   TOP ANNOUNCEMENT BAR (E-COMMERCE)
+   ======================= */
+.top-announcement-bar {
+  background: linear-gradient(90deg, #1c1917 0%, #292524 50%, #1c1917 100%);
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+  position: relative;
+  z-index: 7400;
+}
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.announcement-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(217, 119, 6, 0.3);
+}
+.announcement-text {
+  color: #f5f5f4;
+  font-weight: 400;
+}
+.announcement-strikethrough {
+  text-decoration: line-through;
+  opacity: 0.6;
+  margin: 0 2px;
+}
+.announcement-link {
+  color: #fbbf24;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+.announcement-link:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+@media (max-width: 640px) {
+  .top-announcement-bar {
+    font-size: 0.74rem;
+    padding: 6px 0;
+  }
+  .announcement-pill {
+    display: none;
+  }
+}
+
 header.site-header {
   width: 100%;
   height: 76px;
@@ -371,23 +435,42 @@ button.nav-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 9px 20px;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-  border: none;
-  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.25);
-  transition: transform var(--speed), box-shadow var(--speed), background var(--speed);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.28);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .btn-header-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.35);
-  background: linear-gradient(135deg, #fbbf24 0%, var(--gold-dark) 100%);
-  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.42);
+  filter: brightness(1.06);
+  color: #ffffff !important;
+}
+
+.btn-header-cta:active {
+  transform: translateY(1px);
+}
+
+.cart-icon {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.header-cta-badge {
+  background: rgba(255, 255, 255, 0.24);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .nav-mobile-only { 
@@ -756,6 +839,81 @@ section { padding: clamp(42px, 6.5vw, 80px) 0; scroll-margin-top: 76px; }
 .hero-ecommerce .stat-bar {
   margin: 0 0 var(--space-3) 0;
   max-width: 530px;
+}
+
+.hero-actions-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: var(--space-2);
+}
+
+.hero-price-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-price-current {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  line-height: 1;
+  color: var(--gold-dark);
+  letter-spacing: 0.5px;
+}
+
+.hero-price-old {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.hero-discount-pill {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #047857;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.btn-hero-cta svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-hero-cta:hover svg {
+  transform: scale(1.12);
+}
+
+.badge-stock-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  display: inline-block;
+  margin-right: 6px;
+  animation: stockPulse 2s infinite;
+}
+
+@keyframes stockPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
 }
 
 .hero-ecommerce .hero-actions {
@@ -1576,6 +1734,193 @@ section { padding: clamp(42px, 6.5vw, 80px) 0; scroll-margin-top: 76px; }
   line-height: 1.4;
   color: #475569;
   margin: 0;
+}
+
+.store-featured-header {
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.store-top-pill {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: var(--accent-cream);
+  border: 1px solid var(--accent-cream-border);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: var(--space-1);
+}
+
+.store-product-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.store-review-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.store-review-link:hover {
+  color: var(--gold-dark);
+}
+
+.star-gold {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.store-product-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: -10px;
+}
+
+.store-pricing-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.store-price-reference {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.store-badge-save {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #047857;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.store-shipping-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.store-whats-inside {
+  background: #fdfbf7;
+  border: 1px solid #ede7dc;
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.whats-inside-title {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.whats-inside-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .whats-inside-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inside-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.84rem;
+}
+
+.inside-item strong {
+  display: block;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.inside-item span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.inside-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.store-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-ecommerce-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 28px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.store-amazon-alt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 999px;
+  color: #475569 !important;
+}
+
+.store-payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.payment-method-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
 .price-prime-block {

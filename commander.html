@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904" />
-  <script src="components.js?v=20260904"></script>
+  <link rel="stylesheet" href="style.css?v=20260904b" />
+  <script src="components.js?v=20260904b"></script>
   <script src="reviews-data.js?v=20260902"></script>
   <script src="reviews.js?v=20260902" defer></script>
 
@@ -215,6 +215,100 @@
     .order-delivery-estimate-icon {
       font-size: 1.4rem;
       line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .bundle-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .bundle-card {
+      border: 2px solid #e7e2d9;
+      border-radius: 16px;
+      background: #ffffff;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .bundle-card:hover {
+      border-color: var(--gold-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
+    }
+    .bundle-card.is-active {
+      border-color: var(--gold);
+      background: #fdfbf7;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.18);
+    }
+    .bundle-badge-pop {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+    }
+    .bundle-qty {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .bundle-price {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin-top: 2px;
+    }
+    .bundle-desc {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .order-content-box {
+      background: #ffffff;
+      border: 1px solid #e7e2d9;
+      border-radius: 18px;
+      padding: 18px 22px;
+      margin-top: 24px;
+      box-shadow: 0 4px 16px -2px rgba(69, 26, 3, 0.04);
+    }
+    .order-content-title {
+      font-family: var(--font-body);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .order-content-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+    .order-content-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .order-content-list li span {
+      font-size: 1.1rem;
       flex-shrink: 0;
     }
 
@@ -794,9 +888,9 @@
 
   <main id="contenu-principal">
     <kyran-page-hero
-      eyebrow="Boutique officielle · Commande directe"
+      eyebrow="Boutique officielle"
       title="Commander <span class=&quot;accent&quot;>KYRAN</span>"
-      subtitle="Recevez la boîte officielle du jeu de cartes tactique. Paiement sécurisé et expédition suivie."
+      subtitle="Boîte complète livrée chez vous sous 3 à 5 jours. Paiement sécurisé par carte bancaire."
       breadcrumb='[{"label":"Accueil","href":"/index.html"},{"label":"Commander"}]'
     ></kyran-page-hero>
 
@@ -826,48 +920,59 @@
             <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les points forts</span></div></div>
             <div class="product-perks">
               <div class="perk-box">
-                <h4>✨ 55 Cartes Vernies Toilées</h4>
-                <p>Cartes 300g/m² haute durabilité avec vernis protecteur de qualité pro.</p>
+                <h4>✨ 55 Cartes qualité pro</h4>
+                <p>Cartes toilées et vernies 300g/m², solides et agréables en main.</p>
               </div>
               <div class="perk-box">
-                <h4>⚡ 4 Cartes Pouvoir Uniques</h4>
-                <p>Sceau, Voile, Clairvoyance et Bénédiction pour dynamiter les pronostics.</p>
+                <h4>⚡ 4 Cartes Pouvoir</h4>
+                <p>Pour piéger vos adversaires et changer le cours de la manche.</p>
               </div>
               <div class="perk-box">
-                <h4>🎭 Manche Mystique sur le Front</h4>
-                <p>Manche culte jouée carte collée sur le front : les autres voient votre jeu, pas vous !</p>
+                <h4>🎭 Manche sur le front</h4>
+                <p>Carte collée sur le front : les autres voient votre jeu, mais pas vous.</p>
               </div>
               <div class="perk-box">
-                <h4>📱 Règles Vidéo &amp; Dojo Inclus</h4>
-                <p>QR code direct sur la boîte vers la vidéo 5 min et le simulateur en ligne.</p>
+                <h4>📱 Règles en vidéo</h4>
+                <p>QR code sur la boîte pour apprendre à jouer en 5 minutes chrono.</p>
               </div>
+            </div>
+
+            <!-- Contenu du jeu -->
+            <div class="order-content-box">
+              <h3 class="order-content-title">Ce que contient votre commande :</h3>
+              <ul class="order-content-list">
+                <li><span>🃏</span> <span><strong>55 cartes toilées 300g :</strong> Finition vernie lin haute durabilité, agréable en main</span></li>
+                <li><span>⚡</span> <span><strong>4 Pouvoirs + La Mystique :</strong> Retournements de situation et bluff à chaque pli</span></li>
+                <li><span>📖</span> <span><strong>Livret de règles officiel :</strong> En français, simple et rapide à comprendre (2 min)</span></li>
+                <li><span>📦</span> <span><strong>Boîte cloche rigide :</strong> Format compact (11,5 × 8,5 × 2,8 cm), facile à emporter partout</span></li>
+              </ul>
             </div>
 
             <!-- Fiche technique produit (pliée par défaut pour lisibilité) -->
             <details class="order-specs-accordion">
-              <summary class="order-specs-summary">Fiche technique &amp; Caractéristiques</summary>
+              <summary class="order-specs-summary">Fiche technique &amp; Détails</summary>
               <div class="order-specs-content">
                 <table class="order-specs-table">
                   <tbody>
                     <tr>
                       <td>Contenu</td>
-                      <td>Cartes vernies toilées + Cartes de règles officielles</td>
+                      <td>55 cartes toilées + cartes de règles en français</td>
                     </tr>
                     <tr>
                       <td>Format boîte</td>
-                      <td>Boîte cloche rigide haute densité (11,5 × 8,5 × 2,8 cm)</td>
+                      <td>Boîte rigide (11,5 × 8,5 × 2,8 cm)</td>
                     </tr>
                     <tr>
                       <td>Poids</td>
-                      <td>Environ 175 g (format poche / voyage ultra nomade)</td>
+                      <td>175 g (facile à emporter partout)</td>
                     </tr>
                     <tr>
-                      <td>Nombre de joueurs</td>
+                      <td>Joueurs</td>
                       <td>3 à 6 joueurs</td>
                     </tr>
                     <tr>
-                      <td>Âge conseillé</td>
-                      <td>Dès 8 ans (ambiance apéro, amis &amp; famille)</td>
+                      <td>Âge</td>
+                      <td>Dès 8 ans (amis et famille)</td>
                     </tr>
                     <tr>
                       <td>Durée d'une partie</td>
@@ -875,7 +980,7 @@
                     </tr>
                     <tr>
                       <td>Conception</td>
-                      <td>Auteur : Corentin Sence · Illustratrice : Crea by Floh</td>
+                      <td>Créé et édité en France</td>
                     </tr>
                   </tbody>
                 </table>
@@ -884,23 +989,23 @@
 
             <!-- Mini FAQ réassurance commande -->
             <div class="order-faq-section">
-              <h3>Questions fréquentes sur votre commande</h3>
+              <h3>Questions fréquentes</h3>
               <div class="order-faq-accordion">
                 <details>
                   <summary>Quels sont les délais et modes de livraison ?</summary>
-                  <div class="faq-ans">Les commandes sont préparées et expédiées sous 24 à 48h ouvrées. L'acheminement est assuré en courrier suivi postal (La Poste / Colissimo) en 2 à 4 jours ouvrés. Vous recevez votre numéro de suivi par e-mail dès expédition.</div>
+                  <div class="faq-ans">Expédition sous 24 à 48h par La Poste avec numéro de suivi. Livraison chez vous en 2 à 4 jours ouvrés. Vous recevez le lien de suivi par e-mail dès le départ de votre colis.</div>
                 </details>
                 <details>
                   <summary>Quels pays sont desservis ?</summary>
-                  <div class="faq-ans">La boutique livre en France métropolitaine, en Belgique, en Suisse et au Luxembourg au tarif unique de 3,99€ en envoi suivi.</div>
+                  <div class="faq-ans">France métropolitaine, Belgique, Suisse et Luxembourg (frais de port fixes : 3,99€ en envoi suivi).</div>
                 </details>
                 <details>
-                  <summary>Comment le jeu est-il emballé et protégé ?</summary>
-                  <div class="faq-ans">Chaque boîte rigide de KYRAN est conditionnée sous protection renforcée (enveloppe matelassée bulle haute résistance ou carton) pour garantir une réception impeccable.</div>
+                  <summary>Comment le jeu est-il protégé pour le transport ?</summary>
+                  <div class="faq-ans">Chaque boîte est emballée sous protection renforcée (enveloppe matelassée à bulles ou carton) pour arriver en parfait état.</div>
                 </details>
                 <details>
                   <summary>Puis-je retourner le jeu s'il ne me convient pas ?</summary>
-                  <div class="faq-ans">Oui. Vous bénéficiez du droit légal de rétractation de 14 jours dès réception de votre colis. Contactez-nous simplement à contact@kyran-jeu.fr pour les modalités de retour et de remboursement.</div>
+                  <div class="faq-ans">Oui. Vous avez 14 jours après réception pour changer d'avis. Écrivez-nous à contact@kyran-jeu.fr pour les modalités de retour et de remboursement.</div>
                 </details>
               </div>
             </div>
@@ -910,18 +1015,38 @@
           <div class="order-form-column">
             <div class="order-card" id="order-card-box">
               <div class="order-badge-stock">✓ En stock · Expédié sous 24-48h</div>
-              <h2 class="order-title">Édition Officielle KYRAN</h2>
-              <p class="order-desc">Jeu complet dans sa boîte rigide cloche avec cartes Pouvoir et manche Mystique.</p>
+              <h2 class="order-title">Boîte KYRAN officielle</h2>
+              <p class="order-desc">Jeu complet dans sa boîte rigide : 55 cartes et règles en français.</p>
 
               <!-- Estimation dynamique de livraison -->
               <div class="order-delivery-estimate" id="delivery-estimate-box">
                 <span class="order-delivery-estimate-icon">🚚</span>
-                <span id="delivery-estimate-text">Expédié sous 24-48h · Livraison estimée sous 3 à 5 jours</span>
+                <span id="delivery-estimate-text">Expédié sous 24-48h · Chez vous en 3 à 5 jours</span>
               </div>
 
               <div class="order-price-row">
                 <span class="order-price-main" id="display-unit-price">9,99€</span>
                 <span class="order-price-sub">TTC · Frais de port : 3,99€</span>
+              </div>
+
+              <!-- Sélecteur de formules bundle -->
+              <div class="bundle-options" role="radiogroup" aria-label="Choisir le nombre de boîtes">
+                <button type="button" class="bundle-card is-active" data-qty="1" role="radio" aria-checked="true">
+                  <div class="bundle-qty">1 Boîte</div>
+                  <div class="bundle-price">9,99€</div>
+                  <div class="bundle-desc">Découverte</div>
+                </button>
+                <button type="button" class="bundle-card" data-qty="2" role="radio" aria-checked="false">
+                  <span class="bundle-badge-pop">Top Vente ⭐</span>
+                  <div class="bundle-qty">2 Boîtes</div>
+                  <div class="bundle-price">19,98€</div>
+                  <div class="bundle-desc">Cadeau &amp; Soirée</div>
+                </button>
+                <button type="button" class="bundle-card" data-qty="3" role="radio" aria-checked="false">
+                  <div class="bundle-qty">3 Boîtes</div>
+                  <div class="bundle-price">29,97€</div>
+                  <div class="bundle-desc">Pack Groupe</div>
+                </button>
               </div>
 
               <div class="order-qty-block">
@@ -945,7 +1070,7 @@
               </div>
 
               <div class="order-total-row">
-                <span>Total TTC :</span>
+                <span>Total :</span>
                 <span class="order-total-amount" id="display-total-price">13,98€</span>
               </div>
 
@@ -954,12 +1079,12 @@
                 href="https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00" 
                 class="order-btn-stripe"
               >
-                <span>Payer en toute sécurité (Stripe)</span>
+                <span>Payer par carte bancaire</span>
                 <span aria-hidden="true">→</span>
               </a>
 
               <p style="text-align: center; margin-top: 8px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;">
-                🔒 Adresse postale et livraison demandées à l'étape suivante sur Stripe
+                🔒 Votre adresse de livraison sera demandée à l'étape suivante (paiement Stripe sécurisé)
               </p>
 
               <div class="order-badges-payment">
@@ -988,19 +1113,19 @@
               <ul class="reassurance-list">
                 <li class="reassurance-item">
                   <span class="reassurance-icon">🔒</span>
-                  <span><strong>Paiement 100% sécurisé</strong> chiffré SSL via Stripe</span>
+                  <span><strong>Paiement 100% sécurisé</strong> par carte bancaire</span>
                 </li>
                 <li class="reassurance-item">
                   <span class="reassurance-icon">📦</span>
-                  <span><strong>Expédition sous 24-48h</strong> avec numéro de suivi postal</span>
+                  <span><strong>Expédié sous 24 à 48h</strong> avec numéro de suivi</span>
                 </li>
                 <li class="reassurance-item">
                   <span class="reassurance-icon">🛡️</span>
-                  <span><strong>Satisfait ou remboursé</strong> · 14 jours de rétractation</span>
+                  <span><strong>14 jours</strong> pour changer d'avis et être remboursé</span>
                 </li>
                 <li class="reassurance-item">
                   <span class="reassurance-icon">✉️</span>
-                  <span><strong>Support direct créateur</strong> : contact@kyran-jeu.fr</span>
+                  <span><strong>Une question ?</strong> Réponse rapide à contact@kyran-jeu.fr</span>
                 </li>
               </ul>
             </div>
@@ -1015,7 +1140,7 @@
       <div class="container">
         <h2 class="section-title">Avis des joueurs &amp; Évaluations Amazon</h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Retours vérifiés de la communauté et des testeurs Vine sur Amazon.fr</p>
+        <p class="section-sub">Avis vérifiés de joueurs sur Amazon.fr</p>
         <div id="amazon-reviews-widget">
           <!-- Injecté dynamiquement par reviews.js -->
         </div>
@@ -1023,10 +1148,10 @@
     </section>
 
     <kyran-cta-band
-      title="Besoin d'un aperçu avant d'acheter ?"
-      text="Testez les mécaniques de pli et de pari en 4 manches sur notre dojo interactif gratuit."
+      title="Envie de tester avant d'acheter ?"
+      text="Faites une partie d'entraînement gratuite en 4 manches sur notre simulateur en ligne."
       secondary-href="minijeu.html"
-      secondary-label="Essayer le Dojo"
+      secondary-label="Tester gratuitement"
       show-dojo="false"
     ></kyran-cta-band>
 
@@ -1180,17 +1305,41 @@
         }
       }
 
+      var bundleCards = document.querySelectorAll('.bundle-card');
+
+      function syncBundleCards() {
+        bundleCards.forEach(function (card) {
+          var cardQty = parseInt(card.getAttribute('data-qty'), 10);
+          var active = cardQty === qty;
+          card.classList.toggle('is-active', active);
+          card.setAttribute('aria-checked', active ? 'true' : 'false');
+        });
+      }
+
+      bundleCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var chosenQty = parseInt(card.getAttribute('data-qty'), 10);
+          if (chosenQty) {
+            qty = chosenQty;
+            updateTotal();
+            syncBundleCards();
+          }
+        });
+      });
+
       if (qtyMinus && qtyPlus) {
         qtyMinus.addEventListener('click', function () {
           if (qty > 1) {
             qty--;
             updateTotal();
+            syncBundleCards();
           }
         });
         qtyPlus.addEventListener('click', function () {
           if (qty < 10) {
             qty++;
             updateTotal();
+            syncBundleCards();
           }
         });
       }

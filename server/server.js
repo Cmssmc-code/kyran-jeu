@@ -432,3 +432,12 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Serveur KYRAN Webhook v1.4.0 actif sur port ${PORT}`);
 });
+
+process.on('uncaughtException', (err) => {
+  console.error('💥 Uncaught Exception :', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('💥 Unhandled Rejection :', reason);
+});
+

@@ -5162,7 +5162,8 @@ header.blog-article-hero::after {
   .product-main-wrap {
     border-radius: 16px !important;
   }
-  .hero-ecommerce .hero-actions .btn {
+}
+
 /* ============================================================
    9. MODERNISATION UI/UX 2026 : AÉRATION, TABLETTE & LISIBILITÉ
    ============================================================ */
@@ -5724,3 +5725,305 @@ article {
     break-inside: avoid;
   }
 }
+
+/* ============================================================
+   11. MOBILE VISUEL PREMIUM — INDEX.HTML (2026)
+   ============================================================ */
+
+/* ── A. SCROLL-REVEAL : Apparition fluide au défilement ── */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-on-scroll[data-delay="1"] { transition-delay: 0.08s; }
+.reveal-on-scroll[data-delay="2"] { transition-delay: 0.16s; }
+.reveal-on-scroll[data-delay="3"] { transition-delay: 0.24s; }
+.reveal-on-scroll[data-delay="4"] { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── B. HERO MOBILE — suppression étirement, meilleur spacing ── */
+@media (max-width: 768px) {
+  /* Badge row : empilement propre sans overflow */
+  .hero-badge-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* H1 : max-width pour éviter ligne trop longue */
+  .hero-ecommerce h1 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    line-height: 1;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Lead text : ne s'étire plus au-delà du viewport */
+  .hero-ecommerce .hero-lead {
+    font-size: 0.97rem;
+    max-width: 100%;
+    padding: 0 4px;
+    line-height: 1.65;
+  }
+
+  /* Micro-réassurance sous les CTA : pill par pill */
+  .hero-reassurance-micro {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+    font-size: 0.79rem;
+  }
+  .hero-reassurance-micro > span:is(:nth-child(2), :nth-child(4)) {
+    display: none; /* cacher les séparateurs · */
+  }
+
+  /* Prix hero : compact */
+  .hero-price-tag {
+    justify-content: center;
+    gap: 10px;
+  }
+  .hero-price-current {
+    font-size: 2rem;
+  }
+  .hero-price-old {
+    font-size: 1rem;
+  }
+
+  /* Boîte produit hero : proportions soignées */
+  .hero-product-stage {
+    max-width: 260px;
+  }
+  .hero-box-img {
+    max-width: 220px;
+  }
+  .hero-visual-badge {
+    bottom: -8px;
+    right: 0;
+    padding: 8px 14px;
+  }
+  .hero-visual-badge .badge-price {
+    font-size: 1.3rem;
+  }
+  .hero-visual-badge .badge-desc {
+    font-size: 0.65rem;
+  }
+}
+
+/* ── C. TRUST BAR MOBILE : no-scroll, pills en grille 2×2 ── */
+@media (max-width: 560px) {
+  .trust-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    gap: 8px !important;
+    padding: 12px 14px !important;
+    border-radius: 20px !important;
+    margin-top: 20px !important;
+  }
+  .trust-bar-item {
+    flex: none !important;
+    white-space: normal !important;
+    justify-content: flex-start;
+    font-size: 0.77rem !important;
+    line-height: 1.35;
+    padding: 8px 12px !important;
+    border-radius: 14px !important;
+  }
+  .trust-bar-icon {
+    flex-shrink: 0;
+  }
+}
+
+/* ── D. CARROUSELS SNAP : POINTS DE PAGINATION (dots) ── */
+/* Les dots existent déjà en CSS, on améliore leur positionnement */
+@media (max-width: 768px) {
+  /* Wrapper pour chaque section carrousel — permet de clipper le scroll */
+  .carousel-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Indicateur swipe : animation shake horizontale plus douce */
+  .mobile-swipe-indicator {
+    animation: swipeShake 3.2s ease-in-out infinite !important;
+  }
+  @keyframes swipeShake {
+    0%   { transform: translateX(0); }
+    8%   { transform: translateX(6px); }
+    16%  { transform: translateX(0); }
+    24%  { transform: translateX(4px); }
+    32%  { transform: translateX(0); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Dots pagination : plus grands, meilleur espacement */
+  .mobile-carousel-dots {
+    margin: 4px auto 20px !important;
+    gap: 10px !important;
+  }
+  .carousel-dot {
+    width: 9px !important;
+    height: 9px !important;
+  }
+  .carousel-dot.is-active {
+    width: 28px !important;
+  }
+
+  /* Estomper bords des carrousels pour indiquer la continuité */
+  .steps-grid,
+  .powers-grid,
+  .game-gallery-quotes,
+  .blog-grid,
+  .amazon-reviews-grid {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 92%,
+      transparent 100%
+    ) !important;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 92%,
+      transparent 100%
+    ) !important;
+  }
+
+  /* step-card : hauteur uniforme */
+  .step-card {
+    min-height: 200px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .step-card p {
+    flex: 1;
+  }
+
+  /* power-card-item : centrage + image plus lisible */
+  .power-card-item {
+    min-height: 340px !important;
+    justify-content: flex-start !important;
+  }
+  .power-card-thumb {
+    width: 100px !important;
+    height: 147px !important;
+  }
+}
+
+/* ── E. SECTION AMBIANCE (game-gallery) : photo + quotes mobile ── */
+@media (max-width: 768px) {
+  /* Photo en plein largeur au-dessus des quotes */
+  #game-gallery .grid.grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .game-gallery-photo-card {
+    max-height: 280px;
+    overflow: hidden;
+  }
+  .game-gallery-photo-card img {
+    height: 280px;
+    object-position: center top;
+  }
+}
+
+/* ── F. HERITAGE SPLIT : texte ne déborde plus sur mobile ── */
+@media (max-width: 768px) {
+  .heritage-split {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .heritage-split .heritage-visual {
+    order: -1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .heritage-copy h3 {
+    font-size: 1.5rem !important;
+  }
+  .heritage-copy p {
+    font-size: 0.93rem !important;
+  }
+}
+
+/* ── G. VIDEO SECTION : ratio correct + rounded corners mobile ── */
+@media (max-width: 768px) {
+  .video-container {
+    border-radius: 16px !important;
+    margin: 0 -2px !important;
+  }
+}
+
+/* ── H. SECTION STORE (commander) MOBILE ── */
+@media (max-width: 500px) {
+  .amazon-store-showcase {
+    padding: 22px 16px 28px !important;
+    border-radius: 16px !important;
+  }
+  .amazon-store-price {
+    font-size: 2.4rem !important;
+  }
+  .store-pricing-row {
+    gap: 8px !important;
+    flex-wrap: wrap;
+  }
+  .store-badge-save {
+    font-size: 0.72rem !important;
+  }
+  .store-shipping-info {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+  .store-shipping-info > span:nth-child(2) {
+    display: none; /* enlève le · */
+  }
+  .whats-inside-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* ── I. BLOG SECTION HOME ── */
+@media (max-width: 768px) {
+  .blog-section-home {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+}
+
+/* ── J. SECTION TITLE : jamais trop large sur micro-écrans ── */
+@media (max-width: 380px) {
+  .section-title {
+    font-size: clamp(1.7rem, 9vw, 2.2rem) !important;
+  }
+  .hero-ecommerce h1 {
+    font-size: clamp(2rem, 12vw, 2.8rem) !important;
+  }
+  .hero-price-current {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* ── K. ANIMATION SECTIONS : fade-up au scroll ── */
+/* Cibler les sections principales (appliquées par JS) */
+section > .container {
+  will-change: opacity, transform;
+}

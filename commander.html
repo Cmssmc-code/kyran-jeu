@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Commander KYRAN — Jeu de cartes officiel | 9,99 €</title>
-  <meta name="description" content="Commandez le jeu de cartes KYRAN en ligne au tarif de 9,99 €. Édition officielle 55 cartes avec règles et boîte rigide. Livraison suivie à 3,99 €. Paiement sécurisé par Stripe." />
+  <meta name="description" content="Commandez le jeu de cartes KYRAN en ligne au tarif de 9,99 €. Édition officielle 55 cartes avec règles et boîte rigide. Frais de livraison calculés à l'étape suivante. Paiement sécurisé par Stripe." />
   <link rel="canonical" href="https://kyran-jeu.fr/commander.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
@@ -997,7 +997,7 @@
                 </details>
                 <details>
                   <summary>Quels pays sont desservis ?</summary>
-                  <div class="faq-ans">France métropolitaine, Belgique, Suisse et Luxembourg (frais de port fixes : 3,99€ en envoi suivi).</div>
+                  <div class="faq-ans">France métropolitaine, Belgique, Suisse et Luxembourg (frais de port calculés lors du paiement selon l'adresse).</div>
                 </details>
                 <details>
                   <summary>Comment le jeu est-il protégé pour le transport ?</summary>
@@ -1026,7 +1026,7 @@
 
               <div class="order-price-row">
                 <span class="order-price-main" id="display-unit-price">9,99€</span>
-                <span class="order-price-sub">TTC · Frais de port : 3,99€</span>
+                <span class="order-price-sub">TTC · Livraison calculée à l'étape suivante</span>
               </div>
 
               <!-- Sélecteur de formules bundle -->
@@ -1064,14 +1064,14 @@
                   <span id="display-subtotal" class="order-line-val">9,99€</span>
                 </div>
                 <div class="order-line-item">
-                  <span>Livraison suivie (2-4 jours) :</span>
-                  <span class="order-line-val">3,99€</span>
+                  <span>Livraison suivie :</span>
+                  <span class="order-line-val" style="font-size: 0.85rem; color: var(--text-muted);">Calculée à l'étape suivante</span>
                 </div>
               </div>
 
               <div class="order-total-row">
-                <span>Total :</span>
-                <span class="order-total-amount" id="display-total-price">13,98€</span>
+                <span>Total (hors livraison) :</span>
+                <span class="order-total-amount" id="display-total-price">9,99€</span>
               </div>
 
               <a 
@@ -1168,7 +1168,7 @@
           <img src="boite-recto-kyran.webp" alt="Miniature KYRAN" class="sticky-buy-thumb" width="42" height="42" />
           <div>
             <div class="sticky-buy-title">KYRAN — Édition Officielle</div>
-            <span class="sticky-buy-price">9,99€ <small style="color:var(--text-muted);font-weight:normal;">(+ 3,99€ envoi)</small></span>
+            <span class="sticky-buy-price">9,99€ <small style="color:var(--text-muted);font-weight:normal;">(+ port calculé)</small></span>
           </div>
         </div>
         <a href="#stripe-checkout-link" class="sticky-buy-btn" id="sticky-buy-cta">Commander</a>
@@ -1281,7 +1281,6 @@
 
       // Logique Quantité & Prix Stripe
       var unitPrice = 9.99;
-      var shippingRate = 3.99;
       var qty = 1;
       var qtyMinus = document.getElementById('qty-minus');
       var qtyPlus = document.getElementById('qty-plus');
@@ -1294,14 +1293,13 @@
         qtyVal.textContent = qty;
         var subtotal = (unitPrice * qty).toFixed(2).replace('.', ',');
         if (displaySubtotal) displaySubtotal.textContent = subtotal + '€';
-        var total = (unitPrice * qty + shippingRate).toFixed(2).replace('.', ',');
-        displayTotal.textContent = total + '€';
+        if (displayTotal) displayTotal.textContent = subtotal + '€';
         if (stripeBtn) {
           stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + (qty > 1 ? '?quantity=' + qty : '');
         }
         var stickyPriceEl = document.querySelector('.sticky-buy-price');
         if (stickyPriceEl) {
-          stickyPriceEl.innerHTML = total + '&nbsp;€ <small style="color:var(--text-muted);font-weight:normal;">(' + qty + ' boîte' + (qty > 1 ? 's' : '') + ' + 3,99&nbsp;€ port)</small>';
+          stickyPriceEl.innerHTML = subtotal + '&nbsp;€ <small style="color:var(--text-muted);font-weight:normal;">(' + qty + ' boîte' + (qty > 1 ? 's' : '') + ' · port calculé)</small>';
         }
       }
 

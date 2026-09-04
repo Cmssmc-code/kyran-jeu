@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904b" />
+  <link rel="stylesheet" href="style.css?v=20260904c" />
   <script src="blog-data.js?v=20260904"></script>
   <script src="components.js?v=20260904b"></script>
   <script src="reviews-data.js?v=20260904"></script>
@@ -210,7 +210,7 @@
             "name": "Où acheter KYRAN ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "KYRAN est disponible sur la boutique officielle à 9,99€ (+ 3,99€ envoi suivi) et sur Amazon au prix de 17,99€ avec livraison Prime."
+              "text": "KYRAN est disponible sur la boutique officielle à 9,99€ (frais de livraison calculés au paiement) et sur Amazon au prix de 17,99€ avec livraison Prime."
             }
           },
           {
@@ -324,9 +324,9 @@
     <!-- 1. Ce qui rend KYRAN unique : L'ambiance autour de la table -->
     <section id="game-gallery" class="section-alt">
       <div class="container">
-        <h2 class="section-title">Ambiance <span class="accent">autour de la table</span></h2>
+        <h2 class="section-title reveal-on-scroll">Ambiance <span class="accent">autour de la table</span></h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Des règles rapides à comprendre, du bluff et des fous rires à chaque partie.</p>
+        <p class="section-sub reveal-on-scroll" data-delay="1">Des règles rapides à comprendre, du bluff et des fous rires à chaque partie.</p>
 
         <div class="grid grid-2" style="align-items: center; gap: 36px; margin-top: var(--space-4);">
           <div class="game-gallery-photo-card">
@@ -371,12 +371,12 @@
     <!-- 2. Comment jouer en 3 étapes -->
     <section id="comment-jouer">
       <div class="container">
-        <h2 class="section-title">Comment jouer en <span class="accent">3 minutes</span> ?</h2>
+        <h2 class="section-title reveal-on-scroll">Comment jouer en <span class="accent">3 minutes</span> ?</h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Le principe en 3 étapes simples :</p>
+        <p class="section-sub reveal-on-scroll" data-delay="1">Le principe en 3 étapes simples :</p>
         <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les étapes</span></div></div>
 
-        <div class="steps-grid">
+        <div class="steps-grid reveal-on-scroll" data-delay="2" id="steps-carousel">
           <div class="step-card">
             <span class="step-card-num">01</span>
             <h3>1. Annoncez vos plis</h3>
@@ -393,6 +393,11 @@
             <p>Pari réussi ? Vous gardez vos vies. Pari raté ? Vous en perdez. La dernière manche se joue avec la carte sur le front. Le dernier en jeu gagne la partie !</p>
           </div>
         </div>
+        <div class="mobile-carousel-dots" id="steps-dots" aria-hidden="true">
+          <button class="carousel-dot is-active" data-idx="0" aria-label="Étape 1"></button>
+          <button class="carousel-dot" data-idx="1" aria-label="Étape 2"></button>
+          <button class="carousel-dot" data-idx="2" aria-label="Étape 3"></button>
+        </div>
 
         <p style="text-align: center; margin-top: var(--space-4);">
           <a class="btn btn-secondary" href="regle.html">Voir les règles complètes</a>
@@ -403,12 +408,12 @@
     <!-- 3. Showcase des 5 cartes Pouvoir & Mystique -->
     <section id="pouvoirs-showcase" class="section-alt">
       <div class="container">
-        <h2 class="section-title">Les 5 cartes <span class="accent">spéciales</span></h2>
+        <h2 class="section-title reveal-on-scroll">Les 5 cartes <span class="accent">spéciales</span></h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Des cartes uniques pour changer le cours de la partie</p>
+        <p class="section-sub reveal-on-scroll" data-delay="1">Des cartes uniques pour changer le cours de la partie</p>
         <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Balayez pour voir les 5 cartes</span></div></div>
 
-        <div class="powers-grid">
+        <div class="powers-grid reveal-on-scroll" data-delay="2" id="powers-carousel">
           <div class="power-card-item">
             <img src="carte-mystique.webp" alt="Carte Mystique" class="power-card-thumb" width="130" height="191" loading="lazy" />
             <div class="power-val-toggle">
@@ -463,6 +468,13 @@
             <span class="power-condition">* Annulé si premier à jouer ce tour</span>
           </div>
         </div>
+        <div class="mobile-carousel-dots" id="powers-dots" aria-hidden="true">
+          <button class="carousel-dot is-active" data-idx="0" aria-label="Mystique"></button>
+          <button class="carousel-dot" data-idx="1" aria-label="Sceau"></button>
+          <button class="carousel-dot" data-idx="2" aria-label="Clairvoyance"></button>
+          <button class="carousel-dot" data-idx="3" aria-label="Bénédiction"></button>
+          <button class="carousel-dot" data-idx="4" aria-label="Voile"></button>
+        </div>
 
         <p style="text-align: center; margin-top: var(--space-4);">
           <a class="btn btn-secondary" href="regle.html#pouvoirs">Voir les 4 Pouvoirs en détail</a>
@@ -473,10 +485,10 @@
     <!-- 4. La Bande-Annonce Vidéo (1 minute) -->
     <section id="video">
       <div class="container">
-        <h2 class="section-title">Le jeu en <span class="accent">1 minute</span></h2>
+        <h2 class="section-title reveal-on-scroll">Le jeu en <span class="accent">1 minute</span></h2>
         <div class="section-divider"></div>
-        <p class="section-sub">Découvrez l'ambiance et le rythme des parties en vidéo</p>
-        <div class="video-container">
+        <p class="section-sub reveal-on-scroll" data-delay="1">Découvrez l'ambiance et le rythme des parties en vidéo</p>
+        <div class="video-container reveal-on-scroll" data-delay="2">
           <iframe 
             src="https://www.youtube.com/embed/y0YVn-lZMAc" 
             title="Bande-annonce du jeu KYRAN" 
@@ -565,7 +577,7 @@
                   <span class="store-badge-save">Économisez 8€ en direct</span>
                 </div>
                 <div class="store-shipping-info">
-                  <span>🚚 Livraison suivie La Poste (+ 3,99€)</span>
+                  <span>🚚 Livraison suivie La Poste (frais calculés au paiement)</span>
                   <span>·</span>
                   <span>🔒 Paiement Stripe 3D-Secure</span>
                 </div>
@@ -772,6 +784,77 @@
         });
       }
     }
+  </script>
+
+  <script>
+    /* ── SCROLL REVEAL (IntersectionObserver) ── */
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+        io.observe(el);
+      });
+    })();
+
+    /* ── DOTS CAROUSEL : sync scroll → dot actif ── */
+    (function () {
+      function initDots(carouselId, dotsId) {
+        var carousel = document.getElementById(carouselId);
+        var dotsEl   = document.getElementById(dotsId);
+        if (!carousel || !dotsEl) return;
+        var dots = Array.from(dotsEl.querySelectorAll('.carousel-dot'));
+        if (!dots.length) return;
+
+        /* Scroll → dot actif */
+        var ticking = false;
+        carousel.addEventListener('scroll', function () {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            var items = Array.from(carousel.children);
+            var center = carousel.scrollLeft + carousel.clientWidth / 2;
+            var closest = 0;
+            var minDist = Infinity;
+            items.forEach(function(item, i) {
+              var itemCenter = item.offsetLeft + item.offsetWidth / 2;
+              var dist = Math.abs(center - itemCenter);
+              if (dist < minDist) { minDist = dist; closest = i; }
+            });
+            dots.forEach(function(d, i) {
+              d.classList.toggle('is-active', i === closest);
+            });
+            ticking = false;
+          });
+        }, { passive: true });
+
+        /* Dot click → scroll vers l'item */
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () {
+            var items = Array.from(carousel.children);
+            if (!items[i]) return;
+            carousel.scrollTo({
+              left: items[i].offsetLeft - (carousel.clientWidth - items[i].offsetWidth) / 2,
+              behavior: 'smooth'
+            });
+          });
+        });
+      }
+
+      initDots('steps-carousel',  'steps-dots');
+      initDots('powers-carousel', 'powers-dots');
+    })();
   </script>
 </body>
 </html>

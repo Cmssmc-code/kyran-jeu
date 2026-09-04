@@ -182,40 +182,67 @@
 
     .order-price-row {
       display: flex;
-      align-items: baseline;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      margin: 16px 0;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #f1ece1;
+      margin: 14px 0 6px;
+      flex-wrap: wrap;
+    }
+    .order-price-group {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
     }
     .order-price-main {
       font-family: var(--font-display);
-      font-size: clamp(2.6rem, 5.5vw, 3.4rem);
-      line-height: 0.95;
+      font-size: clamp(2.4rem, 5vw, 3rem);
+      line-height: 1;
       color: var(--gold-dark);
       letter-spacing: 0.5px;
     }
-    .order-price-sub {
+    .order-price-ref {
+      font-size: 1.15rem;
       color: var(--text-muted);
-      font-size: 0.92rem;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    .order-price-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background: var(--accent-cream);
+      border: 1px solid var(--accent-cream-border);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .order-price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1ece1;
     }
 
     .order-delivery-estimate {
       background: #fdfbf7;
       border: 1px solid #ede7dc;
-      border-radius: 14px;
-      padding: 12px 16px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 0.88rem;
+      gap: 10px;
+      font-size: 0.84rem;
       color: var(--text-sub);
-      line-height: 1.5;
+      line-height: 1.4;
     }
     .order-delivery-estimate-icon {
-      font-size: 1.4rem;
-      line-height: 1;
+      color: var(--gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
@@ -467,6 +494,27 @@
       letter-spacing: 0.01em;
     }
 
+    .order-payment-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .order-payment-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #faf7f2;
+      border: 1px solid #ede7dc;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #78716c;
+      letter-spacing: 0.02em;
+    }
+
     .order-divider {
       position: relative;
       text-align: center;
@@ -551,41 +599,72 @@
     }
 
 
-    /* Fiche technique / Specs */
-    .order-specs {
+    /* Fiche technique / Accordion Details */
+    .order-specs-accordion {
       background: #ffffff;
       border: 1px solid #e7e2d9;
-      border-radius: 20px;
-      padding: 24px 26px;
-      margin-top: 24px;
-      box-shadow: 0 4px 18px -2px rgba(69, 26, 3, 0.03);
+      border-radius: 16px;
+      margin-top: 18px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(69, 26, 3, 0.02);
+      transition: border-color var(--speed);
     }
-    .order-specs h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
+    .order-specs-accordion:hover {
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+    .order-specs-summary {
+      padding: 14px 18px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
       color: var(--text-main);
-      margin-bottom: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+      transition: background 0.2s ease;
+    }
+    .order-specs-summary::-webkit-details-marker {
+      display: none;
+    }
+    .order-specs-summary::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--gold-dark);
+      border-bottom: 2px solid var(--gold-dark);
+      transform: rotate(45deg);
+      transition: transform 0.25s ease;
+      margin-right: 4px;
+    }
+    .order-specs-accordion[open] .order-specs-summary::after {
+      transform: rotate(-135deg);
+    }
+    .order-specs-content {
+      padding: 4px 18px 16px;
+      border-top: 1px solid #f4f0e8;
     }
     .order-specs-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .order-specs-table tr {
-      border-bottom: 1px solid #f4f0e8;
+      border-bottom: 1px solid #f7f4ee;
     }
     .order-specs-table tr:last-child {
       border-bottom: none;
     }
     .order-specs-table td {
-      padding: 10px 4px;
-      line-height: 1.5;
+      padding: 9px 4px;
+      line-height: 1.45;
     }
     .order-specs-table td:first-child {
       color: var(--text-muted);
       font-weight: 500;
-      width: 42%;
+      width: 44%;
     }
     .order-specs-table td:last-child {
       color: var(--text-main);
@@ -656,17 +735,19 @@
       transform: scale(1.03);
     }
     .product-main-wrap::after {
-      content: '🔍 Cliquer pour zoomer';
+      content: 'Agrandir ⤢';
       position: absolute;
       bottom: 14px;
       right: 14px;
       background: rgba(28, 25, 23, 0.85);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       color: #ffffff;
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 500;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       pointer-events: none;
       opacity: 0.9;
       transition: opacity 0.2s;
@@ -923,7 +1004,7 @@
           <!-- Colonne Formulaire & Checkout Stripe -->
           <div class="order-form-column">
             <div class="order-card" id="order-card-box">
-              <div class="order-badge-stock">✓ En stock · Expédié sous 24-48h</div>
+              <div class="order-badge-stock">En stock · Atelier France</div>
               <h2 class="order-title">Boîte KYRAN officielle</h2>
               <p class="order-desc">Jeu complet dans sa boîte rigide : 55 cartes et règles en français.</p>
 
@@ -936,9 +1017,13 @@
               </div>
 
               <div class="order-price-row">
-                <span class="order-price-main" id="display-unit-price">9,99€</span>
-                <span class="order-price-sub">TTC · Livraison calculée à l'étape suivante</span>
+                <div class="order-price-group">
+                  <span class="order-price-main" id="display-unit-price">9,99€</span>
+                  <span class="order-price-ref">17,99€</span>
+                </div>
+                <div class="order-price-badge">Tarif direct créateur (-44%)</div>
               </div>
+              <p class="order-price-note">Prix unitaire TTC · Frais de port calculés à l'étape suivante</p>
 
               <!-- Sélecteur de formules bundle -->
               <div class="bundle-options" role="radiogroup" aria-label="Choisir le nombre de boîtes">
@@ -990,15 +1075,21 @@
                 href="https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00" 
                 class="order-btn-stripe"
               >
-                <span>Payer par carte bancaire</span>
-                <span aria-hidden="true">→</span>
+                <span>Commander · <strong id="btn-total-display">9,99€</strong></span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
+
+              <div class="order-payment-badges" aria-label="Moyens de paiement acceptés">
+                <span class="order-payment-badge">CB</span>
+                <span class="order-payment-badge">Visa</span>
+                <span class="order-payment-badge">Mastercard</span>
+                <span class="order-payment-badge">Apple Pay</span>
+                <span class="order-payment-badge">Google Pay</span>
+              </div>
 
               <p style="text-align: center; margin-top: 8px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;">
                 Adresse de livraison demandée à l'étape suivante (paiement Stripe sécurisé)
               </p>
-
-              <p class="order-payment-line">Paiement sécurisé par Stripe · CB · Visa · Apple Pay · Google Pay</p>
 
               <div class="order-divider">
                 <span>ou</span>
@@ -1012,7 +1103,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <span>Amazon · Livraison Prime · 17,99€</span>
+                <span>Commander plutôt sur Amazon Prime · 17,99€</span>
               </a>
 
               <ul class="reassurance-list">
@@ -1199,6 +1290,8 @@
         var subtotal = (unitPrice * qty).toFixed(2).replace('.', ',');
         if (displaySubtotal) displaySubtotal.textContent = subtotal + '€';
         if (displayTotal) displayTotal.textContent = subtotal + '€';
+        var btnTotal = document.getElementById('btn-total-display');
+        if (btnTotal) btnTotal.textContent = subtotal + '€';
         if (stripeBtn) {
           stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + (qty > 1 ? '?quantity=' + qty : '');
         }

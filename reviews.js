@@ -91,6 +91,7 @@
     html += '</div>';
 
     // 2. Grille de TOUS les avis clients (100% visibles directement)
+    html += '<div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour faire défiler les avis</span></div></div>';
     html += '<div class="amazon-reviews-grid" id="amazon-reviews-list">';
 
     reviews.forEach(function (rev, index) {
@@ -161,6 +162,10 @@
         btn.textContent = expanded ? 'Réduire' : 'Lire la suite';
       });
     });
+
+    if (typeof initMobileCarouselDots === 'function') {
+      setTimeout(initMobileCarouselDots, 100);
+    }
 
     // Mise à jour dynamique du Schema.org pour SEO Google Rich Snippet
     updateStructuredData(avg, total, reviews);

@@ -25,6 +25,7 @@
   <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -38,6 +39,9 @@
   <meta property="og:description" content="Défie ton intuition. Un jeu de plis impitoyable où chaque carte compte." />
   <meta property="og:url" content="https://kyran-jeu.fr/" />
   <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="Boîte du jeu de cartes KYRAN" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -49,12 +53,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="seo-config.js?v=20260610"></script>
-  <link rel="stylesheet" href="style.css?v=20260610b" />
-  <script src="blog-data.js?v=20260610"></script>
-  <script src="components.js?v=20260610"></script>
-  <script src="reviews-data.js?v=20260610b"></script>
-  <script src="reviews.js?v=20260610b" defer></script>
+  <script src="seo-config.js?v=20260904"></script>
+  <link rel="stylesheet" href="style.css?v=20260904" />
+  <script src="blog-data.js?v=20260904"></script>
+  <script src="components.js?v=20260904"></script>
+  <script src="reviews-data.js?v=20260904"></script>
+  <script src="reviews.js?v=20260904" defer></script>
 
   <script type="application/ld+json">
   {
@@ -233,7 +237,7 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge-row">
-            <span class="eyebrow-pill">🃏 Jeu de Cartes &amp; Bluff · Édition 2026</span>
+            <span class="eyebrow-pill">🃏 Édition 2026 · Jeu de Cartes &amp; Bluff</span>
             <a href="#avis" class="hero-rating-pill" aria-label="Noté 4.7 sur 5 sur Amazon">
               <span class="star-icon star-full">★</span>
               <strong>4.7 / 5</strong> sur Amazon
@@ -241,7 +245,7 @@
             </a>
           </div>
           <h1>Défiez votre <span class="accent">Intuition</span></h1>
-          <p class="hero-lead">Le jeu de cartes d'ambiance et de tactique où réussir son pari sauve ses vies. Prise en main en 2 minutes, bluff impitoyable et la célèbre manche finale à l'aveugle, jouée la carte collée sur le front&nbsp;!</p>
+          <p class="hero-lead">Le jeu de cartes d'ambiance et de tactique où réussir son pari sauve ses vies. Prise en main en 2 minutes, bluff impitoyable et manche finale à l'aveugle, jouée la carte collée sur le front&nbsp;!</p>
           
           <kyran-stat-bar></kyran-stat-bar>
 
@@ -251,7 +255,7 @@
           </div>
 
           <p class="hero-reassurance-micro">
-            <span><svg viewBox="0 0 3 2" width="16" height="11" style="vertical-align:middle;margin-right:4px;border-radius:2px;box-shadow:0 0 1px rgba(0,0,0,0.3);display:inline-block;" aria-hidden="true"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>Édition française</span>
+            <span><svg viewBox="0 0 3 2" width="16" height="11" style="vertical-align:middle;margin-right:5px;border-radius:2px;box-shadow:0 0 1px rgba(0,0,0,0.3);display:inline-block;" aria-hidden="true"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>Édition française</span>
             <span>·</span>
             <span>📦 Envoi suivi 24-48h</span>
             <span>·</span>
@@ -266,7 +270,10 @@
               <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin KYRAN" class="fan-card fan-card-2" width="135" height="205" loading="eager" />
               <img src="card-1.jpg" alt="Carte Nombre 1 KYRAN" class="fan-card fan-card-3" width="135" height="205" loading="eager" />
             </div>
-            <img src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="380" height="380" fetchpriority="high" loading="eager" />
+            <picture>
+              <source srcset="boite-recto-kyran.webp" type="image/webp" />
+              <img src="boite-recto-kyran.png" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="370" height="530" fetchpriority="high" loading="eager" />
+            </picture>
             <div class="hero-visual-badge">
               <span class="badge-price">9,99€</span>
               <span class="badge-desc">Boîte complète</span>
@@ -285,15 +292,15 @@
           </div>
           <div class="trust-bar-item">
             <span class="trust-bar-icon" aria-hidden="true">⚡</span>
-            <span><strong>Règles en 2 min</strong> · Dès 8 ans</span>
+            <span><strong>Règles en 2 min</strong> · 3 à 6 joueurs</span>
           </div>
           <div class="trust-bar-item">
             <span class="trust-bar-icon" aria-hidden="true">📦</span>
-            <span><strong>Envoi suivi 24-48h</strong> · Boîte rigide</span>
+            <span><strong>Boîte rigide</strong> · Cartes toilées 300g</span>
           </div>
           <div class="trust-bar-item">
-            <span class="trust-bar-icon" aria-hidden="true">⭐</span>
-            <span><strong>4.7 / 5 sur Amazon</strong> · 33 avis certifiés</span>
+            <span class="trust-bar-icon" aria-hidden="true">🛡️</span>
+            <span><strong>Expédié sous 24-48h</strong> · Envoi soigné</span>
           </div>
         </div>
       </div>
@@ -314,21 +321,32 @@
             </p>
           </div>
 
-          <div class="game-gallery-quotes">
-            <div class="card quote-card">
-              <p>« Ce qui m’a particulièrement plu, c’est l’ambiance générée autour de la table. Les phases de bluff, les paris ratés et certaines manches spéciales créent de nombreux moments de rire. »</p>
-              <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
-                <strong>Toto</strong>
-                <span style="font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: rgba(2, 132, 199, 0.1); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.25);">Club des Testeurs Vine</span>
-              </cite>
-            </div>
+          <div>
+            <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour lire les retours</span></div></div>
+            <div class="game-gallery-quotes">
+              <div class="card quote-card">
+                <p>« Ce qui m’a particulièrement plu, c’est l’ambiance générée autour de la table. Les phases de bluff, les paris ratés et certaines manches spéciales créent de nombreux moments de rire. »</p>
+                <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                  <strong>Toto</strong>
+                  <span style="font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: rgba(2, 132, 199, 0.1); color: #0284c7; border: 1px solid rgba(2, 132, 199, 0.25);">Club des Testeurs Vine</span>
+                </cite>
+              </div>
 
-            <div class="card quote-card">
-              <p>« Les règles s'expliquent en deux minutes. Ce qui fait vraiment la différence, ce sont les cartes pouvoirs qui provoquent des retournements imprévisibles. Un futur classique de nos soirées ! »</p>
-              <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
-                <strong>Patrick</strong>
-                <span style="font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: rgba(5, 150, 105, 0.1); color: #059669; border: 1px solid rgba(5, 150, 105, 0.25);">✓ Achat vérifié Amazon</span>
-              </cite>
+              <div class="card quote-card">
+                <p>« Les règles s'expliquent en deux minutes. Ce qui fait vraiment la différence, ce sont les cartes pouvoirs qui provoquent des retournements imprévisibles. Un futur classique de nos soirées ! »</p>
+                <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                  <strong>Patrick</strong>
+                  <span style="font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: rgba(5, 150, 105, 0.1); color: #059669; border: 1px solid rgba(5, 150, 105, 0.25);">✓ Achat vérifié Amazon</span>
+                </cite>
+              </div>
+
+              <div class="card quote-card">
+                <p>« La manche Mystique jouée carte collée sur le front provoque des fous rires incontrôlables. Tout le monde voit notre carte sauf nous ! Parfait pour lancer l'apéro. »</p>
+                <cite style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                  <strong>Amélie</strong>
+                  <span style="font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: rgba(5, 150, 105, 0.1); color: #059669; border: 1px solid rgba(5, 150, 105, 0.25);">✓ Achat vérifié Amazon</span>
+                </cite>
+              </div>
             </div>
           </div>
         </div>
@@ -493,7 +511,7 @@
               <div class="product-gallery">
                 <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
                   <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto">
-                    <img src="boite-recto-kyran.jpg" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
+                    <img src="boite-recto-kyran.webp" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso">
                     <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
@@ -503,7 +521,7 @@
                   </button>
                 </div>
                 <div class="product-main-wrap">
-                  <img id="product-main-img" src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
+                  <img id="product-main-img" src="boite-recto-kyran.webp" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
                 </div>
               </div>
             </div>
@@ -563,6 +581,7 @@
           <div class="section-divider"></div>
           <p>Sélections de jeux, idées cadeaux et alternatives — pour varier vos soirées.</p>
         </div>
+        <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les articles</span></div></div>
         <kyran-blog-grid limit="3"></kyran-blog-grid>
         <p class="text-link-wrap" style="text-align:center;margin-top:var(--space-4);">
           <a class="btn btn-secondary" href="/blog/index.html">Voir tous les articles</a>
@@ -590,7 +609,7 @@
       var gallery = document.querySelector('.product-gallery');
       if (!thumbs.length || !mainImg) return;
       var images = [
-        { src: 'boite-recto-kyran.jpg', alt: 'Boîte KYRAN recto' },
+        { src: 'boite-recto-kyran.webp', alt: 'Boîte KYRAN recto' },
         { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
         { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' }
       ];
@@ -628,6 +647,26 @@
         gallery.addEventListener('mouseleave', function() {
           if (!carouselTimer) carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
         });
+
+        // Swipe gestuel tactile sur mobile
+        var touchStartX = 0;
+        var touchEndX = 0;
+        gallery.addEventListener('touchstart', function(e) {
+          if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        gallery.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          var diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+              setSlide(currentIndex + 1); // swipe gauche -> photo suivante
+            } else {
+              setSlide(currentIndex - 1); // swipe droite -> photo précédente
+            }
+          }
+          if (!carouselTimer) carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
+        }, { passive: true });
       }
 
       carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);

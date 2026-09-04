@@ -130,7 +130,7 @@ class KyranHeader extends HTMLElement {
         <div class="nav-backdrop" hidden></div>
       </header>
 
-      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
+      <nav class="mobile-bottom-nav" style="display:none;" aria-label="Navigation rapide mobile">
         <a href="${ROOT}index.html" class="mobile-nav-tab ${activePage === 'home' ? 'active' : ''}">
           <span class="mobile-nav-icon" aria-hidden="true">🃏</span>
           <span class="mobile-nav-label">Accueil</span>
@@ -171,6 +171,7 @@ class KyranHeader extends HTMLElement {
     function closeMenu() {
       if (!body.classList.contains('menu-open')) return;
       body.classList.remove('menu-open');
+      body.style.overflow = '';
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Ouvrir le menu');
       backdrop.hidden = true;
@@ -178,6 +179,7 @@ class KyranHeader extends HTMLElement {
 
     function openMenu() {
       body.classList.add('menu-open');
+      body.style.overflow = 'hidden';
       navToggle.setAttribute('aria-expanded', 'true');
       navToggle.setAttribute('aria-label', 'Fermer le menu');
       backdrop.hidden = false;
@@ -566,3 +568,86 @@ customElements.define('kyran-blog-filters', KyranBlogFilters);
 customElements.define('kyran-related-articles', KyranRelatedArticles);
 customElements.define('kyran-stat-bar', KyranStatBar);
 customElements.define('kyran-cta-band', KyranCtaBand);
+
+function initMobileCarouselDots() {
+  if (typeof window === 'undefined' || window.innerWidth > 768) return;
+  var selectors = [
+    '.steps-grid',
+    '.powers-grid',
+    '.amazon-reviews-grid',
+    '.product-perks',
+    '.game-gallery-quotes',
+    '.blog-section-home .blog-grid'
+  ];
+
+  selectors.forEach(function (sel) {
+    var carousels = document.querySelectorAll(sel);
+    carousels.forEach(function (carousel) {
+      if (carousel.dataset.hasDots) return;
+      var items = carousel.children;
+      if (!items || items.length <= 1) return;
+      carousel.dataset.hasDots = 'true';
+
+      var dotsContainer = document.createElement('div');
+      dotsContainer.className = 'mobile-carousel-dots';
+      dotsContainer.setAttribute('role', 'tablist');
+      dotsContainer.setAttribute('aria-label', 'Pagination carrousel');
+
+      var dots = [];
+      for (var i = 0; i < items.length; i++) {
+        (function (idx) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot' + (idx === 0 ? ' is-active' : '');
+          dot.setAttribute('aria-label', 'Afficher élément ' + (idx + 1));
+          dot.addEventListener('click', function () {
+            items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          });
+          dotsContainer.appendChild(dot);
+          dots.push(dot);
+        })(i);
+      }
+
+      carousel.parentNode.insertBefore(dotsContainer, carousel.nextSibling);
+
+      var ticking = false;
+      carousel.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var carouselCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+            var closestIndex = 0;
+            var minDistance = Infinity;
+            for (var j = 0; j < items.length; j++) {
+              var itemCenter = items[j].offsetLeft + items[j].offsetWidth / 2;
+              var dist = Math.abs(carouselCenter - itemCenter);
+              if (dist < minDistance) {
+                minDistance = dist;
+                closestIndex = j;
+              }
+            }
+            dots.forEach(function (d, k) {
+              d.classList.toggle('is-active', k === closestIndex);
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    });
+  });
+}
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(initMobileCarouselDots, 250);
+    });
+  } else {
+    setTimeout(initMobileCarouselDots, 250);
+  }
+  window.addEventListener('resize', function () {
+    if (window.innerWidth <= 768) {
+      initMobileCarouselDots();
+    }
+  });
+}

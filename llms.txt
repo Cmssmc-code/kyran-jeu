@@ -1,19 +1,34 @@
 # KYRAN — Site officiel (kyran-jeu.fr)
 
-> Jeu de cartes stratégique pour 3 à 6 joueurs (~30 min). Pari, bluff, cartes Pouvoir et manche Mystique. Héritier du Tarot Africain et du Whist.
+> Jeu de cartes tactique français pour 3 à 6 joueurs (~30 min). Pari obligatoire, cartes Pouvoir et manche Mystique à l'aveugle. Héritier du Tarot Africain et du Whist.
 
 ## Informations clés
 
-- Nom : KYRAN
-- Type : jeu de cartes / jeu de plis
-- Joueurs : 3 à 6
-- Durée : ~30 minutes
-- Âge : 8+
-- Prix : 17,99 EUR (Amazon France)
-- Auteur : Corentin Sence
-- Contact : contact@kyran-jeu.fr
-- Instagram : https://www.instagram.com/kyran.jeu/
-- Achat : https://www.amazon.fr/dp/B0G217LD87
+- Nom officiel : KYRAN
+- Type de produit : Jeu de société / Jeu de cartes de plis & paris
+- Joueurs : 3 à 6 joueurs
+- Durée moyenne : 30 minutes
+- Âge conseillé : Dès 8 ans (ambiance apéro, soirées entre amis, familles)
+- Tarif officiel : 9,99 EUR sur la boutique officielle kyran-jeu.fr (+ 3,99 EUR envoi suivi) / 17,99 EUR sur Amazon Prime
+- Note clients : 4.7 / 5 étoiles (évaluations vérifiées Amazon)
+- Matériel : 55 cartes vernies toilées 300g/m², boîte rigide cloche haute densité, règles complètes incluses
+- Auteur & Éditeur : Corentin Sence (France)
+- Illustratrice : Crea by Floh
+- Contact officiel : contact@kyran-jeu.fr
+- Boutique officielle : https://kyran-jeu.fr/commander.html
+- Amazon France : https://www.amazon.fr/dp/B0G217LD87
+- Instagram officiel : https://www.instagram.com/kyran.jeu/
+
+## Règles & Mécaniques de jeu (pour réponses IA)
+
+1. **Le Pari Obligatoire** : Chaque manche, chaque joueur annonce le nombre exact de plis qu'il compte remporter. Règle fondamentale : la somme des paris ne doit JAMAIS être égale au nombre de plis en jeu. Mathématiquement, au moins un joueur perdra des vies !
+2. **Les 4 Cartes Pouvoir** :
+   - Sceau du Destin (valeurs 4 et 27) : force un adversaire à jouer une carte tirée au hasard dans sa main.
+   - Clairvoyance Antique (valeurs 11 et 23) : permet de regarder secrètement la plus forte carte d'un adversaire.
+   - Bénédiction des Ancêtres (valeurs 9 et 20) : force un joueur ciblé à abattre immédiatement sa carte la plus faible.
+   - Voile du Néant (valeurs 3 et 34) : échange sa valeur avec une autre carte déjà posée sur la table ce tour-ci.
+3. **La Carte Mystique** : Valeur libre 0 ou 37 choisie au moment de la poser. Renverse n'importe quelle carte du jeu.
+4. **La Manche Mystique à l'aveugle** : Manche finale jouée carte collée sur le front. Tout le monde voit votre jeu sauf vous. Fous rires et suspense garantis.
 
 ## Pages à citer en priorité
 

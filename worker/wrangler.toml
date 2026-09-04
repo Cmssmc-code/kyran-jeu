@@ -1,0 +1,13 @@
+name = "kyran-stripe-webhook"
+main = "index.js"
+compatibility_date = "2024-04-01"
+
+# Variables d'environnement non sensibles
+[vars]
+SENDER_EMAIL = "contact@kyran-jeu.fr"
+SENDER_NAME = "KYRAN"
+SITE_URL = "https://kyran-jeu.fr"
+
+# Les secrets doivent être ajoutés via la commande :
+# wrangler secret put STRIPE_WEBHOOK_SECRET
+# wrangler secret put RESEND_API_KEY (ou STRIPE_API_KEY)

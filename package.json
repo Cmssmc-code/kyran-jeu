@@ -10,7 +10,9 @@
     "generate:seo": "node scripts/generate-seo.mjs",
     "images:blog": "node scripts/download-blog-images.mjs && node scripts/fetch-philibert-blog.mjs && node scripts/fix-the-game-image.mjs",
     "images:blog:fix": "node scripts/redownload-small-images.mjs && node scripts/fetch-philibert-blog.mjs",
-    "fetch:reviews": "node scripts/fetch-amazon-reviews.mjs"
+    "fetch:reviews": "node scripts/fetch-amazon-reviews.mjs",
+    "preview:emails": "node scripts/preview-emails.mjs",
+    "send:test-email": "node scripts/send-test-email.mjs"
   },
   "keywords": [],
   "author": "",

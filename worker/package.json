@@ -1,0 +1,14 @@
+{
+  "name": "kyran-stripe-webhook",
+  "version": "1.0.0",
+  "description": "Webhook Stripe Cloudflare Worker pour les emails KYRAN",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.50.0"
+  }
+}

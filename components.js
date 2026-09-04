@@ -129,6 +129,26 @@ class KyranHeader extends HTMLElement {
         </div>
         <div class="nav-backdrop" hidden></div>
       </header>
+
+      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
+        <a href="${ROOT}index.html" class="mobile-nav-tab ${activePage === 'home' ? 'active' : ''}">
+          <span class="mobile-nav-icon" aria-hidden="true">🃏</span>
+          <span class="mobile-nav-label">Accueil</span>
+        </a>
+        <a href="${ROOT}regle.html" class="mobile-nav-tab ${activePage === 'rules' ? 'active' : ''}">
+          <span class="mobile-nav-icon" aria-hidden="true">📖</span>
+          <span class="mobile-nav-label">Règles</span>
+        </a>
+        <a href="${ROOT}minijeu.html" class="mobile-nav-tab ${activePage === 'game' ? 'active' : ''}">
+          <span class="mobile-nav-icon" aria-hidden="true">🎮</span>
+          <span class="mobile-nav-label">Dojo</span>
+        </a>
+        <a href="${ORDER_URL}" class="mobile-nav-tab mobile-nav-tab--highlight ${activePage === 'order' ? 'active' : ''}">
+          <span class="mobile-nav-icon" aria-hidden="true">🛒</span>
+          <span class="mobile-nav-label">Acheter</span>
+          <span class="mobile-nav-pill">9,99€</span>
+        </a>
+      </nav>
     `;
 
     const navToggle = this.querySelector('.nav-toggle');

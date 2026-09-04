@@ -11,3 +11,4 @@ secrets/
 stripe-keys.json
 .stripe/
 *.secret
+email-previews/

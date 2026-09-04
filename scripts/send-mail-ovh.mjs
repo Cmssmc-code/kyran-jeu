@@ -5,7 +5,7 @@ const SMTP_HOST = 'ssl0.ovh.net';
 const SMTP_PORT = 465;
 const SENDER_EMAIL = 'contact@kyran-jeu.fr';
 
-export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text }) {
+export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text, html }) {
   return new Promise((resolve, reject) => {
     if (!pass) return reject(new Error('Mot de passe SMTP requis'));
     if (!to) return reject(new Error('Destinataire requis'));
@@ -43,18 +43,49 @@ export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text }) {
         socket.write('DATA\r\n');
         step = 7;
       } else if (step === 7 && line.startsWith('354')) {
-        const mailContent = [
-          `From: "KYRAN" <${user}>`,
-          `To: <${to}>`,
-          `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
-          'MIME-Version: 1.0',
-          'Content-Type: text/plain; charset=UTF-8',
-          'Content-Transfer-Encoding: 8bit',
-          '',
-          text,
-          '.',
-          ''
-        ].join('\r\n');
+        const boundary = '----=_Part_' + Date.now().toString(16);
+        let mailContent = '';
+
+        if (html) {
+          const plainText = text || 'Veuillez visualiser ce message dans client email compatible HTML.';
+          mailContent = [
+            `From: "KYRAN" <${user}>`,
+            `To: <${to}>`,
+            `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
+            'MIME-Version: 1.0',
+            `Content-Type: multipart/alternative; boundary="${boundary}"`,
+            '',
+            `--${boundary}`,
+            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Transfer-Encoding: 8bit',
+            '',
+            plainText,
+            '',
+            `--${boundary}`,
+            'Content-Type: text/html; charset=UTF-8',
+            'Content-Transfer-Encoding: 8bit',
+            '',
+            html,
+            '',
+            `--${boundary}--`,
+            '.',
+            ''
+          ].join('\r\n');
+        } else {
+          mailContent = [
+            `From: "KYRAN" <${user}>`,
+            `To: <${to}>`,
+            `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
+            'MIME-Version: 1.0',
+            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Transfer-Encoding: 8bit',
+            '',
+            text || '',
+            '.',
+            ''
+          ].join('\r\n');
+        }
+
         socket.write(mailContent);
         step = 8;
       } else if (step === 8 && line.startsWith('250')) {

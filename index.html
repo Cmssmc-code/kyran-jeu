@@ -262,9 +262,9 @@
         <div class="hero-visual">
           <div class="hero-product-stage">
             <div class="hero-card-fan">
-              <img src="card-37.jpg" alt="Carte Mystique KYRAN" class="fan-card fan-card-1" width="135" height="205" loading="eager" />
-              <img src="card-21.jpg" alt="Carte Pouvoir KYRAN" class="fan-card fan-card-2" width="135" height="205" loading="eager" />
-              <img src="card-1.jpg" alt="Carte KYRAN" class="fan-card fan-card-3" width="135" height="205" loading="eager" />
+              <img src="carte-mystique.webp" alt="Carte Mystique KYRAN" class="fan-card fan-card-1" width="135" height="205" loading="eager" />
+              <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin KYRAN" class="fan-card fan-card-2" width="135" height="205" loading="eager" />
+              <img src="card-1.jpg" alt="Carte Nombre 1 KYRAN" class="fan-card fan-card-3" width="135" height="205" loading="eager" />
             </div>
             <img src="boite-recto-kyran.jpg" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="380" height="380" fetchpriority="high" loading="eager" />
             <div class="hero-visual-badge">
@@ -341,6 +341,7 @@
         <h2 class="section-title">Comment jouer en <span class="accent">3 minutes</span> ?</h2>
         <div class="section-divider"></div>
         <p class="section-sub">Une boucle de jeu simple, addictive et impitoyable</p>
+        <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les étapes</span></div></div>
 
         <div class="steps-grid">
           <div class="step-card">
@@ -356,12 +357,12 @@
           <div class="step-card">
             <span class="step-card-num">03</span>
             <h3>La Manche à l'Aveugle</h3>
-            <p>Contrat réussi ? Vous conservez vos 5 vies. Contrat manqué ? Vous perdez 1 vie. Les manches s'accélèrent de 7 cartes jusqu'à la Manche Mystique à l'aveugle (carte sur le front). Le dernier survivant l'emporte !</p>
+            <p>Contrat réussi ? Vous conservez vos 5 vies. Contrat manqué ? Vous perdez autant de cartes Vie que de plis d'écart ! Les manches s'accélèrent de 7 cartes jusqu'à la Manche Mystique à l'aveugle (carte sur le front). Le dernier survivant l'emporte !</p>
           </div>
         </div>
 
         <p style="text-align: center; margin-top: var(--space-4);">
-          <a class="btn btn-secondary" href="regle.html">Consulter le livret de règles complet</a>
+          <a class="btn btn-secondary" href="regle.html">Consulter les règles officielles complètes</a>
         </p>
       </div>
     </section>
@@ -372,41 +373,61 @@
         <h2 class="section-title">Les Cartes &amp; <span class="accent">Pouvoirs Mystiques</span></h2>
         <div class="section-divider"></div>
         <p class="section-sub">5 cartes spéciales pour renverser les manches au dernier instant</p>
+        <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Balayez pour voir les 5 cartes</span></div></div>
 
         <div class="powers-grid">
           <div class="power-card-item">
-            <img src="card-37.jpg" alt="Carte Mystique" class="power-card-thumb" width="130" height="195" loading="lazy" />
-            <span class="power-badge-num">Carte Suprême</span>
+            <img src="carte-mystique.webp" alt="Carte Mystique" class="power-card-thumb" width="130" height="191" loading="lazy" />
+            <div class="power-val-toggle">
+              <span class="power-pill active">Valeur 0 ou 37</span>
+            </div>
             <h3>La Mystique</h3>
             <p>Valeur 0 ou 37 choisie librement au moment de la poser. Renverse n'importe quelle carte du jeu.</p>
+            <span class="power-condition" style="background:#fef3c7;border-color:#fde68a;color:#92400e;">★ Carte la plus forte du jeu</span>
           </div>
 
-          <div class="power-card-item">
-            <img src="card-27.jpg" alt="Carte Sceau du Destin" class="power-card-thumb" width="130" height="195" loading="lazy" />
-            <span class="power-badge-num">Valeur 27</span>
+          <div class="power-card-item" data-card="sceau">
+            <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-sceau" />
+            <div class="power-val-toggle" role="group" aria-label="Valeurs Sceau du Destin">
+              <button type="button" class="power-pill active" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-27.webp', '27')">Val. 27</button>
+              <button type="button" class="power-pill" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-4.webp', '4')">Val. 4</button>
+            </div>
             <h3>Sceau du Destin</h3>
-            <p>Piochez au hasard une carte dans la main d'un adversaire : il est forcé de la jouer immédiatement !</p>
+            <p>Piochez au hasard une carte dans la main d'un joueur : il est forcé de la jouer immédiatement !</p>
+            <span class="power-condition">* Annulé si dernier à jouer ce tour</span>
           </div>
 
-          <div class="power-card-item">
-            <img src="card-11.jpg" alt="Carte Clairvoyance Antique" class="power-card-thumb" width="130" height="195" loading="lazy" />
-            <span class="power-badge-num">Valeur 11</span>
+          <div class="power-card-item" data-card="clairvoyance">
+            <img src="carte-pouvoir-clairvoyance-11.webp" alt="Carte Pouvoir Clairvoyance Antique" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-clairvoyance" />
+            <div class="power-val-toggle" role="group" aria-label="Valeurs Clairvoyance Antique">
+              <button type="button" class="power-pill active" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-11.webp', '11')">Val. 11</button>
+              <button type="button" class="power-pill" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-23.webp', '23')">Val. 23</button>
+            </div>
             <h3>Clairvoyance</h3>
             <p>Regardez secrètement la carte la plus forte du joueur de votre choix pour anticiper son pari.</p>
+            <span class="power-condition" style="background:#f0fdf4;border-color:#bbf7d0;color:#166534;">✓ Active à n'importe quel rang</span>
           </div>
 
-          <div class="power-card-item">
-            <img src="card-20.jpg" alt="Carte Bénédiction des Ancêtres" class="power-card-thumb" width="130" height="195" loading="lazy" />
-            <span class="power-badge-num">Valeur 20</span>
+          <div class="power-card-item" data-card="benediction">
+            <img src="carte-pouvoir-benediction-20.webp" alt="Carte Pouvoir Bénédiction des Ancêtres" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-benediction" />
+            <div class="power-val-toggle" role="group" aria-label="Valeurs Bénédiction des Ancêtres">
+              <button type="button" class="power-pill active" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-20.webp', '20')">Val. 20</button>
+              <button type="button" class="power-pill" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-9.webp', '9')">Val. 9</button>
+            </div>
             <h3>Bénédiction</h3>
-            <p>Forcez un adversaire à abattre immédiatement sa plus faible carte, ruinant son plan de jeu.</p>
+            <p>Ciblez un joueur : il doit immédiatement jouer sa carte la plus faible, ruinant son plan de jeu.</p>
+            <span class="power-condition">* Annulé si dernier à jouer ce tour</span>
           </div>
 
-          <div class="power-card-item">
-            <img src="card-3.jpg" alt="Carte Voile du Néant" class="power-card-thumb" width="130" height="195" loading="lazy" />
-            <span class="power-badge-num">Valeur 3</span>
+          <div class="power-card-item" data-card="voile">
+            <img src="carte-pouvoir-voile-3.webp" alt="Carte Pouvoir Voile du Néant" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-voile" />
+            <div class="power-val-toggle" role="group" aria-label="Valeurs Voile du Néant">
+              <button type="button" class="power-pill active" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-3.webp', '3')">Val. 3</button>
+              <button type="button" class="power-pill" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-34.webp', '34')">Val. 34</button>
+            </div>
             <h3>Voile du Néant</h3>
             <p>Échangez la valeur de votre carte avec une autre carte déjà posée sur la table ce tour-ci.</p>
+            <span class="power-condition">* Annulé si premier à jouer ce tour</span>
           </div>
         </div>
 
@@ -500,7 +521,7 @@
                 <li><strong>Mécanique de Pari :</strong> Réussir son contrat sauve vos vies, le rater est fatal</li>
                 <li><strong>4 Cartes Pouvoir majeures :</strong> Sceau, Voile, Clairvoyance et Bénédiction pour renverser la table</li>
                 <li><strong>Manche Mystique à l'aveugle :</strong> Carte collée sur le front, fous rires et suspense garantis</li>
-                <li><strong>Matériel Pro &amp; Voyage :</strong> 55 cartes toilées 300g/m², boîte rigide cloche, livret officiel</li>
+                <li><strong>Matériel Pro &amp; Voyage :</strong> Cartes toilées 300g/m², boîte rigide cloche, règles complètes incluses</li>
                 <li><strong>Dojo interactif inclus :</strong> QR code imprimé sur la boîte vers le simulateur gratuit en ligne</li>
               </ul>
 
@@ -611,6 +632,26 @@
 
       carouselTimer = setInterval(function() { setSlide(currentIndex + 1); }, carouselInterval);
     })();
+
+    function switchPowerCard(cardKey, imgSrc, valText) {
+      var thumb = document.getElementById('thumb-' + cardKey);
+      if (thumb) {
+        thumb.style.opacity = '0.4';
+        thumb.style.transform = 'scale(0.96)';
+        setTimeout(function() {
+          thumb.src = imgSrc;
+          thumb.style.opacity = '1';
+          thumb.style.transform = 'none';
+        }, 120);
+      }
+      var container = thumb ? thumb.closest('.power-card-item') : null;
+      if (container) {
+        var btns = container.querySelectorAll('.power-pill');
+        btns.forEach(function(btn) {
+          btn.classList.toggle('active', btn.textContent.indexOf(valText) !== -1);
+        });
+      }
+    }
   </script>
 </body>
 </html>

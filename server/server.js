@@ -4,7 +4,8 @@ import {
   renderOrderEmail,
   renderRefundEmail,
   renderShippingEmail,
-  renderCustomMessageEmail
+  renderCustomMessageEmail,
+  renderAdminOrderNotificationEmail
 } from './templates.js';
 
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,12 @@ const ADMIN_SECRET = process.env.ADMIN_SECRET || 'kyran_secret_2026';
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'contact@majordia.fr';
 const SENDER_NAME = process.env.SENDER_NAME || 'KYRAN';
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
+
+// Destinataires des alertes administratives de vente
+const ADMIN_EMAILS = (process.env.ADMIN_NOTIFICATION_EMAILS || 'contact@kyran-jeu.fr,corentin.sence@gmail.com')
+  .split(',')
+  .map(e => e.trim())
+  .filter(Boolean);
 
 // Cache d'idempotence anti-doublon (mémoire vive 24h)
 const processedEventIds = new Map();
@@ -64,7 +71,8 @@ async function sendEmail({ to, subject, html, text }) {
     return { simulated: true };
   }
 
-  console.log(`✉️ Envoi email transactionnel à ${to}...`);
+  const recipients = Array.isArray(to) ? to : [to];
+  console.log(`✉️ Envoi email transactionnel à ${recipients.join(', ')}...`);
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 10000);
 
@@ -77,7 +85,7 @@ async function sendEmail({ to, subject, html, text }) {
       },
       body: JSON.stringify({
         from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-        to: [to],
+        to: recipients,
         reply_to: REPLY_TO_EMAIL,
         subject,
         html,
@@ -91,7 +99,7 @@ async function sendEmail({ to, subject, html, text }) {
       throw new Error(`Erreur Resend (${res.status}): ${resJson.message || JSON.stringify(resJson)}`);
     }
 
-    console.log(`✅ Email délivré à ${to} (Resend ID: ${resJson.id})`);
+    console.log(`✅ Email délivré à ${recipients.join(', ')} (Resend ID: ${resJson.id})`);
     return resJson;
   } finally {
     clearTimeout(timeoutId);
@@ -135,7 +143,8 @@ async function handleOrderCompleted(session) {
     country: shipping.address.country === 'FR' ? 'France' : shipping.address.country
   } : null;
 
-  const { html, text } = renderOrderEmail({
+  // 1. Envoi confirmation de commande au client
+  const clientEmailContent = renderOrderEmail({
     customerName,
     orderId: session.id,
     quantity,
@@ -149,9 +158,41 @@ async function handleOrderCompleted(session) {
   await sendEmail({
     to: customerEmail,
     subject: 'Confirmation de commande KYRAN',
-    html,
-    text
+    html: clientEmailContent.html,
+    text: clientEmailContent.text
   });
+
+  // 2. Envoi notification d'alerte immédiate à l'administrateur (Corentin Sence)
+  try {
+    const customerPhone = session.customer_details?.phone || session.shipping_details?.phone || '';
+    const paymentIntentId = typeof session.payment_intent === 'string'
+      ? session.payment_intent
+      : (session.payment_intent?.id || '');
+
+    const adminNotification = renderAdminOrderNotificationEmail({
+      customerName,
+      customerEmail,
+      customerPhone,
+      orderId: session.id,
+      paymentIntentId,
+      quantity,
+      subtotalAmount,
+      shippingCost,
+      totalAmount,
+      shippingAddress,
+      orderDate: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })
+    });
+
+    await sendEmail({
+      to: ADMIN_EMAILS,
+      subject: `🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${customerName}`,
+      html: adminNotification.html,
+      text: adminNotification.text
+    });
+    console.log(`🔔 Notification de commande envoyée à l'administrateur (${ADMIN_EMAILS.join(', ')})`);
+  } catch (adminErr) {
+    console.error('Erreur notification admin commande :', adminErr.message);
+  }
 }
 
 async function handleChargeRefunded(charge) {
@@ -174,12 +215,25 @@ async function handleChargeRefunded(charge) {
     reason: charge.refunds?.data?.[0]?.reason || 'Demande client'
   });
 
+  // 1. Email client
   await sendEmail({
     to: customerEmail,
     subject: 'Remboursement commande KYRAN',
     html,
     text
   });
+
+  // 2. Notification admin
+  try {
+    await sendEmail({
+      to: ADMIN_EMAILS,
+      subject: `⚠️ REMBOURSEMENT KYRAN : ${refundAmount} — ${customerName}`,
+      html,
+      text
+    });
+  } catch (err) {
+    console.error('Erreur notification admin remboursement :', err.message);
+  }
 }
 
 const server = http.createServer(async (req, res) => {
@@ -202,10 +256,11 @@ const server = http.createServer(async (req, res) => {
     res.end(JSON.stringify({
       status: 'ok',
       service: 'kyran-stripe-webhook-server',
-      version: '1.3.0',
+      version: '1.4.0',
       idempotencyCacheSize: processedEventIds.size,
       hasResendKey: Boolean(RESEND_API_KEY),
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
+      adminNotificationsTo: ADMIN_EMAILS,
       senderEmail: SENDER_EMAIL,
       replyToEmail: REPLY_TO_EMAIL
     }));
@@ -375,5 +430,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 Serveur KYRAN Webhook v1.3.0 actif sur port ${PORT}`);
+  console.log(`🚀 Serveur KYRAN Webhook v1.4.0 actif sur port ${PORT}`);
 });

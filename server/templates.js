@@ -338,3 +338,115 @@ https://kyran-jeu.fr
   return { html, text };
 }
 
+export function renderAdminOrderNotificationEmail({
+  customerName = '',
+  customerEmail = '',
+  customerPhone = '',
+  orderId = '',
+  paymentIntentId = '',
+  quantity = 1,
+  subtotalAmount = '',
+  shippingCost = '',
+  totalAmount = '',
+  shippingAddress = null,
+  orderDate = ''
+}) {
+  const addressFormatted = shippingAddress ? `
+Nom : ${shippingAddress.name || customerName}
+Adresse : ${shippingAddress.line1 || ''}${shippingAddress.line2 ? `\nComplément : ${shippingAddress.line2}` : ''}
+Ville : ${shippingAddress.postal_code || ''} ${shippingAddress.city || ''}
+Pays : ${shippingAddress.country || 'France'}
+`.trim() : 'Non renseignée';
+
+  const contentHtml = `
+    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #b45309; margin-bottom: 8px;">
+      ⚡ Alerte Vente KYRAN
+    </div>
+
+    <h1 style="margin: 0 0 16px 0; font-size: 22px; font-weight: 800; color: #0f172a; line-height: 1.3;">
+      Nouvelle commande : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount})
+    </h1>
+
+    <!-- Récap commande -->
+    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size: 14px;">
+        <tr>
+          <td style="padding: 6px 0; color: #64748b;">Quantité :</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 700;">${quantity} exemplaire${quantity > 1 ? 's' : ''}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #64748b;">Sous-total :</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${subtotalAmount}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; color: #64748b;">Frais de port :</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${shippingCost}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #0f172a; font-weight: 800; font-size: 15px;">Total encaissé :</td>
+          <td align="right" style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #b45309; font-weight: 800; font-size: 16px;">${totalAmount}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Coordonnées Client -->
+    <div style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px;">
+      <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #475569; margin-bottom: 12px;">
+        👤 Coordonnées client
+      </div>
+      <div style="font-size: 14px; margin-bottom: 6px;">
+        <strong>Nom :</strong> ${customerName || 'Non précisé'}
+      </div>
+      <div style="font-size: 14px; margin-bottom: 6px;">
+        <strong>Email :</strong> <a href="mailto:${customerEmail}" style="color: #0f172a; text-decoration: underline;">${customerEmail}</a>
+      </div>
+      <div style="font-size: 14px;">
+        <strong>Téléphone :</strong> ${customerPhone || 'Non renseigné'}
+      </div>
+    </div>
+
+    <!-- Adresse d'expédition pour bordereau -->
+    <div style="background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px;">
+      <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 10px;">
+        📦 Adresse de livraison (Format étiquette / bordereau)
+      </div>
+      <div style="font-family: monospace; font-size: 13px; color: #78350f; line-height: 1.6; white-space: pre-line;">${addressFormatted}</div>
+    </div>
+
+    <!-- Infos Stripe -->
+    <div style="font-size: 11px; color: #94a3b8; line-height: 1.6;">
+      <div>Réf Stripe : <code>${orderId}</code></div>
+      ${paymentIntentId ? `<div>PaymentIntent : <code>${paymentIntentId}</code></div>` : ''}
+      <div>Date : ${orderDate || new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}</div>
+    </div>
+  `;
+
+  const html = baseLayout({
+    title: `Nouvelle commande KYRAN : ${quantity} boîte(s) (${totalAmount})`,
+    previewText: `Commande de ${customerName} (${totalAmount}). Adresse : ${shippingAddress ? `${shippingAddress.city} (${shippingAddress.postal_code})` : 'Non renseignée'}.`,
+    contentHtml
+  });
+
+  const text = `🚨 NOUVELLE COMMANDE KYRAN !
+
+Quantité : ${quantity} boîte(s)
+Total payé : ${totalAmount} (Sous-total: ${subtotalAmount}, Port: ${shippingCost})
+
+CLIENT :
+- Nom : ${customerName}
+- Email : ${customerEmail}
+- Téléphone : ${customerPhone || 'Non renseigné'}
+
+ADRESSE DE LIVRAISON :
+${addressFormatted}
+
+RÉFÉRENCE STRIPE :
+- Session ID : ${orderId}
+- PaymentIntent : ${paymentIntentId || 'N/A'}
+- Date : ${orderDate || new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}
+`;
+
+  return { html, text };
+}
+
+

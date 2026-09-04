@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration Emails — KYRAN</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --gold: #d97706;
+      --gold-dark: #b45309;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 30px 15px; line-height: 1.5; }
+    .container { max-width: 640px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 28px; }
+    .header h1 { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 2.4rem; letter-spacing: 2px; color: var(--text); margin-bottom: 4px; }
+    .header p { font-size: 0.9rem; color: var(--text-muted); }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); margin-bottom: 20px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    input[type="text"], input[type="email"], input[type="password"], textarea, select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+    textarea { min-height: 110px; resize: vertical; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .tab-btn.active { background: #f1f5f9; color: var(--text); }
+    .btn-submit {
+      width: 100%;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #1e293b; }
+    .status-msg { margin-top: 14px; padding: 12px; border-radius: 6px; font-size: 0.88rem; display: none; }
+    .status-msg.success { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; display: block; }
+    .status-msg.error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; display: block; }
+    .footer-note { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>KYRAN · GESTION EMAILS</h1>
+    <p>Envoi d'emails officiels aux clients depuis le serveur officiel</p>
+  </div>
+
+  <div class="card">
+    <div class="form-group">
+      <label for="admin-token">Mot de passe / Token administrateur</label>
+      <input type="password" id="admin-token" value="kyran_secret_2026">
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="setMode('custom')">Message personnalisé</button>
+      <button class="tab-btn" onclick="setMode('shipping')">Notification Colis Suivi</button>
+    </div>
+
+    <form id="email-form" onsubmit="handleSend(event)">
+      <div class="form-group">
+        <label for="client-email">Email du client *</label>
+        <input type="email" id="client-email" placeholder="client@exemple.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="client-name">Nom du client</label>
+        <input type="text" id="client-name" placeholder="Alexandre Dupont">
+      </div>
+
+      <!-- Champs Message Custom -->
+      <div id="fields-custom">
+        <div class="form-group">
+          <label for="email-subject">Objet de l'email</label>
+          <input type="text" id="email-subject" value="Message concernant votre jeu KYRAN">
+        </div>
+
+        <div class="form-group">
+          <label for="email-message">Message *</label>
+          <textarea id="email-message" placeholder="Tapez votre message ici. Les sauts de ligne formeront des paragraphes nets."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="email-btn-text">Bouton d'action (optionnel)</label>
+          <input type="text" id="email-btn-text" placeholder="Ex: Consulter les règles">
+        </div>
+
+        <div class="form-group">
+          <label for="email-btn-url">Lien du bouton (optionnel)</label>
+          <input type="text" id="email-btn-url" placeholder="https://kyran-jeu.fr/regle.html">
+        </div>
+      </div>
+
+      <!-- Champs Colis Suivi -->
+      <div id="fields-shipping" style="display: none;">
+        <div class="form-group">
+          <label for="ship-carrier">Transporteur</label>
+          <input type="text" id="ship-carrier" value="La Poste (Courrier Suivi)">
+        </div>
+
+        <div class="form-group">
+          <label for="ship-tracking">Numéro de suivi La Poste</label>
+          <input type="text" id="ship-tracking" placeholder="1L02938475610">
+        </div>
+
+        <div class="form-group">
+          <label for="ship-order">Référence commande (optionnel)</label>
+          <input type="text" id="ship-order" placeholder="cs_live_...">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">Envoyer l'email officiel</button>
+
+      <div id="status-box" class="status-msg"></div>
+    </form>
+  </div>
+
+  <div class="footer-note">
+    Serveur : <code>https://kyran-webhook-production.up.railway.app</code> · Expéditeur : KYRAN &lt;contact@majordia.fr&gt; (Réponse : contact@kyran-jeu.fr)
+  </div>
+</div>
+
+<script>
+  var currentMode = 'custom';
+  var API_URL = 'https://kyran-webhook-production.up.railway.app';
+
+  function setMode(mode) {
+    currentMode = mode;
+    document.querySelectorAll('.tab-btn').forEach(function(b, i) {
+      b.classList.toggle('active', (mode === 'custom' && i === 0) || (mode === 'shipping' && i === 1));
+    });
+    document.getElementById('fields-custom').style.display = mode === 'custom' ? 'block' : 'none';
+    document.getElementById('fields-shipping').style.display = mode === 'shipping' ? 'block' : 'none';
+  }
+
+  async function handleSend(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var statusBox = document.getElementById('status-box');
+    var token = document.getElementById('admin-token').value.trim();
+    var email = document.getElementById('client-email').value.trim();
+    var name = document.getElementById('client-name').value.trim();
+
+    statusBox.className = 'status-msg';
+    statusBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+
+    try {
+      var endpoint = currentMode === 'custom' ? '/api/send-custom-email' : '/api/shipping';
+      var payload = {};
+
+      if (currentMode === 'custom') {
+        payload = {
+          to: email,
+          customerName: name,
+          subject: document.getElementById('email-subject').value.trim(),
+          message: document.getElementById('email-message').value.trim(),
+          actionText: document.getElementById('email-btn-text').value.trim() || null,
+          actionUrl: document.getElementById('email-btn-url').value.trim() || null
+        };
+      } else {
+        var tracking = document.getElementById('ship-tracking').value.trim();
+        payload = {
+          customerEmail: email,
+          customerName: name,
+          orderId: document.getElementById('ship-order').value.trim(),
+          carrier: document.getElementById('ship-carrier').value.trim(),
+          trackingNumber: tracking,
+          trackingUrl: tracking ? 'https://www.laposte.fr/outils/suivre-vos-envois?code=' + tracking : '',
+          estimatedDelivery: '2 à 4 jours ouvrés'
+        };
+      }
+
+      var res = await fetch(API_URL + endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(payload)
+      });
+
+      var data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erreur lors de l\'envoi');
+
+      statusBox.textContent = '✓ Email envoyé avec succès à ' + email + ' !';
+      statusBox.className = 'status-msg success';
+      if (currentMode === 'custom') {
+        document.getElementById('email-message').value = '';
+      }
+    } catch (err) {
+      statusBox.textContent = '✗ ' + err.message;
+      statusBox.className = 'status-msg error';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer l\'email officiel';
+    }
+  }
+</script>
+</body>
+</html>

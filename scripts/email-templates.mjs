@@ -284,3 +284,57 @@ Une question ? Répondez directement à cet email.
 
   return { html, text };
 }
+
+export function renderCustomMessageEmail({
+  customerName = 'Cher joueur',
+  subject = 'Message concernant KYRAN',
+  message = '',
+  actionText = null,
+  actionUrl = null
+}) {
+  const actionHtml = (actionText && actionUrl) ? `
+    <div style="margin: 24px 0 16px 0;">
+      <a href="${actionUrl}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600;" target="_blank">
+        ${actionText} →
+      </a>
+    </div>
+  ` : '';
+
+  const formattedMessage = message
+    .split('\n\n')
+    .map(p => `<p style="margin: 0 0 14px 0; font-size: 14px; color: #334155; line-height: 1.6;">${p.replace(/\n/g, '<br>')}</p>`)
+    .join('');
+
+  const contentHtml = `
+    <h1 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.3;">
+      ${subject}
+    </h1>
+
+    <div style="margin-bottom: 20px;">
+      ${formattedMessage}
+    </div>
+
+    ${actionHtml}
+
+    <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f5f9; font-size: 13px; color: #64748b;">
+      À très bientôt sur le jeu,<br>
+      <strong>Corentin Sence</strong> · Édition officielle KYRAN
+    </div>
+  `;
+
+  const html = baseLayout({
+    title: subject,
+    previewText: message.slice(0, 100).replace(/\n/g, ' '),
+    contentHtml
+  });
+
+  const text = `${customerName ? `Bonjour ${customerName},\n\n` : ''}${message}
+
+${(actionText && actionUrl) ? `${actionText} : ${actionUrl}\n\n` : ''}À très bientôt sur le jeu,
+Corentin Sence · Édition officielle KYRAN
+https://kyran-jeu.fr
+`;
+
+  return { html, text };
+}
+

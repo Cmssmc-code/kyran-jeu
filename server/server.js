@@ -1,6 +1,11 @@
 import http from 'http';
 import crypto from 'crypto';
-import { renderOrderEmail, renderRefundEmail, renderShippingEmail } from './templates.js';
+import {
+  renderOrderEmail,
+  renderRefundEmail,
+  renderShippingEmail,
+  renderCustomMessageEmail
+} from './templates.js';
 
 const PORT = process.env.PORT || 3000;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -16,7 +21,6 @@ const processedEventIds = new Map();
 function isAlreadyProcessed(id) {
   if (!id) return false;
   const now = Date.now();
-  // Nettoyage périodique des événements de plus de 24h
   for (const [key, time] of processedEventIds.entries()) {
     if (now - time > 86400000) processedEventIds.delete(key);
   }
@@ -181,13 +185,24 @@ async function handleChargeRefunded(charge) {
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
+  // Headers CORS pour appels depuis admin web
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
   // Health check & monitoring
   if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/health')) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
       status: 'ok',
       service: 'kyran-stripe-webhook-server',
-      version: '1.2.0',
+      version: '1.3.0',
       idempotencyCacheSize: processedEventIds.size,
       hasResendKey: Boolean(RESEND_API_KEY),
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
@@ -212,28 +227,73 @@ const server = http.createServer(async (req, res) => {
   });
 
   req.on('end', async () => {
-    // Route Expédition manuelle ou script CLI
-    if (req.method === 'POST' && url.pathname === '/api/shipping') {
-      try {
-        const authHeader = req.headers['authorization'] || '';
-        const token = authHeader.replace(/^Bearer\s+/i, '').trim();
-        const expected = ADMIN_SECRET || STRIPE_WEBHOOK_SECRET;
+    function checkAdminAuth() {
+      const authHeader = req.headers['authorization'] || '';
+      const token = authHeader.replace(/^Bearer\s+/i, '').trim();
+      const expected = ADMIN_SECRET || STRIPE_WEBHOOK_SECRET;
+      return !expected || token === expected;
+    }
 
-        if (expected && token !== expected) {
-          res.writeHead(401, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'Unauthorized' }));
+    // Route Envoi email personnalisé au client
+    if (req.method === 'POST' && (url.pathname === '/api/send-custom-email' || url.pathname === '/api/custom-email')) {
+      if (!checkAdminAuth()) {
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Unauthorized' }));
+        return;
+      }
+
+      try {
+        const data = JSON.parse(rawBody || '{}');
+        if (!data.to) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Champ "to" requis' }));
           return;
         }
 
+        const subject = data.subject || 'Message concernant votre jeu KYRAN';
+        const { html, text } = renderCustomMessageEmail({
+          customerName: data.customerName || data.name || '',
+          subject,
+          message: data.message || '',
+          actionText: data.actionText || null,
+          actionUrl: data.actionUrl || null
+        });
+
+        const result = await sendEmail({
+          to: data.to,
+          subject,
+          html,
+          text
+        });
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, sentTo: data.to, id: result?.id }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+      return;
+    }
+
+    // Route Expédition manuelle ou script CLI
+    if (req.method === 'POST' && url.pathname === '/api/shipping') {
+      if (!checkAdminAuth()) {
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Unauthorized' }));
+        return;
+      }
+
+      try {
         const data = JSON.parse(rawBody || '{}');
-        if (!data.customerEmail) {
+        if (!data.customerEmail && !data.to) {
           res.writeHead(400, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ error: 'customerEmail requis' }));
           return;
         }
 
+        const toEmail = data.customerEmail || data.to;
         const { html, text } = renderShippingEmail({
-          customerName: data.customerName || 'Cher joueur',
+          customerName: data.customerName || data.name || 'Cher joueur',
           orderId: data.orderId || '',
           carrier: data.carrier || 'La Poste (Courrier Suivi)',
           trackingNumber: data.trackingNumber || '',
@@ -241,15 +301,15 @@ const server = http.createServer(async (req, res) => {
           estimatedDelivery: data.estimatedDelivery || '2 à 4 jours ouvrés'
         });
 
-        await sendEmail({
-          to: data.customerEmail,
+        const result = await sendEmail({
+          to: toEmail,
           subject: 'Votre jeu KYRAN a été expédié',
           html,
           text
         });
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, sentTo: data.customerEmail }));
+        res.end(JSON.stringify({ success: true, sentTo: toEmail, id: result?.id }));
       } catch (err) {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: err.message }));
@@ -315,5 +375,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 Serveur KYRAN Webhook actif sur port ${PORT}`);
+  console.log(`🚀 Serveur KYRAN Webhook v1.3.0 actif sur port ${PORT}`);
 });

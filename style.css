@@ -3231,7 +3231,7 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
   .sticky-toc a:hover,
   .sticky-toc a.active { border-left: none; border-bottom-color: var(--gold); }
   .discover-grid { grid-template-columns: 1fr; }
-  .stat-bar { grid-template-columns: 1fr; }
+  .stat-bar { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .compare-table-wrap {
     overflow-x: auto;

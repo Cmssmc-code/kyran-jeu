@@ -351,35 +351,42 @@ class KyranBreadcrumb extends HTMLElement {
 
 class KyranPageHero extends HTMLElement {
   connectedCallback() {
-    const existingH1 = this.querySelector('h1');
-    if (existingH1 && existingH1.textContent.trim().length > 0) return;
-    const eyebrow = this.getAttribute('eyebrow') || '';
-    const title = this.getAttribute('title') || '';
-    const subtitle = this.getAttribute('subtitle') || '';
-    let breadcrumbItems = [];
-    try {
-      breadcrumbItems = JSON.parse(this.getAttribute('breadcrumb') || '[]');
-    } catch (e) {
-      breadcrumbItems = [];
-    }
+    // Si déjà présent au moment de l'appel (SSR), ne rien faire
+    if (this.querySelector('.page-hero') || this.querySelector('h1')) return;
 
-    this.innerHTML = `
-      <section class="page-hero">
-        <div class="container">
-          <div class="page-hero-breadcrumb"></div>
-          ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}
-          <h1></h1>
-          ${subtitle ? `<p class="hero-lead">${subtitle}</p>` : ''}
-        </div>
-      </section>
-    `;
+    // Différer pour laisser le parser HTML insérer les enfants déclarés dans la page
+    setTimeout(() => {
+      // Si les enfants SSR ont été insérés par le parser, ne rien faire
+      if (this.querySelector('.page-hero') || this.querySelector('h1')) return;
 
-    this.querySelector('h1').innerHTML = title;
-    if (breadcrumbItems.length) {
-      const bc = document.createElement('kyran-breadcrumb');
-      bc.setAttribute('items', JSON.stringify(breadcrumbItems));
-      this.querySelector('.page-hero-breadcrumb').appendChild(bc);
-    }
+      const eyebrow = this.getAttribute('eyebrow') || '';
+      const title = this.getAttribute('title') || '';
+      const subtitle = this.getAttribute('subtitle') || '';
+      let breadcrumbItems = [];
+      try {
+        breadcrumbItems = JSON.parse(this.getAttribute('breadcrumb') || '[]');
+      } catch (e) {
+        breadcrumbItems = [];
+      }
+
+      this.innerHTML = `
+        <section class="page-hero">
+          <div class="container">
+            <div class="page-hero-breadcrumb"></div>
+            ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}
+            <h1>${title}</h1>
+            ${subtitle ? `<p class="hero-lead">${subtitle}</p>` : ''}
+          </div>
+        </section>
+      `;
+
+      if (breadcrumbItems.length) {
+        const bc = document.createElement('kyran-breadcrumb');
+        bc.setAttribute('items', JSON.stringify(breadcrumbItems));
+        const container = this.querySelector('.page-hero-breadcrumb');
+        if (container) container.appendChild(bc);
+      }
+    }, 0);
   }
 }
 

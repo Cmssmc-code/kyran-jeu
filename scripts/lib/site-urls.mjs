@@ -17,18 +17,7 @@ export const STATIC_PAGES = [
       <image:loc>${SITE}/boite-recto-kyran.png</image:loc>
       <image:title>KYRAN – Jeu de cartes stratégique (boîte)</image:title>
       <image:caption>Jeu de cartes KYRAN pour 3 à 6 joueurs</image:caption>
-    </image:image>
-    <video:video>
-      <video:thumbnail_loc>${SITE}/boite-recto-kyran.png</video:thumbnail_loc>
-      <video:title>Bande-annonce officielle KYRAN</video:title>
-      <video:description>Découvrez l'univers sombre et doré de KYRAN, le jeu de plis et de paris pour 3 à 6 joueurs.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/y0YVn-lZMAc</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=y0YVn-lZMAc</video:content_loc>
-      <video:publication_date>2025-01-01T10:00:00+01:00</video:publication_date>
-      <video:duration>60</video:duration>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:live>no</video:live>
-    </video:video>`
+    </image:image>`
   },
   {
     path: '/regle.html',
@@ -42,18 +31,7 @@ export const STATIC_PAGES = [
       <image:loc>${SITE}/logo.png</image:loc>
       <image:title>Règles officielles KYRAN</image:title>
       <image:caption>Règles complètes du jeu de cartes KYRAN</image:caption>
-    </image:image>
-    <video:video>
-      <video:thumbnail_loc>${SITE}/logo.png</video:thumbnail_loc>
-      <video:title>Comment jouer à KYRAN – Ludochrono</video:title>
-      <video:description>Tutoriel vidéo : mise en place, mécanique de pari et manche Mystique.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/aconMJG9uSQ</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=aconMJG9uSQ</video:content_loc>
-      <video:publication_date>2025-06-01T10:00:00+02:00</video:publication_date>
-      <video:duration>300</video:duration>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:live>no</video:live>
-    </video:video>`
+    </image:image>`
   },
   {
     path: '/minijeu.html',

@@ -351,42 +351,8 @@ class KyranBreadcrumb extends HTMLElement {
 
 class KyranPageHero extends HTMLElement {
   connectedCallback() {
-    // Si déjà présent au moment de l'appel (SSR), ne rien faire
-    if (this.querySelector('.page-hero') || this.querySelector('h1')) return;
-
-    // Différer pour laisser le parser HTML insérer les enfants déclarés dans la page
-    setTimeout(() => {
-      // Si les enfants SSR ont été insérés par le parser, ne rien faire
-      if (this.querySelector('.page-hero') || this.querySelector('h1')) return;
-
-      const eyebrow = this.getAttribute('eyebrow') || '';
-      const title = this.getAttribute('title') || '';
-      const subtitle = this.getAttribute('subtitle') || '';
-      let breadcrumbItems = [];
-      try {
-        breadcrumbItems = JSON.parse(this.getAttribute('breadcrumb') || '[]');
-      } catch (e) {
-        breadcrumbItems = [];
-      }
-
-      this.innerHTML = `
-        <section class="page-hero">
-          <div class="container">
-            <div class="page-hero-breadcrumb"></div>
-            ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}
-            <h1>${title}</h1>
-            ${subtitle ? `<p class="hero-lead">${subtitle}</p>` : ''}
-          </div>
-        </section>
-      `;
-
-      if (breadcrumbItems.length) {
-        const bc = document.createElement('kyran-breadcrumb');
-        bc.setAttribute('items', JSON.stringify(breadcrumbItems));
-        const container = this.querySelector('.page-hero-breadcrumb');
-        if (container) container.appendChild(bc);
-      }
-    }, 0);
+    // Contenu hero déjà pré-rendu en HTML statique pour le SEO.
+    // Zéro manipulation DOM pour éviter tout doublon d'affichage.
   }
 }
 

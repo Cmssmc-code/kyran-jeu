@@ -85,14 +85,18 @@ function renderGamePick(game, index) {
     : '';
 
   return `<article class="game-pick${kyranClass}" id="${id}" itemscope itemtype="https://schema.org/Game">
-  <div class="game-pick__inner">
-    <div class="game-pick__rank-col"><span class="game-pick__rank" aria-hidden="true">${padRank(index)}</span></div>
-    <div class="game-pick__media">${renderGameFigure(game, meta, caption)}</div>
-    <div class="game-pick__content">
-      <header class="game-pick__header">
+  <div class="game-pick__card">
+    <header class="game-pick__top">
+      <span class="game-pick__rank" aria-hidden="true">${padRank(index)}</span>
+      <div class="game-pick__title-wrap">
         ${badge}
         <h2 class="game-pick__title" itemprop="name">${title}</h2>
         ${designerLine}
+      </div>
+    </header>
+    <div class="game-pick__overview">
+      <div class="game-pick__media">${renderGameFigure(game, meta, caption)}</div>
+      <div class="game-pick__info">
         <dl class="game-specs">
           <div class="game-spec"><dt>Joueurs</dt><dd itemprop="numberOfPlayers">${game.players}</dd></div>
           <div class="game-spec"><dt>Durée</dt><dd>${game.duration}</dd></div>
@@ -100,9 +104,9 @@ function renderGamePick(game, index) {
           <div class="game-spec game-spec--price"><dt>Prix</dt><dd>${game.price}</dd></div>
         </dl>
         ${renderGameLinks(game)}
-      </header>
-      <div class="game-pick__body" itemprop="description">${body}</div>
+      </div>
     </div>
+    <div class="game-pick__body" itemprop="description">${body}</div>
   </div>
 </article>`;
 }

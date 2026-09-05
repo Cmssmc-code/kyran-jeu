@@ -1,5 +1,6 @@
-/** Auto-generated blog article data — 30 articles */
-export const ARTICLES = [
+/** Auto-generated blog article data — 30 base + 10 new articles */
+import { NEW_ARTICLES } from './new-articles-data.mjs';
+const BASE_ARTICLES = [
   {
     "slug": "jeux-comme-skyjo",
     "title": "10 jeux de société comme Skyjo",
@@ -4267,3 +4268,5 @@ export const ARTICLES = [
     ]
   }
 ];
+
+export const ARTICLES = [...BASE_ARTICLES, ...NEW_ARTICLES];

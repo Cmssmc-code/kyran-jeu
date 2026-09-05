@@ -29,7 +29,17 @@ export const ARTICLE_SEO = {
   'jeux-draft-encheres': 'jeux draft cartes, jeux enchères, sushi go for sale',
   'jeux-trahison-cachee': 'jeux trahison, jeux rôles cachés, saboteur bang',
   'jeux-classiques-modernes': 'jeux classiques modernes, monopoly deal uno',
-  'jeux-memoire-concentration': 'jeux mémoire, jeux concentration, the mind'
+  'jeux-memoire-concentration': 'jeux mémoire, jeux concentration, the mind',
+  'variantes-skyjo': 'variante skyjo, variantes skyjo, autre jeu avec carte skyjo, regle alternative skyjo',
+  'jeux-cartes-5-joueurs': 'jeu de carte 5 joueurs, jeux de societe 5 joueurs, jeu de cartes a 5, jeux 5 personnes',
+  'jeux-comme-6-qui-prend': 'jeu comme 6 qui prend, alternative 6 qui prend, jeux similaires 6 qui prend',
+  'alternatives-belote-coinche': 'jeu comme la belote, alternative belote coinche, remplacer belote, jeu de plis moderne',
+  'jeux-comme-the-crew': 'jeu comme the crew, alternative the crew, jeux plis cooperatifs, jeux coop cartes',
+  'jeux-cartes-4-joueurs': 'jeu de cartes 4 joueurs, meilleur jeu societe 4 joueurs, jeux de cartes a 4',
+  'jeux-comme-exploding-kittens': 'jeu comme exploding kittens, alternative exploding kittens, jeux cartes pieges',
+  'guide-jeux-de-plis': 'jeu de plis, regle jeu de plis, comment jouer aux plis, atout belote tarot whist',
+  'jeux-brise-glace-afterwork': 'jeu brise glace soiree, jeu afterwork, jeu brise glace adulte, animation soiree collegues',
+  'jeux-cartes-addictifs-poche': 'jeu de carte addictif, jeu format poche voyage, petit jeu cartes rapide'
 };
 
 export const ARTICLE_ORDER = [
@@ -40,5 +50,8 @@ export const ARTICLE_ORDER = [
   'jeux-comme-dixit', 'jeux-comme-codenames', 'jeux-comme-hanabi', 'jeux-coop-cartes',
   'jeux-duo-couples', 'jeux-grands-groupes', 'jeux-sans-elimination', 'jeux-ete-terrasse',
   'jeux-strategie-legere', 'jeux-ambiance-party', 'jeux-comme-skull', 'jeux-draft-encheres',
-  'jeux-trahison-cachee', 'jeux-classiques-modernes', 'jeux-memoire-concentration'
+  'jeux-trahison-cachee', 'jeux-classiques-modernes', 'jeux-memoire-concentration',
+  'variantes-skyjo', 'jeux-cartes-5-joueurs', 'jeux-comme-6-qui-prend', 'alternatives-belote-coinche',
+  'jeux-comme-the-crew', 'jeux-cartes-4-joueurs', 'jeux-comme-exploding-kittens', 'guide-jeux-de-plis',
+  'jeux-brise-glace-afterwork', 'jeux-cartes-addictifs-poche'
 ];

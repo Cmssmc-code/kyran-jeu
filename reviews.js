@@ -77,11 +77,6 @@
     html += '  </div>';
     html += '  <div class="amazon-summary-badge">';
     html += '    <div class="amazon-prime-tag">';
-    html += '      <svg class="amazon-logo-svg" viewBox="0 0 100 30" width="85" height="26" aria-label="Amazon" fill="currentColor">';
-    html += '        <path d="M57.6 19.3c-4.8 3.5-11.8 5.4-17.7 5.4-8.3 0-15.8-3.1-21.5-8.3-.4-.4-.1-.9.4-.6 6.1 3.5 13.7 5.7 21.6 5.7 5.3 0 11.2-1.3 16.7-4.1.8-.4 1.5.5.5 1.9z"/>';
-    html += '        <path d="M59.4 17.5c-.6-.8-4.1-.4-5.6-.2-.5.1-.6-.3-.1-.6 2.9-2.1 7.7-1.5 8.2-.8.6.8-.2 5.7-3 8-0.5.4-.8.2-.6-.3.6-1.5 1.7-5.3 1.1-6.1z"/>';
-    html += '        <path d="M43.7 13.9v-5.2c0-.3.2-.5.5-.5h2.8c.3 0 .5.2.5.5v10.3c0 2.8 1.4 4.1 3.7 4.1 1.6 0 2.9-.7 3.7-2.1V14c0-.3.2-.5.5-.5h2.7c.3 0 .5.2.5.5v13.8c0 .3-.2.5-.5.5h-2.5c-.3 0-.5-.2-.5-.5v-1.7c-1.1 1.6-2.9 2.5-5.1 2.5-3.8 0-6.6-2.3-6.6-6.4 0-.1 0-.3.1-.4h.4c0-2.8-.9-4.8-4.4-4.8-2.2 0-4.1 1.2-4.8 2.6-.2.4-.6.4-.8.1l-1.3-1.8c-.2-.3-.1-.7.2-.9 1.4-1.7 3.9-3 7.3-3 4.8 0 7.4 2.4 7.4 7.2v.5z"/>';
-    html += '      </svg>';
     html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> 100% avis vérifiés &amp; testeurs</span>';
     html += '    </div>';
     html += '    <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87#customerReviews') + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';

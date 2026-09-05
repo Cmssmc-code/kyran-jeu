@@ -360,6 +360,126 @@ const BLOG_ITEMS = [
     seoQuery: 'jeux mémoire, jeux concentration cartes',
     kyranPosition: 7,
     related: ['jeux-comme-hanabi', 'jeux-famille', 'jeux-sans-elimination']
+  },
+  {
+    slug: 'variantes-skyjo',
+    title: 'Variantes Skyjo : 5 façons de réinventer vos parties',
+    category: 'Alternatives',
+    date: '2026-09-05',
+    readMinutes: 11,
+    excerpt: 'Vous maîtrisez Skyjo sur le bout des doigts ? Découvrez 5 variantes officielles et maison pour relancer la compétition.',
+    image: '/blog/images/skyjo.jpg',
+    seoQuery: 'variante skyjo, variantes skyjo, autre jeu avec carte skyjo',
+    kyranPosition: 4,
+    related: ['jeux-comme-skyjo', 'jeux-cartes-pas-chers', 'meilleurs-jeux-apero']
+  },
+  {
+    slug: 'jeux-cartes-5-joueurs',
+    title: 'Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas',
+    category: 'Cartes',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Trouver un bon jeu de cartes à 5 joueurs sans temps mort est un vrai défi. Voici 8 jeux testés pour des parties fluides.',
+    image: '/blog/images/skull.jpg',
+    seoQuery: 'jeu de carte 5 joueurs, jeux de societe 5 joueurs, jeu de cartes a 5',
+    kyranPosition: 3,
+    related: ['jeux-3-joueurs', 'jeux-grands-groupes', 'meilleurs-jeux-apero']
+  },
+  {
+    slug: 'jeux-comme-6-qui-prend',
+    title: '8 jeux de cartes comme 6 qui prend pour amateurs de coups bas',
+    category: 'Alternatives',
+    date: '2026-09-05',
+    readMinutes: 11,
+    excerpt: 'Vous adorez piéger vos adversaires dans 6 qui prend ? Découvrez 8 jeux de cartes où anticipation et coups bas font la loi.',
+    image: '/blog/images/6-qui-prend.jpg',
+    seoQuery: 'jeu comme 6 qui prend, alternative 6 qui prend',
+    kyranPosition: 5,
+    related: ['alternatives-uno', 'jeux-comme-skyjo', 'jeux-cartes-pas-chers']
+  },
+  {
+    slug: 'alternatives-belote-coinche',
+    title: 'Marre de la belote ? 7 jeux de plis modernes à tester d\'urgence',
+    category: 'Alternatives',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Envie de retrouver la saveur des atouts et des levées sans contraintes rigides ? Voici 7 jeux de plis modernes conviviaux.',
+    image: '/blog/images/wizard.jpg',
+    seoQuery: 'jeu comme la belote, alternative belote coinche, remplacer belote',
+    kyranPosition: 3,
+    related: ['alternatives-wizard', 'jeux-plis-comparatif', 'jeux-comme-the-crew']
+  },
+  {
+    slug: 'jeux-comme-the-crew',
+    title: '8 jeux de cartes comme The Crew : coopératifs malins et jeux de plis',
+    category: 'Alternatives',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Après avoir exploré l\'espace ou les abysses avec The Crew, prolongez le plaisir avec 8 jeux coopératifs de levées.',
+    image: '/blog/images/the-crew.jpg',
+    seoQuery: 'jeu comme the crew, alternative the crew, jeux plis cooperatifs',
+    kyranPosition: 5,
+    related: ['jeux-coop-cartes', 'alternatives-wizard', 'jeux-comme-hanabi']
+  },
+  {
+    slug: 'jeux-cartes-4-joueurs',
+    title: '8 jeux de cartes incontournables à 4 joueurs pour vos soirées',
+    category: 'Cartes',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'À 4 autour de la table, la dynamique de jeu est idéale. Découvrez notre sélection des 8 meilleurs jeux de cartes à 4 joueurs.',
+    image: '/blog/images/love-letter.jpg',
+    seoQuery: 'jeu de cartes 4 joueurs, meilleur jeu societe 4 joueurs',
+    kyranPosition: 4,
+    related: ['jeux-3-joueurs', 'jeux-cartes-5-joueurs', 'jeux-soiree-amis']
+  },
+  {
+    slug: 'jeux-comme-exploding-kittens',
+    title: '8 jeux de cartes déjantés comme Exploding Kittens',
+    category: 'Alternatives',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Fan de coups tordus et de cartes pièges ? Voici 8 jeux de cartes rapides, explosifs et hilarants dans l\'esprit d\'Exploding Kittens.',
+    image: '/blog/images/bang.jpg',
+    seoQuery: 'jeu comme exploding kittens, alternative exploding kittens',
+    kyranPosition: 5,
+    related: ['jeux-ambiance-party', 'jeux-soiree-amis', 'meilleurs-jeux-apero']
+  },
+  {
+    slug: 'guide-jeux-de-plis',
+    title: 'Guide complet du jeu de plis : atout, défausse, coupe et stratégie',
+    category: 'Cartes',
+    date: '2026-09-05',
+    readMinutes: 13,
+    excerpt: 'Comprendre les jeux de levées de A à Z : règles fondamentales, différences atout/défausse et top des jeux modernes.',
+    image: '/boite-recto-kyran.png',
+    seoQuery: 'jeu de plis, regle jeu de plis, comment jouer aux plis',
+    kyranPosition: 1,
+    related: ['alternatives-wizard', 'jeux-plis-comparatif', 'alternatives-belote-coinche']
+  },
+  {
+    slug: 'jeux-brise-glace-afterwork',
+    title: '8 jeux de cartes brise-glace pour afterwork et soirées d\'équipe',
+    category: 'Soirée',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Détendre l\'atmosphère sans aucun malaise : sélection de 8 jeux de cartes immédiats et fédérateurs pour vos afterworks.',
+    image: '/blog/images/just-one.jpg',
+    seoQuery: 'jeu brise glace soiree, jeu afterwork, animation soiree collegues',
+    kyranPosition: 5,
+    related: ['jeux-ambiance-party', 'jeux-soiree-amis', 'meilleurs-jeux-apero']
+  },
+  {
+    slug: 'jeux-cartes-addictifs-poche',
+    title: '8 jeux de cartes ultra addictifs au format poche à emporter partout',
+    category: 'Cartes',
+    date: '2026-09-05',
+    readMinutes: 12,
+    excerpt: 'Petits formats, plaisir immédiat et rejouabilité infinie : voici 8 jeux de cartes compacts qui ne quitteront plus votre sac.',
+    image: '/boite-recto-kyran.jpg',
+    seoQuery: 'jeu de carte addictif, jeu format poche voyage, petit jeu cartes rapide',
+    kyranPosition: 5,
+    related: ['jeux-vacances-voyage', 'jeux-30-minutes', 'jeux-cartes-pas-chers']
   }
 ];
 

@@ -227,11 +227,14 @@
         return res.json();
       })
       .then(function (data) {
+        if (!data || !data.reviews || !data.reviews.length) {
+          throw new Error('Données avis vides dans JSON');
+        }
         initReviewsWidget(data);
       })
       .catch(function () {
-        // Fallback immédiat si CORS local ou fetch bloqué
-        if (window.KYRAN_REVIEWS_DATA) {
+        // Fallback immédiat si CORS local, fetch bloqué ou JSON vide
+        if (window.KYRAN_REVIEWS_DATA && window.KYRAN_REVIEWS_DATA.reviews && window.KYRAN_REVIEWS_DATA.reviews.length) {
           initReviewsWidget(window.KYRAN_REVIEWS_DATA);
         }
       });

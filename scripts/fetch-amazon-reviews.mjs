@@ -163,6 +163,10 @@ async function run() {
   try {
     const data = await getAmazonReviews();
 
+    if (!data.reviews || data.reviews.length === 0) {
+      throw new Error('Aucun avis extrait (blocage Amazon ou page incomplète). Conservation des avis existants.');
+    }
+
     const jsonPath = join(ROOT, 'reviews-data.json');
     const jsPath = join(ROOT, 'reviews-data.js');
 

@@ -1,9 +1,9 @@
 name: Synchronisation automatique des avis Amazon
 
 on:
-  schedule:
-    # Exécution tous les jours à 4h00 UTC
-    - cron: '0 4 * * *'
+  # Cron désactivé car les runners GitHub sont bloqués par les captchas Amazon
+  # schedule:
+  #   - cron: '0 4 * * *'
   workflow_dispatch: # Permet de lancer manuellement depuis l'interface GitHub
 
 jobs:
@@ -26,6 +26,7 @@ jobs:
 
       - name: Récupération des avis Amazon
         run: node scripts/fetch-amazon-reviews.mjs
+        continue-on-error: true
 
       - name: Commit et Push si de nouveaux avis sont détectés
         run: |

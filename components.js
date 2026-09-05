@@ -272,46 +272,41 @@ class KyranFooter extends HTMLElement {
       return `<p><a href="${getBlogUrl(item.slug)}">${item.title}</a></p>`;
     }).join('');
     const blogSection = blogLinks
-      ? `<div class="footer-col"><h4>Blog</h4>${blogLinks}<p><a href="${ROOT}blog/index.html">Tous les articles</a></p></div>`
+      ? `<div class="footer-col footer-col--blog"><h4>Blog</h4>${blogLinks}<p><a href="${ROOT}blog/index.html">Tous les articles</a></p></div>`
       : '';
 
     this.innerHTML = `
       <footer>
         <div class="footer-grid">
-          <div class="footer-col">
+          <div class="footer-col footer-col--brand">
             <h4>KYRAN</h4>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
-            <p>Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">
               <p class="footer-follow-label">Suivez le jeu</p>
               ${instagramLinkHtml('social-link social-link--instagram')}
             </div>
           </div>
-          <div class="footer-col">
+          <div class="footer-col footer-col--explore">
             <h4>Explorer</h4>
             ${exploreLinks}
           </div>
           ${blogSection}
-          <div class="footer-col">
+          <div class="footer-col footer-col--contact">
             <h4>Contact</h4>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="${ROOT}minijeu.html">Dojo interactif</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
-            <p class="footer-contact-social">${instagramLinkHtml('social-link social-link--instagram social-link--compact')}</p>
           </div>
-          <div class="footer-col">
+          <div class="footer-col footer-col--credits">
             <h4>Cr&eacute;dits</h4>
             <p>Design : Crea by Floh</p>
             <p>Auteur : Corentin Sence</p>
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie sous 24-48h · 🇫🇷 Édition indépendante en France</p>
-          <p class="footer-social">
-            ${instagramLinkHtml('social-link social-link--instagram social-link--footer', 'Suivre @kyran.jeu sur Instagram')}
-          </p>
-          <p class="footer-credits">Illustrations &amp; identit&eacute; visuelle · Crea by Floh</p>
+          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie 24-48h · 🇫🇷 Édition indépendante</p>
           <p class="footer-seo-links">
             <a href="${ROOT}mentions-legales.html">Mentions légales</a>
             <span aria-hidden="true"> · </span>
@@ -325,7 +320,7 @@ class KyranFooter extends HTMLElement {
             <span aria-hidden="true"> · </span>
             <a href="${ROOT}llms.txt">llms.txt</a>
           </p>
-          <p>&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
+          <p class="footer-copyright">&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
         </div>
       </footer>
     `;

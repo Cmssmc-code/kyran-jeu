@@ -186,13 +186,8 @@
             }
           }
           if (bg) {
-            // Google Rich Snippets requiert Product en type principal pour aggregateRating
-            if (!Array.isArray(bg['@type'])) {
-              bg['@type'] = ['Product', 'BoardGame'];
-            } else if (bg['@type'][0] !== 'Product') {
-              var remaining = bg['@type'].filter(function (x) { return x !== 'Product'; });
-              bg['@type'] = ['Product'].concat(remaining);
-            }
+            // Google Review Snippets requiert Product en type scalaire unique
+            bg['@type'] = 'Product';
             bg.aggregateRating = {
               '@type': 'AggregateRating',
               'ratingValue': avg.toFixed(1),

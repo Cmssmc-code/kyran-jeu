@@ -2531,23 +2531,45 @@ footer h4 { color: #fff; margin-bottom: 15px; font-family: var(--font-display); 
     background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
     color: #ffffff !important;
     font-weight: 600;
-    padding: 6px 12px;
+    padding: 0 12px;
     border-radius: 999px;
     box-shadow: 0 2px 10px rgba(217, 119, 6, 0.3);
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 6px;
+    flex: 0 0 auto;
+    height: 38px;
+    min-height: 38px;
+    margin: auto 4px;
+    white-space: nowrap;
   }
 
   .mobile-nav-tab--highlight .mobile-nav-icon {
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+  }
+
+  .mobile-nav-tab--highlight .mobile-nav-label {
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
   }
 
   .mobile-nav-tab--highlight .mobile-nav-pill {
+    position: static;
     background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
     font-size: 0.68rem;
     padding: 2px 6px;
     border-radius: 999px;
     font-weight: 700;
+    box-shadow: none;
+    animation: none;
+    line-height: 1.2;
   }
 
   /* Palier Tablettes (641px à 900px) : 2 colonnes équilibrées */
@@ -5242,20 +5264,13 @@ header.blog-article-hero::after {
     margin-left: -16px !important;
     margin-right: -16px !important;
     padding-left: 16px !important;
-    padding-right: 16px !important;
-    scrollbar-width: thin;
-    scrollbar-color: var(--gold) transparent;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .amazon-reviews-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-  .amazon-reviews-grid::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .amazon-reviews-grid::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .amazon-review-card {
     flex: 0 0 85% !important;
@@ -5405,16 +5420,86 @@ article {
     margin-bottom: 32px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
+  /* Footer mobile compact & ergonomique */
+  footer {
+    padding: 36px 16px calc(24px + env(safe-area-inset-bottom, 0)) !important;
   }
 
-  /* Zone tactile garantie 44px min */
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .footer-col:first-child,
+  .footer-col--brand {
+    grid-column: 1 / -1 !important;
+    max-width: 100% !important;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-col h4 {
+    font-size: 1.05rem !important;
+    margin-bottom: 8px !important;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-col p {
+    margin-bottom: 4px !important;
+    line-height: 1.35 !important;
+    font-size: 0.82rem !important;
+  }
+
+  .footer-col a {
+    min-height: unset !important;
+    display: inline-block !important;
+    padding: 3px 0 !important;
+    font-size: 0.83rem !important;
+    line-height: 1.35 !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .footer-follow {
+    margin-top: 10px !important;
+  }
+
+  .footer-follow-label {
+    margin-bottom: 6px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .footer-bottom {
+    padding-top: 18px !important;
+  }
+
+  .footer-trust-note {
+    font-size: 0.78rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  .footer-seo-links {
+    font-size: 0.74rem !important;
+    line-height: 1.6 !important;
+    margin: 6px 0 !important;
+  }
+
+  .footer-seo-links a {
+    display: inline !important;
+    padding: 2px !important;
+  }
+
+  .footer-copyright {
+    font-size: 0.76rem !important;
+    margin-top: 8px !important;
+  }
+
+  /* Zone tactile garantie 44px min pour boutons et liens de nav (sauf micro-composants dots et toggles) */
   .nav-link,
-  .footer-col a,
   .btn,
-  button {
+  button:not(.carousel-dot):not(.power-pill):not(.order-qty-btn) {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
@@ -5490,19 +5575,13 @@ article {
     padding: 6px 16px 20px !important;
     margin-left: -16px !important;
     margin-right: -16px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .game-gallery-quotes::-webkit-scrollbar {
-    height: 4px;
-  }
-  .game-gallery-quotes::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .game-gallery-quotes::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .game-gallery-quotes .quote-card {
     flex: 0 0 85% !important;
@@ -5523,19 +5602,13 @@ article {
     padding: 12px 18px 26px !important;
     margin-left: -18px !important;
     margin-right: -18px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .steps-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-  .steps-grid::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .steps-grid::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .step-card {
     flex: 0 0 84% !important;
@@ -5557,23 +5630,17 @@ article {
     padding: 12px 18px 26px !important;
     margin-left: -18px !important;
     margin-right: -18px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .powers-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-  .powers-grid::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .powers-grid::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .power-card-item {
-    flex: 0 0 76% !important;
-    max-width: 250px !important;
+    flex: 0 0 78% !important;
+    max-width: 270px !important;
     scroll-snap-align: center !important;
     scroll-snap-stop: always !important;
     border-radius: 20px !important;
@@ -5581,7 +5648,7 @@ article {
     box-shadow: 0 6px 20px rgba(69, 26, 3, 0.07) !important;
   }
 
-  /* 5. Avis Clients Amazon (#avis) : carrousel swipe horizontal au lieu d'une pile interminable */
+  /* 5. Avis Clients Amazon (#avis) : carrousel swipe horizontal */
   .amazon-reviews-grid {
     display: flex !important;
     overflow-x: auto !important;
@@ -5591,19 +5658,13 @@ article {
     padding: 8px 18px 24px !important;
     margin-left: -18px !important;
     margin-right: -18px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .amazon-reviews-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-  .amazon-reviews-grid::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .amazon-reviews-grid::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .amazon-review-card {
     flex: 0 0 85% !important;
@@ -5624,19 +5685,13 @@ article {
     padding: 6px 16px 20px !important;
     margin-left: -16px !important;
     margin-right: -16px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .product-perks::-webkit-scrollbar {
-    height: 4px;
-  }
-  .product-perks::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
-  }
-  .product-perks::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .perk-box {
     flex: 0 0 78% !important;
@@ -5656,15 +5711,13 @@ article {
     padding: 8px 18px 24px !important;
     margin-left: -18px !important;
     margin-right: -18px !important;
-    scrollbar-width: thin !important;
-    scrollbar-color: var(--gold) #f1ece1 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   .blog-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-  .blog-grid::-webkit-scrollbar-track {
-    background: #f1ece1;
-    border-radius: 4px;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   .blog-grid::-webkit-scrollbar-thumb {
     background: var(--gold);
@@ -5681,30 +5734,52 @@ article {
   /* 8. Indicateurs de pagination tactile à points interactifs (iOS / App style) */
   .mobile-carousel-dots {
     display: flex !important;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin: -6px auto 18px;
-    padding: 4px 0;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 8px auto 16px !important;
+    padding: 6px 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
   }
   .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 999px;
-    background: #e2dcd0;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    -webkit-tap-highlight-color: transparent;
+    position: relative !important;
+    width: 8px !important;
+    height: 8px !important;
+    min-height: 0 !important;
+    max-height: 8px !important;
+    min-width: 0 !important;
+    border-radius: 999px !important;
+    background: #ded7cb !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .carousel-dot::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -16px !important;
+    bottom: -16px !important;
+    left: -8px !important;
+    right: -8px !important;
   }
   .carousel-dot.is-active {
-    width: 24px;
-    background: linear-gradient(90deg, var(--gold-bright), var(--gold-dark));
-    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+    width: 26px !important;
+    height: 8px !important;
+    min-height: 0 !important;
+    max-height: 8px !important;
+    background: linear-gradient(90deg, var(--gold-bright, #d97706), var(--gold-dark, #b45309)) !important;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.38) !important;
   }
   .carousel-dot:active {
-    transform: scale(0.85);
+    transform: scale(0.9) !important;
   }
 
   /* 9. Retour haptique tactile visuel */
@@ -5825,24 +5900,65 @@ article {
     line-height: 1;
   }
   .mobile-nav-tab--highlight {
-    color: var(--gold-dark);
-  }
-  .mobile-nav-pill {
-    position: absolute;
-    top: 4px;
-    right: 12%;
-    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-    color: #ffffff;
-    font-size: 0.62rem;
-    font-weight: 700;
-    padding: 1px 6px;
+    flex: 0 0 auto;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 38px;
+    min-height: 38px;
+    padding: 0 12px;
+    margin: auto 4px;
     border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
-    animation: badgePulse 2.5s ease-in-out infinite;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+    white-space: nowrap;
+    text-decoration: none;
   }
-  @keyframes badgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+  .mobile-nav-tab--highlight:active {
+    transform: scale(0.96);
+  }
+  .mobile-nav-tab--highlight .mobile-nav-icon {
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    line-height: 1;
+  }
+  .mobile-nav-tab--highlight .mobile-nav-icon svg {
+    display: block;
+    stroke: #ffffff;
+  }
+  .mobile-nav-tab--highlight .mobile-nav-label {
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .mobile-nav-tab--highlight .mobile-nav-pill {
+    position: static !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 999px;
+    box-shadow: none;
+    animation: none;
+    line-height: 1.2;
+    transform: none !important;
+  }
+  @media (max-width: 360px) {
+    .mobile-nav-tab--highlight {
+      padding: 0 8px;
+      gap: 4px;
+    }
+    .mobile-nav-tab--highlight .mobile-nav-pill {
+      font-size: 0.62rem;
+      padding: 1px 5px;
+    }
   }
 }
 
@@ -5995,9 +6111,16 @@ article {
     overflow: hidden;
   }
 
-  /* Indicateur swipe : animation shake horizontale plus douce */
+  /* Indicateur swipe : animation subtile et disparition fluide au scroll */
   .mobile-swipe-indicator {
     animation: swipeShake 3.2s ease-in-out infinite !important;
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
+  }
+  .mobile-swipe-indicator.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-8px) scale(0.96) !important;
+    pointer-events: none !important;
   }
   @keyframes swipeShake {
     0%   { transform: translateX(0); }
@@ -6008,39 +6131,86 @@ article {
     100% { transform: translateX(0); }
   }
 
-  /* Dots pagination : plus grands, meilleur espacement */
+  /* Dots pagination mobile : dimensions horizontales parfaites, zéro déformation */
   .mobile-carousel-dots {
-    margin: 4px auto 20px !important;
-    gap: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 10px auto 18px !important;
+    padding: 6px 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
   }
   .carousel-dot {
-    width: 9px !important;
-    height: 9px !important;
+    position: relative !important;
+    width: 8px !important;
+    height: 8px !important;
+    min-height: 0 !important;
+    max-height: 8px !important;
+    min-width: 0 !important;
+    max-width: 28px !important;
+    border-radius: 999px !important;
+    background: #ded7cb !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .carousel-dot::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -16px !important;
+    bottom: -16px !important;
+    left: -8px !important;
+    right: -8px !important;
   }
   .carousel-dot.is-active {
-    width: 28px !important;
+    width: 26px !important;
+    height: 8px !important;
+    min-height: 0 !important;
+    max-height: 8px !important;
+    background: linear-gradient(90deg, var(--gold-bright, #d97706), var(--gold-dark, #b45309)) !important;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.38) !important;
   }
 
-  /* Estomper bords des carrousels pour indiquer la continuité */
+  /* Carrousels mobiles : masque doux à droite pour inviter au balayage + masquage scrollbar native */
   .steps-grid,
   .powers-grid,
   .game-gallery-quotes,
   .blog-grid,
   .amazon-reviews-grid {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
     -webkit-mask-image: linear-gradient(
       to right,
-      transparent 0%,
-      black 5%,
-      black 92%,
+      black 0%,
+      black 90%,
+      rgba(0, 0, 0, 0.25) 97%,
       transparent 100%
     ) !important;
     mask-image: linear-gradient(
       to right,
-      transparent 0%,
-      black 5%,
-      black 92%,
+      black 0%,
+      black 90%,
+      rgba(0, 0, 0, 0.25) 97%,
       transparent 100%
     ) !important;
+  }
+  .steps-grid::-webkit-scrollbar,
+  .powers-grid::-webkit-scrollbar,
+  .game-gallery-quotes::-webkit-scrollbar,
+  .blog-grid::-webkit-scrollbar,
+  .amazon-reviews-grid::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   /* step-card : hauteur uniforme */

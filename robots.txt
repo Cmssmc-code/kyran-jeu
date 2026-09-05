@@ -4,9 +4,13 @@
 User-agent: *
 Allow: /
 Allow: /llms.txt
+Allow: /llms-full.txt
 Allow: /plan-du-site.html
 Allow: /blog/
 Disallow: /404.html
+Disallow: /merci.html
+Disallow: /admin-emails.html
+Disallow: /email-previews/
 
 # Moteurs & Agents IA (ChatGPT, Claude, Perplexity, Gemini, Apple Intelligence, Common Crawl)
 User-agent: GPTBot
@@ -40,4 +44,5 @@ Sitemap: https://kyran-jeu.fr/sitemap.xml
 
 # Plan du site : https://kyran-jeu.fr/plan-du-site.html
 # Contexte LLM : https://kyran-jeu.fr/llms.txt
+# Contexte LLM exhaustif : https://kyran-jeu.fr/llms-full.txt
 # Flux RSS blog : https://kyran-jeu.fr/blog/feed.xml

@@ -4,7 +4,8 @@
   "description": "",
   "main": "components.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:seo",
+    "test:seo": "node scripts/audit-seo.mjs",
     "generate:blog": "node scripts/build-blog-articles-data.mjs && node scripts/generate-blog.mjs && node scripts/generate-blog-infra.mjs && node scripts/generate-seo.mjs",
     "generate:blog-data": "node scripts/build-blog-articles-data.mjs",
     "generate:seo": "node scripts/generate-seo.mjs",

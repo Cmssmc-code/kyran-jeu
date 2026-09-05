@@ -26,6 +26,7 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Context" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -54,11 +55,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904e" />
+  <link rel="stylesheet" href="style.css?v=20260904b" />
   <script src="blog-data.js?v=20260904"></script>
-  <script src="components.js?v=20260904d"></script>
-  <script src="reviews-data.js?v=20260905"></script>
-  <script src="reviews.js?v=20260905" defer></script>
+  <script src="components.js?v=20260904a"></script>
+  <script src="reviews-data.js?v=20260904"></script>
+  <script src="reviews.js?v=20260904" defer></script>
 
   <script type="application/ld+json">
   {
@@ -97,15 +98,19 @@
         }
       },
       {
-        "@type": "BoardGame",
+        "@type": ["BoardGame", "Product"],
         "@id": "https://kyran-jeu.fr/#boardgame",
         "name": "KYRAN",
+        "sku": "KYRAN-01",
         "inLanguage": "fr-FR",
-        "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing.",
+        "disambiguatingDescription": "Jeu de cartes tactique français de plis et de paris obligatoires pour 3 à 6 joueurs (~30 min), avec cartes Pouvoir et manche Mystique à l'aveugle.",
+        "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing. Héritier moderne du Tarot Africain et du Whist.",
+        "keywords": "jeu de cartes, jeu de plis, jeu apéro, alternative Skyjo, alternative Wizard, Tarot Africain moderne, jeu de société 30 minutes, jeu de bluff",
+        "isFamilyFriendly": true,
         "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 6},
         "timeRequired": "PT30M",
         "audience": {"@type": "PeopleAudience", "suggestedMinAge": 8},
-        "genre": ["Jeu de cartes", "Stratégie", "Bluff", "Jeu de plis"],
+        "genre": ["Jeu de cartes", "Stratégie", "Bluff", "Jeu de plis", "Jeu d'apéro"],
         "brand": {"@type": "Brand", "name": "KYRAN"},
         "image": ["https://kyran-jeu.fr/boite-recto-kyran.png", "https://kyran-jeu.fr/logo.png"],
         "sameAs": [
@@ -130,6 +135,8 @@
             "availability": "https://schema.org/InStock",
             "price": "9.99",
             "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
             "url": "https://kyran-jeu.fr/commander.html",
             "seller": {"@type": "Person", "name": "Corentin Sence"}
           },
@@ -139,6 +146,8 @@
             "availability": "https://schema.org/InStock",
             "price": "17.99",
             "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
             "url": "https://www.amazon.fr/dp/B0G217LD87",
             "seller": {"@type": "Organization", "name": "Amazon"}
           }
@@ -373,7 +382,7 @@
         <h2 class="section-title reveal-on-scroll">Comment jouer en <span class="accent">3 minutes</span> ?</h2>
         <div class="section-divider"></div>
         <p class="section-sub reveal-on-scroll" data-delay="1">Le principe en 3 étapes simples :</p>
-        <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les étapes</span></div></div>
+        <div style="text-align: center;"><div class="mobile-swipe-indicator" id="steps-swipe-hint" aria-hidden="true"><span>👉 Glissez pour voir les étapes</span></div></div>
 
         <div class="steps-grid reveal-on-scroll" data-delay="2" id="steps-carousel">
           <div class="step-card">
@@ -401,10 +410,10 @@
             <p>Pari réussi ? Vous gardez vos vies. Pari raté ? Vous en perdez. La dernière manche se joue avec la carte sur le front. Le dernier en jeu gagne la partie !</p>
           </div>
         </div>
-        <div class="mobile-carousel-dots" id="steps-dots" aria-hidden="true">
-          <button class="carousel-dot is-active" data-idx="0" aria-label="Étape 1"></button>
-          <button class="carousel-dot" data-idx="1" aria-label="Étape 2"></button>
-          <button class="carousel-dot" data-idx="2" aria-label="Étape 3"></button>
+        <div class="mobile-carousel-dots" id="steps-dots" role="tablist" aria-label="Étapes de jeu">
+          <button type="button" class="carousel-dot is-active" data-idx="0" aria-label="Étape 1"></button>
+          <button type="button" class="carousel-dot" data-idx="1" aria-label="Étape 2"></button>
+          <button type="button" class="carousel-dot" data-idx="2" aria-label="Étape 3"></button>
         </div>
 
         <p style="text-align: center; margin-top: var(--space-4);">
@@ -419,7 +428,7 @@
         <h2 class="section-title reveal-on-scroll">Les 5 cartes <span class="accent">spéciales</span></h2>
         <div class="section-divider"></div>
         <p class="section-sub reveal-on-scroll" data-delay="1">Des cartes uniques pour changer le cours de la partie</p>
-        <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Balayez pour voir les 5 cartes</span></div></div>
+        <div style="text-align: center;"><div class="mobile-swipe-indicator" id="powers-swipe-hint" aria-hidden="true"><span>👉 Balayez pour voir les 5 cartes</span></div></div>
 
         <div class="powers-grid reveal-on-scroll" data-delay="2" id="powers-carousel">
           <div class="power-card-item">
@@ -476,12 +485,12 @@
             <span class="power-condition">* Annulé si premier à jouer ce tour</span>
           </div>
         </div>
-        <div class="mobile-carousel-dots" id="powers-dots" aria-hidden="true">
-          <button class="carousel-dot is-active" data-idx="0" aria-label="Mystique"></button>
-          <button class="carousel-dot" data-idx="1" aria-label="Sceau"></button>
-          <button class="carousel-dot" data-idx="2" aria-label="Clairvoyance"></button>
-          <button class="carousel-dot" data-idx="3" aria-label="Bénédiction"></button>
-          <button class="carousel-dot" data-idx="4" aria-label="Voile"></button>
+        <div class="mobile-carousel-dots" id="powers-dots" role="tablist" aria-label="Cartes spéciales">
+          <button type="button" class="carousel-dot is-active" data-idx="0" aria-label="Mystique"></button>
+          <button type="button" class="carousel-dot" data-idx="1" aria-label="Sceau"></button>
+          <button type="button" class="carousel-dot" data-idx="2" aria-label="Clairvoyance"></button>
+          <button type="button" class="carousel-dot" data-idx="3" aria-label="Bénédiction"></button>
+          <button type="button" class="carousel-dot" data-idx="4" aria-label="Voile"></button>
         </div>
 
         <p style="text-align: center; margin-top: var(--space-4);">
@@ -818,16 +827,20 @@
 
     /* ── DOTS CAROUSEL : sync scroll → dot actif ── */
     (function () {
-      function initDots(carouselId, dotsId) {
+      function initDots(carouselId, dotsId, hintId) {
         var carousel = document.getElementById(carouselId);
         var dotsEl   = document.getElementById(dotsId);
+        var hintEl   = hintId ? document.getElementById(hintId) : null;
         if (!carousel || !dotsEl) return;
         var dots = Array.from(dotsEl.querySelectorAll('.carousel-dot'));
         if (!dots.length) return;
 
-        /* Scroll → dot actif */
+        /* Scroll → dot actif + masquer indicateur "glissez" */
         var ticking = false;
         carousel.addEventListener('scroll', function () {
+          if (hintEl && carousel.scrollLeft > 24) {
+            hintEl.classList.add('is-hidden');
+          }
           if (ticking) return;
           ticking = true;
           requestAnimationFrame(function () {
@@ -860,8 +873,8 @@
         });
       }
 
-      initDots('steps-carousel',  'steps-dots');
-      initDots('powers-carousel', 'powers-dots');
+      initDots('steps-carousel',  'steps-dots',  'steps-swipe-hint');
+      initDots('powers-carousel', 'powers-dots', 'powers-swipe-hint');
     })();
   </script>
 </body>

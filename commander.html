@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Commander KYRAN — Jeu de cartes officiel | 9,99 €</title>
-  <meta name="description" content="Commandez le jeu de cartes KYRAN en ligne au tarif de 9,99 €. Édition officielle 55 cartes avec règles et boîte rigide. Frais de livraison calculés à l'étape suivante. Paiement sécurisé par Stripe." />
+  <meta name="description" content="Commandez le jeu de cartes KYRAN à 9,99 €. Boîte officielle 55 cartes toilées, règles complètes, expédition sous 24-48h et paiement sécurisé par Stripe." />
   <link rel="canonical" href="https://kyran-jeu.fr/commander.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
@@ -29,12 +29,18 @@
   <meta property="product:price:amount" content="9.99" />
   <meta property="product:price:currency" content="EUR" />
 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Commander KYRAN — Jeu de cartes officiel | 9,99 €" />
+  <meta name="twitter:description" content="Commandez le jeu de cartes KYRAN à 9,99 €. 55 cartes toilées, boîte rigide. Expédition 24-48h." />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta name="twitter:image:alt" content="Boîte du jeu de cartes KYRAN" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904e" />
+  <link rel="stylesheet" href="style.css?v=20260905a" />
   <script src="components.js?v=20260904d"></script>
   <script src="reviews-data.js?v=20260905"></script>
   <script src="reviews.js?v=20260905" defer></script>
@@ -54,6 +60,7 @@
         "@type": "Product",
         "@id": "https://kyran-jeu.fr/commander.html#product",
         "name": "KYRAN — Jeu de cartes",
+        "sku": "KYRAN-01",
         "image": "https://kyran-jeu.fr/boite-recto-kyran.png",
         "description": "Jeu de cartes stratégique pour 3 à 6 joueurs. Boîte cloche rigide, cartes vernies toilées et règles officielles.",
         "brand": {
@@ -71,6 +78,8 @@
           "@type": "Offer",
           "price": "9.99",
           "priceCurrency": "EUR",
+          "priceValidUntil": "2026-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
           "url": "https://kyran-jeu.fr/commander.html",
           "seller": {
@@ -1244,6 +1253,28 @@
                 <div class="order-price-badge">Tarif direct créateur (-44%)</div>
               </div>
 
+              <div class="order-field-label">Choisir une formule :</div>
+
+              <!-- Sélecteur de formules bundle -->
+              <div class="bundle-options" role="radiogroup" aria-label="Choisir le nombre de boîtes">
+                <button type="button" class="bundle-card is-active" data-qty="1" role="radio" aria-checked="true">
+                  <span class="bundle-qty">1 Boîte</span>
+                  <span class="bundle-price">9,99€</span>
+                  <span class="bundle-desc">Découverte</span>
+                </button>
+                <button type="button" class="bundle-card" data-qty="2" role="radio" aria-checked="false">
+                  <span class="bundle-badge-pop">Le plus choisi</span>
+                  <span class="bundle-qty">2 Boîtes</span>
+                  <span class="bundle-price">19,98€</span>
+                  <span class="bundle-desc">Cadeau &amp; Soirée</span>
+                </button>
+                <button type="button" class="bundle-card" data-qty="3" role="radio" aria-checked="false">
+                  <span class="bundle-qty">3 Boîtes</span>
+                  <span class="bundle-price">29,97€</span>
+                  <span class="bundle-desc">Pack Groupe</span>
+                </button>
+              </div>
+
               <!-- Bloc Récapitulatif et Quantité -->
               <div class="order-checkout-box">
                 <div class="order-qty-row">
@@ -1496,17 +1527,41 @@
         }
       }
 
+      var bundleCards = document.querySelectorAll('.bundle-card');
+
+      function syncBundleCards() {
+        bundleCards.forEach(function (card) {
+          var cardQty = parseInt(card.getAttribute('data-qty'), 10);
+          var active = cardQty === qty;
+          card.classList.toggle('is-active', active);
+          card.setAttribute('aria-checked', active ? 'true' : 'false');
+        });
+      }
+
+      bundleCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var chosenQty = parseInt(card.getAttribute('data-qty'), 10);
+          if (chosenQty) {
+            qty = chosenQty;
+            updateTotal();
+            syncBundleCards();
+          }
+        });
+      });
+
       if (qtyMinus && qtyPlus) {
         qtyMinus.addEventListener('click', function () {
           if (qty > 1) {
             qty--;
             updateTotal();
+            syncBundleCards();
           }
         });
         qtyPlus.addEventListener('click', function () {
           if (qty < 10) {
             qty++;
             updateTotal();
+            syncBundleCards();
           }
         });
       }

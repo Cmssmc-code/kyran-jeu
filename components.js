@@ -351,6 +351,7 @@ class KyranBreadcrumb extends HTMLElement {
 
 class KyranPageHero extends HTMLElement {
   connectedCallback() {
+    if (this.querySelector('h1')) return;
     const eyebrow = this.getAttribute('eyebrow') || '';
     const title = this.getAttribute('title') || '';
     const subtitle = this.getAttribute('subtitle') || '';
@@ -611,8 +612,6 @@ customElements.define('kyran-cta-band', KyranCtaBand);
 function initMobileCarouselDots() {
   if (typeof window === 'undefined' || window.innerWidth > 768) return;
   var selectors = [
-    '.steps-grid',
-    '.powers-grid',
     '.amazon-reviews-grid',
     '.product-perks',
     '.game-gallery-quotes',
@@ -623,6 +622,18 @@ function initMobileCarouselDots() {
     var carousels = document.querySelectorAll(sel);
     carousels.forEach(function (carousel) {
       if (carousel.dataset.hasDots) return;
+      // Ne pas dupliquer si des dots existent déjà après le carrousel
+      var nextEl = carousel.nextElementSibling;
+      if (nextEl && nextEl.classList.contains('mobile-carousel-dots')) {
+        carousel.dataset.hasDots = 'true';
+        return;
+      }
+      var existingInParent = carousel.parentNode.querySelector('.mobile-carousel-dots');
+      if (existingInParent) {
+        carousel.dataset.hasDots = 'true';
+        return;
+      }
+
       var items = carousel.children;
       if (!items || items.length <= 1) return;
       carousel.dataset.hasDots = 'true';
@@ -640,7 +651,10 @@ function initMobileCarouselDots() {
           dot.className = 'carousel-dot' + (idx === 0 ? ' is-active' : '');
           dot.setAttribute('aria-label', 'Afficher élément ' + (idx + 1));
           dot.addEventListener('click', function () {
-            items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            carousel.scrollTo({
+              left: items[idx].offsetLeft - (carousel.clientWidth - items[idx].offsetWidth) / 2,
+              behavior: 'smooth'
+            });
           });
           dotsContainer.appendChild(dot);
           dots.push(dot);

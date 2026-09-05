@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
-  <link rel="stylesheet" href="style.css?v=20260904" />
+  <link rel="stylesheet" href="style.css?v=20260904a" />
   <script src="components.js?v=20260904"></script>
 
   <link rel="prefetch" href="index.html" as="document">
@@ -95,6 +95,7 @@
             "name": "Boutique officielle KYRAN",
             "price": "9.99",
             "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "url": "https://kyran-jeu.fr/commander.html"
           },
@@ -103,8 +104,48 @@
             "name": "Amazon France",
             "price": "17.99",
             "priceCurrency": "EUR",
+            "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "url": "https://www.amazon.fr/dp/B0G217LD87"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "Comment jouer à KYRAN",
+        "description": "Règles pas à pas du jeu de plis et de pari KYRAN : mise en place, enchères, plis et manche Mystique.",
+        "image": "https://kyran-jeu.fr/boite-recto-kyran.png",
+        "totalTime": "PT30M",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Mise en place",
+            "text": "Mélanger les cartes Nombre (1 à 36) et les cartes Pouvoir. Chaque joueur reçoit 5 cartes Vie visibles.",
+            "url": "https://kyran-jeu.fr/regle.html#mise-en-place"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Phase de paris",
+            "text": "Chaque joueur prédit le nombre exact de plis qu'il compte remporter. La somme des paris ne doit jamais égaler le nombre de plis disponibles.",
+            "url": "https://kyran-jeu.fr/regle.html#paris"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Phase de plis",
+            "text": "Les joueurs posent une carte à tour de rôle. Les cartes Pouvoir s'activent immédiatement. La carte la plus forte remporte le pli.",
+            "url": "https://kyran-jeu.fr/regle.html#jeu"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Résolution & Perte de vies",
+            "text": "Si un joueur réalise son contrat, il conserve ses vies. S'il rate son pari, il perd autant de vies que l'écart entre son pari et ses plis.",
+            "url": "https://kyran-jeu.fr/regle.html#fin-manche"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "La Manche Mystique",
+            "text": "Manche finale à une seule carte collée sur le front : chacun voit le jeu adverse mais ignore le sien pour le pari ultime.",
+            "url": "https://kyran-jeu.fr/regle.html#manche-mystique"
           }
         ]
       }
@@ -125,10 +166,17 @@
       title="Règles du jeu de plis <span class=&quot;accent&quot;>KYRAN</span>"
       subtitle="Pari, bluff, cartes Pouvoir et manche Mystique — tout pour jouer sans hésiter."
       breadcrumb='[{"label":"Accueil","href":"index.html"},{"label":"Règles"}]'
-    ></kyran-page-hero>
-
-    <section id="intro-comparatif">
-      <div class="container">
+    >
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-breadcrumb">
+            <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Règles</span></nav>
+          </div>
+          <p class="eyebrow">Référence officielle</p>
+          <h1>Règles du jeu de plis <span class="accent">KYRAN</span></h1>
+          <p class="hero-lead">Pari, bluff, cartes Pouvoir et manche Mystique — tout pour jouer sans hésiter.</p>
+        </div>
+      </section>
         <div class="editorial-callout">
           <strong>Fans de Whist ou Tarot Africain ?</strong> Vous retrouverez la logique du contrat et des plis, avec des twists modernes. Voir <a class="text-link" href="whist-moderne.html">Whist moderne</a>, <a class="text-link" href="tarot-africain.html">Tarot Africain</a> ou le <a class="text-link" href="comparatif-jeux-plis.html">comparatif jeux de plis</a>.
         </div>

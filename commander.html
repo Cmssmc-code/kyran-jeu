@@ -82,6 +82,47 @@
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
           "url": "https://kyran-jeu.fr/commander.html",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "2.99",
+              "currency": "EUR"
+            },
+            "shippingDestination": [
+              {
+                "@type": "DefinedRegion",
+                "addressCountry": "FR"
+              },
+              {
+                "@type": "DefinedRegion",
+                "addressCountry": "BE"
+              }
+            ],
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 3,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "FR",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 14,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          },
           "seller": {
             "@type": "Person",
             "name": "Corentin Sence"

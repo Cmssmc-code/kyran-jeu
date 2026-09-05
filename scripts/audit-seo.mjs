@@ -54,7 +54,7 @@ for (const file of htmlFiles) {
   const robots = $('meta[name="robots"]').attr('content') || '';
   const isNoIndex = robots.toLowerCase().includes('noindex');
 
-  const h1s = $('h1').map((_, el) => $(el).text().trim()).get();
+  const h1s = $('h1').map((_, el) => $(el).text().trim()).get().filter(t => t.length > 0);
   const ogTitle = $('meta[property="og:title"]').attr('content') || '';
   const ogDesc = $('meta[property="og:description"]').attr('content') || '';
   const ogImage = $('meta[property="og:image"]').attr('content') || '';

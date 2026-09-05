@@ -351,7 +351,8 @@ class KyranBreadcrumb extends HTMLElement {
 
 class KyranPageHero extends HTMLElement {
   connectedCallback() {
-    if (this.querySelector('h1')) return;
+    const existingH1 = this.querySelector('h1');
+    if (existingH1 && existingH1.textContent.trim().length > 0) return;
     const eyebrow = this.getAttribute('eyebrow') || '';
     const title = this.getAttribute('title') || '';
     const subtitle = this.getAttribute('subtitle') || '';

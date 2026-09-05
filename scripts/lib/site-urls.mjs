@@ -2,7 +2,7 @@
  * Registre canonique des URLs publiques kyran-jeu.fr
  */
 export const SITE = 'https://kyran-jeu.fr';
-export const SITE_LASTMOD = '2026-06-01';
+export const SITE_LASTMOD = '2026-09-05';
 
 export const STATIC_PAGES = [
   {
@@ -82,11 +82,11 @@ export const STATIC_PAGES = [
     section: 'Guides',
     lastmod: SITE_LASTMOD,
     changefreq: 'monthly',
-    priority: '0.85'
+    priority: '0.30'
   },
   {
     path: '/tarot-africain.html',
-    title: 'Tarot Africain — héritage KYRAN',
+    title: 'Règles du Tarot Africain (Whist 22) : Guide & Variantes',
     section: 'Guides',
     lastmod: SITE_LASTMOD,
     changefreq: 'monthly',

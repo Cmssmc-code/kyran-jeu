@@ -135,10 +135,52 @@
             "availability": "https://schema.org/InStock",
             "price": "9.99",
             "priceCurrency": "EUR",
+            "validFrom": "2024-01-01",
             "priceValidUntil": "2026-12-31",
             "itemCondition": "https://schema.org/NewCondition",
             "url": "https://kyran-jeu.fr/commander.html",
-            "seller": {"@type": "Person", "name": "Corentin Sence"}
+            "seller": {"@type": "Person", "name": "Corentin Sence"},
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "2.99",
+                "currency": "EUR"
+              },
+              "shippingDestination": [
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "FR"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "BE"
+                }
+              ],
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 3,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "FR",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 14,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
           },
           {
             "@type": "Offer",
@@ -146,10 +188,46 @@
             "availability": "https://schema.org/InStock",
             "price": "17.99",
             "priceCurrency": "EUR",
+            "validFrom": "2024-01-01",
             "priceValidUntil": "2026-12-31",
             "itemCondition": "https://schema.org/NewCondition",
             "url": "https://www.amazon.fr/dp/B0G217LD87",
-            "seller": {"@type": "Organization", "name": "Amazon"}
+            "seller": {"@type": "Organization", "name": "Amazon"},
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "FR"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 1,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 2,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "FR",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
           }
         ]
       },

@@ -78,6 +78,7 @@
           "@type": "Offer",
           "price": "9.99",
           "priceCurrency": "EUR",
+          "validFrom": "2024-01-01",
           "priceValidUntil": "2026-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
@@ -414,6 +415,7 @@
 
     .amazon-order-badge {
       display: inline-flex;
+      margin-bottom: 0;
     }
     .amazon-order-rating-pill {
       display: inline-flex;
@@ -511,8 +513,6 @@
       justify-content: center;
       flex-shrink: 0;
     }
-
-
 
     /* Bloc Récapitulatif et Quantité */
     .order-checkout-box {
@@ -975,6 +975,12 @@
         padding: 16px 14px;
         border-radius: 20px;
       }
+      .order-card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
       .order-title {
         font-size: 1.85rem;
       }
@@ -996,28 +1002,6 @@
         font-size: 0.78rem;
         gap: 8px;
         margin-bottom: 14px;
-      }
-      .bundle-options {
-        gap: 6px;
-        margin-bottom: 12px;
-      }
-      .bundle-card {
-        padding: 10px 4px 8px;
-        border-radius: 12px;
-      }
-      .bundle-qty {
-        font-size: 0.82rem;
-      }
-      .bundle-price {
-        font-size: 0.78rem;
-      }
-      .bundle-desc {
-        font-size: 0.62rem;
-      }
-      .bundle-badge-pop {
-        font-size: 0.54rem;
-        padding: 1px 5px;
-        top: -8px;
       }
       .order-checkout-box {
         padding: 12px 14px;
@@ -1124,22 +1108,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
-      }
-      .bundle-card {
-        padding: 8px 2px 6px;
-      }
-      .bundle-qty {
-        font-size: 0.76rem;
-      }
-      .bundle-price {
-        font-size: 0.72rem;
-      }
-      .bundle-desc {
-        display: none;
-      }
-      .bundle-badge-pop {
-        font-size: 0.48rem;
-        padding: 1px 4px;
       }
       .order-payment-badge {
         font-size: 0.64rem;
@@ -1292,28 +1260,6 @@
                   <span class="order-price-ref">17,99€</span>
                 </div>
                 <div class="order-price-badge">Tarif direct créateur (-44%)</div>
-              </div>
-
-              <div class="order-field-label">Choisir une formule :</div>
-
-              <!-- Sélecteur de formules bundle -->
-              <div class="bundle-options" role="radiogroup" aria-label="Choisir le nombre de boîtes">
-                <button type="button" class="bundle-card is-active" data-qty="1" role="radio" aria-checked="true">
-                  <span class="bundle-qty">1 Boîte</span>
-                  <span class="bundle-price">9,99€</span>
-                  <span class="bundle-desc">Découverte</span>
-                </button>
-                <button type="button" class="bundle-card" data-qty="2" role="radio" aria-checked="false">
-                  <span class="bundle-badge-pop">Le plus choisi</span>
-                  <span class="bundle-qty">2 Boîtes</span>
-                  <span class="bundle-price">19,98€</span>
-                  <span class="bundle-desc">Cadeau &amp; Soirée</span>
-                </button>
-                <button type="button" class="bundle-card" data-qty="3" role="radio" aria-checked="false">
-                  <span class="bundle-qty">3 Boîtes</span>
-                  <span class="bundle-price">29,97€</span>
-                  <span class="bundle-desc">Pack Groupe</span>
-                </button>
               </div>
 
               <!-- Bloc Récapitulatif et Quantité -->
@@ -1568,41 +1514,17 @@
         }
       }
 
-      var bundleCards = document.querySelectorAll('.bundle-card');
-
-      function syncBundleCards() {
-        bundleCards.forEach(function (card) {
-          var cardQty = parseInt(card.getAttribute('data-qty'), 10);
-          var active = cardQty === qty;
-          card.classList.toggle('is-active', active);
-          card.setAttribute('aria-checked', active ? 'true' : 'false');
-        });
-      }
-
-      bundleCards.forEach(function (card) {
-        card.addEventListener('click', function () {
-          var chosenQty = parseInt(card.getAttribute('data-qty'), 10);
-          if (chosenQty) {
-            qty = chosenQty;
-            updateTotal();
-            syncBundleCards();
-          }
-        });
-      });
-
       if (qtyMinus && qtyPlus) {
         qtyMinus.addEventListener('click', function () {
           if (qty > 1) {
             qty--;
             updateTotal();
-            syncBundleCards();
           }
         });
         qtyPlus.addEventListener('click', function () {
           if (qty < 10) {
             qty++;
             updateTotal();
-            syncBundleCards();
           }
         });
       }

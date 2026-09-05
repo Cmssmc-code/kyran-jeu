@@ -13,7 +13,8 @@
     "images:blog:fix": "node scripts/redownload-small-images.mjs && node scripts/fetch-philibert-blog.mjs",
     "fetch:reviews": "node scripts/fetch-amazon-reviews.mjs",
     "preview:emails": "node scripts/preview-emails.mjs",
-    "send:test-email": "node scripts/send-test-email.mjs"
+    "send:test-email": "node scripts/send-test-email.mjs",
+    "pitch:presse": "node scripts/send-press-pitch.mjs"
   },
   "keywords": [],
   "author": "",

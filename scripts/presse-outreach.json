@@ -1,0 +1,137 @@
+[
+  {
+    "id": "ludovox",
+    "name": "Ludovox",
+    "contact": "redaction@ludovox.fr",
+    "type": "Webzine & Vidéos jeux de société",
+    "website": "https://ludovox.fr",
+    "hook": "Un jeu de plis moderne inspiré du Tarot Africain avec twist cartes Pouvoir",
+    "targetAudience": "Passionnés & joueurs réguliers"
+  },
+  {
+    "id": "gusandco",
+    "name": "Gus & Co",
+    "contact": "contact@gusandco.net",
+    "type": "Média de référence jeu de société & pop culture",
+    "website": "https://gusandco.net",
+    "hook": "Design épuré Dark & Gold et mécanique de paris mathématiquement impitoyable",
+    "targetAudience": "Joueurs experts et curieux de game design"
+  },
+  {
+    "id": "undecent",
+    "name": "Undécent",
+    "contact": "contact@undecent.fr",
+    "type": "Blog & critiques approfondies",
+    "website": "https://undecent.fr",
+    "hook": "L'alternative moderne à Skyjo et Wizard pour soirées entre amis",
+    "targetAudience": "Jeux d'ambiance et jeux de cartes"
+  },
+  {
+    "id": "plateau-marmots",
+    "name": "Plateau Junior / Marmots",
+    "contact": "contact@plateaumarmots.fr",
+    "type": "Webzine jeux famille & ados",
+    "website": "https://plateaumarmots.fr",
+    "hook": "Accessibilité dès 8 ans et apprentissage du pli et du pari sans calcul complexe",
+    "targetAudience": "Familles et adolescents"
+  },
+  {
+    "id": "le-labo-des-jeux",
+    "name": "Le Labo des Jeux",
+    "contact": "contact@lelabodesjeux.com",
+    "type": "Collectif de chroniqueurs & influenceurs",
+    "website": "https://lelabodesjeux.com",
+    "hook": "Une création indépendante française soignée : de l'idée d'enfance à la boîte toilée",
+    "targetAudience": "Communauté ludique active"
+  },
+  {
+    "id": "des-jeux-et-des-bieres",
+    "name": "Des Jeux et des Bières",
+    "contact": "contact@desjeuxetdesbieres.fr",
+    "type": "Blog ambiance & apéro",
+    "website": "https://desjeuxetdesbieres.fr",
+    "hook": "Le parfait jeu d'apéro de 30 minutes avec manche finale à l'aveugle",
+    "targetAudience": "Jeux d'apéro et soirées entre potes"
+  },
+  {
+    "id": "un-de-dans-la-tomate",
+    "name": "Un Dé Dans La Tomate",
+    "contact": "undedanslatomate@gmail.com",
+    "type": "Chaîne YouTube & chroniques Instagram",
+    "website": "https://undedanslatomate.fr",
+    "hook": "Esthétique Dark & Gold très photogénique et gameplay ultra-tendu",
+    "targetAudience": "Abonnés YouTube et Instagram ludiques"
+  },
+  {
+    "id": "carnet-des-jeux",
+    "name": "Carnet des Jeux",
+    "contact": "contact@carnetdesjeux.com",
+    "type": "Blog tests & avis",
+    "website": "https://carnetdesjeux.com",
+    "hook": "Fiche de test et découverte d'un jeune auteur français indépendant",
+    "targetAudience": "Découvertes ludiques indépendantes"
+  },
+  {
+    "id": "pixel-aventuriers",
+    "name": "Pixel Aventuriers",
+    "contact": "contact@pixelaventuriers.com",
+    "type": "Blog jeux & univers visuels",
+    "website": "https://pixelaventuriers.com",
+    "hook": "L'univers graphique signé Floh et la rejouabilité des cartes Pouvoir",
+    "targetAudience": "Jeux de société narratifs et visuels"
+  },
+  {
+    "id": "ludigaume",
+    "name": "LudiGaume",
+    "contact": "contact@ludigaume.be",
+    "type": "Webzine ludique belge (Ciblage Belgique francophone)",
+    "website": "https://ludigaume.be",
+    "hook": "Forte affinité belge avec le Tarot Africain / Whist et livraison disponible en Belgique",
+    "targetAudience": "Public belge francophone passionné de jeux de plis"
+  },
+  {
+    "id": "vin-d-jeu",
+    "name": "Vin d'Jeu",
+    "contact": "vindjeu@gmail.com",
+    "type": "Blog d'avis et dégustations ludiques",
+    "website": "https://www.vindjeu.eu",
+    "hook": "Revisite tactique d'un classique avec contrainte d'annonce mathématique",
+    "targetAudience": "Joueurs stratégiques"
+  },
+  {
+    "id": "scifi-universe",
+    "name": "SciFi-Universe (Section Jeux de cartes)",
+    "contact": "redaction@scifi-universe.com",
+    "type": "Média imaginaire & jeux",
+    "website": "https://www.scifi-universe.com",
+    "hook": "Direction artistique Dark & Gold et pouvoirs mystiques",
+    "targetAudience": "Amateurs d'univers fantastiques et ludiques"
+  },
+  {
+    "id": "jeumarmots",
+    "name": "Geek Junior (Rubrique Jeux)",
+    "contact": "contact@geek-junior.com",
+    "type": "Magazine & site ados/familles",
+    "website": "https://www.geek-junior.com",
+    "hook": "Jeu de cartes sans écran favorisant la logique, l'anticipation et les paris",
+    "targetAudience": "Jeunes et familles"
+  },
+  {
+    "id": "campustech",
+    "name": "Campustech (Section Boardgames)",
+    "contact": "contact@campustech.fr",
+    "type": "Média pop-culture et jeux de société tendance",
+    "website": "https://campustech.fr",
+    "hook": "Pourquoi ce petit jeu de cartes indépendant à 9,99 € bouscule les jeux d'apéro",
+    "targetAudience": "Étudiants et jeunes adultes"
+  },
+  {
+    "id": "trictrac-redac",
+    "name": "Tric Trac Équipe Rédactionnelle",
+    "contact": "contact@trictrac.net",
+    "type": "Portail ludique",
+    "website": "https://www.trictrac.net",
+    "hook": "Article découverte créateur & auto-édition française",
+    "targetAudience": "Tous joueurs francophones"
+  }
+]

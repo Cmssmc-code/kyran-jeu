@@ -181,12 +181,23 @@
           var graph = schema['@graph'] || [schema];
           var bg = null;
           for (var g = 0; g < graph.length; g++) {
-            if (graph[g]['@type'] === 'BoardGame') {
-              bg = graph[g];
+            var item = graph[g];
+            var t = item['@type'];
+            var isTarget = (item['@id'] === 'https://kyran-jeu.fr/#boardgame') ||
+              (Array.isArray(t) ? (t.indexOf('Product') !== -1 || t.indexOf('BoardGame') !== -1) : (t === 'BoardGame' || t === 'Product'));
+            if (isTarget) {
+              bg = item;
               break;
             }
           }
           if (bg) {
+            // Google Rich Snippets requiert Product en type principal pour aggregateRating
+            if (!Array.isArray(bg['@type'])) {
+              bg['@type'] = ['Product', 'BoardGame'];
+            } else if (bg['@type'][0] !== 'Product') {
+              var remaining = bg['@type'].filter(function (x) { return x !== 'Product'; });
+              bg['@type'] = ['Product'].concat(remaining);
+            }
             bg.aggregateRating = {
               '@type': 'AggregateRating',
               'ratingValue': avg.toFixed(1),

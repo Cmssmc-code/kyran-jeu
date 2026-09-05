@@ -56,7 +56,7 @@ function resolveActivePage(explicit) {
 
 const DISCOVER_ITEMS = [
   { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
-  { href: '/alternative-skyjo.html', title: 'Alternative Skyjo', desc: 'Même usage, mécaniques de plis' },
+  { href: '/blog/jeux-comme-skyjo.html', title: 'Alternative Skyjo', desc: '10 jeux équivalents & KYRAN' },
   { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Héritage et genèse du jeu' },
   { href: '/whist-moderne.html', title: 'Whist moderne', desc: 'Contrat, plis et pari impitoyable' },
   { href: '/comparatif-jeux-plis.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },

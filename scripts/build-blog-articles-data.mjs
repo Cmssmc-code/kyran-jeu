@@ -35,7 +35,7 @@ function countArticle(a) {
   return wc(parts.join(' '));
 }
 
-const INTRO_SKYJO = `Skyjo a conquis les tables françaises avec sa formule simple : des cartes face cachée, un score à minimiser, et des retournements de situation qui font hurler la table. Si vous l'avez bouclé dix fois et cherchez <strong>des jeux dans le même esprit</strong>, cette sélection est faite pour vous. Nous avons retenu dix titres testés en conditions réelles — apéros, soirées entre amis, parties familiales — en privilégiant l'accessibilité, la durée raisonnable et la rejouabilité. Pas de grosses boîtes à trois heures de règles : ici, on sort le jeu, on explique en cinq minutes, on rigole. Du jeu de cartes compact au titre un peu plus stratégique, vous trouverez des alternatives honnêtes à Skyjo, dont certaines moins connues mais tout aussi conviviales. Pour aller plus loin sur le comparatif Skyjo, consultez aussi notre page <a class="text-link" href="/alternative-skyjo.html">alternative Skyjo</a>.`;
+const INTRO_SKYJO = `Skyjo a conquis les tables françaises avec sa formule simple : des cartes face cachée, un score à minimiser, et des retournements de situation qui font hurler la table. Si vous l'avez bouclé dix fois et cherchez <strong>des jeux dans le même esprit</strong>, cette sélection est faite pour vous. Nous avons retenu dix titres testés en conditions réelles — apéros, soirées entre amis, parties familiales — en privilégiant l'accessibilité, la durée raisonnable et la rejouabilité. Pas de grosses boîtes à trois heures de règles : ici, on sort le jeu, on explique en cinq minutes, on rigole. Du jeu de cartes compact au titre un peu plus stratégique, vous trouverez des alternatives honnêtes à Skyjo, dont certaines moins connues mais tout aussi conviviales. Pour aller plus loin sur le comparatif Skyjo, consultez aussi notre page <a class="text-link" href="/blog/jeux-comme-skyjo.html">alternative Skyjo</a>.`;
 
 const CONCLUSION_DEFAULT = (topic) =>
   `Chaque groupe a ses habitudes : certains veulent du reflexe, d'autres de la réflexion légère ou du bluff. L'important est de matcher le jeu à l'ambiance plutôt que de viser le « meilleur » titre du marché. Nos dix suggestions couvrent ${topic} avec des budgets variés, tous testables en une soirée. Commencez par un ou deux titres proches de ce que vous connaissez déjà, puis élargissez progressivement. Et si vous hésitez encore, demandez en boutique : un bon vendeur spécialisé orientera selon la taille et le tempérament de votre groupe. Bonnes parties !`;
@@ -57,7 +57,7 @@ const ARTICLE_DEFS = [
     heroCaption: 'Skyjo et ses alternatives — jeux de cartes accessibles.',
     intro: INTRO_SKYJO,
     conclusion: CONCLUSION_DEFAULT('des profils différents'),
-    guideLinks: '<strong>Guides KYRAN :</strong> <a class="text-link" href="/alternative-skyjo.html">Alternative Skyjo</a> · <a class="text-link" href="/jeu-apero.html">Jeu apéro</a> · <a class="text-link" href="/comparatif-jeux-plis.html">Comparatif jeux de plis</a>',
+    guideLinks: '<strong>Guides KYRAN :</strong> <a class="text-link" href="/blog/jeux-comme-skyjo.html">Alternative Skyjo</a> · <a class="text-link" href="/jeu-apero.html">Jeu apéro</a> · <a class="text-link" href="/comparatif-jeux-plis.html">Comparatif jeux de plis</a>',
     related: ['jeux-cartes-pas-chers', 'meilleurs-jeux-apero', 'jeux-30-minutes'],
     gameKeys: ['skyjo', 'love-letter', 'hanabi', 'lost-cities', 'timeline', 'dobble', 'jungle-speed', 'uno', 'saboteur'],
     kyranPos: 4,
@@ -185,7 +185,7 @@ const ARTICLE_DEFS = [
     heroCaption: 'Uno — le classique abordable.',
     intro: `Un jeu de cartes ne doit pas coûter une fortune pour offrir des dizaines de parties mémorables. Cette sélection de <strong>huit jeux de cartes pas chers</strong> ( tous sous la barre des 20 € ) prouve que le petit budget n'implique pas le mauvais goût. Uno et Jungle Speed pour les apéros ; Love Letter et Skull pour le bluff ; Timeline pour la culture générale ; KYRAN pour les plis avec pari — autant de titres disponibles chez les revendeurs spécialisés, parfois en promotion. Nous avons exclu les gadgets jetables : chaque jeu ici a une vraie rejouabilité.`,
     conclusion: `Petit budget ne veut pas dire compromis total. Commencez par Uno ou Love Letter si vous hésitez ; montez en gamme avec Skull ou KYRAN quand votre groupe accroche aux jeux de cartes modernes. Et surveillez les soldes en boutique — les bonnes affaires ne manquent pas sur ces références.`,
-    guideLinks: '<strong>Voir aussi :</strong> <a class="text-link" href="/alternative-skyjo.html">Alternative Skyjo</a> · <a class="text-link" href="/comparatif-jeux-plis.html">Comparatif plis</a>',
+    guideLinks: '<strong>Voir aussi :</strong> <a class="text-link" href="/blog/jeux-comme-skyjo.html">Alternative Skyjo</a> · <a class="text-link" href="/comparatif-jeux-plis.html">Comparatif plis</a>',
     related: ['jeux-comme-skyjo', 'alternatives-uno', 'jeux-vacances-voyage'],
     gameKeys: ['uno', 'jungle-speed', 'love-letter', 'skull', 'saboteur', 'timeline', 'dobble'],
     kyranPos: 3,

@@ -6,7 +6,7 @@
 >
   <url>
     <loc>https://kyran-jeu.fr/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
     <image:image>
@@ -69,13 +69,6 @@
   </url>
 
   <url>
-    <loc>https://kyran-jeu.fr/alternative-skyjo.html</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.30</priority>
-  </url>
-
-  <url>
     <loc>https://kyran-jeu.fr/tarot-africain.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -117,14 +110,14 @@
 
   <url>
     <loc>https://kyran-jeu.fr/plan-du-site.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/commander.html</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -152,14 +145,14 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/index.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -170,7 +163,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -181,7 +174,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -192,7 +185,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-famille.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -203,7 +196,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-anniversaire.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -214,7 +207,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-noel.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -225,7 +218,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -236,7 +229,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -247,7 +240,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -258,7 +251,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-30-minutes.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -269,7 +262,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -280,7 +273,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -291,7 +284,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -302,7 +295,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -313,7 +306,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -324,7 +317,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -335,7 +328,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-codenames.html</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -346,7 +339,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-hanabi.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -357,7 +350,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -368,7 +361,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-duo-couples.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -379,7 +372,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -390,7 +383,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -401,7 +394,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-ete-terrasse.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -412,7 +405,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -423,7 +416,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-ambiance-party.html</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -434,7 +427,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skull.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -445,7 +438,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-draft-encheres.html</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -456,7 +449,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-trahison-cachee.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -467,7 +460,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-classiques-modernes.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -478,7 +471,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>

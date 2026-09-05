@@ -9,7 +9,7 @@ export const STATIC_PAGES = [
     path: '/',
     title: 'Accueil — KYRAN jeu de cartes',
     section: 'KYRAN',
-    lastmod: '2026-06-01',
+    lastmod: SITE_LASTMOD,
     changefreq: 'weekly',
     priority: '1.00',
     sitemapExtra: `
@@ -77,12 +77,13 @@ export const STATIC_PAGES = [
     </image:image>`
   },
   {
-    path: '/alternative-skyjo.html',
+    path: '/blog/jeux-comme-skyjo.html',
     title: 'Alternative Skyjo — KYRAN',
     section: 'Guides',
     lastmod: SITE_LASTMOD,
     changefreq: 'monthly',
-    priority: '0.30'
+    priority: '0.30',
+    noSitemap: true
   },
   {
     path: '/tarot-africain.html',
@@ -134,7 +135,7 @@ export const STATIC_PAGES = [
     path: '/plan-du-site.html',
     title: 'Plan du site — kyran-jeu.fr',
     section: 'Ressources',
-    lastmod: '2026-06-01',
+    lastmod: SITE_LASTMOD,
     changefreq: 'monthly',
     priority: '0.55'
   },
@@ -142,7 +143,7 @@ export const STATIC_PAGES = [
     path: '/commander.html',
     title: 'Commander KYRAN — Boutique officielle',
     section: 'Boutique',
-    lastmod: '2026-09-02',
+    lastmod: SITE_LASTMOD,
     changefreq: 'weekly',
     priority: '0.95'
   },
@@ -172,9 +173,9 @@ export const STATIC_PAGES = [
   },
   {
     path: '/blog/index.html',
-    title: 'Blog KYRAN — 30 sélections jeux',
+    title: 'Blog KYRAN — 40 sélections jeux',
     section: 'Blog',
-    lastmod: '2026-06-30',
+    lastmod: SITE_LASTMOD,
     changefreq: 'weekly',
     priority: '0.85'
   }

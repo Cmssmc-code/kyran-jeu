@@ -38,6 +38,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preload" as="image" href="boite-recto-kyran.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="seo-config.js?v=20260904"></script>
   <link rel="stylesheet" href="style.css?v=20260905a" />
@@ -514,6 +515,156 @@
       flex-shrink: 0;
     }
 
+    /* Indicateur de progression commande */
+    .order-progress-steps {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      background: #faf7f2;
+      border: 1px solid #ede7dc;
+      border-radius: 12px;
+    }
+    .order-step-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .order-step-item.is-active {
+      color: var(--gold-dark);
+    }
+    .order-step-num {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #e7e2d9;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+    .order-step-item.is-active .order-step-num {
+      background: var(--gold-dark);
+      color: #ffffff;
+    }
+    .order-step-arrow {
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Sélecteur d'offres Bundles */
+    .order-bundle-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .order-bundle-card {
+      position: relative;
+      border: 2px solid #e7e2d9;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .order-bundle-card:hover {
+      border-color: rgba(217, 119, 6, 0.45);
+      background: #fdfbf7;
+    }
+    .order-bundle-card.is-active {
+      border-color: var(--gold-dark);
+      background: #fffbeb;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+    }
+    .order-bundle-radio {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #cbd5e1;
+      background: #ffffff;
+      flex-shrink: 0;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .order-bundle-card.is-active .order-bundle-radio {
+      border-color: var(--gold-dark);
+    }
+    .order-bundle-card.is-active .order-bundle-radio::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-dark);
+    }
+    .order-bundle-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .order-bundle-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .order-bundle-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .order-bundle-pricing {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .order-bundle-price {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+    .order-bundle-sub {
+      display: block;
+      font-size: 0.68rem;
+      color: #059669;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .order-bundle-tag {
+      position: absolute;
+      top: -9px;
+      right: 14px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+      text-transform: uppercase;
+    }
+    .order-bundle-tag--best {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      box-shadow: 0 2px 6px rgba(5, 150, 105, 0.3);
+    }
+
     /* Bloc Récapitulatif et Quantité */
     .order-checkout-box {
       background: #faf7f2;
@@ -539,35 +690,41 @@
     .order-qty-controls {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 4px;
       background: #ffffff;
       border: 1px solid #d6cebf;
       border-radius: 10px;
-      padding: 2px 6px;
+      padding: 2px;
     }
     .order-qty-btn {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 8px;
       border: none;
       background: transparent;
       color: var(--text-main);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s, color 0.15s;
+      transition: background 0.15s, color 0.15s, transform 0.1s;
+      -webkit-tap-highlight-color: transparent;
     }
     .order-qty-btn:hover {
       background: #f4f0e8;
       color: var(--gold-dark);
     }
+    .order-qty-btn:active {
+      transform: scale(0.92);
+    }
     .order-qty-val {
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      min-width: 22px;
+      min-width: 28px;
       text-align: center;
       color: var(--text-main);
     }
@@ -647,30 +804,52 @@
         0 14px 30px -4px rgba(217, 119, 6, 0.45);
     }
     .order-btn-stripe:active {
-      transform: translateY(1px);
+      transform: scale(0.98) translateY(1px);
+      filter: brightness(0.96);
       box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
     }
 
+    /* Badges de paiement SVG vectoriels */
     .order-payment-badges {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      margin-top: 11px;
+      gap: 8px;
+      margin-top: 12px;
       flex-wrap: wrap;
     }
-    .order-payment-badge {
-      background: #fdfbf7;
-      border: 1px solid #ede7dc;
-      border-radius: 6px;
-      padding: 3px 8px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #78716c;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-      white-space: nowrap;
+    .payment-icon-svg {
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      flex-shrink: 0;
+      display: block;
     }
+
+    /* Carte de garantie sérénité */
+    .order-guarantee-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: #166534;
+      line-height: 1.35;
+    }
+    .order-guarantee-badge {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .order-guarantee-content strong {
+      display: block;
+      color: #14532d;
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+
 
     .order-step-note {
       display: flex;
@@ -1244,28 +1423,78 @@
               </div>
 
               <h1 class="order-title">Boîte KYRAN officielle</h1>
-              <p class="order-desc">Jeu complet dans sa boîte rigide : 55 cartes et règles en français.</p>
+              <p class="order-desc">Jeu complet dans sa boîte rigide : 55 cartes toilées et règles en français.</p>
+
+              <!-- Fil de progression rassurant -->
+              <div class="order-progress-steps" aria-label="Étapes de votre commande">
+                <div class="order-step-item is-active">
+                  <span class="order-step-num">1</span>
+                  <span class="order-step-name">Choix du pack</span>
+                </div>
+                <div class="order-step-arrow" aria-hidden="true">→</div>
+                <div class="order-step-item">
+                  <span class="order-step-num">2</span>
+                  <span class="order-step-name">Paiement Stripe</span>
+                </div>
+                <div class="order-step-arrow" aria-hidden="true">→</div>
+                <div class="order-step-item">
+                  <span class="order-step-num">3</span>
+                  <span class="order-step-name">Expédié 24/48h</span>
+                </div>
+              </div>
 
               <!-- Estimation dynamique de livraison -->
               <div class="order-delivery-estimate" id="delivery-estimate-box">
                 <span class="order-delivery-estimate-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                 </span>
                 <span id="delivery-estimate-text">Expédié sous 24-48h · Chez vous en 3 à 5 jours</span>
               </div>
 
-              <div class="order-price-bar">
-                <div class="order-price-group">
-                  <span class="order-price-main" id="display-unit-price">9,99€</span>
-                  <span class="order-price-ref">17,99€</span>
+              <!-- Sélecteur d'offres Bundles multi-boîtes -->
+              <div class="order-bundle-group" role="radiogroup" aria-label="Choisir votre formule">
+                <div class="order-bundle-card is-active" data-qty="1" tabindex="0" role="radio" aria-checked="true">
+                  <div class="order-bundle-radio"></div>
+                  <div class="order-bundle-info">
+                    <div class="order-bundle-title">1 Boîte KYRAN</div>
+                    <div class="order-bundle-desc">Édition officielle complète 2026</div>
+                  </div>
+                  <div class="order-bundle-pricing">
+                    <span class="order-bundle-price">9,99€</span>
+                  </div>
                 </div>
-                <div class="order-price-badge">Tarif direct créateur (-44%)</div>
+
+                <div class="order-bundle-card" data-qty="2" tabindex="0" role="radio" aria-checked="false">
+                  <span class="order-bundle-tag">★ Le plus choisi</span>
+                  <div class="order-bundle-radio"></div>
+                  <div class="order-bundle-info">
+                    <div class="order-bundle-title">Pack Duo (2 Boîtes)</div>
+                    <div class="order-bundle-desc">1 pour vous + 1 à offrir à un proche</div>
+                  </div>
+                  <div class="order-bundle-pricing">
+                    <span class="order-bundle-price">19,98€</span>
+                    <span class="order-bundle-sub">Frais de port réduits</span>
+                  </div>
+                </div>
+
+                <div class="order-bundle-card" data-qty="3" tabindex="0" role="radio" aria-checked="false">
+                  <span class="order-bundle-tag order-bundle-tag--best">Pack Amis · Soirée</span>
+                  <div class="order-bundle-radio"></div>
+                  <div class="order-bundle-info">
+                    <div class="order-bundle-title">Pack Trio (3 Boîtes)</div>
+                    <div class="order-bundle-desc">Idéal pour les tables nombreuses &amp; cadeaux</div>
+                  </div>
+                  <div class="order-bundle-pricing">
+                    <span class="order-bundle-price">29,97€</span>
+                    <span class="order-bundle-sub">Max d'économies</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Bloc Récapitulatif et Quantité -->
+              <!-- Bloc Récapitulatif et Quantité fine -->
               <div class="order-checkout-box">
                 <div class="order-qty-row">
-                  <span class="order-qty-label">Quantité&nbsp;:</span>
+                  <span class="order-qty-label">Quantité personnalisée&nbsp;:</span>
                   <div class="order-qty-controls">
                     <button type="button" class="order-qty-btn" id="qty-minus" aria-label="Diminuer la quantité">−</button>
                     <span class="order-qty-val" id="qty-count">1</span>
@@ -1280,12 +1509,12 @@
                   </div>
                   <div class="order-line-item">
                     <span class="order-line-label">Livraison suivie&nbsp;:</span>
-                    <span class="order-line-val order-line-muted">Calculée à l'étape suivante</span>
+                    <span class="order-line-val order-line-muted">Dès 2,99€ en France (selon adresse)</span>
                   </div>
                 </div>
 
                 <div class="order-total-row">
-                  <span>Total (hors livraison)&nbsp;:</span>
+                  <span>Total commande&nbsp;:</span>
                   <span class="order-total-amount" id="display-total-price">9,99€</span>
                 </div>
               </div>
@@ -1299,18 +1528,56 @@
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
 
+              <!-- Logos de paiement vectoriels SVG -->
               <div class="order-payment-badges" aria-label="Moyens de paiement acceptés">
-                <span class="order-payment-badge">CB</span>
-                <span class="order-payment-badge">Visa</span>
-                <span class="order-payment-badge">Mastercard</span>
-                <span class="order-payment-badge">Apple Pay</span>
-                <span class="order-payment-badge">Google Pay</span>
+                <!-- CB -->
+                <svg class="payment-icon-svg" viewBox="0 0 38 24" width="38" height="24" aria-label="Carte Bancaire" role="img">
+                  <rect width="38" height="24" rx="4" fill="#00796B" stroke="#004D40"/>
+                  <text x="19" y="16" fill="#ffffff" font-family="'Poppins', sans-serif" font-weight="900" font-size="11" text-anchor="middle" letter-spacing="1">CB</text>
+                </svg>
+                <!-- Visa -->
+                <svg class="payment-icon-svg" viewBox="0 0 38 24" width="38" height="24" aria-label="Visa" role="img">
+                  <rect width="38" height="24" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                  <path d="M15.5 16.5l2.4-10h2.4l-2.4 10h-2.4zm10.7-9.8c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.1 0 1.4 1.3 2.1 2.3 2.6 1 .5 1.4.8 1.4 1.2 0 .7-.8 1-1.6 1-1.1 0-1.7-.2-2.6-.6l-.4-.2-.4 2.3c.7.3 1.9.6 3.2.6 2.7 0 4.5-1.3 4.5-3.3 0-1.1-.7-2-2.2-2.7-.9-.5-1.5-.8-1.5-1.3 0-.4.5-.9 1.5-.9.9 0 1.5.2 2 .4l.2.1.5-2.3zm6.3 0h-1.9c-.6 0-1 .2-1.3.9l-3.6 8.9h2.5l.5-1.4h3.1l.3 1.4h2.2l-1.8-9.8zm-3.1 6.5l1.3-3.6.8 3.6h-2.1zm-15.6-6.5l-2.4 6.8-.3-1.4c-.4-1.5-1.8-3.1-3.3-3.9l2.2 8.3h2.6l3.8-9.8h-2.6z" fill="#1434CB"/>
+                  <path d="M7.7 6.7H3.8l-.1.4c2.9.7 4.9 2.5 5.7 4.6l-.8-4.2c-.1-.5-.5-.8-.9-.8z" fill="#F7B600"/>
+                </svg>
+                <!-- Mastercard -->
+                <svg class="payment-icon-svg" viewBox="0 0 38 24" width="38" height="24" aria-label="Mastercard" role="img">
+                  <rect width="38" height="24" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                  <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+                  <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+                  <path d="M19 6.8a6.96 6.96 0 0 1 2.6 5.2 6.96 6.96 0 0 1-2.6 5.2 6.96 6.96 0 0 1-2.6-5.2c0-2 1-3.9 2.6-5.2z" fill="#FF5F00"/>
+                </svg>
+                <!-- Apple Pay -->
+                <svg class="payment-icon-svg" viewBox="0 0 38 24" width="38" height="24" aria-label="Apple Pay" role="img">
+                  <rect width="38" height="24" rx="4" fill="#000000"/>
+                  <path d="M13.2 8.9c-.3.4-.8.7-1.3.7-.1-.5.1-1 .4-1.3.3-.4.8-.6 1.3-.6.1.5-.1 1-.4 1.2zm1.4 1.6c-.7 0-1.3.4-1.7.4-.4 0-.9-.4-1.5-.4-.8 0-1.5.5-1.9 1.2-.8 1.4-.2 3.5.6 4.6.4.6.9 1.2 1.5 1.2.6 0 .8-.4 1.5-.4.7 0 .9.4 1.5.4.6 0 1.1-.6 1.5-1.2.5-.7.7-1.4.7-1.5-.1 0-1.3-.5-1.3-1.9 0-1.2 1-1.8 1.1-1.8-.6-.9-1.5-1-1.8-1-.4 0-.9.4-1.7.4z" fill="#ffffff"/>
+                  <text x="23" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="9" fill="#ffffff">Pay</text>
+                </svg>
+                <!-- Google Pay -->
+                <svg class="payment-icon-svg" viewBox="0 0 38 24" width="38" height="24" aria-label="Google Pay" role="img">
+                  <rect width="38" height="24" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+                  <path d="M14.5 12.1c0-.3 0-.6-.1-.9h-3.9v1.7h2.2c-.1.5-.4 1-.9 1.3v1h1.4c.8-.8 1.3-1.9 1.3-3.1z" fill="#4285F4"/>
+                  <path d="M10.5 16.2c1.1 0 2.1-.4 2.8-1.1l-1.4-1c-.4.3-.9.4-1.4.4-1.1 0-2-.7-2.3-1.7H6.7v1.1c.7 1.4 2.2 2.3 3.8 2.3z" fill="#34A853"/>
+                  <path d="M8.2 12.8c-.1-.3-.2-.6-.2-.9s.1-.6.2-.9V9.9H6.7c-.3.6-.5 1.3-.5 2s.2 1.4.5 2l1.5-1.1z" fill="#FBBC05"/>
+                  <path d="M10.5 9.4c.6 0 1.2.2 1.6.6l1.2-1.2C12.6 8.2 11.6 7.8 10.5 7.8 8.9 7.8 7.4 8.7 6.7 10.1l1.5 1.1c.3-1 1.2-1.8 2.3-1.8z" fill="#EA4335"/>
+                  <text x="24" y="15" font-family="'Poppins', sans-serif" font-weight="700" font-size="9" fill="#5f6368">Pay</text>
+                </svg>
               </div>
 
               <p class="order-step-note">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <span>Paiement Stripe sécurisé · Adresse demandée à l'étape suivante</span>
+                <span>Paiement Stripe 100% sécurisé · Adresse demandée à l'étape suivante</span>
               </p>
+
+              <!-- Carte de garantie satisfaction -->
+              <div class="order-guarantee-box">
+                <div class="order-guarantee-badge" aria-hidden="true">🛡️</div>
+                <div class="order-guarantee-content">
+                  <strong>Garantie 14 jours « Satisfait ou Remboursé »</strong>
+                  <span>Commandez en toute confiance : retour simple et remboursement sous 14 jours.</span>
+                </div>
+              </div>
 
               <div class="order-divider">
                 <span>ou</span>
@@ -1486,7 +1753,7 @@
         deliveryText.innerHTML = 'Commandez aujourd\'hui · Livraison suivie estimée entre le <strong>' + minStr + '</strong> et le <strong>' + maxStr + '</strong>';
       }
 
-      // Logique Quantité & Prix Stripe
+      // Logique Quantité, Bundles & Prix Stripe
       var unitPrice = 9.99;
       var qty = 1;
       var qtyMinus = document.getElementById('qty-minus');
@@ -1495,6 +1762,7 @@
       var displaySubtotal = document.getElementById('display-subtotal');
       var displayTotal = document.getElementById('display-total-price');
       var stripeBtn = document.getElementById('stripe-checkout-link');
+      var bundleCards = document.querySelectorAll('.order-bundle-card');
 
       function updateTotal() {
         qtyVal.textContent = qty;
@@ -1505,6 +1773,15 @@
         if (displayTotal) displayTotal.textContent = subtotal + '€';
         var btnTotal = document.getElementById('btn-total-display');
         if (btnTotal) btnTotal.textContent = subtotal + '€';
+        
+        // Synchro visuelle des cartes bundles
+        bundleCards.forEach(function (card) {
+          var cardQty = parseInt(card.getAttribute('data-qty'), 10);
+          var isActive = cardQty === qty;
+          card.classList.toggle('is-active', isActive);
+          card.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+
         if (stripeBtn) {
           stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + (qty > 1 ? '?quantity=' + qty : '');
         }
@@ -1513,6 +1790,22 @@
           stickyPriceEl.innerHTML = subtotal + '&nbsp;€ <small style="color:var(--text-muted);font-weight:normal;">(' + qty + ' boîte' + (qty > 1 ? 's' : '') + ' · port calculé)</small>';
         }
       }
+
+      bundleCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var q = parseInt(card.getAttribute('data-qty'), 10);
+          if (q && q >= 1 && q <= 10) {
+            qty = q;
+            updateTotal();
+          }
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
 
       if (qtyMinus && qtyPlus) {
         qtyMinus.addEventListener('click', function () {

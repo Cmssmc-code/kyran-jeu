@@ -42,13 +42,13 @@
     var total = data.totalReviews || data.reviews.length;
     var reviews = data.reviews;
 
-    // Rendu badge compact pour la page de commande si présente
+    // Rendu badge compact pour la page de commande si présente (cliquable vers #avis)
     var orderBadge = document.getElementById('amazon-order-badge');
     if (orderBadge) {
-      orderBadge.innerHTML = '<div class="amazon-order-rating-pill">' +
+      orderBadge.innerHTML = '<a href="#avis" class="amazon-order-rating-pill" style="text-decoration:none;cursor:pointer;" title="Voir les avis des joueurs">' +
         '<span class="star-gold">★</span> <strong>' + avg.toFixed(1) + '/5</strong> sur Amazon ' +
         '<span class="amazon-rating-count">(' + total + ' évaluations)</span>' +
-        '</div>';
+        '</a>';
     }
 
     var container = document.getElementById('amazon-reviews-widget');

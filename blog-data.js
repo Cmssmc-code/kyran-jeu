@@ -480,6 +480,30 @@ const BLOG_ITEMS = [
     seoQuery: 'jeu de carte addictif, jeu format poche voyage, petit jeu cartes rapide',
     kyranPosition: 5,
     related: ['jeux-vacances-voyage', 'jeux-30-minutes', 'jeux-cartes-pas-chers']
+  },
+  {
+    slug: 'jeux-cartes-6-joueurs',
+    title: 'Top 8 des jeux de cartes à 6 joueurs sans temps mort',
+    category: 'Cartes',
+    date: '2026-09-11',
+    readMinutes: 13,
+    excerpt: 'Finis les tours interminables : découvrez 8 excellents jeux de cartes testés pour 6 joueurs alliant bluff, rapidité et fous rires.',
+    image: '/blog/images/6-qui-prend.jpg',
+    seoQuery: 'jeu de carte 6 joueurs, jeux de societe 6 joueurs, jeu cartes 6 personnes',
+    kyranPosition: 1,
+    related: ['jeux-cartes-5-joueurs', 'jeux-cartes-4-joueurs', 'meilleurs-jeux-apero']
+  },
+  {
+    slug: 'jeux-cartes-adultes',
+    title: 'Top 8 des meilleurs jeux de cartes pour adultes',
+    category: 'Soirée',
+    date: '2026-09-11',
+    readMinutes: 14,
+    excerpt: 'Tension psychologique, bluff, tactique et retournements : découvrez 8 pépites modernes de jeux de cartes pour adultes.',
+    image: '/blog/images/coup.jpg',
+    seoQuery: 'jeu de cartes adulte, jeux de societe adultes, jeux de cartes soiree adulte',
+    kyranPosition: 1,
+    related: ['jeux-soiree-amis', 'jeux-cartes-6-joueurs', 'meilleurs-jeux-apero']
   }
 ];
 

@@ -482,6 +482,30 @@
       ]
     },
     {
+      "page": "/blog/jeux-cartes-6-joueurs.html",
+      "primary_queries": [
+        "jeu de carte 6 joueurs",
+        "jeux de societe 6 joueurs",
+        "jeu cartes 6 personnes"
+      ],
+      "secondary_queries": [
+        "meilleur jeu 6 joueurs",
+        "jeu soiree 6 joueurs"
+      ]
+    },
+    {
+      "page": "/blog/jeux-cartes-adultes.html",
+      "primary_queries": [
+        "jeu de cartes adulte",
+        "jeux de societe adultes",
+        "jeux de cartes soiree adulte"
+      ],
+      "secondary_queries": [
+        "meilleur jeu de cartes pour adulte",
+        "jeu cartes adultes soiree"
+      ]
+    },
+    {
       "page": "/plan-du-site.html",
       "primary_queries": [
         "plan du site kyran",

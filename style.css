@@ -1959,6 +1959,13 @@ button:active,
   flex-shrink: 0;
 }
 
+.order-presentation .product-thumbnails {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .product-thumb {
   display: block;
   width: 68px;

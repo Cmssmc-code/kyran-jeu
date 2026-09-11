@@ -564,7 +564,29 @@
     <image:image>
       <image:loc>https://kyran-jeu.fr/boite-recto-kyran.jpg</image:loc>
       <image:title>8 jeux de cartes ultra addictifs au format poche à emporter partout</image:title>
-      <image:caption>Petits formats, plaisir immédiat et rejouabilité infinie : voici 8 jeux de cartes compacts qui ne quitteront plus votre </image:caption>
+      <image:caption>Petits formats, plaisir immédiat et rejouabilité infinie : voici 8 jeux de cartes compacts qui ne quitteront plus votre sac</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
+      <image:title>Top 8 des jeux de cartes à 6 joueurs sans temps mort</image:title>
+      <image:caption>Sélection des meilleurs jeux de cartes à 6 joueurs rapides, conviviaux et rythmés</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/coup.jpg</image:loc>
+      <image:title>Top 8 des meilleurs jeux de cartes pour adultes</image:title>
+      <image:caption>Sélection de jeux de cartes pour adultes : tension, bluff, stratégie et convivialité</image:caption>
     </image:image>
   </url>
 </urlset>

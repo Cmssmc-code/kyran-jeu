@@ -5,13 +5,27 @@
     <link>https://kyran-jeu.fr/blog/index.html</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Tue, 30 Jun 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 19:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/index.html</link>
     </image>
+    <item>
+      <title>Top 8 des jeux de cartes à 6 joueurs sans temps mort</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</guid>
+      <pubDate>Fri, 11 Sep 2026 18:00:00 +0200</pubDate>
+      <description>Finis les tours interminables : découvrez 8 excellents jeux de cartes testés pour 6 joueurs alliant bluff, rapidité et dynamisme.</description>
+    </item>
+    <item>
+      <title>Top 8 des meilleurs jeux de cartes pour adultes</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</guid>
+      <pubDate>Fri, 11 Sep 2026 18:00:00 +0200</pubDate>
+      <description>Tension psychologique, bluff, tactique et retournements : découvrez 8 pépites modernes de jeux de cartes pour adultes.</description>
+    </item>
     <item>
       <title>Variantes Skyjo : 5 façons de réinventer vos parties</title>
       <link>https://kyran-jeu.fr/blog/variantes-skyjo.html</link>

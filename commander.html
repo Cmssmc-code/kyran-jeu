@@ -1607,7 +1607,7 @@
               <div class="order-progress-steps" aria-label="Étapes de votre commande">
                 <div class="order-step-item is-active">
                   <span class="order-step-num">1</span>
-                  <span class="order-step-name">Choix du pack</span>
+                  <span class="order-step-name">Quantité</span>
                 </div>
                 <div class="order-step-arrow" aria-hidden="true">→</div>
                 <div class="order-step-item">
@@ -1629,45 +1629,6 @@
                 <span id="delivery-estimate-text">Expédié sous 24-48h · Chez vous en 3 à 5 jours</span>
               </div>
 
-              <!-- Sélecteur d'offres Bundles multi-boîtes -->
-              <div class="order-bundle-group" role="radiogroup" aria-label="Choisir votre formule">
-                <div class="order-bundle-card is-active" data-qty="1" tabindex="0" role="radio" aria-checked="true">
-                  <div class="order-bundle-radio"></div>
-                  <div class="order-bundle-info">
-                    <div class="order-bundle-title">1 Boîte KYRAN</div>
-                    <div class="order-bundle-desc">Édition officielle complète 2026</div>
-                  </div>
-                  <div class="order-bundle-pricing">
-                    <span class="order-bundle-price">9,99€</span>
-                  </div>
-                </div>
-
-                <div class="order-bundle-card" data-qty="2" tabindex="0" role="radio" aria-checked="false">
-                  <span class="order-bundle-tag">★ Le plus choisi</span>
-                  <div class="order-bundle-radio"></div>
-                  <div class="order-bundle-info">
-                    <div class="order-bundle-title">Pack Duo (2 Boîtes)</div>
-                    <div class="order-bundle-desc">1 pour vous + 1 à offrir à un proche</div>
-                  </div>
-                  <div class="order-bundle-pricing">
-                    <span class="order-bundle-price">19,98€</span>
-                    <span class="order-bundle-sub">Frais de port réduits</span>
-                  </div>
-                </div>
-
-                <div class="order-bundle-card" data-qty="3" tabindex="0" role="radio" aria-checked="false">
-                  <span class="order-bundle-tag order-bundle-tag--best">Pack Amis · Soirée</span>
-                  <div class="order-bundle-radio"></div>
-                  <div class="order-bundle-info">
-                    <div class="order-bundle-title">Pack Trio (3 Boîtes)</div>
-                    <div class="order-bundle-desc">Idéal pour les tables nombreuses &amp; cadeaux</div>
-                  </div>
-                  <div class="order-bundle-pricing">
-                    <span class="order-bundle-price">29,97€</span>
-                    <span class="order-bundle-sub">Max d'économies</span>
-                  </div>
-                </div>
-              </div>
 
               <!-- Bloc Récapitulatif et Quantité fine -->
               <div class="order-checkout-box">
@@ -2061,7 +2022,6 @@
       var displaySubtotal = document.getElementById('display-subtotal');
       var displayTotal = document.getElementById('display-total-price');
       var stripeBtn = document.getElementById('stripe-checkout-link');
-      var bundleCards = document.querySelectorAll('.order-bundle-card');
 
       function updateTotal() {
         qtyVal.textContent = qty;
@@ -2072,14 +2032,6 @@
         if (displayTotal) displayTotal.textContent = subtotal + '€';
         var btnTotal = document.getElementById('btn-total-display');
         if (btnTotal) btnTotal.textContent = subtotal + '€';
-        
-        // Synchro visuelle des cartes bundles
-        bundleCards.forEach(function (card) {
-          var cardQty = parseInt(card.getAttribute('data-qty'), 10);
-          var isActive = cardQty === qty;
-          card.classList.toggle('is-active', isActive);
-          card.setAttribute('aria-checked', isActive ? 'true' : 'false');
-        });
 
         if (stripeBtn) {
           stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + (qty > 1 ? '?quantity=' + qty : '');
@@ -2089,22 +2041,6 @@
           stickyPriceEl.innerHTML = subtotal + '&nbsp;€ <small style="color:var(--text-muted);font-weight:normal;">(' + qty + ' boîte' + (qty > 1 ? 's' : '') + ' · port calculé)</small>';
         }
       }
-
-      bundleCards.forEach(function (card) {
-        card.addEventListener('click', function () {
-          var q = parseInt(card.getAttribute('data-qty'), 10);
-          if (q && q >= 1 && q <= 10) {
-            qty = q;
-            updateTotal();
-          }
-        });
-        card.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            card.click();
-          }
-        });
-      });
 
       if (qtyMinus && qtyPlus) {
         qtyMinus.addEventListener('click', function () {

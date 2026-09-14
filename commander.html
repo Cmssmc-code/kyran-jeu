@@ -187,11 +187,12 @@
 
 
 
-    /* Colonne Visuel (Gauche) */
+    /* Colonne Visuel (Gauche) — Style Amazon avec miniatures sur le côté */
     .product-gallery {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
     }
     .product-main-wrap {
       cursor: zoom-in;
@@ -204,9 +205,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: clamp(16px, 2.5vw, 24px);
-      min-height: clamp(280px, 34vw, 390px);
-      max-height: 410px;
+      padding: clamp(14px, 2vw, 22px);
+      min-height: 420px;
+      max-height: 420px;
+      height: 420px;
+      flex: 1;
+      min-width: 0;
     }
     .product-main-wrap img {
       max-width: 100%;
@@ -283,52 +287,62 @@
     }
     .product-thumbnails {
       display: flex !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
+      flex-direction: column !important;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
       align-items: center !important;
-      gap: 8px !important;
-      width: 100% !important;
-      max-width: 330px;
-      margin: 12px auto 0;
+      gap: 6px !important;
+      width: 48px !important;
+      max-width: 48px !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+      max-height: 420px;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    .product-thumbnails::-webkit-scrollbar {
+      display: none;
     }
     .product-thumb {
-      width: 56px !important;
-      height: 56px !important;
-      border-radius: 12px;
-      border: 2px solid #dfd7ca;
+      width: 46px !important;
+      height: 46px !important;
+      min-width: 46px !important;
+      min-height: 46px !important;
+      border-radius: 8px;
+      border: 1.5px solid #d5d0c6;
       padding: 2px;
       background: #ffffff;
-      box-shadow: 0 2px 6px rgba(69, 26, 3, 0.05);
+      box-shadow: 0 1px 3px rgba(69, 26, 3, 0.04);
       cursor: pointer;
       overflow: hidden;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
       flex-shrink: 0;
       position: relative;
     }
     .product-thumb:hover {
-      border-color: rgba(217, 119, 6, 0.6);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.16);
+      border-color: var(--gold);
+      transform: scale(1.04);
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.16);
     }
     .product-thumb.active {
       border-color: var(--gold-dark);
-      box-shadow: 0 5px 14px rgba(217, 119, 6, 0.28), 0 0 0 2px rgba(217, 119, 6, 0.22);
-      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.35);
+      transform: scale(1.04);
     }
     .product-thumb-play-icon {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: rgba(217, 119, 6, 0.92);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.62rem;
+      font-size: 0.52rem;
       padding-left: 2px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
       pointer-events: none;
@@ -341,7 +355,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 9px;
+      border-radius: 5px;
       display: block;
     }
 
@@ -1087,26 +1101,36 @@
       .order-layout {
         gap: 20px;
       }
+      .product-gallery {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
       .product-main-wrap {
-        min-height: 220px;
-        max-height: 290px;
-        padding: 14px;
-        border-radius: 16px;
+        order: 1 !important;
+        min-height: 220px !important;
+        max-height: 290px !important;
+        height: auto !important;
+        width: 100% !important;
+        padding: 14px !important;
+        border-radius: 16px !important;
       }
       .product-main-wrap img {
-        max-height: 250px;
+        max-height: 250px !important;
       }
       .product-thumbnails {
+        order: 2 !important;
         display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
         justify-content: flex-start !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 6px 0 0 !important;
-        padding: 4px 2px 8px;
+        margin: 4px 0 0 !important;
+        padding: 4px 2px 8px !important;
         -webkit-overflow-scrolling: touch;
         gap: 6px !important;
+        max-height: none !important;
         scrollbar-width: thin;
       }
       .product-thumb {
@@ -1276,6 +1300,39 @@
           <!-- Colonne Visuel & Détails -->
           <div class="order-presentation">
             <div class="product-gallery">
+              <!-- Miniatures à gauche (Style Amazon) -->
+              <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
+                <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte officielle" title="Boîte officielle recto">
+                  <img src="boite-recto-kyran.webp" alt="Miniature boîte KYRAN recto" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte et cartes étalées" title="Jeu complet et éventail de 55 cartes">
+                  <img src="kyran-cartes-table.jpg" alt="Miniature boîte et cartes étalées" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Boîte verso" title="Boîte verso avec règles résumées">
+                  <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="3" aria-pressed="false" aria-label="Jeu en partie" title="Jeu en partie entre amis">
+                  <img src="jeu-kyran-ami.jpg" alt="Miniature partie KYRAN entre amis" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="4" aria-pressed="false" aria-label="Cartes Pouvoirs" title="Cartes aux pouvoirs fantastiques">
+                  <img src="kyran-cartes-pouvoirs.jpg" alt="Miniature cartes aux pouvoirs" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="5" aria-pressed="false" aria-label="Règle 1 : Estime ton destin" title="Comment jouer ? 1 - Estime ton destin">
+                  <img src="kyran-regles-estime.jpg" alt="Miniature étape 1 règle" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="6" aria-pressed="false" aria-label="Règle 2 : Joue tes mains" title="Comment jouer ? 2 - Joue tes mains">
+                  <img src="kyran-regles-joue.jpg" alt="Miniature étape 2 règle" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb" data-index="7" aria-pressed="false" aria-label="Règle 3 : Tranche le score" title="Comment jouer ? 3 - Tranche le score">
+                  <img src="kyran-regles-tranche.jpg" alt="Miniature étape 3 règle" width="48" height="48" loading="lazy" />
+                </button>
+                <button type="button" class="product-thumb product-thumb--video" data-index="8" aria-pressed="false" aria-label="Teaser Vidéo" title="Teaser Vidéo officiel">
+                  <img src="kyran-cartes-table.jpg" alt="Teaser Vidéo KYRAN" width="48" height="48" loading="lazy" />
+                  <span class="product-thumb-play-icon" aria-hidden="true">▶</span>
+                </button>
+              </div>
+
+              <!-- Grande photo principale -->
               <div class="product-main-wrap" id="product-main-wrap" title="Agrandir l'image" role="button" tabindex="0" aria-label="Agrandir l'image produit">
                 <button type="button" class="gallery-nav-btn prev" id="gallery-prev" aria-label="Photo précédente" title="Photo précédente">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -1289,36 +1346,6 @@
                   <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                   Agrandir
                 </span>
-              </div>
-              <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
-                <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte officielle" title="Boîte officielle recto">
-                  <img src="boite-recto-kyran.webp" alt="Miniature boîte KYRAN recto" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte et cartes étalées" title="Jeu complet et éventail de 55 cartes">
-                  <img src="kyran-cartes-table.jpg" alt="Miniature boîte et cartes étalées" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Boîte verso" title="Boîte verso avec règles résumées">
-                  <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="3" aria-pressed="false" aria-label="Jeu en partie" title="Jeu en partie entre amis">
-                  <img src="jeu-kyran-ami.jpg" alt="Miniature partie KYRAN entre amis" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="4" aria-pressed="false" aria-label="Cartes Pouvoirs" title="Cartes aux pouvoirs fantastiques">
-                  <img src="kyran-cartes-pouvoirs.jpg" alt="Miniature cartes aux pouvoirs" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="5" aria-pressed="false" aria-label="Règle 1 : Estime ton destin" title="Comment jouer ? 1 - Estime ton destin">
-                  <img src="kyran-regles-estime.jpg" alt="Miniature étape 1 règle" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="6" aria-pressed="false" aria-label="Règle 2 : Joue tes mains" title="Comment jouer ? 2 - Joue tes mains">
-                  <img src="kyran-regles-joue.jpg" alt="Miniature étape 2 règle" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb" data-index="7" aria-pressed="false" aria-label="Règle 3 : Tranche le score" title="Comment jouer ? 3 - Tranche le score">
-                  <img src="kyran-regles-tranche.jpg" alt="Miniature étape 3 règle" width="58" height="58" loading="lazy" />
-                </button>
-                <button type="button" class="product-thumb product-thumb--video" data-index="8" aria-pressed="false" aria-label="Teaser Vidéo" title="Teaser Vidéo officiel">
-                  <img src="kyran-cartes-table.jpg" alt="Teaser Vidéo KYRAN" width="58" height="58" loading="lazy" />
-                  <span class="product-thumb-play-icon" aria-hidden="true">▶</span>
-                </button>
               </div>
             </div>
 
@@ -1687,6 +1714,10 @@
 
       thumbs.forEach(function (btn) {
         btn.addEventListener('click', function () {
+          var idx = parseInt(btn.getAttribute('data-index'), 10);
+          selectItem(idx);
+        });
+        btn.addEventListener('mouseenter', function () {
           var idx = parseInt(btn.getAttribute('data-index'), 10);
           selectItem(idx);
         });

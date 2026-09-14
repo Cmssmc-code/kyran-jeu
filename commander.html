@@ -148,10 +148,18 @@
       background: #ffffff;
     }
     .is-order-page .site-header .nav {
-      justify-content: space-between;
+      justify-content: center !important;
       align-items: center;
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    .is-order-page .site-header .nav-brand-group {
+      justify-content: center;
+      flex: 0 0 auto;
+      margin: 0 auto;
+    }
+    .is-order-page .site-header .logo {
+      margin: 0 auto;
     }
 
     /* Barre supérieure de réassurance & retour */
@@ -164,6 +172,8 @@
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
+      max-width: 1040px;
+      margin: 0 auto;
     }
     .checkout-back-link {
       display: inline-flex;
@@ -189,9 +199,11 @@
     
     .order-layout {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: clamp(28px, 4vw, 48px);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 3.5vw, 38px);
       align-items: start;
+      max-width: 1040px;
+      margin: 0 auto;
     }
 
 
@@ -213,8 +225,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: clamp(18px, 3.5vw, 32px);
-      min-height: clamp(260px, 42vw, 380px);
+      padding: clamp(16px, 2.5vw, 24px);
+      min-height: clamp(280px, 34vw, 390px);
+      max-height: 410px;
     }
     .product-main-wrap img {
       max-width: 100%;
@@ -296,7 +309,7 @@
       align-items: center !important;
       gap: 8px !important;
       width: 100% !important;
-      max-width: 320px;
+      max-width: 330px;
       margin: 12px auto 0;
     }
     .product-thumb {
@@ -500,24 +513,26 @@
     .order-card-meta {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px;
+      flex-wrap: nowrap;
       margin-bottom: 8px;
     }
 
     .order-badge-stock {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 4px 12px;
+      gap: 6px;
+      padding: 3px 10px;
       border-radius: 999px;
       background: rgba(16, 185, 129, 0.08);
       border: 1px solid rgba(16, 185, 129, 0.24);
       color: #047857;
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       font-weight: 600;
       letter-spacing: 0.01em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .stock-pulse {
       width: 7px;
@@ -536,21 +551,23 @@
     .amazon-order-badge {
       display: inline-flex;
       margin-bottom: 0;
+      flex-shrink: 0;
     }
     .amazon-order-rating-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
+      gap: 5px;
+      font-size: 0.76rem;
       color: var(--text-main);
       background: #ffffff;
       border: 1px solid #fcd34d;
-      padding: 4px 11px;
+      padding: 3px 10px;
       border-radius: 999px;
       box-shadow: 0 2px 6px rgba(245, 158, 11, 0.12);
       font-weight: 600;
       text-decoration: none;
       transition: all 0.18s ease;
+      white-space: nowrap;
     }
     .amazon-order-rating-pill:hover {
       background: #fffbeb;

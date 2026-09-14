@@ -136,6 +136,10 @@
   </script>
 
   <style>
+    html, body.is-order-page {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
 
     /* Barre supérieure de réassurance & retour */
     .order-topbar {
@@ -587,9 +591,12 @@
       margin-bottom: 10px;
     }
     .order-delivery-submention {
+      display: block;
       color: var(--text-muted);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 500;
+      margin-top: 1px;
+      line-height: 1.25;
     }
     .order-qty-row {
       display: flex;
@@ -664,18 +671,22 @@
     .order-line-item {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
+      align-items: flex-start;
+      font-size: 0.82rem;
       color: var(--text-muted);
+      gap: 10px;
     }
     .order-line-label {
-      white-space: nowrap;
-      flex-shrink: 0;
+      flex: 1;
+      min-width: 0;
+      line-height: 1.35;
     }
     .order-line-val {
       font-weight: 600;
       color: var(--text-main);
       text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .order-total-row {
       display: flex;
@@ -1090,10 +1101,12 @@
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
         justify-content: flex-start !important;
-        padding: 2px 2px 6px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 6px 0 0 !important;
+        padding: 4px 2px 8px;
         -webkit-overflow-scrolling: touch;
         gap: 6px !important;
-        margin-top: 6px;
         scrollbar-width: thin;
       }
       .product-thumb {
@@ -1169,13 +1182,16 @@
       .order-line-item {
         font-size: 0.82rem;
         gap: 8px;
+        align-items: flex-start;
       }
       .order-line-label {
-        white-space: nowrap;
-        flex-shrink: 0;
+        flex: 1;
+        min-width: 0;
       }
       .order-line-val {
         text-align: right;
+        white-space: nowrap;
+        flex-shrink: 0;
       }
       .order-total-row {
         padding-top: 8px;
@@ -1415,7 +1431,10 @@
                     <span id="display-subtotal" class="order-line-val">9,99€</span>
                   </div>
                   <div class="order-line-item">
-                    <span class="order-line-label">Livraison suivie France <small id="delivery-estimate-text" class="order-delivery-submention"></small>&nbsp;:</span>
+                    <div class="order-line-label">
+                      <span>Livraison suivie France&nbsp;:</span>
+                      <small id="delivery-estimate-text" class="order-delivery-submention"></small>
+                    </div>
                     <span id="display-shipping" class="order-line-val">2,99€</span>
                   </div>
                 </div>

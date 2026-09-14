@@ -324,14 +324,12 @@
       align-items: center !important;
       gap: 8px !important;
       width: 100% !important;
-      max-width: 480px;
-      margin: 10px auto 0;
+      max-width: 320px;
+      margin: 12px auto 0;
     }
     .product-thumb {
-      width: calc((100% - 32px) / 5) !important;
-      max-width: 62px;
-      aspect-ratio: 1 / 1;
-      height: auto !important;
+      width: 56px !important;
+      height: 56px !important;
       border-radius: 12px;
       border: 2px solid #dfd7ca;
       padding: 2px;
@@ -382,26 +380,16 @@
       border-radius: 9px;
       display: block;
     }
-    .product-badge-unboxed {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(217, 119, 6, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: #ffffff;
-      padding: 4px 11px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      pointer-events: none;
-      z-index: 2;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
 
     .order-presentation kyran-stat-bar {
-      display: none; /* Déplacé vers la colonne droite (Point 4) */
+      margin-top: 18px;
+      display: block;
+      width: 100%;
+    }
+    .order-presentation .stat-bar {
+      margin-bottom: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     /* Contenu de la boîte épuré */
@@ -621,86 +609,18 @@
     }
     .order-desc {
       color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 12px;
+      font-size: 0.92rem;
+      margin-bottom: 20px;
       line-height: 1.5;
     }
 
-    /* Cartouche specs intégré dans la colonne droite (Point 4) */
-    .order-card kyran-stat-bar {
-      display: block;
-      margin-bottom: 14px;
-      width: 100%;
-    }
-    .order-card .stat-bar--specs {
-      background: #faf7f2;
-      border: 1px solid #ede7dc;
-      border-radius: 12px;
-      padding: 8px 4px;
-      margin-bottom: 0;
-      box-shadow: none;
-    }
-
-    /* Citation coup de cœur / Preuve sociale (Point 7) */
-    .order-social-quote {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fffbeb;
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      border-radius: 10px;
-      padding: 7px 11px;
-      margin-bottom: 14px;
-      font-size: 0.78rem;
-      color: #78350f;
-      line-height: 1.35;
-    }
-    .order-social-quote-stars {
-      color: #f59e0b;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      flex-shrink: 0;
-    }
-    .order-social-quote-text {
-      flex: 1;
-      font-style: italic;
-    }
-
-    /* Ruban de réassurance compact remplaçant le stepper lourd (Point 8) */
-    .order-trust-ribbon {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      background: #fdfbf7;
-      border: 1px solid #ede7dc;
-      border-radius: 12px;
-      padding: 7px 12px;
-      margin-bottom: 16px;
-      font-size: 0.74rem;
-      color: var(--text-sub);
-      font-weight: 600;
-    }
-    .order-trust-step {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .order-trust-step svg {
-      color: var(--gold-dark);
-      flex-shrink: 0;
-    }
-    .order-trust-dot {
-      color: #cbd5e1;
-    }
-
-    /* Carte unifiée sans effet d'empilement (Point 6) & Calcul clair (Point 2) */
+    /* Carte unifiée sans effet d'empilement & Calcul clair */
     .order-checkout-box {
       background: #faf7f2;
       border: 1px solid #ede7dc;
       border-radius: 16px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
     }
     .order-delivery-inline {
       display: flex;
@@ -898,18 +818,6 @@
       border-radius: 4px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
       flex-shrink: 0;
-      display: block;
-    }
-    .order-cta-guarantees {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-      text-align: center;
-      margin-top: 2px;
     }
 
     .order-divider {
@@ -1431,7 +1339,6 @@
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
                 <span class="product-counter-pill" id="gallery-counter" aria-hidden="true">1 / 9</span>
-                <span class="product-badge-unboxed" aria-hidden="true">✨ 55 Cartes toilées</span>
                 <span class="product-zoom-hint" id="product-zoom-hint" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                   Agrandir
@@ -1468,6 +1375,8 @@
                 </button>
               </div>
             </div>
+
+            <kyran-stat-bar></kyran-stat-bar>
 
             <!-- Contenu du jeu -->
             <div class="order-content-card">
@@ -1555,34 +1464,7 @@
               <h1 class="order-title">Boîte KYRAN officielle</h1>
               <p class="order-desc">Jeu complet dans sa boîte rigide : 55 cartes toilées et règles en français.</p>
 
-              <!-- Spécifications produit sous le titre (Point 4) -->
-              <kyran-stat-bar></kyran-stat-bar>
-
-              <!-- Citation joueur / Preuve sociale forte (Point 7) -->
-              <div class="order-social-quote" aria-label="Avis vérifié joueur">
-                <span class="order-social-quote-stars">★★★★★</span>
-                <span class="order-social-quote-text">« Règles simples en 2 min, ambiance garantie et tension jusqu'au bout ! »</span>
-              </div>
-
-              <!-- Ruban réassurance compact remplaçant l'ancien stepper (Point 8) -->
-              <div class="order-trust-ribbon" aria-label="Garanties d'achat">
-                <span class="order-trust-step">
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                  <span>Stripe 100% sécurisé</span>
-                </span>
-                <span class="order-trust-dot" aria-hidden="true">•</span>
-                <span class="order-trust-step">
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                  <span>Expédié sous 24-48h</span>
-                </span>
-                <span class="order-trust-dot" aria-hidden="true">•</span>
-                <span class="order-trust-step">
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  <span>Garantie 14 jours</span>
-                </span>
-              </div>
-
-              <!-- Bloc Récapitulatif et Quantité unifié (Point 6 & Point 2) -->
+              <!-- Bloc Récapitulatif et Quantité unifié -->
               <div class="order-checkout-box">
                 <!-- Estimation de livraison intégrée -->
                 <div class="order-delivery-inline" id="delivery-estimate-box">
@@ -1594,7 +1476,7 @@
 
                 <div class="order-qty-row">
                   <div class="order-qty-info">
-                    <span class="order-qty-label">Quantité de boîtes</span>
+                    <span class="order-qty-label">Quantité</span>
                     <span class="order-qty-sublabel">9,99€ / boîte</span>
                   </div>
                   <div class="order-qty-controls">
@@ -1671,13 +1553,6 @@
                       <path d="M10.5 9.4c.6 0 1.2.2 1.6.6l1.2-1.2C12.6 8.2 11.6 7.8 10.5 7.8 8.9 7.8 7.4 8.7 6.7 10.1l1.5 1.1c.3-1 1.2-1.8 2.3-1.8z" fill="#EA4335"/>
                       <text x="24" y="15" font-family="'Poppins', sans-serif" font-weight="700" font-size="9" fill="#5f6368">Pay</text>
                     </svg>
-                  </div>
-                  <div class="order-cta-guarantees">
-                    <span>🔒 Paiement sécurisé Stripe</span>
-                    <span aria-hidden="true">•</span>
-                    <span>⚡ Expédié sous 24-48h</span>
-                    <span aria-hidden="true">•</span>
-                    <span>🛡️ 14j satisfait/remboursé</span>
                   </div>
                 </div>
               </div>

@@ -50,7 +50,7 @@ export const STATIC_PAGES = [
     priority: '0.85',
     sitemapExtra: `
     <image:image>
-      <image:loc>${SITE}/jeu-kyran-ami.jpg</image:loc>
+      <image:loc>${SITE}/jeu-kyran-ami.webp</image:loc>
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
     </image:image>`
   },

@@ -46,3 +46,4 @@ Sitemap: https://kyran-jeu.fr/sitemap.xml
 # Contexte LLM : https://kyran-jeu.fr/llms.txt
 # Contexte LLM exhaustif : https://kyran-jeu.fr/llms-full.txt
 # Flux RSS blog : https://kyran-jeu.fr/blog/feed.xml
+# Flux Google Merchant Center : https://kyran-jeu.fr/google-merchant-feed.xml

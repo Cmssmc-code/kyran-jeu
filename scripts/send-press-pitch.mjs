@@ -50,7 +50,7 @@ En quelques mots :
 - Principe : un jeu de plis et de contrat pour 3 à 6 joueurs où l'on parie son nombre exact de levées (inspiré du Tarot Africain et du Whist 22).
 - Le twist : la somme des paris ne peut jamais égaler le total des plis, garantissant l'échec d'au moins un joueur à chaque tour.
 - Les nouveautés : 4 cartes Pouvoir, des vies physiques sur table, et la "manche Mystique" jouée à l'aveugle.
-- Format : 30 minutes, boîte cloche compacte et cartes toilées Dark & Gold (illustrations Floh).
+- Format : 30 minutes, boîte cloche compacte et cartes toilées Dark & Gold (illustrations Floh — https://graphiste.com/pictures/542454).
 
 Je serais ravi de vous envoyer gracieusement un exemplaire officiel du jeu pour que vous puissiez le tester en équipe ou en famille. Si le jeu vous plaît, une chronique ou un partage serait un immense coup de pouce pour ce projet indépendant.
 
@@ -81,7 +81,7 @@ const htmlBody = `
       <li><strong>Mécanique :</strong> Jeu de plis et de contrat (3 à 6 joueurs) où l'on parie son nombre exact de levées (revisite du Tarot Africain / Whist 22).</li>
       <li><strong>Règle signature :</strong> La somme des paris ne peut jamais égaler le total des plis — tension permanente.</li>
       <li><strong>Twists modernes :</strong> 4 cartes Pouvoir, 5 vies physiques, et la manche Mystique jouée à l'aveugle.</li>
-      <li><strong>Édition :</strong> 55 cartes toilées Dark & Gold (illustrations Floh), parties de 30 min.</li>
+      <li><strong>Édition :</strong> 55 cartes toilées Dark &amp; Gold (illustrations <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer" style="color: #c8a85d;">Floh</a>), parties de 30 min.</li>
     </ul>
   </div>
 

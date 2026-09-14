@@ -301,7 +301,7 @@ class KyranFooter extends HTMLElement {
           </div>
           <div class="footer-col footer-col--credits">
             <h4>Cr&eacute;dits</h4>
-            <p>Design : Crea by Floh</p>
+            <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
             <p>Auteur : Corentin Sence</p>
           </div>
         </div>

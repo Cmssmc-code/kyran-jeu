@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>KYRAN - Boutique Officielle</title>
+    <link>https://kyran-jeu.fr/</link>
+    <description>Boutique officielle du jeu de cartes tactique KYRAN (3 à 6 joueurs).</description>
+    <item>
+      <g:id>KYRAN-01</g:id>
+      <g:title>KYRAN – Jeu de cartes officiel de plis, bluff et paris (3 à 6 joueurs)</g:title>
+      <g:description>Jeu de cartes rapide et stratégique pour 3 à 6 joueurs (~30 min). Boîte cloche rigide, 55 cartes vernies toilées Dark &amp; Gold, cartes Pouvoir et manche Mystique à l'aveugle. Héritier moderne du Tarot Africain et du Whist.</g:description>
+      <g:link>https://kyran-jeu.fr/commander.html</g:link>
+      <g:image_link>https://kyran-jeu.fr/boite-recto-kyran.png</g:image_link>
+      <g:additional_image_link>https://kyran-jeu.fr/jeu-kyran-ami.webp</g:additional_image_link>
+      <g:additional_image_link>https://kyran-jeu.fr/kyran-cartes-table.webp</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>9.99 EUR</g:price>
+      <g:brand>KYRAN</g:brand>
+      <g:condition>new</g:condition>
+      <g:google_product_category>1088</g:google_product_category>
+      <g:product_type>Jeux et jouets &gt; Jeux &gt; Jeux de cartes</g:product_type>
+      <g:shipping>
+        <g:country>FR</g:country>
+        <g:service>Livraison suivie France</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>BE</g:country>
+        <g:service>Livraison suivie Belgique</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping_weight>160 g</g:shipping_weight>
+      <g:gtin>3770040368015</g:gtin>
+      <g:mpn>KYRAN-01</g:mpn>
+    </item>
+  </channel>
+</rss>

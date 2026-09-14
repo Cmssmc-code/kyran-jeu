@@ -104,6 +104,7 @@
         "@id": "https://kyran-jeu.fr/#boardgame",
         "name": "KYRAN",
         "sku": "KYRAN-01",
+        "gtin13": "3770040368015",
         "inLanguage": "fr-FR",
         "disambiguatingDescription": "Jeu de cartes tactique français de plis et de paris obligatoires pour 3 à 6 joueurs (~30 min), avec cartes Pouvoir et manche Mystique à l'aveugle.",
         "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing. Héritier moderne du Tarot Africain et du Whist.",
@@ -454,7 +455,7 @@
 
         <div class="grid grid-2" style="align-items: center; gap: 36px; margin-top: var(--space-4);">
           <div class="game-gallery-photo-card">
-            <img src="jeu-kyran-ami.jpg" alt="Partie de jeu KYRAN entre amis autour de la table : bluff, paris et convivialité" width="600" height="400" loading="lazy" />
+            <img src="jeu-kyran-ami.webp" alt="Partie de jeu KYRAN entre amis autour de la table : bluff, paris et convivialité" width="600" height="400" loading="lazy" />
             <p class="game-gallery-photo-caption">
               Partie entre amis : bluff, paris tendus et fous rires garantis autour de la table&nbsp;!
             </p>
@@ -672,34 +673,34 @@
         <div class="amazon-store-showcase">
           <div class="amazon-store-grid">
             <div class="amazon-store-visual">
-              <div class="product-gallery">
+              <div class="product-gallery" role="region" aria-roledescription="carousel" aria-label="Galerie photos produit KYRAN">
                 <div class="product-thumbnails" role="tablist" aria-label="Choisir une vue du produit">
                   <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte recto" title="Boîte recto">
                     <img src="boite-recto-kyran.webp" alt="Miniature boîte KYRAN recto" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte verso" title="Boîte verso">
-                    <img src="boite-verso-kyran.jpg" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
+                    <img src="boite-verso-kyran.webp" alt="Miniature boîte KYRAN verso" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Jeu en partie" title="Jeu en partie">
-                    <img src="jeu-kyran-ami.jpg" alt="Miniature partie KYRAN entre amis" width="80" height="80" loading="lazy" />
+                    <img src="jeu-kyran-ami.webp" alt="Miniature partie KYRAN entre amis" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="3" aria-pressed="false" aria-label="Boîte et cartes" title="Boîte et cartes étalées">
-                    <img src="kyran-cartes-table.jpg" alt="Boîte et cartes étalées" width="80" height="80" loading="lazy" />
+                    <img src="kyran-cartes-table.webp" alt="Boîte et cartes étalées" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="4" aria-pressed="false" aria-label="Cartes Pouvoirs" title="Cartes aux pouvoirs">
-                    <img src="kyran-cartes-pouvoirs.jpg" alt="Cartes aux pouvoirs" width="80" height="80" loading="lazy" />
+                    <img src="kyran-cartes-pouvoirs.webp" alt="Cartes aux pouvoirs" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="5" aria-pressed="false" aria-label="Règle 1 : Estime" title="Comment jouer ? 1 - Estime">
-                    <img src="kyran-regles-estime.jpg" alt="Règle 1 : Estime" width="80" height="80" loading="lazy" />
+                    <img src="kyran-regles-estime.webp" alt="Règle 1 : Estime" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="6" aria-pressed="false" aria-label="Règle 2 : Joue" title="Comment jouer ? 2 - Joue">
-                    <img src="kyran-regles-joue.jpg" alt="Règle 2 : Joue" width="80" height="80" loading="lazy" />
+                    <img src="kyran-regles-joue.webp" alt="Règle 2 : Joue" width="80" height="80" loading="lazy" />
                   </button>
                   <button type="button" class="product-thumb" data-index="7" aria-pressed="false" aria-label="Règle 3 : Tranche" title="Comment jouer ? 3 - Tranche">
-                    <img src="kyran-regles-tranche.jpg" alt="Règle 3 : Tranche" width="80" height="80" loading="lazy" />
+                    <img src="kyran-regles-tranche.webp" alt="Règle 3 : Tranche" width="80" height="80" loading="lazy" />
                   </button>
                 </div>
-                <div class="product-main-wrap">
+                <div class="product-main-wrap" aria-live="polite">
                   <img id="product-main-img" src="boite-recto-kyran.webp" alt="Boîte du jeu de cartes KYRAN — recto" width="480" height="480" fetchpriority="high" loading="eager" />
                 </div>
               </div>
@@ -802,7 +803,7 @@
         <p class="section-sub">Un grand classique des jeux de cartes revisité</p>
         <div class="heritage-split">
           <div class="heritage-visual">
-            <img src="boite-verso-kyran.jpg" alt="Boîte KYRAN — univers Dark and Gold" width="480" height="480" loading="lazy" />
+            <img src="boite-verso-kyran.webp" alt="Boîte KYRAN — univers Dark and Gold" width="480" height="480" loading="lazy" />
           </div>
           <div class="heritage-copy">
             <h3>L'esprit du Tarot Africain en version moderne</h3>
@@ -851,13 +852,13 @@
       if (!thumbs.length || !mainImg) return;
       var images = [
         { src: 'boite-recto-kyran.webp', alt: 'Boîte KYRAN recto' },
-        { src: 'boite-verso-kyran.jpg', alt: 'Boîte KYRAN verso' },
-        { src: 'jeu-kyran-ami.jpg', alt: 'Jeu KYRAN en partie' },
-        { src: 'kyran-cartes-table.jpg', alt: 'Boîte KYRAN et cartes étalées' },
-        { src: 'kyran-cartes-pouvoirs.jpg', alt: 'Cartes aux Pouvoirs fantastiques' },
-        { src: 'kyran-regles-estime.jpg', alt: 'Comment jouer : 1. Estime ton destin' },
-        { src: 'kyran-regles-joue.jpg', alt: 'Comment jouer : 2. Joue tes mains' },
-        { src: 'kyran-regles-tranche.jpg', alt: 'Comment jouer : 3. Tranche le score' }
+        { src: 'boite-verso-kyran.webp', alt: 'Boîte KYRAN verso' },
+        { src: 'jeu-kyran-ami.webp', alt: 'Jeu KYRAN en partie' },
+        { src: 'kyran-cartes-table.webp', alt: 'Boîte KYRAN et cartes étalées' },
+        { src: 'kyran-cartes-pouvoirs.webp', alt: 'Cartes aux Pouvoirs fantastiques' },
+        { src: 'kyran-regles-estime.webp', alt: 'Comment jouer : 1. Estime ton destin' },
+        { src: 'kyran-regles-joue.webp', alt: 'Comment jouer : 2. Joue tes mains' },
+        { src: 'kyran-regles-tranche.webp', alt: 'Comment jouer : 3. Tranche le score' }
       ];
       var fadeDuration = 280;
       var carouselInterval = 4500;

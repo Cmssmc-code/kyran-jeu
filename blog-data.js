@@ -2,6 +2,18 @@ const BLOG_CATEGORIES = ['Tous', 'Apéro', 'Famille', 'Cadeaux', 'Alternatives',
 
 const BLOG_ITEMS = [
   {
+    slug: 'science-jeux-de-cartes-cerveau',
+    title: 'Jeux de cartes et cerveau : ce que dit la science',
+    category: 'Cartes',
+    date: '2026-09-16',
+    readMinutes: 14,
+    excerpt: 'Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.',
+    image: '/kyran-cartes-table.webp',
+    seoQuery: 'jeux cartes cerveau, bienfaits jeux société mémoire, neurosciences cartes',
+    kyranPosition: 1,
+    related: ['guide-jeux-de-plis', 'jeux-memoire-concentration', 'jeux-bluff-pari']
+  },
+  {
     slug: 'jeux-comme-skyjo',
     title: '10 jeux de société comme Skyjo',
     category: 'Alternatives',

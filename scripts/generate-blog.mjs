@@ -11,7 +11,7 @@ import { ARTICLE_SEO, ARTICLE_ORDER } from './lib/article-seo.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, '..', 'blog');
-const CACHE = '20260904';
+const CACHE = '20260921';
 const SITE = 'https://kyran-jeu.fr';
 
 function slugify(name) {
@@ -283,7 +283,7 @@ function renderArticle(article) {
       author: { '@type': 'Person', name: 'Corentin Sence', url: SITE + '/dossier-presse.html' },
       publisher: { '@id': SITE + '/#organization' },
       datePublished: article.date,
-      dateModified: '2026-05-31',
+      dateModified: '2026-09-21',
       inLanguage: 'fr-FR',
       url,
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
@@ -343,7 +343,7 @@ function renderArticle(article) {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="675" />
   <meta property="article:published_time" content="${article.date}" />
-  <meta property="article:modified_time" content="2026-05-31" />
+  <meta property="article:modified_time" content="2026-09-21" />
   <meta property="article:author" content="Corentin Sence" />
   <meta property="article:section" content="${article.category}" />
   ${keywords ? `<meta property="article:tag" content="${keywords.split(',')[0].trim()}" />` : ''}

@@ -35,6 +35,6 @@ export function kyranGame(variant = 'default') {
     age: '8+',
     price: '9,99&nbsp;€ (boutique) / 17,99&nbsp;€ (Amazon)',
     caption: 'KYRAN — jeu de cartes officiel',
-    paragraphs: KYRAN_PARAS[variant] || KYRAN_PARAS.default,
+    paragraphs: [...(KYRAN_PARAS[variant] || KYRAN_PARAS.default)],
   };
 }

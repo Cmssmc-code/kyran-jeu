@@ -17,7 +17,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -129,12 +129,12 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
-      <image:title>Jeux de cartes et cerveau : ce que révèlent les neurosciences</image:title>
+      <image:title>Jeux de cartes et cerveau : ce que dit la science</image:title>
       <image:caption>Études médicales, mémoire de travail et cognition appliquées au jeu de cartes KYRAN</image:caption>
     </image:image>
   </url>
@@ -261,7 +261,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -459,7 +459,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -547,7 +547,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/guide-jeux-de-plis.html</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>

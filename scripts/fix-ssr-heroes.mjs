@@ -33,7 +33,8 @@ function buildBreadcrumb(itemsJson) {
   if (!items.length) return '';
   const parts = items.map((item, index) => {
     const isLast = index === items.length - 1;
-    const href = item.href || '';
+    let href = item.href || '';
+    if (href === 'index.html' || href === '/index.html') href = '/';
     if (isLast || !href) {
       return `<span class="breadcrumb-current" aria-current="page">${item.label}</span>`;
     }
@@ -48,7 +49,7 @@ for (const rel of filesToFix) {
   let html = fs.readFileSync(filePath, 'utf8');
 
   // Match <kyran-page-hero ...>(optional content)</kyran-page-hero>
-  const match = html.match(/<kyran-page-hero\b([^>]*)>([\s\S]*?)<\/kyran-page-hero>/i);
+  const match = html.match(/<kyran-page-hero\b((?:[^>"']|"[^"]*"|'[^']*')*)>([\s\S]*?)<\/kyran-page-hero>/i);
   if (!match) continue;
 
   const attrs = match[1];

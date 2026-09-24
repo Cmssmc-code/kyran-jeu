@@ -1,5 +1,5 @@
-/** Auto-generated blog article data — 30 base + 10 new articles */
 import { NEW_ARTICLES } from './new-articles-data.mjs';
+import { EXTRA_ARTICLES } from './extra-articles-data.mjs';
 const BASE_ARTICLES = [
   {
     "slug": "jeux-comme-skyjo",
@@ -4269,4 +4269,4 @@ const BASE_ARTICLES = [
   }
 ];
 
-export const ARTICLES = [...BASE_ARTICLES, ...NEW_ARTICLES];
+export const ARTICLES = [...BASE_ARTICLES, ...NEW_ARTICLES, ...EXTRA_ARTICLES];

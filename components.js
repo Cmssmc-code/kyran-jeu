@@ -6,7 +6,7 @@ const ROOT = '/';
 const ORDER_URL = rootPath('commander.html');
 
 function rootPath(path) {
-  if (!path) return ROOT;
+  if (!path || path === 'index.html' || path === '/index.html') return ROOT;
   if (path.startsWith('http') || path.startsWith('mailto:') || path.startsWith('#')) return path;
   if (path.startsWith('/')) return path;
   return ROOT + path;
@@ -63,11 +63,19 @@ const DISCOVER_ITEMS = [
   { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' }
 ];
 
+const FALLBACK_FOOTER_BLOG_ITEMS = [
+  { slug: 'jeux-comme-skyjo', title: '10 jeux de société comme Skyjo' },
+  { slug: 'meilleurs-jeux-apero', title: 'Les meilleurs jeux de cartes pour apéro' },
+  { slug: 'science-jeux-de-cartes-cerveau', title: 'Jeux de cartes et cerveau : neurosciences' },
+  { slug: 'jeux-soiree-amis', title: 'Meilleurs jeux entre amis pour une soirée' },
+  { slug: 'guide-jeux-de-plis', title: 'Guide complet des jeux de plis' }
+];
+
 function getBlogItemsForFooter() {
-  if (typeof BLOG_ITEMS !== 'undefined') {
+  if (typeof BLOG_ITEMS !== 'undefined' && BLOG_ITEMS.length) {
     return BLOG_ITEMS.slice(0, 5);
   }
-  return [];
+  return FALLBACK_FOOTER_BLOG_ITEMS;
 }
 
 class KyranHeader extends HTMLElement {
@@ -92,13 +100,13 @@ class KyranHeader extends HTMLElement {
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="${ROOT}index.html" class="logo" aria-label="KYRAN - Accueil">
+            <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
               <img src="${ROOT}logo.png" alt="KYRAN" />
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
               <ul class="nav-list" id="menu-principal">
-                <li><a href="${ROOT}index.html" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
+                <li><a href="${ROOT}" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
                 <li><a href="${ROOT}regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
                 <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
                 <li class="nav-dropdown nav-desktop-only">
@@ -148,7 +156,7 @@ class KyranHeader extends HTMLElement {
       </header>
 
       <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
-        <a href="${ROOT}index.html" class="mobile-nav-tab ${activePage === 'home' ? 'active' : ''}">
+        <a href="${ROOT}" class="mobile-nav-tab ${activePage === 'home' ? 'active' : ''}">
           <span class="mobile-nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
           </span>
@@ -374,6 +382,11 @@ class KyranDiscoverGrid extends HTMLElement {
 
 class KyranBlogGrid extends HTMLElement {
   connectedCallback() {
+    // Si la grille est déjà pré-rendue statiquement (SSR pour Googlebot), ne pas écraser
+    if (this.querySelector('.blog-grid') && this.querySelectorAll('.blog-card').length > 0) {
+      return;
+    }
+
     if (typeof BLOG_ITEMS === 'undefined') {
       this.innerHTML = '';
       return;

@@ -373,7 +373,7 @@ function renderArticle(article) {
       </div>
       <div class="blog-article-hero__overlay"></div>
       <div class="container blog-article-hero__content">
-        <kyran-breadcrumb items='${JSON.stringify([{ label: 'Accueil', href: '/index.html' }, { label: 'Blog', href: '/blog/index.html' }, { label: article.shortTitle }])}'></kyran-breadcrumb>
+        <kyran-breadcrumb items='${JSON.stringify([{ label: 'Accueil', href: '/' }, { label: 'Blog', href: '/blog/index.html' }, { label: article.shortTitle }])}'></kyran-breadcrumb>
         <span class="blog-article-hero__category">${article.category}</span>
         <h1 class="blog-article-hero__title">${article.heroTitle}</h1>
         <p class="blog-article-hero__subtitle">${article.heroSubtitle}</p>

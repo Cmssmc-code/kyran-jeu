@@ -206,7 +206,7 @@ Manche décisive jouée avec 1 seule carte sur le front, face visible pour les a
 - **Quelles différences avec Skyjo ?** Skyjo est un jeu de défausse individuel basé sur la chance du tirage. KYRAN est un jeu d'interaction directe, de prédiction de plis, de bluff et de calcul de probabilités.
 - **Quelles différences avec Wizard ?** KYRAN est plus court (30 min vs 45-60 min), intègre 4 cartes Pouvoir actives et se termine par la manche Mystique à l'aveugle.
 
-## Base de données éditoriale des 30 articles
+## Base de données éditoriale des ${ARTICLES.length} articles
 ${fullArticles}
 `;
 }

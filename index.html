@@ -55,13 +55,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="boite-recto-kyran.webp" type="image/webp" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="seo-config.js?v=20260905ccccccccb"></script>
-  <link rel="stylesheet" href="style.css?v=20260907a" />
-  <script src="blog-data.js?v=20260905ccccccccb"></script>
-  <script src="components.js?v=20260905ccccccccba"></script>
-  <script src="reviews-data.js?v=20260905ccccccccb"></script>
-  <script src="reviews.js?v=20260905ccccccccb" defer></script>
-  <script src="hero-visual.js?v=20260907a" defer></script>
+  <script src="seo-config.js?v=20260905ccccccccccb"></script>
+  <link rel="stylesheet" href="style.css?v=20260905cca" />
+  <script src="blog-data.js?v=20260905ccccccccccb"></script>
+  <script src="components.js?v=20260905ccccccccccba"></script>
+  <script src="reviews-data.js?v=20260905ccccccccccb"></script>
+  <script src="reviews.js?v=20260905ccccccccccb" defer></script>
+  <script src="hero-visual.js?v=20260905cca" defer></script>
 
   <script type="application/ld+json">
   {
@@ -131,6 +131,32 @@
           "bestRating": "5",
           "worstRating": "1"
         },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Patrice Q." },
+            "datePublished": "2026-07-03",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "name": "Nickel",
+            "reviewBody": "Jeu simple et facile"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "patrick" },
+            "datePublished": "2026-01-26",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "name": "Un indispensable pour des soirées animées !!",
+            "reviewBody": "Ce jeu de cartes est une excellente surprise. Les règles sont simples et s'expliquent en deux minutes, ce qui permet de lancer une partie immédiatement."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Agathe" },
+            "datePublished": "2026-02-05",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "name": "Super jeu",
+            "reviewBody": "Super jeu à faire en famille ou entre amis. Nous aimons les jeux de société et le kyran est une belle découverte. Idéal pour un cadeau."
+          }
+        ],
         "offers": [
           {
             "@type": "Offer",
@@ -824,7 +850,52 @@
           <p>Sélections de jeux, idées cadeaux et conseils pour vos soirées.</p>
         </div>
         <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour voir les articles</span></div></div>
-        <kyran-blog-grid limit="3"></kyran-blog-grid>
+        <kyran-blog-grid limit="3">
+      <div class="blog-grid">
+        <a href="/blog/science-jeux-de-cartes-cerveau.html" class="blog-card" data-category="Cartes">
+          <div class="blog-card-image">
+            <img src="/kyran-cartes-table.webp" alt="Jeux de cartes et cerveau : ce que dit la science" width="400" height="225" loading="lazy" decoding="async" />
+            <span class="blog-badge">Cartes</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">14 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">16 septembre 2026</p>
+            <h3>Jeux de cartes et cerveau : ce que dit la science</h3>
+            <p class="blog-card-excerpt">Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-comme-skyjo.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <img src="/blog/images/skyjo.jpg" alt="10 jeux de société comme Skyjo" width="400" height="225" loading="lazy" decoding="async" />
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">10 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">1 mai 2026</p>
+            <h3>10 jeux de société comme Skyjo</h3>
+            <p class="blog-card-excerpt">Vous adorez Skyjo ? Découvrez dix jeux de cartes et de société pour varier vos soirées sans perdre en simplicité.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/meilleurs-jeux-apero.html" class="blog-card" data-category="Apéro">
+          <div class="blog-card-image">
+            <img src="/blog/images/jungle-speed.jpg" alt="Les meilleurs jeux de cartes pour apéro" width="400" height="225" loading="lazy" decoding="async" />
+            <span class="blog-badge">Apéro</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">9 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">3 mai 2026</p>
+            <h3>Les meilleurs jeux de cartes pour apéro</h3>
+            <p class="blog-card-excerpt">Huit jeux de cartes testés en conditions réelles d'apéro : durée, ambiance et facilité d'explication.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+      </div>
+    </kyran-blog-grid>
         <p class="text-link-wrap" style="text-align:center;margin-top:var(--space-4);">
           <a class="btn btn-secondary" href="/blog/index.html">Voir tous les articles</a>
         </p>

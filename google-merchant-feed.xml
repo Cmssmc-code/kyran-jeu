@@ -28,6 +28,46 @@
         <g:service>Livraison suivie Belgique</g:service>
         <g:price>2.99 EUR</g:price>
       </g:shipping>
+      <g:shipping>
+        <g:country>LU</g:country>
+        <g:service>Livraison suivie Luxembourg</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>DE</g:country>
+        <g:service>Livraison suivie Allemagne</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>CH</g:country>
+        <g:service>Livraison suivie Suisse</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>IT</g:country>
+        <g:service>Livraison suivie Italie</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>ES</g:country>
+        <g:service>Livraison suivie Espagne</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>MC</g:country>
+        <g:service>Livraison suivie Monaco</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>AD</g:country>
+        <g:service>Livraison suivie Andorre</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>GB</g:country>
+        <g:service>Livraison suivie Royaume-Uni</g:service>
+        <g:price>2.99 EUR</g:price>
+      </g:shipping>
       <g:shipping_weight>160 g</g:shipping_weight>
       <g:gtin>3770040368015</g:gtin>
       <g:mpn>KYRAN-01</g:mpn>

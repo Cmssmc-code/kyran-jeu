@@ -6,36 +6,54 @@ on:
   #   - cron: '0 4 * * *'
   workflow_dispatch: # Permet de lancer manuellement depuis l'interface GitHub
 
+# Aucune permission par défaut ; seul le job ci-dessous peut écrire le contenu du dépôt
+permissions: {}
+
+concurrency:
+  group: update-reviews
+  cancel-in-progress: false
+
 jobs:
   update-reviews:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
+      actions: write # relancer la publication Pages après mise à jour des avis
 
     steps:
+      # Actions épinglées sur un SHA de commit (les tags peuvent être déplacés)
       - name: Checkout du code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          # Le token n'est pas laissé dans .git/config pendant l'exécution du scraper
+          persist-credentials: false
 
       - name: Configuration de Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '20'
 
-      - name: Installation des dépendances
-        run: npm ci || npm install --save-dev cheerio
+      - name: Installation des dépendances (versions verrouillées)
+        run: npm ci --ignore-scripts
 
       - name: Récupération des avis Amazon
         run: node scripts/fetch-amazon-reviews.mjs
         continue-on-error: true
 
       - name: Commit et Push si de nouveaux avis sont détectés
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add reviews-data.json reviews-data.js
           if git diff --staged --quiet; then
             echo "Aucune modification des avis Amazon."
           else
             git commit -m "chore(reviews): mise à jour automatique des avis Amazon [skip ci]"
-            git push
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
+            # Un push fait avec GITHUB_TOKEN ne déclenche pas d'autre workflow : on relance
+            # explicitement la publication (sans effet tant que Pages n'est pas en mode Actions)
+            gh workflow run pages.yml --ref "${GITHUB_REF_NAME}" || echo "::warning::Relance de pages.yml impossible"
           fi

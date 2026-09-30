@@ -11,16 +11,96 @@ import {
 const PORT = process.env.PORT || 3000;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
-const ADMIN_SECRET = process.env.ADMIN_SECRET || 'kyran_secret_2026';
+// Aucun secret par défaut : sans ADMIN_SECRET (32 caractères minimum), les routes
+// d'administration sont désactivées (fail closed).
+const ADMIN_SECRET = process.env.ADMIN_SECRET || '';
+const ADMIN_ENABLED = ADMIN_SECRET.length >= 32;
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'contact@majordia.fr';
 const SENDER_NAME = process.env.SENDER_NAME || 'KYRAN';
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
 
-// Destinataires des alertes administratives de vente
-const ADMIN_EMAILS = (process.env.ADMIN_NOTIFICATION_EMAILS || 'contact@kyran-jeu.fr,corentin.sence@gmail.com')
+// Tolérance sur l'horodatage de signature Stripe (valeur par défaut des SDK Stripe)
+const STRIPE_TOLERANCE_SECONDS = 300;
+
+// Origines autorisées à appeler l'API d'administration depuis un navigateur
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'https://kyran-jeu.fr,https://www.kyran-jeu.fr')
+  .split(',')
+  .map(o => o.trim())
+  .filter(Boolean);
+
+// Destinataires des alertes administratives de vente (à définir via ADMIN_NOTIFICATION_EMAILS)
+const ADMIN_EMAILS = (process.env.ADMIN_NOTIFICATION_EMAILS || 'contact@kyran-jeu.fr')
   .split(',')
   .map(e => e.trim())
   .filter(Boolean);
+
+if (!ADMIN_ENABLED) {
+  console.warn('⚠️ ADMIN_SECRET absent ou trop court (< 32 caractères) : routes /api/* désactivées.');
+}
+if (!STRIPE_WEBHOOK_SECRET) {
+  console.warn('⚠️ STRIPE_WEBHOOK_SECRET absent : tous les webhooks Stripe seront rejetés.');
+}
+
+function sha256(value) {
+  return crypto.createHash('sha256').update(String(value)).digest();
+}
+
+// Comparaison à temps constant (évite les attaques temporelles)
+function safeEqual(a, b) {
+  return crypto.timingSafeEqual(sha256(a), sha256(b));
+}
+
+// Limitation de débit en mémoire : au-delà de `limit` requêtes par fenêtre et par clé
+const rateBuckets = new Map();
+function rateLimited(key, limit, windowMs) {
+  const now = Date.now();
+  const bucket = rateBuckets.get(key);
+  if (!bucket || now - bucket.start > windowMs) {
+    rateBuckets.set(key, { start: now, count: 1 });
+    if (rateBuckets.size > 10000) {
+      for (const [k, b] of rateBuckets) if (now - b.start > windowMs) rateBuckets.delete(k);
+    }
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > limit;
+}
+
+const EMAIL_RE = /^[^\s@<>"'(),;:]+@[^\s@<>"'(),;:]+\.[a-z]{2,}$/i;
+function isValidEmail(value) {
+  return typeof value === 'string' && value.length <= 254 && EMAIL_RE.test(value);
+}
+
+// Chaîne sur une ligne, sans caractères de contrôle, tronquée
+function cleanLine(value, max = 200) {
+  if (value === null || value === undefined) return '';
+  return String(value).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
+}
+
+// Texte multiligne : conserve les sauts de ligne, retire les autres caractères de contrôle
+function cleanText(value, max = 5000) {
+  if (value === null || value === undefined) return '';
+  return String(value)
+    .replace(/\r\n?/g, '\n')
+    .replace(/[\u0000-\u0009\u000b-\u001f\u007f]+/g, ' ')
+    .slice(0, max);
+}
+
+// '' si vide, l'URL normalisée si https://, null si invalide
+function httpsUrlOrEmpty(value) {
+  if (!value) return '';
+  try {
+    const url = new URL(String(value).trim());
+    return url.protocol === 'https:' ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+function sendJson(res, status, body) {
+  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+  res.end(JSON.stringify(body));
+}
 
 // Cache d'idempotence anti-doublon (mémoire vive 24h)
 const processedEventIds = new Map();
@@ -31,38 +111,47 @@ function isAlreadyProcessed(id) {
   for (const [key, time] of processedEventIds.entries()) {
     if (now - time > 86400000) processedEventIds.delete(key);
   }
-  if (processedEventIds.has(id)) return true;
-  processedEventIds.set(id, now);
-  return false;
+  return processedEventIds.has(id);
 }
 
-function verifyStripeSignature(payload, signatureHeader, secret) {
-  if (!signatureHeader || !secret) return false;
-  const parts = signatureHeader.split(',');
-  let timestamp = null;
-  let signatures = [];
+// Marqué uniquement après un traitement réussi : si l'envoi échoue, la relance
+// automatique de Stripe pourra retraiter l'événement.
+function markProcessed(id) {
+  if (id) processedEventIds.set(id, Date.now());
+}
 
-  for (const part of parts) {
-    const [key, value] = part.split('=');
+export function verifyStripeSignature(payload, signatureHeader, secret, now = Date.now()) {
+  if (!signatureHeader || !secret) return false;
+  let timestamp = null;
+  const signatures = [];
+
+  for (const part of String(signatureHeader).split(',')) {
+    const idx = part.indexOf('=');
+    if (idx === -1) continue;
+    const key = part.slice(0, idx).trim();
+    const value = part.slice(idx + 1).trim();
     if (key === 't') timestamp = value;
     if (key === 'v1') signatures.push(value);
   }
 
-  if (!timestamp || signatures.length === 0) return false;
+  if (!timestamp || !/^\d+$/.test(timestamp) || signatures.length === 0) return false;
 
-  const currentTime = Math.floor(Date.now() / 1000);
-  if (Math.abs(currentTime - parseInt(timestamp, 10)) > 600) {
-    console.warn('Webhook timestamp expiré (replay attack)');
+  const currentTime = Math.floor(now / 1000);
+  if (Math.abs(currentTime - parseInt(timestamp, 10)) > STRIPE_TOLERANCE_SECONDS) {
+    console.warn('Webhook Stripe : horodatage hors tolérance (rejeu possible)');
     return false;
   }
 
-  const signedPayload = `${timestamp}.${payload}`;
-  const expectedSignature = crypto
+  const expected = crypto
     .createHmac('sha256', secret)
-    .update(signedPayload)
-    .digest('hex');
+    .update(`${timestamp}.`)
+    .update(payload)
+    .digest();
 
-  return signatures.some(sig => sig === expectedSignature);
+  return signatures.some(sig => {
+    if (!/^[0-9a-f]{64}$/i.test(sig)) return false;
+    return crypto.timingSafeEqual(Buffer.from(sig, 'hex'), expected);
+  });
 }
 
 async function sendEmail({ to, subject, html, text }) {
@@ -87,7 +176,7 @@ async function sendEmail({ to, subject, html, text }) {
         from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
         to: recipients,
         reply_to: REPLY_TO_EMAIL,
-        subject,
+        subject: cleanLine(subject, 250),
         html,
         text: text || undefined
       }),
@@ -185,7 +274,7 @@ async function handleOrderCompleted(session) {
 
     await sendEmail({
       to: ADMIN_EMAILS,
-      subject: `🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${customerName}`,
+      subject: `🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
       html: adminNotification.html,
       text: adminNotification.text
     });
@@ -227,7 +316,7 @@ async function handleChargeRefunded(charge) {
   try {
     await sendEmail({
       to: ADMIN_EMAILS,
-      subject: `⚠️ REMBOURSEMENT KYRAN : ${refundAmount} — ${customerName}`,
+      subject: `⚠️ REMBOURSEMENT KYRAN : ${refundAmount} — ${cleanLine(customerName, 80)}`,
       html,
       text
     });
@@ -236,13 +325,182 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+const VERSION = '1.5.0';
+const MAX_BODY_BYTES = 1048576;
 
-  // Headers CORS pour appels depuis admin web
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+function applyCors(req, res, pathname) {
+  // CORS uniquement pour l'API d'administration, et seulement pour les origines connues.
+  // Le webhook Stripe est appelé de serveur à serveur et n'a pas besoin de CORS.
+  if (!pathname.startsWith('/api/')) return;
+  const origin = req.headers.origin;
+  res.setHeader('Vary', 'Origin');
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Max-Age', '600');
+  }
+}
+
+function clientIp(req) {
+  // Railway place l'IP réelle du client en tête de X-Forwarded-For
+  const fwd = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  return fwd || req.socket.remoteAddress || 'unknown';
+}
+
+// Retourne true si la requête est autorisée, sinon répond et retourne false
+function requireAdmin(req, res) {
+  const ip = clientIp(req);
+  if (!ADMIN_ENABLED) {
+    sendJson(res, 503, { error: 'Administration désactivée' });
+    return false;
+  }
+  const authHeader = String(req.headers['authorization'] || '');
+  const match = authHeader.match(/^Bearer\s+(.+)$/i);
+  const token = match ? match[1].trim() : '';
+  if (!token || !safeEqual(token, ADMIN_SECRET)) {
+    // 10 échecs max par IP et par quart d'heure
+    if (rateLimited(`authfail:${ip}`, 10, 15 * 60 * 1000)) {
+      sendJson(res, 429, { error: 'Trop de tentatives, réessayez plus tard' });
+      return false;
+    }
+    sendJson(res, 401, { error: 'Unauthorized' });
+    return false;
+  }
+  // 30 envois max par heure, même authentifié (limite les dégâts en cas de fuite du token)
+  if (rateLimited(`send:${ip}`, 30, 60 * 60 * 1000)) {
+    sendJson(res, 429, { error: 'Limite d\'envoi atteinte, réessayez plus tard' });
+    return false;
+  }
+  return true;
+}
+
+function parseJsonBody(rawBody) {
+  try {
+    const data = JSON.parse(rawBody.toString('utf8') || '{}');
+    return data && typeof data === 'object' && !Array.isArray(data) ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+async function handleCustomEmail(req, res, rawBody) {
+  if (!requireAdmin(req, res)) return;
+  const data = parseJsonBody(rawBody);
+  if (!data) return sendJson(res, 400, { error: 'JSON invalide' });
+
+  const to = cleanLine(data.to, 254);
+  if (!isValidEmail(to)) return sendJson(res, 400, { error: 'Champ "to" invalide (une seule adresse e-mail)' });
+
+  const message = cleanText(data.message, 5000);
+  if (!message.trim()) return sendJson(res, 400, { error: 'Champ "message" requis' });
+
+  const actionUrl = httpsUrlOrEmpty(data.actionUrl);
+  if (actionUrl === null) return sendJson(res, 400, { error: 'Le lien du bouton doit commencer par https://' });
+
+  const subject = cleanLine(data.subject, 150) || 'Message concernant votre jeu KYRAN';
+  const { html, text } = renderCustomMessageEmail({
+    customerName: cleanLine(data.customerName || data.name, 100),
+    subject,
+    message,
+    actionText: cleanLine(data.actionText, 60) || null,
+    actionUrl: actionUrl || null
+  });
+
+  try {
+    const result = await sendEmail({ to, subject, html, text });
+    console.log(`📨 Email personnalisé envoyé via l'admin (IP ${clientIp(req)})`);
+    sendJson(res, 200, { success: true, sentTo: to, id: result?.id });
+  } catch (err) {
+    console.error('Erreur envoi email personnalisé :', err.message);
+    sendJson(res, 502, { error: 'Échec de l\'envoi de l\'email' });
+  }
+}
+
+async function handleShipping(req, res, rawBody) {
+  if (!requireAdmin(req, res)) return;
+  const data = parseJsonBody(rawBody);
+  if (!data) return sendJson(res, 400, { error: 'JSON invalide' });
+
+  const toEmail = cleanLine(data.customerEmail || data.to, 254);
+  if (!isValidEmail(toEmail)) return sendJson(res, 400, { error: 'customerEmail invalide ou manquant' });
+
+  const trackingUrl = httpsUrlOrEmpty(data.trackingUrl);
+  if (trackingUrl === null) return sendJson(res, 400, { error: 'trackingUrl doit commencer par https://' });
+
+  const { html, text } = renderShippingEmail({
+    customerName: cleanLine(data.customerName || data.name, 100) || 'Cher joueur',
+    orderId: cleanLine(data.orderId, 100),
+    carrier: cleanLine(data.carrier, 80) || 'La Poste (Courrier Suivi)',
+    trackingNumber: cleanLine(data.trackingNumber, 60),
+    trackingUrl,
+    estimatedDelivery: cleanLine(data.estimatedDelivery, 60) || '2 à 4 jours ouvrés'
+  });
+
+  try {
+    const result = await sendEmail({ to: toEmail, subject: 'Votre jeu KYRAN a été expédié', html, text });
+    console.log(`📦 Email d'expédition envoyé via l'admin (IP ${clientIp(req)})`);
+    sendJson(res, 200, { success: true, sentTo: toEmail, id: result?.id });
+  } catch (err) {
+    console.error('Erreur envoi email expédition :', err.message);
+    sendJson(res, 502, { error: 'Échec de l\'envoi de l\'email' });
+  }
+}
+
+async function handleStripeWebhook(req, res, rawBody) {
+  // Fail closed : sans secret configuré, aucun événement n'est accepté.
+  if (!STRIPE_WEBHOOK_SECRET) {
+    console.error('Webhook rejeté : STRIPE_WEBHOOK_SECRET non configuré');
+    return sendJson(res, 503, { error: 'Webhook not configured' });
+  }
+
+  const signature = req.headers['stripe-signature'];
+  if (!verifyStripeSignature(rawBody, signature, STRIPE_WEBHOOK_SECRET)) {
+    console.error('Signature Stripe invalide rejetée');
+    return sendJson(res, 400, { error: 'Invalid Stripe signature' });
+  }
+
+  const event = parseJsonBody(rawBody);
+  if (!event) return sendJson(res, 400, { error: 'Invalid JSON' });
+
+  // Idempotence : évite double envoi si Stripe relance
+  if (event.id && isAlreadyProcessed(event.id)) {
+    console.log(`ℹ️ Événement Stripe ${event.id} déjà traité (idempotence).`);
+    return sendJson(res, 200, { received: true, deduplicated: true });
+  }
+
+  try {
+    switch (event.type) {
+      case 'checkout.session.completed':
+        await handleOrderCompleted(event.data.object);
+        break;
+      case 'charge.refunded':
+        await handleChargeRefunded(event.data.object);
+        break;
+      default:
+        console.log(`Événement Stripe ignoré: ${event.type}`);
+    }
+    markProcessed(event.id);
+    sendJson(res, 200, { received: true });
+  } catch (err) {
+    console.error('Erreur traitement event Stripe:', err);
+    sendJson(res, 500, { error: 'Processing error' });
+  }
+}
+
+const server = http.createServer((req, res) => {
+  let url;
+  try {
+    url = new URL(req.url, 'http://localhost');
+  } catch {
+    return sendJson(res, 400, { error: 'Bad Request' });
+  }
+  const pathname = url.pathname;
+
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  applyCors(req, res, pathname);
 
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
@@ -250,188 +508,62 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // Health check & monitoring
-  if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/health')) {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
+  // Health check & monitoring (aucune donnée personnelle ni configuration exposée)
+  if (req.method === 'GET' && (pathname === '/' || pathname === '/health')) {
+    return sendJson(res, 200, {
       status: 'ok',
       service: 'kyran-stripe-webhook-server',
-      version: '1.4.0',
-      idempotencyCacheSize: processedEventIds.size,
+      version: VERSION,
       hasResendKey: Boolean(RESEND_API_KEY),
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
-      adminNotificationsTo: ADMIN_EMAILS,
-      senderEmail: SENDER_EMAIL,
-      replyToEmail: REPLY_TO_EMAIL
-    }));
-    return;
+      adminEnabled: ADMIN_ENABLED
+    });
   }
 
-  // Protection taille de charge utile (max 1 Mo)
-  let rawBody = '';
+  const isCustom = pathname === '/api/send-custom-email' || pathname === '/api/custom-email';
+  const isShipping = pathname === '/api/shipping';
+  const isWebhook = pathname === '/webhook' || pathname === '/';
+
+  if (req.method !== 'POST' || !(isCustom || isShipping || isWebhook)) {
+    return sendJson(res, 404, { error: 'Not Found' });
+  }
+
+  // Protection taille de charge utile (max 1 Mo), corps conservé en octets bruts
+  // pour que la signature Stripe soit calculée sur exactement ce qui a été reçu.
+  const chunks = [];
   let bodySize = 0;
+  let aborted = false;
   req.on('data', chunk => {
+    if (aborted) return;
     bodySize += chunk.length;
-    if (bodySize > 1048576) {
-      res.writeHead(413, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Payload too large' }));
+    if (bodySize > MAX_BODY_BYTES) {
+      aborted = true;
+      sendJson(res, 413, { error: 'Payload too large' });
       req.destroy();
-    } else {
-      rawBody += chunk;
+      return;
     }
+    chunks.push(chunk);
   });
 
   req.on('end', async () => {
-    function checkAdminAuth() {
-      const authHeader = req.headers['authorization'] || '';
-      const token = authHeader.replace(/^Bearer\s+/i, '').trim();
-      const expected = ADMIN_SECRET || STRIPE_WEBHOOK_SECRET;
-      return !expected || token === expected;
+    if (aborted) return;
+    const rawBody = Buffer.concat(chunks);
+    try {
+      if (isCustom) return await handleCustomEmail(req, res, rawBody);
+      if (isShipping) return await handleShipping(req, res, rawBody);
+      return await handleStripeWebhook(req, res, rawBody);
+    } catch (err) {
+      console.error('Erreur inattendue :', err);
+      if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
     }
-
-    // Route Envoi email personnalisé au client
-    if (req.method === 'POST' && (url.pathname === '/api/send-custom-email' || url.pathname === '/api/custom-email')) {
-      if (!checkAdminAuth()) {
-        res.writeHead(401, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Unauthorized' }));
-        return;
-      }
-
-      try {
-        const data = JSON.parse(rawBody || '{}');
-        if (!data.to) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'Champ "to" requis' }));
-          return;
-        }
-
-        const subject = data.subject || 'Message concernant votre jeu KYRAN';
-        const { html, text } = renderCustomMessageEmail({
-          customerName: data.customerName || data.name || '',
-          subject,
-          message: data.message || '',
-          actionText: data.actionText || null,
-          actionUrl: data.actionUrl || null
-        });
-
-        const result = await sendEmail({
-          to: data.to,
-          subject,
-          html,
-          text
-        });
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, sentTo: data.to, id: result?.id }));
-      } catch (err) {
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: err.message }));
-      }
-      return;
-    }
-
-    // Route Expédition manuelle ou script CLI
-    if (req.method === 'POST' && url.pathname === '/api/shipping') {
-      if (!checkAdminAuth()) {
-        res.writeHead(401, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Unauthorized' }));
-        return;
-      }
-
-      try {
-        const data = JSON.parse(rawBody || '{}');
-        if (!data.customerEmail && !data.to) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'customerEmail requis' }));
-          return;
-        }
-
-        const toEmail = data.customerEmail || data.to;
-        const { html, text } = renderShippingEmail({
-          customerName: data.customerName || data.name || 'Cher joueur',
-          orderId: data.orderId || '',
-          carrier: data.carrier || 'La Poste (Courrier Suivi)',
-          trackingNumber: data.trackingNumber || '',
-          trackingUrl: data.trackingUrl || '',
-          estimatedDelivery: data.estimatedDelivery || '2 à 4 jours ouvrés'
-        });
-
-        const result = await sendEmail({
-          to: toEmail,
-          subject: 'Votre jeu KYRAN a été expédié',
-          html,
-          text
-        });
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, sentTo: toEmail, id: result?.id }));
-      } catch (err) {
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: err.message }));
-      }
-      return;
-    }
-
-    // Route Webhook Stripe
-    if (req.method === 'POST' && (url.pathname === '/webhook' || url.pathname === '/')) {
-      const signature = req.headers['stripe-signature'];
-      if (STRIPE_WEBHOOK_SECRET) {
-        const valid = verifyStripeSignature(rawBody, signature, STRIPE_WEBHOOK_SECRET);
-        if (!valid) {
-          console.error('Signature Stripe invalide rejetée');
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'Invalid Stripe signature' }));
-          return;
-        }
-      }
-
-      let event;
-      try {
-        event = JSON.parse(rawBody);
-      } catch (err) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Invalid JSON' }));
-        return;
-      }
-
-      // Idempotence : évite double envoi si Stripe relance
-      if (event.id && isAlreadyProcessed(event.id)) {
-        console.log(`ℹ️ Événement Stripe ${event.id} déjà traité (idempotence).`);
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ received: true, deduplicated: true }));
-        return;
-      }
-
-      try {
-        switch (event.type) {
-          case 'checkout.session.completed':
-            await handleOrderCompleted(event.data.object);
-            break;
-          case 'charge.refunded':
-            await handleChargeRefunded(event.data.object);
-            break;
-          default:
-            console.log(`Événement Stripe ignoré: ${event.type}`);
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ received: true }));
-      } catch (err) {
-        console.error('Erreur traitement event Stripe:', err);
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: err.message }));
-      }
-      return;
-    }
-
-    res.writeHead(404, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ error: 'Not Found' }));
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`🚀 Serveur KYRAN Webhook v1.4.0 actif sur port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  server.listen(PORT, () => {
+    console.log(`🚀 Serveur KYRAN Webhook v${VERSION} actif sur port ${PORT}`);
+  });
+}
 
 process.on('uncaughtException', (err) => {
   console.error('💥 Uncaught Exception :', err);
@@ -441,3 +573,4 @@ process.on('unhandledRejection', (reason) => {
   console.error('💥 Unhandled Rejection :', reason);
 });
 
+export { server };

@@ -4,10 +4,14 @@ compatibility_date = "2024-04-01"
 
 # Variables d'environnement non sensibles
 [vars]
-SENDER_EMAIL = "contact@kyran-jeu.fr"
+# Seul le domaine majordia.fr est vérifié dans Resend
+SENDER_EMAIL = "contact@majordia.fr"
 SENDER_NAME = "KYRAN"
+REPLY_TO_EMAIL = "contact@kyran-jeu.fr"
 SITE_URL = "https://kyran-jeu.fr"
 
-# Les secrets doivent être ajoutés via la commande :
-# wrangler secret put STRIPE_WEBHOOK_SECRET
-# wrangler secret put RESEND_API_KEY (ou STRIPE_API_KEY)
+# Les secrets doivent être ajoutés via la commande (jamais dans ce fichier) :
+#   npx wrangler secret put STRIPE_WEBHOOK_SECRET   (obligatoire, sinon tout webhook est rejeté)
+#   npx wrangler secret put RESEND_API_KEY
+#   npx wrangler secret put ADMIN_SECRET            (32 caractères min., sinon /api/shipping est désactivé)
+# Pour le développement local, utiliser .dev.vars (ignoré par git).

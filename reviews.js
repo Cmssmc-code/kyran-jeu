@@ -24,8 +24,8 @@
   }
 
   function escapeHtml(str) {
-    if (!str) return '';
-    return str
+    if (str === null || str === undefined) return '';
+    return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -33,14 +33,31 @@
       .replace(/'/g, '&#039;');
   }
 
+  // Les données proviennent d'un scraping Amazon : n'accepter qu'un lien https vers amazon
+  function safeAmazonUrl(value) {
+    var fallback = 'https://www.amazon.fr/dp/B0G217LD87#customerReviews';
+    try {
+      var u = new URL(String(value));
+      return (u.protocol === 'https:' && /(^|\.)amazon\.fr$/.test(u.hostname)) ? u.href : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function toNumber(value, fallback) {
+    var n = parseFloat(value);
+    return isFinite(n) ? n : fallback;
+  }
+
   function initReviewsWidget(data) {
     if (!data || !data.reviews || !data.reviews.length) {
       return;
     }
 
-    var avg = data.averageRating || 4.7;
-    var total = data.totalReviews || data.reviews.length;
+    var avg = Math.min(5, Math.max(0, toNumber(data.averageRating, 4.7)));
+    var total = Math.max(0, Math.round(toNumber(data.totalReviews, data.reviews.length)));
     var reviews = data.reviews;
+    var reviewsUrl = escapeHtml(safeAmazonUrl(data.reviewsUrl));
 
     // Rendu badge compact pour la page de commande si présente (cliquable vers #avis)
     var orderBadge = document.getElementById('amazon-order-badge');
@@ -79,7 +96,7 @@
     html += '    <div class="amazon-prime-tag">';
     html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> 100% avis vérifiés &amp; testeurs</span>';
     html += '    </div>';
-    html += '    <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87#customerReviews') + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
+    html += '    <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
     html += '      Voir les 33 évaluations sur Amazon.fr <span aria-hidden="true">↗</span>';
     html += '    </a>';
     html += '  </div>';
@@ -102,7 +119,7 @@
 
       html += '<div class="amazon-review-card">';
       html += '  <div class="review-card-header">';
-      html += '    <div class="review-card-rating">' + renderStars(rev.rating) + '</div>';
+      html += '    <div class="review-card-rating">' + renderStars(Math.min(5, Math.max(0, toNumber(rev.rating, 5)))) + '</div>';
       if (rev.date) {
         html += '    <span class="review-card-date">' + escapeHtml(rev.date) + '</span>';
       }
@@ -123,7 +140,7 @@
 
       html += '  <div class="review-card-footer">';
       html += '    <div class="review-author-info">';
-      html += '      <span class="review-author-avatar">' + escapeHtml(rev.author.charAt(0).toUpperCase()) + '</span>';
+      html += '      <span class="review-author-avatar">' + escapeHtml(String(rev.author || '?').charAt(0).toUpperCase()) + '</span>';
       html += '      <div>';
       html += '        <strong class="review-author-name">' + escapeHtml(rev.author) + '</strong>';
       if (badgeHtml) {
@@ -139,7 +156,7 @@
 
     // 3. Bouton direct vers Amazon.fr
     html += '<div class="amazon-reviews-actions">';
-    html += '  <a href="' + (data.reviewsUrl || 'https://www.amazon.fr/dp/B0G217LD87#customerReviews') + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-outline">';
+    html += '  <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-outline">';
     html += '    <span>Consulter toutes les 33 évaluations sur Amazon.fr ↗</span>';
     html += '  </a>';
     html += '</div>';

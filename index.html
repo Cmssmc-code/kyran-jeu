@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <!-- QR imprimé (boîte) : index.html#video → règles Ludochrono -->
   <script>
     (function () {
@@ -650,7 +652,7 @@
         <p class="section-sub reveal-on-scroll" data-delay="1">Découvrez l'ambiance et le rythme des parties en vidéo</p>
         <div class="video-container reveal-on-scroll" data-delay="2">
           <iframe 
-            src="https://www.youtube.com/embed/y0YVn-lZMAc" 
+            src="https://www.youtube-nocookie.com/embed/y0YVn-lZMAc" 
             title="Bande-annonce du jeu KYRAN" 
             loading="lazy" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

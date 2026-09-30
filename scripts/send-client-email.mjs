@@ -40,7 +40,11 @@ if (!to || !message) {
 }
 
 const serverUrl = process.env.KYRAN_WEBHOOK_URL || 'https://kyran-webhook-production.up.railway.app';
-const secret = process.env.ADMIN_SECRET || 'kyran_secret_2026';
+const secret = process.env.ADMIN_SECRET || env.ADMIN_SECRET;
+if (!secret) {
+  console.error('❌ ADMIN_SECRET manquant : définissez-le dans .env ou dans l\'environnement (valeur visible dans les variables Railway).');
+  process.exit(1);
+}
 
 async function send() {
   console.log(`✉️ Envoi de l'email à ${to}...`);

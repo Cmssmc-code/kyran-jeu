@@ -28,7 +28,7 @@ const customerName = getArg('--name', 'Cher joueur');
 const orderId = getArg('--order', '');
 const carrier = getArg('--carrier', 'La Poste (Courrier Suivi)');
 const trackingNumber = getArg('--tracking', '');
-const trackingUrl = getArg('--url', trackingNumber ? `https://www.laposte.fr/outils/suivre-vos-envois?code=${trackingNumber}` : '');
+const trackingUrl = getArg('--url', trackingNumber ? `https://www.laposte.fr/outils/suivre-vos-envois?code=${encodeURIComponent(trackingNumber)}` : '');
 const estimatedDelivery = getArg('--delay', '2 à 4 jours ouvrés');
 
 if (!to) {
@@ -40,7 +40,10 @@ async function send() {
   console.log(`🚀 Déclenchement de l'email d'expédition pour ${to} (Suivi: ${trackingNumber || 'aucun'})...`);
 
   const serverUrl = process.env.KYRAN_WEBHOOK_URL || 'https://kyran-webhook-production.up.railway.app';
-  const secret = process.env.ADMIN_SECRET || 'kyran_secret_2026';
+  const secret = process.env.ADMIN_SECRET || env.ADMIN_SECRET;
+  if (!secret) {
+    throw new Error('ADMIN_SECRET manquant : définissez-le dans .env ou dans l\'environnement (valeur visible dans les variables Railway).');
+  }
 
   const res = await fetch(`${serverUrl}/api/shipping`, {
     method: 'POST',

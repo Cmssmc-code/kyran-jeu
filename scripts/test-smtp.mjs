@@ -1,11 +1,17 @@
 import tls from 'tls';
 
 const email = process.argv[2] || 'contact@kyran-jeu.fr';
-const password = process.argv[3];
+// Mot de passe uniquement via variable d'environnement : passé en argument, il resterait
+// visible dans l'historique du shell et dans la liste des processus (ps).
+const password = process.env.OVH_SMTP_PASSWORD || process.env.OVH_MAIL_PASSWORD;
 
 if (!password) {
-  console.log('Usage: node scripts/test-smtp.mjs <email> <password>');
-  console.log('Exemple: node scripts/test-smtp.mjs contact@kyran-jeu.fr MonMotDePasse123');
+  console.log('Usage: OVH_SMTP_PASSWORD=... node scripts/test-smtp.mjs [email]');
+  console.log('Astuce : `read -s OVH_SMTP_PASSWORD && export OVH_SMTP_PASSWORD` pour saisir le mot de passe sans l\'afficher.');
+  process.exit(1);
+}
+if (/[\r\n]/.test(email)) {
+  console.error('Adresse invalide');
   process.exit(1);
 }
 
@@ -34,7 +40,7 @@ socket.on('data', (data) => {
   } else if (step === 4) {
     if (line.startsWith('235')) {
       console.log('\n✅ SUCCÈS : Identifiants SMTP OVH 100% VALIDES !');
-      console.log('Vous pouvez saisir ce mot de passe dans Gmail en toute confiance.');
+      console.log('Identifiants valides.');
       socket.write('QUIT\r\n');
       socket.end();
       process.exit(0);

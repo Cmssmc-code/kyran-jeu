@@ -6,127 +6,163 @@ import { renderOrderEmail, renderRefundEmail, renderShippingEmail } from './temp
  * - Écoute charge.refunded -> Envoi email de remboursement
  * - Endpoint POST /api/shipping -> Envoi email d'expédition de commande
  * - Utilise l'API Resend pour délivrabilité maximale
+ *
+ * ⚠️ Doublon du serveur Railway (server/server.js). Ne pas enregistrer les deux
+ * URL comme endpoints de webhook dans Stripe, sinon chaque client reçoit deux emails.
+ *
+ * Sécurité (fail closed) :
+ * - sans STRIPE_WEBHOOK_SECRET, tous les webhooks sont rejetés ;
+ * - sans ADMIN_SECRET (32 caractères min.), /api/shipping est désactivé.
  */
+
+const STRIPE_TOLERANCE_SECONDS = 300;
+const MAX_BODY_BYTES = 1048576;
+const EMAIL_RE = /^[^\s@<>"'(),;:]+@[^\s@<>"'(),;:]+\.[a-z]{2,}$/i;
+
+function json(body, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'X-Content-Type-Options': 'nosniff',
+      'Cache-Control': 'no-store'
+    }
+  });
+}
+
+function cleanLine(value, max = 200) {
+  if (value === null || value === undefined) return '';
+  return String(value).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
+}
+
+function httpsUrlOrEmpty(value) {
+  if (!value) return '';
+  try {
+    const url = new URL(String(value).trim());
+    return url.protocol === 'https:' ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+async function sha256(value) {
+  return new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(value))));
+}
+
+// Comparaison à temps constant de deux chaînes (via leurs empreintes SHA-256)
+async function safeEqual(a, b) {
+  const [ha, hb] = await Promise.all([sha256(a), sha256(b)]);
+  let diff = 0;
+  for (let i = 0; i < ha.length; i++) diff |= ha[i] ^ hb[i];
+  return diff === 0;
+}
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Health check et diagnostic
+    // Health check (aucune configuration ni adresse exposée)
     if (request.method === 'GET' && (url.pathname === '/' || url.pathname === '/health')) {
-      return new Response(JSON.stringify({
+      return json({
         status: 'ok',
         service: 'kyran-stripe-webhook',
         hasResendKey: Boolean(env.RESEND_API_KEY),
-        hasStripeWebhookSecret: Boolean(env.STRIPE_WEBHOOK_SECRET),
-        senderEmail: env.SENDER_EMAIL || 'contact@kyran-jeu.fr'
-      }), {
-        headers: { 'Content-Type': 'application/json' }
+        hasStripeWebhookSecret: Boolean(env.STRIPE_WEBHOOK_SECRET)
       });
+    }
+
+    const contentLength = Number(request.headers.get('content-length') || 0);
+    if (contentLength > MAX_BODY_BYTES) {
+      return json({ error: 'Payload too large' }, 413);
     }
 
     // Endpoint manuel sécurisé d'expédition
     if (request.method === 'POST' && url.pathname === '/api/shipping') {
-      const authHeader = request.headers.get('authorization') || '';
-      const token = authHeader.replace(/^Bearer\s+/i, '').trim();
-      const expectedToken = env.ADMIN_SECRET || env.STRIPE_WEBHOOK_SECRET;
+      const adminSecret = env.ADMIN_SECRET || '';
+      if (adminSecret.length < 32) {
+        return json({ error: 'Administration désactivée' }, 503);
+      }
 
-      if (expectedToken && token !== expectedToken) {
-        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-          status: 401,
-          headers: { 'Content-Type': 'application/json' }
-        });
+      const authHeader = request.headers.get('authorization') || '';
+      const match = authHeader.match(/^Bearer\s+(.+)$/i);
+      const token = match ? match[1].trim() : '';
+      if (!token || !(await safeEqual(token, adminSecret))) {
+        return json({ error: 'Unauthorized' }, 401);
+      }
+
+      let data;
+      try {
+        data = await request.json();
+      } catch {
+        return json({ error: 'JSON invalide' }, 400);
+      }
+
+      const to = cleanLine(data?.customerEmail, 254);
+      if (!EMAIL_RE.test(to)) {
+        return json({ error: 'customerEmail invalide ou manquant' }, 400);
+      }
+      const trackingUrl = httpsUrlOrEmpty(data.trackingUrl);
+      if (trackingUrl === null) {
+        return json({ error: 'trackingUrl doit commencer par https://' }, 400);
       }
 
       try {
-        const data = await request.json();
-        if (!data.customerEmail) {
-          return new Response(JSON.stringify({ error: 'customerEmail requis' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-          });
-        }
-
-        const html = renderShippingEmail({
-          customerName: data.customerName || 'Cher joueur',
-          orderId: data.orderId || '',
-          carrier: data.carrier || 'La Poste (Courrier Suivi)',
-          trackingNumber: data.trackingNumber || '',
-          trackingUrl: data.trackingUrl || '',
-          estimatedDelivery: data.estimatedDelivery || '2 à 4 jours ouvrés'
+        const { html, text } = renderShippingEmail({
+          customerName: cleanLine(data.customerName, 100) || 'Cher joueur',
+          orderId: cleanLine(data.orderId, 100),
+          carrier: cleanLine(data.carrier, 80) || 'La Poste (Courrier Suivi)',
+          trackingNumber: cleanLine(data.trackingNumber, 60),
+          trackingUrl,
+          estimatedDelivery: cleanLine(data.estimatedDelivery, 60) || '2 à 4 jours ouvrés'
         });
 
-        await sendEmail({
-          to: data.customerEmail,
-          subject: '📦 Votre jeu KYRAN a été expédié !',
-          html,
-          env
-        });
-
-        return new Response(JSON.stringify({ success: true, sentTo: data.customerEmail }), {
-          status: 200,
-          headers: { 'Content-Type': 'application/json' }
-        });
+        await sendEmail({ to, subject: '📦 Votre jeu KYRAN a été expédié !', html, text, env });
+        return json({ success: true, sentTo: to });
       } catch (err) {
-        return new Response(JSON.stringify({ error: err.message }), {
-          status: 500,
-          headers: { 'Content-Type': 'application/json' }
-        });
+        console.error('Erreur envoi email expédition :', err.message);
+        return json({ error: 'Échec de l\'envoi de l\'email' }, 502);
       }
     }
 
-    if (request.method !== 'POST') {
-      return new Response('Method Not Allowed', { status: 405 });
+    if (request.method !== 'POST' || !(url.pathname === '/' || url.pathname === '/webhook')) {
+      return json({ error: 'Not Found' }, 404);
     }
 
-    const signature = request.headers.get('stripe-signature');
+    // Fail closed : sans secret, aucun événement n'est accepté
     const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
+    if (!webhookSecret) {
+      console.error('Webhook rejeté : STRIPE_WEBHOOK_SECRET non configuré');
+      return json({ error: 'Webhook not configured' }, 503);
+    }
 
     const rawBody = await request.text();
-
-    // Vérification de la signature Stripe si le secret est configuré
-    if (webhookSecret) {
-      const isValid = await verifyStripeSignature(rawBody, signature, webhookSecret);
-      if (!isValid) {
-        return new Response('Invalid signature', { status: 400 });
-      }
+    const signature = request.headers.get('stripe-signature');
+    if (!(await verifyStripeSignature(rawBody, signature, webhookSecret))) {
+      return json({ error: 'Invalid Stripe signature' }, 400);
     }
 
     let event;
     try {
       event = JSON.parse(rawBody);
-    } catch (err) {
-      return new Response('Invalid JSON payload', { status: 400 });
+    } catch {
+      return json({ error: 'Invalid JSON' }, 400);
     }
 
     try {
       switch (event.type) {
-        case 'checkout.session.completed': {
-          const session = event.data.object;
-          await handleOrderCompleted(session, env);
+        case 'checkout.session.completed':
+          await handleOrderCompleted(event.data.object, env);
           break;
-        }
-
-        case 'charge.refunded': {
-          const charge = event.data.object;
-          await handleChargeRefunded(charge, env);
+        case 'charge.refunded':
+          await handleChargeRefunded(event.data.object, env);
           break;
-        }
-
         default:
           console.log(`Événement Stripe ignoré : ${event.type}`);
       }
-
-      return new Response(JSON.stringify({ received: true }), {
-        headers: { 'Content-Type': 'application/json' },
-        status: 200
-      });
+      return json({ received: true });
     } catch (error) {
       console.error('Erreur traitement webhook :', error);
-      return new Response(JSON.stringify({ error: error.message }), {
-        headers: { 'Content-Type': 'application/json' },
-        status: 500
-      });
+      return json({ error: 'Processing error' }, 500);
     }
   }
 };
@@ -174,7 +210,7 @@ async function handleOrderCompleted(session, env) {
     country: shipping.address.country === 'FR' ? 'France' : shipping.address.country
   } : null;
 
-  const html = renderOrderEmail({
+  const { html, text } = renderOrderEmail({
     customerName,
     orderId: session.id,
     quantity,
@@ -189,6 +225,7 @@ async function handleOrderCompleted(session, env) {
     to: customerEmail,
     subject: '🃏 Confirmation de votre commande KYRAN !',
     html,
+    text,
     env
   });
 }
@@ -209,7 +246,7 @@ async function handleChargeRefunded(charge, env) {
     ? (charge.amount_refunded / 100).toFixed(2).replace('.', ',') + ' €'
     : '13,98 €';
 
-  const html = renderRefundEmail({
+  const { html, text } = renderRefundEmail({
     customerName,
     orderId: charge.id,
     refundAmount,
@@ -220,6 +257,7 @@ async function handleChargeRefunded(charge, env) {
     to: customerEmail,
     subject: 'Remboursement de votre commande KYRAN',
     html,
+    text,
     env
   });
 }
@@ -227,15 +265,16 @@ async function handleChargeRefunded(charge, env) {
 /**
  * Envoi d'email via Resend API
  */
-async function sendEmail({ to, subject, html, env }) {
+async function sendEmail({ to, subject, html, text, env }) {
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn('RESEND_API_KEY non configurée. Email simulé pour :', to);
+    console.warn('RESEND_API_KEY non configurée. Email simulé.');
     return;
   }
 
-  const sender = env.SENDER_EMAIL || 'contact@kyran-jeu.fr';
+  const sender = env.SENDER_EMAIL || 'contact@majordia.fr';
   const senderName = env.SENDER_NAME || 'KYRAN';
+  const replyTo = env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
 
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -246,9 +285,10 @@ async function sendEmail({ to, subject, html, env }) {
     body: JSON.stringify({
       from: `${senderName} <${sender}>`,
       to: [to],
-      reply_to: sender,
-      subject,
-      html
+      reply_to: replyTo,
+      subject: cleanLine(subject, 250),
+      html,
+      text
     })
   });
 
@@ -257,54 +297,55 @@ async function sendEmail({ to, subject, html, env }) {
     throw new Error(`Erreur Resend (${res.status}): ${errText}`);
   }
 
-  console.log(`✅ Email envoyé avec succès à ${to} : "${subject}"`);
+  console.log(`✅ Email envoyé : "${subject}"`);
+}
+
+function hexToBytes(hex) {
+  const out = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
+  return out;
 }
 
 /**
- * Vérification signature webhook Stripe avec Web Crypto API (HMAC-SHA256)
+ * Vérification signature webhook Stripe avec Web Crypto API (HMAC-SHA256).
+ * crypto.subtle.verify compare à temps constant.
  */
-async function verifyStripeSignature(payload, signatureHeader, secret) {
+export async function verifyStripeSignature(payload, signatureHeader, secret, now = Date.now()) {
   if (!signatureHeader || !secret) return false;
 
-  const parts = signatureHeader.split(',');
   let timestamp = null;
-  let signatures = [];
-
-  for (const part of parts) {
-    const [key, value] = part.split('=');
+  const signatures = [];
+  for (const part of String(signatureHeader).split(',')) {
+    const idx = part.indexOf('=');
+    if (idx === -1) continue;
+    const key = part.slice(0, idx).trim();
+    const value = part.slice(idx + 1).trim();
     if (key === 't') timestamp = value;
     if (key === 'v1') signatures.push(value);
   }
 
-  if (!timestamp || signatures.length === 0) return false;
+  if (!timestamp || !/^\d+$/.test(timestamp) || signatures.length === 0) return false;
 
-  // Protection contre replay attack (10 minutes)
-  const currentTime = Math.floor(Date.now() / 1000);
-  if (Math.abs(currentTime - parseInt(timestamp, 10)) > 600) {
-    console.warn('Signature webhook expirée');
+  // Protection contre le rejeu (tolérance Stripe par défaut : 5 minutes)
+  const currentTime = Math.floor(now / 1000);
+  if (Math.abs(currentTime - parseInt(timestamp, 10)) > STRIPE_TOLERANCE_SECONDS) {
+    console.warn('Signature webhook hors tolérance');
     return false;
   }
 
-  const signedPayload = `${timestamp}.${payload}`;
   const encoder = new TextEncoder();
-
   const key = await crypto.subtle.importKey(
     'raw',
     encoder.encode(secret),
     { name: 'HMAC', hash: 'SHA-256' },
     false,
-    ['sign']
+    ['verify']
   );
+  const data = encoder.encode(`${timestamp}.${payload}`);
 
-  const signatureBuffer = await crypto.subtle.sign(
-    'HMAC',
-    key,
-    encoder.encode(signedPayload)
-  );
-
-  const expectedSignature = Array.from(new Uint8Array(signatureBuffer))
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
-
-  return signatures.some(sig => sig === expectedSignature);
+  for (const sig of signatures) {
+    if (!/^[0-9a-f]{64}$/i.test(sig)) continue;
+    if (await crypto.subtle.verify('HMAC', key, hexToBytes(sig), data)) return true;
+  }
+  return false;
 }

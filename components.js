@@ -344,13 +344,18 @@ class KyranBreadcrumb extends HTMLElement {
       items = [];
     }
 
+    const esc = function (v) {
+      return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    };
     const parts = items.map(function (item, index) {
       const isLast = index === items.length - 1;
-      const href = item.href ? rootPath(item.href) : '';
+      const href = item.href && !/^\s*(javascript|data|vbscript):/i.test(item.href) ? rootPath(item.href) : '';
       if (isLast || !href) {
-        return `<span class="breadcrumb-current" aria-current="page">${item.label}</span>`;
+        return `<span class="breadcrumb-current" aria-current="page">${esc(item.label)}</span>`;
       }
-      return `<a href="${href}">${item.label}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
+      return `<a href="${esc(href)}">${esc(item.label)}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
     }).join('');
 
     this.innerHTML = `<nav class="breadcrumb" aria-label="Fil d'Ariane">${parts}</nav>`;

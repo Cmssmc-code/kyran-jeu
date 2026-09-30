@@ -1,5 +1,39 @@
 // Templates emails ultra-épurés pour KYRAN
 // Design minimaliste, typographique, 0 surcharge visuelle, compatibilité 100% webmails.
+//
+// SÉCURITÉ : toute donnée dynamique (saisie admin, données Stripe) DOIT passer par
+// esc() avant d'être insérée dans le HTML, et par safeUrl() avant d'être placée
+// dans un attribut href. Ce fichier est dupliqué dans worker/templates.js : garder
+// les deux copies identiques.
+
+export function escapeHtml(value) {
+  if (value === null || value === undefined) return '';
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+const esc = escapeHtml;
+
+// N'autorise que les liens https:// (pas de javascript:, data:, http:, etc.)
+export function safeUrl(value) {
+  if (!value) return '';
+  try {
+    const url = new URL(String(value).trim());
+    return url.protocol === 'https:' ? url.toString() : '';
+  } catch {
+    return '';
+  }
+}
+
+// Adresse e-mail sûre pour un lien mailto:
+function safeEmail(value) {
+  const v = String(value || '').trim();
+  return /^[^\s@<>"'()]+@[^\s@<>"'()]+\.[^\s@<>"'()]+$/.test(v) ? v : '';
+}
 
 function baseLayout({ title, previewText, contentHtml }) {
   return `<!DOCTYPE html>
@@ -7,11 +41,11 @@ function baseLayout({ title, previewText, contentHtml }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title}</title>
+  <title>${esc(title)}</title>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #0f172a; line-height: 1.6;">
   <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; font-size: 1px; line-height: 1px;">
-    ${previewText}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+    ${esc(previewText)}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
   </div>
 
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 40px 15px;">
@@ -75,11 +109,11 @@ export function renderOrderEmail({
   const addressHtml = shippingAddress ? `
     <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #f1f5f9; font-size: 13px; color: #475569; line-height: 1.5;">
       <div style="font-weight: 600; color: #0f172a; margin-bottom: 4px;">Livraison à :</div>
-      ${shippingAddress.name ? `<div>${shippingAddress.name}</div>` : ''}
-      ${shippingAddress.line1 ? `<div>${shippingAddress.line1}</div>` : ''}
-      ${shippingAddress.line2 ? `<div>${shippingAddress.line2}</div>` : ''}
-      <div>${shippingAddress.postal_code || ''} ${shippingAddress.city || ''}</div>
-      <div>${shippingAddress.country || 'France'}</div>
+      ${shippingAddress.name ? `<div>${esc(shippingAddress.name)}</div>` : ''}
+      ${shippingAddress.line1 ? `<div>${esc(shippingAddress.line1)}</div>` : ''}
+      ${shippingAddress.line2 ? `<div>${esc(shippingAddress.line2)}</div>` : ''}
+      <div>${esc(shippingAddress.postal_code || '')} ${esc(shippingAddress.city || '')}</div>
+      <div>${esc(shippingAddress.country || 'France')}</div>
     </div>
   ` : '';
 
@@ -89,7 +123,7 @@ export function renderOrderEmail({
     </div>
 
     <h1 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: #0f172a; line-height: 1.3;">
-      Merci pour votre commande, ${customerName}.
+      Merci pour votre commande, ${esc(customerName)}.
     </h1>
 
     <p style="margin: 0 0 24px 0; font-size: 14px; color: #475569; line-height: 1.6;">
@@ -101,18 +135,18 @@ export function renderOrderEmail({
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size: 14px;">
         <tr>
           <td style="padding: 14px 16px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-weight: 500;">
-            KYRAN — Édition Officielle × ${quantity}
+            KYRAN — Édition Officielle × ${esc(quantity)}
           </td>
           <td align="right" style="padding: 14px 16px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-weight: 600;">
-            ${subtotalAmount}
+            ${esc(subtotalAmount)}
           </td>
         </tr>
         <tr>
           <td style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">
-            Livraison suivie (${estimatedDelivery})
+            Livraison suivie (${esc(estimatedDelivery)})
           </td>
           <td align="right" style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">
-            ${shippingCost}
+            ${esc(shippingCost)}
           </td>
         </tr>
         <tr style="background-color: #fafaf9;">
@@ -120,7 +154,7 @@ export function renderOrderEmail({
             Total réglé
           </td>
           <td align="right" style="padding: 12px 16px; color: #0f172a; font-weight: 700;">
-            ${totalAmount}
+            ${esc(totalAmount)}
           </td>
         </tr>
       </table>
@@ -137,7 +171,7 @@ export function renderOrderEmail({
       </a>
     </div>
 
-    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence : ${orderId}</div>` : ''}
+    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence : ${esc(orderId)}</div>` : ''}
   `;
 
   const html = baseLayout({
@@ -174,9 +208,10 @@ export function renderShippingEmail({
   trackingUrl = '',
   estimatedDelivery = '2 à 4 jours ouvrés'
 }) {
-  const trackingButton = trackingUrl ? `
+  const trackingHref = safeUrl(trackingUrl);
+  const trackingButton = trackingHref ? `
     <div style="margin: 20px 0 24px 0;">
-      <a href="${trackingUrl}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600;" target="_blank">
+      <a href="${esc(trackingHref)}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600;" target="_blank">
         Suivre mon colis en direct →
       </a>
     </div>
@@ -192,12 +227,12 @@ export function renderShippingEmail({
     </h1>
 
     <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6;">
-      Votre commande a été remise au transporteur (${carrier}) et arrive sous ${estimatedDelivery}.
+      Votre commande a été remise au transporteur (${esc(carrier)}) et arrive sous ${esc(estimatedDelivery)}.
     </p>
 
     <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; font-size: 13px; color: #334155;">
       <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px;">Numéro de suivi :</div>
-      <div style="font-size: 16px; font-weight: 700; color: #0f172a; font-family: monospace;">${trackingNumber || 'En cours d\'actualisation'}</div>
+      <div style="font-size: 16px; font-weight: 700; color: #0f172a; font-family: monospace;">${esc(trackingNumber || 'En cours d\'actualisation')}</div>
     </div>
 
     ${trackingButton}
@@ -206,7 +241,7 @@ export function renderShippingEmail({
       Astuce : préparez vos parties dès maintenant en consultant les règles du jeu sur <a href="https://kyran-jeu.fr/regle.html" style="color: #0f172a; text-decoration: underline;">kyran-jeu.fr/regle.html</a>.
     </div>
 
-    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence commande : ${orderId}</div>` : ''}
+    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence commande : ${esc(orderId)}</div>` : ''}
   `;
 
   const html = baseLayout({
@@ -220,7 +255,7 @@ export function renderShippingEmail({
 Votre commande KYRAN a été remise au transporteur (${carrier}) et arrive sous ${estimatedDelivery}.
 
 Numéro de suivi : ${trackingNumber || 'Non renseigné'}
-${trackingUrl ? `Lien de suivi : ${trackingUrl}` : ''}
+${trackingHref ? `Lien de suivi : ${trackingHref}` : ''}
 
 Règles du jeu : https://kyran-jeu.fr/regle.html
 
@@ -247,20 +282,20 @@ export function renderRefundEmail({
     </h1>
 
     <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6;">
-      Bonjour ${customerName}, le remboursement de votre commande KYRAN a bien été émis sur votre moyen de paiement initial.
+      Bonjour ${esc(customerName)}, le remboursement de votre commande KYRAN a bien été émis sur votre moyen de paiement initial.
     </p>
 
     <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; font-size: 13px; color: #334155; margin-bottom: 20px;">
       <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 4px;">Montant crédité :</div>
-      <div style="font-size: 22px; font-weight: 800; color: #0f172a;">${refundAmount}</div>
-      ${reason ? `<div style="margin-top: 6px; font-size: 12px; color: #64748b;">Motif : ${reason}</div>` : ''}
+      <div style="font-size: 22px; font-weight: 800; color: #0f172a;">${esc(refundAmount)}</div>
+      ${reason ? `<div style="margin-top: 6px; font-size: 12px; color: #64748b;">Motif : ${esc(reason)}</div>` : ''}
     </div>
 
     <p style="font-size: 13px; color: #64748b; line-height: 1.5;">
       Selon votre établissement bancaire, le crédit apparaîtra sur votre relevé sous <strong>5 à 10 jours ouvrés</strong>.
     </p>
 
-    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence : ${orderId}</div>` : ''}
+    ${orderId ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Référence : ${esc(orderId)}</div>` : ''}
   `;
 
   const html = baseLayout({
@@ -292,22 +327,23 @@ export function renderCustomMessageEmail({
   actionText = null,
   actionUrl = null
 }) {
-  const actionHtml = (actionText && actionUrl) ? `
+  const actionHref = safeUrl(actionUrl);
+  const actionHtml = (actionText && actionHref) ? `
     <div style="margin: 24px 0 16px 0;">
-      <a href="${actionUrl}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600;" target="_blank">
-        ${actionText} →
+      <a href="${esc(actionHref)}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600;" target="_blank">
+        ${esc(actionText)} →
       </a>
     </div>
   ` : '';
 
   const formattedMessage = message
     .split('\n\n')
-    .map(p => `<p style="margin: 0 0 14px 0; font-size: 14px; color: #334155; line-height: 1.6;">${p.replace(/\n/g, '<br>')}</p>`)
+    .map(p => `<p style="margin: 0 0 14px 0; font-size: 14px; color: #334155; line-height: 1.6;">${esc(p).replace(/\n/g, '<br>')}</p>`)
     .join('');
 
   const contentHtml = `
     <h1 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.3;">
-      ${subject}
+      ${esc(subject)}
     </h1>
 
     <div style="margin-bottom: 20px;">
@@ -330,7 +366,7 @@ export function renderCustomMessageEmail({
 
   const text = `${customerName ? `Bonjour ${customerName},\n\n` : ''}${message}
 
-${(actionText && actionUrl) ? `${actionText} : ${actionUrl}\n\n` : ''}À très bientôt sur le jeu,
+${(actionText && actionHref) ? `${actionText} : ${actionHref}\n\n` : ''}À très bientôt sur le jeu,
 Corentin Sence · Édition officielle KYRAN
 https://kyran-jeu.fr
 `;
@@ -364,7 +400,7 @@ Pays : ${shippingAddress.country || 'France'}
     </div>
 
     <h1 style="margin: 0 0 16px 0; font-size: 22px; font-weight: 800; color: #0f172a; line-height: 1.3;">
-      Nouvelle commande : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount})
+      Nouvelle commande : ${esc(quantity)} boîte${quantity > 1 ? 's' : ''} (${esc(totalAmount)})
     </h1>
 
     <!-- Récap commande -->
@@ -372,19 +408,19 @@ Pays : ${shippingAddress.country || 'France'}
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size: 14px;">
         <tr>
           <td style="padding: 6px 0; color: #64748b;">Quantité :</td>
-          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 700;">${quantity} exemplaire${quantity > 1 ? 's' : ''}</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 700;">${esc(quantity)} exemplaire${quantity > 1 ? 's' : ''}</td>
         </tr>
         <tr>
           <td style="padding: 6px 0; color: #64748b;">Sous-total :</td>
-          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${subtotalAmount}</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${esc(subtotalAmount)}</td>
         </tr>
         <tr>
           <td style="padding: 6px 0; color: #64748b;">Frais de port :</td>
-          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${shippingCost}</td>
+          <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${esc(shippingCost)}</td>
         </tr>
         <tr>
           <td style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #0f172a; font-weight: 800; font-size: 15px;">Total encaissé :</td>
-          <td align="right" style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #b45309; font-weight: 800; font-size: 16px;">${totalAmount}</td>
+          <td align="right" style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #b45309; font-weight: 800; font-size: 16px;">${esc(totalAmount)}</td>
         </tr>
       </table>
     </div>
@@ -395,13 +431,13 @@ Pays : ${shippingAddress.country || 'France'}
         👤 Coordonnées client
       </div>
       <div style="font-size: 14px; margin-bottom: 6px;">
-        <strong>Nom :</strong> ${customerName || 'Non précisé'}
+        <strong>Nom :</strong> ${esc(customerName || 'Non précisé')}
       </div>
       <div style="font-size: 14px; margin-bottom: 6px;">
-        <strong>Email :</strong> <a href="mailto:${customerEmail}" style="color: #0f172a; text-decoration: underline;">${customerEmail}</a>
+        <strong>Email :</strong> <a href="mailto:${esc(safeEmail(customerEmail))}" style="color: #0f172a; text-decoration: underline;">${esc(customerEmail)}</a>
       </div>
       <div style="font-size: 14px;">
-        <strong>Téléphone :</strong> ${customerPhone || 'Non renseigné'}
+        <strong>Téléphone :</strong> ${esc(customerPhone || 'Non renseigné')}
       </div>
     </div>
 
@@ -410,14 +446,14 @@ Pays : ${shippingAddress.country || 'France'}
       <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 10px;">
         📦 Adresse de livraison (Format étiquette / bordereau)
       </div>
-      <div style="font-family: monospace; font-size: 13px; color: #78350f; line-height: 1.6; white-space: pre-line;">${addressFormatted}</div>
+      <div style="font-family: monospace; font-size: 13px; color: #78350f; line-height: 1.6; white-space: pre-line;">${esc(addressFormatted)}</div>
     </div>
 
     <!-- Infos Stripe -->
     <div style="font-size: 11px; color: #94a3b8; line-height: 1.6;">
-      <div>Réf Stripe : <code>${orderId}</code></div>
-      ${paymentIntentId ? `<div>PaymentIntent : <code>${paymentIntentId}</code></div>` : ''}
-      <div>Date : ${orderDate || new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}</div>
+      <div>Réf Stripe : <code>${esc(orderId)}</code></div>
+      ${paymentIntentId ? `<div>PaymentIntent : <code>${esc(paymentIntentId)}</code></div>` : ''}
+      <div>Date : ${esc(orderDate || new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }))}</div>
     </div>
   `;
 

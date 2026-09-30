@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Politique de Confidentialité &amp; RGPD — KYRAN</title>
   <meta name="description" content="Politique de confidentialité et protection des données personnelles (RGPD) du site kyran-jeu.fr : finalités, sous-traitants Stripe, conservation et droits CNIL." />
@@ -142,6 +144,10 @@
             <li><strong>Stripe Payments Europe Ltd :</strong> Passerelle de paiement agréée assurant le traitement bancaire chiffré et la lutte antifraude (certifiée PCI-DSS Niveau 1).</li>
             <li><strong>Opérateurs postaux (La Poste, Colissimo) :</strong> Transport et distribution physique de votre colis à votre adresse.</li>
             <li><strong>GitHub Inc. (GitHub Pages) :</strong> Hébergement technique du site web statique.</li>
+            <li><strong>Resend (Plus Five Five, Inc.) :</strong> Envoi des e-mails transactionnels (confirmation de commande, expédition, remboursement). Données traitées : nom, adresse e-mail, adresse de livraison et contenu de l'e-mail.</li>
+            <li><strong>Railway Corporation :</strong> Hébergement du serveur qui reçoit les notifications de paiement de Stripe et déclenche l'envoi des e-mails (aucune base de données : les informations ne sont pas conservées par ce serveur, hors journaux techniques de courte durée).</li>
+            <li><strong>Google Ireland Ltd (Google Fonts, Gmail) :</strong> Chargement des polices d'écriture du site (votre adresse IP est transmise à Google lors de ce chargement) et réception des notifications de commande par l'éditeur.</li>
+            <li><strong>Google / YouTube :</strong> Lecture des vidéos de présentation, intégrées en mode « confidentialité renforcée » (youtube-nocookie.com) : aucun cookie YouTube n'est déposé tant que vous ne lancez pas la vidéo.</li>
           </ul>
           <p>
             Lorsque des sous-traitants opèrent des serveurs situés en dehors de l'Espace Économique Européen (notamment aux États-Unis), les transferts sont encadrés par le Cadre de Protection des Données UE-USA (Data Privacy Framework) ou par les Clauses Contractuelles Types (CCT) adoptées par la Commission Européenne.
@@ -188,6 +194,7 @@
           </p>
           <ul>
             <li>Aucun cookie tiers à finalité publicitaire ou de profilage n'est déposé sur votre terminal lors de votre visite ;</li>
+            <li>La lecture d'une vidéo YouTube intégrée (à votre initiative) peut entraîner le dépôt de traceurs par YouTube, soumis à la politique de confidentialité de Google ;</li>
             <li>Seuls des témoins de session techniques et strictement nécessaires au traitement du paiement sécurisé peuvent être émis par Stripe au moment du règlement ;</li>
             <li>Le site n'effectue aucun croisement de données avec des régies publicitaires externes.</li>
           </ul>

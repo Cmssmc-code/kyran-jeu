@@ -4,9 +4,9 @@
   "description": "",
   "main": "components.js",
   "scripts": {
-    "test": "npm run test:seo",
+    "test": "npm run test:seo && npm run test:security",
     "test:seo": "node scripts/audit-seo.mjs",
-    "generate:blog": "node scripts/build-blog-articles-data.mjs && node scripts/generate-blog.mjs && node scripts/generate-blog-infra.mjs && node scripts/generate-seo.mjs",
+    "generate:blog": "node scripts/build-blog-articles-data.mjs && node scripts/generate-blog.mjs && node scripts/generate-blog-infra.mjs && node scripts/generate-seo.mjs && node scripts/apply-csp.mjs",
     "generate:blog-data": "node scripts/build-blog-articles-data.mjs",
     "generate:seo": "node scripts/generate-seo.mjs",
     "images:blog": "node scripts/download-blog-images.mjs && node scripts/fetch-philibert-blog.mjs && node scripts/fix-the-game-image.mjs",
@@ -14,7 +14,9 @@
     "fetch:reviews": "node scripts/fetch-amazon-reviews.mjs",
     "preview:emails": "node scripts/preview-emails.mjs",
     "send:test-email": "node scripts/send-test-email.mjs",
-    "pitch:presse": "node scripts/send-press-pitch.mjs"
+    "pitch:presse": "node scripts/send-press-pitch.mjs",
+    "test:security": "node --test \"server/test/*.test.mjs\" \"worker/test/*.test.mjs\"",
+    "apply:csp": "node scripts/apply-csp.mjs"
   },
   "keywords": [],
   "author": "",

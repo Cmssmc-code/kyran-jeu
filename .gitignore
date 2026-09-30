@@ -5,10 +5,27 @@ node_modules/
 .env.*
 !.env.example
 *.env
+.dev.vars
+.dev.vars.*
+.wrangler/
+.railway/
 *.key
 *.pem
+*.p12
+*.pfx
 secrets/
 stripe-keys.json
 .stripe/
 *.secret
+credentials*.json
+service-account*.json
+
+# Sorties locales pouvant contenir des données clients
 email-previews/
+*.log
+npm-debug.log*
+logs/
+
+# Système
+.DS_Store
+Thumbs.db

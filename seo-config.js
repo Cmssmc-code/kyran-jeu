@@ -6,6 +6,9 @@
    *    dans googleSiteVerification ci-dessous, puis soumettre /sitemap.xml
    *
    * 2. GA4 (optionnel) : renseigner ga4MeasurementId
+   *    ⚠️ RGPD : GA4 dépose des cookies de mesure d'audience soumis au consentement
+   *    préalable (CNIL). Ne l'activer qu'avec un bandeau de consentement et après mise
+   *    à jour de confidentialite.html (section Cookies).
    *
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster

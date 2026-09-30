@@ -5,15 +5,16 @@ import { renderOrderEmail, renderShippingEmail, renderRefundEmail } from './emai
 const args = process.argv.slice(2);
 const toIdx = args.indexOf('--to');
 const typeIdx = args.indexOf('--type'); // 'order', 'shipping', 'refund'
-const passIdx = args.indexOf('--pass');
 
 const to = toIdx !== -1 ? args[toIdx + 1] : null;
 const type = typeIdx !== -1 ? args[typeIdx + 1] : 'order';
-const pass = passIdx !== -1 ? args[passIdx + 1] : process.env.OVH_MAIL_PASSWORD;
+// Mot de passe uniquement via variable d'environnement (jamais en argument : il
+// resterait visible dans l'historique du shell et la liste des processus)
+const pass = process.env.OVH_SMTP_PASSWORD || process.env.OVH_MAIL_PASSWORD;
 
 if (!to || !pass) {
-  console.log('Usage: node scripts/send-test-email.mjs --to destinataire@gmail.com --pass MOT_DE_PASSE_OVH [--type order|shipping|refund]');
-  console.log('Exemple: node scripts/send-test-email.mjs --to test@example.com --pass MonPass --type order');
+  console.log('Usage: OVH_SMTP_PASSWORD=... node scripts/send-test-email.mjs --to destinataire@gmail.com [--type order|shipping|refund]');
+  console.log('Astuce : lancez `read -s OVH_SMTP_PASSWORD && export OVH_SMTP_PASSWORD` pour saisir le mot de passe sans l\'afficher.');
   process.exit(1);
 }
 

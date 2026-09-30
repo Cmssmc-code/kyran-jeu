@@ -5,10 +5,27 @@ const SMTP_HOST = 'ssl0.ovh.net';
 const SMTP_PORT = 465;
 const SENDER_EMAIL = 'contact@kyran-jeu.fr';
 
+// Empêche l'injection de commandes SMTP / d'en-têtes via des retours à la ligne
+function assertSingleLine(value, label) {
+  if (/[\r\n]/.test(String(value))) throw new Error(`${label} invalide (retour à la ligne interdit)`);
+}
+
+// « Dot-stuffing » SMTP : une ligne commençant par « . » terminerait le message
+function dotStuff(body) {
+  return String(body).replace(/\r?\n/g, '\r\n').replace(/^\./gm, '..');
+}
+
 export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text, html }) {
   return new Promise((resolve, reject) => {
     if (!pass) return reject(new Error('Mot de passe SMTP requis'));
     if (!to) return reject(new Error('Destinataire requis'));
+    try {
+      assertSingleLine(to, 'Destinataire');
+      assertSingleLine(user, 'Expéditeur');
+      assertSingleLine(subject || '', 'Sujet');
+    } catch (err) {
+      return reject(err);
+    }
 
     const socket = tls.connect(SMTP_PORT, SMTP_HOST, { servername: SMTP_HOST }, () => {});
     socket.setEncoding('utf8');
@@ -59,13 +76,13 @@ export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text, html })
             'Content-Type: text/plain; charset=UTF-8',
             'Content-Transfer-Encoding: 8bit',
             '',
-            plainText,
+            dotStuff(plainText),
             '',
             `--${boundary}`,
             'Content-Type: text/html; charset=UTF-8',
             'Content-Transfer-Encoding: 8bit',
             '',
-            html,
+            dotStuff(html),
             '',
             `--${boundary}--`,
             '.',
@@ -80,7 +97,7 @@ export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text, html })
             'Content-Type: text/plain; charset=UTF-8',
             'Content-Transfer-Encoding: 8bit',
             '',
-            text || '',
+            dotStuff(text || ''),
             '.',
             ''
           ].join('\r\n');
@@ -103,18 +120,19 @@ export function sendMail({ user = SENDER_EMAIL, pass, to, subject, text, html })
 const isDirectRun = process.argv[1] && process.argv[1].endsWith('send-mail-ovh.mjs');
 if (isDirectRun) {
   const args = process.argv.slice(2);
-  const passIdx = args.indexOf('--pass');
   const toIdx = args.indexOf('--to');
   const subjIdx = args.indexOf('--subject');
   const bodyIdx = args.indexOf('--body');
 
-  const pass = passIdx !== -1 ? args[passIdx + 1] : process.env.OVH_MAIL_PASSWORD;
+  // Mot de passe uniquement via variable d'environnement (jamais en argument de commande)
+  const pass = process.env.OVH_SMTP_PASSWORD || process.env.OVH_MAIL_PASSWORD;
   const to = toIdx !== -1 ? args[toIdx + 1] : null;
   const subject = subjIdx !== -1 ? args[subjIdx + 1] : 'Message de KYRAN';
   const text = bodyIdx !== -1 ? args[bodyIdx + 1] : 'Bonjour,\n\nCeci est un message de test envoyé depuis contact@kyran-jeu.fr.';
 
   if (!pass || !to) {
-    console.log('Usage: node scripts/send-mail-ovh.mjs --pass VOTRE_MOT_DE_PASSE --to CLIENT_EMAIL --subject "Sujet" --body "Texte"');
+    console.log('Usage: OVH_SMTP_PASSWORD=... node scripts/send-mail-ovh.mjs --to CLIENT_EMAIL --subject "Sujet" --body "Texte"');
+    console.log('Astuce : `read -s OVH_SMTP_PASSWORD && export OVH_SMTP_PASSWORD` pour saisir le mot de passe sans l\'afficher.');
     process.exit(1);
   }
 

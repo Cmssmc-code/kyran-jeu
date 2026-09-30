@@ -1,0 +1,90 @@
+name: Publication GitHub Pages (fichiers publics uniquement)
+
+# Publie uniquement les fichiers destinés au public : scripts/, server/, worker/,
+# fichiers .md, package*.json, .env.example, etc. ne sont plus servis sur kyran-jeu.fr.
+#
+# Prérequis (une seule fois) : Settings → Pages → Build and deployment → Source :
+# « GitHub Actions ». Tant que ce n'est pas fait, ce workflow ne publie rien
+# (le site continue d'être servi depuis la branche, comme avant).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      enabled: ${{ steps.mode.outputs.enabled }}
+    steps:
+      - name: Vérifier que Pages est configuré en mode « GitHub Actions »
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_type=$(curl -fsS -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" | jq -r '.build_type // empty' || true)
+          echo "build_type=${build_type:-inconnu}"
+          if [ "$build_type" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Pages n'est pas en mode GitHub Actions (build_type=${build_type:-inconnu}) : publication ignorée."
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout du code
+        if: steps.mode.outputs.enabled == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Préparer le site public
+        if: steps.mode.outputs.enabled == 'true'
+        run: |
+          mkdir -p _site
+          git ls-files -z \
+            | grep -zvE '^(scripts|server|worker|\.github|node_modules)/' \
+            | grep -zvE '(^|/)[^/]*\.md$' \
+            | grep -zvE '^(package\.json|package-lock\.json|\.env\.example|\.gitignore|seo-keywords\.json|blog/images/download-log\.json)$' \
+            | xargs -0 cp --parents -t _site
+          for f in index.html CNAME commander.html admin-emails.html vendor/canvas-confetti-1.6.0.browser.js; do
+            test -f "_site/$f" || { echo "::error::$f manquant dans _site"; exit 1; }
+          done
+          for f in server/server.js scripts/presse-outreach.json package.json .env.example; do
+            test ! -e "_site/$f" || { echo "::error::$f ne doit pas être publié"; exit 1; }
+          done
+          echo "$(find _site -type f | wc -l) fichiers publiés"
+
+      - name: Téléverser l'artefact Pages
+        if: steps.mode.outputs.enabled == 'true'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

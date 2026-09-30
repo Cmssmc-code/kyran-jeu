@@ -78,6 +78,20 @@ function getBlogItemsForFooter() {
   return FALLBACK_FOOTER_BLOG_ITEMS;
 }
 
+function getBlogUrl(slug) {
+  return '/blog/' + slug + '.html';
+}
+
+function formatBlogDate(isoDate) {
+  if (!isoDate) return '';
+  var parts = isoDate.split('-');
+  var months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  var y = parts[0];
+  var m = parseInt(parts[1], 10) - 1;
+  var d = parseInt(parts[2], 10);
+  return d + ' ' + (months[m] || '') + ' ' + y;
+}
+
 class KyranHeader extends HTMLElement {
   connectedCallback() {
     const activePage = resolveActivePage(this.getAttribute('active'));

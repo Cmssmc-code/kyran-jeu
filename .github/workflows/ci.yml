@@ -29,7 +29,8 @@ jobs:
       - name: Configuration de Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '20'
+          # Node 22 : `node --test` y interprète les motifs glob de `npm run test:security` (Node 20 non)
+          node-version: '22'
 
       - name: Installation des dépendances (versions verrouillées)
         run: npm ci --ignore-scripts

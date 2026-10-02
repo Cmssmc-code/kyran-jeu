@@ -29,3 +29,6 @@ logs/
 # Système
 .DS_Store
 Thumbs.db
+
+# Journaux générés par les scripts de téléchargement
+blog/images/download-log.json

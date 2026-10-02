@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Règle du Tarot Africain à imprimer (PDF A4) | KYRAN</title>
+  <meta name="description" content="Règle condensée du Tarot Africain (Whist 22) et feuille de score à imprimer, format A4. Version imprimable de la page tarot-africain.html." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="author" content="Corentin Sence" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Helvetica Neue", Arial, "Liberation Sans", sans-serif; color: #1c1917; background: #f3efe6; line-height: 1.35; }
+  a { color: inherit; }
+
+  /* Barre d'outils (écran uniquement) */
+  .toolbar { max-width: 210mm; margin: 0 auto; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+  .tb-link { font-size: 14px; color: #92400e; text-decoration: none; border-bottom: 1px solid rgba(146, 64, 14, .35); }
+  .tb-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tb-btn { font: inherit; font-size: 14px; font-weight: 600; padding: 9px 18px; border-radius: 999px; border: 1px solid #d6cfc0; background: #fff; color: #1c1917; text-decoration: none; cursor: pointer; }
+  .tb-btn--primary { background: #b45309; border-color: #b45309; color: #fff; }
+  .tb-btn:focus-visible, .tb-link:focus-visible { outline: 2px solid #d97706; outline-offset: 2px; }
+
+  /* Feuilles */
+  .sheet { width: 210mm; min-height: 297mm; margin: 0 auto 24px; padding: 12mm 13mm; background: #fff; box-shadow: 0 4px 24px rgba(69, 26, 3, .12); font-size: 10.4pt; }
+  .sheet--score { width: 297mm; min-height: 210mm; font-size: 9.4pt; }
+
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; padding-bottom: 7px; border-bottom: 2.5px solid #92400e; margin-bottom: 9px; }
+  .kicker { font-size: 8.4pt; letter-spacing: .08em; text-transform: uppercase; color: #92400e; font-weight: 700; }
+  h1, .h-score { font-size: 23pt; line-height: 1.1; letter-spacing: .01em; }
+  .url { font-size: 8.4pt; color: #57534e; text-align: right; white-space: nowrap; }
+  h2 { font-size: 11.6pt; margin: 11px 0 4px; padding-bottom: 2px; border-bottom: 1px solid #d6cfc0; color: #92400e; }
+  .h-score { margin: 0; padding: 0; border: 0; color: #1c1917; }
+
+  .goal { margin-bottom: 4px; font-size: 11pt; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 9mm; }
+  .cols section > h2:first-child { margin-top: 4px; }
+  ul, ol { margin: 2px 0 3px 15px; }
+  li { margin-bottom: 3px; }
+  .opts { list-style: none; margin-left: 0; }
+  .opts li { margin-bottom: 5px; }
+  .box { display: inline-block; width: 3.2mm; height: 3.2mm; border: 1.2px solid #1c1917; margin: 0 1.5mm 0 3mm; vertical-align: -0.4mm; }
+  .opts strong + .box { margin-left: 1.5mm; }
+  p { margin-bottom: 3px; }
+  .small { font-size: 8.8pt; color: #57534e; }
+
+  .rule { margin-top: 10px; padding: 9px 11px; border: 1.5px solid #92400e; border-left-width: 5px; border-radius: 3px; background: #fff7ed; }
+  .rule .ex { display: block; margin-top: 4px; font-size: 9.2pt; color: #44403c; }
+
+  table { width: 100%; border-collapse: collapse; }
+  .dist { margin-top: 4px; font-size: 9.8pt; text-align: center; }
+  .dist th, .dist td { border: 1px solid #a8a29e; padding: 3.2px 4px; }
+  .dist th { background: #f3efe6; font-size: 8.8pt; line-height: 1.2; }
+  .dist td:first-child { text-align: left; white-space: nowrap; }
+  .dist .foot td { background: #faf7f2; font-weight: 700; }
+
+  .foot-note { margin-top: 12px; padding-top: 7px; border-top: 1px solid #d6cfc0; font-size: 9pt; color: #44403c; }
+
+  /* Feuille de score */
+  .score { table-layout: fixed; font-size: 9pt; text-align: center; }
+  .score th, .score td { border: 1px solid #78716c; height: 10.2mm; padding: 1px 2px; }
+  .score thead th { height: auto; background: #f3efe6; font-size: 8pt; padding: 3px 2px; line-height: 1.15; }
+  .score .pname { font-size: 8.4pt; text-align: left; padding: 5px 5px; }
+  .score th.n, .score td.n { width: 15mm; font-weight: 700; }
+  .score td.lives { background: #faf7f2; font-weight: 700; }
+  .score tr.start td { height: 7.6mm; background: #f3efe6; font-weight: 700; text-align: left; padding-left: 5px; }
+  .score tr.start td.lives { text-align: center; }
+  .legend { margin-top: 8px; font-size: 8.4pt; color: #44403c; }
+
+  @page { size: A4 portrait; margin: 0; }
+  @page score { size: A4 landscape; margin: 0; }
+
+  @media print {
+    body { background: #fff; }
+    .no-print { display: none !important; }
+    .sheet { margin: 0; box-shadow: none; width: auto; min-height: 0; break-after: page; page-break-after: always; }
+    .sheet--rules { width: 210mm; min-height: 297mm; }
+    .sheet--score { page: score; width: 297mm; min-height: 210mm; break-after: auto; page-break-after: auto; }
+  }
+
+  @media screen and (max-width: 900px) {
+    .sheet, .sheet--score { width: auto; min-height: 0; margin: 0 0 16px; padding: 18px 16px; }
+    .cols { grid-template-columns: minmax(0, 1fr); }
+    .dist td:first-child { white-space: normal; }
+    .head { flex-wrap: wrap; }
+    .sheet--score { overflow-x: auto; }
+    .score { min-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <a class="tb-link" href="/tarot-africain.html">← Retour à l'article</a>
+  <span class="tb-actions">
+    <a class="tb-btn" href="/regle-tarot-africain.pdf" download>Télécharger le PDF</a>
+    <button class="tb-btn tb-btn--primary" type="button" id="print-btn">Imprimer</button>
+  </span>
+</div>
+
+<div class="sheet sheet--rules">
+  <header class="head">
+    <div>
+      <p class="kicker">Règle condensée · 3 à 5 joueurs · 22 cartes</p>
+      <h1>Tarot Africain (Whist 22)</h1>
+    </div>
+    <p class="url"><a href="https://kyran-jeu.fr/tarot-africain.html">kyran-jeu.fr/tarot-africain.html</a></p>
+  </header>
+
+  <p class="goal"><strong>But du jeu&nbsp;:</strong> remporter <strong>exactement</strong> le nombre de plis que l'on a annoncé, ni plus, ni moins.</p>
+
+  <div class="cols">
+    <section>
+      <h2>Matériel</h2>
+      <ul>
+        <li>Les <strong>21 atouts</strong> (1 à 21) et l'<strong>Excuse</strong> d'un jeu de tarot&nbsp;: 22 cartes. Le 21 est la carte la plus forte.</li>
+        <li>L'Excuse vaut <strong>0</strong>&nbsp;: elle perd toujours le pli. <em>Variante&nbsp;: son joueur choisit 0 ou 22 en la posant.</em></li>
+        <li>Pas de couleur&nbsp;: on joue la carte de son choix.</li>
+        <li><strong>5 vies</strong> par joueur (papier ou jetons).</li>
+      </ul>
+
+      <h2>Une manche</h2>
+      <ol>
+        <li><strong>Distribuer</strong> le nombre de cartes de la manche (tableau ci-contre). Les cartes restantes sont écartées, face cachée.</li>
+        <li><strong>Annoncer.</strong> À partir de la gauche du donneur, chacun annonce le nombre exact de plis qu'il va faire (de 0 au nombre de cartes). Le donneur parle en dernier.</li>
+        <li><strong>Jouer.</strong> Le joueur à gauche du donneur entame&nbsp;; chacun pose une carte. Le plus fort atout gagne le pli et entame le suivant.</li>
+        <li><strong>Compter.</strong> Annonce exacte&nbsp;: rien à payer. Sinon, on perd autant de vies que l'écart entre l'annonce et les plis.</li>
+        <li>Le donneur passe à gauche&nbsp;; la manche suivante compte une carte de moins.</li>
+      </ol>
+
+      <div class="rule">
+        <strong>Règle d'or.</strong> La somme des annonces ne doit jamais égaler le nombre de plis N. Le donneur ne peut pas dire <strong>N − (somme des annonces précédentes)</strong>&nbsp;; si ce nombre est négatif, il est libre.
+        <span class="ex">Exemple&nbsp;: 4 plis, annonces 1, 1 et 0 → le donneur ne peut pas dire 2.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cartes par joueur, manche après manche</h2>
+      <table class="dist">
+        <thead>
+          <tr><th>Manche</th><th>3 joueurs<br />cycle long</th><th>3 joueurs<br />cycle court</th><th>4 joueurs</th><th>5 joueurs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Manche 1</td><td>7</td><td>5</td><td>5</td><td>4</td></tr>
+          <tr><td>Manche 2</td><td>6</td><td>4</td><td>4</td><td>3</td></tr>
+          <tr><td>Manche 3</td><td>5</td><td>3</td><td>3</td><td>2</td></tr>
+          <tr><td>Manche 4</td><td>4</td><td>2</td><td>2</td><td>1*</td></tr>
+          <tr><td>Manche 5</td><td>3</td><td>1*</td><td>1*</td><td>–</td></tr>
+          <tr><td>Manche 6</td><td>2</td><td>–</td><td>–</td><td>–</td></tr>
+          <tr><td>Manche 7</td><td>1*</td><td>–</td><td>–</td><td>–</td></tr>
+          <tr class="foot"><td>Plis par cycle</td><td>28</td><td>15</td><td>15</td><td>10</td></tr>
+          <tr class="foot"><td>Cartes écartées, manche 1</td><td>1</td><td>7</td><td>2</td><td>2</td></tr>
+        </tbody>
+      </table>
+      <p class="small">* Manche à 1 carte, jouée sur le front. Ensuite, on recommence au nombre de cartes de départ.</p>
+
+      <h2>Vies et fin de partie</h2>
+      <ul>
+        <li>Perte = |annonce − plis|. Annonce 1, plis 3&nbsp;: <strong>−2 vies</strong>.</li>
+        <li>À 0 vie, le joueur est éliminé&nbsp;; le <strong>dernier en vie gagne</strong>.</li>
+        <li><em>Variante&nbsp;:</em> la partie s'arrête dès qu'un joueur tombe à 0&nbsp;; le plus de vies gagne.</li>
+      </ul>
+
+      <h2>Manche sur le front</h2>
+      <p>À 1 carte, chacun place sa carte sur son front, face visible pour les autres, <strong>sans la regarder</strong>. On annonce 0 ou 1 en voyant les cartes adverses. La règle d'or s'applique au donneur.</p>
+
+      <h2>À convenir avant de jouer (cochez)</h2>
+      <ul class="opts">
+        <li><strong>Excuse&nbsp;:</strong> <span class="box"></span> vaut 0 <span class="box"></span> 0 ou 22 au choix</li>
+        <li><strong>Vies de départ&nbsp;:</strong> <span class="box"></span> 5 <span class="box"></span> 10 <span class="box"></span> 14</li>
+        <li><strong>Fin de partie&nbsp;:</strong> <span class="box"></span> élimination <span class="box"></span> arrêt au premier à 0</li>
+        <li><strong>Cycle à 3 joueurs&nbsp;:</strong> <span class="box"></span> 7 à 1 <span class="box"></span> 5 à 1</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="foot-note">
+    Règle complète, exemple de manche commenté, variantes et origine&nbsp;: <a href="https://kyran-jeu.fr/tarot-africain.html"><strong>kyran-jeu.fr/tarot-africain.html</strong></a> · Jeu à 3 joueurs&nbsp;: <a href="https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html"><strong>kyran-jeu.fr/tarot-africain-a-3-joueurs.html</strong></a>
+  </footer>
+</div>
+
+<div class="sheet sheet--score">
+  <header class="head">
+    <div>
+      <p class="kicker">Tarot Africain (Whist 22)</p>
+      <h2 class="h-score">Feuille de score</h2>
+    </div>
+    <p class="url">Date&nbsp;: ………………………</p>
+  </header>
+
+  <table class="score">
+    <thead>
+      <tr><th rowspan="2" class="n">Manche</th><th rowspan="2">Cartes</th><th rowspan="2">Interdit au donneur</th><th colspan="3" class="pname">Joueur 1&nbsp;: ………………</th><th colspan="3" class="pname">Joueur 2&nbsp;: ………………</th><th colspan="3" class="pname">Joueur 3&nbsp;: ………………</th><th colspan="3" class="pname">Joueur 4&nbsp;: ………………</th><th colspan="3" class="pname">Joueur 5&nbsp;: ………………</th></tr>
+      <tr><th>Annonce</th><th>Plis</th><th>Vies</th><th>Annonce</th><th>Plis</th><th>Vies</th><th>Annonce</th><th>Plis</th><th>Vies</th><th>Annonce</th><th>Plis</th><th>Vies</th><th>Annonce</th><th>Plis</th><th>Vies</th></tr>
+    </thead>
+    <tbody>
+        <tr class="start"><td colspan="3">Départ</td><td></td><td></td><td class="lives">5</td><td></td><td></td><td class="lives">5</td><td></td><td></td><td class="lives">5</td><td></td><td></td><td class="lives">5</td><td></td><td></td><td class="lives">5</td></tr>
+        <tr><td class="n">1</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">2</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">3</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">4</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">5</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">6</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">7</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">8</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">9</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">10</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">11</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+        <tr><td class="n">12</td><td></td><td></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td><td></td><td></td><td class="lives"></td></tr>
+    </tbody>
+  </table>
+
+  <p class="legend"><strong>Comment remplir&nbsp;:</strong> notez le nombre de cartes de la manche, puis les annonces dans l'ordre de parole. <strong>Interdit au donneur = nombre de plis − somme des annonces déjà faites</strong> (si négatif&nbsp;: aucun). Après les plis, inscrivez les plis réellement remportés, puis retranchez l'écart |annonce − plis| des vies.</p>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('print-btn');
+    if (btn) btn.addEventListener('click', function () { window.print(); });
+  })();
+</script>
+</body>
+</html>

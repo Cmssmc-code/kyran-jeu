@@ -20,7 +20,7 @@
         stars += '<span class="star-icon star-empty" aria-hidden="true">☆</span>';
       }
     }
-    return '<span class="review-stars" aria-label="' + rating + ' sur 5 étoiles">' + stars + '</span>';
+    return '<span class="review-stars" role="img" aria-label="' + rating + ' sur 5 étoiles">' + stars + '</span>';
   }
 
   function escapeHtml(str) {
@@ -49,31 +49,27 @@
     return isFinite(n) ? n : fallback;
   }
 
-  function initReviewsWidget(data) {
-    if (!data || !data.reviews || !data.reviews.length) {
-      return;
-    }
+  function normalizeData(data) {
+    return {
+      avg: Math.min(5, Math.max(0, toNumber(data.averageRating, 4.7))),
+      total: Math.max(0, Math.round(toNumber(data.totalReviews, data.reviews.length))),
+      reviews: data.reviews,
+      reviewsUrl: escapeHtml(safeAmazonUrl(data.reviewsUrl))
+    };
+  }
 
-    var avg = Math.min(5, Math.max(0, toNumber(data.averageRating, 4.7)));
-    var total = Math.max(0, Math.round(toNumber(data.totalReviews, data.reviews.length)));
-    var reviews = data.reviews;
-    var reviewsUrl = escapeHtml(safeAmazonUrl(data.reviewsUrl));
+  function buildOrderBadgeHtml(n) {
+    return '<a href="#avis" class="amazon-order-rating-pill" style="text-decoration:none;cursor:pointer;" title="Voir les avis des joueurs">' +
+      '<span class="star-gold">★</span> <strong>' + n.avg.toFixed(1) + '/5</strong> sur Amazon ' +
+      '<span class="amazon-rating-count">(' + n.total + ' évaluations)</span>' +
+      '</a>';
+  }
 
-    // Rendu badge compact pour la page de commande si présente (cliquable vers #avis)
-    var orderBadge = document.getElementById('amazon-order-badge');
-    if (orderBadge) {
-      orderBadge.innerHTML = '<a href="#avis" class="amazon-order-rating-pill" style="text-decoration:none;cursor:pointer;" title="Voir les avis des joueurs">' +
-        '<span class="star-gold">★</span> <strong>' + avg.toFixed(1) + '/5</strong> sur Amazon ' +
-        '<span class="amazon-rating-count">(' + total + ' évaluations)</span>' +
-        '</a>';
-    }
-
-    var container = document.getElementById('amazon-reviews-widget');
-    if (!container) {
-      updateStructuredData(avg, total, reviews);
-      return;
-    }
-
+  function buildWidgetHtml(n) {
+    var avg = n.avg;
+    var total = n.total;
+    var reviews = n.reviews;
+    var reviewsUrl = n.reviewsUrl;
     var html = '';
 
     // 1. Synthèse globale Amazon avec répartition des notes
@@ -97,7 +93,7 @@
     html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> 100% avis vérifiés &amp; testeurs</span>';
     html += '    </div>';
     html += '    <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
-    html += '      Voir les 33 évaluations sur Amazon.fr <span aria-hidden="true">↗</span>';
+    html += '      Voir les ' + total + ' évaluations sur Amazon.fr <span aria-hidden="true">↗</span>';
     html += '    </a>';
     html += '  </div>';
     html += '</div>';
@@ -157,11 +153,37 @@
     // 3. Bouton direct vers Amazon.fr
     html += '<div class="amazon-reviews-actions">';
     html += '  <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-outline">';
-    html += '    <span>Consulter toutes les 33 évaluations sur Amazon.fr ↗</span>';
+    html += '    <span>Consulter toutes les ' + total + ' évaluations sur Amazon.fr ↗</span>';
     html += '  </a>';
     html += '</div>';
 
-    container.innerHTML = html;
+    return html;
+  }
+
+  function initReviewsWidget(data) {
+    if (!data || !data.reviews || !data.reviews.length) {
+      return;
+    }
+
+    var n = normalizeData(data);
+    var avg = n.avg;
+    var total = n.total;
+    var reviews = n.reviews;
+
+    // Rendu badge compact pour la page de commande si présente (cliquable vers #avis)
+    var orderBadge = document.getElementById('amazon-order-badge');
+    if (orderBadge && !orderBadge.hasAttribute('data-ssr')) {
+      orderBadge.innerHTML = buildOrderBadgeHtml(n);
+    }
+
+    var container = document.getElementById('amazon-reviews-widget');
+    if (!container) {
+      updateStructuredData(avg, total, reviews);
+      return;
+    }
+
+    // Rendu statique déjà présent (scripts/prerender.mjs) : on n'écrase pas, on branche seulement les boutons
+    if (!container.hasAttribute('data-ssr')) container.innerHTML = buildWidgetHtml(n);
 
     // Événement boutons "Lire la suite"
     var moreBtns = container.querySelectorAll('.btn-read-more');
@@ -235,6 +257,14 @@
     } catch (e) {
       // ignore silently if JSON parse fails
     }
+  }
+
+  if (typeof window !== 'undefined') {
+    window.KyranReviews = {
+      normalizeData: normalizeData,
+      buildWidgetHtml: buildWidgetHtml,
+      buildOrderBadgeHtml: buildOrderBadgeHtml
+    };
   }
 
   // Chargement des données : fetch 'reviews-data.json' avec fallback sur 'window.KYRAN_REVIEWS_DATA'

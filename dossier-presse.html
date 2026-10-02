@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>KYRAN - Espace Presse & Kit Media</title>
+  <title>Espace presse KYRAN : communiqué et kit média</title>
 
-  <meta name="description" content="Kit média officiel KYRAN. Communiqué, fiche technique détaillée et analyse des mécaniques de jeu (Pli, Pari, Stratégie)." />
+  <meta name="description" content="Kit média KYRAN : communiqué de presse, fiche technique et visuels du jeu de cartes de plis, de bluff et de paris (3 à 6 joueurs)." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="author" content="Corentin Sence" />
@@ -25,7 +25,7 @@
 
   <meta property="og:site_name" content="KYRAN" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="KYRAN - Espace Presse" />
+  <meta property="og:title" content="Espace presse KYRAN : communiqué et kit média" />
   <meta property="og:description" content="Kit média complet : Fiche technique et Communiqué." />
   <meta property="og:url" content="https://kyran-jeu.fr/dossier-presse.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
@@ -38,13 +38,13 @@
   <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
   <meta name="twitter:image:alt" content="Logo KYRAN – espace presse" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="seo-config.js?v=20260905ccccccccccc"></script>
-  <link rel="stylesheet" href="style.css?v=20260905ccccccccccc">
+  <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="seo-config.js?v=0e10dcdcda" defer></script>
+  <link rel="stylesheet" href="style.css?v=0e10dcdcda">
   <link rel="prefetch" href="/" as="document">
-  <script src="components.js?v=20260905ccccccccccc"></script>
+  <script src="components.js?v=0e10dcdcda" defer></script>
 
   <script type="application/ld+json">
   {
@@ -84,7 +84,100 @@
 
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
 
-  <kyran-header></kyran-header>
+  <kyran-header data-ssr="1">
+      <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
+        <div class="container announcement-content">
+          <span class="announcement-pill">Offre atelier</span>
+          <span class="announcement-text">Jeu complet <strong>9,99€</strong> au lieu de 17,99€ · Expédié sous 24-48h suivie</span>
+          <a href="/commander.html" class="announcement-link">Commander &rarr;</a>
+        </div>
+      </div>
+      <header class="site-header">
+        <div class="container nav">
+          <div class="nav-brand-group">
+            <a href="/" class="logo" aria-label="KYRAN - Accueil">
+              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+            </a>
+
+            <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
+              <ul class="nav-list" id="menu-principal">
+                <li><a href="/" class="nav-link ">Accueil</a></li>
+                <li><a href="/regle.html" class="nav-link ">R&egrave;gles</a></li>
+                <li><a href="/minijeu.html" class="nav-link ">Dojo</a></li>
+                <li class="nav-dropdown nav-desktop-only">
+                  <button type="button" class="nav-link nav-link--menu " aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
+                    D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
+                  </button>
+                  <ul class="nav-submenu" id="nav-discover-menu" aria-label="Guides KYRAN"><li><a href="/jeu-apero.html">Jeu apéro<span class="sub-desc">Soirée 30 min, 3 à 6 joueurs</span></a></li><li><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span class="sub-desc">10 alternatives et variantes</span></a></li><li><a href="/tarot-africain.html">Tarot Africain<span class="sub-desc">Règles, variantes et comptage</span></a></li><li><a href="/whist-22.html">Whist 22<span class="sub-desc">Définition et jeux proches</span></a></li><li><a href="/blog/jeux-plis-comparatif.html">Jeux de plis<span class="sub-desc">KYRAN vs Wizard, Oh Hell…</span></a></li><li><a href="/faq.html">FAQ<span class="sub-desc">Questions fréquentes</span></a></li><li><a href="/a-propos.html">À propos<span class="sub-desc">L'auteur et notre méthode</span></a></li></ul>
+                </li>
+                <li class="nav-mobile-only">
+                  <details class="nav-discover-details">
+                    <summary class="nav-discover-summary">D&eacute;couvrir</summary>
+                    <div class="nav-drawer-links"><a class="nav-drawer-link" href="/jeu-apero.html">Jeu apéro<span>Soirée 30 min, 3 à 6 joueurs</span></a><a class="nav-drawer-link" href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span>10 alternatives et variantes</span></a><a class="nav-drawer-link" href="/tarot-africain.html">Tarot Africain<span>Règles, variantes et comptage</span></a><a class="nav-drawer-link" href="/whist-22.html">Whist 22<span>Définition et jeux proches</span></a><a class="nav-drawer-link" href="/blog/jeux-plis-comparatif.html">Jeux de plis<span>KYRAN vs Wizard, Oh Hell…</span></a><a class="nav-drawer-link" href="/faq.html">FAQ<span>Questions fréquentes</span></a><a class="nav-drawer-link" href="/a-propos.html">À propos<span>L'auteur et notre méthode</span></a></div>
+                  </details>
+                </li>
+                <li><a href="/blog/" class="nav-link ">Blog</a></li>
+                <li><a href="/dossier-presse.html" class="nav-link active">Presse</a></li>
+              </ul>
+              <div class="nav-drawer-footer nav-mobile-only">
+                <a class="btn btn-primary btn-block" href="/commander.html">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  <span>Commander — 9,99&euro;</span>
+                </a>
+                <a class="social-link social-link--instagram social-link--block" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>Suivre sur Instagram</span></a>
+              </div>
+            </nav>
+          </div>
+
+          <div class="nav-actions">
+            <div class="cta cta-desktop">
+              <a class="btn btn-header-cta" href="/commander.html" aria-label="Commander le jeu KYRAN">
+                <svg class="cart-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Commander</span>
+              </a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
+              <span class="nav-toggle-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="nav-backdrop" hidden></div>
+      </header>
+
+      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
+        <a href="/" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </span>
+          <span class="mobile-nav-label">Accueil</span>
+        </a>
+        <a href="/regle.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Règles</span>
+        </a>
+        <a href="/minijeu.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+          </span>
+          <span class="mobile-nav-label">Dojo</span>
+        </a>
+        <a href="/commander.html" class="mobile-nav-tab mobile-nav-tab--highlight ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Acheter</span>
+          <span class="mobile-nav-pill">9,99€</span>
+        </a>
+      </nav>
+    </kyran-header>
 
   <main id="contenu-principal">
     <kyran-page-hero
@@ -246,12 +339,102 @@
         <div class="section-divider" aria-hidden="true"></div>
         <h2 class="faq-section-title">Guides publics</h2>
         <p class="section-sub">Pages de référence pour médias et lecteurs</p>
-        <kyran-discover-grid></kyran-discover-grid>
+        <kyran-discover-grid data-ssr="1"><div class="discover-grid">
+        <a href="/jeu-apero.html" class="discover-card">
+          <h3>Jeu apéro</h3>
+          <p>Soirée 30 min, 3 à 6 joueurs</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/blog/jeux-comme-skyjo.html" class="discover-card">
+          <h3>Jeux comme Skyjo</h3>
+          <p>10 alternatives et variantes</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/tarot-africain.html" class="discover-card">
+          <h3>Tarot Africain</h3>
+          <p>Règles, variantes et comptage</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/whist-22.html" class="discover-card">
+          <h3>Whist 22</h3>
+          <p>Définition et jeux proches</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/blog/jeux-plis-comparatif.html" class="discover-card">
+          <h3>Jeux de plis</h3>
+          <p>KYRAN vs Wizard, Oh Hell…</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/faq.html" class="discover-card">
+          <h3>FAQ</h3>
+          <p>Questions fréquentes</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      
+        <a href="/a-propos.html" class="discover-card">
+          <h3>À propos</h3>
+          <p>L'auteur et notre méthode</p>
+          <span class="card-arrow">Lire le guide</span>
+        </a>
+      </div></kyran-discover-grid>
       </div>
     </section>
   </main>
 
-  <kyran-footer></kyran-footer>
+  <kyran-footer data-ssr="1">
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-col footer-col--brand">
+            <p class="footer-heading">KYRAN</p>
+            <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
+            <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <div class="footer-follow">
+              <p class="footer-follow-label">Suivez le jeu</p>
+              <a class="social-link social-link--instagram" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>@kyran.jeu</span></a>
+            </div>
+          </div>
+          <div class="footer-col footer-col--explore">
+            <p class="footer-heading">Explorer</p>
+            <p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/faq.html">FAQ</a></p><p><a href="/a-propos.html">À propos</a></p>
+          </div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que dit la science</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--contact">
+            <p class="footer-heading">Contact</p>
+            <p><a href="/regle.html">R&egrave;gles du jeu</a></p>
+            <p><a href="/minijeu.html">Dojo interactif</a></p>
+            <p><a href="/dossier-presse.html">Espace Presse</a></p>
+            <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+          </div>
+          <div class="footer-col footer-col--credits">
+            <p class="footer-heading">Cr&eacute;dits</p>
+            <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
+            <p>Auteur : Corentin Sence</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie 24-48h · 🇫🇷 Édition indépendante</p>
+          <p class="footer-seo-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/cgv.html">CGV</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/confidentialite.html">Confidentialité</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/plan-du-site.html">Plan du site</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/sitemap.xml">Sitemap</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/llms.txt">llms.txt</a>
+          </p>
+          <p class="footer-copyright">&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
+        </div>
+      </footer>
+    </kyran-footer>
 </body>
 </html>
 

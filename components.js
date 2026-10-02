@@ -31,10 +31,10 @@ const ACTIVE_BY_PATH = {
   'minijeu.html': 'game',
   'dossier-presse.html': 'press',
   'jeu-apero.html': 'discover',
-  'alternative-skyjo.html': 'discover',
   'tarot-africain.html': 'discover',
-  'whist-moderne.html': 'discover',
-  'comparatif-jeux-plis.html': 'discover',
+  'tarot-africain-a-3-joueurs.html': 'discover',
+  'whist-22.html': 'discover',
+  'a-propos.html': 'discover',
   'faq.html': 'discover',
   'plan-du-site.html': 'discover',
   'mentions-legales.html': 'legal',
@@ -42,9 +42,9 @@ const ACTIVE_BY_PATH = {
   'confidentialite.html': 'legal'
 };
 
-function resolveActivePage(explicit) {
+function resolveActivePage(explicit, pathname) {
   if (explicit) return explicit;
-  var path = window.location.pathname.toLowerCase();
+  var path = String(pathname || window.location.pathname).toLowerCase();
   if (path.indexOf('/blog') !== -1) return 'blog';
   var file = path.split('/').pop() || 'index.html';
   if (!file || file.endsWith('/')) file = 'index.html';
@@ -56,19 +56,20 @@ function resolveActivePage(explicit) {
 
 const DISCOVER_ITEMS = [
   { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
-  { href: '/blog/jeux-comme-skyjo.html', title: 'Alternative Skyjo', desc: '10 jeux équivalents & KYRAN' },
-  { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Héritage et genèse du jeu' },
-  { href: '/whist-moderne.html', title: 'Whist moderne', desc: 'Contrat, plis et pari impitoyable' },
-  { href: '/comparatif-jeux-plis.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
-  { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' }
+  { href: '/blog/jeux-comme-skyjo.html', title: 'Jeux comme Skyjo', desc: '10 alternatives et variantes' },
+  { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Règles, variantes et comptage' },
+  { href: '/whist-22.html', title: 'Whist 22', desc: 'Définition et jeux proches' },
+  { href: '/blog/jeux-plis-comparatif.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
+  { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' },
+  { href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' }
 ];
 
 const FALLBACK_FOOTER_BLOG_ITEMS = [
-  { slug: 'jeux-comme-skyjo', title: '10 jeux de société comme Skyjo' },
+  { slug: 'jeux-comme-skyjo', title: '10 jeux comme Skyjo' },
   { slug: 'meilleurs-jeux-apero', title: 'Les meilleurs jeux de cartes pour apéro' },
-  { slug: 'science-jeux-de-cartes-cerveau', title: 'Jeux de cartes et cerveau : neurosciences' },
-  { slug: 'jeux-soiree-amis', title: 'Meilleurs jeux entre amis pour une soirée' },
-  { slug: 'guide-jeux-de-plis', title: 'Guide complet des jeux de plis' }
+  { slug: 'jeux-soiree-amis', title: 'Jeux pour une soirée entre amis' },
+  { slug: 'jeux-3-joueurs', title: 'Jeux de cartes à 3 joueurs' },
+  { slug: 'jeux-plis-comparatif', title: 'Comparatif des jeux de plis' }
 ];
 
 function getBlogItemsForFooter() {
@@ -92,9 +93,8 @@ function formatBlogDate(isoDate) {
   return d + ' ' + (months[m] || '') + ' ' + y;
 }
 
-class KyranHeader extends HTMLElement {
-  connectedCallback() {
-    const activePage = resolveActivePage(this.getAttribute('active'));
+function renderHeaderHtml(active, pathname) {
+    const activePage = resolveActivePage(active, pathname);
     const discoverActive = ['discover', 'apero', 'skyjo', 'tarot', 'whist', 'plis', 'faq'].includes(activePage);
     const submenu = DISCOVER_ITEMS.map(function (item) {
       return `<li><a href="${item.href}">${item.title}<span class="sub-desc">${item.desc}</span></a></li>`;
@@ -103,7 +103,7 @@ class KyranHeader extends HTMLElement {
       return `<a class="nav-drawer-link" href="${item.href}">${item.title}<span>${item.desc}</span></a>`;
     }).join('');
 
-    this.innerHTML = `
+    return `
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
         <div class="container announcement-content">
           <span class="announcement-pill">Offre atelier</span>
@@ -115,7 +115,7 @@ class KyranHeader extends HTMLElement {
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
-              <img src="${ROOT}logo.png" alt="KYRAN" />
+              <img src="${ROOT}logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
@@ -135,7 +135,7 @@ class KyranHeader extends HTMLElement {
                     <div class="nav-drawer-links">${drawerDiscover}</div>
                   </details>
                 </li>
-                <li><a href="${ROOT}blog/index.html" class="nav-link ${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
+                <li><a href="${ROOT}blog/" class="nav-link ${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
                 <li><a href="${ROOT}dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
@@ -197,6 +197,26 @@ class KyranHeader extends HTMLElement {
         </a>
       </nav>
     `;
+}
+
+// Un élément créé par le parseur HTML est connecté AVANT que ses enfants soient analysés :
+// avec un rendu statique (data-ssr), on attend la fin de l'analyse avant de brancher les événements.
+function whenParsed(callback) {
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', callback, { once: true });
+  else callback();
+}
+
+class KyranHeader extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) {
+      whenParsed(() => this.bindBehavior());
+    } else {
+      this.innerHTML = renderHeaderHtml(this.getAttribute('active'));
+      this.bindBehavior();
+    }
+  }
+
+  bindBehavior() {
 
     const navToggle = this.querySelector('.nav-toggle');
     const backdrop = this.querySelector('.nav-backdrop');
@@ -283,8 +303,7 @@ class KyranHeader extends HTMLElement {
   }
 }
 
-class KyranFooter extends HTMLElement {
-  connectedCallback() {
+function renderFooterHtml() {
     const exploreLinks = DISCOVER_ITEMS.map(function (item) {
       return `<p><a href="${item.href}">${item.title}</a></p>`;
     }).join('');
@@ -294,14 +313,14 @@ class KyranFooter extends HTMLElement {
       return `<p><a href="${getBlogUrl(item.slug)}">${item.title}</a></p>`;
     }).join('');
     const blogSection = blogLinks
-      ? `<div class="footer-col footer-col--blog"><h4>Blog</h4>${blogLinks}<p><a href="${ROOT}blog/index.html">Tous les articles</a></p></div>`
+      ? `<div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p>${blogLinks}<p><a href="${ROOT}blog/">Tous les articles</a></p></div>`
       : '';
 
-    this.innerHTML = `
+    return `
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <h4>KYRAN</h4>
+            <p class="footer-heading">KYRAN</p>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">
@@ -310,19 +329,19 @@ class KyranFooter extends HTMLElement {
             </div>
           </div>
           <div class="footer-col footer-col--explore">
-            <h4>Explorer</h4>
+            <p class="footer-heading">Explorer</p>
             ${exploreLinks}
           </div>
           ${blogSection}
           <div class="footer-col footer-col--contact">
-            <h4>Contact</h4>
+            <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="${ROOT}minijeu.html">Dojo interactif</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>
           <div class="footer-col footer-col--credits">
-            <h4>Cr&eacute;dits</h4>
+            <p class="footer-heading">Cr&eacute;dits</p>
             <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
             <p>Auteur : Corentin Sence</p>
           </div>
@@ -346,33 +365,43 @@ class KyranFooter extends HTMLElement {
         </div>
       </footer>
     `;
+}
+
+class KyranFooter extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
+    this.innerHTML = renderFooterHtml();
   }
+}
+
+function renderBreadcrumbHtml(items) {
+  const esc = function (v) {
+    return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+  const parts = items.map(function (item, index) {
+    const isLast = index === items.length - 1;
+    const href = item.href && !/^\s*(javascript|data|vbscript):/i.test(item.href) ? rootPath(item.href) : '';
+    if (isLast || !href) {
+      return `<span class="breadcrumb-current" aria-current="page">${esc(item.label)}</span>`;
+    }
+    return `<a href="${esc(href)}">${esc(item.label)}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
+  }).join('');
+
+  return `<nav class="breadcrumb" aria-label="Fil d'Ariane">${parts}</nav>`;
 }
 
 class KyranBreadcrumb extends HTMLElement {
   connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
     let items = [];
     try {
       items = JSON.parse(this.getAttribute('items') || '[]');
     } catch (e) {
       items = [];
     }
-
-    const esc = function (v) {
-      return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
-        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-      });
-    };
-    const parts = items.map(function (item, index) {
-      const isLast = index === items.length - 1;
-      const href = item.href && !/^\s*(javascript|data|vbscript):/i.test(item.href) ? rootPath(item.href) : '';
-      if (isLast || !href) {
-        return `<span class="breadcrumb-current" aria-current="page">${esc(item.label)}</span>`;
-      }
-      return `<a href="${esc(href)}">${esc(item.label)}</a><span class="breadcrumb-sep" aria-hidden="true">/</span>`;
-    }).join('');
-
-    this.innerHTML = `<nav class="breadcrumb" aria-label="Fil d'Ariane">${parts}</nav>`;
+    this.innerHTML = renderBreadcrumbHtml(items);
   }
 }
 
@@ -383,53 +412,51 @@ class KyranPageHero extends HTMLElement {
   }
 }
 
-class KyranDiscoverGrid extends HTMLElement {
-  connectedCallback() {
-    const cards = DISCOVER_ITEMS.map(function (item) {
-      return `
+function renderDiscoverGridHtml() {
+  const cards = DISCOVER_ITEMS.map(function (item) {
+    return `
         <a href="${item.href}" class="discover-card">
           <h3>${item.title}</h3>
           <p>${item.desc}</p>
           <span class="card-arrow">Lire le guide</span>
         </a>
       `;
-    }).join('');
+  }).join('');
 
-    this.innerHTML = `<div class="discover-grid">${cards}</div>`;
+  return `<div class="discover-grid">${cards}</div>`;
+}
+
+class KyranDiscoverGrid extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
+    this.innerHTML = renderDiscoverGridHtml();
   }
 }
 
-class KyranBlogGrid extends HTMLElement {
-  connectedCallback() {
-    // Si la grille est déjà pré-rendue statiquement (SSR pour Googlebot), ne pas écraser
-    if (this.querySelector('.blog-grid') && this.querySelectorAll('.blog-card').length > 0) {
-      return;
-    }
+function blogImageHtml(item, width, height) {
+  const img = `<img src="${item.image}" alt="${item.title}" width="${width}" height="${height}" loading="lazy" decoding="async" />`;
+  return item.webp ? `<picture><source srcset="${item.webp}" type="image/webp" />${img}</picture>` : img;
+}
 
-    if (typeof BLOG_ITEMS === 'undefined') {
-      this.innerHTML = '';
-      return;
-    }
+function renderBlogGridHtml(limit, category) {
+  if (typeof BLOG_ITEMS === 'undefined') return '';
 
-    const limit = parseInt(this.getAttribute('limit') || '0', 10);
-    const category = this.getAttribute('category') || '';
-    let items = BLOG_ITEMS.slice();
+  let items = BLOG_ITEMS.slice();
+  if (category && category !== 'Tous') {
+    items = items.filter(function (item) { return item.category === category; });
+  }
+  if (limit > 0) {
+    items = items.slice(0, limit);
+  }
 
-    if (category && category !== 'Tous') {
-      items = items.filter(function (item) { return item.category === category; });
-    }
-    if (limit > 0) {
-      items = items.slice(0, limit);
-    }
-
-    const cards = items.map(function (item) {
-      const gc = (item.title.match(/^(\d+)/) || [])[1] || '8';
-      return `
+  const cards = items.map(function (item) {
+    const gc = item.gameCount;
+    return `
         <a href="${getBlogUrl(item.slug)}" class="blog-card" data-category="${item.category}">
           <div class="blog-card-image">
-            <img src="${item.image}" alt="${item.title}" width="400" height="225" loading="lazy" decoding="async" />
+            ${blogImageHtml(item, 400, 225)}
             <span class="blog-badge">${item.category}</span>
-            <span class="blog-card-games">${gc} jeux</span>
+            ${gc ? '<span class="blog-card-games">' + gc + ' jeux</span>' : ''}
             <span class="blog-card-read">${item.readMinutes} min</span>
           </div>
           <div class="blog-card-body">
@@ -440,22 +467,41 @@ class KyranBlogGrid extends HTMLElement {
           </div>
         </a>
       `;
-    }).join('');
+  }).join('');
 
-    this.innerHTML = `<div class="blog-grid">${cards}</div>`;
+  return `<div class="blog-grid">${cards}</div>`;
+}
+
+class KyranBlogGrid extends HTMLElement {
+  connectedCallback() {
+    // Grille déjà pré-rendue statiquement (data-ssr) : ne rien réécrire
+    if (this.hasAttribute('data-ssr')) return;
+    this.innerHTML = renderBlogGridHtml(parseInt(this.getAttribute('limit') || '0', 10), this.getAttribute('category') || '');
   }
+}
+
+function renderBlogFiltersHtml() {
+  const pills = BLOG_CATEGORIES.map(function (cat, index) {
+    const active = index === 0 ? ' is-active' : '';
+    return `<button type="button" class="blog-filter-pill${active}" data-filter="${cat}">${cat}</button>`;
+  }).join('');
+
+  return `<div class="blog-filters" role="group" aria-label="Filtrer par catégorie">${pills}</div><p class="blog-filter-count" id="blog-filter-count"></p>`;
 }
 
 class KyranBlogFilters extends HTMLElement {
   connectedCallback() {
     if (typeof BLOG_CATEGORIES === 'undefined') return;
 
-    const pills = BLOG_CATEGORIES.map(function (cat, index) {
-      const active = index === 0 ? ' is-active' : '';
-      return `<button type="button" class="blog-filter-pill${active}" data-filter="${cat}">${cat}</button>`;
-    }).join('');
+    if (this.hasAttribute('data-ssr')) {
+      whenParsed(() => this.bindBehavior());
+    } else {
+      this.innerHTML = renderBlogFiltersHtml();
+      whenParsed(() => this.bindBehavior());
+    }
+  }
 
-    this.innerHTML = `<div class="blog-filters" role="group" aria-label="Filtrer par catégorie">${pills}</div><p class="blog-filter-count" id="blog-filter-count"></p>`;
+  bindBehavior() {
 
     const grid = document.querySelector('kyran-blog-grid .blog-grid');
     const countEl = this.querySelector('#blog-filter-count');
@@ -492,22 +538,17 @@ class KyranBlogFilters extends HTMLElement {
   }
 }
 
-class KyranRelatedArticles extends HTMLElement {
-  connectedCallback() {
-    const slug = this.getAttribute('slug') || '';
-    if (typeof getRelatedArticles === 'undefined') return;
+function renderRelatedHtml(slug) {
+  if (typeof getRelatedArticles === 'undefined') return '';
 
-    const related = getRelatedArticles(slug, 3);
-    if (!related.length) {
-      this.innerHTML = '';
-      return;
-    }
+  const related = getRelatedArticles(slug, 3);
+  if (!related.length) return '';
 
-    const cards = related.map(function (item) {
-      return `
+  const cards = related.map(function (item) {
+    return `
         <a href="${getBlogUrl(item.slug)}" class="blog-card blog-card--compact">
           <div class="blog-card-image">
-            <img src="${item.image}" alt="${item.title}" width="320" height="180" loading="lazy" decoding="async" />
+            ${blogImageHtml(item, 320, 180)}
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">${item.category} · ${item.readMinutes} min</p>
@@ -515,20 +556,25 @@ class KyranRelatedArticles extends HTMLElement {
           </div>
         </a>
       `;
-    }).join('');
+  }).join('');
 
-    this.innerHTML = `
+  return `
       <section class="related-articles">
         <h2>Articles similaires</h2>
         <div class="blog-grid blog-grid--compact">${cards}</div>
       </section>
     `;
+}
+
+class KyranRelatedArticles extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
+    this.innerHTML = renderRelatedHtml(this.getAttribute('slug') || '');
   }
 }
 
-class KyranStatBar extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = `
+function renderStatBarHtml() {
+  return `
       <div class="stat-bar stat-bar--specs" role="list" aria-label="Caractéristiques du jeu">
         <div class="stat-cell" role="listitem">
           <svg class="stat-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -579,18 +625,23 @@ class KyranStatBar extends HTMLElement {
         </div>
       </div>
     `;
+}
+
+class KyranStatBar extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
+    this.innerHTML = renderStatBarHtml();
   }
 }
 
-class KyranCtaBand extends HTMLElement {
-  connectedCallback() {
-    const title = this.getAttribute('title') || 'Prêt à défier votre intuition ?';
-    const text = this.getAttribute('text') || 'Commandez KYRAN ou apprenez les règles en quelques minutes.';
-    const secondaryHref = rootPath(this.getAttribute('secondary-href') || 'regle.html');
-    const secondaryLabel = this.getAttribute('secondary-label') || 'Voir les règles';
-    const showDojo = this.getAttribute('show-dojo') !== 'false';
+function renderCtaBandHtml(attr) {
+  const title = attr('title') || 'Prêt à défier votre intuition ?';
+  const text = attr('text') || 'Commandez KYRAN ou apprenez les règles en quelques minutes.';
+  const secondaryHref = rootPath(attr('secondary-href') || 'regle.html');
+  const secondaryLabel = attr('secondary-label') || 'Voir les règles';
+  const showDojo = attr('show-dojo') !== 'false';
 
-    this.innerHTML = `
+  return `
       <div class="cta-band">
         <h2>${title}</h2>
         <p>${text}</p>
@@ -601,6 +652,13 @@ class KyranCtaBand extends HTMLElement {
         </div>
       </div>
     `;
+}
+
+class KyranCtaBand extends HTMLElement {
+  connectedCallback() {
+    if (this.hasAttribute('data-ssr')) return;
+    const el = this;
+    this.innerHTML = renderCtaBandHtml(function (name) { return el.getAttribute(name); });
   }
 }
 
@@ -646,9 +704,7 @@ function initMobileCarouselDots() {
 
       var dotsContainer = document.createElement('div');
       dotsContainer.className = 'mobile-carousel-dots';
-      dotsContainer.setAttribute('role', 'tablist');
-      dotsContainer.setAttribute('aria-label', 'Pagination carrousel');
-
+      
       var dots = [];
       for (var i = 0; i < items.length; i++) {
         (function (idx) {
@@ -710,3 +766,16 @@ if (typeof document !== 'undefined') {
     }
   });
 }
+
+// Fonctions de rendu pures, utilisées par scripts/prerender.mjs pour écrire le HTML statique.
+var KyranRender = {
+  header: renderHeaderHtml,
+  footer: renderFooterHtml,
+  breadcrumb: renderBreadcrumbHtml,
+  discoverGrid: renderDiscoverGridHtml,
+  blogGrid: renderBlogGridHtml,
+  blogFilters: renderBlogFiltersHtml,
+  related: renderRelatedHtml,
+  statBar: renderStatBarHtml,
+  ctaBand: renderCtaBandHtml
+};

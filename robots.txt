@@ -1,49 +1,59 @@
 # robots.txt — kyran-jeu.fr
-# Pages publiques indexables. Ressources LLM : /llms.txt
+# Pages publiques indexables. Ressources pour assistants IA : /llms.txt
+# Les groupes nommés ci-dessous ne héritent pas du groupe « * » : leurs Disallow sont répétés.
 
 User-agent: *
 Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /plan-du-site.html
-Allow: /blog/
 Disallow: /404.html
 Disallow: /merci.html
 Disallow: /admin-emails.html
 Disallow: /email-previews/
 
-# Moteurs & Agents IA (ChatGPT, Claude, Perplexity, Gemini, Apple Intelligence, Common Crawl)
+# Moteurs de recherche
+User-agent: Googlebot
+Allow: /
+Disallow: /merci.html
+Disallow: /admin-emails.html
+Disallow: /email-previews/
+
+User-agent: bingbot
+Allow: /
+Disallow: /merci.html
+Disallow: /admin-emails.html
+Disallow: /email-previews/
+
+# Assistants et moteurs IA — entraînement, recherche et lecture à la demande
+# OpenAI (GPTBot : entraînement ; OAI-SearchBot : recherche ChatGPT ; ChatGPT-User : lecture à la demande)
 User-agent: GPTBot
-Allow: /
-
+User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
-Allow: /
-
+# Anthropic (Claude)
 User-agent: ClaudeBot
-Allow: /
-
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: anthropic-ai
-Allow: /
-
+# Perplexity
 User-agent: PerplexityBot
-Allow: /
-
+User-agent: Perplexity-User
+# Google (Gemini) et Apple
 User-agent: Google-Extended
-Allow: /
-
+User-agent: Applebot
 User-agent: Applebot-Extended
-Allow: /
-
+# Microsoft, Amazon, Meta, Mistral, Cohere, Common Crawl
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: MistralAI-User
+User-agent: cohere-ai
 User-agent: CCBot
 Allow: /
-
-User-agent: cohere-ai
-Allow: /
+Disallow: /merci.html
+Disallow: /admin-emails.html
+Disallow: /email-previews/
 
 Sitemap: https://kyran-jeu.fr/sitemap.xml
 
 # Plan du site : https://kyran-jeu.fr/plan-du-site.html
-# Contexte LLM : https://kyran-jeu.fr/llms.txt
-# Contexte LLM exhaustif : https://kyran-jeu.fr/llms-full.txt
-# Flux RSS blog : https://kyran-jeu.fr/blog/feed.xml
+# Contexte pour assistants IA : https://kyran-jeu.fr/llms.txt
+# Contexte étendu : https://kyran-jeu.fr/llms-full.txt
+# Flux RSS du blog : https://kyran-jeu.fr/blog/feed.xml
 # Flux Google Merchant Center : https://kyran-jeu.fr/google-merchant-feed.xml

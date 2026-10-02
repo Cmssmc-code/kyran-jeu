@@ -1,0 +1,78 @@
+/*
+ * Compléments de style pour les pages commander, jeu-apero, faq et minijeu.
+ * S'ajoute à style.css sans en remplacer aucune règle : seuls des sélecteurs
+ * propres à ces pages (ou plus spécifiques) sont définis ici.
+ */
+
+/* Listes numérotées dans .prose (style.css impose list-style: disc sur .prose li) */
+.prose ol.numbered-list {
+  margin: 0 0 var(--space-3) 1.5rem;
+  padding: 0;
+}
+.prose ol.numbered-list li {
+  list-style: decimal;
+  padding-left: 6px;
+}
+.prose ol.numbered-list li::marker {
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+/* Tableaux dans un bloc de texte */
+.prose .compare-table-wrap {
+  margin: var(--space-3) 0;
+}
+
+/* Cartes d'information dans un bloc de texte (pour qui / limites / avantages) */
+.prose .card--static h3 {
+  margin: 0 0 var(--space-1);
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: 1.5rem;
+}
+.prose .card--static ul {
+  margin: 0 0 0 1.1rem;
+}
+.prose .card--static li {
+  margin-bottom: 6px;
+  font-size: 0.94rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+.card--static:hover {
+  transform: none;
+  border-color: #e7e2d9;
+  box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
+}
+.prose .grid {
+  margin: var(--space-4) 0;
+}
+
+/* Accordéons de questions dans un bloc de texte */
+.prose .faq-accordion {
+  margin-top: var(--space-2);
+}
+
+/* Citations d'avis : auteur en évidence */
+.quote-card cite strong {
+  color: var(--text-main);
+}
+
+/* Titres de thème de la FAQ : léger espace avant les accordéons */
+.faq-section-title + .faq-accordion {
+  margin-top: var(--space-2);
+}
+
+/* Phrase d'introduction répondant à la question avant le détail */
+.answer-first {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+/* Photo verticale insérée dans un texte : largeur limitée pour ne pas dominer la page */
+.figure--portrait img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}

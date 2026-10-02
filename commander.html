@@ -42,12 +42,12 @@
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=0e10dcdcda" defer></script>
-  <link rel="stylesheet" href="style.css?v=0e10dcdcda" />
-  <link rel="stylesheet" href="/css/commerce-pages.css?v=0e10dcdcda" />
-  <script src="components.js?v=0e10dcdcda" defer></script>
-  <script src="reviews-data.js?v=0e10dcdcda" defer></script>
-  <script src="reviews.js?v=0e10dcdcda" defer></script>
+  <script src="seo-config.js?v=646adbf47b" defer></script>
+  <link rel="stylesheet" href="style.css?v=646adbf47b" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=646adbf47b" />
+  <script src="components.js?v=646adbf47b" defer></script>
+  <script src="reviews-data.js?v=646adbf47b" defer></script>
+  <script src="reviews.js?v=646adbf47b" defer></script>
 
   <script type="application/ld+json">
   {
@@ -74,7 +74,7 @@
         "@type": "Product",
         "@id": "https://kyran-jeu.fr/commander.html#product",
         "name": "KYRAN — Jeu de cartes de plis et de paris",
-        "description": "KYRAN est un jeu de cartes de plis à pari obligatoire pour 3 à 6 joueurs, d'environ 30 minutes, à partir de 8 ans. À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner ; la somme des paris ne peut jamais égaler le nombre de plis, donc au moins un joueur se trompe, et un pari raté fait perdre autant de cartes Vie que l'écart. La boîte contient 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles en français ; la manche Mystique se joue avec une carte posée sur le front. Boîte cloche rigide de 11,5 × 8,5 × 2,8 cm (175 g), cartes toilées vernies de 300 g/m². Créé et édité en France par Corentin Sence, illustrations de Crea by Floh.",
+        "description": "KYRAN est un jeu de cartes de plis à pari obligatoire pour 3 à 6 joueurs, d'environ 30 minutes, à partir de 8 ans. À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner ; la somme des paris ne peut jamais égaler le nombre de plis, donc au moins un joueur se trompe, et un pari raté fait perdre autant de cartes Vie que l'écart. La boîte contient 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et des cartes de règles en français ; la manche Mystique se joue avec une carte posée sur le front. Boîte cloche rigide de 11,5 × 8,5 × 2,8 cm (175 g), cartes toilées vernies de 300 g/m². Créé et édité en France par Corentin Sence, illustrations de Crea by Floh.",
         "sku": "KYRAN-01",
         "mpn": "KYRAN-01",
         "gtin13": "3770040368015",
@@ -240,7 +240,7 @@
             },
             {
               "@type": "OfferShippingDetails",
-              "shippingLabel": "Livraison suivie Belgique, Suisse, Luxembourg",
+              "shippingLabel": "Livraison suivie dans les autres pays desservis",
               "shippingRate": {
                 "@type": "MonetaryAmount",
                 "value": "2.99",
@@ -253,11 +253,35 @@
                 },
                 {
                   "@type": "DefinedRegion",
+                  "addressCountry": "LU"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "DE"
+                },
+                {
+                  "@type": "DefinedRegion",
                   "addressCountry": "CH"
                 },
                 {
                   "@type": "DefinedRegion",
-                  "addressCountry": "LU"
+                  "addressCountry": "IT"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ES"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "MC"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "AD"
+                },
+                {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "GB"
                 }
               ],
               "deliveryTime": {
@@ -279,16 +303,11 @@
           ],
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
-            "applicableCountry": [
-              "FR",
-              "BE",
-              "CH",
-              "LU"
-            ],
+            "applicableCountry": ["FR", "BE", "LU", "DE", "CH", "IT", "ES", "MC", "AD", "GB"],
             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
             "merchantReturnDays": 14,
             "returnMethod": "https://schema.org/ReturnByMail",
-            "returnFees": "https://schema.org/ReturnShippingFees",
+            "returnFees": "https://schema.org/FreeReturn",
             "refundType": "https://schema.org/FullRefund",
             "merchantReturnLink": "https://kyran-jeu.fr/cgv.html#art6"
           }
@@ -313,7 +332,7 @@
             "name": "Sous quel délai ma commande est-elle livrée ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le colis part sous 24 à 48 heures ouvrées après la validation du paiement. Comptez ensuite 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés en Belgique, en Suisse et au Luxembourg. L'envoi est suivi (La Poste / Colissimo) et le numéro de suivi vous est transmis par courriel."
+              "text": "Le colis part sous 24 à 48 heures ouvrées après la validation du paiement. Comptez ensuite 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays desservis. L'envoi est suivi (La Poste / Colissimo) et le numéro de suivi vous est transmis par courriel."
             }
           },
           {
@@ -321,7 +340,7 @@
             "name": "Livrez-vous hors de France ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Les conditions de vente prévoient la France métropolitaine, la Belgique, la Suisse et le Luxembourg. Les frais de livraison sont calculés selon l'adresse et affichés avant le paiement. Pour une autre destination, écrivez à contact@kyran-jeu.fr avant de commander."
+              "text": "Oui. Nous livrons en France métropolitaine et dans les pays limitrophes : la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, l'Espagne, Monaco, Andorre et le Royaume-Uni. Les frais de livraison sont calculés selon l'adresse et affichés avant le paiement. Pour une autre destination, écrivez à contact@kyran-jeu.fr avant de commander."
             }
           },
           {
@@ -329,7 +348,7 @@
             "name": "Puis-je me rétracter ou retourner le jeu ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Vous avez 14 jours francs à compter de la réception pour vous rétracter, sans motif. Le jeu doit revenir complet et en état d'origine, les frais de réexpédition étant à votre charge. Le remboursement, frais d'expédition initiaux compris, intervient sous 14 jours via le moyen de paiement utilisé. Le détail est dans les CGV."
+              "text": "Oui. Vous avez 14 jours francs à compter de la réception pour vous rétracter, sans motif. Le jeu doit revenir complet et en état d'origine, les frais de retour étant pris en charge par le vendeur. Le remboursement, frais d'expédition initiaux compris, intervient sous 14 jours via le moyen de paiement utilisé. Le détail est dans les CGV."
             }
           },
           {
@@ -353,7 +372,7 @@
             "name": "Faut-il connaître le Tarot Africain ou le Whist pour jouer ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Non. Les règles complètes tiennent sur 7 cartes de règles en français, et un QR code mène à la règle en ligne, à une vidéo de 5 minutes et au Dojo gratuit. Pour une première partie, la variante d'initiation retire les cartes Pouvoir et la carte Mystique."
+              "text": "Non. Les règles complètes tiennent sur des cartes de règles en français, et un QR code mène à la règle en ligne, à une vidéo de 5 minutes et au Dojo gratuit. Pour une première partie, la variante d'initiation retire les cartes Pouvoir et la carte Mystique."
             }
           },
           {
@@ -1632,7 +1651,7 @@
                 <button type="button" class="product-thumb active" data-index="0" aria-pressed="true" aria-label="Boîte officielle" title="Boîte officielle recto">
                   <img src="boite-recto-kyran.webp" alt="Miniature boîte KYRAN recto" width="48" height="48" loading="lazy" />
                 </button>
-                <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte et cartes étalées" title="Jeu complet et éventail de 55 cartes">
+                <button type="button" class="product-thumb" data-index="1" aria-pressed="false" aria-label="Boîte et cartes étalées" title="Jeu complet et éventail de cartes">
                   <img src="kyran-cartes-table.webp" alt="Miniature boîte et cartes étalées" width="48" height="48" loading="lazy" />
                 </button>
                 <button type="button" class="product-thumb" data-index="2" aria-pressed="false" aria-label="Boîte verso" title="Boîte verso avec règles résumées">
@@ -1718,8 +1737,8 @@
             <path d="M7 5V3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2"></path>
           </svg>
           <div class="stat-info">
-            <span class="stat-num">55 cartes</span>
-            <span class="stat-desc">Toilées 300g</span>
+            <span class="stat-num">45 cartes</span>
+            <span class="stat-desc">+ 30 cartes Vie</span>
           </div>
         </div>
       </div>
@@ -1733,7 +1752,7 @@
                   <span class="order-content-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="17" rx="2"></rect><path d="M7 5V3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2"></path></svg>
                   </span>
-                  <span class="order-content-text"><strong>55 cartes toilées 300g :</strong> Finition vernie lin haute durabilité, agréable en main</span>
+                  <span class="order-content-text"><strong>45 cartes de jeu toilées 300g + 30 cartes Vie :</strong> finition vernie lin haute durabilité, agréable en main</span>
                 </li>
                 <li>
                   <span class="order-content-icon" aria-hidden="true">
@@ -1764,7 +1783,7 @@
                   <tbody>
                     <tr>
                       <td>Contenu</td>
-                      <td>55 cartes toilées + cartes de règles en français</td>
+                      <td>45 cartes de jeu toilées (36 Nombre, 1 Mystique, 8 Pouvoir), 30 cartes Vie et cartes de règles en français</td>
                     </tr>
                     <tr>
                       <td>Format boîte</td>
@@ -1980,7 +1999,7 @@
             <li><strong>1 carte Mystique</strong>, qui vaut 0 ou 37 au choix de son joueur : c'est la carte la plus forte du jeu.</li>
             <li><strong>8 cartes Pouvoir</strong> : quatre pouvoirs, chacun décliné en deux cartes de valeurs différentes.</li>
             <li><strong>30 cartes Vie</strong> : cinq par joueur, de 1 à 5 étoiles, pour six joueurs au maximum.</li>
-            <li><strong>7 cartes de règles</strong> en français.</li>
+            <li><strong>Cartes de règles</strong> en français.</li>
           </ul>
           <p>Le tout tient dans une <strong>boîte cloche rigide de 11,5 × 8,5 × 2,8 cm pour 175 g</strong>, qui se glisse dans un sac ou une poche de manteau. Les cartes sont toilées, vernies, d'un grammage de 300 g/m² avec une finition lin. Un QR code sur la boîte renvoie vers la règle en ligne, le tutoriel vidéo et le <a class="text-link" href="/minijeu.html">Dojo</a>. Le jeu porte le marquage CE et respecte les normes EN 71 et le règlement REACH ; il est recommandé dès 8 ans.</p>
           <p>Les règles sont imprimées sur ces 7 cartes : deux avis Amazon signalent qu'elles se confondent facilement avec les cartes de jeu. Le plus simple est de les ranger à part dans la boîte ou de garder la <a class="text-link" href="/regle.html">règle en ligne</a> sous la main.</p>
@@ -2151,7 +2170,7 @@
               </thead>
               <tbody>
                 <tr><td>France métropolitaine</td><td>24 à 48 h ouvrées</td><td>2 à 4 jours ouvrés</td><td>2,99 € (montant du récapitulatif de commande)</td></tr>
-                <tr><td>Belgique, Suisse, Luxembourg</td><td>24 à 48 h ouvrées</td><td>3 à 6 jours ouvrés</td><td>Calculés selon l'adresse, affichés avant le paiement</td></tr>
+                <tr><td>Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni</td><td>24 à 48 h ouvrées</td><td>3 à 6 jours ouvrés</td><td>Calculés selon l'adresse, affichés avant le paiement</td></tr>
               </tbody>
             </table>
           </div>
@@ -2161,7 +2180,7 @@
           <p>Le règlement passe par Stripe Checkout : carte bancaire (CB, Visa, Mastercard), Apple Pay ou Google Pay. La transaction est chiffrée et aucune coordonnée bancaire n'est enregistrée sur les serveurs de kyran-jeu.fr. Les prix sont indiqués TTC : la TVA n'est pas applicable (article 293 B du Code général des impôts, franchise en base). Un accusé de réception est envoyé par courriel une fois le paiement accepté.</p>
 
           <h3>Rétractation et retours</h3>
-          <p>Vous disposez de 14 jours francs à compter de la réception pour vous rétracter, sans avoir à vous justifier. Le jeu doit être renvoyé complet et en état d'origine, à vos frais. Le vendeur rembourse la totalité des sommes versées, frais d'expédition initiaux compris, dans un délai maximal de 14 jours après avoir été informé de votre décision, par le même moyen de paiement, une fois le jeu reçu ou son expédition prouvée. Un modèle de formulaire figure dans les <a class="text-link" href="/cgv.html#formulaire">CGV</a>.</p>
+          <p>Vous disposez de 14 jours francs à compter de la réception pour vous rétracter, sans avoir à vous justifier. Le jeu doit être renvoyé complet et en état d'origine, sans frais de retour pour vous : le vendeur les prend en charge (écrivez à contact@kyran-jeu.fr avant l'envoi). Le vendeur rembourse la totalité des sommes versées, frais d'expédition initiaux compris, dans un délai maximal de 14 jours après avoir été informé de votre décision, par le même moyen de paiement, une fois le jeu reçu ou son expédition prouvée. Un modèle de formulaire figure dans les <a class="text-link" href="/cgv.html#formulaire">CGV</a>.</p>
 
           <h3>Garanties et assistance</h3>
           <p>Le jeu est couvert par la garantie légale de conformité, pendant deux ans à compter de la délivrance, et par la garantie des vices cachés. Pour toute question sur une commande, écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a> : la réponse est annoncée sous 24 à 48 heures ouvrées. En cas de litige, le recours gratuit à un médiateur de la consommation (CM2C) est prévu à l'<a class="text-link" href="/cgv.html#art9">article 9 des CGV</a>.</p>
@@ -2184,15 +2203,15 @@
             </details>
             <details>
               <summary>Sous quel délai ma commande est-elle livrée ?</summary>
-              <div class="faq-answer">Le colis part sous 24 à 48 heures ouvrées après la validation du paiement. Comptez ensuite 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés en Belgique, en Suisse et au Luxembourg. L'envoi est suivi (La Poste / Colissimo) et le numéro de suivi vous est transmis par courriel.</div>
+              <div class="faq-answer">Le colis part sous 24 à 48 heures ouvrées après la validation du paiement. Comptez ensuite 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays desservis. L'envoi est suivi (La Poste / Colissimo) et le numéro de suivi vous est transmis par courriel.</div>
             </details>
             <details>
               <summary>Livrez-vous hors de France ?</summary>
-              <div class="faq-answer">Oui. Les conditions de vente prévoient la France métropolitaine, la Belgique, la Suisse et le Luxembourg. Les frais de livraison sont calculés selon l'adresse et affichés avant le paiement. Pour une autre destination, écrivez à contact@kyran-jeu.fr avant de commander.</div>
+              <div class="faq-answer">Oui. Nous livrons en France métropolitaine et dans les pays limitrophes : la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, l'Espagne, Monaco, Andorre et le Royaume-Uni. Les frais de livraison sont calculés selon l'adresse et affichés avant le paiement. Pour une autre destination, écrivez à contact@kyran-jeu.fr avant de commander.</div>
             </details>
             <details>
               <summary>Puis-je me rétracter ou retourner le jeu ?</summary>
-              <div class="faq-answer">Oui. Vous avez 14 jours francs à compter de la réception pour vous rétracter, sans motif. Le jeu doit revenir complet et en état d'origine, les frais de réexpédition étant à votre charge. Le remboursement, frais d'expédition initiaux compris, intervient sous 14 jours via le moyen de paiement utilisé. Le détail est dans les <a class="text-link" href="/cgv.html#art6">CGV</a>.</div>
+              <div class="faq-answer">Oui. Vous avez 14 jours francs à compter de la réception pour vous rétracter, sans motif. Le jeu doit revenir complet et en état d'origine, les frais de retour étant pris en charge par le vendeur. Le remboursement, frais d'expédition initiaux compris, intervient sous 14 jours via le moyen de paiement utilisé. Le détail est dans les <a class="text-link" href="/cgv.html#art6">CGV</a>.</div>
             </details>
             <details>
               <summary>Le paiement est-il sécurisé ?</summary>
@@ -2204,7 +2223,7 @@
             </details>
             <details>
               <summary>Faut-il connaître le Tarot Africain ou le Whist pour jouer ?</summary>
-              <div class="faq-answer">Non. Les règles complètes tiennent sur 7 cartes de règles en français, et un QR code mène à la règle en ligne, à une vidéo de 5 minutes et au <a class="text-link" href="/minijeu.html">Dojo</a> gratuit. Pour une première partie, la variante d'initiation retire les cartes Pouvoir et la carte Mystique.</div>
+              <div class="faq-answer">Non. Les règles complètes tiennent sur des cartes de règles en français, et un QR code mène à la règle en ligne, à une vidéo de 5 minutes et au <a class="text-link" href="/minijeu.html">Dojo</a> gratuit. Pour une première partie, la variante d'initiation retire les cartes Pouvoir et la carte Mystique.</div>
             </details>
             <details>
               <summary>Quelle différence entre acheter sur kyran-jeu.fr et sur Amazon ?</summary>
@@ -2344,7 +2363,7 @@
       ];
       var alts = [
         'Boîte du jeu de cartes KYRAN — recto',
-        'Boîte officielle KYRAN et éventail complet de 55 cartes toilées étalées',
+        'Boîte officielle KYRAN et éventail complet de cartes toilées étalées',
         'Boîte du jeu de cartes KYRAN — verso avec explications',
         'Partie du jeu de cartes KYRAN en cours entre amis',
         'Cartes aux Pouvoirs fantastiques du jeu KYRAN',

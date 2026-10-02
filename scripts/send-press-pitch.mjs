@@ -81,7 +81,7 @@ const htmlBody = `
       <li><strong>Mécanique :</strong> Jeu de plis et de contrat (3 à 6 joueurs) où l'on parie son nombre exact de levées (revisite du Tarot Africain / Whist 22).</li>
       <li><strong>Règle signature :</strong> La somme des paris ne peut jamais égaler le total des plis — tension permanente.</li>
       <li><strong>Twists modernes :</strong> 4 cartes Pouvoir, 5 vies physiques, et la manche Mystique jouée à l'aveugle.</li>
-      <li><strong>Édition :</strong> 55 cartes toilées Dark &amp; Gold (illustrations <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer" style="color: #c8a85d;">Floh</a>), parties de 30 min.</li>
+      <li><strong>Édition :</strong> 45 cartes de jeu toilées Dark &amp; Gold + 30 cartes Vie (illustrations <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer" style="color: #c8a85d;">Floh</a>), parties de 30 min.</li>
     </ul>
   </div>
 

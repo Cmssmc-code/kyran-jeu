@@ -44,7 +44,7 @@ Key Features:
 ```text
 KYRAN est un jeu de cartes rapide et stratégique pour 3 à 6 joueurs qui modernise le jeu de plis et de pari (inspiré du Tarot Africain et du Whist 22).
 
-Parier juste, bluffer ses adversaires et survivre aux manches dégressives : la somme des paris ne peut jamais égaler le nombre de plis disponibles. Comprend 55 cartes toilées Dark & Gold, 4 cartes Pouvoir inédites, un système de vies physiques et la manche Mystique jouée à l'aveugle.
+Parier juste, bluffer ses adversaires et survivre aux manches dégressives : la somme des paris ne peut jamais égaler le nombre de plis disponibles. Comprend 45 cartes de jeu toilées Dark & Gold, 4 cartes Pouvoir inédites, un système de vies physiques et la manche Mystique jouée à l'aveugle.
 ```
 
 ---
@@ -81,7 +81,7 @@ Bonjour à la communauté Tric Trac,
 Je vous présente KYRAN, un jeu de cartes édité en février 2026 conçu pour 3 à 6 joueurs (parties de 30 min).
 
 Amoureux des soirées Tarot Africain / Whist 22 d'enfance, j'ai voulu créer une édition moderne et épurée :
-- Deck de 55 cartes toilées qualité casino avec univers graphique Dark & Gold par Floh.
+- 45 cartes de jeu toilées (36 Nombre, 1 Mystique, 8 Pouvoir) et 30 cartes Vie, qualité casino avec univers graphique Dark & Gold par Floh.
 - Contrainte d'annonce stricte (la somme des paris != total des plis).
 - 4 cartes Pouvoir (vol de carte, protection, échange de pli).
 - Système de 5 vies physiques et la fameuse manche finale "au front" (manche Mystique).

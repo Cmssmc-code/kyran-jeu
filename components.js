@@ -619,8 +619,8 @@ function renderStatBarHtml() {
             <path d="M7 5V3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2"></path>
           </svg>
           <div class="stat-info">
-            <span class="stat-num">55 cartes</span>
-            <span class="stat-desc">Toilées 300g</span>
+            <span class="stat-num">45 cartes</span>
+            <span class="stat-desc">+ 30 cartes Vie</span>
           </div>
         </div>
       </div>

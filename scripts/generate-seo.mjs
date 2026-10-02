@@ -117,10 +117,12 @@ function buildLlmsTxt() {
 - Joueurs : 3 à 6 (ne se joue pas à deux)
 - Durée d'une partie : environ 30 minutes
 - Âge : dès 8 ans
-- Matériel : 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles ; cartes vernies toilées, boîte rigide
+- Matériel : 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et des cartes de règles ; cartes vernies toilées, boîte rigide
 - Auteur et éditeur : Corentin Sence (France) — présentation : ${SITE}/a-propos.html
 - Illustrations : Crea by Floh
-- Édition actuelle : 2026
+- Édition actuelle : 2026 (sortie en février 2026 selon le dossier de presse)
+- Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
+- Livraison : France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni ; retours gratuits (14 jours)
 - Prix : 9,99 € sur ${SITE}/commander.html ; 17,99 € sur Amazon.fr (https://www.amazon.fr/dp/B0G217LD87)
 - Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
 - Règles : ${SITE}/regle.html (avec vidéo Ludochrono de 5 minutes)
@@ -187,7 +189,7 @@ KYRAN est un jeu de plis et de paris pour 3 à 6 joueurs. À chaque manche, les 
 - 8 cartes Pouvoir (4 pouvoirs en double exemplaire : 4/27, 11/23, 9/20, 3/34)
 - 1 carte Mystique (0 ou 37)
 - 30 cartes Vie (5 cartes par joueur, numérotées de 1 à 5 étoiles)
-- 7 cartes de règles
+- cartes de règles
 - À 3 ou 4 joueurs : une seule carte de chaque pouvoir (Clairvoyance 11, Sceau 27, Bénédiction 20, Voile 3) et la carte Mystique.
 - À 5 ou 6 joueurs : toutes les cartes Pouvoir et la carte Mystique.
 

@@ -87,17 +87,29 @@ Hors code (indispensable pour viser la première place — le site n'a aucun lie
 8. YouTube : vidéos « Comment jouer à KYRAN en 3 minutes » et « Règles du Tarot Africain en vidéo », avec
    lien vers le site. La chaîne officielle (https://www.youtube.com/@Kyran-jeu) est déjà dans les `sameAs`.
 
-## 7. Points à trancher (incohérences relevées pendant l'audit)
+## 7. Décisions du propriétaire et points restants
+
+Tranchés (2 octobre 2026) :
+
+| Sujet | Décision appliquée |
+|---|---|
+| Nombre de cartes | D'après la carte de règles : 36 Nombre + 1 Mystique + 8 Pouvoir (45 cartes de jeu) + 30 Vie + cartes de règles. « 55 cartes » retiré partout (site, CGV, flux Merchant, barre de stats). Le nombre de cartes de règles n'est pas écrit (7 sur l'ancienne page, 4 sur l'annonce Amazon) : à confirmer si vous voulez le publier. |
+| Avis « Amélie » | Citation supprimée de l'accueil. Les citations de Toto et Patrick sont maintenant des extraits exacts de leurs avis. |
+| Retours | Retours gratuits confirmés : CGV (art. 6), page commander, FAQ et JSON-LD alignés (`FreeReturn`). |
+| Livraison | France métropolitaine et pays limitrophes : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni (liste du flux Merchant). CGV, JSON-LD, page commander et FAQ alignés. |
+| Prix | 9,99 € sur kyran-jeu.fr (confirmé). |
+| Flux Merchant | « Dès 10 ans » corrigé en « Dès 8 ans ». |
+| Kbis | Cohérent avec les mentions légales (SIREN 840 817 548, RCS Nanterre). Activité commencée le 10/09/2025 : ajoutée dans `llms.txt` et au JSON-LD de l'Organisation (`foundingDate`). Le domicile du Kbis n'est pas republié. |
+
+Restent ouverts :
 
 | Sujet | Constat | Action |
 |---|---|---|
-| Nombre de cartes | `regle.html` : 36 Nombre + 1 Mystique + 8 Pouvoir (45 cartes de jeu) + 30 Vie + 7 règles. Plusieurs pages, la barre de stats, les CGV et le flux Merchant parlent de « 55 cartes ». | Vérifier la boîte réelle et aligner partout (`components.js` → `renderStatBarHtml`, `index.html`, `commander.html`, CGV, flux Merchant). `llms.txt` ne cite que les composants. |
-| Avis cités sur l'accueil | « Amélie (achat vérifié Amazon) » ne figure pas parmi les 8 avis de `reviews-data.json` ; les citations de Toto et Patrick sont des montages de phrases de leurs avis. | Ne garder que des citations exactes d'avis réels (politique Google sur les avis, DGCCRF). |
-| Frais de retour | CGV : à la charge du client. JSON-LD de `index.html` et `regle.html` : `FreeReturn`. | Aligner le JSON-LD sur les CGV (ou l'inverse si c'est la politique réelle). |
-| Zones et frais de livraison | CGV : France métropolitaine, Belgique, Suisse, Luxembourg. JSON-LD / flux : autres listes de pays. | Choisir une liste unique. |
-| Date de sortie | Dossier de presse : sortie février 2026. Le blog affichait 2024 (corrigé : 2026). Les offres JSON-LD avaient `validFrom: 2024-01-01` (supprimé). | Fournir la date exacte pour `llms.txt`, Wikidata et BGG. |
+| Liens externes | Recherche web faite le 2 octobre 2026 : aucune fiche Etsy, BoardGameGeek, Tric Trac, aucun blog ni test indexé. Seuls l'annonce Amazon, la chaîne YouTube (@Kyran-jeu) et la vidéo Ludovox existent. Amazon n'a pas pu être consulté (robot check) : avis et fiche non récupérés. | Créer les fiches (voir § 6) puis me donner les URL pour le `sameAs`. |
+| Etsy | Une boutique Etsy a été évoquée : aucune n'est trouvable publiquement. | Fournir l'URL de la boutique si elle existe. |
+| Date de sortie | Dossier de presse : février 2026 ; Kbis : activité depuis septembre 2025. | Confirmer la date exacte pour Wikidata et BGG. |
 | `priceValidUntil` | 2026-12-31 dans les offres JSON-LD. | À renouveler avant cette date. |
-| Origine du Tarot Africain | Aucune source sur le site : les pages restent prudentes. | Fournir une source (livre, article) si vous voulez répondre précisément à « tarot africain origine ». |
+| Origine du Tarot Africain | Aucune source sur le site : les pages restent prudentes. | Fournir une source si vous voulez répondre précisément à « tarot africain origine ». |
 | Fabrication | Un avis Amazon parle d'un jeu « imaginé en Guadeloupe et fabriqué en Chine ». Le site ne le dit pas. | À confirmer si vous voulez l'écrire dans « À propos ». |
 | Page « À propos » | Pas de photo ni d'histoire de création dans les sources. | Ajouter une photo, le récit de création, un profil personnel (`sameAs` de la Person). |
 | Références scientifiques | Deux références erronées de l'article sur le cerveau ont été corrigées (Altschul & Deary 2020 ; Dartigues et al. 2013). | Faire relire par une personne qualifiée avant d'insister sur les allégations de santé. |

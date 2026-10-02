@@ -85,7 +85,7 @@ Générés automatiquement (ne pas écrire) : tableau comparatif, sommaire, temp
 - Jeu de plis avec **pari obligatoire**, 3 à 6 joueurs, environ 30 minutes, dès 8 ans. Auteur et
   éditeur : Corentin Sence. Illustrations : Crea by Floh. Édition française.
 - Matériel : 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie
-  (5 par joueur, 1 à 5 étoiles), 7 cartes de règles. Cartes toilées, boîte rigide.
+  (5 par joueur, 1 à 5 étoiles), cartes de règles (leur nombre n'est pas établi : ne pas l'écrire). Cartes toilées, boîte rigide.
 - Chaque manche : on annonce le nombre exact de plis qu'on va gagner. **La somme des paris ne peut
   jamais égaler le nombre de plis** : le dernier à parler ne peut pas « boucler » ; au moins un joueur
   se trompera donc à chaque manche.

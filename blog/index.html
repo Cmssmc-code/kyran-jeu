@@ -2,34 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog KYRAN — 43 sélections jeux de cartes &amp; société</title>
-  <meta name="description" content="43 articles éditoriaux : sélections de jeux de cartes testées autour de la table, photos réelles, liens BGG et Philibert. Apéro, famille, cadeaux, alternatives." />
+  <title>Blog KYRAN : 33 guides pour choisir un jeu de cartes</title>
+  <meta name="description" content="Quel jeu de cartes choisir ? 33 guides comparés : apéro, 3 joueurs, famille, cadeaux, alternatives à Skyjo, Uno ou Wizard. Tableaux et avis tranchés." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="canonical" href="https://kyran-jeu.fr/blog/index.html" />
+  <link rel="canonical" href="https://kyran-jeu.fr/blog/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/blog/index.html" />
+  <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/blog/" />
   <link rel="alternate" type="application/rss+xml" title="Blog KYRAN" href="https://kyran-jeu.fr/blog/feed.xml" />
   <meta name="author" content="Corentin Sence" />
   <meta property="og:site_name" content="KYRAN" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Blog KYRAN — 43 sélections jeux de cartes" />
-  <meta property="og:description" content="Sélections testées, photos réelles et liens vérifiés pour trouver votre prochain jeu de cartes." />
-  <meta property="og:url" content="https://kyran-jeu.fr/blog/index.html" />
-  <meta property="og:image" content="https://kyran-jeu.fr/boite-recto-kyran.png" />
+  <meta property="og:title" content="Blog KYRAN : 33 guides pour choisir un jeu de cartes" />
+  <meta property="og:description" content="Quel jeu de cartes choisir ? 33 guides comparés : apéro, 3 joueurs, famille, cadeaux, alternatives à Skyjo, Uno ou Wizard. Tableaux et avis tranchés." />
+  <meta property="og:url" content="https://kyran-jeu.fr/blog/" />
+  <meta property="og:image" content="https://kyran-jeu.fr/og-kyran.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://kyran-jeu.fr/og-kyran.jpg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="/seo-config.js?v=20260905ccccccccccb"></script>
-  <link rel="stylesheet" href="/style.css?v=20260905ccccccccccb" />
-  <script src="/blog-data.js?v=20260905ccccccccccb"></script>
-  <script src="/components.js?v=20260905ccccccccccb"></script>
+  <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="/seo-config.js?v=0e10dcdcda" defer></script>
+  <link rel="stylesheet" href="/style.css?v=0e10dcdcda" />
+  <script src="/blog-data.js?v=0e10dcdcda" defer></script>
+  <script src="/components.js?v=0e10dcdcda" defer></script>
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -47,15 +51,16 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": "https://kyran-jeu.fr/blog/index.html"
+          "item": "https://kyran-jeu.fr/blog/"
         }
       ]
     },
     {
       "@type": "Blog",
+      "@id": "https://kyran-jeu.fr/blog/#blog",
       "name": "Blog KYRAN",
-      "description": "43 sélections éditoriales de jeux de cartes et de société.",
-      "url": "https://kyran-jeu.fr/blog/index.html",
+      "description": "33 guides éditoriaux de jeux de cartes et de société.",
+      "url": "https://kyran-jeu.fr/blog/",
       "publisher": {
         "@id": "https://kyran-jeu.fr/#organization"
       },
@@ -63,296 +68,258 @@
       "blogPost": [
         {
           "@type": "BlogPosting",
-          "headline": "Jeux de cartes et cerveau : ce que dit la science",
-          "url": "https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html",
-          "datePublished": "2026-09-16",
-          "image": "https://kyran-jeu.fr/kyran-cartes-table.webp"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "10 jeux de société comme Skyjo",
+          "headline": "10 jeux comme Skyjo : les meilleures alternatives en 2026",
           "url": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html",
           "datePublished": "2026-05-01",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "Les meilleurs jeux de cartes pour apéro",
+          "headline": "Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table",
           "url": "https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html",
           "datePublished": "2026-05-03",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/jungle-speed.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "Meilleurs jeux entre amis pour une soirée",
+          "headline": "Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée",
           "url": "https://kyran-jeu.fr/blog/jeux-soiree-amis.html",
           "datePublished": "2026-05-05",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/codenames.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "Jeux de société en famille (8 ans et +)",
-          "url": "https://kyran-jeu.fr/blog/jeux-famille.html",
-          "datePublished": "2026-05-07",
-          "image": "https://kyran-jeu.fr/blog/images/dixit.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux à offrir pour un anniversaire",
-          "url": "https://kyran-jeu.fr/blog/cadeau-anniversaire.html",
-          "datePublished": "2026-05-09",
-          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Idées jeux de société pour Noël",
-          "url": "https://kyran-jeu.fr/blog/cadeau-noel.html",
-          "datePublished": "2026-05-11",
-          "image": "https://kyran-jeu.fr/blog/images/hanabi.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux de cartes pas chers (moins de 20 €)",
-          "url": "https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html",
-          "datePublished": "2026-05-13",
-          "image": "https://kyran-jeu.fr/blog/images/uno.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Alternatives à Wizard pour fans de plis",
-          "url": "https://kyran-jeu.fr/blog/alternatives-wizard.html",
-          "datePublished": "2026-05-15",
-          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux à essayer si vous aimez Uno",
-          "url": "https://kyran-jeu.fr/blog/alternatives-uno.html",
-          "datePublished": "2026-05-17",
-          "image": "https://kyran-jeu.fr/blog/images/uno.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux rapides en 30 minutes ou moins",
-          "url": "https://kyran-jeu.fr/blog/jeux-30-minutes.html",
-          "datePublished": "2026-05-19",
-          "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Meilleurs jeux de société à 3 joueurs",
+          "headline": "Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois",
           "url": "https://kyran-jeu.fr/blog/jeux-3-joueurs.html",
           "datePublished": "2026-05-21",
-          "image": "https://kyran-jeu.fr/blog/images/schotten-totten.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux de bluff et de pari à table",
-          "url": "https://kyran-jeu.fr/blog/jeux-bluff-pari.html",
-          "datePublished": "2026-05-23",
-          "image": "https://kyran-jeu.fr/boite-recto-kyran.png"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux de société pour débutants adultes",
-          "url": "https://kyran-jeu.fr/blog/jeux-debutants-adultes.html",
-          "datePublished": "2026-05-25",
-          "image": "https://kyran-jeu.fr/blog/images/timeline.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Jeux compacts à emporter en vacances",
-          "url": "https://kyran-jeu.fr/blog/jeux-vacances-voyage.html",
-          "datePublished": "2026-05-27",
-          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Guide des jeux de plis : lequel choisir ?",
-          "url": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html",
-          "datePublished": "2026-05-29",
-          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "10 jeux comme Dixit pour varier vos soirées",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-dixit.html",
-          "datePublished": "2026-06-02",
-          "image": "https://kyran-jeu.fr/blog/images/dixit.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux comme Codenames à essayer",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-codenames.html",
-          "datePublished": "2026-06-04",
-          "image": "https://kyran-jeu.fr/blog/images/codenames.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux comme Hanabi en coopératif malin",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-hanabi.html",
-          "datePublished": "2026-06-06",
-          "image": "https://kyran-jeu.fr/blog/images/hanabi.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux coopératifs de cartes à découvrir",
-          "url": "https://kyran-jeu.fr/blog/jeux-coop-cartes.html",
-          "datePublished": "2026-06-08",
-          "image": "https://kyran-jeu.fr/blog/images/the-crew.jpg?v=20260610"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de cartes pour duo et couples",
-          "url": "https://kyran-jeu.fr/blog/jeux-duo-couples.html",
-          "datePublished": "2026-06-10",
-          "image": "https://kyran-jeu.fr/blog/images/lost-cities.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de cartes pour grands groupes",
-          "url": "https://kyran-jeu.fr/blog/jeux-grands-groupes.html",
-          "datePublished": "2026-06-12",
-          "image": "https://kyran-jeu.fr/blog/images/6-qui-prend.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux sans élimination frustrante",
-          "url": "https://kyran-jeu.fr/blog/jeux-sans-elimination.html",
-          "datePublished": "2026-06-14",
-          "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de cartes pour l'été en terrasse",
-          "url": "https://kyran-jeu.fr/blog/jeux-ete-terrasse.html",
-          "datePublished": "2026-06-16",
-          "image": "https://kyran-jeu.fr/blog/images/jungle-speed.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de stratégie légère en cartes",
-          "url": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html",
-          "datePublished": "2026-06-18",
-          "image": "https://kyran-jeu.fr/blog/images/star-realms.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux ambiance party qui marchent vraiment",
-          "url": "https://kyran-jeu.fr/blog/jeux-ambiance-party.html",
-          "datePublished": "2026-06-20",
-          "image": "https://kyran-jeu.fr/blog/images/dobble.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux comme Skull pour fans de bluff",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-skull.html",
-          "datePublished": "2026-06-22",
-          "image": "https://kyran-jeu.fr/blog/images/skull.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de draft et enchères en cartes",
-          "url": "https://kyran-jeu.fr/blog/jeux-draft-encheres.html",
-          "datePublished": "2026-06-24",
-          "image": "https://kyran-jeu.fr/blog/images/for-sale.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de trahison cachée et bluff",
-          "url": "https://kyran-jeu.fr/blog/jeux-trahison-cachee.html",
-          "datePublished": "2026-06-26",
-          "image": "https://kyran-jeu.fr/blog/images/saboteur.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 classiques modernes du jeu de cartes",
-          "url": "https://kyran-jeu.fr/blog/jeux-classiques-modernes.html",
-          "datePublished": "2026-06-28",
-          "image": "https://kyran-jeu.fr/blog/images/uno.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de mémoire et concentration",
-          "url": "https://kyran-jeu.fr/blog/jeux-memoire-concentration.html",
-          "datePublished": "2026-06-30",
-          "image": "https://kyran-jeu.fr/blog/images/the-mind.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Variantes Skyjo : 5 façons de réinventer vos parties",
-          "url": "https://kyran-jeu.fr/blog/variantes-skyjo.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas",
-          "url": "https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/blog/images/skull.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de cartes comme 6 qui prend pour amateurs de coups bas",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/blog/images/6-qui-prend.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Marre de la belote ? 7 jeux de plis modernes à tester d'urgence",
-          "url": "https://kyran-jeu.fr/blog/alternatives-belote-coinche.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "8 jeux de cartes comme The Crew : coopératifs malins et jeux de plis",
-          "url": "https://kyran-jeu.fr/blog/jeux-comme-the-crew.html",
-          "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/the-crew.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "8 jeux de cartes incontournables à 4 joueurs pour vos soirées",
-          "url": "https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
+          "headline": "Jeux de cartes et cerveau : ce que dit la science",
+          "url": "https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html",
+          "datePublished": "2026-09-16",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/kyran-cartes-table.webp"
         },
         {
           "@type": "BlogPosting",
-          "headline": "8 jeux de cartes déjantés comme Exploding Kittens",
+          "headline": "10 jeux comme Dixit : alternatives créatives et indices malins",
+          "url": "https://kyran-jeu.fr/blog/jeux-comme-dixit.html",
+          "datePublished": "2026-06-02",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/dixit.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "8 jeux comme Codenames : équipes, indices et déduction",
+          "url": "https://kyran-jeu.fr/blog/jeux-comme-codenames.html",
+          "datePublished": "2026-06-04",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/codenames.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas",
+          "url": "https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html",
+          "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/6-qui-prend.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "8 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre",
           "url": "https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html",
           "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/bang.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "Guide complet du jeu de plis : atout, défausse, coupe et stratégie",
-          "url": "https://kyran-jeu.fr/blog/guide-jeux-de-plis.html",
-          "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/boite-recto-kyran.png"
+          "headline": "Alternatives à Wizard : 6 jeux de plis pour changer de rythme",
+          "url": "https://kyran-jeu.fr/blog/alternatives-wizard.html",
+          "datePublished": "2026-05-15",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "8 jeux de cartes brise-glace pour afterwork et soirées d'équipe",
+          "headline": "Alternatives à Uno : 8 jeux de cartes rapides pour changer",
+          "url": "https://kyran-jeu.fr/blog/alternatives-uno.html",
+          "datePublished": "2026-05-17",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/uno.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Alternatives à la belote et à la coinche : 6 jeux de plis modernes",
+          "url": "https://kyran-jeu.fr/blog/alternatives-belote-coinche.html",
+          "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de plis : le comparatif et le guide pour bien choisir",
+          "url": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html",
+          "datePublished": "2026-05-29",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/wizard.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester",
+          "url": "https://kyran-jeu.fr/blog/jeux-bluff-pari.html",
+          "datePublished": "2026-05-23",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/boite-recto-kyran.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes",
           "url": "https://kyran-jeu.fr/blog/jeux-brise-glace-afterwork.html",
           "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/just-one.jpg"
         },
         {
           "@type": "BlogPosting",
-          "headline": "8 jeux de cartes ultra addictifs au format poche à emporter partout",
-          "url": "https://kyran-jeu.fr/blog/jeux-cartes-addictifs-poche.html",
+          "headline": "Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus",
+          "url": "https://kyran-jeu.fr/blog/jeux-grands-groupes.html",
+          "datePublished": "2026-06-12",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/6-qui-prend.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes à offrir à Noël : 8 idées selon le destinataire",
+          "url": "https://kyran-jeu.fr/blog/cadeau-noel.html",
+          "datePublished": "2026-05-11",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/hanabi.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget",
+          "url": "https://kyran-jeu.fr/blog/cadeau-anniversaire.html",
+          "datePublished": "2026-05-09",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent",
+          "url": "https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html",
+          "datePublished": "2026-05-13",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/uno.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes de 30 minutes ou moins : 9 parties express",
+          "url": "https://kyran-jeu.fr/blog/jeux-30-minutes.html",
+          "datePublished": "2026-05-19",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter",
+          "url": "https://kyran-jeu.fr/blog/jeux-vacances-voyage.html",
+          "datePublished": "2026-05-27",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de société en famille : 8 jeux de cartes dès 8 ans",
+          "url": "https://kyran-jeu.fr/blog/jeux-famille.html",
+          "datePublished": "2026-05-07",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/dixit.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de société pour débutants adultes : par où commencer",
+          "url": "https://kyran-jeu.fr/blog/jeux-debutants-adultes.html",
+          "datePublished": "2026-05-25",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/timeline.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout",
+          "url": "https://kyran-jeu.fr/blog/jeux-sans-elimination.html",
+          "datePublished": "2026-06-14",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/skyjo.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres",
+          "url": "https://kyran-jeu.fr/blog/jeux-coop-cartes.html",
+          "datePublished": "2026-06-08",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/the-crew.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes de mémoire et de concentration : 8 choix",
+          "url": "https://kyran-jeu.fr/blog/jeux-memoire-concentration.html",
+          "datePublished": "2026-06-30",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/the-mind.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes à deux : 8 idées pour un duo ou un couple",
+          "url": "https://kyran-jeu.fr/blog/jeux-duo-couples.html",
+          "datePublished": "2026-06-10",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/lost-cities.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi",
+          "url": "https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html",
           "datePublished": "2026-09-05",
-          "image": "https://kyran-jeu.fr/boite-recto-kyran.jpg"
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/love-letter.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas",
+          "url": "https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html",
+          "datePublished": "2026-09-05",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/skull.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes",
+          "url": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html",
+          "datePublished": "2026-06-18",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/star-realms.jpg"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Jeux de draft et d'enchères en cartes : choisir, passer, miser",
+          "url": "https://kyran-jeu.fr/blog/jeux-draft-encheres.html",
+          "datePublished": "2026-06-24",
+          "dateModified": "2026-10-02",
+          "image": "https://kyran-jeu.fr/blog/images/for-sale.jpg"
         },
         {
           "@type": "BlogPosting",
           "headline": "Top 8 des jeux de cartes à 6 joueurs sans temps mort",
           "url": "https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html",
           "datePublished": "2026-09-11",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/6-qui-prend.jpg"
         },
         {
@@ -360,6 +327,7 @@
           "headline": "Top 8 des meilleurs jeux de cartes pour adultes",
           "url": "https://kyran-jeu.fr/blog/jeux-cartes-adultes.html",
           "datePublished": "2026-09-11",
+          "dateModified": "2026-10-02",
           "image": "https://kyran-jeu.fr/blog/images/coup.jpg"
         }
       ]
@@ -370,12 +338,105 @@
 </head>
 <body>
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
-  <kyran-header active="blog"></kyran-header>
+  <kyran-header active="blog" data-ssr="1">
+      <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
+        <div class="container announcement-content">
+          <span class="announcement-pill">Offre atelier</span>
+          <span class="announcement-text">Jeu complet <strong>9,99€</strong> au lieu de 17,99€ · Expédié sous 24-48h suivie</span>
+          <a href="/commander.html" class="announcement-link">Commander &rarr;</a>
+        </div>
+      </div>
+      <header class="site-header">
+        <div class="container nav">
+          <div class="nav-brand-group">
+            <a href="/" class="logo" aria-label="KYRAN - Accueil">
+              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+            </a>
+
+            <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
+              <ul class="nav-list" id="menu-principal">
+                <li><a href="/" class="nav-link ">Accueil</a></li>
+                <li><a href="/regle.html" class="nav-link ">R&egrave;gles</a></li>
+                <li><a href="/minijeu.html" class="nav-link ">Dojo</a></li>
+                <li class="nav-dropdown nav-desktop-only">
+                  <button type="button" class="nav-link nav-link--menu " aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
+                    D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
+                  </button>
+                  <ul class="nav-submenu" id="nav-discover-menu" aria-label="Guides KYRAN"><li><a href="/jeu-apero.html">Jeu apéro<span class="sub-desc">Soirée 30 min, 3 à 6 joueurs</span></a></li><li><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span class="sub-desc">10 alternatives et variantes</span></a></li><li><a href="/tarot-africain.html">Tarot Africain<span class="sub-desc">Règles, variantes et comptage</span></a></li><li><a href="/whist-22.html">Whist 22<span class="sub-desc">Définition et jeux proches</span></a></li><li><a href="/blog/jeux-plis-comparatif.html">Jeux de plis<span class="sub-desc">KYRAN vs Wizard, Oh Hell…</span></a></li><li><a href="/faq.html">FAQ<span class="sub-desc">Questions fréquentes</span></a></li><li><a href="/a-propos.html">À propos<span class="sub-desc">L'auteur et notre méthode</span></a></li></ul>
+                </li>
+                <li class="nav-mobile-only">
+                  <details class="nav-discover-details">
+                    <summary class="nav-discover-summary">D&eacute;couvrir</summary>
+                    <div class="nav-drawer-links"><a class="nav-drawer-link" href="/jeu-apero.html">Jeu apéro<span>Soirée 30 min, 3 à 6 joueurs</span></a><a class="nav-drawer-link" href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span>10 alternatives et variantes</span></a><a class="nav-drawer-link" href="/tarot-africain.html">Tarot Africain<span>Règles, variantes et comptage</span></a><a class="nav-drawer-link" href="/whist-22.html">Whist 22<span>Définition et jeux proches</span></a><a class="nav-drawer-link" href="/blog/jeux-plis-comparatif.html">Jeux de plis<span>KYRAN vs Wizard, Oh Hell…</span></a><a class="nav-drawer-link" href="/faq.html">FAQ<span>Questions fréquentes</span></a><a class="nav-drawer-link" href="/a-propos.html">À propos<span>L'auteur et notre méthode</span></a></div>
+                  </details>
+                </li>
+                <li><a href="/blog/" class="nav-link active">Blog</a></li>
+                <li><a href="/dossier-presse.html" class="nav-link ">Presse</a></li>
+              </ul>
+              <div class="nav-drawer-footer nav-mobile-only">
+                <a class="btn btn-primary btn-block" href="/commander.html">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  <span>Commander — 9,99&euro;</span>
+                </a>
+                <a class="social-link social-link--instagram social-link--block" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>Suivre sur Instagram</span></a>
+              </div>
+            </nav>
+          </div>
+
+          <div class="nav-actions">
+            <div class="cta cta-desktop">
+              <a class="btn btn-header-cta" href="/commander.html" aria-label="Commander le jeu KYRAN">
+                <svg class="cart-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Commander</span>
+              </a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
+              <span class="nav-toggle-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="nav-backdrop" hidden></div>
+      </header>
+
+      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
+        <a href="/" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </span>
+          <span class="mobile-nav-label">Accueil</span>
+        </a>
+        <a href="/regle.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Règles</span>
+        </a>
+        <a href="/minijeu.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+          </span>
+          <span class="mobile-nav-label">Dojo</span>
+        </a>
+        <a href="/commander.html" class="mobile-nav-tab mobile-nav-tab--highlight ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Acheter</span>
+          <span class="mobile-nav-pill">9,99€</span>
+        </a>
+      </nav>
+    </kyran-header>
   <main id="contenu-principal">
     <kyran-page-hero
-      eyebrow="Blog · 43 sélections éditoriales"
-      title="Idées jeux, <span class=&quot;accent&quot;>comparatifs</span> et pépites pour vos soirées"
-      subtitle="Guides thématiques, alternatives ludiques et conseils pour choisir le bon jeu."
+      eyebrow="Blog · 33 guides éditoriaux"
+      title="Quel jeu de cartes choisir ? <span class=&quot;accent&quot;>Nos guides</span> pour vos soirées"
+      subtitle="Comparatifs, alternatives et sélections par nombre de joueurs, par occasion ou par budget."
       breadcrumb='[{"label":"Accueil","href":"/"},{"label":"Blog"}]'
     >
       <section class="page-hero">
@@ -383,37 +444,93 @@
           <div class="page-hero-breadcrumb">
             <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page">Blog</span></nav>
           </div>
-          <p class="eyebrow">Blog · 43 sélections éditoriales</p>
-          <h1>Idées jeux, <span class="accent">comparatifs</span> et pépites pour vos soirées</h1>
-          <p class="hero-lead">Guides thématiques, alternatives ludiques et conseils pour choisir le bon jeu.</p>
+          <p class="eyebrow">Blog · 33 guides éditoriaux</p>
+          <h1>Quel jeu de cartes choisir ? <span class="accent">Nos guides</span> pour vos soirées</h1>
+          <p class="hero-lead">Comparatifs, alternatives et sélections par nombre de joueurs, par occasion ou par budget.</p>
         </div>
       </section>
     </kyran-page-hero>
 
     <section>
       <div class="container">
+        <p class="blog-index-intro">Chaque guide compare des jeux de cartes et de société avec un tableau (joueurs, durée, âge, prix), une fiche par jeu rédigée pour l'usage visé et un avis tranché. Les guides sont signés par <a class="text-link" href="/a-propos.html">Corentin Sence</a>, créateur de <a class="text-link" href="/">KYRAN</a> : le jeu y figure quand il convient, et nous disons quand il ne convient pas. Pour commencer : <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a>, <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d'apéro</a>, <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a> ou le <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.</p>
         <div class="blog-index-stats" aria-label="Chiffres du blog">
           <div class="blog-index-stat">
-            <span class="blog-index-stat__value">43</span>
-            <span class="blog-index-stat__label">articles</span>
+            <span class="blog-index-stat__value">33</span>
+            <span class="blog-index-stat__label">guides</span>
           </div>
           <div class="blog-index-stat">
-            <span class="blog-index-stat__value">240+</span>
-            <span class="blog-index-stat__label">jeux passés au crible</span>
+            <span class="blog-index-stat__value">32</span>
+            <span class="blog-index-stat__label">jeux présentés</span>
           </div>
           <div class="blog-index-stat">
-            <span class="blog-index-stat__value">1500+</span>
-            <span class="blog-index-stat__label">mots par article</span>
+            <span class="blog-index-stat__value">2100+</span>
+            <span class="blog-index-stat__label">mots par guide</span>
           </div>
         </div>
-        <kyran-blog-filters></kyran-blog-filters>
-        <kyran-blog-grid>
+        <kyran-blog-filters data-ssr="1"><div class="blog-filters" role="group" aria-label="Filtrer par catégorie"><button type="button" class="blog-filter-pill is-active" data-filter="Tous">Tous</button><button type="button" class="blog-filter-pill" data-filter="Apéro">Apéro</button><button type="button" class="blog-filter-pill" data-filter="Famille">Famille</button><button type="button" class="blog-filter-pill" data-filter="Cadeaux">Cadeaux</button><button type="button" class="blog-filter-pill" data-filter="Alternatives">Alternatives</button><button type="button" class="blog-filter-pill" data-filter="Cartes">Cartes</button><button type="button" class="blog-filter-pill" data-filter="Soirée">Soirée</button></div><p class="blog-filter-count" id="blog-filter-count"></p></kyran-blog-filters>
+        <kyran-blog-grid data-ssr="1">
       <div class="blog-grid">
+        <a href="/blog/jeux-comme-skyjo.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/skyjo.webp" type="image/webp" /><img src="/blog/images/skyjo.jpg" alt="10 jeux comme Skyjo : les meilleures alternatives en 2026" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">10 jeux</span>
+            <span class="blog-card-read">12 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">1 mai 2026</p>
+            <h3>10 jeux comme Skyjo : les meilleures alternatives en 2026</h3>
+            <p class="blog-card-excerpt">Jeu style Skyjo, jeux similaires, règles alternatives : 10 jeux classés selon ce que vous aimiez dans Skyjo, plus 5 variantes pour relancer la boîte.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/meilleurs-jeux-apero.html" class="blog-card" data-category="Apéro">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/jungle-speed.webp" type="image/webp" /><img src="/blog/images/jungle-speed.jpg" alt="Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Apéro</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">3 mai 2026</p>
+            <h3>Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</h3>
+            <p class="blog-card-excerpt">Quels jeux de cartes sortir à l’apéro ? 8 jeux pour tables encombrées de verres, invités qui arrivent par vagues et règles expliquées en deux minutes.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-soiree-amis.html" class="blog-card" data-category="Soirée">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/codenames.webp" type="image/webp" /><img src="/blog/images/codenames.jpg" alt="Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Soirée</span>
+            <span class="blog-card-games">10 jeux</span>
+            <span class="blog-card-read">12 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">5 mai 2026</p>
+            <h3>Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</h3>
+            <p class="blog-card-excerpt">Quel jeu choisir pour une soirée entre amis ? 10 jeux classés selon le groupe (calme, bruyant, compétitif, mixte) et la durée, avec leurs défauts.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-3-joueurs.html" class="blog-card" data-category="Soirée">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/the-crew.webp" type="image/webp" /><img src="/blog/images/the-crew.jpg" alt="Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Soirée</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">11 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">21 mai 2026</p>
+            <h3>Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</h3>
+            <p class="blog-card-excerpt">Quel jeu faire à trois ? The Crew, Love Letter et Hanabi en tête, plus cinq autres choix, et les duels à laisser de côté. Ce qui change à trois, jeu par jeu.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
         <a href="/blog/science-jeux-de-cartes-cerveau.html" class="blog-card" data-category="Cartes">
           <div class="blog-card-image">
             <img src="/kyran-cartes-table.webp" alt="Jeux de cartes et cerveau : ce que dit la science" width="400" height="225" loading="lazy" decoding="async" />
             <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">14 min</span>
           </div>
           <div class="blog-card-body">
@@ -423,569 +540,373 @@
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-comme-skyjo.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/skyjo.jpg" alt="10 jeux de société comme Skyjo" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">10 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">1 mai 2026</p>
-            <h3>10 jeux de société comme Skyjo</h3>
-            <p class="blog-card-excerpt">Vous adorez Skyjo ? Découvrez dix jeux de cartes et de société pour varier vos soirées sans perdre en simplicité.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/meilleurs-jeux-apero.html" class="blog-card" data-category="Apéro">
-          <div class="blog-card-image">
-            <img src="/blog/images/jungle-speed.jpg" alt="Les meilleurs jeux de cartes pour apéro" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Apéro</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">3 mai 2026</p>
-            <h3>Les meilleurs jeux de cartes pour apéro</h3>
-            <p class="blog-card-excerpt">Huit jeux de cartes testés en conditions réelles d'apéro : durée, ambiance et facilité d'explication.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-soiree-amis.html" class="blog-card" data-category="Soirée">
-          <div class="blog-card-image">
-            <img src="/blog/images/codenames.jpg" alt="Meilleurs jeux entre amis pour une soirée" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 mai 2026</p>
-            <h3>Meilleurs jeux entre amis pour une soirée</h3>
-            <p class="blog-card-excerpt">De la table animée au groupe calme : huit jeux pour une soirée entre amis qui ne traîne pas en longueur.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-famille.html" class="blog-card" data-category="Famille">
-          <div class="blog-card-image">
-            <img src="/blog/images/dixit.jpg" alt="Jeux de société en famille (8 ans et +)" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Famille</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">7 mai 2026</p>
-            <h3>Jeux de société en famille (8 ans et +)</h3>
-            <p class="blog-card-excerpt">Huit jeux où adultes et enfants jouent sur un pied d'égalité — sans règles interminables ni frustration.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/cadeau-anniversaire.html" class="blog-card" data-category="Cadeaux">
-          <div class="blog-card-image">
-            <img src="/blog/images/love-letter.jpg" alt="Jeux à offrir pour un anniversaire" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cadeaux</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">9 mai 2026</p>
-            <h3>Jeux à offrir pour un anniversaire</h3>
-            <p class="blog-card-excerpt">Huit idées cadeau jeu de société pour un anniversaire : du petit budget au cadeau qui marque.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/cadeau-noel.html" class="blog-card" data-category="Cadeaux">
-          <div class="blog-card-image">
-            <img src="/blog/images/hanabi.jpg" alt="Idées jeux de société pour Noël" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cadeaux</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">11 mai 2026</p>
-            <h3>Idées jeux de société pour Noël</h3>
-            <p class="blog-card-excerpt">Sélection de jeux à glisser sous le sapin : conviviaux, beaux en boîte et jouables le soir même.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-cartes-pas-chers.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/uno.jpg" alt="Jeux de cartes pas chers (moins de 20 €)" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">13 mai 2026</p>
-            <h3>Jeux de cartes pas chers (moins de 20 €)</h3>
-            <p class="blog-card-excerpt">Huit jeux de cartes à petit prix qui valent bien plus que leur étiquette — qualité, rejouabilité et fun garanti.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/alternatives-wizard.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/wizard.jpg" alt="Alternatives à Wizard pour fans de plis" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">15 mai 2026</p>
-            <h3>Alternatives à Wizard pour fans de plis</h3>
-            <p class="blog-card-excerpt">Vous connaissez Wizard par cœur ? Voici huit jeux de plis et de pari pour renouveler vos parties.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/alternatives-uno.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/uno.jpg" alt="Jeux à essayer si vous aimez Uno" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">17 mai 2026</p>
-            <h3>Jeux à essayer si vous aimez Uno</h3>
-            <p class="blog-card-excerpt">Uno vous a lassé ? Huit alternatives rapides, colorées et interactives pour vos prochaines soirées.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-30-minutes.html" class="blog-card" data-category="Soirée">
-          <div class="blog-card-image">
-            <img src="/blog/images/skyjo.jpg" alt="Jeux rapides en 30 minutes ou moins" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">19 mai 2026</p>
-            <h3>Jeux rapides en 30 minutes ou moins</h3>
-            <p class="blog-card-excerpt">Pas le temps pour une épopée de trois heures ? Huit jeux qui tiennent la promesse d'une demi-heure max.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-3-joueurs.html" class="blog-card" data-category="Soirée">
-          <div class="blog-card-image">
-            <img src="/blog/images/schotten-totten.jpg" alt="Meilleurs jeux de société à 3 joueurs" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">21 mai 2026</p>
-            <h3>Meilleurs jeux de société à 3 joueurs</h3>
-            <p class="blog-card-excerpt">À trois autour de la table, le choix se réduit vite. Huit jeux qui brillent vraiment à ce format.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-bluff-pari.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/boite-recto-kyran.png" alt="Jeux de bluff et de pari à table" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">23 mai 2026</p>
-            <h3>Jeux de bluff et de pari à table</h3>
-            <p class="blog-card-excerpt">Quand mentir devient une stratégie : huit jeux où le pari et le bluff créent une tension incomparable.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-debutants-adultes.html" class="blog-card" data-category="Famille">
-          <div class="blog-card-image">
-            <img src="/blog/images/timeline.jpg" alt="Jeux de société pour débutants adultes" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Famille</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">25 mai 2026</p>
-            <h3>Jeux de société pour débutants adultes</h3>
-            <p class="blog-card-excerpt">Vous découvrez les jeux modernes ? Huit titres accessibles pour entrer dans le hobby sans intimidation.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-vacances-voyage.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/love-letter.jpg" alt="Jeux compacts à emporter en vacances" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">27 mai 2026</p>
-            <h3>Jeux compacts à emporter en vacances</h3>
-            <p class="blog-card-excerpt">Petit format, gros fun : huit jeux qui tiennent dans un sac de voyage sans sacrifier l'expérience.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-plis-comparatif.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/wizard.jpg" alt="Guide des jeux de plis : lequel choisir ?" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">29 mai 2026</p>
-            <h3>Guide des jeux de plis : lequel choisir ?</h3>
-            <p class="blog-card-excerpt">Wizard, Oh Hell, 6 qui prend, KYRAN… Comparatif honnête de huit jeux de plis pour trouver votre match.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
         <a href="/blog/jeux-comme-dixit.html" class="blog-card" data-category="Alternatives">
           <div class="blog-card-image">
-            <img src="/blog/images/dixit.jpg" alt="10 jeux comme Dixit pour varier vos soirées" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/dixit.webp" type="image/webp" /><img src="/blog/images/dixit.jpg" alt="10 jeux comme Dixit : alternatives créatives et indices malins" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Alternatives</span>
             <span class="blog-card-games">10 jeux</span>
             <span class="blog-card-read">11 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">2 juin 2026</p>
-            <h3>10 jeux comme Dixit pour varier vos soirées</h3>
-            <p class="blog-card-excerpt">Vous adorez Dixit ? Dix alternatives créatives et conviviales, plus KYRAN en bonus.</p>
+            <h3>10 jeux comme Dixit : alternatives créatives et indices malins</h3>
+            <p class="blog-card-excerpt">Alternative à Dixit : 10 jeux d’indices, de bluff et d’entente silencieuse, avec pour chacun ce qui rappelle Dixit, ce qui change et le bon nombre de joueurs.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-comme-codenames.html" class="blog-card" data-category="Alternatives">
           <div class="blog-card-image">
-            <img src="/blog/images/codenames.jpg" alt="8 jeux comme Codenames à essayer" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/codenames.webp" type="image/webp" /><img src="/blog/images/codenames.jpg" alt="8 jeux comme Codenames : équipes, indices et déduction" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Alternatives</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">9 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">4 juin 2026</p>
-            <h3>8 jeux comme Codenames à essayer</h3>
-            <p class="blog-card-excerpt">Indices, équipes et déduction : huit alternatives à Codenames pour vos soirées.</p>
+            <h3>8 jeux comme Codenames : équipes, indices et déduction</h3>
+            <p class="blog-card-excerpt">Alternative à Codenames : 8 jeux d’indices à un mot, d’équipes cachées et de déduction verbale, avec le nombre de joueurs idéal pour chacun.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-comme-hanabi.html" class="blog-card" data-category="Alternatives">
+        <a href="/blog/jeux-comme-6-qui-prend.html" class="blog-card" data-category="Alternatives">
           <div class="blog-card-image">
-            <img src="/blog/images/hanabi.jpg" alt="8 jeux comme Hanabi en coopératif malin" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/6-qui-prend.webp" type="image/webp" /><img src="/blog/images/6-qui-prend.jpg" alt="8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Alternatives</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">6 juin 2026</p>
-            <h3>8 jeux comme Hanabi en coopératif malin</h3>
-            <p class="blog-card-excerpt">Communication, mémoire et coopération : huit jeux proches de Hanabi.</p>
+            <p class="blog-card-meta">5 septembre 2026</p>
+            <h3>8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas</h3>
+            <p class="blog-card-excerpt">Alternative à 6 qui prend : 8 jeux de rangées, de choix secrets et de pénalités, avec ce qu’on perd selon le nombre de joueurs, jusqu’à dix.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-coop-cartes.html" class="blog-card" data-category="Famille">
+        <a href="/blog/jeux-comme-exploding-kittens.html" class="blog-card" data-category="Alternatives">
           <div class="blog-card-image">
-            <img src="/blog/images/the-crew.jpg?v=20260610" alt="8 jeux coopératifs de cartes à découvrir" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Famille</span>
+            <picture><source srcset="/blog/images/bang.webp" type="image/webp" /><img src="/blog/images/bang.jpg" alt="8 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">9 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">8 juin 2026</p>
-            <h3>8 jeux coopératifs de cartes à découvrir</h3>
-            <p class="blog-card-excerpt">Jouer ensemble plutôt que les uns contre les autres : huit coop cartes accessibles.</p>
+            <p class="blog-card-meta">5 septembre 2026</p>
+            <h3>8 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre</h3>
+            <p class="blog-card-excerpt">Alternative à Exploding Kittens : 8 jeux à pièges, éliminations et coups de théâtre, avec l’âge, le nombre de joueurs et le ton de chacun.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-duo-couples.html" class="blog-card" data-category="Soirée">
+        <a href="/blog/alternatives-wizard.html" class="blog-card" data-category="Alternatives">
           <div class="blog-card-image">
-            <img src="/blog/images/lost-cities.jpg" alt="8 jeux de cartes pour duo et couples" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/wizard.webp" type="image/webp" /><img src="/blog/images/wizard.jpg" alt="Alternatives à Wizard : 6 jeux de plis pour changer de rythme" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">6 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">15 mai 2026</p>
+            <h3>Alternatives à Wizard : 6 jeux de plis pour changer de rythme</h3>
+            <p class="blog-card-excerpt">Lassé de Wizard ? Six jeux de plis qui gardent l'annonce ou changent la donne : Oh Hell, KYRAN, The Crew, 6 qui prend !, Parade et Skull.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/alternatives-uno.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/uno.webp" type="image/webp" /><img src="/blog/images/uno.jpg" alt="Alternatives à Uno : 8 jeux de cartes rapides pour changer" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">17 mai 2026</p>
+            <h3>Alternatives à Uno : 8 jeux de cartes rapides pour changer</h3>
+            <p class="blog-card-excerpt">Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/alternatives-belote-coinche.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/wizard.webp" type="image/webp" /><img src="/blog/images/wizard.jpg" alt="Alternatives à la belote et à la coinche : 6 jeux de plis modernes" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">6 jeux</span>
+            <span class="blog-card-read">9 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">5 septembre 2026</p>
+            <h3>Alternatives à la belote et à la coinche : 6 jeux de plis modernes</h3>
+            <p class="blog-card-excerpt">Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes pour 3 à 6 joueurs, avec atout, annonces ou coopération : comment choisir.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-plis-comparatif.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/wizard.webp" type="image/webp" /><img src="/blog/images/wizard.jpg" alt="Jeux de plis : le comparatif et le guide pour bien choisir" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">6 jeux</span>
+            <span class="blog-card-read">9 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">29 mai 2026</p>
+            <h3>Jeux de plis : le comparatif et le guide pour bien choisir</h3>
+            <p class="blog-card-excerpt">Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-bluff-pari.html" class="blog-card" data-category="Cartes">
+          <div class="blog-card-image">
+            <picture><source srcset="/boite-recto-kyran.webp" type="image/webp" /><img src="/boite-recto-kyran.jpg" alt="Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cartes</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">23 mai 2026</p>
+            <h3>Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester</h3>
+            <p class="blog-card-excerpt">Bluff pur, pari sur ses plis ou traîtres cachés : huit jeux de cartes pour chaque type de tension, de Skull et Coup à Saboteur, Bang! et KYRAN.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-brise-glace-afterwork.html" class="blog-card" data-category="Soirée">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/just-one.webp" type="image/webp" /><img src="/blog/images/just-one.jpg" alt="Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Soirée</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">9 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">10 juin 2026</p>
-            <h3>8 jeux de cartes pour duo et couples</h3>
-            <p class="blog-card-excerpt">Duels et coop à deux : huit jeux pensés pour les soirées en duo.</p>
+            <p class="blog-card-meta">5 septembre 2026</p>
+            <h3>Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes</h3>
+            <p class="blog-card-excerpt">Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes sans gêne, expliqués en trois minutes, classés du moins au plus exposant.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-grands-groupes.html" class="blog-card" data-category="Apéro">
           <div class="blog-card-image">
-            <img src="/blog/images/6-qui-prend.jpg" alt="8 jeux de cartes pour grands groupes" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/6-qui-prend.webp" type="image/webp" /><img src="/blog/images/6-qui-prend.jpg" alt="Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Apéro</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
+            <span class="blog-card-games">9 jeux</span>
+            <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">12 juin 2026</p>
-            <h3>8 jeux de cartes pour grands groupes</h3>
-            <p class="blog-card-excerpt">Six, huit, dix joueurs : huit jeux qui tiennent la cadence sans exclure personne.</p>
+            <h3>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</h3>
+            <p class="blog-card-excerpt">Quels jeux choisir à 8 joueurs ou plus ? 9 jeux de cartes qui passent à l’échelle, avec le plafond de joueurs de chacun et la limite de KYRAN (6).</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/cadeau-noel.html" class="blog-card" data-category="Cadeaux">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/hanabi.webp" type="image/webp" /><img src="/blog/images/hanabi.jpg" alt="Jeux de cartes à offrir à Noël : 8 idées selon le destinataire" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cadeaux</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">11 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">11 mai 2026</p>
+            <h3>Jeux de cartes à offrir à Noël : 8 idées selon le destinataire</h3>
+            <p class="blog-card-excerpt">Quel jeu offrir à Noël ? Huit idées classées par destinataire (tablée familiale, ado, couple, collègue), avec durée de partie et budget.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/cadeau-anniversaire.html" class="blog-card" data-category="Cadeaux">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/love-letter.webp" type="image/webp" /><img src="/blog/images/love-letter.jpg" alt="Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cadeaux</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">9 mai 2026</p>
+            <h3>Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget</h3>
+            <p class="blog-card-excerpt">Quel jeu offrir pour un anniversaire ? Huit idées triées par budget, du petit cadeau à la cagnotte collective, jouables dès le soir même.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-cartes-pas-chers.html" class="blog-card" data-category="Cartes">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/uno.webp" type="image/webp" /><img src="/blog/images/uno.jpg" alt="Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cartes</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">13 mai 2026</p>
+            <h3>Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent</h3>
+            <p class="blog-card-excerpt">Huit jeux de cartes à moins de 20 €, jugés sur le rapport qualité-prix et la rejouabilité : prix, nombre de joueurs et défauts de chacun.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-30-minutes.html" class="blog-card" data-category="Soirée">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/skyjo.webp" type="image/webp" /><img src="/blog/images/skyjo.jpg" alt="Jeux de cartes de 30 minutes ou moins : 9 parties express" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Soirée</span>
+            <span class="blog-card-games">9 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">19 mai 2026</p>
+            <h3>Jeux de cartes de 30 minutes ou moins : 9 parties express</h3>
+            <p class="blog-card-excerpt">Neuf jeux de cartes de 15 à 30 minutes, triés par durée : explication, nombre de joueurs et enchaînement de manches pour des soirées express.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-vacances-voyage.html" class="blog-card" data-category="Cartes">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/love-letter.webp" type="image/webp" /><img src="/blog/images/love-letter.jpg" alt="Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cartes</span>
+            <span class="blog-card-games">9 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">27 mai 2026</p>
+            <h3>Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter</h3>
+            <p class="blog-card-excerpt">Neuf jeux de cartes compacts pour la plage, le camping, la terrasse ou le train : encombrement, vent, parties reprises et jeux addictifs.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-famille.html" class="blog-card" data-category="Famille">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/dixit.webp" type="image/webp" /><img src="/blog/images/dixit.jpg" alt="Jeux de société en famille : 8 jeux de cartes dès 8 ans" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Famille</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">11 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">7 mai 2026</p>
+            <h3>Jeux de société en famille : 8 jeux de cartes dès 8 ans</h3>
+            <p class="blog-card-excerpt">Dixit, Timeline, Dobble, Skyjo… 8 jeux de cartes où enfants et adultes jouent à armes égales, avec des parties qui finissent avant le coucher.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-debutants-adultes.html" class="blog-card" data-category="Famille">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/timeline.webp" type="image/webp" /><img src="/blog/images/timeline.jpg" alt="Jeux de société pour débutants adultes : par où commencer" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Famille</span>
+            <span class="blog-card-games">8 jeux</span>
+            <span class="blog-card-read">10 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">25 mai 2026</p>
+            <h3>Jeux de société pour débutants adultes : par où commencer</h3>
+            <p class="blog-card-excerpt">Pli, pioche, défausse, draft : le jargon traduit, puis 8 jeux de cartes faciles rangés en trois étapes pour apprendre sans se sentir perdu.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-sans-elimination.html" class="blog-card" data-category="Famille">
           <div class="blog-card-image">
-            <img src="/blog/images/skyjo.jpg" alt="8 jeux sans élimination frustrante" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/skyjo.webp" type="image/webp" /><img src="/blog/images/skyjo.jpg" alt="Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Famille</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">9 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">14 juin 2026</p>
-            <h3>8 jeux sans élimination frustrante</h3>
-            <p class="blog-card-excerpt">Tout le monde joue jusqu'à la fin : huit titres conviviaux sans élimination précoce.</p>
+            <h3>Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout</h3>
+            <p class="blog-card-excerpt">Personne ne regarde les autres jouer : 8 jeux de cartes sans joueur éliminé, avec pour chacun la condition exacte qui met fin à la partie.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-ete-terrasse.html" class="blog-card" data-category="Apéro">
+        <a href="/blog/jeux-coop-cartes.html" class="blog-card" data-category="Famille">
           <div class="blog-card-image">
-            <img src="/blog/images/jungle-speed.jpg" alt="8 jeux de cartes pour l'été en terrasse" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Apéro</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">8 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">16 juin 2026</p>
-            <h3>8 jeux de cartes pour l'été en terrasse</h3>
-            <p class="blog-card-excerpt">Courts, visuels, faciles à lancer dehors : la sélection terrasse/été.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-strategie-legere.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/star-realms.jpg" alt="8 jeux de stratégie légère en cartes" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">18 juin 2026</p>
-            <h3>8 jeux de stratégie légère en cartes</h3>
-            <p class="blog-card-excerpt">Réfléchir sans se prendre la tête : huit jeux stratégiques mais accessibles.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-ambiance-party.html" class="blog-card" data-category="Soirée">
-          <div class="blog-card-image">
-            <img src="/blog/images/dobble.jpg" alt="8 jeux ambiance party qui marchent vraiment" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">20 juin 2026</p>
-            <h3>8 jeux ambiance party qui marchent vraiment</h3>
-            <p class="blog-card-excerpt">Rythme, interaction et fous rires : huit party games testés en soirée.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-comme-skull.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/skull.jpg" alt="8 jeux comme Skull pour fans de bluff" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">9 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">22 juin 2026</p>
-            <h3>8 jeux comme Skull pour fans de bluff</h3>
-            <p class="blog-card-excerpt">Bluff, tension et lectures psychologiques : huit alternatives à Skull.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-draft-encheres.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/for-sale.jpg" alt="8 jeux de draft et enchères en cartes" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
+            <picture><source srcset="/blog/images/the-crew.webp" type="image/webp" /><img src="/blog/images/the-crew.jpg" alt="Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Famille</span>
+            <span class="blog-card-games">7 jeux</span>
             <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">24 juin 2026</p>
-            <h3>8 jeux de draft et enchères en cartes</h3>
-            <p class="blog-card-excerpt">Draft malin et enchères tendues : huit jeux pour amateurs de choix tactiques.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-trahison-cachee.html" class="blog-card" data-category="Soirée">
-          <div class="blog-card-image">
-            <img src="/blog/images/saboteur.jpg" alt="8 jeux de trahison cachée et bluff" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">26 juin 2026</p>
-            <h3>8 jeux de trahison cachée et bluff</h3>
-            <p class="blog-card-excerpt">Rôles secrets et accusations : huit jeux pour groupes qui aiment la tension sociale.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-classiques-modernes.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/uno.jpg" alt="8 classiques modernes du jeu de cartes" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">8 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">28 juin 2026</p>
-            <h3>8 classiques modernes du jeu de cartes</h3>
-            <p class="blog-card-excerpt">Incontournables toujours efficaces : huit classiques modernes pour toute ludothèque.</p>
+            <p class="blog-card-meta">8 juin 2026</p>
+            <h3>Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres</h3>
+            <p class="blog-card-excerpt">Hanabi, The Crew, The Mind, The Game, Letter Jam, Just One : 7 jeux de cartes coopératifs comparés selon la façon dont on a le droit de communiquer.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-memoire-concentration.html" class="blog-card" data-category="Famille">
           <div class="blog-card-image">
-            <img src="/blog/images/the-mind.jpg" alt="8 jeux de mémoire et concentration" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/the-mind.webp" type="image/webp" /><img src="/blog/images/the-mind.jpg" alt="Jeux de cartes de mémoire et de concentration : 8 choix" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Famille</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">9 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">30 juin 2026</p>
-            <h3>8 jeux de mémoire et concentration</h3>
-            <p class="blog-card-excerpt">Attention et mémoire sans ennui : huit jeux dynamiques et rejouables.</p>
+            <h3>Jeux de cartes de mémoire et de concentration : 8 choix</h3>
+            <p class="blog-card-excerpt">Compter les cartes, retenir une défausse, tenir un rythme : 8 jeux de cartes qui sollicitent l’attention, classés selon ce qu’ils font retenir.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/variantes-skyjo.html" class="blog-card" data-category="Alternatives">
+        <a href="/blog/jeux-duo-couples.html" class="blog-card" data-category="Soirée">
           <div class="blog-card-image">
-            <img src="/blog/images/skyjo.jpg" alt="Variantes Skyjo : 5 façons de réinventer vos parties" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
+            <picture><source srcset="/blog/images/lost-cities.webp" type="image/webp" /><img src="/blog/images/lost-cities.jpg" alt="Jeux de cartes à deux : 8 idées pour un duo ou un couple" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Soirée</span>
             <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">11 min</span>
+            <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>Variantes Skyjo : 5 façons de réinventer vos parties</h3>
-            <p class="blog-card-excerpt">Vous maîtrisez Skyjo sur le bout des doigts ? Découvrez 5 variantes officielles et maison pour relancer la compétition.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-cartes-5-joueurs.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/blog/images/skull.jpg" alt="Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas</h3>
-            <p class="blog-card-excerpt">Trouver un bon jeu de cartes à 5 joueurs sans temps mort est un vrai défi. Voici 8 jeux testés pour des parties fluides.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-comme-6-qui-prend.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/6-qui-prend.jpg" alt="8 jeux de cartes comme 6 qui prend pour amateurs de coups bas" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">11 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes comme 6 qui prend pour amateurs de coups bas</h3>
-            <p class="blog-card-excerpt">Vous adorez piéger vos adversaires dans 6 qui prend ? Découvrez 8 jeux de cartes où anticipation et coups bas font la loi.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/alternatives-belote-coinche.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/wizard.jpg" alt="Marre de la belote ? 7 jeux de plis modernes à tester d'urgence" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>Marre de la belote ? 7 jeux de plis modernes à tester d'urgence</h3>
-            <p class="blog-card-excerpt">Envie de retrouver la saveur des atouts et des levées sans contraintes rigides ? Voici 7 jeux de plis modernes conviviaux.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-comme-the-crew.html" class="blog-card" data-category="Alternatives">
-          <div class="blog-card-image">
-            <img src="/blog/images/the-crew.jpg" alt="8 jeux de cartes comme The Crew : coopératifs malins et jeux de plis" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes comme The Crew : coopératifs malins et jeux de plis</h3>
-            <p class="blog-card-excerpt">Après avoir exploré l'espace ou les abysses avec The Crew, prolongez le plaisir avec 8 jeux coopératifs de levées.</p>
+            <p class="blog-card-meta">10 juin 2026</p>
+            <h3>Jeux de cartes à deux : 8 idées pour un duo ou un couple</h3>
+            <p class="blog-card-excerpt">Duel ou coopération ? Lost Cities, The Crew, Love Letter et cinq autres jeux de cartes pour deux, avec le format qui convient à une soirée calme en couple.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-cartes-4-joueurs.html" class="blog-card" data-category="Cartes">
           <div class="blog-card-image">
-            <img src="/blog/images/love-letter.jpg" alt="8 jeux de cartes incontournables à 4 joueurs pour vos soirées" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/love-letter.webp" type="image/webp" /><img src="/blog/images/love-letter.jpg" alt="Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Cartes</span>
             <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
+            <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes incontournables à 4 joueurs pour vos soirées</h3>
-            <p class="blog-card-excerpt">À 4 autour de la table, la dynamique de jeu est idéale. Découvrez notre sélection des 8 meilleurs jeux de cartes à 4 joueurs.</p>
+            <h3>Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi</h3>
+            <p class="blog-card-excerpt">Deux contre deux ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et quatre autres jeux de cartes pour une table de quatre, avec ce qui change à ce format.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-comme-exploding-kittens.html" class="blog-card" data-category="Alternatives">
+        <a href="/blog/jeux-cartes-5-joueurs.html" class="blog-card" data-category="Cartes">
           <div class="blog-card-image">
-            <img src="/blog/images/bang.jpg" alt="8 jeux de cartes déjantés comme Exploding Kittens" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Alternatives</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes déjantés comme Exploding Kittens</h3>
-            <p class="blog-card-excerpt">Fan de coups tordus et de cartes pièges ? Voici 8 jeux de cartes rapides, explosifs et hilarants dans l'esprit d'Exploding Kittens.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/guide-jeux-de-plis.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/boite-recto-kyran.png" alt="Guide complet du jeu de plis : atout, défausse, coupe et stratégie" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/skull.webp" type="image/webp" /><img src="/blog/images/skull.jpg" alt="Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Cartes</span>
             <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">13 min</span>
+            <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>Guide complet du jeu de plis : atout, défausse, coupe et stratégie</h3>
-            <p class="blog-card-excerpt">Comprendre les jeux de levées de A à Z : règles fondamentales, différences atout/défausse et top des jeux modernes.</p>
+            <h3>Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas</h3>
+            <p class="blog-card-excerpt">À cinq, la table est impaire et les tours s'allongent. 6 qui prend !, For Sale, Saboteur, KYRAN : 8 jeux de cartes vraiment calibrés pour cinq joueurs.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-        <a href="/blog/jeux-brise-glace-afterwork.html" class="blog-card" data-category="Soirée">
+        <a href="/blog/jeux-strategie-legere.html" class="blog-card" data-category="Cartes">
           <div class="blog-card-image">
-            <img src="/blog/images/just-one.jpg" alt="8 jeux de cartes brise-glace pour afterwork et soirées d'équipe" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Soirée</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes brise-glace pour afterwork et soirées d'équipe</h3>
-            <p class="blog-card-excerpt">Détendre l'atmosphère sans aucun malaise : sélection de 8 jeux de cartes immédiats et fédérateurs pour vos afterworks.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
-        <a href="/blog/jeux-cartes-addictifs-poche.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/boite-recto-kyran.jpg" alt="8 jeux de cartes ultra addictifs au format poche à emporter partout" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/star-realms.webp" type="image/webp" /><img src="/blog/images/star-realms.jpg" alt="Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Cartes</span>
             <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">12 min</span>
+            <span class="blog-card-read">10 min</span>
           </div>
           <div class="blog-card-body">
-            <p class="blog-card-meta">5 septembre 2026</p>
-            <h3>8 jeux de cartes ultra addictifs au format poche à emporter partout</h3>
-            <p class="blog-card-excerpt">Petits formats, plaisir immédiat et rejouabilité infinie : voici 8 jeux de cartes compacts qui ne quitteront plus votre sac.</p>
+            <p class="blog-card-meta">18 juin 2026</p>
+            <h3>Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes</h3>
+            <p class="blog-card-excerpt">Lost Cities, Schotten Totten, Parade, Oh Hell!, KYRAN : 8 jeux de cartes classés par profondeur et par part de chance, avec des règles qui tiennent en dix minutes.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+        <a href="/blog/jeux-draft-encheres.html" class="blog-card" data-category="Cartes">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/for-sale.webp" type="image/webp" /><img src="/blog/images/for-sale.jpg" alt="Jeux de draft et d'enchères en cartes : choisir, passer, miser" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Cartes</span>
+            <span class="blog-card-games">7 jeux</span>
+            <span class="blog-card-read">9 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">24 juin 2026</p>
+            <h3>Jeux de draft et d'enchères en cartes : choisir, passer, miser</h3>
+            <p class="blog-card-excerpt">Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-cartes-6-joueurs.html" class="blog-card" data-category="Cartes">
           <div class="blog-card-image">
-            <img src="/blog/images/6-qui-prend.jpg" alt="Top 8 des jeux de cartes à 6 joueurs sans temps mort" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/6-qui-prend.webp" type="image/webp" /><img src="/blog/images/6-qui-prend.jpg" alt="Top 8 des jeux de cartes à 6 joueurs sans temps mort" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Cartes</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">13 min</span>
@@ -993,13 +914,13 @@
           <div class="blog-card-body">
             <p class="blog-card-meta">11 septembre 2026</p>
             <h3>Top 8 des jeux de cartes à 6 joueurs sans temps mort</h3>
-            <p class="blog-card-excerpt">Finis les tours interminables : découvrez 8 excellents jeux de cartes testés pour 6 joueurs alliant bluff, rapidité et fous rires.</p>
+            <p class="blog-card-excerpt">Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
         <a href="/blog/jeux-cartes-adultes.html" class="blog-card" data-category="Soirée">
           <div class="blog-card-image">
-            <img src="/blog/images/coup.jpg" alt="Top 8 des meilleurs jeux de cartes pour adultes" width="400" height="225" loading="lazy" decoding="async" />
+            <picture><source srcset="/blog/images/coup.webp" type="image/webp" /><img src="/blog/images/coup.jpg" alt="Top 8 des meilleurs jeux de cartes pour adultes" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Soirée</span>
             <span class="blog-card-games">8 jeux</span>
             <span class="blog-card-read">14 min</span>
@@ -1007,7 +928,7 @@
           <div class="blog-card-body">
             <p class="blog-card-meta">11 septembre 2026</p>
             <h3>Top 8 des meilleurs jeux de cartes pour adultes</h3>
-            <p class="blog-card-excerpt">Tension psychologique, bluff, tactique et retournements : découvrez 8 pépites modernes de jeux de cartes pour adultes.</p>
+            <p class="blog-card-excerpt">Tension psychologique, bluff, tactique et retournements : 8 jeux de cartes modernes pour adultes.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
@@ -1016,6 +937,54 @@
       </div>
     </section>
   </main>
-  <kyran-footer></kyran-footer>
+  <kyran-footer data-ssr="1">
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-col footer-col--brand">
+            <p class="footer-heading">KYRAN</p>
+            <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
+            <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <div class="footer-follow">
+              <p class="footer-follow-label">Suivez le jeu</p>
+              <a class="social-link social-link--instagram" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>@kyran.jeu</span></a>
+            </div>
+          </div>
+          <div class="footer-col footer-col--explore">
+            <p class="footer-heading">Explorer</p>
+            <p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/faq.html">FAQ</a></p><p><a href="/a-propos.html">À propos</a></p>
+          </div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que dit la science</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--contact">
+            <p class="footer-heading">Contact</p>
+            <p><a href="/regle.html">R&egrave;gles du jeu</a></p>
+            <p><a href="/minijeu.html">Dojo interactif</a></p>
+            <p><a href="/dossier-presse.html">Espace Presse</a></p>
+            <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+          </div>
+          <div class="footer-col footer-col--credits">
+            <p class="footer-heading">Cr&eacute;dits</p>
+            <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
+            <p>Auteur : Corentin Sence</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie 24-48h · 🇫🇷 Édition indépendante</p>
+          <p class="footer-seo-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/cgv.html">CGV</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/confidentialite.html">Confidentialité</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/plan-du-site.html">Plan du site</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/sitemap.xml">Sitemap</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/llms.txt">llms.txt</a>
+          </p>
+          <p class="footer-copyright">&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
+        </div>
+      </footer>
+    </kyran-footer>
 </body>
 </html>

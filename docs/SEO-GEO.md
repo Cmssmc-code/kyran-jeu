@@ -93,7 +93,7 @@ Tranchés (2 octobre 2026) :
 
 | Sujet | Décision appliquée |
 |---|---|
-| Nombre de cartes | D'après la carte de règles : 36 Nombre + 1 Mystique + 8 Pouvoir (45 cartes de jeu) + 30 Vie + cartes de règles. « 55 cartes » retiré partout (site, CGV, flux Merchant, barre de stats). Le nombre de cartes de règles n'est pas écrit (7 sur l'ancienne page, 4 sur l'annonce Amazon) : à confirmer si vous voulez le publier. |
+| Nombre de cartes | 36 Nombre + 1 Mystique + 8 Pouvoir (45 cartes de jeu) + 30 Vie + **7 cartes de règles** (confirmé par l'éditeur le 2 octobre 2026). « 55 cartes » retiré partout (site, CGV, flux Merchant, barre de stats). |
 | Avis « Amélie » | Citation supprimée de l'accueil. Les citations de Toto et Patrick sont maintenant des extraits exacts de leurs avis. |
 | Retours | Retours gratuits confirmés : CGV (art. 6), page commander, FAQ et JSON-LD alignés (`FreeReturn`). |
 | Livraison | France métropolitaine et pays limitrophes : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni (liste du flux Merchant). CGV, JSON-LD, page commander et FAQ alignés. |
@@ -105,9 +105,9 @@ Restent ouverts :
 
 | Sujet | Constat | Action |
 |---|---|---|
-| Liens externes | Recherche web faite le 2 octobre 2026 : aucune fiche Etsy, BoardGameGeek, Tric Trac, aucun blog ni test indexé. Seuls l'annonce Amazon, la chaîne YouTube (@Kyran-jeu) et la vidéo Ludovox existent. Amazon n'a pas pu être consulté (robot check) : avis et fiche non récupérés. | Créer les fiches (voir § 6) puis me donner les URL pour le `sameAs`. |
-| Etsy | Une boutique Etsy a été évoquée : aucune n'est trouvable publiquement. | Fournir l'URL de la boutique si elle existe. |
-| Date de sortie | Dossier de presse : février 2026 ; Kbis : activité depuis septembre 2025. | Confirmer la date exacte pour Wikidata et BGG. |
+| Liens externes | Fiches trouvées et ajoutées à « À propos » (références), au `sameAs` de l'accueil ou à `llms.txt` : fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran, titre « Kyran : Maître des Mystiques », 3 à 6 joueurs, 8 ans, 30 min) ; Ludochrono de Ludovox (https://ludovox.fr/ludochrono-kyran/, 31 janvier 2026) ; vidéo « kyran maître des mystiques » de la chaîne Le Pirate Ludique ; annonce Etsy ; fiche Amazon. BoardGamesFlix signale aussi une fiche Okkazeo (non vérifiée : site inaccessible depuis l'environnement de build). Toujours aucune fiche BoardGameGeek, Tric Trac ni Wikidata. Amazon, Etsy et BGG bloquent les accès automatiques : avis et fiches non récupérés. | Créer les fiches BGG / Tric Trac / Wikidata (voir § 6) puis donner les URL pour le `sameAs`. |
+| Etsy | Boutique « KyranJeu » : https://www.etsy.com/fr/shop/KyranJeu (URL fournie par l'éditeur). Annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie, 9,99 € + 2,99 € de livraison (même tarif que le site), retours et échanges acceptés. Offre Etsy dans le JSON-LD de l'accueil (livraison France), boutique dans le `sameAs` de l'Organisation. | Aucune. Délai de livraison Etsy et conditions de retour non publiés (non confirmés). |
+| Date de sortie | **31 janvier 2026** (confirmée par l'éditeur ; cohérent avec le Ludochrono de Ludovox du 31 janvier 2026). Remplace « février 2026 » du dossier de presse : accueil (`releaseDate`, `datePublished`), À propos, dossier de presse, llms.txt. Le Kbis indique une activité depuis septembre 2025. |
 | `priceValidUntil` | 2026-12-31 dans les offres JSON-LD. | À renouveler avant cette date. |
 | Origine du Tarot Africain | Aucune source sur le site : les pages restent prudentes. | Fournir une source si vous voulez répondre précisément à « tarot africain origine ». |
 | Fabrication | Un avis Amazon parle d'un jeu « imaginé en Guadeloupe et fabriqué en Chine ». Le site ne le dit pas. | À confirmer si vous voulez l'écrire dans « À propos ». |

@@ -78,7 +78,7 @@ Parier juste, bluffer ses adversaires et survivre aux manches dégressives : la 
 ```text
 Bonjour à la communauté Tric Trac,
 
-Je vous présente KYRAN, un jeu de cartes édité en février 2026 conçu pour 3 à 6 joueurs (parties de 30 min).
+Je vous présente KYRAN, un jeu de cartes sorti le 31 janvier 2026 conçu pour 3 à 6 joueurs (parties de 30 min).
 
 Amoureux des soirées Tarot Africain / Whist 22 d'enfance, j'ai voulu créer une édition moderne et épurée :
 - 45 cartes de jeu toilées (36 Nombre, 1 Mystique, 8 Pouvoir) et 30 cartes Vie, qualité casino avec univers graphique Dark & Gold par Floh.

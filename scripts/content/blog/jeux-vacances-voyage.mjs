@@ -113,7 +113,7 @@ export default {
       type: `Plis et paris`,
       pick: `Pour trois à six joueurs, avec de la place dans le coffre`,
       paragraphs: [
-        `KYRAN n’est pas un jeu de poche : plus de soixante-quinze cartes (36 cartes Nombre, une Mystique, 8 Pouvoir, 30 Vie et des cartes de règles) dans une boîte rigide. Il convient donc davantage à un séjour en gîte ou en location qu’à une randonnée. Prévoyez une table pour trois à six joueurs, une demi-heure par partie, et un âge minimum de huit ans.`,
+        `KYRAN n’est pas un jeu de poche : plus de quatre-vingts cartes (36 cartes Nombre, une Mystique, 8 Pouvoir, 30 Vie et 7 cartes de règles) dans une boîte rigide. Il convient donc davantage à un séjour en gîte ou en location qu’à une randonnée. Prévoyez une table pour trois à six joueurs, une demi-heure par partie, et un âge minimum de huit ans.`,
         `Son intérêt en vacances : l’apprentissage se prépare dans le train, grâce au <a class="text-link" href="/minijeu.html">dojo gratuit</a> ou à la vidéo de cinq minutes, puis une tablée entière découvre le principe, parier le nombre de plis avant de jouer, en une manche. KYRAN ne se joue pas à deux : pour un duo en voyage, Schotten Totten ou Love Letter sont mieux adaptés. Pour acheter, la <a class="text-link" href="/commander.html">page de commande</a> propose la boîte à 9,99 €.`
       ]
     }

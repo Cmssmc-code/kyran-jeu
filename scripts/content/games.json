@@ -1,0 +1,312 @@
+{
+  "love-letter": {
+    "name": "Love Letter",
+    "players": "2 à 4",
+    "duration": "~15 min",
+    "age": "10+",
+    "price": "~12 €",
+    "image": "/blog/images/love-letter.jpg",
+    "designer": "Seiji Kanai",
+    "year": 2012
+  },
+  "skull": {
+    "name": "Skull",
+    "players": "3 à 6",
+    "duration": "~30 min",
+    "age": "10+",
+    "price": "~15 €",
+    "image": "/blog/images/skull.jpg",
+    "designer": "Hervé Marly",
+    "year": 2011
+  },
+  "skyjo": {
+    "name": "Skyjo",
+    "players": "2 à 8",
+    "duration": "~30 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": "/blog/images/skyjo.jpg",
+    "designer": "Magilano",
+    "year": 2015
+  },
+  "hanabi": {
+    "name": "Hanabi",
+    "players": "2 à 5",
+    "duration": "~25 min",
+    "age": "8+",
+    "price": "~12 €",
+    "image": "/blog/images/hanabi.jpg",
+    "designer": "Antoine Bauza",
+    "year": 2010
+  },
+  "uno": {
+    "name": "Uno",
+    "players": "2 à 10",
+    "duration": "~20 min",
+    "age": "7+",
+    "price": "~10 €",
+    "image": "/blog/images/uno.jpg",
+    "designer": "Merle Robbins",
+    "year": 1971
+  },
+  "saboteur": {
+    "name": "Saboteur",
+    "players": "3 à 10",
+    "duration": "~30 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": "/blog/images/saboteur.jpg",
+    "designer": "Frédéric Moyersoen",
+    "year": 2004
+  },
+  "bang": {
+    "name": "Bang!",
+    "players": "4 à 7",
+    "duration": "~30 min",
+    "age": "8+",
+    "price": "~20 €",
+    "image": "/blog/images/bang.jpg",
+    "designer": "Emiliano Sciarra",
+    "year": 2002
+  },
+  "the-crew": {
+    "name": "The Crew",
+    "players": "2 à 5",
+    "duration": "~20 min",
+    "age": "10+",
+    "price": "~15 €",
+    "image": "/blog/images/the-crew.jpg",
+    "designer": "Thomas Sing",
+    "year": 2019
+  },
+  "timeline": {
+    "name": "Timeline",
+    "players": "2 à 8",
+    "duration": "~15 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": "/blog/images/timeline.jpg",
+    "designer": "Frédéric Henry",
+    "year": 2011
+  },
+  "dobble": {
+    "name": "Dobble",
+    "players": "2 à 8",
+    "duration": "~15 min",
+    "age": "6+",
+    "price": "~12 €",
+    "image": "/blog/images/dobble.jpg",
+    "designer": "Denis Blanchot",
+    "year": 2009
+  },
+  "jungle-speed": {
+    "name": "Jungle Speed",
+    "players": "2 à 10",
+    "duration": "~15 min",
+    "age": "7+",
+    "price": "~15 €",
+    "image": "/blog/images/jungle-speed.jpg",
+    "designer": "Thomas Vuarchex",
+    "year": 1991
+  },
+  "wizard": {
+    "name": "Wizard",
+    "players": "3 à 6",
+    "duration": "~45 min",
+    "age": "10+",
+    "price": "~15 €",
+    "image": "/blog/images/wizard.jpg",
+    "designer": "Ken Fisher",
+    "year": 1984
+  },
+  "codenames": {
+    "name": "Codenames",
+    "players": "2 à 8+",
+    "duration": "~15 min",
+    "age": "10+",
+    "price": "~20 €",
+    "image": "/blog/images/codenames.jpg",
+    "designer": "Vlaada Chvátil",
+    "year": 2015
+  },
+  "6-qui-prend": {
+    "name": "6 qui prend !",
+    "players": "2 à 10",
+    "duration": "~45 min",
+    "age": "10+",
+    "price": "~15 €",
+    "image": "/blog/images/6-qui-prend.jpg",
+    "designer": "Wolfgang Kramer",
+    "year": 1994
+  },
+  "dixit": {
+    "name": "Dixit",
+    "players": "3 à 6",
+    "duration": "~30 min",
+    "age": "8+",
+    "price": "~30 €",
+    "image": "/blog/images/dixit.jpg",
+    "designer": "Jean-Louis Roubira",
+    "year": 2008
+  },
+  "lost-cities": {
+    "name": "Lost Cities",
+    "players": "2",
+    "duration": "~30 min",
+    "age": "10+",
+    "price": "~15 €",
+    "image": "/blog/images/lost-cities.jpg",
+    "designer": "Reiner Knizia",
+    "year": 1999
+  },
+  "parade": {
+    "name": "Parade",
+    "players": "2 à 6",
+    "duration": "~45 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": "/blog/images/parade.jpg",
+    "designer": "Naoki Homma",
+    "year": 2007
+  },
+  "the-mind": {
+    "name": "The Mind",
+    "players": "2 à 4",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~12 €",
+    "image": "/blog/images/the-mind.jpg",
+    "designer": "Wolfgang Warsch",
+    "year": 2018
+  },
+  "star-realms": {
+    "name": "Star Realms",
+    "players": "2",
+    "duration": "~20 min",
+    "age": "12+",
+    "price": "~18 €",
+    "image": "/blog/images/star-realms.jpg",
+    "designer": "Robert Dougherty",
+    "year": 2014
+  },
+  "no-thanks": {
+    "name": "No Thanks!",
+    "players": "3 à 7",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~12 €",
+    "image": "/blog/images/no-thanks.jpg",
+    "designer": "Thorsten Gimmler",
+    "year": 2004
+  },
+  "schotten-totten": {
+    "name": "Schotten Totten",
+    "players": "2",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": "/blog/images/schotten-totten.jpg",
+    "designer": "Reiner Knizia",
+    "year": 1999
+  },
+  "sushi-go": {
+    "name": "Sushi Go!",
+    "players": "2 à 5",
+    "duration": "~15 min",
+    "age": "8+",
+    "price": "~13 €",
+    "image": "/blog/images/sushi-go.jpg",
+    "designer": "Phil Walker-Harding",
+    "year": 2013
+  },
+  "colt-express": {
+    "name": "Colt Express",
+    "players": "2 à 6",
+    "duration": "~40 min",
+    "age": "10+",
+    "price": "~30 €",
+    "image": "/blog/images/colt-express.jpg",
+    "designer": "Christophe Raimbault",
+    "year": 2014
+  },
+  "oh-hell": {
+    "name": "Oh Hell!",
+    "players": "3 à 7",
+    "duration": "~45 min",
+    "age": "10+",
+    "price": "~10 €",
+    "image": "/blog/images/oh-hell.jpg",
+    "designer": "Traditionnel",
+    "year": null
+  },
+  "letter-jam": {
+    "name": "Letter Jam",
+    "players": "2 à 6",
+    "duration": "~45 min",
+    "age": "10+",
+    "price": "~22 €",
+    "image": "/blog/images/letter-jam.jpg",
+    "designer": "Ondra Skoupý",
+    "year": 2019
+  },
+  "coup": {
+    "name": "Coup",
+    "players": "2 à 6",
+    "duration": "~15 min",
+    "age": "10+",
+    "price": "~14 €",
+    "image": "/blog/images/coup.jpg",
+    "designer": "Rikki Tahta",
+    "year": 2012
+  },
+  "just-one": {
+    "name": "Just One",
+    "players": "3 à 7",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~22 €",
+    "image": "/blog/images/just-one.jpg",
+    "designer": "Steven Du Vernet",
+    "year": 2018
+  },
+  "for-sale": {
+    "name": "For Sale",
+    "players": "3 à 6",
+    "duration": "~30 min",
+    "age": "10+",
+    "price": "~18 €",
+    "image": "/blog/images/for-sale.jpg",
+    "designer": "Stefan Dorra",
+    "year": 1997
+  },
+  "the-game": {
+    "name": "The Game",
+    "players": "1 à 5",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~12 €",
+    "image": "/blog/images/the-game.jpg",
+    "designer": "Steffen Benndorf",
+    "year": 2015
+  },
+  "llama": {
+    "name": "Llama",
+    "players": "2 à 6",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~12 €",
+    "image": "/blog/images/llama.jpg",
+    "designer": "Reiner Knizia",
+    "year": 2019
+  },
+  "monopoly-deal": {
+    "name": "Monopoly Deal",
+    "players": "2 à 5",
+    "duration": "~15 min",
+    "age": "8+",
+    "price": "~9 €",
+    "image": "/blog/images/monopoly-deal.jpg",
+    "designer": "Hasbro",
+    "year": 2014
+  }
+}

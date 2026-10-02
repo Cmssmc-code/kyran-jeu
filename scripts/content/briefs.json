@@ -1,0 +1,894 @@
+[
+  {
+    "slug": "jeux-comme-skyjo",
+    "angle": "Vous aimez Skyjo (score à minimiser, prise de risque, pioche/défausse, jusqu'à 8 joueurs, aucune élimination) : 10 alternatives classées selon CE QUE vous aimiez dans Skyjo. Ne listez pas Skyjo lui-même (c'est la référence). Ajoutez une section extraSections « Variantes de règles pour relancer Skyjo » (5 variantes de règles maison/officielles, reprendre et réécrire celles de l'ancien article variantes-skyjo : mêmes cartes Skyjo, autres conditions).",
+    "suggest": [
+      "llama",
+      "no-thanks",
+      "6-qui-prend",
+      "parade",
+      "love-letter",
+      "uno",
+      "the-mind",
+      "sushi-go",
+      "lost-cities",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 10,
+    "mergedFrom": [
+      "variantes-skyjo"
+    ],
+    "queries": [
+      "jeu comme skyjo",
+      "jeu style skyjo",
+      "jeu qui ressemble au skyjo",
+      "jeux similaires skyjo",
+      "variantes skyjo",
+      "règle alternative skyjo"
+    ],
+    "notes": "Page n°1 en impressions du site (4 700). Titre cible : « 10 jeux comme Skyjo (2026) : les meilleures alternatives ». KYRAN = le choix pour ceux qui veulent plus de tactique que de chance.",
+    "date": "2026-05-01",
+    "heroImage": "/blog/images/skyjo.jpg",
+    "heroCaption": "Skyjo et ses alternatives — jeux de cartes accessibles.",
+    "oldTitle": "10 jeux de société comme Skyjo",
+    "oldMetaTitle": "10 jeux comme Skyjo — alternatives cartes conviviales",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-comme-dixit",
+    "angle": "Vous aimez Dixit (imagination, narration, indices subtils, jeu à voter) : 10 jeux qui prolongent cette sensation (association, indices, déduction légère). Précisez pour chacun ce qui rappelle Dixit et ce qui change.",
+    "suggest": [
+      "just-one",
+      "codenames",
+      "letter-jam",
+      "timeline",
+      "the-mind",
+      "skull",
+      "coup",
+      "the-crew",
+      "sushi-go",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 10,
+    "mergedFrom": [],
+    "queries": [
+      "jeux comme dixit",
+      "alternative dixit",
+      "jeu qui ressemble à dixit"
+    ],
+    "notes": "Page indexée avec trafic (643 impressions, pos 5,7). KYRAN : plus tactique, moins narratif — dites-le.",
+    "date": "2026-06-02",
+    "heroImage": "/blog/images/dixit.jpg",
+    "heroCaption": "Dixit inspire une nouvelle génération de jeux créatifs.",
+    "oldTitle": "10 jeux comme Dixit pour varier vos soirées",
+    "oldMetaTitle": "10 jeux comme Dixit — alternatives créatives et conviviales",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-comme-codenames",
+    "angle": "Vous aimez Codenames (équipes, indices à un mot, tension de déduction) : 8 jeux d'association d'idées, d'équipe ou de déduction verbale.",
+    "suggest": [
+      "just-one",
+      "dixit",
+      "letter-jam",
+      "the-mind",
+      "coup",
+      "saboteur",
+      "skull",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux comme codenames",
+      "alternative codenames"
+    ],
+    "notes": "Page indexée avec trafic (1 010 impressions, pos 6,1). KYRAN est individuel : précisez que ce n'est pas un jeu d'équipe.",
+    "date": "2026-06-04",
+    "heroImage": "/blog/images/codenames.jpg",
+    "heroCaption": "Codenames, roi des jeux d'équipes rapides.",
+    "oldTitle": "8 jeux comme Codenames à essayer",
+    "oldMetaTitle": "Jeux comme Codenames — 8 alternatives équipe et déduction",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-comme-6-qui-prend",
+    "angle": "Vous aimez 6 qui prend ! (choix simultané, cartes en rangées, pénalités, jusqu'à 10 joueurs) : alternatives où l'on joue en même temps ou où le chaos domine.",
+    "suggest": [
+      "no-thanks",
+      "llama",
+      "parade",
+      "the-game",
+      "skull",
+      "for-sale",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 7,
+    "mergedFrom": [],
+    "queries": [
+      "jeu comme 6 qui prend",
+      "alternative 6 qui prend"
+    ],
+    "notes": "",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/6-qui-prend.jpg",
+    "heroCaption": "Des bœufs et des pièges — les meilleures alternatives à 6 qui prend.",
+    "oldTitle": "8 jeux de cartes comme 6 qui prend pour amateurs de coups bas",
+    "oldMetaTitle": "8 jeux de cartes comme 6 qui prend — vacheries, bluff et calcul",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-comme-exploding-kittens",
+    "angle": "Vous aimez Exploding Kittens (pioche-ou-pas, cartes d'action, coups bas, élimination humoristique) : jeux de cartes à pièges, éliminations et coups de théâtre. Exploding Kittens n'est pas dans games.json : citez-le seulement comme référence.",
+    "suggest": [
+      "bang",
+      "coup",
+      "jungle-speed",
+      "saboteur",
+      "uno",
+      "skull",
+      "colt-express",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeu comme exploding kittens",
+      "alternative exploding kittens"
+    ],
+    "notes": "",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/bang.jpg",
+    "heroCaption": "Des cartes explosives pour des soirées pleines de rires.",
+    "oldTitle": "8 jeux de cartes déjantés comme Exploding Kittens",
+    "oldMetaTitle": "8 jeux de cartes déjantés comme Exploding Kittens — pièges et rigolade",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "alternatives-wizard",
+    "angle": "Vous connaissez Wizard par cœur : 8 jeux de plis à annonce ou proches, pour renouveler vos soirées (même famille : prédire ses plis). Soyez précis sur les différences de règles.",
+    "suggest": [
+      "oh-hell",
+      "6-qui-prend",
+      "the-crew",
+      "parade",
+      "hanabi",
+      "love-letter",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 7,
+    "mergedFrom": [],
+    "queries": [
+      "alternative wizard",
+      "jeu comme wizard",
+      "jeu de cartes pari nombre de plis"
+    ],
+    "notes": "",
+    "date": "2026-05-15",
+    "heroImage": "/blog/images/wizard.jpg",
+    "heroCaption": "Wizard — la référence des jeux de plis.",
+    "oldTitle": "Alternatives à Wizard pour fans de plis",
+    "oldMetaTitle": "Alternatives à Wizard — jeux de plis et paris",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "alternatives-uno",
+    "angle": "Uno vous a lassé : alternatives à défausse rapide, couleurs et coups bas, du plus enfantin au plus tendu.",
+    "suggest": [
+      "jungle-speed",
+      "dobble",
+      "love-letter",
+      "llama",
+      "monopoly-deal",
+      "skyjo",
+      "saboteur",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [
+      "jeux-classiques-modernes"
+    ],
+    "queries": [
+      "alternative uno",
+      "jeu comme uno",
+      "jeux classiques modernes"
+    ],
+    "notes": "Page indexée. Ajoutez une section extraSections « Classiques et modernes : par où commencer ? » (reprendre l'esprit de l'ancien article jeux-classiques-modernes, réécrit).",
+    "date": "2026-05-17",
+    "heroImage": "/blog/images/uno.jpg",
+    "heroCaption": "Uno — et au-delà.",
+    "oldTitle": "Jeux à essayer si vous aimez Uno",
+    "oldMetaTitle": "Alternatives à Uno — 8 jeux rapides et fun",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "alternatives-belote-coinche",
+    "angle": "Vous jouez à la belote ou à la coinche : jeux de plis modernes pour sortir de la routine (équipes vs individuel, atout, annonces).",
+    "suggest": [
+      "wizard",
+      "oh-hell",
+      "the-crew",
+      "schotten-totten",
+      "skull",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 6,
+    "mergedFrom": [],
+    "queries": [
+      "jeu comme la belote",
+      "alternative belote coinche",
+      "jeu de plis moderne"
+    ],
+    "notes": "Parlez aussi du Tarot Africain (lien /tarot-africain.html) comme jeu de plis à annonce traditionnel.",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/wizard.jpg",
+    "heroCaption": "Des cartes modernes pour renouveler le plaisir traditionnel des plis.",
+    "oldTitle": "Marre de la belote ? 7 jeux de plis modernes à tester d'urgence",
+    "oldMetaTitle": "Alternatives à la belote et à la coinche : 7 jeux de plis modernes",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-plis-comparatif",
+    "angle": "Comparatif des jeux de plis, point d'entrée du sujet : annonce de plis (Wizard, Oh Hell, Tarot Africain, KYRAN, Whist), plis sans annonce (The Crew coopératif, 6 qui prend / Parade en variantes), tableau comparatif et guide « comprendre les jeux de plis » (atout, suivre la couleur, annonce, contrat). Absorbe l'ancien guide-jeux-de-plis et la page comparatif-jeux-plis.html.",
+    "suggest": [
+      "wizard",
+      "oh-hell",
+      "6-qui-prend",
+      "the-crew",
+      "parade",
+      "schotten-totten",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 7,
+    "mergedFrom": [
+      "guide-jeux-de-plis",
+      "comparatif-jeux-plis.html"
+    ],
+    "queries": [
+      "jeu de carte pari nombre de plis",
+      "jeu de carte annonce nombre de plis",
+      "jeu de plis",
+      "règle jeu de plis",
+      "tarot africain"
+    ],
+    "notes": "Répondez explicitement à « jeu de cartes où l'on annonce son nombre de plis ». Lien vers /tarot-africain.html obligatoire. Les jeux non présents dans games.json (Whist, Tarot Africain, Belote) peuvent être traités dans criteria/extraSections, pas comme fiches.",
+    "date": "2026-05-29",
+    "heroImage": "/blog/images/wizard.jpg",
+    "heroCaption": "Wizard — point de départ du comparatif.",
+    "oldTitle": "Guide des jeux de plis : lequel choisir ?",
+    "oldMetaTitle": "Jeux de plis comparatif — lequel choisir ?",
+    "category": "Alternatives"
+  },
+  {
+    "slug": "jeux-bluff-pari",
+    "angle": "Jeux de bluff, de pari et de rôles cachés : trois familles (bluff pur : Skull, Coup ; pari/annonce : KYRAN, Wizard ; traîtres cachés : Saboteur, Bang). Absorbe les anciens jeux-trahison-cachee et jeux-comme-skull : intégrez une section sur « les jeux comme Skull ».",
+    "suggest": [
+      "skull",
+      "coup",
+      "saboteur",
+      "bang",
+      "wizard",
+      "for-sale",
+      "colt-express",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [
+      "jeux-trahison-cachee",
+      "jeux-comme-skull"
+    ],
+    "queries": [
+      "jeux de bluff",
+      "jeu comme skull",
+      "jeux de rôles cachés",
+      "jeu de cartes pari"
+    ],
+    "notes": "",
+    "date": "2026-05-23",
+    "heroImage": "/boite-recto-kyran.png",
+    "heroCaption": "KYRAN — paris, plis et manche Mystique.",
+    "oldTitle": "Jeux de bluff et de pari à table",
+    "oldMetaTitle": "Jeux de bluff et pari — 8 titres tendus",
+    "category": "Cartes"
+  },
+  {
+    "slug": "meilleurs-jeux-apero",
+    "angle": "Jeux de cartes pour l'apéro : contraintes concrètes (table encombrée de verres, invités qui arrivent par vagues, bruit, explication en 2 minutes, manches courtes qu'on peut quitter). Lien vers /jeu-apero.html (page dédiée KYRAN).",
+    "suggest": [
+      "jungle-speed",
+      "uno",
+      "dobble",
+      "skull",
+      "just-one",
+      "love-letter",
+      "bang",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeu de carte apéro",
+      "jeux de cartes apéro",
+      "jeu apéro entre amis"
+    ],
+    "notes": "Bing : positions 1-5 sur « jeu de carte apéro » — page à préserver et approfondir.",
+    "date": "2026-05-03",
+    "heroImage": "/blog/images/jungle-speed.jpg",
+    "heroCaption": "Jungle Speed — le reflexe en apéro.",
+    "oldTitle": "Les meilleurs jeux de cartes pour apéro",
+    "oldMetaTitle": "Meilleurs jeux de cartes apéro — sélection 2026",
+    "category": "Apéro"
+  },
+  {
+    "slug": "jeux-soiree-amis",
+    "angle": "Jeux pour une soirée entre amis, hub principal « jeux entre amis / jeu soirée amis / ambiance / party / adultes » (absorbe l'ancien jeux-ambiance-party). Segmentez par type de groupe (calme, bruyant, compétitif, mixte) et par durée de soirée.",
+    "suggest": [
+      "codenames",
+      "skull",
+      "just-one",
+      "dixit",
+      "saboteur",
+      "bang",
+      "colt-express",
+      "coup",
+      "dobble",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 10,
+    "mergedFrom": [
+      "jeux-ambiance-party"
+    ],
+    "queries": [
+      "jeux entre amis",
+      "jeu soirée amis",
+      "jeux soirée entre amis",
+      "jeux ambiance soirée"
+    ],
+    "notes": "Position 14,8 pour 1 610 impressions : à réécrire en priorité. Réponse directe dès l'intro (3 recommandations selon le groupe).",
+    "date": "2026-05-05",
+    "heroImage": "/blog/images/codenames.jpg",
+    "heroCaption": "Codenames — déduction et fous rires en équipe.",
+    "oldTitle": "Meilleurs jeux entre amis pour une soirée",
+    "oldMetaTitle": "Jeux soirée entre amis — 8 titres testés",
+    "category": "Soirée"
+  },
+  {
+    "slug": "jeux-brise-glace-afterwork",
+    "angle": "Jeux brise-glace pour afterwork, soirées d'équipe, rencontres : groupes qui ne se connaissent pas bien, pas de règles complexes, pas de gêne.",
+    "suggest": [
+      "just-one",
+      "codenames",
+      "dixit",
+      "dobble",
+      "timeline",
+      "love-letter",
+      "sushi-go",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeu brise glace soirée",
+      "jeu afterwork",
+      "jeu brise glace adulte"
+    ],
+    "notes": "",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/just-one.jpg",
+    "heroCaption": "Des cartes conviviales pour réchauffer n'importe quel afterwork.",
+    "oldTitle": "8 jeux de cartes brise-glace pour afterwork et soirées d'équipe",
+    "oldMetaTitle": "8 jeux de cartes brise-glace idéaux pour un afterwork ou une soirée",
+    "category": "Soirée"
+  },
+  {
+    "slug": "jeux-grands-groupes",
+    "angle": "Jeux pour 7, 8 joueurs et plus : ce qui passe à l'échelle (simultané, équipes, pas de temps mort). Précisez le plafond de joueurs de chaque jeu et la limite de KYRAN (6 max).",
+    "suggest": [
+      "uno",
+      "jungle-speed",
+      "dobble",
+      "saboteur",
+      "codenames",
+      "timeline",
+      "6-qui-prend",
+      "just-one",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 9,
+    "mergedFrom": [],
+    "queries": [
+      "jeux 8 joueurs",
+      "jeu de cartes grand groupe",
+      "jeux pour beaucoup de joueurs"
+    ],
+    "notes": "Page indexée. KYRAN s'arrête à 6 : dites comment le jouer à 7-8 (deux tables / tournoi) seulement si vous restez fidèle aux règles ; sinon suggérez-le comme jeu « de la moitié du groupe ».",
+    "date": "2026-06-12",
+    "heroImage": "/blog/images/6-qui-prend.jpg",
+    "heroCaption": "6 qui prend !, parfait quand vous êtes nombreux.",
+    "oldTitle": "8 jeux de cartes pour grands groupes",
+    "oldMetaTitle": "Jeux grands groupes — 8 idées efficaces en apéro",
+    "category": "Apéro"
+  },
+  {
+    "slug": "cadeau-noel",
+    "angle": "Jeux à offrir à Noël : se compte en profils de destinataires (famille réunie, ado, collègue, couple, amateur), emballage, durée de partie après le repas, prix.",
+    "suggest": [
+      "hanabi",
+      "dixit",
+      "timeline",
+      "the-crew",
+      "lost-cities",
+      "love-letter",
+      "codenames",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "cadeau noël jeu de société",
+      "jeu de société noël",
+      "idée cadeau noël jeu cartes"
+    ],
+    "notes": "Saisonnier : mentionnez le délai de livraison (kyran-jeu.fr expédie sous 24-48h) pour KYRAN uniquement, sans promesse de date.",
+    "date": "2026-05-11",
+    "heroImage": "/blog/images/hanabi.jpg",
+    "heroCaption": "Hanabi — coopération sous le sapin.",
+    "oldTitle": "Idées jeux de société pour Noël",
+    "oldMetaTitle": "Jeux de société Noël — idées cadeaux sous le sapin",
+    "category": "Cadeaux"
+  },
+  {
+    "slug": "cadeau-anniversaire",
+    "angle": "Jeux à offrir pour un anniversaire : angle « profil de la personne et budget » (petit prix, cadeau marquant, cadeau collectif de groupe), jouable le jour même, boîte présentable.",
+    "suggest": [
+      "love-letter",
+      "skull",
+      "dixit",
+      "codenames",
+      "bang",
+      "colt-express",
+      "skyjo",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "cadeau anniversaire jeu de société",
+      "idée cadeau jeu de cartes anniversaire"
+    ],
+    "notes": "",
+    "date": "2026-05-09",
+    "heroImage": "/blog/images/love-letter.jpg",
+    "heroCaption": "Love Letter — petit format, grand effet cadeau.",
+    "oldTitle": "Jeux à offrir pour un anniversaire",
+    "oldMetaTitle": "Jeux à offrir anniversaire — 8 idées cadeau",
+    "category": "Cadeaux"
+  },
+  {
+    "slug": "jeux-cartes-pas-chers",
+    "angle": "Jeux de cartes à moins de 20 € : classés par rapport qualité-prix et par nombre de parties que l'on en tire (rejouabilité). Tableau avec prix. Mentionnez le prix KYRAN 9,99 € en direct et 17,99 € sur Amazon sans fanfaronnade.",
+    "suggest": [
+      "uno",
+      "love-letter",
+      "dobble",
+      "jungle-speed",
+      "skull",
+      "saboteur",
+      "no-thanks",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux de cartes pas chers",
+      "jeu de société pas cher",
+      "petit budget jeu de cartes"
+    ],
+    "notes": "",
+    "date": "2026-05-13",
+    "heroImage": "/blog/images/uno.jpg",
+    "heroCaption": "Uno — le classique abordable.",
+    "oldTitle": "Jeux de cartes pas chers (moins de 20 €)",
+    "oldMetaTitle": "Jeux de cartes pas chers — moins de 20 €",
+    "category": "Cartes"
+  },
+  {
+    "slug": "jeux-30-minutes",
+    "angle": "Jeux qui tiennent en 30 minutes ou moins : durée réelle (installation + explication + partie), enchaînement de manches, soirées express. Triez par durée.",
+    "suggest": [
+      "love-letter",
+      "coup",
+      "jungle-speed",
+      "skyjo",
+      "the-mind",
+      "no-thanks",
+      "sushi-go",
+      "skull",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 9,
+    "mergedFrom": [],
+    "queries": [
+      "jeux 30 minutes",
+      "jeu rapide cartes",
+      "jeu de société court"
+    ],
+    "notes": "",
+    "date": "2026-05-19",
+    "heroImage": "/blog/images/skyjo.jpg",
+    "heroCaption": "Skyjo — une demi-heure bien remplie.",
+    "oldTitle": "Jeux rapides en 30 minutes ou moins",
+    "oldMetaTitle": "Jeux rapides 30 min — sélection soirée express",
+    "category": "Soirée"
+  },
+  {
+    "slug": "jeux-vacances-voyage",
+    "angle": "Jeux compacts pour vacances, voyage, camping, terrasse et plage (absorbe jeux-ete-terrasse et jeux-cartes-addictifs-poche) : format poche, tolérance au vent/sable/chaleur, parties qu'on reprend après interruption, jeux addictifs.",
+    "suggest": [
+      "love-letter",
+      "dobble",
+      "jungle-speed",
+      "no-thanks",
+      "the-mind",
+      "coup",
+      "schotten-totten",
+      "skyjo",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 9,
+    "mergedFrom": [
+      "jeux-ete-terrasse",
+      "jeux-cartes-addictifs-poche"
+    ],
+    "queries": [
+      "jeux vacances",
+      "jeu de cartes voyage",
+      "jeu poche",
+      "jeu terrasse été",
+      "jeu de carte addictif"
+    ],
+    "notes": "",
+    "date": "2026-05-27",
+    "heroImage": "/blog/images/love-letter.jpg",
+    "heroCaption": "Love Letter — le roi du format poche.",
+    "oldTitle": "Jeux compacts à emporter en vacances",
+    "oldMetaTitle": "Jeux compacts vacances — 8 titres voyage",
+    "category": "Cartes"
+  },
+  {
+    "slug": "jeux-famille",
+    "angle": "Jeux en famille (adultes + enfants dès 8 ans) : équité entre générations, absence de frustration, durée avant le coucher.",
+    "suggest": [
+      "dixit",
+      "timeline",
+      "hanabi",
+      "love-letter",
+      "skyjo",
+      "the-crew",
+      "dobble",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux de société famille",
+      "jeux de cartes famille 8 ans"
+    ],
+    "notes": "Page indexée.",
+    "date": "2026-05-07",
+    "heroImage": "/blog/images/dixit.jpg",
+    "heroCaption": "Dixit — l'imaginaire au service de la famille.",
+    "oldTitle": "Jeux de société en famille (8 ans et +)",
+    "oldMetaTitle": "Jeux de société famille — 8 ans et + (sélection)",
+    "category": "Famille"
+  },
+  {
+    "slug": "jeux-debutants-adultes",
+    "angle": "Jeux pour débutants adultes qui découvrent les jeux modernes : jargon expliqué (pli, pioche, draft…), pas d'intimidation, progression en 3 étapes.",
+    "suggest": [
+      "timeline",
+      "dixit",
+      "codenames",
+      "love-letter",
+      "jungle-speed",
+      "skyjo",
+      "uno",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux de société débutants adultes",
+      "jeux faciles pour commencer"
+    ],
+    "notes": "",
+    "date": "2026-05-25",
+    "heroImage": "/blog/images/timeline.jpg",
+    "heroCaption": "Timeline — apprendre en jouant.",
+    "oldTitle": "Jeux de société pour débutants adultes",
+    "oldMetaTitle": "Jeux société débutants adultes — par où commencer",
+    "category": "Famille"
+  },
+  {
+    "slug": "jeux-sans-elimination",
+    "angle": "Jeux où personne n'est éliminé (ou où l'élimination est brève) : pour que tout le monde joue jusqu'au bout. Soyez rigoureux : KYRAN met fin à la partie dès qu'un joueur n'a plus de vies (c'est la partie qui s'arrête, pas un joueur qui attend) — dites-le honnêtement.",
+    "suggest": [
+      "skyjo",
+      "dixit",
+      "timeline",
+      "hanabi",
+      "the-crew",
+      "sushi-go",
+      "no-thanks",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux sans élimination",
+      "jeu sans éliminé"
+    ],
+    "notes": "",
+    "date": "2026-06-14",
+    "heroImage": "/blog/images/skyjo.jpg",
+    "heroCaption": "Skyjo, un exemple populaire sans sortie précoce.",
+    "oldTitle": "8 jeux sans élimination frustrante",
+    "oldMetaTitle": "Jeux sans élimination — 8 titres conviviaux",
+    "category": "Famille"
+  },
+  {
+    "slug": "jeux-coop-cartes",
+    "angle": "Jeux coopératifs de cartes (absorbe jeux-comme-hanabi et jeux-comme-the-crew) : Hanabi, The Crew, The Mind, The Game, Letter Jam. Dites ce qui change entre coop à information cachée, coop à communication limitée et coop de défausse.",
+    "suggest": [
+      "hanabi",
+      "the-crew",
+      "the-mind",
+      "the-game",
+      "letter-jam",
+      "love-letter",
+      "kyran"
+    ],
+    "kyran": "optional",
+    "count": 7,
+    "mergedFrom": [
+      "jeux-comme-hanabi",
+      "jeux-comme-the-crew"
+    ],
+    "queries": [
+      "jeu comme hanabi",
+      "jeu comme the crew",
+      "jeux coopératifs cartes"
+    ],
+    "notes": "KYRAN n'est pas coopératif : sa place est « le jeu compétitif à garder pour après la coop ».",
+    "date": "2026-06-08",
+    "heroImage": "/blog/images/the-crew.jpg",
+    "heroCaption": "The Crew, une référence coopérative moderne.",
+    "oldTitle": "8 jeux coopératifs de cartes à découvrir",
+    "oldMetaTitle": "Jeux coopératifs cartes — 8 choix efficaces",
+    "category": "Famille"
+  },
+  {
+    "slug": "jeux-memoire-concentration",
+    "angle": "Jeux qui sollicitent la mémoire, l'attention et le calcul : compter les cartes, retenir ce qui est sorti. Lien vers l'article scientifique /blog/science-jeux-de-cartes-cerveau.html.",
+    "suggest": [
+      "the-mind",
+      "skyjo",
+      "timeline",
+      "hanabi",
+      "lost-cities",
+      "no-thanks",
+      "dobble",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux mémoire cartes",
+      "jeux concentration",
+      "jeu de cartes cerveau"
+    ],
+    "notes": "Pas de promesses médicales : renvoyez vers l'article scientifique pour tout ce qui touche à la santé.",
+    "date": "2026-06-30",
+    "heroImage": "/blog/images/the-mind.jpg",
+    "heroCaption": "The Mind, concentration collective à haute intensité.",
+    "oldTitle": "8 jeux de mémoire et concentration",
+    "oldMetaTitle": "Jeux mémoire concentration — 8 titres cartes",
+    "category": "Famille"
+  },
+  {
+    "slug": "jeux-3-joueurs",
+    "angle": "Jeux qui fonctionnent bien à TROIS (pas des jeux « jouables à 3 » à contrecœur) : explique pourquoi certains jeux boitent à 3 (duels, alliances) et lesquels sont conçus pour. Réponse directe en tête : 3 jeux à retenir.",
+    "suggest": [
+      "schotten-totten",
+      "lost-cities",
+      "hanabi",
+      "skull",
+      "love-letter",
+      "the-crew",
+      "wizard",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux à 3 joueurs",
+      "jeu à faire à 3",
+      "jeux 3 joueurs",
+      "jeu de cartes à trois"
+    ],
+    "notes": "Cette page est la plus citée par les IA côté Bing (302 citations) : réponses factuelles, fortes, concises. Schotten Totten et Lost Cities sont des jeux à 2 joueurs : ne les présentez PAS comme des jeux à 3 ; retirez-les ou traitez-les dans une section « et si on est deux + un spectateur ? ». Vérifiez le nombre de joueurs de CHAQUE jeu dans games.json.",
+    "date": "2026-05-21",
+    "heroImage": "/blog/images/schotten-totten.jpg",
+    "heroCaption": "Schotten Totten — duel écossais ( idéal à 2, alternance à 3 ).",
+    "oldTitle": "Meilleurs jeux de société à 3 joueurs",
+    "oldMetaTitle": "Meilleurs jeux 3 joueurs — sélection équilibrée",
+    "category": "Soirée"
+  },
+  {
+    "slug": "jeux-duo-couples",
+    "angle": "Jeux à deux, pour couples : dynamique à 2, soirées calmes, duels. KYRAN ne se joue pas à 2 (le dire clairement, ou le citer seulement comme jeu à sortir quand un couple reçoit des amis).",
+    "suggest": [
+      "lost-cities",
+      "schotten-totten",
+      "love-letter",
+      "star-realms",
+      "the-game",
+      "the-crew",
+      "letter-jam",
+      "just-one"
+    ],
+    "kyran": "no-fit",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux à deux",
+      "jeux couple",
+      "jeux 2 joueurs cartes"
+    ],
+    "notes": "Vérifiez que chaque jeu se joue bien à 2 dans games.json (The Crew, The Game, Love Letter OK ; Just One et Letter Jam : voir players).",
+    "date": "2026-06-10",
+    "heroImage": "/blog/images/lost-cities.jpg",
+    "heroCaption": "Lost Cities, un duel élégant pour deux joueurs.",
+    "oldTitle": "8 jeux de cartes pour duo et couples",
+    "oldMetaTitle": "Jeux duo couples — 8 cartes pour jouer à deux",
+    "category": "Soirée"
+  },
+  {
+    "slug": "jeux-cartes-4-joueurs",
+    "angle": "Jeux de cartes à 4 joueurs : le format le plus courant (couples d'amis, repas de famille) — équipes 2 vs 2 possibles ou chacun pour soi.",
+    "suggest": [
+      "love-letter",
+      "the-crew",
+      "codenames",
+      "skull",
+      "wizard",
+      "uno",
+      "skyjo",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeu de cartes 4 joueurs",
+      "jeux à 4",
+      "jeu de société 4 joueurs"
+    ],
+    "notes": "",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/love-letter.jpg",
+    "heroCaption": "Des cartes idéales pour une tablée de quatre convives.",
+    "oldTitle": "8 jeux de cartes incontournables à 4 joueurs pour vos soirées",
+    "oldMetaTitle": "Meilleurs jeux de cartes à 4 joueurs : sélection festive et tactique",
+    "category": "Cartes"
+  },
+  {
+    "slug": "jeux-cartes-5-joueurs",
+    "angle": "Jeux de cartes à 5 joueurs : table impaire, pas d'équipes égales, tours qui s'allongent — quels jeux sont calibrés pour 5.",
+    "suggest": [
+      "skull",
+      "the-crew",
+      "6-qui-prend",
+      "saboteur",
+      "for-sale",
+      "bang",
+      "no-thanks",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeu de carte 5 joueurs",
+      "jeux de société 5 joueurs",
+      "jeu de cartes à 5"
+    ],
+    "notes": "",
+    "date": "2026-09-05",
+    "heroImage": "/blog/images/skull.jpg",
+    "heroCaption": "Des cartes dynamiques pour les tables de cinq convives.",
+    "oldTitle": "Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas",
+    "oldMetaTitle": "Top 8 des meilleurs jeux de cartes à 5 joueurs rapides et dynamiques",
+    "category": "Cartes"
+  },
+  {
+    "slug": "jeux-strategie-legere",
+    "angle": "Stratégie légère : décisions réelles sans manuel de 20 pages. Classez par « profondeur par minute de règles » et par part de chance.",
+    "suggest": [
+      "lost-cities",
+      "schotten-totten",
+      "star-realms",
+      "oh-hell",
+      "wizard",
+      "parade",
+      "hanabi",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 8,
+    "mergedFrom": [],
+    "queries": [
+      "jeux stratégie légère",
+      "jeux réflexion accessibles"
+    ],
+    "notes": "",
+    "date": "2026-06-18",
+    "heroImage": "/blog/images/star-realms.jpg",
+    "heroCaption": "Star Realms, stratégie compacte et nerveuse.",
+    "oldTitle": "8 jeux de stratégie légère en cartes",
+    "oldMetaTitle": "Jeux stratégie légère — 8 cartes accessibles",
+    "category": "Cartes"
+  },
+  {
+    "slug": "jeux-draft-encheres",
+    "angle": "Jeux de draft (choisir puis passer les cartes) et d'enchères : Sushi Go!, For Sale, etc. Expliquez draft vs enchères, ce que l'on gagne à chaque mécanique ; KYRAN pour son système de pari (plus proche des enchères de plis).",
+    "suggest": [
+      "sushi-go",
+      "for-sale",
+      "no-thanks",
+      "6-qui-prend",
+      "parade",
+      "star-realms",
+      "kyran"
+    ],
+    "kyran": "include",
+    "count": 7,
+    "mergedFrom": [],
+    "queries": [
+      "jeux draft cartes",
+      "jeux enchères cartes",
+      "sushi go for sale"
+    ],
+    "notes": "Page indexée.",
+    "date": "2026-06-24",
+    "heroImage": "/blog/images/for-sale.jpg",
+    "heroCaption": "For Sale, l'enchère élégante en format court.",
+    "oldTitle": "8 jeux de draft et enchères en cartes",
+    "oldMetaTitle": "Jeux draft enchères — 8 choix accessibles",
+    "category": "Cartes"
+  }
+]

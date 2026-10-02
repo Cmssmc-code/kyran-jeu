@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "science-jeux-de-cartes-cerveau",
+    "title": "Jeux de cartes et cerveau : ce que dit la science",
+    "category": "Cartes",
+    "date": "2026-09-16",
+    "readMinutes": 14,
+    "excerpt": "Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.",
+    "image": "/kyran-cartes-table.webp",
+    "gameCount": 0,
+    "related": ["jeux-plis-comparatif", "jeux-memoire-concentration", "jeux-bluff-pari"]
+  },
+  {
+    "slug": "jeux-cartes-6-joueurs",
+    "title": "Top 8 des jeux de cartes à 6 joueurs sans temps mort",
+    "category": "Cartes",
+    "date": "2026-09-11",
+    "readMinutes": 13,
+    "excerpt": "Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.",
+    "image": "/blog/images/6-qui-prend.jpg",
+    "gameCount": 8,
+    "related": ["jeux-cartes-5-joueurs", "jeux-cartes-4-joueurs", "meilleurs-jeux-apero"]
+  },
+  {
+    "slug": "jeux-cartes-adultes",
+    "title": "Top 8 des meilleurs jeux de cartes pour adultes",
+    "category": "Soirée",
+    "date": "2026-09-11",
+    "readMinutes": 14,
+    "excerpt": "Tension psychologique, bluff, tactique et retournements : 8 jeux de cartes modernes pour adultes.",
+    "image": "/blog/images/coup.jpg",
+    "gameCount": 8,
+    "related": ["jeux-soiree-amis", "jeux-cartes-6-joueurs", "meilleurs-jeux-apero"]
+  }
+]

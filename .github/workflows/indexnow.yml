@@ -1,0 +1,51 @@
+name: Notification IndexNow (Bing, Copilot)
+
+# À chaque publication sur la branche de production, envoie à IndexNow les pages HTML
+# modifiées par le push. Lancement manuel possible pour renvoyer tout le sitemap.
+# La clé (fichier <clé>.txt à la racine du site) est publique par conception.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "Envoyer toutes les URLs du sitemap"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Actions épinglées sur un SHA de commit (les tags peuvent être déplacés)
+      - name: Checkout du code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '20'
+
+      - name: Envoi à IndexNow (attend que la clé soit en ligne)
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            node scripts/indexnow.mjs --all --wait
+          else
+            node scripts/indexnow.mjs --changed "$BEFORE" "$SHA" --wait
+          fi

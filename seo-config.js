@@ -13,7 +13,7 @@
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster
    */
-  var ASSET_VERSION = '20260905c';
+  var ASSET_VERSION = '646adbf47b';
 
   var config = {
     googleSiteVerification: '',
@@ -31,28 +31,6 @@
     });
   }
 
-  function injectFonts() {
-    if (document.querySelector('link[href*="fonts.googleapis.com/css2"]')) {
-      return;
-    }
-    var pre1 = document.createElement('link');
-    pre1.rel = 'preconnect';
-    pre1.href = 'https://fonts.googleapis.com';
-    document.head.appendChild(pre1);
-
-    var pre2 = document.createElement('link');
-    pre2.rel = 'preconnect';
-    pre2.href = 'https://fonts.gstatic.com';
-    pre2.crossOrigin = '';
-    document.head.appendChild(pre2);
-
-    var fonts = document.createElement('link');
-    fonts.rel = 'stylesheet';
-    fonts.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap';
-    document.head.appendChild(fonts);
-  }
-
-  injectFonts();
   injectDnsPrefetch();
 
   if (config.googleSiteVerification) {

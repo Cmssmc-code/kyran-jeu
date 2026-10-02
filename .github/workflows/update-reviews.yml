@@ -41,13 +41,16 @@ jobs:
         run: node scripts/fetch-amazon-reviews.mjs
         continue-on-error: true
 
+      - name: Mise à jour du rendu statique des avis (pages index et commander)
+        run: node scripts/prerender.mjs
+
       - name: Commit et Push si de nouveaux avis sont détectés
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reviews-data.json reviews-data.js
+          git add reviews-data.json reviews-data.js index.html commander.html
           if git diff --staged --quiet; then
             echo "Aucune modification des avis Amazon."
           else

@@ -1,0 +1,229 @@
+/* =========================================================
+   Page « À propos » — styles spécifiques (complète style.css)
+   Aucune règle globale : tout est préfixé .about-*
+   ========================================================= */
+
+.about-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.about-wrap .prose {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 800px;
+}
+
+.about-wrap .prose > h2 {
+  margin-top: 0;
+}
+
+.about-wrap .prose h3 {
+  font-size: 1.45rem;
+  margin-top: var(--space-4);
+}
+
+.about-wrap .prose > h3:first-child {
+  margin-top: 0;
+}
+
+.about-wrap code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface);
+  font-size: 0.9em;
+}
+
+.about-meta {
+  margin: 0 0 var(--space-3);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Sommaire de la page */
+.about-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.about-toc li {
+  margin: 0;
+  list-style: none;
+}
+
+.about-toc a {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid #e7e2d9;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: var(--text-sub);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--speed), color var(--speed), background var(--speed);
+}
+
+.about-toc a:hover,
+.about-toc a:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+  background: var(--accent-cream);
+}
+
+/* Bloc auteur (variante agrandie de .article-author-card) */
+.about-author-card {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  align-items: center;
+}
+
+.about-author-card .article-author-card__avatar {
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+}
+
+.about-author-card .article-author-card__body {
+  min-width: 0;
+}
+
+.about-author-card .article-author-card__name {
+  font-size: 1.15rem;
+}
+
+/* Texte + visuel côte à côte */
+.about-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.about-figure {
+  margin: 0;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
+}
+
+.about-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Fiche synthétique du jeu */
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 12px;
+  margin: var(--space-3) 0;
+}
+
+.about-fact {
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-radius: 14px;
+}
+
+.about-fact dt {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.about-fact dd {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text-main);
+  overflow-wrap: anywhere;
+}
+
+/* Encadré de déclaration d'intérêt */
+.about-disclosure {
+  margin: var(--space-3) 0;
+}
+
+.about-disclosure ul {
+  margin-bottom: 0;
+}
+
+/* Appels à l'action */
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+/* Liste de contacts */
+.about-wrap .about-contact-list {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+
+.about-contact-list li {
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #e7e2d9;
+  overflow-wrap: anywhere;
+}
+
+.about-contact-list li:last-child {
+  border-bottom: none;
+}
+
+/* Références */
+.about-wrap .about-refs {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-refs li {
+  list-style: none;
+  padding: 10px 0 10px 18px;
+  border-left: 2px solid var(--gold-border);
+  overflow-wrap: anywhere;
+}
+
+.about-refs li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .about-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-figure {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-author-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

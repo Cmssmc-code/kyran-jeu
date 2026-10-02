@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ KYRAN — jeu de cartes, apéro, Skyjo, Whist, Tarot Africain</title>
-  <meta name="description" content="Questions fréquentes sur KYRAN : jeu apéro, Skyjo, Wizard, Whist, Tarot Africain, règles, prix et achat." />
+  <title>FAQ KYRAN : règles, Tarot Africain, Skyjo, achat et livraison</title>
+  <meta name="description" content="30 réponses sur KYRAN : pari sur les plis, matériel, Tarot Africain et Whist 22, comparaison avec Skyjo, Wizard et Uno, livraison et retours." />
   <link rel="canonical" href="https://kyran-jeu.fr/faq.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -17,22 +17,23 @@
   <meta property="og:site_name" content="KYRAN" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="FAQ KYRAN — jeu de cartes, apéro, comparatifs" />
-  <meta property="og:description" content="Questions fréquentes sur KYRAN : règles, prix, achat, Skyjo, Wizard et Tarot Africain." />
+  <meta property="og:title" content="FAQ KYRAN : règles, Tarot Africain, Skyjo, achat et livraison" />
+  <meta property="og:description" content="Pari sur les plis, matériel, Tarot Africain et Whist 22, comparaison avec Skyjo, Wizard et Uno, livraison et retours : 30 réponses directes." />
   <meta property="og:url" content="https://kyran-jeu.fr/faq.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
   <meta property="og:image:alt" content="Logo KYRAN — FAQ officielle" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FAQ KYRAN" />
-  <meta name="twitter:description" content="Toutes les réponses sur le jeu de cartes KYRAN." />
+  <meta name="twitter:title" content="FAQ KYRAN : 30 réponses sur le jeu de plis" />
+  <meta name="twitter:description" content="Règles, Tarot Africain, comparaisons avec Skyjo, Wizard et Uno, livraison et retours." />
   <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <script src="seo-config.js?v=20260905ccccccccccb"></script>
-  <link rel="stylesheet" href="style.css?v=20260905ccccccccccb" />
-  <script src="components.js?v=20260905ccccccccccb"></script>
+  <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="seo-config.js?v=646adbf47b" defer></script>
+  <link rel="stylesheet" href="style.css?v=646adbf47b" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=646adbf47b" />
+  <script src="components.js?v=646adbf47b" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,32 +41,270 @@
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kyran-jeu.fr/"},
-          {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://kyran-jeu.fr/faq.html"}
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://kyran-jeu.fr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://kyran-jeu.fr/faq.html"
+          }
         ]
       },
       {
         "@type": "FAQPage",
         "@id": "https://kyran-jeu.fr/faq.html#faq",
         "url": "https://kyran-jeu.fr/faq.html",
+        "name": "FAQ KYRAN : règles, Tarot Africain, Skyjo, achat et livraison",
         "inLanguage": "fr-FR",
+        "about": {
+          "@id": "https://kyran-jeu.fr/#boardgame"
+        },
         "mainEntity": [
-          {"@type": "Question", "name": "Combien de joueurs pour KYRAN ?", "acceptedAnswer": {"@type": "Answer", "text": "De 3 à 6 joueurs — plage optimale pour la tension des paris."}},
-          {"@type": "Question", "name": "Quelle est la durée d'une partie ?", "acceptedAnswer": {"@type": "Answer", "text": "Environ 30 minutes."}},
-          {"@type": "Question", "name": "À partir de quel âge ?", "acceptedAnswer": {"@type": "Answer", "text": "Dès 8 ans. Profondeur stratégique pour les adultes."}},
-          {"@type": "Question", "name": "Quel est le prix de KYRAN ?", "acceptedAnswer": {"@type": "Answer", "text": "9,99€ sur la boutique officielle kyran-jeu.fr (frais de livraison calculés à la commande) ou 17,99€ sur Amazon avec livraison Prime."}},
-          {"@type": "Question", "name": "KYRAN est-il un bon jeu apéro ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. KYRAN dure environ 30 minutes pour 3 à 6 joueurs, idéal en apéro ou soirée entre amis."}},
-          {"@type": "Question", "name": "Peut-on enchaîner plusieurs parties ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui — 30 minutes par partie, deux sessions possibles dans une soirée."}},
-          {"@type": "Question", "name": "KYRAN convient-il en famille ?", "acceptedAnswer": {"@type": "Answer", "text": "Parfaitement dès 8 ans, avec une vraie profondeur stratégique pour les parents."}},
-          {"@type": "Question", "name": "Quelle différence entre KYRAN et Skyjo ?", "acceptedAnswer": {"@type": "Answer", "text": "Skyjo repose sur la mémoire et la gestion de sa main ; KYRAN sur les plis, les paris et le bluff."}},
-          {"@type": "Question", "name": "KYRAN est-il une alternative à Wizard ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. KYRAN partage la logique de plis et de pari avec Wizard, avec des cartes Pouvoir et une manche Mystique."}},
-          {"@type": "Question", "name": "Quel lien entre KYRAN, le Whist et le Tarot Africain ?", "acceptedAnswer": {"@type": "Answer", "text": "KYRAN revisite les mécaniques de pari sur les plis du Whist et du Tarot Africain (Whist 22) dans un format moderne."}},
-          {"@type": "Question", "name": "KYRAN convient-il aux débutants ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Une vidéo Ludochrono de 5 minutes et un Dojo interactif gratuit permettent d'apprendre rapidement."}},
-          {"@type": "Question", "name": "Qu'est-ce que la manche Mystique ?", "acceptedAnswer": {"@type": "Answer", "text": "Une manche à une seule carte jouée sans la voir — pari et bluff à l'aveugle."}},
-          {"@type": "Question", "name": "Existe-t-il une variante simplifiée ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : jouer sans cartes Pouvoir ni carte Mystique pour une première partie."}},
-          {"@type": "Question", "name": "Où acheter KYRAN ?", "acceptedAnswer": {"@type": "Answer", "text": "Directement sur la boutique officielle (commander.html) à 9,99€ (frais de port calculés au paiement) avec paiement sécurisé Stripe, ou sur Amazon France à 17,99€."}},
-          {"@type": "Question", "name": "KYRAN est-il disponible en magasin ?", "acceptedAnswer": {"@type": "Answer", "text": "La distribution principale se fait via Amazon. Pour les revendeurs, contactez contact@kyran-jeu.fr."}},
-          {"@type": "Question", "name": "Comment suivre l'actualité de KYRAN ?", "acceptedAnswer": {"@type": "Answer", "text": "Sur Instagram @kyran.jeu pour les actus, visuels et coulisses du jeu."}}
+          {
+            "@type": "Question",
+            "name": "Quelles sont les règles de KYRAN en résumé ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner, puis on joue les plis : un pari raté coûte autant de cartes Vie que l'écart. Les manches passent de 7 à 2 cartes, avant la manche Mystique à une carte posée sur le front. La partie s'arrête quand un joueur n'a plus de Vie. Tout le détail est dans les règles complètes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment fonctionne le pari sur le nombre de plis ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avant de jouer, chacun annonce à voix haute combien de plis il pense remporter, de 0 jusqu'au nombre de cartes en main, en partant de la gauche du donneur. Gagner plus de plis que prévu est aussi une erreur : seul le nombre exact préserve vos cartes Vie. Des exemples chiffrés figurent dans les règles de la phase de paris."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pourquoi la somme des paris ne peut-elle pas égaler le nombre de plis ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cette règle d'or empêche le dernier joueur à parler d'équilibrer la table : il doit annoncer un chiffre qui fait diverger la somme des paris et le nombre de plis. Au moins un joueur rate donc son pari à chaque manche. Avec 5 plis en jeu et des paris de 1, 2 et 1, le dernier joueur ne peut pas annoncer 1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que se passe-t-il quand un pari est raté ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le joueur perd autant de cartes Vie que l'écart entre son pari et ses plis gagnés : annoncer 3 plis et n'en gagner qu'un coûte 2 cartes Vie. Un pari réussi ne coûte rien. Chacun démarre avec 5 cartes Vie, de 5 étoiles à 1 étoile, posées devant lui et visibles de tous."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que la manche Mystique ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "C'est la manche à une seule carte, jouée après la manche à 2 cartes. Chaque joueur tient sa carte contre son front : il voit celles des autres, mais pas la sienne, puis parie 1 (il gagne le pli) ou 0. Tous abattent leur carte ensemble ; un pari raté coûte 1 carte Vie, et les cartes Pouvoir n'ont aucun effet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À quoi servent les cartes Pouvoir ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les quatre pouvoirs agissent dès qu'ils sont posés : Sceau du Destin force un joueur à jouer une carte tirée au hasard, Clairvoyance Antique révèle en secret la carte la plus forte d'un joueur, Bénédiction des Ancêtres l'oblige à jouer sa carte la plus faible et Voile du Néant échange la valeur de votre carte avec une carte déjà posée. En cas d'égalité avec une carte Nombre, le pouvoir l'emporte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment se termine une partie et qui gagne ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La partie s'arrête dès qu'un joueur a perdu toutes ses cartes Vie. Celui qui en possède alors le plus grand nombre devient Maître des Mystiques. En cas d'égalité de Vies restantes, les joueurs concernés se départagent lors d'une ultime manche Mystique. Une partie dure environ 30 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Existe-t-il une variante simplifiée pour débuter ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui : la variante d'initiation se joue sans cartes Pouvoir ni carte Mystique. Elle permet d'assimiler d'abord le pari et les plis, puis d'ajouter les retournements de situation à la partie suivante. Les règles la recommandent aussi pour de jeunes enfants. Voir la section variante d'initiation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de joueurs faut-il pour jouer à KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN se joue de 3 à 6 joueurs ; il ne se joue pas à deux. À 3 ou 4 joueurs, on utilise quatre cartes Pouvoir (valeurs 11, 27, 20 et 3) et la carte Mystique ; à 5 ou 6 joueurs, toutes les cartes Pouvoir. Pour jouer en duo, consultez notre sélection de jeux de cartes à deux."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps dure une partie de KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Environ 30 minutes. La partie s'arrête dès qu'un joueur perd sa dernière carte Vie, donc sa durée réelle dépend du nombre de manches nécessaires. Les manches se jouent à 7, 6, 5, 4, 3 puis 2 cartes, avant la manche Mystique. Pour d'autres idées courtes, voir les jeux de cartes de 30 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À partir de quel âge peut-on jouer, et en famille ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN est recommandé dès 8 ans et se joue en famille. Une testeuse Amazon le juge toutefois un peu subtil pour des enfants de 10 ans et moins ; la variante d'initiation, sans cartes Pouvoir ni Mystique, est prévue pour une première partie ou de jeunes enfants. Voir aussi les jeux de société en famille."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que contient la boîte de KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La boîte contient 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie (5 par joueur) et des cartes de règles en français. Elle mesure 11,5 × 8,5 × 2,8 cm pour 175 g, avec des cartes toilées vernies de 300 g/m². Le détail figure sur la page contenu de la boîte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Y a-t-il une notice dans la boîte ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les règles sont imprimées sur des cartes de règles en français, et un QR code sur la boîte donne accès à la règle en ligne, au tutoriel vidéo et au Dojo. Deux avis Amazon notent que ces cartes se confondent facilement avec les cartes de jeu : rangez-les à part. La règle complète reste consultable en ligne."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est l'autre nom du Tarot Africain ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Tarot Africain est aussi appelé Whist 22, d'après les 22 atouts du tarot avec lesquels il se joue. Rikiki et Ascenseur sont des noms du jeu parent à 52 cartes, pas des synonymes ; d'autres appellations circulent, sans source fiable pour les confirmer. Voir le guide du Tarot Africain."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est l'origine du Tarot Africain ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aucune date ni aucun lieu d'invention du Tarot Africain n'est établi sur ce site, et nous ne les avançons pas sans source. Son nom de Whist 22 le rattache au Whist, jeu de plis anglais, et aux 22 atouts du tarot. L'auteur de KYRAN indique avoir été fasciné enfant par ses mécaniques de pari. Voir Tarot Africain et Whist 22."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le Whist 22 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Whist 22 est un autre nom du Tarot Africain : un jeu de plis où l'on annonce le nombre exact de plis qu'on va remporter, avec les 22 cartes d'atout d'un tarot (21 atouts et l'Excuse), généralement à 3 à 5 joueurs. La somme des annonces ne peut pas égaler le nombre de plis. Détails sur la page Whist 22."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel jeu de cartes se joue en annonçant son nombre de plis ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plusieurs jeux de plis reposent sur l'annonce du nombre de plis : le Tarot Africain (Whist 22), Oh Hell!, Wizard et KYRAN. Dans chacun, on prédit son score avant de jouer et l'erreur se paie ; ils diffèrent par le matériel, les atouts et le décompte. Le comparatif des jeux de plis les met côte à côte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre le Tarot Africain et KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN reprend l'annonce contrainte des plis du Tarot Africain, mais remplace le jeu de tarot par un jeu dédié de cartes Nombre de 1 à 36, ajoute quatre cartes Pouvoir et la carte Mystique, et matérialise les Vies par des cartes. Il se joue de 3 à 6 joueurs, là où le Tarot Africain à 22 cartes s'arrête généralement à 5. Voir la page Tarot Africain."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel jeu ressemble à Skyjo ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour une soirée dans l'esprit de Skyjo, avec des règles courtes et environ 30 minutes de jeu, essayez Love Letter, Dobble, Uno ou KYRAN. Aucun n'a la même mécanique : Skyjo repose sur des cartes face cachée à retourner et à échanger pour obtenir le score le plus bas, KYRAN sur des plis et des paris. Détails dans 10 jeux comme Skyjo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle différence entre KYRAN et Wizard ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wizard et KYRAN reposent tous deux sur l'annonce du nombre de plis. Wizard (3 à 6 joueurs, environ 45 minutes, dès 10 ans) utilise des cartes spéciales et se joue aux points ; KYRAN (3 à 6 joueurs, environ 30 minutes, dès 8 ans) remplace les points par des cartes Vie et ajoute les cartes Pouvoir et la manche Mystique. Voir les alternatives à Wizard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "KYRAN et Uno : quelle différence ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Uno se joue en se défaussant par couleur ou par numéro, de 2 à 10 joueurs, environ 20 minutes, dès 7 ans ; KYRAN se joue en plis avec un pari obligatoire, de 3 à 6 joueurs, environ 30 minutes, dès 8 ans. Uno est plus simple et accueille plus de monde ; KYRAN demande de prévoir ses plis. Voir les alternatives à Uno."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel jeu choisir pour une soirée entre amis ou un apéro ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cela dépend du nombre de joueurs : de 3 à 6, KYRAN offre une vraie partie de 30 minutes avec paris et bluff ; au-delà, Uno et Jungle Speed accueillent jusqu'à 10 joueurs et Dobble jusqu'à 8. Notre guide jeu de cartes apéro détaille une partie, et la sélection jeux entre amis compare plusieurs titres."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où acheter KYRAN et à quel prix ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "KYRAN se commande sur la boutique en ligne à 9,99 € TTC la boîte, hors frais de livraison, ou sur Amazon.fr à 17,99 € avec livraison Prime. Sur la boutique, le paiement passe par Stripe (carte bancaire, Apple Pay, Google Pay) et les frais de livraison sont affichés avant la validation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les délais et les zones de livraison ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le colis part sous 24 à 48 heures ouvrées, puis arrive en 2 à 4 jours ouvrés en France et en 3 à 6 jours ouvrés dans les autres pays desservis (Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni). L'envoi est suivi (La Poste / Colissimo), avec un numéro de suivi par courriel. Les frais sont affichés avant le paiement : 2,99 € pour la France. Voir la page livraison et retours."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Puis-je retourner KYRAN ou me rétracter ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, vous disposez de 14 jours francs après la réception pour vous rétracter, sans motif. Le jeu doit être renvoyé complet et en état d'origine, les frais de retour étant pris en charge par le vendeur. Le remboursement, frais d'envoi initiaux compris, intervient sous 14 jours. Voir les conditions générales de vente, qui contiennent un modèle de formulaire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le paiement en ligne est-il sécurisé ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Le règlement passe par Stripe Checkout et la transaction est chiffrée ; aucune coordonnée bancaire n'est enregistrée sur kyran-jeu.fr. Les moyens acceptés sont la carte bancaire (CB, Visa, Mastercard), Apple Pay et Google Pay. Un accusé de réception est envoyé par courriel dès que la banque accepte le paiement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "KYRAN est-il vendu en magasin, et comment contacter l'équipe ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La distribution se fait en ligne, sur la boutique et sur Amazon.fr. Les boutiques et revendeurs intéressés peuvent écrire à contact@kyran-jeu.fr, adresse qui répond aussi aux questions sur une commande sous 24 à 48 heures ouvrées. Les actualités du jeu sont publiées sur Instagram @kyran.jeu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment apprendre les règles de KYRAN rapidement ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le plus rapide est de regarder la vidéo Ludochrono de 5 minutes, puis de lancer une première partie en variante d'initiation. Vous pouvez aussi lire les règles écrites ou vous entraîner au Dojo gratuit. Plusieurs avis Amazon indiquent que les règles s'expliquent en deux minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le Dojo et que permet-il d'apprendre ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Dojo est un simulateur gratuit où vous affrontez trois adversaires ordinateur en quatre manches de 4, 3, 2 puis 1 carte. Il enseigne le pari, la gestion des plis et la manche Mystique, mais pas les cartes Pouvoir, à découvrir avec la version physique. Il est accessible sur la page Dojo KYRAN."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment bien parier à KYRAN ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Comptez vos cartes fortes, de 25 à 36, pour estimer vos plis ; avec une main faible, parier 0 est souvent prudent. À la manche Mystique, observez les cartes des autres : si elles sont toutes faibles, la vôtre est peut-être forte. Ces repères viennent du tutoriel du Dojo, qui permet de s'exercer sans enjeu."
+            }
+          }
         ]
       }
     ]
@@ -74,133 +313,342 @@
 </head>
 <body>
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
-  <kyran-header></kyran-header>
+  <kyran-header data-ssr="1">
+      <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
+        <div class="container announcement-content">
+          <span class="announcement-pill">Offre atelier</span>
+          <span class="announcement-text">Jeu complet <strong>9,99€</strong> au lieu de 17,99€ · Expédié sous 24-48h suivie</span>
+          <a href="/commander.html" class="announcement-link">Commander &rarr;</a>
+        </div>
+      </div>
+      <header class="site-header">
+        <div class="container nav">
+          <div class="nav-brand-group">
+            <a href="/" class="logo" aria-label="KYRAN - Accueil">
+              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+            </a>
+
+            <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
+              <ul class="nav-list" id="menu-principal">
+                <li><a href="/" class="nav-link ">Accueil</a></li>
+                <li><a href="/regle.html" class="nav-link ">R&egrave;gles</a></li>
+                <li><a href="/minijeu.html" class="nav-link ">Dojo</a></li>
+                <li class="nav-dropdown nav-desktop-only">
+                  <button type="button" class="nav-link nav-link--menu active" aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
+                    D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
+                  </button>
+                  <ul class="nav-submenu" id="nav-discover-menu" aria-label="Guides KYRAN"><li><a href="/jeu-apero.html">Jeu apéro<span class="sub-desc">Soirée 30 min, 3 à 6 joueurs</span></a></li><li><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span class="sub-desc">10 alternatives et variantes</span></a></li><li><a href="/tarot-africain.html">Tarot Africain<span class="sub-desc">Règles, variantes et comptage</span></a></li><li><a href="/whist-22.html">Whist 22<span class="sub-desc">Définition et jeux proches</span></a></li><li><a href="/blog/jeux-plis-comparatif.html">Jeux de plis<span class="sub-desc">KYRAN vs Wizard, Oh Hell…</span></a></li><li><a href="/faq.html">FAQ<span class="sub-desc">Questions fréquentes</span></a></li><li><a href="/a-propos.html">À propos<span class="sub-desc">L'auteur et notre méthode</span></a></li></ul>
+                </li>
+                <li class="nav-mobile-only">
+                  <details class="nav-discover-details">
+                    <summary class="nav-discover-summary">D&eacute;couvrir</summary>
+                    <div class="nav-drawer-links"><a class="nav-drawer-link" href="/jeu-apero.html">Jeu apéro<span>Soirée 30 min, 3 à 6 joueurs</span></a><a class="nav-drawer-link" href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo<span>10 alternatives et variantes</span></a><a class="nav-drawer-link" href="/tarot-africain.html">Tarot Africain<span>Règles, variantes et comptage</span></a><a class="nav-drawer-link" href="/whist-22.html">Whist 22<span>Définition et jeux proches</span></a><a class="nav-drawer-link" href="/blog/jeux-plis-comparatif.html">Jeux de plis<span>KYRAN vs Wizard, Oh Hell…</span></a><a class="nav-drawer-link" href="/faq.html">FAQ<span>Questions fréquentes</span></a><a class="nav-drawer-link" href="/a-propos.html">À propos<span>L'auteur et notre méthode</span></a></div>
+                  </details>
+                </li>
+                <li><a href="/blog/" class="nav-link ">Blog</a></li>
+                <li><a href="/dossier-presse.html" class="nav-link ">Presse</a></li>
+              </ul>
+              <div class="nav-drawer-footer nav-mobile-only">
+                <a class="btn btn-primary btn-block" href="/commander.html">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  <span>Commander — 9,99&euro;</span>
+                </a>
+                <a class="social-link social-link--instagram social-link--block" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>Suivre sur Instagram</span></a>
+              </div>
+            </nav>
+          </div>
+
+          <div class="nav-actions">
+            <div class="cta cta-desktop">
+              <a class="btn btn-header-cta" href="/commander.html" aria-label="Commander le jeu KYRAN">
+                <svg class="cart-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Commander</span>
+              </a>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-primary">
+              <span class="nav-toggle-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="nav-backdrop" hidden></div>
+      </header>
+
+      <nav class="mobile-bottom-nav" aria-label="Navigation rapide mobile">
+        <a href="/" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </span>
+          <span class="mobile-nav-label">Accueil</span>
+        </a>
+        <a href="/regle.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Règles</span>
+        </a>
+        <a href="/minijeu.html" class="mobile-nav-tab ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+          </span>
+          <span class="mobile-nav-label">Dojo</span>
+        </a>
+        <a href="/commander.html" class="mobile-nav-tab mobile-nav-tab--highlight ">
+          <span class="mobile-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </span>
+          <span class="mobile-nav-label">Acheter</span>
+          <span class="mobile-nav-pill">9,99€</span>
+        </a>
+      </nav>
+    </kyran-header>
   <main id="contenu-principal">
     <kyran-page-hero
       eyebrow="Aide &amp; Support"
       title="Questions <span class=&quot;accent&quot;>fréquentes</span> sur KYRAN"
-      subtitle="Règles, livraison, variantes et matériel : tout ce que vous devez savoir sur KYRAN."
+      subtitle="30 réponses directes sur les règles, le matériel, le Tarot Africain, les comparaisons et l'achat de KYRAN."
     >
       <section class="page-hero">
         <div class="container">
           
           <p class="eyebrow">Aide &amp; Support</p>
           <h1>Questions <span class="accent">fréquentes</span> sur KYRAN</h1>
-          <p class="hero-lead">Règles, livraison, variantes et matériel : tout ce que vous devez savoir sur KYRAN.</p>
+          <p class="hero-lead">30 réponses directes sur les règles, le matériel, le Tarot Africain, les comparaisons et l'achat de KYRAN.</p>
         </div>
       </section>
     </kyran-page-hero>
 
     <section>
       <div class="container">
-        <nav class="seo-toc" aria-label="Catégories FAQ">
-          <a href="#general">Général</a>
-          <a href="#apero">Apéro</a>
-          <a href="#comparatifs">Comparatifs</a>
-          <a href="#regles">Règles</a>
-          <a href="#achat">Achat</a>
-        </nav>
-
         <div class="prose prose-wide">
-          <h2 id="general" class="faq-section-title">Général</h2>
-          <div class="faq-accordion">
-            <details>
-              <summary>Combien de joueurs pour KYRAN ?</summary>
-              <div class="faq-answer">De 3 à 6 joueurs — plage optimale pour la tension des paris.</div>
-            </details>
-            <details>
-              <summary>Quelle est la durée d'une partie ?</summary>
-              <div class="faq-answer">Environ 30 minutes.</div>
-            </details>
-            <details>
-              <summary>À partir de quel âge ?</summary>
-              <div class="faq-answer">Dès 8 ans. Profondeur stratégique pour les adultes.</div>
-            </details>
-          </div>
+          <p class="article-lead answer-first"><strong>KYRAN est un jeu de plis à pari obligatoire pour 3 à 6 joueurs, d'environ 30 minutes, à partir de 8 ans.</strong> Cette FAQ répond en quelques lignes aux questions les plus posées sur ses règles, son matériel, ses origines (Tarot Africain, Whist 22), ses comparaisons avec Skyjo, Wizard ou Uno, et son achat. Chaque réponse donne l'essentiel dès la première phrase, puis renvoie vers la page détaillée.</p>
 
-          <h2 id="apero" class="faq-section-title">Apéro &amp; soirée</h2>
-          <div class="faq-accordion">
-            <details>
-              <summary>KYRAN est-il un bon jeu apéro ?</summary>
-              <div class="faq-answer">Oui. Voir le guide <a class="text-link" href="jeu-apero.html">jeu apéro KYRAN</a>.</div>
-            </details>
-            <details>
-              <summary>Peut-on enchaîner plusieurs parties ?</summary>
-              <div class="faq-answer">Oui — 30 min par partie, deux sessions possibles dans une soirée.</div>
-            </details>
-            <details>
-              <summary>Convient-il en famille ?</summary>
-              <div class="faq-answer">Parfaitement dès 8 ans, stratégique pour les parents.</div>
-            </details>
-          </div>
+          <nav class="seo-toc" aria-label="Catégories de la FAQ">
+          <a href="#regles">Règles et pari</a>
+          <a href="#materiel">Matériel</a>
+          <a href="#tarot-africain-whist">Tarot Africain et Whist 22</a>
+          <a href="#comparatifs">Comparaisons</a>
+          <a href="#achat">Achat et livraison</a>
+          <a href="#apprendre">Apprendre à jouer</a>
+          </nav>
 
-          <h2 id="comparatifs" class="faq-section-title">Comparatifs</h2>
+          <h2 id="regles" class="faq-section-title">Règles et pari sur les plis</h2>
           <div class="faq-accordion">
             <details>
-              <summary>Différence avec Skyjo ?</summary>
-              <div class="faq-answer">Skyjo = mémoire. KYRAN = plis + pari. Détails : <a class="text-link" href="/blog/jeux-comme-skyjo.html">alternative Skyjo</a>.</div>
+              <summary>Quelles sont les règles de KYRAN en résumé ?</summary>
+              <div class="faq-answer">À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner, puis on joue les plis : un pari raté coûte autant de cartes Vie que l'écart. Les manches passent de 7 à 2 cartes, avant la manche Mystique à une carte posée sur le front. La partie s'arrête quand un joueur n'a plus de Vie. Tout le détail est dans les <a class="text-link" href="/regle.html">règles complètes</a>.</div>
             </details>
             <details>
-              <summary>Alternative à Wizard ?</summary>
-              <div class="faq-answer">Oui — voir <a class="text-link" href="comparatif-jeux-plis.html">comparatif jeux de plis</a>.</div>
+              <summary>Comment fonctionne le pari sur le nombre de plis ?</summary>
+              <div class="faq-answer">Avant de jouer, chacun annonce à voix haute combien de plis il pense remporter, de 0 jusqu'au nombre de cartes en main, en partant de la gauche du donneur. Gagner plus de plis que prévu est aussi une erreur : seul le nombre exact préserve vos cartes Vie. Des exemples chiffrés figurent dans les <a class="text-link" href="/regle.html#paris">règles de la phase de paris</a>.</div>
             </details>
             <details>
-              <summary>Lien Whist / Tarot Africain ?</summary>
-              <div class="faq-answer"><a class="text-link" href="whist-moderne.html">Whist moderne</a> · <a class="text-link" href="tarot-africain.html">Tarot Africain</a>.</div>
+              <summary>Pourquoi la somme des paris ne peut-elle pas égaler le nombre de plis ?</summary>
+              <div class="faq-answer">Cette règle d'or empêche le dernier joueur à parler d'équilibrer la table : il doit annoncer un chiffre qui fait diverger la somme des paris et le nombre de plis. Au moins un joueur rate donc son pari à chaque manche. Avec 5 plis en jeu et des paris de 1, 2 et 1, le dernier joueur ne peut pas annoncer 1.</div>
             </details>
-          </div>
-
-          <h2 id="regles" class="faq-section-title">Règles</h2>
-          <div class="faq-accordion">
             <details>
-              <summary>Convient aux débutants ?</summary>
-              <div class="faq-answer"><a class="text-link" href="regle.html#video">Vidéo 5 min</a> · <a class="text-link" href="minijeu.html">Dojo interactif</a>.</div>
+              <summary>Que se passe-t-il quand un pari est raté ?</summary>
+              <div class="faq-answer">Le joueur perd autant de cartes Vie que l'écart entre son pari et ses plis gagnés : annoncer 3 plis et n'en gagner qu'un coûte 2 cartes Vie. Un pari réussi ne coûte rien. Chacun démarre avec 5 cartes Vie, de 5 étoiles à 1 étoile, posées devant lui et visibles de tous.</div>
             </details>
             <details>
               <summary>Qu'est-ce que la manche Mystique ?</summary>
-              <div class="faq-answer">La manche finale culte se joue à 1 seule carte collée sur le front : les adversaires voient votre jeu mais pas vous ! Vous pariez et bluffez à l'aveugle.</div>
+              <div class="faq-answer">C'est la manche à une seule carte, jouée après la manche à 2 cartes. Chaque joueur tient sa carte contre son front : il voit celles des autres, mais pas la sienne, puis parie 1 (il gagne le pli) ou 0. Tous abattent leur carte ensemble ; un pari raté coûte 1 carte Vie, et les cartes Pouvoir n'ont aucun effet.</div>
             </details>
             <details>
-              <summary>Variante simplifiée ?</summary>
-              <div class="faq-answer">Sans Pouvoirs ni Mystique — voir <a class="text-link" href="regle.html#variante">règles</a>.</div>
+              <summary>À quoi servent les cartes Pouvoir ?</summary>
+              <div class="faq-answer">Les quatre pouvoirs agissent dès qu'ils sont posés : Sceau du Destin force un joueur à jouer une carte tirée au hasard, Clairvoyance Antique révèle en secret la carte la plus forte d'un joueur, Bénédiction des Ancêtres l'oblige à jouer sa carte la plus faible et Voile du Néant échange la valeur de votre carte avec une carte déjà posée. En cas d'égalité avec une carte Nombre, le pouvoir l'emporte.</div>
+            </details>
+            <details>
+              <summary>Comment se termine une partie et qui gagne ?</summary>
+              <div class="faq-answer">La partie s'arrête dès qu'un joueur a perdu toutes ses cartes Vie. Celui qui en possède alors le plus grand nombre devient Maître des Mystiques. En cas d'égalité de Vies restantes, les joueurs concernés se départagent lors d'une ultime manche Mystique. Une partie dure environ 30 minutes.</div>
+            </details>
+            <details>
+              <summary>Existe-t-il une variante simplifiée pour débuter ?</summary>
+              <div class="faq-answer">Oui : la variante d'initiation se joue sans cartes Pouvoir ni carte Mystique. Elle permet d'assimiler d'abord le pari et les plis, puis d'ajouter les retournements de situation à la partie suivante. Les règles la recommandent aussi pour de jeunes enfants. Voir la section <a class="text-link" href="/regle.html#variante">variante d'initiation</a>.</div>
             </details>
           </div>
 
-          <h2 id="achat" class="faq-section-title">Achat</h2>
+          <h2 id="materiel" class="faq-section-title">Matériel et caractéristiques</h2>
           <div class="faq-accordion">
             <details>
-              <summary>Quel est le prix de KYRAN ?</summary>
-              <div class="faq-answer">Le jeu est au tarif direct éditeur de <strong>9,99€</strong> (frais de livraison calculés à l'étape de commande) sur notre <a class="text-link" href="commander.html">boutique officielle</a>. Il est également disponible sur <a class="text-link" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Amazon</a> à 17,99€ (avec livraison Prime).</div>
+              <summary>Combien de joueurs faut-il pour jouer à KYRAN ?</summary>
+              <div class="faq-answer">KYRAN se joue de 3 à 6 joueurs ; il ne se joue pas à deux. À 3 ou 4 joueurs, on utilise quatre cartes Pouvoir (valeurs 11, 27, 20 et 3) et la carte Mystique ; à 5 ou 6 joueurs, toutes les cartes Pouvoir. Pour jouer en duo, consultez notre sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a>.</div>
             </details>
             <details>
-              <summary>Où acheter KYRAN ?</summary>
-              <div class="faq-answer">Directement sur notre <a class="text-link" href="commander.html">boutique en ligne officielle (9,99€)</a> avec paiement sécurisé Stripe, ou sur <a class="text-link" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Amazon France (17,99€)</a>.</div>
+              <summary>Combien de temps dure une partie de KYRAN ?</summary>
+              <div class="faq-answer">Environ 30 minutes. La partie s'arrête dès qu'un joueur perd sa dernière carte Vie, donc sa durée réelle dépend du nombre de manches nécessaires. Les manches se jouent à 7, 6, 5, 4, 3 puis 2 cartes, avant la manche Mystique. Pour d'autres idées courtes, voir les <a class="text-link" href="/blog/jeux-30-minutes.html">jeux de cartes de 30 minutes</a>.</div>
             </details>
             <details>
-              <summary>Disponible en magasin ?</summary>
-              <div class="faq-answer">La distribution principale se fait en ligne (boutique officielle et Amazon). Pour les boutiques et revendeurs partenaires, contactez : <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>.</div>
+              <summary>À partir de quel âge peut-on jouer, et en famille ?</summary>
+              <div class="faq-answer">KYRAN est recommandé dès 8 ans et se joue en famille. Une testeuse Amazon le juge toutefois un peu subtil pour des enfants de 10 ans et moins ; la variante d'initiation, sans cartes Pouvoir ni Mystique, est prévue pour une première partie ou de jeunes enfants. Voir aussi les <a class="text-link" href="/blog/jeux-famille.html">jeux de société en famille</a>.</div>
             </details>
             <details>
-              <summary>Comment suivre KYRAN ?</summary>
-              <div class="faq-answer">Actus, visuels et coulisses sur
-                <a class="social-link social-link--instagram social-link--inline" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me">
-                  <span class="icon-instagram" aria-hidden="true"></span>
-                  <span>@kyran.jeu</span>
-                </a>.
-              </div>
+              <summary>Que contient la boîte de KYRAN ?</summary>
+              <div class="faq-answer">La boîte contient 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie (5 par joueur) et des cartes de règles en français. Elle mesure 11,5 × 8,5 × 2,8 cm pour 175 g, avec des cartes toilées vernies de 300 g/m². Le détail figure sur la page <a class="text-link" href="/commander.html#contenu-boite">contenu de la boîte</a>.</div>
+            </details>
+            <details>
+              <summary>Y a-t-il une notice dans la boîte ?</summary>
+              <div class="faq-answer">Les règles sont imprimées sur des cartes de règles en français, et un QR code sur la boîte donne accès à la règle en ligne, au tutoriel vidéo et au Dojo. Deux avis Amazon notent que ces cartes se confondent facilement avec les cartes de jeu : rangez-les à part. La <a class="text-link" href="/regle.html">règle complète</a> reste consultable en ligne.</div>
+            </details>
+          </div>
+
+          <h2 id="tarot-africain-whist" class="faq-section-title">Tarot Africain, Whist 22 et jeux de plis</h2>
+          <div class="faq-accordion">
+            <details>
+              <summary>Quel est l'autre nom du Tarot Africain ?</summary>
+              <div class="faq-answer">Le Tarot Africain est aussi appelé Whist 22, d'après les 22 atouts du tarot avec lesquels il se joue. Rikiki et Ascenseur sont des noms du jeu parent à 52 cartes, pas des synonymes ; d'autres appellations circulent, sans source fiable pour les confirmer. Voir le <a class="text-link" href="/tarot-africain.html">guide du Tarot Africain</a>.</div>
+            </details>
+            <details>
+              <summary>Quelle est l'origine du Tarot Africain ?</summary>
+              <div class="faq-answer">Aucune date ni aucun lieu d'invention du Tarot Africain n'est établi sur ce site, et nous ne les avançons pas sans source. Son nom de Whist 22 le rattache au Whist, jeu de plis anglais, et aux 22 atouts du tarot. L'auteur de KYRAN indique avoir été fasciné enfant par ses mécaniques de pari. Voir <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> et <a class="text-link" href="/whist-22.html">Whist 22</a>.</div>
+            </details>
+            <details>
+              <summary>Qu'est-ce que le Whist 22 ?</summary>
+              <div class="faq-answer">Le Whist 22 est un autre nom du Tarot Africain : un jeu de plis où l'on annonce le nombre exact de plis qu'on va remporter, avec les 22 cartes d'atout d'un tarot (21 atouts et l'Excuse), généralement à 3 à 5 joueurs. La somme des annonces ne peut pas égaler le nombre de plis. Détails sur la page <a class="text-link" href="/whist-22.html">Whist 22</a>.</div>
+            </details>
+            <details>
+              <summary>Quel jeu de cartes se joue en annonçant son nombre de plis ?</summary>
+              <div class="faq-answer">Plusieurs jeux de plis reposent sur l'annonce du nombre de plis : le Tarot Africain (Whist 22), Oh Hell!, Wizard et KYRAN. Dans chacun, on prédit son score avant de jouer et l'erreur se paie ; ils diffèrent par le matériel, les atouts et le décompte. Le <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> les met côte à côte.</div>
+            </details>
+            <details>
+              <summary>Quelle différence entre le Tarot Africain et KYRAN ?</summary>
+              <div class="faq-answer">KYRAN reprend l'annonce contrainte des plis du Tarot Africain, mais remplace le jeu de tarot par un jeu dédié de cartes Nombre de 1 à 36, ajoute quatre cartes Pouvoir et la carte Mystique, et matérialise les Vies par des cartes. Il se joue de 3 à 6 joueurs, là où le Tarot Africain à 22 cartes s'arrête généralement à 5. Voir la page <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>.</div>
+            </details>
+          </div>
+
+          <h2 id="comparatifs" class="faq-section-title">Comparaisons avec d'autres jeux</h2>
+          <div class="faq-accordion">
+            <details>
+              <summary>Quel jeu ressemble à Skyjo ?</summary>
+              <div class="faq-answer">Pour une soirée dans l'esprit de Skyjo, avec des règles courtes et environ 30 minutes de jeu, essayez Love Letter, Dobble, Uno ou KYRAN. Aucun n'a la même mécanique : Skyjo repose sur des cartes face cachée à retourner et à échanger pour obtenir le score le plus bas, KYRAN sur des plis et des paris. Détails dans <a class="text-link" href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo</a>.</div>
+            </details>
+            <details>
+              <summary>Quelle différence entre KYRAN et Wizard ?</summary>
+              <div class="faq-answer">Wizard et KYRAN reposent tous deux sur l'annonce du nombre de plis. Wizard (3 à 6 joueurs, environ 45 minutes, dès 10 ans) utilise des cartes spéciales et se joue aux points ; KYRAN (3 à 6 joueurs, environ 30 minutes, dès 8 ans) remplace les points par des cartes Vie et ajoute les cartes Pouvoir et la manche Mystique. Voir les <a class="text-link" href="/blog/alternatives-wizard.html">alternatives à Wizard</a>.</div>
+            </details>
+            <details>
+              <summary>KYRAN et Uno : quelle différence ?</summary>
+              <div class="faq-answer">Uno se joue en se défaussant par couleur ou par numéro, de 2 à 10 joueurs, environ 20 minutes, dès 7 ans ; KYRAN se joue en plis avec un pari obligatoire, de 3 à 6 joueurs, environ 30 minutes, dès 8 ans. Uno est plus simple et accueille plus de monde ; KYRAN demande de prévoir ses plis. Voir les <a class="text-link" href="/blog/alternatives-uno.html">alternatives à Uno</a>.</div>
+            </details>
+            <details>
+              <summary>Quel jeu choisir pour une soirée entre amis ou un apéro ?</summary>
+              <div class="faq-answer">Cela dépend du nombre de joueurs : de 3 à 6, KYRAN offre une vraie partie de 30 minutes avec paris et bluff ; au-delà, Uno et Jungle Speed accueillent jusqu'à 10 joueurs et Dobble jusqu'à 8. Notre guide <a class="text-link" href="/jeu-apero.html">jeu de cartes apéro</a> détaille une partie, et la sélection <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a> compare plusieurs titres.</div>
+            </details>
+          </div>
+
+          <h2 id="achat" class="faq-section-title">Achat, livraison et retours</h2>
+          <div class="faq-accordion">
+            <details>
+              <summary>Où acheter KYRAN et à quel prix ?</summary>
+              <div class="faq-answer">KYRAN se commande sur la <a class="text-link" href="/commander.html">boutique en ligne</a> à 9,99 € TTC la boîte, hors frais de livraison, ou sur <a class="text-link" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">Amazon.fr</a> à 17,99 € avec livraison Prime. Sur la boutique, le paiement passe par Stripe (carte bancaire, Apple Pay, Google Pay) et les frais de livraison sont affichés avant la validation.</div>
+            </details>
+            <details>
+              <summary>Quels sont les délais et les zones de livraison ?</summary>
+              <div class="faq-answer">Le colis part sous 24 à 48 heures ouvrées, puis arrive en 2 à 4 jours ouvrés en France et en 3 à 6 jours ouvrés dans les autres pays desservis (Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni). L'envoi est suivi (La Poste / Colissimo), avec un numéro de suivi par courriel. Les frais sont affichés avant le paiement : 2,99 € pour la France. Voir la page <a class="text-link" href="/commander.html#livraison-retours">livraison et retours</a>.</div>
+            </details>
+            <details>
+              <summary>Puis-je retourner KYRAN ou me rétracter ?</summary>
+              <div class="faq-answer">Oui, vous disposez de 14 jours francs après la réception pour vous rétracter, sans motif. Le jeu doit être renvoyé complet et en état d'origine, les frais de retour étant pris en charge par le vendeur. Le remboursement, frais d'envoi initiaux compris, intervient sous 14 jours. Voir les <a class="text-link" href="/cgv.html#art6">conditions générales de vente</a>, qui contiennent un modèle de formulaire.</div>
+            </details>
+            <details>
+              <summary>Le paiement en ligne est-il sécurisé ?</summary>
+              <div class="faq-answer">Oui. Le règlement passe par Stripe Checkout et la transaction est chiffrée ; aucune coordonnée bancaire n'est enregistrée sur kyran-jeu.fr. Les moyens acceptés sont la carte bancaire (CB, Visa, Mastercard), Apple Pay et Google Pay. Un accusé de réception est envoyé par courriel dès que la banque accepte le paiement.</div>
+            </details>
+            <details>
+              <summary>KYRAN est-il vendu en magasin, et comment contacter l'équipe ?</summary>
+              <div class="faq-answer">La distribution se fait en ligne, sur la boutique et sur Amazon.fr. Les boutiques et revendeurs intéressés peuvent écrire à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>, adresse qui répond aussi aux questions sur une commande sous 24 à 48 heures ouvrées. Les actualités du jeu sont publiées sur Instagram <a class="social-link social-link--instagram social-link--inline" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>@kyran.jeu</span></a>.</div>
+            </details>
+          </div>
+
+          <h2 id="apprendre" class="faq-section-title">Apprendre à jouer</h2>
+          <div class="faq-accordion">
+            <details>
+              <summary>Comment apprendre les règles de KYRAN rapidement ?</summary>
+              <div class="faq-answer">Le plus rapide est de regarder la <a class="text-link" href="/regle.html#video">vidéo Ludochrono</a> de 5 minutes, puis de lancer une première partie en variante d'initiation. Vous pouvez aussi lire les <a class="text-link" href="/regle.html">règles écrites</a> ou vous entraîner au <a class="text-link" href="/minijeu.html">Dojo</a> gratuit. Plusieurs avis Amazon indiquent que les règles s'expliquent en deux minutes.</div>
+            </details>
+            <details>
+              <summary>Qu'est-ce que le Dojo et que permet-il d'apprendre ?</summary>
+              <div class="faq-answer">Le Dojo est un simulateur gratuit où vous affrontez trois adversaires ordinateur en quatre manches de 4, 3, 2 puis 1 carte. Il enseigne le pari, la gestion des plis et la manche Mystique, mais pas les cartes Pouvoir, à découvrir avec la version physique. Il est accessible sur la page <a class="text-link" href="/minijeu.html">Dojo KYRAN</a>.</div>
+            </details>
+            <details>
+              <summary>Comment bien parier à KYRAN ?</summary>
+              <div class="faq-answer">Comptez vos cartes fortes, de 25 à 36, pour estimer vos plis ; avec une main faible, parier 0 est souvent prudent. À la manche Mystique, observez les cartes des autres : si elles sont toutes faibles, la vôtre est peut-être forte. Ces repères viennent du tutoriel du <a class="text-link" href="/minijeu.html">Dojo</a>, qui permet de s'exercer sans enjeu.</div>
             </details>
           </div>
         </div>
 
         <div class="editorial-callout" style="max-width:800px;margin:0 auto var(--space-4);">
-          <strong>Sur le blog :</strong> <a class="text-link" href="/blog/jeux-debutants-adultes.html">jeux pour débutants adultes</a> · <a class="text-link" href="/blog/index.html">tous les articles</a>
+          <strong>Sur le blog :</strong> <a class="text-link" href="/blog/jeux-debutants-adultes.html">jeux pour débutants adultes</a> · <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a> · <a class="text-link" href="/blog/">tous les articles</a>
         </div>
 
-        <kyran-cta-band show-dojo="false"></kyran-cta-band>
+        <kyran-cta-band show-dojo="false" data-ssr="1">
+      <div class="cta-band">
+        <h2>Prêt à défier votre intuition ?</h2>
+        <p>Commandez KYRAN ou apprenez les règles en quelques minutes.</p>
+        <div class="cta-band-actions">
+          <a class="btn btn-primary" href="/commander.html">Commander — 9,99&euro;</a>
+          <a class="btn btn-secondary" href="/regle.html">Voir les règles</a>
+          
+        </div>
+      </div>
+    </kyran-cta-band>
       </div>
     </section>
   </main>
-  <kyran-footer></kyran-footer>
+  <kyran-footer data-ssr="1">
+      <footer>
+        <div class="footer-grid">
+          <div class="footer-col footer-col--brand">
+            <p class="footer-heading">KYRAN</p>
+            <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
+            <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <div class="footer-follow">
+              <p class="footer-follow-label">Suivez le jeu</p>
+              <a class="social-link social-link--instagram" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>@kyran.jeu</span></a>
+            </div>
+          </div>
+          <div class="footer-col footer-col--explore">
+            <p class="footer-heading">Explorer</p>
+            <p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/faq.html">FAQ</a></p><p><a href="/a-propos.html">À propos</a></p>
+          </div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que dit la science</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--contact">
+            <p class="footer-heading">Contact</p>
+            <p><a href="/regle.html">R&egrave;gles du jeu</a></p>
+            <p><a href="/minijeu.html">Dojo interactif</a></p>
+            <p><a href="/dossier-presse.html">Espace Presse</a></p>
+            <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
+          </div>
+          <div class="footer-col footer-col--credits">
+            <p class="footer-heading">Cr&eacute;dits</p>
+            <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
+            <p>Auteur : Corentin Sence</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie 24-48h · 🇫🇷 Édition indépendante</p>
+          <p class="footer-seo-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/cgv.html">CGV</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/confidentialite.html">Confidentialité</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/plan-du-site.html">Plan du site</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/sitemap.xml">Sitemap</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/llms.txt">llms.txt</a>
+          </p>
+          <p class="footer-copyright">&copy; 2026 KYRAN. Tous droits r&eacute;serv&eacute;s.</p>
+        </div>
+      </footer>
+    </kyran-footer>
 </body>
 </html>
 

@@ -1,165 +1,77 @@
 /**
  * Registre canonique des URLs publiques kyran-jeu.fr
+ *
+ * - noSitemap : page publique mais sans valeur de recherche (légal, plan du site) → hors sitemap.
+ * - Les dates <lastmod> ne sont plus saisies ici : elles viennent de scripts/lib/lastmod.mjs.
  */
 export const SITE = 'https://kyran-jeu.fr';
-export const SITE_LASTMOD = '2026-09-05';
 
 export const STATIC_PAGES = [
   {
     path: '/',
-    title: 'Accueil — KYRAN jeu de cartes',
+    title: 'Accueil — KYRAN, jeu de cartes de plis, de bluff et de paris',
     section: 'KYRAN',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'weekly',
-    priority: '1.00',
     sitemapExtra: `
     <image:image>
-      <image:loc>${SITE}/boite-recto-kyran.png</image:loc>
-      <image:title>KYRAN – Jeu de cartes stratégique (boîte)</image:title>
+      <image:loc>${SITE}/boite-recto-kyran.jpg</image:loc>
+      <image:title>KYRAN – Jeu de cartes de plis, de bluff et de paris (boîte)</image:title>
       <image:caption>Jeu de cartes KYRAN pour 3 à 6 joueurs</image:caption>
     </image:image>`
   },
   {
     path: '/regle.html',
-    title: 'Règles officielles KYRAN',
+    title: 'Règles du jeu KYRAN (vidéo et règles écrites)',
     section: 'KYRAN',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.90',
     sitemapExtra: `
     <image:image>
       <image:loc>${SITE}/logo.png</image:loc>
-      <image:title>Règles officielles KYRAN</image:title>
+      <image:title>Règles du jeu KYRAN</image:title>
       <image:caption>Règles complètes du jeu de cartes KYRAN</image:caption>
     </image:image>`
   },
-  {
-    path: '/minijeu.html',
-    title: 'Dojo KYRAN — tutoriel interactif',
-    section: 'KYRAN',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.75'
-  },
+  { path: '/minijeu.html', title: 'Dojo KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
+  { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   {
     path: '/jeu-apero.html',
-    title: 'KYRAN — jeu de cartes apéro',
+    title: 'KYRAN — jeu de cartes pour l\'apéro',
     section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.85',
     sitemapExtra: `
     <image:image>
       <image:loc>${SITE}/jeu-kyran-ami.webp</image:loc>
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
     </image:image>`
   },
-  {
-    path: '/blog/jeux-comme-skyjo.html',
-    title: 'Alternative Skyjo — KYRAN',
-    section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.30',
-    noSitemap: true
-  },
-  {
-    path: '/tarot-africain.html',
-    title: 'Règles du Tarot Africain (Whist 22) : Guide & Variantes',
-    section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.85'
-  },
-  {
-    path: '/whist-moderne.html',
-    title: 'Whist moderne — plis et pari',
-    section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.80'
-  },
-  {
-    path: '/comparatif-jeux-plis.html',
-    title: 'Comparatif jeux de plis — KYRAN',
-    section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.80'
-  },
-  {
-    path: '/faq.html',
-    title: 'FAQ KYRAN',
-    section: 'Guides',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.75'
-  },
+  { path: '/tarot-africain.html', title: 'Tarot Africain : règles complètes, variantes et comptage des points', section: 'Guides' },
+  { path: '/tarot-africain-a-3-joueurs.html', title: 'Tarot Africain à 3 joueurs : règles et exemple', section: 'Guides' },
+  { path: '/whist-22.html', title: 'Whist 22 : définition, règles et jeux proches', section: 'Guides' },
+  { path: '/faq.html', title: 'FAQ KYRAN — règles, achat, Tarot Africain', section: 'Guides' },
+  { path: '/a-propos.html', title: 'À propos de KYRAN : l\'auteur, le jeu et notre méthode', section: 'KYRAN' },
   {
     path: '/dossier-presse.html',
     title: 'Espace presse KYRAN',
     section: 'KYRAN',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'yearly',
-    priority: '0.50',
     sitemapExtra: `
     <image:image>
       <image:loc>${SITE}/logo.png</image:loc>
       <image:title>Kit média et communiqué de presse KYRAN</image:title>
-      <image:caption>Espace presse officiel du jeu KYRAN</image:caption>
+      <image:caption>Espace presse du jeu KYRAN</image:caption>
     </image:image>`
   },
-  {
-    path: '/plan-du-site.html',
-    title: 'Plan du site — kyran-jeu.fr',
-    section: 'Ressources',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'monthly',
-    priority: '0.55'
-  },
-  {
-    path: '/commander.html',
-    title: 'Commander KYRAN — Boutique officielle',
-    section: 'Boutique',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'weekly',
-    priority: '0.95'
-  },
-  {
-    path: '/mentions-legales.html',
-    title: 'Mentions légales',
-    section: 'Légal & Vente',
-    lastmod: '2026-09-02',
-    changefreq: 'yearly',
-    priority: '0.40'
-  },
-  {
-    path: '/cgv.html',
-    title: 'Conditions Générales de Vente (CGV)',
-    section: 'Légal & Vente',
-    lastmod: '2026-09-02',
-    changefreq: 'yearly',
-    priority: '0.40'
-  },
-  {
-    path: '/confidentialite.html',
-    title: 'Politique de confidentialité (RGPD)',
-    section: 'Légal & Vente',
-    lastmod: '2026-09-02',
-    changefreq: 'yearly',
-    priority: '0.40'
-  },
-  {
-    path: '/blog/index.html',
-    title: 'Blog KYRAN — 40 sélections jeux',
-    section: 'Blog',
-    lastmod: SITE_LASTMOD,
-    changefreq: 'weekly',
-    priority: '0.85'
-  }
+  { path: '/blog/', title: 'Blog KYRAN — guides de jeux de cartes et de société', section: 'Blog' },
+  { path: '/plan-du-site.html', title: 'Plan du site — kyran-jeu.fr', section: 'Ressources', noSitemap: true },
+  { path: '/mentions-legales.html', title: 'Mentions légales', section: 'Légal & Vente', noSitemap: true },
+  { path: '/cgv.html', title: 'Conditions Générales de Vente (CGV)', section: 'Légal & Vente', noSitemap: true },
+  { path: '/confidentialite.html', title: 'Politique de confidentialité (RGPD)', section: 'Légal & Vente', noSitemap: true }
 ];
 
 export function loc(path) {
   if (path === '/') return SITE + '/';
   return SITE + path;
+}
+
+/** Fichier du dépôt correspondant à un chemin d'URL. */
+export function pathToFile(urlPath) {
+  if (urlPath === '/') return 'index.html';
+  if (urlPath.endsWith('/')) return urlPath.slice(1) + 'index.html';
+  return urlPath.slice(1);
 }

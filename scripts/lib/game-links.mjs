@@ -32,7 +32,7 @@ export const GAME_LINKS = {
     rules: '/regle.html',
     dojo: '/minijeu.html',
     designer: 'Corentin Sence',
-    year: 2024,
+    year: 2026,
     imageCredit: 'KYRAN — jeu officiel'
   },
   'lost-cities': {
@@ -262,34 +262,3 @@ export const GAME_LINKS = {
 };
 
 /** FAQ générique par catégorie d'article */
-export const ARTICLE_FAQ = {
-  Alternatives: [
-    { q: 'Comment choisir une alternative à un jeu qu\'on adore déjà ?', a: 'Identifiez ce qui vous plaît : durée, nombre de joueurs, niveau de chance ou d\'interaction. Testez d\'abord un titre proche, puis élargissez.' },
-    { q: 'Faut-il acheter plusieurs jeux similaires ?', a: 'Un ou deux titres complémentaires suffisent souvent. Variez les mécaniques (plis, bluff, coop) plutôt que d\'empiler les clones.' }
-  ],
-  Apéro: [
-    { q: 'Quel jeu de cartes pour un apéro de 6 personnes ?', a: 'Privilégiez des règles en 5 minutes, peu de setup et une durée sous 30 min : Jungle Speed, Uno, Skull ou KYRAN selon l\'ambiance.' },
-    { q: 'Peut-on enchaîner plusieurs jeux en une soirée ?', a: 'Oui : commencez par un jeu d\'action rapide, enchaînez avec un pli ou un bluff, terminez par un titre plus calme si besoin.' }
-  ],
-  Famille: [
-    { q: 'À partir de quel âge un enfant peut jouer à ces jeux ?', a: 'La plupart des titres listés conviennent dès 8 ans ; Dobble dès 6 ans. Vérifiez l\'âge sur la boîte et adaptez les règles si nécessaire.' }
-  ],
-  Cadeaux: [
-    { q: 'Quel budget pour un jeu de société cadeau ?', a: 'Entre 12 et 20 €, vous trouvez d\'excellents jeux de cartes. Au-delà de 25 €, orientez-vous vers des titres avec matériel premium (Dixit, Colt Express).' }
-  ],
-  Cartes: [
-    { q: 'Jeux de cartes pas chers : où acheter ?', a: 'Boutiques spécialisées (Philibert, Ludum), grandes surfaces culturelles ou Amazon. Comparez les promos avant Noël et les soldes.' }
-  ],
-  Soirée: [
-    { q: 'Quel jeu choisir pour une soirée entre amis ?', a: 'Variez : un jeu d\'ambiance rapide (Jungle Speed, Codenames), puis un titre plus stratégique (Skull, KYRAN). Adaptez au niveau d\'énergie du groupe.' },
-    { q: 'Combien de temps dure une soirée jeux réussie ?', a: 'Prévoyez 2–3 jeux de 20–40 min plutôt qu\'un marathon. Les articles KYRAN listent des durées réalistes par titre.' }
-  ],
-  'Stratégie': [
-    { q: 'Qu\'est-ce qu\'un jeu de stratégie légère ?', a: 'Un titre avec de vraies décisions tactiques, des règles abordables en une dizaine de minutes et des parties sous 45 minutes.' },
-    { q: 'Stratégie légère vs jeu expert : comment trancher ?', a: 'Si votre groupe veut réfléchir sans lire un manuel de 20 pages, restez sur la stratégie légère. Réservez l\'expert pour les soirées dédiées.' }
-  ],
-  Coop: [
-    { q: 'Les jeux coopératifs conviennent-ils aux débutants ?', a: 'Oui, surtout Hanabi, The Mind ou The Game : tout le monde gagne ou perd ensemble, ce qui réduit la frustration des novices.' },
-    { q: 'Comment éviter le « quarterbacking » en coop ?', a: 'Interdisez les ordres directs, limitez le temps de parole ou choisissez des jeux avec information cachée (Hanabi, Letter Jam).' }
-  ]
-};

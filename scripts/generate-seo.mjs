@@ -124,6 +124,8 @@ function buildLlmsTxt() {
 - Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
 - Livraison : France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni ; retours gratuits (14 jours)
 - Prix : 9,99 € sur ${SITE}/commander.html ; 17,99 € sur Amazon.fr (https://www.amazon.fr/dp/B0G217LD87)
+- Autre point de vente : Etsy (https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie)
+- Présence externe : fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
 - Règles : ${SITE}/regle.html (avec vidéo Ludochrono de 5 minutes)
 - Simulateur d'apprentissage gratuit (Dojo) : ${SITE}/minijeu.html

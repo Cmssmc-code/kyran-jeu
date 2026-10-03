@@ -413,7 +413,7 @@ function applyTarget(state, pid, power, target, events) {
     const a = mine.value;
     mine.value = theirs.value;
     theirs.value = a;
-    events.push({ type: 'swap', pid, target, mine: mine.value, theirs: theirs.value });
+    events.push({ type: 'swap', pid, target, mine: mine.value, theirs: theirs.value, mineCard: mine.card, theirsCard: theirs.card });
     return advance(state, events);
   }
   const victim = state.players[target];
@@ -467,9 +467,11 @@ function endRound(state, events) {
   let tied = null;
   const ids = state.players.map(p => p.id);
   if (state.tiebreak) {
+    // Départage : ceux qui réussissent leur pari l'emportent ; si tous réussissent ou tous
+    // échouent, on rejoue entre les mêmes joueurs.
     const pool = state.tiebreak;
-    const max = Math.max(...pool.map(id => state.players[id].lives));
-    tied = pool.filter(id => state.players[id].lives === max);
+    const ok = results.filter(x => x.diff === 0).map(x => x.pid);
+    tied = ok.length && ok.length < pool.length ? ok : pool;
     state.tiebreakCount = (state.tiebreakCount || 0) + 1;
     over = true;
   } else {
@@ -481,7 +483,9 @@ function endRound(state, events) {
       tied = ids.filter(id => state.players[id].lives === max);
     }
   }
-  if (over && tied.length > 1 && (state.tiebreakCount || 0) < 8 && !state.opts.noTiebreak) {
+  // Le départage se joue entre survivants : si tous les ex æquo sont à 0 Vie, victoire partagée.
+  const survivors = tied && tied.some(id => state.players[id].lives > 0);
+  if (over && tied.length > 1 && (survivors || state.tiebreak) && (state.tiebreakCount || 0) < 8 && !state.opts.noTiebreak) {
     state.tiebreak = tied;
     events.push({ type: 'tiebreak', players: tied });
     state.phase = 'roundEnd';

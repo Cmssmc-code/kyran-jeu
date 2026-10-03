@@ -6,7 +6,7 @@
  * manche (Monte-Carlo) pour choisir pari et carte ; les mêmes calculs alimentent les conseils
  * expliqués au joueur.
  */
-import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=888f9bc4b4';
+import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=617bc536b5';
 
 export const PERSONAS = [
   { key: 'oraculus', name: 'Oraculus', emoji: '🔮', bias: 0, chaos: 0, motto: 'calculateur, il parie juste' },
@@ -250,7 +250,6 @@ export function evaluateMoves(state, pid, sims = 160, seed = 1) {
   const me = state.players[pid];
   const rng = makeSimRng(seed + r.no * 7919 + r.trickNo * 104729 + pid * 13 + (state.trick ? state.trick.plays.length : 0));
   const moves = candidateMoves(me.hand).map(m => ({ ...m, loss: 0, exact: 0 }));
-  if (moves.length <= 1) return moves.map(m => ({ ...m, exact: 1 }));
   for (let s = 0; s < sims; s++) {
     const det = determinize(state, pid, rng);
     const bets = [];

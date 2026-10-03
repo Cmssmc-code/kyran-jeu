@@ -224,3 +224,42 @@ test('chaque leçon se déroule selon son scénario quand on suit le Sensei', ()
     }
   }
 });
+
+test('ex æquo tous à 0 Vie : victoire partagée, sans départage sans fin', () => {
+  const s = createGame({ players: [{ name: 'A' }, { name: 'B' }, { name: 'C' }], lives: 1, rounds: [1], cycles: 1, dealer: 2, seed: 2, deals: { 0: { hands: { 0: ['n30'], 1: ['n5'], 2: ['n6'] } } } });
+  act(s, { type: 'start' });
+  act(s, { type: 'bet', pid: 0, value: 0 });
+  act(s, { type: 'bet', pid: 1, value: 1 });
+  act(s, { type: 'bet', pid: 2, value: 1 });
+  const ev = act(s, { type: 'reveal' });
+  assert.ok(!ev.some(e => e.type === 'tiebreak'));
+  assert.deepEqual(s.winners, [0, 1, 2]);
+});
+
+test('départage : celui qui réussit son pari l’emporte', () => {
+  const s = createGame({ players: [{ name: 'A' }, { name: 'B' }, { name: 'C' }], lives: 2, rounds: [1], cycles: 1, dealer: 2, seed: 2,
+    deals: { 0: { hands: { 0: ['n30'], 1: ['n5'], 2: ['n6'] } }, 1: { hands: { 0: ['n10'], 1: ['n20'] } } } });
+  act(s, { type: 'start' });
+  for (const [pid, value] of [[0, 1], [1, 0], [2, 1]]) act(s, { type: 'bet', pid, value });
+  const ev = act(s, { type: 'reveal' });
+  assert.deepEqual(ev.find(e => e.type === 'tiebreak').players, [0, 1]);
+  act(s, { type: 'next' });
+  assert.deepEqual(s.round.participants, [0, 1]);
+  while (s.pending.type === 'bet') act(s, { type: 'bet', pid: s.pending.pid, value: legalBets(s, s.pending.pid)[0] });
+  act(s, { type: 'reveal' });
+  assert.equal(s.winners.length, 1);
+});
+
+test('Voile du Néant joué en fin de pli : l’événement porte les cartes échangées', () => {
+  const s = scripted({ 0: ['n10', 'n2'], 1: ['n31', 'n1'], 2: ['n12', 'n5'], 3: ['p3', 'n32'] });
+  for (const pid of [0, 1, 2, 3]) act(s, { type: 'bet', pid, value: 0 });
+  act(s, { type: 'play', pid: 0, cardId: 'n10' });
+  act(s, { type: 'play', pid: 1, cardId: 'n31' });
+  act(s, { type: 'play', pid: 2, cardId: 'n12' });
+  act(s, { type: 'play', pid: 3, cardId: 'p3' });
+  const ev = act(s, { type: 'target', pid: 3, target: 1 });
+  const swap = ev.find(e => e.type === 'swap');
+  assert.equal(swap.mineCard.id, 'p3');
+  assert.equal(swap.theirsCard.id, 'n31');
+  assert.equal(s.trick.no, 2, 'le moteur est déjà passé au pli suivant');
+});

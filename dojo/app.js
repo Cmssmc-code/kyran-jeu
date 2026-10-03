@@ -3,8 +3,8 @@
  * Les règles vivent dans engine.js, les adversaires et conseils dans ai.js, les leçons dans
  * lessons.js. Ce fichier ne fait qu'afficher l'état et transmettre les choix du joueur.
  */
-import * as E from './engine.js?v=888f9bc4b4';
-import * as AI from './ai.js?v=f748eb5723';
+import * as E from './engine.js?v=617bc536b5';
+import * as AI from './ai.js?v=20cbd41c06';
 import { LESSONS, BELT_COLORS } from './lessons.js?v=600cf92b76';
 
 const ROOT = document.getElementById('dojo');
@@ -160,8 +160,29 @@ class Aborted extends Error {}
 
 function wait(ms, sess) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => (sess && sess !== S ? reject(new Aborted()) : resolve()), Math.round(ms * speed()));
+    setTimeout(async () => {
+      // Partie en pause (fenêtre « Quitter ? ») : on attend la reprise
+      while (sess && sess === S && sess.pause) await sess.pause.promise;
+      if (sess && sess !== S) reject(new Aborted());
+      else resolve();
+    }, Math.round(ms * speed()));
   });
+}
+
+// Écouteurs clavier des fenêtres et du bouton « Continuer » : retirés à chaque changement
+// d'écran, même si la fenêtre n'a pas été fermée normalement.
+const uiCleanups = new Set();
+function onDocKey(fn) {
+  document.addEventListener('keydown', fn);
+  const off = () => {
+    document.removeEventListener('keydown', fn);
+    uiCleanups.delete(off);
+  };
+  uiCleanups.add(off);
+  return off;
+}
+function resetUi() {
+  for (const off of [...uiCleanups]) off();
 }
 
 function guard(sess) {
@@ -352,7 +373,9 @@ function defaultTip(sess, pend) {
 }
 
 function act0(action) {
-  if (S && S.resolveHuman) S.resolveHuman(action);
+  if (!S || !S.resolveHuman) return;
+  if (action.type !== 'play' && S.panelAt && performance.now() - S.panelAt < 300) return;
+  S.resolveHuman(action);
 }
 
 // ── Événements (animations, journal, Sensei) ───────────────────────────────
@@ -468,10 +491,9 @@ async function onEvent(sess, ev) {
     case 'swap': {
       const a = slotFor(ev.pid) && slotFor(ev.pid).querySelector('.dj-card');
       const b = slotFor(ev.target) && slotFor(ev.target).querySelector('.dj-card');
-      const pa = st.trick.plays.find(p => p.pid === ev.pid);
-      const pb = st.trick.plays.find(p => p.pid === ev.target);
-      if (a) { setValueBadge(a, ev.mine, pa.card.kind === 'mystique' ? null : pa.card.value); a.classList.add('is-swapped'); }
-      if (b) { setValueBadge(b, ev.theirs, pb.card.kind === 'mystique' ? null : pb.card.value); b.classList.add('is-swapped'); }
+      // Lire les cartes dans l'événement : le moteur a pu passer au pli suivant entre-temps
+      if (a) { setValueBadge(a, ev.mine, ev.mineCard.kind === 'mystique' ? null : ev.mineCard.value); a.classList.add('is-swapped'); }
+      if (b) { setValueBadge(b, ev.theirs, ev.theirsCard.kind === 'mystique' ? null : ev.theirsCard.value); b.classList.add('is-swapped'); }
       log(`Voile du Néant : ${name(ev.pid)} échange sa valeur avec ${name(ev.target)} (${ev.mine} contre ${ev.theirs}).`);
       toast(ev.pid, `Échange : ${ev.mine}`);
       await wait(900, sess);
@@ -562,6 +584,7 @@ const ICONS = {
 function renderGame() {
   const sess = S;
   const L = sess.lesson;
+  resetUi();
   ROOT.innerHTML = '';
   setModalOpen(false);
   ROOT.classList.add('is-playing');
@@ -929,8 +952,15 @@ function renderActions(sess, pend) {
       h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-lg', onclick: () => act0({ type: 'reveal' }) }, 'Révéler les cartes')
     ));
   }
-  const first = a.querySelector('button:not([disabled])');
-  if (first && pend.type !== 'play') first.focus({ preventScroll: true });
+  // Pas de focus automatique sur un bouton (un double clic ou une touche Entrée de trop
+  // validerait un choix) : le focus va au panneau, et les choix des 300 premières
+  // millisecondes sont ignorés.
+  sess.panelAt = performance.now();
+  const panel = a.firstElementChild;
+  if (panel && pend.type !== 'play') {
+    panel.setAttribute('tabindex', '-1');
+    panel.focus({ preventScroll: true });
+  }
   void st;
 }
 
@@ -1038,17 +1068,18 @@ function coachSay(html, opts = {}) {
   return new Promise((resolve, reject) => {
     const sess = opts.sess;
     const btn = h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-sm dj-ack' }, 'Continuer');
+    let off = null;
     const done = () => {
       btn.remove();
       if (S) S.coachHold = false;
-      document.removeEventListener('keydown', onKey);
+      if (off) off();
       if (sess && sess !== S) reject(new Aborted());
       else resolve();
     };
     const onKey = e => { if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('input,textarea') && !$('#dj-modal-layer .dj-modal')) { e.preventDefault(); done(); } };
     btn.addEventListener('click', done);
     actions.prepend(btn);
-    document.addEventListener('keydown', onKey);
+    off = onDocKey(onKey);
     btn.focus({ preventScroll: true });
   });
 }
@@ -1176,11 +1207,16 @@ document.addEventListener('fullscreenchange', () => {
 
 async function confirmQuit() {
   const sess = S;
+  if (!sess || sess.pause) return;
+  let release;
+  sess.pause = { promise: new Promise(r => { release = r; }) };
   const ok = await modal({
     title: 'Quitter la partie ?',
     body: h('p', { text: 'La partie en cours sera perdue.' }),
     buttons: [{ label: 'Continuer à jouer', value: false }, { label: 'Quitter', value: true, primary: true }]
   });
+  sess.pause = null;
+  release();
   if (ok && sess === S) exitToLobby();
 }
 
@@ -1204,10 +1240,11 @@ function modal({ title, body, buttons, className, sess, dismissible }) {
   return new Promise((resolve, reject) => {
     const prev = document.activeElement;
     const box = h('div', { class: 'dj-modal ' + (className || ''), role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'dj-modal-title' });
+    let off = null;
     const close = value => {
       box.remove();
       if (!ROOT.querySelector('.dj-modal')) setModalOpen(false);
-      document.removeEventListener('keydown', onKey);
+      if (off) off();
       if (prev && prev.focus && document.contains(prev)) prev.focus({ preventScroll: true });
       if (sess && sess !== S) reject(new Aborted());
       else resolve(value);
@@ -1233,7 +1270,7 @@ function modal({ title, body, buttons, className, sess, dismissible }) {
     box.appendChild(inner);
     layer.appendChild(box);
     setModalOpen(true);
-    document.addEventListener('keydown', onKey);
+    off = onDocKey(onKey);
     const focusEl = box.querySelector('.dj-btn-primary') || box.querySelector('button, a[href]');
     if (focusEl) focusEl.focus({ preventScroll: true });
   });
@@ -1443,6 +1480,7 @@ function renderLobby(keepFocus) {
   const focusedText = keepFocus && document.activeElement && ROOT.contains(document.activeElement) ? document.activeElement.textContent : null;
   const focusedGroup = focusedText && document.activeElement.closest('.dj-seg') ? document.activeElement.closest('.dj-seg').getAttribute('aria-label') : null;
   S = null;
+  resetUi();
   ROOT.innerHTML = '';
   ROOT.classList.remove('is-playing');
   setModalOpen(false);

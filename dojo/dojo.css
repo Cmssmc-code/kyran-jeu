@@ -450,6 +450,7 @@ html.dj-lock, html.dj-lock body { overflow: hidden; }
 
 .dj-actions { min-height: 48px; display: flex; justify-content: center; }
 .dj-hint-line { margin: 0; align-self: center; font-size: 0.76rem; color: var(--dj-muted); text-align: center; }
+.dj-panel:focus { outline: none; }
 .dj-panel { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 560px; }
 .dj-panel-title { margin: 0; font-weight: 800; font-size: 0.95rem; text-align: center; }
 .dj-panel-title span { display: block; font-weight: 500; font-size: 0.78rem; color: var(--dj-muted); }

@@ -8,6 +8,12 @@
  * scripts/content/communaute-reglages.json la force (`include: true` + `credit`).
  * Les publications propres à @kyran.jeu (sans crédit) sont ignorées.
  *
+ * Limite de l'API (connexion Instagram, instagram_business_basic) : /me/media ne renvoie que les
+ * publications dont @kyran.jeu est propriétaire. Les publications en collaboration créées par un
+ * joueur (champ collaborative_media, réservé à l'API « Facebook Login ») et les reposts natifs
+ * n'y figurent pas : ils sont listés à la main dans communaute-reglages.json → manual.
+ * Le renouvellement du jeton est géré à part : scripts/instagram-token.mjs.
+ *
  * Sortie : scripts/content/communaute.json + fichiers dans /communaute/. Puis `npm run build`.
  *
  * Variables d'environnement :
@@ -47,24 +53,10 @@ async function getJson(url) {
   const body = await res.json().catch(() => ({}));
   if (!res.ok || body.error) {
     const e = body.error || {};
-    throw new Error(hide(`API Instagram ${res.status} : ${e.message || res.statusText} (type ${e.type || '?'}, code ${e.code || '?'})`));
+    const expired = e.code === 190 ? ' — jeton expiré ou révoqué : générez-en un nouveau et mettez à jour le secret INSTAGRAM_ACCESS_TOKEN (docs/INSTAGRAM.md)' : '';
+    throw new Error(hide(`API Instagram ${res.status} : ${e.message || res.statusText} (type ${e.type || '?'}, code ${e.code || '?'})${expired}`));
   }
   return body;
-}
-
-/** Prolonge le jeton longue durée (60 jours) ; sans effet bloquant si Meta refuse. */
-async function refreshToken() {
-  if (userId) return; // jetons Facebook Login : renouvellement côté Meta Business
-  try {
-    const r = await getJson(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(token)}`);
-    const days = Math.round((r.expires_in || 0) / 86400);
-    console.log(`Jeton prolongé : valable encore ${days} jour(s).`);
-    if (r.access_token && r.access_token !== token) {
-      console.log('::warning::Meta a renvoyé un nouveau jeton : mettez à jour le secret INSTAGRAM_ACCESS_TOKEN (voir docs/INSTAGRAM.md).');
-    }
-  } catch (e) {
-    console.log(`Prolongation du jeton impossible (${e.message}).`);
-  }
 }
 
 async function fetchAllMedia() {
@@ -152,7 +144,6 @@ async function buildPost(item, credit) {
 }
 
 // ── Exécution ──────────────────────────────────────────────────────────────
-await refreshToken();
 const { overrides, manual } = loadSettings();
 const { items, complete } = await fetchAllMedia();
 console.log(`${items.length} publication(s) lue(s) sur Instagram.`);
@@ -194,5 +185,6 @@ if (dryRun) {
 } else {
   fs.writeFileSync(COMMUNITY_DATA, JSON.stringify({ posts }, null, 2) + '\n', 'utf8');
   console.log(`${posts.length} publication(s) de joueurs, ${count} média(s) ; ${removed} fichier(s) supprimé(s).`);
+  console.log(`+ ${manual.length} publication(s) de joueurs de la liste manuelle (collaborations, communaute-reglages.json).`);
   console.log('Étape suivante : npm run build');
 }

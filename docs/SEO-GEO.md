@@ -62,10 +62,12 @@ et le pied de page rendus statiquement n'y comptent pas). Ne modifiez pas ce fic
 
 ## 6. Page Communauté (Instagram)
 
-`/communaute.html` publie les photos et vidéos de joueurs republiées sur @kyran.jeu, hébergées sur le
-site (pas d'intégration Instagram) : sitemap image et vidéo, `ImageObject` / `VideoObject` avec le crédit
-de l'auteur, aucun cookie Meta. Synchronisation quotidienne par `.github/workflows/instagram.yml`.
-Mise en place (jeton Meta, secret GitHub) et règles de crédit : `docs/INSTAGRAM.md`.
+`/communaute.html` publie les photos et vidéos de joueurs partagées avec @kyran.jeu. Republications
+(automatiques) : fichiers hébergés sur le site, sitemap image et vidéo, `ImageObject` / `VideoObject` avec
+le crédit de l'auteur. Collaborations créées par un joueur (liste manuelle, l'API ne les renvoie pas) :
+intégration Instagram chargée au clic, `SocialMediaPosting` ; aucun cookie Meta avant le clic.
+Synchronisation quotidienne par `.github/workflows/instagram.yml`. Mise en place, liste manuelle et
+renouvellement du jeton : `docs/INSTAGRAM.md`.
 
 ## 7. À faire à la main (Corentin)
 

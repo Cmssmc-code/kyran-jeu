@@ -1,8 +1,26 @@
 # Page Communauté — photos et vidéos de joueurs depuis Instagram
 
-`/communaute.html` affiche les photos et vidéos prises par des joueurs de KYRAN et republiées sur
-le compte [@kyran.jeu](https://www.instagram.com/kyran.jeu/). Elle se met à jour toute seule, chaque
-jour, via `.github/workflows/instagram.yml`.
+`/communaute.html` affiche les photos et vidéos prises par des joueurs de KYRAN et partagées avec le
+compte [@kyran.jeu](https://www.instagram.com/kyran.jeu/) : republications, et publications créées par
+un joueur en collaboration avec @kyran.jeu. Elle se met à jour chaque jour via
+`.github/workflows/instagram.yml`.
+
+## Deux sources, deux affichages
+
+| Source | Comment elle arrive sur le site | Affichage |
+|---|---|---|
+| Publication **créée par @kyran.jeu** dont la légende crédite un joueur (`📸 @pseudo`…) | Automatique (API, chaque jour) | Fichiers hébergés sur le site (meilleur SEO) |
+| Publication **créée par un joueur** en collaboration avec @kyran.jeu, ou repost natif | Liste manuelle `manual` de `scripts/content/communaute-reglages.json` | Intégration officielle d'Instagram, chargée au clic ; ou fichiers hébergés si vous les ajoutez |
+
+Pourquoi les collaborations ne sont pas automatiques (vérifié dans la documentation Meta, octobre 2026) :
+l'endpoint `/me/media` ne renvoie que les publications dont @kyran.jeu est **propriétaire**. Une
+collaboration appartient au joueur qui l'a créée. Meta propose bien un champ `collaborative_media`
+(publications où le compte est collaborateur accepté), ainsi que `tags` et `business_discovery`, mais
+**uniquement avec l'API « Facebook Login »** : Page Facebook reliée au compte Instagram, permissions
+`instagram_basic` et `pages_read_engagement`, autre configuration de l'app. L'app « KYRAN site » utilise
+l'API « Instagram Login » avec la seule permission `instagram_business_basic` : elle ne voit pas ces
+publications. L'oEmbed d'Instagram ne donne plus de miniature depuis le 3 novembre 2025 et demande un
+examen de l'app (App Review) : il n'est pas utilisé.
 
 ## Pourquoi héberger les fichiers plutôt qu'intégrer Instagram
 
@@ -47,15 +65,69 @@ Les libellés de l'interface Meta changent souvent : suivez l'esprit des étapes
    nom `INSTAGRAM_ACCESS_TOKEN`, valeur = le jeton. Ne jamais le commiter ni le coller ailleurs.
 6. GitHub → Actions → « Synchronisation Instagram » → **Run workflow** pour un premier passage.
 
-Le workflow prolonge le jeton à chaque passage (quotidien), ce qui le garde valide. Si le journal du
-workflow affiche « Meta a renvoyé un nouveau jeton », remplacez la valeur du secret. Si le jeton a
-expiré (workflow en échec « API Instagram 400/190 »), regénérez-le (étape 3) et mettez à jour le secret.
+## Jeton : expiration et renouvellement
+
+Un jeton longue durée vit **60 jours**. Le renouveler auprès de Meta renvoie un **nouveau** jeton
+(valable 60 jours à compter du renouvellement) ; l'ancien continue de fonctionner jusqu'à sa propre
+échéance. Un jeton renouvelé n'est donc utile que s'il est réenregistré dans le secret GitHub, ce que
+le `GITHUB_TOKEN` d'un workflow ne peut pas faire.
+
+`scripts/instagram-token.mjs` (première étape du workflow) suit l'âge du jeton dans
+`scripts/content/instagram-jeton.json` : date d'enregistrement et empreinte SHA-256 tronquée du
+jeton (irréversible, jamais le jeton lui-même). Remplacer le secret à la main est détecté
+automatiquement (empreinte différente) et remet la date à zéro.
+
+**Option recommandée — renouvellement automatique** (à faire une fois) :
+
+1. GitHub → photo de profil → Settings → Developer settings → Personal access tokens →
+   **Fine-grained tokens** → Generate new token.
+2. Nom : `kyran-jeu secrets Instagram`. Expiration : la plus longue proposée.
+   Repository access : **Only select repositories** → `Cmssmc-code/kyran-jeu`.
+   Permissions → Repository permissions → **Secrets : Read and write**. Rien d'autre.
+3. Generate token, copier.
+4. Dépôt → Settings → Secrets and variables → Actions → New repository secret :
+   nom `GH_SECRETS_TOKEN`, valeur = ce jeton GitHub.
+
+Dès que le jeton Instagram a 30 jours, le workflow le renouvelle et réécrit lui-même
+`INSTAGRAM_ACCESS_TOKEN` (le nouveau jeton est masqué dans les journaux et passé à `gh secret set` par
+l'entrée standard). Il reste toujours au moins 30 jours de marge en cas d'échec.
+
+**Sans `GH_SECRETS_TOKEN`** : aucun renouvellement. 10 jours avant l'expiration estimée, le workflow
+ouvre une issue « Synchronisation Instagram : action requise » (une seule à la fois) et affiche un
+avertissement. La même issue s'ouvre si la synchronisation échoue (« code 190 » = jeton expiré ou
+révoqué). Procédure manuelle : générer un nouveau jeton (étape 3 de la mise en place), remplacer la
+valeur du secret `INSTAGRAM_ACCESS_TOKEN`, relancer le workflow, fermer l'issue. Si le jeton GitHub
+`GH_SECRETS_TOKEN` expire, l'écriture du secret échoue (avertissement) et l'alerte reprend le relais.
 
 Variante « Facebook Login » (compte Instagram relié à une Page Facebook) : renseigner aussi le secret
 `INSTAGRAM_USER_ID` (ID du compte Instagram professionnel) avec un jeton de l'API Graph Facebook.
 
 En local : `INSTAGRAM_ACCESS_TOKEN=… npm run fetch:instagram -- --dry-run` (liste sans rien
 télécharger), puis sans `--dry-run`, puis `npm run build`.
+
+## Publications de joueurs en collaboration (liste manuelle)
+
+Quand un joueur publie une photo ou un reel avec @kyran.jeu en collaborateur, ajoutez son lien et son
+pseudo dans `scripts/content/communaute-reglages.json` → `manual` :
+
+```json
+"manual": [
+  { "permalink": "https://www.instagram.com/reel/DV9BYIsjJgU/", "credit": "le.pirate.ludique" }
+]
+```
+
+C'est tout : l'identifiant, la date (encodée dans le lien) et le type (post ou reel) sont déduits du
+lien. Puis `npm run build` et commit (ou modification directe sur GitHub : le workflow du lendemain
+reconstruit la page).
+
+- **Sans fichier**, la carte affiche le pseudo, la date, un lien vers la publication et un bouton
+  « Afficher la publication » qui charge l'intégration officielle d'Instagram. Rien n'est chargé depuis
+  Instagram (Meta) avant ce clic : pas de cookie Meta ni de bandeau de consentement à prévoir. Si le
+  joueur a désactivé les intégrations sur son compte, le lien vers Instagram reste disponible.
+  Données structurées : `SocialMediaPosting` (auteur, date, lien).
+- **Avec fichiers** (meilleur SEO : Google Images, vidéos, assistants IA) : demandez au joueur sa
+  photo ou sa vidéo et son accord pour le site, déposez les fichiers dans `/communaute/`, puis ajoutez
+  `media` à l'entrée (format plus bas). La carte devient une photo ou une vidéo hébergée.
 
 ## Au quotidien
 
@@ -77,15 +149,13 @@ télécharger), puis sans `--dry-run`, puis `npm run build`.
 - **Corriger un crédit ou un texte** : `{ "credit": "pseudo", "alt": "Quatre amis jouent à KYRAN en terrasse", "caption": "…" }`.
   Un `alt` décrivant vraiment l'image est le meilleur gain SEO image : il remplace le texte automatique.
 - **Forcer une publication sans crédit dans la légende** : `{ "include": true, "credit": "pseudo" }`.
-- **Repost natif d'Instagram** (bouton « Republier ») et stories : l'API ne les renvoie pas. Les
-  ajouter à la main dans `manual` après avoir déposé les fichiers dans `/communaute/` :
+- **Publication avec fichiers hébergés** (collaboration dont le joueur vous a envoyé les fichiers,
+  repost natif, story enregistrée) : déposer les fichiers dans `/communaute/`, puis :
 
   ```json
   "manual": [
     {
-      "id": "manuel-2026-03-12-lea",
       "permalink": "https://www.instagram.com/p/XXXXXXXX/",
-      "date": "2026-03-12T20:00:00+01:00",
       "credit": "lea",
       "caption": "Soirée KYRAN à six joueurs.",
       "alt": "Six joueurs autour d'une table pendant une partie de KYRAN",
@@ -102,10 +172,12 @@ télécharger), puis sans `--dry-run`, puis `npm run build`.
 | Fichier | Rôle |
 |---|---|
 | `scripts/fetch-instagram.mjs` | Lecture de l'API, sélection, téléchargement |
+| `scripts/instagram-token.mjs` | Âge du jeton, renouvellement, alerte |
+| `scripts/content/instagram-jeton.json` | Date d'enregistrement et empreinte du jeton (généré) |
 | `scripts/generate-community.mjs` | Génère `communaute.html` (étape de `npm run build`) |
 | `scripts/lib/community.mjs` | Détection des crédits, textes, extrait de sitemap |
 | `scripts/content/communaute.json` | Publications récupérées (généré, ne pas éditer) |
-| `scripts/content/communaute-reglages.json` | Réglages manuels (masquer, corriger, ajouter) |
+| `scripts/content/communaute-reglages.json` | Réglages manuels : masquer, corriger, collaborations (`manual`) |
 | `communaute/` | Photos, vidéos et miniatures publiées |
 | `css/communaute.css` | Styles de la galerie |
-| `.github/workflows/instagram.yml` | Synchronisation quotidienne |
+| `.github/workflows/instagram.yml` | Synchronisation quotidienne, renouvellement du jeton, alerte |

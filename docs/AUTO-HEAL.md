@@ -62,9 +62,11 @@ sinon `ADMIN_NOTIFICATION_EMAILS`.
 
 Expéditeur de **tous** les emails KYRAN (`server/mailer.js`) : une adresse `@kyran-jeu.fr` (défaut
 `contact@kyran-jeu.fr`) ou `kyran.jeu@gmail.com`, jamais l'adresse d'un autre produit — toute autre
-valeur de `SENDER_EMAIL` est remplacée par `contact@kyran-jeu.fr`. Transport : SMTP si `SMTP_PASSWORD`
-est défini (boîte OVH `ssl0.ovh.net`, ou `smtp.gmail.com` pour l'adresse Gmail), sinon Resend avec le
-domaine `kyran-jeu.fr` vérifié.
+valeur de `SENDER_EMAIL` est remplacée par `contact@kyran-jeu.fr`. Transport : Resend si `RESEND_API_KEY`
+est défini (domaine `kyran-jeu.fr` vérifié dans Resend requis), sinon SMTP via `SMTP_PASSWORD` (boîte OVH
+`ssl0.ovh.net`, ou `smtp.gmail.com` pour l'adresse Gmail). Railway bloque le SMTP sortant hors offre Pro :
+`EMAIL_TRANSPORT=smtp` ne sert qu'en offre Pro ou hors Railway. Test d'envoi : workflow « Hourly
+Auto-Heal » lancé à la main avec `test_email`.
 
 ## 4. Agent (`scripts/auto-heal-worker.mjs`)
 

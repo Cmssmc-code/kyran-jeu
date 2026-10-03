@@ -243,3 +243,11 @@ test('rapport 24 h : envoyé (simulé sans Resend) une seule fois par jour', asy
   const second = await (await cron('/api/auto-heal/daily-report')).json();
   assert.equal(second.reason, 'already_sent_today');
 });
+
+test('email de test : authentification requise, envoi (simulé sans transport) depuis une adresse KYRAN', async () => {
+  assert.equal((await fetch(`${BASE}/api/auto-heal/test-email`, { method: 'POST' })).status, 401);
+  const res = await (await cron('/api/auto-heal/test-email', {})).json();
+  assert.equal(res.ok, true);
+  assert.equal(res.sender, 'contact@kyran-jeu.fr');
+  assert.equal(res.transport, 'none');
+});

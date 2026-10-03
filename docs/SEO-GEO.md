@@ -65,7 +65,7 @@ et le pied de page rendus statiquement n'y comptent pas). Ne modifiez pas ce fic
 `/communaute.html` publie les photos et vidéos de joueurs partagées avec @kyran.jeu. Republications
 (automatiques) : fichiers hébergés sur le site, sitemap image et vidéo, `ImageObject` / `VideoObject` avec
 le crédit de l'auteur. Collaborations créées par un joueur (liste manuelle, l'API ne les renvoie pas) :
-intégration Instagram chargée au clic, `SocialMediaPosting` ; aucun cookie Meta avant le clic.
+intégration Instagram affichée directement (iframe à chargement différé), `SocialMediaPosting`.
 Synchronisation quotidienne par `.github/workflows/instagram.yml`. Mise en place, liste manuelle et
 renouvellement du jeton : `docs/INSTAGRAM.md`.
 

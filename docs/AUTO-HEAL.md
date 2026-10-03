@@ -14,7 +14,7 @@ de vente, exceptions → recordServerIncident     agrégation par empreinte     
                                                                                      │ 4. commit + push sur main
                                               ◄── resolve / fail / ignore ───────────┤ 5. relance CI + Pages ; Railway redéploie seul
                                               ◄── daily-report (08:xx UTC) ──────────┘
-                                              email Resend → ADMIN_NOTIFICATION_EMAILS (contact@kyran-jeu.fr)
+                                              email depuis contact@kyran-jeu.fr → AUTO_HEAL_REPORT_EMAILS (kyran.jeu@gmail.com)
 ```
 
 ## 1. Remontée des erreurs
@@ -57,7 +57,14 @@ Pas de base de données : fichier JSON sur le volume Railway monté sur `/data`
 Authentification : **jeton OIDC GitHub Actions** (audience `kyran-auto-heal`, dépôt
 `Cmssmc-code/kyran-jeu`) vérifié par `server/githubOidc.js` — aucun secret à partager entre GitHub et
 Railway. Repli manuel : en-tête `X-Cron-Secret` si la variable Railway `CRON_SECRET` (32 caractères
-min.) est définie. Destinataires du rapport : `AUTO_HEAL_REPORT_EMAILS`, sinon `ADMIN_NOTIFICATION_EMAILS`.
+min.) est définie. Destinataires du rapport : `AUTO_HEAL_REPORT_EMAILS` (kyran.jeu@gmail.com sur Railway),
+sinon `ADMIN_NOTIFICATION_EMAILS`.
+
+Expéditeur de **tous** les emails KYRAN (`server/mailer.js`) : une adresse `@kyran-jeu.fr` (défaut
+`contact@kyran-jeu.fr`) ou `kyran.jeu@gmail.com`, jamais l'adresse d'un autre produit — toute autre
+valeur de `SENDER_EMAIL` est remplacée par `contact@kyran-jeu.fr`. Transport : SMTP si `SMTP_PASSWORD`
+est défini (boîte OVH `ssl0.ovh.net`, ou `smtp.gmail.com` pour l'adresse Gmail), sinon Resend avec le
+domaine `kyran-jeu.fr` vérifié.
 
 ## 4. Agent (`scripts/auto-heal-worker.mjs`)
 

@@ -4,8 +4,8 @@ compatibility_date = "2024-04-01"
 
 # Variables d'environnement non sensibles
 [vars]
-# Seul le domaine majordia.fr est vérifié dans Resend
-SENDER_EMAIL = "contact@majordia.fr"
+# Expéditeur KYRAN uniquement (domaine kyran-jeu.fr à vérifier dans Resend)
+SENDER_EMAIL = "contact@kyran-jeu.fr"
 SENDER_NAME = "KYRAN"
 REPLY_TO_EMAIL = "contact@kyran-jeu.fr"
 SITE_URL = "https://kyran-jeu.fr"

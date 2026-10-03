@@ -124,7 +124,7 @@ function renderHeaderHtml(active, pathname) {
               <ul class="nav-list" id="menu-principal">
                 <li><a href="${ROOT}" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
                 <li><a href="${ROOT}regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
-                <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Dojo</a></li>
+                <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Initiation</a></li>
                 <li class="nav-dropdown nav-desktop-only">
                   <button type="button" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
                     D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
@@ -188,7 +188,7 @@ function renderHeaderHtml(active, pathname) {
           <span class="mobile-nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
           </span>
-          <span class="mobile-nav-label">Dojo</span>
+          <span class="mobile-nav-label">Initiation</span>
         </a>
         <a href="${ORDER_URL}" class="mobile-nav-tab mobile-nav-tab--highlight ${activePage === 'order' ? 'active' : ''}">
           <span class="mobile-nav-icon" aria-hidden="true">
@@ -338,7 +338,7 @@ function renderFooterHtml() {
           <div class="footer-col footer-col--contact">
             <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
-            <p><a href="${ROOT}minijeu.html">Dojo interactif</a></p>
+            <p><a href="${ROOT}minijeu.html">Initiation interactive</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>
@@ -650,7 +650,7 @@ function renderCtaBandHtml(attr) {
         <div class="cta-band-actions">
           <a class="btn btn-primary" href="${ORDER_URL}">Commander — 9,99&euro;</a>
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
-          ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer le Dojo</a>' : ''}
+          ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer l’Initiation</a>' : ''}
         </div>
       </div>
     `;

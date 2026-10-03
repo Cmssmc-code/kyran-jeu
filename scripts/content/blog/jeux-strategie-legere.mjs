@@ -78,7 +78,7 @@ export default {
       pick: 'Pour une table de 3 à 6 qui aime jouer avec des vies visibles',
       paragraphs: [
         `KYRAN appartient à la même famille que le Tarot Africain et Oh Hell!, avec trois particularités qui touchent la stratégie. Rater son pari coûte autant de cartes Vie que l'écart : se tromper de trois fait trois fois plus mal que se tromper d'un seul pli, ce qui incite à prendre un risque raisonnable avec une mauvaise main. Les cartes Pouvoir permettent d'espionner ou de forcer un coup, et la manche Mystique se joue à une carte sur le front.`,
-        `Comme les cartes Vie sont visibles de tous, on joue aussi sur l'état de la table : un joueur proche de la dernière vie se met à jouer sur le fil. La chance est celle de la donne ; la profondeur reste celle d'un bon jeu de plis, pas d'un jeu de combinatoire. Les <a class="text-link" href="/regle.html">règles</a> se lisent en cinq minutes, et le <a class="text-link" href="/minijeu.html">dojo gratuit</a> permet d'essayer le pari sans ouvrir la boîte.`
+        `Comme les cartes Vie sont visibles de tous, on joue aussi sur l'état de la table : un joueur proche de la dernière vie se met à jouer sur le fil. La chance est celle de la donne ; la profondeur reste celle d'un bon jeu de plis, pas d'un jeu de combinatoire. Les <a class="text-link" href="/regle.html">règles</a> se lisent en cinq minutes, et l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet d'essayer le pari sans ouvrir la boîte.`
       ]
     },
     {

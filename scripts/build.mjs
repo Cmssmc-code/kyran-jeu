@@ -2,7 +2,7 @@
 /**
  * Régénère tout ce qui est généré (articles, redirections, données du blog, page communauté,
  * sitemap, llms.txt,
- * plan du site, rendu statique des composants, versions du Dojo, CSP). À lancer après toute modification de
+ * plan du site, rendu statique des composants, versions de l’Initiation (ex-Dojo), CSP). À lancer après toute modification de
  * scripts/content/, des composants (components.js, reviews.js) ou des pages.
  */
 import { spawnSync } from 'child_process';

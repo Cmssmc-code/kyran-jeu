@@ -1,8 +1,8 @@
 /*
- * Dojo KYRAN — parcours des ceintures.
+ * Initiation KYRAN — les sept rites du collier d'initié.
  *
- * Chaque leçon impose une donne (mains, donneur, paris et cartes des adversaires) pour que le
- * Sensei puisse commenter précisément la situation. Les étapes `coach` se déclenchent une seule
+ * Chaque rite impose une donne (mains, donneur, paris et cartes des adversaires) pour que le
+ * Bokonon, devin du Fa, puisse commenter précisément la situation. Les étapes `coach` se déclenchent une seule
  * fois, avant une décision du joueur (`on: 'bet' | 'play' | 'target' | 'mysticValue' | 'reveal'`)
  * ou après un événement (`on: 'start' | 'trickWon' | 'peek' | 'roundEnd'`). `allow*` restreint les
  * choix possibles ; `ack` attend que le joueur ait lu avant de continuer.
@@ -17,16 +17,16 @@ const missedText = s => {
 
 const TABLE = [
   { name: 'Toi', human: true },
-  { name: 'Oraculus', persona: 'oraculus', level: 'adepte' },
-  { name: 'Titan', persona: 'titan', level: 'adepte' },
-  { name: 'Viper', persona: 'viper', level: 'adepte' }
+  { name: 'Griot', persona: 'griot', level: 'adepte' },
+  { name: 'Amazone', persona: 'amazone', level: 'adepte' },
+  { name: 'Caméléon', persona: 'cameleon', level: 'adepte' }
 ];
 
 export const LESSONS = [
   {
     id: 'pli',
-    belt: 'blanche',
-    beltName: 'Ceinture blanche',
+    bead: 'blanche',
+    beadName: 'Perle blanche',
     title: 'Le pli',
     summary: 'La carte la plus forte remporte le pli.',
     intro: [
@@ -49,20 +49,20 @@ export const LESSONS = [
     aiBets: { 1: 1, 2: 1, 3: 1 },
     aiPlays: { 1: ['n28', 'n12', 'n2'], 2: ['n30', 'n17', 'n4'], 3: ['n14', 'n35', 'n1'] },
     coach: [
-      { on: 'start', ack: true, say: 'Voici ta main : un 33 rouge, un 21 jaune et un 5 mauve. Pour cette première leçon, je fais les annonces à ta place : on se concentre sur les plis.' },
+      { on: 'start', ack: true, say: 'Voici ta main : un 33 rouge, un 21 jaune et un 5 mauve. Pour ce premier rite, je fais les annonces à ta place : on se concentre sur les plis.' },
       { on: 'play', trick: 1, allowCards: ['n33'], say: 'Tu ouvres le premier pli. Pose ton <b>33</b> : une carte rouge est très forte.' },
       { on: 'trickWon', trick: 1, ack: true, say: '33 bat 30, 28 et 14 : <b>tu remportes le pli</b>. Celui qui gagne un pli ouvre le suivant, donc c’est encore à toi.' },
       { on: 'play', trick: 2, allowCards: ['n21'], say: 'Ouvre avec ton <b>21</b>. Observe bien ce que jouent les autres.' },
-      { on: 'trickWon', trick: 2, ack: true, say: 'Viper avait gardé un <b>35</b> : elle remporte le pli et ouvre le suivant. Une carte jaune ne suffit pas toujours.' },
-      { on: 'play', trick: 3, say: 'Viper a ouvert avec un 1. Il ne te reste que ton <b>5</b> : pose-le.' },
+      { on: 'trickWon', trick: 2, ack: true, say: 'Caméléon avait gardé un <b>35</b> : il remporte le pli et ouvre le suivant. Une carte jaune ne suffit pas toujours.' },
+      { on: 'play', trick: 3, say: 'Caméléon a ouvert avec un 1. Il ne te reste que ton <b>5</b> : pose-le.' },
       { on: 'trickWon', trick: 3, ack: true, say: 'Ton 5 bat le 1, le 2 et le 4 ! Une petite carte gagne quand les autres jouent encore plus petit. Tu as remporté <b>2 plis</b>.' }
     ],
     success: () => ({ ok: true, text: 'Tu sais lire un pli : la plus forte carte gagne et son propriétaire ouvre le suivant.' })
   },
   {
     id: 'pari',
-    belt: 'jaune',
-    beltName: 'Ceinture jaune',
+    bead: 'jaune',
+    beadName: 'Perle jaune',
     title: 'Le pari',
     summary: 'Annonce le nombre exact de plis que tu vas gagner.',
     intro: [
@@ -94,8 +94,8 @@ export const LESSONS = [
   },
   {
     id: 'regle-or',
-    belt: 'orange',
-    beltName: 'Ceinture orange',
+    bead: 'orange',
+    beadName: 'Perle orange',
     title: 'La règle d’or',
     summary: 'Le dernier à parier ne peut pas tomber juste sur le total.',
     intro: [
@@ -117,8 +117,8 @@ export const LESSONS = [
     aiPlays: { 1: ['n34', 'n15', 'n6'], 2: ['n20', 'n29', 'n11'], 3: ['n7', 'n26', 'n13'] },
     coach: [
       { on: 'bet', say: 'Les autres ont annoncé 1 + 1 + 0 = 2 plis sur 3. Ton 32 vaut sans doute 1 pli… mais 2 + 1 ferait 3 : <b>la règle d’or t’interdit 1</b>. Parier 0 et perdre exprès est souvent plus sûr que viser 2.' },
-      { on: 'play', trick: 1, say: s => (s.players[0].bet === 0 ? 'Oraculus a posé un 34 : glisse ton <b>32</b> dessous, il ne gagnera pas ce pli. C’est le moment de te débarrasser de ta carte dangereuse.' : 'Tu vises 2 plis : il faudra gagner avec ton 32 et ton 18.') },
-      { on: 'play', trick: 2, when: s => s.players[0].bet === 0, say: 'Titan a posé 29 : ton <b>18</b> passe dessous. Garde le 2 pour la fin, il ne risque rien.' },
+      { on: 'play', trick: 1, say: s => (s.players[0].bet === 0 ? 'Griot a posé un 34 : glisse ton <b>32</b> dessous, il ne gagnera pas ce pli. C’est le moment de te débarrasser de ta carte dangereuse.' : 'Tu vises 2 plis : il faudra gagner avec ton 32 et ton 18.') },
+      { on: 'play', trick: 2, when: s => s.players[0].bet === 0, say: 'Amazone a posé 29 : ton <b>18</b> passe dessous. Garde le 2 pour la fin, il ne risque rien.' },
       { on: 'roundEnd', ack: true, say: s => 'Avec la règle d’or, la somme des paris ne tombe jamais juste : quelqu’un rate forcément.' + (missed(s).length ? ` Cette fois : ${missed(s).join(', ')}.` : '') }
     ],
     success: s => (s.players[0].bet === s.players[0].tricks
@@ -127,8 +127,8 @@ export const LESSONS = [
   },
   {
     id: 'mystique',
-    belt: 'verte',
-    beltName: 'Ceinture verte',
+    bead: 'verte',
+    beadName: 'Perle verte',
     title: 'La carte Mystique',
     summary: 'Le joker qui vaut 0 ou 37, au choix.',
     intro: [
@@ -152,19 +152,19 @@ export const LESSONS = [
       { on: 'bet', allowBets: [1], say: 'Ton 36 gagnera un pli. La Mystique, elle, fera ce que tu veux. Annonce <b>1</b> : le 36 le gagnera, et la Mystique t’aidera à ne pas en prendre d’autre.' },
       { on: 'play', trick: 1, allowCards: ['n36'], say: 'Ouvre avec ton <b>36</b> : la seule carte capable de le battre, c’est la Mystique… et elle est dans ta main.' },
       { on: 'trickWon', trick: 1, ack: true, say: 'Pli gagné, ton compte est bon. Maintenant, il faut tout perdre.' },
-      { on: 'play', trick: 2, allowCards: ['m'], say: 'Le Sensei a lu leur jeu : sur ce pli, ils vont jouer petit et ton 8 risquerait de gagner. Joue la <b>Mystique</b>.' },
+      { on: 'play', trick: 2, allowCards: ['m'], say: 'J’ai lu leur jeu dans le Fa : sur ce pli, ils vont jouer petit et ton 8 risquerait de gagner. Joue la <b>Mystique</b>.' },
       { on: 'mysticValue', allowValues: [0], say: 'Choisis <b>0</b> : la Mystique devient la carte la plus faible et ne peut pas gagner.' },
-      { on: 'trickWon', trick: 2, ack: true, say: 'Viper prend le pli avec un 7. À 37, la Mystique t’aurait offert un pli de trop.' },
+      { on: 'trickWon', trick: 2, ack: true, say: 'Caméléon prend le pli avec un 7. À 37, la Mystique t’aurait offert un pli de trop.' },
       { on: 'roundEnd', ack: true, say: 'Pari tenu grâce au joker. Retiens : 37 pour gagner à coup sûr, 0 pour perdre à coup sûr.' }
     ],
     success: s => (s.players[0].bet === s.players[0].tricks
       ? { ok: true, text: 'La Mystique n’a plus de secret pour toi.' }
-      : { ok: false, text: 'Réessaie en suivant le Sensei.' })
+      : { ok: false, text: 'Réessaie en suivant les conseils du Bokonon.' })
   },
   {
     id: 'pouvoirs',
-    belt: 'bleue',
-    beltName: 'Ceinture bleue',
+    bead: 'bleue',
+    beadName: 'Perle bleue',
     title: 'Les cartes Pouvoir',
     summary: 'Quatre pouvoirs qui renversent un pli.',
     intro: [
@@ -189,11 +189,11 @@ export const LESSONS = [
     coach: [
       { on: 'start', ack: true, say: 'Ta main ne contient que des cartes Pouvoir. Je parie 2 pour toi : on va les essayer une par une.' },
       { on: 'play', trick: 1, allowCards: ['p11'], say: 'Ouvre avec la <b>Clairvoyance Antique</b> : tu regarderas en secret la meilleure carte d’un adversaire.' },
-      { on: 'target', trick: 1, allowTargets: [2], say: 'Espionne <b>Titan</b> : c’est lui qui semble le plus dangereux.' },
-      { on: 'peek', ack: true, say: 'Titan cache un <b>35</b> : ta Clairvoyance (11) ne fera pas le poids. Ce genre d’information vaut de l’or pour la suite.' },
-      { on: 'play', trick: 2, allowCards: ['p20'], say: 'Oraculus joue après toi. Pose la <b>Bénédiction des Ancêtres</b> (20) : il devra jouer sa plus faible carte. Si tu jouais en dernier, l’effet serait annulé.' },
-      { on: 'target', trick: 2, say: 'Cible <b>Oraculus</b>, le seul joueur qui n’a pas encore joué.' },
-      { on: 'trickWon', trick: 2, ack: true, say: 'Forcé de jouer son 1, Oraculus ne peut plus te battre : ton 20 remporte le pli.' },
+      { on: 'target', trick: 1, allowTargets: [2], say: 'Espionne <b>Amazone</b> : c’est elle qui semble la plus dangereuse.' },
+      { on: 'peek', ack: true, say: 'Amazone cache un <b>35</b> : ta Clairvoyance (11) ne fera pas le poids. Ce genre d’information vaut de l’or pour la suite.' },
+      { on: 'play', trick: 2, allowCards: ['p20'], say: 'Griot joue après toi. Pose la <b>Bénédiction des Ancêtres</b> (20) : il devra jouer sa plus faible carte. Si tu jouais en dernier, l’effet serait annulé.' },
+      { on: 'target', trick: 2, say: 'Cible <b>Griot</b>, le seul joueur qui n’a pas encore joué.' },
+      { on: 'trickWon', trick: 2, ack: true, say: 'Forcé de jouer son 1, Griot ne peut plus te battre : ton 20 remporte le pli.' },
       { on: 'play', trick: 3, allowCards: ['p27'], say: 'Tu ouvres. Pose le <b>Sceau du Destin</b> (27) : tu tires au hasard une carte d’un adversaire, qu’il doit jouer aussitôt.' },
       { on: 'trickWon', trick: 3, ack: true, say: 'Leurs dernières cartes étaient toutes au-dessus de 27. Le hasard du Sceau ne suffit pas toujours !' },
       { on: 'play', trick: 4, allowCards: ['p3'], say: 'Dernière carte : le <b>Voile du Néant</b> (3). Il échange sa valeur avec une carte déjà posée par un adversaire. Il est annulé si tu ouvres le pli : ici, ce n’est pas le cas.' },
@@ -204,8 +204,8 @@ export const LESSONS = [
   },
   {
     id: 'manche-mystique',
-    belt: 'marron',
-    beltName: 'Ceinture marron',
+    bead: 'rouge',
+    beadName: 'Perle rouge',
     title: 'La manche Mystique',
     summary: 'Une carte sur le front : tu vois les autres, jamais la tienne.',
     intro: [
@@ -227,7 +227,7 @@ export const LESSONS = [
     coach: [
       { on: 'start', ack: true, say: 'Ta carte est face cachée : regarde plutôt celles de tes adversaires, au-dessus de leurs avatars : 8, 15 et 12.' },
       { on: 'bet', say: 'La plus forte carte visible est un 15. Parmi les cartes que tu ne vois pas, une grande majorité bat le 15 : tes chances de gagner sont bonnes. Le bouton Conseil te donne le calcul exact.' },
-      { on: 'reveal', say: s => (s.players[0].bet === 1 && s.players[3].bet === 1 ? 'Les paris sont faits. Viper, dernière à parler, n’avait pas le droit d’annoncer 0 : avec la règle d’or, la somme des paris ne peut pas valoir 1. Révèle les cartes !' : 'Les paris sont faits. Révèle les cartes !') },
+      { on: 'reveal', say: s => (s.players[0].bet === 1 && s.players[3].bet === 1 ? 'Les paris sont faits. Caméléon, dernier à parler, n’avait pas le droit d’annoncer 0 : avec la règle d’or, la somme des paris ne peut pas valoir 1. Révèle les cartes !' : 'Les paris sont faits. Révèle les cartes !') },
       { on: 'roundEnd', ack: true, say: s => (s.players[0].bet === s.players[0].tricks ? 'Tu avais un 29 : déduction parfaite.' : 'Tu avais un 29 : face à 8, 15 et 12, il fallait oser parier 1.') }
     ],
     success: s => (s.players[0].bet === s.players[0].tricks
@@ -236,22 +236,22 @@ export const LESSONS = [
   },
   {
     id: 'epreuve',
-    belt: 'noire',
-    beltName: 'Ceinture noire',
-    title: 'L’épreuve du Maître',
+    bead: 'noire',
+    beadName: 'Perle noire',
+    title: 'L’épreuve des Anciens',
     summary: 'Une vraie partie, toutes règles, face à trois Maîtres.',
     intro: [
       'Partie complète : manches de <b>7 à 2 cartes</b>, puis la manche Mystique, avec les cartes Pouvoir et la Mystique.',
       'La partie s’arrête dès qu’un joueur perd sa dernière Vie. Celui qui a le plus de Vies devient <b>Maître des Mystiques</b>.',
-      'Tes adversaires jouent au niveau Maître. Termine premier pour obtenir la ceinture noire.'
+      'Tes adversaires jouent au niveau Maître. Termine premier pour recevoir la perle noire.'
     ],
     showCards: ['n36', 'p27', 'm'],
     setup: {
       players: [
         { name: 'Toi', human: true },
-        { name: 'Oraculus', persona: 'oraculus', level: 'maitre' },
-        { name: 'Titan', persona: 'titan', level: 'maitre' },
-        { name: 'Gaïa', persona: 'gaia', level: 'maitre' }
+        { name: 'Griot', persona: 'griot', level: 'maitre' },
+        { name: 'Amazone', persona: 'amazone', level: 'maitre' },
+        { name: 'Guérisseuse', persona: 'guerisseuse', level: 'maitre' }
       ],
       powers: true,
       mystique: true
@@ -264,12 +264,13 @@ export const LESSONS = [
   }
 ];
 
-export const BELT_COLORS = {
-  blanche: '#f1f5f9',
+/** Couleur de la perle gagnée à chaque rite. */
+export const BEAD_COLORS = {
+  blanche: '#f8fafc',
   jaune: '#facc15',
   orange: '#fb923c',
   verte: '#22c55e',
   bleue: '#3b82f6',
-  marron: '#a16207',
-  noire: '#0b0b0f'
+  rouge: '#dc2626',
+  noire: '#111111'
 };

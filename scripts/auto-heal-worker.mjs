@@ -399,7 +399,7 @@ const SYSTEM_PROMPT = `Tu es l'agent d'auto-remédiation du site KYRAN (kyran-je
 
 Le dépôt :
 - Site statique publié sur GitHub Pages : pages HTML à la racine (index.html, regle.html, commander.html, minijeu.html…), scripts navigateur (components.js, blog.js, reviews.js, hero-visual.js, error-reporter.js), style.css et css/.
-- Dojo (minijeu.html) : modules ES dans dojo/ (engine.js règles, ai.js adversaires et conseils, lessons.js leçons, app.js interface, dojo.css), testés par scripts/test/dojo.test.mjs ; leurs ?v= sont posés par scripts/stamp-dojo.mjs pendant le build.
+- Initiation, ex-Dojo (minijeu.html) : modules ES dans dojo/ (engine.js règles, ai.js adversaires et conseils, lessons.js leçons, app.js interface, dojo.css), testés par scripts/test/dojo.test.mjs ; leurs ?v= sont posés par scripts/stamp-dojo.mjs pendant le build.
 - Pages et fichiers GÉNÉRÉS par \`npm run build\` (scripts/build.mjs) : articles blog/*.html (source : scripts/content/ et scripts/generate-blog.mjs), redirections, sitemap.xml, llms*.txt, plan-du-site.html, communaute.html, rendu statique des composants (scripts/prerender.mjs), CSP en <meta> + balise error-reporter (scripts/apply-csp.mjs). Ne modifie jamais un fichier généré directement : corrige sa source, la validation relance le build.
 - Serveur Node sans dépendance déployé sur Railway (server/server.js, server/templates.js, server/incidents.js) : webhook Stripe → emails Resend, API d'administration, remontée des erreurs.
 - worker/ : variante Cloudflare Worker du webhook (non déployée automatiquement).

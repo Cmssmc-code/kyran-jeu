@@ -78,7 +78,7 @@ export default {
       pick: `Pour trois à six joueurs qui aiment les plis`,
       paragraphs: [
         `Le prix de KYRAN dépend du canal : 9,99 € sur kyran-jeu.fr, 17,99 € sur Amazon, pour un jeu identique. Si le budget compte, la <a class="text-link" href="/commander.html">commande directe</a> est la voie logique. Le principe : des plis avec pari obligatoire, où la somme des paris ne peut jamais égaler le nombre de plis, de sorte que quelqu’un perd des cartes Vie à chaque manche. La partie réunit trois à six joueurs dès huit ans et se règle en une demi-heure.`,
-        `Pour la rejouabilité, la donne change tout, et les manches de sept cartes jusqu’à la manche Mystique donnent à chaque partie le même rythme mais des situations inédites. Le matériel, avec ses cartes toilées et sa boîte rigide, est pensé pour durer. Deux limites : on ne joue pas à deux, et la boîte compte plus de quatre-vingts cartes. Pour l’essayer sans acheter, le <a class="text-link" href="/minijeu.html">dojo</a> est gratuit.`
+        `Pour la rejouabilité, la donne change tout, et les manches de sept cartes jusqu’à la manche Mystique donnent à chaque partie le même rythme mais des situations inédites. Le matériel, avec ses cartes toilées et sa boîte rigide, est pensé pour durer. Deux limites : on ne joue pas à deux, et la boîte compte plus de quatre-vingts cartes. Pour l’essayer sans acheter, l’<a class="text-link" href="/minijeu.html">Initiation</a> est gratuite.`
       ]
     },
     {
@@ -136,7 +136,7 @@ export default {
     },
     {
       q: `Comment tester un jeu de cartes avant de l’acheter ?`,
-      a: `Regardez une vidéo de règles et lisez le livret en ligne : c’est gratuit et fiable. Pour KYRAN, les règles existent en vidéo de cinq minutes sur la page règles, et le dojo gratuit propose un tutoriel interactif en sept leçons guidées, puis des parties contre l’ordinateur, directement en ligne, avant de commander.`
+      a: `Regardez une vidéo de règles et lisez le livret en ligne : c’est gratuit et fiable. Pour KYRAN, les règles existent en vidéo de cinq minutes sur la page règles, et l’Initiation gratuite propose un tutoriel interactif en sept leçons guidées, puis des parties contre l’ordinateur, directement en ligne, avant de commander.`
     }
   ],
   related: [`cadeau-anniversaire`, `jeux-30-minutes`, `alternatives-uno`]

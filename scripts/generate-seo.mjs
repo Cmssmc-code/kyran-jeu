@@ -129,7 +129,7 @@ function buildLlmsTxt() {
 - Présence externe : fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
 - Règles : ${SITE}/regle.html (avec vidéo Ludochrono de 5 minutes)
-- Simulateur d'apprentissage gratuit (Dojo) : ${SITE}/minijeu.html
+- Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques
@@ -212,7 +212,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Quelle durée ? Environ 30 minutes.
 - Quel âge ? Dès 8 ans.
 - Où acheter ? 9,99 € sur ${SITE}/commander.html, 17,99 € sur Amazon.fr.
-- Peut-on essayer gratuitement ? Oui, avec le Dojo en ligne : ${SITE}/minijeu.html.
+- Peut-on essayer gratuitement ? Oui, avec l’Initiation en ligne : ${SITE}/minijeu.html.
 - Différence avec Skyjo ? Skyjo se joue sans plis (on minimise un score avec une grille de cartes) ; KYRAN est un jeu de plis avec pari et vies.
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : ${SITE}/tarot-africain.html

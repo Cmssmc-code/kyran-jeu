@@ -5,7 +5,7 @@ Railway (`server/`), variante Cloudflare Worker (`worker/`). Après toute modifi
 composants ou contenus : `npm run build` puis `npm test` (la CI vérifie que les fichiers générés
 sont à jour). Leçons anti-récidive : [`_notes/lecon.md`](_notes/lecon.md).
 
-Dojo (`minijeu.html`) : modules ES dans `dojo/` — `engine.js` (règles officielles, sans DOM),
+Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` — `engine.js` (règles officielles, sans DOM),
 `ai.js` (adversaires et conseils du Sensei), `lessons.js` (parcours des ceintures), `app.js`
 (interface), `dojo.css`. Tests : `scripts/test/dojo.test.mjs`. Les `?v=` sont posés par
 `scripts/stamp-dojo.mjs` (inclus dans `npm run build`).

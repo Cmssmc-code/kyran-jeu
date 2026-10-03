@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'KYRAN est-il un jeu à pièges comme Exploding Kittens ?',
-      a: `Pas vraiment : KYRAN est un jeu de plis avec paris obligatoires, pour 3 à 6 joueurs. Il contient des pouvoirs qui contrarient un adversaire, comme le Voile du Néant ou le Sceau du Destin, mais son ton est plus calculé que farfelu. Le dojo gratuit sur <a class="text-link" href="/minijeu.html">la page mini-jeu</a> permet de l’essayer.`
+      a: `Pas vraiment : KYRAN est un jeu de plis avec paris obligatoires, pour 3 à 6 joueurs. Il contient des pouvoirs qui contrarient un adversaire, comme le Voile du Néant ou le Sceau du Destin, mais son ton est plus calculé que farfelu. L’Initiation gratuite sur <a class="text-link" href="/minijeu.html">la page mini-jeu</a> permet de l’essayer.`
     }
   ],
   related: ['jeux-bluff-pari', 'jeux-soiree-amis', 'meilleurs-jeux-apero']

@@ -2,7 +2,7 @@ import { renderOrderEmail, renderRefundEmail, renderShippingEmail } from './temp
 
 /**
  * Cloudflare Worker pour Webhook Stripe KYRAN
- * - Écoute checkout.session.completed -> Envoi email de confirmation avec récap & Dojo
+ * - Écoute checkout.session.completed -> Envoi email de confirmation avec récap & Initiation
  * - Écoute charge.refunded -> Envoi email de remboursement
  * - Endpoint POST /api/shipping -> Envoi email d'expédition de commande
  * - Utilise l'API Resend pour délivrabilité maximale

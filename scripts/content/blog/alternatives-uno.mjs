@@ -104,7 +104,7 @@ export default {
       pick: 'Pour les groupes de 3 à 6 prêts à annoncer leurs plis',
       paragraphs: [
         `KYRAN ne ressemble pas à Uno par sa mécanique : pas de pioche à vider ni de défausse à surveiller, chaque joueur reçoit sa main et annonce combien de plis il va gagner. Le point commun est le rythme : une carte posée à la fois, des cartes Pouvoir capables de retourner une situation (le Sceau du Destin force un joueur à jouer une carte tirée au hasard dans sa main) et une manche finale à une seule carte, la manche Mystique, qui tient lieu de « dernière carte » pour toute la table.`,
-        `Pour des habitués d'Uno, le saut est réel : il faut raisonner en plis, et le jeu ne se joue pas à deux. Dès 8 ans et en environ 30 minutes, avec une variante d'initiation sans cartes Pouvoir ni Mystique pour une première partie. Les <a class="text-link" href="/regle.html">règles de KYRAN</a> se lisent en quelques minutes, et le <a class="text-link" href="/minijeu.html">dojo gratuit</a> sert d'entraînement avant d'acheter.`
+        `Pour des habitués d'Uno, le saut est réel : il faut raisonner en plis, et le jeu ne se joue pas à deux. Dès 8 ans et en environ 30 minutes, avec une variante d’initiation sans cartes Pouvoir ni Mystique pour une première partie. Les <a class="text-link" href="/regle.html">règles de KYRAN</a> se lisent en quelques minutes, et l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> sert d'entraînement avant d'acheter.`
       ]
     }
   ],

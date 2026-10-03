@@ -96,7 +96,7 @@ export default {
       type: 'Plis et paris',
       pick: 'Pour les familles de 3 à 6 joueurs déjà à l’aise avec les plis',
       paragraphs: [
-        `KYRAN est indiqué dès 8 ans, mais c’est le jeu le plus calculatoire de cette liste : annoncer le nombre exact de plis que l’on va gagner oblige à évaluer sa main avant de jouer. La variante d’initiation retire les cartes Pouvoir et la carte Mystique, pour qu’un enfant ne manipule que la valeur de ses cartes, de 1 à 36. On peut aussi s’exercer d’abord au <a class="text-link" href="/minijeu.html">dojo gratuit</a>, sans sortir la boîte.`,
+        `KYRAN est indiqué dès 8 ans, mais c’est le jeu le plus calculatoire de cette liste : annoncer le nombre exact de plis que l’on va gagner oblige à évaluer sa main avant de jouer. La variante d’initiation retire les cartes Pouvoir et la carte Mystique, pour qu’un enfant ne manipule que la valeur de ses cartes, de 1 à 36. On peut aussi s’exercer d’abord à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a>, sans sortir la boîte.`,
         `Deux défauts pour une famille : il ne se joue pas à deux, donc un parent seul avec un enfant doit trouver un troisième joueur, et perdre des vies après un pari raté peut décourager un enfant qui se trompe de deux plis. Un détail rassure : au moins un joueur se trompe à chaque manche, l’erreur n’est donc jamais celle d’un seul. Les <a class="text-link" href="/regle.html">règles complètes</a> tiennent en une vidéo de cinq minutes.`
       ]
     }

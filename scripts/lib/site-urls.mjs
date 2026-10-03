@@ -34,7 +34,7 @@ export const STATIC_PAGES = [
       <image:caption>Règles complètes du jeu de cartes KYRAN</image:caption>
     </image:image>`
   },
-  { path: '/minijeu.html', title: 'Dojo KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
+  { path: '/minijeu.html', title: 'Initiation KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   {
     path: '/jeu-apero.html',

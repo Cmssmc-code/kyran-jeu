@@ -20,7 +20,7 @@
 - Présence externe : fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
 - Règles : https://kyran-jeu.fr/regle.html (avec vidéo Ludochrono de 5 minutes)
-- Simulateur d'apprentissage gratuit (Dojo) : https://kyran-jeu.fr/minijeu.html
+- Simulateur d'apprentissage gratuit (Initiation) : https://kyran-jeu.fr/minijeu.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques
@@ -44,7 +44,7 @@
 
 - Accueil — KYRAN, jeu de cartes de plis, de bluff et de paris : https://kyran-jeu.fr/
 - Règles du jeu KYRAN (vidéo et règles écrites) : https://kyran-jeu.fr/regle.html
-- Dojo KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
+- Initiation KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
 - Commander KYRAN — boutique en ligne : https://kyran-jeu.fr/commander.html
 - KYRAN — jeu de cartes pour l'apéro : https://kyran-jeu.fr/jeu-apero.html
 - Tarot Africain : règles complètes, variantes et comptage des points : https://kyran-jeu.fr/tarot-africain.html

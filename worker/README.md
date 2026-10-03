@@ -21,10 +21,10 @@ Pour que chaque client reçoive automatiquement un reçu/facture officiel dès l
 
 ## 2. Emails Personnalisés KYRAN (Cloudflare Worker + Resend)
 
-Le worker écoute les événements Stripe et envoie des emails brandés avec le lien direct vers le **Dojo en ligne** (`minijeu.html`), le récapitulatif détaillé et les règles du jeu.
+Le worker écoute les événements Stripe et envoie des emails brandés avec le lien direct vers l'**Initiation en ligne** (`minijeu.html`), le récapitulatif détaillé et les règles du jeu.
 
 ### Événements gérés :
-- `checkout.session.completed` : Email de confirmation d'achat + accès immédiat Dojo.
+- `checkout.session.completed` : Email de confirmation d'achat + accès immédiat Initiation.
 - `charge.refunded` : Notification de remboursement avec délais bancaires (5-10 jours).
 - `POST /api/shipping` : Notification d'expédition avec numéro de suivi La Poste.
 

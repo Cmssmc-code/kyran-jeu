@@ -105,7 +105,7 @@ export default {
       pick: `Pour qui aime la belote ou le tarot, avec un petit budget`,
       paragraphs: [
         `Dans l’enveloppe des petits cadeaux, KYRAN est affiché 9,99 € sur kyran-jeu.fr, contre 17,99 € chez Amazon : à vous de choisir où l’acheter. Il s’adresse à la personne qui joue déjà aux plis et accepte de parier sur le nombre de levées qu’elle va remporter, la somme des paris ne pouvant jamais tomber juste pour tous. De trois à six joueurs, environ trente minutes, dès huit ans.`,
-        `La boîte rigide et les cartes toilées lui donnent l’allure d’un vrai cadeau, et les <a class="text-link" href="/regle.html">règles</a> existent en vidéo de cinq minutes, ce qui aide si vous devez les expliquer en pleine fête. Il ne se joue pas à deux : pour un couple, préférez Love Letter. Pour quelqu’un qui n’a jamais joué aux plis, la variante d’initiation, sans Pouvoir ni Mystique, ouvre la voie, et le <a class="text-link" href="/minijeu.html">dojo gratuit</a> permet de s’entraîner avant d’offrir.`
+        `La boîte rigide et les cartes toilées lui donnent l’allure d’un vrai cadeau, et les <a class="text-link" href="/regle.html">règles</a> existent en vidéo de cinq minutes, ce qui aide si vous devez les expliquer en pleine fête. Il ne se joue pas à deux : pour un couple, préférez Love Letter. Pour quelqu’un qui n’a jamais joué aux plis, la variante d’initiation, sans Pouvoir ni Mystique, ouvre la voie, et l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet de s’entraîner avant d’offrir.`
       ]
     }
   ],

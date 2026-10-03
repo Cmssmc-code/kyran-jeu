@@ -114,7 +114,7 @@ export default {
       pick: 'La moitié d’un groupe : 3 à 6 joueurs, les autres jouent ailleurs',
       paragraphs: [
         `KYRAN se joue de trois à six joueurs et il n’existe aucune règle pour sept ou huit : si votre groupe dépasse six, l’honnêteté impose de le scinder. Deux solutions. Proposer un autre jeu à ceux qui restent (Uno, Dobble), puis échanger les places à la partie suivante. Ou installer deux tables avec deux boîtes, chaque table jouant sa propre partie, ce que les règles n’interdisent pas mais ne prévoient pas non plus.`,
-        `Ce que KYRAN apporte à un grand groupe, c’est la table sérieuse : celle des joueurs qui veulent parier, compter et se tromper à voix haute pendant que les autres chahutent. Une partie dure environ trente minutes. Les <a class="text-link" href="/regle.html">règles</a> se découvrent en vidéo de cinq minutes, le <a class="text-link" href="/minijeu.html">dojo gratuit</a> permet de s’entraîner, et la boîte coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique</a>.`
+        `Ce que KYRAN apporte à un grand groupe, c’est la table sérieuse : celle des joueurs qui veulent parier, compter et se tromper à voix haute pendant que les autres chahutent. Une partie dure environ trente minutes. Les <a class="text-link" href="/regle.html">règles</a> se découvrent en vidéo de cinq minutes, l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet de s’entraîner, et la boîte coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique</a>.`
       ]
     }
   ],

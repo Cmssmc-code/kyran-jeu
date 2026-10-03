@@ -97,7 +97,7 @@ export default {
       pick: 'Pour suivre les cartes fortes tombées et ajuster son pari',
       paragraphs: [
         `Un bon pari à KYRAN s’appuie sur ce qui est déjà tombé : après quelques plis, retenir quelles cartes fortes ont été jouées permet de savoir s’il en reste en circulation pour vous priver d’un pli. Les manches de 7 à 2 cartes font varier la charge : à 7 cartes, la mémoire est mise à contribution ; à 2 cartes, c’est le calcul qui prend le relais.`,
-        `La manche Mystique est singulière : une seule carte posée sur le front, visible de tous sauf de son porteur, qui parie 1 ou 0 selon ce qu’il voit chez les autres. Défaut : les cartes Pouvoir à valeurs doubles, comme le Sceau du Destin (27 ou 4), ajoutent des exceptions à retenir. La variante d’initiation les retire, pour un comptage plus pur. Consultez les <a class="text-link" href="/regle.html">règles</a> ou le <a class="text-link" href="/minijeu.html">dojo gratuit</a> pour vous entraîner.`
+        `La manche Mystique est singulière : une seule carte posée sur le front, visible de tous sauf de son porteur, qui parie 1 ou 0 selon ce qu’il voit chez les autres. Défaut : les cartes Pouvoir à valeurs doubles, comme le Sceau du Destin (27 ou 4), ajoutent des exceptions à retenir. La variante d’initiation les retire, pour un comptage plus pur. Consultez les <a class="text-link" href="/regle.html">règles</a> ou l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> pour vous entraîner.`
       ]
     }
   ],

@@ -97,7 +97,7 @@ export default {
       pick: 'Pour trois à six joueurs qui veulent un jeu de plis exigeant',
       paragraphs: [
         `KYRAN se distingue du modèle par sa famille : un jeu de plis où l’on annonce, avant chaque manche, le nombre de plis qu’on va gagner. Comme dans 6 qui prend !, la pénalité est proportionnelle à l’erreur, ici sous forme de cartes Vie perdues selon l’écart entre le pari et les plis gagnés. On ne joue pas simultanément : chacun pose à son tour, mais le pari engage toute la table.`,
-        `Il tient de 3 à 6, en environ 30 minutes, ne se joue pas à deux et ne remplace donc pas 6 qui prend ! pour dix personnes. Les pouvoirs ajoutent des coups bas ciblés : le Voile du Néant, par exemple, échange la valeur de votre carte avec une carte déjà posée ce tour. Pour s’y essayer, le <a class="text-link" href="/minijeu.html">dojo gratuit</a> montre le principe, et les <a class="text-link" href="/regle.html">règles complètes</a> tiennent sur quelques cartes.`
+        `Il tient de 3 à 6, en environ 30 minutes, ne se joue pas à deux et ne remplace donc pas 6 qui prend ! pour dix personnes. Les pouvoirs ajoutent des coups bas ciblés : le Voile du Néant, par exemple, échange la valeur de votre carte avec une carte déjà posée ce tour. Pour s’y essayer, l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> montre le principe, et les <a class="text-link" href="/regle.html">règles complètes</a> tiennent sur quelques cartes.`
       ]
     }
   ],

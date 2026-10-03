@@ -289,7 +289,7 @@ const html = `<!DOCTYPE html>
           <h2>Apparaître sur cette page</h2>
           <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram, ou invitez-le comme collaborateur. Quand nous republions votre photo ou votre vidéo, ou acceptons votre collaboration, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
           <p>Chaque photo et chaque vidéo reste la propriété de son auteur. Vous figurez sur cette page et préférez être retiré&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: la publication est retirée du site.</p>
-          <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a>, entraînez-vous gratuitement dans le <a class="text-link" href="/minijeu.html">Dojo</a> ou <a class="text-link" href="/commander.html">commandez KYRAN</a>.</p>
+          <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a>, entraînez-vous gratuitement dans l’<a class="text-link" href="/minijeu.html">Initiation</a> ou <a class="text-link" href="/commander.html">commandez KYRAN</a>.</p>
         </div>
       </div>
     </section>

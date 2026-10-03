@@ -160,7 +160,7 @@ test('des centaines de parties de 3 à 6 joueurs se terminent sans erreur', () =
   }
 });
 
-test('l’IA ne voit pas les cartes cachées et le Sensei conseille un pari autorisé', () => {
+test('l’IA ne voit pas les cartes cachées et le Bokonon conseille un pari autorisé', () => {
   const s = createGame({ players: TABLE4, rounds: [5], cycles: 1, dealer: 0, seed: 11 });
   act(s, { type: 'start' });
   const unseen = unseenFor(s, 1).map(c => c.id);
@@ -184,7 +184,7 @@ test('manche Mystique : chances calculées sur les cartes invisibles', () => {
   assert.ok(o.pWin > 0.5);
 });
 
-test('chaque leçon se déroule selon son scénario quand on suit le Sensei', () => {
+test('chaque leçon se déroule selon son scénario quand on suit le Bokonon', () => {
   for (const L of LESSONS.filter(l => !l.free)) {
     const s = createGame({ ...L.setup, seed: 5 });
     act(s, { type: 'start' });

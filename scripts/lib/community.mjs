@@ -4,7 +4,8 @@
  * Deux fichiers de données :
  * - scripts/content/communaute.json          généré par scripts/fetch-instagram.mjs (ne pas éditer)
  * - scripts/content/communaute-reglages.json édité à la main : masquer une publication, corriger
- *   un crédit ou un texte alternatif, ajouter une publication absente de l'API (repost natif).
+ *   un crédit ou un texte alternatif, ajouter une publication absente de l'API (publication en
+ *   collaboration créée par un joueur, repost natif) avec ou sans fichiers.
  *
  * Les fichiers médias sont hébergés sur le site (dossier /communaute/) : les images et vidéos
  * sont indexées sous kyran-jeu.fr (Google Images, vidéos, assistants IA), sans script ni cookie
@@ -51,6 +52,31 @@ export function extractCredit(caption) {
 
 export function profileUrl(handle) {
   return `https://www.instagram.com/${normalizeHandle(handle)}/`;
+}
+
+// ── Liens de publication ───────────────────────────────────────────────────
+const SHORTCODE_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+const INSTAGRAM_EPOCH_MS = 1314220021721; // identifiants Instagram : 41 bits de millisecondes depuis cette date
+
+/** Code court d'une URL de publication (instagram.com/p/<code>/, /reel/<code>/, /tv/<code>/), ou null. */
+export function shortcodeOf(permalink) {
+  const m = String(permalink || '').match(/^https:\/\/(?:www\.)?instagram\.com\/(?:[A-Za-z0-9._]+\/)?(?:p|reel|reels|tv)\/([A-Za-z0-9_-]{5,40})\/?(?:[?#].*)?$/);
+  return m ? m[1] : null;
+}
+
+/** Date de publication encodée dans le code court (heure exacte à la seconde près), ou null. */
+export function shortcodeDate(code) {
+  if (!code || code.length > 12) return null;
+  let id = 0n;
+  for (const ch of code) id = id * 64n + BigInt(SHORTCODE_ALPHABET.indexOf(ch));
+  const ms = Number(id >> 23n) + INSTAGRAM_EPOCH_MS;
+  if (ms < Date.UTC(2012, 0, 1) || ms > Date.UTC(2100, 0, 1)) return null;
+  return new Date(Math.floor(ms / 1000) * 1000).toISOString().replace('.000Z', '+00:00');
+}
+
+/** URL d'intégration officielle d'Instagram pour une publication. */
+export function embedUrl(code) {
+  return `https://www.instagram.com/p/${code}/embed/`;
 }
 
 /** Légende affichable : sans lignes composées uniquement de hashtags, espaces réduits, longueur bornée. */
@@ -139,19 +165,35 @@ export function loadFetched() {
 
 const fileExists = src => fs.existsSync(path.join(ROOT, String(src).replace(/^\//, '')));
 
+/** Ajout manuel : identifiant et date déduits du lien de la publication s'ils manquent. */
+function withDefaults(p) {
+  const code = shortcodeOf(p.permalink);
+  return {
+    ...p,
+    id: p.id || code,
+    date: p.date || shortcodeDate(code) || '',
+    type: p.type || (/\/reels?\//.test(String(p.permalink)) ? 'reel' : 'post')
+  };
+}
+
 /**
  * Publications à afficher : publications Instagram + ajouts manuels, réglages appliqués,
  * médias manquants écartés (jamais d'image cassée), triées de la plus récente à la plus ancienne.
+ * Un ajout manuel sans fichier (publication d'un joueur en collaboration, que l'API ne renvoie
+ * pas) est affiché par l'intégration officielle d'Instagram : propriété `embed`, `media` vide.
  */
 export function loadCommunityPosts({ warn = () => {} } = {}) {
   const { overrides, manual } = loadSettings();
-  const all = [...loadFetched(), ...manual.map(p => ({ ...p, source: 'manuel' }))];
+  const all = [...loadFetched(), ...manual.map(p => withDefaults({ ...p, source: 'manuel' }))];
   const out = [];
   const seen = new Set();
   for (const raw of all) {
-    if (!raw || !raw.id || seen.has(String(raw.id))) continue;
-    seen.add(String(raw.id));
-    const o = overrides[raw.id] || {};
+    if (!raw || !raw.id) continue;
+    // Une même publication peut venir de l'API et de la liste manuelle : la première l'emporte
+    const keys = [String(raw.id), shortcodeOf(raw.permalink)].filter(Boolean);
+    if (keys.some(k => seen.has(k))) continue;
+    keys.forEach(k => seen.add(k));
+    const o = overrides[raw.id] || overrides[shortcodeOf(raw.permalink)] || {};
     if (o.hide) continue;
     const post = { ...raw, ...o };
     post.credit = normalizeHandle(post.credit);
@@ -161,8 +203,12 @@ export function loadCommunityPosts({ warn = () => {} } = {}) {
       if (!ok) warn(`publication ${post.id} : média introuvable (${m && m.src})`);
       return ok;
     });
-    if (!media.length) continue;
-    out.push({ ...post, media });
+    if (media.length) {
+      out.push({ ...post, media });
+    } else if (post.source === 'manuel' && shortcodeOf(post.permalink)) {
+      // Sans fichier hébergé : intégration officielle d'Instagram, chargée au clic du visiteur
+      out.push({ ...post, media: [], embed: embedUrl(shortcodeOf(post.permalink)) });
+    }
   }
   return out.sort((a, b) => String(b.date).localeCompare(String(a.date)) || String(b.id).localeCompare(String(a.id)));
 }
@@ -218,3 +264,37 @@ export function communitySitemapExtra(posts) {
 }
 
 export { SITE, abs as absoluteUrl };
+
+// ── Jeton Instagram : suivi de l'expiration ────────────────────────────────
+export const TOKEN_LIFETIME_DAYS = 60; // jeton longue durée, à compter de sa création ou de son renouvellement
+export const TOKEN_ROTATE_AFTER_DAYS = 30; // renouvellement automatique à partir de cet âge
+export const TOKEN_ALERT_DAYS = 10; // alerte (issue GitHub) quand il reste moins de jours que cela
+
+const DAY_MS = 86400000;
+export const addDays = (iso, n) => new Date(Date.parse(iso + 'T00:00:00Z') + n * DAY_MS).toISOString().slice(0, 10);
+export const daysBetween = (from, to) => Math.round((Date.parse(to + 'T00:00:00Z') - Date.parse(from + 'T00:00:00Z')) / DAY_MS);
+
+/**
+ * État du jeton enregistré dans le secret GitHub. On ne connaît pas le jeton, seulement son
+ * empreinte (SHA-256 tronquée, irréversible) : une empreinte différente signifie que le secret
+ * a été remplacé, et la date d'enregistrement repart du jour.
+ * @returns {{ state: {empreinte: string, enregistreLe: string}, changed: boolean, replaced: boolean }}
+ */
+export function trackToken(previous, fingerprint, today) {
+  const prev = previous || {};
+  if (!prev.empreinte) {
+    const state = { empreinte: fingerprint, enregistreLe: prev.enregistreLe || today };
+    return { state, changed: true, replaced: false };
+  }
+  if (prev.empreinte !== fingerprint) {
+    return { state: { empreinte: fingerprint, enregistreLe: today }, changed: true, replaced: true };
+  }
+  return { state: { empreinte: prev.empreinte, enregistreLe: prev.enregistreLe || today }, changed: !prev.enregistreLe, replaced: false };
+}
+
+export function tokenStatus(state, today) {
+  const expiresOn = addDays(state.enregistreLe, TOKEN_LIFETIME_DAYS);
+  const age = daysBetween(state.enregistreLe, today);
+  const daysLeft = daysBetween(today, expiresOn);
+  return { expiresOn, age, daysLeft, rotateDue: age >= TOKEN_ROTATE_AFTER_DAYS, alert: daysLeft <= TOKEN_ALERT_DAYS };
+}

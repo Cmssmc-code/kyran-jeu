@@ -6,6 +6,10 @@ name: Synchronisation Instagram (photos et vidéos de joueurs)
 #
 # Prérequis : secret du dépôt INSTAGRAM_ACCESS_TOKEN (voir docs/INSTAGRAM.md).
 # Sans ce secret, le workflow s'arrête proprement sans rien modifier.
+# Facultatif : secret GH_SECRETS_TOKEN (jeton GitHub limité au droit « Secrets » de ce dépôt) pour
+# que le jeton Instagram soit renouvelé et réenregistré automatiquement tous les 30 jours.
+# Sans lui, une issue « Synchronisation Instagram : action requise » est ouverte 10 jours avant
+# l'expiration du jeton (ou si la synchronisation échoue).
 
 on:
   schedule:
@@ -26,6 +30,7 @@ jobs:
     permissions:
       contents: write
       actions: write # relancer la publication Pages après mise à jour
+      issues: write # alerte avant l'expiration du jeton Instagram
     steps:
       - name: Jeton Instagram configuré ?
         id: token
@@ -56,7 +61,36 @@ jobs:
         if: steps.token.outputs.ok == 'true'
         run: npm ci --ignore-scripts
 
+      - name: Jeton Instagram (âge, renouvellement)
+        id: jeton
+        if: steps.token.outputs.ok == 'true'
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          HAS_SECRETS_WRITER: ${{ secrets.GH_SECRETS_TOKEN != '' }}
+        run: |
+          if [ "$HAS_SECRETS_WRITER" = "true" ]; then
+            export INSTAGRAM_ROTATION_FILE="$RUNNER_TEMP/instagram-token"
+          fi
+          node scripts/instagram-token.mjs
+
+      - name: Enregistrement du jeton renouvelé dans le secret
+        if: steps.jeton.outputs.rotated == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+        run: |
+          file="$RUNNER_TEMP/instagram-token"
+          trap 'rm -f "$file"' EXIT
+          # Valeur lue sur l'entrée standard : jamais dans la ligne de commande ni dans les journaux
+          if gh secret set INSTAGRAM_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < "$file"; then
+            echo "Secret INSTAGRAM_ACCESS_TOKEN mis à jour."
+          else
+            echo "::warning::Écriture du secret impossible (droits de GH_SECRETS_TOKEN ?) : l'ancien jeton reste en place."
+            git checkout -- scripts/content/instagram-jeton.json
+          fi
+
       - name: Récupération des publications Instagram
+        id: fetch
         if: steps.token.outputs.ok == 'true'
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -78,14 +112,49 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          if git diff --staged --quiet -- scripts/content/communaute.json communaute; then
+          if git diff --staged --quiet -- scripts/content/communaute.json communaute scripts/content/instagram-jeton.json; then
             echo "Aucune nouvelle publication de joueur."
             exit 0
           fi
+          media=false
+          git diff --staged --quiet -- scripts/content/communaute.json communaute || media=true
           before=$(git rev-parse HEAD)
-          git commit -m "chore(communaute): synchronisation des photos et vidéos Instagram [skip ci]"
+          git commit -m "chore(communaute): synchronisation Instagram [skip ci]"
           git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
-          # Un push fait avec GITHUB_TOKEN ne déclenche pas d'autre workflow : on relance
-          # explicitement la publication (sans effet tant que Pages n'est pas en mode Actions)
-          gh workflow run pages.yml --ref "${GITHUB_REF_NAME}" || echo "::warning::Relance de pages.yml impossible"
-          node scripts/indexnow.mjs --changed "$before" HEAD --wait || echo "::warning::IndexNow non notifié"
+          if [ "$media" = "true" ]; then
+            # Un push fait avec GITHUB_TOKEN ne déclenche pas d'autre workflow : on relance
+            # explicitement la publication (sans effet tant que Pages n'est pas en mode Actions)
+            gh workflow run pages.yml --ref "${GITHUB_REF_NAME}" || echo "::warning::Relance de pages.yml impossible"
+            node scripts/indexnow.mjs --changed "$before" HEAD --wait || echo "::warning::IndexNow non notifié"
+          fi
+
+      - name: Alerte (issue GitHub) si le jeton expire bientôt ou si la synchronisation échoue
+        if: always() && steps.token.outputs.ok == 'true' && (steps.jeton.outputs.alert == 'true' || steps.jeton.outcome == 'failure' || steps.fetch.outcome == 'failure')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPIRES_ON: ${{ steps.jeton.outputs.expires_on }}
+          DAYS_LEFT: ${{ steps.jeton.outputs.days_left }}
+          FETCH_OUTCOME: ${{ steps.fetch.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Synchronisation Instagram : action requise"
+          open=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$open" ]; then
+            echo "Issue déjà ouverte : #$open"
+            exit 0
+          fi
+          if [ "$FETCH_OUTCOME" = "failure" ]; then
+            reason="La synchronisation a échoué (voir le journal). Si l'erreur mentionne « code 190 », le jeton a expiré ou a été révoqué."
+          else
+            reason="Le jeton Instagram enregistré dans le secret expire vers le ${EXPIRES_ON} (dans ${DAYS_LEFT} jour(s)). Passé cette date, la page /communaute.html ne se met plus à jour."
+          fi
+          body=$(printf '%s\n\n%s\n\n%s\n%s\n%s\n%s\n\n%s\n\nExécution : %s\n' \
+            "$reason" \
+            "Procédure (5 minutes, détails dans docs/INSTAGRAM.md, section « Jeton ») :" \
+            "1. developers.facebook.com → app « KYRAN site » → Cas d'utilisation → Instagram → Personnaliser → Configuration de l'API avec connexion Instagram → Générer un token pour kyran.jeu." \
+            "2. GitHub → Settings → Secrets and variables → Actions → INSTAGRAM_ACCESS_TOKEN → Update → coller le jeton." \
+            "3. Actions → « Synchronisation Instagram » → Run workflow, puis fermer cette issue." \
+            "4. Pour ne plus avoir à le faire : créer le secret GH_SECRETS_TOKEN (renouvellement automatique, voir la doc)." \
+            "Ne jamais coller le jeton dans une issue, un commentaire ou un commit." \
+            "$RUN_URL")
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body "$body"

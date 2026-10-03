@@ -36,7 +36,13 @@ export const CSP = [
   'upgrade-insecure-requests'
 ].join('; ');
 
-const META = `<meta http-equiv="Content-Security-Policy" content="${CSP}" />`;
+// Page communauté : publications Instagram de joueurs intégrées au clic (iframe officielle)
+const FRAME_EXTRA = { 'communaute.html': 'https://www.instagram.com' };
+const metaFor = rel => {
+  const extra = FRAME_EXTRA[rel];
+  const csp = extra ? CSP.replace(/(frame-src [^;]+)/, `$1 ${extra}`) : CSP;
+  return `<meta http-equiv="Content-Security-Policy" content="${csp}" />`;
+};
 const REFERRER = '<meta name="referrer" content="strict-origin-when-cross-origin" />';
 const SKIP_DIRS = new Set(['node_modules', '.git', 'server', 'worker', 'scripts', 'email-previews', 'vendor']);
 const SKIP_FILES = new Set(['admin-emails.html']);
@@ -65,7 +71,8 @@ for (const file of htmlFiles(ROOT)) {
     continue;
   }
   const indent = charset[1];
-  out = out.replace(charset[0], `${charset[0]}\n${indent}${META}\n${indent}${REFERRER}`);
+  const rel = path.relative(ROOT, file).replace(/\\/g, '/');
+  out = out.replace(charset[0], `${charset[0]}\n${indent}${metaFor(rel)}\n${indent}${REFERRER}`);
   if (out !== src) {
     fs.writeFileSync(file, out);
     updated++;

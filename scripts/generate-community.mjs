@@ -18,15 +18,20 @@ import {
   isoDuration, absoluteUrl, SITE, PAGE_PATH, OWN_HANDLE
 } from './lib/community.mjs';
 
+// Publications intégrées (sans fichier hébergé) : comptées comme photo (post) ou vidéo (reel)
+const isReel = post => post.type === 'reel';
+
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'communaute.html');
 const URL = SITE + PAGE_PATH;
 const CACHE = assetVersion();
 
 const posts = loadCommunityPosts({ warn: m => console.log(`  ⚠ ${m}`) });
+const embeds = posts.filter(p => p.embed);
 const mediaCount = posts.reduce((n, p) => n + p.media.length, 0);
-const photos = posts.reduce((n, p) => n + p.media.filter(m => m.type !== 'video').length, 0);
-const videos = mediaCount - photos;
+const hostedPhotos = posts.reduce((n, p) => n + p.media.filter(m => m.type !== 'video').length, 0);
+const photos = hostedPhotos + embeds.filter(p => !isReel(p)).length;
+const videos = mediaCount - hostedPhotos + embeds.filter(isReel).length;
 const creators = new Set(posts.map(p => p.credit)).size;
 const indexable = posts.length > 0;
 
@@ -54,7 +59,27 @@ function mediaHtml(post, m, i, eager) {
   return `<img src="${esc(m.src)}" alt="${alt}"${size} loading="${eager ? 'eager' : 'lazy'}" decoding="async" />`;
 }
 
+function embedCardHtml(post) {
+  const caption = cleanCaption(stripCredits(post.caption));
+  const kind = isReel(post) ? 'Reel' : 'Publication';
+  const date = post.date ? `<time datetime="${esc(post.date)}">${esc(dateFr(post.date))}</time>` : '';
+  return `<figure class="ugc-card ugc-card--embed" id="ig-${esc(post.id)}">
+        <div class="ugc-embed${isReel(post) ? ' ugc-embed--reel' : ''}" data-embed="${esc(post.embed)}" data-title="${esc(`${kind} Instagram de @${post.credit}`)}">
+          <p class="ugc-embed__kind">${kind} Instagram</p>
+          <p class="ugc-embed__author">@${esc(post.credit)}</p>
+          <button type="button" class="btn btn-primary ugc-embed__btn">Afficher ${isReel(post) ? 'le reel' : 'la publication'}</button>
+          <p class="ugc-embed__note">Rien n’est chargé depuis Instagram (Meta) avant votre clic. Ensuite, Instagram peut déposer des cookies.</p>
+        </div>
+        <figcaption class="ugc-body">
+          <p class="ugc-credit">${kind} de <a href="${esc(profileUrl(post.credit))}" target="_blank" rel="noopener noreferrer nofollow">@${esc(post.credit)}</a>${date ? ` · ${date}` : ''}</p>
+          ${caption ? `<p class="ugc-caption">${esc(caption)}</p>` : ''}
+          <a class="ugc-link" href="${esc(post.permalink)}" target="_blank" rel="noopener noreferrer nofollow">Voir ${isReel(post) ? 'le reel' : 'la publication'} sur Instagram</a>
+        </figcaption>
+      </figure>`;
+}
+
 function cardHtml(post, index) {
+  if (post.embed) return embedCardHtml(post);
   const caption = cleanCaption(stripCredits(post.caption));
   const multi = post.media.length > 1;
   const items = post.media.map((m, i) => `<div class="ugc-slide">
@@ -117,6 +142,23 @@ function mediaSchema(post, m, i) {
   return { '@type': 'ImageObject', ...common, caption: altText(post, m, i) };
 }
 
+/** Publication intégrée : décrite comme publication de réseau social (aucun fichier hébergé). */
+function postingSchema(post) {
+  const kind = isReel(post) ? 'Reel' : 'Publication';
+  const text = cleanCaption(stripCredits(post.caption), 300);
+  return {
+    '@type': 'SocialMediaPosting',
+    '@id': `${URL}#ig-${post.id}`,
+    url: post.permalink,
+    headline: `${kind} Instagram de @${post.credit} sur le jeu KYRAN`,
+    ...(text ? { text } : {}),
+    ...(post.date ? { datePublished: post.date } : {}),
+    author: { '@type': 'Person', name: '@' + post.credit, url: profileUrl(post.credit) },
+    about: { '@id': SITE + '/#game' },
+    inLanguage: 'fr-FR'
+  };
+}
+
 function schema(title, description, dateModified) {
   const graph = [
     {
@@ -150,7 +192,10 @@ function schema(title, description, dateModified) {
   ];
   if (indexable) {
     const elements = [];
-    for (const post of posts) post.media.forEach((m, i) => elements.push(mediaSchema(post, m, i)));
+    for (const post of posts) {
+      if (post.embed) elements.push(postingSchema(post));
+      else post.media.forEach((m, i) => elements.push(mediaSchema(post, m, i)));
+    }
     graph.push({
       '@type': 'ItemList',
       '@id': `${URL}#galerie`,
@@ -171,8 +216,8 @@ function previousDateModified() {
 
 const title = 'Photos et vidéos de joueurs de KYRAN — communauté';
 const description = indexable
-  ? `${countLabel()} de parties de KYRAN prises par ${plural(creators, 'joueur', 'joueurs')} et republiées sur Instagram (@${OWN_HANDLE}), avec le crédit de chaque auteur.`
-  : `Photos et vidéos de parties de KYRAN prises par des joueurs et republiées sur Instagram (@${OWN_HANDLE}), avec le crédit de chaque auteur.`;
+  ? `${countLabel()} de parties de KYRAN prises par ${plural(creators, 'joueur', 'joueurs')} et partagées sur Instagram avec @${OWN_HANDLE}, avec le crédit de chaque auteur.`
+  : `Photos et vidéos de parties de KYRAN prises par des joueurs et partagées sur Instagram avec @${OWN_HANDLE}, avec le crédit de chaque auteur.`;
 const lead = indexable
   ? `${countLabel()} de parties, partagées par ${plural(creators, 'joueur', 'joueurs')} sur Instagram.`
   : 'Vos parties de KYRAN, partagées sur Instagram.';
@@ -235,7 +280,7 @@ const html = `<!DOCTYPE html>
     <section id="galerie">
       <div class="container ugc-wrap">
         <div class="prose ugc-intro">
-          <p class="article-lead">Ces photos et vidéos ont été prises par des joueurs de KYRAN, le jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs, puis republiées sur le compte Instagram officiel <a class="text-link" href="https://www.instagram.com/${OWN_HANDLE}/" target="_blank" rel="noopener noreferrer me">@${OWN_HANDLE}</a>. Chaque publication est créditée à son auteur et renvoie vers la publication d'origine.</p>
+          <p class="article-lead">Ces photos et vidéos ont été prises par des joueurs de KYRAN, le jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs, puis republiées sur le compte Instagram officiel <a class="text-link" href="https://www.instagram.com/${OWN_HANDLE}/" target="_blank" rel="noopener noreferrer me">@${OWN_HANDLE}</a> ou publiées en collaboration avec lui. Chaque publication est créditée à son auteur et renvoie vers la publication d'origine.</p>
         </div>
         ${galleryHtml()}
       </div>
@@ -245,14 +290,31 @@ const html = `<!DOCTYPE html>
       <div class="container ugc-wrap">
         <div class="prose">
           <h2>Apparaître sur cette page</h2>
-          <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram. Quand nous republions votre photo ou votre vidéo, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
+          <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram, ou invitez-le comme collaborateur. Quand nous republions votre photo ou votre vidéo, ou acceptons votre collaboration, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
           <p>Chaque photo et chaque vidéo reste la propriété de son auteur. Vous figurez sur cette page et préférez être retiré&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: la publication est retirée du site.</p>
           <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a>, entraînez-vous gratuitement dans le <a class="text-link" href="/minijeu.html">Dojo</a> ou <a class="text-link" href="/commander.html">commandez KYRAN</a>.</p>
         </div>
       </div>
     </section>
   </main>
-  <kyran-footer></kyran-footer>
+  <kyran-footer></kyran-footer>${embeds.length ? `
+  <script>
+    // Intégrations Instagram : rien n'est chargé depuis Instagram avant le clic du visiteur
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest('.ugc-embed__btn');
+      if (!button) return;
+      var box = button.closest('.ugc-embed');
+      var frame = document.createElement('iframe');
+      frame.src = box.getAttribute('data-embed');
+      frame.title = box.getAttribute('data-title');
+      frame.loading = 'lazy';
+      frame.allowFullscreen = true;
+      frame.setAttribute('allow', 'encrypted-media; picture-in-picture; fullscreen');
+      frame.className = 'ugc-embed__frame';
+      box.replaceChildren(frame);
+      box.classList.add('is-loaded');
+    });
+  </script>` : ''}
 </body>
 </html>
 `;

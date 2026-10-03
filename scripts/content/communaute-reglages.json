@@ -1,5 +1,34 @@
 {
-  "_aide": "Réglages de la page /communaute.html — mode d'emploi : docs/INSTAGRAM.md. overrides : par ID de publication Instagram, { \"hide\": true } pour masquer, { \"include\": true, \"credit\": \"pseudo\" } pour forcer, \"alt\" ou \"caption\" pour corriger un texte. manual : publications absentes de l'API (repost natif Instagram), médias déposés à la main dans /communaute/.",
+  "_aide": "Réglages de la page /communaute.html — mode d'emploi : docs/INSTAGRAM.md. overrides : par ID ou code court de publication, { \"hide\": true } pour masquer, { \"include\": true, \"credit\": \"pseudo\" } pour forcer, \"alt\" ou \"caption\" pour corriger un texte. manual : publications que l'API ne renvoie pas (publications en collaboration créées par un joueur, repost natif). Minimum : { \"permalink\": \"…\", \"credit\": \"pseudo\" } ; la date et le type sont déduits du lien. Sans \"media\", la publication est affichée par l'intégration officielle d'Instagram (au clic) ; avec \"media\" (fichiers déposés dans /communaute/), elle est hébergée sur le site.",
   "overrides": {},
-  "manual": []
+  "manual": [
+    {
+      "permalink": "https://www.instagram.com/p/DZc1cg_gsGK/",
+      "credit": "ariaflore"
+    },
+    {
+      "permalink": "https://www.instagram.com/p/DYCshGFiFXX/",
+      "credit": "un_vrai_jeu_d_enfant"
+    },
+    {
+      "permalink": "https://www.instagram.com/reel/DWQe0vPjI1P/",
+      "credit": "marie_et_cie5.8"
+    },
+    {
+      "permalink": "https://www.instagram.com/reel/DV9BYIsjJgU/",
+      "credit": "le.pirate.ludique"
+    },
+    {
+      "permalink": "https://www.instagram.com/p/DV0Di6oDGo8/",
+      "credit": "kev_clz_aimelesjeux"
+    },
+    {
+      "permalink": "https://www.instagram.com/p/DVxex7HjDQN/",
+      "credit": "kev_clz_aimelesjeux"
+    },
+    {
+      "permalink": "https://www.instagram.com/reel/DVoynJ4DKcp/",
+      "credit": "la.luciole.bar"
+    }
+  ]
 }

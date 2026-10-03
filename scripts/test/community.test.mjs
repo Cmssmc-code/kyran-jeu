@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   extractCredit, stripCredits, cleanCaption, firstSentence, mediaBaseName, mp4Duration, isoDuration,
-  communitySitemapExtra
+  communitySitemapExtra, shortcodeOf, shortcodeDate, embedUrl, trackToken, tokenStatus, addDays, daysBetween
 } from '../lib/community.mjs';
 
 test('crédit : marqueurs usuels dans une légende', () => {
@@ -66,4 +66,43 @@ test('sitemap : image:image et video:video échappés', () => {
   assert.match(xml, /<video:duration>30<\/video:duration>/);
   assert.ok(!xml.includes('<top>'));
   assert.ok(xml.includes('@a&amp;b'));
+});
+
+test('lien de publication : code court, date encodée, intégration', () => {
+  assert.equal(shortcodeOf('https://www.instagram.com/p/DZc1cg_gsGK/'), 'DZc1cg_gsGK');
+  assert.equal(shortcodeOf('https://www.instagram.com/reel/DWQe0vPjI1P/?igsh=abc'), 'DWQe0vPjI1P');
+  assert.equal(shortcodeOf('https://instagram.com/kyran.jeu/p/DVSOYIvjmpk'), 'DVSOYIvjmpk');
+  assert.equal(shortcodeOf('https://www.instagram.com/kyran.jeu/'), null);
+  assert.equal(shortcodeOf('https://evil.example/p/DZc1cg_gsGK/'), null);
+  assert.equal(shortcodeOf('javascript:alert(1)//instagram.com/p/x/'), null);
+  // Reel du Pirate Ludique : publié le 16 mars 2026
+  assert.equal(shortcodeDate('DV9BYIsjJgU'), '2026-03-16T17:19:41+00:00');
+  assert.equal(shortcodeDate('DZc1cg_gsGK').slice(0, 10), '2026-06-11');
+  assert.equal(shortcodeDate(null), null);
+  assert.equal(embedUrl('DWQe0vPjI1P'), 'https://www.instagram.com/p/DWQe0vPjI1P/embed/');
+});
+
+test('jeton : empreinte adoptée, remplacement détecté, échéances', () => {
+  // État initial commité : date connue, empreinte inconnue → adoptée sans changer la date
+  let r = trackToken({ empreinte: '', enregistreLe: '2026-10-03' }, 'aaaa', '2026-10-05');
+  assert.deepEqual(r.state, { empreinte: 'aaaa', enregistreLe: '2026-10-03' });
+  assert.equal(r.replaced, false);
+  // Même jeton : rien ne change
+  r = trackToken(r.state, 'aaaa', '2026-10-20');
+  assert.equal(r.changed, false);
+  // Secret remplacé à la main : la date repart du jour
+  r = trackToken(r.state, 'bbbb', '2026-11-25');
+  assert.deepEqual(r.state, { empreinte: 'bbbb', enregistreLe: '2026-11-25' });
+  assert.equal(r.replaced, true);
+
+  assert.equal(addDays('2026-10-03', 60), '2026-12-02');
+  assert.equal(daysBetween('2026-10-03', '2026-12-02'), 60);
+  let st = tokenStatus({ enregistreLe: '2026-10-03' }, '2026-10-04');
+  assert.deepEqual(st, { expiresOn: '2026-12-02', age: 1, daysLeft: 59, rotateDue: false, alert: false });
+  st = tokenStatus({ enregistreLe: '2026-10-03' }, '2026-11-02');
+  assert.equal(st.rotateDue, true);
+  assert.equal(st.alert, false);
+  st = tokenStatus({ enregistreLe: '2026-10-03' }, '2026-11-22');
+  assert.equal(st.daysLeft, 10);
+  assert.equal(st.alert, true);
 });

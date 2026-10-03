@@ -146,6 +146,16 @@ async function refreshAnthropicIdentityToken() {
   process.env.ANTHROPIC_IDENTITY_TOKEN_FILE = identityTokenFile;
 }
 
+/**
+ * Client Anthropic. Avec une clé API non rattachée à un workspace (secret ANTHROPIC_API_KEY),
+ * l'API exige l'en-tête anthropic-workspace-id : on le prend dans ANTHROPIC_WORKSPACE_ID.
+ */
+function anthropicClient(maxRetries) {
+  const workspace = process.env.ANTHROPIC_WORKSPACE_ID?.trim();
+  const defaultHeaders = process.env.ANTHROPIC_API_KEY && workspace ? { 'anthropic-workspace-id': workspace } : undefined;
+  return new Anthropic({ maxRetries, defaultHeaders });
+}
+
 // ---------------------------------------------------------------------------
 // API du serveur KYRAN (Railway)
 // ---------------------------------------------------------------------------
@@ -459,7 +469,7 @@ export function parseVerdict(text) {
 
 async function runAgent(incident, editedFiles) {
   await refreshAnthropicIdentityToken();
-  const client = new Anthropic({ maxRetries: 4 });
+  const client = anthropicClient(4);
 
   const runner = client.beta.messages.toolRunner({
     model: MODEL,
@@ -566,7 +576,7 @@ function commitAndPush(incident, verdict) {
 /** Vérifie la chaîne d'auth (OIDC GitHub → WIF → API Anthropic, et OIDC → serveur KYRAN) sans génération facturée. */
 async function smokeTest() {
   await refreshAnthropicIdentityToken();
-  const client = new Anthropic({ maxRetries: 2 });
+  const client = anthropicClient(2);
   const model = await client.models.retrieve(MODEL);
   console.log(`[AutoHeal] Smoke test Anthropic OK : modèle ${model.id} accessible.`);
   if (apiBase) {

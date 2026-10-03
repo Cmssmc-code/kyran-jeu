@@ -5,7 +5,8 @@ import {
   renderRefundEmail,
   renderShippingEmail,
   renderCustomMessageEmail,
-  renderAdminOrderNotificationEmail
+  renderAdminOrderNotificationEmail,
+  escapeHtml
 } from './templates.js';
 import { IncidentStore, isBenignClientError } from './incidents.js';
 import { verifyGithubOidcToken } from './githubOidc.js';
@@ -661,6 +662,25 @@ async function handleDailyReport(res) {
   }
 }
 
+// Email de test vers les destinataires du rapport : vérifie l'envoi (SMTP / Resend) de bout en bout.
+async function handleTestEmail(res) {
+  if (rateLimited('autoheal:test-email', 3, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Trop de tests, réessayez plus tard' });
+  const to = AUTO_HEAL_REPORT_EMAILS.length ? AUTO_HEAL_REPORT_EMAILS : ADMIN_EMAILS;
+  const when = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
+  try {
+    await sendEmail({
+      to,
+      subject: '[KYRAN Auto-Heal] Email de test',
+      text: `Email de test du système Auto-Heal KYRAN (${when}).\nExpéditeur : ${mailer.sender} — transport : ${mailer.transport}.\nLes rapports 24 h arriveront à cette adresse les jours où le système agit.`,
+      html: `<p>Email de test du système Auto-Heal KYRAN (${escapeHtml(when)}).</p><p>Expéditeur : <strong>${escapeHtml(mailer.sender)}</strong> — transport : ${escapeHtml(mailer.transport)}.</p><p>Les rapports 24 h arriveront à cette adresse les jours où le système agit.</p>`
+    });
+    return sendJson(res, 200, { ok: true, sender: mailer.sender, transport: mailer.transport, recipients: to.length });
+  } catch (err) {
+    console.error('[AutoHeal] Email de test non envoyé :', err.message);
+    return sendJson(res, 502, { ok: false, error: cleanLine(err.message, 300) });
+  }
+}
+
 async function routeAutoHeal(req, res, pathname, url) {
   if (pathname === '/api/client-error') {
     if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method Not Allowed' });
@@ -676,6 +696,9 @@ async function routeAutoHeal(req, res, pathname, url) {
   }
   if (pathname === '/api/auto-heal/daily-report' && (req.method === 'GET' || req.method === 'POST')) {
     return handleDailyReport(res);
+  }
+  if (pathname === '/api/auto-heal/test-email' && req.method === 'POST') {
+    return handleTestEmail(res);
   }
   const action = pathname.match(/^\/api\/auto-heal\/incidents\/(resolve|fail|ignore)$/);
   if (req.method !== 'POST' || !action) return sendJson(res, 404, { error: 'Not Found' });

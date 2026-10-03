@@ -20,6 +20,10 @@ on:
         description: "Vérifier uniquement l'auth (WIF Anthropic + serveur), aucun token de génération consommé"
         type: boolean
         default: false
+      test_email:
+        description: "Envoyer un email de test aux destinataires du rapport 24 h"
+        type: boolean
+        default: false
 
 concurrency:
   group: auto-heal
@@ -61,6 +65,14 @@ jobs:
             echo "Incident(s) en attente : lancement de l'agent."
             echo "has_work=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Email de test (lancement manuel)
+        if: inputs.test_email
+        run: |
+          TOKEN=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kyran-auto-heal" | jq -r '.value')
+          echo "::add-mask::$TOKEN"
+          curl -sS --fail-with-body --max-time 60 -X POST -H "Authorization: Bearer $TOKEN" "${API_PUBLIC_URL%/}/api/auto-heal/test-email"
 
       - name: Daily report (08:xx UTC, dédupliqué côté serveur)
         if: always()

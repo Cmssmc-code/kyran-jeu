@@ -1,0 +1,145 @@
+name: Hourly Auto-Heal (Claude)
+
+# Passe horaire (portage du pipeline Majordia) : si des incidents de production sont en attente
+# sur le serveur Railway (erreurs du site remontées par error-reporter.js, erreurs du serveur),
+# un agent Claude les corrige, valide (build + tests du site), puis pousse sur main.
+# Auth Anthropic : Workload Identity Federation (jeton OIDC GitHub, aucun secret API stocké).
+# Auth serveur KYRAN : jeton OIDC GitHub (audience kyran-auto-heal) vérifié par server/githubOidc.js.
+# Documentation : docs/AUTO-HEAL.md
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Ne rien pousser ni marquer (test de bout en bout)"
+        type: boolean
+        default: false
+      smoke_test:
+        description: "Vérifier uniquement l'auth (WIF Anthropic + serveur), aucun token de génération consommé"
+        type: boolean
+        default: false
+
+concurrency:
+  group: auto-heal
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  API_PUBLIC_URL: ${{ vars.KYRAN_API_URL || 'https://kyran-webhook-production.up.railway.app' }}
+
+jobs:
+  check:
+    name: Incidents en attente ?
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      id-token: write
+    outputs:
+      has_work: ${{ steps.check.outputs.has_work }}
+    steps:
+      - name: Check pending incidents (fast exit, 0 token)
+        id: check
+        run: |
+          TOKEN=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kyran-auto-heal" | jq -r '.value')
+          echo "::add-mask::$TOKEN"
+          RESP=$(curl -fsS --retry 3 --retry-all-errors --max-time 30 \
+            -H "Authorization: Bearer $TOKEN" "${API_PUBLIC_URL%/}/api/auto-heal/incidents?limit=1")
+          COUNT=$(echo "$RESP" | jq -r '.incidents | length')
+          QUOTA=$(echo "$RESP" | jq -r '.quotaReached')
+          if [ "$QUOTA" = "true" ]; then
+            echo "Quota 24h d'auto-fixes atteint. Fin de passe."
+            echo "has_work=false" >> "$GITHUB_OUTPUT"
+          elif [ "$COUNT" = "0" ]; then
+            echo "Aucun incident en attente."
+            echo "has_work=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Incident(s) en attente : lancement de l'agent."
+            echo "has_work=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Daily report (08:xx UTC, dédupliqué côté serveur)
+        if: always()
+        run: |
+          if [ "$(date -u +%H)" = "08" ]; then
+            TOKEN=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kyran-auto-heal" | jq -r '.value')
+            echo "::add-mask::$TOKEN"
+            curl -fsS --max-time 60 -H "Authorization: Bearer $TOKEN" "${API_PUBLIC_URL%/}/api/auto-heal/daily-report" || true
+          fi
+
+  heal:
+    name: Auto-Heal (Claude)
+    needs: check
+    if: always() && (needs.check.outputs.has_work == 'true' || inputs.smoke_test)
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      id-token: write
+      actions: write
+      pages: write
+    steps:
+      # Branche du déclenchement (main pour le cron) : l'agent ne pousse que sur cette branche.
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          # Optionnel : secret AUTO_HEAL_PUSH_TOKEN si main est protégée ; à défaut, GITHUB_TOKEN
+          # (CI et Pages sont alors relancés explicitement par l'étape finale).
+          token: ${{ secrets.AUTO_HEAL_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+
+      - name: Install dependencies (versions verrouillées)
+        run: npm ci --ignore-scripts
+
+      - name: Record starting commit
+        run: echo "START_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Run Auto-Heal worker
+        env:
+          # Workload Identity Federation : le SDK Anthropic échange lui-même le jeton OIDC GitHub
+          # (le worker rafraîchit ce jeton avant chaque incident). Secret ANTHROPIC_API_KEY : repli facultatif.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID || 'fdrl_01YA6haXm2AP2TpbNaE5qwjq' }}
+          ANTHROPIC_ORGANIZATION_ID: 2117f365-70c3-48c6-9ec9-849419fa4745
+          ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID || 'svac_01Fta4onswAz6gWVWrmcjRP2' }}
+          ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID || 'wrkspc_01LazJaJJFFiuGsBHip52B4f' }}
+          ANTHROPIC_MODEL: claude-opus-5-5
+          AUTO_HEAL_EFFORT: medium
+          AUTO_HEAL_MAX_INCIDENTS: "5"
+          AUTO_HEAL_BRANCH: ${{ github.ref_name }}
+          AUTO_HEAL_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          AUTO_HEAL_SMOKE: ${{ inputs.smoke_test && '1' || '0' }}
+        run: |
+          # Clé API vide = absente (sinon le SDK tenterait une clé vide au lieu de WIF)
+          [ -n "$ANTHROPIC_API_KEY" ] || unset ANTHROPIC_API_KEY
+          node scripts/auto-heal-worker.mjs
+
+      # Les pushs faits avec GITHUB_TOKEN ne déclenchent pas les workflows `push` :
+      # on relance explicitement la CI et la publication Pages quand l'agent a poussé un correctif.
+      # (Railway redéploie le serveur tout seul : il suit les pushs sur main via son app GitHub.)
+      - name: Trigger CI and Pages on auto-heal commits
+        if: always() && inputs.dry_run != true && inputs.smoke_test != true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="${{ github.ref_name }}"
+          git fetch -q origin "$BRANCH"
+          if [ -n "$(git log --format=%H --author=auto-heal@kyran-jeu.fr "$START_SHA..origin/$BRANCH")" ]; then
+            gh workflow run ci.yml --ref "$BRANCH"
+            gh workflow run pages.yml --ref "$BRANCH"
+            # Pages en mode « branche » : demande explicite d'un build (sans effet en mode Actions)
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" >/dev/null 2>&1 || true
+          else
+            echo "Aucun commit auto-heal : rien à relancer."
+          fi

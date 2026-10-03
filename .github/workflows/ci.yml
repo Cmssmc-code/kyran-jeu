@@ -7,6 +7,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  # Relancée par le workflow Auto-Heal après un correctif poussé avec GITHUB_TOKEN
+  workflow_dispatch:
 
 permissions:
   contents: read

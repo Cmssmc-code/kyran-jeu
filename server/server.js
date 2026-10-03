@@ -7,6 +7,9 @@ import {
   renderCustomMessageEmail,
   renderAdminOrderNotificationEmail
 } from './templates.js';
+import { IncidentStore, isBenignClientError } from './incidents.js';
+import { verifyGithubOidcToken } from './githubOidc.js';
+import { renderDailyReport } from './autoHealReport.js';
 
 const PORT = process.env.PORT || 3000;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -33,6 +36,18 @@ const ADMIN_EMAILS = (process.env.ADMIN_NOTIFICATION_EMAILS || 'contact@kyran-je
   .split(',')
   .map(e => e.trim())
   .filter(Boolean);
+
+// Auto-Heal : le workflow GitHub s'authentifie par jeton OIDC (aucun secret partagé).
+// CRON_SECRET (32 caractères min.) reste possible pour un appel manuel.
+const AUTO_HEAL_REPOSITORY = process.env.AUTO_HEAL_REPOSITORY || 'Cmssmc-code/kyran-jeu';
+const AUTO_HEAL_AUDIENCE = 'kyran-auto-heal';
+const CRON_SECRET = process.env.CRON_SECRET || '';
+const AUTO_HEAL_REPORT_EMAILS = (process.env.AUTO_HEAL_REPORT_EMAILS || '')
+  .split(',')
+  .map(e => e.trim())
+  .filter(Boolean);
+const MAX_CLIENT_REPORT_BYTES = 16384;
+const incidents = new IncidentStore();
 
 if (!ADMIN_ENABLED) {
   console.warn('⚠️ ADMIN_SECRET absent ou trop court (< 32 caractères) : routes /api/* désactivées.');
@@ -281,6 +296,7 @@ async function handleOrderCompleted(session) {
     console.log(`🔔 Notification de commande envoyée à l'administrateur (${ADMIN_EMAILS.join(', ')})`);
   } catch (adminErr) {
     console.error('Erreur notification admin commande :', adminErr.message);
+    recordServerIncident(adminErr, { path: '/webhook', errorCode: 'ADMIN_ORDER_NOTIFICATION', httpStatus: 200 });
   }
 }
 
@@ -484,6 +500,7 @@ async function handleStripeWebhook(req, res, rawBody) {
     sendJson(res, 200, { received: true });
   } catch (err) {
     console.error('Erreur traitement event Stripe:', err);
+    recordServerIncident(err, { path: '/webhook', errorCode: 'STRIPE_EVENT_PROCESSING', httpStatus: 500, details: { eventType: cleanLine(event.type, 80) } });
     sendJson(res, 500, { error: 'Processing error' });
   }
 }
@@ -517,6 +534,13 @@ const server = http.createServer((req, res) => {
       hasResendKey: Boolean(RESEND_API_KEY),
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       adminEnabled: ADMIN_ENABLED
+    });
+  }
+
+  if (pathname === '/api/client-error' || pathname.startsWith('/api/auto-heal/')) {
+    return routeAutoHeal(req, res, pathname, url).catch(err => {
+      console.error('[AutoHeal] Erreur de route :', err);
+      if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
     });
   }
 
@@ -554,10 +578,165 @@ const server = http.createServer((req, res) => {
       return await handleStripeWebhook(req, res, rawBody);
     } catch (err) {
       console.error('Erreur inattendue :', err);
+      recordServerIncident(err, { path: pathname, errorCode: 'UNEXPECTED_ERROR', httpStatus: 500, details: { method: req.method } });
       if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// Auto-Heal : remontée des erreurs (navigateur + serveur) et API du workflow horaire
+// ---------------------------------------------------------------------------
+
+function recordServerIncident(err, { path, errorCode, httpStatus, details = {} }) {
+  try {
+    const e = err instanceof Error ? err : new Error(String(err));
+    incidents.record({
+      source: 'api',
+      errorCode,
+      httpStatus,
+      message: cleanLine(e.message, 1000),
+      stack: cleanText(e.stack, 8000),
+      path,
+      details
+    });
+  } catch (recordErr) {
+    console.error('[AutoHeal] Incident non consigné :', recordErr.message);
+  }
+}
+
+function readBody(req, limit) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let size = 0;
+    req.on('data', chunk => {
+      size += chunk.length;
+      if (size > limit) {
+        // On draine le reste sans le garder en mémoire, pour pouvoir répondre 413.
+        req.removeAllListeners('data');
+        req.resume();
+        reject(Object.assign(new Error('too large'), { status: 413 }));
+        return;
+      }
+      chunks.push(chunk);
+    });
+    req.on('end', () => resolve(Buffer.concat(chunks)));
+    req.on('error', reject);
+  });
+}
+
+// true si l'appel vient du workflow Auto-Heal du dépôt (jeton OIDC GitHub) ou porte CRON_SECRET
+async function isAutoHealCaller(req) {
+  const cronHeader = String(req.headers['x-cron-secret'] || '');
+  if (CRON_SECRET.length >= 32 && cronHeader && safeEqual(cronHeader, CRON_SECRET)) return true;
+  const match = String(req.headers['authorization'] || '').match(/^Bearer\s+(.+)$/i);
+  if (!match) return false;
+  try {
+    const claims = await verifyGithubOidcToken(match[1].trim(), {
+      repository: AUTO_HEAL_REPOSITORY,
+      audience: AUTO_HEAL_AUDIENCE
+    });
+    return Boolean(claims);
+  } catch (err) {
+    console.error('[AutoHeal] Vérification OIDC impossible :', err.message);
+    return false;
+  }
+}
+
+// Navigateur → serveur : erreurs JS et ressources cassées du site (error-reporter.js)
+async function handleClientError(req, res) {
+  const origin = req.headers.origin;
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return sendJson(res, 403, { error: 'Forbidden' });
+  // 20 rapports max par IP et par heure : un visiteur ne peut pas inonder le journal
+  if (rateLimited(`clienterr:${clientIp(req)}`, 20, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Too many reports' });
+  let raw;
+  try {
+    raw = await readBody(req, MAX_CLIENT_REPORT_BYTES);
+  } catch (err) {
+    return sendJson(res, err.status || 400, { error: 'Bad Request' });
+  }
+  const data = parseJsonBody(raw);
+  if (!data) return sendJson(res, 400, { error: 'JSON invalide' });
+  const kind = ['resource', 'rejection'].includes(data.kind) ? data.kind : 'error';
+  const report = {
+    kind,
+    message: cleanLine(data.message, 1000),
+    file: cleanLine(data.file, 500),
+    stack: cleanText(data.stack, 6000)
+  };
+  const userAgent = cleanLine(req.headers['user-agent'], 300);
+  if (isBenignClientError(report, userAgent)) return sendJson(res, 202, { recorded: false });
+  incidents.record({
+    source: 'client',
+    errorCode: { resource: 'RESOURCE_LOAD_FAILED', rejection: 'UNHANDLED_REJECTION', error: 'JS_ERROR' }[kind],
+    message: report.message,
+    stack: report.stack,
+    path: cleanLine(data.page, 500),
+    details: {
+      file: report.file,
+      line: Number.isInteger(data.line) ? data.line : null,
+      column: Number.isInteger(data.column) ? data.column : null,
+      browser: userAgent,
+      pageUrl: cleanLine(data.page, 500),
+      assetVersion: cleanLine(data.version, 40)
+    }
+  });
+  return sendJson(res, 202, { recorded: true });
+}
+
+async function handleDailyReport(res) {
+  if (incidents.reportAlreadySent()) return sendJson(res, 200, { ok: true, sent: false, reason: 'already_sent_today' });
+  const report = renderDailyReport(incidents.handledLast24h());
+  if (!report) return sendJson(res, 200, { ok: true, sent: false, reason: 'no_actions_in_24h' });
+  const to = AUTO_HEAL_REPORT_EMAILS.length ? AUTO_HEAL_REPORT_EMAILS : ADMIN_EMAILS;
+  try {
+    await sendEmail({ to, subject: report.subject, html: report.html, text: report.text });
+    incidents.markReportSent();
+    return sendJson(res, 200, { ok: true, sent: true });
+  } catch (err) {
+    console.error('[AutoHeal] Rapport 24h non envoyé :', err.message);
+    return sendJson(res, 502, { ok: false, error: 'Échec envoi du rapport' });
+  }
+}
+
+async function routeAutoHeal(req, res, pathname, url) {
+  if (pathname === '/api/client-error') {
+    if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method Not Allowed' });
+    return handleClientError(req, res);
+  }
+
+  if (rateLimited(`autoheal:${clientIp(req)}`, 120, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Too many requests' });
+  if (!(await isAutoHealCaller(req))) return sendJson(res, 401, { error: 'Unauthorized' });
+
+  if (req.method === 'GET' && pathname === '/api/auto-heal/incidents') {
+    const limit = parseInt(url.searchParams.get('limit') || '5', 10);
+    return sendJson(res, 200, { ok: true, ...incidents.pending(limit) });
+  }
+  if (pathname === '/api/auto-heal/daily-report' && (req.method === 'GET' || req.method === 'POST')) {
+    return handleDailyReport(res);
+  }
+  const action = pathname.match(/^\/api\/auto-heal\/incidents\/(resolve|fail|ignore)$/);
+  if (req.method !== 'POST' || !action) return sendJson(res, 404, { error: 'Not Found' });
+
+  let data;
+  try {
+    data = parseJsonBody(await readBody(req, 65536));
+  } catch (err) {
+    return sendJson(res, err.status || 400, { error: 'Bad Request' });
+  }
+  if (!data || typeof data.incidentId !== 'string') return sendJson(res, 400, { error: 'incidentId requis' });
+  const report = data.report && typeof data.report === 'object' ? data.report : null;
+  let updated;
+  if (action[1] === 'resolve') {
+    if (typeof data.commitSha !== 'string' || !data.commitSha) return sendJson(res, 400, { error: 'commitSha requis' });
+    updated = incidents.markResolved(data.incidentId, data.commitSha, cleanLine(data.resolutionSummary, 300), report);
+  } else if (action[1] === 'fail') {
+    updated = incidents.markFailed(data.incidentId, cleanLine(data.reason, 600) || 'échec', report);
+  } else {
+    updated = incidents.markIgnored(data.incidentId, cleanLine(data.reason, 600) || 'ignoré', report);
+  }
+  return sendJson(res, updated ? 200 : 404, { ok: updated });
+}
 
 if (process.env.NODE_ENV !== 'test') {
   server.listen(PORT, () => {
@@ -567,10 +746,12 @@ if (process.env.NODE_ENV !== 'test') {
 
 process.on('uncaughtException', (err) => {
   console.error('💥 Uncaught Exception :', err);
+  recordServerIncident(err, { path: '-', errorCode: 'UNCAUGHT_EXCEPTION', httpStatus: 500 });
 });
 
 process.on('unhandledRejection', (reason) => {
   console.error('💥 Unhandled Rejection :', reason);
+  recordServerIncident(reason, { path: '-', errorCode: 'UNHANDLED_REJECTION', httpStatus: 500 });
 });
 
 export { server };

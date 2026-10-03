@@ -139,7 +139,7 @@ export default {
     },
     {
       q: 'KYRAN est-il un bon jeu pour les fans de Dixit ?',
-      a: `Seulement si vous cherchez un autre plaisir. KYRAN se joue de 3 à 6 en environ 30 minutes, mais c’est un jeu de plis avec paris : tactique, compétitif, sans narration. Le dojo gratuit sur <a class="text-link" href="/minijeu.html">la page mini-jeu</a> permet de juger avant d’acheter.`
+      a: `Seulement si vous cherchez un autre plaisir. KYRAN se joue de 3 à 6 en environ 30 minutes, mais c’est un jeu de plis avec paris : tactique, compétitif, sans narration. L’Initiation gratuite sur <a class="text-link" href="/minijeu.html">la page mini-jeu</a> permet de juger avant d’acheter.`
     },
     {
       q: 'Vaut-il mieux acheter une extension Dixit qu’un autre jeu ?',

@@ -104,7 +104,7 @@ export default {
       pick: 'Tablées de 3 à 6 déjà installées, pour une demi-heure',
       paragraphs: [
         `KYRAN s’adresse à l’apéro qui a déjà trouvé son rythme : trois à six personnes assises, une demi-heure devant soi. Chaque manche s’ouvre sur un pari à voix haute, le nombre exact de plis qu’on pense gagner, et comme la somme des paris n’a pas le droit d’égaler le nombre de plis, quelqu’un se trompe forcément. À l’apéro, cela produit des commentaires dès la donne plutôt qu’un silence de concentration.`,
-        `Les limites sont claires pour ce contexte. On ne rejoint pas une partie en cours, on ne joue pas à deux, et la partie démarre à sept cartes par joueur, ce qui réclame une table dégagée. Le matériel (cartes toilées, boîte rigide) rassure quand les doigts ont touché les chips. Apprenez la règle avant l’arrivée des invités avec la <a class="text-link" href="/regle.html">vidéo de cinq minutes</a> ou le <a class="text-link" href="/minijeu.html">dojo gratuit</a>, et retrouvez le détail du format sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a>.`
+        `Les limites sont claires pour ce contexte. On ne rejoint pas une partie en cours, on ne joue pas à deux, et la partie démarre à sept cartes par joueur, ce qui réclame une table dégagée. Le matériel (cartes toilées, boîte rigide) rassure quand les doigts ont touché les chips. Apprenez la règle avant l’arrivée des invités avec la <a class="text-link" href="/regle.html">vidéo de cinq minutes</a> ou l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a>, et retrouvez le détail du format sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a>.`
       ]
     }
   ],

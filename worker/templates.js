@@ -162,12 +162,12 @@ export function renderOrderEmail({
 
     ${addressHtml}
 
-    <!-- Lien Dojo ultra simple -->
+    <!-- Lien Initiation ultra simple -->
     <div style="margin-top: 28px; padding: 18px 20px; background-color: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; font-size: 13px; line-height: 1.5;">
       <div style="font-weight: 600; color: #0f172a; margin-bottom: 4px;">🃏 En attendant votre colis :</div>
       <div style="color: #57534e; margin-bottom: 12px;">Découvrez les cartes et testez la manche Mystique sur notre simulateur en ligne gratuit.</div>
       <a href="https://kyran-jeu.fr/minijeu.html" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600;" target="_blank">
-        Tester le Dojo en ligne →
+        Tester l’Initiation en ligne →
       </a>
     </div>
 

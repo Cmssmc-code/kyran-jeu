@@ -115,7 +115,7 @@ export default {
       pick: 'Pour passer d’un jeu de chance à un jeu de lecture, à 3-6',
       paragraphs: [
         `Si c’est le calcul du risque qui vous plaît dans Skyjo, KYRAN le pousse plus loin : au lieu de subir une grille tirée au sort, on annonce à chaque manche le nombre exact de plis qu’on va gagner. Un pari raté coûte autant de cartes Vie que l’écart constaté, un pari juste ne coûte rien. Comme la somme des paris ne peut jamais égaler le nombre de plis, quelqu’un se trompe forcément.`,
-        `C’est un jeu de plis, donc une logique différente de la pioche-défausse : la donne pèse, comme pour Skyjo, mais on joue surtout sur les cartes des autres. Les manches vont de 7 à 2 cartes, puis vient la manche Mystique à une carte portée sur le front. KYRAN ne se joue pas à deux et plafonne à six : pour huit joueurs, restez sur Skyjo. Vous pouvez le découvrir dans le <a class="text-link" href="/minijeu.html">dojo gratuit</a> ou lire les <a class="text-link" href="/regle.html">règles de KYRAN</a>.`
+        `C’est un jeu de plis, donc une logique différente de la pioche-défausse : la donne pèse, comme pour Skyjo, mais on joue surtout sur les cartes des autres. Les manches vont de 7 à 2 cartes, puis vient la manche Mystique à une carte portée sur le front. KYRAN ne se joue pas à deux et plafonne à six : pour huit joueurs, restez sur Skyjo. Vous pouvez le découvrir dans l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> ou lire les <a class="text-link" href="/regle.html">règles de KYRAN</a>.`
       ]
     }
   ],

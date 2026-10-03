@@ -103,7 +103,7 @@ export default {
       pick: 'Pour franchir la dernière marche : les plis avec un pari à tenir',
       paragraphs: [
         `Un pli, c’est un tour de table où chacun pose une carte et où la plus forte l’emporte. KYRAN en fait un jeu de paris : avant la manche, chaque joueur annonce combien de plis il va gagner, et la somme des paris ne peut pas égaler le nombre de plis, donc au moins un joueur se trompe à chaque manche. C’est la marche la plus haute de cette liste, et la variante d’initiation, sans cartes Pouvoir ni Mystique, permet d’apprendre le cœur de la règle d’abord.`,
-        `Pour apprendre sans lire la notice, regardez la vidéo de cinq minutes sur la page des <a class="text-link" href="/regle.html">règles de KYRAN</a>, puis entraînez-vous au <a class="text-link" href="/minijeu.html">dojo gratuit</a> avant de sortir la boîte. À savoir : de 3 à 6 joueurs, jamais à deux, environ 30 minutes, à 9,99 € sur le site. Si vous n’avez jamais joué à un jeu de plis, passez d’abord par Uno ou Skyjo : le calcul du pari peut rebuter sans cela.`
+        `Pour apprendre sans lire la notice, regardez la vidéo de cinq minutes sur la page des <a class="text-link" href="/regle.html">règles de KYRAN</a>, puis entraînez-vous à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> avant de sortir la boîte. À savoir : de 3 à 6 joueurs, jamais à deux, environ 30 minutes, à 9,99 € sur le site. Si vous n’avez jamais joué à un jeu de plis, passez d’abord par Uno ou Skyjo : le calcul du pari peut rebuter sans cela.`
       ]
     }
   ],

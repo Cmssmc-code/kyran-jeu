@@ -45,7 +45,7 @@ export default {
       paragraphs: [
         `KYRAN reprend l'annonce, mais verrouille ce que Wizard laisse libre : la somme des paris ne peut jamais égaler le nombre de plis de la manche. Le dernier à parler se voit donc interdire un chiffre, et au moins un joueur rate son contrat à chaque donne. Il n'y a ni couleur à fournir ni atout : les cartes Nombre vont de 1 à 36 et la plus forte l'emporte. Pour un habitué des soixante cartes de Wizard, le comptage des couleurs disparaît ; la lecture des paris adverses reste entière.`,
         `Le score passe par des cartes Vie visibles de tous : un pari raté coûte autant de cartes que l'écart constaté, et la partie s'arrête dès qu'un joueur n'en a plus. À la place des Magiciens et des Fous, quatre à huit cartes Pouvoir selon la table, comme le Voile du Néant (valeurs 3 et 34), qui échange la valeur de sa carte avec une carte déjà posée. La manche Mystique, jouée avec une carte tenue sur le front, remplace la longue montée vers la main maximale : le cycle va de 7 cartes à 1.`,
-        `Le défaut à connaître : KYRAN ne se joue pas à deux et propose moins de calcul probabiliste que Wizard, faute de couleurs. Un groupe qui adore estimer des mains de quinze cartes y trouvera moins son compte. Le <a class="text-link" href="/minijeu.html">dojo gratuit</a> permet d'enchaîner quelques manches avant de décider.`
+        `Le défaut à connaître : KYRAN ne se joue pas à deux et propose moins de calcul probabiliste que Wizard, faute de couleurs. Un groupe qui adore estimer des mains de quinze cartes y trouvera moins son compte. L’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet d'enchaîner quelques manches avant de décider.`
       ]
     },
     {

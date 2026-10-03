@@ -60,7 +60,7 @@ export default {
       paragraphs: [
         `À trois, KYRAN se joue avec le matériel resserré : seulement quatre cartes Pouvoir (valeurs 3, 11, 20 et 27) et la carte Mystique, soit moins d'effets à surveiller qu'à cinq ou six. Chaque manche débute par l'annonce du nombre exact de plis visés, avec une contrainte : le total des annonces ne peut pas coïncider avec le nombre de plis distribués. Le dernier à parler doit donc ajuster, et au moins l'un des trois se trompe à chaque manche.`,
         `Les pouvoirs ont des conditions de position qui comptent particulièrement à trois : le Sceau du Destin et la Bénédiction des Ancêtres sont annulés si leur joueur passe en dernier, le Voile du Néant s'il passe en premier. Avec trois cartes par pli, la place du milieu est la seule qui les laisse tous agir.`,
-        `Trois est le plancher du jeu, qui ne se joue pas à deux, et la manche à une carte sur le front n'y demande de lire que deux fronts, au lieu de quatre ou cinq autour d'une grande table. Une partie tourne autour de trente minutes, et le <a class="text-link" href="/minijeu.html">dojo gratuit</a> du site permet d'essayer le principe du pari avant d'acheter.`
+        `Trois est le plancher du jeu, qui ne se joue pas à deux, et la manche à une carte sur le front n'y demande de lire que deux fronts, au lieu de quatre ou cinq autour d'une grande table. Une partie tourne autour de trente minutes, et l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> du site permet d'essayer le principe du pari avant d'acheter.`
       ]
     },
     {

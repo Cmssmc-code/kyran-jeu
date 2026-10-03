@@ -1,5 +1,5 @@
 /*
- * Dojo KYRAN — adversaires ordinateur et conseils du Sensei.
+ * Initiation KYRAN — adversaires ordinateur et conseils du Bokonon (devin du Fa).
  *
  * Les adversaires ne trichent pas : ils ne voient que leur main, les cartes posées, les paris
  * et ce que la Clairvoyance leur a montré. Le niveau Maître simule des centaines de fins de
@@ -9,16 +9,16 @@
 import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=617bc536b5';
 
 export const PERSONAS = [
-  { key: 'oraculus', name: 'Oraculus', emoji: '🔮', bias: 0, chaos: 0, motto: 'calculateur, il parie juste' },
-  { key: 'titan', name: 'Titan', emoji: '🛡️', bias: 0.35, chaos: 0, motto: 'gourmand, il vise toujours haut' },
-  { key: 'viper', name: 'Viper', emoji: '🐍', bias: -0.1, chaos: 0.05, motto: 'joueuse, elle adore perdre exprès' },
-  { key: 'loki', name: 'Loki', emoji: '🎭', bias: 0, chaos: 0.2, motto: 'imprévisible, il bluffe et improvise' },
-  { key: 'gaia', name: 'Gaïa', emoji: '🌿', bias: -0.35, chaos: 0, motto: 'prudente, elle parie bas' }
+  { key: 'griot', name: 'Griot', emoji: '🪘', bias: 0, chaos: 0, motto: 'gardien des récits, il calcule et parie juste' },
+  { key: 'amazone', name: 'Amazone', emoji: '⚔️', bias: 0.35, chaos: 0, motto: 'guerrière du Danxomè, elle vise toujours haut' },
+  { key: 'cameleon', name: 'Caméléon', emoji: '🦎', bias: -0.1, chaos: 0.05, motto: 'rusé, il change de couleur et adore perdre exprès' },
+  { key: 'anansi', name: 'Anansi', emoji: '🕷️', bias: 0, chaos: 0.2, motto: 'l’araignée des contes, imprévisible et bluffeuse' },
+  { key: 'guerisseuse', name: 'Guérisseuse', emoji: '🌿', bias: -0.35, chaos: 0, motto: 'connaisseuse des plantes, prudente, elle parie bas' }
 ];
 
 export const LEVELS = {
-  novice: { label: 'Novice', sims: 0, mistake: 0.3, betNoise: 1 },
-  adepte: { label: 'Adepte', sims: 60, mistake: 0.08, betNoise: 0.35 },
+  novice: { label: 'Apprenti', sims: 0, mistake: 0.3, betNoise: 1 },
+  adepte: { label: 'Initié', sims: 60, mistake: 0.08, betNoise: 0.35 },
   maitre: { label: 'Maître', sims: 220, mistake: 0, betNoise: 0 }
 };
 
@@ -59,7 +59,7 @@ function quickBet(hand, unseenCount, othersCards) {
   return Math.round(e);
 }
 
-// ── Politique heuristique (adversaires Adepte/Novice et simulations) ───────
+// ── Politique heuristique (adversaires Initié/Apprenti et simulations) ─────
 
 /**
  * Choisit une carte : renvoie { idx, value }. `best` = meilleure carte posée ({ value, kind }) ou null.
@@ -415,7 +415,7 @@ export function chooseTarget(state, pid, pend) {
   if (pend.power === 'benediction') {
     if (wantWin) {
       const t = byNeed(true);
-      return { target: t, why: `${name(t)} cherche des plis : force-le à jouer sa plus faible carte maintenant.` };
+      return { target: t, why: `${name(t)} cherche des plis : impose-lui de jouer sa plus faible carte maintenant.` };
     }
     const t = byNeed(false);
     return { target: t, why: `${name(t)} joue déjà petit : sa plus faible carte change peu le pli.` };
@@ -429,7 +429,7 @@ export function chooseTarget(state, pid, pend) {
   return { target: t, why: `${name(t)} veut jouer petit : une carte au hasard peut te passer au-dessus.` };
 }
 
-// ── Conseils du Sensei ─────────────────────────────────────────────────────
+// ── Conseils du Bokonon ────────────────────────────────────────────────────
 
 const pct = x => Math.round(x * 100) + ' %';
 
@@ -485,7 +485,7 @@ export function adviseBet(state, pid) {
     if (s.card.kind === 'mystique') return '<b>Mystique</b> (joker : 1 pli si tu veux)';
     return `<b>${cardShort(s.card)}</b> ${strengthWord(s.p)}`;
   });
-  let text = `Ta main : ${parts.join(', ')}. Le Sensei a simulé la manche : <b>parie ${best.bet}</b> (pari exact ${pct(best.exact)}).`;
+  let text = `Ta main : ${parts.join(', ')}. J’ai consulté le Fa et simulé la manche : <b>parie ${best.bet}</b> (pari exact ${pct(best.exact)}).`;
   const top = evals.reduce((a, b) => (b.loss < a.loss ? b : a));
   if (!top.legal) text += ` Sans la règle d’or, ${top.bet} aurait été idéal.`;
   return { bet: best.bet, evals, strengths, text };

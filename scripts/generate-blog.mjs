@@ -63,7 +63,7 @@ function renderGameLinks(game) {
   if (game.isKyran) {
     links.push(`<a class="game-link game-link--primary" href="/commander.html">Commander (9,99&nbsp;€)</a>`);
     links.push(`<a class="game-link" href="/regle.html">Règles</a>`);
-    links.push(`<a class="game-link" href="/minijeu.html">Dojo</a>`);
+    links.push(`<a class="game-link" href="/minijeu.html">Initiation</a>`);
     links.push(`<a class="game-link game-link--shop" href="https://www.amazon.fr/dp/B0G217LD87" rel="noopener noreferrer sponsored">Amazon (17,99&nbsp;€)</a>`);
   } else {
     if (meta.bgg) links.push(`<a class="game-link" href="${meta.bgg}" rel="noopener noreferrer">BoardGameGeek ↗</a>`);
@@ -267,7 +267,7 @@ function renderSidebarCta() {
   <p class="article-sidebar-cta__label">Le jeu KYRAN</p>
   <p class="article-sidebar-cta__text">Plis, paris et manche Mystique — 3 à 6 joueurs, ~30 min.</p>
   <a class="btn btn-primary btn--sm" href="/regle.html">Voir les règles</a>
-  <a class="btn btn-secondary btn--sm" href="/minijeu.html">Essayer le Dojo</a>
+  <a class="btn btn-secondary btn--sm" href="/minijeu.html">Essayer l’Initiation</a>
 </div>`;
 }
 

@@ -104,7 +104,7 @@ export default {
       pick: 'Tables de 3 à 6 prêtes à jouer une demi-heure',
       paragraphs: [
         `Le pari de plis fait parler dès la première minute : chacun annonce combien de plis il va gagner, et commente la prise de risque du voisin. En afterwork, la variante d’initiation, sans cartes Pouvoir ni Mystique, permet d’apprendre en une manche d’essai ; les pouvoirs et la manche Mystique, où l’on joue une carte posée sur le front sans la regarder, s’ajoutent dès la deuxième partie.`,
-        `Soyons clairs sur sa place dans la liste : c’est un jeu de plis, donc plus structuré que les autres, et la <a class="text-link" href="/regle.html">vidéo de règles</a> dure cinq minutes. Il convient moins comme tout premier jeu d’un groupe qui n’a jamais joué ensemble, mieux comme deuxième. Il ne se joue ni à deux ni à plus de six. Pour s’entraîner avant la soirée, le <a class="text-link" href="/minijeu.html">dojo gratuit</a> suffit.`
+        `Soyons clairs sur sa place dans la liste : c’est un jeu de plis, donc plus structuré que les autres, et la <a class="text-link" href="/regle.html">vidéo de règles</a> dure cinq minutes. Il convient moins comme tout premier jeu d’un groupe qui n’a jamais joué ensemble, mieux comme deuxième. Il ne se joue ni à deux ni à plus de six. Pour s’entraîner avant la soirée, l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> suffit.`
       ]
     }
   ],

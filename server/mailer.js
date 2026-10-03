@@ -5,10 +5,11 @@
  * kyran.jeu@gmail.com. Toute autre adresse configurée (ex. un domaine d'un autre produit)
  * est remplacée par contact@kyran-jeu.fr.
  *
- * Transport :
- *  1. SMTP si SMTP_PASSWORD (ou OVH_SMTP_PASSWORD) est défini : boîte OVH ssl0.ovh.net pour
- *     @kyran-jeu.fr, smtp.gmail.com (mot de passe d'application) pour kyran.jeu@gmail.com ;
- *  2. sinon API Resend (RESEND_API_KEY), qui exige le domaine kyran-jeu.fr vérifié dans Resend.
+ * Transport (EMAIL_TRANSPORT=resend|smtp pour forcer) :
+ *  1. API Resend si RESEND_API_KEY est défini (exige le domaine kyran-jeu.fr vérifié dans Resend).
+ *     Prioritaire : Railway bloque le SMTP sortant hors offre Pro ;
+ *  2. sinon SMTP si SMTP_PASSWORD (ou OVH_SMTP_PASSWORD) est défini : boîte OVH ssl0.ovh.net pour
+ *     @kyran-jeu.fr, smtp.gmail.com (mot de passe d'application) pour kyran.jeu@gmail.com.
  */
 import net from 'net';
 import tls from 'tls';
@@ -87,7 +88,7 @@ export function buildMimeMessage({ fromName, from, to, replyTo, subject, text, h
  * Client SMTP minimal (AUTH LOGIN), sans dépendance. `secure: false` (TCP en clair) ne sert
  * qu'aux tests locaux.
  */
-export function smtpSend({ host, port = 465, secure = true, user, pass, from, to, message, timeoutMs = 20000 }) {
+export function smtpSend({ host, port = 465, secure = true, user, pass, from, to, message, timeoutMs = 10000 }) {
   return new Promise((resolve, reject) => {
     for (const a of [from, ...to]) assertAddress(a);
     const socket = secure
@@ -153,7 +154,10 @@ export function createMailer(env = process.env) {
   const replyTo = env.REPLY_TO_EMAIL || DEFAULT_SENDER;
   const smtpPass = env.SMTP_PASSWORD || env.OVH_SMTP_PASSWORD || '';
   const resendKey = env.RESEND_API_KEY || '';
-  const transport = smtpPass ? 'smtp' : resendKey ? 'resend' : 'none';
+  const forced = ['resend', 'smtp'].includes(env.EMAIL_TRANSPORT) ? env.EMAIL_TRANSPORT : '';
+  const transport = forced === 'smtp' && smtpPass ? 'smtp'
+    : forced === 'resend' && resendKey ? 'resend'
+      : resendKey ? 'resend' : smtpPass ? 'smtp' : 'none';
 
   async function viaResend({ to, subject, html, text }) {
     const controller = new AbortController();

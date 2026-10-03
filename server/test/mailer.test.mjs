@@ -32,6 +32,13 @@ test('Resend : le champ from est une adresse KYRAN même si SENDER_EMAIL vise un
   }
 });
 
+test('transport : Resend prioritaire (SMTP bloqué sur Railway hors Pro), SMTP forçable', () => {
+  assert.equal(createMailer({ RESEND_API_KEY: 'k', SMTP_PASSWORD: 'p' }).transport, 'resend');
+  assert.equal(createMailer({ RESEND_API_KEY: 'k', SMTP_PASSWORD: 'p', EMAIL_TRANSPORT: 'smtp' }).transport, 'smtp');
+  assert.equal(createMailer({ SMTP_PASSWORD: 'p' }).transport, 'smtp');
+  assert.equal(createMailer({}).transport, 'none');
+});
+
 test('MIME : en-têtes encodés, corps en base64, pas d\'injection d\'en-tête', () => {
   const msg = buildMimeMessage({
     fromName: 'KYRAN', from: 'contact@kyran-jeu.fr', to: ['a@b.fr'], replyTo: 'contact@kyran-jeu.fr',
@@ -71,7 +78,7 @@ test('SMTP : dialogue complet avec un faux serveur', async () => {
   try {
     const mailer = createMailer({
       SMTP_PASSWORD: 'secret', SMTP_HOST: '127.0.0.1', SMTP_PORT: String(server.address().port), SMTP_SECURE: 'false',
-      SENDER_EMAIL: 'contact@majordia.fr', RESEND_API_KEY: 're_ignored'
+      SENDER_EMAIL: 'contact@majordia.fr', RESEND_API_KEY: 're_ignored', EMAIL_TRANSPORT: 'smtp'
     });
     assert.equal(mailer.transport, 'smtp');
     const res = await mailer.sendEmail({ to: ['a@b.fr', 'c@d.fr'], subject: 'Test', text: 'Bonjour', html: '<b>hi</b>' });

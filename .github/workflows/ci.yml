@@ -53,5 +53,8 @@ jobs:
           git diff --exit-code -- . ':(exclude)scripts/lastmod-manifest.json' \
             || { echo "::error::Fichiers générés obsolètes : lancer « npm run build » et commiter le résultat."; exit 1; }
 
+      - name: Tests unitaires des scripts (page communauté Instagram)
+        run: npm run test:unit
+
       - name: Tests de sécurité
         run: npm run test:security

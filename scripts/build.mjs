@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Régénère tout ce qui est généré (articles, redirections, données du blog, sitemap, llms.txt,
+ * Régénère tout ce qui est généré (articles, redirections, données du blog, page communauté,
+ * sitemap, llms.txt,
  * plan du site, rendu statique des composants, CSP). À lancer après toute modification de
  * scripts/content/, des composants (components.js, reviews.js) ou des pages.
  */
@@ -13,6 +14,7 @@ const steps = [
   'generate-blog.mjs',
   'generate-redirects.mjs',
   'generate-blog-infra.mjs',
+  'generate-community.mjs',
   'generate-seo.mjs',
   'prerender.mjs',
   'apply-csp.mjs'

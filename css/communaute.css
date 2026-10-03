@@ -1,0 +1,111 @@
+/* =========================================================
+   Page « Communauté » — photos et vidéos de joueurs (complète style.css)
+   Aucune règle globale : tout est préfixé .ugc-*
+   ========================================================= */
+
+.ugc-wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.ugc-intro {
+  margin: 0 auto var(--space-4);
+  max-width: 800px;
+}
+
+.ugc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.ugc-card {
+  margin: 0;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.ugc-media {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  background: var(--surface);
+}
+
+.ugc-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.ugc-slide img,
+.ugc-slide video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.ugc-body {
+  padding: var(--space-2);
+}
+
+.ugc-credit {
+  margin: 0 0 var(--space-1);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ugc-credit a {
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-decoration: none;
+}
+
+.ugc-credit a:hover,
+.ugc-credit a:focus-visible {
+  text-decoration: underline;
+}
+
+.ugc-hint {
+  margin: 0 0 var(--space-1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.ugc-caption {
+  margin: 0 0 var(--space-1);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-sub);
+  overflow-wrap: anywhere;
+}
+
+.ugc-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.ugc-empty {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-4);
+  text-align: center;
+  background: var(--accent-cream);
+  border: 1px solid var(--accent-cream-border);
+  border-radius: var(--radius);
+}
+
+.ugc-empty p {
+  margin: 0;
+}

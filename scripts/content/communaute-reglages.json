@@ -1,0 +1,5 @@
+{
+  "_aide": "Réglages de la page /communaute.html — mode d'emploi : docs/INSTAGRAM.md. overrides : par ID de publication Instagram, { \"hide\": true } pour masquer, { \"include\": true, \"credit\": \"pseudo\" } pour forcer, \"alt\" ou \"caption\" pour corriger un texte. manual : publications absentes de l'API (repost natif Instagram), médias déposés à la main dans /communaute/.",
+  "overrides": {},
+  "manual": []
+}

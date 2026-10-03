@@ -20,9 +20,10 @@ Toujours commiter le résultat du build avec les sources.
 | 1 | `generate-blog.mjs` | `blog/<slug>.html` à partir de `scripts/content/blog/<slug>.mjs` |
 | 2 | `generate-redirects.mjs` | pages de redirection (`roster.json` → `redirects`) |
 | 3 | `generate-blog-infra.mjs` | `blog-data.js`, `blog/feed.xml`, `blog/index.html` |
-| 4 | `generate-seo.mjs` | `sitemap.xml`, `llms.txt`, `llms-full.txt`, `plan-du-site.html`, version des assets |
-| 5 | `prerender.mjs` | HTML statique des composants `<kyran-*>` et des avis |
-| 6 | `apply-csp.mjs` | balises CSP / referrer |
+| 4 | `generate-community.mjs` | `communaute.html` (photos et vidéos Instagram de joueurs) |
+| 5 | `generate-seo.mjs` | `sitemap.xml`, `llms.txt`, `llms-full.txt`, `plan-du-site.html`, version des assets |
+| 6 | `prerender.mjs` | HTML statique des composants `<kyran-*>` et des avis |
+| 7 | `apply-csp.mjs` | balises CSP / referrer |
 
 Images : `node scripts/optimize-images.mjs` (WebP des images du blog) après l'ajout d'une image.
 
@@ -59,7 +60,14 @@ et le pied de page rendus statiquement n'y comptent pas). Ne modifiez pas ce fic
 `.github/workflows/ci.yml` : JSON-LD valide partout, validation des articles, cohérence du site
 (canoniques, liens internes, sitemap, redirections, robots.txt, llms.txt), build à jour, tests de sécurité.
 
-## 6. À faire à la main (Corentin)
+## 6. Page Communauté (Instagram)
+
+`/communaute.html` publie les photos et vidéos de joueurs republiées sur @kyran.jeu, hébergées sur le
+site (pas d'intégration Instagram) : sitemap image et vidéo, `ImageObject` / `VideoObject` avec le crédit
+de l'auteur, aucun cookie Meta. Synchronisation quotidienne par `.github/workflows/instagram.yml`.
+Mise en place (jeton Meta, secret GitHub) et règles de crédit : `docs/INSTAGRAM.md`.
+
+## 7. À faire à la main (Corentin)
 
 Après déploiement :
 
@@ -87,7 +95,7 @@ Hors code (indispensable pour viser la première place — le site n'a aucun lie
 8. YouTube : vidéos « Comment jouer à KYRAN en 3 minutes » et « Règles du Tarot Africain en vidéo », avec
    lien vers le site. La chaîne officielle (https://www.youtube.com/@Kyran-jeu) est déjà dans les `sameAs`.
 
-## 7. Décisions du propriétaire et points restants
+## 8. Décisions du propriétaire et points restants
 
 Tranchés (2 octobre 2026) :
 

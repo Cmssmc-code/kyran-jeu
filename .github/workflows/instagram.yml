@@ -1,0 +1,91 @@
+name: Synchronisation Instagram (photos et vidéos de joueurs)
+
+# Télécharge sur le site les photos et vidéos de joueurs republiées sur @kyran.jeu,
+# régénère /communaute.html (galerie, sitemap image/vidéo, JSON-LD), commite, relance la
+# publication Pages et notifie IndexNow.
+#
+# Prérequis : secret du dépôt INSTAGRAM_ACCESS_TOKEN (voir docs/INSTAGRAM.md).
+# Sans ce secret, le workflow s'arrête proprement sans rien modifier.
+
+on:
+  schedule:
+    - cron: '17 5 * * *' # tous les jours vers 7 h (heure de Paris)
+  workflow_dispatch:
+
+# Aucune permission par défaut ; seul le job ci-dessous peut écrire le contenu du dépôt
+permissions: {}
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: write # relancer la publication Pages après mise à jour
+    steps:
+      - name: Jeton Instagram configuré ?
+        id: token
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$INSTAGRAM_ACCESS_TOKEN" ]; then
+            echo "::notice::Secret INSTAGRAM_ACCESS_TOKEN absent : synchronisation ignorée (voir docs/INSTAGRAM.md)."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Actions épinglées sur un SHA de commit (les tags peuvent être déplacés)
+      - name: Checkout du code
+        if: steps.token.outputs.ok == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Configuration de Node.js
+        if: steps.token.outputs.ok == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+
+      - name: Installation des dépendances (versions verrouillées)
+        if: steps.token.outputs.ok == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Récupération des publications Instagram
+        if: steps.token.outputs.ok == 'true'
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+        run: node scripts/fetch-instagram.mjs
+
+      - name: Build (page communauté, sitemap, llms.txt, rendu statique)
+        if: steps.token.outputs.ok == 'true'
+        run: |
+          npm run build
+          npm run check:site
+          npm run check:jsonld
+
+      - name: Commit, push, publication et IndexNow
+        if: steps.token.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet -- scripts/content/communaute.json communaute; then
+            echo "Aucune nouvelle publication de joueur."
+            exit 0
+          fi
+          before=$(git rev-parse HEAD)
+          git commit -m "chore(communaute): synchronisation des photos et vidéos Instagram [skip ci]"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
+          # Un push fait avec GITHUB_TOKEN ne déclenche pas d'autre workflow : on relance
+          # explicitement la publication (sans effet tant que Pages n'est pas en mode Actions)
+          gh workflow run pages.yml --ref "${GITHUB_REF_NAME}" || echo "::warning::Relance de pages.yml impossible"
+          node scripts/indexnow.mjs --changed "$before" HEAD --wait || echo "::warning::IndexNow non notifié"

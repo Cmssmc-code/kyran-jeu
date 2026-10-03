@@ -35,6 +35,7 @@ const ACTIVE_BY_PATH = {
   'tarot-africain-a-3-joueurs.html': 'discover',
   'whist-22.html': 'discover',
   'a-propos.html': 'discover',
+  'communaute.html': 'discover',
   'faq.html': 'discover',
   'plan-du-site.html': 'discover',
   'mentions-legales.html': 'legal',
@@ -61,6 +62,7 @@ const DISCOVER_ITEMS = [
   { href: '/whist-22.html', title: 'Whist 22', desc: 'Définition et jeux proches' },
   { href: '/blog/jeux-plis-comparatif.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
   { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' },
+  { href: '/communaute.html', title: 'Communauté', desc: 'Vos parties en photos et vidéos' },
   { href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' }
 ];
 

@@ -4,7 +4,12 @@
  * - noSitemap : page publique mais sans valeur de recherche (légal, plan du site) → hors sitemap.
  * - Les dates <lastmod> ne sont plus saisies ici : elles viennent de scripts/lib/lastmod.mjs.
  */
+import { loadCommunityPosts, communitySitemapExtra } from './community.mjs';
+
 export const SITE = 'https://kyran-jeu.fr';
+
+// Page communauté : hors sitemap tant qu'aucune photo de joueur n'est publiée (page en noindex)
+const communityPosts = loadCommunityPosts();
 
 export const STATIC_PAGES = [
   {
@@ -56,6 +61,13 @@ export const STATIC_PAGES = [
       <image:title>Kit média et communiqué de presse KYRAN</image:title>
       <image:caption>Espace presse du jeu KYRAN</image:caption>
     </image:image>`
+  },
+  {
+    path: '/communaute.html',
+    title: 'Communauté KYRAN — photos et vidéos de joueurs',
+    section: 'KYRAN',
+    noSitemap: communityPosts.length === 0,
+    sitemapExtra: communitySitemapExtra(communityPosts)
   },
   { path: '/blog/', title: 'Blog KYRAN — guides de jeux de cartes et de société', section: 'Blog' },
   { path: '/plan-du-site.html', title: 'Plan du site — kyran-jeu.fr', section: 'Ressources', noSitemap: true },

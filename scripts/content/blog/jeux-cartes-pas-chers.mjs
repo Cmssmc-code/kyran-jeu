@@ -136,7 +136,7 @@ export default {
     },
     {
       q: `Comment tester un jeu de cartes avant de l’acheter ?`,
-      a: `Regardez une vidéo de règles et lisez le livret en ligne : c’est gratuit et fiable. Pour KYRAN, les règles existent en vidéo de cinq minutes sur la page règles, et le dojo gratuit propose un tutoriel interactif de quatre manches guidées, directement en ligne, avant de commander.`
+      a: `Regardez une vidéo de règles et lisez le livret en ligne : c’est gratuit et fiable. Pour KYRAN, les règles existent en vidéo de cinq minutes sur la page règles, et le dojo gratuit propose un tutoriel interactif en sept leçons guidées, puis des parties contre l’ordinateur, directement en ligne, avant de commander.`
     }
   ],
   related: [`cadeau-anniversaire`, `jeux-30-minutes`, `alternatives-uno`]

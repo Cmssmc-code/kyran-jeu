@@ -634,12 +634,14 @@ async function main() {
 
       appendLecon(incident, verdict);
       const sha = commitAndPush(incident, verdict);
-      console.log(`[AutoHeal] ✅ Poussé sur ${BRANCH} : ${sha} (${validation.files.join(', ')})`);
+      // Fichiers corrigés par l'agent (les pages régénérées par le build ne sont pas listées).
+      const files = editedFiles.size ? [...editedFiles] : validation.files.slice(0, 30);
+      console.log(`[AutoHeal] ✅ Poussé sur ${BRANCH} : ${sha} (${files.join(', ')} ; ${validation.files.length} fichier(s) au total)`);
       await reportOutcome('resolve', {
         incidentId: incident.id,
         commitSha: sha,
         resolutionSummary: verdict.summary,
-        report: { ...report, files: validation.files.slice(0, 30) }
+        report: { ...report, files }
       });
       fixed++;
       if (DRY_RUN) resetToRemote();

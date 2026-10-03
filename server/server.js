@@ -10,17 +10,15 @@ import {
 import { IncidentStore, isBenignClientError } from './incidents.js';
 import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
+import { createMailer } from './mailer.js';
 
 const PORT = process.env.PORT || 3000;
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
 // Aucun secret par défaut : sans ADMIN_SECRET (32 caractères minimum), les routes
 // d'administration sont désactivées (fail closed).
 const ADMIN_SECRET = process.env.ADMIN_SECRET || '';
 const ADMIN_ENABLED = ADMIN_SECRET.length >= 32;
-const SENDER_EMAIL = process.env.SENDER_EMAIL || 'contact@majordia.fr';
-const SENDER_NAME = process.env.SENDER_NAME || 'KYRAN';
-const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
+const mailer = createMailer(process.env);
 
 // Tolérance sur l'horodatage de signature Stripe (valeur par défaut des SDK Stripe)
 const STRIPE_TOLERANCE_SECONDS = 300;
@@ -169,45 +167,9 @@ export function verifyStripeSignature(payload, signatureHeader, secret, now = Da
   });
 }
 
+// Expéditeur toujours KYRAN (contact@kyran-jeu.fr ou kyran.jeu@gmail.com) : voir server/mailer.js
 async function sendEmail({ to, subject, html, text }) {
-  if (!RESEND_API_KEY) {
-    console.warn('⚠️ RESEND_API_KEY absente. Simulation envoi à :', to);
-    return { simulated: true };
-  }
-
-  const recipients = Array.isArray(to) ? to : [to];
-  console.log(`✉️ Envoi email transactionnel à ${recipients.join(', ')}...`);
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-  try {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        from: `${SENDER_NAME} <${SENDER_EMAIL}>`,
-        to: recipients,
-        reply_to: REPLY_TO_EMAIL,
-        subject: cleanLine(subject, 250),
-        html,
-        text: text || undefined
-      }),
-      signal: controller.signal
-    });
-
-    const resJson = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      throw new Error(`Erreur Resend (${res.status}): ${resJson.message || JSON.stringify(resJson)}`);
-    }
-
-    console.log(`✅ Email délivré à ${recipients.join(', ')} (Resend ID: ${resJson.id})`);
-    return resJson;
-  } finally {
-    clearTimeout(timeoutId);
-  }
+  return mailer.sendEmail({ to, subject: cleanLine(subject, 250), html, text });
 }
 
 async function handleOrderCompleted(session) {
@@ -531,7 +493,7 @@ const server = http.createServer((req, res) => {
       status: 'ok',
       service: 'kyran-stripe-webhook-server',
       version: VERSION,
-      hasResendKey: Boolean(RESEND_API_KEY),
+      emailTransport: mailer.transport,
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       adminEnabled: ADMIN_ENABLED
     });

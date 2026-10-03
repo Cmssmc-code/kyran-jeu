@@ -115,7 +115,7 @@ export function redactSecrets(text) {
     .replace(/\bwhsec_[A-Za-z0-9]+/g, '[WHSEC_REDACTED]')
     .replace(/\bre_[A-Za-z0-9_]{16,}/g, '[RESEND_KEY_REDACTED]')
     .replace(/eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{5,}/g, '[JWT_REDACTED]')
-    .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/gi, m => (/@(kyran-jeu|majordia)\.fr$/i.test(m) ? m : '[EMAIL]'));
+    .replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/gi, m => (/@kyran-jeu\.fr$/i.test(m) ? m : '[EMAIL]'));
 }
 
 // ---------------------------------------------------------------------------

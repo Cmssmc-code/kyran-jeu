@@ -272,7 +272,9 @@ async function sendEmail({ to, subject, html, text, env }) {
     return;
   }
 
-  const sender = env.SENDER_EMAIL || 'contact@majordia.fr';
+  // Expéditeur toujours KYRAN : une adresse @kyran-jeu.fr, sinon contact@kyran-jeu.fr
+  const configured = String(env.SENDER_EMAIL || '').trim().toLowerCase();
+  const sender = /^[a-z0-9._%+-]+@kyran-jeu\.fr$/.test(configured) ? configured : 'contact@kyran-jeu.fr';
   const senderName = env.SENDER_NAME || 'KYRAN';
   const replyTo = env.REPLY_TO_EMAIL || 'contact@kyran-jeu.fr';
 

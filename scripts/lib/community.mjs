@@ -206,7 +206,7 @@ export function loadCommunityPosts({ warn = () => {} } = {}) {
     if (media.length) {
       out.push({ ...post, media });
     } else if (post.source === 'manuel' && shortcodeOf(post.permalink)) {
-      // Sans fichier hébergé : intégration officielle d'Instagram, chargée au clic du visiteur
+      // Sans fichier hébergé : intégration officielle d'Instagram (iframe)
       out.push({ ...post, media: [], embed: embedUrl(shortcodeOf(post.permalink)) });
     }
   }

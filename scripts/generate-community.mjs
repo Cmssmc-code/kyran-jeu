@@ -64,11 +64,8 @@ function embedCardHtml(post) {
   const kind = isReel(post) ? 'Reel' : 'Publication';
   const date = post.date ? `<time datetime="${esc(post.date)}">${esc(dateFr(post.date))}</time>` : '';
   return `<figure class="ugc-card ugc-card--embed" id="ig-${esc(post.id)}">
-        <div class="ugc-embed${isReel(post) ? ' ugc-embed--reel' : ''}" data-embed="${esc(post.embed)}" data-title="${esc(`${kind} Instagram de @${post.credit}`)}">
-          <p class="ugc-embed__kind">${kind} Instagram</p>
-          <p class="ugc-embed__author">@${esc(post.credit)}</p>
-          <button type="button" class="btn btn-primary ugc-embed__btn">Afficher ${isReel(post) ? 'le reel' : 'la publication'}</button>
-          <p class="ugc-embed__note">Rien n’est chargé depuis Instagram (Meta) avant votre clic. Ensuite, Instagram peut déposer des cookies.</p>
+        <div class="ugc-embed${isReel(post) ? ' ugc-embed--reel' : ''}">
+          <iframe class="ugc-embed__frame" src="${esc(post.embed)}" title="${esc(`${kind} Instagram de @${post.credit}`)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
         </div>
         <figcaption class="ugc-body">
           <p class="ugc-credit">${kind} de <a href="${esc(profileUrl(post.credit))}" target="_blank" rel="noopener noreferrer nofollow">@${esc(post.credit)}</a>${date ? ` · ${date}` : ''}</p>
@@ -142,7 +139,7 @@ function mediaSchema(post, m, i) {
   return { '@type': 'ImageObject', ...common, caption: altText(post, m, i) };
 }
 
-/** Publication intégrée : décrite comme publication de réseau social (aucun fichier hébergé). */
+/** Publication intégrée (iframe Instagram) : décrite comme publication de réseau social (aucun fichier hébergé). */
 function postingSchema(post) {
   const kind = isReel(post) ? 'Reel' : 'Publication';
   const text = cleanCaption(stripCredits(post.caption), 300);
@@ -297,24 +294,7 @@ const html = `<!DOCTYPE html>
       </div>
     </section>
   </main>
-  <kyran-footer></kyran-footer>${embeds.length ? `
-  <script>
-    // Intégrations Instagram : rien n'est chargé depuis Instagram avant le clic du visiteur
-    document.addEventListener('click', function (event) {
-      var button = event.target.closest('.ugc-embed__btn');
-      if (!button) return;
-      var box = button.closest('.ugc-embed');
-      var frame = document.createElement('iframe');
-      frame.src = box.getAttribute('data-embed');
-      frame.title = box.getAttribute('data-title');
-      frame.loading = 'lazy';
-      frame.allowFullscreen = true;
-      frame.setAttribute('allow', 'encrypted-media; picture-in-picture; fullscreen');
-      frame.className = 'ugc-embed__frame';
-      box.replaceChildren(frame);
-      box.classList.add('is-loaded');
-    });
-  </script>` : ''}
+  <kyran-footer></kyran-footer>
 </body>
 </html>
 `;

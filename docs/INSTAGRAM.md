@@ -10,7 +10,7 @@ un joueur en collaboration avec @kyran.jeu. Elle se met à jour chaque jour via
 | Source | Comment elle arrive sur le site | Affichage |
 |---|---|---|
 | Publication **créée par @kyran.jeu** dont la légende crédite un joueur (`📸 @pseudo`…) | Automatique (API, chaque jour) | Fichiers hébergés sur le site (meilleur SEO) |
-| Publication **créée par un joueur** en collaboration avec @kyran.jeu, ou repost natif | Liste manuelle `manual` de `scripts/content/communaute-reglages.json` | Intégration officielle d'Instagram, chargée au clic ; ou fichiers hébergés si vous les ajoutez |
+| Publication **créée par un joueur** en collaboration avec @kyran.jeu, ou repost natif | Liste manuelle `manual` de `scripts/content/communaute-reglages.json` | Intégration officielle d'Instagram (iframe affichée directement) ; ou fichiers hébergés si vous les ajoutez |
 
 Pourquoi les collaborations ne sont pas automatiques (vérifié dans la documentation Meta, octobre 2026) :
 l'endpoint `/me/media` ne renvoie que les publications dont @kyran.jeu est **propriétaire**. Une
@@ -120,10 +120,11 @@ C'est tout : l'identifiant, la date (encodée dans le lien) et le type (post ou 
 lien. Puis `npm run build` et commit (ou modification directe sur GitHub : le workflow du lendemain
 reconstruit la page).
 
-- **Sans fichier**, la carte affiche le pseudo, la date, un lien vers la publication et un bouton
-  « Afficher la publication » qui charge l'intégration officielle d'Instagram. Rien n'est chargé depuis
-  Instagram (Meta) avant ce clic : pas de cookie Meta ni de bandeau de consentement à prévoir. Si le
-  joueur a désactivé les intégrations sur son compte, le lien vers Instagram reste disponible.
+- **Sans fichier**, la carte affiche directement l'intégration officielle d'Instagram (iframe à
+  chargement différé : elle se charge quand le visiteur fait défiler la page jusqu'à elle), avec le
+  pseudo, la date, la description et un lien vers la publication. RGPD : l'iframe peut déposer des
+  traceurs Meta dès l'affichage, sans consentement préalable ; la politique de confidentialité le
+  mentionne. Si le joueur a désactivé les intégrations sur son compte, le lien vers Instagram reste disponible.
   Données structurées : `SocialMediaPosting` (auteur, date, lien).
 - **Avec fichiers** (meilleur SEO : Google Images, vidéos, assistants IA) : demandez au joueur sa
   photo ou sa vidéo et son accord pour le site, déposez les fichiers dans `/communaute/`, puis ajoutez

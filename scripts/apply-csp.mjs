@@ -40,7 +40,7 @@ export const CSP = [
   'upgrade-insecure-requests'
 ].join('; ');
 
-// Page communauté : publications Instagram de joueurs intégrées au clic (iframe officielle)
+// Page communauté : publications Instagram de joueurs intégrées (iframe officielle)
 const FRAME_EXTRA = { 'communaute.html': 'https://www.instagram.com' };
 const metaFor = rel => {
   const extra = FRAME_EXTRA[rel];

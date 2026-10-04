@@ -9,16 +9,5 @@
     "image": "/kyran-cartes-table.webp",
     "gameCount": 0,
     "related": ["jeux-plis-comparatif", "jeux-memoire-concentration", "jeux-bluff-pari"]
-  },
-  {
-    "slug": "jeux-cartes-adultes",
-    "title": "Top 8 des meilleurs jeux de cartes pour adultes",
-    "category": "Soirée",
-    "date": "2026-09-11",
-    "readMinutes": 14,
-    "excerpt": "Tension psychologique, bluff, tactique et retournements : 8 jeux de cartes modernes pour adultes.",
-    "image": "/blog/images/coup.jpg",
-    "gameCount": 8,
-    "related": ["jeux-soiree-amis", "jeux-cartes-6-joueurs", "meilleurs-jeux-apero"]
   }
 ]

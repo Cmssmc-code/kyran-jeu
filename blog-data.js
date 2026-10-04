@@ -466,6 +466,22 @@ const BLOG_ITEMS = [
     ]
   },
   {
+    "slug": "jeux-cartes-6-joueurs",
+    "title": "Meilleurs jeux de cartes à 6 joueurs : ce qui tient quand la table est pleine",
+    "category": "Cartes",
+    "date": "2026-09-11",
+    "readMinutes": 16,
+    "excerpt": "À six, beaucoup de boîtes sont à leur maximum. 6 qui prend !, Codenames en 3 contre 3, For Sale, KYRAN : 8 jeux vérifiés règle en main pour six.",
+    "image": "/kyran-cartes-table.jpg",
+    "webp": "/kyran-cartes-table.webp",
+    "gameCount": 8,
+    "related": [
+      "jeux-cartes-5-joueurs",
+      "jeux-grands-groupes",
+      "jeux-bluff-pari"
+    ]
+  },
+  {
     "slug": "jeux-strategie-legere",
     "title": "Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes",
     "category": "Cartes",
@@ -495,22 +511,6 @@ const BLOG_ITEMS = [
       "jeux-strategie-legere",
       "jeux-plis-comparatif",
       "jeux-cartes-5-joueurs"
-    ]
-  },
-  {
-    "slug": "jeux-cartes-6-joueurs",
-    "title": "Top 8 des jeux de cartes à 6 joueurs sans temps mort",
-    "category": "Cartes",
-    "date": "2026-09-11",
-    "readMinutes": 13,
-    "excerpt": "Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.",
-    "image": "/blog/images/6-qui-prend.jpg",
-    "webp": "/blog/images/6-qui-prend.webp",
-    "gameCount": 8,
-    "related": [
-      "jeux-cartes-5-joueurs",
-      "jeux-cartes-4-joueurs",
-      "meilleurs-jeux-apero"
     ]
   },
   {

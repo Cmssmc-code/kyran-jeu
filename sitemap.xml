@@ -85,7 +85,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-04</lastmod>
   </url>
 
   <url>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
       <image:title>Alternatives à Wizard : 6 jeux de plis pour changer de rythme</image:title>
@@ -210,7 +210,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
       <image:title>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</image:title>
@@ -321,6 +321,14 @@
     </image:image>
   </url>
   <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/kyran-cartes-table.jpg</image:loc>
+      <image:title>Meilleurs jeux de cartes à 6 joueurs : ce qui tient quand la table est pleine</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</loc>
     <lastmod>2026-10-03</lastmod>
     <image:image>
@@ -334,14 +342,6 @@
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/for-sale.jpg</image:loc>
       <image:title>Jeux de draft et d'enchères en cartes : choisir, passer, miser</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
-    <lastmod>2026-10-03</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
-      <image:title>Top 8 des jeux de cartes à 6 joueurs sans temps mort</image:title>
     </image:image>
   </url>
   <url>

@@ -134,7 +134,7 @@ export default {
     },
     {
       q: 'Quel jeu pour 12 personnes ou plus ?',
-      a: 'Codenames s’étire en deux grandes équipes, mais le plus sûr consiste à former deux tables de six et à les faire tourner entre deux jeux. Chaque table prend alors un jeu adapté à six joueurs (Skull, KYRAN, Saboteur), ce qui évite les temps morts.'
+      a: 'Codenames s’étire en deux grandes équipes, mais le plus sûr consiste à former deux tables de six et à les faire tourner entre deux jeux. Chaque table prend alors un <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">jeu adapté à six joueurs</a> (Skull, KYRAN, Saboteur), ce qui évite les temps morts.'
     },
     {
       q: 'Peut-on jouer à KYRAN à 7 ou 8 joueurs ?',

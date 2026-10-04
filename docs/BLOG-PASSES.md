@@ -1,9 +1,13 @@
 # Passes éditoriales du blog
 
-Le blog reçoit trois passes par semaine (lundi, mercredi, vendredi, routine « Blog KYRAN passe
-editoriale » lancée à 6 h 50, heure de Paris). Chaque passe produit **un** article neuf ou **un**
-rafraîchissement, ou rien si aucun sujet ne tient. Elle ouvre une PR prête pour relecture : un humain
-la relit et la fusionne (publication visée : 9 h 30 le jour de la passe). Aucune fusion automatique.
+Le blog reçoit trois passes par semaine (lundi, mercredi, vendredi). À 6 h 50, heure de Paris, la
+routine « Blog KYRAN passes (Sonnet 5.5) » réveille la session « Blog KYRAN — passes auto
+lun/mer/ven », qui a ce dépôt attaché. Chaque passe produit **un** article neuf ou **un**
+rafraîchissement, ou rien si aucun sujet ne tient. Le propriétaire a choisi, le 4 octobre 2026, une
+publication entièrement automatique, sans relecture humaine : la passe ouvre sa PR puis la fusionne
+elle-même dès que toutes ces conditions sont réunies : CI verte sur le dernier commit, aucun conflit,
+aucun commentaire de relecture ouvert, et chaque point incertain sourcé ou retiré de l'article. Sinon
+la PR reste ouverte et dit pourquoi. Publication visée : 9 h 30 le jour de la passe.
 
 Ce fichier est lu en premier par chaque passe. Mettez-le à jour dans la PR de la passe : une ligne au
 journal, et la liste « En attente » si un sujet est traité ou découvert.
@@ -28,7 +32,10 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    KYRAN : réponse honnête, jamais « sans élimination » ni « sans hasard ».
 6. **Contrôler** : relecture adversariale de chaque fait, liens (200), `node scripts/validate-articles.mjs <slug>`,
    `npm run build`, `npm test`.
-7. **PR** : sources, images (crédit + licence), section « À vérifier par le relecteur », résultat des tests.
+7. **PR** : sources, images (crédit + licence), section « À vérifier par le relecteur », résultat des
+   tests ; puis fusion aux conditions ci-dessus. Personne ne relit : un fait sans source fiable est
+   retiré avant la fusion, jamais laissé à un relecteur.
+8. **Après la fusion** : vérifiez la page en ligne (kyran-jeu.fr/blog/<slug>.html, sitemap, flux).
 
 ## Pièges connus
 

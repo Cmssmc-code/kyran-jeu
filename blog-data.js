@@ -131,18 +131,18 @@ const BLOG_ITEMS = [
   },
   {
     "slug": "jeux-comme-exploding-kittens",
-    "title": "8 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre",
+    "title": "6 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre",
     "category": "Alternatives",
     "date": "2026-09-05",
-    "readMinutes": 9,
-    "excerpt": "Alternative à Exploding Kittens : 8 jeux à pièges, éliminations et coups de théâtre, avec l’âge, le nombre de joueurs et le ton de chacun.",
+    "readMinutes": 8,
+    "excerpt": "Alternative à Exploding Kittens : 6 jeux à pièges, éliminations et coups de théâtre, avec l’âge, le nombre de joueurs et le ton de chacun.",
     "image": "/blog/images/bang.jpg",
     "webp": "/blog/images/bang.webp",
-    "gameCount": 8,
+    "gameCount": 6,
     "related": [
       "jeux-bluff-pari",
       "jeux-soiree-amis",
-      "meilleurs-jeux-apero"
+      "jeux-sans-elimination"
     ]
   },
   {
@@ -183,7 +183,7 @@ const BLOG_ITEMS = [
     "category": "Alternatives",
     "date": "2026-09-05",
     "readMinutes": 9,
-    "excerpt": "Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes pour 3 à 6 joueurs, avec atout, annonces ou coopération : comment choisir.",
+    "excerpt": "Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes, de l'atout retourné au duel, puis un guide pour choisir selon ce qui vous manquerait.",
     "image": "/blog/images/wizard.jpg",
     "webp": "/blog/images/wizard.webp",
     "gameCount": 6,
@@ -243,18 +243,18 @@ const BLOG_ITEMS = [
   },
   {
     "slug": "cadeau-noel",
-    "title": "Jeux de cartes à offrir à Noël : 8 idées selon le destinataire",
+    "title": "Jeux de cartes à offrir à Noël : 7 idées selon le destinataire",
     "category": "Cadeaux",
     "date": "2026-05-11",
     "readMinutes": 11,
-    "excerpt": "Quel jeu offrir à Noël ? Huit idées classées par destinataire (tablée familiale, ado, couple, collègue), avec durée de partie et budget.",
+    "excerpt": "Quel jeu offrir à Noël ? Sept idées rangées par destinataire (tablée du réveillon, couple, ado, amateur de cartes), avec durée de partie et budget.",
     "image": "/blog/images/hanabi.jpg",
     "webp": "/blog/images/hanabi.webp",
-    "gameCount": 8,
+    "gameCount": 7,
     "related": [
       "cadeau-anniversaire",
-      "jeux-famille",
-      "jeux-duo-couples"
+      "jeux-duo-couples",
+      "jeux-famille"
     ]
   },
   {
@@ -407,10 +407,10 @@ const BLOG_ITEMS = [
     "category": "Cartes",
     "date": "2026-09-05",
     "readMinutes": 10,
-    "excerpt": "Deux contre deux ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et quatre autres jeux de cartes pour une table de quatre, avec ce qui change à ce format.",
+    "excerpt": "Deux contre deux, tous ensemble ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et trois autres jeux de cartes pour une table de quatre.",
     "image": "/blog/images/love-letter.jpg",
     "webp": "/blog/images/love-letter.webp",
-    "gameCount": 8,
+    "gameCount": 7,
     "related": [
       "jeux-3-joueurs",
       "jeux-cartes-6-joueurs",

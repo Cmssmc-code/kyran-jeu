@@ -1875,6 +1875,7 @@ button:active,
 }
 .video-facade__btn img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.82; transition: opacity var(--speed); }
 .video-facade__btn:hover img, .video-facade__btn:focus-visible img { opacity: 1; }
+.video-facade__btn img.video-facade__img--contain { object-fit: contain; }
 .video-facade__play {
   position: absolute; top: 50%; left: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px;
   border-radius: 50%; background: rgba(0, 0, 0, 0.72); border: 2px solid var(--gold);
@@ -1894,7 +1895,7 @@ button:active,
 /* Accueil : index des guides du blog (maillage interne) */
 .home-guides { margin-top: var(--space-5); padding: var(--space-4); border-radius: var(--radius); background: #ffffff; border: 1px solid #e7e2d9; }
 .home-guides__title { margin: 0 0 var(--space-3); text-align: center; font-size: 1.3rem; }
-.home-guides__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
+.home-guides__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-3); }
 .home-guides__label { margin: 0 0 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); }
 .home-guides ul { margin: 0; padding: 0; list-style: none; }
 .home-guides li { margin: 0 0 6px; }

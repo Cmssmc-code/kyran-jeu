@@ -122,7 +122,7 @@ export default {
       pick: `Pour trois à six joueurs, avec de la place dans le coffre`,
       paragraphs: [
         `KYRAN n’est pas un jeu de poche : plus de quatre-vingts cartes (36 cartes Nombre, une Mystique, 8 Pouvoir, 30 Vie et 7 cartes de règles) dans une boîte rigide. Il convient donc davantage à un séjour en gîte ou en location qu’à une randonnée. Prévoyez une table pour trois à six joueurs, une demi-heure par partie, et un âge minimum de huit ans.`,
-        `Son intérêt en vacances : l’apprentissage se fait avant le départ, grâce à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> ou à la vidéo de cinq minutes sur la <a class="text-link" href="/regle.html#video">page des règles de KYRAN</a>, puis la tablée découvre le principe en une manche : parier le nombre exact de plis avant de jouer. KYRAN ne se joue pas à deux : pour un duo en voyage, Love Letter ou The Mind sont mieux adaptés. La boîte coûte 9,99 € sur le site.`
+        `Son intérêt en vacances : l’apprentissage se fait avant le départ, grâce à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> ou à la vidéo de cinq minutes sur la <a class="text-link" href="/video-regles.html">page vidéo des règles de KYRAN</a>, puis la tablée découvre le principe en une manche : parier le nombre exact de plis avant de jouer. KYRAN ne se joue pas à deux : pour un duo en voyage, Love Letter ou The Mind sont mieux adaptés. La boîte coûte 9,99 € sur le site.`
       ]
     }
   ],

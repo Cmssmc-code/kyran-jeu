@@ -135,7 +135,7 @@ Générés automatiquement (ne pas écrire) : tableau comparatif, sommaire, temp
   Mystique : 0 ou 37 au choix. À 3-4 joueurs, 4 pouvoirs + Mystique seulement ; à 5-6, tout.
 - Variante d'initiation : sans cartes Pouvoir ni Mystique.
 - Prix : 9,99 € sur kyran-jeu.fr (`/commander.html`), 17,99 € sur Amazon. Initiation gratuite : `/minijeu.html`.
-  Règles vidéo : Ludochrono (5 min) sur `/regle.html#video`.
+  Règles vidéo : Ludochrono (5 min) sur la page de lecture `/video-regles.html`.
 - Il **ne se joue pas à deux**.
 - Héritier du Tarot Africain / Whist : `/tarot-africain.html`.
 - Ne jamais écrire que KYRAN est « sans élimination » (le premier joueur à zéro vie met fin à la partie),

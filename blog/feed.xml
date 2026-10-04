@@ -5,7 +5,7 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Sat, 03 Oct 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
@@ -13,18 +13,18 @@
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
     <item>
-      <title>Jeux de cartes et cerveau : ce que dit la science</title>
+      <title>Jeux de cartes et cerveau : ce que disent les études</title>
       <link>https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</guid>
       <pubDate>Wed, 16 Sep 2026 08:00:00 +0200</pubDate>
-      <description>Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.</description>
+      <description>Mémoire de travail, fonctions exécutives, cohortes PAQUID et Lothian : ce que les études observent sur les jeux de cartes, et ce qu’elles ne prouvent pas.</description>
     </item>
     <item>
-      <title>Top 8 des jeux de cartes à 6 joueurs sans temps mort</title>
+      <title>Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort</title>
       <link>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</guid>
       <pubDate>Fri, 11 Sep 2026 08:00:00 +0200</pubDate>
-      <description>Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.</description>
+      <description>Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n&apos;attend, et ce qui change entre cinq et six.</description>
     </item>
     <item>
       <title>Top 8 des meilleurs jeux de cartes pour adultes</title>
@@ -55,13 +55,6 @@
       <description>Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes pour 3 à 6 joueurs, avec atout, annonces ou coopération : comment choisir.</description>
     </item>
     <item>
-      <title>Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes</title>
-      <link>https://kyran-jeu.fr/blog/jeux-brise-glace-afterwork.html</link>
-      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-brise-glace-afterwork.html</guid>
-      <pubDate>Sat, 05 Sep 2026 08:00:00 +0200</pubDate>
-      <description>Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes sans gêne, expliqués en trois minutes, classés du moins au plus exposant.</description>
-    </item>
-    <item>
       <title>Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi</title>
       <link>https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html</guid>
@@ -69,18 +62,11 @@
       <description>Deux contre deux ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et quatre autres jeux de cartes pour une table de quatre, avec ce qui change à ce format.</description>
     </item>
     <item>
-      <title>Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas</title>
-      <link>https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html</link>
-      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html</guid>
-      <pubDate>Sat, 05 Sep 2026 08:00:00 +0200</pubDate>
-      <description>À cinq, la table est impaire et les tours s&apos;allongent. 6 qui prend !, For Sale, Saboteur, KYRAN : 8 jeux de cartes vraiment calibrés pour cinq joueurs.</description>
-    </item>
-    <item>
-      <title>Jeux de cartes de mémoire et de concentration : 8 choix</title>
+      <title>Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort</title>
       <link>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</guid>
       <pubDate>Tue, 30 Jun 2026 08:00:00 +0200</pubDate>
-      <description>Compter les cartes, retenir une défausse, tenir un rythme : 8 jeux de cartes qui sollicitent l’attention, classés selon ce qu’ils font retenir.</description>
+      <description>Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.</description>
     </item>
     <item>
       <title>Jeux de draft et d&apos;enchères en cartes : choisir, passer, miser</title>
@@ -94,14 +80,14 @@
       <link>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-strategie-legere.html</guid>
       <pubDate>Thu, 18 Jun 2026 08:00:00 +0200</pubDate>
-      <description>Lost Cities, Schotten Totten, Parade, Oh Hell!, KYRAN : 8 jeux de cartes classés par profondeur et par part de chance, avec des règles qui tiennent en dix minutes.</description>
+      <description>Lost Cities, Schotten Totten, Parade, Star Realms, Oh Hell!, Wizard, KYRAN : sept jeux de cartes rangés par mécanique, avec la part de chance de chacun.</description>
     </item>
     <item>
-      <title>Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout</title>
+      <title>Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table</title>
       <link>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-sans-elimination.html</guid>
       <pubDate>Sun, 14 Jun 2026 08:00:00 +0200</pubDate>
-      <description>Personne ne regarde les autres jouer : 8 jeux de cartes sans joueur éliminé, avec pour chacun la condition exacte qui met fin à la partie.</description>
+      <description>Sushi Go!, Timeline, Hanabi, No Thanks!, Skyjo : cinq jeux de cartes où personne ne sort, la règle de fin de chacun, et comment vérifier une autre boîte.</description>
     </item>
     <item>
       <title>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</title>
@@ -111,18 +97,18 @@
       <description>Quels jeux choisir à 8 joueurs ou plus ? 9 jeux de cartes qui passent à l’échelle, avec le plafond de joueurs de chacun et la limite de KYRAN (6).</description>
     </item>
     <item>
-      <title>Jeux de cartes à deux : 8 idées pour un duo ou un couple</title>
+      <title>Jeux de cartes à deux : 7 idées pour un duo ou un couple</title>
       <link>https://kyran-jeu.fr/blog/jeux-duo-couples.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-duo-couples.html</guid>
       <pubDate>Wed, 10 Jun 2026 08:00:00 +0200</pubDate>
-      <description>Duel ou coopération ? Lost Cities, The Crew, Love Letter et cinq autres jeux de cartes pour deux, avec le format qui convient à une soirée calme en couple.</description>
+      <description>Duel ou coopération ? Lost Cities, The Crew, Love Letter et quatre autres jeux de cartes pour deux, puis un guide pour choisir selon votre couple.</description>
     </item>
     <item>
-      <title>Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres</title>
+      <title>Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble</title>
       <link>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-coop-cartes.html</guid>
       <pubDate>Mon, 08 Jun 2026 08:00:00 +0200</pubDate>
-      <description>Hanabi, The Crew, The Mind, The Game, Letter Jam, Just One : 7 jeux de cartes coopératifs comparés selon la façon dont on a le droit de communiquer.</description>
+      <description>Hanabi, The Crew, The Mind, The Game, Letter Jam : cinq jeux de cartes coopératifs classés selon la parole permise, et lequel acheter en premier.</description>
     </item>
     <item>
       <title>8 jeux comme Codenames : équipes, indices et déduction</title>
@@ -146,39 +132,39 @@
       <description>Un jeu de cartes où l&apos;on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.</description>
     </item>
     <item>
-      <title>Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter</title>
+      <title>Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter</title>
       <link>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</guid>
       <pubDate>Wed, 27 May 2026 08:00:00 +0200</pubDate>
-      <description>Neuf jeux de cartes compacts pour la plage, le camping, la terrasse ou le train : encombrement, vent, parties reprises et jeux addictifs.</description>
+      <description>Sept jeux de cartes rangés par situation : tablette de train, serviette de plage, terrasse ou table de gîte, avec ce que le vent et les pauses leur font.</description>
     </item>
     <item>
       <title>Jeux de société pour débutants adultes : par où commencer</title>
       <link>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</guid>
       <pubDate>Mon, 25 May 2026 08:00:00 +0200</pubDate>
-      <description>Pli, pioche, défausse, draft : le jargon traduit, puis 8 jeux de cartes faciles rangés en trois étapes pour apprendre sans se sentir perdu.</description>
+      <description>Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.</description>
     </item>
     <item>
-      <title>Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester</title>
+      <title>Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille</title>
       <link>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-bluff-pari.html</guid>
       <pubDate>Sat, 23 May 2026 08:00:00 +0200</pubDate>
-      <description>Bluff pur, pari sur ses plis ou traîtres cachés : huit jeux de cartes pour chaque type de tension, de Skull et Coup à Saboteur, Bang! et KYRAN.</description>
+      <description>Skull, Coup, Saboteur, Bang!, Wizard, KYRAN et For Sale : sept jeux de cartes rangés en trois familles, du mensonge en face au pari sur sa main.</description>
     </item>
     <item>
       <title>Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</title>
       <link>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-3-joueurs.html</guid>
       <pubDate>Thu, 21 May 2026 08:00:00 +0200</pubDate>
-      <description>Quel jeu faire à trois ? The Crew, Love Letter et Hanabi en tête, plus cinq autres choix, et les duels à laisser de côté. Ce qui change à trois, jeu par jeu.</description>
+      <description>Quel jeu faire à trois ? The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s&apos;affronter, et que faire des jeux à deux.</description>
     </item>
     <item>
       <title>Jeux de cartes de 30 minutes ou moins : 9 parties express</title>
       <link>https://kyran-jeu.fr/blog/jeux-30-minutes.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-30-minutes.html</guid>
       <pubDate>Tue, 19 May 2026 08:00:00 +0200</pubDate>
-      <description>Neuf jeux de cartes de 15 à 30 minutes, triés par durée : explication, nombre de joueurs et enchaînement de manches pour des soirées express.</description>
+      <description>Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.</description>
     </item>
     <item>
       <title>Alternatives à Uno : 8 jeux de cartes rapides pour changer</title>
@@ -188,18 +174,11 @@
       <description>Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d&apos;autres.</description>
     </item>
     <item>
-      <title>Alternatives à Wizard : 6 jeux de plis pour changer de rythme</title>
+      <title>Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose</title>
       <link>https://kyran-jeu.fr/blog/alternatives-wizard.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/alternatives-wizard.html</guid>
       <pubDate>Fri, 15 May 2026 08:00:00 +0200</pubDate>
-      <description>Lassé de Wizard ? Six jeux de plis qui gardent l&apos;annonce ou changent la donne : Oh Hell, KYRAN, The Crew, 6 qui prend !, Parade et Skull.</description>
-    </item>
-    <item>
-      <title>Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent</title>
-      <link>https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</link>
-      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html</guid>
-      <pubDate>Wed, 13 May 2026 08:00:00 +0200</pubDate>
-      <description>Huit jeux de cartes à moins de 20 €, jugés sur le rapport qualité-prix et la rejouabilité : prix, nombre de joueurs et défauts de chacun.</description>
+      <description>Jeu comme Wizard : Oh Hell et KYRAN gardent l&apos;annonce de plis ; The Crew, Skull, 6 qui prend ! et Parade gardent le pli, le pari ou la main.</description>
     </item>
     <item>
       <title>Jeux de cartes à offrir à Noël : 8 idées selon le destinataire</title>
@@ -209,11 +188,11 @@
       <description>Quel jeu offrir à Noël ? Huit idées classées par destinataire (tablée familiale, ado, couple, collègue), avec durée de partie et budget.</description>
     </item>
     <item>
-      <title>Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget</title>
+      <title>Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant</title>
       <link>https://kyran-jeu.fr/blog/cadeau-anniversaire.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/cadeau-anniversaire.html</guid>
       <pubDate>Sat, 09 May 2026 08:00:00 +0200</pubDate>
-      <description>Quel jeu offrir pour un anniversaire ? Huit idées triées par budget, du petit cadeau à la cagnotte collective, jouables dès le soir même.</description>
+      <description>Quel jeu de cartes offrir pour un anniversaire ? 9 idées classées par budget, des jeux pas chers à moins de 15 € au cadeau marquant, jouables le soir même.</description>
     </item>
     <item>
       <title>Jeux de société en famille : 8 jeux de cartes dès 8 ans</title>
@@ -230,11 +209,11 @@
       <description>Quel jeu choisir pour une soirée entre amis ? 10 jeux classés selon le groupe (calme, bruyant, compétitif, mixte) et la durée, avec leurs défauts.</description>
     </item>
     <item>
-      <title>Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</title>
+      <title>Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</title>
       <link>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</guid>
       <pubDate>Sun, 03 May 2026 08:00:00 +0200</pubDate>
-      <description>Quels jeux de cartes sortir à l’apéro ? 8 jeux pour tables encombrées de verres, invités qui arrivent par vagues et règles expliquées en deux minutes.</description>
+      <description>Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.</description>
     </item>
     <item>
       <title>10 jeux comme Skyjo : les meilleures alternatives en 2026</title>

@@ -597,14 +597,14 @@
       "no-thanks",
       "kyran"
     ],
-    "kyran": "include",
+    "kyran": "no-fit",
     "count": 8,
     "mergedFrom": [],
     "queries": [
       "jeux sans élimination",
       "jeu sans éliminé"
     ],
-    "notes": "",
+    "notes": "KYRAN n'est pas sans élimination (le joueur à zéro vie est éliminé) : pas de fiche, explication en FAQ (audit Search Console, octobre 2026).",
     "date": "2026-06-14",
     "heroImage": "/blog/images/skyjo.jpg",
     "heroCaption": "Skyjo, un exemple populaire sans sortie précoce.",

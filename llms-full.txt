@@ -19,7 +19,7 @@
 - Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
 - Présence externe : fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
-- Règles : https://kyran-jeu.fr/regle.html (avec vidéo Ludochrono de 5 minutes)
+- Règles : https://kyran-jeu.fr/regle.html ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : https://kyran-jeu.fr/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : https://kyran-jeu.fr/minijeu.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
@@ -44,6 +44,7 @@
 
 - Accueil — KYRAN, jeu de cartes de plis, de bluff et de paris : https://kyran-jeu.fr/
 - Règles du jeu KYRAN (vidéo et règles écrites) : https://kyran-jeu.fr/regle.html
+- Règles de KYRAN en vidéo (Ludochrono, 5 min) : https://kyran-jeu.fr/video-regles.html
 - Initiation KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
 - Commander KYRAN — boutique en ligne : https://kyran-jeu.fr/commander.html
 - KYRAN — jeu de cartes pour l'apéro : https://kyran-jeu.fr/jeu-apero.html
@@ -59,7 +60,7 @@
 - Conditions Générales de Vente (CGV) : https://kyran-jeu.fr/cgv.html
 - Politique de confidentialité (RGPD) : https://kyran-jeu.fr/confidentialite.html
 
-## Blog — 33 guides
+## Blog — 30 guides
 
 - Index : https://kyran-jeu.fr/blog/
 - Flux RSS : https://kyran-jeu.fr/blog/feed.xml
@@ -72,48 +73,45 @@
 - 8 jeux comme Codenames : équipes, indices et déduction : https://kyran-jeu.fr/blog/jeux-comme-codenames.html (8 jeux)
 - 8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas : https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html (8 jeux)
 - 8 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre : https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html (8 jeux)
-- Alternatives à Wizard : 6 jeux de plis pour changer de rythme : https://kyran-jeu.fr/blog/alternatives-wizard.html (6 jeux)
+- Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose : https://kyran-jeu.fr/blog/alternatives-wizard.html (6 jeux)
 - Alternatives à Uno : 8 jeux de cartes rapides pour changer : https://kyran-jeu.fr/blog/alternatives-uno.html (8 jeux)
 - Alternatives à la belote et à la coinche : 6 jeux de plis modernes : https://kyran-jeu.fr/blog/alternatives-belote-coinche.html (6 jeux)
 - Jeux de plis : le comparatif et le guide pour bien choisir : https://kyran-jeu.fr/blog/jeux-plis-comparatif.html (6 jeux)
 
 ### Apéro
 
-- Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table : https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html (8 jeux)
+- Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table : https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html (9 jeux)
 - Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus : https://kyran-jeu.fr/blog/jeux-grands-groupes.html (9 jeux)
 
 ### Cadeaux
 
 - Jeux de cartes à offrir à Noël : 8 idées selon le destinataire : https://kyran-jeu.fr/blog/cadeau-noel.html (8 jeux)
-- Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget : https://kyran-jeu.fr/blog/cadeau-anniversaire.html (8 jeux)
+- Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant : https://kyran-jeu.fr/blog/cadeau-anniversaire.html (9 jeux)
 
 ### Cartes
 
-- Jeux de cartes et cerveau : ce que dit la science : https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html
-- Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester : https://kyran-jeu.fr/blog/jeux-bluff-pari.html (8 jeux)
-- Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent : https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html (8 jeux)
-- Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter : https://kyran-jeu.fr/blog/jeux-vacances-voyage.html (9 jeux)
+- Jeux de cartes et cerveau : ce que disent les études : https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html
+- Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille : https://kyran-jeu.fr/blog/jeux-bluff-pari.html (7 jeux)
+- Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter : https://kyran-jeu.fr/blog/jeux-vacances-voyage.html (7 jeux)
 - Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi : https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html (8 jeux)
-- Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas : https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html (8 jeux)
-- Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes : https://kyran-jeu.fr/blog/jeux-strategie-legere.html (8 jeux)
+- Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort : https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html (8 jeux)
+- Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes : https://kyran-jeu.fr/blog/jeux-strategie-legere.html (7 jeux)
 - Jeux de draft et d'enchères en cartes : choisir, passer, miser : https://kyran-jeu.fr/blog/jeux-draft-encheres.html (7 jeux)
-- Top 8 des jeux de cartes à 6 joueurs sans temps mort : https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html (8 jeux)
 
 ### Famille
 
 - Jeux de société en famille : 8 jeux de cartes dès 8 ans : https://kyran-jeu.fr/blog/jeux-famille.html (8 jeux)
-- Jeux de société pour débutants adultes : par où commencer : https://kyran-jeu.fr/blog/jeux-debutants-adultes.html (8 jeux)
-- Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout : https://kyran-jeu.fr/blog/jeux-sans-elimination.html (8 jeux)
-- Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres : https://kyran-jeu.fr/blog/jeux-coop-cartes.html (7 jeux)
-- Jeux de cartes de mémoire et de concentration : 8 choix : https://kyran-jeu.fr/blog/jeux-memoire-concentration.html (8 jeux)
+- Jeux de société pour débutants adultes : par où commencer : https://kyran-jeu.fr/blog/jeux-debutants-adultes.html (5 jeux)
+- Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table : https://kyran-jeu.fr/blog/jeux-sans-elimination.html (5 jeux)
+- Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble : https://kyran-jeu.fr/blog/jeux-coop-cartes.html (6 jeux)
+- Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort : https://kyran-jeu.fr/blog/jeux-memoire-concentration.html (6 jeux)
 
 ### Soirée
 
 - Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée : https://kyran-jeu.fr/blog/jeux-soiree-amis.html (10 jeux)
-- Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (8 jeux)
-- Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes : https://kyran-jeu.fr/blog/jeux-brise-glace-afterwork.html (8 jeux)
+- Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
 - Jeux de cartes de 30 minutes ou moins : 9 parties express : https://kyran-jeu.fr/blog/jeux-30-minutes.html (9 jeux)
-- Jeux de cartes à deux : 8 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (8 jeux)
+- Jeux de cartes à deux : 7 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (7 jeux)
 - Top 8 des meilleurs jeux de cartes pour adultes : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (8 jeux)
 
 ## Sources
@@ -160,7 +158,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 33 guides du blog
+## Résumé des 30 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -192,11 +190,11 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Alternative à Exploding Kittens : 8 jeux à pièges, éliminations et coups de théâtre, avec l’âge, le nombre de joueurs et le ton de chacun.
 - Jeux comparés : Bang! (4 à 7 joueurs, ~30 min, Rôles cachés, duels) ; Coup (2 à 6 joueurs, ~15 min, Bluff, élimination brève) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexes et totem) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés, tunnels) ; Uno (2 à 10 joueurs, ~20 min, Cartes d’action) ; Skull (3 à 6 joueurs, ~30 min, Bluff et défis) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation et gags) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
-### Alternatives à Wizard : 6 jeux de plis pour changer de rythme
+### Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose
 
 - URL : https://kyran-jeu.fr/blog/alternatives-wizard.html
-- Résumé : Lassé de Wizard ? Six jeux de plis qui gardent l'annonce ou changent la donne : Oh Hell, KYRAN, The Crew, 6 qui prend !, Parade et Skull.
-- Jeux comparés : Oh Hell! (3 à 7 joueurs, ~45 min, Annonce, version épurée) ; KYRAN (3 à 6 joueurs, ~30 min, Annonce et pouvoirs) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées, sans annonce) ; Parade (2 à 6 joueurs, ~45 min, Défausse en file) ; Skull (3 à 6 joueurs, ~30 min, Bluff et enchère)
+- Résumé : Jeu comme Wizard : Oh Hell et KYRAN gardent l'annonce de plis ; The Crew, Skull, 6 qui prend ! et Parade gardent le pli, le pari ou la main.
+- Jeux comparés : Oh Hell! (3 à 7 joueurs, ~45 min, Annonce, version épurée) ; KYRAN (3 à 6 joueurs, ~30 min, Annonce et pouvoirs) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Skull (3 à 6 joueurs, ~30 min, Bluff et enchère) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées, sans annonce) ; Parade (2 à 6 joueurs, ~45 min, Défausse en file)
 
 ### Alternatives à Uno : 8 jeux de cartes rapides pour changer
 
@@ -216,29 +214,23 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.
 - Jeux comparés : Wizard (3 à 6 joueurs, ~45 min, Plis à annonce) ; Oh Hell! (3 à 7 joueurs, ~45 min, Plis à annonce) ; KYRAN (3 à 6 joueurs, ~30 min, Plis à annonce) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées, sans annonce) ; Parade (2 à 6 joueurs, ~45 min, Défausse en file)
 
-### Jeux de bluff, de pari et de rôles cachés : 8 jeux de cartes à tester
+### Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille
 
 - URL : https://kyran-jeu.fr/blog/jeux-bluff-pari.html
-- Résumé : Bluff pur, pari sur ses plis ou traîtres cachés : huit jeux de cartes pour chaque type de tension, de Skull et Coup à Saboteur, Bang! et KYRAN.
-- Jeux comparés : Skull (3 à 6 joueurs, ~30 min, Bluff pur) ; Coup (2 à 6 joueurs, ~15 min, Bluff pur) ; Love Letter (2 à 4 joueurs, ~15 min, Bluff et déduction) ; Wizard (3 à 6 joueurs, ~45 min, Pari sur ses plis) ; KYRAN (3 à 6 joueurs, ~30 min, Pari et plis) ; For Sale (3 à 6 joueurs, ~30 min, Enchères et pari) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés)
+- Résumé : Skull, Coup, Saboteur, Bang!, Wizard, KYRAN et For Sale : sept jeux de cartes rangés en trois familles, du mensonge en face au pari sur sa main.
+- Jeux comparés : Skull (3 à 6 joueurs, ~30 min, Bluff pur) ; Coup (2 à 6 joueurs, ~15 min, Bluff pur) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés) ; Wizard (3 à 6 joueurs, ~45 min, Pari sur ses plis) ; KYRAN (3 à 6 joueurs, ~30 min, Pari et plis) ; For Sale (3 à 6 joueurs, ~30 min, Enchères et pari)
 
-### Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table
+### Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table
 
 - URL : https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html
-- Résumé : Quels jeux de cartes sortir à l’apéro ? 8 jeux pour tables encombrées de verres, invités qui arrivent par vagues et règles expliquées en deux minutes.
-- Jeux comparés : Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Uno (2 à 10 joueurs, ~20 min, Défausse) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.
+- Jeux comparés : Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Uno (2 à 10 joueurs, ~20 min, Défausse) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Timeline (2 à 8 joueurs, ~15 min, Frise chronologique) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée
 
 - URL : https://kyran-jeu.fr/blog/jeux-soiree-amis.html
 - Résumé : Quel jeu choisir pour une soirée entre amis ? 10 jeux classés selon le groupe (calme, bruyant, compétitif, mixte) et la durée, avec leurs défauts.
 - Jeux comparés : Codenames (2 à 8+ joueurs, ~15 min, Déduction par équipes) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Saboteur (3 à 10 joueurs, ~30 min, Déduction sociale) ; Bang! (4 à 7 joueurs, ~30 min, Western, rôles secrets) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
-
-### Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes
-
-- URL : https://kyran-jeu.fr/blog/jeux-brise-glace-afterwork.html
-- Résumé : Jeux brise-glace pour afterwork et soirées d’équipe : 8 jeux de cartes sans gêne, expliqués en trois minutes, classés du moins au plus exposant.
-- Jeux comparés : Sushi Go! (2 à 5 joueurs, ~15 min, Draft de cartes) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Timeline (2 à 8 joueurs, ~15 min, Frise chronologique) ; Codenames (2 à 8+ joueurs, ~15 min, Déduction par équipes) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus
 
@@ -252,29 +244,23 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Quel jeu offrir à Noël ? Huit idées classées par destinataire (tablée familiale, ado, couple, collègue), avec durée de partie et budget.
 - Jeux comparés : Hanabi (2 à 5 joueurs, ~25 min, Coopératif) ; Dixit (3 à 6 joueurs, ~30 min, Récit en images) ; Timeline (2 à 8 joueurs, ~15 min, Culture et chronologie) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Lost Cities (2 joueurs, ~30 min, Duel à deux) ; Love Letter (2 à 4 joueurs, ~15 min, Petit format) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et indices) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
-### Jeux de cartes à offrir pour un anniversaire : 8 idées selon le budget
+### Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant
 
 - URL : https://kyran-jeu.fr/blog/cadeau-anniversaire.html
-- Résumé : Quel jeu offrir pour un anniversaire ? Huit idées triées par budget, du petit cadeau à la cagnotte collective, jouables dès le soir même.
-- Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Petit prix, petit format) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Dixit (3 à 6 joueurs, ~30 min, Récit en images) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et indices) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation d’actions) ; Skyjo (2 à 8 joueurs, ~30 min, Défausse et score) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
-
-### Jeux de cartes pas chers : 8 jeux à moins de 20 € qui se rejouent
-
-- URL : https://kyran-jeu.fr/blog/jeux-cartes-pas-chers.html
-- Résumé : Huit jeux de cartes à moins de 20 €, jugés sur le rapport qualité-prix et la rejouabilité : prix, nombre de joueurs et défauts de chacun.
-- Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Déduction courte) ; No Thanks! (3 à 7 joueurs, ~20 min, Prise de risque) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe et totem) ; Uno (2 à 10 joueurs, ~20 min, Défausse)
+- Résumé : Quel jeu de cartes offrir pour un anniversaire ? 9 idées classées par budget, des jeux pas chers à moins de 15 € au cadeau marquant, jouables le soir même.
+- Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Petit prix, petit format) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Skyjo (2 à 8 joueurs, ~30 min, Défausse et score) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et indices) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés) ; Dixit (3 à 6 joueurs, ~30 min, Récit en images) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation d’actions)
 
 ### Jeux de cartes de 30 minutes ou moins : 9 parties express
 
 - URL : https://kyran-jeu.fr/blog/jeux-30-minutes.html
-- Résumé : Neuf jeux de cartes de 15 à 30 minutes, triés par durée : explication, nombre de joueurs et enchaînement de manches pour des soirées express.
+- Résumé : Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.
 - Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Déduction) ; Coup (2 à 6 joueurs, ~15 min, Bluff et élimination) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft de cartes) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif silencieux) ; No Thanks! (3 à 7 joueurs, ~20 min, Prise de risque) ; Skyjo (2 à 8 joueurs, ~30 min, Défausse et score) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
-### Jeux de cartes pour les vacances et le voyage : 9 jeux à emporter
+### Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter
 
 - URL : https://kyran-jeu.fr/blog/jeux-vacances-voyage.html
-- Résumé : Neuf jeux de cartes compacts pour la plage, le camping, la terrasse ou le train : encombrement, vent, parties reprises et jeux addictifs.
-- Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Format poche) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe et totem) ; No Thanks! (3 à 7 joueurs, ~20 min, Prise de risque) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif silencieux) ; Coup (2 à 6 joueurs, ~15 min, Bluff) ; Schotten Totten (2 joueurs, ~20 min, Duel à deux) ; Skyjo (2 à 8 joueurs, ~30 min, Défausse et score) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Sept jeux de cartes rangés par situation : tablette de train, serviette de plage, terrasse ou table de gîte, avec ce que le vent et les pauses leur font.
+- Jeux comparés : Love Letter (2 à 4 joueurs, ~15 min, Format poche) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif silencieux) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Coup (2 à 6 joueurs, ~15 min, Bluff) ; No Thanks! (3 à 7 joueurs, ~20 min, Prise de risque) ; Skyjo (2 à 8 joueurs, ~30 min, Défausse et score) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux de société en famille : 8 jeux de cartes dès 8 ans
 
@@ -285,38 +271,38 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### Jeux de société pour débutants adultes : par où commencer
 
 - URL : https://kyran-jeu.fr/blog/jeux-debutants-adultes.html
-- Résumé : Pli, pioche, défausse, draft : le jargon traduit, puis 8 jeux de cartes faciles rangés en trois étapes pour apprendre sans se sentir perdu.
-- Jeux comparés : Timeline (2 à 8 joueurs, ~15 min, Culture et placement) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et mots) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexes) ; Uno (2 à 10 joueurs, ~20 min, Défausse) ; Skyjo (2 à 8 joueurs, ~30 min, Pioche et score) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.
+- Jeux comparés : Timeline (2 à 8 joueurs, ~15 min, Culture et placement) ; Uno (2 à 10 joueurs, ~20 min, Défausse) ; Skyjo (2 à 8 joueurs, ~30 min, Pioche et score) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
-### Jeux de cartes sans élimination : 8 jeux où l’on joue jusqu’au bout
+### Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table
 
 - URL : https://kyran-jeu.fr/blog/jeux-sans-elimination.html
-- Résumé : Personne ne regarde les autres jouer : 8 jeux de cartes sans joueur éliminé, avec pour chacun la condition exacte qui met fin à la partie.
-- Jeux comparés : Skyjo (2 à 8 joueurs, ~30 min, Score cumulé) ; Dixit (3 à 6 joueurs, ~30 min, Narration et vote) ; Timeline (2 à 8 joueurs, ~15 min, Frise et fin de tour) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif) ; The Crew (2 à 5 joueurs, ~20 min, Coop à missions) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft de cartes) ; No Thanks! (3 à 7 joueurs, ~20 min, Prendre ou payer) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Sushi Go!, Timeline, Hanabi, No Thanks!, Skyjo : cinq jeux de cartes où personne ne sort, la règle de fin de chacun, et comment vérifier une autre boîte.
+- Jeux comparés : Sushi Go! (2 à 5 joueurs, ~15 min, Draft simultané) ; Timeline (2 à 8 joueurs, ~15 min, Fin au tour complet) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif) ; No Thanks! (3 à 7 joueurs, ~20 min, Prendre ou payer) ; Skyjo (2 à 8 joueurs, ~30 min, Score cumulé)
 
-### Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres
+### Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble
 
 - URL : https://kyran-jeu.fr/blog/jeux-coop-cartes.html
-- Résumé : Hanabi, The Crew, The Mind, The Game, Letter Jam, Just One : 7 jeux de cartes coopératifs comparés selon la façon dont on a le droit de communiquer.
-- Jeux comparés : Hanabi (2 à 5 joueurs, ~25 min, Coop à indices) ; Letter Jam (2 à 6 joueurs, ~45 min, Coop à indices) ; The Crew (2 à 5 joueurs, ~20 min, Coop à plis) ; The Mind (2 à 4 joueurs, ~20 min, Coop silencieuse) ; The Game (1 à 5 joueurs, ~20 min, Coop de défausse) ; Just One (3 à 7 joueurs, ~20 min, Coop de mots) ; KYRAN (3 à 6 joueurs, ~30 min, Plis (compétitif))
+- Résumé : Hanabi, The Crew, The Mind, The Game, Letter Jam : cinq jeux de cartes coopératifs classés selon la parole permise, et lequel acheter en premier.
+- Jeux comparés : The Game (1 à 5 joueurs, ~20 min, Coop de défausse) ; Letter Jam (2 à 6 joueurs, ~45 min, Coop à indices) ; Hanabi (2 à 5 joueurs, ~25 min, Coop à indices) ; The Crew (2 à 5 joueurs, ~20 min, Coop à plis) ; The Mind (2 à 4 joueurs, ~20 min, Coop silencieuse) ; KYRAN (3 à 6 joueurs, ~30 min, Plis (compétitif))
 
-### Jeux de cartes de mémoire et de concentration : 8 choix
+### Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort
 
 - URL : https://kyran-jeu.fr/blog/jeux-memoire-concentration.html
-- Résumé : Compter les cartes, retenir une défausse, tenir un rythme : 8 jeux de cartes qui sollicitent l’attention, classés selon ce qu’ils font retenir.
-- Jeux comparés : Skyjo (2 à 8 joueurs, ~30 min, Mémoire de défausse) ; No Thanks! (3 à 7 joueurs, ~20 min, Comptage de cartes) ; Lost Cities (2 joueurs, ~30 min, Duel à deux) ; Hanabi (2 à 5 joueurs, ~25 min, Déduction par indices) ; The Mind (2 à 4 joueurs, ~20 min, Concentration collective) ; Dobble (2 à 8 joueurs, ~15 min, Attention visuelle) ; Timeline (2 à 8 joueurs, ~15 min, Repères chronologiques) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.
+- Jeux comparés : Skyjo (2 à 8 joueurs, ~30 min, Mémoire de défausse) ; Hanabi (2 à 5 joueurs, ~25 min, Déduction par indices) ; Dobble (2 à 8 joueurs, ~15 min, Attention visuelle) ; The Mind (2 à 4 joueurs, ~20 min, Concentration collective) ; No Thanks! (3 à 7 joueurs, ~20 min, Comptage de cartes) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois
 
 - URL : https://kyran-jeu.fr/blog/jeux-3-joueurs.html
-- Résumé : Quel jeu faire à trois ? The Crew, Love Letter et Hanabi en tête, plus cinq autres choix, et les duels à laisser de côté. Ce qui change à trois, jeu par jeu.
-- Jeux comparés : The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, déduction) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Plis et enchères) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft rapide) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif, silence)
+- Résumé : Quel jeu faire à trois ? The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des jeux à deux.
+- Jeux comparés : The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, déduction) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif, silence) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft rapide)
 
-### Jeux de cartes à deux : 8 idées pour un duo ou un couple
+### Jeux de cartes à deux : 7 idées pour un duo ou un couple
 
 - URL : https://kyran-jeu.fr/blog/jeux-duo-couples.html
-- Résumé : Duel ou coopération ? Lost Cities, The Crew, Love Letter et cinq autres jeux de cartes pour deux, avec le format qui convient à une soirée calme en couple.
-- Jeux comparés : Lost Cities (2 joueurs, ~30 min, Duel, expéditions) ; Schotten Totten (2 joueurs, ~20 min, Duel, formations) ; Star Realms (2 joueurs, ~20 min, Deck-building, duel) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, indices) ; The Game (1 à 5 joueurs, ~20 min, Coopératif, suites) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif, silence)
+- Résumé : Duel ou coopération ? Lost Cities, The Crew, Love Letter et quatre autres jeux de cartes pour deux, puis un guide pour choisir selon votre couple.
+- Jeux comparés : Lost Cities (2 joueurs, ~30 min, Duel, expéditions) ; Schotten Totten (2 joueurs, ~20 min, Duel, formations) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; Star Realms (2 joueurs, ~20 min, Deck-building, duel) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, indices) ; The Game (1 à 5 joueurs, ~20 min, Coopératif, suites)
 
 ### Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi
 
@@ -324,17 +310,17 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Deux contre deux ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et quatre autres jeux de cartes pour une table de quatre, avec ce qui change à ce format.
 - Jeux comparés : The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes, indices) ; Wizard (3 à 6 joueurs, ~45 min, Plis et enchères) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Skyjo (2 à 8 joueurs, ~30 min, Cartes à points) ; Uno (2 à 10 joueurs, ~20 min, Défausse)
 
-### Meilleurs jeux de cartes à 5 joueurs : ceux qui ne traînent pas
+### Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort
 
-- URL : https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html
-- Résumé : À cinq, la table est impaire et les tours s'allongent. 6 qui prend !, For Sale, Saboteur, KYRAN : 8 jeux de cartes vraiment calibrés pour cinq joueurs.
-- Jeux comparés : 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; For Sale (3 à 6 joueurs, ~30 min, Enchères) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés, tir) ; No Thanks! (3 à 7 joueurs, ~20 min, Enchère inversée) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html
+- Résumé : Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n'attend, et ce qui change entre cinq et six.
+- Jeux comparés : 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; For Sale (3 à 6 joueurs, ~30 min, Enchères) ; No Thanks! (3 à 7 joueurs, ~20 min, Enchère inversée) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Bang! (4 à 7 joueurs, ~30 min, Rôles cachés, tir) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et indices) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes
 
 - URL : https://kyran-jeu.fr/blog/jeux-strategie-legere.html
-- Résumé : Lost Cities, Schotten Totten, Parade, Oh Hell!, KYRAN : 8 jeux de cartes classés par profondeur et par part de chance, avec des règles qui tiennent en dix minutes.
-- Jeux comparés : Lost Cities (2 joueurs, ~30 min, Duel, gestion de risque) ; Schotten Totten (2 joueurs, ~20 min, Duel, formations) ; Parade (2 à 6 joueurs, ~45 min, Collection inversée) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, déduction) ; Oh Hell! (3 à 7 joueurs, ~45 min, Plis et paris) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Plis et enchères) ; Star Realms (2 joueurs, ~20 min, Deck-building, duel)
+- Résumé : Lost Cities, Schotten Totten, Parade, Star Realms, Oh Hell!, Wizard, KYRAN : sept jeux de cartes rangés par mécanique, avec la part de chance de chacun.
+- Jeux comparés : Lost Cities (2 joueurs, ~30 min, Duel, gestion de risque) ; Schotten Totten (2 joueurs, ~20 min, Duel, formations) ; Parade (2 à 6 joueurs, ~45 min, Collection inversée) ; Star Realms (2 joueurs, ~20 min, Deck-building, duel) ; Oh Hell! (3 à 7 joueurs, ~45 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Plis et enchères) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux de draft et d'enchères en cartes : choisir, passer, miser
 
@@ -342,15 +328,10 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.
 - Jeux comparés : Sushi Go! (2 à 5 joueurs, ~15 min, Draft pur) ; For Sale (3 à 6 joueurs, ~30 min, Enchères en deux temps) ; No Thanks! (3 à 7 joueurs, ~20 min, Enchère inversée) ; Skull (3 à 6 joueurs, ~30 min, Enchère de bluff) ; Oh Hell! (3 à 7 joueurs, ~45 min, Paris de plis) ; KYRAN (3 à 6 joueurs, ~30 min, Paris de plis) ; Star Realms (2 joueurs, ~20 min, Marché partagé)
 
-### Jeux de cartes et cerveau : ce que dit la science
+### Jeux de cartes et cerveau : ce que disent les études
 
 - URL : https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html
-- Résumé : Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.
-
-### Top 8 des jeux de cartes à 6 joueurs sans temps mort
-
-- URL : https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html
-- Résumé : Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.
+- Résumé : Mémoire de travail, fonctions exécutives, cohortes PAQUID et Lothian : ce que les études observent sur les jeux de cartes, et ce qu’elles ne prouvent pas.
 
 ### Top 8 des meilleurs jeux de cartes pour adultes
 

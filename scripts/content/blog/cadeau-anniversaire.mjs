@@ -2,7 +2,7 @@ export default {
   slug: `cadeau-anniversaire`,
   title: `Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant`,
   shortTitle: `Jeux cadeaux d’anniversaire`,
-  metaTitle: `Cadeau d’anniversaire : 9 jeux de cartes pas chers ou marquants`,
+  metaTitle: `Cadeau anniversaire : 9 jeux de cartes pas chers ou marquants`,
   description: `Quel jeu de cartes offrir pour un anniversaire ? 9 idées classées par budget, des jeux pas chers à moins de 15 € au cadeau marquant, jouables le soir même.`,
   category: `Cadeaux`,
   date: `2026-05-09`,

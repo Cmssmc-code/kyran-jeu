@@ -112,7 +112,7 @@
 - Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
 - Jeux de cartes de 30 minutes ou moins : 9 parties express : https://kyran-jeu.fr/blog/jeux-30-minutes.html (9 jeux)
 - Jeux de cartes à deux : 7 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (7 jeux)
-- Top 8 des meilleurs jeux de cartes pour adultes : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (8 jeux)
+- Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (7 jeux)
 
 ## Sources
 
@@ -328,12 +328,13 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.
 - Jeux comparés : Sushi Go! (2 à 5 joueurs, ~15 min, Draft pur) ; For Sale (3 à 6 joueurs, ~30 min, Enchères en deux temps) ; No Thanks! (3 à 7 joueurs, ~20 min, Enchère inversée) ; Skull (3 à 6 joueurs, ~30 min, Enchère de bluff) ; Oh Hell! (3 à 7 joueurs, ~45 min, Paris de plis) ; KYRAN (3 à 6 joueurs, ~30 min, Paris de plis) ; Star Realms (2 joueurs, ~20 min, Marché partagé)
 
+### Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html
+- Résumé : Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.
+- Jeux comparés : KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Prédiction de plis) ; Coup (2 à 6 joueurs, ~15 min, Bluff pur) ; Skull (3 à 6 joueurs, ~30 min, Bluff et enchères) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Schotten Totten (2 joueurs, ~20 min, Duel de combinaisons) ; Star Realms (2 joueurs, ~20 min, Deckbuilding en duel)
+
 ### Jeux de cartes et cerveau : ce que disent les études
 
 - URL : https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html
 - Résumé : Mémoire de travail, fonctions exécutives, cohortes PAQUID et Lothian : ce que les études observent sur les jeux de cartes, et ce qu’elles ne prouvent pas.
-
-### Top 8 des meilleurs jeux de cartes pour adultes
-
-- URL : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html
-- Résumé : Tension psychologique, bluff, tactique et retournements : 8 jeux de cartes modernes pour adultes.

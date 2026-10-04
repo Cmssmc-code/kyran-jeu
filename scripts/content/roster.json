@@ -27,11 +27,11 @@
     "jeux-cartes-4-joueurs",
     "jeux-cartes-6-joueurs",
     "jeux-strategie-legere",
-    "jeux-draft-encheres"
+    "jeux-draft-encheres",
+    "jeux-cartes-adultes"
   ],
   "handwritten": [
-    "science-jeux-de-cartes-cerveau",
-    "jeux-cartes-adultes"
+    "science-jeux-de-cartes-cerveau"
   ],
   "redirects": {
     "/blog/variantes-skyjo.html": "/blog/jeux-comme-skyjo.html",

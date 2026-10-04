@@ -467,18 +467,17 @@ const BLOG_ITEMS = [
   },
   {
     "slug": "jeux-cartes-adultes",
-    "title": "Top 8 des meilleurs jeux de cartes pour adultes",
+    "title": "Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend",
     "category": "Soirée",
     "date": "2026-09-11",
-    "readMinutes": 14,
-    "excerpt": "Tension psychologique, bluff, tactique et retournements : 8 jeux de cartes modernes pour adultes.",
-    "image": "/blog/images/coup.jpg",
-    "webp": "/blog/images/coup.webp",
-    "gameCount": 8,
+    "readMinutes": 9,
+    "excerpt": "Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.",
+    "image": "/kyran-cartes-table.webp",
+    "gameCount": 7,
     "related": [
+      "jeux-bluff-pari",
       "jeux-soiree-amis",
-      "jeux-cartes-6-joueurs",
-      "meilleurs-jeux-apero"
+      "jeux-duo-couples"
     ]
   }
 ];

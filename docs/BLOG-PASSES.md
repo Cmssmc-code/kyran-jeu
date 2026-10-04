@@ -53,16 +53,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | Date | Type | Article | Mot-clé principal | PR |
 |---|---|---|---|---|
 | 2026-10-04 | Corrections sur l'article « 5 ou 6 joueurs » de #16 (la réécriture « 6 joueurs » de la passe a été abandonnée), liens des fiches, prix | `jeux-cartes-6-joueurs` | jeu de cartes 6 joueurs | [#18](https://github.com/Cmssmc-code/kyran-jeu/pull/18) |
+| 2026-10-04 | Rafraîchissement : passage au format généré, fiche KYRAN corrigée (« 2024 » → sortie 31 janvier 2026), 7 jeux revérifiés (Love Letter retiré). **Sujet pris : ne pas le reprendre.** | `jeux-cartes-adultes` | jeu de cartes adulte | (à venir) |
 
 ## En attente
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-1. **`jeux-cartes-adultes`** (rédigé à la main, 11 septembre 2026) : la fiche KYRAN indique encore
-   « Auteur Corentin Sence · 2024 » (sortie : 31 janvier 2026). À passer au format généré, faits revérifiés.
-2. **`alternatives-uno`** : parle d'une « manche finale à une seule carte » pour KYRAN ; la manche
+1. **`alternatives-uno`** : parle d'une « manche finale à une seule carte » pour KYRAN ; la manche
    Mystique clôt chaque cycle, puis on repart à sept cartes.
-3. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
+2. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».
 

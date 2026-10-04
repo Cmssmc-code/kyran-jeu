@@ -1,13 +1,16 @@
 /**
- * Liens externes vérifiés par jeu (BGG, Wikipedia FR, boutique).
+ * Liens externes vérifiés par jeu (BGG, Wikipédia, boutique).
+ * bgg : identifiant contrôlé avec api.geekdo.com/api/geekitems?objectid=<id> (nom + auteur).
+ * wiki : article français s'il existe, sinon anglais (sitelinks Wikidata), réponse 200 ;
+ *   pas de clé wiki quand aucun article n'existe. Dernier contrôle : 4 octobre 2026.
  * Utilisé par generate-blog.mjs pour liens et JSON-LD.
  */
 export const GAME_LINKS = {
   skyjo: {
-    bgg: 'https://boardgamegeek.com/boardgame/218915/skyjo',
+    bgg: 'https://boardgamegeek.com/boardgame/204135/skyjo',
     wiki: 'https://fr.wikipedia.org/wiki/Skyjo',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=skyjo',
-    designer: 'Magilano',
+    designer: 'Alexander Bernhardt',
     year: 2015,
     imageCredit: 'Photo — Wikimedia Commons'
   },
@@ -37,7 +40,7 @@ export const GAME_LINKS = {
   },
   'lost-cities': {
     bgg: 'https://boardgamegeek.com/boardgame/50/lost-cities',
-    wiki: 'https://fr.wikipedia.org/wiki/Lost_Cities',
+    wiki: 'https://en.wikipedia.org/wiki/Lost_Cities',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=lost+cities',
     designer: 'Reiner Knizia',
     year: 1999,
@@ -45,14 +48,13 @@ export const GAME_LINKS = {
   },
   timeline: {
     bgg: 'https://boardgamegeek.com/boardgame/257284/timeline-classic',
-    wiki: 'https://fr.wikipedia.org/wiki/Timeline_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=timeline+classic',
     designer: 'Frédéric Henry',
     year: 2011,
     imageCredit: 'Photo — Philibert / éditeur'
   },
   dobble: {
-    bgg: 'https://boardgamegeek.com/boardgame/63268/dobble',
+    bgg: 'https://boardgamegeek.com/boardgame/63268/spot-it',
     wiki: 'https://fr.wikipedia.org/wiki/Dobble',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=dobble',
     designer: 'Denis Blanchot',
@@ -69,7 +71,7 @@ export const GAME_LINKS = {
   },
   uno: {
     bgg: 'https://boardgamegeek.com/boardgame/2223/uno',
-    wiki: 'https://fr.wikipedia.org/wiki/Uno_(jeu)',
+    wiki: 'https://fr.wikipedia.org/wiki/Uno',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=uno',
     designer: 'Merle Robbins',
     year: 1971,
@@ -101,14 +103,14 @@ export const GAME_LINKS = {
   },
   bang: {
     bgg: 'https://boardgamegeek.com/boardgame/3955/bang',
-    wiki: 'https://fr.wikipedia.org/wiki/Bang!_(jeu)',
+    wiki: 'https://fr.wikipedia.org/wiki/Bang!_(jeu_de_cartes)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=bang',
     designer: 'Emiliano Sciarra',
     year: 2002,
     imageCredit: 'Photo — dV Giochi'
   },
   dixit: {
-    bgg: 'https://boardgamegeek.com/boardgame/39853/dixit',
+    bgg: 'https://boardgamegeek.com/boardgame/39856/dixit',
     wiki: 'https://fr.wikipedia.org/wiki/Dixit_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=dixit',
     designer: 'Jean-Louis Roubira',
@@ -132,23 +134,23 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Ludonaute'
   },
   'the-crew': {
-    bgg: 'https://boardgamegeek.com/boardgame/284083/the-crew-mission-deep-sea',
-    wiki: 'https://fr.wikipedia.org/wiki/The_Crew',
+    bgg: 'https://boardgamegeek.com/boardgame/284083/the-crew-the-quest-for-planet-nine',
+    wiki: 'https://fr.wikipedia.org/wiki/The_Crew_:_en_qu%C3%AAte_de_la_neuvi%C3%A8me_plan%C3%A8te',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+crew',
     designer: 'Thomas Sing',
     year: 2019,
     imageCredit: 'Photo — KOSMOS'
   },
   'oh-hell': {
-    bgg: 'https://boardgamegeek.com/boardgame/21768/oh-hell',
-    wiki: 'https://fr.wikipedia.org/wiki/Oh_hell',
+    bgg: 'https://boardgamegeek.com/boardgame/1116/oh-hell',
+    wiki: 'https://fr.wikipedia.org/wiki/Ascenseur_(jeu_de_cartes)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=oh+hell',
     designer: 'Traditionnel',
     year: null,
     imageCredit: 'Illustration — cartes à jouer'
   },
   '6-qui-prend': {
-    bgg: 'https://boardgamegeek.com/boardgame/432/take-6',
+    bgg: 'https://boardgamegeek.com/boardgame/432/take-5',
     wiki: 'https://fr.wikipedia.org/wiki/6_qui_prend_!',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=6+qui+prend',
     designer: 'Wolfgang Kramer',
@@ -156,16 +158,15 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Wikimedia Commons'
   },
   parade: {
-    bgg: 'https://boardgamegeek.com/boardgame/93029/parade',
-    wiki: 'https://fr.wikipedia.org/wiki/Parade_(jeu_de_cartes)',
+    bgg: 'https://boardgamegeek.com/boardgame/56692/parade',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=parade+z-man',
     designer: 'Naoki Homma',
     year: 2007,
     imageCredit: 'Photo — Z-Man Games'
   },
   'schotten-totten': {
-    bgg: 'https://boardgamegeek.com/boardgame/258/schotten-totten',
-    wiki: 'https://fr.wikipedia.org/wiki/Schotten_Totten',
+    bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten',
+    wiki: 'https://fr.wikipedia.org/wiki/Schotten-Totten',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=schotten+totten',
     designer: 'Reiner Knizia',
     year: 1999,
@@ -173,7 +174,7 @@ export const GAME_LINKS = {
   },
   'sushi-go': {
     bgg: 'https://boardgamegeek.com/boardgame/133473/sushi-go',
-    wiki: 'https://fr.wikipedia.org/wiki/Sushi_Go!',
+    wiki: 'https://en.wikipedia.org/wiki/Sushi_Go!',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=sushi+go',
     designer: 'Phil Walker-Harding',
     year: 2013,
@@ -189,7 +190,7 @@ export const GAME_LINKS = {
   },
   coup: {
     bgg: 'https://boardgamegeek.com/boardgame/131357/coup',
-    wiki: 'https://fr.wikipedia.org/wiki/Coup_(jeu)',
+    wiki: 'https://en.wikipedia.org/wiki/Coup_(card_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=coup',
     designer: 'Rikki Tahta',
     year: 2012,
@@ -199,7 +200,7 @@ export const GAME_LINKS = {
     bgg: 'https://boardgamegeek.com/boardgame/254640/just-one',
     wiki: 'https://fr.wikipedia.org/wiki/Just_One',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=just+one',
-    designer: 'Steven Du Vernet',
+    designer: 'Ludovic Roudy et Bruno Sautter',
     year: 2018,
     imageCredit: 'Photo — Wikimedia Commons'
   },
@@ -213,22 +214,21 @@ export const GAME_LINKS = {
   },
   'no-thanks': {
     bgg: 'https://boardgamegeek.com/boardgame/12942/no-thanks',
-    wiki: 'https://fr.wikipedia.org/wiki/No_Thanks!',
+    wiki: 'https://en.wikipedia.org/wiki/No_Thanks!_(game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=no+thanks',
     designer: 'Thorsten Gimmler',
     year: 2004,
     imageCredit: 'Photo — Wikimedia Commons'
   },
   'letter-jam': {
-    bgg: 'https://boardgamegeek.com/boardgame/268864/letter-jam',
-    wiki: 'https://fr.wikipedia.org/wiki/Letter_Jam',
+    bgg: 'https://boardgamegeek.com/boardgame/275467/letter-jam',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=letter+jam',
     designer: 'Ondra Skoupý',
     year: 2019,
     imageCredit: 'Photo — Wikimedia Commons'
   },
   'for-sale': {
-    bgg: 'https://boardgamegeek.com/boardgame/172/For-Sale',
+    bgg: 'https://boardgamegeek.com/boardgame/172/for-sale',
     wiki: 'https://en.wikipedia.org/wiki/For_Sale_(board_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=for+sale',
     designer: 'Stefan Dorra',
@@ -236,16 +236,15 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Wikimedia Commons'
   },
   'monopoly-deal': {
-    bgg: 'https://boardgamegeek.com/boardgame/142379/monopoly-deal',
-    wiki: 'https://fr.wikipedia.org/wiki/Monopoly_Deal',
+    bgg: 'https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game',
+    wiki: 'https://en.wikipedia.org/wiki/Monopoly_Deal',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=monopoly+deal',
-    designer: 'Hasbro',
-    year: 2014,
+    designer: 'Katharine Chapman',
+    year: 2008,
     imageCredit: 'Photo — Wikimedia Commons'
   },
   llama: {
     bgg: 'https://boardgamegeek.com/boardgame/266083/llama',
-    wiki: 'https://fr.wikipedia.org/wiki/Llama_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=llama+jeu',
     designer: 'Reiner Knizia',
     year: 2019,
@@ -253,7 +252,6 @@ export const GAME_LINKS = {
   },
   'the-game': {
     bgg: 'https://boardgamegeek.com/boardgame/173090/the-game',
-    wiki: 'https://fr.wikipedia.org/wiki/The_Game_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+game+cartes',
     designer: 'Steffen Benndorf',
     year: 2015,

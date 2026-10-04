@@ -66,13 +66,12 @@ Rafraîchissements repérés (par ordre de priorité) :
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».
 
-Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`), contrôlés le 4 octobre 2026 : ceux
-de Skull, Wizard, Colt Express, For Sale, Saboteur et 6 qui prend ! sont corrigés (#18). Restent faux
-(identifiant BGG d'un autre jeu) : Skyjo, Dixit, Oh Hell!, Parade, Schotten Totten, Letter Jam, Monopoly
-Deal ; restent en 404 sur Wikipédia : Lost Cities, Timeline, Bang!, Oh Hell!, Parade, Schotten Totten,
-Sushi Go!, Coup, No Thanks!, Letter Jam, Monopoly Deal, Llama, The Game. Ils nourrissent le `sameAs` du
-JSON-LD : à corriger en une passe dédiée (Wikidata, propriété P2339, donne l'identifiant BGG et les
-pages Wikipédia).
+Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
+(#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque
+lien Wikipédia vient des sitelinks Wikidata (article français s'il existe, sinon anglais) et répond 200.
+Timeline, Parade, Letter Jam, L.L.A.M.A. et The Game n'ont d'article ni en français ni en anglais :
+pas de clé `wiki`. Les liens de l'article rédigé à la main `jeux-cartes-adultes` ont été corrigés de
+la même façon.
 
 Écarts relevés dans `games.json` le 4 octobre 2026 et non corrigés (des textes en dépendent) :
 
@@ -82,3 +81,5 @@ pages Wikipédia).
 | Dixit | 3 à 6 | Édition actuelle : 3 à 8 (Libellud) ; 3 à 6 pour l'édition de 2008 |
 | Coup | 10+, ~14 € | 13+ (Indie Boards & Cards) ; VO 20,50 € chez Philibert ; la VF « Complots » (Ferti) est un autre produit (2 à 8 joueurs) |
 | 6 qui prend ! | 10+ | 8+ sur les fiches Gigamic et Amigo actuelles ; 10 ans dans la règle française de 2012 et chez Philibert |
+| Timeline | 2011 | La fiche BGG liée (« Timeline: Classic », Frédéric Henry) date de 2018 ; la série commence en 2010 (« Timeline: Inventions ») |
+| Oh Hell! | auteur « Traditionnel » | Publié en JSON-LD comme `Person` nommée « Traditionnel » ; jeu traditionnel sans auteur |

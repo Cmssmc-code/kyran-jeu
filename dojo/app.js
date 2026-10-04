@@ -5,7 +5,7 @@
  */
 import * as E from './engine.js?v=617bc536b5';
 import * as AI from './ai.js?v=cf654c11eb';
-import { LESSONS, BEAD_COLORS } from './lessons.js?v=58f31a9012';
+import { LESSONS, BEAD_IMAGES } from './lessons.js?v=a1ebc70b43';
 
 const ROOT = document.getElementById('dojo');
 
@@ -78,12 +78,27 @@ const plural = (n, w) => `${n} ${w}${n > 1 ? 's' : ''}`;
 const PERSONA_COLORS = { oraculus: '#a78bfa', titan: '#f59e0b', viper: '#22c55e', loki: '#ec4899', gaia: '#2dd4bf' };
 
 // Sur le site, card-3/11/20/27.jpg montrent les cartes Pouvoir de même valeur : ces quatre
-// cartes Nombre sont donc dessinées en CSS, aux couleurs de leur famille.
-const DRAWN = { 3: '#4e4ca8', 11: '#2f9fd9', 20: '#f2ad2f', 27: '#f0802b' };
+// cartes Nombre sont recomposées à partir des vraies cartes (même motif, mêmes chiffres).
+const REBUILT = new Set([3, 11, 20, 27]);
+
+// Visuels tirés des cartes : icônes des cartes Pouvoir et motif de la carte Vie.
+const AVATARS = {
+  griot: '/dojo/img/avatar-griot.jpg',
+  amazone: '/dojo/img/avatar-amazone.jpg',
+  cameleon: '/dojo/img/avatar-cameleon.jpg',
+  anansi: '/dojo/img/avatar-anansi.jpg',
+  guerisseuse: '/dojo/img/avatar-guerisseuse.jpg'
+};
+
+function avatarImg(p, cls) {
+  const src = AVATARS[p.persona];
+  return src ? h('img', { class: cls, src, alt: '', width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
+}
 
 function cardImage(card) {
   if (card.kind === 'mystique') return '/card-37.jpg';
   if (card.kind === 'power') return `/carte-pouvoir-${card.power}-${card.value}.webp`;
+  if (REBUILT.has(card.value)) return `/dojo/img/nombre-${card.value}.jpg`;
   return `/card-${card.value}.jpg`;
 }
 
@@ -103,12 +118,6 @@ function cardEl(card, opts = {}) {
     'aria-label': opts.back ? 'carte face cachée' : cardName(card),
     role: opts.button ? null : 'img'
   });
-  if (!opts.back && card.kind === 'number' && DRAWN[card.value]) {
-    el.classList.add('is-drawn');
-    el.style.setProperty('--fam', DRAWN[card.value]);
-    el.appendChild(h('span', { class: 'dj-drawn', 'aria-hidden': 'true' }, h('span', { class: 'dj-drawn-num', text: String(card.value) }), h('span', { class: 'dj-drawn-foot', text: 'NOMBRE' })));
-    return el;
-  }
   const img = h('img', { src: opts.back ? '/back.jpg' : cardImage(card), alt: '', width: 304, height: 452, decoding: 'async', draggable: 'false' });
   img.addEventListener('error', () => el.classList.add('no-img'));
   el.appendChild(img);
@@ -593,7 +602,7 @@ function renderGame() {
   const game = h('div', { class: 'dj-game' },
     h('header', { class: 'dj-top' },
       h('div', { class: 'dj-top-title' },
-        L ? h('span', { class: 'dj-bead', style: { '--bead': BEAD_COLORS[L.bead] }, title: L.beadName }) : null,
+        L ? beadIcon(L.bead) : null,
         h('strong', { text: title }),
         h('span', { class: 'dj-round', id: 'dj-round' })
       ),
@@ -662,7 +671,7 @@ function renderStatus() {
 function livesEl(p, total) {
   const wrap = h('span', { class: 'dj-lives', 'aria-label': plural(p.lives, 'Vie') });
   const max = Math.max(total, p.lives);
-  for (let i = 0; i < max; i++) wrap.appendChild(h('span', { class: 'dj-life' + (i < p.lives ? ' is-on' : ''), 'aria-hidden': 'true', text: '★' }));
+  for (let i = 0; i < max; i++) wrap.appendChild(h('span', { class: 'dj-life' + (i < p.lives ? ' is-on' : ''), 'aria-hidden': 'true' }));
   return wrap;
 }
 
@@ -692,7 +701,7 @@ function renderSeats() {
     },
     h('div', { class: 'dj-bubble', 'aria-hidden': 'true' }),
     h('div', { class: 'dj-avatar', style: { '--c': PERSONA_COLORS[p.persona] || '#94a3b8' }, 'aria-hidden': 'true' },
-      h('span', { text: persona ? persona.emoji : '🙂' }),
+      avatarImg(p, 'dj-avatar-img') || h('span', { text: persona ? persona.emoji : '🙂' }),
       r && r.dealer === p.id ? h('span', { class: 'dj-dealer', title: 'Donneur', text: 'D' }) : null,
       h('span', { class: 'dj-think' }, h('i'), h('i'), h('i'))
     ),
@@ -806,7 +815,7 @@ function renderTrick(orderOverride) {
       slot.appendChild(el);
       slot.classList.add('is-filled');
     }
-    const cell = h('div', { class: 'dj-slot-wrap' }, slot, h('span', { class: 'dj-slot-label', html: `${persona ? persona.emoji + ' ' : ''}${esc(p.name)}` }));
+    const cell = h('div', { class: 'dj-slot-wrap' }, slot, h('span', { class: 'dj-slot-label' }, avatarImg(p, 'dj-mini-avatar'), p.name));
     wrap.appendChild(cell);
   }
 }
@@ -1040,7 +1049,7 @@ function targetPanel(sess, pend) {
       class: 'dj-target' + (advised === id || (gate && gate.includes(id)) ? ' is-advised' : ''),
       disabled: gate && !gate.includes(id),
       onclick: () => act0({ type: 'target', pid: 0, target: id })
-    }, h('span', { class: 'dj-target-emoji', text: persona ? persona.emoji : '🙂' }), h('span', { text: p.name }), play ? h('b', { text: String(play.value) }) : null));
+    }, avatarImg(p, 'dj-mini-avatar is-md') || h('span', { class: 'dj-target-emoji', text: '🙂' }), h('span', { text: p.name }), play ? h('b', { text: String(play.value) }) : null));
   }
   if (pend.optional) {
     list.appendChild(h('button', { type: 'button', class: 'dj-target is-none' + (advised === null ? ' is-advised' : ''), disabled: !!gate, onclick: () => act0({ type: 'target', pid: 0, target: null }) }, 'Ne pas échanger'));
@@ -1332,7 +1341,7 @@ async function finish(sess) {
     const persona = personaOf(p);
     return h('li', { class: p.id === 0 ? 'is-me' : '' },
       h('span', { class: 'dj-rank', text: st.winners.includes(p.id) ? '👑' : String(i + 1) }),
-      h('span', { text: `${persona ? persona.emoji + ' ' : ''}${p.name}` }),
+      h('span', { class: 'dj-rank-name' }, avatarImg(p, 'dj-mini-avatar'), p.name),
       livesEl(p, st.opts.lives),
       h('span', { class: 'dj-muted', text: `${p.stats.exact}/${p.stats.bets} paris` })
     );
@@ -1387,7 +1396,7 @@ async function lessonResult(sess) {
     res.ok ? h('div', { class: 'dj-bead-award' }, beadIcon(L.bead, true), h('span', { text: first ? `${L.beadName} ajoutée à ton collier !` : L.beadName })) : null,
     h('p', { class: 'dj-lead', text: res.text }),
     last && !L.noTable ? resultsTable(st, last.results) : null,
-    res.ok && L.bead === 'noire' ? ctaBox(true) : null
+    res.ok && L.bead === 'mystique' ? ctaBox(true) : null
   );
   const buttons = res.ok
     ? [{ label: 'Retour à l’accueil', value: 'lobby' }, nextL ? { label: `Rite suivant : ${nextL.title}`, value: 'next', primary: true } : { label: 'Partie libre', value: 'free', primary: true }]
@@ -1428,7 +1437,7 @@ function showCrash() {
 // ── Accueil de l’Initiation ────────────────────────────────────────────────────────
 
 function beadIcon(bead, big) {
-  return h('span', { class: 'dj-bead' + (big ? ' is-big' : ''), style: { '--bead': BEAD_COLORS[bead] }, 'aria-hidden': 'true' });
+  return h('img', { class: 'dj-bead' + (big ? ' is-big' : ''), src: BEAD_IMAGES[bead], alt: '', width: 96, height: 96, 'aria-hidden': 'true' });
 }
 
 function openLesson(L, retry) {
@@ -1495,7 +1504,7 @@ function renderLobby(keepFocus) {
       h('p', { class: 'dj-kicker', text: 'L’Initiation KYRAN' }),
       h('h2', { class: 'dj-hero-title', text: earned === LESSONS.length ? 'Salut, Maître des Mystiques.' : earned ? 'Bon retour, initié.' : 'Deviens Maître des Mystiques' }),
       h('p', { class: 'dj-hero-sub', text: earned ? `${earned} perle${earned > 1 ? 's' : ''} sur ${LESSONS.length} à ton collier d’initié. ${nl ? 'Prochain rite : ' + nl.title.charAt(0).toLowerCase() + nl.title.slice(1) + '.' : 'Ton collier est complet : défie les Maîtres en partie libre.'}` : 'Le Bokonon, devin du Fa, te guide en sept rites. Chaque rite accompli ajoute une perle à ton collier d’initié ; ensuite, défie l’ordinateur. Aucune inscription, rien à installer.' }),
-      h('div', { class: 'dj-necklace', role: 'img', 'aria-label': `${earned} perles sur ${LESSONS.length} à ton collier` }, LESSONS.map((L, i) => h('span', { class: 'dj-necklace-bead' + (store.belts[L.id] ? ' is-on' : ''), style: { '--bead': BEAD_COLORS[L.bead], '--i': i }, title: L.beadName }))),
+      h('div', { class: 'dj-necklace', role: 'img', 'aria-label': `${earned} perles sur ${LESSONS.length} à ton collier` }, LESSONS.map((L, i) => h('img', { class: 'dj-necklace-bead' + (store.belts[L.id] ? ' is-on' : ''), src: BEAD_IMAGES[L.bead], alt: '', width: 96, height: 96, style: { '--i': i }, title: L.beadName }))),
       h('div', { class: 'dj-hero-cta' },
         nl ? h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-lg', onclick: () => openLesson(nl) }, earned ? `Continuer : ${nl.title}` : 'Commencer le premier rite') : null,
         h('button', { type: 'button', class: 'dj-btn ' + (nl ? 'dj-btn-ghost' : 'dj-btn-primary') + ' dj-btn-lg', onclick: () => startSession(null) }, earned ? 'Partie libre' : 'Je connais les règles : jouer')
@@ -1574,7 +1583,7 @@ function init() {
   });
   // Préchargement discret des images de cartes (fluidité des premières donnes)
   const preload = () => {
-    for (let v = 1; v <= 37; v++) { if (!DRAWN[v]) { const i = new Image(); i.src = `/card-${v}.jpg`; } }
+    for (let v = 1; v <= 37; v++) { const i = new Image(); i.src = REBUILT.has(v) ? `/dojo/img/nombre-${v}.jpg` : `/card-${v}.jpg`; }
   };
   if ('requestIdleCallback' in window) window.requestIdleCallback(preload, { timeout: 4000 });
   else setTimeout(preload, 2500);

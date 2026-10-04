@@ -6,8 +6,8 @@ composants ou contenus : `npm run build` puis `npm test` (la CI vérifie que les
 sont à jour). Leçons anti-récidive : [`_notes/lecon.md`](_notes/lecon.md).
 
 Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` — `engine.js` (règles officielles, sans DOM),
-`ai.js` (adversaires et conseils du Sensei), `lessons.js` (parcours des ceintures), `app.js`
-(interface), `dojo.css`. Tests : `scripts/test/dojo.test.mjs`. Les `?v=` sont posés par
+`ai.js` (adversaires et conseils du Bokonon), `lessons.js` (sept rites), `app.js`
+(interface), `dojo.css`, visuels tirés des cartes dans `dojo/img/`. Tests : `scripts/test/dojo.test.mjs`. Les `?v=` sont posés par
 `scripts/stamp-dojo.mjs` (inclus dans `npm run build`).
 
 ## Style de réponse : caveman

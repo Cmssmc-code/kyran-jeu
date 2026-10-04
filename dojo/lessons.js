@@ -25,8 +25,8 @@ const TABLE = [
 export const LESSONS = [
   {
     id: 'pli',
-    bead: 'blanche',
-    beadName: 'Perle blanche',
+    bead: 'mauve',
+    beadName: 'Perle mauve',
     title: 'Le pli',
     summary: 'La carte la plus forte remporte le pli.',
     intro: [
@@ -61,8 +61,8 @@ export const LESSONS = [
   },
   {
     id: 'pari',
-    bead: 'jaune',
-    beadName: 'Perle jaune',
+    bead: 'bleue',
+    beadName: 'Perle bleue',
     title: 'Le pari',
     summary: 'Annonce le nombre exact de plis que tu vas gagner.',
     intro: [
@@ -94,8 +94,8 @@ export const LESSONS = [
   },
   {
     id: 'regle-or',
-    bead: 'orange',
-    beadName: 'Perle orange',
+    bead: 'verte',
+    beadName: 'Perle verte',
     title: 'La règle d’or',
     summary: 'Le dernier à parier ne peut pas tomber juste sur le total.',
     intro: [
@@ -127,8 +127,8 @@ export const LESSONS = [
   },
   {
     id: 'mystique',
-    bead: 'verte',
-    beadName: 'Perle verte',
+    bead: 'jaune',
+    beadName: 'Perle jaune',
     title: 'La carte Mystique',
     summary: 'Le joker qui vaut 0 ou 37, au choix.',
     intro: [
@@ -163,8 +163,8 @@ export const LESSONS = [
   },
   {
     id: 'pouvoirs',
-    bead: 'bleue',
-    beadName: 'Perle bleue',
+    bead: 'orange',
+    beadName: 'Perle orange',
     title: 'Les cartes Pouvoir',
     summary: 'Quatre pouvoirs qui renversent un pli.',
     intro: [
@@ -236,14 +236,14 @@ export const LESSONS = [
   },
   {
     id: 'epreuve',
-    bead: 'noire',
-    beadName: 'Perle noire',
+    bead: 'mystique',
+    beadName: 'Perle Mystique',
     title: 'L’épreuve des Anciens',
     summary: 'Une vraie partie, toutes règles, face à trois Maîtres.',
     intro: [
       'Partie complète : manches de <b>7 à 2 cartes</b>, puis la manche Mystique, avec les cartes Pouvoir et la Mystique.',
       'La partie s’arrête dès qu’un joueur perd sa dernière Vie. Celui qui a le plus de Vies devient <b>Maître des Mystiques</b>.',
-      'Tes adversaires jouent au niveau Maître. Termine premier pour recevoir la perle noire.'
+      'Tes adversaires jouent au niveau Maître. Termine premier pour recevoir la perle Mystique.'
     ],
     showCards: ['n36', 'p27', 'm'],
     setup: {
@@ -264,13 +264,13 @@ export const LESSONS = [
   }
 ];
 
-/** Couleur de la perle gagnée à chaque rite. */
-export const BEAD_COLORS = {
-  blanche: '#f8fafc',
-  jaune: '#facc15',
-  orange: '#fb923c',
-  verte: '#22c55e',
-  bleue: '#3b82f6',
-  rouge: '#dc2626',
-  noire: '#111111'
+/** Perle gagnée à chaque rite : motif des cartes Nombre de la même couleur, puis la Mystique. */
+export const BEAD_IMAGES = {
+  mauve: '/dojo/img/perle-mauve.png',
+  bleue: '/dojo/img/perle-bleue.png',
+  verte: '/dojo/img/perle-verte.png',
+  jaune: '/dojo/img/perle-jaune.png',
+  orange: '/dojo/img/perle-orange.png',
+  rouge: '/dojo/img/perle-rouge.png',
+  mystique: '/dojo/img/perle-mystique.png'
 };

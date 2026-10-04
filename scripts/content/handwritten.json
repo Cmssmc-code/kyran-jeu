@@ -1,11 +1,11 @@
 [
   {
     "slug": "science-jeux-de-cartes-cerveau",
-    "title": "Jeux de cartes et cerveau : ce que dit la science",
+    "title": "Jeux de cartes et cerveau : ce que disent les études",
     "category": "Cartes",
     "date": "2026-09-16",
     "readMinutes": 14,
-    "excerpt": "Mémoire de travail, prévention cognitive et calcul bayésien : ce que les études médicales prouvent sur les jeux de plis comme KYRAN.",
+    "excerpt": "Mémoire de travail, fonctions exécutives, cohortes PAQUID et Lothian : ce que les études observent sur les jeux de cartes, et ce qu’elles ne prouvent pas.",
     "image": "/kyran-cartes-table.webp",
     "gameCount": 0,
     "related": ["jeux-plis-comparatif", "jeux-memoire-concentration", "jeux-bluff-pari"]

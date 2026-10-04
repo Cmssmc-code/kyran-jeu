@@ -2,94 +2,65 @@ export default {
   slug: 'jeux-debutants-adultes',
   title: 'Jeux de société pour débutants adultes : par où commencer',
   shortTitle: 'Jeux pour débutants adultes',
-  metaTitle: 'Jeux de société pour débutants adultes : 8 jeux simples',
-  description: 'Pli, pioche, défausse, draft : le jargon traduit, puis 8 jeux de cartes faciles rangés en trois étapes pour apprendre sans se sentir perdu.',
+  metaTitle: 'Jeux de société pour débutants adultes : 5 jeux pour commencer',
+  description: 'Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.',
   category: 'Famille',
   date: '2026-05-25',
   heroTitle: 'Jeux pour <span class="accent">débutants</span> adultes',
-  heroSubtitle: 'Le jargon expliqué en deux lignes, puis huit jeux rangés par marche d’escalier.',
+  heroSubtitle: 'La réponse d’abord, puis cinq jeux rangés comme des marches : chacun n’ajoute qu’une notion à la précédente.',
   heroImage: '/blog/images/timeline.jpg',
   heroCaption: 'Timeline — apprendre en jouant.',
-  intro: `<p>Le premier obstacle d’un adulte qui découvre les jeux modernes n’est pas la difficulté des règles, c’est le vocabulaire : on lui parle de pli, de pioche ou de draft comme s’il l’avait toujours su. Ce guide commence par traduire ces mots, puis range huit jeux de cartes en <strong>trois marches</strong> : des jeux sans aucun terme technique, des jeux où l’on pioche et défausse, enfin un jeu de plis. Chaque étape prépare la suivante, et vous pouvez vous arrêter à celle qui plaît à votre table. Si des enfants se joignent à la soirée, le guide des <a class="text-link" href="/blog/jeux-famille.html">jeux en famille</a> prend le relais.</p>`,
-  criteria: {
-    heading: 'Comment bien débuter quand on n’a jamais joué à un jeu moderne ?',
-    html: `<p>Un adulte qui s’initie se heurte moins à la complexité des règles qu’au langage qui les accompagne. Voici d’abord les mots qui reviennent partout, puis la progression que nous conseillons.</p>
-<h3>Six mots pour décoder une règle</h3>
-<ul>
-<li><strong>Pioche et défausse</strong> : la pioche est le tas de cartes face cachée où l’on prend la carte du dessus, la défausse est le tas où l’on dépose, face visible, celles dont on ne veut plus.</li>
-<li><strong>Main</strong> : les cartes que vous seul regardez.</li>
-<li><strong>Manche</strong> : une partie se découpe en plusieurs manches, et les points s’additionnent de l’une à l’autre.</li>
-<li><strong>Pli</strong> : chaque joueur pose une carte, la plus forte emporte le tout et son propriétaire ramasse le tas.</li>
-<li><strong>Pari</strong> : annoncer à l’avance ce que l’on va réussir, avant de jouer.</li>
-<li><strong>Draft</strong> : prendre une carte dans sa main et passer le reste à son voisin. Aucun jeu de la liste n’en utilise, mais le mot revient vite ; notre dossier sur les <a class="text-link" href="/blog/jeux-draft-encheres.html">jeux de draft et d’enchères</a> l’explique.</li>
-</ul>
-<h3>Trois marches, dans cet ordre</h3>
-<p>La première marche réunit les jeux sans vocabulaire : Timeline, Dixit, Codenames et Jungle Speed se lancent en une phrase d’explication, car ils ne demandent ni main à cacher ni calcul. La deuxième introduit pioche, défausse et main avec Uno, Skyjo et Love Letter, où chaque tour oblige déjà à choisir. La troisième est un jeu de plis avec pari, KYRAN, qui suppose d’avoir digéré les deux précédentes. Rien n’oblige à tout gravir : si la première soirée a plu, une deuxième du même niveau vaut mieux qu’un jeu trop ambitieux.</p>
-<h3>Trois pièges de la première soirée</h3>
-<ul>
-<li>Lire la règle en entier à voix haute. Mieux vaut expliquer l’essentiel en deux minutes, puis jouer une manche d’essai à cartes visibles.</li>
-<li>Choisir un jeu trop long. Avec des débutants, visez quinze à trente minutes, pour rejouer tout de suite avec ce qu’on vient d’apprendre.</li>
-<li>Réunir trop de monde. À six ou huit, les tours s’allongent et la règle se perd ; à trois ou quatre, chacun voit vite l’effet de ses choix.</li>
-</ul>
-<p>Pour des idées plus ciblées selon le groupe, voyez aussi la sélection de <a class="text-link" href="/blog/jeux-cartes-adultes.html">jeux de cartes pour adultes</a>.</p>`
+  intro: `<p>Le premier obstacle d’un adulte qui découvre les jeux de société n’est pas la difficulté des règles, c’est le vocabulaire : on lui parle de main, de défausse ou de pli comme s’il l’avait toujours su. Cette page répond d’abord à la question que vous vous posez, <strong>par quel jeu commencer</strong>, puis présente cinq jeux de cartes rangés comme les marches d’un escalier. Chacun n’ajoute qu’une seule notion à celui qui le précède : un geste unique avec Timeline, la main et la défausse avec Uno, une vraie décision avec Skyjo, une carte à protéger avec Love Letter, enfin le pli et le pari avec KYRAN. Le petit lexique et les conseils pour passer d’une marche à l’autre viennent ensuite, une fois les jeux en tête.</p>`,
+  layout: {
+    answerFirst: true,
+    criteriaAfter: true,
+    criteriaShort: 'Lexique et méthode',
+    compare: false
+  },
+  headings: {
+    selection: 'Cinq marches, du geste unique au pari',
+    conclusion: 'Une marche par soirée',
+    faq: 'Les questions qu’on n’ose pas poser',
+    related: 'Pour continuer à progresser'
+  },
+  verdict: {
+    heading: 'Par quoi commencer quand on n’a jamais joué ?',
+    html: `<p>Commencez par Timeline. Sa règle tient dans un seul geste, glisser une carte avant ou après celles déjà posées, et une erreur de compréhension n’y coûte rien : la carte mal placée est simplement remplacée. Si votre table préfère de « vraies » cartes, prenez Skyjo, la seconde porte d’entrée : une pioche, une défausse et une décision par tour, rien de plus. Uno, que beaucoup d’adultes connaissent déjà, sert de pont entre les deux pour qui se sent intimidé.</p><p>Ne commencez ni par Love Letter, qui peut sortir un joueur de la manche au bout de deux tours, ni par KYRAN, qui suppose de savoir ce qu’est un pli avant de parier dessus. Gardez-les pour la deuxième ou la troisième soirée.</p>`
   },
   games: [
     {
       id: 'timeline',
+      subtitle: 'le jeu en un seul geste',
       type: 'Culture et placement',
       pick: 'Pour une première partie sans aucun terme technique à apprendre',
       paragraphs: [
         `Timeline convient en premier jeu parce que son vocabulaire se résume à un geste : poser une carte à gauche ou à droite d’une suite déjà alignée. Aucune main à cacher, aucun calcul. Chaque carte porte un événement sur une face et sa date sur l’autre ; si vous la placez au mauvais endroit, elle est écartée et vous en recevez une nouvelle. Une explication de trente secondes suffit pour démarrer, à deux comme à huit joueurs.`,
-        `Le seul obstacle est culturel, pas technique : si votre table connaît mal les inventions ou l’histoire, les placements deviennent des paris au hasard et l’intérêt retombe. Le choix de l’édition compte donc davantage que la règle. Les parties d’environ quinze minutes se rejouent d’affilée, et le paquet est assez épais pour enchaîner plusieurs manches avant de revoir les mêmes dates.`
-      ]
-    },
-    {
-      id: 'dixit',
-      type: 'Imagination',
-      pick: 'Pour ceux qui redoutent les règles : ici, on raconte et on devine',
-      paragraphs: [
-        `Dixit ne demande aucune compétence de cartes : on regarde une illustration, on la décrit par une phrase ou un mot, et les autres retrouvent laquelle des cartes posées est la vôtre. Pour un adulte qui se méfie des jeux « compliqués », c’est la porte la plus basse de la liste, parce que personne ne peut jouer « mal » au sens technique. Le vocabulaire se limite à « conteur » et « vote ».`,
-        `La contrepartie : il faut au moins trois joueurs, et son prix d’environ 30 € est le plus élevé de la liste, ce qui fait réfléchir avant un premier achat. La vraie maîtrise consiste à doser son indice, ni trop clair ni trop opaque, et cela se découvre en jouant, pas en lisant la notice. Si vous hésitez, une partie chez des amis suffit à savoir si l’exercice vous plaît.`
-      ]
-    },
-    {
-      id: 'codenames',
-      type: 'Équipes et mots',
-      pick: 'Pour les groupes à l’aise avec les mots, sans règle de cartes',
-      paragraphs: [
-        `Dans Codenames, tout tient dans la grille de 25 mots étalée sur la table : deux chefs d’espions donnent chacun un indice d’un mot accompagné d’un nombre, et leurs équipiers désignent les mots concernés. Il n’y a pas de main de cartes à ranger, donc aucun jargon. Pour un adulte débutant mais bon avec le langage, c’est rassurant : on joue avec ce que l’on sait déjà.`,
-        `Deux points faibles. L’âge indiqué est 10+, et un indice mal compris est vécu comme une faute personnelle du chef d’espions, ce qui peut refroidir un novice. Jouez d’abord à quatre, en équipes de deux ; à huit, les discussions d’équipe s’allongent et le plaisir diminue. Le côté « cartes » reste minimal : on y vient pour l’ambiance, pas pour apprendre un mécanisme.`
-      ]
-    },
-    {
-      id: 'jungle-speed',
-      type: 'Réflexes',
-      pick: 'Pour dédramatiser : aucun raisonnement, juste un totem à saisir',
-      paragraphs: [
-        `Jungle Speed casse la timidité autour de la table : chacun retourne une carte à son tour, et si deux symboles identiques apparaissent, les deux joueurs concernés se jettent sur le totem. Ni stratégie ni lecture de règle complexe. C’est le jeu qui permet à un débutant de rire de ses erreurs sans qu’elles pèsent, puisque l’erreur est un geste de trop et non une mauvaise décision.`,
-        `Attention aux limites : le jeu est physique, les mains se heurtent, et il faut une table dégagée avec le totem au centre. Il sert de marche zéro, pour une soirée où l’on ne sait pas encore qui est joueur : quinze minutes de réflexes, puis on passe à autre chose. Il n’apprend aucun des mots du glossaire ci-dessus, et c’est son principal défaut dans une logique de progression.`
+        `Le seul obstacle est culturel, pas technique : si votre table connaît mal les inventions ou l’histoire, les placements deviennent des paris au hasard et l’intérêt retombe. Le choix de l’édition compte donc davantage que la règle. Ce que Timeline enseigne sans le dire : jouer chacun son tour et viser le premier à se débarrasser de ses cartes, exactement le but de la marche suivante.`
       ]
     },
     {
       id: 'uno',
+      subtitle: 'mettre un nom sur la main et la défausse',
       type: 'Défausse',
       pick: 'Pour comprendre pioche, défausse et sens du tour sans rien lire',
       paragraphs: [
-        `Uno enseigne trois notions d’un coup : la main (vos cartes), la pioche (le tas face cachée) et la défausse (le tas où l’on pose en respectant couleur ou valeur). Un adulte qui n’a pas touché à un jeu de société depuis trente ans les retrouve dans presque tous les jeux de cartes modernes. La règle d’appariement se voit à l’œil nu, ce qui en fait un excellent premier cours.`,
-        `Le jeu a un vrai défaut pour un adulte exigeant : l’essentiel de la partie dépend du tirage, et les cartes spéciales provoquent des revirements qui n’ont rien à voir avec l’habileté. C’est précisément ce qui rassure un novice, puisque rien n’est perdu d’avance. Dès que la défausse n’a plus de secret, passez à Skyjo ou à Love Letter ; notre guide des <a class="text-link" href="/blog/alternatives-uno.html">alternatives à Uno</a> détaille d’autres pistes.`
+        `Uno enseigne trois notions d’un coup : la main (vos cartes), la pioche (le tas face cachée) et la défausse (le tas où l’on pose en respectant couleur ou valeur). Un adulte qui n’a pas touché à un jeu de société depuis trente ans les retrouve dans presque tous les jeux de cartes modernes. La règle d’appariement se voit à l’œil nu, ce qui en fait un excellent premier cours, de deux à dix joueurs.`,
+        `Le jeu a un vrai défaut pour un adulte exigeant : l’essentiel de la partie dépend du tirage, et les cartes spéciales provoquent des revirements qui n’ont rien à voir avec l’habileté. C’est précisément ce qui rassure un novice, puisque rien n’est perdu d’avance. Dès que la défausse n’a plus de secret, montez d’une marche ; notre guide des <a class="text-link" href="/blog/alternatives-uno.html">alternatives à Uno</a> détaille d’autres pistes du même niveau.`
       ]
     },
     {
       id: 'skyjo',
+      subtitle: 'la première vraie décision',
       type: 'Pioche et score',
       pick: 'Pour goûter au risque calculé avec des règles tenant sur une main',
       paragraphs: [
-        `Skyjo est la marche suivante : pioche et défausse reviennent, mais avec une vraie décision à chaque tour, garder la carte visible de la défausse ou tirer à l’aveugle. Votre jeu est une grille de douze cartes retournées petit à petit, posée sur la table : pas de main cachée à mémoriser, ce qui facilite la lecture pour un novice. Le plus petit total gagne, ce qui inverse l’intuition de Uno et mérite une phrase d’explication.`,
-        `Cumuler des points sur plusieurs manches peut décourager : une partie d’une demi-heure demande de la patience. Pour un premier essai, jouez à trois ou quatre et fixez un score cible plus bas que celui de la règle avant de lancer. À huit joueurs, la partie traîne et ne convient pas à une première expérience.`
+        `Skyjo reprend la pioche et la défausse d’Uno, mais avec une vraie décision à chaque tour : garder la carte visible de la défausse ou tirer à l’aveugle. Votre jeu est une grille de douze cartes retournées petit à petit, posée sur la table : pas de main cachée à mémoriser, ce qui facilite la lecture pour un novice. Le plus petit total gagne, ce qui inverse l’intuition d’Uno et mérite une phrase d’explication.`,
+        `C’est aussi le premier jeu de l’escalier qui se découpe en manches, avec des points qui s’additionnent d’une manche à l’autre, et cela peut décourager : une partie d’une demi-heure demande de la patience. Pour un premier essai, jouez à trois ou quatre et fixez un score cible plus bas que celui de la règle avant de lancer. À huit joueurs, la partie traîne et ne convient pas à une première expérience.`
       ]
     },
     {
       id: 'love-letter',
+      subtitle: 'la carte qu’il faut protéger',
       type: 'Déduction',
       pick: 'Pour goûter à la déduction avec seize cartes seulement en tête',
       paragraphs: [
@@ -99,19 +70,38 @@ export default {
     },
     {
       id: 'kyran',
+      subtitle: 'le pli, puis le pari',
       type: 'Plis et paris',
       pick: 'Pour franchir la dernière marche : les plis avec un pari à tenir',
       paragraphs: [
         `Un pli, c’est un tour de table où chacun pose une carte et où la plus forte l’emporte. KYRAN en fait un jeu de paris : avant la manche, chaque joueur annonce combien de plis il va gagner, et la somme des paris ne peut pas égaler le nombre de plis, donc au moins un joueur se trompe à chaque manche. C’est la marche la plus haute de cette liste, et la variante d’initiation, sans cartes Pouvoir ni Mystique, permet d’apprendre le cœur de la règle d’abord.`,
-        `Pour apprendre sans lire la notice, regardez la vidéo de cinq minutes sur la page des <a class="text-link" href="/regle.html">règles de KYRAN</a>, puis entraînez-vous à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> avant de sortir la boîte. À savoir : de 3 à 6 joueurs, jamais à deux, environ 30 minutes, à 9,99 € sur le site. Si vous n’avez jamais joué à un jeu de plis, passez d’abord par Uno ou Skyjo : le calcul du pari peut rebuter sans cela.`
+        `Pour apprendre sans lire la notice, regardez la vidéo de cinq minutes sur la <a class="text-link" href="/video-regles.html">page vidéo des règles de KYRAN</a>, puis entraînez-vous à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> avant de sortir la boîte. À savoir : de 3 à 6 joueurs, jamais à deux, environ 30 minutes, à 9,99 € sur le site. Si vous n’avez jamais joué à un jeu de plis, passez d’abord par Uno ou Skyjo : le calcul du pari peut rebuter sans cela.`
       ]
     }
   ],
-  verdict: {
-    heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en retenir qu’un pour débuter, prenez Timeline : c’est le seul jeu de la liste dont la règle tient dans un geste et où une erreur de compréhension ne coûte rien. Skyjo vient juste derrière pour ceux qui veulent déjà de vraies décisions avec une pioche et une défausse.</p><p>À ne pas choisir en premier : Codenames à huit joueurs, qui noie les débutants dans les discussions d’équipe, et KYRAN, dont le pari obligatoire se savoure mieux après un jeu de défausse. Jungle Speed brise la glace, mais il n’apprend rien qui serve pour la suite.</p>`
+  criteria: {
+    heading: 'Le lexique du débutant, et comment monter d’une marche',
+    html: `<p>Les cinq jeux ci-dessus vous ont appris des mots sans les nommer. Les voici rassemblés, avec la manière de choisir la marche suivante et les erreurs qui gâchent le plus souvent une première soirée.</p>
+<h3>Les mots qui reviennent dans toutes les règles</h3>
+<ul>
+<li><strong>Main</strong> : les cartes que vous seul regardez. Timeline s’en passe presque, Uno en fait le cœur de la partie.</li>
+<li><strong>Pioche et défausse</strong> : la pioche est le tas de cartes face cachée où l’on prend la carte du dessus, la défausse est le tas où l’on dépose, face visible, celles dont on ne veut plus.</li>
+<li><strong>Manche</strong> : une partie se découpe en plusieurs manches, et les points s’additionnent de l’une à l’autre, comme dans Skyjo.</li>
+<li><strong>Élimination</strong> : sortir d’une manche ou d’une partie avant les autres. Love Letter l’applique à chaque manche, ce qui reste supportable parce qu’elles sont brèves.</li>
+<li><strong>Pli</strong> : chaque joueur pose une carte, la plus forte emporte le tout et son propriétaire ramasse le tas.</li>
+<li><strong>Pari</strong> (ou annonce) : dire à l’avance ce que l’on va réussir, avant de jouer.</li>
+<li><strong>Draft</strong> : garder une carte de sa main et passer le reste à son voisin. Aucun des cinq jeux ne l’utilise, mais le mot revient vite dès qu’on fréquente une boutique de jeux.</li>
+</ul>
+<h3>Choisir la marche suivante</h3>
+<p>Rien n’oblige à gravir tout l’escalier. Les marches ne mesurent pas la qualité d’un jeu mais le nombre de notions à digérer : si votre table s’amuse avec Uno, une deuxième soirée au même niveau vaut mieux qu’un saut vers un jeu de plis. Montez quand la règle actuelle ne pose plus aucune question, et sautez une marche seulement si quelqu’un à la table connaît déjà la suivante et peut l’expliquer en jouant.</p>
+<h3>Trois pièges de la première soirée</h3>
+<ul>
+<li>Lire la règle en entier à voix haute. Mieux vaut expliquer l’essentiel en deux minutes, puis jouer une manche d’essai à cartes visibles.</li>
+<li>Choisir un jeu trop long. Avec des débutants, visez quinze à trente minutes, pour rejouer tout de suite avec ce qu’on vient d’apprendre.</li>
+<li>Réunir trop de monde. À six ou huit, les tours s’allongent et la règle se perd ; à trois ou quatre, chacun voit vite l’effet de ses choix.</li>
+</ul>`
   },
-  conclusion: `<p>Une marche par soirée suffit. Quand la table réclame une nouvelle partie du même jeu, vous pouvez monter d’un cran ; quand elle regarde son téléphone, redescendez plutôt. Les adultes qui débutent ne manquent pas de capacités, seulement de repères, et le jeu qui les leur donne en quinze minutes vaut mieux que le plus réputé. Pour la suite, essayez les <a class="text-link" href="/blog/jeux-strategie-legere.html">jeux de stratégie légère</a>.</p>`,
+  conclusion: `<p>Une marche par soirée suffit. Quand la table réclame une nouvelle partie du même jeu, vous pouvez monter d’un cran ; quand elle regarde son téléphone, redescendez plutôt. Les adultes qui débutent ne manquent pas de capacités, seulement de repères, et le jeu qui les leur donne en quinze minutes vaut mieux que le plus réputé. Une fois l’escalier gravi, l’étape suivante est celle des <a class="text-link" href="/blog/jeux-strategie-legere.html">jeux de stratégie légère</a>, où chaque partie demande de vrais choix sans règle épaisse.</p>`,
   faq: [
     {
       q: 'Par quel jeu de cartes commencer quand on est adulte et débutant ?',
@@ -119,11 +109,11 @@ export default {
     },
     {
       q: 'C’est quoi un pli dans un jeu de cartes ?',
-      a: `Un pli est un tour de table où chaque joueur pose une carte ; la plus forte, selon la règle du jeu, remporte l’ensemble. La belote, le tarot ou KYRAN reposent sur ce mécanisme. Le <a class="text-link" href="/tarot-africain.html">tarot africain</a> permet de les comprendre avec un simple paquet, en jouant quelques plis à cartes visibles.`
+      a: 'Un pli est un tour de table où chaque joueur pose une carte ; la plus forte, selon la règle du jeu, remporte l’ensemble. La belote, le tarot ou KYRAN reposent sur ce mécanisme. Pour le saisir, jouez quelques plis à cartes visibles avec un paquet ordinaire avant de compter le moindre point.'
     },
     {
       q: 'Faut-il lire toute la notice avant de jouer ?',
-      a: `Non : lisez l’essentiel (but, déroulement d’un tour, fin de partie), jouez une manche d’essai, puis retournez à la notice pour les cas particuliers. Une vidéo de règles de cinq minutes, comme celle proposée sur la <a class="text-link" href="/regle.html#video">page des règles de KYRAN</a>, fait gagner un temps précieux.`
+      a: 'Non : lisez l’essentiel (but, déroulement d’un tour, fin de partie), lancez une manche d’essai, puis retournez à la notice pour les cas particuliers. Beaucoup d’éditeurs proposent aussi une vidéo de règles de quelques minutes, plus facile à suivre qu’une lecture à voix haute.'
     },
     {
       q: 'Quel jeu choisir après Uno quand on veut plus de réflexion ?',
@@ -131,11 +121,11 @@ export default {
     },
     {
       q: 'Combien de joueurs faut-il pour débuter ?',
-      a: 'Trois ou quatre est le meilleur compromis. Timeline, Skyjo, Jungle Speed et Uno acceptent plus de joueurs, Dixit et KYRAN demandent au moins trois personnes, Love Letter s’arrête à quatre. Au-delà de six, les tours s’allongent et les règles s’oublient plus facilement.'
+      a: 'Trois ou quatre est le meilleur compromis. Timeline, Skyjo et Uno acceptent bien davantage de monde, KYRAN demande au moins trois personnes et Love Letter s’arrête à quatre. Au-delà de six, les tours s’allongent et les règles s’oublient plus facilement.'
     },
     {
       q: 'Les jeux de cartes pour débuter coûtent-ils cher ?',
-      a: `Non, la plupart restent sous 15 € : environ 10 € pour Uno, 12 € pour Love Letter, 15 € pour Timeline et Skyjo. Dixit, à environ 30 €, fait exception ; KYRAN est à 9,99 € sur la <a class="text-link" href="/commander.html">page de commande</a>. Notre liste des <a class="text-link" href="/blog/jeux-cartes-pas-chers.html">jeux de cartes pas chers</a> va plus loin.`
+      a: `Non : comptez environ 10 € pour Uno, 12 € pour Love Letter, 15 € pour Timeline et Skyjo, et 9,99 € pour KYRAN sur son site. Pour d’autres idées rangées par prix, notre sélection de <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes à offrir selon le budget</a> va plus loin.`
     }
   ],
   related: ['jeux-famille', 'jeux-cartes-adultes', 'jeux-soiree-amis']

@@ -3,28 +3,42 @@ export default {
   title: 'Alternatives à la belote et à la coinche : 6 jeux de plis modernes',
   shortTitle: 'Alternatives belote-coinche',
   metaTitle: 'Alternative à la belote et la coinche : 6 jeux de plis',
-  description: `Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes pour 3 à 6 joueurs, avec atout, annonces ou coopération : comment choisir.`,
+  description: `Envie de varier de la belote ou de la coinche ? Six jeux de plis modernes, de l'atout retourné au duel, puis un guide pour choisir selon ce qui vous manquerait.`,
   category: 'Alternatives',
   date: '2026-09-05',
   heroTitle: 'Alternatives à la <span class="accent">belote</span> et à la coinche',
-  heroSubtitle: `Atout, annonces, partenaire : ce que six jeux de plis modernes gardent de la belote, et ce qu'ils changent.`,
+  heroSubtitle: `Atout, contrat, partenaire : ce que six jeux de plis modernes gardent de la belote, et ce qu'ils vous obligent à lâcher.`,
   heroImage: '/blog/images/wizard.jpg',
   heroCaption: 'Des cartes modernes pour renouveler le plaisir traditionnel des plis.',
-  intro: `<p>La belote se joue à quatre, par équipes, avec 32 cartes dont le valet et le 9 d'atout règnent. La coinche y ajoute les enchères et le défi du contrat. Réunir précisément ces quatre joueurs, tous d'accord sur les annonces et sur la façon de compter, n'est pas toujours simple. Les jeux de plis modernes reprennent les gestes que vous maîtrisez déjà (fournir, couper, retenir ce qui est tombé) sous d'autres règles de table : on joue à trois, à cinq, chacun pour soi ou tous ensemble. Voici six jeux classés selon ce qu'ils conservent de la belote, de l'atout au partenaire, avec un détour par le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> et une page pour comprendre le <a class="text-link" href="/blog/jeux-plis-comparatif.html">vocabulaire des jeux de plis</a>.</p>`,
+  layout: {
+    criteriaAfter: true,
+    criteriaShort: 'Bien choisir',
+    numbered: false
+  },
+  headings: {
+    selection: 'Du plus proche de la belote au plus lointain',
+    compare: 'Effectif, durée, prix : les six jeux avant les fiches',
+    conclusion: 'Garder le jeu de 32 cartes, ouvrir la table',
+    faq: 'Ce que demandent les joueurs de belote',
+    related: 'D’autres tables de plis à explorer'
+  },
+  intro: `<p>La belote se joue à quatre, par équipes, avec 32 cartes dont le valet et le 9 d'atout règnent ; la coinche y ajoute les enchères et le défi du contrat. Réunir précisément ces quatre joueurs, tous d'accord sur les annonces et sur la façon de compter, n'est pas toujours simple. Les jeux de plis modernes reprennent les gestes que vous maîtrisez déjà (fournir, couper, retenir ce qui est tombé) sous d'autres règles de table : on joue à trois, à cinq, chacun pour soi ou tous ensemble. Les six jeux ci-dessous vont du plus proche de la belote au plus éloigné, sans classement de valeur ; le guide pour trancher selon ce qui vous manquerait vient après les fiches. Si vous êtes justement quatre et cherchez seulement à varier, notre sélection de <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">jeux de cartes à 4 joueurs</a> part de l'effectif plutôt que de la belote.</p>`,
   criteria: {
-    heading: 'Ce que vous voulez garder de la belote',
-    html: `<p>Un joueur de coinche aime rarement « les plis » en général ; il tient à des éléments précis. Les repérer évite d'acheter un jeu qui ne partage rien avec ce qu'on pratique.</p>
-<h3>Quatre attachements, quatre réponses</h3>
+    heading: 'Choisir selon ce qui vous manquerait de la belote',
+    html: `<p>Les fiches l'ont montré : aucun de ces jeux ne reprend la belote entière, chacun en garde un morceau. Pour choisir, partez de ce qui vous ferait le plus défaut le jour où le jeu de 32 cartes reste au tiroir.</p>
+<h3>Si c'est l'atout et l'obligation de fournir</h3>
+<p>Wizard et Oh Hell sont vos candidats : une couleur d'atout révélée en début de manche, l'obligation de suivre la couleur demandée, la possibilité de couper. L'habitude de compter les cartes tombées sert dès la première donne. Oh Hell se teste avec le paquet que vous possédez déjà ; Wizard ajoute ses Magiciens et ses Fous, qui rendent certaines annonces plus sûres.</p>
+<h3>Si c'est le contrat</h3>
+<p>À la coinche, un camp s'engage sur un score collectif. Dans Wizard, Oh Hell ou KYRAN, chacun s'engage sur un nombre de plis qui lui est propre, et se trompe aussi bien en trop qu'en moins. Le plaisir d'enchérir demeure, le risque devient individuel. Skull garde l'enchère mais quitte les plis : c'est la piste de ceux qui aiment surtout relancer un adversaire.</p>
+<h3>Si c'est le partenaire</h3>
+<p>C'est le plus difficile à retrouver, puisque les jeux modernes se jouent presque tous chacun pour soi. The Crew fait exception en réunissant toute la table dans une seule équipe. Si c'est plutôt la rivalité entre deux camps qui vous manque, aucune boîte de cette liste ne la rend : gardez la belote pour ces soirs-là.</p>
+<h3>Trois réflexes à désapprendre</h3>
 <ul>
-<li><strong>L'atout et l'obligation de fournir.</strong> Wizard et Oh Hell conservent ces deux mécanismes : une couleur d'atout révélée en début de manche et l'obligation de suivre la couleur demandée. C'est la voie la plus naturelle, parce que l'habitude de compter les cartes tombées sert immédiatement.</li>
-<li><strong>Le contrat.</strong> À la coinche, un camp s'engage sur un score collectif. Dans Wizard, Oh Hell ou KYRAN, chacun s'engage sur un nombre de plis qui lui est propre, et se trompe aussi bien en trop qu'en moins. Le plaisir d'enchérir demeure, le risque devient individuel.</li>
-<li><strong>Le partenaire.</strong> C'est le plus difficile à retrouver : les jeux modernes se jouent presque tous chacun pour soi. The Crew fait exception, parce que toute la table forme une seule équipe.</li>
-<li><strong>Les annonces et le décompte.</strong> Belote-rebelote, tierces et le calcul final des 162 points n'ont pas d'équivalent : les jeux récents remplacent ce travail par une annonce de plis ou une feuille de score simple.</li>
+<li><strong>La hiérarchie des cartes.</strong> Le valet qui bat l'as à l'atout est propre à la belote. Dans Wizard et Oh Hell, l'as reste la plus haute carte ; dans KYRAN, il n'y a pas de couleur, seulement des valeurs de 1 à 36.</li>
+<li><strong>Le décompte.</strong> Belote-rebelote, tierces et calcul final des 162 points n'ont pas d'équivalent : les jeux récents les remplacent par une annonce de plis, des vies ou une feuille de score simple.</li>
+<li><strong>Le format.</strong> La belote tient à quatre, en donnes de huit cartes. Les alternatives ouvrent la table, de deux à sept joueurs selon le titre, mais certaines s'étirent : à quatre, une partie de Wizard compte quinze manches et demande environ 45 minutes. Si le côté vif de la coinche vous plaît, KYRAN plafonne la main à sept cartes.</li>
 </ul>
-<h3>Les écarts de format à anticiper</h3>
-<p>La belote tient à quatre et se joue en donnes de huit cartes. Les alternatives ouvrent la table (de trois à sept joueurs selon le titre), mais s'étirent : à quatre, une partie de Wizard compte quinze manches et demande environ 45 minutes. Si le côté vif de la coinche vous plaît, regardez plutôt KYRAN, dont la main maximale est de sept cartes.</p>
-<p>Autre piège : la hiérarchie des cartes. Le valet qui bat l'as à l'atout est propre à la belote. Dans Wizard et Oh Hell, l'as reste la plus haute carte, et dans KYRAN il n'y a pas de couleur, seulement des valeurs de 1 à 36. Préparez vos joueurs à désapprendre un réflexe plutôt qu'à en acquérir un nouveau.</p>
-<p>Dernier point : la dimension sociale. Une partie de belote se joue sous le regard du partenaire, avec ses signaux et ses reproches. Si votre table y tient, la coopération est la seule voie ; si c'est plutôt la rivalité entre équipes qui vous manque, les annonces individuelles s'y prêtent mieux.</p>`
+<p>Pour le vocabulaire commun à toute la famille (pli, levée, couper, fournir, annonce), le <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> sert de lexique.</p>`
   },
   games: [
     {
@@ -55,7 +69,7 @@ export default {
       paragraphs: [
         `Ce que KYRAN change pour un joueur de belote est radical : plus de couleur ni d'atout, juste des valeurs de 1 à 36 où la plus haute emporte le pli. L'attention passe du comptage des cartes tombées à la lecture des paris : chacun annonce son nombre de plis, mais le total des annonces n'a pas le droit de coïncider avec le nombre de plis en jeu. Le dernier à parler est donc privé d'un chiffre, et quelqu'un se trompe forcément.`,
         `Les manches descendent de sept cartes à deux, puis vient la manche Mystique, où l'on tient une carte contre son front sans la voir. Un pari raté coûte autant de cartes Vie que l'écart, et la partie s'arrête dès qu'un joueur n'en a plus. À quatre, on joue avec quatre cartes Pouvoir et la Mystique. Une partie dure environ 30 minutes, dès 8 ans.`,
-        `Le défaut, vu depuis une table de coinche : aucun partenaire, et peu de place pour le compte des cartes, puisque l'ordre des valeurs suffit à désigner le vainqueur du pli. KYRAN descend du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> plus que de la belote ; ses <a class="text-link" href="/regle.html">règles</a> sont courtes.`
+        `Le défaut, vu depuis une table de coinche : aucun partenaire, et peu de place pour le compte des cartes, puisque l'ordre des valeurs suffit à désigner le vainqueur du pli. KYRAN descend du Tarot Africain plus que de la belote ; ses <a class="text-link" href="/regle.html">règles de jeu</a> sont courtes et se consultent en ligne.`
       ]
     },
     {
@@ -92,14 +106,14 @@ export default {
   extraSections: [
     {
       heading: 'Et le Tarot Africain, maillon traditionnel ?',
-      html: `<p>Avant de passer aux jeux modernes, un détour par un jeu français de plis à annonce dépayse peu : le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> se joue avec les 22 atouts d'un tarot (les 21 atouts et l'Excuse), de 3 à 5 joueurs. Chacun annonce le nombre exact de plis qu'il fera, et la somme des annonces ne peut pas égaler le nombre de plis de la manche : quelqu'un se trompe forcément. On compte généralement en vies. Si un jeu de tarot dort dans un tiroir, c'est un test gratuit avant d'investir dans Wizard ou KYRAN, qui reprennent ce principe.</p>`
+      html: `<p>Reste un jeu français de plis à annonce qui ne demande aucun achat, et qu'on appelle aussi Whist 22 : le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> se joue avec les 22 atouts d'un tarot (les 21 atouts et l'Excuse), de 3 à 5 joueurs. Chacun annonce le nombre exact de plis qu'il fera, et la somme des annonces ne peut pas égaler le nombre de plis de la manche : quelqu'un se trompe forcément. On compte généralement en vies. Si un jeu de tarot dort dans un tiroir, c'est un test gratuit avant d'investir dans Wizard ou KYRAN, qui reprennent ce principe.</p>`
     }
   ],
   verdict: {
-    heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en retenir qu'un, prenez Wizard : atout, couleurs à fournir et possibilité de couper, tout ce que votre main sait déjà faire, avec une table ouverte de trois à six joueurs. Si la belote vous manque pour son partenaire, The Crew est le seul jeu de la liste qui le rend. KYRAN convient aux tables qui veulent rester sous les trente minutes. Écartez Schotten Totten dès que vous êtes plus de deux et Skull si votre groupe n'aime pas parler : ni l'un ni l'autre ne remplace une partie de plis à quatre.</p>`
+    heading: 'Le jeu à poser à côté du paquet de 32',
+    html: `<p>Une seule boîte à acheter ? Wizard : atout, couleurs à fournir et possibilité de couper, tout ce que votre main sait déjà faire, avec une table ouverte de trois à six joueurs. Si la belote vous manque pour son partenaire, The Crew est le seul jeu de la liste qui le rend, au prix de la rivalité entre camps. KYRAN convient aux tables qui veulent rester sous les trente minutes et acceptent de lâcher les couleurs. Avant tout achat, une soirée d'Oh Hell avec votre propre paquet dira si l'annonce individuelle plaît à votre groupe. Écartez Schotten Totten dès que vous êtes plus de deux, et Skull si votre groupe n'aime pas parler : ni l'un ni l'autre ne remplace une partie de plis à quatre.</p>`
   },
-  conclusion: `<p>Passer de la belote à un jeu de plis moderne revient moins à changer de jeu qu'à déplacer un curseur : plus d'annonces, moins de partenaires, des tables plus grandes. Gardez votre jeu de 32 cartes pour les soirs où vous êtes quatre, et testez une de ces boîtes dès que le groupe change de taille. Le <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">guide des jeux à quatre</a> complète utilement la liste.</p>`,
+  conclusion: `<p>Passer de la belote à un jeu de plis moderne revient moins à changer de jeu qu'à déplacer un curseur : plus d'annonces, moins de partenaires, des tables plus grandes. Gardez votre jeu de 32 cartes pour les soirs où vous êtes quatre, et sortez une de ces boîtes dès que le groupe change de taille. Si Wizard devient votre jeu du dimanche et finit à son tour par lasser, nos <a class="text-link" href="/blog/alternatives-wizard.html">alternatives à Wizard</a> prennent le relais.</p>`,
   faq: [
     {
       q: 'Quel jeu de cartes moderne ressemble à la belote ?',

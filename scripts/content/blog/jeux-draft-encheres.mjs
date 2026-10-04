@@ -95,7 +95,7 @@ export default {
     heading: 'Notre avis tranché',
     html: `<p>Si vous ne deviez en retenir qu'un, prenez <strong>For Sale</strong> : en une demi-heure, il fait pratiquer une enchère ouverte puis un choix secret, sans élimination. Pour goûter au draft, <strong>Sushi Go!</strong> est imbattable de simplicité. Pour la pression pure, No Thanks!. Quant à KYRAN, ne l'achetez pas en pensant à une salle des ventes : c'est un jeu de plis à paris, qui convient mieux à ceux qui aiment s'engager sur leur main. Star Realms, enfin, n'est pas le bon point d'entrée.</p>`
   },
-  conclusion: `<p>Draft et enchères partagent l'idée que l'on joue autant avec les choix des autres qu'avec les siens. Pour explorer d'autres jeux à décisions, notre sélection de <a class="text-link" href="/blog/jeux-strategie-legere.html">stratégie légère</a> complète celle-ci, et la page des <a class="text-link" href="/blog/jeux-cartes-5-joueurs.html">jeux à cinq joueurs</a> vous aide à choisir quand la table s'agrandit.</p>`,
+  conclusion: `<p>Draft et enchères partagent l'idée que l'on joue autant avec les choix des autres qu'avec les siens. Pour explorer d'autres jeux à décisions, notre sélection de <a class="text-link" href="/blog/jeux-strategie-legere.html">stratégie légère</a> complète celle-ci, et la page des <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">jeux à cinq ou six joueurs</a> vous aide à choisir quand la table s'agrandit.</p>`,
   faq: [
     {
       q: 'Qu\'est-ce qu\'un jeu de draft en cartes ?',
@@ -122,5 +122,5 @@ export default {
       a: `Pas au sens strict. Chacun annonce combien de plis il va gagner, ce qui ressemble à une enchère sur soi-même, mais personne ne se dispute les mêmes cartes. Le jeu est plus proche d'Oh Hell! et du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, avec des vies visibles en plus.`
     }
   ],
-  related: ['jeux-strategie-legere', 'jeux-plis-comparatif', 'jeux-cartes-5-joueurs']
+  related: ['jeux-strategie-legere', 'jeux-plis-comparatif', 'jeux-cartes-6-joueurs']
 };

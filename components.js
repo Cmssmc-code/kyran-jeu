@@ -769,6 +769,37 @@ if (typeof document !== 'undefined') {
   });
 }
 
+// Vidéos chargées au clic (accueil, règles) : rien n'est intégré tant qu'on ne clique pas, la
+// vidéo des règles n'a donc qu'une page de lecture (/video-regles.html) pour les moteurs.
+function initVideoFacades() {
+  document.querySelectorAll('[data-video-facade]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var box = btn.parentNode;
+      var el;
+      if (btn.dataset.youtube) {
+        el = document.createElement('iframe');
+        el.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.dataset.youtube) + '?autoplay=1';
+        el.title = btn.dataset.title || 'Vidéo';
+        el.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        el.referrerPolicy = 'strict-origin-when-cross-origin';
+        el.allowFullscreen = true;
+      } else if (btn.dataset.mp4) {
+        el = document.createElement('video');
+        el.src = btn.dataset.mp4;
+        el.controls = true;
+        el.autoplay = true;
+        el.playsInline = true;
+      } else {
+        return;
+      }
+      box.replaceChild(el, btn);
+      if (el.focus) el.focus();
+    }, { once: true });
+  });
+}
+
+if (typeof document !== 'undefined') whenParsed(initVideoFacades);
+
 // Fonctions de rendu pures, utilisées par scripts/prerender.mjs pour écrire le HTML statique.
 var KyranRender = {
   header: renderHeaderHtml,

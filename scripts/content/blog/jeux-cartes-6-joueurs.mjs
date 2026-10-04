@@ -1,175 +1,170 @@
 export default {
   slug: 'jeux-cartes-6-joueurs',
-  title: 'Meilleurs jeux de cartes à 6 joueurs : ce qui tient quand la table est pleine',
-  shortTitle: 'Jeux de cartes à 6 joueurs',
-  metaTitle: 'Jeux de cartes à 6 joueurs : 8 choix pour une table pleine',
-  description: 'À six, beaucoup de boîtes sont à leur maximum. 6 qui prend !, Codenames en 3 contre 3, For Sale, KYRAN : 8 jeux vérifiés règle en main pour six.',
+  title: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort',
+  shortTitle: 'Jeux à 5 ou 6 joueurs',
+  metaTitle: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort',
+  description: `Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n'attend, et ce qui change entre cinq et six.`,
   category: 'Cartes',
   date: '2026-09-11',
-  heroTitle: 'Jeux de cartes à <span class="accent">6 joueurs</span>',
-  heroSubtitle: 'Six chaises et une table pleine : huit jeux dont la règle prévoit précisément six joueurs.',
-  heroImage: '/kyran-cartes-table.jpg',
-  heroCaption: 'Boîte de KYRAN posée sur des cartes Nombre étalées.',
-  intro: `<p>À six, commencez par <strong>6 qui prend !</strong> : tout le monde pose sa carte en même temps, et la boîte accepte jusqu'à dix joueurs. <strong>Codenames</strong> coupe la table en deux équipes de trois, et <strong>For Sale</strong> tient en une demi-heure environ sans écarter personne. Six pose aussi une contrainte que les tables de trois ou quatre ignorent : c'est le plafond de nombreuses boîtes, dont Skull, Colt Express, Wizard, For Sale et KYRAN. À ce maximum, chaque place prévue par la boîte est occupée, et aucun de ces jeux ne garde de chaise pour un septième invité. Chaque fiche ci-dessous dit ce que la règle officielle prévoit précisément à six joueurs, renvoie vers cette règle et signale ce qui coince. Si vous n'êtes que cinq, voyez les <a class="text-link" href="/blog/jeux-cartes-5-joueurs.html">jeux à cinq joueurs</a> ; si le groupe grossit, les <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a>.</p>`,
+  heroTitle: 'Jeux de cartes à <span class="accent">5 ou 6 joueurs</span>',
+  heroSubtitle: `Table impaire ou table pleine : huit jeux de cartes réglés pour cinq comme pour six, où l'on ne compte pas les tours des autres.`,
+  heroImage: '/blog/images/6-qui-prend.jpg',
+  heroCaption: `6 qui prend ! — les cartes se révèlent toutes en même temps, à cinq comme à six.`,
+  intro: `<p>Cinq ou six autour de la table, c'est l'effectif des soirées où l'on a invité « un couple de plus », et celui où beaucoup de boîtes montrent leurs limites. Le problème n'est pas la place, c'est l'attente : à cinq, on regarde quatre joueurs avant de rejouer ; à six, cinq. Les huit <strong>jeux de cartes pour 5 ou 6 joueurs</strong> retenus ici règlent ce problème de trois façons : faire jouer tout le monde en même temps, répartir la table en camps, ou donner du poids à chaque carte posée par un voisin. Tous se jouent à cinq comme à six ; pour chacun, nous indiquons ce qui change d'un effectif à l'autre (rôles, cartes, jetons) et le défaut à connaître. Si votre groupe tourne plutôt à quatre, la sélection des <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">jeux de cartes à 4 joueurs</a> est plus adaptée.</p>`,
+  layout: {
+    answerFirst: true,
+    criteriaAfter: true,
+    criteriaShort: 'Guide 5-6 joueurs',
+    compare: { position: 'after' },
+    numbered: false,
+    groups: [
+      {
+        heading: `Personne n'attend son tour`,
+        html: `<p>Le temps mort est le premier ennemi d'une table de cinq ou six. Ces trois jeux le suppriment de deux manières : tout le monde choisit sa carte en même temps, ou chaque tour se résume à une décision de deux secondes. Ce sont les plus sûrs pour un groupe qui joue peu ou qui dispose d'une demi-heure.</p>`,
+        ids: ['6-qui-prend', 'for-sale', 'no-thanks']
+      },
+      {
+        heading: 'Des camps plutôt qu\'un tour de table',
+        html: `<p>Une table de cinq ne se coupe pas en deux équipes égales, une table de six si. Les jeux de rôles cachés profitent des deux cas : ils créent des camps inégaux et secrets, si bien que chacun surveille les autres même quand ce n'est pas à lui de jouer. Codenames, lui, n'aligne deux équipes égales qu'à six.</p>`,
+        ids: ['saboteur', 'bang', 'codenames']
+      },
+      {
+        heading: 'Bluff et paris à table pleine',
+        html: `<p>Plus il y a de joueurs, plus une annonce est difficile à tenir : c'est ce qui rend ces deux jeux plus tendus à cinq ou six qu'à trois. Skull et KYRAN plafonnent tous deux à six joueurs et sortent alors l'intégralité de leur matériel.</p>`,
+        ids: ['skull', 'kyran']
+      }
+    ]
+  },
+  headings: {
+    compare: 'Les huit jeux pour cinq ou six, côte à côte',
+    conclusion: 'Quand la table change de taille',
+    faq: 'Vos questions sur les tables de cinq et six',
+    related: 'Pour un autre nombre de joueurs'
+  },
   criteria: {
-    heading: 'Qu\'est-ce qui change quand la table passe à six ?',
-    html: `<p>Le sixième joueur change trois choses. Chacun voit désormais passer cinq adversaires avant de rejouer ; plusieurs jeux atteignent la limite imprimée sur leur boîte ; et le groupe se divise par deux comme par trois, ce qui ouvre la porte aux équipes. Trois questions permettent de trier les candidats.</p>
-<h3>La boîte est-elle à son maximum ?</h3>
-<p>Skull contient six sets de disques, Colt Express six personnages et six wagons, For Sale 84 Billets, soit 14 par joueur quand on est six. À ce plafond, le matériel prévu pour les joueurs est entièrement distribué, et un invité de plus ne peut pas s'asseoir. Si un septième joueur risque de sonner à la porte, préférez un jeu dont la limite est plus haute : 6 qui prend ! et Saboteur montent à dix, Codenames à huit et davantage.</p>
-<h3>Combien de temps attend-on entre deux tours ?</h3>
-<p>Un jeu au tour par tour fait patienter cinq personnes à chaque décision. Deux parades existent. Le choix simultané supprime l'attente : dans 6 qui prend ! ou dans la phase de vente de For Sale, tout le monde révèle sa carte au même instant. Les tours très brefs la réduisent, comme poser un disque dans Skull. Sans l'une ni l'autre, les jeux de plis comme Wizard ou KYRAN, où chacun annonce puis joue à son tour, demandent une table patiente.</p>
-<h3>Qui regarde la fin de la partie ?</h3>
+    heading: 'Ce qui change entre cinq et six joueurs',
+    html: `<p>Cinq et six sont des effectifs confortables pour recevoir, plus ingrats pour le jeu lui-même : chaque joueur ajouté allonge le tour de table, et celui qui réfléchit longtemps se paie par quatre ou cinq spectateurs. Si chacun prend quarante-cinq secondes par coup, à six on passe près de quatre minutes à regarder les autres avant de rejouer. Un jeu bien calibré pour ces effectifs raccourcit les tours, ou les supprime.</p>
+<h3>Cinq n'est pas six</h3>
 <ul>
-<li><strong>Personne n'est éliminé</strong> dans 6 qui prend !, For Sale, Saboteur, Codenames, Colt Express et Wizard.</li>
-<li><strong>Skull</strong> écarte pour de bon celui qui perd son dernier disque, et la partie continue sans lui.</li>
-<li><strong>KYRAN</strong> prend fin au moment où un joueur perd sa dernière carte Vie : il y a bien un éliminé, mais il ne regarde au plus qu'une manche Mystique de départage entre ex æquo.</li>
-<li><strong>Bang!</strong> prévoit bien une répartition soignée à six (un Shérif, un Adjoint, trois Hors-la-loi, un Renégat, selon la <a class="text-link" href="https://www.dvgiochi.com/giochi/bang/download/Bang_rules_FRA.pdf" rel="noopener noreferrer">règle de dV Giochi</a>), mais un joueur abattu ne joue plus : c'est la raison de son absence ici.</li>
+<li><strong>À cinq, la table est impaire.</strong> Pas d'équipes égales : les jeux individuels, coopératifs ou à rôles secrets s'y prêtent mieux. Les rôles cachés en tirent parti, avec des camps volontairement déséquilibrés, comme deux saboteurs face à quatre chercheurs d'or.</li>
+<li><strong>À six, beaucoup de jeux atteignent leur maximum.</strong> Skull, For Sale, KYRAN et Colt Express s'arrêtent là ; The Crew et Hanabi s'arrêtent même à cinq. Vérifiez la borne haute imprimée sur la boîte avant d'accueillir un invité de dernière minute.</li>
+<li><strong>Un jeu à son maximum n'est pas forcément à son meilleur.</strong> Dans The Crew à cinq, les mains rétrécissent et un joueur distrait fait échouer la mission ; dans Skull à six, la tension monte au contraire. Les fiches ci-dessus indiquent de quel côté penche chaque jeu.</li>
 </ul>
-<p>Reste la question des camps. Six joueurs forment deux équipes de trois dans Codenames, ou des camps secrets dans Saboteur, où sept cartes Nain, deux saboteurs et cinq chercheurs, sont tirées pour six places : un ou deux traîtres se cachent donc à la table. Notre page sur les <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de bluff et de pari</a> détaille ces mécaniques de rôles cachés.</p>`
+<h3>Trois règles pour une soirée à cinq ou six</h3>
+<ul>
+<li><strong>Préférez le simultané ou les tours éclair.</strong> Les révélations de 6 qui prend !, la vente finale de For Sale ou les refus de No Thanks! occupent tout le monde en même temps. Dans un jeu de plis comme KYRAN, chaque carte jouée peut faire tomber le pari d'un voisin, ce qui garde la table attentive.</li>
+<li><strong>Méfiez-vous de l'élimination précoce.</strong> Un joueur sorti au bout de dix minutes d'une partie qui en dure quarante finit sur son téléphone. Bang! et Skull éliminent ; Saboteur, For Sale et 6 qui prend ! gardent chacun en jeu jusqu'au décompte. Notre page sur les <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> approfondit ce critère.</li>
+<li><strong>Gardez de la place sur la table.</strong> À six, il faut caser les verres et les mains de chacun : une main de cartes ou quatre disques par joueur passent mieux qu'un plateau. La grille de Codenames et le réseau de galeries de Saboteur réclament en revanche un vrai espace au centre.</li>
+</ul>
+<h3>Voulez-vous un camp ?</h3>
+<p>Les rôles cachés (Saboteur, Bang!) créent des groupes inégaux et secrets, Codenames deux équipes visibles, tandis que les jeux de plis à paris (KYRAN, Oh Hell!, Wizard) restent chacun pour soi. Un groupe qui préfère gagner ensemble trouvera son bonheur à cinq, pas à six : les jeux coopératifs de cartes les plus connus plafonnent à cinq joueurs.</p>`
   },
   games: [
     {
       id: '6-qui-prend',
-      type: 'Pose simultanée',
-      pick: 'Pour six joueurs qui veulent jouer tous en même temps',
+      type: 'Choix simultané',
+      pick: 'Pour cinq ou six joueurs qui veulent zéro attente et du chaos',
       paragraphs: [
-        `Six joueurs, quatre rangées et presque pas d'attente : chacun choisit une carte en secret, on n'attend que le plus lent, puis toutes sont révélées ensemble et placées de la plus faible à la plus forte. Chaque main compte dix cartes, si bien qu'à six on joue 64 des 104 cartes de la boîte, 60 en main et 4 pour ouvrir les rangées. Les 40 autres restent dans la pioche jusqu'à la manche suivante : impossible de savoir lesquelles manquent, donc inutile de compter.`,
-        `Ce brouillard est le prix du nombre. Six cartes arrivent à chaque tour sur quatre rangées qui n'en tolèrent que cinq chacune, et la place de la vôtre dépend surtout des choix des cinq autres. Les joueurs qui aiment prévoir ont une parade dans la variante pro de la règle : on ne garde que dix cartes par joueur plus quatre, soit les cartes de 1 à 64 à six, étalées face visible, et chacun compose sa main à tour de rôle. Toutes les cartes en jeu sont alors connues, et la mise en place prend le temps de soixante choix successifs.`,
-        `Comptez environ trois quarts d'heure : la partie s'arrête quand un joueur dépasse 66 têtes de bœuf, à moins de fixer à l'avance un nombre de manches, comme la règle l'autorise. Prévoyez aussi papier et crayon, que la <a class="text-link" href="https://www.gigamic.com/index.php?controller=attachment&amp;id_attachment=56" rel="noopener noreferrer">règle de Gigamic</a> demande pour noter les pénalités après chaque manche. Notre page sur les <a class="text-link" href="/blog/jeux-comme-6-qui-prend.html">jeux comme 6 qui prend !</a> présente d'autres jeux de la même famille.`
-      ]
-    },
-    {
-      id: 'codenames',
-      type: 'Équipes, mots',
-      pick: 'Pour un groupe qui préfère gagner à trois plutôt que seul',
-      paragraphs: [
-        `À six, la règle de Codenames demande deux équipes aussi égales que possible : trois contre trois, chacune avec un espion et deux agents. Les deux espions s'assoient du même côté de la table et connaissent, grâce à la carte Clé, la couleur des 25 mots posés en grille. À tour de rôle, ils donnent un indice d'un seul mot, suivi d'un chiffre qui indique combien de mots de la grille il désigne.`,
-        `Avec deux agents par camp, le jeu trouve un équilibre que les équipes de deux n'ont pas : on discute vraiment avant de toucher une carte, sans les palabres des grandes équipes. La règle demande d'ailleurs que chacun puisse donner son avis, tout en évitant « des débats interminables ». Comptez une quinzaine de minutes par partie ; on rejoue en retournant les 25 cartes et en changeant de carte Clé, ce qui permet à chacun de passer espion au fil de la soirée.`,
-        `Le format a aussi ses revers. À chaque partie, deux joueurs sur six ne disent rien d'autre que leurs indices et doivent rester impassibles quand leurs agents se trompent. Le premier indice peut prendre quelques minutes, la règle le reconnaît, et la boîte ne fournit aucun sablier. Toucher l'assassin fait perdre l'équipe sur-le-champ. C'est enfin un jeu de vocabulaire : la <a class="text-link" href="https://iello.fr/wp-content/uploads/2025/08/Codenames_Nouvelle_Edition_Rulebook_FR_Light.pdf" rel="noopener noreferrer">règle d'IELLO</a> exige des indices en français, ce qui pénalise une table où tous ne lisent pas aisément la langue.`
+        `Chacun choisit une carte en secret, puis toute la table révèle en même temps : la durée d'un tour ne dépend donc pas du nombre de joueurs, ce qui fait de 6 qui prend ! le jeu le plus à l'aise de cette page quand la table se remplit. Les cartes se rangent par ordre croissant sur quatre rangées, et celui qui pose la sixième carte d'une rangée ramasse les cinq précédentes, avec leurs têtes de bœuf. Chaque joueur reçoit dix cartes par manche.`,
+        `À cinq ou six, cinq ou six cartes arrivent sur seulement quatre rangées à chaque révélation : une rangée qui ne compte qu'une carte peut déborder dès le premier tour. Un 47 posé derrière un 42 paraît prudent, jusqu'à ce que d'autres joueurs glissent des cartes intermédiaires. C'est le sel du jeu et sa limite : on parie sur les choix des autres plus qu'on ne planifie, et un joueur méthodique n'en tire guère d'avantage.`,
+        `La durée affichée, environ 45 minutes, est longue pour un jeu aussi léger : fixer un seuil de points plus bas raccourcit la partie sans rien changer à la règle. La pose se résume aux quatre règles numérotées de la règle de Gigamic, ce qui en fait un bon premier jeu de soirée.`
       ]
     },
     {
       id: 'for-sale',
-      type: 'Enchères, revente',
-      pick: 'Pour une table qui aime marchander sans écarter personne',
+      type: 'Enchères',
+      pick: 'Pour une table qui aime miser sans s\'éterniser',
       paragraphs: [
-        `À six, For Sale vide sa boîte dès la mise en place : chaque joueur reçoit 14 Billets, soit les 84 que contient le jeu. On garde aussi les 30 Maisons et les 30 Chèques, y compris les deux « Refusé » qui valent zéro, puisque seule la partie à quatre retire des cartes. Chaque manche dévoile autant de Maisons qu'il y a de joueurs : cinq manches d'achat, puis cinq manches de vente.`,
-        `Quatorze Billets, c'est la plus petite dotation de la boîte, contre 28 à trois ; mais on ne dispute que cinq enchères au lieu de dix, si bien que le budget par enchère reste le même (calcul : 14 ÷ 5 et 28 ÷ 10). Ce qui change, ce sont les cinq rivaux sur chaque lot. Celui qui quitte l'enchère prend la Maison la plus faible et récupère la moitié de sa mise, arrondie au supérieur. La vente se joue en simultané : chacun pose une Maison face cachée, tout le monde révèle, et la plus haute empoche le plus gros Chèque. Seule la phase d'achat, enchère après enchère, fait patienter, et personne n'est écarté.`,
-        `Revers de la médaille : avec cinq Maisons chacun, une enchère manquée se rattrape mal, et les Chèques à zéro sortent forcément à un moment de la partie. La <a class="text-link" href="https://iello.fr/wp-content/uploads/2020/06/For-Sale_Rulebook_FR.pdf" rel="noopener noreferrer">règle d'IELLO</a> propose aussi une variante, « Il n'y en aura pas pour tout le monde », qui se joue à six avec toutes les cartes : on révèle une Maison de moins que le nombre de joueurs, et le premier à passer reprend tous ses Billets mais repart sans Maison.`
+        `For Sale est réglé pour que ses 30 immeubles soient tous en jeu à cinq comme à six : six tours d'enchères de cinq cartes dans le premier cas, cinq tours de six cartes dans le second. Chaque tour dévoile autant d'immeubles qu'il y a de joueurs, et l'on surenchérit à tour de rôle. Celui qui se retire prend le moins cher du lot et ne paie que la moitié de sa mise : abandonner coûte moins qu'on ne le croit.`,
+        `La seconde phase se joue en simultané : chacun choisit un immeuble de sa collection, tous les révèlent ensemble, et le plus élevé empoche le chèque le plus gros. Comme aucune carte n'est écartée à ces effectifs, un joueur attentif aux enchères sait exactement ce que ses rivaux ont encore en main. Défaut : la phase d'enchères s'étire si quelqu'un tergiverse, mais personne n'est éliminé et chacun garde une chance jusqu'au dernier chèque.`
       ]
     },
     {
-      id: 'kyran',
-      type: 'Plis et paris',
-      pick: 'Pour six joueurs qui veulent parier sur leurs plis et bluffer',
+      id: 'no-thanks',
+      type: 'Enchère inversée',
+      pick: 'Pour vingt minutes de décisions éclair, sans règle à relire',
       paragraphs: [
-        `À cinq ou six, KYRAN se joue avec tout son paquet : 36 cartes Nombre, huit cartes Pouvoir et la carte Mystique, soit 45 cartes. La manche à sept cartes en distribue 42, et trois seulement restent hors des mains, contre vingt à trois joueurs (calcul à partir des <a class="text-link" href="/regle.html">règles officielles</a> : 6 × 7 sur 45, puis 3 × 7 sur 41). Presque tout le paquet est donc en jeu, et chaque carte forte tombée renseigne davantage sur celles qui restent.`,
-        `La boîte elle-même s'arrête à six : 30 cartes Vie, cinq par joueur. Comme dans Wizard, paris et plis se font au tour par tour. Avant chaque manche, chacun s'engage sur un nombre précis de plis, et le sixième à parler, le donneur, ne peut pas choisir le chiffre qui ferait coïncider le total des paris avec le nombre de plis. Les pouvoirs y gagnent : le Sceau du Destin et la Bénédiction des Ancêtres sont annulés pour qui joue en dernier, le Voile du Néant pour qui joue en premier, si bien que de la deuxième à la cinquième place, tous agissent. À la manche Mystique, chacun lit cinq fronts.`,
-        `La partie prend fin dès que quelqu'un perd sa dernière carte Vie, et celui qui en garde le plus l'emporte ; seule une égalité impose une ultime manche Mystique entre ex æquo. Pour une première partie à six, un détail compte : sans cartes Pouvoir ni Mystique, il ne reste que 36 cartes, trop peu pour en donner sept à chacun, et l'<a class="text-link" href="/minijeu.html">Initiation gratuite</a>, réglée sans Pouvoirs et en durée « Complète », ouvre alors la partie à la manche de six cartes. La règle imprimée ne traite pas ce cas.`
-      ]
-    },
-    {
-      id: 'skull',
-      type: 'Bluff',
-      pick: 'Pour six joueurs prêts à miser sur le bluff des autres',
-      paragraphs: [
-        `Skull est vendu avec six sets, un par joueur, chacun composé d'un tapis et de quatre disques : trois fleurs et un crâne. À six, tout le matériel est donc en jeu, et rien n'est prévu pour un septième joueur. À son tour, on pose un disque face cachée ou l'on lance un défi, en annonçant combien de disques on pense retourner sans trouver de crâne ; la mise peut grimper jusqu'au total posé sur les six tapis, vingt-quatre disques au plus.`,
-        `Plus la table est grande, plus les pièges se dissimulent : un joueur qui se retire des enchères laisse ses disques en jeu, et le challenger doit d'abord retourner les siens avant de fouiller chez les autres. Le défaut grandit avec le nombre : celui qui perd son dernier disque range son tapis et regarde la suite. La règle actuelle de Space Cowboys propose en variante un disque « Dernière chance », prêté pour une manche au challenger qui vient de perdre son avant-dernier disque ; chaque joueur n'y a droit qu'une fois par partie.`,
-        `Une nuance pour un article consacré aux cartes : Skull se joue avec des disques, pas avec des cartes. Chaque tour se résume à poser un disque, à surenchérir ou à passer, ce qui limite l'attente même à six ; seule l'élimination fait vraiment patienter. La <a class="text-link" href="https://cdn.svc.asmodee.net/production-spacecowboys/uploads/2025/12/SKULL_RULES_FR.pdf" rel="noopener noreferrer">règle de Space Cowboys</a>, en ligne, précise la mise en place et cette variante.`
+        `Chaque tour pose une seule question : payer un jeton pour refuser la carte, ou la ramasser avec les jetons accumulés dessus. La décision prend deux secondes, ce qui règle l'attente sans passer par le jeu simultané. À cinq, chacun démarre avec 11 jetons ; une carte que toute la table refuse gagne un jeton à chaque refus, soit cinq par tour complet à cinq joueurs et six à six, et la pression monte jusqu'à ce que quelqu'un craque.`,
+        `Les cartes, numérotées de 3 à 35, comptent en points négatifs, sauf dans une suite où seule la plus petite est retenue : il faut donc surveiller qui attend quelle carte pour ne pas lui offrir sa suite. Neuf cartes sont retirées au hasard avant la partie, ce qui empêche un comptage parfait. Le jeu reste léger et le hasard pèse lourd ; il accepte jusqu'à sept joueurs, pratique si un retardataire sonne à la porte.`
       ]
     },
     {
       id: 'saboteur',
       type: 'Rôles cachés',
-      pick: 'Pour un groupe qui aime soupçonner sans éliminer personne',
+      pick: 'Pour cinq ou six joueurs qui aiment accuser sans preuve',
       paragraphs: [
-        `Pour six joueurs, la règle de Saboteur réunit sept cartes Nain : deux saboteurs et cinq chercheurs d'or. Chacun en reçoit une et la septième est écartée face cachée. Un saboteur se retrouve donc seul dans deux manches sur sept en moyenne, et ils sont deux le reste du temps (calcul : deux chances sur sept que la carte écartée soit un saboteur). Le nombre exact de traîtres ne se découvre qu'en fin de manche, quand on retourne les cartes Nain.`,
-        `Chacun tient cinq cartes de chemin ou d'action, une de moins qu'à cinq joueurs, et personne ne quitte la partie : au pire, un outil brisé posé devant soi interdit de creuser jusqu'à sa réparation. Si les chercheurs atteignent le trésor, on pioche six cartes Or, autant que de joueurs, à partager entre quatre ou cinq chercheurs ; un saboteur gagnant seul touche quatre pépites, deux saboteurs en touchent trois chacun.`,
-        `Les gains restent capricieux : les cartes Or n'ont pas toutes la même valeur, elles sont piochées au hasard puis choisies à tour de rôle à partir de celui qui a atteint le trésor, et la <a class="text-link" href="https://www.gigamic.com/index.php?controller=attachment&amp;id_attachment=61" rel="noopener noreferrer">règle de Gigamic</a> prévient que certains chercheurs peuvent recevoir plus de cartes que d'autres. Prévoyez trois manches et une table assez longue pour le labyrinthe.`
+        `Chacun reçoit une identité secrète : chercheur d'or, qui veut relier l'entrée de la mine au trésor, ou saboteur, qui veut l'en empêcher. Les cartes Rôle s'ajustent au nombre de joueurs : à cinq, on mélange deux saboteurs et quatre chercheurs ; à six, deux saboteurs et cinq chercheurs. Une carte reste toujours de côté, si bien que personne ne sait s'il y a un ou deux traîtres autour de la table.`,
+        `Personne n'est éliminé, un atout quand l'attente pèse. Le doute naît de gestes anodins : une impasse posée de bonne foi suffit à passer pour suspect, et un saboteur patient peut coopérer longtemps avant de bloquer le dernier virage. Défaut : les parties s'enlisent parfois en accusations, et un saboteur maladroit se trahit trop tôt pour que la tension monte. Les trois manches tiennent en une demi-heure environ.`
       ]
     },
     {
-      id: 'colt-express',
-      type: 'Programmation',
-      pick: 'Pour une tablée qui aime voir ses plans dérailler',
+      id: 'bang',
+      type: 'Rôles cachés, tir',
+      pick: 'Pour une table qui accepte l\'élimination au nom de l\'ambiance',
       paragraphs: [
-        `Colt Express s'arrête à six : la boîte contient six personnages, et le train compte autant de wagons que de joueurs, soit les six wagons plus la locomotive. À cinq ou six, on tire les cinq cartes Manche de la partie dans un paquet réservé à ces effectifs. Au départ, les bandits s'installent en alternance dans les deux derniers wagons, trois dans chacun : dès les premières actions, les cibles ne manquent pas.`,
-        `Chaque manche se joue en deux temps : on programme ses actions en posant une carte sur une pile commune, puis on les exécute dans l'ordre, qu'elles aient encore un sens ou non. À six, jusqu'à cinq cartes adverses s'intercalent entre deux des vôtres, et certaines sont posées face cachée quand le train traverse un tunnel. Tout le sel du jeu tient à ce décalage entre le plan et son exécution ; à pleine table, la part d'imprévu grandit mécaniquement.`,
-        `Personne n'est éliminé : selon la <a class="text-link" href="https://www.data.ludonaute.fr/Colt_Express/RULES/Colt_Express_Rules_2016_FR.pdf" rel="noopener noreferrer">règle de Ludonaute</a>, un coup de poing ne peut jamais faire quitter le train à un bandit. En revanche, il faut monter le train en carton avant la première partie et lui trouver de la place, et c'est le jeu le plus cher de cette sélection. Ce n'est pas un pur jeu de cartes, mais ses cartes Action font tout le travail.`
+        `Bang! distribue ses rôles selon l'effectif : à cinq, un shérif, un adjoint, deux hors-la-loi et un renégat ; à six, un troisième hors-la-loi rejoint la table. Le shérif est connu de tous, les autres rôles restent secrets. Chaque joueur incarne un personnage doté d'un pouvoir et de points de vie, et tire sur les joueurs à sa portée. Le renégat, qui doit rester le dernier debout, a parfois intérêt à protéger le shérif.`,
+        `La distance compte davantage à six : le joueur assis en face se trouve à trois places, hors de portée d'une arme de base, si bien que les hors-la-loi éloignés du shérif doivent s'équiper avant de l'atteindre. Défaut franc : on peut être éliminé tôt et regarder les autres finir. Si votre groupe supporte mal cette attente, préférez Saboteur ; pour d'autres identités cachées, voyez nos <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de bluff et de pari</a>.`
       ]
     },
     {
-      id: 'wizard',
-      type: 'Plis et annonces',
-      pick: 'Pour six amateurs de plis qui aiment compter leurs points',
+      id: 'codenames',
+      type: 'Équipes et indices',
+      pick: 'Pour six joueurs prêts à former deux équipes de trois',
       paragraphs: [
-        `Wizard plafonne lui aussi à six joueurs. Ses 60 cartes comptent quatre couleurs de 1 à 13, quatre Zarbis, dont le premier posé remporte le pli, et quatre Nazes, qui perdent toujours à six, puisqu'il n'en existe que quatre pour des plis de six cartes (ce sont les noms de la règle française d'Amigo). On distribue une carte de plus à chaque manche : à six, la première ne met que six cartes en jeu sur soixante, et la dernière donne tout le paquet, dix cartes chacun, sans atout.`,
-        `Les annonces se font l'une après l'autre, en partant de la gauche du donneur ; une annonce juste rapporte 20 points plus 10 par pli, une annonce fausse coûte 10 points par pli d'écart. La <a class="text-link" href="https://blog.amigo-spiele.de/content/ap/rule/06900-FR-AmigoRule.pdf" rel="noopener noreferrer">règle française d'Amigo</a> propose une variante, « Plus ou moins 1 », qui interdit au dernier à parier de faire coïncider la somme des annonces avec le nombre de plis : c'est précisément la contrainte que KYRAN impose à chaque manche.`,
-        `À six, deux détails pèsent. Le donneur, qui annonce en dernier et connaît donc toutes les autres annonces, change à chaque manche : sur les dix manches, quatre joueurs tiennent ce rôle deux fois et deux une seule fois. Et tout se joue au tour par tour, annonces comme plis, ce qui allonge l'attente. La variante « Unicolore » de la règle, elle, est réservée aux parties à trois ou quatre joueurs.`
+        `Codenames est le seul jeu de cette page qui préfère clairement six à cinq. À six, deux équipes de trois se font face : dans chaque camp, un maître-espion donne un indice d'un seul mot assorti d'un nombre, et ses deux agents en débattent avant de toucher une carte de la grille. Ce duo d'agents est un bon format, assez pour une vraie discussion, pas assez pour qu'une voix couvre toutes les autres.`,
+        `À cinq, une équipe compte un agent de moins que l'autre ; le jeu le supporte, puisque chaque camp n'a qu'un maître-espion, mais l'agent isolé porte seul la réflexion de son équipe. Défauts : la table attend pendant qu'un maître-espion cherche son indice, et toucher le mot de l'assassin fait perdre la partie d'un coup. Comptez un quart d'heure par partie, dès dix ans.`
       ]
-    }
-  ],
-  extraSections: [
-    {
-      heading: 'Ce que change la sixième place, jeu par jeu',
-      html: `<p>Ce tableau résume ce que chaque règle officielle prévoit à six joueurs. Les liens mènent aux règles publiées par les éditeurs, lues le 4 octobre 2026.</p>
-<div class="compare-table-wrap">
-<table class="compare-table">
-<caption class="sr-only">Réglages prévus à six joueurs par la règle de chaque jeu</caption>
-<thead><tr><th scope="col">Jeu</th><th scope="col">Plafond</th><th scope="col">Ce que la règle prévoit à six</th><th scope="col">Élimination</th><th scope="col">Source</th></tr></thead>
-<tbody>
-<tr><th scope="row">6 qui prend !</th><td>10</td><td>10 cartes chacun, 64 cartes sur 104 en jeu ; variante pro : cartes 1 à 64, mains composées à tour de rôle</td><td>Non</td><td><a class="text-link" href="https://www.gigamic.com/index.php?controller=attachment&amp;id_attachment=56" rel="noopener noreferrer">Gigamic</a></td></tr>
-<tr><th scope="row">Codenames</th><td>8 et plus</td><td>Deux équipes de trois : un espion, deux agents</td><td>Non, mais l'assassin met fin à la partie</td><td><a class="text-link" href="https://iello.fr/wp-content/uploads/2025/08/Codenames_Nouvelle_Edition_Rulebook_FR_Light.pdf" rel="noopener noreferrer">IELLO</a></td></tr>
-<tr><th scope="row">For Sale</th><td>6</td><td>14 Billets chacun, soit les 84 de la boîte ; 5 manches d'achat, 5 de vente</td><td>Non</td><td><a class="text-link" href="https://iello.fr/wp-content/uploads/2020/06/For-Sale_Rulebook_FR.pdf" rel="noopener noreferrer">IELLO</a></td></tr>
-<tr><th scope="row">KYRAN</th><td>6</td><td>8 cartes Pouvoir et Mystique ; 42 des 45 cartes distribuées à la manche à sept cartes</td><td>La première élimination termine la partie</td><td><a class="text-link" href="/regle.html">Règles KYRAN</a></td></tr>
-<tr><th scope="row">Skull</th><td>6</td><td>Les six sets de la boîte ; défi jusqu'à 24 disques</td><td>Oui, définitive</td><td><a class="text-link" href="https://cdn.svc.asmodee.net/production-spacecowboys/uploads/2025/12/SKULL_RULES_FR.pdf" rel="noopener noreferrer">Space Cowboys</a></td></tr>
-<tr><th scope="row">Saboteur</th><td>10</td><td>2 saboteurs et 5 chercheurs pour 6 places ; 5 cartes en main</td><td>Non</td><td><a class="text-link" href="https://www.gigamic.com/index.php?controller=attachment&amp;id_attachment=61" rel="noopener noreferrer">Gigamic</a></td></tr>
-<tr><th scope="row">Colt Express</th><td>6</td><td>6 wagons et cartes Manche « 5-6 joueurs »</td><td>Non</td><td><a class="text-link" href="https://www.data.ludonaute.fr/Colt_Express/RULES/Colt_Express_Rules_2016_FR.pdf" rel="noopener noreferrer">Ludonaute</a></td></tr>
-<tr><th scope="row">Wizard</th><td>6</td><td>10 manches, dernière donne de 10 cartes sans atout</td><td>Non</td><td><a class="text-link" href="https://blog.amigo-spiele.de/content/ap/rule/06900-FR-AmigoRule.pdf" rel="noopener noreferrer">Amigo</a></td></tr>
-</tbody>
-</table>
-</div>
-<p>Calculs à partir des règles citées : 6 × 10 + 4 = 64 cartes pour 6 qui prend ! ; 6 × 14 = 84 Billets pour For Sale ; 6 × 7 = 42 cartes sur 36 + 8 + 1 = 45 pour KYRAN ; 6 × 4 = 24 disques pour Skull ; 60 ÷ 6 = 10 manches pour Wizard.</p>`
     },
     {
-      heading: 'À retenir',
-      html: `<div class="editorial-callout">
-<ul>
-<li><strong>Six est un plafond</strong> pour Skull, For Sale, Colt Express, Wizard et KYRAN : aucune de ces boîtes de base ne prend un septième joueur.</li>
-<li><strong>Le choix simultané</strong> (6 qui prend !, vente de For Sale) supprime l'attente entre deux tours.</li>
-<li><strong>Six se divise</strong> en deux équipes de trois (Codenames) ou en camps cachés (Saboteur).</li>
-<li><strong>Skull</strong> fait attendre ses éliminés ; dans KYRAN, le premier joueur à zéro carte Vie termine la partie.</li>
-<li><strong>Un septième invité possible ?</strong> Gardez 6 qui prend !, Saboteur ou Codenames sous la main.</li>
-</ul>
-</div>`
+      id: 'skull',
+      type: 'Bluff',
+      pick: 'Pour une table pleine qui aime lire les visages',
+      paragraphs: [
+        `Skull s'arrête à six joueurs, et c'est à ce nombre qu'il est le plus tendu. Chacun possède quatre disques, trois fleurs et un crâne : à six, six crânes circulent et jusqu'à vingt-quatre disques peuvent se retrouver sur la table. Plus il y en a, plus une enchère élevée paraît plausible, ce qui rend les bluffs crédibles et les défis risqués. Celui qui remporte l'enchère retourne d'abord ses propres disques, puis ceux des autres.`,
+        `Deux défis réussis donnent la victoire ; un crâne retourné coûte un disque, définitivement. Le défaut est l'élimination : un joueur qui a perdu ses quatre disques attend la fin, et à cinq ou six cette attente peut durer. Les règles tiennent en quelques phrases et la partie en une trentaine de minutes. Skull plaira à ceux qui aiment observer leurs voisins, moins à ceux qui préfèrent calculer.`
+      ]
+    },
+    {
+      id: 'kyran',
+      type: 'Plis et paris',
+      pick: 'Pour cinq ou six joueurs qui veulent des plis avec tout le matériel',
+      paragraphs: [
+        `KYRAN est notre jeu, et cinq ou six est l'effectif où il sort tout son matériel : les huit cartes Pouvoir et la carte Mystique rejoignent les 36 cartes Nombre, alors qu'à trois ou quatre on se limite à quatre pouvoirs et à la Mystique. À chaque manche, on annonce le nombre exact de plis qu'on va gagner, et la somme des annonces ne doit jamais égaler le nombre de plis : au moins un joueur se trompera donc.`,
+        `Les pouvoirs gardent la table attentive même hors de son tour : Bénédiction des Ancêtres oblige un joueur à jouer immédiatement sa plus faible carte, Voile du Néant échange la valeur de sa carte avec une carte déjà posée, et un pli inattendu suffit à faire tomber le pari d'un voisin. Dans la manche Mystique, la carte posée sur le front, vous lisez quatre fronts à cinq, cinq à six, avant de parier 1 ou 0.`,
+        `Le défaut est honnête à dire : avec tous les pouvoirs en jeu, les retournements sont plus fréquents qu'à trois ou quatre et le plan se maîtrise moins. La partie dure environ 30 minutes. Le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, dont KYRAN hérite, s'arrête à cinq joueurs faute de cartes ; les <a class="text-link" href="/regle.html">règles de KYRAN</a> et le <a class="text-link" href="/commander.html">jeu à 9,99 €</a> sont en ligne.`
+      ]
     }
   ],
   verdict: {
-    heading: 'Notre avis tranché',
-    html: `<p>Pour une table de six, <strong>6 qui prend !</strong> reste le choix le plus sûr : il n'atteint pas sa limite, fait jouer tout le monde en même temps et n'élimine personne. <strong>Codenames</strong> le talonne quand le groupe préfère jouer en équipes, à condition que tout le monde soit à l'aise avec les mots. <strong>For Sale</strong> tient en une demi-heure de calcul léger, sans temps mort pendant la vente. Pour les plis à paris, KYRAN et Wizard se jouent tous deux annonce après annonce : KYRAN sort à six ses huit cartes Pouvoir et presque tout son paquet en une trentaine de minutes, Wizard déroule dix manches comptées aux points. Skull et Saboteur conviennent aux groupes qui aiment se soupçonner, Colt Express aux tablées qui ont de la place et le goût du chaos.</p>`
+    heading: 'À cinq ou à six, lequel sortir en premier ?',
+    html: `<p>Pour une table qui hésite entre cinq et six, <strong>For Sale</strong> est le choix le plus sûr : ses 30 immeubles sont tous joués dans les deux cas, la vente finale se fait en simultané et personne n'est éliminé. À six exactement, <strong>Codenames</strong> prend l'avantage, parce que deux équipes de trois lui vont mieux que la répartition boiteuse de cinq. <strong>6 qui prend !</strong> convient aux groupes qui aiment le chaos, Skull à ceux qui aiment se jauger, KYRAN à ceux qui veulent des plis à paris avec tous les pouvoirs. Évitez Bang! si un invité supporte mal d'être éliminé tôt, et Saboteur reste le meilleur choix quand le groupe mêle âges et niveaux.</p>`
   },
-  conclusion: `<p>À six, rien n'oblige à s'en tenir à un seul jeu : une partie de 6 qui prend ! ou de Codenames lance la table, puis Skull, Saboteur, Wizard ou KYRAN prennent le relais selon que le groupe veut bluffer ou compter ses plis. Avant d'acheter, vous pouvez essayer KYRAN à six sur l'<a class="text-link" href="/minijeu.html">Initiation en ligne</a>, contre cinq adversaires ordinateur, puis le <a class="text-link" href="/commander.html">commander pour 9,99 €</a> si le principe du pari vous plaît. Pour une soirée plus légère, notre sélection de <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes d'apéro</a> prolonge celle-ci.</p>`,
+  conclusion: `<p>Cinq ou six joueurs, c'est souvent l'effectif d'une soirée improvisée : mieux vaut un jeu qu'on explique en cinq minutes que le meilleur titre de la liste. Gardez deux boîtes de nature différente, un jeu simultané pour lancer la soirée et un jeu de bluff ou de plis pour la suite. Si deux invités de plus arrivent, la page <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a> indique le plafond de chaque jeu.</p>`,
   faq: [
     {
-      q: 'Quel jeu de cartes sortir à six sans longues explications ?',
-      a: `6 qui prend ! : la pose suit quatre règles courtes, tout le monde joue en même temps et personne n'est éliminé. Codenames s'explique presque aussi vite, mais impose deux équipes de trois. Gardez Colt Express pour une soirée où vous aurez le temps de monter le train et d'apprendre la programmation des actions.`
+      q: 'Quel est le meilleur jeu de cartes à 5 joueurs ?',
+      a: `For Sale est le plus équilibré à cinq : les 30 immeubles sont tous en jeu, la vente finale se joue en simultané et personne n'est éliminé. Pour jouer tous en même temps, 6 qui prend ! ; pour des plis à paris en 30 minutes avec tous les pouvoirs, KYRAN.`
     },
     {
-      q: 'Que faire si un septième joueur arrive en cours de soirée ?',
-      a: `Skull, For Sale, Colt Express, Wizard et KYRAN s'arrêtent à six joueurs dans leur boîte de base ; seule une extension de Colt Express, vendue à part, monte à huit. Basculez plutôt sur 6 qui prend ! ou Saboteur, qui montent à dix, ou sur Codenames, prévu pour huit et davantage. D'autres idées figurent dans notre sélection de <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a>.`
+      q: 'Quel jeu de cartes à 6 joueurs choisir pour des débutants ?',
+      a: `6 qui prend ! tient en quatre règles de pose et No Thanks! se résume à une décision par tour. Codenames convient si deux personnes à l'aise acceptent le rôle de maître-espion. Pour KYRAN, la variante d'initiation, sans cartes Pouvoir ni Mystique, permet une manche d'essai ; à six, ses 36 cartes ne suffisent pas pour la manche à sept cartes, et l'Initiation en ligne commence alors à six cartes.`
     },
     {
-      q: 'Peut-on faire une première partie de KYRAN directement à six ?',
-      a: `Oui, avec une adaptation. La règle conseille de débuter sans cartes Pouvoir ni Mystique, mais elle ne prévoit pas le cas de six joueurs : ce paquet de 36 cartes ne permet pas la manche à sept cartes, qui en demande 42. L'Initiation en ligne, en durée « Complète », commence alors la partie à six cartes, et l'on peut faire de même autour de la table, sans que ce soit une règle de la boîte.`
+      q: 'Peut-on jouer en équipes à cinq ou six joueurs ?',
+      a: `À six, oui : Codenames se joue en deux équipes de trois. À cinq, les équipes ne peuvent pas être égales ; Codenames l'accepte avec un agent de moins d'un côté, et les jeux de rôles cachés comme Saboteur ou Bang! créent des camps inégaux et secrets.`
     },
     {
-      q: 'Quels jeux de cette sélection n\'éliminent aucun joueur ?',
-      a: `6 qui prend !, For Sale, Saboteur, Codenames, Colt Express et Wizard gardent tout le monde jusqu'au bout. Dans Skull, en revanche, le joueur qui n'a plus de disque assiste à la fin sans jouer. KYRAN compte une élimination, mais elle met fin à la partie ; seule une égalité de Vies impose ensuite une manche Mystique de départage.`
+      q: 'Quels jeux de cartes à 5 ou 6 avec un jeu classique ?',
+      a: `Oh Hell! se joue de 3 à 7 joueurs avec un jeu de 52 cartes. Le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> accepte cinq joueurs avec les 22 cartes d'un jeu de tarot, à raison de quatre cartes par main au plus ; à six, ses manches deviennent minuscules.`
     },
     {
-      q: 'Quel jeu à six pour une petite table ou un apéro ?',
-      a: `Skull et 6 qui prend ! tiennent dans peu de place : quatre disques chacun pour l'un, une main de cartes et quatre rangées pour l'autre. Colt Express demande au contraire la place du train en trois dimensions, et Saboteur un long labyrinthe de cartes. Pour d'autres jeux à jouer verre en main, voyez notre sélection de <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes d'apéro</a>.`
+      q: 'Existe-t-il un jeu coopératif à 5 ou 6 joueurs ?',
+      a: `The Crew et Hanabi acceptent jusqu'à cinq joueurs, c'est leur maximum. À six, il faut passer à un jeu d'équipes comme Codenames, ou à Just One, coopératif jusqu'à sept. Notre page sur les <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux coopératifs en cartes</a> en compare davantage.`
+    },
+    {
+      q: 'KYRAN se joue-t-il à cinq et à six joueurs ?',
+      a: `Oui, KYRAN se joue de 3 à 6 joueurs, et c'est à cinq et six qu'on utilise tout le matériel : les huit cartes Pouvoir et la carte Mystique. À trois et quatre, on se contente de quatre pouvoirs. La partie dure environ 30 minutes, dès 8 ans, et il ne se joue pas à deux.`
     }
   ],
-  related: ['jeux-cartes-5-joueurs', 'jeux-grands-groupes', 'jeux-bluff-pari']
+  related: ['jeux-cartes-4-joueurs', 'jeux-3-joueurs', 'jeux-grands-groupes']
 };

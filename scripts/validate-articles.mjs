@@ -6,11 +6,14 @@
  * Usage : node scripts/validate-articles.mjs [slug ...]   (sans argument : tous les fichiers présents)
  * Code de sortie 1 si une erreur est trouvée (les avertissements ne bloquent pas).
  */
-import { readdirSync } from 'fs';
+import { readdirSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import {
   BLOG_DIR, ROSTER, GAMES, BRIEFS, loadRawArticle, articleText, stripHtml, wordCount
 } from './lib/article-model.mjs';
 
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CATEGORIES = ['Apéro', 'Famille', 'Cadeaux', 'Alternatives', 'Cartes', 'Soirée'];
 const BANNED = [
   'dans le cadre de notre sélection', 'pour conclure sur', 'testés en conditions réelles',
@@ -47,6 +50,8 @@ function htmlFields(a) {
   (a.games || []).forEach((g, i) => (g.paragraphs || []).forEach((p, j) => f.push([`games[${i}].paragraphs[${j}]`, p])));
   (a.extraSections || []).forEach((s, i) => f.push([`extraSections[${i}]`, s.html]));
   (a.faq || []).forEach((q, i) => f.push([`faq[${i}].a`, q.a]));
+  ((a.layout && a.layout.groups) || []).forEach((g, i) => f.push([`layout.groups[${i}].html`, g.html]));
+  if (a.authorNote) f.push(['authorNote', a.authorNote.html]);
   return f.filter(([, v]) => v);
 }
 
@@ -106,6 +111,34 @@ function validate(slug, a, errors, warns, cache) {
   if (kyranCount === 0 && brief.kyran === 'include') err('fiche KYRAN manquante (brief : include)');
   if (kyranCount === 1 && brief.kyran === 'no-fit') warn('KYRAN présent alors que le brief le déconseille');
   if (brief.count && brief.count >= 9 && games.length < brief.count) warn(`brief demandait ${brief.count} jeux, ${games.length} livrés`);
+
+  // Mise en page (layout) et libellés de sections
+  const layout = a.layout || {};
+  if (layout.groups) {
+    const ids = layout.groups.flatMap(g => g.ids || []);
+    const gameIds = games.map(g => g.id);
+    if (layout.groups.length < 2) err('layout.groups : au moins 2 groupes');
+    layout.groups.forEach((g, i) => {
+      if (!g.heading || /<h[1-6]/i.test(g.heading)) err(`layout.groups[${i}] : heading manquant ou balisé`);
+      if (!g.ids || !g.ids.length) err(`layout.groups[${i}] : ids vide`);
+    });
+    if (ids.length !== gameIds.length || gameIds.some(id => !ids.includes(id))) err('layout.groups doit couvrir chaque jeu exactement une fois');
+  }
+  if (layout.compare && !['before', 'after'].includes(layout.compare.position || 'before')) err('layout.compare.position : before | after');
+  for (const [k, v] of Object.entries(a.headings || {})) {
+    if (!['selection', 'compare', 'conclusion', 'faq', 'related'].includes(k)) err(`headings.${k} inconnu`);
+    if (typeof v !== 'string' || !v.trim() || /<h[1-6]/i.test(v)) err(`headings.${k} : texte simple attendu`);
+  }
+  // Gabarit : un article qui garde tous les libellés par défaut ressemble à tous les autres
+  const h = a.headings || {};
+  const defaults = [!h.selection && !layout.groups, !h.compare && layout.compare !== false, !h.conclusion, !h.faq, !h.related,
+    !a.verdict || !a.verdict.heading || a.verdict.heading === 'Notre avis tranché'].filter(Boolean).length;
+  if (defaults >= 5) warn(`gabarit par défaut (${defaults} libellés de section génériques) : voir layout / headings dans scripts/content/README.md`);
+  if (a.authorNote && (!a.authorNote.html || !a.authorNote.provided)) err('authorNote : html et provided (date à laquelle l\'auteur a fourni le texte) obligatoires');
+  for (const [i, ph] of (a.photos || []).entries()) {
+    if (!ph.src || !ph.alt || !ph.caption) err(`photos[${i}] : src, alt et caption obligatoires`);
+    else if (!existsSync(join(ROOT, ph.src))) err(`photos[${i}] : fichier introuvable ${ph.src}`);
+  }
 
   const faq = a.faq || [];
   if (faq.length < 4 || faq.length > 6) err(`${faq.length} questions FAQ (4–6)`);

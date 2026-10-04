@@ -1,124 +1,125 @@
 export default {
   slug: 'jeux-coop-cartes',
-  title: 'Jeux de cartes coopératifs : Hanabi, The Crew et 5 autres',
+  title: 'Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble',
   shortTitle: 'Jeux de cartes coopératifs',
-  metaTitle: 'Jeux coopératifs de cartes : 7 jeux comme Hanabi, The Crew',
-  description: 'Hanabi, The Crew, The Mind, The Game, Letter Jam, Just One : 7 jeux de cartes coopératifs comparés selon la façon dont on a le droit de communiquer.',
+  metaTitle: 'Jeux de cartes coopératifs : 5 jeux comme Hanabi ou The Crew',
+  description: 'Hanabi, The Crew, The Mind, The Game, Letter Jam : cinq jeux de cartes coopératifs classés selon la parole permise, et lequel acheter en premier.',
   category: 'Famille',
   date: '2026-06-08',
   heroTitle: 'Jeux <span class="accent">coopératifs</span> de cartes',
-  heroSubtitle: 'Voir les cartes des autres, parler à peine ou ne rien dire du tout : trois façons de jouer ensemble.',
+  heroSubtitle: 'Indices codés, signal unique ou silence complet : la règle de communication décide du jeu qui conviendra à votre table.',
   heroImage: '/blog/images/the-crew.jpg',
   heroCaption: 'The Crew, une référence coopérative moderne.',
-  intro: `<p>Tout le monde parle de coopération, mais deux jeux coopératifs peuvent n’avoir presque rien en commun. À Hanabi, on voit les cartes des autres et pas les siennes ; à The Mind, on ne dit rien du tout ; à The Crew, on parle à peine, mais on joue des plis. Si vous cherchez un jeu comme Hanabi ou comme The Crew, la vraie question est donc : <strong>comment a-t-on le droit de communiquer ?</strong> Les sept jeux de cette page sont classés selon cette réponse, avec leur nombre de joueurs, leur âge et leur faiblesse la plus gênante. Pour la dimension cerveau de ces jeux, voyez aussi nos <a class="text-link" href="/blog/jeux-memoire-concentration.html">jeux de mémoire et de concentration</a>.</p>`,
+  layout: {
+    answerFirst: true
+  },
+  headings: {
+    selection: 'Du plus bavard au plus silencieux, puis un jeu pour après',
+    compare: 'Cinq coopératifs et un compétitif, côte à côte',
+    conclusion: 'Le bon coopératif est celui qu’on relance',
+    faq: 'Jeux comme Hanabi ou The Crew : vos questions',
+    related: 'Autres sélections pour les mêmes tables'
+  },
+  intro: `<p>Deux jeux coopératifs peuvent n’avoir en commun que l’objectif partagé. À Hanabi, vous voyez la main de tous sauf la vôtre ; à The Crew, vous remportez des plis en ne parlant presque pas ; à The Mind, vous ne dites rien du tout. Pour choisir, la question utile n’est donc pas « est-ce coopératif ? » mais <strong>« qu’a-t-on le droit de se dire ? »</strong>. Cette page réunit nos anciens guides des jeux comme Hanabi et comme The Crew : cinq coopératifs classés selon cette règle, plus KYRAN, compétitif, pour la partie d’après. La réponse courte vient tout de suite ; la méthode et les fiches détaillées suivent. Pour l’effort d’attention que ces jeux réclament, voyez aussi nos <a class="text-link" href="/blog/jeux-memoire-concentration.html">jeux de mémoire et de concentration</a>.</p>`,
+  verdict: {
+    heading: 'Par quel coopératif commencer ?',
+    html: `<p><strong>The Crew</strong> est le premier achat à faire si votre groupe sait suivre une couleur : sa campagne de 50 missions occupe de nombreuses soirées, pour environ 15 €. Si vos joueurs n’ont jamais touché un jeu de plis, ou si des enfants de 8 ou 9 ans sont de la partie, prenez plutôt <strong>Hanabi</strong>, indiqué dès 8 ans.</p><p>The Mind est une expérience de groupe surprenante, pas un casse-tête : à réserver aux tables calmes. Letter Jam ne vaut que pour les amateurs de mots, The Game pour qui veut aussi jouer seul. KYRAN, lui, n’est pas coopératif : c’est la partie compétitive à sortir une fois la coopération terminée.</p>`
+  },
   criteria: {
-    heading: 'Comment choisir un jeu coopératif selon la communication permise ?',
-    html: `<p>Un jeu coopératif réussi donne à chacun un rôle utile sans permettre à un seul d’assumer toutes les décisions. Cette contrainte tient à la règle de communication, et c’est elle qu’il faut examiner avant d’acheter.</p>
-<h3>Trois façons de coopérer</h3>
+    heading: 'Ce que la règle de communication change à la partie',
+    html: `<p>Un coopératif réussi donne un rôle utile à chacun sans laisser un seul joueur décider pour tous. C’est la règle de communication qui garantit cet équilibre, et c’est elle qu’il faut lire en premier au dos de la boîte.</p>
+<h3>Trois régimes de parole</h3>
 <ul>
-<li><strong>Information cachée</strong> : vous voyez ce que les autres ont en main, pas ce que vous avez, et on vous renseigne par des indices codifiés. C’est le cas de Hanabi et de Letter Jam.</li>
-<li><strong>Communication limitée</strong> : la parole est rationnée ou interdite. The Crew accorde un signal unique par mission, The Mind supprime tout échange, Just One impose un indice d’un seul mot.</li>
-<li><strong>Défausse commune</strong> : l’équipe se débarrasse d’un paquet de cartes sur des piles partagées, comme à The Game, avec une parole autorisée mais sans jamais citer les chiffres exacts.</li>
+<li><strong>L’information inversée</strong> : chacun voit ce que les autres tiennent, jamais ce qu’il tient, et n’apprend son jeu qu’à travers des indices encadrés. Hanabi et Letter Jam fonctionnent ainsi.</li>
+<li><strong>La parole rationnée</strong> : on ne se parle presque plus, voire plus du tout. The Crew accorde un signal par joueur et par mission ; The Mind interdit tout échange.</li>
+<li><strong>La concertation bridée</strong> : on discute librement de la stratégie, sans jamais donner de chiffre exact. C’est le régime de The Game, dont les quatre piles communes se vident à plusieurs mains.</li>
 </ul>
-<h3>Le piège du joueur « chef d’orchestre »</h3>
-<p>Dans beaucoup de coopératifs, un joueur expérimenté finit par dicter les coups des autres. Les règles de communication sont justement là pour l’empêcher, et les jeux ci-dessous s’en sortent inégalement : Hanabi interdit toute consigne en dehors d’un indice de couleur ou de chiffre, The Mind rend la direction impossible, alors que The Game laisse une marge de discussion où le plus bavard peut prendre la main. Si votre table compte un chef d’orchestre naturel, préférez l’un des deux premiers.</p>
-<h3>Âge, nombre de joueurs et langue</h3>
-<p>Vérifiez trois choses avant d’acheter. L’âge : Hanabi, The Mind, The Game et Just One sont indiqués 8+, The Crew et Letter Jam 10+. Le nombre de joueurs : The Mind s’arrête à quatre, Just One demande au moins trois joueurs. La dépendance à la langue : Letter Jam et Just One reposent entièrement sur le vocabulaire. Côté durée de vie, The Crew propose une campagne de missions, The Mind des niveaux qui s’empilent, Hanabi un score à améliorer d’une partie à l’autre. Si la coopération vous attire parce que la compétition crispe votre table, les <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> sont une autre piste.</p>`
+<h3>Le joueur qui veut tout diriger</h3>
+<p>Le travers classique du coopératif est le joueur expérimenté qui dicte les coups des autres. Plus la parole est encadrée, moins il a de prise : à Hanabi, il ne peut transmettre qu’un indice de couleur ou de valeur ; à The Mind, il n’a aucun moyen de s’exprimer. The Game lui laisse davantage de marge, puisque la discussion y reste libre tant qu’elle demeure vague. Si votre table compte un meneur naturel, privilégiez Hanabi, The Crew ou The Mind.</p>
+<h3>Âge, effectif et langue</h3>
+<p>Hanabi, The Mind et The Game sont indiqués dès 8 ans, The Crew et Letter Jam dès 10 ans. The Mind plafonne à quatre joueurs, Letter Jam monte à six, The Game descend jusqu’au solo. Letter Jam est le seul à dépendre du vocabulaire : un groupe peu à l’aise avec les mots s’y ennuiera vite. Enfin, si c’est la compétition qui crispe votre table plutôt que l’envie de jouer ensemble, les <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux de cartes sans élimination</a> offrent une autre réponse, sans renoncer à désigner un vainqueur.</p>`
   },
   games: [
     {
-      id: 'hanabi',
-      type: 'Coop à indices',
-      pick: 'Pour ceux qui aiment déduire ce que leur partenaire cherche à dire',
+      id: 'the-game',
+      type: 'Coop de défausse',
+      pick: 'Pour discuter librement sans citer un chiffre, de un à cinq',
       paragraphs: [
-        `Hanabi est le modèle de la coopération par information cachée : chaque joueur tient son éventail face aux autres, voit toutes les mains sauf la sienne, et ne peut parler qu’en donnant un indice de couleur ou de chiffre, dont le nombre est limité. Le plaisir vient de ce que l’on déduit de l’indice reçu : pourquoi m’a-t-on désigné cette carte maintenant ? La conversation est pauvre en mots et riche en inférences.`,
-        `Le score s’exprime sur 25 points au maximum, ce qui donne un objectif chiffré à battre d’une partie à l’autre. Le revers : des habitués finissent par adopter des conventions tacites (tel indice veut dire « joue cette carte »), qui rendent la table opaque pour un nouveau venu. Jouable de 2 à 5, environ 25 minutes, dès 8 ans, pour environ 12 €.`
+        `The Game est le plus bavard des coopératifs de cette page, et c’est sa singularité. L’équipe doit écouler 98 cartes numérotées de 2 à 99 sur quatre piles communes : deux montent à partir de 1, deux descendent à partir de 100. On a le droit de parler de tout, sauf des valeurs exactes. D’où un langage d’approximations, du genre « évitez la pile de gauche, j’ai une carte très proche ».`,
+        `La subtilité tient au retour en arrière : une carte inférieure d’exactement dix sur une pile montante, ou supérieure de dix sur une descendante, la fait reculer et redonne de l’air. C’est aussi le seul jeu de la sélection jouable en solo, de 1 à 5 joueurs, dès 8 ans, en vingt minutes environ. Revers de la parole libre : le joueur le plus loquace peut finir par organiser la partie à la place des autres.`
       ]
     },
     {
       id: 'letter-jam',
       type: 'Coop à indices',
-      pick: 'Pour les amateurs de jeux de mots qui ont une heure devant eux',
+      pick: 'Pour une table qui aime les mots et dispose d’une heure',
       paragraphs: [
-        `Letter Jam applique la même logique que Hanabi à un jeu de lettres : chacun a une lettre devant lui qu’il ne voit pas, alors que tous les autres la voient. Un indice est un mot formé avec les lettres visibles chez les autres joueurs, et le destinataire doit en déduire la sienne. À la fin, chacun doit reconstituer son propre mot secret grâce aux lettres devinées.`,
-        `Les limites sont franches. La partie dure environ 45 minutes, le prix dépasse 20 €, l’âge indiqué est 10+, et tout dépend de la maîtrise du vocabulaire du groupe : une table peu à l’aise avec les anagrammes s’y ennuiera. Pour un groupe qui aime les mots, c’est l’une des coopérations les plus originales, jouable de 2 à 6 joueurs.`
+        `Letter Jam transpose le principe de Hanabi aux lettres. Devant chaque joueur, une carte lettre tournée vers les autres : il ne la voit pas, eux si. Pour l’aider, quelqu’un compose un mot avec les lettres visibles autour de la table, et chacun déduit la sienne de la place qu’elle occupe dans ce mot. En fin de partie, il faut reconstituer son propre mot secret à partir des lettres découvertes.`,
+        `Les indices sont plus riches qu’à Hanabi, puisqu’un mot entier circule, mais l’effort aussi : environ 45 minutes, dès 10 ans, de 2 à 6 joueurs, pour un prix d’environ 22 €. C’est le coopératif le plus dépendant de la langue. Une table qui joue volontiers au Scrabble y trouvera un défi original ; une autre peinera dès la première manche.`
+      ]
+    },
+    {
+      id: 'hanabi',
+      type: 'Coop à indices',
+      pick: 'Pour deviner ce qu’un partenaire veut dire avec un seul indice',
+      paragraphs: [
+        `Hanabi a posé le modèle : votre main est tournée vers les autres, et vous ne la connaissez qu’à travers leurs indices. Un indice désigne toutes vos cartes d’une couleur ou d’une valeur, rien de plus, et les jetons qui permettent d’en donner sont comptés. Le jeu se déroule alors dans les intentions : pourquoi cet indice maintenant, et pourquoi sur cette carte-là ?`,
+        `L’objectif chiffré, 25 points pour un feu d’artifice complet, donne une raison de rejouer. Le revers apparaît chez les habitués : ils adoptent des conventions tacites qui rendent leurs indices opaques pour un nouveau venu. Jouable de 2 à 5, environ 25 minutes, dès 8 ans, pour environ 12 € : c’est le point d’entrée le plus accessible de la sélection.`
       ]
     },
     {
       id: 'the-crew',
       type: 'Coop à plis',
-      pick: 'Pour les groupes qui savent ce qu’est un pli et veulent une campagne',
+      pick: 'Pour une table qui connaît les plis et veut une campagne',
       paragraphs: [
-        `The Crew greffe la coopération sur un jeu de plis : chaque mission impose à certains joueurs de remporter des cartes précises, et la table a le droit de très peu communiquer. Chaque joueur peut, une fois par mission, signaler une carte en précisant si elle est la plus haute, la plus basse ou la seule de sa couleur dans sa main. Voilà l’ADN de ce jeu : plis, objectifs, parole rationnée.`,
-        `Il faut savoir suivre la couleur et accepter que les cartes Fusée jouent le rôle d’atouts. La campagne de 50 missions offre une durée de vie longue, mais elle peut buter sur une mission difficile qu’on rejoue plusieurs soirs. De 2 à 5 joueurs, environ 20 minutes, indiqué 10+. Pour retrouver les plis avec de la compétition, voyez notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.`
+        `The Crew fait d’un jeu de plis une coopération. Chaque mission attribue des cartes précises à remporter par certains joueurs, et la table doit s’organiser presque sans parler. Une fois par mission, chacun peut révéler une carte et préciser s’il s’agit de sa plus haute, de sa plus basse ou de la seule de sa couleur. Les cartes Fusée servent d’atouts, et il faut fournir la couleur demandée.`,
+        `La campagne de 50 missions monte en difficulté, ce qui assure une longue durée de vie, mais une mission ratée se rejoue autant de fois qu’il le faut et peut bloquer une table plusieurs soirs. De 2 à 5 joueurs, une vingtaine de minutes, dès 10 ans. Pour retrouver des plis en compétition, notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> présente la famille dans son ensemble.`
       ]
     },
     {
       id: 'the-mind',
       type: 'Coop silencieuse',
-      pick: 'Pour les tables calmes qui aiment l’expérience de groupe plus que la tactique',
+      pick: 'Pour une table calme qui préfère sentir plutôt que calculer',
       paragraphs: [
-        `The Mind retire la parole elle-même : chaque joueur reçoit des cartes numérotées de 1 à 100, et l’équipe doit les poser dans l’ordre croissant sans se concerter. Au premier niveau chacun a une carte, au deuxième deux, et ainsi de suite. On mesure le temps qui passe en observant les visages et le rythme de la table. C’est la coopération la plus étrange de la liste : il n’y a rien à déduire, seulement un tempo commun à sentir.`,
-        `Les erreurs sont absorbées par des vies partagées, et un geste commun permet à chacun d’écarter sa carte la plus basse. Le défaut est la lassitude : certaines tables s’ennuient dès le troisième niveau, et le jeu devient impossible dans une pièce bruyante. De 2 à 4 joueurs seulement, environ 20 minutes, dès 8 ans : une partie pour le début de soirée plutôt que pour la fin.`
-      ]
-    },
-    {
-      id: 'the-game',
-      type: 'Coop de défausse',
-      pick: 'Pour jouer seul ou à cinq, avec une parole rationnée',
-      paragraphs: [
-        `The Game est une coopération de défausse : il faut vider un paquet de 98 cartes, de 2 à 99, sur quatre piles communes, deux montantes à partir de 1 et deux descendantes à partir de 100. On peut parler, mais sans citer les chiffres exacts, ce qui crée un langage de proximité (« ne touche pas à ma pile du haut ») très différent des indices de Hanabi.`,
-        `C’est le seul jeu de la liste qui se joue de 1 à 5 joueurs, donc aussi en solo. La finesse à retenir est le saut de dix en sens inverse, qui permet de remonter une pile sans pénalité. Le défaut, déjà évoqué : la marge de discussion donne l’avantage au plus bavard. Comptez environ 20 minutes, dès 8 ans, pour un prix proche de 12 €.`
-      ]
-    },
-    {
-      id: 'just-one',
-      type: 'Coop de mots',
-      pick: 'Pour les grandes tablées, de 3 à 7, sans habitude des cartes',
-      paragraphs: [
-        `Just One transforme la coopération en jeu de mots : un joueur doit deviner un mot secret, et les autres écrivent chacun un indice d’un seul mot sur un chevalet. Les indices identiques sont supprimés avant que le devineur les lise. D’où l’idée centrale du jeu : être original sans être obscur. Contrairement à Hanabi ou The Crew, il n’y a aucune ressource à gérer, seulement la tête et un feutre.`,
-        `Réserve : le matériel est un paquet de cartes de mots complété par des chevalets, c’est donc un jeu de cartes au sens large, dont la difficulté ne tient pas à une décision tactique. Il plaît aux grandes tablées qui n’ont pas l’habitude des mécaniques, un peu moins à ceux qui cherchent un vrai défi. De 3 à 7 joueurs, environ 20 minutes, dès 8 ans, pour environ 22 €.`
+        `The Mind supprime la parole. Chacun reçoit des cartes numérotées de 1 à 100, et l’équipe doit les poser en ordre croissant sans le moindre échange : une carte par joueur au premier niveau, deux au deuxième, et ainsi de suite. Faute de mots, on guette le rythme ; celui qui temporise longtemps tient sans doute une carte haute. Il n’y a rien à déduire au sens strict, seulement un tempo commun à trouver.`,
+        `Des vies partagées absorbent les erreurs, et un accord silencieux permet à tous d’écarter leur plus petite carte. Deux défauts : certaines tables décrochent après quelques niveaux, et le jeu supporte mal une pièce bruyante. De 2 à 4 joueurs seulement, une vingtaine de minutes, dès 8 ans : un jeu d’ouverture de soirée plutôt que de fin.`
       ]
     },
     {
       id: 'kyran',
       type: 'Plis (compétitif)',
-      pick: 'Pour enchaîner, après la coop, sur un jeu de plis en solo',
+      pick: 'Pour la partie compétitive qui suit la coopération',
       paragraphs: [
-        `KYRAN n’est pas coopératif : chaque joueur joue pour lui et cherche à garder le plus de vies. Il figure ici parce que beaucoup de groupes sortent de The Crew avec l’envie de rester sur les plis. On retrouve la logique de la carte la plus forte, mais avec un pari obligatoire à annoncer avant la manche, dont la somme ne peut jamais égaler le nombre de plis. Placez-le en seconde partie de soirée, une fois la coopération terminée.`,
-        `Un point de contact avec les jeux de cette page : il faut évaluer sa main avant de jouer et anticiper ce que les autres feront. La différence tient au nombre de joueurs (de 3 à 6, jamais à deux) et à l’esprit : si votre table veut éviter toute rivalité, n’ouvrez pas la boîte. Environ 30 minutes, dès 8 ans, à 9,99 € ; les <a class="text-link" href="/regle.html">règles de KYRAN</a> sont expliquées en vidéo de cinq minutes.`
+        `KYRAN ne coopère pas : chacun joue pour garder le plus de cartes Vie. Il a sa place ici comme suite logique d’une soirée The Crew, pour les groupes qui veulent rester sur les plis en retrouvant un vainqueur. Avant chaque manche, on annonce le nombre exact de plis qu’on remportera, et la somme des annonces ne peut jamais égaler le nombre de plis : quelqu’un se trompera forcément.`,
+        `Après la coopération, l’esprit change : la lecture des intentions, si utile à Hanabi, sert désormais à piéger ses voisins. La manche Mystique fait d’ailleurs écho à Hanabi, puisqu’on y parie avec une carte sur le front, sans la voir. De 3 à 6 joueurs, jamais à deux, environ 30 minutes, dès 8 ans, 9,99 € sur le site ; les <a class="text-link" href="/regle.html">règles de KYRAN</a> sont aussi expliquées en vidéo.`
       ]
     }
   ],
-  verdict: {
-    heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en retenir qu’un, prenez The Crew : c’est la coopération la plus facile à recommander à un groupe qui sait ce qu’est un pli, avec une campagne qui dure longtemps pour environ 15 €. Pour un groupe sans habitude des cartes, Hanabi reste la meilleure porte d’entrée à partir de 8 ans.</p><p>Évitez The Mind si vous cherchez de la réflexion : c’est une expérience de groupe, pas un casse-tête. Évitez Letter Jam si votre table n’aime pas les jeux de mots, et Just One si vous voulez une coopération tactique. KYRAN n’est pas coopératif et ne remplace aucun jeu de cette page.</p>`
-  },
-  conclusion: `<p>Un bon coopératif se rejoue parce qu’on a raté de peu, pas parce qu’on a gagné. Notez où votre groupe a calé (une mission, un score, un niveau) et revenez-y la semaine suivante : c’est la meilleure manière de savoir si le jeu tient la durée. Pour varier les formats de soirée, voyez aussi nos <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à trois joueurs</a>.</p>`,
+  conclusion: `<p>Un coopératif tient la distance quand on a envie de retenter la mission ou le niveau qui a résisté. Notez où votre groupe a calé et reprenez à cet endroit la fois suivante : c’est le meilleur test de longévité. Si vous êtes souvent trois autour de la table, notre sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux de cartes à trois joueurs</a> associe coopération et affrontement pour ce format délicat.</p>`,
   faq: [
     {
       q: 'Quel jeu choisir quand on a aimé Hanabi ?',
-      a: 'Letter Jam reprend la même idée (vous voyez les cartes des autres, pas la vôtre) dans une version jeu de mots, et The Crew garde la coopération sous contrainte avec des plis. The Mind pousse la contrainte jusqu’au silence complet. Letter Jam dure environ 45 minutes, contre 25 pour Hanabi.'
+      a: 'Letter Jam garde le principe de la carte qu’on ne voit pas, avec des lettres à la place des couleurs, mais demande près de deux fois plus de temps. The Crew conserve la parole rationnée en passant aux plis, et The Mind la pousse jusqu’au silence complet.'
     },
     {
       q: 'Quel jeu choisir quand on a aimé The Crew ?',
-      a: `Pour rester coopératif, Hanabi et The Game offrent la même parole rationnée sans jouer de plis. Pour retrouver des plis et des objectifs, KYRAN ou les jeux de notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> sont proches, mais ils sont compétitifs.`
+      a: 'Pour rester en coopération, Hanabi offre la même contrainte de parole sans jouer de plis. Pour garder les plis mais retrouver un gagnant, KYRAN ou Wizard reprennent l’annonce exacte des plis, en compétition cette fois.'
     },
     {
-      q: 'Peut-on jouer à deux à un jeu de cartes coopératif ?',
-      a: 'Oui : Hanabi (2 à 5), The Crew (2 à 5), The Mind (2 à 4), The Game (1 à 5) et Letter Jam (2 à 6) se jouent à deux. Just One demande au moins trois joueurs, comme KYRAN, qui n’est d’ailleurs pas coopératif.'
+      q: 'Peut-on jouer à deux à un coopératif de cartes ?',
+      a: 'Oui : The Game, Hanabi, The Crew, The Mind et Letter Jam acceptent tous un duo. KYRAN, en revanche, demande au moins trois joueurs, et il n’est pas coopératif.'
     },
     {
-      q: 'Comment empêcher un joueur de diriger toute la partie ?',
-      a: 'Choisissez un jeu dont la règle verrouille la parole, comme Hanabi, The Crew ou The Mind, et convenez avant de commencer que personne ne commente les cartes des autres. Faire tourner le joueur qui s’exprime en premier après chaque tour limite aussi l’effet de domination.'
+      q: 'Comment éviter qu’un joueur dirige toute la partie ?',
+      a: 'Choisissez un jeu à parole verrouillée, comme Hanabi, The Crew ou The Mind, et posez une règle de table : personne ne commente le coup d’un autre avant qu’il soit joué. À The Game, faites tourner la parole pour que chacun propose à son tour.'
     },
     {
-      q: 'Un jeu coopératif convient-il à un enfant de 8 ans ?',
-      a: 'Oui avec Hanabi, The Mind, The Game ou Just One, tous indiqués 8+. The Crew et Letter Jam sont indiqués 10+. Jouez les premières parties avec un adulte qui se retient de diriger, et gardez les missions de The Crew pour plus tard.'
+      q: 'À partir de quel âge jouer à un coopératif de cartes ?',
+      a: 'Hanabi, The Mind et The Game sont indiqués dès 8 ans, The Crew et Letter Jam dès 10 ans. Pour une première partie avec un enfant, The Game est le plus intuitif, à condition que l’adulte présent résiste à l’envie de tout orchestrer.'
     },
     {
-      q: 'Peut-on jouer seul à un jeu de cartes coopératif ?',
-      a: 'The Game est le seul de cette sélection annoncé de 1 à 5 joueurs, donc jouable en solo. Les autres demandent au moins deux joueurs (Hanabi, The Crew, The Mind, Letter Jam) ou trois (Just One).'
+      q: 'Existe-t-il un coopératif de cartes jouable en solo ?',
+      a: 'The Game est le seul de cette sélection prévu de 1 à 5 joueurs : seul, on tente de vider le paquet sur les quatre piles. Tous les autres demandent au moins deux joueurs.'
     }
   ],
   related: ['jeux-plis-comparatif', 'jeux-memoire-concentration', 'jeux-famille']

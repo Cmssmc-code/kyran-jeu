@@ -55,6 +55,14 @@ Rafraîchissements repérés (par ordre de priorité) :
 3. **`alternatives-uno`** : parle d'une « manche finale à une seule carte » pour KYRAN ; la manche
    Mystique clôt chaque cycle, puis on repart à sept cartes.
 
+Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`), contrôlés le 4 octobre 2026 : les
+liens de Skull, Wizard, Colt Express, For Sale, Saboteur et 6 qui prend ! sont corrigés. Restent faux
+(identifiant BGG d'un autre jeu, vérifié avec `api.geekdo.com/api/geekitems?objectid=…`) : Skyjo,
+Dixit, Oh Hell!, Parade, Schotten Totten, Letter Jam, Monopoly Deal ; restent en 404 sur Wikipédia :
+Lost Cities, Timeline, Bang!, Oh Hell!, Parade, Schotten Totten, Sushi Go!, Coup, No Thanks!, Letter
+Jam, Monopoly Deal, Llama, The Game. Ces liens nourrissent aussi le `sameAs` du JSON-LD : à corriger
+en une passe dédiée (Wikidata, propriété P2339, donne l'identifiant BGG et les pages Wikipédia).
+
 Écarts relevés dans `games.json` le 4 octobre 2026 (à corriger avec les textes qui en dépendent) :
 
 | Jeu | `games.json` | Source officielle ou boutique |

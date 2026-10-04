@@ -470,7 +470,7 @@ const BLOG_ITEMS = [
     "title": "Meilleurs jeux de cartes à 6 joueurs : ce qui tient quand la table est pleine",
     "category": "Cartes",
     "date": "2026-09-11",
-    "readMinutes": 16,
+    "readMinutes": 17,
     "excerpt": "À six, beaucoup de boîtes sont à leur maximum. 6 qui prend !, Codenames en 3 contre 3, For Sale, KYRAN : 8 jeux vérifiés règle en main pour six.",
     "image": "/kyran-cartes-table.jpg",
     "webp": "/kyran-cartes-table.webp",

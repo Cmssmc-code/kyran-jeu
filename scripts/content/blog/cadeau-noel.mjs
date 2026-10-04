@@ -113,7 +113,7 @@ export default {
     heading: `Notre avis tranché`,
     html: `<p>Si vous ne deviez offrir qu’un seul jeu à une tablée mixte de quatre à six personnes qui n’a pas l’habitude des jeux : Dixit. Il se comprend en une phrase, ne fabrique pas de perdant humilié et a l’allure d’un vrai cadeau. Pour moins de 15 €, Love Letter convient aux échanges entre collègues ; pour huit convives, Timeline. À éviter : Lost Cities sans partenaire attitré, et Hanabi pour une famille impatiente. KYRAN est le bon choix pour quelqu’un qui joue déjà aux plis, et le mauvais pour un couple.</p>`
   },
-  conclusion: `<p>Avant d’emballer, vérifiez deux détails que l’on oublie souvent : le nombre minimum de joueurs et l’âge imprimé sur la boîte. Précisez dans un mot à quelle table et à quelle heure vous imaginez la première partie, et proposez de l’expliquer vous-même autour du dessert. Si le budget le permet, une seconde boîte plus légère, choisie parmi les <a class="text-link" href="/blog/jeux-cartes-pas-chers.html">jeux de cartes pas chers</a>, complète joliment le cadeau principal.</p>`,
+  conclusion: `<p>Avant d’emballer, vérifiez deux détails que l’on oublie souvent : le nombre minimum de joueurs et l’âge imprimé sur la boîte. Précisez dans un mot à quelle table et à quelle heure vous imaginez la première partie, et proposez de l’expliquer vous-même autour du dessert. Si le budget le permet, une seconde boîte plus légère, choisie parmi les <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes à moins de 15 €</a>, complète joliment le cadeau principal.</p>`,
   faq: [
     {
       q: `Quel jeu de société offrir à Noël pour toute la famille ?`,

@@ -25,7 +25,7 @@ export default {
       },
       {
         heading: 'Des camps plutôt qu\'un tour de table',
-        html: `<p>Une table de cinq ne se coupe pas en deux équipes égales, une table de six si. Les jeux de rôles cachés profitent des deux cas : ils créent des camps inégaux et secrets, si bien que chacun surveille les autres même quand ce n'est pas à lui de jouer. Codenames, lui, préfère nettement six à cinq.</p>`,
+        html: `<p>Une table de cinq ne se coupe pas en deux équipes égales, une table de six si. Les jeux de rôles cachés profitent des deux cas : ils créent des camps inégaux et secrets, si bien que chacun surveille les autres même quand ce n'est pas à lui de jouer. Codenames, lui, n'aligne deux équipes égales qu'à six.</p>`,
         ids: ['saboteur', 'bang', 'codenames']
       },
       {
@@ -112,7 +112,7 @@ export default {
       pick: 'Pour six joueurs prêts à former deux équipes de trois',
       paragraphs: [
         `Codenames est le seul jeu de cette page qui préfère clairement six à cinq. À six, deux équipes de trois se font face : dans chaque camp, un maître-espion donne un indice d'un seul mot assorti d'un nombre, et ses deux agents en débattent avant de toucher une carte de la grille. Ce duo d'agents est un bon format, assez pour une vraie discussion, pas assez pour qu'une voix couvre toutes les autres.`,
-        `À cinq, une équipe compte un agent de moins que l'autre ; le jeu le supporte, puisque chaque camp n'a qu'un maître-espion, mais l'agent isolé porte seul la réflexion de son équipe. Défauts : la table attend pendant qu'un maître-espion cherche son indice, et toucher le mot de l'assassin fait perdre la manche d'un coup. Comptez un quart d'heure par manche, dès dix ans.`
+        `À cinq, une équipe compte un agent de moins que l'autre ; le jeu le supporte, puisque chaque camp n'a qu'un maître-espion, mais l'agent isolé porte seul la réflexion de son équipe. Défauts : la table attend pendant qu'un maître-espion cherche son indice, et toucher le mot de l'assassin fait perdre la partie d'un coup. Comptez un quart d'heure par partie, dès dix ans.`
       ]
     },
     {

@@ -1,16 +1,16 @@
 export default {
   slug: 'meilleurs-jeux-apero',
-  title: 'Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table',
-  shortTitle: 'Jeux de cartes apéro',
-  metaTitle: 'Jeux de cartes apéro : 8 jeux rapides, verre en main',
-  description: 'Quels jeux de cartes sortir à l’apéro ? 8 jeux pour tables encombrées de verres, invités qui arrivent par vagues et règles expliquées en deux minutes.',
+  title: 'Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table',
+  shortTitle: 'Jeux apéro et afterwork',
+  metaTitle: 'Jeux de cartes apéro et afterwork : 9 jeux brise-glace',
+  description: 'Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.',
   category: 'Apéro',
   date: '2026-05-03',
   heroTitle: 'Jeux de cartes <span class="accent">pour l’apéro</span>',
-  heroSubtitle: 'Huit jeux qui tiennent entre les verres, se rejoignent en route et s’expliquent en deux minutes.',
+  heroSubtitle: 'Neuf jeux qui tiennent entre les verres, se rejoignent en route et brisent la glace entre collègues.',
   heroImage: '/blog/images/jungle-speed.jpg',
   heroCaption: 'Jungle Speed — le reflexe en apéro.',
-  intro: `<p>Un apéro n’est pas une soirée jeux. La table est couverte de verres et de bols, les invités arrivent à des heures différentes, la musique couvre la voix de celui qui lit la règle, et personne ne veut rester coincé quarante minutes dans une partie. Un bon <strong>jeu de cartes pour l’apéro</strong> se juge donc sur des critères très concrets : encombrement, entrée en cours de route, bruit, temps d’explication, durée des manches. Selon qu’il s’agit de quatre amis installés ou de dix voisins qui vont et viennent, les réponses changent ; les huit jeux ci-dessous couvrent les deux cas. Le format dédié à KYRAN est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a> ; pour une soirée qui s’étire, voyez plutôt les <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a>.</p>`,
+  intro: `<p>Un apéro n’est pas une soirée jeux. La table est couverte de verres et de bols, les invités arrivent à des heures différentes, la musique couvre la voix de celui qui lit la règle, et personne ne veut rester coincé quarante minutes dans une partie. Un bon <strong>jeu de cartes pour l’apéro</strong> se juge donc sur des critères très concrets : encombrement, entrée en cours de route, bruit, temps d’explication, durée des manches. Un <strong>afterwork</strong> ajoute une contrainte : les participants se connaissent peu, et le <strong>jeu brise-glace</strong> doit les faire parler sans mettre personne mal à l’aise. Les neuf jeux ci-dessous couvrent ces cas, de quatre amis installés à dix collègues qui vont et viennent ; une section dédiée à l’afterwork les classe ensuite selon ce qu’ils exposent. Le format dédié à KYRAN est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a> ; pour une soirée qui s’étire, voyez plutôt les <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a>.</p>`,
   criteria: {
     heading: 'Quels critères pour un jeu de cartes d’apéro ?',
     html: `<p>Le même jeu se comporte très différemment autour d’une table d’apéro et lors d’une soirée jeux planifiée. Une boîte qui brille un samedi soir avec quatre passionnés peut s’avérer impraticable un vendredi, au milieu des chips et des invités qui sonnent à la porte. Cinq contraintes reviennent systématiquement.</p>
@@ -73,8 +73,19 @@ export default {
       type: 'Coopératif',
       pick: 'Groupes de 3 à 7 dans un salon bruyant, sans rivalités',
       paragraphs: [
-        `Les indices s’écrivent sur des chevalets au lieu d’être criés : la musique, les rires dans la cuisine ou la conversation voisine ne perturbent donc pas la partie. Dans un salon animé, c’est un atout précis. Chaque tour est court et le groupe marque ensemble, si bien que le nouveau venu se glisse à la manche suivante.`,
+        `Les indices s’écrivent sur des chevalets au lieu d’être criés : la musique, les rires dans la cuisine ou la conversation voisine ne perturbent donc pas la partie. Dans un salon animé, c’est un atout précis. Chaque tour est court et le groupe marque ensemble, si bien que le nouveau venu se glisse à la manche suivante. Entre collègues qui se découvrent, c’est un avantage de plus : on écrit un mot au lieu de prendre la parole devant tout le monde.`,
         `Ses limites sont matérielles : il faut des feutres, un espace pour dresser les chevalets, et la boîte plafonne à sept joueurs. C’est aussi l’un des plus chers du lot, environ 22 euros. Quant à celui qui tient vraiment à gagner contre les autres, il restera sur sa faim, puisque tout le monde joue du même côté de la table.`
+      ]
+    },
+    {
+      id: 'timeline',
+      subtitle: 'la culture générale comme prétexte à discuter',
+      type: 'Frise chronologique',
+      pick: 'Collègues ou voisins qui se connaissent peu, de 2 à 8',
+      paragraphs: [
+        `Chaque carte montre une invention ou un événement, dont la date est imprimée au verso ; à son tour, on la glisse sur la frise commune, avant, après ou entre les cartes déjà posées, puis on la retourne pour vérifier. Le premier qui vide sa main gagne. À l’apéro, chaque pose s’accompagne d’une hésitation à voix haute et la table s’en mêle : le jeu fait parler sans demander à personne de se raconter.`,
+        `Pour des invités qui se connaissent peu, c’est l’un des moins exposants de la liste : personne ne connaît toutes les dates, donc une erreur ne vexe personne, et les débats sur la place d’une carte révèlent les repères de chaque génération. Les cartes sont petites, mais la frise s’allonge au centre : gardez entre les verres une bande libre où aligner une dizaine de cartes.`,
+        `Limites : la culture générale avantage ceux qui lisent ou voyagent beaucoup, et les cartes se mémorisent quand on ressort souvent la même boîte. Une partie dure un quart d’heure environ, et un nouveau venu rejoint la suivante sans difficulté. Plusieurs éditions thématiques existent, ce qui permet d’en choisir une selon le groupe.`
       ]
     },
     {
@@ -108,9 +119,32 @@ export default {
       ]
     }
   ],
+  headings: {
+    selection: 'Du premier verre à la table installée',
+    compare: 'Les neuf jeux d’apéro en un tableau',
+    conclusion: 'Deux paquets plutôt qu’un',
+    faq: 'Questions d’apéro et d’afterwork',
+    related: 'Quand l’apéro se prolonge'
+  },
+  extraSections: [
+    {
+      heading: 'Afterwork : briser la glace entre collègues',
+      html: `<p>Un afterwork ressemble à un apéro, avec une différence de taille : les participants se croisent au bureau sans vraiment se connaître. Le jeu y sert de prétexte à la conversation, et il se juge moins à son intérêt qu’à ce qu’il oblige chacun à montrer de lui. Prendre la parole devant dix collègues, mentir à son responsable ou avouer qu’on ignore une référence n’ont pas le même coût social.</p>
+<h3>Du moins exposant au plus animé</h3>
+<ul>
+<li><strong>Jouer côte à côte :</strong> Dobble et Uno font jouer tout le monde sans que personne ait à parler longtemps, et l’ancienneté ou le poste n’y pèsent rien. Parfaits pendant que le groupe se forme.</li>
+<li><strong>Gagner ensemble :</strong> avec Just One, la table entière marque ou échoue d’un même élan, sans perdant désigné, et chacun écrit son indice au lieu de le dire devant tous.</li>
+<li><strong>Débattre sans être jugé :</strong> Timeline lance des discussions dont personne ne connaît la réponse, et l’erreur fait rire plutôt que rougir.</li>
+<li><strong>Deviner, bluffer, parier :</strong> Love Letter, Coup, Skull ou KYRAN supposent d’accepter de mentir ou de s’exposer devant les autres. À garder pour un groupe qui a déjà ri ensemble.</li>
+</ul>
+<h3>Les pièges propres au bureau</h3>
+<p>La hiérarchie change tout : accuser son manager de bluffer amuse une équipe soudée et gêne une équipe qui se découvre. Commencez par les deux premiers niveaux et ne montez d’un cran que si l’ambiance s’y prête. Comptez aussi avec l’heure de fin, car certains partent pour leur train : des parties de quinze à vingt minutes évitent de laisser une manche en plan. Les jeux de mots comme Just One pénalisent un collègue dont le français n’est pas la langue maternelle, alors que Dobble repose sur des images.</p>
+<p>Au-delà de sept ou huit personnes, formez deux tables et faites tourner les joueurs d’un jeu à l’autre, plutôt que de laisser les groupes d’affinités se reformer. Proposez le jeu sans l’imposer : « une partie d’un quart d’heure ? » passe mieux que « tout le monde joue ». Pour rassurer ceux qui n’ont jamais joué, la sélection de <a class="text-link" href="/blog/jeux-debutants-adultes.html">jeux pour débutants adultes</a> réunit les règles les plus simples à transmettre.</p>`
+    }
+  ],
   verdict: {
-    heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en emporter qu’un à un apéro dont vous ignorez la taille et les horaires d’arrivée, prenez Dobble : il s’explique en dix secondes, se rejoint à tout moment et se range en poche. Pour une tablée de quatre à six déjà installée, Skull donne la meilleure demi-heure de la liste. À éviter : Jungle Speed sur une petite table de salon chargée de verres. KYRAN est notre jeu, et nous le disons franchement : il vaut pour un apéro qui s’installe, pas pour un apéro à flux continu où la moitié des joueurs aura bougé avant la fin de la première manche.</p>`
+    heading: 'Un seul paquet dans la poche : lequel ?',
+    html: `<p>Si vous ne deviez en emporter qu’un à un apéro dont vous ignorez la taille et les horaires d’arrivée, prenez Dobble : il s’explique en dix secondes, se rejoint à tout moment et se range en poche. Pour une tablée de quatre à six déjà installée, Skull donne la meilleure demi-heure de la liste. Pour un afterwork où personne ne se connaît, Just One est le plus sûr : il se joue à l’écrit et ne désigne aucun perdant. À éviter : Jungle Speed sur une petite table de salon chargée de verres. KYRAN est notre jeu, et nous le disons franchement : il vaut pour un apéro qui s’installe, pas pour un apéro à flux continu où la moitié des joueurs aura bougé avant la fin de la première manche.</p>`
   },
   conclusion: `<p>Gardez deux paquets sous la main : un jeu d’entrée qui accepte les retardataires, et un jeu de table pour le moment où tout le monde est enfin assis. Si l’apéro se prolonge en soirée, la sélection de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a> prend le relais avec des formats plus longs, et à plus de huit invités la page <a class="text-link" href="/blog/jeux-grands-groupes.html">grands groupes</a> indique le plafond de chaque jeu.</p>`,
   faq: [
@@ -123,20 +157,20 @@ export default {
       a: 'Dobble s’explique en dix secondes, Uno est connu de presque tout le monde, et Jungle Speed se comprend en regardant une manche. Just One demande une minute de plus pour expliquer les indices qui s’annulent. Skull et Coup exigent de mimer une manche.'
     },
     {
-      q: 'Quels jeux de cartes jouer à l’apéro sans prise de tête ?',
-      a: 'Préférez les jeux de réflexe ou de défausse, qui n’exigent aucun calcul : Dobble, Uno, Jungle Speed. Après deux verres, les jeux qui demandent de mémoriser les cartes jouées passent mal, alors que les jeux de bluff comme Coup restent faciles à suivre.'
+      q: 'Quel jeu brise-glace pour un afterwork entre collègues qui se connaissent peu ?',
+      a: 'Commencez par un jeu où l’on peut mal jouer sans perdre la face : Just One, qui se joue à l’écrit et sans perdant désigné, ou Timeline, où personne ne connaît toutes les dates. Gardez Coup, Skull et KYRAN pour la suite de la soirée, quand le groupe a déjà ri ensemble.'
     },
     {
       q: 'Quels jeux de cartes pour un apéro dehors, sur une table de jardin ?',
       a: 'Le vent est le vrai ennemi : choisissez des cartes qu’on garde en main, comme Love Letter ou Uno, et posez un verre sur la pioche. Évitez les jeux à grande grille ou à chevalets. La page <a class="text-link" href="/blog/jeux-vacances-voyage.html">jeux de voyage et de terrasse</a> détaille les formats compacts.'
     },
     {
-      q: 'Combien de temps dure un jeu d’apéro ?',
-      a: 'Entre quinze et trente minutes. Dobble, Love Letter, Coup et Jungle Speed tiennent en un quart d’heure environ, Skull et KYRAN demandent une demi-heure. Au-delà de quarante minutes, un jeu n’a plus sa place à l’apéritif.'
+      q: 'Combien de temps dure un jeu d’apéro ou d’afterwork ?',
+      a: 'Entre quinze et trente minutes. Dobble, Love Letter, Coup, Timeline et Jungle Speed tiennent en un quart d’heure environ, Skull et KYRAN demandent une demi-heure. En afterwork, l’heure de fin compte : une partie de plus de quarante minutes reste souvent inachevée quand les premiers partent pour leur train.'
     },
     {
-      q: 'KYRAN convient-il à un apéro entre amis ?',
-      a: 'Oui pour trois à six personnes installées autour de la table, avec une demi-heure devant elles ; non pour un apéro où l’on entre et sort sans cesse. Le format est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a>.'
+      q: 'KYRAN convient-il à un apéro entre amis ou à un afterwork ?',
+      a: 'Oui pour trois à six personnes installées autour de la table, avec une demi-heure devant elles ; non pour un apéro où l’on entre et sort sans cesse. En afterwork, sortez-le en deuxième jeu, avec la variante d’initiation sans cartes Pouvoir ni Mystique. Le format est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a>.'
     }
   ],
   related: ['jeux-soiree-amis', 'jeux-grands-groupes', 'jeux-vacances-voyage']

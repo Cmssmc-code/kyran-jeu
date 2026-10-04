@@ -23,7 +23,7 @@ export default {
 <li><strong>L'élimination.</strong> Dans Skull ou Love Letter, un joueur sorti attend la fin de la manche ; à quatre, l'attente reste courte, mais elle se remarque dès que la manche s'éternise.</li>
 <li><strong>L'écart d'âge et de niveau.</strong> Uno et Skyjo se jouent dès 7 ou 8 ans (selon les fiches), Codenames, Love Letter, Skull, Wizard et The Crew exigent plutôt 10 ans.</li>
 </ul>
-<p>Enfin, gardez en tête la fréquence de vos soirées : un jeu qu'on joue une fois par mois peut avoir des règles plus longues qu'un jeu d'apéro qu'on ressort chaque semaine. Si votre groupe grandit souvent, notre page sur les <a class="text-link" href="/blog/jeux-cartes-5-joueurs.html">jeux à cinq joueurs</a> vous évite de racheter une boîte à chaque nouvel invité.</p>`
+<p>Enfin, gardez en tête la fréquence de vos soirées : un jeu qu'on joue une fois par mois peut avoir des règles plus longues qu'un jeu d'apéro qu'on ressort chaque semaine. Si votre groupe grandit souvent, notre page sur les <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">jeux à cinq ou six joueurs</a> vous évite de racheter une boîte à chaque nouvel invité.</p>`
   },
   games: [
     {
@@ -130,5 +130,5 @@ export default {
       a: `Oui, KYRAN se joue de 3 à 6 joueurs, et quatre est un effectif très confortable. On ne garde que quatre cartes Pouvoir et la carte Mystique, et les manches vont de sept à deux cartes avant la manche Mystique. Détails sur la <a class="text-link" href="/regle.html">page des règles</a>.`
     }
   ],
-  related: ['jeux-3-joueurs', 'jeux-cartes-5-joueurs', 'alternatives-belote-coinche']
+  related: ['jeux-3-joueurs', 'jeux-cartes-6-joueurs', 'alternatives-belote-coinche']
 };

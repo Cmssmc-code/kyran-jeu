@@ -3,14 +3,14 @@ export default {
   title: `Jeux de cartes de 30 minutes ou moins : 9 parties express`,
   shortTitle: `Jeux de 30 minutes ou moins`,
   metaTitle: `Jeux de 30 minutes max : 9 jeux de cartes rapides à jouer`,
-  description: `Neuf jeux de cartes de 15 à 30 minutes, triés par durée : explication, nombre de joueurs et enchaînement de manches pour des soirées express.`,
+  description: `Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.`,
   category: `Soirée`,
   date: `2026-05-19`,
   heroTitle: `Jeux de cartes en <span class="accent">30 minutes ou moins</span>`,
-  heroSubtitle: `La durée de la boîte n’est qu’une partie du temps réel : neuf jeux triés par durée, avec ce qui les allonge ou les raccourcit.`,
+  heroSubtitle: `La durée de la boîte n’est qu’une partie du temps réel : neuf jeux rangés en trois créneaux, avec ce qui les allonge ou les raccourcit.`,
   heroImage: `/blog/images/skyjo.jpg`,
   heroCaption: `Skyjo — une demi-heure bien remplie.`,
-  intro: `<p>Une partie annoncée pour vingt minutes dure rarement exactement vingt minutes : il faut sortir les cartes, expliquer, jouer, puis ranger. Cette sélection part de ce temps réel. Neuf jeux de cartes de 15 à 30 minutes, classés du plus court au plus long, avec pour chacun ce qui allonge ou raccourcit vraiment la partie : le nombre de joueurs, la condition de fin, l’attente entre deux tours. Elle sert pour une pause déjeuner, une soirée de semaine ou un enchaînement de plusieurs jeux courts à la place d’un seul long. Pour les budgets serrés, voyez aussi les <a class="text-link" href="/blog/jeux-cartes-pas-chers.html">jeux de cartes à moins de 20 €</a>, et pour jouer dans le train ou à la plage, les <a class="text-link" href="/blog/jeux-vacances-voyage.html">jeux de vacances</a>.</p>`,
+  intro: `<p>Une partie annoncée pour vingt minutes dure rarement exactement vingt minutes : il faut sortir les cartes, expliquer, jouer, puis ranger. Cette sélection part de ce temps réel. Neuf jeux de cartes y sont rangés en <strong>trois créneaux</strong>, selon la durée indiquée sur leur boîte : un quart d’heure, une vingtaine de minutes, une demi-heure pleine. Pour chacun, nous indiquons ce qui allonge ou raccourcit vraiment la partie : le nombre de joueurs, la condition de fin, l’attente entre deux tours. De quoi remplir une pause déjeuner, une soirée de semaine ou un enchaînement de plusieurs jeux courts à la place d’un seul long. Pour jouer dans le train ou à la plage, voyez les <a class="text-link" href="/blog/jeux-vacances-voyage.html">jeux de vacances</a> ; pour un budget précis, nos <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes triés par prix</a>.</p>`,
   criteria: {
     heading: `Comment mesurer la vraie durée d’un jeu court ?`,
     html: `<p>La durée imprimée sur la boîte désigne la partie, pas la soirée. Pour savoir ce qu’un jeu coûtera en temps, additionnez cinq éléments : l’installation, l’explication, la partie, la revanche éventuelle et le rangement.</p>
@@ -29,6 +29,31 @@ export default {
 <li>Un jeu à score cible, comme Skyjo, se prolonge quand les manches sont serrées, car personne n’atteint le seuil.</li>
 <li>La première partie dure plus que les suivantes ; ne jugez pas un jeu sur sa seule partie d’initiation.</li>
 </ul>`
+  },
+  layout: {
+    groups: [
+      {
+        heading: `Un quart d’heure : quatre jeux pour un créneau serré`,
+        html: `<p>Ces quatre jeux sont annoncés à une quinzaine de minutes. Ce qui les sépare, c’est la façon dont ce quart d’heure résiste au nombre de joueurs et à la première explication : un jeu où tout le monde agit en même temps ne bouge presque pas, un jeu à élimination accélère vers la fin.</p>`,
+        ids: [`love-letter`, `coup`, `jungle-speed`, `sushi-go`]
+      },
+      {
+        heading: `Une vingtaine de minutes : un paquet qui borne, un niveau qui tranche`,
+        html: `<p>Deux jeux annoncés à une vingtaine de minutes, pour des raisons opposées : la durée de No Thanks! est fixée par son paquet, celle de The Mind par la réussite ou l’échec de l’équipe. Le premier se prévoit à la minute près, le second réserve des surprises dans les deux sens.</p>`,
+        ids: [`the-mind`, `no-thanks`]
+      },
+      {
+        heading: `Une demi-heure pleine : trois jeux à réserver`,
+        html: `<p>Les trois derniers occupent toute la demi-heure, et parfois davantage. Leur fin dépend d’un seuil de points, de défis réussis ou de vies perdues, jamais d’un nombre de tours fixé à l’avance : on les lance quand le créneau est sûr, pas entre deux rendez-vous.</p>`,
+        ids: [`skyjo`, `skull`, `kyran`]
+      }
+    ]
+  },
+  headings: {
+    compare: `Le chronomètre des neuf jeux`,
+    conclusion: `Choisir selon le créneau disponible`,
+    faq: `Questions sur la durée des parties`,
+    related: `D’autres formats pour les soirées courtes`
   },
   games: [
     {
@@ -117,16 +142,16 @@ export default {
       type: `Plis et paris`,
       pick: `Pour trois à six joueurs, une vraie partie en une demi-heure`,
       paragraphs: [
-        `Dans KYRAN, la partie démarre avec sept cartes en main et diminue manche après manche : sept, six, cinq, quatre, trois, deux, puis la manche Mystique, jouée avec une seule carte posée sur le front. Moins il y a de cartes, plus la manche est courte, et la dernière tient en un seul pli. Le jeu réunit de trois à six joueurs, dès huit ans.`,
-        `Le cycle peut s’interrompre avant la fin : la partie s’arrête dès qu’un joueur a perdu toutes ses cartes Vie, ce qui plafonne la durée sans la rendre certaine. Pour gagner du temps à la première partie, la variante d’initiation, sans Pouvoir ni Mystique, allège l’explication, et la vidéo de cinq minutes sur la <a class="text-link" href="/regle.html">page des règles</a> se regarde avant la soirée. Il ne se joue pas à deux.`
+        `Dans KYRAN, la partie démarre avec sept cartes en main et diminue manche après manche : sept, six, cinq, quatre, trois, deux, puis la manche Mystique, jouée avec une seule carte posée sur le front. Moins il y a de cartes, plus la manche est courte, et la dernière tient en un seul pli. Ce compte à rebours, KYRAN l’hérite du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, qui retire lui aussi une carte à chaque manche jusqu’à la carte unique sur le front.`,
+        `Le cycle peut s’interrompre avant la fin : la partie s’arrête dès qu’un joueur a perdu toutes ses cartes Vie, ce qui plafonne la durée sans la rendre certaine. Pour gagner du temps à la première partie, la variante d’initiation, sans Pouvoir ni Mystique, allège l’explication, et la vidéo de cinq minutes sur la <a class="text-link" href="/regle.html">page des règles</a> se regarde avant la soirée. De trois à six joueurs, dès huit ans ; il ne se joue pas à deux.`
       ]
     }
   ],
   verdict: {
-    heading: `Notre avis tranché`,
-    html: `<p>Si vous ne deviez en retenir qu’un : No Thanks!. Son paquet de vingt-quatre cartes borne la durée, sa règle tient en deux phrases et il accueille de trois à sept joueurs sans ralentir de façon notable. À deux ou trois, Love Letter est plus court encore ; pour une table de dix, Jungle Speed. À éviter quand on est vraiment pressé : Skull et Skyjo, dont la durée varie le plus selon la table. KYRAN convient quand on veut une vraie partie avec un pari à chaque manche, à condition de réserver trente minutes pleines.</p>`
+    heading: `Le jeu court à garder sous la main`,
+    html: `<p>Si vous ne deviez en retenir qu’un : No Thanks!. Son paquet de vingt-quatre cartes borne la durée, sa règle tient en deux phrases et il accueille de trois à sept joueurs sans ralentir de façon notable. Dans le créneau du quart d’heure, Love Letter est plus court encore à deux ou trois, et Jungle Speed tient une table de dix. Dans celui de la demi-heure, méfiez-vous de Skull et de Skyjo quand l’heure de fin est ferme : ce sont eux dont la durée varie le plus selon la table. KYRAN convient quand on veut une vraie partie avec un pari à chaque manche, à condition de réserver trente minutes pleines.</p>`
   },
-  conclusion: `<p>Mesurez votre créneau avant de choisir : quinze minutes autorisent un jeu simultané ou à manches courtes, trente minutes un jeu de score ou de bluff. Gardez sous la main deux jeux de durées différentes pour ajuster la soirée selon l’humeur. Pour poursuivre avec d’autres formats de soirée, la sélection <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux de soirée entre amis</a> prolonge cette liste.</p>`,
+  conclusion: `<p>Mesurez votre créneau avant de choisir : un quart d’heure autorise un jeu simultané ou à manches courtes, vingt minutes un jeu dont le paquet fixe la fin, une demi-heure un jeu de score, de bluff ou de plis. Gardez sous la main deux jeux de créneaux différents pour ajuster la soirée selon l’humeur et le nombre de présents. Avant d’inviter, vérifiez dans le tableau la borne haute de joueurs : c’est elle qui décide si le créneau prévu tiendra.</p>`,
   faq: [
     {
       q: `Quel jeu de cartes se joue en 15 minutes ?`,
@@ -149,5 +174,5 @@ export default {
       a: `Commencez par un jeu simultané et facile, comme Jungle Speed ou Sushi Go!, continuez avec un jeu de déduction ou de bluff, puis finissez sur un jeu plus calme. Fixez l’heure de fin à l’avance pour que le dernier jeu ne devienne pas une troisième partie.`
     }
   ],
-  related: [`jeux-vacances-voyage`, `jeux-soiree-amis`, `jeux-brise-glace-afterwork`]
+  related: [`jeux-vacances-voyage`, `jeux-soiree-amis`, `meilleurs-jeux-apero`]
 };

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-04",
   "property": "https://kyran-jeu.fr/",
   "clusters": [
     {
@@ -156,7 +156,10 @@
         "jeu de cartes apéro",
         "jeu de carte apéro",
         "jeux de cartes apéro",
-        "jeu apéro entre amis"
+        "jeu apéro entre amis",
+        "jeu brise glace soirée",
+        "jeu afterwork",
+        "jeu brise glace adulte"
       ],
       "secondary_queries": [
         "jeu soirée apéro",
@@ -205,11 +208,19 @@
         "offrir jeu société",
         "idée cadeau jeu",
         "cadeau anniversaire jeu de société",
-        "idée cadeau jeu de cartes anniversaire"
+        "idée cadeau jeu de cartes anniversaire",
+        "jeu de cartes pas cher",
+        "jeux cartes petit budget",
+        "cartes pas cher",
+        "jeux de cartes pas chers",
+        "jeu de société pas cher",
+        "petit budget jeu de cartes"
       ],
       "secondary_queries": [
         "cadeau jeu cartes",
-        "anniversaire jeu"
+        "anniversaire jeu",
+        "jeu société pas cher",
+        "jeu cartes moins 20 euros"
       ]
     },
     {
@@ -225,21 +236,6 @@
       "secondary_queries": [
         "cadeau sapin jeu",
         "noël jeux société"
-      ]
-    },
-    {
-      "page": "/blog/jeux-cartes-pas-chers.html",
-      "primary_queries": [
-        "jeu de cartes pas cher",
-        "jeux cartes petit budget",
-        "cartes pas cher",
-        "jeux de cartes pas chers",
-        "jeu de société pas cher",
-        "petit budget jeu de cartes"
-      ],
-      "secondary_queries": [
-        "jeu société pas cher",
-        "jeu cartes moins 20 euros"
       ]
     },
     {
@@ -497,7 +493,10 @@
       "primary_queries": [
         "jeu de carte 6 joueurs",
         "jeux de societe 6 joueurs",
-        "jeu cartes 6 personnes"
+        "jeu cartes 6 personnes",
+        "jeu de carte 5 joueurs",
+        "jeux de société 5 joueurs",
+        "jeu de cartes à 5"
       ],
       "secondary_queries": [
         "meilleur jeu 6 joueurs",
@@ -542,29 +541,11 @@
       "secondary_queries": []
     },
     {
-      "page": "/blog/jeux-brise-glace-afterwork.html",
-      "primary_queries": [
-        "jeu brise glace soirée",
-        "jeu afterwork",
-        "jeu brise glace adulte"
-      ],
-      "secondary_queries": []
-    },
-    {
       "page": "/blog/jeux-cartes-4-joueurs.html",
       "primary_queries": [
         "jeu de cartes 4 joueurs",
         "jeux à 4",
         "jeu de société 4 joueurs"
-      ],
-      "secondary_queries": []
-    },
-    {
-      "page": "/blog/jeux-cartes-5-joueurs.html",
-      "primary_queries": [
-        "jeu de carte 5 joueurs",
-        "jeux de société 5 joueurs",
-        "jeu de cartes à 5"
       ],
       "secondary_queries": []
     },

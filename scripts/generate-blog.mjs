@@ -8,6 +8,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { GAME_LINKS } from './lib/game-links.mjs';
 import { loadItems, SITE, stripHtml } from './lib/items.mjs';
+import { formatDateFr } from './lib/article-model.mjs';
 import { assetVersion } from './lib/asset-version.mjs';
 import { imageSize } from './lib/image-size.mjs';
 
@@ -56,7 +57,12 @@ function getGameMeta(game) {
   return GAME_LINKS[game.id || slugify(game.name)] || {};
 }
 
-function renderGameLinks(game) {
+/**
+ * Liens d'une fiche. Un seul lien externe par jeu tiers (audit Search Console d'octobre 2026 :
+ * ~33 liens externes par article) : la fiche BoardGameGeek, ou la boutique pour les guides
+ * d'achat (article.layout.shopLinks).
+ */
+function renderGameLinks(game, article) {
   const meta = getGameMeta(game);
   const links = [];
 
@@ -64,31 +70,27 @@ function renderGameLinks(game) {
     links.push(`<a class="game-link game-link--primary" href="/commander.html">Commander (9,99&nbsp;€)</a>`);
     links.push(`<a class="game-link" href="/regle.html">Règles</a>`);
     links.push(`<a class="game-link" href="/minijeu.html">Initiation</a>`);
-    links.push(`<a class="game-link game-link--shop" href="https://www.amazon.fr/dp/B0G217LD87" rel="noopener noreferrer sponsored">Amazon (17,99&nbsp;€)</a>`);
   } else {
-    if (meta.bgg) links.push(`<a class="game-link" href="${meta.bgg}" rel="noopener noreferrer">BoardGameGeek ↗</a>`);
-    if (meta.wiki) links.push(`<a class="game-link" href="${meta.wiki}" rel="noopener noreferrer">Wikipedia ↗</a>`);
-    if (meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">Philibert ↗</a>`);
+    const preferShop = article.layout && article.layout.shopLinks;
+    if (preferShop && meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">Voir chez Philibert ↗</a>`);
+    else if (meta.bgg) links.push(`<a class="game-link" href="${meta.bgg}" rel="noopener noreferrer">Fiche BoardGameGeek ↗</a>`);
+    else if (meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">Voir chez Philibert ↗</a>`);
   }
 
   if (!links.length) return '';
   return `<nav class="game-pick__links" aria-label="Liens ${esc(game.name)}">${links.join('')}</nav>`;
 }
 
-function renderGameFigure(game, meta, caption) {
+function renderGameFigure(game, caption) {
   const img = game.image || '/blog/images/' + slugify(game.name) + '.jpg';
   const alt = `${game.name} — jeu de cartes${game.subtitle ? ', ' + game.subtitle : ''}`;
   const dims = imageSize(join(ROOT, img)) || { width: 480, height: 320 };
   const imgTag = pictureHtml(img, `<img src="${img}" alt="${esc(alt)}" width="${dims.width}" height="${dims.height}" loading="lazy" decoding="async" itemprop="image" />`);
-  const photoLink = meta.bgg || meta.shop || null;
-  const media = photoLink
-    ? `<a class="game-pick__photo-link" href="${photoLink}" rel="noopener noreferrer" title="Voir ${esc(game.name)}">${imgTag}</a>`
-    : imgTag;
-
-  return `<figure class="game-pick__figure">${media}<figcaption>${caption}</figcaption></figure>`;
+  return `<figure class="game-pick__figure">${imgTag}<figcaption>${caption}</figcaption></figure>`;
 }
 
-function renderGamePick(game, index) {
+function renderGamePick(game, index, article) {
+  const numbered = !(article.layout && article.layout.numbered === false);
   const id = 'jeu-' + (game.id || slugify(game.name));
   const meta = getGameMeta(game);
   const caption = game.caption || meta.imageCredit || ('Illustration — ' + game.name);
@@ -107,7 +109,7 @@ function renderGamePick(game, index) {
   return `<article class="game-pick${kyranClass}" id="${id}" itemscope itemtype="https://schema.org/Game">
   <div class="game-pick__card">
     <header class="game-pick__top">
-      <span class="game-pick__rank" aria-hidden="true">${padRank(index)}</span>
+      ${numbered ? `<span class="game-pick__rank" aria-hidden="true">${padRank(index)}</span>` : ''}
       <div class="game-pick__title-wrap">
         ${badge}${typeTag}
         <h3 class="game-pick__title" itemprop="name">${title}</h3>
@@ -115,7 +117,7 @@ function renderGamePick(game, index) {
       </div>
     </header>
     <div class="game-pick__overview">
-      <div class="game-pick__media">${renderGameFigure(game, meta, caption)}</div>
+      <div class="game-pick__media">${renderGameFigure(game, caption)}</div>
       <div class="game-pick__info">
         <dl class="game-specs">
           <div class="game-spec"><dt>Joueurs</dt><dd itemprop="numberOfPlayers">${game.players}</dd></div>
@@ -124,7 +126,7 @@ function renderGamePick(game, index) {
           <div class="game-spec game-spec--price"><dt>Prix</dt><dd>${game.price}</dd></div>
         </dl>
         ${pickLine}
-        ${renderGameLinks(game)}
+        ${renderGameLinks(game, article)}
       </div>
     </div>
     <div class="game-pick__body" itemprop="description">${body}</div>
@@ -133,13 +135,14 @@ function renderGamePick(game, index) {
 }
 
 function renderCompareTable(article) {
+  const label = heading(article, 'compare', 'Tableau comparatif');
   const rows = article.games.map(g => {
     const id = 'jeu-' + (g.id || slugify(g.name));
     const cls = g.isKyran ? ' class="col-kyran"' : '';
     return `<tr${cls}><th scope="row"><a href="#${id}">${g.name}</a></th><td>${g.players}</td><td>${g.duration}</td><td>${g.age}</td><td>${g.price}</td><td>${g.type || ''}</td></tr>`;
   }).join('\n');
   return `<section class="article-compare" id="comparatif" aria-labelledby="compare-title">
-  <h2 id="compare-title" class="article-section-label">Tableau comparatif</h2>
+  <h2 id="compare-title" class="article-section-label">${label}</h2>
   <div class="compare-table-wrap">
     <table class="compare-table">
       <caption class="sr-only">Comparatif des ${article.games.length} jeux : joueurs, durée, âge, prix et type</caption>
@@ -204,22 +207,44 @@ function renderAuthorCard() {
   <div class="article-author-card__body">
     <p class="article-author-card__name"><a href="/a-propos.html">Corentin Sence</a></p>
     <p class="article-author-card__role">Créateur de KYRAN · auteur de la sélection</p>
-    <p class="article-author-card__bio">Sélections éditoriales avec fiches pratiques et liens de référence (BGG, Wikipedia, Philibert). KYRAN est notre jeu : nous le signalons et disons quand il n'est pas le bon choix.</p>
+    <p class="article-author-card__bio">KYRAN est notre jeu : nous le signalons dans chaque sélection et disons quand il n'est pas le bon choix.</p>
   </div>
 </div>`;
 }
 
-function renderShareBar(article, url) {
-  const title = encodeURIComponent(article.metaTitle);
-  const shareUrl = encodeURIComponent(url);
+function renderShareBar(url) {
   return `<div class="article-share-bar" aria-label="Partager cet article">
   <span class="article-share-bar__label">Partager</span>
-  <a class="article-share-bar__btn" href="https://twitter.com/intent/tweet?text=${title}&amp;url=${shareUrl}" rel="noopener noreferrer" target="_blank">X</a>
-  <a class="article-share-bar__btn" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" rel="noopener noreferrer" target="_blank">Facebook</a>
-  <a class="article-share-bar__btn" href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-  <a class="article-share-bar__btn" href="${SITE}/blog/feed.xml" rel="alternate">RSS</a>
   <button type="button" class="article-share-bar__btn article-share-bar__btn--copy" data-copy-url="${url}">Copier le lien</button>
+  <a class="article-share-bar__btn" href="/blog/feed.xml" rel="alternate">Flux RSS</a>
 </div>`;
+}
+
+/** Libellé de section : article.headings[key] s'il existe, sinon le libellé par défaut. */
+function heading(article, key, fallback) {
+  return (article.headings && article.headings[key]) || fallback;
+}
+
+/** Mot de l'auteur, signé (contenu fourni par l'auteur : jamais rédigé à sa place). */
+function renderAuthorNote(note) {
+  if (!note) return '';
+  const date = note.date ? ` · <time datetime="${note.date}">${formatDateFr(note.date)}</time>` : '';
+  return `<aside class="article-author-note" id="mot-auteur" aria-labelledby="mot-auteur-title">
+  <h2 id="mot-auteur-title" class="article-section-label">${note.heading || 'Le mot de l’auteur de KYRAN'}</h2>
+  <div class="article-author-note__body">${note.html}</div>
+  <p class="article-author-note__sign">Corentin Sence, auteur de KYRAN${date}</p>
+</aside>`;
+}
+
+/** Photos de parties réelles (fichiers du site, crédit obligatoire). */
+function renderPhotos(photos) {
+  if (!photos || !photos.length) return '';
+  const figs = photos.map(ph => {
+    const dims = imageSize(join(ROOT, ph.src)) || { width: 800, height: 600 };
+    const img = `<img src="${ph.src}" alt="${esc(ph.alt)}" width="${dims.width}" height="${dims.height}" loading="lazy" decoding="async" />`;
+    return `<figure class="article-photo">${pictureHtml(ph.src, img)}<figcaption>${ph.caption}</figcaption></figure>`;
+  }).join('');
+  return `<div class="article-photos">${figs}</div>`;
 }
 
 function renderFAQ(article) {
@@ -230,7 +255,7 @@ function renderFAQ(article) {
   ).join('');
   return {
     html: `<section class="article-faq" id="faq" aria-labelledby="faq-title">
-  <h2 id="faq-title" class="article-section-label">Questions fréquentes</h2>
+  <h2 id="faq-title" class="article-section-label">${heading(article, 'faq', 'Questions fréquentes')}</h2>
   <div class="faq-list">${items}</div>
 </section>`,
     schema: {
@@ -257,7 +282,7 @@ function renderCrossLinks(article, itemsBySlug) {
   }).join('');
   if (!cards) return '';
   return `<section class="article-cross-links" aria-labelledby="cross-links-title">
-  <h2 id="cross-links-title" class="article-section-label">À lire aussi</h2>
+  <h2 id="cross-links-title" class="article-section-label">${heading(article, 'related', 'À lire aussi')}</h2>
   <div class="article-cross-links__grid">${cards}</div>
 </section>`;
 }
@@ -284,26 +309,27 @@ function renderArticle(article, itemsBySlug) {
   const ogImage = useBrandOg ? SITE + '/og-kyran.jpg' : SITE + article.heroImage;
   const ogDims = useBrandOg ? { width: 1200, height: 630 } : heroDims;
 
+  const layout = article.layout || {};
   const gameId = g => 'jeu-' + (g.id || slugify(g.name));
-  const tocLinks = [
-    `<a href="#criteres"><span class="toc-num">1</span>${esc(article.criteria.heading)}</a>`,
-    `<a href="#comparatif"><span class="toc-num">2</span>Tableau comparatif</a>`,
-    ...article.games.map((g, i) => `<a href="#${gameId(g)}"><span class="toc-num">${i + 3}</span>${g.name}</a>`),
-    ...extras.map((s, i) => `<a href="#section-${i + 1}"><span class="toc-num">+</span>${esc(s.heading)}</a>`),
-    `<a href="#avis"><span class="toc-num">★</span>Notre avis</a>`,
-    `<a href="#faq"><span class="toc-num">?</span>FAQ</a>`
-  ].join('');
+  const gameEntries = article.games.map((g, i) => ({ href: '#' + gameId(g), label: g.name, short: `${i + 1}. ${g.name}` }));
 
-  const jumpLinks = [
-    `<a href="#criteres">Comment choisir</a>`,
-    `<a href="#comparatif">Comparatif</a>`,
-    ...article.games.map((g, i) => `<a href="#${gameId(g)}">${i + 1}. ${g.name}</a>`),
-    ...extras.map((s, i) => `<a href="#section-${i + 1}">${esc(s.heading)}</a>`),
-    `<a href="#avis">Notre avis</a>`,
-    `<a href="#faq">FAQ</a>`
-  ].join('');
-
-  const gameHtml = article.games.map((g, i) => renderGamePick(g, i + 1)).join('\n');
+  // Sélection : liste unique, ou groupes thématiques ayant chacun leur titre (layout.groups)
+  let gameHtml;
+  if (layout.groups) {
+    let n = 0;
+    gameHtml = layout.groups.map((grp, gi) => {
+      const gid = `groupe-${gi + 1}`;
+      const cards = grp.ids.map(id => renderGamePick(article.games.find(g => g.id === id), ++n, article)).join('\n');
+      return `<section class="article-group" id="${gid}" aria-labelledby="${gid}-title">
+  <h2 id="${gid}-title" class="article-section-label">${grp.heading}</h2>
+  ${grp.html ? `<div class="article-group__intro">${grp.html}</div>` : ''}
+${cards}
+</section>`;
+    }).join('\n');
+  } else {
+    gameHtml = `<h2 class="article-section-label" id="selection">${heading(article, 'selection', `${gameCount} jeux, un par un`)}</h2>
+${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
+  }
 
   const schemaGraph = [
     {
@@ -358,15 +384,50 @@ function renderArticle(article, itemsBySlug) {
     ? `<div class="editorial-callout editorial-callout--soft">${article.guideLinks}</div>`
     : '';
 
-  const extraHtml = extras.map((s, i) => `<section class="article-extra" id="section-${i + 1}" aria-labelledby="section-${i + 1}-title">
-  <h2 id="section-${i + 1}-title" class="article-section-label">${s.heading}</h2>
-  <div class="article-extra__body">${s.html}</div>
-</section>`).join('\n');
+  const verdictLabel = article.verdict.heading || 'Notre avis tranché';
+  const conclusionLabel = heading(article, 'conclusion', 'Conclusion');
 
-  const verdictHtml = `<section class="article-verdict" id="avis" aria-labelledby="avis-title">
-  <h2 id="avis-title" class="article-section-label">${article.verdict.heading || 'Notre avis tranché'}</h2>
+  // Ordre des sections propre à l'article (layout) : réponse d'abord, critères après la
+  // sélection, tableau absent ou déplacé… Chaque bloc déclare ses entrées de sommaire.
+  const blocks = [];
+  const add = (html, toc = []) => { if (html) blocks.push({ html, toc }); };
+  const verdictBlock = () => add(`<section class="article-verdict" id="avis" aria-labelledby="avis-title">
+  <h2 id="avis-title" class="article-section-label">${verdictLabel}</h2>
   <div class="article-verdict__body">${article.verdict.html}</div>
-</section>`;
+</section>`, [{ href: '#avis', label: verdictLabel, short: 'Notre avis' }]);
+  const criteriaBlock = () => add(`<section class="article-criteria" id="criteres" aria-labelledby="criteres-title">
+  <h2 id="criteres-title" class="article-section-label">${article.criteria.heading}</h2>
+  <div class="article-criteria__body">${article.criteria.html}</div>
+</section>`, [{ href: '#criteres', label: article.criteria.heading, short: layout.criteriaShort || 'Comment choisir' }]);
+  const compareBlock = () => add(renderCompareTable(article), [{ href: '#comparatif', label: heading(article, 'compare', 'Tableau comparatif'), short: 'Comparatif' }]);
+  const comparePos = layout.compare === false ? null : ((layout.compare && layout.compare.position) || 'before');
+
+  if (layout.answerFirst) verdictBlock();
+  add(renderAuthorNote(article.authorNote), article.authorNote ? [{ href: '#mot-auteur', label: 'Le mot de l’auteur', short: 'Mot de l’auteur' }] : []);
+  if (!layout.criteriaAfter) criteriaBlock();
+  if (comparePos === 'before') compareBlock();
+  add(gameHtml, gameEntries);
+  add(renderPhotos(article.photos));
+  if (comparePos === 'after') compareBlock();
+  if (layout.criteriaAfter) criteriaBlock();
+  extras.forEach((sec, i) => add(`<section class="article-extra" id="section-${i + 1}" aria-labelledby="section-${i + 1}-title">
+  <h2 id="section-${i + 1}-title" class="article-section-label">${sec.heading}</h2>
+  <div class="article-extra__body">${sec.html}</div>
+</section>`, [{ href: `#section-${i + 1}`, label: stripHtml(sec.heading), short: stripHtml(sec.heading) }]));
+  if (!layout.answerFirst) verdictBlock();
+  add(`<section class="article-outro" id="conclusion">
+  <div class="article-outro__inner">
+    ${article.headings && article.headings.conclusion ? '' : '<span class="article-outro__eyebrow">En résumé</span>'}
+    <h2 class="article-outro__title">${conclusionLabel}</h2>
+    ${conclusionHtml}
+  </div>
+</section>`);
+  add(faqBlock.html, faqBlock.html ? [{ href: '#faq', label: heading(article, 'faq', 'Questions fréquentes'), short: 'FAQ' }] : []);
+
+  const tocEntries = blocks.flatMap(b => b.toc);
+  const tocLinks = tocEntries.map((t, i) => `<a href="${t.href}"><span class="toc-num">${i + 1}</span>${esc(t.label)}</a>`).join('');
+  const jumpLinks = tocEntries.map(t => `<a href="${t.href}">${esc(t.short)}</a>`).join('');
+  const bodyHtml = blocks.map(b => b.html).join('\n');
 
   return compactHtml(`<!DOCTYPE html>
 <html lang="fr">
@@ -447,25 +508,9 @@ function renderArticle(article, itemsBySlug) {
           <article class="article-main prose prose-wide">
             ${renderIntro(article.intro)}
             ${renderAuthorCard()}
-            ${renderShareBar(article, url)}
-            ${renderLLMBox(article)}
-            <section class="article-criteria" id="criteres" aria-labelledby="criteres-title">
-              <h2 id="criteres-title" class="article-section-label">${article.criteria.heading}</h2>
-              <div class="article-criteria__body">${article.criteria.html}</div>
-            </section>
-            ${renderCompareTable(article)}
-            <h2 class="article-section-label" id="selection">${gameCount} jeux, un par un</h2>
-            ${gameHtml}
-            ${extraHtml}
-            ${verdictHtml}
-            <section class="article-outro" id="conclusion">
-              <div class="article-outro__inner">
-                <span class="article-outro__eyebrow">En résumé</span>
-                <h2 class="article-outro__title">Conclusion</h2>
-                ${conclusionHtml}
-              </div>
-            </section>
-            ${faqBlock.html}
+            ${renderShareBar(url)}
+            ${layout.summaryBox === false ? '' : renderLLMBox(article)}
+            ${bodyHtml}
             ${guideBlock}
             ${renderCrossLinks(article, itemsBySlug)}
           </article>

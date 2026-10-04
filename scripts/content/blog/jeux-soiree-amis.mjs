@@ -144,7 +144,7 @@ export default {
 <p>Rien n’oblige à tout jouer. Si la conversation prend, rangez les boîtes : un jeu qui a servi de prétexte a rempli son rôle.</p>`
     }
   ],
-  conclusion: `<p>Choisissez d’après les gens, pas d’après la boîte : dans le doute, partez du jeu le plus tolérant et laissez le groupe réclamer plus de bluff ou plus de paris. Pour recevoir en plus petit comité, la page sur les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d’apéro</a> propose des formats plus courts, et pour une équipe qui se connaît peu, la sélection <a class="text-link" href="/blog/jeux-brise-glace-afterwork.html">brise-glace</a> écarte les jeux trop exposants.</p>`,
+  conclusion: `<p>Choisissez d’après les gens, pas d’après la boîte : dans le doute, partez du jeu le plus tolérant et laissez le groupe réclamer plus de bluff ou plus de paris. Pour recevoir en plus petit comité ou réunir une équipe qui se connaît peu, la page sur les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d’apéro et d’afterwork</a> propose des formats plus courts et écarte les jeux trop exposants.</p>`,
   faq: [
     {
       q: 'Quel jeu choisir pour une soirée entre amis à quatre ?',

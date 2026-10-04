@@ -5,13 +5,13 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="/error-reporter.js?v=d95ff8dcc6"></script>
-  <!-- QR imprimé (boîte) : index.html#video → règles Ludochrono -->
+  <!-- QR imprimé (boîte) : index.html#video → page de lecture de la vidéo des règles (Ludochrono) -->
   <script>
     (function () {
       if (location.hash !== '#video') return;
       var path = location.pathname.replace(/\/$/, '') || '/';
       if (path === '/' || path.endsWith('index.html')) {
-        location.replace('regle.html#video' + location.search);
+        location.replace('/video-regles.html' + location.search);
       }
     })();
   </script>
@@ -59,13 +59,13 @@
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=796aed76b7" defer></script>
-  <link rel="stylesheet" href="style.css?v=796aed76b7" />
-  <script src="blog-data.js?v=796aed76b7" defer></script>
-  <script src="components.js?v=796aed76b7" defer></script>
-  <script src="reviews-data.js?v=796aed76b7" defer></script>
-  <script src="reviews.js?v=796aed76b7" defer></script>
-  <script src="hero-visual.js?v=796aed76b7" defer></script>
+  <script src="seo-config.js?v=d7e07a26e1" defer></script>
+  <link rel="stylesheet" href="style.css?v=d7e07a26e1" />
+  <script src="blog-data.js?v=d7e07a26e1" defer></script>
+  <script src="components.js?v=d7e07a26e1" defer></script>
+  <script src="reviews-data.js?v=d7e07a26e1" defer></script>
+  <script src="reviews.js?v=d7e07a26e1" defer></script>
+  <script src="hero-visual.js?v=d7e07a26e1" defer></script>
 
   <script type="application/ld+json">
   {
@@ -361,92 +361,6 @@
           "https://boardgamesflix.com/boardgames/kyran",
           "https://www.instagram.com/kyran.jeu/"
         ]
-      },
-      {
-        "@type": "VideoObject",
-        "@id": "https://kyran-jeu.fr/#video-bande-annonce",
-        "name": "KYRAN — Bande-annonce",
-        "description": "Bande-annonce du jeu de cartes KYRAN : ambiance, matériel et tension d'une partie de plis, de paris et de bluff.",
-        "thumbnailUrl": [
-          "https://i.ytimg.com/vi/y0YVn-lZMAc/maxresdefault.jpg",
-          "https://i.ytimg.com/vi/y0YVn-lZMAc/hqdefault.jpg"
-        ],
-        "uploadDate": "2025-10-07",
-        "duration": "PT1M",
-        "embedUrl": "https://www.youtube.com/embed/y0YVn-lZMAc",
-        "contentUrl": "https://www.youtube.com/watch?v=y0YVn-lZMAc",
-        "inLanguage": "fr-FR",
-        "publisher": {"@id": "https://kyran-jeu.fr/#organization"},
-        "isPartOf": {"@id": "https://kyran-jeu.fr/#website"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Combien de joueurs pour KYRAN ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "KYRAN se joue de 3 à 6 joueurs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quelle est la durée d'une partie ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Une partie dure environ 30 minutes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "À partir de quel âge peut-on jouer ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Le jeu est recommandé à partir de 8 ans."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "KYRAN est-il un jeu apéro ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. KYRAN dure environ 30 minutes pour 3 à 6 joueurs et convient parfaitement à un apéro ou une soirée entre amis."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "KYRAN est-il une alternative à Skyjo ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pour une soirée rapide oui, mais les mécaniques diffèrent : Skyjo repose sur la mémoire, KYRAN sur les plis et les paris."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "KYRAN est-il inspiré du Tarot Africain ou du Whist ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. KYRAN revisite les mécaniques traditionnelles du Tarot Africain (Whist 22) avec un système de pari modernisé pour 3 à 6 joueurs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Où acheter KYRAN ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "KYRAN est disponible sur la boutique officielle à 9,99€ (frais de livraison calculés au paiement) et sur Amazon au prix de 17,99€ avec livraison Prime."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Comment apprendre les règles rapidement ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Via la vidéo Ludochrono (5 minutes), les règles écrites sur regle.html ou l'Initiation interactive gratuite sur minijeu.html."
-            }
-          }
-        ]
       }
     ]
   }
@@ -633,7 +547,7 @@
                 </svg>
                 <span>Commander le jeu</span>
               </a>
-              <a class="btn btn-secondary btn-hero-sec" href="regle.html#video">
+              <a class="btn btn-secondary btn-hero-sec" href="/video-regles.html">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 <span>Règles vidéo (5 min)</span>
               </a>
@@ -903,14 +817,13 @@
         <div class="section-divider"></div>
         <p class="section-sub reveal-on-scroll" data-delay="1">Découvrez l'ambiance et le rythme des parties en vidéo</p>
         <div class="video-container reveal-on-scroll" data-delay="2">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/y0YVn-lZMAc" 
-            title="Bande-annonce du jeu KYRAN" 
-            loading="lazy" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
+          <button type="button" class="video-facade__btn" data-video-facade data-youtube="y0YVn-lZMAc" data-title="Bande-annonce du jeu KYRAN" aria-label="Lire la bande-annonce de KYRAN (vidéo YouTube, environ 1 minute)">
+            <img class="video-facade__img--contain" src="/og-kyran.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async" />
+            <span class="video-facade__play" aria-hidden="true"></span>
+            <span class="video-facade__label">Bande-annonce · 1 min</span>
+          </button>
         </div>
+        <p class="video-watch__more reveal-on-scroll" data-delay="2"><a class="text-link" href="/video-regles.html">Voir les règles complètes en vidéo (Ludochrono, 5 min)</a></p>
       </div>
     </section>
 
@@ -1106,15 +1019,15 @@
       
         <a href="/blog/meilleurs-jeux-apero.html" class="blog-card" data-category="Apéro">
           <div class="blog-card-image">
-            <picture><source srcset="/blog/images/jungle-speed.webp" type="image/webp" /><img src="/blog/images/jungle-speed.jpg" alt="Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <picture><source srcset="/blog/images/jungle-speed.webp" type="image/webp" /><img src="/blog/images/jungle-speed.jpg" alt="Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table" width="400" height="225" loading="lazy" decoding="async" /></picture>
             <span class="blog-badge">Apéro</span>
-            <span class="blog-card-games">8 jeux</span>
-            <span class="blog-card-read">10 min</span>
+            <span class="blog-card-games">9 jeux</span>
+            <span class="blog-card-read">13 min</span>
           </div>
           <div class="blog-card-body">
             <p class="blog-card-meta">3 mai 2026</p>
-            <h3>Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</h3>
-            <p class="blog-card-excerpt">Quels jeux de cartes sortir à l’apéro ? 8 jeux pour tables encombrées de verres, invités qui arrivent par vagues et règles expliquées en deux minutes.</p>
+            <h3>Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</h3>
+            <p class="blog-card-excerpt">Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.</p>
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
@@ -1134,6 +1047,56 @@
           </div>
         </a>
       </div></kyran-blog-grid>
+        <nav class="home-guides" aria-labelledby="home-guides-title">
+          <h3 id="home-guides-title" class="home-guides__title">Trouver le bon jeu de cartes</h3>
+          <div class="home-guides__grid">
+            <div>
+              <p class="home-guides__label">Selon le nombre de joueurs</p>
+              <ul>
+                <li><a href="/blog/jeux-duo-couples.html">À deux</a></li>
+                <li><a href="/blog/jeux-3-joueurs.html">À 3 joueurs</a></li>
+                <li><a href="/blog/jeux-cartes-4-joueurs.html">À 4 joueurs</a></li>
+                <li><a href="/blog/jeux-cartes-6-joueurs.html">À 5 ou 6 joueurs</a></li>
+                <li><a href="/blog/jeux-grands-groupes.html">À 7 joueurs et plus</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="home-guides__label">Selon l'occasion</p>
+              <ul>
+                <li><a href="/blog/meilleurs-jeux-apero.html">Apéro et afterwork</a></li>
+                <li><a href="/blog/jeux-30-minutes.html">Partie de 30 minutes</a></li>
+                <li><a href="/blog/jeux-vacances-voyage.html">Vacances et voyage</a></li>
+                <li><a href="/blog/jeux-famille.html">En famille</a></li>
+                <li><a href="/blog/cadeau-noel.html">Cadeau de Noël</a></li>
+                <li><a href="/blog/cadeau-anniversaire.html">Cadeau d'anniversaire, petit budget</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="home-guides__label">Selon le style de jeu</p>
+              <ul>
+                <li><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></li>
+                <li><a href="/blog/jeux-bluff-pari.html">Bluff et pari</a></li>
+                <li><a href="/blog/jeux-coop-cartes.html">Coopératifs</a></li>
+                <li><a href="/blog/jeux-strategie-legere.html">Stratégie légère</a></li>
+                <li><a href="/blog/jeux-sans-elimination.html">Sans élimination</a></li>
+                <li><a href="/blog/jeux-memoire-concentration.html">Mémoire et concentration</a></li>
+                <li><a href="/blog/jeux-debutants-adultes.html">Adultes débutants</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="home-guides__label">Si vous aimez déjà…</p>
+              <ul>
+                <li><a href="/blog/alternatives-wizard.html">Wizard</a></li>
+                <li><a href="/blog/alternatives-belote-coinche.html">La belote, la coinche</a></li>
+                <li><a href="/blog/alternatives-uno.html">Uno</a></li>
+                <li><a href="/blog/jeux-comme-6-qui-prend.html">6 qui prend</a></li>
+                <li><a href="/blog/jeux-comme-exploding-kittens.html">Exploding Kittens</a></li>
+                <li><a href="/blog/jeux-comme-dixit.html">Dixit</a></li>
+                <li><a href="/blog/jeux-comme-codenames.html">Codenames</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <p class="text-link-wrap" style="text-align:center;margin-top:var(--space-4);">
           <a class="btn btn-secondary" href="/blog/">Voir tous les articles</a>
         </p>
@@ -1176,7 +1139,7 @@
             <p class="footer-heading">Explorer</p>
             <p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/faq.html">FAQ</a></p><p><a href="/communaute.html">Communauté</a></p><p><a href="/a-propos.html">À propos</a></p>
           </div>
-          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro : 8 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que dit la science</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que disent les études</a></p><p><a href="/blog/">Tous les articles</a></p></div>
           <div class="footer-col footer-col--contact">
             <p class="footer-heading">Contact</p>
             <p><a href="/regle.html">R&egrave;gles du jeu</a></p>

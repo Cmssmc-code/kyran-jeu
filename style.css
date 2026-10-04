@@ -1868,6 +1868,48 @@ button:active,
 }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+/* Vidéo chargée au clic (accueil, règles) : la page de lecture est /video-regles.html */
+.video-facade__btn {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  padding: 0; border: 0; background: #000; cursor: pointer; display: block;
+}
+.video-facade__btn img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.82; transition: opacity var(--speed); }
+.video-facade__btn:hover img, .video-facade__btn:focus-visible img { opacity: 1; }
+.video-facade__play {
+  position: absolute; top: 50%; left: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px;
+  border-radius: 50%; background: rgba(0, 0, 0, 0.72); border: 2px solid var(--gold);
+}
+.video-facade__play::after {
+  content: ''; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%);
+  border-style: solid; border-width: 13px 0 13px 22px; border-color: transparent transparent transparent #fff;
+}
+.video-facade__label {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); color: #fff;
+  font-weight: 600; font-size: 0.95rem; text-align: left;
+}
+.video-container--teaser { max-width: 620px; }
+.video-container video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; }
+
+/* Accueil : index des guides du blog (maillage interne) */
+.home-guides { margin-top: var(--space-5); padding: var(--space-4); border-radius: var(--radius); background: #ffffff; border: 1px solid #e7e2d9; }
+.home-guides__title { margin: 0 0 var(--space-3); text-align: center; font-size: 1.3rem; }
+.home-guides__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
+.home-guides__label { margin: 0 0 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); }
+.home-guides ul { margin: 0; padding: 0; list-style: none; }
+.home-guides li { margin: 0 0 6px; }
+.home-guides a { color: #292524; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.home-guides a:hover { color: var(--gold-dark); }
+
+/* Page de lecture /video-regles.html : la vidéo au-dessus de la ligne de flottaison */
+.video-watch { padding: var(--space-4) 0 var(--space-5); }
+.video-watch__title { font-size: clamp(1.9rem, 4.5vw, 3rem); margin: var(--space-2) 0 6px; text-align: center; }
+.video-watch__lead { text-align: center; margin: 0 0 var(--space-3); color: #57534e; }
+.video-container--watch { max-width: 1000px; }
+.video-watch__credit { text-align: center; font-size: 0.9rem; color: #78716c; margin: var(--space-2) auto 0; max-width: 1000px; }
+.video-watch-notes { padding-top: 0; }
+.video-watch__more { text-align: center; margin-top: var(--space-3); }
+
 .eyebrow-center {
   text-align: center;
   display: block;
@@ -6661,6 +6703,46 @@ section > .container {
   border-bottom-color: var(--accent-cream-border);
 }
 .article-verdict__body p:last-child { margin-bottom: 0; }
+
+/* Groupes thématiques de jeux (layout.groups) */
+.article-group { margin: var(--space-5) 0; }
+.article-group__intro {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #292524;
+  margin-bottom: var(--space-3);
+}
+.article-group__intro p { margin: 0 0 1.1em; }
+
+/* Mot de l'auteur (texte fourni et signé par l'auteur) */
+.article-author-note {
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: #ffffff;
+  border: 1px solid #e7e2d9;
+  border-top: 4px solid var(--gold);
+}
+.article-author-note .article-section-label { margin-top: 0; }
+.article-author-note__body { font-size: 1.02rem; line-height: 1.8; color: #292524; }
+.article-author-note__body p { margin: 0 0 1.1em; }
+.article-author-note__sign {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gold-dark);
+}
+
+/* Photos de parties réelles */
+.article-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+.article-photo { margin: 0; }
+.article-photo img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.article-photo figcaption { font-size: 0.85rem; color: #78716c; margin-top: 6px; }
 
 .article-compare .compare-table-wrap { margin-top: var(--space-2); }
 .compare-table tbody th {

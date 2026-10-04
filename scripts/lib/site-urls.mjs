@@ -34,6 +34,22 @@ export const STATIC_PAGES = [
       <image:caption>Règles complètes du jeu de cartes KYRAN</image:caption>
     </image:image>`
   },
+  {
+    // Page de lecture : la vidéo y est l'élément principal (Search Console, rapport Vidéos)
+    path: '/video-regles.html',
+    title: 'Règles de KYRAN en vidéo (Ludochrono, 5 min)',
+    section: 'KYRAN',
+    sitemapExtra: `
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/aconMJG9uSQ/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Comment jouer à KYRAN — les règles en vidéo (Ludochrono)</video:title>
+      <video:description>Les règles du jeu de cartes KYRAN expliquées en 5 minutes par Ludovox : mise en place, paris sur le nombre exact de plis, plis, cartes Pouvoir et manche Mystique.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/aconMJG9uSQ</video:player_loc>
+      <video:duration>300</video:duration>
+      <video:publication_date>2026-01-31</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>`
+  },
   { path: '/minijeu.html', title: 'Initiation KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   {

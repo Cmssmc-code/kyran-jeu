@@ -58,6 +58,8 @@ export function articleText(a) {
   for (const g of a.games || []) parts.push(...(g.paragraphs || []), g.pick || '');
   for (const f of a.faq || []) parts.push(f.q, f.a);
   for (const s of a.extraSections || []) parts.push(s.html);
+  for (const g of (a.layout && a.layout.groups) || []) parts.push(g.html || '');
+  if (a.authorNote) parts.push(a.authorNote.html);
   return parts.filter(Boolean).map(stripHtml).join('\n');
 }
 
@@ -89,7 +91,10 @@ export function normalizeArticle(raw) {
       paragraphs: g.paragraphs
     };
   });
-  const article = { ...raw, games };
+  // Groupes thématiques : l'ordre des jeux suit celui des groupes (tableau, ItemList, numéros)
+  const groups = raw.layout && raw.layout.groups;
+  const ordered = groups ? groups.flatMap(gr => gr.ids.map(id => games.find(g => g.id === id)).filter(Boolean)) : games;
+  const article = { ...raw, games: ordered };
   const words = wordCount(articleText(article));
   article.wordCount = words;
   article.readMinutes = Math.max(3, Math.round(words / 210));

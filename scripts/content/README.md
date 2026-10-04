@@ -57,6 +57,41 @@ export default {
 Facultatifs : `subtitle` dans un jeu (sous-titre), `extraSections: [{ heading, html }]` pour une
 section supplémentaire après la liste (ex. variantes de règles), `guideLinks` (HTML).
 
+### Structure propre à chaque article (`layout`, `headings`)
+
+Audit Search Console du 4 octobre 2026 : les articles non indexés partageaient tous le même gabarit
+(mêmes H2, 8 jeux, ~33 liens externes). Chaque article doit avoir **sa** structure :
+
+```js
+layout: {
+  answerFirst: true,        // l'avis tranché juste après l'intro (réponse directe)
+  criteriaAfter: true,      // les critères de choix après la sélection (guide de lecture)
+  criteriaShort: 'Méthode', // libellé court des critères dans la barre de navigation
+  compare: false,           // pas de tableau ; ou { position: 'after' } (après les fiches)
+  numbered: false,          // fiches sans numéro 01, 02…
+  summaryBox: false,        // pas d'encadré « En bref »
+  shopLinks: true,          // lien boutique (Philibert) au lieu de BoardGameGeek : guides d'achat
+  groups: [                 // fiches regroupées sous des H2 thématiques (≥ 2 groupes,
+    { heading: '…', html: '<p>…</p>', ids: ['the-crew', 'hanabi'] }, // chaque jeu une seule fois)
+    { heading: '…', ids: ['love-letter', 'kyran'] }
+  ]
+},
+headings: { selection: '…', compare: '…', conclusion: '…', faq: '…', related: '…' } // libellés H2
+```
+
+Varier aussi `verdict.heading`, `criteria.heading` et le nombre de jeux (5 à 10, pas 8 partout).
+Chaque fiche tierce n'a qu'**un** lien externe (BoardGameGeek, ou la boutique avec `shopLinks`).
+
+### Contenu de première main (fourni par l'auteur, jamais rédigé à sa place)
+
+- `authorNote: { html, provided: 'AAAA-MM-JJ', date?, heading? }` : mot signé de l'auteur de KYRAN
+  (bloc « Le mot de l'auteur »). `provided` = date à laquelle l'auteur a fourni le texte ; le
+  validateur refuse un `authorNote` sans cette date.
+- `photos: [{ src, alt, caption }]` : photos de parties réelles, fichiers hébergés sur le site
+  (ex. `/blog/images/parties/<fichier>.jpg`), crédit dans `caption`.
+- Retours de test chiffrés (durée mesurée, nombre de joueurs) : uniquement s'ils sont fournis par
+  l'auteur, dans `authorNote` ou une `extraSections`, avec leur source.
+
 Générés automatiquement (ne pas écrire) : tableau comparatif, sommaire, temps de lecture,
 `dateModified`, JSON-LD, bloc « À lire aussi », liens BGG / Philibert.
 

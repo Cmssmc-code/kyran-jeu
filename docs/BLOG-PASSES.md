@@ -41,7 +41,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 
 | Date | Type | Article | Mot-clé principal | PR |
 |---|---|---|---|---|
-| 2026-10-04 | Rafraîchissement (passage au format généré) | `jeux-cartes-6-joueurs` | jeu de cartes 6 joueurs | branche `claude/busy-rubin-xb9jj9` |
+| 2026-10-04 | Rafraîchissement (passage au format généré) | `jeux-cartes-6-joueurs` | jeu de cartes 6 joueurs | [#18](https://github.com/Cmssmc-code/kyran-jeu/pull/18) |
 
 ## En attente
 
@@ -54,6 +54,9 @@ Rafraîchissements repérés (par ordre de priorité) :
    relire par une personne qualifiée (voir `docs/SEO-GEO.md`, § 8).
 3. **`alternatives-uno`** : parle d'une « manche finale à une seule carte » pour KYRAN ; la manche
    Mystique clôt chaque cycle, puis on repart à sept cartes.
+4. **`jeux-sans-elimination`** : la description annonce « 8 jeux de cartes sans joueur éliminé » alors
+   que la sélection compte KYRAN, dont la fiche explique bien que la première élimination termine la
+   partie. Ajuster la description (et `llms-full.txt` suivra au build).
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`), contrôlés le 4 octobre 2026 : les
 liens de Skull, Wizard, Colt Express, For Sale, Saboteur et 6 qui prend ! sont corrigés. Restent faux

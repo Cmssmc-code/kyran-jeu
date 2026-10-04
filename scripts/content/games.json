@@ -26,7 +26,7 @@
     "age": "8+",
     "price": "~15 €",
     "image": "/blog/images/skyjo.jpg",
-    "designer": "Magilano",
+    "designer": "Alexander Bernhardt",
     "year": 2015
   },
   "hanabi": {
@@ -266,7 +266,7 @@
     "age": "8+",
     "price": "~22 €",
     "image": "/blog/images/just-one.jpg",
-    "designer": "Steven Du Vernet",
+    "designer": "Ludovic Roudy et Bruno Sautter",
     "year": 2018
   },
   "for-sale": {
@@ -306,7 +306,7 @@
     "age": "8+",
     "price": "~9 €",
     "image": "/blog/images/monopoly-deal.jpg",
-    "designer": "Hasbro",
-    "year": 2014
+    "designer": "Katharine Chapman",
+    "year": 2008
   }
 }

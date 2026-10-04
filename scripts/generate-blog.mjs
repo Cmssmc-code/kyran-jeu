@@ -176,7 +176,11 @@ function buildAboutGames(games) {
     };
     const sameAs = [meta.bgg, meta.wiki].filter(Boolean);
     if (sameAs.length) entry.sameAs = sameAs;
-    if (meta.designer) entry.author = { '@type': 'Person', name: meta.designer };
+    if (meta.designer) {
+      // « Ludovic Roudy et Bruno Sautter » : une Person par auteur.
+      const authors = meta.designer.split(' et ').map(name => ({ '@type': 'Person', name }));
+      entry.author = authors.length > 1 ? authors : authors[0];
+    }
     return entry;
   });
 }

@@ -11,9 +11,9 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 ### 2026-10-04 — Fiches de jeux : liens BoardGameGeek vers d'autres jeux, liens Wikipédia morts
 
-- **Symptôme :** sur les fiches du blog, « BoardGameGeek » ouvrait un autre jeu pour Skull (un numéro de magazine), Wizard (« Operation Ironfist ») et Colt Express (« Star Fleet Battles ») ; les liens Wikipédia de 6 qui prend !, For Sale, Skull et Saboteur renvoyaient 404. Les mêmes URL alimentent le `sameAs` JSON-LD, qui associait donc ces jeux à d'autres œuvres.
+- **Symptôme :** sur les fiches du blog, « BoardGameGeek » ouvrait un autre jeu pour Skull (un numéro de magazine), Wizard (« Operation Ironfist »), Colt Express (« Star Fleet Battles »), Skyjo (« Creature Quest »), Dixit, Oh Hell!, Parade, Schotten Totten (« Fluxx »), Letter Jam et Monopoly Deal ; 22 liens Wikipédia renvoyaient 404 ou une page d'homonymie (dont 4 dans l'article rédigé à la main). La fiche affichait aussi « Auteur Magilano » (l'éditeur de Skyjo) et « Steven Du Vernet » pour Just One. Les mêmes URL alimentent le `sameAs` JSON-LD, qui associait donc ces jeux à d'autres œuvres.
 - **Cause :** identifiants BGG et titres Wikipédia saisis de mémoire dans `scripts/lib/game-links.mjs`, jamais vérifiés (BGG choisit la page d'après l'identifiant et ignore le slug ; il renvoie 403 aux robots, ce qui masque l'erreur).
-- **Correctif :** liens des six jeux corrigés après vérification (`api.geekdo.com/api/geekitems?objectid=<id>` pour BGG, Wikidata P2339 et `curl` 200 pour Wikipédia). Règle : ne jamais ajouter un lien de jeu sans avoir vérifié qu'il ouvre le bon jeu ; les liens encore faux sont listés dans `docs/BLOG-PASSES.md`.
+- **Correctif :** tous les liens revérifiés (#18 puis passe dédiée) : identifiant BGG contrôlé par `api.geekdo.com/api/geekitems?objectid=<id>` (nom et auteur), page Wikipédia prise dans les sitelinks Wikidata (français, sinon anglais) et contrôlée par `curl` (200, ni redirection ni homonymie) ; pas de clé `wiki` quand aucun article n'existe. Même correction dans l'article rédigé à la main `jeux-cartes-adultes`. Règle : ne jamais ajouter un lien de jeu sans avoir vérifié qu'il ouvre le bon jeu.
 
 ### 2026-10-04 — Search Console : articles non indexés, vidéos hors page de lecture
 

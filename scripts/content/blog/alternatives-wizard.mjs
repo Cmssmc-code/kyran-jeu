@@ -46,7 +46,7 @@ export default {
 <h3>Trois critères qui tranchent</h3>
 <p>Le premier est la durée. Les manches de Wizard s'allongent jusqu'à épuiser le paquet : vingt manches à trois joueurs, quinze à quatre, dix à six. Un joueur qui s'effondre à la sixième manche d'une partie à quatre doit encore en subir neuf. Si votre groupe décroche en route, cherchez un jeu à main plafonnée ou à fin brutale, comme KYRAN (sept cartes au maximum).</p>
 <p>Le deuxième est le nombre de joueurs. Wizard démarre à trois et s'arrête à six. Pour jouer à deux, il faut sortir de l'annonce : The Crew, Parade et 6 qui prend ! acceptent un duo. Pour sept joueurs ou plus, Oh Hell grimpe jusqu'à sept et 6 qui prend ! jusqu'à dix.</p>
-<p>Le troisième est votre rapport au calcul. Si vous aimez compter les atouts tombés, restez dans la première famille, avec Oh Hell en tête. Si vous voulez ranger la feuille de score, Skull et 6 qui prend ! demandent surtout du flair. Évitez enfin de choisir sur la seule ressemblance : un jeu « comme Wizard » qui ne se joue qu'à quatre ne dépannera pas une soirée à six.</p>`
+<p>Le troisième est votre rapport au calcul. Si vous aimez compter les atouts tombés, restez dans la première famille, avec Oh Hell en tête. Si vous voulez ranger la feuille de score, Skull et 6 qui prend ! demandent surtout du flair. Évitez enfin de choisir sur la seule ressemblance : un jeu « comme Wizard » qui ne se joue qu'à quatre ne dépannera pas une <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">soirée à six</a>.</p>`
   },
   games: [
     {

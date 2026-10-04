@@ -77,7 +77,7 @@ export const GAME_LINKS = {
   },
   saboteur: {
     bgg: 'https://boardgamegeek.com/boardgame/9220/saboteur',
-    wiki: 'https://fr.wikipedia.org/wiki/Saboteur_(jeu)',
+    wiki: 'https://fr.wikipedia.org/wiki/Saboteur_(jeu_de_soci%C3%A9t%C3%A9)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=saboteur',
     designer: 'Frédéric Moyersoen',
     year: 2004,
@@ -92,8 +92,8 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Wikimedia Commons'
   },
   skull: {
-    bgg: 'https://boardgamegeek.com/boardgame/92491/skull',
-    wiki: 'https://fr.wikipedia.org/wiki/Skull_(jeu)',
+    bgg: 'https://boardgamegeek.com/boardgame/92415/skull',
+    wiki: 'https://en.wikipedia.org/wiki/Skull_(card_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=skull',
     designer: 'Hervé Marly',
     year: 2011,
@@ -116,7 +116,7 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Wikimedia Commons'
   },
   wizard: {
-    bgg: 'https://boardgamegeek.com/boardgame/15257/wizard',
+    bgg: 'https://boardgamegeek.com/boardgame/1465/wizard',
     wiki: 'https://en.wikipedia.org/wiki/Wizard_(card_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=wizard',
     designer: 'Ken Fisher',
@@ -124,7 +124,7 @@ export const GAME_LINKS = {
     imageCredit: 'Photo — Wikimedia Commons'
   },
   'colt-express': {
-    bgg: 'https://boardgamegeek.com/boardgame/158098/colt-express',
+    bgg: 'https://boardgamegeek.com/boardgame/158899/colt-express',
     wiki: 'https://fr.wikipedia.org/wiki/Colt_Express',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=colt+express',
     designer: 'Christophe Raimbault',
@@ -149,7 +149,7 @@ export const GAME_LINKS = {
   },
   '6-qui-prend': {
     bgg: 'https://boardgamegeek.com/boardgame/432/take-6',
-    wiki: 'https://fr.wikipedia.org/wiki/6_qui_prend!',
+    wiki: 'https://fr.wikipedia.org/wiki/6_qui_prend_!',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=6+qui+prend',
     designer: 'Wolfgang Kramer',
     year: 1994,
@@ -229,7 +229,7 @@ export const GAME_LINKS = {
   },
   'for-sale': {
     bgg: 'https://boardgamegeek.com/boardgame/172/For-Sale',
-    wiki: 'https://fr.wikipedia.org/wiki/For_Sale_(jeu)',
+    wiki: 'https://en.wikipedia.org/wiki/For_Sale_(board_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=for+sale',
     designer: 'Stefan Dorra',
     year: 1997,

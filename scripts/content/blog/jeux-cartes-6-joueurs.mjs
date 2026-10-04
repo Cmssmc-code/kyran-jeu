@@ -67,7 +67,7 @@ export default {
       paragraphs: [
         `Chacun choisit une carte en secret, puis toute la table révèle en même temps : la durée d'un tour ne dépend donc pas du nombre de joueurs, ce qui fait de 6 qui prend ! le jeu le plus à l'aise de cette page quand la table se remplit. Les cartes se rangent par ordre croissant sur quatre rangées, et celui qui pose la sixième carte d'une rangée ramasse les cinq précédentes, avec leurs têtes de bœuf. Chaque joueur reçoit dix cartes par manche.`,
         `À cinq ou six, cinq ou six cartes arrivent sur seulement quatre rangées à chaque révélation : une rangée qui ne compte qu'une carte peut déborder dès le premier tour. Un 47 posé derrière un 42 paraît prudent, jusqu'à ce que d'autres joueurs glissent des cartes intermédiaires. C'est le sel du jeu et sa limite : on parie sur les choix des autres plus qu'on ne planifie, et un joueur méthodique n'en tire guère d'avantage.`,
-        `La durée affichée, environ 45 minutes, est longue pour un jeu aussi léger : fixer un seuil de points plus bas raccourcit la partie sans rien changer à la règle. L'explication tient en une minute, ce qui en fait un bon premier jeu de soirée.`
+        `La durée affichée, environ 45 minutes, est longue pour un jeu aussi léger : fixer un seuil de points plus bas raccourcit la partie sans rien changer à la règle. La pose se résume aux quatre règles numérotées de la règle de Gigamic, ce qui en fait un bon premier jeu de soirée.`
       ]
     },
     {
@@ -147,7 +147,7 @@ export default {
     },
     {
       q: 'Quel jeu de cartes à 6 joueurs choisir pour des débutants ?',
-      a: `6 qui prend ! s'explique en une minute et No Thanks! se résume à une décision par tour. Codenames convient si deux personnes à l'aise acceptent le rôle de maître-espion. Pour KYRAN, la variante d'initiation, sans cartes Pouvoir ni Mystique, permet une manche d'essai avant la vraie partie.`
+      a: `6 qui prend ! tient en quatre règles de pose et No Thanks! se résume à une décision par tour. Codenames convient si deux personnes à l'aise acceptent le rôle de maître-espion. Pour KYRAN, la variante d'initiation, sans cartes Pouvoir ni Mystique, permet une manche d'essai ; à six, ses 36 cartes ne suffisent pas pour la manche à sept cartes, et l'Initiation en ligne commence alors à six cartes.`
     },
     {
       q: 'Peut-on jouer en équipes à cinq ou six joueurs ?',

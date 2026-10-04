@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-04 — Fiches de jeux : liens BoardGameGeek vers d'autres jeux, liens Wikipédia morts
+
+- **Symptôme :** sur les fiches du blog, « BoardGameGeek » ouvrait un autre jeu pour Skull (un numéro de magazine), Wizard (« Operation Ironfist ») et Colt Express (« Star Fleet Battles ») ; les liens Wikipédia de 6 qui prend !, For Sale, Skull et Saboteur renvoyaient 404. Les mêmes URL alimentent le `sameAs` JSON-LD, qui associait donc ces jeux à d'autres œuvres.
+- **Cause :** identifiants BGG et titres Wikipédia saisis de mémoire dans `scripts/lib/game-links.mjs`, jamais vérifiés (BGG choisit la page d'après l'identifiant et ignore le slug ; il renvoie 403 aux robots, ce qui masque l'erreur).
+- **Correctif :** liens des six jeux corrigés après vérification (`api.geekdo.com/api/geekitems?objectid=<id>` pour BGG, Wikidata P2339 et `curl` 200 pour Wikipédia). Règle : ne jamais ajouter un lien de jeu sans avoir vérifié qu'il ouvre le bon jeu ; les liens encore faux sont listés dans `docs/BLOG-PASSES.md`.
+
 ### 2026-10-04 — Search Console : articles non indexés, vidéos hors page de lecture
 
 - **Symptôme :** une vingtaine d'articles « explorés / détectés, actuellement non indexés » ; 3 vidéos refusées (« la vidéo n'est pas sur une page de lecture ») ; `FAQPage` de l'accueil sans questions visibles.

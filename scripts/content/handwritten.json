@@ -11,17 +11,6 @@
     "related": ["jeux-plis-comparatif", "jeux-memoire-concentration", "jeux-bluff-pari"]
   },
   {
-    "slug": "jeux-cartes-6-joueurs",
-    "title": "Top 8 des jeux de cartes à 6 joueurs sans temps mort",
-    "category": "Cartes",
-    "date": "2026-09-11",
-    "readMinutes": 13,
-    "excerpt": "Finis les tours interminables : 8 jeux de cartes pour 6 joueurs alliant bluff, rapidité et fous rires.",
-    "image": "/blog/images/6-qui-prend.jpg",
-    "gameCount": 8,
-    "related": ["jeux-cartes-5-joueurs", "jeux-cartes-4-joueurs", "meilleurs-jeux-apero"]
-  },
-  {
     "slug": "jeux-cartes-adultes",
     "title": "Top 8 des meilleurs jeux de cartes pour adultes",
     "category": "Soirée",

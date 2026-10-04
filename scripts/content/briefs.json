@@ -303,7 +303,7 @@
   },
   {
     "slug": "meilleurs-jeux-apero",
-    "angle": "Jeux de cartes pour l'apéro : contraintes concrètes (table encombrée de verres, invités qui arrivent par vagues, bruit, explication en 2 minutes, manches courtes qu'on peut quitter). Lien vers /jeu-apero.html (page dédiée KYRAN).",
+    "angle": "Jeux de cartes pour l'apéro : contraintes concrètes (table encombrée de verres, invités qui arrivent par vagues, bruit, explication en 2 minutes, manches courtes qu'on peut quitter). Lien vers /jeu-apero.html (page dédiée KYRAN). Absorbe l'ancien article afterwork / brise-glace : section dédiée aux groupes qui se connaissent peu (collègues), jeux classés selon ce qu'ils exposent, pièges propres au bureau (hiérarchie, heure de fin, langue).",
     "suggest": [
       "jungle-speed",
       "uno",
@@ -312,15 +312,21 @@
       "just-one",
       "love-letter",
       "bang",
+      "timeline",
       "kyran"
     ],
     "kyran": "include",
-    "count": 8,
-    "mergedFrom": [],
+    "count": 9,
+    "mergedFrom": [
+      "jeux-brise-glace-afterwork"
+    ],
     "queries": [
       "jeu de carte apéro",
       "jeux de cartes apéro",
-      "jeu apéro entre amis"
+      "jeu apéro entre amis",
+      "jeu brise glace soirée",
+      "jeu afterwork",
+      "jeu brise glace adulte"
     ],
     "notes": "Bing : positions 1-5 sur « jeu de carte apéro » — page à préserver et approfondir.",
     "date": "2026-05-03",
@@ -362,35 +368,6 @@
     "heroCaption": "Codenames — déduction et fous rires en équipe.",
     "oldTitle": "Meilleurs jeux entre amis pour une soirée",
     "oldMetaTitle": "Jeux soirée entre amis — 8 titres testés",
-    "category": "Soirée"
-  },
-  {
-    "slug": "jeux-brise-glace-afterwork",
-    "angle": "Jeux brise-glace pour afterwork, soirées d'équipe, rencontres : groupes qui ne se connaissent pas bien, pas de règles complexes, pas de gêne.",
-    "suggest": [
-      "just-one",
-      "codenames",
-      "dixit",
-      "dobble",
-      "timeline",
-      "love-letter",
-      "sushi-go",
-      "kyran"
-    ],
-    "kyran": "include",
-    "count": 8,
-    "mergedFrom": [],
-    "queries": [
-      "jeu brise glace soirée",
-      "jeu afterwork",
-      "jeu brise glace adulte"
-    ],
-    "notes": "",
-    "date": "2026-09-05",
-    "heroImage": "/blog/images/just-one.jpg",
-    "heroCaption": "Des cartes conviviales pour réchauffer n'importe quel afterwork.",
-    "oldTitle": "8 jeux de cartes brise-glace pour afterwork et soirées d'équipe",
-    "oldMetaTitle": "8 jeux de cartes brise-glace idéaux pour un afterwork ou une soirée",
     "category": "Soirée"
   },
   {
@@ -454,7 +431,7 @@
   },
   {
     "slug": "cadeau-anniversaire",
-    "angle": "Jeux à offrir pour un anniversaire : angle « profil de la personne et budget » (petit prix, cadeau marquant, cadeau collectif de groupe), jouable le jour même, boîte présentable.",
+    "angle": "Jeux à offrir pour un anniversaire : angle « profil de la personne et budget » (petit prix, cadeau marquant, cadeau collectif de groupe), jouable le jour même, boîte présentable. Absorbe l'ancien article « jeux de cartes pas chers » : fiches groupées par budget (moins de 15 €, 15 à 20 €, autour de 30 €), section sur la rejouabilité d'un jeu à petit prix, liens boutique (guide d'achat). Prix KYRAN 9,99 € en direct et 17,99 € sur Amazon sans fanfaronnade.",
     "suggest": [
       "love-letter",
       "skull",
@@ -463,14 +440,20 @@
       "bang",
       "colt-express",
       "skyjo",
+      "dobble",
       "kyran"
     ],
     "kyran": "include",
-    "count": 8,
-    "mergedFrom": [],
+    "count": 9,
+    "mergedFrom": [
+      "jeux-cartes-pas-chers"
+    ],
     "queries": [
       "cadeau anniversaire jeu de société",
-      "idée cadeau jeu de cartes anniversaire"
+      "idée cadeau jeu de cartes anniversaire",
+      "jeux de cartes pas chers",
+      "jeu de société pas cher",
+      "petit budget jeu de cartes"
     ],
     "notes": "",
     "date": "2026-05-09",
@@ -479,35 +462,6 @@
     "oldTitle": "Jeux à offrir pour un anniversaire",
     "oldMetaTitle": "Jeux à offrir anniversaire — 8 idées cadeau",
     "category": "Cadeaux"
-  },
-  {
-    "slug": "jeux-cartes-pas-chers",
-    "angle": "Jeux de cartes à moins de 20 € : classés par rapport qualité-prix et par nombre de parties que l'on en tire (rejouabilité). Tableau avec prix. Mentionnez le prix KYRAN 9,99 € en direct et 17,99 € sur Amazon sans fanfaronnade.",
-    "suggest": [
-      "uno",
-      "love-letter",
-      "dobble",
-      "jungle-speed",
-      "skull",
-      "saboteur",
-      "no-thanks",
-      "kyran"
-    ],
-    "kyran": "include",
-    "count": 8,
-    "mergedFrom": [],
-    "queries": [
-      "jeux de cartes pas chers",
-      "jeu de société pas cher",
-      "petit budget jeu de cartes"
-    ],
-    "notes": "",
-    "date": "2026-05-13",
-    "heroImage": "/blog/images/uno.jpg",
-    "heroCaption": "Uno — le classique abordable.",
-    "oldTitle": "Jeux de cartes pas chers (moins de 20 €)",
-    "oldMetaTitle": "Jeux de cartes pas chers — moins de 20 €",
-    "category": "Cartes"
   },
   {
     "slug": "jeux-30-minutes",
@@ -807,32 +761,36 @@
     "category": "Cartes"
   },
   {
-    "slug": "jeux-cartes-5-joueurs",
-    "angle": "Jeux de cartes à 5 joueurs : table impaire, pas d'équipes égales, tours qui s'allongent — quels jeux sont calibrés pour 5.",
+    "slug": "jeux-cartes-6-joueurs",
+    "angle": "Jeux de cartes à 5 ou 6 joueurs (fusion de l'article généré « 5 joueurs » et de l'article rédigé à la main « 6 joueurs ») : table impaire à 5 (pas d'équipes égales), table pleine à 6 (beaucoup de jeux à leur maximum), tours qui s'allongent. Jeux regroupés selon la façon dont ils suppriment l'attente (simultané, camps, bluff/paris) et, pour chacun, ce qui change entre 5 et 6 (rôles, cartes, jetons). KYRAN : tout le matériel à 5-6 (8 pouvoirs + Mystique).",
     "suggest": [
-      "skull",
-      "the-crew",
       "6-qui-prend",
-      "saboteur",
       "for-sale",
-      "bang",
       "no-thanks",
+      "saboteur",
+      "bang",
+      "codenames",
+      "skull",
       "kyran"
     ],
     "kyran": "include",
     "count": 8,
-    "mergedFrom": [],
+    "mergedFrom": [
+      "jeux-cartes-5-joueurs"
+    ],
     "queries": [
       "jeu de carte 5 joueurs",
       "jeux de société 5 joueurs",
-      "jeu de cartes à 5"
+      "jeu de cartes à 5",
+      "jeu de cartes 6 joueurs",
+      "jeux 6 joueurs"
     ],
-    "notes": "",
-    "date": "2026-09-05",
-    "heroImage": "/blog/images/skull.jpg",
-    "heroCaption": "Des cartes dynamiques pour les tables de cinq convives.",
-    "oldTitle": "Top 8 des jeux de cartes à 5 joueurs qui ne traînent pas",
-    "oldMetaTitle": "Top 8 des meilleurs jeux de cartes à 5 joueurs rapides et dynamiques",
+    "notes": "Page indexée, rédigée à la main jusqu'en octobre 2026 (gabarit « Top 8 », ~32 liens externes), désormais générée. Absorbe jeux-cartes-5-joueurs (non indexé), redirigé ici. Date de publication d'origine de la page 6 joueurs conservée.",
+    "date": "2026-09-11",
+    "heroImage": "/blog/images/6-qui-prend.jpg",
+    "heroCaption": "6 qui prend ! — les cartes se révèlent toutes en même temps, à cinq comme à six.",
+    "oldTitle": "Top 8 des jeux de cartes à 6 joueurs sans temps mort",
+    "oldMetaTitle": "Top 8 des jeux de cartes à 6 joueurs : fluide et rythmé",
     "category": "Cartes"
   },
   {

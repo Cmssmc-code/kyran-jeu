@@ -12,11 +12,9 @@
     "jeux-bluff-pari",
     "meilleurs-jeux-apero",
     "jeux-soiree-amis",
-    "jeux-brise-glace-afterwork",
     "jeux-grands-groupes",
     "cadeau-noel",
     "cadeau-anniversaire",
-    "jeux-cartes-pas-chers",
     "jeux-30-minutes",
     "jeux-vacances-voyage",
     "jeux-famille",
@@ -27,13 +25,12 @@
     "jeux-3-joueurs",
     "jeux-duo-couples",
     "jeux-cartes-4-joueurs",
-    "jeux-cartes-5-joueurs",
+    "jeux-cartes-6-joueurs",
     "jeux-strategie-legere",
     "jeux-draft-encheres"
   ],
   "handwritten": [
     "science-jeux-de-cartes-cerveau",
-    "jeux-cartes-6-joueurs",
     "jeux-cartes-adultes"
   ],
   "redirects": {
@@ -49,7 +46,10 @@
     "/blog/jeux-ete-terrasse.html": "/blog/jeux-vacances-voyage.html",
     "/blog/jeux-cartes-addictifs-poche.html": "/blog/jeux-vacances-voyage.html",
     "/blog/jeux-classiques-modernes.html": "/blog/alternatives-uno.html",
-    "/whist-moderne.html": "/whist-22.html"
+    "/whist-moderne.html": "/whist-22.html",
+    "/blog/jeux-cartes-5-joueurs.html": "/blog/jeux-cartes-6-joueurs.html",
+    "/blog/jeux-brise-glace-afterwork.html": "/blog/meilleurs-jeux-apero.html",
+    "/blog/jeux-cartes-pas-chers.html": "/blog/cadeau-anniversaire.html"
   },
   "pages": [
     "/",

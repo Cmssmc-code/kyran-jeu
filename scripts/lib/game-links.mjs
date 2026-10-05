@@ -123,7 +123,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=wizard',
     designer: 'Ken Fisher',
     year: 1984,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Logo — Ken Fisher, vectorisé par TheWanderingTraders, Wikimedia Commons, CC BY-SA 4.0'
   },
   'colt-express': {
     bgg: 'https://boardgamegeek.com/boardgame/158899/colt-express',
@@ -170,7 +170,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=schotten+totten',
     designer: 'Reiner Knizia',
     year: 1999,
-    imageCredit: 'Photo — KOSMOS'
+    imageCredit: 'Photo — PS Games'
   },
   'sushi-go': {
     bgg: 'https://boardgamegeek.com/boardgame/133473/sushi-go',
@@ -193,8 +193,9 @@ export const GAME_LINKS = {
     wiki: 'https://en.wikipedia.org/wiki/Coup_(card_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=coup',
     designer: 'Rikki Tahta',
-    year: 2012,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 2012
+    // Pas d'image : aucune photo libre de Coup trouvée ; l'ancienne (une planche de loterie
+    // ancienne venue d'une recherche Commons) n'avait rien à voir avec le jeu.
   },
   'just-one': {
     bgg: 'https://boardgamegeek.com/boardgame/254640/just-one',
@@ -208,7 +209,7 @@ export const GAME_LINKS = {
     bgg: 'https://boardgamegeek.com/boardgame/147020/star-realms',
     wiki: 'https://fr.wikipedia.org/wiki/Star_Realms',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=star+realms',
-    designer: 'Robert Dougherty',
+    designer: 'Darwin Kastle et Robert Dougherty',
     year: 2014,
     imageCredit: 'Photo — Wikimedia Commons'
   },

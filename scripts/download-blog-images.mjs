@@ -1,5 +1,5 @@
 /**
- * Télécharge photos jeux : Wikimedia Commons + fallback Wikipedia.
+ * Télécharge photos jeux : fichier Wikimedia Commons nommé, sinon image de la page Wikipédia.
  * Run: node scripts/download-blog-images.mjs
  */
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'fs';
@@ -35,7 +35,6 @@ const GAMES = {
   'parade.jpg': { commons: 'Parade_(card_game).jpg', wiki: 'Parade_(card_game)' },
   'sushi-go.jpg': { commons: 'Sushi_Go!_card_game.jpg', wiki: 'Sushi_Go!' },
   'the-mind.jpg': { commons: 'The_Mind_(card_game).jpg', wiki: 'The_Mind_(game)' },
-  'coup.jpg': { commons: 'Coup_(card_game).jpg', wiki: 'Coup_(card_game)' },
   'just-one.jpg': { commons: 'Just_One_(board_game).jpg', wiki: 'Just_One_(board_game)' },
   'star-realms.jpg': { commons: 'Star_Realms.jpg', wiki: 'Star_Realms' },
   'no-thanks.jpg': { commons: 'No_Thanks!_card_game.jpg', wiki: 'No_Thanks!' },
@@ -106,28 +105,6 @@ async function wikiThumb(title) {
   return page.thumbnail?.source || null;
 }
 
-async function commonsSearch(query) {
-  const params = new URLSearchParams({
-    action: 'query',
-    generator: 'search',
-    gsrsearch: query + ' filetype:bitmap',
-    gsrnamespace: '6',
-    gsrlimit: '5',
-    prop: 'imageinfo',
-    iiprop: 'url',
-    iiurlwidth: '1200',
-    format: 'json',
-    origin: '*'
-  });
-  const data = await apiFetch('https://commons.wikimedia.org/w/api.php?' + params);
-  const pages = Object.values(data.query?.pages || {}).sort((a, b) => a.index - b.index);
-  for (const p of pages) {
-    const url = p.imageinfo?.[0]?.thumburl || p.imageinfo?.[0]?.url;
-    if (url) return url;
-  }
-  return null;
-}
-
 async function download(url, dest) {
   const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow' });
   if (!res.ok) throw new Error('DL ' + res.status);
@@ -137,8 +114,7 @@ async function download(url, dest) {
   return buf.length;
 }
 
-async function resolveUrl(config, local) {
-  const name = local.replace('.jpg', '').replace(/-/g, ' ');
+async function resolveUrl(config) {
   const width = config.width || 1200;
   if (config.commons) {
     try {
@@ -154,11 +130,10 @@ async function resolveUrl(config, local) {
     } catch { /* retry next */ }
     await sleep(1200);
   }
-  try {
-    return await commonsSearch(name + ' card game box');
-  } catch {
-    return null;
-  }
+  // Pas de repli sur une recherche Commons : son premier résultat peut n'avoir aucun rapport
+  // avec le jeu (pour Coup, une planche « Loterie aux petites images »). Sans fichier nommé ni
+  // image de la page Wikipédia, le jeu reste sans image.
+  return null;
 }
 
 const results = [];
@@ -178,7 +153,7 @@ for (const [local, config] of Object.entries(GAMES)) {
     } catch { /* re-download */ }
   }
   try {
-    const url = await resolveUrl(config, local);
+    const url = await resolveUrl(config);
     if (!url) {
       console.log('FAIL', local, 'no URL');
       results.push({ local, status: 'FAIL' });

@@ -41,6 +41,23 @@ export function stripHtml(s) {
   return String(s || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * Coupe un texte à `max` caractères sur une fin de phrase ; à défaut, sur un espace, avec des
+ * points de suspension. Sert aux descriptions JSON-LD : une coupe en plein mot donnait aux moteurs
+ * une règle tronquée (la description de Coup s'arrêtait sur « s'il »).
+ */
+export function clipText(s, max) {
+  const text = String(s || '');
+  if (text.length <= max) return text;
+  const head = text.slice(0, max + 1);
+  const re = /[.!?…](?=\s)/g;
+  let end = -1;
+  let m;
+  while ((m = re.exec(head))) if (m.index < max) end = m.index;
+  if (end >= max * 0.25) return text.slice(0, end + 1);
+  return text.slice(0, max).replace(/\s+\S*$/, '') + '…';
+}
+
 export function wordCount(s) {
   return stripHtml(s).split(/\s+/).filter(Boolean).length;
 }

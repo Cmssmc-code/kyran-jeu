@@ -8,7 +8,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { GAME_LINKS } from './lib/game-links.mjs';
 import { loadItems, SITE, stripHtml } from './lib/items.mjs';
-import { formatDateFr } from './lib/article-model.mjs';
+import { formatDateFr, clipText } from './lib/article-model.mjs';
 import { assetVersion } from './lib/asset-version.mjs';
 import { imageSize } from './lib/image-size.mjs';
 
@@ -81,8 +81,15 @@ function renderGameLinks(game, article) {
   return `<nav class="game-pick__links" aria-label="Liens ${esc(game.name)}">${links.join('')}</nav>`;
 }
 
-function renderGameFigure(game, caption) {
+/** Image d'une fiche, ou null si le fichier manque (image retirée faute de visuel fiable). */
+function gameImage(game) {
   const img = game.image || '/blog/images/' + slugify(game.name) + '.jpg';
+  return existsSync(join(ROOT, img)) ? img : null;
+}
+
+function renderGameFigure(game, caption) {
+  const img = gameImage(game);
+  if (!img) return '';
   const alt = `${game.name} — jeu de cartes${game.subtitle ? ', ' + game.subtitle : ''}`;
   const dims = imageSize(join(ROOT, img)) || { width: 480, height: 320 };
   const imgTag = pictureHtml(img, `<img src="${img}" alt="${esc(alt)}" width="${dims.width}" height="${dims.height}" loading="lazy" decoding="async" itemprop="image" />`);
@@ -105,6 +112,7 @@ function renderGamePick(game, index, article) {
     ? `<p class="game-pick__pick"><strong>Pour qui ?</strong> ${game.pick}</p>`
     : '';
   const typeTag = game.type ? `<span class="game-pick__type">${game.type}</span>` : '';
+  const figure = renderGameFigure(game, caption);
 
   return `<article class="game-pick${kyranClass}" id="${id}" itemscope itemtype="https://schema.org/Game">
   <div class="game-pick__card">
@@ -116,8 +124,8 @@ function renderGamePick(game, index, article) {
         ${designerLine}
       </div>
     </header>
-    <div class="game-pick__overview">
-      <div class="game-pick__media">${renderGameFigure(game, caption)}</div>
+    <div class="game-pick__overview${figure ? '' : ' game-pick__overview--text'}">
+      ${figure ? `<div class="game-pick__media">${figure}</div>` : ''}
       <div class="game-pick__info">
         <dl class="game-specs">
           <div class="game-spec"><dt>Joueurs</dt><dd itemprop="numberOfPlayers">${game.players}</dd></div>
@@ -170,10 +178,11 @@ function buildAboutGames(games) {
     const entry = {
       '@type': 'Game',
       name: g.name,
-      description: stripHtml(g.paragraphs[0]).slice(0, 200),
-      numberOfPlayers: g.players,
-      image: SITE + (g.image || '/blog/images/' + slugify(g.name) + '.jpg')
+      description: clipText(stripHtml(g.paragraphs[0]), 200),
+      numberOfPlayers: g.players
     };
+    const img = gameImage(g);
+    if (img) entry.image = SITE + img;
     const sameAs = [meta.bgg, meta.wiki].filter(Boolean);
     if (sameAs.length) entry.sameAs = sameAs;
     if (meta.designer) {
@@ -350,7 +359,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
       headline: article.title,
       alternativeHeadline: article.metaTitle,
       description: article.description,
-      abstract: stripHtml(article.intro).slice(0, 300),
+      abstract: clipText(stripHtml(article.intro), 300),
       author: { '@type': 'Person', '@id': AUTHOR_ID, name: 'Corentin Sence', url: AUTHOR_URL },
       publisher: { '@id': SITE + '/#organization' },
       datePublished: article.date,

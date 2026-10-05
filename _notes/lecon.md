@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-05 — Blog : image de Coup sans rapport avec le jeu, As d'Or mal attribué
+
+- **Symptôme :** sur neuf articles, la fiche de Coup montrait une planche ancienne « Loterie aux petites images — À tout coup l'on gagne ! » au lieu du jeu. L'article `jeux-cartes-adultes`, publié le 4 octobre sans relecture humaine, disait Skull « As d'Or 2011 ex aequo avec SOS Octopus » (SOS Octopus avait l'As d'Or Enfant) et Star Realms « conçu exclusivement pour un duel » ; une vérification adversariale y a confirmé 20 erreurs. La description JSON-LD de chaque jeu était coupée au 200ᵉ caractère, en plein mot.
+- **Cause :** `scripts/download-blog-images.mjs` prenait, faute de fichier Commons nommé, le premier résultat d'une recherche Commons sur « coup card game box », et personne n'a regardé l'image. La passe automatique a vérifié ses sources mais pas chaque formulation, ni les images et crédits. Le générateur tronquait avec `slice(0, 200)`.
+- **Correctif :** image de Coup retirée (la fiche s'affiche sans figure quand l'image manque), plus de repli sur une recherche Commons, crédits du logo Wizard corrigés, 14 phrases corrigées, descriptions JSON-LD coupées sur une fin de phrase (`clipText`). Règle : regarder chaque image de jeu avec l'outil de lecture avant publication, vérifier son crédit sur la page Commons, et faire relire chaque fait par un agent qui cherche à prouver l'erreur.
+
 ### 2026-10-04 — Fiches de jeux : liens BoardGameGeek vers d'autres jeux, liens Wikipédia morts
 
 - **Symptôme :** sur les fiches du blog, « BoardGameGeek » ouvrait un autre jeu pour Skull (un numéro de magazine), Wizard (« Operation Ironfist »), Colt Express (« Star Fleet Battles »), Skyjo (« Creature Quest »), Dixit, Oh Hell!, Parade, Schotten Totten (« Fluxx »), Letter Jam et Monopoly Deal ; 22 liens Wikipédia renvoyaient 404 ou une page d'homonymie (dont 4 dans l'article rédigé à la main). La fiche affichait aussi « Auteur Magilano » (l'éditeur de Skyjo) et « Steven Du Vernet » pour Just One. Les mêmes URL alimentent le `sameAs` JSON-LD, qui associait donc ces jeux à d'autres œuvres.

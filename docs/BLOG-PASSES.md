@@ -54,14 +54,25 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
   `pdftotext`.
 - Changer un prix dans `games.json` modifie tous les articles qui citent ce jeu : vérifiez d'abord
   qu'aucun texte d'article ne cite l'ancien prix (`grep` dans `scripts/content/blog/`).
+- **Ce qu'une relecture adversariale a trouvé dans une passe publiée sans relecture** (#20, vérifiée
+  le 5 octobre 2026) : un prix attribué à la mauvaise catégorie (Skull « ex aequo avec SOS Octopus »,
+  qui avait l'As d'Or Enfant : citez le palmarès officiel, pas une liste) ; « conçu exclusivement
+  pour deux » alors que la règle de Star Realms prévoit le multijoueur ; un pronom qui change le sens
+  (« ces cartes » renvoyait aux cartes Vie perdues) ; KYRAN rangé parmi les jeux qui « éliminent
+  avant la fin » ; une image de jeu jamais regardée (celle de Coup était une planche de loterie
+  ancienne) et des crédits faux (« Photo — KOSMOS » sur une boîte PS Games, « Photo » sur un logo).
+  Regardez chaque image avec l'outil de lecture et vérifiez son crédit sur la page Commons.
+- `scripts/download-blog-images.mjs` ne se rabat plus sur une recherche Commons : sans fichier nommé ni
+  image de la page Wikipédia, le jeu reste sans image, et sa fiche s'affiche sans figure.
 
 ## Journal
 
 | Date | Type | Article | Mot-clé principal | PR |
 |---|---|---|---|---|
 | 2026-10-04 | Corrections sur l'article « 5 ou 6 joueurs » de #16 (la réécriture « 6 joueurs » de la passe a été abandonnée), liens des fiches, prix | `jeux-cartes-6-joueurs` | jeu de cartes 6 joueurs | [#18](https://github.com/Cmssmc-code/kyran-jeu/pull/18) |
-| 2026-10-04 | Rafraîchissement : passage au format généré, fiche KYRAN corrigée (« 2024 » → sortie 31 janvier 2026), 7 jeux revérifiés (Love Letter retiré). **Sujet pris : ne pas le reprendre.** | `jeux-cartes-adultes` | jeu de cartes adulte | (à venir) |
-| 2026-10-05 | Rafraîchissement : faits des 8 jeux revérifiés, fiche KYRAN corrigée (manche Mystique), « Skyjo supprime la défausse » corrigé, Love Letter (édition actuelle), structure propre. **Sujet pris : ne pas le reprendre.** | `alternatives-uno` | alternatives à uno | (cette PR) |
+| 2026-10-04 | Rafraîchissement : passage au format généré, fiche KYRAN corrigée (« 2024 » → sortie 31 janvier 2026), 7 jeux revérifiés (Love Letter retiré). **Sujet pris : ne pas le reprendre.** | `jeux-cartes-adultes` | jeu de cartes adulte | [#20](https://github.com/Cmssmc-code/kyran-jeu/pull/20) |
+| 2026-10-05 | Rafraîchissement : faits des 8 jeux revérifiés, fiche KYRAN corrigée (manche Mystique), « Skyjo supprime la défausse » corrigé, Love Letter (édition actuelle), structure propre. **Sujet pris : ne pas le reprendre.** | `alternatives-uno` | alternatives à uno | [#22](https://github.com/Cmssmc-code/kyran-jeu/pull/22) |
+| 2026-10-05 | Corrections après vérification adversariale de #20 (20 erreurs confirmées par deux contradicteurs indépendants) : As d'Or de Skull, image de Coup sans rapport avec le jeu (retirée), Star Realms « réservé à deux », élimination à KYRAN, variante de Wizard, crédits d'image ; descriptions JSON-LD coupées sur une fin de phrase | `jeux-cartes-adultes` | jeu de cartes adulte | (cette PR) |
 
 ## En attente
 
@@ -93,3 +104,4 @@ la même façon.
 | 6 qui prend ! | 10+ | 8+ sur les fiches Gigamic et Amigo actuelles ; 10 ans dans la règle française de 2012 et chez Philibert |
 | Timeline | 2011 | La fiche BGG liée (« Timeline: Classic », Frédéric Henry) date de 2018 ; la série commence en 2010 (« Timeline: Inventions ») |
 | Oh Hell! | auteur « Traditionnel » | Publié en JSON-LD comme `Person` nommée « Traditionnel » ; jeu traditionnel sans auteur |
+| The Crew | ~15 € | 16,50 € chez Philibert, 18 € sur la boutique Iello (5 octobre 2026) ; avis partagé entre vérificateurs |

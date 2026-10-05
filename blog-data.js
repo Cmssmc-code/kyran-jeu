@@ -166,7 +166,7 @@ const BLOG_ITEMS = [
     "title": "Alternatives à Uno : 8 jeux de cartes rapides pour changer",
     "category": "Alternatives",
     "date": "2026-05-17",
-    "readMinutes": 10,
+    "readMinutes": 11,
     "excerpt": "Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.",
     "image": "/blog/images/uno.jpg",
     "webp": "/blog/images/uno.webp",

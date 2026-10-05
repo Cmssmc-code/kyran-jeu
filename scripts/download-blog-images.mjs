@@ -18,7 +18,6 @@ const GAMES = {
   'dobble.jpg': { commons: 'Dobble.jpg', wiki: 'Dobble' },
   'jungle-speed.jpg': { commons: 'Jungle_Speed.jpg', wiki: 'Jungle_Speed' },
   'codenames.jpg': { commons: 'Codenames_board_game.jpg', wiki: 'Codenames_(board_game)' },
-  'dixit.jpg': { commons: 'Dixit_(board_game).jpg', wiki: 'Dixit_(board_game)' },
   'hanabi.jpg': { commons: 'Hanabi_(card_game).jpg', wiki: 'Hanabi_(card_game)' },
   'love-letter.jpg': { commons: 'Love_Letter_(card_game).jpg', wiki: 'Love_Letter_(card_game)' },
   'wizard.jpg': { commons: 'Wizard_(card_game).jpg', wiki: 'Wizard_(card_game)' },
@@ -34,14 +33,10 @@ const GAMES = {
   'oh-hell.jpg': { commons: 'Oh_hell_(card_game).jpg', wiki: 'Oh_hell' },
   'parade.jpg': { commons: 'Parade_(card_game).jpg', wiki: 'Parade_(card_game)' },
   'sushi-go.jpg': { commons: 'Sushi_Go!_card_game.jpg', wiki: 'Sushi_Go!' },
-  'the-mind.jpg': { commons: 'The_Mind_(card_game).jpg', wiki: 'The_Mind_(game)' },
-  'just-one.jpg': { commons: 'Just_One_(board_game).jpg', wiki: 'Just_One_(board_game)' },
   'star-realms.jpg': { commons: 'Star_Realms.jpg', wiki: 'Star_Realms' },
   'no-thanks.jpg': { commons: 'No_Thanks!_card_game.jpg', wiki: 'No_Thanks!' },
   'letter-jam.jpg': { commons: 'Letter_Jam.jpg', wiki: 'Letter_Jam' },
-  'for-sale.jpg': { commons: 'For_Sale_(card_game).jpg', wiki: 'For_Sale_(game)' },
   'monopoly-deal.jpg': { commons: 'Monopoly_Deal.jpg', wiki: 'Monopoly_Deal' },
-  'llama.jpg': { commons: 'Llama_(card_game).jpg', wiki: 'Llama_(card_game)' },
   'the-game.jpg': { commons: 'The_Game_(card_game).jpg', wiki: 'The_Game_(card_game)', width: 500 },
 };
 

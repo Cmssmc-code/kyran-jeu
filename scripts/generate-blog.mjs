@@ -83,6 +83,7 @@ function renderGameLinks(game, article) {
 
 /** Image d'une fiche, ou null si le fichier manque (image retirée faute de visuel fiable). */
 function gameImage(game) {
+  if (game.image === false) return null;
   const img = game.image || '/blog/images/' + slugify(game.name) + '.jpg';
   return existsSync(join(ROOT, img)) ? img : null;
 }

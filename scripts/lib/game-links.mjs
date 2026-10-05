@@ -20,7 +20,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=love+letter',
     designer: 'Seiji Kanai',
     year: 2012,
-    imageCredit: 'Photo — Philibert / AEG'
+    imageCredit: 'Visuel de la boîte — Z-Man Games (via Philibert)'
   },
   hanabi: {
     bgg: 'https://boardgamegeek.com/boardgame/98778/hanabi',
@@ -44,14 +44,14 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=lost+cities',
     designer: 'Reiner Knizia',
     year: 1999,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Photo — zizou man (Flickr), CC BY 2.0, via Wikimedia Commons'
   },
   timeline: {
     bgg: 'https://boardgamegeek.com/boardgame/257284/timeline-classic',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=timeline+classic',
     designer: 'Frédéric Henry',
     year: 2011,
-    imageCredit: 'Photo — Philibert / éditeur'
+    imageCredit: 'Visuel de la boîte — Zygomatic / Asmodee (via Philibert)'
   },
   dobble: {
     bgg: 'https://boardgamegeek.com/boardgame/63268/spot-it',
@@ -67,7 +67,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=jungle+speed',
     designer: 'Thomas Vuarchex',
     year: 1991,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Photo — Nicosmos, Wikimedia Commons, CC BY-SA 3.0'
   },
   uno: {
     bgg: 'https://boardgamegeek.com/boardgame/2223/uno',
@@ -75,7 +75,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=uno',
     designer: 'Merle Robbins',
     year: 1971,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Logo — Mattel, Wikimedia Commons (domaine public)'
   },
   saboteur: {
     bgg: 'https://boardgamegeek.com/boardgame/9220/saboteur',
@@ -83,7 +83,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=saboteur',
     designer: 'Frédéric Moyersoen',
     year: 2004,
-    imageCredit: 'Photo — Philibert / Amigo'
+    imageCredit: 'Photo — Philibert / Gigamic'
   },
   codenames: {
     bgg: 'https://boardgamegeek.com/boardgame/178900/codenames',
@@ -114,8 +114,7 @@ export const GAME_LINKS = {
     wiki: 'https://fr.wikipedia.org/wiki/Dixit_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=dixit',
     designer: 'Jean-Louis Roubira',
-    year: 2008,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 2008
   },
   wizard: {
     bgg: 'https://boardgamegeek.com/boardgame/1465/wizard',
@@ -131,7 +130,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=colt+express',
     designer: 'Christophe Raimbault',
     year: 2014,
-    imageCredit: 'Photo — Ludonaute'
+    imageCredit: 'Visuel promotionnel (illustration) — Ludonaute'
   },
   'the-crew': {
     bgg: 'https://boardgamegeek.com/boardgame/284083/the-crew-the-quest-for-planet-nine',
@@ -147,7 +146,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=oh+hell',
     designer: 'Traditionnel',
     year: null,
-    imageCredit: 'Illustration — cartes à jouer'
+    imageCredit: 'Photo — Newwhist, Wikimedia Commons, CC BY-SA 4.0'
   },
   '6-qui-prend': {
     bgg: 'https://boardgamegeek.com/boardgame/432/take-5',
@@ -178,15 +177,14 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=sushi+go',
     designer: 'Phil Walker-Harding',
     year: 2013,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte (édition française) — éditeur'
   },
   'the-mind': {
     bgg: 'https://boardgamegeek.com/boardgame/244992/the-mind',
     wiki: 'https://fr.wikipedia.org/wiki/The_Mind',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+mind',
     designer: 'Wolfgang Warsch',
-    year: 2018,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 2018
   },
   coup: {
     bgg: 'https://boardgamegeek.com/boardgame/131357/coup',
@@ -202,8 +200,7 @@ export const GAME_LINKS = {
     wiki: 'https://fr.wikipedia.org/wiki/Just_One',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=just+one',
     designer: 'Ludovic Roudy et Bruno Sautter',
-    year: 2018,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 2018
   },
   'star-realms': {
     bgg: 'https://boardgamegeek.com/boardgame/147020/star-realms',
@@ -219,22 +216,21 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=no+thanks',
     designer: 'Thorsten Gimmler',
     year: 2004,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Photo — CMYK (édition Magenta), Wikimedia Commons'
   },
   'letter-jam': {
     bgg: 'https://boardgamegeek.com/boardgame/275467/letter-jam',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=letter+jam',
     designer: 'Ondra Skoupý',
     year: 2019,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte (édition française) — Czech Games Edition / IELLO'
   },
   'for-sale': {
     bgg: 'https://boardgamegeek.com/boardgame/172/for-sale',
     wiki: 'https://en.wikipedia.org/wiki/For_Sale_(board_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=for+sale',
     designer: 'Stefan Dorra',
-    year: 1997,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 1997
   },
   'monopoly-deal': {
     bgg: 'https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game',
@@ -242,14 +238,13 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=monopoly+deal',
     designer: 'Katharine Chapman',
     year: 2008,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte (édition française) — Hasbro Gaming'
   },
   llama: {
     bgg: 'https://boardgamegeek.com/boardgame/266083/llama',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=llama+jeu',
     designer: 'Reiner Knizia',
-    year: 2019,
-    imageCredit: 'Photo — Wikimedia Commons'
+    year: 2019
   },
   'the-game': {
     bgg: 'https://boardgamegeek.com/boardgame/173090/the-game',

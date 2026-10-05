@@ -145,9 +145,9 @@
     "duration": "~30 min",
     "age": "8+",
     "price": "~30 €",
-    "image": "/blog/images/dixit.jpg",
     "designer": "Jean-Louis Roubira",
-    "year": 2008
+    "year": 2008,
+    "image": false
   },
   "lost-cities": {
     "name": "Lost Cities",
@@ -175,9 +175,9 @@
     "duration": "~20 min",
     "age": "8+",
     "price": "~12 €",
-    "image": "/blog/images/the-mind.jpg",
     "designer": "Wolfgang Warsch",
-    "year": 2018
+    "year": 2018,
+    "image": false
   },
   "star-realms": {
     "name": "Star Realms",
@@ -264,9 +264,9 @@
     "duration": "~20 min",
     "age": "8+",
     "price": "~22 €",
-    "image": "/blog/images/just-one.jpg",
     "designer": "Ludovic Roudy et Bruno Sautter",
-    "year": 2018
+    "year": 2018,
+    "image": false
   },
   "for-sale": {
     "name": "For Sale",
@@ -274,9 +274,9 @@
     "duration": "~30 min",
     "age": "10+",
     "price": "~14 €",
-    "image": "/blog/images/for-sale.jpg",
     "designer": "Stefan Dorra",
-    "year": 1997
+    "year": 1997,
+    "image": false
   },
   "the-game": {
     "name": "The Game",
@@ -294,9 +294,9 @@
     "duration": "~20 min",
     "age": "8+",
     "price": "~12 €",
-    "image": "/blog/images/llama.jpg",
     "designer": "Reiner Knizia",
-    "year": 2019
+    "year": 2019,
+    "image": false
   },
   "monopoly-deal": {
     "name": "Monopoly Deal",

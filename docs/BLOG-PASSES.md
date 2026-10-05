@@ -74,14 +74,17 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-05 | Rafraîchissement : faits des 8 jeux revérifiés, fiche KYRAN corrigée (manche Mystique), « Skyjo supprime la défausse » corrigé, Love Letter (édition actuelle), structure propre. **Sujet pris : ne pas le reprendre.** | `alternatives-uno` | alternatives à uno | [#22](https://github.com/Cmssmc-code/kyran-jeu/pull/22) |
 | 2026-10-05 | Corrections après vérification adversariale de #20 (20 erreurs confirmées par deux contradicteurs indépendants) : As d'Or de Skull, image de Coup sans rapport avec le jeu (retirée), Star Realms « réservé à deux », élimination à KYRAN, variante de Wizard, crédits d'image ; descriptions JSON-LD coupées sur une fin de phrase | `jeux-cartes-adultes` | jeu de cartes adulte | (cette PR) |
 
+| 2026-10-05 | Contrôle visuel des 31 images de jeux : 18 problèmes confirmés. Crédits corrigés (12 jeux) ; images retirées des fiches Just One (boîte de PS2), For Sale (photo de livre), Llama (autre jeu), Dixit (Dixit Jinx), The Mind (source inconnue). | toutes les fiches | — | (cette PR) |
+
 ## En attente
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-1. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
+1. **Images d'en-tête fausses** (`heroImage`, hors fiches) : `jeux-draft-encheres` utilise `for-sale.jpg`, `jeux-comme-dixit` et `jeux-famille` utilisent `dixit.jpg` (Dixit Jinx), `jeux-memoire-concentration` utilise `the-mind.jpg` : à remplacer par un visuel vérifié (KYRAN du dépôt, ou image libre avec licence contrôlée sur Commons).
+2. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».
-2. **Autres articles à revérifier** (relevé du 5 octobre 2026 lors de `alternatives-uno`) : Love Letter existe
+3. **Autres articles à revérifier** (relevé du 5 octobre 2026 lors de `alternatives-uno`) : Love Letter existe
    en deux éditions (classique 2012 : 16 cartes, 2 à 4 joueurs ; Z-Man 2025 : 21 cartes, 2 à 6 joueurs ;
    Philibert affiche « dès 14 ans », Z-Man 10+). Les articles qui parlent de « seize cartes » ou de
    « 2 à 4 joueurs » (par ex. `jeux-3-joueurs`) sont à préciser. Jungle Speed : année incertaine selon les

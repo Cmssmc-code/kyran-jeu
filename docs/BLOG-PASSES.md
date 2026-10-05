@@ -61,16 +61,20 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 |---|---|---|---|---|
 | 2026-10-04 | Corrections sur l'article « 5 ou 6 joueurs » de #16 (la réécriture « 6 joueurs » de la passe a été abandonnée), liens des fiches, prix | `jeux-cartes-6-joueurs` | jeu de cartes 6 joueurs | [#18](https://github.com/Cmssmc-code/kyran-jeu/pull/18) |
 | 2026-10-04 | Rafraîchissement : passage au format généré, fiche KYRAN corrigée (« 2024 » → sortie 31 janvier 2026), 7 jeux revérifiés (Love Letter retiré). **Sujet pris : ne pas le reprendre.** | `jeux-cartes-adultes` | jeu de cartes adulte | (à venir) |
+| 2026-10-05 | Rafraîchissement : faits des 8 jeux revérifiés, fiche KYRAN corrigée (manche Mystique), « Skyjo supprime la défausse » corrigé, Love Letter (édition actuelle), structure propre. **Sujet pris : ne pas le reprendre.** | `alternatives-uno` | alternatives à uno | (cette PR) |
 
 ## En attente
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-1. **`alternatives-uno`** : parle d'une « manche finale à une seule carte » pour KYRAN ; la manche
-   Mystique clôt chaque cycle, puis on repart à sept cartes.
-2. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
+1. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».
+2. **Autres articles à revérifier** (relevé du 5 octobre 2026 lors de `alternatives-uno`) : Love Letter existe
+   en deux éditions (classique 2012 : 16 cartes, 2 à 4 joueurs ; Z-Man 2025 : 21 cartes, 2 à 6 joueurs ;
+   Philibert affiche « dès 14 ans », Z-Man 10+). Les articles qui parlent de « seize cartes » ou de
+   « 2 à 4 joueurs » (par ex. `jeux-3-joueurs`) sont à préciser. Jungle Speed : année incertaine selon les
+   sources (BGG 1997, Wikipédia 1991 ou 1996) : ne pas l'afficher sans source primaire.
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
 (#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque

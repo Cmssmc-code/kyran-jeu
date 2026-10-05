@@ -4215,6 +4215,9 @@ header.blog-article-hero::after {
   align-items: start;
   margin-bottom: 22px;
 }
+.game-pick__overview--text {
+  grid-template-columns: 1fr;
+}
 @media (max-width: 720px) {
   .game-pick__overview {
     grid-template-columns: 1fr;

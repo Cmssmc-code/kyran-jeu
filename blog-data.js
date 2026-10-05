@@ -470,7 +470,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend",
     "category": "Soirée",
     "date": "2026-09-11",
-    "readMinutes": 9,
+    "readMinutes": 10,
     "excerpt": "Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.",
     "image": "/kyran-cartes-table.webp",
     "gameCount": 7,

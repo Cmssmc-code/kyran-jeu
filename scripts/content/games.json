@@ -186,7 +186,7 @@
     "age": "12+",
     "price": "~18 €",
     "image": "/blog/images/star-realms.jpg",
-    "designer": "Robert Dougherty",
+    "designer": "Darwin Kastle et Robert Dougherty",
     "year": 2014
   },
   "no-thanks": {
@@ -255,7 +255,6 @@
     "duration": "~15 min",
     "age": "10+",
     "price": "~14 €",
-    "image": "/blog/images/coup.jpg",
     "designer": "Rikki Tahta",
     "year": 2012
   },

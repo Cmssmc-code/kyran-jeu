@@ -8,8 +8,8 @@ export default {
   date: '2026-05-07',
   heroTitle: 'Jeux de cartes en <span class="accent">famille</span>',
   heroSubtitle: 'Des parties où un enfant de 8 ans peut battre ses parents, et qui se terminent avant l’heure du coucher.',
-  heroImage: '/blog/images/dixit.jpg',
-  heroCaption: 'Dixit — l’imaginaire au service de la famille.',
+  heroImage: '/jeu-kyran-ami.webp',
+  heroCaption: 'Quatre joueurs rient autour d’une table basse pendant une partie de KYRAN.',
   intro: `<p>Autour d’une table de famille, il y a rarement un seul niveau : un enfant de huit ans qui compte sur ses doigts, un adolescent qui connaît déjà tout, des parents fatigués en fin de journée. Le bon jeu n’est donc pas le plus ingénieux, c’est celui où <strong>chacun peut gagner sans qu’on lui laisse gagner</strong> et dont la partie se termine avant que l’humeur ne tourne. Les huit jeux retenus ici sont jugés sur trois points vérifiables : l’âge indiqué sur la boîte, la durée annoncée et la part de hasard qui compense l’écart d’expérience. Si les adultes de la table n’ont jamais joué, commencez plutôt par le guide <a class="text-link" href="/blog/jeux-debutants-adultes.html">jeux pour débutants adultes</a>.</p>`,
   criteria: {
     heading: 'Comment choisir un jeu qui convienne aux enfants comme aux adultes ?',

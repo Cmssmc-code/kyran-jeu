@@ -35,8 +35,8 @@ export default {
   },
   heroTitle: 'Jeux de <span class="accent">mémoire</span> et d’attention',
   heroSubtitle: 'Retenir ce qui a disparu, rester attentif, déduire ce qui reste : six jeux rangés selon l’effort qu’ils demandent vraiment à la table.',
-  heroImage: '/blog/images/the-mind.jpg',
-  heroCaption: 'The Mind, concentration collective à haute intensité.',
+  heroImage: '/kyran-cartes-table.webp',
+  heroCaption: 'Des cartes Nombre de KYRAN étalées autour de la boîte du jeu.',
   intro: `<p>Un jeu « de mémoire » n’est pas toujours celui qu’on croit. Autour d’une table de cartes, trois efforts se mélangent : <strong>retenir</strong> ce qui a quitté la table (une défausse recouverte, un indice reçu), <strong>rester attentif</strong> à ce qui se passe maintenant (un symbole, un rythme) et <strong>déduire</strong> ce qui reste en jeu (des cartes écartées, des plis encore à prendre). Plutôt qu’un classement unique, cette page range six jeux en trois familles, selon l’effort qui domine. Elle décrit ce qu’un jeu demande à la table, rien de plus : pour ce que la recherche établit, et surtout ce qu’elle ne permet pas de conclure, sur les cartes et le cerveau, lisez notre <a class="text-link" href="/blog/science-jeux-de-cartes-cerveau.html">synthèse des études sur les jeux de cartes et le cerveau</a>.</p>`,
   criteria: {
     heading: 'Trois efforts mentaux qu’il vaut mieux distinguer',

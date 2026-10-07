@@ -9,7 +9,7 @@ export default {
   heroImage: '/kyran-cartes-pouvoirs.webp',
   heroTitle: 'Jeux comme <span class="accent">Dixit</span>',
   heroSubtitle: `Dix jeux qui prolongent le plaisir de se faire comprendre à demi-mot, avec ce qui rappelle Dixit et ce qui change.`,
-  heroCaption: 'Les quatre cartes Pouvoir et la carte Mystique de KYRAN, illustrées par Crea by Floh.',
+  heroCaption: 'Quatre cartes Pouvoir de KYRAN et la carte Mystique, illustrées par Crea by Floh.',
   intro: `<p>Ce qui rend Dixit singulier tient en une contrainte : l’indice du conteur doit être compris par une partie de la table, pas par tous. Trop clair, personne ne marque ; trop obscur, non plus. Cette zone étroite explique pourquoi il est difficile de trouver un <strong>jeu qui ressemble à Dixit</strong> : une bonne alternative doit conserver ce travail d’interprétation, ou en proposer une version neuve.</p><p>Nos dix propositions se répartissent en trois familles : les jeux d’indices en mots, ceux où l’on devine les intentions des autres, et ceux qui reposent sur une entente silencieuse. Pour chacun, nous précisons ce qui rappelle Dixit, ce qui change et le nombre de joueurs qui lui convient. Si votre goût va plutôt vers l’esprit d’équipe, notre sélection de <a class="text-link" href="/blog/jeux-comme-codenames.html">jeux comme Codenames</a> prend le relais.</p>`,
   criteria: {
     heading: 'Comment choisir une alternative à Dixit ?',

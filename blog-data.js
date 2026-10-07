@@ -311,7 +311,7 @@ const BLOG_ITEMS = [
     "date": "2026-05-07",
     "readMinutes": 11,
     "excerpt": "Dixit, Timeline, Dobble, Skyjo… 8 jeux de cartes où enfants et adultes jouent à armes égales, avec des parties qui finissent avant le coucher.",
-    "image": "/jeu-kyran-ami.webp",
+    "image": "/kyran-cartes-table.webp",
     "gameCount": 8,
     "related": [
       "jeux-debutants-adultes",

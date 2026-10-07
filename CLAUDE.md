@@ -4,6 +4,7 @@ Site du jeu de cartes KYRAN (kyran-jeu.fr) : site statique GitHub Pages, serveur
 Railway (`server/`), variante Cloudflare Worker (`worker/`). Après toute modification de pages,
 composants ou contenus : `npm run build` puis `npm test` (la CI vérifie que les fichiers générés
 sont à jour). Leçons anti-récidive : [`_notes/lecon.md`](_notes/lecon.md).
+Mémoire condensée du projet (jeu, architecture, pipelines, routines) : [`_notes/memoire.md`](_notes/memoire.md).
 
 Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` — `engine.js` (règles officielles, sans DOM),
 `ai.js` (adversaires et conseils du Bokonon), `lessons.js` (sept rites), `app.js`

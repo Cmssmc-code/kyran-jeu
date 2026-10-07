@@ -76,6 +76,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 
 | 2026-10-05 | Contrôle visuel des 31 images de jeux : 18 problèmes confirmés. Crédits corrigés (12 jeux) ; images retirées des fiches Just One (boîte de PS2), For Sale (photo de livre), Llama (autre jeu), Dixit (Dixit Jinx), The Mind (source inconnue). | toutes les fiches | — | (cette PR) |
 | 2026-10-07 | Correction : images d'en-tête fausses remplacées par des visuels KYRAN du dépôt (`for-sale.jpg` = photo ancienne sans rapport, `dixit.jpg` = Dixit Jinx, `the-mind.jpg` = licence inconnue), légendes qui décrivent l'image. **Sujet pris : ne pas le reprendre.** | `jeux-draft-encheres`, `jeux-comme-dixit`, `jeux-famille`, `jeux-memoire-concentration` | — | (cette PR) |
+| 2026-10-07 | Rattrapage du mercredi : rafraîchissement, Love Letter précisé (édition classique 16 cartes, 2 à 4 joueurs ; Z-Man 2025 21 cartes, 2 à 6 ; même réglage à trois : 5 faveurs, 1 carte écartée). Sources : 64 Ounce Games, Asmodee (Eco Box), regles-du-jeu.net, Opinionated Gamers, Play-in, Esprit Jeu. | `jeux-3-joueurs` | jeux de cartes 3 joueurs | (cette PR) |
 
 ## En attente
 
@@ -86,8 +87,8 @@ Rafraîchissements repérés (par ordre de priorité) :
    du « jour 1 ».
 2. **Autres articles à revérifier** (relevé du 5 octobre 2026 lors de `alternatives-uno`) : Love Letter existe
    en deux éditions (classique 2012 : 16 cartes, 2 à 4 joueurs ; Z-Man 2025 : 21 cartes, 2 à 6 joueurs ;
-   Philibert affiche « dès 14 ans », Z-Man 10+). Les articles qui parlent de « seize cartes » ou de
-   « 2 à 4 joueurs » (par ex. `jeux-3-joueurs`) sont à préciser. Jungle Speed : année incertaine selon les
+   Philibert affiche « dès 14 ans », Z-Man 10+). `jeux-3-joueurs` est précisé (7 octobre) ; `games.json` affiche encore « 2 à 4 » et les autres articles
+   qui parlent de « seize cartes » ou de « 2 à 4 joueurs » restent à préciser. Jungle Speed : année incertaine selon les
    sources (BGG 1997, Wikipédia 1991 ou 1996) : ne pas l'afficher sans source primaire.
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026

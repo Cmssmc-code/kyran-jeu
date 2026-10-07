@@ -80,7 +80,7 @@ export default {
       type: 'Déduction express',
       pick: 'Pour un quart d\'heure sans manuel, avant le dîner ou entre deux jeux',
       paragraphs: [
-        `Love Letter à trois occupe un entre-deux : seize cartes, une seule carte en main, une pioche, un effet à jouer. La règle prévoit pour trois joueurs cinq marques de faveur à gagner, et une seule carte écartée face cachée, sans les trois cartes visibles réservées au duel. Il reste donc assez d'inconnues pour que le Garde, qui devine la carte d'un adversaire, demeure un vrai pari et non un tirage au sort déguisé.`,
+        `Love Letter à trois occupe un entre-deux : une seule carte en main, une pioche, un effet à jouer. Le jeu existe en deux éditions, la classique de 2012 (16 cartes, 2 à 4 joueurs) et celle de Z-Man de 2025 (21 cartes, 2 à 6 joueurs, avec deux personnages supplémentaires), mais à trois le réglage est le même : cinq marques de faveur à gagner et une seule carte écartée face cachée, sans les trois cartes visibles réservées au duel. Il reste donc assez d'inconnues pour que le Garde, qui devine la carte d'un adversaire, demeure un vrai pari et non un tirage au sort déguisé.`,
         `À trois s'installe aussi une tension que le duel ne connaît pas : quand deux joueurs s'attaquent, le troisième avance sans rien risquer. Choisir sa cible, entre le meneur et le joueur le plus fragile, est la décision que chaque tour pose. Défaut à signaler : la pioche pèse lourd, et une Princesse défaussée sous l'effet du Prince met fin à une manche en quelques secondes.`
       ]
     },

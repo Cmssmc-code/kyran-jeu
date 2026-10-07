@@ -9,6 +9,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-07 — Routines blog : une session neuve ouverte par une routine n'a pas `add_repo`
+
+- **Contexte :** premiers déclenchements des routines recréées le 2026-10-07 (passes KYRAN et blog Majordia), configurées pour ouvrir une session neuve sans dépôt et rattacher le dépôt avec `add_repo`.
+- **Erreur :** aucune passe. L'appel à `mcp__claude-code-remote__add_repo` répond « No such tool available » ; le clone anonyme marche (dépôt public) mais `gh api` répond 403 et rien ne peut être poussé.
+- **Cause / leçon :** une session ouverte par une routine (déclenchement en session neuve, ou « Run now » / `fire_trigger`) n'a pas d'outil pour rattacher un dépôt. Le dépôt doit être attaché à la session dès sa création.
+- **Règle pour l'avenir :** la routine réveille une session dédiée créée avec le dépôt attaché (`_notes/memoire.md` § 14). Tester avec une exécution unique programmée (`run_once_at`) vers cette session, jamais avec « Run now ».
+
 ### 2026-10-05 — Blog : image de Coup sans rapport avec le jeu, As d'Or mal attribué
 
 - **Symptôme :** sur neuf articles, la fiche de Coup montrait une planche ancienne « Loterie aux petites images — À tout coup l'on gagne ! » au lieu du jeu. L'article `jeux-cartes-adultes`, publié le 4 octobre sans relecture humaine, disait Skull « As d'Or 2011 ex aequo avec SOS Octopus » (SOS Octopus avait l'As d'Or Enfant) et Star Realms « conçu exclusivement pour un duel » ; une vérification adversariale y a confirmé 20 erreurs. La description JSON-LD de chaque jeu était coupée au 200ᵉ caractère, en plein mot.

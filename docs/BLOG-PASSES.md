@@ -1,8 +1,8 @@
 # Passes éditoriales du blog
 
 Le blog reçoit trois passes par semaine (lundi, mercredi, vendredi). À 6 h 50, heure de Paris, la
-routine « Blog KYRAN passes (Sonnet 5.5) » réveille la session « Blog KYRAN — passes auto
-lun/mer/ven », qui a ce dépôt attaché. Chaque passe produit **un** article neuf ou **un**
+routine « Blog KYRAN passes lun/mer/ven (session dédiée) » réveille la session « Blog KYRAN —
+passes lun/mer/ven (session dédiée) », qui a ce dépôt attaché (voir `_notes/memoire.md` § 14). Chaque passe produit **un** article neuf ou **un**
 rafraîchissement, ou rien si aucun sujet ne tient. Le propriétaire a choisi, le 4 octobre 2026, une
 publication entièrement automatique, sans relecture humaine : la passe ouvre sa PR puis la fusionne
 elle-même dès que toutes ces conditions sont réunies : CI verte sur le dernier commit, aucun conflit,

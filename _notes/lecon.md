@@ -9,6 +9,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-08 — Site entier en 404 : dépôt passé en privé, GitHub Pages désactivé
+
+- **Symptôme :** le 2026-10-07 au soir, toutes les URL de kyran-jeu.fr (accueil, boutique, blog, sitemap) répondaient 404 « Server: GitHub.com ». Search Console a refusé des demandes d'indexation (« Introuvable (404) »). Le workflow `pages.yml` restait vert mais affichait « Pages n'est pas en mode GitHub Actions (build_type=inconnu) : publication ignorée ».
+- **Cause :** le dépôt `Cmssmc-code/kyran-jeu` avait été passé en **privé**. Sur un compte GitHub gratuit, Pages n'est pas disponible pour un dépôt privé : la configuration Pages a été supprimée (`GET /repos/.../pages` → 404) et le site dépublié.
+- **Correctif :** historique git scanné (aucun secret), dépôt repassé en public, Pages recréé en mode `workflow` avec le domaine `kyran-jeu.fr` et HTTPS forcé, `pages.yml` relancé ; site revenu en 200.
+- **Règle pour l'avenir :** ne jamais rendre ce dépôt privé sans avoir d'abord un autre hébergement (ou un forfait GitHub payant). Après tout changement de visibilité ou de réglages du dépôt, vérifier `curl -sI https://kyran-jeu.fr/` (200 attendu). Un `pages.yml` vert avec la notice « publication ignorée » signifie que le site n'est pas publié.
+
 ### 2026-10-07 — Routines blog : une session neuve ouverte par une routine n'a pas `add_repo`
 
 - **Contexte :** premiers déclenchements des routines recréées le 2026-10-07 (passes KYRAN et blog Majordia), configurées pour ouvrir une session neuve sans dépôt et rattacher le dépôt avec `add_repo`.

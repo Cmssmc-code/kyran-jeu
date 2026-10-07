@@ -37,6 +37,19 @@ const indexable = posts.length > 0;
 
 const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const dateFr = iso => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' }).format(new Date(iso));
+// Date ISO 8601 complète avec fuseau (exigée par Google pour uploadDate) : « +0000 » → « +00:00 »,
+// date seule → minuit heure de Paris, heure sans fuseau → UTC.
+function isoDateTime(value) {
+  const s = String(value || '').trim().replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+    const name = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Paris', timeZoneName: 'longOffset' })
+      .formatToParts(new Date(`${s}T12:00:00Z`)).find(p => p.type === 'timeZoneName').value;
+    const offset = name === 'GMT' ? '+00:00' : name.replace('GMT', '');
+    return `${s}T00:00:00${offset}`;
+  }
+  if (/T\d{2}:\d{2}(:\d{2}(\.\d+)?)?$/.test(s)) return s + 'Z';
+  return s;
+}
 const plural = (n, one, many) => `${n} ${n > 1 ? many : one}`;
 
 function countLabel() {
@@ -120,7 +133,7 @@ function mediaSchema(post, m, i) {
     description: mediaDescription(post, m),
     contentUrl: absoluteUrl(m.src),
     ...(m.width && m.height ? { width: m.width, height: m.height } : {}),
-    ...(post.date ? { uploadDate: post.date } : {}),
+    ...(post.date ? { uploadDate: isoDateTime(post.date) } : {}),
     creator,
     creditText: '@' + post.credit,
     copyrightNotice: `© @${post.credit}`,

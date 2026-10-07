@@ -188,6 +188,7 @@
             "availability": "https://schema.org/InStock",
             "price": "9.99",
             "priceCurrency": "EUR",
+            "validFrom": "2024-01-01",
             "priceValidUntil": "2026-12-31",
             "itemCondition": "https://schema.org/NewCondition",
             "url": "https://kyran-jeu.fr/commander.html",
@@ -245,14 +246,14 @@
                 "@type": "ShippingDeliveryTime",
                 "handlingTime": {
                   "@type": "QuantitativeValue",
-                  "minValue": 0,
-                  "maxValue": 1,
+                  "minValue": 1,
+                  "maxValue": 2,
                   "unitCode": "DAY"
                 },
                 "transitTime": {
                   "@type": "QuantitativeValue",
-                  "minValue": 1,
-                  "maxValue": 3,
+                  "minValue": 2,
+                  "maxValue": 6,
                   "unitCode": "DAY"
                 }
               }
@@ -272,6 +273,7 @@
             "availability": "https://schema.org/InStock",
             "price": "17.99",
             "priceCurrency": "EUR",
+            "validFrom": "2024-01-01",
             "priceValidUntil": "2026-12-31",
             "itemCondition": "https://schema.org/NewCondition",
             "url": "https://www.amazon.fr/dp/B0G217LD87",
@@ -310,29 +312,6 @@
               "merchantReturnDays": 30,
               "returnMethod": "https://schema.org/ReturnByMail",
               "returnFees": "https://schema.org/FreeReturn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Etsy (boutique KyranJeu)",
-            "availability": "https://schema.org/InStock",
-            "price": "9.99",
-            "priceCurrency": "EUR",
-            "priceValidUntil": "2026-12-31",
-            "itemCondition": "https://schema.org/NewCondition",
-            "url": "https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie",
-            "seller": {"@type": "Organization", "name": "KyranJeu", "url": "https://www.etsy.com/fr/shop/KyranJeu"},
-            "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "2.99",
-                "currency": "EUR"
-              },
-              "shippingDestination": {
-                "@type": "DefinedRegion",
-                "addressCountry": "FR"
-              }
             }
           }
         ]

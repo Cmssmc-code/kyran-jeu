@@ -8,8 +8,8 @@ export default {
   date: '2026-06-24',
   heroTitle: 'Jeux de <span class="accent">draft et enchères</span>',
   heroSubtitle: 'Choisir une carte et passer le reste, ou fixer son prix : sept jeux qui font de ces deux gestes le cœur de la partie.',
-  heroImage: '/blog/images/for-sale.jpg',
-  heroCaption: 'For Sale, l\'enchère élégante en format court.',
+  heroImage: '/boite-recto-kyran.jpg',
+  heroCaption: 'Boîte de KYRAN « Maître des Mystiques » : un singe orné au centre, entouré de motifs colorés.',
   intro: `<p>Le <strong>draft</strong> consiste à garder une carte de sa main et à passer les autres au voisin ; l'<strong>enchère</strong> consiste à fixer un prix, en pièces, en jetons ou en risque, pour obtenir quelque chose. Pour découvrir le premier, jouez à <strong>Sushi Go!</strong> : quinze minutes, de 2 à 5 joueurs. Pour la seconde, <strong>For Sale</strong> est l'entrée la plus claire, avec deux enchères différentes dans une même partie. <strong>No Thanks!</strong> en propose une version inversée où l'on paie pour ne pas prendre. Les quatre autres jeux de la sélection (Skull, Oh Hell!, KYRAN, Star Realms) en reprennent l'esprit sans en respecter la lettre : miser un bluff, parier sur ses propres plis ou acheter dans un marché partagé. Les paris de plis sont détaillés dans notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.</p>`,
   criteria: {
     heading: 'Draft ou enchères : ce que chaque mécanique change à table',

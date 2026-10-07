@@ -88,8 +88,7 @@ const BLOG_ITEMS = [
     "date": "2026-06-02",
     "readMinutes": 11,
     "excerpt": "Alternative à Dixit : 10 jeux d’indices, de bluff et d’entente silencieuse, avec pour chacun ce qui rappelle Dixit, ce qui change et le bon nombre de joueurs.",
-    "image": "/blog/images/dixit.jpg",
-    "webp": "/blog/images/dixit.webp",
+    "image": "/kyran-cartes-pouvoirs.webp",
     "gameCount": 10,
     "related": [
       "jeux-comme-codenames",
@@ -312,8 +311,7 @@ const BLOG_ITEMS = [
     "date": "2026-05-07",
     "readMinutes": 11,
     "excerpt": "Dixit, Timeline, Dobble, Skyjo… 8 jeux de cartes où enfants et adultes jouent à armes égales, avec des parties qui finissent avant le coucher.",
-    "image": "/blog/images/dixit.jpg",
-    "webp": "/blog/images/dixit.webp",
+    "image": "/kyran-cartes-table.webp",
     "gameCount": 8,
     "related": [
       "jeux-debutants-adultes",
@@ -376,8 +374,7 @@ const BLOG_ITEMS = [
     "date": "2026-06-30",
     "readMinutes": 10,
     "excerpt": "Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.",
-    "image": "/blog/images/the-mind.jpg",
-    "webp": "/blog/images/the-mind.webp",
+    "image": "/kyran-cartes-table.webp",
     "gameCount": 6,
     "related": [
       "science-jeux-de-cartes-cerveau",
@@ -456,8 +453,8 @@ const BLOG_ITEMS = [
     "date": "2026-06-24",
     "readMinutes": 9,
     "excerpt": "Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.",
-    "image": "/blog/images/for-sale.jpg",
-    "webp": "/blog/images/for-sale.webp",
+    "image": "/boite-recto-kyran.jpg",
+    "webp": "/boite-recto-kyran.webp",
     "gameCount": 7,
     "related": [
       "jeux-strategie-legere",

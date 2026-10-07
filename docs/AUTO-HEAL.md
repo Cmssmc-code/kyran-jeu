@@ -6,7 +6,7 @@ Portage, pour kyran-jeu.fr, du pipeline Auto-Heal de Majordia (alertes `support@
 ## Vue d'ensemble
 
 ```
-Navigateur (kyran-jeu.fr)                 Serveur Railway (kyran-webhook)            GitHub Actions (toutes les heures, :17)
+Navigateur (kyran-jeu.fr)                 Serveur Railway (kyran-webhook)            GitHub Actions (toutes les 6 h, :17)
 error-reporter.js ── POST /api/client-error ──► isBenignClientError (filtre)       auto-heal-hourly.yml
                                               │                                      │ 1. GET /api/auto-heal/incidents (OIDC)
 server.js : webhook Stripe, notification ───►  IncidentStore (/data/incidents.json) ◄─┤ 2. agent Claude (scripts/auto-heal-worker.mjs)

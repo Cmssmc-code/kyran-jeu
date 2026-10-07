@@ -308,17 +308,25 @@ Les pushs faits avec `GITHUB_TOKEN` ne déclenchent aucun autre workflow. Il fau
 
 ## 14. Routines Claude Code (tâches planifiées)
 
-Routines du compte du propriétaire (claude.ai → Routines). Chaque déclenchement ouvre une session
-cloud neuve qui clone le dépôt elle-même (`add_repo`) si besoin.
+Routines du compte du propriétaire (claude.ai → Routines).
 
-| Routine | Planification | Rôle |
-|---|---|---|
-| « Blog KYRAN passes lun/mer/ven » (`trig_01Bx6MzhsHYAea6mEMstNjSs`) | `CRON_TZ=Europe/Paris 50 6 * * 1,3,5` | Suit `docs/BLOG-PASSES.md` : un article neuf, un rafraîchissement ou rien ; PR puis fusion automatique si CI verte, aucun conflit, aucun commentaire ouvert |
-| « Blog Majordia quotidien » (`trig_016HyCXEDoFKD9uBLFXbq2xt`) | `CRON_TZ=Europe/Paris 53 2 * * *` | Dépôt frère Majordia : suit `_notes/blog-routine-mission.md` de ce dépôt |
+| Routine | Planification | Session réveillée | Rôle |
+|---|---|---|---|
+| « Blog Majordia quotidien (session dédiée) » (`trig_01HoFH4gEtdiFogSMHUmWzqo`) | `CRON_TZ=Europe/Paris 53 2 * * *` | « Blog Majordia — routine quotidienne (session dédiée) » (`session_014FVquExjQdhX9Qo8JKixnr`), dépôt Majordia attaché | Dépôt frère Majordia : suit `_notes/blog-routine-mission.md` de ce dépôt |
+| « Blog KYRAN passes lun/mer/ven (session dédiée) » (`trig_01CV4VUee9BDx4jf2PT9BfWS`) | `CRON_TZ=Europe/Paris 50 6 * * 1,3,5` | « Blog KYRAN — passes lun/mer/ven (session dédiée) » (`session_01UtBssiigx8y6ySwNcWS6r5`), dépôt kyran-jeu attaché | Suit `docs/BLOG-PASSES.md` : un article neuf, un rafraîchissement ou rien ; PR puis fusion automatique si CI verte, aucun conflit, aucun commentaire ouvert |
 
-Recréées le 2026-10-07 d'après la documentation des dépôts. Les routines créées par un agent ne
-portent pas de connecteurs : si les outils `mcp__github__*` manquent dans une passe, la passe pousse sa
-branche et documente le blocage plutôt que de fusionner à l'aveugle.
+Montage du 2026-10-07 (soir). Chaque routine réveille une **session dédiée** créée avec son dépôt
+attaché (`create_session` avec `source_url`) : le dépôt y est cloné avec des droits d'écriture et les
+outils `mcp__github__*` sont disponibles. Le montage précédent (session neuve à chaque déclenchement,
+routines `trig_016HyCXEDoFKD9uBLFXbq2xt` et `trig_01Bx6MzhsHYAea6mEMstNjSs`, désactivées) échouait :
+une session neuve ouverte par une routine n'a **pas** l'outil `add_repo` (« No such tool available »)
+et ne peut donc ni cloner un dépôt privé ni pousser. Voir `_notes/lecon.md` (2026-10-07).
+
+- Un lancement manuel (« Run now » ou `fire_trigger`) ouvre lui aussi une session neuve sans dépôt :
+  pour tester, programmer plutôt une routine unique (`run_once_at`) vers la session dédiée.
+- Ne pas archiver les sessions dédiées : la routine ne pourrait plus les réveiller.
+- Pour changer la consigne : modifier le prompt de la routine (claude.ai → Routines) ou, mieux, le
+  fichier de mission dans le dépôt, que chaque run relit sur `origin/main`.
 
 Workflows GitHub planifiés (indépendants des routines) : `auto-heal-hourly.yml` (`17 * * * *`) et
 `instagram.yml` (`17 5 * * *`), voir § 7.

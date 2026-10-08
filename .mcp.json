@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "gsc": {
+      "command": "node",
+      "args": ["scripts/mcp/gsc.mjs"],
+      "type": "stdio"
+    },
+    "bing-webmaster": {
+      "command": "node",
+      "args": ["scripts/mcp/bing.mjs"],
+      "type": "stdio"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__gsc__list_sites",
+      "mcp__gsc__search_analytics",
+      "mcp__gsc__enhanced_search_analytics",
+      "mcp__gsc__detect_quick_wins",
+      "mcp__gsc__index_inspect",
+      "mcp__gsc__list_sitemaps",
+      "mcp__gsc__get_sitemap",
+      "mcp__bing-webmaster__get_sites",
+      "mcp__bing-webmaster__get_query_stats",
+      "mcp__bing-webmaster__get_page_stats",
+      "mcp__bing-webmaster__get_rank_and_traffic_stats",
+      "mcp__bing-webmaster__get_crawl_stats",
+      "mcp__bing-webmaster__get_crawl_issues",
+      "mcp__bing-webmaster__get_url_submission_quota",
+      "mcp__bing-webmaster__get_keyword_data",
+      "mcp__bing-webmaster__get_related_keywords",
+      "mcp__bing-webmaster__get_link_counts",
+      "mcp__bing-webmaster__get_url_links",
+      "mcp__bing-webmaster__get_blocked_urls",
+      "mcp__bing-webmaster__get_query_page_stats",
+      "mcp__bing-webmaster__get_query_page_detail_stats",
+      "mcp__bing-webmaster__get_url_info",
+      "mcp__bing-webmaster__get_keyword_stats",
+      "mcp__bing-webmaster__get_deep_link_blocks",
+      "mcp__bing-webmaster__get_query_parameters",
+      "mcp__bing-webmaster__get_site_roles",
+      "mcp__bing-webmaster__get_feeds",
+      "mcp__bing-webmaster__get_content_submission_quota",
+      "mcp__bing-webmaster__get_url_traffic_info",
+      "mcp__bing-webmaster__get_crawl_settings",
+      "mcp__bing-webmaster__get_country_region_settings",
+      "mcp__bing-webmaster__get_active_page_preview_blocks",
+      "mcp__bing-webmaster__get_fetched_urls",
+      "mcp__bing-webmaster__get_fetched_url_details",
+      "mcp__bing-webmaster__get_connected_pages",
+      "mcp__bing-webmaster__get_children_url_info",
+      "mcp__bing-webmaster__get_children_url_traffic_info",
+      "mcp__bing-webmaster__get_feed_details",
+      "mcp__bing-webmaster__get_page_query_stats",
+      "mcp__bing-webmaster__get_query_traffic_stats",
+      "mcp__bing-webmaster__get_site_moves"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

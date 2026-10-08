@@ -41,6 +41,9 @@ Règle d'or : aucun paragraphe ne doit exister dans deux articles. Le contrôle 
 
 Fusionner ou supprimer un article : ajouter l'ancienne URL dans `roster.json` → `redirects`
 (GitHub Pages ne gère pas les 301 : une page `meta refresh` + canonique est générée).
+La cible doit reprendre l'ancien sujet dans une section dédiée (mot-clé dans le H2) ; la redirection
+vise alors son ancre (`/blog/<slug>.html#<id>`, champ `id` de la section) et la canonique reste sans
+ancre. `check-site` refuse une ancre absente ou une redirection en chaîne.
 
 ## 3. Dates de modification
 
@@ -53,6 +56,7 @@ et le pied de page rendus statiquement n'y comptent pas). Ne modifiez pas ce fic
 - Clé : fichier `<clé>.txt` à la racine (publique par conception).
 - `.github/workflows/indexnow.yml` envoie à chaque push sur `main` les pages HTML modifiées, après avoir
   attendu que la clé soit en ligne. Lancement manuel possible (« Run workflow ») pour renvoyer tout le sitemap.
+- Les pages de redirection ne sont jamais envoyées (`scripts/lib/indexnow-urls.mjs`, testé).
 - Test local : `node scripts/indexnow.mjs --all --dry-run`.
 
 ## 5. CI

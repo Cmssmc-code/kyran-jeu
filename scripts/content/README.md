@@ -54,8 +54,13 @@ export default {
 };
 ```
 
-Facultatifs : `subtitle` dans un jeu (sous-titre), `extraSections: [{ heading, html }]` pour une
+Facultatifs : `subtitle` dans un jeu (sous-titre), `extraSections: [{ id?, heading, html }]` pour une
 section supplémentaire après la liste (ex. variantes de règles), `guideLinks` (HTML).
+
+`id` (facultatif, sur une `extraSections` ou un `layout.groups`) fixe l'ancre de la section
+(`[a-z0-9-]`, sinon `section-N` / `groupe-N`). Il sert de cible aux anciennes URL fusionnées :
+`roster.json` → `redirects` peut viser `/blog/<slug>.html#<id>` (la canonique du stub reste sans
+ancre). `check-site` vérifie que l'ancre existe : **ne pas renommer ni retirer un `id` visé**.
 
 ### Structure propre à chaque article (`layout`, `headings`)
 

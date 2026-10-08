@@ -6,8 +6,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="/error-reporter.js?v=d95ff8dcc6"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tarot Africain à 3 joueurs : règles, cartes et stratégie</title>
-  <meta name="description" content="Tarot Africain à 3 joueurs : 7 cartes en première manche, cycles 7 à 1 ou 5 à 1, contrainte d'annonce du donneur, manche sur le front chiffrée et stratégie." />
+  <title>Tarot Africain à 3 joueurs : cartes par manche et exemple</title>
+  <meta name="description" content="Tarot Africain à 3 : 7 cartes chacun en première manche (21 des 22), puis une de moins jusqu'à la manche sur le front. Tableau des manches, exemple, stratégie." />
   <link rel="canonical" href="https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -19,25 +19,25 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Tarot Africain à 3 joueurs : cartes par manche, stratégie et pièges" />
-  <meta property="og:description" content="Cartes par manche, contrainte du donneur, chances de la manche sur le front et stratégie : tout ce qui change quand on joue au Tarot Africain à trois." />
+  <meta property="og:description" content="Cartes par manche, rotation du donneur, exemple en sept plis, chances de la manche sur le front et stratégie : tout ce qui change quand on joue au Tarot Africain à trois." />
   <meta property="og:url" content="https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html" />
   <meta property="og:image" content="https://kyran-jeu.fr/logo.png" />
   <meta property="og:image:alt" content="Tarot Africain à 3 joueurs : règles et stratégie" />
   <meta property="article:published_time" content="2026-10-02" />
-  <meta property="article:modified_time" content="2026-10-03" />
+  <meta property="article:modified_time" content="2026-10-08" />
   <meta property="article:author" content="Corentin Sence" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tarot Africain à 3 joueurs : règles, cartes et stratégie" />
-  <meta name="twitter:description" content="Le Tarot Africain à 3 joueurs : cycles 7 à 1 ou 5 à 1, calculs de probabilités et erreurs à éviter." />
+  <meta name="twitter:title" content="Tarot Africain à 3 joueurs : cartes par manche et exemple" />
+  <meta name="twitter:description" content="Le Tarot Africain à 3 joueurs : cartes par manche, rotation du donneur, exemple en sept plis et chances de la manche sur le front." />
   <meta name="twitter:image" content="https://kyran-jeu.fr/logo.png" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=67534d8b92" defer></script>
-  <link rel="stylesheet" href="style.css?v=67534d8b92" />
-  <link rel="stylesheet" href="css/tarot-africain.css?v=67534d8b92" />
-  <script src="components.js?v=67534d8b92" defer></script>
+  <script src="seo-config.js?v=74d213ad17" defer></script>
+  <link rel="stylesheet" href="style.css?v=74d213ad17" />
+  <link rel="stylesheet" href="css/tarot-africain.css?v=74d213ad17" />
+  <script src="components.js?v=74d213ad17" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,7 +69,7 @@
         "@type": "Article",
         "@id": "https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html#article",
         "headline": "Tarot Africain à 3 joueurs : cartes par manche, stratégie et pièges",
-        "description": "Tarot Africain à 3 joueurs : 7 cartes en première manche, cycles 7 à 1 ou 5 à 1, contrainte d'annonce du donneur, manche sur le front chiffrée et stratégie.",
+        "description": "Tarot Africain à 3 : 7 cartes chacun en première manche (21 des 22), puis une de moins jusqu'à la manche sur le front. Tableau des manches, exemple, stratégie.",
         "author": {
           "@type": "Person",
           "@id": "https://kyran-jeu.fr/a-propos.html#corentin-sence",
@@ -80,7 +80,7 @@
           "@id": "https://kyran-jeu.fr/#organization"
         },
         "datePublished": "2026-10-02",
-        "dateModified": "2026-10-03",
+        "dateModified": "2026-10-08",
         "inLanguage": "fr-FR",
         "url": "https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html",
         "image": "https://kyran-jeu.fr/logo.png",
@@ -260,8 +260,20 @@
   <strong>En bref.</strong> À trois, on joue avec les 22 cartes (21 atouts et l'Excuse), on distribue 7 cartes chacun à la première manche en cycle long (ou 5 en cycle court), et chacun est donneur une manche sur trois. Les calculs de cette page supposent l'Excuse à 0, la règle de base du guide.
 </div>
 
+<div class="card ta-download">
+  <div class="ta-download__text">
+    <p class="ta-download__title">Feuille de score et règle en PDF, gratuites</p>
+    <p class="ta-download__desc">La règle condensée, le tableau des cartes par manche (cycles long et court à trois) et une feuille de score vierge pour 3 à 5 joueurs, au format A4.</p>
+  </div>
+  <div class="ta-download__actions">
+    <a class="btn btn-primary" href="/regle-tarot-africain.pdf" download>Télécharger le PDF</a>
+    <a class="btn btn-secondary" href="/regle-tarot-africain-imprimable.html">Version à l'écran</a>
+  </div>
+</div>
+
 <nav class="seo-toc" aria-label="Sommaire de la page">
   <a href="#cartes">Cartes par manche</a>
+  <a href="#donneur">Qui distribue</a>
   <a href="#annonce">Contrainte d'annonce</a>
   <a href="#exemple">Exemple en 7 plis</a>
   <a href="#front">Manche sur le front</a>
@@ -293,6 +305,29 @@
 </div>
 
 <p>Ce tableau met en évidence un effet qui compte beaucoup à trois&nbsp;: le nombre de cartes hors jeu grimpe vite. En première manche du cycle long, une seule carte manque à l'appel&nbsp;; à la manche à 1 carte, 19 cartes sur 22 restent dans le talon. À mesure que les manches raccourcissent, vous voyez moins de cartes mais il en manque davantage&nbsp;: le comptage devient moins fiable et la déduction à partir des annonces prend le relais. Le cycle court démarre d'emblée avec 7 cartes hors jeu, ce qui rend ses premières manches plus incertaines que celles du cycle long.</p>
+
+<h2 id="donneur">Qui distribue à chaque manche&nbsp;?</h2>
+<p>Le donneur change à chaque manche&nbsp;: on décale d'un joueur vers la gauche, et c'est le joueur assis à gauche du donneur qui annonce le premier et entame le premier pli. À trois, chacun est donc donneur une manche sur trois. Voici la rotation sur un cycle long, avec Anna, Bastien et Clara assis dans cet ordre dans le sens horaire et Clara comme premier donneur.</p>
+
+<div class="compare-table-wrap">
+  <table class="compare-table ta-table ta-table--wide ta-table--first-nowrap">
+    <caption class="ta-caption">Cycle long à 3 joueurs&nbsp;: donneur et ordre de parole à chaque manche</caption>
+    <thead>
+      <tr><th scope="col">Manche</th><th scope="col">Cartes par joueur</th><th scope="col">Donneur (parle en dernier)</th><th scope="col">Annonce et entame en premier</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Manche 1</td><td>7</td><td>Clara</td><td>Anna</td></tr>
+      <tr><td>Manche 2</td><td>6</td><td>Anna</td><td>Bastien</td></tr>
+      <tr><td>Manche 3</td><td>5</td><td>Bastien</td><td>Clara</td></tr>
+      <tr><td>Manche 4</td><td>4</td><td>Clara</td><td>Anna</td></tr>
+      <tr><td>Manche 5</td><td>3</td><td>Anna</td><td>Bastien</td></tr>
+      <tr><td>Manche 6</td><td>2</td><td>Bastien</td><td>Clara</td></tr>
+      <tr><td>Manche 7</td><td>1 (front)</td><td>Clara</td><td>Anna</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Le cycle long compte 7 manches, un nombre qui ne se divise pas par trois&nbsp;: dans ce cycle, Clara distribue trois fois (à 7, 4 et 1 carte) et les deux autres deux fois. Si le donneur continue de tourner au cycle suivant, c'est Anna qui ouvre la manche à 7 cartes en donneur, puis Bastien au cycle d'après&nbsp;: sur trois cycles longs consécutifs, chacun distribue sept fois. En cycle court (5 manches), le même décalage se produit, avec deux joueurs qui distribuent deux fois et un seul qui distribue une fois.</p>
 
 <h2 id="annonce">La contrainte d'annonce à trois joueurs</h2>
 <p>La règle d'or reste celle du guide complet&nbsp;: la somme des annonces ne doit pas égaler le nombre de plis. À trois joueurs, elle prend une forme particulièrement simple, parce que le donneur parle en troisième position et ne doit retrancher que <strong>deux annonces</strong> du nombre de plis pour trouver son chiffre interdit.</p>
@@ -478,7 +513,7 @@
             <p class="footer-heading">Explorer</p>
             <p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/faq.html">FAQ</a></p><p><a href="/communaute.html">Communauté</a></p><p><a href="/a-propos.html">À propos</a></p>
           </div>
-          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que disent les études</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skyjo.html">10 jeux comme Skyjo : les meilleures alternatives en 2026</a></p><p><a href="/blog/meilleurs-jeux-apero.html">Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</a></p><p><a href="/blog/jeux-soiree-amis.html">Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</a></p><p><a href="/blog/jeux-3-joueurs.html">Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que disent les études</a></p><p><a href="/blog/">Tous les articles</a></p></div>
           <div class="footer-col footer-col--contact">
             <p class="footer-heading">Contact</p>
             <p><a href="/regle.html">R&egrave;gles du jeu</a></p>

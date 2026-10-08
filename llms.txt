@@ -48,9 +48,9 @@
 - Initiation KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
 - Commander KYRAN — boutique en ligne : https://kyran-jeu.fr/commander.html
 - KYRAN — jeu de cartes pour l'apéro : https://kyran-jeu.fr/jeu-apero.html
-- Tarot Africain : règles complètes, variantes et comptage des points : https://kyran-jeu.fr/tarot-africain.html
-- Tarot Africain à 3 joueurs : règles et exemple : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html
-- Whist 22 : définition, règles et jeux proches : https://kyran-jeu.fr/whist-22.html
+- Règles du Tarot Africain + feuille de score PDF gratuite : https://kyran-jeu.fr/tarot-africain.html
+- Tarot Africain à 3 joueurs : cartes par manche et exemple : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html
+- Whist 22 : règles du jeu, origine du nom et jeux proches : https://kyran-jeu.fr/whist-22.html
 - FAQ KYRAN — règles, achat, Tarot Africain : https://kyran-jeu.fr/faq.html
 - À propos de KYRAN : l'auteur, le jeu et notre méthode : https://kyran-jeu.fr/a-propos.html
 - Espace presse KYRAN : https://kyran-jeu.fr/dossier-presse.html
@@ -109,7 +109,7 @@
 ### Soirée
 
 - Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée : https://kyran-jeu.fr/blog/jeux-soiree-amis.html (10 jeux)
-- Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
+- Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
 - Jeux de cartes de 30 minutes ou moins : 9 parties express : https://kyran-jeu.fr/blog/jeux-30-minutes.html (9 jeux)
 - Jeux de cartes à deux : 7 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (7 jeux)
 - Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (7 jeux)

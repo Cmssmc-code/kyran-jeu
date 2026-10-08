@@ -15,6 +15,7 @@ import fs from 'fs';
 import path from 'path';
 import { execFileSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import { urlsForChangedFiles } from './lib/indexnow-urls.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://kyran-jeu.fr';
@@ -41,25 +42,10 @@ function sitemapUrls() {
   return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 }
 
-/** Fichier du dépôt → URL publique (null si la page n'est pas publique). */
-export function fileToUrl(file) {
-  if (!file.endsWith('.html')) return null;
-  if (/^(scripts|server|worker|\.github|node_modules|css\/)/.test(file)) return null;
-  if (['404.html', 'merci.html', 'admin-emails.html'].includes(file)) return null;
-  if (file === 'index.html') return SITE + '/';
-  if (file === 'blog/index.html') return SITE + '/blog/';
-  return SITE + '/' + file;
-}
-
 function changedUrls(base, head) {
   if (!base || /^0+$/.test(base)) return sitemapUrls();
   const out = execFileSync('git', ['diff', '--name-only', '--diff-filter=ACMRD', base, head], { cwd: ROOT, encoding: 'utf8' });
-  const urls = new Set();
-  for (const f of out.split('\n').filter(Boolean)) {
-    const u = fileToUrl(f);
-    if (u) urls.add(u);
-  }
-  return [...urls];
+  return urlsForChangedFiles(out.split('\n').filter(Boolean), ROOT);
 }
 
 async function waitForKey(key) {

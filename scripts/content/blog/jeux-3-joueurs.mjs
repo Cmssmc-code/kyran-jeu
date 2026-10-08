@@ -1,9 +1,9 @@
 export default {
   slug: 'jeux-3-joueurs',
-  title: 'Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois',
+  title: 'Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois',
   shortTitle: 'Jeux à 3 joueurs',
-  metaTitle: 'Jeux à 3 joueurs : 6 jeux de cartes réglés pour trois',
-  description: 'Quel jeu faire à trois ? The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s\'affronter, et que faire des jeux à deux.',
+  metaTitle: 'Jeux de cartes à 3 joueurs : 6 jeux vraiment réglés pour trois',
+  description: 'Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s\'affronter, et que faire des duels.',
   category: 'Soirée',
   date: '2026-05-21',
   layout: {
@@ -28,11 +28,11 @@ export default {
     faq: 'Ce que l\'on demande souvent sur les parties à trois',
     related: 'Quand la table compte deux, quatre ou six joueurs'
   },
-  heroTitle: 'Jeux à <span class="accent">3 joueurs</span>',
+  heroTitle: 'Jeux de cartes à <span class="accent">3 joueurs</span>',
   heroSubtitle: 'Six jeux dont la règle prévoit un vrai réglage pour trois : trois pour gagner ensemble, trois pour s\'affronter, et une issue pour les duels.',
   heroImage: '/blog/images/the-crew.jpg',
   heroCaption: 'The Crew — jeu de plis coopératif, très à l\'aise à trois.',
-  intro: `<p>Trois est le nombre que beaucoup de boîtes acceptent sans vraiment l'aimer : impossible de former deux équipes, et le moindre duel laisse quelqu'un spectateur. Cette page ne retient donc que des jeux dont la règle ajuste quelque chose pour trois joueurs (taille des mains, vies, matériel, nombre de manches gagnantes), et elle les range selon la question que se pose votre trio : jouer ensemble contre le paquet, ou chacun pour soi. La réponse courte vient juste en dessous ; les fiches détaillent ensuite ce que le passage à trois change pour chaque jeu, défauts compris. Schotten Totten, Lost Cities et Star Realms n'y figurent pas comme des jeux à trois : ce sont des duels, et une section dédiée explique comment les sortir malgré tout.</p>`,
+  intro: `<p>Trois est le nombre que beaucoup de boîtes acceptent sans vraiment l'aimer : impossible de former deux équipes, et le moindre duel laisse quelqu'un spectateur. Cette page ne retient donc que des jeux de cartes dont la règle ajuste quelque chose pour trois joueurs (taille des mains, vies, matériel, nombre de manches gagnantes), et elle les range selon la question que se pose votre trio : jouer ensemble contre le paquet, ou chacun pour soi. La réponse courte vient juste en dessous ; les fiches détaillent ensuite ce que le passage à trois change pour chaque jeu, défauts compris. Schotten Totten, Lost Cities et Star Realms n'y figurent pas comme des jeux à trois : ce sont des duels, et une section dédiée explique comment les sortir malgré tout.</p>`,
   criteria: {
     heading: 'Qu\'est-ce qui fait qu\'un jeu tient la route à trois ?',
     html: `<p>Trois est un nombre ingrat : impossible de former deux équipes égales, impossible de jouer en duel sans laisser quelqu'un au bord de la table, et la moindre alliance transforme la partie en deux contre un. Un bon jeu à trois a donc été pensé pour ce nombre précis, avec une mise en place propre, et pas seulement un « 3 » imprimé en bas de la boîte.</p>

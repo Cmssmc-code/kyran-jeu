@@ -124,6 +124,14 @@ function validate(slug, a, errors, warns, cache) {
     });
     if (ids.length !== gameIds.length || gameIds.some(id => !ids.includes(id))) err('layout.groups doit couvrir chaque jeu exactement une fois');
   }
+  // Ancres facultatives des groupes et sections (cibles des anciennes URL fusionnées)
+  const reserved = new Set(['comparatif', 'compare-title', 'avis', 'criteres', 'faq', 'conclusion', 'mot-auteur', 'selection']);
+  const anchors = [...(layout.groups || []), ...(a.extraSections || [])].map(s => s.id).filter(id => id !== undefined);
+  anchors.forEach(id => {
+    if (typeof id !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(id)) err(`id de section invalide : ${id}`);
+    else if (reserved.has(id) || id.startsWith('jeu-')) err(`id de section réservé : ${id}`);
+  });
+  if (new Set(anchors).size !== anchors.length) err('id de section en double');
   if (layout.compare && !['before', 'after'].includes(layout.compare.position || 'before')) err('layout.compare.position : before | after');
   for (const [k, v] of Object.entries(a.headings || {})) {
     if (!['selection', 'compare', 'conclusion', 'faq', 'related'].includes(k)) err(`headings.${k} inconnu`);

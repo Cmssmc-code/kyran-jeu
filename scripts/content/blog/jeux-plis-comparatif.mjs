@@ -10,23 +10,15 @@ export default {
   heroSubtitle: `Annonce de plis, coopération, rangées : comprendre les mécanismes avant d'acheter.`,
   heroImage: '/blog/images/wizard.jpg',
   heroCaption: 'Wizard — point de départ du comparatif.',
-  intro: `<p><strong>Oui, il existe des jeux de cartes où l'on annonce son nombre de plis.</strong> Avant de jouer, chacun s'engage sur le nombre de levées qu'il pense remporter, puis perd des points ou des vies s'il se trompe. Le Tarot Africain en est la version traditionnelle ; Oh Hell, Wizard et KYRAN en sont les déclinaisons actuelles. La famille des jeux de plis est pourtant plus large : elle compte des titres coopératifs comme The Crew et des cousins sans pli véritable comme 6 qui prend ! et Parade. Cette page pose le vocabulaire, compare six jeux, puis revient sur les classiques sans fiche, dont le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> et le Whist.</p>`,
+  intro: `<p><strong>Oui, il existe des jeux de cartes où l'on annonce son nombre de plis.</strong> Avant de jouer, chacun s'engage sur le nombre de levées qu'il pense remporter, puis perd des points ou des vies s'il se trompe. Le Tarot Africain en est la version traditionnelle ; Oh Hell, Wizard et KYRAN en sont les déclinaisons actuelles. La famille des jeux de plis est pourtant plus large : elle compte des titres coopératifs comme The Crew et des cousins sans pli véritable comme 6 qui prend ! et Parade. Cette page compare six jeux, détaille ce qui sépare les jeux où l'on parie son nombre de plis, explique le vocabulaire du genre, puis revient sur les classiques sans fiche, dont le <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> et le Whist.</p>`,
   criteria: {
-    heading: 'Comprendre les jeux de plis en cinq termes',
-    html: `<p>Un jeu de plis (ou de levées) se joue par tours : chaque joueur pose une carte, une seule personne remporte l'ensemble, et c'est elle qui ouvre le tour suivant. Presque tout se résume à cinq notions.</p>
-<h3>Le vocabulaire</h3>
-<ul>
-<li><strong>Pli ou levée</strong> : l'ensemble des cartes posées pendant un tour. Il revient au joueur dont la carte est la plus forte.</li>
-<li><strong>Entame</strong> : la première carte d'un pli, qui impose la couleur à suivre.</li>
-<li><strong>Fournir</strong> : jouer une carte de la couleur demandée quand on en possède. Cette contrainte rend le jeu lisible, car un joueur qui ne fournit pas révèle qu'il n'a plus la couleur.</li>
-<li><strong>Atout et coupe</strong> : une couleur désignée qui bat toutes les autres. Faute de la couleur demandée, on peut couper avec un atout. Wizard et Oh Hell retournent une carte pour fixer l'atout de chaque manche.</li>
-<li><strong>Annonce, pari ou contrat</strong> : l'engagement pris avant de jouer. Au Tarot Africain, à Oh Hell, à Wizard et à KYRAN, on annonce un nombre de plis ; à la coinche, on annonce un contrat de points.</li>
-</ul>
-<h3>Trois façons de choisir</h3>
+    heading: 'Comment choisir son jeu de plis ?',
+    html: `<p>Avant d'acheter une boîte, posez-vous les questions qui suivent, dans cet ordre : elles suffisent à écarter une bonne part des titres de ce comparatif pour une table donnée. Les termes techniques employés ici (entame, fournir, couper) sont définis dans le guide du vocabulaire, plus bas dans la page.</p>
 <p>Premier critère, la place de l'annonce. Si votre envie est « combien de plis vais-je faire ? », restez dans la famille de l'annonce : Oh Hell avec un paquet classique, Wizard avec ses cartes spéciales, KYRAN avec une contrainte qui fait forcément une victime par manche. Dans toutes ces règles, une annonce exacte est la meilleure issue possible ; gagner un pli de trop est une erreur au même titre que d'en manquer un.</p>
 <p>Deuxième critère, le lien avec les autres joueurs. Les jeux d'annonce sont individuels ; The Crew rend les plis coopératifs, avec des missions à remplir ensemble ; 6 qui prend ! et Parade retirent les plis, mais gardent l'idée d'éviter de ramasser.</p>
 <p>Troisième critère, la taille de la table. Les jeux d'annonce démarrent à trois : Wizard de 3 à 6, KYRAN de 3 à 6, Oh Hell de 3 à 7. Pour jouer à deux, tournez-vous vers The Crew, Parade ou 6 qui prend !. Au-delà de sept joueurs, seul 6 qui prend ! (jusqu'à 10) tient la route dans cette sélection.</p>
-<p>Une dernière vérification porte sur la durée inscrite sur la boîte. Wizard et Oh Hell avoisinent 45 minutes, car les mains grandissent à chaque manche ; KYRAN et The Crew s'arrêtent plus tôt, vers 30 et 20 minutes.</p>`
+<p>Une dernière vérification porte sur la durée inscrite sur la boîte. Wizard et Oh Hell avoisinent 45 minutes, car les mains grandissent à chaque manche ; KYRAN et The Crew s'arrêtent plus tôt, vers 30 et 20 minutes.</p>
+<p>Reste le matériel. Oh Hell se contente d'un paquet de 52 cartes que l'on possède déjà, le Tarot Africain d'un jeu de tarot dont on ne garde que les atouts et l'Excuse ; Wizard et KYRAN demandent leur propre boîte. Le premier choix coûte zéro euro mais oblige à fixer les règles soi-même, le second fournit une règle unique imprimée, utile quand les joueurs changent d'une soirée à l'autre.</p>`
   },
   games: [
     {
@@ -92,6 +84,31 @@ export default {
   ],
   extraSections: [
     {
+      id: 'parier-nombre-de-plis',
+      heading: 'Jeux de cartes où l\'on parie son nombre de plis',
+      html: `<p>Dans cette famille, tout se joue avant la première carte : chacun regarde sa main et déclare combien de plis il remportera, ni plus ni moins. Selon les tables, on parle d'annonce, de pari ou de contrat, mais le principe ne varie pas. Quatre jeux de ce comparatif le portent, et ils se séparent sur deux points : ce que le dernier à parler a le droit d'annoncer, et ce que coûte une prévision ratée.</p>
+<ul>
+<li><strong>Oh Hell!</strong> : 52 cartes ordinaires et un atout qui change à chaque donne. Beaucoup de tables interdisent au donneur, qui annonce en dernier, le chiffre qui ferait tomber le total des paris pile sur le nombre de plis ; d'autres le laissent libre. C'est le point à trancher avant de distribuer.</li>
+<li><strong>Wizard</strong> : la règle de base accepte que le total des annonces corresponde exactement aux plis disponibles. Une règle optionnelle de la notice retire seulement au dernier à annoncer, s'il mène seul au score, le droit d'équilibrer ce total. Magiciens et Fous rendent chaque prévision plus fragile qu'avec un paquet ordinaire.</li>
+<li><strong>Tarot Africain</strong> : les 22 cartes d'un tarot, et une interdiction sans exception pour le total des annonces, qui ne doit jamais tomber sur le nombre de plis de la donne.</li>
+<li><strong>KYRAN</strong> : la même interdiction, appliquée à toutes les manches, avec des cartes Vie en guise de score : chacun en perd autant que l'écart entre son pari et les plis réellement gagnés.</li>
+</ul>
+<p>Cette règle de la somme change la nature de la partie. Quand le total peut tomber juste, toute la table peut réussir en même temps ; quand il est interdit, le dernier à parler sait qu'au moins un joueur, lui peut-être, va rater, et son annonce devient un coup tactique autant qu'une prévision. Pour essayer ce principe avec un simple jeu de tarot, nos règles du <a class="text-link" href="/tarot-africain-a-3-joueurs.html">Tarot Africain à 3 joueurs</a> en donnent la version la plus resserrée.</p>`
+    },
+    {
+      id: 'guide-jeux-de-plis',
+      heading: 'Guide des jeux de plis : la définition et cinq termes à connaître',
+      html: `<p>Un jeu de plis (ou de levées) se joue par tours : chaque joueur pose une carte, une seule personne remporte l'ensemble, et c'est elle qui ouvre le tour suivant. Presque tout se résume à cinq notions.</p>
+<ul>
+<li><strong>Pli ou levée</strong> : l'ensemble des cartes posées pendant un tour. Il revient au joueur dont la carte est la plus forte.</li>
+<li><strong>Entame</strong> : la première carte d'un pli, qui impose la couleur à suivre.</li>
+<li><strong>Fournir</strong> : jouer une carte de la couleur demandée quand on en possède. Cette contrainte rend le jeu lisible, car un joueur qui ne fournit pas révèle qu'il n'a plus la couleur.</li>
+<li><strong>Atout et coupe</strong> : une couleur désignée qui bat toutes les autres. Faute de la couleur demandée, on peut couper avec un atout. Wizard et Oh Hell retournent une carte pour fixer l'atout de chaque manche.</li>
+<li><strong>Annonce, pari ou contrat</strong> : l'engagement pris avant de jouer. Au Tarot Africain, à Oh Hell, à Wizard et à KYRAN, on annonce un nombre de plis ; à la coinche, on annonce un contrat de points.</li>
+</ul>`
+    },
+    {
+      id: 'classiques-whist-tarot-africain',
       heading: 'Les classiques sans fiche : Whist, Tarot Africain, belote',
       html: `<p>Trois jeux traditionnels reviennent dans toutes les discussions sur les plis, sans être vendus en boîte moderne.</p>
 <p>Le <strong>Whist</strong> se joue à quatre, en deux équipes de partenaires assis face à face, avec 52 cartes et une dernière carte distribuée retournée pour désigner l'atout. Il n'y a pas d'annonce : on cherche à gagner plus de plis que l'adversaire. KYRAN se présente comme son héritier moderne, comme l'explique la page <a class="text-link" href="/whist-22.html">Whist moderne</a>.</p>
@@ -110,8 +127,8 @@ export default {
       a: `Plusieurs jeux reposent sur cette annonce : le Tarot Africain, Oh Hell, Wizard et KYRAN. Chaque joueur prédit le nombre exact de plis qu'il va remporter, puis perd des points ou des vies s'il s'est trompé, en plus comme en moins.`
     },
     {
-      q: 'Quelle est la différence entre un pli et une levée ?',
-      a: `Aucune : les deux mots désignent l'ensemble des cartes posées pendant un tour, qui revient au joueur dont la carte est la plus forte. « Pli » est le terme le plus courant en français, « levée » est un synonyme que l'on rencontre au tarot.`
+      q: 'Qu\'est-ce qu\'un jeu de plis ?',
+      a: `C'est un jeu de cartes joué par tours où chacun pose une carte et où la plus forte ramasse le tout : ce paquet s'appelle un pli, ou une levée. Le gagnant entame le tour suivant. Whist, belote, tarot, Wizard et KYRAN appartiennent à cette famille.`
     },
     {
       q: 'Faut-il un atout pour jouer aux plis ?',

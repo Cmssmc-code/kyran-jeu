@@ -55,6 +55,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
 - **`seo-keywords.json`** : clusters de requêtes cibles par page (primaires et secondaires) et KPI. Mis à jour le 2026-10-04.
 - **Fichiers SEO et IA générés** : `sitemap.xml`, `llms.txt`, `llms-full.txt`, `robots.txt`, `blog/feed.xml`.
 - **Autres fichiers SEO :** `google-merchant-feed.xml` / `.tsv`, `BingSiteAuth.xml`, la clé IndexNow (`<clé>.txt` à la racine, publique), `NETLINKING_ANNUAIRES.md`.
+- **MCP SEO :** serveurs `gsc` (Search Console, lecture seule) et `bing-webmaster` dans `.mcp.json`, lanceurs `scripts/mcp/`, mêmes identifiants que Majordia (`GSC_SERVICE_ACCOUNT_JSON`, `BING_WEBMASTER_API_KEY`). Voir `docs/MCP_SEO.md`.
 - **Blog** : `blog/<slug>.html` généré, `blog/index.html`, `blog/images/` (dont `parties/` pour les photos réelles).
 
 ### Génération : `npm run build` (`scripts/build.mjs`)

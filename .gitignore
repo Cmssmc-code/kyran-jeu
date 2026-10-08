@@ -36,3 +36,6 @@ blog/images/download-log.json
 # Journal local des incidents Auto-Heal (en production : volume Railway /data)
 data/
 server/data/
+
+# Identifiants MCP SEO (Search Console, Bing Webmaster) : docs/MCP_SEO.md
+.secrets/

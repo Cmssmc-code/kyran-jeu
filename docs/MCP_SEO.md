@@ -48,8 +48,9 @@ Ordre de priorité :
 3. `.secrets/gsc-service-account.json` à la racine du dépôt, ignoré par git. Méthode recommandée sous
    Windows (copier le fichier de `Majordia/.secrets/`).
 
-Dans les outils, la propriété s'écrit `sc-domain:kyran-jeu.fr` (propriété domaine) ou
-`https://kyran-jeu.fr/` (préfixe d'URL) : prendre la valeur exacte renvoyée par `list_sites`.
+Kyran est une propriété domaine : dans les outils, elle s'écrit `sc-domain:kyran-jeu.fr` (accès
+« Restreint » accordé le 8 octobre 2026). Le serveur accepte aussi `https://kyran-jeu.fr/` et le
+convertit tout seul en `sc-domain:` après un refus d'accès.
 
 Outils : `list_sites`, `search_analytics`, `enhanced_search_analytics` (jusqu'à 25 000 lignes, filtres
 regex), `detect_quick_wins`, `index_inspect`, `list_sitemaps`, `get_sitemap`, `submit_sitemap`.

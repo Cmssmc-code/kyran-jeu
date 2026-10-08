@@ -18,7 +18,8 @@ export default {
         ids: ['skull', 'coup']
       },
       {
-        heading: 'Cacher son camp : les rôles secrets',
+        id: 'roles-caches',
+        heading: 'Cacher son camp : rôles secrets et jeux de trahison',
         html: `<p>Le mensonge ne porte plus sur une carte mais sur votre identité, et il tient toute la manche. C'est le registre des anciens « jeux de trahison » : soupçons, alliances de façade, accusations qui se retournent contre leur auteur. Il réclame des tables plus fournies que le bluff pur, et une bonne humeur à toute épreuve.</p>`,
         ids: ['saboteur', 'bang']
       },
@@ -121,6 +122,7 @@ export default {
   ],
   extraSections: [
     {
+      id: 'jeux-comme-skull',
       heading: 'Les jeux comme Skull : que choisir ensuite ?',
       html: `<p>Skull plaît pour trois raisons : un matériel réduit à quelques disques, une enchère publique et un bluff sanctionné sur-le-champ. La suite dépend de ce qui vous a le plus accroché.</p>
 <ul>

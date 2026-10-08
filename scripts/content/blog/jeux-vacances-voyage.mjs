@@ -32,11 +32,13 @@ export default {
     compare: { position: `after` },
     groups: [
       {
+        id: 'jeux-de-poche',
         heading: `Dans le train ou l’avion : ce qui tient sur une tablette`,
         html: `<p>En transport, deux contraintes dominent : la surface, souvent réduite à une tablette rabattable, et les voisins, qui n’ont rien demandé. Les deux jeux retenus ici se jouent avec très peu de cartes sur la table et sans éclats de voix. Ils acceptent aussi deux joueurs, la configuration la plus fréquente d’un trajet.</p>`,
         ids: [`love-letter`, `the-mind`]
       },
       {
+        id: 'jeux-terrasse',
         heading: `En terrasse, à la plage ou au camping`,
         html: `<p>Dehors, le décor fait la loi : vent, sable, verres posés sur une table de café, lumière qui baisse. Ces deux jeux s’en accommodent parce qu’ils ne demandent ni grille de cartes alignée ni plateau. L’un vise les enfants sur la serviette, l’autre les adultes autour d’un verre.</p>`,
         ids: [`dobble`, `coup`]

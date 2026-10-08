@@ -141,6 +141,7 @@ export default {
   ],
   extraSections: [
     {
+      id: 'classiques-modernes',
       heading: 'Classiques et modernes : par où commencer ?',
       html: `<p>Un jeu ancien n'est ni meilleur ni moins bon qu'un jeu récent : cette liste mêle Uno (1971), Jungle Speed (années 1990) et Saboteur (2004) à Skyjo (2015) ou Llama (2019). Ce qui compte, c'est le rôle que la boîte tient dans votre étagère.</p>
 <ul>

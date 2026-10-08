@@ -3,14 +3,14 @@ export default {
   title: '10 jeux comme Skyjo : les meilleures alternatives en 2026',
   shortTitle: 'Jeux comme Skyjo',
   metaTitle: '10 jeux comme Skyjo (2026) : les meilleures alternatives',
-  description: `Jeu style Skyjo, jeux similaires, règles alternatives : 10 jeux classés selon ce que vous aimiez dans Skyjo, plus 5 variantes pour relancer la boîte.`,
+  description: `10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.`,
   category: 'Alternatives',
   date: '2026-05-01',
   heroTitle: '10 jeux comme <span class="accent">Skyjo</span>',
-  heroSubtitle: `Dix alternatives classées selon ce que vous aimiez dans Skyjo, et cinq variantes de règles pour relancer la boîte que vous avez déjà.`,
+  heroSubtitle: `Dix alternatives classées selon ce que vous aimiez dans Skyjo, cinq variantes de règles pour relancer la boîte, et de quoi y jouer avec un paquet de cartes ordinaire.`,
   heroImage: '/blog/images/skyjo.jpg',
   heroCaption: 'Skyjo et ses alternatives — jeux de cartes accessibles.',
-  intro: `<p>Vous cherchez un <strong>jeu comme Skyjo</strong> parce que la boîte tourne depuis des mois, ou parce que votre tablée dépasse désormais les huit places ? Le problème : aucun jeu ne reproduit exactement une grille de douze cartes cachées où chaque retournement est un pari. Autant chercher ce qui vous plaisait vraiment : le score à garder bas, le choix entre pioche et défausse, les parties sans élimination, ou le confort d’un jeu qu’on explique en deux phrases.</p><p>Voici dix <strong>jeux similaires à Skyjo</strong>, chacun présenté selon le trait qu’il prolonge, avec ses limites. Plus bas, cinq variantes de règles permettent de relancer Skyjo lui-même. Pour élargir la recherche, consultez aussi nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> et nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux à petit prix</a>.</p>`,
+  intro: `<p>Vous cherchez un <strong>jeu comme Skyjo</strong> parce que la boîte tourne depuis des mois, ou parce que votre tablée dépasse désormais les huit places ? Le problème : aucun jeu ne reproduit exactement une grille de douze cartes cachées où chaque retournement est un pari. Autant chercher ce qui vous plaisait vraiment : le score à garder bas, le choix entre pioche et défausse, les parties sans élimination, ou le confort d’un jeu qu’on explique en deux phrases.</p><p>Voici dix <strong>jeux similaires à Skyjo</strong>, chacun présenté selon le trait qu’il prolonge, avec ses limites. Plus bas, cinq variantes de règles permettent de relancer Skyjo lui-même, et une adaptation détaillée vous laisse jouer à la manière de Skyjo avec un simple jeu de 52 cartes, quand la boîte est restée à la maison. Pour élargir la recherche, consultez aussi nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> et nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux à petit prix</a>.</p>`,
   criteria: {
     heading: 'Quel jeu choisir quand on aime Skyjo ?',
     html: `<p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
@@ -121,7 +121,8 @@ export default {
   ],
   extraSections: [
     {
-      heading: '5 variantes de règles pour relancer Skyjo',
+      id: 'variantes-skyjo',
+      heading: 'Variantes du Skyjo : 5 règles pour relancer la boîte',
       html: `<p>Avant de changer de jeu, changez les règles. Aucune de ces variantes ne figure dans la règle de base de Skyjo : ce sont des ajustements de table, à annoncer avant la première manche et à tester sur une partie entière. Elles utilisent toutes les cartes habituelles, de -2 à 12, et la grille de douze cartes.</p>
 <ol>
 <li><strong>Partie à 50 points.</strong> La règle de base arrête la partie quand un joueur atteint 100 points. Abaisser le seuil à 50 raccourcit nettement la soirée et rend la première mauvaise manche beaucoup plus lourde à rattraper.</li>
@@ -131,10 +132,38 @@ export default {
 <li><strong>Mode inversé.</strong> Le plus gros total gagne : les 12 deviennent désirables et les -2 des poisons. On supprime la défausse des colonnes identiques, qui effacerait justement les points recherchés. Déroutant pendant une manche ou deux, puis étonnamment tendu.</li>
 </ol>
 <p>Si ces règles alternatives ne suffisent plus à renouveler le plaisir, c’est le signe qu’il vaut mieux changer de mécanique, et la liste ci-dessus est faite pour cela.</p>`
+    },
+    {
+      id: 'skyjo-cartes-classiques',
+      heading: 'Jouer au Skyjo avec un jeu de 52 cartes classique',
+      html: `<p>Un vrai Skyjo se joue avec sa propre boîte : 150 cartes numérotées de -2 à 12. Sans elle, un paquet ordinaire permet de retrouver l’essentiel, la grille cachée, le dilemme entre pioche et défausse, les colonnes qui disparaissent. Ce qui suit est une <strong>adaptation de table</strong>, pas la règle de l’éditeur. Elle se rapproche d’un jeu plus ancien, le Golf, répandu dans les pays anglophones, dont une version à neuf cartes disposées en carré compte déjà pour zéro une colonne de trois cartes identiques.</p>
+<h3>Le matériel et la valeur des cartes</h3>
+<ul>
+<li><strong>Un paquet de 52 cartes pour deux joueurs</strong>, deux paquets mélangés de trois à six joueurs, trois paquets à sept ou huit. Avec un seul paquet à trois, il ne reste presque plus rien à piocher une fois les grilles distribuées.</li>
+<li><strong>Joker : -2.</strong> Gardez les jokers du paquet, ce sont les meilleures cartes du jeu.</li>
+<li><strong>Roi : 0, As : 1.</strong> Le roi joue le rôle du zéro de Skyjo.</li>
+<li><strong>Du 2 au 10 : leur valeur faciale.</strong></li>
+<li><strong>Valet : 11, Dame : 12.</strong> Ce sont les cartes à chasser de votre grille en priorité.</li>
+</ul>
+<p>La correspondance n’est pas parfaite. Il n’existe pas d’équivalent du -1, et un paquet classique contient proportionnellement moins de cartes négatives ou nulles que la boîte de Skyjo : les scores de manche montent donc plus vite, ce qui justifie de baisser le seuil de fin si les parties s’éternisent.</p>
+<h3>Mise en place</h3>
+<p>Chaque joueur reçoit douze cartes face cachée qu’il dispose sans les regarder en trois rangées de quatre, soit quatre colonnes de trois cartes. Le reste forme la pioche, dont on retourne la première carte pour lancer la défausse. Chacun retourne ensuite deux cartes de sa grille, au choix ; celui dont les deux cartes visibles totalisent le plus de points commence.</p>
+<h3>Le tour de jeu</h3>
+<ul>
+<li><strong>Prendre la carte de la défausse</strong> : elle remplace obligatoirement une carte de votre grille, visible ou cachée. La carte remplacée est posée face visible sur la défausse.</li>
+<li><strong>Ou piocher</strong> : vous pouvez garder la carte piochée et l’échanger de la même façon, ou la jeter sur la défausse puis retourner une carte encore cachée de votre grille.</li>
+</ul>
+<p>Dès qu’une colonne montre trois cartes visibles de même valeur, par exemple trois 7 ou trois rois, elle est retirée de la grille et ne compte plus. Avec deux paquets, chaque valeur existe en huit exemplaires, ce qui rend ces colonnes atteignables ; avec un seul paquet, elles restent rares.</p>
+<h3>Fin de manche et décompte</h3>
+<p>La manche s’arrête lorsqu’un joueur a retourné toutes ses cartes : chacun des autres joue encore un tour, puis tout le monde dévoile sa grille et additionne ses points. Comme dans Skyjo, celui qui a clos la manche voit son total doublé s’il n’a pas le score le plus bas. La partie se termine quand un joueur atteint ou dépasse 100 points cumulés, et le total le plus faible l’emporte. Pour une soirée plus courte, fixez le seuil à 60.</p>
+<p>Si cette version vous plaît mais que le hasard de la donne finit par lasser, c’est le moment de passer à un jeu où l’on agit davantage sur le résultat : les <a class="text-link" href="/regle.html">règles de KYRAN</a> s’apprennent en une manche d’essai.</p>`
     }
   ],
+  headings: {
+    faq: 'Questions fréquentes sur Skyjo et ses alternatives'
+  },
   verdict: {
-    heading: 'Notre avis tranché',
+    heading: 'L’alternative à Skyjo que nous retiendrions',
     html: `<p>Si vous ne deviez en retenir qu’un, prenez <strong>Llama</strong> : il conserve la vitesse de Skyjo, le score à tenir bas et le dilemme entre risque et sécurité, pour une douzaine d’euros et dans une boîte qui voyage. Les groupes qui veulent davantage de réflexion iront vers <strong>KYRAN</strong> (à trois joueurs ou plus, jamais à deux) ou Parade ; ceux qui dépassent huit joueurs, vers 6 qui prend !. À deux, Lost Cities est la seule option cohérente.</p><p>Le moins pertinent pour un fan de Skyjo reste The Mind : très bon jeu, mais il ne prolonge aucune des sensations qui vous ont fait aimer la grille. À essayer par curiosité, pas comme remplaçant.</p>`
   },
   conclusion: `<p>Un jeu de remplacement ne dispense pas de varier les formats : alterner une soirée à score bas à minimiser et une soirée de lecture adverse entretient mieux l’envie qu’un clone. Commencez par une variante de règles ou par Llama pour tester l’appétit de votre table, puis ajoutez un jeu de plis si elle en redemande. Pour comparer ces jeux entre eux, notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> est un bon point de départ.</p>`,
@@ -158,6 +187,10 @@ export default {
     {
       q: 'Peut-on modifier les règles de Skyjo pour ne pas s’en lasser ?',
       a: `Oui, entre amis, à condition de l’annoncer avant la partie : seuil de fin à 50 points, trois cartes retournées au départ, clôture sans doublement ou mode inversé. Ces règles alternatives ne sont pas celles de l’éditeur ; elles servent à tester un autre rythme avec le même matériel.`
+    },
+    {
+      q: 'Peut-on jouer au Skyjo avec un jeu de cartes classique ?',
+      a: `Oui, en adaptant les valeurs : joker à -2, roi à 0, as à 1, cartes numérotées à leur valeur, valet à 11 et dame à 12. Prévoyez deux paquets dès trois joueurs. La grille de douze cartes, les colonnes identiques retirées et le seuil de 100 points restent les mêmes.`
     }
   ],
   related: ['alternatives-uno', 'jeux-sans-elimination', 'jeux-plis-comparatif']

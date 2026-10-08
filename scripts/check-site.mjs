@@ -60,8 +60,14 @@ for (const [urlPath, p] of pages) {
   if (redirectSources.has(urlPath) && !isStub) err(rel, 'devrait être une page de redirection (roster.redirects)');
   if (isStub) {
     const target = $('meta[http-equiv="refresh"]').attr('content').split('url=')[1];
+    const [targetPath, anchor] = target.split('#');
     const canon = $('link[rel="canonical"]').attr('href');
-    if (canon !== SITE + target) err(rel, `canonique de redirection incohérente (${canon} ≠ ${SITE + target})`);
+    if (canon !== SITE + targetPath) err(rel, `canonique de redirection incohérente (${canon} ≠ ${SITE + targetPath})`);
+    // L'ancre visée doit exister sur la page cible (sinon le visiteur arrive en haut de page)
+    const dest = pages.get(targetPath);
+    if (!dest) err(rel, `cible de redirection introuvable : ${targetPath}`);
+    else if (dest.isStub) err(rel, `redirection en chaîne vers ${targetPath}`);
+    else if (anchor && !dest.$(`[id="${anchor}"]`).length) err(rel, `ancre #${anchor} absente de ${targetPath}`);
     continue;
   }
 

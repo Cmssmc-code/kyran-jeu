@@ -128,6 +128,7 @@ export default {
   },
   extraSections: [
     {
+      id: 'brise-glace-afterwork',
       heading: 'Afterwork : briser la glace entre collègues',
       html: `<p>Un afterwork ressemble à un apéro, avec une différence de taille : les participants se croisent au bureau sans vraiment se connaître. Le jeu y sert de prétexte à la conversation, et il se juge moins à son intérêt qu’à ce qu’il oblige chacun à montrer de lui. Prendre la parole devant dix collègues, mentir à son responsable ou avouer qu’on ignore une référence n’ont pas le même coût social.</p>
 <h3>Du moins exposant au plus animé</h3>

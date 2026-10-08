@@ -146,6 +146,7 @@ export default {
   ],
   extraSections: [
     {
+      id: 'jeux-pas-chers',
       heading: `Jeux de cartes pas chers : ce qui fait qu’un petit prix se rejoue`,
       html: `<p>Un jeu à 10 € qui dort au placard après deux soirées coûte plus cher qu’une boîte à 30 € sortie chaque semaine. Pour un cadeau à petit budget, regardez donc le coût par partie : une boîte d’environ 15 € jouée vingt fois revient à moins d’un euro la partie, partagé entre plusieurs joueurs. Encore faut-il qu’elle tienne vingt parties.</p>
 <h3>Trois sources de rejouabilité</h3>

@@ -2,12 +2,12 @@ export default {
   slug: 'jeux-soiree-amis',
   title: 'Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée',
   shortTitle: 'Jeux entre amis',
-  metaTitle: 'Jeux entre amis : 10 jeux selon votre groupe (2026)',
-  description: 'Quel jeu choisir pour une soirée entre amis ? 10 jeux classés selon le groupe (calme, bruyant, compétitif, mixte) et la durée, avec leurs défauts.',
+  metaTitle: 'Jeux entre amis : 10 jeux d’ambiance pour une soirée réussie',
+  description: 'Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.',
   category: 'Soirée',
   date: '2026-05-05',
-  heroTitle: 'Jeux <span class="accent">entre amis</span>',
-  heroSubtitle: 'Dix jeux triés par type de groupe et par durée de soirée, avec le point faible de chacun.',
+  heroTitle: 'Jeux <span class="accent">entre amis</span> : 10 jeux pour une soirée réussie, selon votre groupe',
+  heroSubtitle: 'Ambiance, bluff ou partie à enjeu : chaque jeu est rangé selon le type de tablée et la durée de la soirée, avec son point faible.',
   heroImage: '/blog/images/codenames.jpg',
   heroCaption: 'Codenames — déduction et fous rires en équipe.',
   intro: `<p>Pour choisir un jeu de soirée entre amis, trois réponses couvrent l’essentiel. <strong>Un groupe mixte de quatre à huit, avec des habitués et des occasionnels :</strong> Codenames ou Just One, qui pardonnent l’approximation. <strong>Un groupe qui aime bluffer et se chambrer :</strong> Skull ou Coup, deux jeux de mensonge qui se règlent en une demi-heure ou moins. <strong>Une petite tablée de trois à six qui veut une vraie partie à enjeu :</strong> KYRAN et ses paris de plis. Le reste dépend du bruit que vos invités supportent, de la place sur la table et de l’heure de fin de soirée, ce que détaillent les critères ci-dessous. Pour un format plus léger, voyez les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes d’apéro</a> ; au-delà de huit invités, la sélection <a class="text-link" href="/blog/jeux-grands-groupes.html">grands groupes</a> prend le relais.</p>`,
@@ -128,8 +128,33 @@ export default {
       ]
     }
   ],
+  layout: {
+    groups: [
+      {
+        id: 'jeux-ambiance',
+        heading: 'Jeux d’ambiance entre amis : les plus drôles pour une tablée mixte',
+        html: `<p>Ces quatre jeux se lancent sans préparation et laissent les novices participer dès la première manche. Ils couvrent deux humeurs opposées : Dobble et Codenames font monter le volume, Just One et Dixit laissent la conversation continuer pendant la partie.</p>`,
+        ids: ['codenames', 'just-one', 'dobble', 'dixit']
+      },
+      {
+        id: 'jeux-bluff-amis',
+        heading: 'Jeux de cartes de soirée : bluff et rôles cachés',
+        html: `<p>Ici, le plaisir vient de ce qu’on cache aux autres. Ces jeux supposent des amis qui acceptent d’être accusés à tort et de mentir sans rancune : avec des invités qui se connaissent à peine, commencez plutôt par la famille précédente.</p>`,
+        ids: ['skull', 'coup', 'saboteur', 'bang']
+      },
+      {
+        id: 'jeux-soiree-enjeu',
+        heading: 'Jeux de soirée entre amis pour une vraie partie à enjeu',
+        html: `<p>Deux jeux qui demandent qu’on s’installe : une règle à expliquer, une partie d’une demi-heure ou plus, et un vainqueur que personne ne contestera.</p>`,
+        ids: ['colt-express', 'kyran']
+      }
+    ]
+  },
+  headings: {
+    faq: 'Vos questions sur les jeux entre amis'
+  },
   verdict: {
-    heading: 'Notre avis tranché',
+    heading: 'Si vous ne deviez acheter qu’un jeu pour vos soirées',
     html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne. Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte davantage de calcul que la moyenne de cette liste, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
   },
   extraSections: [
@@ -142,6 +167,18 @@ export default {
 <li><strong>Soirée calme, digestif et conversation :</strong> Dixit, puis Just One, sans chronomètre ni élimination.</li>
 </ul>
 <p>Rien n’oblige à tout jouer. Si la conversation prend, rangez les boîtes : un jeu qui a servi de prétexte a rempli son rôle.</p>`
+    },
+    {
+      id: 'jeux-sans-materiel',
+      heading: 'Jeux à faire entre amis sans matériel',
+      html: `<p>Quand aucune boîte n’a fait le voyage, quelques jeux de tradition orale suffisent à occuper une fin de repas. Ils ne remplacent pas un vrai jeu de société, mais ils ne demandent rien d’autre que de la voix et un peu de mémoire.</p>
+<ul>
+<li><strong>Le ni oui ni non.</strong> Un joueur pose des questions en rafale à un autre, qui doit répondre sans jamais dire « oui » ni « non ». Une minute suffit généralement pour piéger quelqu’un, et chacun passe ensuite à son tour sur la sellette.</li>
+<li><strong>Je pars en voyage et j’emporte…</strong> Chacun répète la liste des objets déjà cités puis en ajoute un. Celui qui oublie un élément ou en inverse l’ordre est éliminé ; le dernier à réciter la liste complète gagne. Le jeu prend tout son intérêt au-delà de cinq participants.</li>
+<li><strong>Deux vérités et un mensonge.</strong> Un joueur énonce trois affirmations sur lui-même, dont une fausse, et les autres votent pour démasquer l’intrus. Parfait pour un groupe où tout le monde ne se connaît pas, moins drôle entre amis qui savent déjà tout les uns des autres.</li>
+<li><strong>Les mimes.</strong> Deux équipes se lancent des titres de films ou d’expressions à faire deviner sans parler. Un bout de papier pour noter les points aide, mais il n’est pas indispensable.</li>
+</ul>
+<p>Ces jeux tiennent rarement plus d’une demi-heure : si l’envie de jouer se confirme, la prochaine fois, glissez un paquet de cartes dans votre sac. Les <a class="text-link" href="/jeu-apero.html">jeux de cartes pour l’apéro</a> sont pensés pour ce genre de situation.</p>`
     }
   ],
   conclusion: `<p>Choisissez d’après les gens, pas d’après la boîte : dans le doute, partez du jeu le plus tolérant et laissez le groupe réclamer plus de bluff ou plus de paris. Pour recevoir en plus petit comité ou réunir une équipe qui se connaît peu, la page sur les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d’apéro et d’afterwork</a> propose des formats plus courts et écarte les jeux trop exposants.</p>`,

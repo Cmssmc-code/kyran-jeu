@@ -48,9 +48,9 @@
 - Initiation KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
 - Commander KYRAN — boutique en ligne : https://kyran-jeu.fr/commander.html
 - KYRAN — jeu de cartes pour l'apéro : https://kyran-jeu.fr/jeu-apero.html
-- Tarot Africain : règles complètes, variantes et comptage des points : https://kyran-jeu.fr/tarot-africain.html
-- Tarot Africain à 3 joueurs : règles et exemple : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html
-- Whist 22 : définition, règles et jeux proches : https://kyran-jeu.fr/whist-22.html
+- Règles du Tarot Africain + feuille de score PDF gratuite : https://kyran-jeu.fr/tarot-africain.html
+- Tarot Africain à 3 joueurs : cartes par manche et exemple : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html
+- Whist 22 : règles du jeu, origine du nom et jeux proches : https://kyran-jeu.fr/whist-22.html
 - FAQ KYRAN — règles, achat, Tarot Africain : https://kyran-jeu.fr/faq.html
 - À propos de KYRAN : l'auteur, le jeu et notre méthode : https://kyran-jeu.fr/a-propos.html
 - Espace presse KYRAN : https://kyran-jeu.fr/dossier-presse.html
@@ -109,7 +109,7 @@
 ### Soirée
 
 - Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée : https://kyran-jeu.fr/blog/jeux-soiree-amis.html (10 jeux)
-- Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
+- Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
 - Jeux de cartes de 30 minutes ou moins : 9 parties express : https://kyran-jeu.fr/blog/jeux-30-minutes.html (9 jeux)
 - Jeux de cartes à deux : 7 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (7 jeux)
 - Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (7 jeux)
@@ -163,19 +163,19 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
 - URL : https://kyran-jeu.fr/blog/jeux-comme-skyjo.html
-- Résumé : Jeu style Skyjo, jeux similaires, règles alternatives : 10 jeux classés selon ce que vous aimiez dans Skyjo, plus 5 variantes pour relancer la boîte.
+- Résumé : 10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.
 - Jeux comparés : Llama (2 à 6 joueurs, ~20 min, Défausse et pénalités) ; No Thanks! (3 à 7 joueurs, ~20 min, Pénalités et jetons) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées et pénalités) ; Parade (2 à 6 joueurs, ~45 min, Défausse et couleurs) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction éclair) ; Uno (2 à 10 joueurs, ~20 min, Défausse et chance) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft rapide) ; Lost Cities (2 joueurs, ~30 min, Duo, expéditions) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### 10 jeux comme Dixit : alternatives créatives et indices malins
 
 - URL : https://kyran-jeu.fr/blog/jeux-comme-dixit.html
-- Résumé : Alternative à Dixit : 10 jeux d’indices, de bluff et d’entente silencieuse, avec pour chacun ce qui rappelle Dixit, ce qui change et le bon nombre de joueurs.
+- Résumé : Jeux comme Dixit en 2026 : 10 alternatives pour 2 à 8 joueurs, en mots (Just One, Codenames), en bluff (Skull, Coup) ou en silence (The Mind).
 - Jeux comparés : Just One (3 à 7 joueurs, ~20 min, Indices en coopération) ; Codenames (2 à 8+ joueurs, ~15 min, Équipes et mots) ; Letter Jam (2 à 6 joueurs, ~45 min, Mots coopératifs) ; Timeline (2 à 8 joueurs, ~15 min, Chronologie) ; The Mind (2 à 4 joueurs, ~20 min, Silence coopératif) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Coup (2 à 6 joueurs, ~15 min, Bluff et rôles) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft familial) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### 8 jeux comme Codenames : équipes, indices et déduction
 
 - URL : https://kyran-jeu.fr/blog/jeux-comme-codenames.html
-- Résumé : Alternative à Codenames : 8 jeux d’indices à un mot, d’équipes cachées et de déduction verbale, avec le nombre de joueurs idéal pour chacun.
+- Résumé : Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).
 - Jeux comparés : Just One (3 à 7 joueurs, ~20 min, Indices en coopération) ; Dixit (3 à 6 joueurs, ~30 min, Indices et images) ; Letter Jam (2 à 6 joueurs, ~45 min, Mots coopératifs) ; The Mind (2 à 4 joueurs, ~20 min, Silence coopératif) ; Coup (2 à 6 joueurs, ~15 min, Bluff et rôles) ; Saboteur (3 à 10 joueurs, ~30 min, Équipes cachées) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### 8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas
@@ -229,8 +229,8 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée
 
 - URL : https://kyran-jeu.fr/blog/jeux-soiree-amis.html
-- Résumé : Quel jeu choisir pour une soirée entre amis ? 10 jeux classés selon le groupe (calme, bruyant, compétitif, mixte) et la durée, avec leurs défauts.
-- Jeux comparés : Codenames (2 à 8+ joueurs, ~15 min, Déduction par équipes) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Saboteur (3 à 10 joueurs, ~30 min, Déduction sociale) ; Bang! (4 à 7 joueurs, ~30 min, Western, rôles secrets) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+- Résumé : Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.
+- Jeux comparés : Codenames (2 à 8+ joueurs, ~15 min, Déduction par équipes) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Saboteur (3 à 10 joueurs, ~30 min, Déduction sociale) ; Bang! (4 à 7 joueurs, ~30 min, Western, rôles secrets) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus
 
@@ -292,10 +292,10 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.
 - Jeux comparés : Skyjo (2 à 8 joueurs, ~30 min, Mémoire de défausse) ; Hanabi (2 à 5 joueurs, ~25 min, Déduction par indices) ; Dobble (2 à 8 joueurs, ~15 min, Attention visuelle) ; The Mind (2 à 4 joueurs, ~20 min, Concentration collective) ; No Thanks! (3 à 7 joueurs, ~20 min, Comptage de cartes) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
-### Meilleurs jeux de cartes à 3 joueurs : lesquels marchent vraiment à trois
+### Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois
 
 - URL : https://kyran-jeu.fr/blog/jeux-3-joueurs.html
-- Résumé : Quel jeu faire à trois ? The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des jeux à deux.
+- Résumé : Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des duels.
 - Jeux comparés : The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, déduction) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif, silence) ; Love Letter (2 à 4 joueurs, ~15 min, Déduction express) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Sushi Go! (2 à 5 joueurs, ~15 min, Draft rapide)
 
 ### Jeux de cartes à deux : 7 idées pour un duo ou un couple

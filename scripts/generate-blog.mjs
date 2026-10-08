@@ -332,7 +332,7 @@ function renderArticle(article, itemsBySlug) {
   if (layout.groups) {
     let n = 0;
     gameHtml = layout.groups.map((grp, gi) => {
-      const gid = `groupe-${gi + 1}`;
+      const gid = grp.id || `groupe-${gi + 1}`;
       const cards = grp.ids.map(id => renderGamePick(article.games.find(g => g.id === id), ++n, article)).join('\n');
       return `<section class="article-group" id="${gid}" aria-labelledby="${gid}-title">
   <h2 id="${gid}-title" class="article-section-label">${grp.heading}</h2>
@@ -424,10 +424,14 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   add(renderPhotos(article.photos));
   if (comparePos === 'after') compareBlock();
   if (layout.criteriaAfter) criteriaBlock();
-  extras.forEach((sec, i) => add(`<section class="article-extra" id="section-${i + 1}" aria-labelledby="section-${i + 1}-title">
-  <h2 id="section-${i + 1}-title" class="article-section-label">${sec.heading}</h2>
+  extras.forEach((sec, i) => {
+    // id stable facultatif : ancre visée par une ancienne URL fusionnée (roster.redirects)
+    const sid = sec.id || `section-${i + 1}`;
+    add(`<section class="article-extra" id="${sid}" aria-labelledby="${sid}-title">
+  <h2 id="${sid}-title" class="article-section-label">${sec.heading}</h2>
   <div class="article-extra__body">${sec.html}</div>
-</section>`, [{ href: `#section-${i + 1}`, label: stripHtml(sec.heading), short: stripHtml(sec.heading) }]));
+</section>`, [{ href: `#${sid}`, label: stripHtml(sec.heading), short: stripHtml(sec.heading) }]);
+  });
   if (!layout.answerFirst) verdictBlock();
   add(`<section class="article-outro" id="conclusion">
   <div class="article-outro__inner">

@@ -17,6 +17,12 @@ Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` �
 Toujours parler comme caveman dans les réponses au user (chat). Phrases courtes. Mots simples.
 Exception : code, commits, PR, commentaires GitHub, docs et fichiers du repo restent écrits normalement.
 
+## Pull requests : fusion automatique
+
+Toujours fusionner soi-même ses PR, sans attendre de validation : dès que la CI (« Contrôles du site »)
+est verte sur le dernier commit, sans conflit ni commentaire de revue ouvert, passer la PR de brouillon
+à prête puis la fusionner dans `main`. Si la CI échoue, corriger et repousser jusqu'au vert, puis fusionner.
+
 ## Erreurs de production — Auto-Heal
 
 Pipeline décrit dans [`docs/AUTO-HEAL.md`](docs/AUTO-HEAL.md) (portage du pipeline Majordia) :

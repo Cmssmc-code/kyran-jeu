@@ -263,6 +263,7 @@ Les pushs faits avec `GITHUB_TOKEN` ne déclenchent aucun autre workflow. Il fau
 ## 10. Règles de `CLAUDE.md`
 
 - Après toute modification de pages, de composants ou de contenu : `npm run build`, puis `npm test`, puis commiter les fichiers générés.
+- **Fusion automatique des PR** : toute PR ouverte par Claude est fusionnée par Claude dès que la CI est verte, sans conflit ni commentaire ouvert (règle dans `CLAUDE.md`).
 - **Style de réponse « caveman »** dans le chat avec l'utilisateur : phrases courtes, mots simples. Le code, les commits, les PR, la documentation et les fichiers restent écrits normalement.
 - Bug de production :
   1. lire `_notes/lecon.md` ;

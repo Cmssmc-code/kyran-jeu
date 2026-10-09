@@ -1,142 +1,142 @@
+/**
+ * Visuel de l'accueil : boîte KYRAN et éventail de cartes.
+ * La chorégraphie (arrivée, éventail, retournement, reflets) est en CSS (style.css,
+ * « VISUEL HERO »). Ce script ajoute :
+ *  - l'inclinaison de la boîte et la parallaxe qui suivent la souris (lissées) ;
+ *  - la carte « présentée » au clic / toucher (Échap, clic ailleurs ou second clic la range) ;
+ *  - les braises dorées ;
+ *  - la pause de toutes les animations quand la scène sort de l'écran.
+ */
 (function () {
   'use strict';
 
   var stage = document.getElementById('heroProductStage');
   if (!stage) return;
 
-  var container = stage.closest('.hero-visual') || stage;
-  var cards = Array.from(stage.querySelectorAll('.fan-card'));
+  var cards = Array.prototype.slice.call(stage.querySelectorAll('.fan-card'));
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-  // Détecter préférence mouvement réduit
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
+  /* ── Braises ── */
+  var embers = stage.querySelector('.hero-embers');
+  if (embers && !reduceMotion.matches) {
+    var count = window.innerWidth < 600 ? 9 : 14;
+    for (var i = 0; i < count; i++) {
+      var e = document.createElement('span');
+      e.className = 'hero-ember';
+      e.style.setProperty('--x', (8 + Math.random() * 84).toFixed(1) + '%');
+      e.style.setProperty('--size', (3 + Math.random() * 4).toFixed(1) + 'px');
+      e.style.setProperty('--dur', (6 + Math.random() * 5).toFixed(2) + 's');
+      e.style.setProperty('--delay', (1.2 + Math.random() * 8).toFixed(2) + 's');
+      e.style.setProperty('--drift', ((Math.random() - 0.5) * 16).toFixed(1) + 'cqw');
+      e.style.setProperty('--alpha', (0.55 + Math.random() * 0.45).toFixed(2));
+      embers.appendChild(e);
+    }
+  }
 
-  // Variables Lerp pour tilt ultra-fluide sans à-coups
-  var targetX = 0;
-  var targetY = 0;
-  var currentX = 0;
-  var currentY = 0;
-  var isHovered = false;
+  /* ── Pause hors écran ── */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      stage.classList.toggle('is-offscreen', !entries[0].isIntersecting);
+    }).observe(stage);
+  }
+
+  /* ── Inclinaison et parallaxe à la souris ── */
+  var target = { x: 0, y: 0 };
+  var current = { x: 0, y: 0 };
   var rafId = null;
 
-  function updatePointer(e) {
-    var rect = container.getBoundingClientRect();
-    var clientX = e.clientX;
-    var clientY = e.clientY;
-
-    if (e.touches && e.touches[0]) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
-    }
-
-    if (clientX === undefined || clientY === undefined) return;
-
-    // Calcul ratio relatif normalisé [-1, 1]
-    var x = ((clientX - rect.left) / rect.width) * 2 - 1;
-    var y = ((clientY - rect.top) / rect.height) * 2 - 1;
-
-    targetX = Math.max(-1, Math.min(1, x));
-    targetY = Math.max(-1, Math.min(1, y));
-
-    if (!isHovered) {
-      isHovered = true;
-      stage.classList.add('is-interactive');
-      startLoop();
-    }
-  }
-
-  function resetPointer() {
-    targetX = 0;
-    targetY = 0;
-    isHovered = false;
-  }
-
   function tick() {
-    // Amortissement lerp pour inertie naturelle
-    var ease = 0.085;
-    currentX += (targetX - currentX) * ease;
-    currentY += (targetY - currentY) * ease;
-
-    var rotX = -currentY * 8.5; // Inclinaison haut/bas
-    var rotY = currentX * 10;   // Inclinaison gauche/droite
-    var shiftX = currentX * 12; // Déplacement latéral
-    var shiftY = currentY * 8;  // Déplacement vertical
-    var shadowX = -currentX * 18;
-    var shadowY = -currentY * 6;
-
-    stage.style.setProperty('--stage-rot-x', rotX.toFixed(2) + 'deg');
-    stage.style.setProperty('--stage-rot-y', rotY.toFixed(2) + 'deg');
-    stage.style.setProperty('--stage-shift-x', shiftX.toFixed(2) + 'px');
-    stage.style.setProperty('--stage-shift-y', shiftY.toFixed(2) + 'px');
-    stage.style.setProperty('--shadow-x', shadowX.toFixed(2) + 'px');
-    stage.style.setProperty('--shadow-y', shadowY.toFixed(2) + 'px');
-
-    // Arrêt intelligent de la boucle RAF quand l'élément est au repos
-    if (!isHovered && Math.abs(currentX) < 0.001 && Math.abs(currentY) < 0.001) {
-      currentX = 0;
-      currentY = 0;
-      stage.style.removeProperty('--stage-rot-x');
-      stage.style.removeProperty('--stage-rot-y');
-      stage.style.removeProperty('--stage-shift-x');
-      stage.style.removeProperty('--stage-shift-y');
-      stage.style.removeProperty('--shadow-x');
-      stage.style.removeProperty('--shadow-y');
-      stage.classList.remove('is-interactive');
+    current.x += (target.x - current.x) * 0.08;
+    current.y += (target.y - current.y) * 0.08;
+    var settled = Math.abs(target.x - current.x) < 0.001 && Math.abs(target.y - current.y) < 0.001;
+    if (settled) {
+      current.x = target.x;
+      current.y = target.y;
+    }
+    stage.style.setProperty('--px', current.x.toFixed(4));
+    stage.style.setProperty('--py', current.y.toFixed(4));
+    if (settled) {
       rafId = null;
+      if (target.x === 0 && target.y === 0) stage.classList.remove('is-tilting');
       return;
     }
-
     rafId = requestAnimationFrame(tick);
   }
 
-  function startLoop() {
-    if (!rafId) {
-      rafId = requestAnimationFrame(tick);
-    }
+  function run() {
+    if (!rafId) rafId = requestAnimationFrame(tick);
   }
 
-  container.addEventListener('mousemove', updatePointer, { passive: true });
-  container.addEventListener('mouseleave', resetPointer, { passive: true });
+  var area = stage.closest('.hero-visual') || stage;
 
-  // Support tactile mobile / tablette
-  container.addEventListener('touchstart', function (e) {
-    updatePointer(e);
-  }, { passive: true });
-  container.addEventListener('touchmove', function (e) {
-    updatePointer(e);
-  }, { passive: true });
-  container.addEventListener('touchend', function () {
-    setTimeout(resetPointer, 800);
+  area.addEventListener('pointermove', function (ev) {
+    if (ev.pointerType !== 'mouse' || reduceMotion.matches || !finePointer.matches) return;
+    var r = stage.getBoundingClientRect();
+    target.x = Math.max(-1, Math.min(1, ((ev.clientX - r.left) / r.width) * 2 - 1));
+    target.y = Math.max(-1, Math.min(1, ((ev.clientY - r.top) / r.height) * 2 - 1));
+    stage.classList.add('is-tilting');
+    run();
   }, { passive: true });
 
-  // Clic / Tap sur une carte : mode focus tactile et mise en avant
-  cards.forEach(function (card) {
-    function toggleFocus(e) {
-      if (e) e.stopPropagation();
-      var wasActive = card.classList.contains('is-active');
-      cards.forEach(function (c) { c.classList.remove('is-active'); });
-      if (!wasActive) {
-        card.classList.add('is-active');
-        stage.classList.add('has-active-card');
-      } else {
-        stage.classList.remove('has-active-card');
-      }
+  area.addEventListener('pointerleave', function () {
+    target.x = 0;
+    target.y = 0;
+    run();
+  }, { passive: true });
+
+  /* ── Carte présentée ── */
+  var presented = null;
+
+  function cleanup(card) {
+    card.classList.remove('is-returning');
+  }
+
+  function release() {
+    if (!presented) return;
+    var card = presented;
+    presented = null;
+    card.classList.remove('is-presented');
+    card.setAttribute('aria-pressed', 'false');
+    stage.classList.remove('has-presented');
+    if (reduceMotion.matches) return;
+    card.classList.add('is-returning');
+    card.addEventListener('animationend', function done(ev) {
+      if (ev.animationName !== 'heroCardReturn') return;
+      card.removeEventListener('animationend', done);
+      cleanup(card);
+    });
+  }
+
+  function present(card) {
+    if (presented === card) {
+      release();
+      return;
     }
+    release();
+    cleanup(card);
+    presented = card;
+    card.classList.add('is-presented');
+    card.setAttribute('aria-pressed', 'true');
+    stage.classList.add('has-presented');
+  }
 
-    card.addEventListener('click', toggleFocus);
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFocus(e);
-      }
+  cards.forEach(function (card) {
+    card.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      present(card);
     });
   });
 
-  // Clic extérieur pour refermer la carte active
-  document.addEventListener('click', function (e) {
-    if (!stage.contains(e.target)) {
-      cards.forEach(function (c) { c.classList.remove('is-active'); });
-      stage.classList.remove('has-active-card');
+  document.addEventListener('click', function (ev) {
+    if (presented && !presented.contains(ev.target)) release();
+  });
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' && presented) {
+      var card = presented;
+      release();
+      card.focus();
     }
   });
 })();

@@ -55,17 +55,17 @@
   <meta name="twitter:image" content="https://kyran-jeu.fr/og-kyran.jpg" />
   <meta name="twitter:image:alt" content="Boîte du jeu de cartes KYRAN" />
 
-  <link rel="preload" as="image" href="boite-recto-kyran-740.webp" type="image/webp" fetchpriority="high" imagesrcset="boite-recto-kyran-740.webp 740w, boite-recto-kyran.webp 1048w" imagesizes="(max-width: 900px) 280px, 370px" />
+  <link rel="preload" as="image" href="boite-recto-kyran-740.webp" type="image/webp" fetchpriority="high" imagesrcset="boite-recto-kyran-740.webp 517w, boite-recto-kyran.webp 1048w" imagesizes="(max-width: 900px) 190px, 240px" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=74d213ad17" defer></script>
-  <link rel="stylesheet" href="style.css?v=74d213ad17" />
-  <script src="blog-data.js?v=74d213ad17" defer></script>
-  <script src="components.js?v=74d213ad17" defer></script>
-  <script src="reviews-data.js?v=74d213ad17" defer></script>
-  <script src="reviews.js?v=74d213ad17" defer></script>
-  <script src="hero-visual.js?v=74d213ad17" defer></script>
+  <script src="seo-config.js?v=e766be9e2e" defer></script>
+  <link rel="stylesheet" href="style.css?v=e766be9e2e" />
+  <script src="blog-data.js?v=e766be9e2e" defer></script>
+  <script src="components.js?v=e766be9e2e" defer></script>
+  <script src="reviews-data.js?v=e766be9e2e" defer></script>
+  <script src="reviews.js?v=e766be9e2e" defer></script>
+  <script src="hero-visual.js?v=e766be9e2e" defer></script>
 
   <script type="application/ld+json">
   {
@@ -544,52 +544,69 @@
 
         <div class="hero-visual">
           <div class="hero-product-stage" id="heroProductStage">
-            <!-- Halo mystique animé en profondeur -->
-            <div class="hero-stage-glow" aria-hidden="true"></div>
+            <div class="hero-stage-aura" aria-hidden="true"></div>
+            <div class="hero-stage-rays" aria-hidden="true"></div>
+            <div class="hero-embers" aria-hidden="true"></div>
 
-            <!-- Particules d'ambiance dorées "Maître des Mystiques" -->
-            <div class="hero-mystic-sparks" aria-hidden="true">
-              <span class="spark spark-1"></span>
-              <span class="spark spark-2"></span>
-              <span class="spark spark-3"></span>
-              <span class="spark spark-4"></span>
-              <span class="spark spark-5"></span>
-              <span class="spark spark-6"></span>
+            <div class="hero-card-fan" role="group" aria-label="Cartes du jeu KYRAN : touchez une carte pour la voir en grand">
+              <button type="button" class="fan-card" aria-label="Voir la carte Nombre 16" aria-pressed="false">
+                <span class="fan-card-float">
+                  <span class="fan-card-flip">
+                    <img class="fan-card-face" src="hero-carte-16.webp" alt="Carte Nombre 16 du jeu KYRAN" width="300" height="441" decoding="async" />
+                    <img class="fan-card-back" src="hero-carte-dos.webp" alt="" width="300" height="441" decoding="async" />
+                    <span class="fan-card-glint" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <button type="button" class="fan-card" aria-label="Voir la carte Pouvoir Sceau du Destin" aria-pressed="false">
+                <span class="fan-card-float">
+                  <span class="fan-card-flip">
+                    <img class="fan-card-face" src="hero-carte-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin (27) du jeu KYRAN" width="300" height="441" decoding="async" />
+                    <img class="fan-card-back" src="hero-carte-dos.webp" alt="" width="300" height="441" decoding="async" />
+                    <span class="fan-card-glint" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <button type="button" class="fan-card" aria-label="Voir la carte Mystique" aria-pressed="false">
+                <span class="fan-card-float">
+                  <span class="fan-card-flip">
+                    <img class="fan-card-face" src="hero-carte-mystique.webp" alt="Carte Mystique du jeu KYRAN, valeur 0 ou 37" width="300" height="441" decoding="async" />
+                    <img class="fan-card-back" src="hero-carte-dos.webp" alt="" width="300" height="441" decoding="async" />
+                    <span class="fan-card-glint" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <button type="button" class="fan-card" aria-label="Voir la carte Pouvoir Voile du Néant" aria-pressed="false">
+                <span class="fan-card-float">
+                  <span class="fan-card-flip">
+                    <img class="fan-card-face" src="hero-carte-voile-34.webp" alt="Carte Pouvoir Voile du Néant (34) du jeu KYRAN" width="300" height="441" decoding="async" />
+                    <img class="fan-card-back" src="hero-carte-dos.webp" alt="" width="300" height="441" decoding="async" />
+                    <span class="fan-card-glint" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <button type="button" class="fan-card" aria-label="Voir la carte Nombre 33" aria-pressed="false">
+                <span class="fan-card-float">
+                  <span class="fan-card-flip">
+                    <img class="fan-card-face" src="hero-carte-33.webp" alt="Carte Nombre 33 du jeu KYRAN" width="300" height="441" decoding="async" />
+                    <img class="fan-card-back" src="hero-carte-dos.webp" alt="" width="300" height="441" decoding="async" />
+                    <span class="fan-card-glint" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
             </div>
 
-            <!-- Éventail de cartes interactif avec reflets foil -->
-            <div class="hero-card-fan" aria-label="Cartes du jeu KYRAN">
-              <div class="fan-card fan-card-1" tabindex="0" role="button" aria-label="Carte Mystique" title="La Mystique (Val. 0 ou 37)">
-                <div class="card-inner">
-                  <img src="carte-mystique.webp" alt="Carte Mystique KYRAN" width="138" height="210" loading="lazy" decoding="async" />
-                  <span class="card-glare" aria-hidden="true"></span>
-                </div>
-              </div>
-              <div class="fan-card fan-card-2" tabindex="0" role="button" aria-label="Carte Pouvoir Sceau du Destin" title="Sceau du Destin (Pouvoir)">
-                <div class="card-inner">
-                  <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin KYRAN" width="138" height="210" loading="lazy" decoding="async" />
-                  <span class="card-glare" aria-hidden="true"></span>
-                </div>
-              </div>
-              <div class="fan-card fan-card-3" tabindex="0" role="button" aria-label="Carte Nombre 1" title="Carte Nombre 1">
-                <div class="card-inner">
-                  <img src="card-1.jpg" alt="Carte Nombre 1 KYRAN" width="138" height="210" loading="lazy" decoding="async" />
-                  <span class="card-glare" aria-hidden="true"></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Boîte de jeu 3D -->
-            <div class="hero-box-wrap">
-              <picture>
-                <source srcset="boite-recto-kyran-740.webp 740w, boite-recto-kyran.webp 1048w" sizes="(max-width: 900px) 280px, 370px" type="image/webp" />
-                <img src="boite-recto-kyran-740.webp" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="370" height="530" fetchpriority="high" loading="eager" decoding="async" />
-              </picture>
-              <div class="hero-box-sheen" aria-hidden="true"></div>
-            </div>
-
-            <!-- Ombre dynamique au sol -->
             <div class="hero-stage-shadow" aria-hidden="true"></div>
+            <div class="hero-box-wrap">
+              <div class="hero-box-tilt">
+                <picture>
+                  <source srcset="boite-recto-kyran-740.webp 517w, boite-recto-kyran.webp 1048w" sizes="(max-width: 900px) 190px, 240px" type="image/webp" />
+                  <img src="boite-recto-kyran-740.webp" alt="Boîte du jeu de cartes KYRAN" class="hero-box-img" width="517" height="740" fetchpriority="high" loading="eager" decoding="async" />
+                </picture>
+                <span class="hero-box-sheen" aria-hidden="true"></span>
+                <span class="hero-box-glare" aria-hidden="true"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

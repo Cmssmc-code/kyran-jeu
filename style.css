@@ -4837,7 +4837,7 @@ header.blog-article-hero::after {
   padding: 7px 0 7px 10px;
   border-left: 2px solid transparent;
   font-size: 0.82rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.35;
   transition: color var(--speed), border-color var(--speed);
 }
@@ -4845,12 +4845,12 @@ header.blog-article-hero::after {
   flex-shrink: 0;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-dark);
   min-width: 1.2em;
 }
 .sticky-toc--editorial a:hover,
 .sticky-toc--editorial a.is-active {
-  color: var(--gold-bright);
+  color: var(--gold-dark);
   border-left-color: var(--gold);
 }
 
@@ -5168,7 +5168,7 @@ header.blog-article-hero::after {
   background: linear-gradient(90deg, var(--gold-bright), var(--gold));
   border-radius: 999px;
 }
-.amazon-bar-row.muted {
+.amazon-bar-row.muted .bar-track {
   opacity: 0.6;
 }
 
@@ -6457,22 +6457,23 @@ article {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 0 !important;
     margin: 10px auto 18px !important;
     padding: 6px 0 !important;
     position: relative !important;
     z-index: 2 !important;
   }
+  /* Bouton de 24 px (cible tactile WCAG 2.5.8) ; le point visible est dessiné par ::before */
   .carousel-dot {
     position: relative !important;
-    width: 8px !important;
-    height: 8px !important;
+    width: 24px !important;
+    height: 24px !important;
     min-height: 0 !important;
-    max-height: 8px !important;
+    max-height: 24px !important;
     min-width: 0 !important;
-    max-width: 28px !important;
+    max-width: 42px !important;
     border-radius: 999px !important;
-    background: #ded7cb !important;
+    background: transparent !important;
     border: none !important;
     outline: none !important;
     padding: 0 !important;
@@ -6487,16 +6488,23 @@ article {
   .carousel-dot::before {
     content: "" !important;
     position: absolute !important;
-    top: -16px !important;
-    bottom: -16px !important;
-    left: -8px !important;
-    right: -8px !important;
+    top: 8px !important;
+    bottom: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    border-radius: 999px !important;
+    background: #ded7cb !important;
+    transition: background 0.3s ease, box-shadow 0.3s ease !important;
   }
   .carousel-dot.is-active {
-    width: 26px !important;
-    height: 8px !important;
+    width: 42px !important;
+    height: 24px !important;
     min-height: 0 !important;
-    max-height: 8px !important;
+    max-height: 24px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .carousel-dot.is-active::before {
     background: linear-gradient(90deg, var(--gold-bright, #d97706), var(--gold-dark, #b45309)) !important;
     box-shadow: 0 2px 8px rgba(217, 119, 6, 0.38) !important;
   }

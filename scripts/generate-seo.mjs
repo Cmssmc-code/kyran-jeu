@@ -94,14 +94,14 @@ function blogByCategory() {
 function buildLlmsTxt() {
   const pages = STATIC_PAGES
     .filter(p => p.path !== '/plan-du-site.html' && !(p.path === '/communaute.html' && p.noSitemap))
-    .map(p => `- ${p.title} : ${loc(p.path)}`)
+    .map(p => `- [${p.title}](${loc(p.path)})`)
     .join('\n');
 
   let blogSection = '';
   for (const [cat, list] of Object.entries(blogByCategory()).sort()) {
-    blogSection += `\n### ${cat}\n\n`;
+    blogSection += `\n## Blog : ${cat}\n\n`;
     for (const a of list) {
-      blogSection += `- ${a.title} : ${loc('/blog/' + a.slug + '.html')}${a.gameCount ? ` (${a.gameCount} jeux)` : ''}\n`;
+      blogSection += `- [${a.title}](${loc('/blog/' + a.slug + '.html')})${a.gameCount ? `: ${a.gameCount} jeux comparés` : ''}\n`;
     }
   }
 
@@ -146,8 +146,8 @@ function buildLlmsTxt() {
 - Skyjo : ${cmp('skyjo').players} joueurs, ${cmp('skyjo').duration}, ${ageOf('skyjo')} ; score à minimiser avec pioche et défausse, sans plis.
 - Wizard : ${cmp('wizard').players} joueurs, ${cmp('wizard').duration}, ${ageOf('wizard')} ; plis avec annonce, atout et cartes spéciales.
 - Oh Hell! : ${cmp('oh-hell').players} joueurs, ${cmp('oh-hell').duration} ; jeu de plis traditionnel à annonce.
-- Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; règles : ${SITE}/tarot-africain.html
-- Comparatif des jeux de plis : ${SITE}/blog/jeux-plis-comparatif.html
+- Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; [règles du Tarot Africain](${SITE}/tarot-africain.html)
+- [Comparatif des jeux de plis](${SITE}/blog/jeux-plis-comparatif.html)
 
 ## Pages du site
 
@@ -155,14 +155,14 @@ ${pages}
 
 ## Blog — ${items.length} guides
 
-- Index : ${SITE}/blog/
-- Flux RSS : ${SITE}/blog/feed.xml
-- Sitemap : ${SITE}/sitemap.xml
+- [Index du blog](${SITE}/blog/)
+- [Flux RSS](${SITE}/blog/feed.xml)
+- [Sitemap](${SITE}/sitemap.xml)
 ${blogSection}
 ## Sources
 
-- Site de référence pour KYRAN : ${SITE}/
-- Documentation étendue : ${SITE}/llms-full.txt
+- [Site de référence pour KYRAN](${SITE}/)
+- [Documentation étendue](${SITE}/llms-full.txt)
 `;
 }
 

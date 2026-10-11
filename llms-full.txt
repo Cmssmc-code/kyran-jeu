@@ -37,87 +37,87 @@
 - Skyjo : 2 à 8 joueurs, ~30 min, 8 ans et plus ; score à minimiser avec pioche et défausse, sans plis.
 - Wizard : 3 à 6 joueurs, ~45 min, 10 ans et plus ; plis avec annonce, atout et cartes spéciales.
 - Oh Hell! : 3 à 7 joueurs, ~45 min ; jeu de plis traditionnel à annonce.
-- Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; règles : https://kyran-jeu.fr/tarot-africain.html
-- Comparatif des jeux de plis : https://kyran-jeu.fr/blog/jeux-plis-comparatif.html
+- Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; [règles du Tarot Africain](https://kyran-jeu.fr/tarot-africain.html)
+- [Comparatif des jeux de plis](https://kyran-jeu.fr/blog/jeux-plis-comparatif.html)
 
 ## Pages du site
 
-- Accueil — KYRAN, jeu de cartes de plis, de bluff et de paris : https://kyran-jeu.fr/
-- Règles du jeu KYRAN (vidéo et règles écrites) : https://kyran-jeu.fr/regle.html
-- Règles de KYRAN en vidéo (Ludochrono, 5 min) : https://kyran-jeu.fr/video-regles.html
-- Initiation KYRAN — tutoriel interactif gratuit : https://kyran-jeu.fr/minijeu.html
-- Commander KYRAN — boutique en ligne : https://kyran-jeu.fr/commander.html
-- KYRAN — jeu de cartes pour l'apéro : https://kyran-jeu.fr/jeu-apero.html
-- Règles du Tarot Africain + feuille de score PDF gratuite : https://kyran-jeu.fr/tarot-africain.html
-- Tarot Africain à 3 joueurs : cartes par manche et exemple : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html
-- Whist 22 : règles du jeu, origine du nom et jeux proches : https://kyran-jeu.fr/whist-22.html
-- FAQ KYRAN — règles, achat, Tarot Africain : https://kyran-jeu.fr/faq.html
-- À propos de KYRAN : l'auteur, le jeu et notre méthode : https://kyran-jeu.fr/a-propos.html
-- Espace presse KYRAN : https://kyran-jeu.fr/dossier-presse.html
-- Communauté KYRAN — photos et vidéos de joueurs : https://kyran-jeu.fr/communaute.html
-- Blog KYRAN — guides de jeux de cartes et de société : https://kyran-jeu.fr/blog/
-- Mentions légales : https://kyran-jeu.fr/mentions-legales.html
-- Conditions Générales de Vente (CGV) : https://kyran-jeu.fr/cgv.html
-- Politique de confidentialité (RGPD) : https://kyran-jeu.fr/confidentialite.html
+- [Accueil — KYRAN, jeu de cartes de plis, de bluff et de paris](https://kyran-jeu.fr/)
+- [Règles du jeu KYRAN (vidéo et règles écrites)](https://kyran-jeu.fr/regle.html)
+- [Règles de KYRAN en vidéo (Ludochrono, 5 min)](https://kyran-jeu.fr/video-regles.html)
+- [Initiation KYRAN — tutoriel interactif gratuit](https://kyran-jeu.fr/minijeu.html)
+- [Commander KYRAN — boutique en ligne](https://kyran-jeu.fr/commander.html)
+- [KYRAN — jeu de cartes pour l'apéro](https://kyran-jeu.fr/jeu-apero.html)
+- [Règles du Tarot Africain + feuille de score PDF gratuite](https://kyran-jeu.fr/tarot-africain.html)
+- [Tarot Africain à 3 joueurs : cartes par manche et exemple](https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html)
+- [Whist 22 : règles du jeu, origine du nom et jeux proches](https://kyran-jeu.fr/whist-22.html)
+- [FAQ KYRAN — règles, achat, Tarot Africain](https://kyran-jeu.fr/faq.html)
+- [À propos de KYRAN : l'auteur, le jeu et notre méthode](https://kyran-jeu.fr/a-propos.html)
+- [Espace presse KYRAN](https://kyran-jeu.fr/dossier-presse.html)
+- [Communauté KYRAN — photos et vidéos de joueurs](https://kyran-jeu.fr/communaute.html)
+- [Blog KYRAN — guides de jeux de cartes et de société](https://kyran-jeu.fr/blog/)
+- [Mentions légales](https://kyran-jeu.fr/mentions-legales.html)
+- [Conditions Générales de Vente (CGV)](https://kyran-jeu.fr/cgv.html)
+- [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
 ## Blog — 30 guides
 
-- Index : https://kyran-jeu.fr/blog/
-- Flux RSS : https://kyran-jeu.fr/blog/feed.xml
-- Sitemap : https://kyran-jeu.fr/sitemap.xml
+- [Index du blog](https://kyran-jeu.fr/blog/)
+- [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
+- [Sitemap](https://kyran-jeu.fr/sitemap.xml)
 
-### Alternatives
+## Blog : Alternatives
 
-- 10 jeux comme Skyjo : les meilleures alternatives en 2026 : https://kyran-jeu.fr/blog/jeux-comme-skyjo.html (10 jeux)
-- 10 jeux comme Dixit : alternatives créatives et indices malins : https://kyran-jeu.fr/blog/jeux-comme-dixit.html (10 jeux)
-- 8 jeux comme Codenames : équipes, indices et déduction : https://kyran-jeu.fr/blog/jeux-comme-codenames.html (8 jeux)
-- 8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas : https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html (8 jeux)
-- 6 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre : https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html (6 jeux)
-- Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose : https://kyran-jeu.fr/blog/alternatives-wizard.html (6 jeux)
-- Alternatives à Uno : 8 jeux de cartes rapides pour changer : https://kyran-jeu.fr/blog/alternatives-uno.html (8 jeux)
-- Alternatives à la belote et à la coinche : 6 jeux de plis modernes : https://kyran-jeu.fr/blog/alternatives-belote-coinche.html (6 jeux)
-- Jeux de plis : le comparatif et le guide pour bien choisir : https://kyran-jeu.fr/blog/jeux-plis-comparatif.html (6 jeux)
+- [10 jeux comme Skyjo : les meilleures alternatives en 2026](https://kyran-jeu.fr/blog/jeux-comme-skyjo.html): 10 jeux comparés
+- [10 jeux comme Dixit : alternatives créatives et indices malins](https://kyran-jeu.fr/blog/jeux-comme-dixit.html): 10 jeux comparés
+- [8 jeux comme Codenames : équipes, indices et déduction](https://kyran-jeu.fr/blog/jeux-comme-codenames.html): 8 jeux comparés
+- [8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas](https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html): 8 jeux comparés
+- [6 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre](https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html): 6 jeux comparés
+- [Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose](https://kyran-jeu.fr/blog/alternatives-wizard.html): 6 jeux comparés
+- [Alternatives à Uno : 8 jeux de cartes rapides pour changer](https://kyran-jeu.fr/blog/alternatives-uno.html): 8 jeux comparés
+- [Alternatives à la belote et à la coinche : 6 jeux de plis modernes](https://kyran-jeu.fr/blog/alternatives-belote-coinche.html): 6 jeux comparés
+- [Jeux de plis : le comparatif et le guide pour bien choisir](https://kyran-jeu.fr/blog/jeux-plis-comparatif.html): 6 jeux comparés
 
-### Apéro
+## Blog : Apéro
 
-- Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table : https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html (9 jeux)
-- Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus : https://kyran-jeu.fr/blog/jeux-grands-groupes.html (9 jeux)
+- [Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table](https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html): 9 jeux comparés
+- [Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus](https://kyran-jeu.fr/blog/jeux-grands-groupes.html): 9 jeux comparés
 
-### Cadeaux
+## Blog : Cadeaux
 
-- Jeux de cartes à offrir à Noël : 7 idées selon le destinataire : https://kyran-jeu.fr/blog/cadeau-noel.html (7 jeux)
-- Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant : https://kyran-jeu.fr/blog/cadeau-anniversaire.html (9 jeux)
+- [Jeux de cartes à offrir à Noël : 7 idées selon le destinataire](https://kyran-jeu.fr/blog/cadeau-noel.html): 7 jeux comparés
+- [Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant](https://kyran-jeu.fr/blog/cadeau-anniversaire.html): 9 jeux comparés
 
-### Cartes
+## Blog : Cartes
 
-- Jeux de cartes et cerveau : ce que disent les études : https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html
-- Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille : https://kyran-jeu.fr/blog/jeux-bluff-pari.html (7 jeux)
-- Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter : https://kyran-jeu.fr/blog/jeux-vacances-voyage.html (7 jeux)
-- Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi : https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html (7 jeux)
-- Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort : https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html (8 jeux)
-- Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes : https://kyran-jeu.fr/blog/jeux-strategie-legere.html (7 jeux)
-- Jeux de draft et d'enchères en cartes : choisir, passer, miser : https://kyran-jeu.fr/blog/jeux-draft-encheres.html (7 jeux)
+- [Jeux de cartes et cerveau : ce que disent les études](https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html)
+- [Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille](https://kyran-jeu.fr/blog/jeux-bluff-pari.html): 7 jeux comparés
+- [Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter](https://kyran-jeu.fr/blog/jeux-vacances-voyage.html): 7 jeux comparés
+- [Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi](https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html): 7 jeux comparés
+- [Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort](https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html): 8 jeux comparés
+- [Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes](https://kyran-jeu.fr/blog/jeux-strategie-legere.html): 7 jeux comparés
+- [Jeux de draft et d'enchères en cartes : choisir, passer, miser](https://kyran-jeu.fr/blog/jeux-draft-encheres.html): 7 jeux comparés
 
-### Famille
+## Blog : Famille
 
-- Jeux de société en famille : 8 jeux de cartes dès 8 ans : https://kyran-jeu.fr/blog/jeux-famille.html (8 jeux)
-- Jeux de société pour débutants adultes : par où commencer : https://kyran-jeu.fr/blog/jeux-debutants-adultes.html (5 jeux)
-- Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table : https://kyran-jeu.fr/blog/jeux-sans-elimination.html (5 jeux)
-- Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble : https://kyran-jeu.fr/blog/jeux-coop-cartes.html (6 jeux)
-- Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort : https://kyran-jeu.fr/blog/jeux-memoire-concentration.html (6 jeux)
+- [Jeux de société en famille : 8 jeux de cartes dès 8 ans](https://kyran-jeu.fr/blog/jeux-famille.html): 8 jeux comparés
+- [Jeux de société pour débutants adultes : par où commencer](https://kyran-jeu.fr/blog/jeux-debutants-adultes.html): 5 jeux comparés
+- [Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table](https://kyran-jeu.fr/blog/jeux-sans-elimination.html): 5 jeux comparés
+- [Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble](https://kyran-jeu.fr/blog/jeux-coop-cartes.html): 6 jeux comparés
+- [Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort](https://kyran-jeu.fr/blog/jeux-memoire-concentration.html): 6 jeux comparés
 
-### Soirée
+## Blog : Soirée
 
-- Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée : https://kyran-jeu.fr/blog/jeux-soiree-amis.html (10 jeux)
-- Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois : https://kyran-jeu.fr/blog/jeux-3-joueurs.html (6 jeux)
-- Jeux de cartes de 30 minutes ou moins : 9 parties express : https://kyran-jeu.fr/blog/jeux-30-minutes.html (9 jeux)
-- Jeux de cartes à deux : 7 idées pour un duo ou un couple : https://kyran-jeu.fr/blog/jeux-duo-couples.html (7 jeux)
-- Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html (7 jeux)
+- [Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée](https://kyran-jeu.fr/blog/jeux-soiree-amis.html): 10 jeux comparés
+- [Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois](https://kyran-jeu.fr/blog/jeux-3-joueurs.html): 6 jeux comparés
+- [Jeux de cartes de 30 minutes ou moins : 9 parties express](https://kyran-jeu.fr/blog/jeux-30-minutes.html): 9 jeux comparés
+- [Jeux de cartes à deux : 7 idées pour un duo ou un couple](https://kyran-jeu.fr/blog/jeux-duo-couples.html): 7 jeux comparés
+- [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés
 
 ## Sources
 
-- Site de référence pour KYRAN : https://kyran-jeu.fr/
-- Documentation étendue : https://kyran-jeu.fr/llms-full.txt
+- [Site de référence pour KYRAN](https://kyran-jeu.fr/)
+- [Documentation étendue](https://kyran-jeu.fr/llms-full.txt)
 
 ---
 

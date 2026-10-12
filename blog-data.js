@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-cartes-ados",
+    "title": "Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis",
+    "category": "Soirée",
+    "date": "2026-10-12",
+    "readMinutes": 10,
+    "excerpt": "Six jeux de cartes pour adolescents, choisis selon l’ambiance qu’ils créent (bluff, réflexes, paris) et non selon l’âge imprimé sur la boîte.",
+    "image": "/blog/images/skull.jpg",
+    "webp": "/blog/images/skull.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-famille",
+      "jeux-soiree-amis",
+      "jeux-grands-groupes"
+    ]
+  },
+  {
     "slug": "science-jeux-de-cartes-cerveau",
     "title": "Jeux de cartes et cerveau : ce que disent les études",
     "category": "Cartes",

@@ -60,7 +60,7 @@
 - [Conditions Générales de Vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 30 guides
+## Blog — 31 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -108,6 +108,7 @@
 
 ## Blog : Soirée
 
+- [Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis](https://kyran-jeu.fr/blog/jeux-cartes-ados.html): 6 jeux comparés
 - [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés
 - [Jeux de cartes à deux : 7 idées pour un duo ou un couple](https://kyran-jeu.fr/blog/jeux-duo-couples.html): 7 jeux comparés
 - [Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois](https://kyran-jeu.fr/blog/jeux-3-joueurs.html): 6 jeux comparés
@@ -158,7 +159,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 30 guides du blog
+## Résumé des 31 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -333,6 +334,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html
 - Résumé : Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.
 - Jeux comparés : KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Prédiction de plis) ; Coup (2 à 6 joueurs, ~15 min, Bluff pur) ; Skull (3 à 6 joueurs, ~30 min, Bluff et enchères) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; Schotten Totten (2 joueurs, ~20 min, Duel de combinaisons) ; Star Realms (2 joueurs, ~20 min, Deckbuilding en duel)
+
+### Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-ados.html
+- Résumé : Six jeux de cartes pour adolescents, choisis selon l’ambiance qu’ils créent (bluff, réflexes, paris) et non selon l’âge imprimé sur la boîte.
+- Jeux comparés : Skull (3 à 6 joueurs, ~30 min, Bluff) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; Skyjo (2 à 8 joueurs, ~30 min, Score et risque) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

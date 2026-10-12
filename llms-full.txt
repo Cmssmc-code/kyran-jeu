@@ -212,7 +212,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 
 - URL : https://kyran-jeu.fr/blog/jeux-plis-comparatif.html
 - Résumé : Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.
-- Jeux comparés : Wizard (3 à 6 joueurs, ~45 min, Plis à annonce) ; Oh Hell! (3 à 7 joueurs, ~45 min, Plis à annonce) ; KYRAN (3 à 6 joueurs, ~30 min, Plis à annonce) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées, sans annonce) ; Parade (2 à 6 joueurs, ~45 min, Défausse en file)
+- Jeux comparés : Wizard (3 à 6 joueurs, ~45 min, Plis à annonce) ; Oh Hell! (3 à 7 joueurs, ~45 min, Plis à annonce) ; KYRAN (3 à 6 joueurs, ~30 min, Plis à annonce) ; The Crew (2 à 5 joueurs, ~20 min, Plis coopératifs) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Rangées, sans annonce) ; Parade (2 à 6 joueurs, ~45 min, File à éviter)
 
 ### Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille
 

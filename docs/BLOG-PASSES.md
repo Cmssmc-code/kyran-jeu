@@ -78,6 +78,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-07 | Correction : images d'en-tête fausses remplacées par des visuels KYRAN du dépôt (`for-sale.jpg` = photo ancienne sans rapport, `dixit.jpg` = Dixit Jinx, `the-mind.jpg` = licence inconnue), légendes qui décrivent l'image. **Sujet pris : ne pas le reprendre.** | `jeux-draft-encheres`, `jeux-comme-dixit`, `jeux-famille`, `jeux-memoire-concentration` | — | (cette PR) |
 | 2026-10-07 | Rattrapage du mercredi : rafraîchissement, Love Letter précisé (édition classique 16 cartes, 2 à 4 joueurs ; Z-Man 2025 21 cartes, 2 à 6 ; même réglage à trois : 5 faveurs, 1 carte écartée). Sources : 64 Ounce Games, Asmodee (Eco Box), regles-du-jeu.net, Opinionated Gamers, Play-in, Esprit Jeu. | `jeux-3-joueurs` | jeux de cartes 3 joueurs | (cette PR) |
 | 2026-10-12 | Rafraîchissement : faits des 7 jeux revérifiés (Dobble, Coup, The Mind, Skyjo, No Thanks!, Love Letter, KYRAN du dépôt). Love Letter : deux éditions (16 cartes / 2 à 4 ; Z-Man 2025 : 21 cartes / 2 à 6), durée 15 à 20 min ; âge de Coup retiré du texte (13+ chez Indie Boards & Cards, 10+ chez d'autres revendeurs). Sources : Esprit Jeu (Dobble, Skyjo, Non Merci, Love Letter), Miniature Market (Coup), Play-in (The Mind, Love Letter), Asmodee (Love Letter), 64 Ounce Games. **Sujet pris : ne pas le reprendre.** | `jeux-vacances-voyage` | jeux de cartes vacances | (cette PR) |
+| 2026-10-12 | Rafraîchissement (page « explorée, non indexée » depuis le 5 sept., rapport SEO/GEO du 11 oct.) : variante « plus ou moins 1 » de Wizard corrigée, The Crew 3-5 joueurs (variante à deux), prix d'Oh Hell retiré (non sourcé), « KYRAN héritier du Whist » corrigé (Whist ≠ Whist 22), vocabulaire et sources liées, structure propre. **Sujet pris : ne pas le reprendre.** | `jeux-plis-comparatif` | jeu de cartes où l'on annonce son nombre de plis | (cette PR) |
 
 ## En attente
 
@@ -110,3 +111,7 @@ la même façon.
 | Timeline | 2011 | La fiche BGG liée (« Timeline: Classic », Frédéric Henry) date de 2018 ; la série commence en 2010 (« Timeline: Inventions ») |
 | Oh Hell! | auteur « Traditionnel » | Publié en JSON-LD comme `Person` nommée « Traditionnel » ; jeu traditionnel sans auteur |
 | The Crew | ~15 € | 16,50 € chez Philibert, 18 € sur la boutique Iello (5 octobre 2026) ; avis partagé entre vérificateurs |
+| Wizard | ~10 € | 15 € TTC chez Gigamic (édition française) ; 9,95 € est le prix de la VO allemande chez Philibert (12 octobre 2026) |
+| The Crew | 2 à 5 | La boîte française annonce 3 à 5 (Iello) ; la variante à 2 joueurs est dans la règle, pages 19 et 20 |
+| Parade | ~45 min, ~15 € | Éditeur français : Filosofia ; 20 à 40 min chez un revendeur, 45 min sur BGG ; pas de règle officielle ouverte |
+| Oh Hell! | ~10 € | Aucune fiche d'éditeur ouverte : prix non sourcé, retiré de `jeux-plis-comparatif` |

@@ -208,6 +208,9 @@ kyran-breadcrumb {
   .announcement-pill {
     display: none;
   }
+  .announcement-extra {
+    display: none;
+  }
 }
 
 header.site-header {
@@ -866,10 +869,8 @@ section { padding: clamp(42px, 6.5vw, 80px) 0; scroll-margin-top: 76px; }
 }
 
 .hero-price-old {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  text-decoration: line-through;
-  opacity: 0.7;
 }
 
 .hero-discount-pill {
@@ -1496,6 +1497,40 @@ section { padding: clamp(42px, 6.5vw, 80px) 0; scroll-margin-top: 76px; }
   }
   .hero-reassurance-micro {
     justify-content: center;
+  }
+  /* Mobile : la boîte et les cartes montent juste sous le titre, avant le prix,
+     pour que le visiteur voie le jeu dès le premier écran. */
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .hero-content {
+    display: contents;
+  }
+  .hero-ecommerce .hero-badge-row { order: 1; }
+  .hero-ecommerce .hero-tagline { order: 2; }
+  .hero-ecommerce h1 { order: 3; }
+  .hero-ecommerce .hero-visual { order: 4; width: 100%; margin: 4px 0 18px; }
+  .hero-ecommerce .hero-actions-wrap { order: 5; }
+  .hero-ecommerce .hero-lead { order: 6; }
+  .hero-ecommerce kyran-stat-bar { order: 7; }
+  .hero-ecommerce .hero-reassurance-micro { order: 8; }
+}
+
+@media (max-width: 480px) {
+  .hero-ecommerce {
+    padding-top: 20px;
+  }
+  .hero-ecommerce .hero-product-stage {
+    max-width: 270px;
+  }
+  .hero-ecommerce .trust-badge-pill {
+    display: none;
+  }
+  .hero-ecommerce .trust-score {
+    white-space: nowrap;
   }
 }
 
@@ -2217,10 +2252,8 @@ button:active,
 }
 
 .store-price-reference {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  text-decoration: line-through;
-  opacity: 0.7;
 }
 
 .store-badge-save {
@@ -3520,6 +3553,10 @@ footer h4, footer .footer-heading { color: #fff; margin-bottom: 15px; font-famil
   flex-wrap: wrap;
   gap: 14px;
   justify-content: center;
+}
+.cta-band p.cta-band-gift {
+  margin: var(--space-3) auto 0;
+  font-size: 0.85rem;
 }
 
 .interactive-zone-label {
@@ -6405,7 +6442,7 @@ article {
     font-size: 2rem;
   }
   .hero-price-old {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
 }

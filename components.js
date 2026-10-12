@@ -108,8 +108,8 @@ function renderHeaderHtml(active, pathname) {
     return `
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
         <div class="container announcement-content">
-          <span class="announcement-pill">Offre atelier</span>
-          <span class="announcement-text">Jeu complet <strong>9,99€</strong> au lieu de 17,99€ · Expédié sous 24-48h suivie</span>
+          <span class="announcement-pill">Idée cadeau</span>
+          <span class="announcement-text">Le jeu complet <strong>9,99€</strong> en direct du créateur<span class="announcement-extra"> · expédié sous 24-48h, suivi La Poste</span></span>
           <a href="${ORDER_URL}" class="announcement-link">Commander &rarr;</a>
         </div>
       </div>
@@ -637,7 +637,7 @@ class KyranStatBar extends HTMLElement {
 }
 
 function renderCtaBandHtml(attr) {
-  const title = attr('title') || 'Prêt à défier votre intuition ?';
+  const title = attr('title') || 'Votre prochaine soirée, avec KYRAN ?';
   const text = attr('text') || 'Commandez KYRAN ou apprenez les règles en quelques minutes.';
   const secondaryHref = rootPath(attr('secondary-href') || 'regle.html');
   const secondaryLabel = attr('secondary-label') || 'Voir les règles';
@@ -652,6 +652,7 @@ function renderCtaBandHtml(attr) {
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
           ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer l’Initiation</a>' : ''}
         </div>
+        <p class="cta-band-gift">Idée cadeau&nbsp;: une boîte de poche de 175&nbsp;g, expédiée sous 24-48&nbsp;h avec suivi.</p>
       </div>
     `;
 }

@@ -19,6 +19,22 @@ const BLOG_ITEMS = [
     ]
   },
   {
+    "slug": "jeux-cartes-seniors",
+    "title": "Jeux de cartes pour seniors : 6 jeux à jouer sans écran",
+    "category": "Famille",
+    "date": "2026-10-12",
+    "readMinutes": 9,
+    "excerpt": "Six jeux de cartes à partager entre grands-parents, parents et petits-enfants, choisis selon le rythme, la règle et la durée, sans promesse de santé.",
+    "image": "/blog/images/schotten-totten.jpg",
+    "webp": "/blog/images/schotten-totten.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-famille",
+      "jeux-debutants-adultes",
+      "science-jeux-de-cartes-cerveau"
+    ]
+  },
+  {
     "slug": "science-jeux-de-cartes-cerveau",
     "title": "Jeux de cartes et cerveau : ce que disent les études",
     "category": "Cartes",

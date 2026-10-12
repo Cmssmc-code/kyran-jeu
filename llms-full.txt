@@ -60,7 +60,7 @@
 - [Conditions Générales de Vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 31 guides
+## Blog — 32 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -100,6 +100,7 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés
 - [Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort](https://kyran-jeu.fr/blog/jeux-memoire-concentration.html): 6 jeux comparés
 - [Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table](https://kyran-jeu.fr/blog/jeux-sans-elimination.html): 5 jeux comparés
 - [Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble](https://kyran-jeu.fr/blog/jeux-coop-cartes.html): 6 jeux comparés
@@ -159,7 +160,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 31 guides du blog
+## Résumé des 32 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -340,6 +341,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/jeux-cartes-ados.html
 - Résumé : Six jeux de cartes pour adolescents, choisis selon l’ambiance qu’ils créent (bluff, réflexes, paris) et non selon l’âge imprimé sur la boîte.
 - Jeux comparés : Skull (3 à 6 joueurs, ~30 min, Bluff) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; Skyjo (2 à 8 joueurs, ~30 min, Score et risque) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
+
+### Jeux de cartes pour seniors : 6 jeux à jouer sans écran
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-seniors.html
+- Résumé : Six jeux de cartes à partager entre grands-parents, parents et petits-enfants, choisis selon le rythme, la règle et la durée, sans promesse de santé.
+- Jeux comparés : Schotten Totten (2 joueurs, ~20 min, Duel de combinaisons) ; No Thanks! (3 à 7 joueurs, ~20 min, Prise de risque) ; Uno (2 à 10 joueurs, ~20 min, Défausse) ; Skyjo (2 à 8 joueurs, ~30 min, Score et risque) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

@@ -16,7 +16,7 @@ export default {
     html: `<p>Quatre épreuves séparent un jeu de salon d’un bon compagnon de voyage : l’encombrement, le décor, l’interruption et l’envie de rejouer. C’est aussi pour cela que la sélection est rangée par situation : un jeu parfait sur une serviette peut devenir pénible dans un wagon, et inversement.</p>
 <h3>Le test du sac et du décor</h3>
 <ul>
-<li><strong>Encombrement.</strong> Comptez les pièces et le format de la boîte. Seize cartes (Love Letter) ou une boîte ronde (Dobble) passent dans une poche ; un jeu qui exige un plateau ou des dizaines de jetons non. Les petits éléments se perdent facilement dans le sable ou l’herbe : une pochette zippée évite d’en semer la moitié.</li>
+<li><strong>Encombrement.</strong> Comptez les pièces et le format de la boîte. Un petit paquet (Love Letter : seize cartes dans l’édition classique, vingt et une dans celle de 2025) ou une boîte ronde en métal (Dobble) passent dans une poche ; un jeu qui exige un plateau ou des dizaines de jetons non. Les petits éléments se perdent facilement dans le sable ou l’herbe : une pochette zippée évite d’en semer la moitié.</li>
 <li><strong>Vent et soleil.</strong> Les cartes qu’on garde en main (Love Letter, Coup) supportent mieux la brise que les jeux qui étalent des grilles à plat, comme Skyjo où chacun aligne douze cartes. Sur une plage, un galet sur la pioche règle beaucoup de choses.</li>
 <li><strong>Chaleur.</strong> En plein été, les doigts collent et la crème solaire marque le carton. Jouez à l’ombre, mains essuyées, et rangez le paquet dans sa boîte plutôt que de le laisser chauffer sur la table entre deux parties.</li>
 <li><strong>Espace.</strong> Sur une terrasse de restaurant, la table est petite et encombrée de verres : un jeu qui exige des mains lancées au centre de la table n’y a pas sa place.</li>
@@ -61,10 +61,10 @@ export default {
       id: `love-letter`,
       subtitle: `le format poche de référence`,
       type: `Format poche`,
-      pick: `Pour deux à quatre voyageurs, sur la moindre tablette`,
+      pick: `Pour deux à quatre voyageurs (jusqu’à six en 2025), sur la moindre tablette`,
       paragraphs: [
-        `Pour un trajet où chaque centimètre compte, Love Letter sort du lot : seize cartes, quelques jetons de victoire, et une surface de jeu qui se réduit à une pioche et aux cartes que chacun vient de jouer. Comme on ne garde qu’une carte en main entre deux tours, rien ne s’étale sur la tablette rabattable, et une partie complète prend environ un quart d’heure, le temps de quelques arrêts en gare.`,
-        `Les jetons de victoire sont l’élément le plus facile à égarer sous un siège ; des pièces de monnaie les remplacent sans difficulté. C’est aussi le jeu « encore une manche » par excellence : la défaite tient souvent à une seule carte mal devinée, et la revanche ne demande que de rebattre le paquet. Deux contraintes à connaître : le jeu s’arrête à quatre joueurs, et il est conseillé dès dix ans, donc plutôt pour des adolescents que pour de jeunes enfants.`
+        `Pour un trajet où chaque centimètre compte, Love Letter sort du lot : une vingtaine de cartes au plus (seize dans l’édition classique de 2012, vingt et une dans celle de Z-Man de 2025), quelques jetons de victoire, et une surface de jeu qui se réduit à une pioche et aux cartes que chacun vient de jouer. Comme on ne garde qu’une carte en main entre deux tours, rien ne s’étale sur la tablette rabattable, et une partie complète prend de quinze à vingt minutes selon les fiches, le temps de quelques arrêts en gare.`,
+        `Les jetons de victoire sont l’élément le plus facile à égarer sous un siège ; des pièces de monnaie les remplacent sans difficulté. C’est aussi le jeu « encore une manche » par excellence : la défaite tient souvent à une seule carte mal devinée, et la revanche ne demande que de rebattre le paquet. Deux contraintes à connaître : l’édition classique s’arrête à quatre joueurs (celle de 2025 va jusqu’à six), et le jeu est conseillé dès dix ans par Z-Man et Asmodee, donc plutôt pour des adolescents que pour de jeunes enfants ; certains revendeurs français indiquent même quatorze ans.`
       ]
     },
     {
@@ -93,7 +93,7 @@ export default {
       type: `Bluff`,
       pick: `Pour deux à six adultes qui aiment mentir le temps d’un verre`,
       paragraphs: [
-        `Coup tient sa place en terrasse grâce à une mise en place minimale : quinze cartes, quelques pièces, et chacun cache deux personnages dont il prétend avoir les pouvoirs. Chaque tour se résume à une annonce, si bien qu’on peut jouer entre deux gorgées sans que la table s’encombre. De deux à six joueurs, dès dix ans, pour environ un quart d’heure.`,
+        `Coup tient sa place en terrasse grâce à une mise en place minimale : quinze cartes, quelques pièces, et chacun cache deux personnages dont il prétend avoir les pouvoirs. Chaque tour se résume à une annonce, si bien qu’on peut jouer entre deux gorgées sans que la table s’encombre. De deux à six joueurs, pour environ un quart d’heure.`,
         `Ses deux cartes restent en main, si bien que le vent du bord de mer n’a guère de prise, et la lumière d’un lampadaire suffit pour lire les personnages. Sur une plage en plein après-midi, il perd en revanche de son intérêt : le bluff demande qu’on se regarde, pas qu’on surveille les enfants dans l’eau. Les éliminations laissent parfois un joueur sur la touche, mais à quinze minutes la partie, on relance aussitôt.`
       ]
     },
@@ -130,13 +130,13 @@ export default {
   ],
   verdict: {
     heading: `Si un seul jeu tient dans la valise`,
-    html: `<p>Si vous ne deviez emporter qu’un jeu : Love Letter, pour les petits groupes de deux à quatre personnes, parce qu’il passe du train à la terrasse sans rien réclamer. Pour un séjour avec plusieurs adultes et des enfants, le duo Love Letter plus Dobble couvre presque tous les cas, du trajet à la plage. Au gîte, pour une tablée de cousins de trois à sept, No Thanks! reste le plus passe-partout. À éviter : Skyjo au vent, The Mind au milieu d’une terrasse animée, et KYRAN dans un sac à dos, car il est conçu pour une table de gîte plutôt que pour la poche.</p>`
+    html: `<p>Si vous ne deviez emporter qu’un jeu : Love Letter, pour les petits groupes de deux à quatre personnes (six avec l’édition de 2025), parce qu’il passe du train à la terrasse sans rien réclamer. Pour un séjour avec plusieurs adultes et des enfants, le duo Love Letter plus Dobble couvre presque tous les cas, du trajet à la plage. Au gîte, pour une tablée de cousins de trois à sept, No Thanks! reste le plus passe-partout. À éviter : Skyjo au vent, The Mind au milieu d’une terrasse animée, et KYRAN dans un sac à dos, car il est conçu pour une table de gîte plutôt que pour la poche.</p>`
   },
   conclusion: `<p>Choisissez deux jeux plutôt qu’un : un silencieux et compact pour les trajets et les soirées calmes, un plus vivant pour la plage ou les grandes tablées. Rangez les cartes dans une pochette zippée lorsque le poids compte plus que la boîte, et glissez un crayon pour les scores. Pour les voyages à deux, la page <a class="text-link" href="/blog/jeux-duo-couples.html">jeux pour couples et duos</a> donne d’autres pistes.</p>`,
   faq: [
     {
       q: `Quel jeu de cartes emporter en vacances ?`,
-      a: `Love Letter si vous êtes deux à quatre, Dobble si des enfants de six ans ou plus voyagent avec vous, No Thanks! pour une tablée de trois à sept. Ces trois jeux se rangent dans une poche de sac et se jouent sans plateau.`
+      a: `Love Letter si vous êtes deux à quatre (jusqu’à six avec l’édition de 2025), Dobble si des enfants de six ans ou plus voyagent avec vous, No Thanks! pour une tablée de trois à sept. Ces trois jeux se rangent dans une poche de sac et se jouent sans plateau.`
     },
     {
       q: `Quel jeu de cartes pour la plage quand il y a du vent ?`,

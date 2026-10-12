@@ -81,7 +81,7 @@ export default {
       pick: 'Pour un quart d\'heure sans manuel, avant le dîner ou entre deux jeux',
       paragraphs: [
         `Love Letter à trois occupe un entre-deux : une seule carte en main, une pioche, un effet à jouer. Le jeu existe en deux éditions, la classique de 2012 (16 cartes, 2 à 4 joueurs) et celle de Z-Man de 2025 (21 cartes, 2 à 6 joueurs, avec deux personnages supplémentaires), mais à trois le réglage est le même : cinq marques de faveur à gagner et une seule carte écartée face cachée, sans les trois cartes visibles réservées au duel. Il reste donc assez d'inconnues pour que le Garde, qui devine la carte d'un adversaire, demeure un vrai pari et non un tirage au sort déguisé.`,
-        `À trois s'installe aussi une tension que le duel ne connaît pas : quand deux joueurs s'attaquent, le troisième avance sans rien risquer. Choisir sa cible, entre le meneur et le joueur le plus fragile, est la décision que chaque tour pose. Défaut à signaler : la pioche pèse lourd, et une Princesse défaussée sous l'effet du Prince met fin à une manche en quelques secondes.`
+        `À trois s'installe aussi une tension que le duel ne connaît pas : quand deux joueurs s'attaquent, le troisième avance sans rien risquer. Choisir sa cible, entre le meneur et le joueur le plus fragile, est la décision que chaque tour pose. Défaut à signaler : la pioche pèse lourd, et une Princesse défaussée sous l'effet du Prince élimine un joueur de la manche en quelques secondes.`
       ]
     },
     {
@@ -89,7 +89,7 @@ export default {
       type: 'Plis et paris',
       pick: 'Pour un trio qui aime annoncer le nombre exact de plis',
       paragraphs: [
-        `À trois, KYRAN se joue avec le matériel resserré : seulement quatre cartes Pouvoir (valeurs 3, 11, 20 et 27) et la carte Mystique, soit moins d'effets à surveiller qu'à cinq ou six. Chaque manche débute par l'annonce du nombre exact de plis visés, avec une contrainte : le total des annonces ne peut pas coïncider avec le nombre de plis distribués. Le dernier à parler doit donc ajuster, et au moins l'un des trois se trompe à chaque manche.`,
+        `À trois, KYRAN se joue avec le matériel resserré : seulement quatre cartes Pouvoir (Sceau du Destin, Clairvoyance Antique, Bénédiction des Ancêtres et Voile du Néant) et la carte Mystique, soit moins d'effets à surveiller qu'à cinq ou six. Chaque manche débute par l'annonce du nombre exact de plis visés, avec une contrainte : le total des annonces ne peut pas coïncider avec le nombre de plis distribués. Le dernier à parler doit donc ajuster, et au moins l'un des trois se trompe à chaque manche.`,
         `Les pouvoirs ont des conditions de position qui comptent particulièrement à trois : le Sceau du Destin et la Bénédiction des Ancêtres sont annulés si leur joueur passe en dernier, le Voile du Néant s'il passe en premier. Avec trois cartes par pli, la place du milieu est la seule qui les laisse tous agir.`,
         `Trois est le plancher du jeu, qui ne se joue pas à deux, et la manche à une carte sur le front n'y demande de lire que deux fronts, au lieu de quatre ou cinq autour d'une grande table. L'annonce exacte des plis et cette carte tenue à l'aveugle viennent de la famille du <a class="text-link" href="/whist-22.html">Whist 22, autre nom du Tarot Africain</a>, que KYRAN prolonge avec ses pouvoirs. Une partie tourne autour de trente minutes, et le joueur à court de vies y met fin pour tout le monde.`
       ]
@@ -107,7 +107,7 @@ export default {
   extraSections: [
     {
       heading: 'Schotten Totten, Lost Cities, Star Realms : et si l\'on est trois quand même ?',
-      html: `<p>Ces trois jeux sont conçus pour deux joueurs, et aucune de leurs règles ne prévoit de variante à trois. Les présenter comme des jeux à trois serait trompeur : <strong>Schotten Totten</strong> oppose deux camps autour de neuf bornes, <strong>Lost Cities</strong> met deux explorateurs en concurrence sur cinq expéditions et <strong>Star Realms</strong> est un duel de deck-building. Si vous êtes trois ce soir et que l'un d'entre vous adore l'un de ces duels, la solution honnête est un mini-tournoi : A contre B, puis B contre C, puis A contre C. Chacun joue deux parties et regarde la troisième ; on compte les victoires, et on rejoue en cas d'égalité.</p>
+      html: `<p>Schotten Totten et Lost Cities sont conçus pour deux joueurs, et leurs règles ne prévoient pas de variante à trois ; Star Realms est un duel, même si des formats à plusieurs existent comme variantes à part. Les présenter comme des jeux à trois serait trompeur : <strong>Schotten Totten</strong> oppose deux camps autour de neuf bornes, <strong>Lost Cities</strong> met deux explorateurs en concurrence sur cinq expéditions et <strong>Star Realms</strong> est un duel de deck-building. Si vous êtes trois ce soir et que l'un d'entre vous adore l'un de ces duels, la solution honnête est un mini-tournoi : A contre B, puis B contre C, puis A contre C. Chacun joue deux parties et regarde la troisième ; on compte les victoires, et on rejoue en cas d'égalité.</p>
 <p>Pour la configuration inverse, deux joueurs réguliers sans troisième, notre sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a> détaille ces trois duels, aux côtés de jeux coopératifs qui fonctionnent en tête-à-tête.</p>`
     }
   ],

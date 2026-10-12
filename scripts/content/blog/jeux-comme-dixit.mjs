@@ -16,14 +16,14 @@ export default {
     html: `<p>Une bonne <strong>alternative à Dixit</strong> dépend de ce que votre table retenait de l’original. Quatre plaisirs s’y mêlent, et les jeux ci-dessous n’en reprennent presque jamais plus de deux.</p>
 <h3>Ce que vous aimiez dans Dixit</h3>
 <ul>
-<li><strong>Les images.</strong> Aucun jeu de cette liste n’offre des illustrations à interpréter. Si ce sont elles qui vous séduisent, les extensions de cartes de Dixit renouvellent l’expérience pour moins cher qu’un nouveau jeu et remplissent mieux l’envie.</li>
+<li><strong>Les images.</strong> Aucun jeu de cette liste n’offre des illustrations à interpréter. Si ce sont elles qui vous séduisent, les extensions de cartes de Dixit renouvellent l’expérience et remplissent mieux l’envie.</li>
 <li><strong>L’indice calibré.</strong> Donner une information juste assez floue : Just One, Codenames et Letter Jam travaillent cette compétence avec des mots.</li>
 <li><strong>La lecture des autres.</strong> Deviner qui a posé quoi et pourquoi : Skull, Coup et KYRAN prolongent ce plaisir sous forme de bluff ou de pari.</li>
 <li><strong>Le moment d’entente.</strong> L’instant où deux joueurs pensent exactement à la même chose : The Mind et The Crew en font leur centre, avec peu ou pas de paroles.</li>
 </ul>
 <h3>Trois points de vigilance</h3>
 <p><strong>La langue et le vocabulaire.</strong> Les jeux de mots dépendent de ce que chacun connaît. Une table qui mêle des enfants, des invités dont le français n’est pas la langue maternelle ou des joueurs peu à l’aise avec les mots trouvera Just One ou Letter Jam plus ardus qu’ils n’en ont l’air.</p>
-<p><strong>L’effectif.</strong> Dixit se joue de 3 à 6. La plupart des alternatives couvrent une plage voisine, mais The Mind plafonne à quatre et KYRAN ne se joue pas à deux. Si vous êtes régulièrement six autour de la table, rayez d’emblée ce qui s’arrête à quatre ou cinq.</p>
+<p><strong>L’effectif.</strong> Dixit se joue de 3 à 6 dans l’édition de 2008 (3 à 8 sur la boîte actuelle). La plupart des alternatives couvrent une plage voisine, mais The Mind plafonne à quatre et KYRAN ne se joue pas à deux. Si vous êtes régulièrement six autour de la table, rayez d’emblée ce qui s’arrête à quatre ou cinq.</p>
 <p><strong>Le ton de la soirée.</strong> Dixit est doux : personne n’y est jamais mis en cause. Coup et Skull introduisent la méfiance, ce qui peut gêner avec des enfants sensibles ou des convives qui n’aiment pas être soupçonnés.</p>
 <p>Pour trancher : si votre groupe adore commenter ses indices après coup, prenez Just One ou Codenames ; s’il préfère débattre des intentions, Skull ou Coup ; s’il cherche simplement une ambiance paisible et un jeu familial, Timeline ou Sushi Go! sont plus sages, même s’ils s’éloignent davantage de l’original.</p>`
   },
@@ -61,7 +61,7 @@ export default {
       pick: 'Pour une soirée douce où l’on discute sans s’affronter',
       paragraphs: [
         `Timeline n’a ni indice ni imagination libre, et il faut l’avouer : il ressemble à Dixit par son ambiance, pas par sa mécanique. On pose une carte d’événement dans une frise, on la retourne pour vérifier la date, et la table commente. Les parties durent environ quinze minutes, et les débats sur l’ordre de deux inventions servent de ciment, comme les discussions sur les cartes de Dixit.`,
-        `Ce qui change : il existe une bonne réponse, vérifiable au dos de la carte, donc beaucoup moins de marge d’interprétation. L’effectif va de 2 à 8 joueurs, au-delà du plafond de six de Dixit. Le point faible est la culture générale : un groupe qui connaît peu l’histoire ou les inventions s’ennuiera plus vite.`
+        `Ce qui change : il existe une bonne réponse, vérifiable au dos de la carte, donc beaucoup moins de marge d’interprétation. L’effectif dépend de la boîte : de 2 à 6 pour Timeline Classic selon BoardGameGeek, davantage sur d’autres éditions. Le point faible est la culture générale : un groupe qui connaît peu l’histoire ou les inventions s’ennuiera plus vite.`
       ]
     },
     {
@@ -79,7 +79,7 @@ export default {
       pick: 'Pour les tablées qui préfèrent lire les visages que les images',
       paragraphs: [
         `Skull est le jeu de cette liste qui s’éloigne le plus du côté poétique de Dixit, mais il garde la tension du dévoilement : chacun pose un disque face cachée, une fleur ou un crâne, puis l’un lance un défi en annonçant combien de fleurs il pense retourner. Le plaisir vient de la lecture de la table, de ce que laissent paraître les voisins, plutôt que de l’imagination.`,
-        `Il se joue de 3 à 6, comme Dixit, ce qui permet de garder la même tablée. Les disques ne disent rien : c’est l’échange entre les joueurs qui fabrique le récit. Un joueur qui perd tous ses disques sort de la partie, un point à garder en tête si votre groupe supporte mal l’attente.`
+        `Il se joue de 3 à 6, comme Dixit dans son édition de 2008, ce qui permet de garder la même tablée. Les disques ne disent rien : c’est l’échange entre les joueurs qui fabrique le récit. Un joueur qui perd tous ses disques sort de la partie, un point à garder en tête si votre groupe supporte mal l’attente.`
       ]
     },
     {
@@ -87,7 +87,7 @@ export default {
       type: 'Bluff et rôles',
       pick: 'Pour ceux qui retiennent de Dixit le plaisir de convaincre',
       paragraphs: [
-        `Dixit récompense celui qui sait persuader sans trop en dire ; Coup transforme cet art en bluff pur. Chacun cache deux cartes de personnages et, à son tour, annonce une action qui n’est possible qu’avec tel rôle, vrai ou faux. N’importe quel autre joueur peut le défier, et celui qui a tort perd une carte.`,
+        `Dixit récompense celui qui sait persuader sans trop en dire ; Coup transforme cet art en bluff pur. Chacun cache deux cartes de personnages et, à son tour, annonce une action, souvent liée à un rôle, vrai ou faux. N’importe quel autre joueur peut le défier, et celui qui a tort perd une carte.`,
         `Les parties durent une quinzaine de minutes, ce qui permet d’enchaîner les revanches, mais l’élimination est réelle : un joueur sans cartes regarde la fin de la manche. Le jeu convient de 2 à 6 joueurs, dès 10 ans, et se déconseille aux groupes qui n’aiment pas être mis en doute.`
       ]
     },
@@ -131,11 +131,11 @@ export default {
     },
     {
       q: 'Existe-t-il un jeu comme Dixit pour deux joueurs ?',
-      a: `Plusieurs jeux de cette liste acceptent deux joueurs sur la boîte : Codenames, Letter Jam, The Mind, The Crew, Timeline et Coup. Mais l’indice libre perd de son intérêt à deux, et Codenames est mieux servi par sa déclinaison Duet. Dixit et Just One demandent, eux, au moins trois joueurs.`
+      a: `Plusieurs jeux de cette liste acceptent deux joueurs sur la boîte : Codenames (édition d’origine), Letter Jam, The Mind, Timeline, Coup et Sushi Go!, plus The Crew grâce à la variante à deux de sa règle. Mais l’indice libre perd de son intérêt à deux, et Codenames est mieux servi par sa déclinaison Duet. Dixit et Just One demandent, eux, au moins trois joueurs.`
     },
     {
       q: 'Quel jeu comme Dixit pour jouer avec des enfants ?',
-      a: `Just One, Sushi Go! et Timeline sont accessibles dès 8 ans, comme Dixit. Just One est le plus proche en esprit. Coup, Skull et Codenames sont indiqués dès 10 ans et supposent un enfant à l’aise avec le bluff ou avec un vocabulaire assez large.`
+      a: `Just One, Sushi Go! et Timeline sont accessibles dès 8 ans, comme Dixit. Just One est le plus proche en esprit. Skull est indiqué dès 10 ans, Coup et Codenames selon l’édition (de 10 à 14 ans), et supposent un enfant à l’aise avec le bluff ou avec un vocabulaire assez large.`
     },
     {
       q: 'KYRAN est-il un bon jeu pour les fans de Dixit ?',

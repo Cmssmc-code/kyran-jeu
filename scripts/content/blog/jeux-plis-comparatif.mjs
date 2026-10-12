@@ -42,7 +42,7 @@ export default {
 <p>Premier critère, la place de l'annonce. Si votre envie est « combien de plis vais-je faire ? », restez dans la famille de l'annonce : Oh Hell avec un paquet classique, Wizard avec ses cartes spéciales, KYRAN avec une contrainte qui fait forcément une victime par manche. Dans toutes ces règles, le but est de réaliser exactement son annonce, même si la sanction d'un écart varie d'un barème à l'autre.</p>
 <p>Deuxième critère, le lien avec les autres joueurs. Les jeux d'annonce sont individuels ; The Crew rend les plis coopératifs, avec des missions à remplir ensemble ; 6 qui prend ! et Parade retirent les plis, mais gardent l'idée d'éviter de ramasser.</p>
 <p>Troisième critère, la taille de la table. Les jeux d'annonce démarrent à trois : Wizard de 3 à 6, KYRAN de 3 à 6, Oh Hell de 3 à 7. Pour jouer à deux, tournez-vous vers Parade, 6 qui prend ! ou The Crew, dont la boîte française annonce 3 à 5 joueurs mais dont les règles contiennent une variante à deux. Au-delà de sept joueurs, 6 qui prend ! (jusqu'à 10) est le seul de cette sélection à convenir.</p>
-<p>Une dernière vérification porte sur la durée. Wizard et Oh Hell demandent de 30 à 60 minutes selon les sources et le nombre de manches choisi ; KYRAN s'arrête vers 30 minutes, et une mission de The Crew dure de 5 à 20 minutes selon l'éditeur.</p>
+<p>Une dernière vérification porte sur la durée. Wizard demande de 40 minutes à une heure selon les sources et le nombre de manches choisi ; KYRAN s'arrête vers 30 minutes, et une mission de The Crew dure de 5 à 20 minutes selon l'éditeur.</p>
 <p>Reste le matériel. Oh Hell se contente d'un paquet de 52 cartes, que l'on possède souvent déjà, et le Tarot Africain d'un jeu de tarot dont on ne garde que les atouts et l'Excuse ; Wizard et KYRAN demandent leur propre boîte. Les premiers obligent à fixer les règles soi-même ; les secondes fournissent une règle unique imprimée, utile quand les joueurs changent d'une soirée à l'autre.</p>`
   },
   games: [
@@ -53,7 +53,7 @@ export default {
       pick: 'Pour découvrir l\'annonce avec un paquet spécialisé, de 3 à 6',
       paragraphs: [
         `Wizard se joue avec soixante cartes : quatre couleurs de 1 à 13, quatre Zarbis (les Magiciens de la règle anglaise), dont le premier posé remporte le pli, et quatre Nazes (les Fous) qui ne l'emportent jamais, sauf dans un pli de seuls Nazes. Le nombre de cartes distribuées monte d'une unité à chaque manche jusqu'à épuisement du paquet, et le score récompense chaque annonce exacte de 20 points plus 10 par pli, avec une pénalité de 10 points par pli d'écart.`,
-        `Dans ce comparatif, il se place au milieu : plus riche qu'Oh Hell grâce à ses cartes spéciales, plus long que KYRAN. Son défaut tient à la durée : la règle d'Amigo prévoit 20 manches à trois joueurs et 10 à six, si bien qu'un joueur très en retard doit encore jouer longtemps. Pour un guide pensé pour ceux qui le connaissent déjà, voyez les <a class="text-link" href="/blog/alternatives-wizard.html">alternatives à Wizard</a>.`
+        `Dans ce comparatif, il se place au milieu : plus riche qu'Oh Hell grâce à ses cartes spéciales, plus long que KYRAN. Son défaut tient à la durée : la règle de Wizard prévoit 20 manches à trois joueurs et 10 à six, si bien qu'un joueur très en retard doit encore jouer longtemps. Pour un guide pensé pour ceux qui le connaissent déjà, voyez les <a class="text-link" href="/blog/alternatives-wizard.html">alternatives à Wizard</a>.`
       ]
     },
     {
@@ -72,7 +72,7 @@ export default {
       type: 'Plis à annonce',
       pick: 'Pour finir une partie en trente minutes, de 3 à 6',
       paragraphs: [
-        `KYRAN rejoint la famille de l'annonce en ajoutant une contrainte : la somme des paris ne peut jamais valoir le nombre de plis de la manche, ce qui garantit une erreur à chaque donne. Les règles ne mentionnent ni atout ni obligation de suivre une couleur : les couleurs des cartes ne sont qu'un repère visuel, et la carte de plus forte valeur remporte le pli, une carte Pouvoir l'emportant à égalité avec un Nombre (de 1 à 36). De quatre à huit cartes Pouvoir, selon la taille de la table, viennent brouiller l'ordre habituel.`,
+        `KYRAN rejoint la famille de l'annonce en ajoutant une contrainte : la somme des paris ne peut jamais valoir le nombre de plis de la manche, ce qui garantit une erreur à chaque donne. Les règles ne mentionnent ni atout ni obligation de suivre une couleur : la carte de plus forte valeur remporte le pli, une carte Pouvoir l'emportant à égalité avec un Nombre (de 1 à 36). De quatre à huit cartes Pouvoir, selon la taille de la table, viennent brouiller l'ordre habituel.`,
         `Les pertes se mesurent en cartes Vie, à hauteur de l'écart entre le pari et les plis gagnés ; le premier joueur à zéro met fin à la partie, et celui qui conserve le plus de vies l'emporte. Une manche à une carte posée sur le front, la manche Mystique, clôt le cycle. Environ 30 minutes, dès 8 ans, de 3 à 6 joueurs ; il ne se joue pas à deux. KYRAN reprend l'annonce contrainte des plis du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, et les <a class="text-link" href="/regle.html">règles complètes</a> sont en ligne.`
       ]
     },
@@ -83,7 +83,7 @@ export default {
       pick: 'Pour jouer les plis sans rivalité, y compris à deux',
       paragraphs: [
         `The Crew conserve la mécanique du pli (fournir, couper avec les fusées, entame) pour l'utiliser sans annonce. Chaque mission distribue des cartes Tâche : un joueur doit remporter une carte précise dans un pli, parfois dans un ordre imposé. Tout le monde gagne ou perd en même temps.`,
-        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle (<a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a>), et les missions durent de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
+        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle ; la <a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs et des missions de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
       ]
     },
     {
@@ -93,7 +93,7 @@ export default {
       pick: 'Pour les groupes jusqu\'à dix, sans annonce ni couleur',
       paragraphs: [
         `Ce n'est pas un jeu de plis au sens strict, puisqu'il n'y a ni couleur, ni atout, ni annonce. La parenté est lointaine : on cherche, comme dans un jeu de plis, à ne pas ramasser. Il accueille de 2 à 10 joueurs, ce qu'aucun jeu d'annonce de la liste n'approche.`,
-        `Tout le monde pose une carte en même temps, et celui qui place la sixième carte d'une rangée de cinq la ramasse ; la partie dure environ 45 minutes et s'arrête quand un joueur dépasse 66 têtes de bœuf. À recommander pour un groupe nombreux ; à éviter si l'envie du moment est d'annoncer ses plis. D'autres idées proches se trouvent dans les <a class="text-link" href="/blog/jeux-comme-6-qui-prend.html">jeux comme 6 qui prend !</a>.`
+        `Tout le monde pose une carte en même temps, et celui qui place la sixième carte d'une rangée de cinq la ramasse ; la partie dure environ 45 minutes et s'arrête quand un joueur atteint ou dépasse 66 têtes de bœuf. À recommander pour un groupe nombreux ; à éviter si l'envie du moment est d'annoncer ses plis. D'autres idées proches se trouvent dans les <a class="text-link" href="/blog/jeux-comme-6-qui-prend.html">jeux comme 6 qui prend !</a>.`
       ]
     },
     {
@@ -114,7 +114,7 @@ export default {
       html: `<p>Dans cette famille, tout se joue avant la première carte : chacun regarde sa main et déclare combien de plis il remportera, ni plus ni moins. Selon les tables, on parle d'annonce, de pari ou de contrat, mais le principe ne varie pas. Quatre jeux le portent, et ils se séparent sur deux points : ce que le dernier à parler a le droit d'annoncer, et ce que coûte une prévision ratée.</p>
 <ul>
 <li><strong>Oh Hell!</strong> : 52 cartes ordinaires et, le plus souvent, un atout désigné par une carte retournée. Selon la <a class="text-link" href="https://www.pagat.com/exact/ohhell.html" rel="noopener">référence en ligne Pagat</a>, le donneur, qui annonce en dernier, n'a pas le droit de choisir le chiffre qui ferait égaler le total des paris au nombre de plis (le « hook ») ; certaines tables jouent sans cette règle. C'est le point à trancher avant de distribuer.</li>
-<li><strong>Wizard</strong> : la règle de base accepte que le total des annonces corresponde exactement aux plis disponibles. Une variante de la notice, « plus ou moins 1 », interdit au dernier à parler d'équilibrer ce total. Zarbis et Nazes rendent chaque prévision plus fragile qu'avec un paquet ordinaire.</li>
+<li><strong>Wizard</strong> : la règle de base accepte que le total des annonces corresponde exactement aux plis disponibles. Une variante (« plus ou moins 1 », décrite dans l'édition anniversaire d'Amigo) interdit au dernier à parler d'équilibrer ce total. Zarbis et Nazes rendent chaque prévision plus fragile qu'avec un paquet ordinaire.</li>
 <li><strong>Tarot Africain</strong> : les 22 cartes d'un tarot, et une interdiction faite au dernier annonceur : le total des annonces ne doit pas égaler le nombre de plis de la donne.</li>
 <li><strong>KYRAN</strong> : la même interdiction, appliquée à toutes les manches, avec des cartes Vie en guise de score : chacun en perd autant que l'écart entre son pari et les plis réellement gagnés.</li>
 </ul>
@@ -126,10 +126,10 @@ export default {
       html: `<p>Un jeu de plis (ou de levées, voir la <a class="text-link" href="https://fr.wikipedia.org/wiki/Jeu_de_lev%C3%A9es" rel="noopener">définition de Wikipédia</a>) se joue par tours : chaque joueur pose une carte, une seule personne remporte l'ensemble, et, dans la plupart des règles, c'est elle qui ouvre le tour suivant. Presque tout se résume à cinq notions.</p>
 <ul>
 <li><strong>Pli ou levée</strong> : l'ensemble des cartes posées pendant un tour ; les deux mots s'emploient presque indifféremment. Il revient au joueur dont la carte est la plus forte.</li>
-<li><strong>Entame</strong> : la première carte d'un pli, qui impose la couleur à suivre dans la plupart des jeux (pas à KYRAN, où les couleurs ne servent que de repère).</li>
+<li><strong>Entame</strong> : la première carte d'un pli, qui impose la couleur à suivre dans la plupart des jeux (pas à KYRAN, où seule la valeur compte).</li>
 <li><strong>Fournir</strong> : jouer une carte de la couleur demandée quand on en possède. Cette contrainte rend le jeu lisible, car un joueur qui ne fournit pas révèle qu'il n'a plus la couleur.</li>
 <li><strong>Atout et coupe</strong> : une couleur désignée qui bat toutes les autres. Faute de la couleur demandée, on peut couper avec un atout. Oh Hell et la plupart des manches de Wizard retournent une carte pour fixer l'atout.</li>
-<li><strong>Annonce, pari ou contrat</strong> : l'engagement pris avant de jouer. Au Tarot Africain, à Oh Hell, à Wizard et à KYRAN, on annonce un nombre de plis ; à la belote, une équipe s'engage à faire plus de points que l'adversaire, et la coinche y ajoute des enchères.</li>
+<li><strong>Annonce, pari ou contrat</strong> : l'engagement pris avant de jouer. Au Tarot Africain, à Oh Hell, à Wizard et à KYRAN, on annonce un nombre de plis ; à la belote, une équipe s'engage à faire plus de points que l'adversaire.</li>
 </ul>`
     },
     {

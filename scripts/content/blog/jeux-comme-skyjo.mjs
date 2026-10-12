@@ -17,13 +17,13 @@ export default {
 <h3>Ce que vous retenez de Skyjo</h3>
 <ul>
 <li><strong>Le score à garder bas.</strong> Éviter les grosses valeurs et cumuler le moins de points possible au fil des manches : No Thanks !, 6 qui prend ! et Llama fonctionnent sur ce principe.</li>
-<li><strong>Le pari sur l’inconnu.</strong> Retourner une carte sans savoir ce qu’elle vaut, ou préférer la défausse à la pioche : Llama et Lost Cities reprennent ce dilemme, Love Letter le réduit à une seule carte en main.</li>
-<li><strong>La grande tablée.</strong> Skyjo accepte jusqu’à huit joueurs sans ralentir. Si ce critère compte, tournez-vous vers 6 qui prend ! ou Uno, qui montent tous deux à dix.</li>
-<li><strong>L’absence d’élimination.</strong> Personne ne quitte la table avant la fin. Presque tous les jeux de la liste respectent cette règle ; seul Love Letter en fait une exception, compensée par des manches de quelques minutes.</li>
+<li><strong>Le pari sur l’inconnu.</strong> Retourner une carte sans savoir ce qu’elle vaut, ou préférer la défausse à la pioche : Lost Cities reprend ce dilemme, Llama garde le risque de la main, Love Letter le réduit à une seule carte en main.</li>
+<li><strong>La grande tablée.</strong> Skyjo accepte jusqu’à huit joueurs. Si ce critère compte, tournez-vous vers 6 qui prend ! ou Uno, qui montent tous deux à dix.</li>
+<li><strong>L’absence d’élimination.</strong> Personne ne quitte la table avant la fin. Presque tous les jeux de la liste respectent cette règle ; seul Love Letter élimine en cours de manche, compensé par des manches de quelques minutes ; dans KYRAN, la partie s’arrête dès qu’un joueur n’a plus de vies.</li>
 </ul>
 <h3>Trois pièges à éviter</h3>
-<p><strong>Chercher un clone.</strong> La chance de Skyjo se joue surtout au départ, au moment où l’on retourne ses premières cartes. Plusieurs alternatives, comme Lost Cities, Parade ou KYRAN, demandent davantage de lecture et peuvent déstabiliser une famille venue chercher un jeu détendu.</p>
-<p><strong>Oublier l’effectif.</strong> Skyjo se joue de 2 à 8 ; Lost Cities exige exactement deux joueurs, Love Letter en accepte de 2 à 4, No Thanks ! de 3 à 7, KYRAN de 3 à 6. Vérifiez la plage avant l’achat plutôt qu’en sortant la boîte un soir de fête.</p>
+<p><strong>Chercher un clone.</strong> Une part de la chance de Skyjo se joue au départ, au moment où l’on retourne ses premières cartes. Plusieurs alternatives, comme Lost Cities, Parade ou KYRAN, demandent davantage de lecture et peuvent déstabiliser une famille venue chercher un jeu détendu.</p>
+<p><strong>Oublier l’effectif.</strong> Skyjo se joue de 2 à 8 ; Lost Cities exige exactement deux joueurs, Love Letter en accepte de 2 à 4 (édition classique ; 2 à 6 dans l’édition Z-Man de 2025), No Thanks ! de 3 à 7, KYRAN de 3 à 6. Vérifiez la plage avant l’achat plutôt qu’en sortant la boîte un soir de fête.</p>
 <p><strong>Sous-estimer la solution gratuite.</strong> Si l’envie de changer vient de la répétition, une <strong>règle alternative pour Skyjo</strong> coûte moins cher qu’un nouveau jeu. La section dédiée, plus bas, propose cinq ajustements à tester avec le matériel que vous possédez déjà.</p>
 <p>Pour trancher : gardez le score et la vitesse avec Llama, la grande tablée avec 6 qui prend !, le duo avec Lost Cities, et une dose de tactique avec KYRAN ou Parade.</p>`
   },
@@ -34,7 +34,7 @@ export default {
       pick: 'Pour garder le rythme de Skyjo dans une boîte de poche',
       paragraphs: [
         `Llama est la proposition la plus proche de Skyjo par le tempo : des manches de quelques minutes, un total de pénalités qui s’alourdit et une décision à chaque tour, jouer une carte, piocher ou se retirer. Se retirer est le geste décisif : on quitte la manche en acceptant que les cartes restées en main comptent, ce qui rappelle l’instant où l’on hésite à clore sa grille avant les autres.`,
-        `Les doublons ne comptent qu’une fois et les lamas pèsent dix points, d’où une arithmétique plus fine qu’il n’y paraît. Le défaut est l’effectif, deux à six joueurs, donc rien pour une très grande tablée, et une part de chance dans la pioche. En échange, la règle tient en une minute et la boîte glisse dans une poche.`
+        `Les doublons ne comptent qu’une fois et les lamas pèsent dix points, d’où une arithmétique plus fine qu’il n’y paraît. Le défaut est l’effectif, deux à six joueurs, donc rien pour une très grande tablée, et une part de chance dans la pioche. En échange, la règle est courte et la boîte glisse dans une poche.`
       ]
     },
     {
@@ -70,7 +70,7 @@ export default {
       pick: 'Pour une partie express entre deux manches de Skyjo',
       paragraphs: [
         `Skyjo se joue avec douze cartes devant soi ; Love Letter n’en demande qu’une en main, et tout change. À chaque tour on pioche, on joue l’une de ses deux cartes et on applique son effet : espionner une main, comparer deux cartes, se protéger, forcer une défausse. Une manche dure quelques minutes, ce qui permet d’enchaîner les revanches.`,
-        `Il faut accepter l’élimination en cours de manche, à l’opposé de l’esprit de Skyjo, mais la brièveté la rend indolore. Les manches gagnées s’accumulent ensuite sous forme de jetons. Le jeu se joue de 2 à 4 : c’est un excellent plan B quand la tablée est réduite, pas un remplaçant pour une soirée à huit.`
+        `Il faut accepter l’élimination en cours de manche, à l’opposé de l’esprit de Skyjo, mais la brièveté la rend indolore. Les manches gagnées s’accumulent ensuite sous forme de jetons. Le jeu se joue de 2 à 4 dans l’édition classique (2 à 6 dans l’édition Z-Man de 2025) : c’est un excellent plan B quand la tablée est réduite, pas un remplaçant pour une soirée à huit.`
       ]
     },
     {
@@ -123,12 +123,12 @@ export default {
     {
       id: 'variantes-skyjo',
       heading: 'Variantes du Skyjo : 5 règles pour relancer la boîte',
-      html: `<p>Avant de changer de jeu, changez les règles. Aucune de ces variantes ne figure dans la règle de base de Skyjo : ce sont des ajustements de table, à annoncer avant la première manche et à tester sur une partie entière. Elles utilisent toutes les cartes habituelles, de -2 à 12, et la grille de douze cartes.</p>
+      html: `<p>Avant de changer de jeu, changez les règles. À notre connaissance, aucune de ces variantes ne figure dans la règle de base de Skyjo : ce sont des ajustements de table, à annoncer avant la première manche et à tester sur une partie entière. Elles utilisent toutes les cartes habituelles, de -2 à 12, et la grille de douze cartes.</p>
 <ol>
 <li><strong>Partie à 50 points.</strong> La règle de base arrête la partie quand un joueur atteint 100 points. Abaisser le seuil à 50 raccourcit nettement la soirée et rend la première mauvaise manche beaucoup plus lourde à rattraper.</li>
 <li><strong>Trois cartes retournées au départ.</strong> Chacun dévoile trois cartes au lieu de deux avant la première pioche. Le début de manche devient moins aléatoire, les colonnes se préparent plus tôt et un mauvais tirage initial est moins punissant.</li>
 <li><strong>Lignes de quatre.</strong> Une ligne horizontale de quatre cartes identiques se défausse comme une colonne de trois. La situation est rare, mais elle pousse à garder des paires côte à côte, et pas seulement l’une sous l’autre.</li>
-<li><strong>Clôture sans malus.</strong> Le joueur qui termine la manche ne voit plus ses points doublés quand il n’a pas le score le plus bas. Le frein principal à une fin de manche rapide disparaît : à essayer si vos parties s’éternisent, en sachant que les manches deviennent plus agressives.</li>
+<li><strong>Clôture sans malus.</strong> Le joueur qui termine la manche ne voit plus ses points doublés quand il n’a pas strictement le score le plus bas. Le frein principal à une fin de manche rapide disparaît : à essayer si vos parties s’éternisent, en sachant que les manches deviennent plus agressives.</li>
 <li><strong>Mode inversé.</strong> Le plus gros total gagne : les 12 deviennent désirables et les -2 des poisons. On supprime la défausse des colonnes identiques, qui effacerait justement les points recherchés. Déroutant pendant une manche ou deux, puis étonnamment tendu.</li>
 </ol>
 <p>Si ces règles alternatives ne suffisent plus à renouveler le plaisir, c’est le signe qu’il vaut mieux changer de mécanique, et la liste ci-dessus est faite pour cela.</p>`
@@ -139,7 +139,7 @@ export default {
       html: `<p>Un vrai Skyjo se joue avec sa propre boîte : 150 cartes numérotées de -2 à 12. Sans elle, un paquet ordinaire permet de retrouver l’essentiel, la grille cachée, le dilemme entre pioche et défausse, les colonnes qui disparaissent. Ce qui suit est une <strong>adaptation de table</strong>, pas la règle de l’éditeur. Elle se rapproche d’un jeu plus ancien, le Golf, répandu dans les pays anglophones, dont une version à neuf cartes disposées en carré compte déjà pour zéro une colonne de trois cartes identiques.</p>
 <h3>Le matériel et la valeur des cartes</h3>
 <ul>
-<li><strong>Un paquet de 52 cartes pour deux joueurs</strong>, deux paquets mélangés de trois à six joueurs, trois paquets à sept ou huit. Avec un seul paquet à trois, il ne reste presque plus rien à piocher une fois les grilles distribuées.</li>
+<li><strong>Un paquet de 52 cartes pour deux joueurs</strong>, deux paquets mélangés de trois à six joueurs, trois paquets à sept ou huit. Avec un seul paquet à trois, il reste peu de cartes à piocher une fois les grilles distribuées.</li>
 <li><strong>Joker : -2.</strong> Gardez les jokers du paquet, ce sont les meilleures cartes du jeu.</li>
 <li><strong>Roi : 0, As : 1.</strong> Le roi joue le rôle du zéro de Skyjo.</li>
 <li><strong>Du 2 au 10 : leur valeur faciale.</strong></li>
@@ -155,8 +155,8 @@ export default {
 </ul>
 <p>Dès qu’une colonne montre trois cartes visibles de même valeur, par exemple trois 7 ou trois rois, elle est retirée de la grille et ne compte plus. Avec deux paquets, chaque valeur existe en huit exemplaires, ce qui rend ces colonnes atteignables ; avec un seul paquet, elles restent rares.</p>
 <h3>Fin de manche et décompte</h3>
-<p>La manche s’arrête lorsqu’un joueur a retourné toutes ses cartes : chacun des autres joue encore un tour, puis tout le monde dévoile sa grille et additionne ses points. Comme dans Skyjo, celui qui a clos la manche voit son total doublé s’il n’a pas le score le plus bas. La partie se termine quand un joueur atteint ou dépasse 100 points cumulés, et le total le plus faible l’emporte. Pour une soirée plus courte, fixez le seuil à 60.</p>
-<p>Si cette version vous plaît mais que le hasard de la donne finit par lasser, c’est le moment de passer à un jeu où l’on agit davantage sur le résultat : les <a class="text-link" href="/regle.html">règles de KYRAN</a> s’apprennent en une manche d’essai.</p>`
+<p>La manche s’arrête lorsqu’un joueur a retourné toutes ses cartes : chacun des autres joue encore un tour, puis tout le monde dévoile sa grille et additionne ses points. Comme dans Skyjo, celui qui a clos la manche voit son total doublé s’il n’a pas strictement le score le plus bas. La partie se termine quand un joueur atteint ou dépasse 100 points cumulés, et le total le plus faible l’emporte. Pour une soirée plus courte, fixez le seuil à 60.</p>
+<p>Si cette version vous plaît mais que le hasard de la donne finit par lasser, c’est le moment de passer à un jeu où l’on agit davantage sur le résultat : les <a class="text-link" href="/regle.html">règles de KYRAN</a> tiennent en 7 cartes de règles, et une vidéo de cinq minutes les résume.</p>`
     }
   ],
   headings: {
@@ -174,7 +174,7 @@ export default {
     },
     {
       q: 'Existe-t-il un jeu comme Skyjo pour deux joueurs ?',
-      a: `Lost Cities est conçu pour deux et reprend le choix entre pioche et défausse avec davantage de planification. Llama et Love Letter fonctionnent aussi en duo, de 2 à 6 et de 2 à 4 joueurs. Skyjo lui-même accepte les duos : une variante de règles peut suffire à relancer la partie.`
+      a: `Lost Cities est conçu pour deux et reprend le choix entre pioche et défausse avec davantage de planification. Llama et Love Letter fonctionnent aussi en duo, de 2 à 6 et de 2 à 4 joueurs (2 à 6 pour l’édition Z-Man de 2025 de Love Letter). Skyjo lui-même accepte les duos : une variante de règles peut suffire à relancer la partie.`
     },
     {
       q: 'Quel jeu comme Skyjo pour plus de huit joueurs ?',

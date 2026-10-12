@@ -44,7 +44,7 @@ export default {
 <h3>Les trois familles de cette page</h3>
 <ul>
 <li><strong>Retenir</strong> : garder en tête une information qui a disparu de la table, comme les cartes recouvertes dans la défausse de Skyjo ou les indices déjà reçus à Hanabi.</li>
-<li><strong>Rester attentif</strong> : maintenir une vigilance continue sur un flux, comme les symboles de Dobble ou le rythme commun de The Mind. Rien n’y est à mémoriser longtemps, mais un instant d’inattention coûte la manche.</li>
+<li><strong>Rester attentif</strong> : maintenir une vigilance continue sur un flux, comme les symboles de Dobble ou le rythme commun de The Mind. Rien n’y est à mémoriser longtemps, mais un instant d’inattention coûte une vie à l’équipe (The Mind) ou la carte (Dobble).</li>
 <li><strong>Déduire</strong> : reconstituer ce qui reste à partir de ce qui est sorti, comme les cartes écartées en début de partie à No Thanks! ou les cartes fortes déjà tombées à KYRAN.</li>
 </ul>
 <h3>Ce qui disparaît de la table fait la différence</h3>
@@ -113,13 +113,13 @@ export default {
   ],
   verdict: {
     heading: 'Quel jeu choisir selon l’effort recherché',
-    html: `<p>Pour solliciter la mémoire sans y passer la soirée, prenez <strong>No Thanks!</strong> : en une vingtaine de minutes, il oblige à tenir compte de neuf cartes invisibles, à estimer les jetons des autres et à trancher à chaque tour. <strong>Skyjo</strong> reste la meilleure option pour une table mixte, parce que le hasard y protège les distraits, et <strong>Hanabi</strong> celle d’une équipe qui veut retenir ensemble. Si c’est l’attention que vous cherchez plutôt que le souvenir, Dobble et The Mind sont plus justes, chacun à son tempo. KYRAN, enfin, s’adresse à ceux qui aiment suivre les cartes fortes et parier sur leurs plis ; sa variante d’initiation, sans pouvoirs, garde le comptage et retire les exceptions.</p>`
+    html: `<p>Pour solliciter l’attention et la déduction sans y passer la soirée, prenez <strong>No Thanks!</strong> : en une vingtaine de minutes, il oblige à tenir compte de neuf cartes invisibles, à estimer les jetons des autres et à trancher à chaque tour. <strong>Skyjo</strong> reste la meilleure option pour une table mixte, parce que le hasard y protège les distraits, et <strong>Hanabi</strong> celle d’une équipe qui veut retenir ensemble. Si c’est l’attention que vous cherchez plutôt que le souvenir, Dobble et The Mind sont plus justes, chacun à son tempo. KYRAN, enfin, s’adresse à ceux qui aiment suivre les cartes fortes et parier sur leurs plis ; sa variante d’initiation, sans pouvoirs, garde le comptage et retire les exceptions.</p>`
   },
   conclusion: `<p>Alterner les efforts vaut mieux que s’acharner sur un seul : une partie de vigilance rapide, puis un jeu de comptage plus posé, renouvelle ce que la table doit garder en tête. Les trois familles de cette page se combinent d’ailleurs dans une même soirée, de la plus nerveuse à la plus calme. Et rien n’interdit de jouer sans compter ni retenir, pour le seul plaisir : ces six jeux fonctionnent aussi comme cela.</p>`,
   faq: [
     {
       q: 'Quel jeu de cartes pour faire travailler la mémoire ?',
-      a: 'Skyjo et No Thanks! sont les plus accessibles : ils obligent à retenir ce qui a disparu de la table (cartes recouvertes dans la défausse, cartes écartées au départ). Hanabi ajoute une mémoire partagée des indices reçus. Ce sont des jeux d’effort léger, pas des exercices programmés.'
+      a: 'Skyjo et No Thanks! sont les plus accessibles : Skyjo oblige à retenir ce qui a été recouvert dans la défausse, No Thanks! relève plutôt de la déduction (neuf cartes écartées sans être vues). Hanabi ajoute une mémoire partagée des indices reçus. Ce sont des jeux d’effort léger, pas des exercices programmés.'
     },
     {
       q: 'Quels jeux de cartes demandent de compter les cartes ?',

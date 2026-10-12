@@ -16,7 +16,7 @@ export default {
     groups: [
       {
         heading: 'Toujours annoncer ses plis : la famille de Wizard',
-        html: `<p>Oh Hell et KYRAN appartiennent à la lignée des jeux où l'on prédit le nombre exact de plis qu'on remportera. En France, cette famille existe aussi en version à 22 cartes de tarot, le <a class="text-link" href="/whist-22.html">Whist 22</a>, autre nom du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> ; Oh Hell en est la déclinaison à 52 cartes, parfois appelée l'Ascenseur. Un joueur de Wizard y garde ses réflexes d'estimation : seuls changent le paquet, l'atout et la façon de sanctionner une annonce ratée.</p>`,
+        html: `<p>Oh Hell et KYRAN appartiennent à la lignée des jeux où l'on prédit le nombre exact de plis qu'on remportera. En France, cette famille existe aussi en version à 22 cartes de tarot, le <a class="text-link" href="/whist-22.html">Whist 22</a>, autre nom du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> ; Oh Hell en est un proche cousin à 52 cartes, que l'on appelle parfois l'Ascenseur en France. Un joueur de Wizard y garde ses réflexes d'estimation : seuls changent le paquet, l'atout et la façon de sanctionner une annonce ratée.</p>`,
         ids: ['oh-hell', 'kyran']
       },
       {
@@ -32,7 +32,7 @@ export default {
     faq: 'Wizard et ses remplaçants : ce qu’on nous demande',
     related: 'Pour prolonger après Wizard'
   },
-  intro: `<p>Vous connaissez les soixante cartes de Wizard, ses quatre Magiciens qui raflent tout et ses quatre Fous qui ne gagnent jamais, et les quinze manches d'une partie à quatre ne réservent plus de surprise. La recommandation vient tout de suite ci-dessous ; le reste de la page montre comment elle se construit. Six jeux sont retenus, en deux familles. La première garde le cœur de Wizard, l'annonce exacte du nombre de plis : <strong>Oh Hell</strong> et <strong>KYRAN</strong>. La seconde abandonne l'annonce mais conserve autre chose : le pli et l'atout (The Crew), le pari lancé devant tout le monde (Skull), l'art de se défaire des mauvaises cartes (6 qui prend !, Parade). Chaque fiche dit, règle par règle, ce qui bouge par rapport à Wizard. Pour situer ces titres dans l'ensemble du genre, passez par le <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.</p>`,
+  intro: `<p>Vous connaissez les soixante cartes de Wizard, ses quatre Magiciens, qui l'emportent presque toujours, et ses quatre Fous, qui perdent presque toujours, et les quinze manches d'une partie à quatre ne réservent plus de surprise. La recommandation vient tout de suite ci-dessous ; le reste de la page montre comment elle se construit. Six jeux sont retenus, en deux familles. La première garde le cœur de Wizard, l'annonce exacte du nombre de plis : <strong>Oh Hell</strong> et <strong>KYRAN</strong>. La seconde abandonne l'annonce mais conserve autre chose : le pli et l'atout (The Crew), le pari lancé devant tout le monde (Skull), l'art de se défaire des mauvaises cartes (6 qui prend !, Parade). Chaque fiche dit, règle par règle, ce qui bouge par rapport à Wizard. Pour situer ces titres dans l'ensemble du genre, passez par le <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.</p>`,
   criteria: {
     heading: 'Que garder de Wizard, que changer ?',
     html: `<p>Avant de racheter une boîte, identifiez ce qui vous plaît vraiment dans Wizard. Ce n'est pas la même chose pour tout le monde, et chaque alternative ci-dessous n'en reprend qu'une partie.</p>
@@ -45,7 +45,7 @@ export default {
 </ul>
 <h3>Trois critères qui tranchent</h3>
 <p>Le premier est la durée. Les manches de Wizard s'allongent jusqu'à épuiser le paquet : vingt manches à trois joueurs, quinze à quatre, dix à six. Un joueur qui s'effondre à la sixième manche d'une partie à quatre doit encore en subir neuf. Si votre groupe décroche en route, cherchez un jeu à main plafonnée ou à fin brutale, comme KYRAN (sept cartes au maximum).</p>
-<p>Le deuxième est le nombre de joueurs. Wizard démarre à trois et s'arrête à six. Pour jouer à deux, il faut sortir de l'annonce : The Crew, Parade et 6 qui prend ! acceptent un duo. Pour sept joueurs ou plus, Oh Hell grimpe jusqu'à sept et 6 qui prend ! jusqu'à dix.</p>
+<p>Le deuxième est le nombre de joueurs. Wizard démarre à trois et s'arrête à six. Pour jouer à deux, il faut sortir de l'annonce : Parade et 6 qui prend ! acceptent un duo, et The Crew prévoit une variante à deux dans sa règle. Pour sept joueurs ou plus, Oh Hell grimpe jusqu'à sept et 6 qui prend ! jusqu'à dix.</p>
 <p>Le troisième est votre rapport au calcul. Si vous aimez compter les atouts tombés, restez dans la première famille, avec Oh Hell en tête. Si vous voulez ranger la feuille de score, Skull et 6 qui prend ! demandent surtout du flair. Évitez enfin de choisir sur la seule ressemblance : un jeu « comme Wizard » qui ne se joue qu'à quatre ne dépannera pas une <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">soirée à six</a>.</p>`
   },
   games: [
@@ -56,7 +56,7 @@ export default {
       pick: `Pour garder l'annonce de plis avec un simple jeu de 52 cartes`,
       paragraphs: [
         `Oh Hell, c'est Wizard dépouillé de ses Magiciens et de ses Fous. Sans carte magique, les certitudes se limitent à l'as d'atout et aux cartes maîtresses d'une couleur déjà tombée, donc vos annonces reposent sur le comptage : combien d'as, combien d'atouts, qui risque de manquer d'une couleur. Un joueur de Wizard retrouve ses réflexes de couleur à fournir et d'atout retourné ; il perd seulement le filet de sécurité des cartes spéciales.`,
-        `Côté règles, comptez avec des écarts de table : la montée et la descente du nombre de cartes ne sont pas fixées partout de la même façon, et le décompte varie. Réglez ces points avant de distribuer. Le plus souvent, le dernier à parler n'a pas le droit de boucler le total, ce que Wizard ne demande pas dans sa règle de base. Un paquet de 52 cartes suffit de 3 à 7 joueurs, avec une main maximale limitée à sept cartes à sept joueurs, faute de cartes dans le paquet. Une édition dédiée coûte environ 10 €.`
+        `Côté règles, comptez avec des écarts de table : la montée et la descente du nombre de cartes ne sont pas fixées partout de la même façon, et le décompte varie. Réglez ces points avant de distribuer. Le plus souvent, le dernier à parler n'a pas le droit de boucler le total, ce que Wizard ne demande pas dans sa règle de base. Un paquet de 52 cartes suffit de 3 à 7 joueurs, avec une main maximale limitée à sept cartes à sept joueurs, faute de cartes dans le paquet.`
       ]
     },
     {
@@ -72,12 +72,12 @@ export default {
     },
     {
       id: 'the-crew',
-      subtitle: 'les plis en équipe, sans perdant',
+      subtitle: 'les plis en équipe, sans rivalité',
       type: 'Plis coopératifs',
-      pick: 'Pour jouer des plis à deux, ou sans perdant autour de la table',
+      pick: 'Pour jouer des plis à deux, ou sans rivalité autour de la table',
       paragraphs: [
         `The Crew garde l'essentiel d'un jeu de plis : suivre la couleur demandée, remporter ou perdre le pli, utiliser une série d'atouts (les fusées, de 1 à 4). Ce qui disparaît, c'est l'annonce. À sa place, des cartes Mission distribuées en début de partie désignent qui doit remporter quel pli, et l'équipage entier échoue si un seul objectif manque. Le renversement est net : à Wizard, on vise un nombre précis de plis pour soi ; ici, on se prive parfois de gagner pour qu'un équipier réussisse le sien.`,
-        `La communication est bridée : interdiction de parler de sa main, avec un jeton qui permet de révéler une carte et d'indiquer sa position dans la couleur (la plus haute, la plus basse ou la seule). La boîte propose cinquante missions de difficulté croissante, pour 2 à 5 joueurs. Le seul vrai point faible pour un fan de Wizard est l'absence de classement : on gagne ensemble ou on recommence. Une table qui vit de rivalité s'y ennuiera.`
+        `La communication est bridée : interdiction de parler de sa main, avec un jeton qui permet de révéler une carte et d'indiquer sa position dans la couleur (la plus haute, la plus basse ou la seule). La boîte propose cinquante missions de difficulté croissante, pour 3 à 5 joueurs, avec une variante à deux dans la règle. Le seul vrai point faible pour un fan de Wizard est l'absence de classement : on gagne ensemble ou on recommence. Une table qui vit de rivalité s'y ennuiera.`
       ]
     },
     {
@@ -113,7 +113,7 @@ export default {
   ],
   verdict: {
     heading: 'Quel jeu sortir après Wizard ?',
-    html: `<p>Votre table veut continuer à annoncer ses plis : prenez KYRAN si vous êtes trois à six et que la partie doit tenir en trente minutes, Oh Hell si le budget est nul et que le groupe aime compter les atouts. S'il manque un joueur, ou si la soirée doit finir sans perdant, The Crew garde couleur à fournir et atout en version coopérative, dès deux joueurs. Si la table a surtout envie de rire, 6 qui prend ! accueille jusqu'à dix personnes. Skull et Parade sont des paris plus risqués pour des fans d'annonce : le premier remplace les cartes par des regards, le second supprime toute prédiction. Prenez-les en complément de Wizard, pas à sa place.</p>`
+    html: `<p>Votre table veut continuer à annoncer ses plis : prenez KYRAN si vous êtes trois à six et que la partie doit tenir en trente minutes, Oh Hell si le budget est nul et que le groupe aime compter les atouts. S'il manque un joueur, ou si la soirée doit se jouer sans rivalité, The Crew garde couleur à fournir et atout en version coopérative, avec une variante à deux joueurs. Si la table a surtout envie de rire, 6 qui prend ! accueille jusqu'à dix personnes. Skull et Parade sont des paris plus risqués pour des fans d'annonce : le premier remplace les cartes par des regards, le second supprime toute prédiction. Prenez-les en complément de Wizard, pas à sa place.</p>`
   },
   conclusion: `<p>Aucun de ces six jeux n'oblige à ranger Wizard : il reste la référence des longues soirées de calcul à quatre ou cinq. Mieux vaut faire tourner les formats : un soir d'annonce avec Oh Hell ou KYRAN, un soir d'équipage avec The Crew, un soir de chahut avec 6 qui prend !. Si un convive découvre les plis à cette occasion, commencez par la première famille : c'est elle qui prépare le mieux à revenir un jour aux Magiciens et aux Fous.</p>`,
   faq: [
@@ -123,7 +123,7 @@ export default {
     },
     {
       q: 'Existe-t-il un jeu comme Wizard à deux joueurs ?',
-      a: `Wizard demande au moins trois joueurs, comme Oh Hell et KYRAN. À deux, The Crew (2 à 5 joueurs) conserve la mécanique des plis en version coopérative, tandis que Parade et 6 qui prend ! se jouent aussi à deux, sans annonce.`
+      a: `Wizard demande au moins trois joueurs, comme Oh Hell et KYRAN. À deux, The Crew (3 à 5 joueurs, variante à deux dans la règle) conserve la mécanique des plis en version coopérative, tandis que Parade et 6 qui prend ! se jouent aussi à deux, sans annonce.`
     },
     {
       q: 'Faut-il interdire au dernier joueur de faire tomber le total des annonces juste ?',

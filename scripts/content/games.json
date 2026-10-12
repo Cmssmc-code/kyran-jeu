@@ -2,7 +2,7 @@
   "love-letter": {
     "name": "Love Letter",
     "players": "2 à 4",
-    "duration": "~15 min",
+    "duration": "~20 min",
     "age": "10+",
     "price": "~12 €",
     "image": "/blog/images/love-letter.jpg",
@@ -44,7 +44,7 @@
     "players": "2 à 10",
     "duration": "~20 min",
     "age": "7+",
-    "price": "~10 €",
+    "price": "~14 €",
     "image": "/blog/images/uno.jpg",
     "designer": "Merle Robbins",
     "year": 1971
@@ -71,20 +71,20 @@
   },
   "the-crew": {
     "name": "The Crew",
-    "players": "2 à 5",
+    "players": "3 à 5",
     "duration": "~20 min",
     "age": "10+",
-    "price": "~15 €",
+    "price": "~16 €",
     "image": "/blog/images/the-crew.jpg",
     "designer": "Thomas Sing",
     "year": 2019
   },
   "timeline": {
     "name": "Timeline",
-    "players": "2 à 8",
+    "players": "2 à 6",
     "duration": "~15 min",
     "age": "8+",
-    "price": "~15 €",
+    "price": "~11 €",
     "image": "/blog/images/timeline.jpg",
     "designer": "Frédéric Henry",
     "year": 2011
@@ -94,7 +94,7 @@
     "players": "2 à 8",
     "duration": "~15 min",
     "age": "6+",
-    "price": "~12 €",
+    "price": "~10 €",
     "image": "/blog/images/dobble.jpg",
     "designer": "Denis Blanchot",
     "year": 2009
@@ -104,17 +104,17 @@
     "players": "2 à 10",
     "duration": "~15 min",
     "age": "7+",
-    "price": "~15 €",
+    "price": "~15 à 20 €",
     "image": "/blog/images/jungle-speed.jpg",
-    "designer": "Thomas Vuarchex",
-    "year": 1991
+    "designer": "Thomas Vuarchex et Pierric Yakovenko",
+    "year": null
   },
   "wizard": {
     "name": "Wizard",
     "players": "3 à 6",
     "duration": "~45 min",
     "age": "10+",
-    "price": "~10 €",
+    "price": "~15 €",
     "image": "/blog/images/wizard.jpg",
     "designer": "Ken Fisher",
     "year": 1984
@@ -174,7 +174,7 @@
     "players": "2 à 4",
     "duration": "~20 min",
     "age": "8+",
-    "price": "~12 €",
+    "price": "~13 €",
     "designer": "Wolfgang Warsch",
     "year": 2018,
     "image": false
@@ -244,7 +244,7 @@
     "players": "2 à 6",
     "duration": "~45 min",
     "age": "10+",
-    "price": "~22 €",
+    "price": "~20 €",
     "image": "/blog/images/letter-jam.jpg",
     "designer": "Ondra Skoupý",
     "year": 2019
@@ -253,7 +253,7 @@
     "name": "Coup",
     "players": "2 à 6",
     "duration": "~15 min",
-    "age": "10+",
+    "age": "13+",
     "price": "~14 €",
     "designer": "Rikki Tahta",
     "year": 2012
@@ -263,7 +263,7 @@
     "players": "3 à 7",
     "duration": "~20 min",
     "age": "8+",
-    "price": "~22 €",
+    "price": "~20 €",
     "designer": "Ludovic Roudy et Bruno Sautter",
     "year": 2018,
     "image": false
@@ -283,7 +283,7 @@
     "players": "1 à 5",
     "duration": "~20 min",
     "age": "8+",
-    "price": "~12 €",
+    "price": "~14 €",
     "image": "/blog/images/the-game.jpg",
     "designer": "Steffen Benndorf",
     "year": 2015

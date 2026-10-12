@@ -23,7 +23,7 @@ export default {
 </ul>
 <h3>Régler la durée sur la soirée</h3>
 <p>Une soirée de trois heures s’organise mieux autour de trois jeux que d’un seul : un échauffement d’un quart d’heure pendant que le groupe s’installe (Dobble, Coup), un jeu principal de trente à quarante minutes (Skull, KYRAN, Saboteur, Colt Express), puis un dernier jeu choisi par les invités, souvent une revanche. Dix minutes de règles sur un jeu de quarante minutes, c’est déjà un quart de la partie : si personne ne le connaît, prenez un jeu qui s’explique en trois minutes.</p>
-<p>Trois pièges méritent d’être connus avant l’achat. L’élimination, d’abord : dans Bang!, un joueur sorti tôt regarde les autres jusqu’à la fin de la partie, alors que Coup limite la casse en tenant en un quart d’heure. Le vocabulaire, ensuite : Codenames et Just One reposent sur la langue et la culture communes, et pénalisent un ami dont le français n’est pas la langue maternelle. La plage annoncée, enfin : la boîte indique ce qui est jouable, pas ce qui est agréable ; Saboteur démarre à trois joueurs mais ne devient vraiment intéressant qu’à cinq ou six.</p>`
+<p>Trois pièges méritent d’être connus avant l’achat. L’élimination, d’abord : dans Bang!, un joueur sorti tôt regarde les autres jusqu’à la fin de la partie, alors que Coup limite la casse en tenant en un quart d’heure. Le vocabulaire, ensuite : Codenames et Just One reposent sur la langue et la culture communes, et pénalisent un ami dont le français n’est pas la langue maternelle. La plage annoncée, enfin : la boîte indique ce qui est jouable, pas ce qui est agréable ; Saboteur démarre à trois joueurs mais gagne en intérêt avec davantage de joueurs.</p>`
   },
   games: [
     {
@@ -50,10 +50,10 @@ export default {
       id: 'dixit',
       subtitle: 'pour la table qui aime raconter',
       type: 'Imagination',
-      pick: 'Tablées de 3 à 6 qui préfèrent raconter plutôt que bluffer',
+      pick: 'Tablées dès 3 qui préfèrent raconter plutôt que bluffer',
       paragraphs: [
         `Le conteur choisit une illustration dans sa main et la décrit par une phrase, un titre ou un bruitage ; les autres jouent la carte de leur main qui s’en rapproche le plus, puis tout le monde cherche l’originale. Le conteur ne marque que s’il n’est ni trop obscur ni trop évident, ce qui pousse chacun à dévoiler une association personnelle. C’est le jeu de la soirée tranquille, autour d’une table basse et d’un digestif.`,
-        `Il respire mieux à partir de quatre ou cinq joueurs, quand le vote offre assez de leurres. Les illustrations et le plateau de score expliquent en partie son prix, environ 30 euros, le plus élevé de cette liste avec Colt Express. Dans un groupe bruyant ou compétitif, il tombe à plat : on y vient pour la conversation, pas pour le duel.`
+        `Il respire mieux à partir de quatre ou cinq joueurs, quand le vote offre assez de leurres. Son prix, environ 30 euros, est le plus élevé de cette liste avec Colt Express. Dans un groupe bruyant ou compétitif, il tombe à plat : on y vient pour la conversation, pas pour le duel.`
       ]
     },
     {
@@ -73,7 +73,7 @@ export default {
       pick: 'Groupes qui aiment bluffer et se regarder dans les yeux',
       paragraphs: [
         `Chacun possède trois fleurs et un crâne, en pose un devant soi face cachée, puis les enchères montent sur le nombre de cartes qu’on se risque à retourner. Tout se joue dans le regard : l’ami qui hésite avant de poser, l’autre qui surenchérit trop vite. Une manche se règle en quelques minutes, et la partie se gagne en réussissant deux défis.`,
-        `Skull prend son sel à partir de quatre joueurs ; à trois, les bluffs se lisent trop facilement. Défaut à connaître : un joueur qui perd toutes ses cartes sort de la partie, ce qui peut durer pour le premier éliminé à six. Comptez environ trente minutes, sur une table assez dégagée pour que chaque pile reste lisible.`
+        `Skull se joue dès trois joueurs, mais gagne en intérêt avec une table plus garnie. Défaut à connaître : un joueur qui perd toutes ses cartes sort de la partie, ce qui peut durer pour le premier éliminé à six. Comptez environ trente minutes, sur une table assez dégagée pour que chaque pile reste lisible.`
       ]
     },
     {
@@ -93,7 +93,7 @@ export default {
       pick: 'Tablées de 5 à 10 qui acceptent de se soupçonner',
       paragraphs: [
         `Saboteur répartit en secret des nains chercheurs d’or et des saboteurs ; tout le monde pose des cartes de chemin vers le trésor, mais les saboteurs bouchent les couloirs. La table se met à interpréter chaque geste : pourquoi cette impasse, pourquoi ce chariot cassé chez lui plutôt que chez un autre ? Ce qui amuse n’est pas le tunnel, ce sont les procès d’intention.`,
-        `Les rôles cachés ne prennent leur intérêt qu’à partir de cinq joueurs ; à trois ou quatre, le saboteur est vite démasqué. Le jeu exige aussi de la place pour étaler le chemin, donc une vraie table plutôt qu’un salon bas. Une partie compte trois manches et dure environ trente minutes.`
+        `Les rôles cachés gagnent en intérêt avec davantage de joueurs ; à trois ou quatre, le saboteur a moins de monde pour se cacher. Le jeu exige aussi de la place pour étaler le chemin, donc une vraie table plutôt qu’un salon bas. Une partie compte trois manches et dure environ trente minutes.`
       ]
     },
     {
@@ -145,7 +145,7 @@ export default {
       {
         id: 'jeux-soiree-enjeu',
         heading: 'Jeux de soirée entre amis pour une vraie partie à enjeu',
-        html: `<p>Deux jeux qui demandent qu’on s’installe : une règle à expliquer, une partie d’une demi-heure ou plus, et un vainqueur que personne ne contestera.</p>`,
+        html: `<p>Deux jeux qui demandent qu’on s’installe : une règle à expliquer, une partie d’une demi-heure ou plus, et un classement final net.</p>`,
         ids: ['colt-express', 'kyran']
       }
     ]
@@ -155,7 +155,7 @@ export default {
   },
   verdict: {
     heading: 'Si vous ne deviez acheter qu’un jeu pour vos soirées',
-    html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne. Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte davantage de calcul que la moyenne de cette liste, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
+    html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne. Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte du calcul, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
   },
   extraSections: [
     {
@@ -173,8 +173,8 @@ export default {
       heading: 'Jeux à faire entre amis sans matériel',
       html: `<p>Quand aucune boîte n’a fait le voyage, quelques jeux de tradition orale suffisent à occuper une fin de repas. Ils ne remplacent pas un vrai jeu de société, mais ils ne demandent rien d’autre que de la voix et un peu de mémoire.</p>
 <ul>
-<li><strong>Le ni oui ni non.</strong> Un joueur pose des questions en rafale à un autre, qui doit répondre sans jamais dire « oui » ni « non ». Une minute suffit généralement pour piéger quelqu’un, et chacun passe ensuite à son tour sur la sellette.</li>
-<li><strong>Je pars en voyage et j’emporte…</strong> Chacun répète la liste des objets déjà cités puis en ajoute un. Celui qui oublie un élément ou en inverse l’ordre est éliminé ; le dernier à réciter la liste complète gagne. Le jeu prend tout son intérêt au-delà de cinq participants.</li>
+<li><strong>Le ni oui ni non.</strong> Un joueur pose des questions en rafale à un autre, qui doit répondre sans jamais dire « oui » ni « non ». Chacun passe ensuite à son tour sur la sellette.</li>
+<li><strong>Je pars en voyage et j’emporte…</strong> Chacun répète la liste des objets déjà cités puis en ajoute un. Celui qui oublie un élément ou en inverse l’ordre est éliminé ; le dernier à réciter la liste complète gagne. Le jeu se prête aux groupes nombreux.</li>
 <li><strong>Deux vérités et un mensonge.</strong> Un joueur énonce trois affirmations sur lui-même, dont une fausse, et les autres votent pour démasquer l’intrus. Parfait pour un groupe où tout le monde ne se connaît pas, moins drôle entre amis qui savent déjà tout les uns des autres.</li>
 <li><strong>Les mimes.</strong> Deux équipes se lancent des titres de films ou d’expressions à faire deviner sans parler. Un bout de papier pour noter les points aide, mais il n’est pas indispensable.</li>
 </ul>

@@ -7,7 +7,7 @@ export default {
   category: 'Cartes',
   date: '2026-06-24',
   heroTitle: 'Jeux de <span class="accent">draft et enchères</span>',
-  heroSubtitle: 'Choisir une carte et passer le reste, ou fixer son prix : sept jeux qui font de ces deux gestes le cœur de la partie.',
+  heroSubtitle: 'Choisir une carte et passer le reste, ou fixer son prix : sept jeux qui reprennent ces deux gestes, à des degrés divers.',
   heroImage: '/boite-recto-kyran.jpg',
   heroCaption: 'Boîte de KYRAN « Maître des Mystiques » : un singe orné au centre, entouré de motifs colorés.',
   intro: `<p>Le <strong>draft</strong> consiste à garder une carte de sa main et à passer les autres au voisin ; l'<strong>enchère</strong> consiste à fixer un prix, en pièces, en jetons ou en risque, pour obtenir quelque chose. Pour découvrir le premier, jouez à <strong>Sushi Go!</strong> : quinze minutes, de 2 à 5 joueurs. Pour la seconde, <strong>For Sale</strong> est l'entrée la plus claire, avec deux enchères différentes dans une même partie. <strong>No Thanks!</strong> en propose une version inversée où l'on paie pour ne pas prendre. Les quatre autres jeux de la sélection (Skull, Oh Hell!, KYRAN, Star Realms) en reprennent l'esprit sans en respecter la lettre : miser un bluff, parier sur ses propres plis ou acheter dans un marché partagé. Les paris de plis sont détaillés dans notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a>.</p>`,
@@ -60,7 +60,7 @@ export default {
       pick: 'Pour miser sur la sincérité des autres, de 3 à 6 joueurs',
       paragraphs: [
         `Skull réduit l'enchère à sa forme la plus pure : on ne mise pas de l'argent, on mise une affirmation. Une fois les cartes posées, un joueur annonce combien de roses il saura retourner sans toucher un crâne ; les autres surenchérissent ou se couchent, et le plus haut prétendant doit tenir parole devant tout le monde.`,
-        `Ici, le prix est le risque : monter trop haut, c'est se mettre à la merci d'un crâne que l'on ne maîtrise pas. L'enchère ne transfère aucune ressource, elle sert seulement à désigner qui prend le risque. Défaut : les joueurs éliminés regardent la suite, et la partie perd en richesse à trois, où les cartes en jeu sont trop peu nombreuses pour masquer les mensonges.`
+        `Ici, le prix est le risque : monter trop haut, c'est se mettre à la merci d'un crâne que l'on ne maîtrise pas. L'enchère ne transfère aucune ressource, elle sert seulement à désigner qui prend le risque. Défaut : les joueurs éliminés regardent la suite.`
       ]
     },
     {
@@ -87,7 +87,7 @@ export default {
       pick: 'Pour deux joueurs qui veulent un draft glissant au cœur d\'un duel',
       paragraphs: [
         `Star Realms n'est ni un draft ni une enchère, mais sa rangée commune de cinq cartes en reproduit le dilemme. Vous payez en ressources, la rangée se recharge depuis la pioche, et la carte que vous laissez passer sera peut-être celle que votre adversaire attend. C'est un marché où chaque achat est aussi un refus infligé à l'autre.`,
-        `Le parallèle avec le draft tient à l'influence : ce que l'on ne prend pas oriente le jeu de l'adversaire. Le prix, lui, est fixé par la carte et non par l'enchère, ce qui rapproche davantage le jeu d'un marché que d'une salle des ventes. Défauts : il se joue à deux seulement, la boîte indique 12 ans et plus, et il convient mal à un premier contact avec ces mécaniques.`
+        `Le parallèle avec le draft tient à l'influence : ce que l'on ne prend pas oriente le jeu de l'adversaire. Le prix, lui, est fixé par la carte et non par l'enchère, ce qui rapproche davantage le jeu d'un marché que d'une salle des ventes. Défauts : la boîte de base se joue à deux, la boîte indique 12 ans et plus, et il convient mal à un premier contact avec ces mécaniques.`
       ]
     }
   ],
@@ -115,11 +115,11 @@ export default {
     },
     {
       q: 'Quel jeu d\'enchères pour débuter en famille ?',
-      a: `No Thanks! (dès 8 ans, environ 20 minutes) est le plus simple : un seul choix par tour, payer ou prendre. For Sale (dès 10 ans) demande un peu plus de calcul. Pour un jeu de cartes plus léger encore, voyez nos <a class="text-link" href="/blog/jeux-famille.html">jeux de famille</a>.`
+      a: `No Thanks! (dès 8 ans, environ 20 minutes) est le plus simple : un seul choix par tour, payer ou prendre. For Sale (dès 8 à 10 ans selon les fiches) demande un peu plus de calcul. Pour un jeu de cartes plus léger encore, voyez nos <a class="text-link" href="/blog/jeux-famille.html">jeux de famille</a>.`
     },
     {
       q: 'KYRAN est-il un jeu d\'enchères ?',
-      a: `Pas au sens strict. Chacun annonce combien de plis il va gagner, ce qui ressemble à une enchère sur soi-même, mais personne ne se dispute les mêmes cartes. Le jeu est plus proche d'Oh Hell! et du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, avec des vies visibles en plus.`
+      a: `Pas au sens strict. Chacun annonce combien de plis il va gagner, ce qui ressemble à une enchère sur soi-même, mais personne ne se dispute les mêmes cartes. Le jeu est plus proche d'Oh Hell! et du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a>, avec en plus des cartes Vie visibles, des pouvoirs et une manche Mystique.`
     }
   ],
   related: ['jeux-strategie-legere', 'jeux-plis-comparatif', 'jeux-cartes-6-joueurs']

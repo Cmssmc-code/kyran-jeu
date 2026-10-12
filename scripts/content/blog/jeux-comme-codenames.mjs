@@ -10,13 +10,13 @@ export default {
   heroTitle: 'Jeux comme <span class="accent">Codenames</span>',
   heroSubtitle: `Huit jeux pour retrouver la tension d’un indice à un mot, avec ou sans équipes, selon la taille de votre tablée.`,
   heroCaption: 'Codenames, roi des jeux d’équipes rapides.',
-  intro: `<p>Codenames tient sur un rapport de force simple : un joueur voit la solution, son équipe ne la voit pas, et un seul mot doit suffire à les relier. La tension naît du doute, quand l’indice « océan » désigne à la fois la mer, la plage et un agent à ne surtout pas toucher. Reproduire cette alchimie demande de choisir ce qu’on veut garder : le <strong>duel d’équipes</strong>, l’<strong>indice minimal</strong> ou la <strong>déduction à plusieurs</strong>.</p><p>Voici huit <strong>jeux comme Codenames</strong>, certains par équipes, d’autres coopératifs ou individuels, classés selon ce qu’ils prolongent de l’original. Si vous aimez aussi les indices plus poétiques, nos <a class="text-link" href="/blog/jeux-comme-dixit.html">jeux comme Dixit</a> complètent ce panorama, et nos <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a> aident quand la table dépasse huit personnes.</p>`,
+  intro: `<p>Codenames tient sur un rapport de force simple : un joueur voit la solution, son équipe ne la voit pas, et un seul mot doit suffire à les relier. La tension naît du doute, quand l’indice « océan » désigne à la fois la mer, la plage et un assassin à ne surtout pas toucher. Reproduire cette alchimie demande de choisir ce qu’on veut garder : le <strong>duel d’équipes</strong>, l’<strong>indice minimal</strong> ou la <strong>déduction à plusieurs</strong>.</p><p>Voici huit <strong>jeux comme Codenames</strong>, une partie par équipes, d’autres coopératifs ou individuels, classés selon ce qu’ils prolongent de l’original. Si vous aimez aussi les indices plus poétiques, nos <a class="text-link" href="/blog/jeux-comme-dixit.html">jeux comme Dixit</a> complètent ce panorama, et nos <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a> aident quand la table dépasse huit personnes.</p>`,
   criteria: {
     heading: 'Que chercher dans une alternative à Codenames ?',
     html: `<p>Pour choisir une <strong>alternative à Codenames</strong>, commencez par isoler ce qui fonctionnait dans votre groupe. Le jeu de Vlaada Chvátil mélange plusieurs ingrédients que peu de boîtes réunissent à la fois.</p>
 <h3>Les ingrédients à repérer</h3>
 <ul>
-<li><strong>L’indice minimal.</strong> Un seul mot, sans phrase ni geste. Just One et Letter Jam suivent cette logique, avec une écriture simultanée plutôt qu’un chef d’équipe unique.</li>
+<li><strong>L’indice minimal.</strong> Un seul mot, sans phrase ni geste. Just One suit cette logique, avec une écriture simultanée ; Letter Jam fait tourner le rôle de donneur d’indices entre tous les joueurs.</li>
 <li><strong>Les équipes.</strong> Deux camps qui s’observent. Rares dans la liste : Saboteur les cache, et le reste du lot est coopératif ou individuel.</li>
 <li><strong>Le rôle asymétrique.</strong> Un chef d’espions qui sait tout et parle peu. Aucun autre jeu n’a exactement cette posture, ce qui explique pourquoi certaines alternatives paraissent plates à côté.</li>
 <li><strong>La partie courte.</strong> Codenames dure environ quinze minutes, ce qui laisse enchaîner les manches. Coup suit le même tempo ; Letter Jam, avec 45 minutes environ, prend une autre ampleur.</li>
@@ -62,7 +62,7 @@ export default {
       pick: 'Pour les groupes qui ont assez parlé pendant l’indice',
       paragraphs: [
         `The Mind fait l’inverse de Codenames : plus aucun mot. Chaque joueur reçoit des cartes numérotées de 1 à 100 et l’équipe doit les jouer en ordre croissant, sans s’indiquer quoi que ce soit. Ce qui rappelle Codenames, c’est la fraction de seconde où toute la table retient son souffle avant que quelqu’un ne pose une carte.`,
-        `À essayer si votre groupe trouve que l’indice monopolise la conversation. Il se joue de 2 à 4, donc il ne remplace pas Codenames pour une grande tablée. Les niveaux sont courts, la règle tient en deux minutes, et tout dépend de la volonté du groupe de jouer le jeu du silence : un seul sceptique suffit à gâcher la mécanique.`
+        `À essayer si votre groupe trouve que l’indice monopolise la conversation. Il se joue de 2 à 4, donc il ne remplace pas Codenames pour une grande tablée. Les niveaux sont courts, la règle est courte, et tout dépend de la volonté du groupe de jouer le jeu du silence : un seul sceptique suffit à gâcher la mécanique.`
       ]
     },
     {

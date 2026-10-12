@@ -23,7 +23,7 @@ export default {
 <li><strong>Les mains occupées :</strong> on joue souvent avec un verre dans l’autre main. Les jeux qui exigent d’étaler beaucoup de cartes ou de tenir une main énorme passent mal.</li>
 </ul>
 <h3>Trancher selon la taille et la durée de l’apéro</h3>
-<p>Pour un apéro de quatre ou cinq amis installés pour deux heures, un jeu de bluff comme Skull ou Coup donne de vrais échanges, alors qu’un jeu de réflexe lasse en trois parties. Pour huit à dix voisins qui vont et viennent, l’inverse : misez sur un jeu qui accepte l’entrée en cours de route et qui n’a pas de tour de réflexion, comme Dobble, Uno ou Jungle Speed.</p>
+<p>Pour un apéro de quatre ou cinq amis installés pour deux heures, un jeu de bluff comme Skull ou Coup donne de vrais échanges, alors qu’un jeu de réflexe lasse en trois parties. Pour huit à dix voisins qui vont et viennent, l’inverse : misez sur un jeu qui accepte l’entrée en cours de route et qui n’a pas de tour de réflexion, comme Uno ou Jungle Speed (ou Dobble jusqu’à huit).</p>
 <p>Quelques pièges reviennent. Les jeux qui demandent de compter ou de mémoriser les cartes jouées passent moins bien après deux verres. Les jeux à mouvements brusques font tomber les gobelets : posez les boissons à bonne distance avant de lancer Jungle Speed. Enfin, sortir un jeu de quarante-cinq minutes à l’heure de l’apéritif condamne la partie : si la moitié de la table va resservir à mi-parcours, mieux vaut un jeu qu’on peut interrompre ou terminer en un quart d’heure.</p>`
   },
   games: [
@@ -59,12 +59,12 @@ export default {
     },
     {
       id: 'love-letter',
-      subtitle: 'un paquet de seize cartes qui tient dans une poche',
+      subtitle: 'un petit paquet qui tient dans une poche',
       type: 'Déduction express',
       pick: 'Petites tables de 2 à 4, quand la place manque',
       paragraphs: [
-        `Seize cartes, une seule en main, une pioche réduite : Love Letter occupe moins de place qu’un verre posé sur la table, ce qui compte quand chaque centimètre est pris. Une manche dure quelques minutes ; on en joue une en attendant la pizza, et on s’arrête sans abandonner une partie à moitié faite.`,
-        `Mais il plafonne à quatre joueurs : au-delà, il faut un autre jeu pour la seconde table. La partie se gagne en collectant des marques de faveur sur plusieurs manches, et le hasard du tirage pèse lourd ; un joueur éliminé en début de manche attend la suivante. Pour deux ou trois couples qui discutent autour d’un plateau de fromages, c’est le bon format.`
+        `Peu de cartes, une seule en main, une pioche réduite : Love Letter occupe moins de place qu’un verre posé sur la table, ce qui compte quand chaque centimètre est pris. Une manche dure quelques minutes ; on en joue une en attendant la pizza, et on s’arrête sans abandonner une partie à moitié faite.`,
+        `Mais l'édition classique plafonne à quatre joueurs (celle de 2025 va jusqu'à six) : au-delà, il faut un autre jeu pour la seconde table. La partie se gagne en collectant des marques de faveur sur plusieurs manches, et le hasard du tirage pèse lourd ; un joueur éliminé en début de manche attend la suivante. Pour deux ou trois couples qui discutent autour d’un plateau de fromages, c’est le bon format.`
       ]
     },
     {
@@ -95,7 +95,7 @@ export default {
       pick: 'Apéros de 3 à 6 qui aiment mentir et accuser',
       paragraphs: [
         `Deux cartes d’influence face cachée par joueur, quelques pièces, et des actions qu’on annonce sans pouvoir les prouver : un apéro de quatre à six personnes y trouve vite son rythme. La partie dure environ un quart d’heure, ce qui laisse le temps de resservir entre deux parties, et chaque accusation lancée déclenche un commentaire de la table.`,
-        `Le défaut est l’élimination : celui qui perd ses deux cartes s’assoit au bord de la partie, mais comme elle ne dure que quelques minutes, il rattrape la suivante. Le jeu s’adresse à des invités qui acceptent de mentir : un groupe de collègues réservés, ou une famille avec un enfant en dessous de dix ans, n’y trouvera pas son compte.`
+        `Le défaut est l’élimination : celui qui perd ses deux cartes s’assoit au bord de la partie, mais comme elle ne dure que quelques minutes, il rattrape la suivante. Le jeu s’adresse à des invités qui acceptent de mentir : un groupe de collègues réservés, ou une famille avec de jeunes enfants, n’y trouvera pas son compte.`
       ]
     },
     {
@@ -151,7 +151,7 @@ export default {
   faq: [
     {
       q: 'Quel jeu de cartes sortir à l’apéro quand on ne connaît pas le nombre d’invités ?',
-      a: 'Prenez un jeu qui accepte de deux à dix joueurs et se rejoint à chaque manche : Dobble, Uno ou Jungle Speed. Évitez Love Letter, limité à quatre joueurs, et Skull ou KYRAN, qu’on ne peut pas rejoindre en cours de partie.'
+      a: 'Prenez un jeu qui accepte de deux à dix joueurs et se rejoint à chaque manche : Uno ou Jungle Speed (Dobble jusqu’à huit). Évitez Love Letter, limité à quatre joueurs dans l’édition classique, et Skull ou KYRAN, qu’on ne peut pas rejoindre en cours de partie.'
     },
     {
       q: 'Quel jeu apéro s’explique en deux minutes ?',

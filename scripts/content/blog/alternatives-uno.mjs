@@ -54,7 +54,7 @@ export default {
 </ul>
 <h3>Les paramètres pratiques</h3>
 <p>Uno se joue de 2 à 10 joueurs, dès 7 ans. Peu de remplaçants tiennent cette amplitude : Jungle Speed et Saboteur acceptent aussi dix joueurs, Skyjo et Dobble s'arrêtent à huit, Llama à six, Monopoly Deal à cinq, Love Letter à quatre dans sa version classique (six dans l'édition actuelle, voir sa fiche). Comptez vos convives avant de choisir : une alternative à quatre places ne sauvera pas un anniversaire de sept personnes.</p>
-<p>L'âge pèse autant. Dobble se joue dès 6 ans et Jungle Speed dès 7 ans, alors que Love Letter et ses déductions commencent à 10 ans selon son éditeur. Pour une table qui mêle enfants et adultes, la vitesse (Dobble, Jungle Speed) égalise mieux les chances que la réflexion, qui avantage toujours le plus âgé.</p>
+<p>L'âge pèse autant. Dobble se joue dès 6 ans et Jungle Speed dès 7 ans, alors que Love Letter et ses déductions commencent à 10 ans selon son éditeur. Pour une table qui mêle enfants et adultes, la vitesse (Dobble, Jungle Speed) égalise mieux les chances que la réflexion, qui avantage souvent le plus âgé.</p>
 <p>Méfiez-vous enfin des règles de table qui se sont glissées dans vos parties d'Uno : l'empilement des +2 et des +4, par exemple, n'est pas dans la règle de base : la <a class="text-link" href="https://service.mattel.com/instruction_sheets/UNO%20Basic%20IS.pdf" rel="noopener">notice Mattel de 2008</a> le range parmi les règles maison. Si votre groupe aime justement les coups bas, Monopoly Deal (actions contrées par un refus) et Saboteur (outils brisés) les inscrivent dans leur règle plutôt que dans une variante de table.</p>`
   },
   games: [

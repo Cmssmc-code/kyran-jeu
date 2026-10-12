@@ -38,7 +38,8 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
 - **Présence externe :**
   - Instagram @kyran.jeu, YouTube @Kyran-jeu ;
   - BoardGamesFlix, Ludochrono (Ludovox), Le Pirate Ludique ;
-  - aucune fiche sur BoardGameGeek, Tric Trac ni Wikidata (reste à créer).
+  - fiche BoardGameGeek : https://boardgamegeek.com/boardgame/480678/kyran (lien dans le pied de page, le dossier de presse et `sameAs`) ;
+  - aucune fiche sur Tric Trac ni Wikidata (reste à créer).
 
 ## 2. Architecture du site (statique, GitHub Pages)
 

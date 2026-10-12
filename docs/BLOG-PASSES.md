@@ -90,6 +90,11 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 
 Rafraîchissements repérés (par ordre de priorité) :
 
+0. **Avant le 1er novembre 2026 (fenêtre de Noël)** : rafraîchir `cadeau-noel` pour Noël 2026
+   (intention d'achat, la seule page du blog qui vise un acheteur en novembre-décembre), avec KYRAN
+   présenté honnêtement parmi les choix et la date limite de commande du site (16 décembre). Puis,
+   si le sujet est absent du blog, un article « jeux de cartes à moins de 15 € à offrir ».
+   Demandé par l'audit commercial du 12 octobre 2026.
 1. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».

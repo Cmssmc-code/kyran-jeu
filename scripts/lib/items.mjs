@@ -64,7 +64,8 @@ export async function loadItems() {
     const f = FEATURED.indexOf(slug);
     return f >= 0 ? f : FEATURED.length + ROSTER.generated.indexOf(slug) + (ROSTER.generated.includes(slug) ? 0 : 1000);
   };
-  items.sort((a, b) => rank(a.slug) - rank(b.slug));
+  // Du plus récent au plus ancien ; à date égale, l'ordre éditorial (featured puis roster) départage.
+  items.sort((a, b) => b.date.localeCompare(a.date) || rank(a.slug) - rank(b.slug));
   return { articles, items, store };
 }
 

@@ -103,38 +103,6 @@
   </url>
 
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
-    <lastmod>2026-10-08</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
-      <image:title>10 jeux comme Skyjo : les meilleures alternatives en 2026</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</loc>
-    <lastmod>2026-10-08</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/jungle-speed.jpg</image:loc>
-      <image:title>Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
-    <lastmod>2026-10-08</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
-      <image:title>Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</loc>
-    <lastmod>2026-10-08</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
-      <image:title>Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</loc>
     <lastmod>2026-10-04</lastmod>
     <image:image>
@@ -143,19 +111,19 @@
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
+    <lastmod>2026-10-04</lastmod>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/kyran-cartes-pouvoirs.webp</image:loc>
-      <image:title>10 jeux comme Dixit : alternatives créatives et indices malins</image:title>
+      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
+      <image:title>Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-comme-codenames.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</loc>
+    <lastmod>2026-10-05</lastmod>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
-      <image:title>8 jeux comme Codenames : équipes, indices et déduction</image:title>
+      <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
+      <image:title>Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend</image:title>
     </image:image>
   </url>
   <url>
@@ -175,27 +143,91 @@
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
-      <image:title>Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
-    <lastmod>2026-10-08</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
-      <image:title>Alternatives à Uno : 8 jeux de cartes rapides pour changer</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-belote-coinche.html</loc>
     <lastmod>2026-10-04</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
       <image:title>Alternatives à la belote et à la coinche : 6 jeux de plis modernes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
+      <image:title>Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
+      <image:title>Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-draft-encheres.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/boite-recto-kyran.jpg</image:loc>
+      <image:title>Jeux de draft et d'enchères en cartes : choisir, passer, miser</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/star-realms.jpg</image:loc>
+      <image:title>Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
+      <image:title>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-duo-couples.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/lost-cities.jpg</image:loc>
+      <image:title>Jeux de cartes à deux : 7 idées pour un duo ou un couple</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
+      <image:title>Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-codenames.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
+      <image:title>8 jeux comme Codenames : équipes, indices et déduction</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/kyran-cartes-pouvoirs.webp</image:loc>
+      <image:title>10 jeux comme Dixit : alternatives créatives et indices malins</image:title>
     </image:image>
   </url>
   <url>
@@ -207,6 +239,22 @@
     </image:image>
   </url>
   <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
+      <image:title>Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/timeline.jpg</image:loc>
+      <image:title>Jeux de société pour débutants adultes : par où commencer</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://kyran-jeu.fr/blog/jeux-bluff-pari.html</loc>
     <lastmod>2026-10-08</lastmod>
     <image:image>
@@ -215,11 +263,35 @@
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
+    <loc>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
+      <image:title>Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-30-minutes.html</loc>
     <lastmod>2026-10-04</lastmod>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
-      <image:title>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</image:title>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>Jeux de cartes de 30 minutes ou moins : 9 parties express</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
+      <image:title>Alternatives à Uno : 8 jeux de cartes rapides pour changer</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
+      <image:title>Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose</image:title>
     </image:image>
   </url>
   <url>
@@ -239,22 +311,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-30-minutes.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
-      <image:title>Jeux de cartes de 30 minutes ou moins : 9 parties express</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</loc>
-    <lastmod>2026-10-12</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
-      <image:title>Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://kyran-jeu.fr/blog/jeux-famille.html</loc>
     <lastmod>2026-10-07</lastmod>
     <image:image>
@@ -263,83 +319,27 @@
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-debutants-adultes.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/timeline.jpg</image:loc>
-      <image:title>Jeux de société pour débutants adultes : par où commencer</image:title>
+      <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
+      <image:title>Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-sans-elimination.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <loc>https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jungle-speed.jpg</image:loc>
+      <image:title>Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
-      <image:title>Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
-      <image:title>Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-memoire-concentration.html</loc>
-    <lastmod>2026-10-07</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
-      <image:title>Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-duo-couples.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/lost-cities.jpg</image:loc>
-      <image:title>Jeux de cartes à deux : 7 idées pour un duo ou un couple</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/love-letter.jpg</image:loc>
-      <image:title>Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
-      <image:title>Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-strategie-legere.html</loc>
-    <lastmod>2026-10-04</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/blog/images/star-realms.jpg</image:loc>
-      <image:title>Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-draft-encheres.html</loc>
-    <lastmod>2026-10-07</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/boite-recto-kyran.jpg</image:loc>
-      <image:title>Jeux de draft et d'enchères en cartes : choisir, passer, miser</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</loc>
-    <lastmod>2026-10-05</lastmod>
-    <image:image>
-      <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
-      <image:title>Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend</image:title>
+      <image:title>10 jeux comme Skyjo : les meilleures alternatives en 2026</image:title>
     </image:image>
   </url>
 </urlset>

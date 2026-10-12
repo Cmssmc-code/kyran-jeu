@@ -3,70 +3,6 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
-    "slug": "jeux-comme-skyjo",
-    "title": "10 jeux comme Skyjo : les meilleures alternatives en 2026",
-    "category": "Alternatives",
-    "date": "2026-05-01",
-    "readMinutes": 15,
-    "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.",
-    "image": "/blog/images/skyjo.jpg",
-    "webp": "/blog/images/skyjo.webp",
-    "gameCount": 10,
-    "related": [
-      "alternatives-uno",
-      "jeux-sans-elimination",
-      "jeux-plis-comparatif"
-    ]
-  },
-  {
-    "slug": "meilleurs-jeux-apero",
-    "title": "Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table",
-    "category": "Apéro",
-    "date": "2026-05-03",
-    "readMinutes": 13,
-    "excerpt": "Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.",
-    "image": "/blog/images/jungle-speed.jpg",
-    "webp": "/blog/images/jungle-speed.webp",
-    "gameCount": 9,
-    "related": [
-      "jeux-soiree-amis",
-      "jeux-grands-groupes",
-      "jeux-vacances-voyage"
-    ]
-  },
-  {
-    "slug": "jeux-soiree-amis",
-    "title": "Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée",
-    "category": "Soirée",
-    "date": "2026-05-05",
-    "readMinutes": 13,
-    "excerpt": "Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.",
-    "image": "/blog/images/codenames.jpg",
-    "webp": "/blog/images/codenames.webp",
-    "gameCount": 10,
-    "related": [
-      "jeux-grands-groupes",
-      "jeux-bluff-pari",
-      "jeux-debutants-adultes"
-    ]
-  },
-  {
-    "slug": "jeux-3-joueurs",
-    "title": "Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois",
-    "category": "Soirée",
-    "date": "2026-05-21",
-    "readMinutes": 11,
-    "excerpt": "Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des duels.",
-    "image": "/blog/images/the-crew.jpg",
-    "webp": "/blog/images/the-crew.webp",
-    "gameCount": 6,
-    "related": [
-      "jeux-duo-couples",
-      "jeux-cartes-4-joueurs",
-      "jeux-cartes-6-joueurs"
-    ]
-  },
-  {
     "slug": "science-jeux-de-cartes-cerveau",
     "title": "Jeux de cartes et cerveau : ce que disent les études",
     "category": "Cartes",
@@ -82,34 +18,34 @@ const BLOG_ITEMS = [
     ]
   },
   {
-    "slug": "jeux-comme-dixit",
-    "title": "10 jeux comme Dixit : alternatives créatives et indices malins",
-    "category": "Alternatives",
-    "date": "2026-06-02",
-    "readMinutes": 11,
-    "excerpt": "Jeux comme Dixit en 2026 : 10 alternatives pour 2 à 8 joueurs, en mots (Just One, Codenames), en bluff (Skull, Coup) ou en silence (The Mind).",
-    "image": "/kyran-cartes-pouvoirs.webp",
-    "gameCount": 10,
+    "slug": "jeux-cartes-6-joueurs",
+    "title": "Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort",
+    "category": "Cartes",
+    "date": "2026-09-11",
+    "readMinutes": 13,
+    "excerpt": "Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n'attend, et ce qui change entre cinq et six.",
+    "image": "/blog/images/6-qui-prend.jpg",
+    "webp": "/blog/images/6-qui-prend.webp",
+    "gameCount": 8,
     "related": [
-      "jeux-comme-codenames",
-      "jeux-coop-cartes",
-      "jeux-bluff-pari"
+      "jeux-cartes-4-joueurs",
+      "jeux-3-joueurs",
+      "jeux-grands-groupes"
     ]
   },
   {
-    "slug": "jeux-comme-codenames",
-    "title": "8 jeux comme Codenames : équipes, indices et déduction",
-    "category": "Alternatives",
-    "date": "2026-06-04",
-    "readMinutes": 9,
-    "excerpt": "Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).",
-    "image": "/blog/images/codenames.jpg",
-    "webp": "/blog/images/codenames.webp",
-    "gameCount": 8,
+    "slug": "jeux-cartes-adultes",
+    "title": "Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend",
+    "category": "Soirée",
+    "date": "2026-09-11",
+    "readMinutes": 10,
+    "excerpt": "Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.",
+    "image": "/kyran-cartes-table.webp",
+    "gameCount": 7,
     "related": [
-      "jeux-comme-dixit",
-      "jeux-grands-groupes",
-      "jeux-bluff-pari"
+      "jeux-bluff-pari",
+      "jeux-soiree-amis",
+      "jeux-duo-couples"
     ]
   },
   {
@@ -145,38 +81,6 @@ const BLOG_ITEMS = [
     ]
   },
   {
-    "slug": "alternatives-wizard",
-    "title": "Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose",
-    "category": "Alternatives",
-    "date": "2026-05-15",
-    "readMinutes": 11,
-    "excerpt": "Jeu comme Wizard : Oh Hell et KYRAN gardent l'annonce de plis ; The Crew, Skull, 6 qui prend ! et Parade gardent le pli, le pari ou la main.",
-    "image": "/blog/images/wizard.jpg",
-    "webp": "/blog/images/wizard.webp",
-    "gameCount": 6,
-    "related": [
-      "jeux-plis-comparatif",
-      "jeux-bluff-pari",
-      "jeux-coop-cartes"
-    ]
-  },
-  {
-    "slug": "alternatives-uno",
-    "title": "Alternatives à Uno : 8 jeux de cartes rapides pour changer",
-    "category": "Alternatives",
-    "date": "2026-05-17",
-    "readMinutes": 11,
-    "excerpt": "Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.",
-    "image": "/blog/images/uno.jpg",
-    "webp": "/blog/images/uno.webp",
-    "gameCount": 8,
-    "related": [
-      "jeux-famille",
-      "meilleurs-jeux-apero",
-      "jeux-grands-groupes"
-    ]
-  },
-  {
     "slug": "alternatives-belote-coinche",
     "title": "Alternatives à la belote et à la coinche : 6 jeux de plis modernes",
     "category": "Alternatives",
@@ -190,6 +94,164 @@ const BLOG_ITEMS = [
       "jeux-plis-comparatif",
       "alternatives-wizard",
       "jeux-cartes-4-joueurs"
+    ]
+  },
+  {
+    "slug": "jeux-cartes-4-joueurs",
+    "title": "Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi",
+    "category": "Cartes",
+    "date": "2026-09-05",
+    "readMinutes": 10,
+    "excerpt": "Deux contre deux, tous ensemble ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et trois autres jeux de cartes pour une table de quatre.",
+    "image": "/blog/images/love-letter.jpg",
+    "webp": "/blog/images/love-letter.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-3-joueurs",
+      "jeux-cartes-6-joueurs",
+      "alternatives-belote-coinche"
+    ]
+  },
+  {
+    "slug": "jeux-memoire-concentration",
+    "title": "Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort",
+    "category": "Famille",
+    "date": "2026-06-30",
+    "readMinutes": 10,
+    "excerpt": "Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.",
+    "image": "/kyran-cartes-table.webp",
+    "gameCount": 6,
+    "related": [
+      "science-jeux-de-cartes-cerveau",
+      "jeux-strategie-legere",
+      "jeux-coop-cartes"
+    ]
+  },
+  {
+    "slug": "jeux-draft-encheres",
+    "title": "Jeux de draft et d'enchères en cartes : choisir, passer, miser",
+    "category": "Cartes",
+    "date": "2026-06-24",
+    "readMinutes": 9,
+    "excerpt": "Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.",
+    "image": "/boite-recto-kyran.jpg",
+    "webp": "/boite-recto-kyran.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-strategie-legere",
+      "jeux-plis-comparatif",
+      "jeux-cartes-6-joueurs"
+    ]
+  },
+  {
+    "slug": "jeux-strategie-legere",
+    "title": "Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes",
+    "category": "Cartes",
+    "date": "2026-06-18",
+    "readMinutes": 10,
+    "excerpt": "Lost Cities, Schotten Totten, Parade, Star Realms, Oh Hell!, Wizard, KYRAN : sept jeux de cartes rangés par mécanique, avec la part de chance de chacun.",
+    "image": "/blog/images/star-realms.jpg",
+    "webp": "/blog/images/star-realms.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-debutants-adultes",
+      "jeux-plis-comparatif",
+      "jeux-draft-encheres"
+    ]
+  },
+  {
+    "slug": "jeux-sans-elimination",
+    "title": "Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table",
+    "category": "Famille",
+    "date": "2026-06-14",
+    "readMinutes": 8,
+    "excerpt": "Sushi Go!, Timeline, Hanabi, No Thanks!, Skyjo : cinq jeux de cartes où personne ne sort, la règle de fin de chacun, et comment vérifier une autre boîte.",
+    "image": "/blog/images/skyjo.jpg",
+    "webp": "/blog/images/skyjo.webp",
+    "gameCount": 5,
+    "related": [
+      "jeux-famille",
+      "jeux-coop-cartes",
+      "jeux-comme-skyjo"
+    ]
+  },
+  {
+    "slug": "jeux-grands-groupes",
+    "title": "Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus",
+    "category": "Apéro",
+    "date": "2026-06-12",
+    "readMinutes": 10,
+    "excerpt": "Quels jeux choisir à 8 joueurs ou plus ? 9 jeux de cartes qui passent à l’échelle, avec le plafond de joueurs de chacun et la limite de KYRAN (6).",
+    "image": "/blog/images/6-qui-prend.jpg",
+    "webp": "/blog/images/6-qui-prend.webp",
+    "gameCount": 9,
+    "related": [
+      "jeux-soiree-amis",
+      "meilleurs-jeux-apero",
+      "jeux-cartes-6-joueurs"
+    ]
+  },
+  {
+    "slug": "jeux-duo-couples",
+    "title": "Jeux de cartes à deux : 7 idées pour un duo ou un couple",
+    "category": "Soirée",
+    "date": "2026-06-10",
+    "readMinutes": 10,
+    "excerpt": "Duel ou coopération ? Lost Cities, The Crew, Love Letter et quatre autres jeux de cartes pour deux, puis un guide pour choisir selon votre couple.",
+    "image": "/blog/images/lost-cities.jpg",
+    "webp": "/blog/images/lost-cities.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-3-joueurs",
+      "jeux-coop-cartes",
+      "jeux-vacances-voyage"
+    ]
+  },
+  {
+    "slug": "jeux-coop-cartes",
+    "title": "Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble",
+    "category": "Famille",
+    "date": "2026-06-08",
+    "readMinutes": 8,
+    "excerpt": "Hanabi, The Crew, The Mind, The Game, Letter Jam : cinq jeux de cartes coopératifs classés selon la parole permise, et lequel acheter en premier.",
+    "image": "/blog/images/the-crew.jpg",
+    "webp": "/blog/images/the-crew.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-plis-comparatif",
+      "jeux-memoire-concentration",
+      "jeux-famille"
+    ]
+  },
+  {
+    "slug": "jeux-comme-codenames",
+    "title": "8 jeux comme Codenames : équipes, indices et déduction",
+    "category": "Alternatives",
+    "date": "2026-06-04",
+    "readMinutes": 9,
+    "excerpt": "Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).",
+    "image": "/blog/images/codenames.jpg",
+    "webp": "/blog/images/codenames.webp",
+    "gameCount": 8,
+    "related": [
+      "jeux-comme-dixit",
+      "jeux-grands-groupes",
+      "jeux-bluff-pari"
+    ]
+  },
+  {
+    "slug": "jeux-comme-dixit",
+    "title": "10 jeux comme Dixit : alternatives créatives et indices malins",
+    "category": "Alternatives",
+    "date": "2026-06-02",
+    "readMinutes": 11,
+    "excerpt": "Jeux comme Dixit en 2026 : 10 alternatives pour 2 à 8 joueurs, en mots (Just One, Codenames), en bluff (Skull, Coup) ou en silence (The Mind).",
+    "image": "/kyran-cartes-pouvoirs.webp",
+    "gameCount": 10,
+    "related": [
+      "jeux-comme-codenames",
+      "jeux-coop-cartes",
+      "jeux-bluff-pari"
     ]
   },
   {
@@ -209,6 +271,38 @@ const BLOG_ITEMS = [
     ]
   },
   {
+    "slug": "jeux-vacances-voyage",
+    "title": "Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter",
+    "category": "Cartes",
+    "date": "2026-05-27",
+    "readMinutes": 11,
+    "excerpt": "Sept jeux de cartes rangés par situation : tablette de train, serviette de plage, terrasse ou table de gîte, avec ce que le vent et les pauses leur font.",
+    "image": "/blog/images/love-letter.jpg",
+    "webp": "/blog/images/love-letter.webp",
+    "gameCount": 7,
+    "related": [
+      "cadeau-anniversaire",
+      "jeux-30-minutes",
+      "jeux-duo-couples"
+    ]
+  },
+  {
+    "slug": "jeux-debutants-adultes",
+    "title": "Jeux de société pour débutants adultes : par où commencer",
+    "category": "Famille",
+    "date": "2026-05-25",
+    "readMinutes": 9,
+    "excerpt": "Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.",
+    "image": "/blog/images/timeline.jpg",
+    "webp": "/blog/images/timeline.webp",
+    "gameCount": 5,
+    "related": [
+      "jeux-famille",
+      "jeux-cartes-adultes",
+      "jeux-soiree-amis"
+    ]
+  },
+  {
     "slug": "jeux-bluff-pari",
     "title": "Jeux de bluff, de pari et de rôles cachés : 7 jeux de cartes rangés par famille",
     "category": "Cartes",
@@ -225,19 +319,67 @@ const BLOG_ITEMS = [
     ]
   },
   {
-    "slug": "jeux-grands-groupes",
-    "title": "Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus",
-    "category": "Apéro",
-    "date": "2026-06-12",
-    "readMinutes": 10,
-    "excerpt": "Quels jeux choisir à 8 joueurs ou plus ? 9 jeux de cartes qui passent à l’échelle, avec le plafond de joueurs de chacun et la limite de KYRAN (6).",
-    "image": "/blog/images/6-qui-prend.jpg",
-    "webp": "/blog/images/6-qui-prend.webp",
+    "slug": "jeux-3-joueurs",
+    "title": "Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois",
+    "category": "Soirée",
+    "date": "2026-05-21",
+    "readMinutes": 11,
+    "excerpt": "Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des duels.",
+    "image": "/blog/images/the-crew.jpg",
+    "webp": "/blog/images/the-crew.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-duo-couples",
+      "jeux-cartes-4-joueurs",
+      "jeux-cartes-6-joueurs"
+    ]
+  },
+  {
+    "slug": "jeux-30-minutes",
+    "title": "Jeux de cartes de 30 minutes ou moins : 9 parties express",
+    "category": "Soirée",
+    "date": "2026-05-19",
+    "readMinutes": 11,
+    "excerpt": "Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.",
+    "image": "/blog/images/skyjo.jpg",
+    "webp": "/blog/images/skyjo.webp",
     "gameCount": 9,
     "related": [
+      "jeux-vacances-voyage",
       "jeux-soiree-amis",
+      "meilleurs-jeux-apero"
+    ]
+  },
+  {
+    "slug": "alternatives-uno",
+    "title": "Alternatives à Uno : 8 jeux de cartes rapides pour changer",
+    "category": "Alternatives",
+    "date": "2026-05-17",
+    "readMinutes": 11,
+    "excerpt": "Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.",
+    "image": "/blog/images/uno.jpg",
+    "webp": "/blog/images/uno.webp",
+    "gameCount": 8,
+    "related": [
+      "jeux-famille",
       "meilleurs-jeux-apero",
-      "jeux-cartes-6-joueurs"
+      "jeux-grands-groupes"
+    ]
+  },
+  {
+    "slug": "alternatives-wizard",
+    "title": "Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose",
+    "category": "Alternatives",
+    "date": "2026-05-15",
+    "readMinutes": 11,
+    "excerpt": "Jeu comme Wizard : Oh Hell et KYRAN gardent l'annonce de plis ; The Crew, Skull, 6 qui prend ! et Parade gardent le pli, le pari ou la main.",
+    "image": "/blog/images/wizard.jpg",
+    "webp": "/blog/images/wizard.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-plis-comparatif",
+      "jeux-bluff-pari",
+      "jeux-coop-cartes"
     ]
   },
   {
@@ -273,38 +415,6 @@ const BLOG_ITEMS = [
     ]
   },
   {
-    "slug": "jeux-30-minutes",
-    "title": "Jeux de cartes de 30 minutes ou moins : 9 parties express",
-    "category": "Soirée",
-    "date": "2026-05-19",
-    "readMinutes": 11,
-    "excerpt": "Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.",
-    "image": "/blog/images/skyjo.jpg",
-    "webp": "/blog/images/skyjo.webp",
-    "gameCount": 9,
-    "related": [
-      "jeux-vacances-voyage",
-      "jeux-soiree-amis",
-      "meilleurs-jeux-apero"
-    ]
-  },
-  {
-    "slug": "jeux-vacances-voyage",
-    "title": "Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter",
-    "category": "Cartes",
-    "date": "2026-05-27",
-    "readMinutes": 11,
-    "excerpt": "Sept jeux de cartes rangés par situation : tablette de train, serviette de plage, terrasse ou table de gîte, avec ce que le vent et les pauses leur font.",
-    "image": "/blog/images/love-letter.jpg",
-    "webp": "/blog/images/love-letter.webp",
-    "gameCount": 7,
-    "related": [
-      "cadeau-anniversaire",
-      "jeux-30-minutes",
-      "jeux-duo-couples"
-    ]
-  },
-  {
     "slug": "jeux-famille",
     "title": "Jeux de société en famille : 8 jeux de cartes dès 8 ans",
     "category": "Famille",
@@ -320,161 +430,51 @@ const BLOG_ITEMS = [
     ]
   },
   {
-    "slug": "jeux-debutants-adultes",
-    "title": "Jeux de société pour débutants adultes : par où commencer",
-    "category": "Famille",
-    "date": "2026-05-25",
-    "readMinutes": 9,
-    "excerpt": "Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.",
-    "image": "/blog/images/timeline.jpg",
-    "webp": "/blog/images/timeline.webp",
-    "gameCount": 5,
-    "related": [
-      "jeux-famille",
-      "jeux-cartes-adultes",
-      "jeux-soiree-amis"
-    ]
-  },
-  {
-    "slug": "jeux-sans-elimination",
-    "title": "Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table",
-    "category": "Famille",
-    "date": "2026-06-14",
-    "readMinutes": 8,
-    "excerpt": "Sushi Go!, Timeline, Hanabi, No Thanks!, Skyjo : cinq jeux de cartes où personne ne sort, la règle de fin de chacun, et comment vérifier une autre boîte.",
-    "image": "/blog/images/skyjo.jpg",
-    "webp": "/blog/images/skyjo.webp",
-    "gameCount": 5,
-    "related": [
-      "jeux-famille",
-      "jeux-coop-cartes",
-      "jeux-comme-skyjo"
-    ]
-  },
-  {
-    "slug": "jeux-coop-cartes",
-    "title": "Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble",
-    "category": "Famille",
-    "date": "2026-06-08",
-    "readMinutes": 8,
-    "excerpt": "Hanabi, The Crew, The Mind, The Game, Letter Jam : cinq jeux de cartes coopératifs classés selon la parole permise, et lequel acheter en premier.",
-    "image": "/blog/images/the-crew.jpg",
-    "webp": "/blog/images/the-crew.webp",
-    "gameCount": 6,
-    "related": [
-      "jeux-plis-comparatif",
-      "jeux-memoire-concentration",
-      "jeux-famille"
-    ]
-  },
-  {
-    "slug": "jeux-memoire-concentration",
-    "title": "Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort",
-    "category": "Famille",
-    "date": "2026-06-30",
-    "readMinutes": 10,
-    "excerpt": "Retenir une défausse, tenir un rythme, déduire ce qui reste : 6 jeux de cartes rangés selon l’effort mental qu’ils demandent, sans promesse médicale.",
-    "image": "/kyran-cartes-table.webp",
-    "gameCount": 6,
-    "related": [
-      "science-jeux-de-cartes-cerveau",
-      "jeux-strategie-legere",
-      "jeux-coop-cartes"
-    ]
-  },
-  {
-    "slug": "jeux-duo-couples",
-    "title": "Jeux de cartes à deux : 7 idées pour un duo ou un couple",
+    "slug": "jeux-soiree-amis",
+    "title": "Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée",
     "category": "Soirée",
-    "date": "2026-06-10",
-    "readMinutes": 10,
-    "excerpt": "Duel ou coopération ? Lost Cities, The Crew, Love Letter et quatre autres jeux de cartes pour deux, puis un guide pour choisir selon votre couple.",
-    "image": "/blog/images/lost-cities.jpg",
-    "webp": "/blog/images/lost-cities.webp",
-    "gameCount": 7,
+    "date": "2026-05-05",
+    "readMinutes": 13,
+    "excerpt": "Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.",
+    "image": "/blog/images/codenames.jpg",
+    "webp": "/blog/images/codenames.webp",
+    "gameCount": 10,
     "related": [
-      "jeux-3-joueurs",
-      "jeux-coop-cartes",
+      "jeux-grands-groupes",
+      "jeux-bluff-pari",
+      "jeux-debutants-adultes"
+    ]
+  },
+  {
+    "slug": "meilleurs-jeux-apero",
+    "title": "Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table",
+    "category": "Apéro",
+    "date": "2026-05-03",
+    "readMinutes": 13,
+    "excerpt": "Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.",
+    "image": "/blog/images/jungle-speed.jpg",
+    "webp": "/blog/images/jungle-speed.webp",
+    "gameCount": 9,
+    "related": [
+      "jeux-soiree-amis",
+      "jeux-grands-groupes",
       "jeux-vacances-voyage"
     ]
   },
   {
-    "slug": "jeux-cartes-4-joueurs",
-    "title": "Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi",
-    "category": "Cartes",
-    "date": "2026-09-05",
-    "readMinutes": 10,
-    "excerpt": "Deux contre deux, tous ensemble ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et trois autres jeux de cartes pour une table de quatre.",
-    "image": "/blog/images/love-letter.jpg",
-    "webp": "/blog/images/love-letter.webp",
-    "gameCount": 7,
+    "slug": "jeux-comme-skyjo",
+    "title": "10 jeux comme Skyjo : les meilleures alternatives en 2026",
+    "category": "Alternatives",
+    "date": "2026-05-01",
+    "readMinutes": 15,
+    "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.",
+    "image": "/blog/images/skyjo.jpg",
+    "webp": "/blog/images/skyjo.webp",
+    "gameCount": 10,
     "related": [
-      "jeux-3-joueurs",
-      "jeux-cartes-6-joueurs",
-      "alternatives-belote-coinche"
-    ]
-  },
-  {
-    "slug": "jeux-cartes-6-joueurs",
-    "title": "Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort",
-    "category": "Cartes",
-    "date": "2026-09-11",
-    "readMinutes": 13,
-    "excerpt": "Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n'attend, et ce qui change entre cinq et six.",
-    "image": "/blog/images/6-qui-prend.jpg",
-    "webp": "/blog/images/6-qui-prend.webp",
-    "gameCount": 8,
-    "related": [
-      "jeux-cartes-4-joueurs",
-      "jeux-3-joueurs",
-      "jeux-grands-groupes"
-    ]
-  },
-  {
-    "slug": "jeux-strategie-legere",
-    "title": "Jeux de cartes de stratégie légère : de vraies décisions, des règles courtes",
-    "category": "Cartes",
-    "date": "2026-06-18",
-    "readMinutes": 10,
-    "excerpt": "Lost Cities, Schotten Totten, Parade, Star Realms, Oh Hell!, Wizard, KYRAN : sept jeux de cartes rangés par mécanique, avec la part de chance de chacun.",
-    "image": "/blog/images/star-realms.jpg",
-    "webp": "/blog/images/star-realms.webp",
-    "gameCount": 7,
-    "related": [
-      "jeux-debutants-adultes",
-      "jeux-plis-comparatif",
-      "jeux-draft-encheres"
-    ]
-  },
-  {
-    "slug": "jeux-draft-encheres",
-    "title": "Jeux de draft et d'enchères en cartes : choisir, passer, miser",
-    "category": "Cartes",
-    "date": "2026-06-24",
-    "readMinutes": 9,
-    "excerpt": "Sushi Go!, For Sale, No Thanks!, Skull, KYRAN : draft ou enchères, que change chaque mécanique ? Sept jeux de cartes comparés, des plus légers aux plus tendus.",
-    "image": "/boite-recto-kyran.jpg",
-    "webp": "/boite-recto-kyran.webp",
-    "gameCount": 7,
-    "related": [
-      "jeux-strategie-legere",
-      "jeux-plis-comparatif",
-      "jeux-cartes-6-joueurs"
-    ]
-  },
-  {
-    "slug": "jeux-cartes-adultes",
-    "title": "Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend",
-    "category": "Soirée",
-    "date": "2026-09-11",
-    "readMinutes": 10,
-    "excerpt": "Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.",
-    "image": "/kyran-cartes-table.webp",
-    "gameCount": 7,
-    "related": [
-      "jeux-bluff-pari",
-      "jeux-soiree-amis",
-      "jeux-duo-couples"
+      "alternatives-uno",
+      "jeux-sans-elimination",
+      "jeux-plis-comparatif"
     ]
   }
 ];

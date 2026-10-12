@@ -1037,7 +1037,8 @@
       border: 1px solid var(--accent-cream-border, #f3dfbf);
       color: var(--text-main, #1c1917);
     }
-    .order-qty-hint[hidden] { display: none; }
+    .order-qty-hint[hidden],
+    .order-xmas-note[hidden] { display: none; }
     .btn-shipping-mention {
       font-weight: 500;
       font-size: 0.78rem;
@@ -1897,6 +1898,7 @@
                 </a>
                 <p class="order-qty-hint" id="qty-hint" hidden>Sur la page de paiement Stripe, touchez «&nbsp;Qté&nbsp;» pour indiquer <strong id="qty-hint-count">2 boîtes</strong>.</p>
                 <p class="order-gift-note">🎁 Port unique de 3,99&nbsp;€, que vous preniez une boîte ou plusieurs&nbsp;: une pour vous, une à offrir.</p>
+                <p class="order-gift-note order-xmas-note" id="xmas-note" hidden></p>
 
                 <div class="order-cta-sub">
                   <div class="order-payment-badges" aria-label="Moyens de paiement acceptés">
@@ -2555,6 +2557,24 @@
         var minStr = minDate.toLocaleDateString('fr-FR', options);
         var maxStr = maxDate.toLocaleDateString('fr-FR', options);
         deliveryText.innerHTML = '(estimée ' + minStr + ' – ' + maxStr + ')';
+      }
+
+      // Message de Noël : affiché seul du 1er novembre au 24 décembre, sans mise à jour manuelle.
+      // Date limite conseillée : 16 décembre (expédition sous 24-48 h + 2 à 4 jours ouvrés).
+      var xmasNote = document.getElementById('xmas-note');
+      if (xmasNote) {
+        var now = new Date();
+        var y = now.getFullYear();
+        var start = new Date(y, 10, 1);
+        var deadline = new Date(y, 11, 16, 23, 59);
+        var xmas = new Date(y, 11, 25);
+        if (now >= start && now <= deadline) {
+          xmasNote.textContent = '🎄 Pour Noël, commandez avant le 16 décembre : le colis part sous 24-48 h et arrive en 2 à 4 jours ouvrés en France.';
+          xmasNote.hidden = false;
+        } else if (now > deadline && now < xmas) {
+          xmasNote.textContent = 'Après le 16 décembre, la livraison avant Noël n’est plus garantie : Amazon Prime peut être plus rapide.';
+          xmasNote.hidden = false;
+        }
       }
 
       // Logique Quantité, Frais de port & Prix Stripe

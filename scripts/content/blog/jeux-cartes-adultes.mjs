@@ -46,7 +46,7 @@ export default {
     faq: 'Jeux de cartes adultes : vos questions',
     related: 'Pour aller plus loin'
   },
-  intro: `<p>Un « jeu de cartes pour adultes » n'a pas besoin d'être grivois : il suffit qu'il traite la table en adultes, avec des décisions qui comptent, des parties de moins d'une heure et une règle qu'on explique en cinq minutes. Cette sélection s'appuie sur ce critère. Pour parier sur ses plis à trois ou plus, prenez <a class="text-link" href="/regle.html">KYRAN</a> ou Wizard ; pour mentir, Coup ou Skull ; pour coopérer, The Crew ; à deux, Schotten Totten ou Star Realms. Les règles et durées viennent des fiches d'éditeurs consultées le 4 octobre 2026, et chaque jeu a un défaut annoncé.</p>`,
+  intro: `<p>Un « jeu de cartes pour adultes » n'a pas besoin d'être grivois : il suffit qu'il traite la table en adultes, avec des décisions qui comptent, des parties de moins d'une heure et une règle qu'on explique en cinq minutes. Cette sélection s'appuie sur ce critère. Pour parier sur ses plis à trois ou plus, prenez <a class="text-link" href="/regle.html">KYRAN</a> ou Wizard ; pour mentir, Coup ou Skull ; pour coopérer, The Crew ; à deux, Schotten Totten ou Star Realms. Chaque jeu a un défaut annoncé.</p>`,
   criteria: {
     heading: 'Comment ces sept jeux ont été retenus',
     html: `<p>Le mot « adulte » prête à confusion : il désigne tantôt des jeux à boire, tantôt des jeux d'expert. Nous nous situons entre les deux, avec des jeux modernes ou classiques qui récompensent la réflexion et la lecture des autres plutôt que l'humour gras. Quatre critères ont servi à trier.</p>
@@ -90,7 +90,7 @@ export default {
       pick: 'Pour une soirée courte, de deux à six joueurs',
       paragraphs: [
         `Chaque joueur reçoit deux personnages face cachée. À son tour, il peut revendiquer l'action de n'importe quel personnage, qu'il l'ait ou non, ou se contenter d'une action générale comme le revenu. N'importe qui peut contester : si le joueur a menti, il perd une influence ; s'il disait vrai, c'est le contestataire qui en perd une. Quand les deux sont retournées, on est éliminé.`,
-        `Coup se joue de deux à six joueurs en quinze minutes environ, ce qui le rend idéal quand la soirée est courte. Son défaut est symétrique : à six, un joueur éliminé tôt attend la fin de la partie. L'âge conseillé varie selon les fiches d'une même boîte, l'édition anglaise d'Indie Boards &amp; Cards : 13 ans chez l'éditeur, 10 ans chez Philibert.`
+        `Coup se joue de deux à six joueurs en quinze minutes environ, ce qui le rend idéal quand la soirée est courte. Son défaut est symétrique : à six, un joueur éliminé tôt attend la fin de la partie. L'âge conseillé varie selon les fiches d'une même boîte, l'édition anglaise d'Indie Boards &amp; Cards : 13 ans chez l'éditeur, 10 ans chez d'autres revendeurs.`
       ]
     },
     {
@@ -109,7 +109,7 @@ export default {
       type: 'Plis coopératifs',
       pick: 'Pour trois à cinq adultes, ou deux en variante, qui veulent gagner ensemble',
       paragraphs: [
-        `The Crew transforme le jeu de plis en aventure coopérative : l'équipage doit accomplir 50 missions de plus en plus périlleuses, en se coordonnant sans parler de sa main. Chaque joueur dispose d'un jeton Radio, utilisable une seule fois par mission et jamais pendant un pli, pour donner une indication minimale.`,
+        `The Crew transforme le jeu de plis en aventure coopérative : l'équipage doit accomplir 50 missions de plus en plus périlleuses, en se coordonnant sans parler de sa main. Chaque joueur dispose d'un jeton Radio, utilisable une seule fois par mission, pour donner une indication minimale.`,
         `Il a reçu le Kennerspiel des Jahres 2020 et l'As d'Or Expert 2021. La <a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs, dès 10 ans ; une variante à deux figure dans les règles. Attendez-vous à rejouer plusieurs fois la même mission : l'échec fait partie du jeu, et une table qui supporte mal de perdre ensemble risque de se lasser.`
       ]
     },
@@ -130,7 +130,7 @@ export default {
       pick: 'Pour deux joueurs qui aiment optimiser',
       paragraphs: [
         `Star Realms oppose deux joueurs, chacun avec 50 points d'Influence et un deck de départ composé de huit Éclaireurs et deux Vipers. À son tour, on peut acheter dans la Ligne d'Achat de nouveaux vaisseaux et bases, répartis en quatre factions : Blob, Fédération du Commerce, Techno-Culte et Empire Galactique. Jouer plusieurs cartes de la même faction active des capacités d'alliance.`,
-        `Le jeu est édité en français par Iello depuis 2016. Ses créateurs, Darwin Kastle et Rob Dougherty, figurent au Hall of Fame de Magic, selon Wikipédia. Défaut : comme dans tout deckbuilding, la partie s'accélère après quelques tours et peut basculer sur un enchaînement favorable, ce qui frustre les joueurs qui préfèrent le contrôle.`
+        `Le jeu est édité en français par Iello depuis 2016. Ses créateurs, Darwin Kastle et Rob Dougherty, figurent au Hall of Fame de Magic, selon leurs pages Wikipédia. Défaut : comme dans tout deckbuilding, la partie s'accélère après quelques tours et peut basculer sur un enchaînement favorable, ce qui frustre les joueurs qui préfèrent le contrôle.`
       ]
     }
   ],

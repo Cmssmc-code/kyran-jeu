@@ -16,14 +16,14 @@ export default {
     html: `<p>La plupart des jeux de cartes sont conçus autour de quatre joueurs. Au-delà de sept, trois problèmes apparaissent : le temps mort (on attend son tour pendant que neuf autres jouent), la lisibilité (on ne voit plus les cartes de la table) et la place (un grand cercle de joueurs ne tient pas autour d’une petite table). Les jeux qui survivent à ces trois épreuves sont peu nombreux.</p>
 <h3>Ce qui passe à l’échelle, ce qui s’effondre</h3>
 <ul>
-<li><strong>Le simultané :</strong> tout le monde joue en même temps, si bien que l’attente ne grandit pas avec la table. 6 qui prend ! révèle les cartes de dix joueurs d’un seul geste, Dobble et Jungle Speed n’ont pas de tour du tout.</li>
+<li><strong>Le simultané :</strong> tout le monde joue en même temps, si bien que l’attente ne grandit pas avec la table. 6 qui prend ! révèle les cartes de dix joueurs d’un seul geste, Dobble n’a pas de tour, et à Jungle Speed le tour dure une seconde.</li>
 <li><strong>Les équipes :</strong> une table de dix devient deux équipes de cinq, et le nombre de décisions par équipe reste constant. Codenames fonctionne ainsi.</li>
 <li><strong>Les tours courts :</strong> Uno et Timeline demandent quelques secondes par tour. À huit ou dix, cela reste acceptable à condition que les joueurs en attente aient quelque chose à commenter.</li>
 <li><strong>Les rôles cachés :</strong> plus la table est grande, plus les soupçons se diluent, ce qui fait de Saboteur un bon candidat jusqu’à dix.</li>
 </ul>
-<p>À l’inverse, les jeux de plis et d’enchères (Wizard, Oh Hell!, KYRAN) supposent une vraie réflexion à chaque tour : à dix, ils produisent des attentes interminables.</p>
+<p>À l’inverse, les jeux de plis et d’enchères (Wizard, Oh Hell!, KYRAN) supposent une vraie réflexion à chaque tour : à six ou sept joueurs, l’attente se fait déjà sentir.</p>
 <h3>Plafond annoncé, plafond confortable</h3>
-<p>La boîte indique le nombre de joueurs jouable, pas celui qui reste agréable. Dobble et Timeline s’arrêtent à huit, Just One à sept, KYRAN à six : au-delà, il faut une deuxième boîte, un deuxième jeu, ou une division du groupe. Pour douze personnes, deux tables de six valent presque toujours mieux qu’un jeu forcé à douze.</p>
+<p>La boîte indique le nombre de joueurs jouable, pas celui qui reste agréable. Dobble s’arrête à huit, Timeline à huit ou six selon la boîte, Just One à sept, KYRAN à six : au-delà, il faut une deuxième boîte, un deuxième jeu, ou une division du groupe. Pour douze personnes, deux tables de six valent presque toujours mieux qu’un jeu forcé à douze.</p>
 <p>Pensez aussi à la géographie. Le totem de Jungle Speed doit rester à portée de bras de chacun, ce qui impose une grande table ronde ou une partie au sol. Une table rectangulaire de dix personnes éloigne aussi les joueurs d’un même bout de ceux de l’autre, et rend la lecture des cartes visibles pénible. Enfin, faites tourner les joueurs d’une table à l’autre entre deux jeux : sinon, les groupes d’affinités se figent dès la première heure.</p>`
   },
   games: [
@@ -33,7 +33,7 @@ export default {
       type: 'Rangées et chaos',
       pick: 'Tablées de 6 à 10 qui aiment le chaos collectif',
       paragraphs: [
-        `Chaque joueur choisit une carte en secret puis tout le monde les révèle ensemble : la durée d’un tour ne dépend donc pas du nombre de joueurs. À dix participants, les 104 cartes de la boîte sont toutes distribuées (dix par joueur plus les quatre cartes qui ouvrent les rangées), et un tour se joue en quelques secondes. C’est le seul titre de la liste où dix joueurs avancent aussi vite que quatre.`,
+        `Chaque joueur choisit une carte en secret puis tout le monde les révèle ensemble : la durée d’un tour ne dépend donc pas du nombre de joueurs. À dix participants, les 104 cartes de la boîte sont toutes distribuées (dix par joueur plus les quatre cartes qui ouvrent les rangées), et un tour se joue en quelques secondes. C’est l’un des rares titres de la liste où dix joueurs avancent presque aussi vite que quatre.`,
         `Le prix de cette échelle est la prévisibilité qui s’évapore : à dix, les quatre rangées se remplissent presque à chaque tour, et le sort d’une carte tient davantage du hasard que de la réflexion. Les joueurs qui aiment calculer s’y perdent ; ceux qui veulent surtout rire des rangées ramassées s’y retrouvent. Comptez environ quarante-cinq minutes pour une partie complète.`
       ]
     },
@@ -53,7 +53,7 @@ export default {
       type: 'Défausse',
       pick: 'Groupes mêlant âges et habitudes, jusqu’à 10 joueurs',
       paragraphs: [
-        `Les 108 cartes d’un jeu de Uno suffisent pour dix joueurs, ce qui en fait l’un des rares jeux de cartes mondialement connus à ce plafond. Dans une réunion où personne ne partage les mêmes habitudes ludiques, aucun autre titre de la liste n’a autant de chances d’être déjà connu de tous.`,
+        `Les 108 cartes de l’édition Mattel classique de Uno suffisent pour dix joueurs, ce qui en fait l’un des rares jeux de cartes mondialement connus à ce plafond. Dans une réunion où personne ne partage les mêmes habitudes ludiques, Uno a de bonnes chances d’être déjà connu de tous.`,
         `Son défaut est la file d’attente : à dix, on joue une carte tous les dix tours, et les inversions ou les sauts de tour prennent des airs de loterie. Une manche de plus à cinq vaut mieux qu’une partie à dix. Si le groupe est vraiment nombreux, installez deux tables de cinq et faites tourner les perdants.`
       ]
     },
@@ -74,7 +74,7 @@ export default {
       pick: 'Groupes de 5 à 8 qui veulent jouer sans explication',
       paragraphs: [
         `La boîte annonce huit joueurs au plus, et c’est bien le plafond réel : les mini-jeux se jouent à découvert, et chacun doit voir la carte du centre. À neuf ou dix, deux tables sont plus sûres qu’une seule, sinon les joueurs situés au bout de la table perdent leur chance de crier le symbole en premier.`,
-        `L’intérêt de Dobble pour un grand groupe est la souplesse : une partie ne dure que quelques minutes, on y entre et on en sort sans conséquence, et la règle se résume à trouver le symbole commun. Il sert de jeu tampon quand le groupe attend les derniers arrivés, ou entre deux jeux plus longs.`
+        `L’intérêt de Dobble pour un grand groupe est la souplesse : un mini-jeu ne dure que quelques minutes, on y entre et on en sort sans conséquence, et la règle se résume à trouver le symbole commun. Il sert de jeu tampon quand le groupe attend les derniers arrivés, ou entre deux jeux plus longs.`
       ]
     },
     {
@@ -89,7 +89,7 @@ export default {
     },
     {
       id: 'codenames',
-      subtitle: 'le seul où le groupe peut dépasser 8',
+      subtitle: 'le seul à dépasser 10 sans règle supplémentaire',
       type: 'Déduction par équipes',
       pick: 'Groupes de 6 à 10 et plus, répartis en deux équipes',
       paragraphs: [
@@ -120,13 +120,13 @@ export default {
   ],
   verdict: {
     heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en garder qu’un pour huit à dix joueurs, ce serait 6 qui prend ! : il conserve la même vitesse à dix qu’à quatre, ce qu’aucun autre jeu de la liste ne fait aussi bien. Pour un groupe qui ne joue jamais, Uno ou Dobble feront l’affaire. Pour dépasser dix, Codenames est le seul à s’étendre sans règle supplémentaire. À éviter : Just One au-delà de sept et tout jeu de plis réfléchi, KYRAN compris, dans une salle où chacun attend son tour. Pour KYRAN, voyez-le comme le jeu d’une moitié de groupe.</p>`
+    html: `<p>Si vous ne deviez en garder qu’un pour huit à dix joueurs, ce serait 6 qui prend ! : il conserve la même vitesse à dix qu’à quatre, ce que peu d’autres jeux de la liste font aussi bien. Pour un groupe qui ne joue jamais, Uno ou Dobble feront l’affaire. Pour dépasser dix, Codenames est le seul à s’étendre sans règle supplémentaire. À éviter : Just One au-delà de sept et tout jeu de plis réfléchi, KYRAN compris, dans une salle où chacun attend son tour. Pour KYRAN, voyez-le comme le jeu d’une moitié de groupe.</p>`
   },
   conclusion: `<p>Préparez deux jeux de nature différente plutôt qu’un seul qui force le nombre : un jeu simultané et bruyant, un jeu plus calme pour ceux qui veulent s’asseoir. Si votre groupe se compose surtout de collègues qui se connaissent peu, la section afterwork de notre page <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes pour l’apéro</a> détaille comment composer les tables.</p>`,
   faq: [
     {
       q: 'Quel jeu de cartes pour 8 joueurs ?',
-      a: 'À huit, Dobble, Timeline, Codenames, Saboteur, Uno, Jungle Speed et 6 qui prend ! fonctionnent tous, car leur plafond est à huit ou au-dessus. Just One et KYRAN ne conviennent pas : ils s’arrêtent à sept et à six joueurs.'
+      a: 'À huit, Dobble, Codenames, Saboteur, Uno, Jungle Speed et 6 qui prend ! fonctionnent tous, car leur plafond est à huit ou au-dessus. Just One et KYRAN ne conviennent pas : ils s’arrêtent à sept et à six joueurs.'
     },
     {
       q: 'Quel jeu choisir pour 10 joueurs ?',
@@ -142,7 +142,7 @@ export default {
     },
     {
       q: 'Quel jeu pour exactement 7 joueurs ?',
-      a: 'À sept, Just One, Codenames, Saboteur, Uno, Jungle Speed, Dobble, Timeline et 6 qui prend ! sont tous jouables, mais Just One est le seul dont sept est le plafond. Skull et KYRAN sont exclus, car limités à six joueurs.'
+      a: 'À sept, Just One, Codenames, Saboteur, Uno, Jungle Speed, Dobble et 6 qui prend ! sont tous jouables (Timeline aussi, sur les boîtes à huit), mais Just One est le seul dont sept est le plafond. Skull et KYRAN sont exclus, car limités à six joueurs.'
     }
   ],
   related: ['jeux-soiree-amis', 'meilleurs-jeux-apero', 'jeux-cartes-6-joueurs']

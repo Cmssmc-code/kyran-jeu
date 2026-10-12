@@ -17,7 +17,7 @@ export default {
     groups: [
       {
         heading: 'Garder, poser, défausser : la stratégie de la main',
-        html: `<p>Ici, la stratégie se joue carte par carte : chaque pose ferme une porte, chaque défausse en ouvre une à l'adversaire. La pioche se renouvelle à chaque tour, si bien qu'une main médiocre au départ se corrige en route. Trois de ces quatre jeux ne se jouent qu'à deux ; Parade est l'exception.</p>`,
+        html: `<p>Ici, la stratégie se joue carte par carte : chaque pose ferme une porte, chaque défausse en ouvre une à l'adversaire. La pioche se renouvelle à chaque tour, si bien qu'une main médiocre au départ se corrige en route. Trois de ces quatre jeux se jouent à deux dans leur boîte de base (Star Realms propose aussi des formats à plusieurs avec plusieurs boîtes) ; Parade est l'exception.</p>`,
         ids: ['lost-cities', 'schotten-totten', 'parade', 'star-realms']
       },
       {
@@ -46,7 +46,7 @@ export default {
 <li><strong>Le plus expérimenté gagne-t-il souvent ?</strong> Si oui, il existe une compétence à acquérir ; si le hasard nivelle tout, on tient un jeu d'ambiance.</li>
 <li><strong>Les choix varient-ils d'une partie à l'autre ?</strong> Un jeu où l'on refait les mêmes coups s'épuise en quelques soirées.</li>
 </ul>
-<p>Dernier filtre, l'effectif : Lost Cities, Schotten Totten et Star Realms ne se jouent qu'à deux, Parade de 2 à 6, les trois jeux de plis à partir de trois. Pour un couple, la sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a> prolonge le premier groupe de cette page.</p>`
+<p>Dernier filtre, l'effectif : Lost Cities et Schotten Totten ne se jouent qu'à deux, Star Realms à deux dans sa boîte de base, Parade de 2 à 6, les trois jeux de plis à partir de trois. Pour un couple, la sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a> prolonge le premier groupe de cette page.</p>`
   },
   games: [
     {
@@ -72,7 +72,7 @@ export default {
       type: 'Collection inversée',
       pick: 'Pour deux à six joueurs prêts à raisonner à l’envers',
       paragraphs: [
-        `Parade renverse l'objectif habituel : on cherche à ramasser le moins de cartes possible. À son tour, on ajoute une carte au bout du défilé ; autant de cartes que sa valeur sont épargnées, en partant de la plus proche, et parmi les autres on ramasse celles de même couleur ou de valeur inférieure ou égale. Un 10 posé dans un défilé de dix cartes ou moins ne ramasse donc rien, alors qu'un 0 expose toute la file.`,
+        `Parade renverse l'objectif habituel : on cherche à ramasser le moins de cartes possible. À son tour, on ajoute une carte au bout du défilé ; autant de cartes que sa valeur sont épargnées, en partant de la plus proche, et parmi les autres on ramasse celles de même couleur ou de valeur inférieure ou égale. Un 10 posé dans un défilé de dix cartes ou moins ne ramasse donc rien, alors qu'un 0 ne protège aucune carte du défilé.`,
         `Le décompte final récompense la majorité dans une couleur : celui qui domine une couleur compte ses cartes un point pièce au lieu de leur valeur. Les premières parties se jouent à la peur du ramassage, les suivantes au calcul de ce qu'on laisse aux voisins. C'est le seul jeu de main de la sélection qui dépasse le duel, de 2 à 6 joueurs, mais sa durée indiquée approche les trois quarts d'heure.`
       ]
     },
@@ -82,7 +82,7 @@ export default {
       pick: 'Pour deux joueurs qui acceptent dix minutes de règles',
       paragraphs: [
         `Star Realms marque la limite haute de ce que « léger » peut contenir. La règle de base se lit vite, mais chaque carte porte un texte qu'il faut déchiffrer en jouant. On part d'un petit paquet de départ, on achète dans une rangée commune de cinq cartes, on déclenche des bonus quand deux cartes de la même faction se croisent. La main se renouvelle à chaque tour : c'est la composition du paquet qu'on pilote.`,
-        `Les décisions sont denses : acheter, attaquer une base, regagner de l'influence, accélérer le rythme. La chance vient de la pioche et de la rangée, mais un mauvais achat se rattrape au fil de la partie. Défauts : âge indiqué 12 ans et plus, deux joueurs seulement, et une réflexion qui s'allonge à mesure que le paquet grossit. En profondeur par minute de règles, il ferme la marche ; en variété de situations, il mène.`
+        `Les décisions sont denses : acheter, attaquer une base, regagner de l'influence, accélérer le rythme. La chance vient de la pioche et de la rangée, mais un mauvais achat se rattrape au fil de la partie. Défauts : âge indiqué 12 ans et plus, boîte de base à deux joueurs, et une réflexion qui s'allonge à mesure que le paquet grossit. En profondeur par minute de règles, il ferme la marche ; en variété de situations, il mène.`
       ]
     },
     {
@@ -99,7 +99,7 @@ export default {
       type: 'Plis et enchères',
       pick: 'Pour des annonces sans contrainte et une partie au long cours',
       paragraphs: [
-        `Wizard laisse chacun annoncer librement : la règle de base ne limite pas le total, et la difficulté vient seulement de tenir sa promesse. Les quatre Magiciens remportent le pli à coup sûr, les quatre Bouffons le perdent : de vrais outils de contrôle pour ajuster son compte de plis en cours de manche. L'atout change à chaque donne, si bien qu'un même roi vaut beaucoup ou presque rien.`,
+        `Wizard laisse chacun annoncer librement : la règle de base ne limite pas le total, et la difficulté vient seulement de tenir sa promesse. Le premier Magicien joué remporte le pli, les Bouffons le perdent presque toujours : de vrais outils de contrôle pour ajuster son compte de plis en cours de manche. L'atout change à chaque donne, si bien qu'un même roi vaut beaucoup ou presque rien.`,
         `Le nombre de cartes augmente d'une unité à chaque manche, ce qui allonge sensiblement la partie à trois joueurs : vingt manches, contre dix à six. Les écarts de niveau mettent du temps à se lire dans le score, ce qui frustre les joueurs pressés. Si le principe vous plaît mais pas la durée, nos <a class="text-link" href="/blog/alternatives-wizard.html">alternatives à Wizard</a> comparent des jeux voisins, dont plusieurs plus courts.`
       ]
     },
@@ -108,7 +108,7 @@ export default {
       type: 'Plis et paris',
       pick: 'Pour trois à six joueurs qui veulent des vies à surveiller',
       paragraphs: [
-        `KYRAN pousse la contrainte d'Oh Hell! jusqu'au bout : la somme des paris ne peut jamais égaler le nombre de plis, à aucune manche, et le dernier à parler perd donc un chiffre. Rater son pari coûte autant de cartes Vie que l'écart : se tromper de trois plis fait trois fois plus mal que d'un seul, ce qui incite à limiter les risques avec une main médiocre.`,
+        `KYRAN reprend la contrainte d'Oh Hell! : la somme des paris ne peut jamais égaler le nombre de plis, à aucune manche, et le dernier à parler perd donc un chiffre. Rater son pari coûte autant de cartes Vie que l'écart : se tromper de trois plis fait trois fois plus mal que d'un seul, ce qui incite à limiter les risques avec une main médiocre.`,
         `Les cartes Vie, visibles de tous, ajoutent une lecture de la table : un joueur proche de sa dernière vie change de comportement, et ses voisins peuvent en jouer. Les cartes Pouvoir permettent d'espionner ou de forcer un coup, et la manche Mystique se joue avec une carte sur le front. La chance vient de la donne ; la profondeur est celle d'un bon jeu de plis, pas d'un casse-tête combinatoire. L'<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet d'essayer le pari avant d'acheter.`
       ]
     }
@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'Quel jeu de stratégie légère pour deux joueurs ?',
-      a: `Lost Cities, Schotten Totten et Star Realms sont conçus pour deux. Lost Cities a la règle la plus courte, Schotten Totten mise sur les combinaisons, Star Realms sur la construction d'un paquet, au prix de davantage de lecture.`
+      a: `Lost Cities et Schotten Totten sont conçus pour deux, et la boîte de base de Star Realms aussi. Lost Cities a la règle la plus courte, Schotten Totten mise sur les combinaisons, Star Realms sur la construction d'un paquet, au prix de davantage de lecture.`
     },
     {
       q: 'Quel jeu de stratégie légère à partir de trois joueurs ?',
@@ -133,7 +133,7 @@ export default {
     },
     {
       q: 'Existe-t-il un jeu de réflexion en cartes avec peu de hasard ?',
-      a: `Aucun jeu de cartes n'en est exempt, puisqu'il faut toujours mélanger. Schotten Totten et Lost Cities sont les plus maîtrisables : les cartes visibles permettent de calculer ce qui reste. Dans les jeux de plis, la donne pèse davantage sur chaque manche.`
+      a: `Tous les jeux de cartes comportent une part de hasard, ne serait-ce que par la donne. Schotten Totten et Lost Cities sont les plus maîtrisables : les cartes visibles permettent de calculer ce qui reste. Dans les jeux de plis, la donne pèse davantage sur chaque manche.`
     },
     {
       q: 'Par quel jeu de stratégie légère commencer ?',

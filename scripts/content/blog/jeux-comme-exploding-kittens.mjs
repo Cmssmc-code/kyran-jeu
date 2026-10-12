@@ -30,13 +30,13 @@ export default {
 <h3>Les traits à retrouver</h3>
 <ul>
 <li><strong>Le piège de la pioche.</strong> Le suspense d’une carte qu’on subit. Uno en garde une trace avec ses cartes qui font piocher ; Coup le transforme en défi dont on choisit le moment ; dans KYRAN, le Sceau du Destin force un joueur à jouer une carte tirée au hasard dans sa main.</li>
-<li><strong>L’élimination.</strong> Sortir de la partie et regarder la fin. Bang! et Coup la conservent ; Uno, Jungle Speed et Saboteur laissent chacun jouer jusqu’au bout. KYRAN s’arrête net au moment où un joueur perd sa dernière vie, si bien que personne ne patiente sur le côté.</li>
+<li><strong>L’élimination.</strong> Sortir de la partie et regarder la fin. Bang! et Coup la conservent ; Uno, Jungle Speed et Saboteur laissent chacun jouer jusqu’au bout. Dans KYRAN, le premier joueur à perdre toutes ses vies est éliminé et met fin à la partie, si bien que personne ne patiente sur le côté.</li>
 <li><strong>Les cartes d’action.</strong> Faire sauter, attaquer ou forcer un voisin : Uno et Bang! sont les plus proches du jeu des chatons sur ce point.</li>
 <li><strong>L’humour de table.</strong> Les cris, les accusations, les gags de dernière seconde : Jungle Speed et Saboteur produisent ce genre d’ambiance mieux que les autres.</li>
 </ul>
 <h3>Ce qu’il faut vérifier avant d’acheter</h3>
 <p><strong>La durée et l’attente.</strong> Exploding Kittens dure environ un quart d’heure, ce qui rend l’élimination presque indolore. Bang! dure environ 30 minutes : un joueur éliminé tôt à six ou sept patiente longtemps. Si votre groupe supporte mal l’attente, privilégiez Coup, Jungle Speed ou Uno, dont les parties sont courtes, ou parcourez nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux de cartes où personne ne quitte la table</a>.</p>
-<p><strong>L’âge et le thème.</strong> Les chatons conviennent à des enfants. Bang! mise sur des revolvers de western, Coup sur des assassins et des dupes : le ton reste caricatural, mais certains parents préféreront Uno ou Jungle Speed, indiqués dès 7 ans, à Coup, signalé dès 10 ans.</p>
+<p><strong>L’âge et le thème.</strong> Les chatons conviennent à des enfants. Bang! mise sur des revolvers de western, Coup sur des assassins et des dupes : le ton reste caricatural, mais certains parents préféreront Uno ou Jungle Speed, indiqués dès 7 ans, à Coup, dont l’âge indiqué varie selon les fiches.</p>
 <p><strong>La part de hasard.</strong> Exploding Kittens et Uno sont très aléatoires ; Coup récompense nettement la lecture des visages, et KYRAN le calcul des paris. Si vous voulez un jeu où le meilleur joueur l’emporte plus souvent, tournez-vous vers ces deux-là, en sachant qu’ils misent moins sur le chaos.</p>`
   },
   games: [
@@ -46,7 +46,7 @@ export default {
       pick: 'Pour quinze minutes de mensonges et de défis',
       paragraphs: [
         `Si c’est le moment où l’on espère ne pas tomber sur la mauvaise carte qui vous plaît dans Exploding Kittens, Coup le convertit en bluff. Chacun cache deux personnages et annonce l’action qu’il veut faire en se réclamant de l’un d’eux, vrai ou faux. N’importe qui peut le défier : l’erreur coûte une carte, et la seconde fait sortir.`,
-        `Les parties durent une quinzaine de minutes, comme le modèle, ce qui rend l’attente d’un joueur éliminé supportable. Il se joue de 2 à 6, dès 10 ans, et suppose un groupe qui accepte de mentir en face. Il remplace bien Exploding Kittens pour des adultes ; il est moins accessible aux jeunes enfants que les chatons.`
+        `Les parties durent une quinzaine de minutes, comme le modèle, ce qui rend l’attente d’un joueur éliminé supportable. Il se joue de 2 à 6, avec un âge indiqué variable selon les fiches, et suppose un groupe qui accepte de mentir en face. Il remplace bien Exploding Kittens pour des adultes ; il est moins accessible aux jeunes enfants que les chatons.`
       ]
     },
     {
@@ -55,7 +55,7 @@ export default {
       pick: 'Pour des enfants dès 7 ans et des adultes qui veulent du simple',
       paragraphs: [
         `Uno est le plus proche d’Exploding Kittens par l’accessibilité : une règle connue de tous, des cartes qui font piocher, sauter un tour ou changer de sens. Quand quelqu’un vous impose quatre cartes d’un coup, la sensation est celle d’une Attaque dans le jeu des chatons : un coup bas sans appel, qu’on accepte en riant.`,
-        `La différence est qu’Uno n’offre aucun suspense de pioche, donc moins de moments de tension. Aucun joueur n’est éliminé, la boîte accueille de 2 à 10 joueurs dès 7 ans, pour vingt minutes. C’est le choix pour les plus jeunes ou pour ne pas expliquer de règles ; une table qui réclame davantage de piquant passera vite à Coup ou à Jungle Speed.`
+        `La différence est qu’Uno offre peu de suspense de pioche, donc moins de moments de tension. Aucun joueur n’est éliminé, la boîte accueille de 2 à 10 joueurs dès 7 ans, pour vingt minutes. C’est le choix pour les plus jeunes ou pour ne pas expliquer de règles ; une table qui réclame davantage de piquant passera vite à Coup ou à Jungle Speed.`
       ]
     },
     {
@@ -96,7 +96,7 @@ export default {
     }
   ],
   verdict: {
-    heading: 'Le remplaçant le plus proche des chatons',
+    heading: 'Selon le critère, le remplaçant le plus proche',
     html: `<p>Prenez <strong>Coup</strong> si vous voulez le même format : un quart d’heure, une élimination qui ne coûte pas cher, des soupçons à chaque tour, de 2 à 6 joueurs. À six ou sept amis qui aiment jouer un rôle, <strong>Bang!</strong> reste le meilleur, à condition d’accepter qu’un joueur sorte tôt. Pour des enfants dès 7 ans, Jungle Speed met plus de piquant qu’Uno ; pour une tablée de huit à dix où personne ne doit quitter la partie, Saboteur. KYRAN, enfin, n’est pas le bon choix pour retrouver le rire des chatons : c’est un jeu de plis et de paris, à garder pour une autre soirée.</p>`
   },
   conclusion: `<p>Ce qui fait réussir une alternative à Exploding Kittens, c’est moins la mécanique que le ton de la table : un groupe qui crie, un autre qui bluffe, un troisième qui rit des catastrophes. Choisissez en fonction de l’ambiance plutôt que de la ressemblance. Pour approfondir le bluff et la déduction, notre guide des <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de bluff et de pari</a> détaille d’autres pistes.</p>`,
@@ -107,11 +107,11 @@ export default {
     },
     {
       q: 'Quel jeu comme Exploding Kittens pour des enfants ?',
-      a: `Uno et Jungle Speed sont indiqués dès 7 ans. Bang!, Saboteur et KYRAN commencent à 8 ans, Coup à 10 ans. Pour de jeunes enfants, Uno est le plus simple, et Jungle Speed le plus remuant. Les thèmes de pistolets ou d’assassins peuvent aussi guider la décision.`
+      a: `Uno et Jungle Speed sont indiqués dès 7 ans. Bang!, Saboteur et KYRAN commencent à 8 ans ; l’âge de Coup varie selon les fiches. Pour de jeunes enfants, Uno est le plus simple, et Jungle Speed le plus remuant. Les thèmes de pistolets ou d’assassins peuvent aussi guider la décision.`
     },
     {
-      q: 'Existe-t-il un jeu comme Exploding Kittens sans élimination ?',
-      a: `Uno, Jungle Speed et Saboteur laissent chaque joueur jouer jusqu’au bout. Bang! et Coup, à l’inverse, éliminent progressivement. KYRAN est un cas à part : personne n’attend sur le côté, mais la partie s’arrête net dès qu’un joueur a perdu sa dernière vie.`
+      q: 'Existe-t-il un jeu comme Exploding Kittens où personne ne reste sur le côté ?',
+      a: `Uno, Jungle Speed et Saboteur laissent chaque joueur jouer jusqu’au bout. Bang! et Coup, à l’inverse, éliminent progressivement. KYRAN : le premier joueur à zéro vie est éliminé et met fin à la partie, donc personne n’attend sur le côté.`
     },
     {
       q: 'Quel jeu comme Exploding Kittens pour une grande tablée ?',

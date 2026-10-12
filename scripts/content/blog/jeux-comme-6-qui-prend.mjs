@@ -69,7 +69,7 @@ export default {
       type: 'Enchères et révélation',
       pick: 'Pour retrouver la révélation simultanée dans un jeu d’enchères',
       paragraphs: [
-        `For Sale est, avec 6 qui prend !, le seul jeu de cette liste dont un temps fort repose sur une révélation commune. Après une phase d’enchères où l’on acquiert des propriétés numérotées de 1 à 30, chaque joueur dépose en même temps l’une de ses propriétés, puis les chèques sont distribués dans l’ordre : le plus haut numéro prend le meilleur chèque.`,
+        `For Sale est, avec 6 qui prend ! et la manche Mystique de KYRAN, l’un des rares jeux de cette liste dont un temps fort repose sur une révélation commune. Après une phase d’enchères où l’on acquiert des propriétés numérotées de 1 à 30, chaque joueur dépose en même temps l’une de ses propriétés, puis les chèques sont distribués dans l’ordre : le plus haut numéro prend le meilleur chèque.`,
         `La première phase se joue au tour par tour : on surenchérit ou on passe, en récupérant alors la plus petite carte du rang pour la moitié de sa mise. L’ensemble prend une trentaine de minutes, de 3 à 6 joueurs. Moins chaotique et plus calculable que le modèle, il récompense les joueurs qui gèrent bien leur argent plus que ceux qui prennent des risques au hasard.`
       ]
     },
@@ -78,7 +78,7 @@ export default {
       type: 'Bluff et défi',
       pick: 'Pour les tables qui aiment le secret et le soupçon avant tout',
       paragraphs: [
-        `Si ce qui vous plaît dans 6 qui prend ! est la minute où chacun choisit en secret avant de découvrir l’effet, Skull en conserve la tension : chacun pose un disque face cachée, puis un défi est lancé. La table sait qu’un seul disque, le crâne, ruine un pari ; reste à deviner où il se cache.`,
+        `Si ce qui vous plaît dans 6 qui prend ! est la minute où chacun choisit en secret avant de découvrir l’effet, Skull en conserve la tension : chacun pose un disque face cachée, puis un défi est lancé. La table sait qu’un crâne suffit à ruiner un pari ; reste à deviner où il se cache.`,
         `Sa limite par rapport au modèle est l’effectif, de 3 à 6, et l’élimination progressive des joueurs qui ont perdu leurs disques. Les pénalités ne s’accumulent pas non plus : on perd un disque à la fois, jusqu’à la sortie. Il convient aux tables de peu de monde qui aiment le bluff, pas à une grande tablée qui cherche un chaos collectif.`
       ]
     },
@@ -96,7 +96,7 @@ export default {
       type: 'Plis et paris',
       pick: 'Pour trois à six joueurs qui veulent un jeu de plis exigeant',
       paragraphs: [
-        `KYRAN se distingue du modèle par sa famille : un jeu de plis où l’on annonce, avant chaque manche, le nombre de plis qu’on va gagner. Comme dans 6 qui prend !, la pénalité est proportionnelle à l’erreur, ici sous forme de cartes Vie perdues selon l’écart entre le pari et les plis gagnés. On ne joue pas simultanément : chacun pose à son tour, mais le pari engage toute la table.`,
+        `KYRAN se distingue du modèle par sa famille : un jeu de plis où l’on annonce, avant chaque manche, le nombre de plis qu’on va gagner. Contrairement à 6 qui prend !, où l’on subit les cartes ramassées, la pénalité de KYRAN est l’écart entre le pari et les plis gagnés, payé en cartes Vie. Hors manche Mystique, chacun pose à son tour ; la manche Mystique, elle, se révèle en simultané. Le pari engage toute la table.`,
         `Il tient de 3 à 6, en environ 30 minutes, ne se joue pas à deux et ne remplace donc pas 6 qui prend ! pour dix personnes. Les pouvoirs ajoutent des coups bas ciblés : le Voile du Néant, par exemple, échange la valeur de votre carte avec une carte déjà posée ce tour. Pour s’y essayer, l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> montre le principe, et les <a class="text-link" href="/regle.html">règles complètes</a> tiennent sur quelques cartes.`
       ]
     }
@@ -117,7 +117,7 @@ export default {
     },
     {
       q: 'Quel jeu comme 6 qui prend où tout le monde joue en même temps ?',
-      a: `For Sale offre une phase de révélation simultanée à la fin de la partie, et Jungle Speed se joue en temps réel. Le reste de la liste fonctionne au tour par tour. Si le choix simultané est indispensable, ces deux jeux sont les seuls à le proposer sous une forme ou une autre.`
+      a: `For Sale offre une phase de révélation simultanée à la fin de la partie, et Jungle Speed se joue en temps réel. Le reste de la liste fonctionne au tour par tour, à l’exception de la manche Mystique de KYRAN. Si le choix simultané est indispensable, 6 qui prend ! et For Sale le proposent le plus nettement.`
     },
     {
       q: 'Peut-on jouer à 6 qui prend à deux ou trois joueurs ?',

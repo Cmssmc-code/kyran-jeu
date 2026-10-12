@@ -17,16 +17,16 @@ export default {
 <h3>Durée affichée, durée vécue</h3>
 <ul>
 <li><strong>L’explication.</strong> Elle pèse surtout la première fois. Une règle qui tient en une phrase (Jungle Speed, No Thanks!) coûte peu ; un jeu à pouvoirs ou à plusieurs types de cartes demande davantage, et la première partie se joue avec les règles ouvertes sur la table.</li>
-<li><strong>Le nombre de joueurs.</strong> Dans un jeu où l’on joue chacun son tour, chaque personne en plus rallonge la partie (Skyjo, Skull). Dans un jeu simultané (Sushi Go!, Jungle Speed), la durée bouge à peine.</li>
+<li><strong>Le nombre de joueurs.</strong> Dans un jeu où l’on joue chacun son tour, chaque personne en plus rallonge la partie (Skyjo, Skull). Dans un jeu où tout le monde reste actif en même temps (Sushi Go!, Jungle Speed), la durée bouge moins.</li>
 <li><strong>La condition de fin.</strong> Certains jeux ont une fin garantie, paquet épuisé ou nombre de manches fixé d’avance ; d’autres s’arrêtent à un score à atteindre ou à un échec, et leur durée varie davantage.</li>
 <li><strong>L’attente.</strong> Les jeux avec élimination laissent des joueurs inoccupés. Sur quinze minutes, cela passe inaperçu ; sur trente, on commence à s’ennuyer.</li>
 </ul>
 <h3>Enchaîner plutôt qu’étirer</h3>
-<p>Pour une soirée de deux heures, trois jeux de vingt minutes valent mieux qu’un seul long : on change d’ambiance, on laisse arriver les retardataires entre deux parties et celui qui a perdu prend sa revanche rapidement. L’ordre compte : commencez par un jeu simultané où tout le monde agit en même temps, passez à un jeu de déduction ou de bluff, terminez sur un jeu qui relâche la tension. Fixez aussi une heure de fin à l’avance, car les jeux rapides ont tendance à s’éterniser sous prétexte d’« une dernière ».</p>
+<p>Pour une soirée de deux heures, trois jeux de vingt minutes valent mieux qu’un seul long : on change d’ambiance, on laisse arriver les retardataires entre deux parties et celui qui a perdu prend sa revanche rapidement. L’ordre compte : commencez par un jeu où tout le monde reste actif, passez à un jeu de déduction ou de bluff, terminez sur un jeu qui relâche la tension. Fixez aussi une heure de fin à l’avance, car les jeux rapides ont tendance à s’éterniser sous prétexte d’« une dernière ».</p>
 <h3>Les pièges de la durée annoncée</h3>
 <ul>
 <li>La durée correspond à une configuration moyenne : à la borne haute du nombre de joueurs, elle s’allonge toujours.</li>
-<li>Un jeu à score cible, comme Skyjo, se prolonge quand les manches sont serrées, car personne n’atteint le seuil.</li>
+<li>Un jeu à score cible, comme Skyjo, dépend du nombre de manches jouées avant que quelqu’un atteigne le seuil.</li>
 <li>La première partie dure plus que les suivantes ; ne jugez pas un jeu sur sa seule partie d’initiation.</li>
 </ul>`
   },
@@ -39,7 +39,7 @@ export default {
       },
       {
         heading: `Une vingtaine de minutes : un paquet qui borne, un niveau qui tranche`,
-        html: `<p>Deux jeux annoncés à une vingtaine de minutes, pour des raisons opposées : la durée de No Thanks! est fixée par son paquet, celle de The Mind par la réussite ou l’échec de l’équipe. Le premier se prévoit à la minute près, le second réserve des surprises dans les deux sens.</p>`,
+        html: `<p>Deux jeux annoncés à une vingtaine de minutes, pour des raisons opposées : la durée de No Thanks! est fixée par son paquet, celle de The Mind par la réussite ou l’échec de l’équipe. Le premier se prévoit presque exactement, le second réserve des surprises dans les deux sens.</p>`,
         ids: [`the-mind`, `no-thanks`]
       },
       {
@@ -62,8 +62,8 @@ export default {
       type: `Déduction`,
       pick: `Pour deux à quatre joueurs qui veulent jouer entre deux obligations`,
       paragraphs: [
-        `Avec seize cartes, une manche de Love Letter se règle en quelques minutes : chacun n’a qu’une carte en main, on en pioche une, on en joue une, et le paquet fond vite. La durée de la partie complète dépend du nombre de jetons à atteindre, qui varie avec le nombre de joueurs. C’est le jeu idéal quand on ignore de combien de temps on dispose.`,
-        `Cette souplesse est son atout face au chronomètre : on peut s’arrêter après n’importe quelle manche et désigner le vainqueur au nombre de jetons. Sa limite est le plafond de quatre joueurs, et la chance de pioche peut décider d’une manche en deux tours, ce qui agace les amateurs de contrôle. Il se joue dès dix ans.`
+        `Avec un petit paquet, une manche de Love Letter se règle en quelques minutes : chacun n’a qu’une carte en main, on en pioche une, on en joue une, et le paquet fond vite. La durée de la partie complète dépend du nombre de jetons à atteindre, qui varie avec le nombre de joueurs. C’est le jeu idéal quand on ignore de combien de temps on dispose.`,
+        `Cette souplesse est son atout face au chronomètre : on peut s’arrêter après n’importe quelle manche et désigner le vainqueur au nombre de jetons. Sa limite, dans l’édition classique à seize cartes, est le plafond de quatre joueurs (l’édition Z-Man de 2025 monte à six), et la chance de pioche peut décider d’une manche en deux tours, ce qui agace les amateurs de contrôle. Il se joue dès dix ans.`
       ]
     },
     {
@@ -72,8 +72,8 @@ export default {
       type: `Bluff et élimination`,
       pick: `Pour deux à six joueurs qui acceptent d’être éliminés`,
       paragraphs: [
-        `Dans Coup, chaque joueur cache deux cartes de personnages et prétend en posséder les pouvoirs ; si on le met au défi et qu’il a menti, il perd une carte. Les éliminations accélèrent la partie à mesure qu’elle avance : une fois les premiers joueurs tombés, les derniers s’affrontent à découvert, ce qui explique une durée d’environ quinze minutes.`,
-        `Le revers du format court, c’est l’attente. Le premier éliminé doit patienter, et à six joueurs elle se fait sentir. Mieux vaut réserver Coup aux groupes de trois à cinq, ou enchaîner les parties pour que celui qui est tombé en premier rejoue vite. Le jeu s’ouvre à des joueurs de dix ans et plus.`
+        `Dans Coup, chaque joueur cache deux cartes de personnages et prétend en posséder les pouvoirs ; si on le met au défi et qu’il a menti, il perd une carte. Les éliminations accélèrent la partie à mesure qu’elle avance : une fois les premiers joueurs tombés, les derniers joueurs s’affrontent avec moins de cartes à bluffer, ce qui explique une durée d’environ quinze minutes.`,
+        `Le revers du format court, c’est l’attente. Le premier éliminé doit patienter, et à six joueurs elle se fait sentir. Mieux vaut réserver Coup aux groupes de trois à cinq, ou enchaîner les parties pour que celui qui est tombé en premier rejoue vite.`
       ]
     },
     {
@@ -82,17 +82,17 @@ export default {
       type: `Réflexe`,
       pick: `Pour deux à dix joueurs, quand le temps manque`,
       paragraphs: [
-        `Jungle Speed ne laisse personne attendre : chacun révèle ses cartes à tour de rôle et surveille la table, si bien que la durée d’environ quinze minutes se maintient quel que soit le nombre de joueurs, jusqu’à dix. La règle de base se transmet en une phrase : même symbole, on attrape le totem.`,
+        `Jungle Speed ne laisse personne attendre : chacun révèle ses cartes à tour de rôle et surveille la table, si bien que la durée d’environ quinze minutes reste courte, de deux à dix joueurs. La règle de base se transmet en une phrase : même symbole, on attrape le totem.`,
         `Le temps gagné à l’explication se perd parfois à l’arbitrage : qui a saisi le totem en premier ? Les contestations sont courantes, et il vaut mieux convenir d’une règle de départage avant la première carte. Le jeu convient à un groupe sans envie de réfléchir, moins à un joueur qui cherche de la stratégie. L’âge minimum est de sept ans.`
       ]
     },
     {
       id: `sushi-go`,
-      subtitle: `la seule durée connue d’avance`,
+      subtitle: `une durée connue d’avance`,
       type: `Draft de cartes`,
       pick: `Pour deux à cinq joueurs qui veulent une durée fixe`,
       paragraphs: [
-        `Sushi Go! a la durée la plus prévisible de la liste : trois manches, et dans chacune on choisit une carte, on la pose face cachée, puis on transmet sa main au voisin, jusqu’à ce qu’il n’y ait plus de cartes. Tout le monde choisit en même temps, donc le temps par tour ne dépend presque pas du nombre de joueurs. Le jeu est annoncé à environ quinze minutes.`,
+        `Sushi Go! a une durée très prévisible : trois manches, et dans chacune on choisit une carte, on la pose face cachée, puis on transmet sa main au voisin, jusqu’à ce qu’il n’y ait plus de cartes. Tout le monde choisit en même temps, donc le temps par tour ne dépend presque pas du nombre de joueurs. Le jeu est annoncé à environ quinze minutes.`,
         `Le temps se perd à l’explication : il existe plusieurs types de cartes à valoriser (tempura, sashimi, makis, nigiri, wasabi, puddings), et la première partie sert surtout à les comprendre. Les puddings ne comptent qu’en fin de partie, après trois manches, ce qui oblige à les garder de côté d’une manche à l’autre. Comptez sur un carnet ou une carte résumé pour la première fois, et sur un âge minimum de huit ans.`
       ]
     },
@@ -122,7 +122,7 @@ export default {
       type: `Défausse et score`,
       pick: `Pour jouer jusqu’à huit, en acceptant une durée variable`,
       paragraphs: [
-        `Skyjo s’arrête quand un joueur atteint 100 points, et non après un nombre de tours fixe : une manche est brève, mais on en enchaîne plusieurs. La demi-heure affichée vaut pour une table moyenne ; à huit joueurs, elle est vite dépassée, et une série de manches serrées prolonge la partie encore davantage.`,
+        `Skyjo s’arrête quand un joueur atteint 100 points, et non après un nombre de tours fixe : une manche est brève, mais on en enchaîne plusieurs. La demi-heure affichée vaut pour une table moyenne . À huit joueurs, comptez davantage.`,
         `Si le temps est compté, deux solutions : convenir d’un seuil plus bas avant de commencer, ou limiter le nombre de manches et départager au score cumulé. La règle se comprend en regardant faire, mais prévoyez de quoi noter les points, car l’addition mentale ralentit le décompte. Skyjo se joue de deux à huit personnes, dès huit ans.`
       ]
     },
@@ -151,7 +151,7 @@ export default {
     heading: `Le jeu court à garder sous la main`,
     html: `<p>Si vous ne deviez en retenir qu’un : No Thanks!. Son paquet de vingt-quatre cartes borne la durée, sa règle tient en deux phrases et il accueille de trois à sept joueurs sans ralentir de façon notable. Dans le créneau du quart d’heure, Love Letter est plus court encore à deux ou trois, et Jungle Speed tient une table de dix. Dans celui de la demi-heure, méfiez-vous de Skull et de Skyjo quand l’heure de fin est ferme : ce sont eux dont la durée varie le plus selon la table. KYRAN convient quand on veut une vraie partie avec un pari à chaque manche, à condition de réserver trente minutes pleines.</p>`
   },
-  conclusion: `<p>Mesurez votre créneau avant de choisir : un quart d’heure autorise un jeu simultané ou à manches courtes, vingt minutes un jeu dont le paquet fixe la fin, une demi-heure un jeu de score, de bluff ou de plis. Gardez sous la main deux jeux de créneaux différents pour ajuster la soirée selon l’humeur et le nombre de présents. Avant d’inviter, vérifiez dans le tableau la borne haute de joueurs : c’est elle qui décide si le créneau prévu tiendra.</p>`,
+  conclusion: `<p>Mesurez votre créneau avant de choisir : un quart d’heure autorise un jeu où tout le monde reste actif ou à manches courtes, vingt minutes un jeu dont le paquet fixe la fin, une demi-heure un jeu de score, de bluff ou de plis. Gardez sous la main deux jeux de créneaux différents pour ajuster la soirée selon l’humeur et le nombre de présents. Avant d’inviter, vérifiez dans le tableau la borne haute de joueurs : c’est elle qui décide si le créneau prévu tiendra.</p>`,
   faq: [
     {
       q: `Quel jeu de cartes se joue en 15 minutes ?`,
@@ -171,7 +171,7 @@ export default {
     },
     {
       q: `Comment enchaîner plusieurs jeux courts sur une soirée ?`,
-      a: `Commencez par un jeu simultané et facile, comme Jungle Speed ou Sushi Go!, continuez avec un jeu de déduction ou de bluff, puis finissez sur un jeu plus calme. Fixez l’heure de fin à l’avance pour que le dernier jeu ne devienne pas une troisième partie.`
+      a: `Commencez par un jeu actif et facile, comme Jungle Speed ou Sushi Go!, continuez avec un jeu de déduction ou de bluff, puis finissez sur un jeu plus calme. Fixez l’heure de fin à l’avance pour que le dernier jeu ne devienne pas une troisième partie.`
     }
   ],
   related: [`jeux-vacances-voyage`, `jeux-soiree-amis`, `meilleurs-jeux-apero`]

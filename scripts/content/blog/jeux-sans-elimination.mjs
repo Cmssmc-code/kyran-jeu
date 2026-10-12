@@ -46,7 +46,7 @@ export default {
       pick: 'Pour une table où personne ne veut attendre son tour',
       paragraphs: [
         `Sushi Go! supprime l’attente à la racine : tout le monde choisit en même temps une carte dans sa main, la pose face cachée, puis passe le reste à son voisin. Il n’existe donc aucun tour adverse à regarder, et aucun moyen de sortir de la partie. Les trois manches se jouent jusqu’à la dernière carte pour chacun, et le décompte des desserts n’intervient qu’à la toute fin.`,
-        `Pour le joueur distancé, ces desserts sont une vraie bouée : celui qui en garde le plus marque un bonus, celui qui en a le moins subit une pénalité, et l’écart se resserre au dernier moment. Le défaut est ailleurs : un débutant ne voit pas ce que collectionnent ses voisins et laisse passer les bonnes cartes. Jouable de deux à cinq, en un quart d’heure environ, dès 8 ans.`
+        `Pour le joueur distancé, ces desserts sont une vraie bouée : celui qui en garde le plus marque un bonus, celui qui en a le moins subit une pénalité (sauf à deux joueurs, où seul le bonus compte), et l’écart se resserre au dernier moment. Le défaut est ailleurs : un débutant ne voit pas ce que collectionnent ses voisins et laisse passer les bonnes cartes. Jouable de deux à cinq, en un quart d’heure environ, dès 8 ans.`
       ]
     },
     {
@@ -55,7 +55,7 @@ export default {
       pick: 'Pour finir à égalité de tours, même après une mauvaise passe',
       paragraphs: [
         `Timeline aurait pu s’arrêter dès qu’un joueur pose sa dernière carte ; sa règle préfère achever le tour de table, pour que chacun ait joué autant de fois que le premier. Une date mal placée ne fait sortir personne non plus : la carte est défaussée, le joueur en reçoit une autre et reste dans la course, simplement un peu plus loin du but.`,
-        `La limite tient à une forme d’impuissance : celui qui accumule les erreurs garde une main aussi garnie qu’au départ, sans rien perdre, mais sans approcher de la victoire. À cinq joueurs ou plus, les tours s’enchaînent assez vite pour que ce sentiment ne s’installe pas. Le jeu accepte de deux à huit joueurs, pour environ un quart d’heure, dès 8 ans.`
+        `La limite tient à une forme d’impuissance : celui qui accumule les erreurs garde une main aussi garnie qu’au départ, sans rien perdre, mais sans approcher de la victoire. Le jeu accepte de deux à six joueurs selon l’édition (huit sur certaines boîtes), pour environ un quart d’heure, dès 8 ans. En cas d’égalité en fin de tour, les ex æquo rejouent un tour et les autres sont écartés.`
       ]
     },
     {
@@ -88,13 +88,13 @@ export default {
   ],
   verdict: {
     heading: 'Le choix le plus sûr pour ne perdre personne',
-    html: `<p>Le choix le plus sûr est Sushi Go! : tout le monde joue en même temps, la partie compte trois manches fixes et les desserts redonnent une chance au dernier jusqu’au décompte final. Timeline suit de près pour les grandes tablées, grâce à son tour complet. Hanabi convient aux groupes qui ne veulent désigner aucun perdant, Skyjo et No Thanks! aux familles qui acceptent un score affiché.</p><p>Nous n’avons pas retenu KYRAN, notre jeu : c’est un jeu de plis à vies, où la partie s’achève justement sur un joueur éliminé.</p>`
+    html: `<p>Le choix le plus sûr est Sushi Go! : tout le monde joue en même temps, la partie compte trois manches fixes et les desserts redonnent une chance au dernier jusqu’au décompte final. Timeline suit pour les grandes tablées, grâce à son tour complet, avec la réserve des égalités de fin de tour (les ex æquo rejouent, les autres sont écartés). Hanabi convient aux groupes qui ne veulent désigner aucun perdant, Skyjo et No Thanks! aux familles qui acceptent un score affiché.</p><p>Nous n’avons pas retenu KYRAN, notre jeu : c’est un jeu de plis à vies, où la partie s’achève justement sur un joueur éliminé.</p>`
   },
   conclusion: `<p>Une règle de fin annoncée à voix haute vaut toutes les étiquettes : « on joue trois manches », « on s’arrête à 60 points », « la pioche vide clôt la partie ». Un joueur en retard accepte bien mieux sa position quand il sait combien de temps elle va durer. Et si quelqu’un décroche malgré tout, regardez le nombre de joueurs avant d’accuser le jeu : une table trop chargée allonge l’attente entre deux tours.</p>`,
   faq: [
     {
       q: 'Quel jeu de cartes choisir pour que personne ne soit éliminé ?',
-      a: 'Sushi Go! et Timeline sont les plus sûrs : chacun joue le même nombre de tours et la fin est connue d’avance. Hanabi supprime aussi tout perdant individuel. Skyjo et No Thanks! gardent tout le monde en jeu, avec un score qui peut décourager le dernier.'
+      a: 'Sushi Go! est le plus sûr : chacun joue le même nombre de tours et la fin est connue d’avance. Timeline s’en approche, avec une exception : en cas d’égalité en fin de tour, les ex æquo rejouent un tour et les autres sont écartés. Hanabi supprime aussi tout perdant individuel. Skyjo et No Thanks! gardent tout le monde en jeu, avec un score qui peut décourager le dernier.'
     },
     {
       q: 'Un jeu coopératif peut-il éliminer un joueur ?',

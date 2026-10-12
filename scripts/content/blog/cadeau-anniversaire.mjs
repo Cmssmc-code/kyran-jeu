@@ -43,7 +43,7 @@ export default {
     heading: `Comment choisir un jeu cadeau pour un anniversaire ?`,
     html: `<p>Un anniversaire laisse peu de marge d’erreur : le cadeau s’ouvre en public et vous n’avez qu’un essai. Une fois l’enveloppe fixée, trois questions évitent la plupart des ratés : qui jouera ce soir-là, ce que la personne possède déjà, et l’âge des plus jeunes invités.</p>
 <h3>Le cadeau collectif inverse la contrainte</h3>
-<p>Quand une dizaine de collègues ou d’amis se cotisent, l’enveloppe grossit, mais le jeu doit alors fonctionner avec le groupe qui l’offre. Un titre limité à quatre joueurs serait un contresens ; Skyjo et Codenames, qui accueillent huit personnes ou davantage, s’y prêtent mieux. Une cagnotte confortable peut aussi réunir deux boîtes de prix moyen, choisies pour deux tables différentes, plutôt qu’une seule.</p>
+<p>Quand une dizaine de collègues ou d’amis se cotisent, l’enveloppe grossit, mais le jeu doit alors fonctionner avec le groupe qui l’offre. Un titre limité à quatre joueurs serait un contresens ; Skyjo, qui accueille jusqu’à huit joueurs, et Codenames, qui en accepte davantage, s’y prêtent mieux. Une cagnotte confortable peut aussi réunir deux boîtes de prix moyen, choisies pour deux tables différentes, plutôt qu’une seule.</p>
 <h3>Ce que vous ignorez : la surprise</h3>
 <p>Offrir un jeu en cachette suppose d’ignorer ce que la personne possède déjà. Deux réflexes limitent le risque : demander discrètement à un proche si elle a déjà un jeu du même genre, et éviter les boîtes ultra-diffusées si elle joue beaucoup. À l’inverse, pour quelqu’un qui ne joue jamais, retenez un jeu dont la règle se résume à une phrase, puisque c’est vous qui devrez l’expliquer devant les invités.</p>
 <h3>Jouable le jour même ou non ?</h3>
@@ -58,7 +58,7 @@ export default {
       type: `Petit prix, petit format`,
       pick: `Pour un budget serré ou un cadeau d’appoint`,
       paragraphs: [
-        `C’est la boîte qui accompagne un autre cadeau sans le faire oublier : environ 12 € pour seize cartes et quelques jetons. Le soir même, deux personnes suffisent pour jouer, ce qui convient à un anniversaire fêté en petit comité. Chacun garde une seule carte en main et en pioche une autre à chaque tour, avec l’idée d’éliminer les rivaux ou de conserver la plus forte à la fin de la manche.`,
+        `C’est la boîte qui accompagne un autre cadeau sans le faire oublier : environ 12 € pour un petit paquet de cartes et quelques jetons. Le soir même, deux personnes suffisent pour jouer, ce qui convient à un anniversaire fêté en petit comité. Chacun garde une seule carte en main et en pioche une autre à chaque tour, avec l’idée d’éliminer les rivaux ou de conserver la plus forte à la fin de la manche.`,
         `Le défaut d’un tel cadeau tient à sa limite : quatre joueurs au maximum, donc impossible d’y faire jouer tous les invités d’un repas d’anniversaire. Mieux vaut le réserver à quelqu’un qui aime les petites parties entre amis, ou à un couple. Une manche se compte en minutes, ce qui laisse la place à une revanche immédiate avant que le gâteau n’arrive.`,
         `Pour un si petit prix, sa durée de vie surprend : la composition du paquet est connue de tous, et chaque pioche relance la déduction sur ce que l’adversaire garde en main. La Comtesse qu’on joue pour faire croire qu’on tient un Roi, la Princesse qu’il ne faut jamais défausser : ces détails expliquent qu’on y revienne longtemps sans extension.`
       ]
@@ -69,7 +69,7 @@ export default {
       type: `Réflexe`,
       pick: `Pour un enfant dès six ans, ou une famille qui reçoit souvent`,
       paragraphs: [
-        `Autour de 12 €, Dobble est le cadeau qui se joue avant même que le papier soit ramassé : la règle se montre en une manche, sans livret à lire. Ses cinquante-cinq cartes portent chacune huit symboles, et deux cartes quelconques en partagent toujours exactement un, qu’il faut repérer et nommer avant les autres. La boîte ronde contient plusieurs mini-jeux, de deux à huit joueurs, dès six ans.`,
+        `Autour de 10 €, Dobble est le cadeau qui se joue avant même que le papier soit ramassé : la règle se montre en une manche, sans livret à lire. Ses cinquante-cinq cartes portent chacune huit symboles, et deux cartes quelconques en partagent toujours exactement un, qu’il faut repérer et nommer avant les autres. La boîte ronde contient plusieurs mini-jeux, de deux à huit joueurs, dès six ans.`,
         `À un goûter d’anniversaire, c’est l’un des rares jeux où un enfant peut battre les adultes sans qu’on le laisse gagner, ce qui ravit l’invité d’honneur s’il a sept ou huit ans. Sa limite tient à la rejouabilité : on y progresse en vitesse, jamais en stratégie, et entre adultes la boîte s’épuise plus vite qu’un jeu à décisions. Offert à un enfant ou glissé dans un sac de voyage, il vaut largement son prix.`
       ]
     },
@@ -79,7 +79,7 @@ export default {
       type: `Bluff`,
       pick: `Pour la bande de trois à six qui aime se défier`,
       paragraphs: [
-        `Skull se classe dans le cadeau de caractère : on l’offre à celui qui ne résiste pas à un défi lancé à voix haute. Chacun possède trois fleurs et un crâne, pose une carte face cachée, puis les enchères commencent : combien de cartes retournera-t-on sans tomber sur un crâne ? Environ 15 € pour un jeu qui occupe une demi-heure, dès dix ans, et qui se range dans un sac.`,
+        `Skull se classe dans le cadeau de caractère : on l’offre à celui qui ne résiste pas à un défi lancé à voix haute. Chacun possède trois fleurs et un crâne, pose une carte face cachée, puis les enchères commencent : combien de cartes retournera-t-on sans tomber sur un crâne ? Environ 18 € pour un jeu qui occupe une demi-heure, dès dix ans, et qui se range dans un sac.`,
         `À une fête, il se lance plus facilement qu’un jeu de réflexion : une explication d’une minute, peu de place sur la table, et des convives qui se mettent à discuter. Deux réserves toutefois. En dessous de trois joueurs, aucune partie n’est possible, et un invité réservé peut être mal à l’aise à l’idée de mentir ouvertement à ses amis. Si le destinataire déteste le bluff, passez votre chemin. À l’inverse, le matériel se résume à quatre cartes par joueur et c’est la table qui renouvelle chaque partie : un petit prix qui dure.`
       ]
     },
@@ -90,7 +90,7 @@ export default {
       pick: `Pour marquer le coup auprès de quelqu’un d’imaginatif`,
       paragraphs: [
         `Avec environ 30 €, Dixit entre dans la catégorie des cadeaux qui se remarquent. Les grandes cartes illustrées s’admirent avant d’être jouées, ce qui donne à l’ouverture du paquet un petit effet de découverte. Un conteur choisit une carte et l’évoque par un indice ; les autres piochent dans leur main celle qui pourrait lui correspondre, puis chacun vote. Il faut au moins trois personnes autour de la table, et six au plus.`,
-        `C’est une bonne idée pour quelqu’un d’imaginatif, ou qui reçoit volontiers des enfants, car les plus jeunes y sont des adversaires redoutables. À écarter si le destinataire cherche un jeu de stratégie : la compétition y est secondaire, et les points se gagnent à la sensibilité plus qu’au calcul. Vérifiez enfin le groupe, car à trois joueurs les votes sont rares et la partie perd en intérêt.`
+        `C’est une bonne idée pour quelqu’un d’imaginatif, ou qui reçoit volontiers des enfants, car les plus jeunes y sont des adversaires redoutables. À écarter si le destinataire cherche un jeu de stratégie : la compétition y est secondaire, et les points se gagnent à la sensibilité plus qu’au calcul. Vérifiez enfin la taille du groupe : la boîte classique de 2008 se joue de trois à six.`
       ]
     },
     {
@@ -161,7 +161,7 @@ export default {
   ],
   verdict: {
     heading: `Le cadeau le plus sûr, selon nous`,
-    html: `<p>Si vous ne deviez en retenir qu’un : Skyjo. Il tient dans une enveloppe d’environ 15 €, convient dès huit ans et accepte de deux à huit joueurs, donc le nombre d’invités ne le gêne presque jamais. Sous 15 €, Love Letter pour un couple et Dobble pour un enfant offrent le plus de parties pour leur prix. Pour marquer le coup avec un budget plus large, Dixit reste le plus sûr auprès d’un public mélangé. À éviter : Bang! pour l’invité d’honneur, Colt Express si le gâteau doit se couper dans l’heure. KYRAN est le bon cadeau pour un joueur de plis, pas pour un duo.</p>`
+    html: `<p>Si vous ne deviez en retenir qu’un : Skyjo. Il tient dans une enveloppe d’environ 15 €, convient dès huit ans et accepte de deux à huit joueurs, donc le nombre d’invités ne le gêne presque jamais. Pour marquer le coup avec un budget plus large, Dixit reste le plus sûr auprès d’un public mélangé. À éviter : Bang! pour l’invité d’honneur, Colt Express si le gâteau doit se couper dans l’heure. KYRAN est le bon cadeau pour un joueur de plis, pas pour un duo.</p>`
   },
   conclusion: `<p>Quelle que soit la boîte, soignez le moment de la remise : ouvrez-la avant le gâteau plutôt qu’après, glissez la règle résumée sur un papier et ne promettez pas une partie complète si vous n’avez qu’une demi-heure. Pour prolonger la soirée avec d’autres idées autour des mêmes jeux, parcourez notre sélection de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux de soirée entre amis</a>.</p>`,
   faq: [
@@ -175,7 +175,7 @@ export default {
     },
     {
       q: `Quels jeux de cartes pas chers offrir, à moins de 15 € ?`,
-      a: `KYRAN (9,99 € en direct), Love Letter et Dobble (environ 12 € chacun) restent sous 15 €. Pour quelques euros de plus, Skull et Skyjo élargissent le choix. Jugez surtout le nombre de parties que la boîte offrira : un jeu bon marché qui reste au placard ne fait pas une économie.`
+      a: `KYRAN (9,99 € en direct), Love Letter (environ 12 €) et Dobble (environ 10 €) restent sous 15 €. Pour quelques euros de plus, Skull et Skyjo élargissent le choix. Jugez surtout le nombre de parties que la boîte offrira : un jeu bon marché qui reste au placard ne fait pas une économie.`
     },
     {
       q: `Quel jeu choisir pour un cadeau collectif entre collègues ou amis ?`,

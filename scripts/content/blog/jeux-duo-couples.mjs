@@ -21,12 +21,12 @@ export default {
   heroSubtitle: 'Sept jeux pour une soirée en tête-à-tête : quatre duels, trois jeux où l\'on gagne du même côté, et un guide pour trancher une fois les fiches lues.',
   heroImage: '/blog/images/lost-cities.jpg',
   heroCaption: 'Lost Cities, un duel élégant pour deux joueurs.',
-  intro: `<p>À deux, la première question n'est pas « quel jeu ? » mais « contre ou avec ? ». Cette page commence donc par les jeux eux-mêmes : quatre duels (Lost Cities, Schotten Totten, Love Letter, Star Realms), puis trois jeux coopératifs où le couple affronte le paquet (The Crew, Hanabi, The Game). Tous sont annoncés jouables à deux dans leur fiche technique. Les jeux qui commencent à trois joueurs, comme Skull, Wizard, For Sale ou notre propre jeu KYRAN, ont été écartés, car aucune variante ne les sauve en tête-à-tête. Le guide de choix arrive après les fiches, une fois chaque mécanique présentée. Et le soir où un ami se joint à vous, la sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a> prend le relais.</p>`,
+  intro: `<p>À deux, la première question n'est pas « quel jeu ? » mais « contre ou avec ? ». Cette page commence donc par les jeux eux-mêmes : quatre duels (Lost Cities, Schotten Totten, Love Letter, Star Realms), puis trois jeux coopératifs où le couple affronte le paquet (The Crew, Hanabi, The Game). Tous se jouent à deux, The Crew grâce à une variante de sa règle (la boîte annonce 3 à 5). Les jeux qui commencent à trois joueurs, comme Skull, Wizard, For Sale ou notre propre jeu KYRAN, ont été écartés, car leur règle de base ne prévoit pas de variante à deux. Le guide de choix arrive après les fiches, une fois chaque mécanique présentée. Et le soir où un ami se joint à vous, la sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a> prend le relais.</p>`,
   criteria: {
     heading: 'Après les fiches : quel jeu pour quel couple ?',
     html: `<p>Les sept fiches qui précèdent décrivent des mécaniques ; reste à savoir laquelle convient à votre duo. À deux, plus personne ne fait diversion : chaque choix touche directement l'autre, aucune alliance ne se noue, et l'écart de niveau se voit immédiatement. Quatre questions suffisent à trancher.</p>
 <h3>Vous défier ou vous épauler ?</h3>
-<p>Le duel offre une confrontation pure, mais il pardonne mal les différences d'expérience : dans Schotten Totten ou Lost Cities, celui qui calcule mieux gagne presque à tous les coups, et le hasard de la pioche est son seul correctif. La coopération supprime ce problème et crée une tension différente, celle de réussir ensemble, avec son propre piège : un partenaire qui dicte tous les coups. The Crew et Hanabi rationnent la parole pour l'empêcher, The Game interdit de citer un nombre exact. Notre page sur les <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux coopératifs en cartes</a> élargit cette moitié du choix.</p>
+<p>Le duel offre une confrontation pure, mais il pardonne mal les différences d'expérience : dans Schotten Totten ou Lost Cities, celui qui calcule mieux a l'avantage, et le hasard de la pioche est le seul correctif. La coopération supprime ce problème et crée une tension différente, celle de réussir ensemble, avec son propre piège : un partenaire qui dicte tous les coups. The Crew et Hanabi rationnent la parole pour l'empêcher, The Game interdit de citer un nombre exact. Notre page sur les <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux coopératifs en cartes</a> élargit cette moitié du choix.</p>
 <h3>L'un de vous joue-t-il bien plus souvent que l'autre ?</h3>
 <p>Si oui, laissez de côté, pour commencer, les duels où le calcul domine. Love Letter, où une pioche malheureuse renverse une manche, et Star Realms, dont la rangée d'achat change à chaque tour, laissent davantage de place au retournement. Les trois jeux coopératifs règlent la question autrement : l'écart de niveau devient une ressource, à condition que le plus aguerri ne joue pas à la place de l'autre.</p>
 <h3>Combien de texte êtes-vous prêts à lire ?</h3>
@@ -50,7 +50,7 @@ export default {
       pick: 'Pour des revanches enchaînées de vingt minutes avec de la lecture',
       paragraphs: [
         `Neuf bornes séparent les deux camps. Sur chacune, on aligne jusqu'à trois cartes (nombres de 1 à 9 en six couleurs) pour former la meilleure combinaison, à la manière du poker : suite de couleur, brelan, couleur, suite, puis simple total. Avec six cartes en main, on décide à chaque tour de renforcer une borne ou de la sacrifier pour en sauver une autre.`,
-        `L'astuce du jeu est de revendiquer une borne dès qu'on peut prouver que l'adversaire ne la battra plus, sans attendre qu'elle soit pleine. On gagne en tenant cinq bornes ou trois adjacentes. Comme les cartes déjà jouées indiquent ce qui reste dans le paquet, le comptage pèse plus que la chance. Limite : une main trop pauvre en hauts nombres vous condamne parfois à subir, et les parties finissent par se ressembler.`
+        `L'astuce du jeu est de revendiquer une borne dès qu'on peut prouver que l'adversaire ne la battra plus, sans attendre qu'elle soit pleine. On gagne en tenant cinq bornes ou trois adjacentes. Comme les cartes déjà jouées indiquent ce qui reste dans le paquet, le comptage compte beaucoup. Limite : une main trop pauvre en hauts nombres vous condamne parfois à subir, et les parties finissent par se ressembler.`
       ]
     },
     {
@@ -86,7 +86,7 @@ export default {
       pick: 'Pour un couple qui aime parler peu et déduire beaucoup',
       paragraphs: [
         `À deux, Hanabi donne cinq cartes à chacun : vous voyez la main complète de l'autre, mais jamais la vôtre. Un indice (une couleur ou un chiffre) désigne toutes les cartes concernées, et huit jetons seulement permettent d'en donner. Sans troisième paire d'yeux, une mauvaise interprétation ne vient jamais que de vous deux, ce qui rend les malentendus faciles à identifier et à corriger.`,
-        `Avantage du duo : les conventions se règlent à deux voix, sans débat. Défaut : la part de pioche pèse davantage qu'à quatre ou cinq, et un score parfait de 25 reste rare. Un risque à garder en tête : si l'un de vous prend le rôle de coach, la partie tourne au monologue et l'autre n'a plus de décision à prendre.`
+        `Avantage du duo : les conventions se règlent à deux voix, sans débat. Défaut : un risque à garder en tête : si l'un de vous prend le rôle de coach, la partie tourne au monologue et l'autre n'a plus de décision à prendre.`
       ]
     },
     {
@@ -119,7 +119,7 @@ export default {
     },
     {
       q: 'Peut-on jouer à deux à un jeu prévu pour trois joueurs ou plus ?',
-      a: `Non, lorsque la boîte annonce « à partir de 3 », il n'existe pas de variante officielle fiable à deux. C'est le cas de Skull, de Wizard et de KYRAN. Vérifiez toujours la plage de joueurs avant l'achat : elle figure dans le tableau de cette page pour chacun des sept jeux retenus.`
+      a: `Non, lorsque la boîte annonce « à partir de 3 », il n'existe pas de variante à deux dans la règle de base. C'est le cas de Skull, de la boîte de base de Wizard et de KYRAN. Vérifiez toujours la plage de joueurs avant l'achat : elle figure dans le tableau de cette page pour chacun des sept jeux retenus.`
     },
     {
       q: 'KYRAN se joue-t-il à deux ?',

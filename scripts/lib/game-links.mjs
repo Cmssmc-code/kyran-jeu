@@ -65,8 +65,8 @@ export const GAME_LINKS = {
     bgg: 'https://boardgamegeek.com/boardgame/8098/jungle-speed',
     wiki: 'https://fr.wikipedia.org/wiki/Jungle_Speed',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=jungle+speed',
-    designer: 'Thomas Vuarchex',
-    year: 1991,
+    designer: 'Thomas Vuarchex et Pierric Yakovenko',
+    year: null,
     imageCredit: 'Photo — Nicosmos, Wikimedia Commons, CC BY-SA 3.0'
   },
   uno: {

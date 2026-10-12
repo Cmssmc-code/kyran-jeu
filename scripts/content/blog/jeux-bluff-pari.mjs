@@ -14,7 +14,7 @@ export default {
     groups: [
       {
         heading: 'Mentir en face : le bluff pur',
-        html: `<p>Dans cette famille, le mensonge est une affirmation que n'importe qui peut contester sur-le-champ. Le défi se règle aussitôt, un disque ou un personnage perdu à la clé, d'où des parties courtes et nerveuses. Les deux jeux retenus font sortir des joueurs avant la fin : mieux vaut le savoir avant de les proposer.</p>`,
+        html: `<p>Dans cette famille, le mensonge est une affirmation que n'importe qui peut contester sur-le-champ. Le défi se règle aussitôt, un disque ou un personnage perdu à la clé, d'où des parties nerveuses. Les deux jeux retenus font sortir des joueurs avant la fin : mieux vaut le savoir avant de les proposer.</p>`,
         ids: ['skull', 'coup']
       },
       {
@@ -25,7 +25,7 @@ export default {
       },
       {
         heading: 'Parier sur sa main : annonces et enchères',
-        html: `<p>Personne n'est tenu de mentir : chacun s'engage sur ce que sa main rapportera, en plis ou en chèques. Wizard et KYRAN appartiennent à la famille des jeux à annonce exacte de plis, celle du Tarot Africain, que beaucoup appellent <a class="text-link" href="/whist-22.html">Whist 22</a> ; les <a class="text-link" href="/tarot-africain.html">règles du Tarot Africain</a> en donnent la version la plus dépouillée, avec 22 cartes de tarot. For Sale transpose cet engagement aux enchères.</p>`,
+        html: `<p>Personne n'est tenu de mentir : chacun s'engage ou mise sur ce que sa main rapportera, en plis ou en chèques. Wizard et KYRAN appartiennent à la famille des jeux à annonce exacte de plis, celle du Tarot Africain, que beaucoup appellent <a class="text-link" href="/whist-22.html">Whist 22</a> ; les <a class="text-link" href="/tarot-africain.html">règles du Tarot Africain</a> en donnent la version la plus dépouillée, avec 22 cartes de tarot. For Sale transpose cet engagement aux enchères.</p>`,
         ids: ['wizard', 'kyran', 'for-sale']
       }
     ]
@@ -36,7 +36,7 @@ export default {
     faq: 'Bluff, pari et rôles cachés : questions courantes',
     related: 'D’autres soirées à préparer'
   },
-  intro: `<p>« Jeu de bluff » désigne en réalité trois plaisirs distincts. Certains jeux demandent d'affirmer une chose fausse en regardant la table dans les yeux (Skull, Coup). D'autres vous confient un rôle secret à tenir toute la manche (Saboteur, Bang!). Les derniers n'exigent aucun mensonge : vous vous engagez sur ce que votre main va rapporter, et la lecture des autres fait la différence (Wizard, KYRAN, For Sale). Se tromper de famille, c'est sortir un jeu que la table n'a aucune envie de jouer. Les sept titres ci-dessous sont donc regroupés par famille, avec pour chacun le nombre minimal de joueurs, le risque d'élimination et la durée. Cette page reprend aussi nos anciens guides des <strong>jeux comme Skull</strong> et des <strong>jeux de trahison cachée</strong>.</p>`,
+  intro: `<p>« Jeu de bluff » désigne en réalité trois plaisirs distincts. Certains jeux demandent d'affirmer une chose fausse en regardant la table dans les yeux (Skull, Coup). D'autres vous confient un rôle secret à tenir toute la manche (Saboteur, Bang!). Les derniers n'exigent aucun mensonge : vous vous engagez sur ce que votre main va rapporter (Wizard, KYRAN) ou vous misez dessus (For Sale), et la lecture des autres fait la différence. Se tromper de famille, c'est sortir un jeu que la table n'a aucune envie de jouer. Les sept titres ci-dessous sont donc regroupés par famille, avec pour chacun le nombre minimal de joueurs, le risque d'élimination et la durée. Cette page reprend aussi nos anciens guides des <strong>jeux comme Skull</strong> et des <strong>jeux de trahison cachée</strong>.</p>`,
   criteria: {
     heading: 'Joueurs, élimination, ton : trois filtres avant d’acheter',
     html: `<p>La famille se choisit vite ; c'est entre deux jeux d'une même famille que l'hésitation commence. Trois filtres pratiques évitent le jeu qui tombe à plat le soir venu.</p>
@@ -65,7 +65,7 @@ export default {
       pick: 'Pour un duel de mensonges, ou une table de six pressée',
       paragraphs: [
         `Coup confie à chaque joueur deux personnages face cachée parmi cinq : Duc, Assassin, Capitaine, Ambassadeur et Comtesse. À son tour, on revendique l'action d'un personnage, qu'on le détienne ou non : le Duc encaisse des pièces, l'Assassin paie pour faire perdre un personnage à un adversaire. N'importe qui peut crier au mensonge, et le perdant de la contestation, menteur démasqué ou accusateur trop prompt, retourne l'un de ses deux personnages.`,
-        `C'est le bluff le plus frontal de la page, et le seul jouable à deux : environ un quart d'heure, dès 10 ans. Dire la vérité y devient parfois la meilleure ruse, puisqu'un contestataire qui se trompe se pénalise lui-même. Le défaut tient à l'effectif : à six, un joueur qui perd ses deux personnages dès les premiers tours peut attendre longtemps la partie suivante.`
+        `C'est le bluff le plus frontal de la page, et le seul jouable à deux : environ un quart d'heure. Dire la vérité y devient parfois la meilleure ruse, puisqu'un contestataire qui se trompe se pénalise lui-même. Le défaut tient à l'effectif : à six, un joueur qui perd ses deux personnages dès les premiers tours peut attendre longtemps la partie suivante.`
       ]
     },
     {
@@ -105,7 +105,7 @@ export default {
       pick: 'Pour bluffer par l’annonce, avec des vies visibles et une manche aveugle',
       paragraphs: [
         `KYRAN rend le pari obligatoire et y ajoute une contrainte : la somme des annonces ne peut jamais égaler le nombre de plis de la manche. Le dernier à parler se voit donc retirer un chiffre, parfois celui qu'il visait, et quelqu'un se trompera forcément. Chaque annonce devient une manœuvre : viser haut pour coincer son voisin, ou bas pour lui laisser le choix le plus inconfortable.`,
-        `La sanction se lit sur la table : un pari raté coûte autant de cartes Vie que l'écart, et ces cartes restent visibles de tous. La manche Mystique pousse l'idée au bout, avec une seule carte posée sur le front, que l'on ne voit pas, et un pari de 1 ou 0 fondé sur les cartes des autres. Les Pouvoirs ajoutent quelques coups fourrés, comme la Clairvoyance Antique, qui révèle en secret la plus forte carte d'un adversaire.`,
+        `La sanction se lit sur la table : un pari raté coûte autant de cartes Vie que l'écart, et les cartes Vie de chacun restent visibles de tous. La manche Mystique pousse l'idée au bout, avec une seule carte posée sur le front, que l'on ne voit pas, et un pari de 1 ou 0 fondé sur les cartes des autres. Les Pouvoirs ajoutent quelques coups fourrés, comme la Clairvoyance Antique, qui révèle en secret la plus forte carte d'un adversaire.`,
         `Ce n'est pas un jeu de mensonge pur : une table qui veut se défier en face sera mieux servie par Coup. De 3 à 6 joueurs, jamais à deux, environ 30 minutes, dès 8 ans ; les <a class="text-link" href="/regle.html">règles de KYRAN</a> existent aussi en vidéo de cinq minutes.`
       ]
     },
@@ -142,7 +142,7 @@ export default {
   faq: [
     {
       q: 'Quel jeu de bluff choisir à trois joueurs ?',
-      a: `Skull, qui démarre à trois et donne tout de suite la sensation du bluff. Coup accepte aussi trois joueurs, pour des parties encore plus courtes. Saboteur se joue à trois, mais avec un seul saboteur au plus, le soupçon retombe vite : gardez-le pour les tables plus nombreuses.`
+      a: `Skull, qui démarre à trois et donne tout de suite la sensation du bluff. Coup accepte aussi trois joueurs. Saboteur se joue à trois, mais avec un seul saboteur au plus, le soupçon retombe vite : gardez-le pour les tables plus nombreuses.`
     },
     {
       q: 'Quel jeu ressemble le plus à Skull ?',
@@ -158,7 +158,7 @@ export default {
     },
     {
       q: 'Peut-on aimer les jeux de bluff sans savoir mentir ?',
-      a: `Oui. Dans Wizard, For Sale ou KYRAN, on ne prononce aucun mensonge : on s'engage, puis on tient parole ou non. Le bluff naît de ce que l'annonce laisse deviner aux autres, sans qu'il faille jouer la comédie.`
+      a: `Oui. Dans Wizard et KYRAN, on ne prononce aucun mensonge : on s'engage, puis on tient parole ou non. Dans For Sale, le bluff reste muet. Le bluff naît de ce que l'annonce laisse deviner aux autres, sans qu'il faille jouer la comédie.`
     }
   ],
   related: ['jeux-soiree-amis', 'jeux-plis-comparatif', 'jeux-sans-elimination']

@@ -1,13 +1,13 @@
 export default {
   slug: 'jeux-cartes-6-joueurs',
-  title: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort',
+  title: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table',
   shortTitle: 'Jeux à 5 ou 6 joueurs',
-  metaTitle: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux sans temps mort',
-  description: `Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux où personne n'attend, et ce qui change entre cinq et six.`,
+  metaTitle: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table',
+  description: `Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux, et ce qui change entre cinq et six joueurs.`,
   category: 'Cartes',
   date: '2026-09-11',
   heroTitle: 'Jeux de cartes à <span class="accent">5 ou 6 joueurs</span>',
-  heroSubtitle: `Table impaire ou table pleine : huit jeux de cartes réglés pour cinq comme pour six, où l'on ne compte pas les tours des autres.`,
+  heroSubtitle: `Table impaire ou table pleine : huit jeux de cartes réglés pour cinq comme pour six.`,
   heroImage: '/blog/images/6-qui-prend.jpg',
   heroCaption: `6 qui prend ! — les cartes se révèlent toutes en même temps, à cinq comme à six.`,
   intro: `<p>Cinq ou six autour de la table, c'est l'effectif des soirées où l'on a invité « un couple de plus », et celui où beaucoup de boîtes montrent leurs limites. Le problème n'est pas la place, c'est l'attente : à cinq, on regarde quatre joueurs avant de rejouer ; à six, cinq. Les huit <strong>jeux de cartes pour 5 ou 6 joueurs</strong> retenus ici règlent ce problème de trois façons : faire jouer tout le monde en même temps, répartir la table en camps, ou donner du poids à chaque carte posée par un voisin. Tous se jouent à cinq comme à six ; pour chacun, nous indiquons ce qui change d'un effectif à l'autre (rôles, cartes, jetons) et le défaut à connaître. Si votre groupe tourne plutôt à quatre, la sélection des <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">jeux de cartes à 4 joueurs</a> est plus adaptée.</p>`,
@@ -67,7 +67,7 @@ export default {
       paragraphs: [
         `Chacun choisit une carte en secret, puis toute la table révèle en même temps : la durée d'un tour ne dépend donc pas du nombre de joueurs, ce qui fait de 6 qui prend ! le jeu le plus à l'aise de cette page quand la table se remplit. Les cartes se rangent par ordre croissant sur quatre rangées, et celui qui pose la sixième carte d'une rangée ramasse les cinq précédentes, avec leurs têtes de bœuf. Chaque joueur reçoit dix cartes par manche.`,
         `À cinq ou six, cinq ou six cartes arrivent sur seulement quatre rangées à chaque révélation : une rangée qui ne compte qu'une carte peut déborder dès le premier tour. Un 47 posé derrière un 42 paraît prudent, jusqu'à ce que d'autres joueurs glissent des cartes intermédiaires. C'est le sel du jeu et sa limite : on parie sur les choix des autres plus qu'on ne planifie, et un joueur méthodique n'en tire guère d'avantage.`,
-        `La durée affichée, environ 45 minutes, est longue pour un jeu aussi léger : fixer un seuil de points plus bas raccourcit la partie sans rien changer à la règle. La pose se résume aux quatre règles numérotées de la règle de Gigamic, ce qui en fait un bon premier jeu de soirée.`
+        `La durée affichée, environ 45 minutes, est longue pour un jeu aussi léger : convenir d'un seuil de points plus bas (variante maison) raccourcit la partie. Les règles de pose tiennent en quelques lignes, ce qui en fait un bon premier jeu de soirée.`
       ]
     },
     {
@@ -76,7 +76,7 @@ export default {
       pick: 'Pour une table qui aime miser sans s\'éterniser',
       paragraphs: [
         `For Sale est réglé pour que ses 30 immeubles soient tous en jeu à cinq comme à six : six tours d'enchères de cinq cartes dans le premier cas, cinq tours de six cartes dans le second. Chaque tour dévoile autant d'immeubles qu'il y a de joueurs, et l'on surenchérit à tour de rôle. Celui qui se retire prend le moins cher du lot et ne paie que la moitié de sa mise : abandonner coûte moins qu'on ne le croit.`,
-        `La seconde phase se joue en simultané : chacun choisit un immeuble de sa collection, tous les révèlent ensemble, et le plus élevé empoche le chèque le plus gros. Comme aucune carte n'est écartée à ces effectifs, un joueur attentif aux enchères sait exactement ce que ses rivaux ont encore en main. Défaut : la phase d'enchères s'étire si quelqu'un tergiverse, mais personne n'est éliminé et chacun garde une chance jusqu'au dernier chèque.`
+        `La seconde phase se joue en simultané : chacun choisit un immeuble de sa collection, tous les révèlent ensemble, et le plus élevé empoche le chèque le plus gros. Comme aucune carte n'est écartée à ces effectifs, un joueur attentif aux enchères peut déduire ce qu'il reste en main. Défaut : la phase d'enchères s'étire si quelqu'un tergiverse, mais personne n'est éliminé et chacun garde une chance jusqu'au dernier chèque.`
       ]
     },
     {
@@ -147,7 +147,7 @@ export default {
     },
     {
       q: 'Quel jeu de cartes à 6 joueurs choisir pour des débutants ?',
-      a: `6 qui prend ! tient en quatre règles de pose et No Thanks! se résume à une décision par tour. Codenames convient si deux personnes à l'aise acceptent le rôle de maître-espion. Pour KYRAN, la variante d'initiation, sans cartes Pouvoir ni Mystique, permet une manche d'essai ; à six, ses 36 cartes ne suffisent pas pour la manche à sept cartes, et l'Initiation en ligne commence alors à six cartes.`
+      a: `6 qui prend ! tient en quelques règles de pose et No Thanks! se résume à une décision par tour. Codenames convient si deux personnes à l'aise acceptent le rôle de maître-espion. Pour KYRAN, la variante d'initiation, sans cartes Pouvoir ni Mystique, permet une manche d'essai ; à six, ses 36 cartes ne suffisent pas pour la manche à sept cartes, et l'Initiation en ligne commence alors à six cartes.`
     },
     {
       q: 'Peut-on jouer en équipes à cinq ou six joueurs ?',

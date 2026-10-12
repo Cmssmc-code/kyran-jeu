@@ -31,18 +31,18 @@ export default {
     faq: 'Jouer aux cartes à quatre : questions pratiques',
     related: 'À trois, à six, ou autour de la belote'
   },
-  intro: `<p>Quatre joueurs, ce sont deux couples d'amis, une famille autour de la table ou un groupe de collègues. Ce chiffre ouvre deux voies, et les sept jeux ci-dessous sont rangés selon celle qu'ils prennent. <strong>En équipe</strong> : Codenames oppose deux binômes, comme à la belote ; The Crew réunit les quatre joueurs dans un seul camp, avec un paquet de 40 cartes qui se partage ici sans reste. <strong>Chacun pour soi</strong> : Wizard et KYRAN pour les plis à annonce, Skull pour le bluff, Love Letter, dont quatre est le plafond, et Skyjo pour mêler les âges. Chaque fiche précise ce que le format à quatre change, et les cas où un autre jeu fait mieux.</p>`,
+  intro: `<p>Quatre joueurs, ce sont deux couples d'amis, une famille autour de la table ou un groupe de collègues. Ce chiffre ouvre deux voies, et les sept jeux ci-dessous sont rangés selon celle qu'ils prennent. <strong>En équipe</strong> : Codenames oppose deux binômes, comme à la belote ; The Crew réunit les quatre joueurs dans un seul camp, avec un paquet de 40 cartes qui se partage ici sans reste. <strong>Chacun pour soi</strong> : Wizard et KYRAN pour les plis à annonce, Skull pour le bluff, Love Letter (dont l'édition classique plafonne à quatre), et Skyjo pour mêler les âges. Chaque fiche précise ce que le format à quatre change, et les cas où un autre jeu fait mieux.</p>`,
   criteria: {
     heading: 'Ce que le chiffre quatre change au choix',
-    html: `<p>Quatre est le seul effectif où l'on peut former deux équipes égales sans bricolage, et celui où beaucoup de jeux répartissent leurs cartes sans reste : 52 cartes donnent 13 par main, 40 cartes en donnent 10, et les 60 cartes de Wizard s'étalent sur 15 manches pleines. Cette régularité facilite la vie de l'organisateur, mais elle ne garantit pas la qualité du jeu.</p>
+    html: `<p>Quatre est un effectif où l'on forme deux équipes égales sans bricolage, et celui où beaucoup de jeux répartissent leurs cartes sans reste : 52 cartes donnent 13 par main, 40 cartes en donnent 10, et les 60 cartes de Wizard s'étalent sur 15 manches pleines. Cette régularité facilite la vie de l'organisateur, mais elle ne garantit pas la qualité du jeu.</p>
 <h3>Première décision : équipes ou solo ?</h3>
 <p>Les jeux en équipes demandent de composer les binômes avec soin. Deux couples qui se retrouvent chacun face à son conjoint jouent souvent en connivence ; mélanger les paires change l'ambiance. Si les niveaux sont inégaux, placez l'habitué avec le débutant plutôt que contre lui. Les jeux solo (Wizard, KYRAN, Skull) évitent ce casse-tête mais exposent le débutant à la comparaison directe avec trois adversaires. Le coopératif, lui, supprime les camps : The Crew en est l'exemple le plus abouti à ce format.</p>
 <h3>Ce qu'il faut regarder ensuite</h3>
 <ul>
 <li><strong>La durée d'un tour.</strong> À quatre, on attend trois autres joueurs. Un tour de dix secondes (Love Letter, Skyjo) ne gêne personne ; un tour de deux minutes (jeux d'optimisation) transforme les trois autres en spectateurs.</li>
-<li><strong>Le plafond ou le plancher du jeu.</strong> Love Letter s'arrête à quatre, Skull, Wizard et KYRAN démarrent à trois, Codenames préfère les tables plus grandes. Un jeu à son maximum est tendu, un jeu à son minimum peut manquer de matière.</li>
+<li><strong>Le plafond ou le plancher du jeu.</strong> Love Letter, dans son édition classique, s'arrête à quatre (celle de 2025 va jusqu'à six), Skull, Wizard et KYRAN démarrent à trois, Codenames préfère les tables plus grandes. Un jeu à son maximum est tendu, un jeu à son minimum peut manquer de matière.</li>
 <li><strong>L'élimination.</strong> Dans Skull ou Love Letter, un joueur sorti attend la fin de la manche ; à quatre, l'attente reste courte, mais elle se remarque dès que la manche s'éternise.</li>
-<li><strong>L'écart d'âge et de niveau.</strong> Skyjo et KYRAN se jouent dès 8 ans ; Codenames, Love Letter, Skull, Wizard et The Crew sont indiqués à partir de 10 ans.</li>
+<li><strong>L'écart d'âge et de niveau.</strong> Skyjo et KYRAN se jouent dès 8 ans ; Skull, Wizard et The Crew sont indiqués à partir de 10 ans ; Codenames et Love Letter selon l'édition, de 10 à 14 ans.</li>
 </ul>
 <p>Enfin, gardez en tête la fréquence de vos soirées : un jeu qu'on joue une fois par mois peut avoir des règles plus longues qu'un jeu d'apéro qu'on ressort chaque semaine. Si votre groupe grandit souvent, notre page sur les <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html">jeux de cartes à 5 ou 6 joueurs</a> vous évite de racheter une boîte à chaque nouvel invité.</p>`
   },
@@ -52,7 +52,7 @@ export default {
       type: 'Équipes, indices',
       pick: 'Pour deux contre deux, avec un maître-espion par camp',
       paragraphs: [
-        `Codenames à quatre se joue en deux équipes de deux : un maître-espion qui voit la grille-clé, un agent de terrain qui devine. Les 25 mots posés sur la table cachent huit ou neuf agents par camp, des passants innocents et un assassin. L'indice se résume à un mot et un chiffre, ce qui force à une précision de vocabulaire que les autres jeux de la liste n'exigent pas.`,
+        `Codenames à quatre se joue en deux équipes de deux : un maître-espion qui voit la grille-clé, un agent de terrain qui devine. Les 25 mots posés sur la table cachent les agents de chaque camp, des passants innocents et un assassin. L'indice se résume à un mot et un chiffre, ce qui force à une précision de vocabulaire que les autres jeux de la liste n'exigent pas.`,
         `Défaut propre à ce format : l'agent de terrain décide seul, sans coéquipier avec qui débattre, et la partie dépend surtout de la finesse des indices. Atout : la composition des équipes (deux couples séparés, parent et enfant) donne la tonalité de la soirée. Codenames est annoncé jusqu'à huit joueurs et plus : c'est le jeu à ressortir quand la table s'agrandit.`
       ]
     },
@@ -97,7 +97,7 @@ export default {
       type: 'Déduction express',
       pick: 'Pour un apéro à quatre, entre deux jeux plus longs',
       paragraphs: [
-        `Quatre est le plafond de Love Letter, et c'est là que la partie s'emballe : il suffit de quatre marques de faveur pour gagner, contre davantage en duel. Une manche s'éteint dès qu'il ne reste qu'un joueur en lice ou que la pioche est vide, et une élimination ne vous écarte que quelques minutes.`,
+        `Quatre est le plafond de Love Letter dans l'édition classique de 2012 (celle de 2025 monte à six), et c'est là que la partie s'emballe : il suffit de quatre marques de faveur pour gagner, contre davantage en duel. Une manche s'éteint dès qu'il ne reste qu'un joueur en lice ou que la pioche est vide, et une élimination ne vous écarte que quelques minutes.`,
         `La décision centrale est le choix de la cible : un Garde ou un Baron peut éliminer un adversaire, mais l'attaque profite aux deux autres. La Comtesse, qu'il faut défausser en présence du Roi ou du Prince, ajoute un bluff discret. Défaut : le hasard de la pioche domine, ce qui convient à un apéro mais pas à une soirée de joueurs en quête de contrôle.`
       ]
     },
@@ -113,7 +113,7 @@ export default {
   ],
   verdict: {
     heading: 'Le jeu à sortir quand vous êtes quatre',
-    html: `<p>Une seule boîte pour une table de quatre ? <strong>The Crew</strong> : 40 cartes pour quatre mains de dix, une campagne qui se renouvelle et aucun perdant. Pour une table qui préfère le chacun pour soi, <strong>KYRAN</strong> rend une partie complète en une demi-heure, là où Wizard en demande souvent davantage ; Wizard reste préférable pour ceux qui aiment les longues soirées de calcul. Codenames fonctionne à quatre mais atteint son meilleur niveau à six ou huit, et Skyjo est le plus sûr dès que des enfants de huit ans s'installent à la table. Love Letter, enfin, sert d'entracte entre deux jeux plus longs plutôt que de plat principal.</p>`
+    html: `<p>Une seule boîte pour une table de quatre ? <strong>The Crew</strong> : 40 cartes pour quatre mains de dix, une campagne qui se renouvelle et aucun perdant. Pour une table qui préfère le chacun pour soi, <strong>KYRAN</strong> rend une partie complète en une demi-heure, là où Wizard en demande souvent davantage ; Wizard reste préférable pour ceux qui aiment les longues soirées de calcul. Codenames fonctionne à quatre mais gagne en intérêt à six joueurs ou plus, et Skyjo est le plus sûr dès que des enfants de huit ans s'installent à la table. Love Letter, enfin, sert d'entracte entre deux jeux plus longs plutôt que de plat principal.</p>`
   },
   conclusion: `<p>Une table de quatre accepte presque tout, ce qui rend le choix plus délicat qu'il n'y paraît : mieux vaut viser deux jeux complémentaires, l'un en équipe et l'autre chacun pour soi, que six boîtes que l'on n'ouvrira qu'une fois. Si l'un de vos invités déclare forfait, la page <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a> vous aide à ajuster la soirée.</p>`,
   faq: [
@@ -131,7 +131,7 @@ export default {
     },
     {
       q: 'Quels jeux de cartes à 4 joueurs pour des enfants ?',
-      a: `Skyjo et KYRAN se jouent dès 8 ans ; Codenames, Love Letter, Skull, Wizard et The Crew sont indiqués à partir de 10 ans. Pour un mélange d'âges, Skyjo demande le moins de réflexion, et la variante d'initiation de KYRAN, sans cartes Pouvoir ni Mystique, simplifie les premières manches.`
+      a: `Skyjo et KYRAN se jouent dès 8 ans ; Skull, Wizard et The Crew sont indiqués à partir de 10 ans ; Codenames et Love Letter selon l'édition, de 10 à 14 ans. Pour un mélange d'âges, Skyjo demande le moins de réflexion, et la variante d'initiation de KYRAN, sans cartes Pouvoir ni Mystique, simplifie les premières manches.`
     },
     {
       q: 'Quel jeu de cartes à 4 joueurs dure moins de 20 minutes ?',

@@ -17,7 +17,7 @@ export default {
     groups: [
       {
         heading: `Pour la tablée du réveillon`,
-        html: `<p>Trois boîtes pour la table où se croisent enfants, parents et grands-parents. Elles se comprennent sans livret et ne laissent personne de côté, mais n’ont pas le même plafond : Timeline accueille huit joueurs, Dixit six, Hanabi cinq. Comptez vos convives avant de choisir, et réservez Hanabi à une famille patiente : c’est le seul des trois où tout le monde gagne ou perd ensemble. D’autres titres sans perdant désigné figurent parmi nos <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux de cartes coopératifs</a>.</p>`,
+        html: `<p>Trois boîtes pour la table où se croisent enfants, parents et grands-parents. Elles s’expliquent vite et ne laissent personne de côté, mais n’ont pas le même plafond : Timeline accueille six à huit joueurs selon la boîte, Dixit six (huit dans l’édition actuelle), Hanabi cinq. Comptez vos convives avant de choisir, et réservez Hanabi à une famille patiente : c’est le seul des trois où tout le monde gagne ou perd ensemble. D’autres titres sans perdant désigné figurent parmi nos <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux de cartes coopératifs</a>.</p>`,
         ids: [`dixit`, `timeline`, `hanabi`]
       },
       {
@@ -27,7 +27,7 @@ export default {
       },
       {
         heading: `Pour un ado ou un amateur de cartes`,
-        html: `<p>L’adolescent veut un jeu qu’il sortira devant ses amis ; l’amateur, un jeu qui respecte ses habitudes de belote ou de tarot. Codenames répond au premier par les mots et les équipes, KYRAN au second par les plis et le pari. Ni l’un ni l’autre ne convient à un tête-à-tête : Codenames s’appauvrit sous quatre joueurs, et KYRAN ne se joue jamais à deux.</p>`,
+        html: `<p>L’adolescent veut un jeu qu’il sortira devant ses amis ; l’amateur, un jeu qui respecte ses habitudes de belote ou de tarot. Codenames répond au premier par les mots et les équipes, KYRAN au second par les plis et le pari. Ni l’un ni l’autre ne convient à un tête-à-tête : la partie standard de Codenames demande quatre joueurs, et KYRAN ne se joue jamais à deux.</p>`,
         ids: [`codenames`, `kyran`]
       }
     ]
@@ -61,7 +61,7 @@ export default {
       pick: `Pour une tablée mixte, de l’enfant de huit ans à la grand-mère`,
       paragraphs: [
         `Avec environ 30 €, Dixit est la boîte la plus chère de cette page, et la seule dont les grandes cartes illustrées se regardent autant qu’elles se jouent. Un conteur choisit une carte dans sa main et l’évoque par un mot, une phrase ou un bruit ; chacun glisse ensuite une carte susceptible de convenir, puis tout le monde vote pour retrouver l’originale. Ni trop évident, ni trop obscur : l’indice parfait ne séduit qu’une partie de la table.`,
-        `Ce jeu convient aux familles où l’on ne maîtrise pas les jeux modernes, parce que personne n’y part avec l’avantage de l’expérience : un enfant imagine souvent des indices plus justes qu’un adulte. À trois joueurs, en revanche, les votes manquent de matière et la partie perd de sa saveur. Assurez-vous donc de quatre convives ou plus avant de l’offrir, et gardez en tête que son prix en fait le cadeau le moins accessible du lot.`
+        `Ce jeu convient aux familles où l’on ne maîtrise pas les jeux modernes, parce que personne n’y part avec l’avantage de l’expérience : un enfant imagine souvent des indices plus justes qu’un adulte. À trois joueurs, chaque non-conteur joue deux cartes, mais la partie reste plus étroite qu’à quatre ou cinq. Assurez-vous donc de quatre convives ou plus avant de l’offrir, et gardez en tête que son prix en fait le cadeau le moins accessible du lot.`
       ]
     },
     {
@@ -100,7 +100,7 @@ export default {
       type: `Plis coopératifs`,
       pick: `Pour un duo ou un petit groupe qui aime relever des défis`,
       paragraphs: [
-        `The Crew reprend la logique d’un jeu de plis, mais en équipe : tous visent le même objectif, par exemple remporter tel pli avec telle carte, et personne n’a le droit d’annoncer sa main. Son vrai atout de cadeau est la campagne : cinquante missions environ, de difficulté croissante, qui occupent les soirées entre Noël et le Nouvel An. Il accepte de deux à cinq joueurs : il sert au tête-à-tête comme à la petite tablée qui reçoit.`,
+        `The Crew reprend la logique d’un jeu de plis, mais en équipe : tous visent le même objectif, par exemple remporter tel pli avec telle carte, et personne n’a le droit d’annoncer sa main. Son vrai atout de cadeau est la campagne : cinquante missions environ, de difficulté croissante, qui occupent les soirées entre Noël et le Nouvel An. Il se joue de trois à cinq joueurs en partie standard, avec une variante à deux dans la règle : il peut servir au tête-à-tête comme à la petite tablée qui reçoit.`,
         `Une condition pour réussir ce cadeau : que le destinataire connaisse déjà la notion de pli et d’atout, sans quoi la première soirée sert surtout à comprendre les cartes. Un parent et son adolescent habitué aux jeux vidéo coopératifs y retrouvent en revanche vite la même tension. Le jeu réclame de la concentration, donc mieux vaut le sortir avant le fromage qu’après le digestif.`
       ]
     },
@@ -111,7 +111,7 @@ export default {
       pick: `Pour l’adolescent et la bande d’amis qui parle beaucoup`,
       paragraphs: [
         `Offrir Codenames à un adolescent, c’est lui donner un jeu qui sert dès que quatre personnes se trouvent dans la même pièce, sans livret à rallonge. Deux équipes se disputent une grille de vingt-cinq mots ; un maître espion souffle un indice d’un seul mot, accompagné d’un nombre, que ses coéquipiers doivent relier aux bons mots, en évitant l’assassin. À environ 20 €, la boîte reste dans la moyenne haute de cette liste.`,
-        `Les équipes se forment sans effort à quatre ; à deux ou trois, le jeu perd son principe et s’appauvrit. Le piège du cadeau tient aux références : les indices reposent sur des mots, et un grand-parent n’a pas toujours les repères d’un adolescent. Le mélange des générations peut devenir un atout, à condition de ne pas regrouper tous les adultes dans la même équipe, et la boîte dépanne aussi le soir du réveillon quand la table compte six ou huit convives.`
+        `Les équipes se forment sans effort à quatre ; la partie standard se joue à partir de quatre ; à deux ou trois, il existe une variante à part. Le piège du cadeau tient aux références : les indices reposent sur des mots, et un grand-parent n’a pas toujours les repères d’un adolescent. Le mélange des générations peut devenir un atout, à condition de ne pas regrouper tous les adultes dans la même équipe, et la boîte dépanne aussi le soir du réveillon quand la table compte six ou huit convives.`
       ]
     },
     {
@@ -120,7 +120,7 @@ export default {
       type: `Plis et paris`,
       pick: `Pour l’amateur de belote ou de tarot, de trois à six joueurs`,
       paragraphs: [
-        `Ce cadeau s’adresse à ceux qui ont grandi avec les jeux de cartes à plis. KYRAN conserve le principe de la levée, mais impose un pari avant chaque manche : la somme des paris ne peut jamais égaler le nombre de plis, si bien qu’au moins un joueur se trompe toujours. Il se joue de trois à six, en environ trente minutes, dès huit ans, dans une boîte rigide avec des cartes toilées. Son principe descend du tarot africain, que beaucoup d’amateurs de tarot connaissent déjà.`,
+        `Ce cadeau s’adresse à ceux qui ont grandi avec les jeux de cartes à plis. KYRAN conserve le principe de la levée, mais impose un pari avant chaque manche : la somme des paris ne peut jamais égaler le nombre de plis, si bien qu’au moins un joueur se trompe toujours. Il se joue de trois à six, en environ trente minutes, dès huit ans, dans une boîte rigide avec des cartes toilées. Son principe descend du tarot africain.`,
         `Côté pratique, la boutique le propose à 9,99 € et expédie sous 24 à 48 heures ; le reste dépend du transporteur et aucune date n’est garantie, donc commandez tôt sur la <a class="text-link" href="/commander.html">page de commande de KYRAN</a>. KYRAN ne se joue pas à deux, ce qui l’écarte pour un couple. Le pari obligatoire demande une manche d’apprentissage : la variante d’initiation, sans cartes Pouvoir ni Mystique, aide à démarrer, et les <a class="text-link" href="/video-regles.html">règles en vidéo</a> durent cinq minutes.`
       ]
     }
@@ -133,7 +133,7 @@ export default {
   faq: [
     {
       q: `Quel jeu de société offrir à Noël pour toute la famille ?`,
-      a: `Choisissez d’abord selon le nombre de convives : Timeline accueille jusqu’à huit joueurs, Dixit jusqu’à six, Hanabi jusqu’à cinq. Pour une tablée de plusieurs générations qui n’a pas l’habitude des jeux, Dixit et Timeline demandent le moins d’apprentissage.`
+      a: `Choisissez d’abord selon le nombre de convives : Timeline accueille six à huit joueurs selon la boîte, Dixit jusqu’à six (huit dans l’édition actuelle), Hanabi jusqu’à cinq. Pour une tablée de plusieurs générations qui n’a pas l’habitude des jeux, Dixit et Timeline demandent le moins d’apprentissage.`
     },
     {
       q: `Quel jeu de cartes offrir à un adolescent pour Noël ?`,
@@ -141,7 +141,7 @@ export default {
     },
     {
       q: `Quel jeu offrir à un couple pour Noël ?`,
-      a: `Lost Cities est conçu uniquement pour deux joueurs ; The Crew démarre aussi à deux et monte jusqu’à cinq. À l’inverse, KYRAN et Dixit exigent au moins trois personnes. Si le couple reçoit souvent du monde, choisissez un jeu qui accepte les deux configurations.`
+      a: `Lost Cities est conçu uniquement pour deux joueurs ; The Crew se joue à deux grâce à une variante de sa règle, et monte jusqu’à cinq. À l’inverse, KYRAN et Dixit exigent au moins trois personnes. Si le couple reçoit souvent du monde, choisissez un jeu qui accepte les deux configurations.`
     },
     {
       q: `Quel budget prévoir pour un jeu de société cadeau de Noël ?`,

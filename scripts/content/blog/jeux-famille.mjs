@@ -1,8 +1,8 @@
 export default {
   slug: 'jeux-famille',
-  title: 'Jeux de société en famille : 8 jeux de cartes dès 8 ans',
+  title: 'Jeux de société en famille : 8 jeux de cartes dès 6 ans',
   shortTitle: 'Jeux de cartes en famille',
-  metaTitle: 'Jeux de société en famille dès 8 ans : 8 choix 2026',
+  metaTitle: 'Jeux de société en famille dès 6 ans : 8 choix 2026',
   description: 'Dixit, Timeline, Dobble, Skyjo… 8 jeux de cartes où enfants et adultes jouent à armes égales, avec des parties qui finissent avant le coucher.',
   category: 'Famille',
   date: '2026-05-07',
@@ -87,7 +87,7 @@ export default {
       type: 'Déduction éclair',
       pick: 'Pour les ados dès 10 ans et les soirées de dernière minute',
       paragraphs: [
-        `Love Letter est annoncé dès 10 ans : les enfants de huit et neuf ans n’y ont pas leur place d’office. Il figure ici pour les fratries plus âgées, parce que l’édition de base ne contient que seize cartes et que chaque manche dure quelques minutes ; on s’arrête où l’on veut sans abandonner une partie en cours. L’effet de chaque personnage est écrit sur sa carte, personne n’a de tableau à mémoriser.`,
+        `Love Letter est annoncé dès 10 ans : les enfants de huit et neuf ans n’y ont pas leur place d’office. Il figure ici pour les fratries plus âgées, parce que l’édition classique ne contient que seize cartes et que chaque manche dure quelques minutes ; on s’arrête où l’on veut sans abandonner une partie en cours. L’effet de chaque personnage est écrit sur sa carte, personne n’a de tableau à mémoriser.`,
         `Deux limites à connaître. Le jeu s’arrête à quatre joueurs, donc une grande famille devra se scinder en deux tables. Et un joueur peut être éliminé dès les premiers tours d’une manche : l’attente est brève, mais un enfant sensible le remarquera, surtout s’il est le seul à tomber trois fois de suite.`
       ]
     },
@@ -97,7 +97,7 @@ export default {
       pick: 'Pour les familles de 3 à 6 joueurs déjà à l’aise avec les plis',
       paragraphs: [
         `KYRAN est indiqué dès 8 ans, mais c’est le jeu le plus calculatoire de cette liste : annoncer le nombre exact de plis que l’on va gagner oblige à évaluer sa main avant de jouer. La variante d’initiation retire les cartes Pouvoir et la carte Mystique, pour qu’un enfant ne manipule que la valeur de ses cartes, de 1 à 36. On peut aussi s’exercer d’abord à l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a>, sans sortir la boîte.`,
-        `Deux défauts pour une famille : il ne se joue pas à deux, donc un parent seul avec un enfant doit trouver un troisième joueur, et perdre des vies après un pari raté peut décourager un enfant qui se trompe de deux plis. Un détail rassure : au moins un joueur se trompe à chaque manche, l’erreur n’est donc jamais celle d’un seul. Les <a class="text-link" href="/regle.html">règles complètes</a> tiennent en une vidéo de cinq minutes.`
+        `Deux défauts pour une famille : il ne se joue pas à deux, donc un parent seul avec un enfant doit trouver un troisième joueur, et perdre des vies après un pari raté peut décourager un enfant qui se trompe de deux plis. Un détail rassure : au moins un joueur se trompe à chaque manche, rater un pari est donc banal. Les <a class="text-link" href="/regle.html">règles complètes</a> tiennent en une vidéo de cinq minutes.`
       ]
     }
   ],
@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'Quels jeux de cartes pour plus de cinq joueurs en famille ?',
-      a: 'Dobble, Skyjo et Timeline acceptent jusqu’à 8 joueurs. Dixit, Llama et KYRAN s’arrêtent à 6, Hanabi à 5 et Love Letter à 4. Pour une grande tablée avec les cousins, Dobble est le plus simple à lancer ; Skyjo demande plus de patience, car les tours s’allongent.'
+      a: 'Dobble et Skyjo acceptent jusqu’à 8 joueurs, Timeline jusqu’à 6 ou 8 selon la boîte. Llama et KYRAN s’arrêtent à 6, Dixit à 6 (édition d’origine) ou 8 (édition 2022), Hanabi à 5 et Love Letter à 4 (édition classique ; 6 dans celle de 2025). Pour une grande tablée avec les cousins, Dobble est le plus simple à lancer ; Skyjo demande plus de patience, car les tours s’allongent.'
     },
     {
       q: 'KYRAN peut-il se jouer avec des enfants ?',

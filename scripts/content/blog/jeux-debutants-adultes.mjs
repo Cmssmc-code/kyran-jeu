@@ -34,7 +34,7 @@ export default {
       type: 'Culture et placement',
       pick: 'Pour une première partie sans aucun terme technique à apprendre',
       paragraphs: [
-        `Timeline convient en premier jeu parce que son vocabulaire se résume à un geste : poser une carte à gauche ou à droite d’une suite déjà alignée. Aucune main à cacher, aucun calcul. Chaque carte porte un événement sur une face et sa date sur l’autre ; si vous la placez au mauvais endroit, elle est écartée et vous en recevez une nouvelle. Une explication de trente secondes suffit pour démarrer, à deux comme à huit joueurs.`,
+        `Timeline convient en premier jeu parce que son vocabulaire se résume à un geste : poser une carte à gauche ou à droite d’une suite déjà alignée. Aucun calcul. Chaque carte porte un événement sur une face et sa date sur l’autre ; si vous la placez au mauvais endroit, elle est écartée et vous en recevez une nouvelle. Une explication très courte suffit pour démarrer, de 2 à 6 joueurs selon l’édition (jusqu’à 8 sur certaines boîtes).`,
         `Le seul obstacle est culturel, pas technique : si votre table connaît mal les inventions ou l’histoire, les placements deviennent des paris au hasard et l’intérêt retombe. Le choix de l’édition compte donc davantage que la règle. Ce que Timeline enseigne sans le dire : jouer chacun son tour et viser le premier à se débarrasser de ses cartes, exactement le but de la marche suivante.`
       ]
     },
@@ -62,10 +62,10 @@ export default {
       id: 'love-letter',
       subtitle: 'la carte qu’il faut protéger',
       type: 'Déduction',
-      pick: 'Pour goûter à la déduction avec seize cartes seulement en tête',
+      pick: 'Pour goûter à la déduction avec peu de cartes en tête',
       paragraphs: [
-        `Love Letter introduit l’idée qu’une carte gardée en main est une information à protéger. Avec huit personnages et jamais plus de deux cartes à la fois, tout se retient sans effort. À chaque tour, on pioche puis on joue une carte dont l’effet est écrit dessus, ce qui évite l’exercice de mémoire de la notice. L’adulte découvre ici qu’un jeu de quinze minutes peut rester tactique.`,
-        `À signaler : à deux ou trois joueurs, la pioche décide parfois de la manche, et un joueur peut se retrouver éliminé après deux tours, avec la sensation d’avoir peu joué. Les manches sont si courtes que cela passe, mais mieux vaut prévenir la table. Le plafond de quatre joueurs et l’âge de 10 ans indiqué sur la boîte sont à garder en tête.`
+        `Love Letter introduit l’idée qu’une carte gardée en main est une information à protéger. Avec peu de personnages à retenir et jamais plus de deux cartes à la fois, tout se retient sans effort. À chaque tour, on pioche puis on joue une carte dont l’effet est écrit dessus, ce qui évite l’exercice de mémoire de la notice. L’adulte découvre ici qu’un jeu de quinze minutes peut rester tactique.`,
+        `À signaler : à deux ou trois joueurs, la pioche décide parfois de la manche, et un joueur peut se retrouver éliminé après deux tours, avec la sensation d’avoir peu joué. Les manches sont si courtes que cela passe, mais mieux vaut prévenir la table. Le plafond de quatre joueurs de l’édition classique (six dans celle de 2025) et l’âge indiqué, variable selon l’éditeur, sont à garder en tête.`
       ]
     },
     {
@@ -105,7 +105,7 @@ export default {
   faq: [
     {
       q: 'Par quel jeu de cartes commencer quand on est adulte et débutant ?',
-      a: 'Timeline si votre groupe aime la culture générale, Skyjo si vous préférez un vrai jeu de cartes avec pioche et défausse. Les deux s’expliquent en quelques minutes, acceptent de 2 à 8 joueurs et durent entre un quart d’heure et une demi-heure.'
+      a: 'Timeline si votre groupe aime la culture générale, Skyjo si vous préférez un vrai jeu de cartes avec pioche et défausse. Les deux s’expliquent en quelques minutes, acceptent de 2 à 6 joueurs au moins, davantage selon l’édition et durent entre un quart d’heure et une demi-heure.'
     },
     {
       q: 'C’est quoi un pli dans un jeu de cartes ?',
@@ -117,7 +117,7 @@ export default {
     },
     {
       q: 'Quel jeu choisir après Uno quand on veut plus de réflexion ?',
-      a: 'Skyjo garde la pioche et la défausse d’Uno mais ajoute une décision à chaque tour, et Love Letter condense la déduction dans seize cartes. Choisissez le premier pour une table nombreuse, le second pour un petit groupe de deux à quatre joueurs.'
+      a: 'Skyjo garde la pioche et la défausse d’Uno mais ajoute une décision à chaque tour, et Love Letter condense la déduction dans peu de cartes. Choisissez le premier pour une table de quatre à six, le second pour un petit groupe (deux à quatre joueurs dans l’édition classique).'
     },
     {
       q: 'Combien de joueurs faut-il pour débuter ?',
@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'Les jeux de cartes pour débuter coûtent-ils cher ?',
-      a: `Non : comptez environ 10 € pour Uno, 12 € pour Love Letter, 15 € pour Timeline et Skyjo, et 9,99 € pour KYRAN sur son site. Pour d’autres idées rangées par prix, notre sélection de <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes à offrir selon le budget</a> va plus loin.`
+      a: `Non : comptez environ 14 € pour Uno, 12 € pour Love Letter, 11 € pour Timeline, 15 € pour Skyjo, et 9,99 € pour KYRAN sur son site. Pour d’autres idées rangées par prix, notre sélection de <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes à offrir selon le budget</a> va plus loin.`
     }
   ],
   related: ['jeux-famille', 'jeux-cartes-adultes', 'jeux-soiree-amis']

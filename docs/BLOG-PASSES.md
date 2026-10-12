@@ -77,6 +77,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-05 | Contrôle visuel des 31 images de jeux : 18 problèmes confirmés. Crédits corrigés (12 jeux) ; images retirées des fiches Just One (boîte de PS2), For Sale (photo de livre), Llama (autre jeu), Dixit (Dixit Jinx), The Mind (source inconnue). | toutes les fiches | — | (cette PR) |
 | 2026-10-07 | Correction : images d'en-tête fausses remplacées par des visuels KYRAN du dépôt (`for-sale.jpg` = photo ancienne sans rapport, `dixit.jpg` = Dixit Jinx, `the-mind.jpg` = licence inconnue), légendes qui décrivent l'image. **Sujet pris : ne pas le reprendre.** | `jeux-draft-encheres`, `jeux-comme-dixit`, `jeux-famille`, `jeux-memoire-concentration` | — | (cette PR) |
 | 2026-10-07 | Rattrapage du mercredi : rafraîchissement, Love Letter précisé (édition classique 16 cartes, 2 à 4 joueurs ; Z-Man 2025 21 cartes, 2 à 6 ; même réglage à trois : 5 faveurs, 1 carte écartée). Sources : 64 Ounce Games, Asmodee (Eco Box), regles-du-jeu.net, Opinionated Gamers, Play-in, Esprit Jeu. | `jeux-3-joueurs` | jeux de cartes 3 joueurs | (cette PR) |
+| 2026-10-12 | Rafraîchissement : faits des 7 jeux revérifiés (Dobble, Coup, The Mind, Skyjo, No Thanks!, Love Letter, KYRAN du dépôt). Love Letter : deux éditions (16 cartes / 2 à 4 ; Z-Man 2025 : 21 cartes / 2 à 6), durée 15 à 20 min ; âge de Coup retiré du texte (13+ chez Indie Boards & Cards, 10+ chez d'autres revendeurs). Sources : Esprit Jeu (Dobble, Skyjo, Non Merci, Love Letter), Miniature Market (Coup), Play-in (The Mind, Love Letter), Asmodee (Love Letter), 64 Ounce Games. **Sujet pris : ne pas le reprendre.** | `jeux-vacances-voyage` | jeux de cartes vacances | (cette PR) |
 
 ## En attente
 
@@ -88,7 +89,7 @@ Rafraîchissements repérés (par ordre de priorité) :
 2. **Autres articles à revérifier** (relevé du 5 octobre 2026 lors de `alternatives-uno`) : Love Letter existe
    en deux éditions (classique 2012 : 16 cartes, 2 à 4 joueurs ; Z-Man 2025 : 21 cartes, 2 à 6 joueurs ;
    Philibert affiche « dès 14 ans », Z-Man 10+). `jeux-3-joueurs` est précisé (7 octobre) ; `games.json` affiche encore « 2 à 4 » et les autres articles
-   qui parlent de « seize cartes » ou de « 2 à 4 joueurs » restent à préciser. Jungle Speed : année incertaine selon les
+   qui parlent de « seize cartes » ou de « 2 à 4 joueurs » restent à préciser (`jeux-vacances-voyage` fait le 12 octobre ; restent `alternatives-uno`, `cadeau-anniversaire`, `jeux-30-minutes`, `jeux-cartes-4-joueurs`, `jeux-comme-skyjo`, `jeux-debutants-adultes`, `jeux-famille`, `meilleurs-jeux-apero`). Jungle Speed : année incertaine selon les
    sources (BGG 1997, Wikipédia 1991 ou 1996) : ne pas l'afficher sans source primaire.
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
@@ -104,7 +105,7 @@ la même façon.
 |---|---|---|
 | Codenames | 2 à 8+, ~20 € | Nouvelle édition 2025 : 4 à 8+ (CGE, IELLO) ; 21,95 € chez Philibert ; `cadeau-anniversaire` dit « 15 à 20 € » |
 | Dixit | 3 à 6 | Édition actuelle : 3 à 8 (Libellud) ; 3 à 6 pour l'édition de 2008 |
-| Coup | 10+, ~14 € | 13+ (Indie Boards & Cards) ; VO 20,50 € chez Philibert ; la VF « Complots » (Ferti) est un autre produit (2 à 8 joueurs) |
+| Coup | 10+, ~14 € | 13+ (Indie Boards & Cards, relevé le 12 octobre sur Miniature Market ; Wikipédia 14+, Leisure Games 10+) ; VO 20,50 € chez Philibert ; la VF « Complots » (Ferti) est un autre produit (2 à 8 joueurs) |
 | 6 qui prend ! | 10+ | 8+ sur les fiches Gigamic et Amigo actuelles ; 10 ans dans la règle française de 2012 et chez Philibert |
 | Timeline | 2011 | La fiche BGG liée (« Timeline: Classic », Frédéric Henry) date de 2018 ; la série commence en 2010 (« Timeline: Inventions ») |
 | Oh Hell! | auteur « Traditionnel » | Publié en JSON-LD comme `Person` nommée « Traditionnel » ; jeu traditionnel sans auteur |

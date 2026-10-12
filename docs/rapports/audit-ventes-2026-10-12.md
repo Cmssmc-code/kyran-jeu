@@ -11,7 +11,7 @@ accessible est celui de Majordia, et les alertes de vente KYRAN ne sont pas dans
 **Le problème principal n'est pas le site, c'est que personne ne rencontre le jeu.** Le site reçoit
 environ 3 visites par jour depuis Google, presque toutes sur des articles « jeux comme Skyjo /
 Codenames / Dixit » dont les lecteurs ne cherchent pas KYRAN. Aucun média, aucune boutique, aucun
-salon ne le montre. Un jeu de cartes inconnu à 10 € se vend quand on y a joué ou vu jouer : c'est là
+salon ne le montre ; la fiche BoardGameGeek, toute récente, n'a encore ni note ni partie enregistrée. Un jeu de cartes inconnu à 10 € se vend quand on y a joué ou vu jouer : c'est là
 que l'effort doit aller.
 
 ## 2. Les chiffres
@@ -27,7 +27,8 @@ que l'effort doit aller.
 | Avis Amazon | 33, note 4,7/5, une partie via Vine | Seule preuve sociale réelle |
 | Ludochrono (Ludovox) | ≈ 1 900 vues | Bonne vidéo, peu exploitée |
 | Chaîne YouTube | 1 vidéo, ≈ 100 vues | Inactive |
-| Philibert, Tric Trac, BoardGameGeek | Absent | Un acheteur qui vérifie ne trouve rien |
+| BoardGameGeek | Fiche récente ([480678](https://boardgamegeek.com/boardgame/480678/kyran)), pas encore indexée par Google, sans note ni partie enregistrée | À faire vivre (notes, photos, parties) |
+| Philibert, Tric Trac | Absent | Un acheteur français qui vérifie ne trouve rien |
 | Page Communauté | 0 publication Instagram synchronisée | Le secret Instagram semble absent : le workflow passe au vert sans rien faire |
 
 ## 3. Les causes, par ordre d'importance
@@ -112,7 +113,7 @@ Chaque action renvoie, si besoin, au texte prêt à copier dans `docs/VENTES-KIT
 | 5 | **Boutiques ludiques et bars à jeux** proches : 5–6 boîtes en dépôt ou en ferme, une boîte de démo offerte (§ 5 du kit) | Octobre–novembre | 2 jours | Moyen à fort |
 | 6 | **CSE et cadeaux d'entreprise** : prix dégressif dès 20 boîtes (§ 6 du kit). Les budgets se bouclent en novembre | Avant fin octobre | 1 jour | Une commande = un mois de ventes |
 | 7 | **Vidéos courtes** (Reels, TikTok, Shorts) : 3 par semaine jusqu'à Noël, en filmant la manche carte sur le front et les retournements des Pouvoirs (idées au § 7 du kit) | Dès maintenant | 2–3 h/semaine | Fort |
-| 8 | **Fiches gratuites** BoardGameGeek, Tric Trac, Okkazeo ; demande de référencement Philibert Marketplace | Novembre | 1 jour | Crédibilité, premiers liens entrants |
+| 8 | **Fiches gratuites** Tric Trac, Okkazeo ; faire vivre la fiche BoardGameGeek (photos, règle, demander aux premiers joueurs de noter et d'enregistrer leurs parties) ; demande de référencement Philibert Marketplace | Novembre | 1 jour | Crédibilité, premiers liens entrants |
 | 9 | **Carte « avis » dans chaque boîte** : demander un avis Amazon contre une variante à 2 joueurs en PDF (critique fréquente). Objectif 100 avis en février | Prochain lot | 50 € d'impression | Moyen |
 | 10 | **Instagram** : rétablir le secret `INSTAGRAM_ACCESS_TOKEN` pour que la page Communauté se remplisse | Quand possible | 15 min | Faible à moyen |
 | 11 | **Google Merchant Center** : associer le compte et soumettre `google-merchant-feed.xml` (fiches produit gratuites dans Google Shopping, trafic d'achat) | Cette semaine | 30 min | Moyen |

@@ -2,6 +2,7 @@ const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
 const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00';
 const INSTAGRAM_URL = 'https://www.instagram.com/kyran.jeu/';
 const INSTAGRAM_HANDLE = '@kyran.jeu';
+const BGG_URL = 'https://boardgamegeek.com/boardgame/480678/kyran';
 const ROOT = '/';
 const ORDER_URL = rootPath('commander.html');
 
@@ -328,6 +329,7 @@ function renderFooterHtml() {
             <div class="footer-follow">
               <p class="footer-follow-label">Suivez le jeu</p>
               ${instagramLinkHtml('social-link social-link--instagram')}
+              <a class="footer-bgg-link" href="${BGG_URL}" target="_blank" rel="noopener noreferrer">Fiche BoardGameGeek</a>
             </div>
           </div>
           <div class="footer-col footer-col--explore">

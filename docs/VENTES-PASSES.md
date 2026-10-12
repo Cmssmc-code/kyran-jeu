@@ -58,6 +58,7 @@ Ces actions sont reprises de l'audit, § 7. Cocher une action quand elle est fai
 - [ ] Marchés de Noël et salons réservés pour la période du 20 novembre au 20 décembre.
 - [ ] Boutiques et bars à jeux démarchés.
 - [ ] CSE démarchés.
-- [ ] Fiches BoardGameGeek, Tric Trac et Okkazeo ; Philibert Marketplace.
+- [x] Fiche BoardGameGeek créée (https://boardgamegeek.com/boardgame/480678/kyran) ; reste à la faire vivre (notes, photos, parties).
+- [ ] Fiches Tric Trac et Okkazeo ; Philibert Marketplace.
 - [ ] Secret Instagram rétabli.
 - [ ] Google Merchant Center associé, flux soumis.

@@ -197,7 +197,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de plis : le comparatif et le guide pour bien choisir",
     "category": "Alternatives",
     "date": "2026-05-29",
-    "readMinutes": 11,
+    "readMinutes": 12,
     "excerpt": "Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.",
     "image": "/blog/images/wizard.jpg",
     "webp": "/blog/images/wizard.webp",

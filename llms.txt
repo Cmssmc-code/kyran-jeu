@@ -60,7 +60,7 @@
 - [Conditions Générales de Vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 31 guides
+## Blog — 32 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -100,6 +100,7 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés
 - [Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort](https://kyran-jeu.fr/blog/jeux-memoire-concentration.html): 6 jeux comparés
 - [Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table](https://kyran-jeu.fr/blog/jeux-sans-elimination.html): 5 jeux comparés
 - [Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble](https://kyran-jeu.fr/blog/jeux-coop-cartes.html): 6 jeux comparés

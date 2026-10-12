@@ -95,38 +95,42 @@ Conseils :
 
 ## 4. Cibles à contacter
 
-Liste issue de l'étude du 12 octobre 2026. Les adresses de `scripts/presse-outreach.json` n'ont pas
-toutes été vérifiées : préférer les formulaires officiels indiqués ici.
+Liste vérifiée le 12 octobre 2026 : chaque adresse a été lue sur le site du média. Les adresses de
+`scripts/presse-outreach.json` ne sont pas fiables : plusieurs médias de ce fichier sont introuvables
+(Un Dé Dans La Tomate, Le Labo des Jeux, Carnet des Jeux, Pixel Aventuriers…).
 
-**Instagram** (classement Play-In 2025)
+**Brouillons Gmail prêts** (boîte corentin.sence@gmail.com, dossier Brouillons, créés le 12 octobre 2026) :
 
-- [Actualité Ludique](https://www.instagram.com/actualiteludique/)
-- [Les Ch'tis Ludiques](https://www.instagram.com/leschtisludiques/)
-- [Clémentine Anfond](https://www.instagram.com/clemantiine_jeux/)
-- [La Copine Geek](https://www.instagram.com/lacopinegeek/)
-- [Hina Geekeries Jeux](https://www.instagram.com/hina_geekeries_jeux/)
-- [Lol et les Meeples](https://www.instagram.com/lol.et.les.meeples/)
-- [Le Grenier Ludique](https://www.instagram.com/legrenierludique/)
+| Média | Adresse | Accroche utilisée |
+|---|---|---|
+| Undécent | contact@undecent.fr | Test de Charuma, jeu de plis |
+| Vin d'jeu | fswatsh@gmail.com | Flip 7 – Vengeance |
+| Jeudice | contact@jeudice.fr | Express Clans, veille jeux de plis |
+| Partie Prise | contact@partieprise.fr | Test de Pili Pili (un avis Amazon compare KYRAN à Pili Pili) |
+| Mr Boardgames | contact@mr-boardgames.com | Test de Yami, jeu de plis |
+| Carnet des Geekeries | contact@carnetdesgeekeries.com | Avis sur des jeux d'auteurs |
+| Proxi-Jeux (podcast) | contact@proxi-jeux.fr | Épisode avec Fliptoons |
+| Ludovox | contact@ludovox.fr | Suite du Ludochrono : test écrit ou concours avant Noël |
 
-**Sites et blogs**
+**Formulaire seulement** : copier l'email du § 3.
 
-- Gus&Co : [formulaire](https://gusandco.net/contact-2-2/)
-- Ludovox : [formulaire](https://ludovox.fr/contact/) ; leur Ludochrono existe déjà, proposer un
-  article ou un concours
-- Undécent : contact@undecent.fr
-- Vin d'jeu : [vindjeu.eu](https://www.vindjeu.eu)
-- Plateau Marmots, jeux pour enfants, adapté au « dès 8 ans » : [plateaumarmots.fr](https://www.plateaumarmots.fr)
-- [Jeudice](http://www.jeudice.fr)
-- [Jedisjeux](https://www.jedisjeux.net)
-- [Blog de Jeux.com](https://blog.jeux.com/jeux-de-societe/), qui accueille les auteurs indépendants
+- [Akoa Tujou](https://akoatujou.fr/contact/) : très bonne cible, avec un dossier sur les jeux de
+  plis à sortir d'ici la fin de l'année. Ce média ne publie pas d'articles sponsorisés, seulement des
+  jeux testés.
+- [Ludiquement](https://ludiquement.fr/contact/).
+- [Jedisjeux](https://www.jedisjeux.net/contact).
 
-**YouTube** : [Le Renard Ludique](https://www.youtube.com/@renardludique).
+**À ne pas démarcher** :
 
-**Podcasts** : Proxi-Jeux, Silence on Joue !, De l'autre côté du plateau, La Radio des Jeux,
-Baladoludique.
+- Gus&Co : le média achète lui-même les jeux qu'il teste et refuse ceux des éditeurs, ainsi que les
+  communiqués de presse.
+- Plateau Marmots : la page contact est polluée par du texte de casino (site peut-être compromis) et
+  le public visé est trop jeune.
 
-**TikTok** : chercher #jeudesociete, #jeudecartes et #boardgamefr, et viser des comptes de 2 000 à
-30 000 abonnés. Ils répondent plus souvent et leur audience est plus engagée.
+**Instagram** : aucune adresse n'a été vérifiée. Passer par un message privé (§ 3, version courte),
+en visant des comptes de 2 000 à 30 000 abonnés trouvés avec #jeudesociete et #jeudecartes. Seul
+[Le Renard Ludique](https://www.youtube.com/@renardludique/about) a été identifié sur YouTube : son
+email pro est caché derrière un bouton.
 
 ## 5. Email aux boutiques ludiques et bars à jeux
 

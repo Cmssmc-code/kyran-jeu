@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-12 — Boutique : port affiché 2,99 €, facturé 3,99 € par Stripe ; quantité perdue
+
+- **Symptôme :** `/commander.html` annonçait 12,98 € (9,99 € + 2,99 € de port) ; la page Stripe facturait 13,98 € (port 3,99 €). La quantité choisie sur le site n'arrivait pas à Stripe (« Qté 1 »). La description du produit sur Stripe disait encore « 55 cartes, livret de règles ».
+- **Cause :** le site et le Payment Link sont configurés séparément ; `?quantity=` n'est pas un paramètre reconnu des Payment Links (seuls `prefilled_email`, `prefilled_promo_code`, `client_reference_id`, `locale` et les `utm_*` le sont). Personne n'avait ouvert la vraie page de paiement.
+- **Correctif :** site aligné sur ce que Stripe facture (3,99 €, port unique), message pour choisir la quantité sur la page Stripe. Règle : à chaque changement de prix ou de port, ouvrir la page Stripe en lecture (Playwright, sans payer) et comparer ; c'est l'étape 2 de `docs/VENTES-PASSES.md`. Un prix de comparaison (Amazon) ne s'affiche jamais barré comme s'il était un ancien prix de la boutique.
+
 ### 2026-10-08 — Site entier en 404 : dépôt passé en privé, GitHub Pages désactivé
 
 - **Symptôme :** le 2026-10-07 au soir, toutes les URL de kyran-jeu.fr (accueil, boutique, blog, sitemap) répondaient 404 « Server: GitHub.com ». Search Console a refusé des demandes d'indexation (« Introuvable (404) »). Le workflow `pages.yml` restait vert mais affichait « Pages n'est pas en mode GitHub Actions (build_type=inconnu) : publication ignorée ».

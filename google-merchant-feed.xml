@@ -41,7 +41,7 @@
       <g:shipping>
         <g:country>FR</g:country>
         <g:service>Livraison suivie France</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>1</g:min_transit_time>
@@ -50,7 +50,7 @@
       <g:shipping>
         <g:country>BE</g:country>
         <g:service>Livraison suivie Belgique</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>2</g:min_transit_time>
@@ -59,7 +59,7 @@
       <g:shipping>
         <g:country>LU</g:country>
         <g:service>Livraison suivie Luxembourg</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>2</g:min_transit_time>
@@ -68,7 +68,7 @@
       <g:shipping>
         <g:country>DE</g:country>
         <g:service>Livraison suivie Allemagne</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>2</g:min_transit_time>
@@ -77,7 +77,7 @@
       <g:shipping>
         <g:country>CH</g:country>
         <g:service>Livraison suivie Suisse</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>3</g:min_transit_time>
@@ -86,7 +86,7 @@
       <g:shipping>
         <g:country>IT</g:country>
         <g:service>Livraison suivie Italie</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>3</g:min_transit_time>
@@ -95,7 +95,7 @@
       <g:shipping>
         <g:country>ES</g:country>
         <g:service>Livraison suivie Espagne</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>3</g:min_transit_time>
@@ -104,7 +104,7 @@
       <g:shipping>
         <g:country>MC</g:country>
         <g:service>Livraison suivie Monaco</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>1</g:min_transit_time>
@@ -113,7 +113,7 @@
       <g:shipping>
         <g:country>AD</g:country>
         <g:service>Livraison suivie Andorre</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>2</g:min_transit_time>
@@ -122,7 +122,7 @@
       <g:shipping>
         <g:country>GB</g:country>
         <g:service>Livraison suivie Royaume-Uni</g:service>
-        <g:price>2.99 EUR</g:price>
+        <g:price>3.99 EUR</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>1</g:max_handling_time>
         <g:min_transit_time>3</g:min_transit_time>

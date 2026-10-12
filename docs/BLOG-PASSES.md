@@ -24,6 +24,9 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 3. **Choisir** : données réelles d'abord (§ 9 : pages « explorées / détectées, non indexées ») ;
    sinon rafraîchir un article vieillissant ou rédigé à la main ; un article neuf seulement pour une
    intention de recherche absente du blog.
+   **Depuis l'audit commercial du 12 octobre 2026** (`docs/rapports/audit-ventes-2026-10-12.md`),
+   à valeur égale, préférez les sujets à intention d'achat (cadeau, Noël, jeu à moins de 15 €, jeu
+   pour un repas de famille) aux listes « jeux comme X », qui attirent du trafic sans acheteurs.
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
    éditeurs, Philibert…). Faits KYRAN : uniquement le dépôt. Aucun chiffre, prix, règle ou citation
    sans source liée.

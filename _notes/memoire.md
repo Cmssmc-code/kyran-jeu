@@ -31,7 +31,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - La Mystique vaut 0 ou 37 au choix.
   - À 3 ou 4 joueurs : 4 Pouvoirs + la Mystique. À 5 ou 6 : toutes les cartes.
   - Variante d'initiation : sans Pouvoirs ni Mystique.
-- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
+- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 3,99 € par commande d'après la page Stripe au 2026-10-12 ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
 - **Livraison :** France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni. Retours gratuits sous 14 jours (`FreeReturn`).
 - **Héritage :** Tarot Africain / Whist 22 (pages `/tarot-africain.html`, `/whist-22.html`, `/tarot-africain-a-3-joueurs.html`).
 - **Interdits rédactionnels :** ne jamais écrire que KYRAN est « sans élimination » (le premier joueur à zéro Vie termine la partie) ni « sans hasard ». Ne jamais inventer de pouvoir.
@@ -316,6 +316,7 @@ Routines du compte du propriétaire (claude.ai → Routines).
 |---|---|---|---|
 | « Blog Majordia quotidien (session dédiée) » (`trig_01HoFH4gEtdiFogSMHUmWzqo`) | `CRON_TZ=Europe/Paris 53 2 * * *` | « Blog Majordia — routine quotidienne (session dédiée) » (`session_014FVquExjQdhX9Qo8JKixnr`), dépôt Majordia attaché | Dépôt frère Majordia : suit `_notes/blog-routine-mission.md` de ce dépôt |
 | « Blog KYRAN passes lun/mer/ven (session dédiée) » (`trig_01CV4VUee9BDx4jf2PT9BfWS`) | `CRON_TZ=Europe/Paris 50 6 * * 1,3,5` | « Blog KYRAN — passes lun/mer/ven (session dédiée) » (`session_01UtBssiigx8y6ySwNcWS6r5`), dépôt kyran-jeu attaché | Suit `docs/BLOG-PASSES.md` : un article neuf, un rafraîchissement ou rien ; PR puis fusion automatique si CI verte, aucun conflit, aucun commentaire ouvert |
+| « Ventes KYRAN passe du mardi (session dédiée) » (`trig_01AHgEuNRov1qwkJXNXQgt3P`) | `CRON_TZ=Europe/Paris 47 6 * * 2` | « Ventes KYRAN — passe du mardi (session dédiée) » (`session_01PRGykNczy1E2qLe6ZBk7Dj`), dépôt kyran-jeu attaché | Suit `docs/VENTES-PASSES.md` : contrôle prix/port Stripe vs site, une amélioration de conversion par semaine, journal ; PR puis fusion automatique (créée le 2026-10-12, suite à `docs/rapports/audit-ventes-2026-10-12.md`) |
 
 Montage du 2026-10-07 (soir). Chaque routine réveille une **session dédiée** créée avec son dépôt
 attaché (`create_session` avec `source_url`) : le dépôt y est cloné avec des droits d'écriture et les

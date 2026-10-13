@@ -4,7 +4,7 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/poppins-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/poppins-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/poppins-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Fredoka'; font-style: normal; font-weight: 300 700; font-stretch: 75% 125%; font-display: swap; src: url('/fonts/fredoka-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Fredoka'; font-style: normal; font-weight: 500 700; font-display: swap; src: url('/fonts/fredoka-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* =======================
    1. VARIABLES & AMBIANCE
@@ -7167,15 +7167,13 @@ header.site-header::after { display: none; }
   flex-direction: column;
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 115%;
+  letter-spacing: 0.04em;
   font-size: 1.45rem;
   line-height: 0.95;
   color: var(--k-ink);
-  letter-spacing: 0.01em;
 }
 .logo-word small {
   font-family: var(--font-body);
-  font-stretch: normal;
   font-size: 0.56rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -7623,7 +7621,7 @@ footer .footer-brand {
   gap: 10px;
   color: #FFF8EA;
   font-weight: 700;
-  font-stretch: 115%;
+  letter-spacing: 0.04em;
   font-size: 1.5rem;
 }
 footer .footer-brand img { width: 40px; height: 40px; }

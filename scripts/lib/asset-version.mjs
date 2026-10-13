@@ -9,7 +9,7 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const FILES = ['style.css', 'components.js', 'blog-data.js', 'blog.js', 'reviews.js', 'reviews-data.js', 'hero-visual.js'];
+const FILES = ['style.css', 'components.js', 'blog-data.js', 'blog.js', 'reviews.js', 'reviews-data.js', 'hero-visual.js', 'js/motion.js'];
 
 export function assetVersion() {
   const h = crypto.createHash('sha1');

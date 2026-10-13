@@ -1,0 +1,258 @@
+/* ============================================================
+   KYRAN : animations d'interface (2026)
+   Couche chargée après les autres feuilles. Pilotage : js/motion.js.
+   Règles : seuls transform et opacity bougent (sauf ouverture des FAQ, au clic) ;
+   les états cachés n'existent que si js/motion.js a posé .km-js sur <html>
+   et seulement pour ce qui est hors de l'écran au chargement (pas de flash,
+   pas de décalage de mise en page) ; tout est coupé sous prefers-reduced-motion.
+   ============================================================ */
+:root {
+  --km-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --km-spring: cubic-bezier(0.3, 1.35, 0.5, 1);
+  --km-rise: 16px;
+  --km-dur: 0.7s;
+  --km-step: 70ms;
+}
+@media (max-width: 900px) {
+  :root { --km-rise: 10px; --km-dur: 0.45s; --km-step: 45ms; }
+}
+
+/* ---------- Transitions de page (View Transitions API) ---------- */
+@view-transition { navigation: auto; }
+kyran-header { view-transition-name: km-header; }
+::view-transition-group(km-header) { animation-duration: 0.3s; animation-timing-function: var(--km-out); }
+::view-transition-old(root) { animation: kmPageOut 0.16s ease-in both; }
+::view-transition-new(root) { animation: kmPageIn 0.38s var(--km-out) both; }
+@keyframes kmPageOut { to { opacity: 0; } }
+@keyframes kmPageIn { from { opacity: 0; transform: translateY(12px); } }
+@media (max-width: 900px) {
+  ::view-transition-new(root) { animation: kmFade 0.22s ease-out both; }
+}
+@keyframes kmFade { from { opacity: 0; } }
+
+/* ---------- En-tête qui se compacte au défilement ---------- */
+header.site-header { transition: transform 0.35s var(--km-out), box-shadow 0.35s ease; }
+html.km-compact header.site-header { box-shadow: 0 12px 26px -20px rgba(35, 31, 34, 0.55); }
+@media (min-width: 901px) {
+  header.site-header .nav { transition: transform 0.35s var(--km-out); }
+  html.km-compact header.site-header { transform: translateY(-10px); }
+  html.km-compact header.site-header .nav { transform: translateY(5px); }
+  html.km-compact .logo img { transform: scale(0.86); }
+  html.km-compact .logo:hover img { transform: rotate(-8deg) scale(0.92); }
+}
+
+/* ---------- Boutons « étiquette » : appui physique ---------- */
+.btn,
+.btn-secondary,
+.btn-hero-cta,
+.btn-hero-sec,
+.btn-header-cta,
+.nav-toggle,
+.back-to-top {
+  transition: transform 0.24s var(--km-spring), box-shadow 0.24s var(--km-spring), background-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active,
+.btn-secondary:active,
+.btn-hero-cta:active,
+.btn-hero-sec:active,
+.btn-header-cta:active,
+.hero-ecommerce .btn-hero-cta:active,
+.hero-ecommerce .btn-hero-sec:active,
+.cta-band .btn:active {
+  transform: translateY(3px) scale(0.985);
+  box-shadow: 0 1px 0 var(--k-ink);
+  transition-duration: 0.06s;
+}
+.back-to-top:active,
+.nav-toggle:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--k-ink); transition-duration: 0.06s; }
+.btn-hero-cta svg { transition: transform 0.3s var(--km-spring); }
+.btn-hero-cta:hover svg { transform: translateX(-1px) rotate(-8deg) scale(1.1); }
+
+/* ---------- Liens soulignés ---------- */
+:where(main p, main li, main dd, main td, main .faq-answer, .breadcrumb) a:not(.btn),
+.text-link,
+.amazon-summary-link,
+.store-amazon-link {
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, text-underline-offset 0.25s var(--km-out);
+}
+:where(main p, main li, main dd, main td, main .faq-answer, .breadcrumb) a:not(.btn):hover,
+.text-link:hover,
+.amazon-summary-link:hover,
+.store-amazon-link:hover { text-underline-offset: 6px; }
+@media (hover: hover) and (pointer: fine) {
+  .footer-col a {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat;
+    transition: color 0.2s ease, background-size 0.3s var(--km-out);
+  }
+  .footer-col a:hover { background-size: 100% 1.5px; }
+}
+
+/* ---------- Retour au toucher (mobile, tablette) ---------- */
+@media (hover: none) {
+  .blog-card, .discover-card, .step-card, .power-card-item, .quote-card,
+  .nav-drawer-link, .mobile-nav-tab, .fan-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .blog-card, .discover-card, .step-card, .power-card-item, .nav-drawer-link {
+    transition: transform 0.25s var(--km-out);
+  }
+  .blog-card:active, .discover-card:active, .step-card:active, .power-card-item:active, .nav-drawer-link:active {
+    transform: scale(0.98);
+    transition-duration: 0.08s;
+  }
+  .mobile-nav-tab:active .mobile-nav-icon { transform: scale(0.86); transition-duration: 0.06s; }
+  .mobile-nav-icon { display: inline-flex; transition: transform 0.25s var(--km-spring); }
+}
+
+/* ---------- Menu mobile : liens en cascade ---------- */
+@media (max-width: 900px) {
+  body.menu-open .nav-list > li { animation-duration: 0.42s; animation-timing-function: var(--km-out); }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link { animation: kmDrawerLink 0.32s var(--km-out) backwards; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(2) { animation-delay: 0.03s; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(3) { animation-delay: 0.06s; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(4) { animation-delay: 0.09s; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(5) { animation-delay: 0.12s; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(n+6) { animation-delay: 0.15s; }
+}
+@keyframes kmDrawerLink { from { opacity: 0; transform: translateX(14px); } }
+
+/* ---------- Accordéons (details / summary) : ouverture en douceur ---------- */
+@supports (interpolate-size: allow-keywords) and selector(::details-content) {
+  main details { interpolate-size: allow-keywords; }
+  main details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition: block-size 0.34s var(--km-out), content-visibility 0.34s allow-discrete;
+  }
+  main details[open]::details-content { block-size: auto; }
+}
+
+/* ---------- Accueil : entrée du hero orchestrée ---------- */
+.hero-ecommerce .hero-actions,
+.hero-ecommerce h1,
+.hero-ecommerce .hero-lead { animation: none; }
+.hero-ecommerce .hero-tagline,
+.hero-ecommerce h1,
+.hero-ecommerce .hero-lead,
+.hero-ecommerce .hero-price > span,
+.hero-ecommerce .hero-actions > *,
+.hero-ecommerce .hero-rating,
+.hero-ecommerce .hero-assurances li {
+  animation: kmRise 0.7s var(--km-out) backwards;
+}
+.hero-ecommerce .hero-tagline { animation-delay: 0.05s; }
+.hero-ecommerce h1 { animation-delay: 0.12s; animation-duration: 0.85s; }
+.hero-ecommerce .hero-lead { animation-delay: 0.26s; }
+.hero-ecommerce .hero-price > span { animation-delay: 0.5s; }
+.hero-ecommerce .hero-actions > :nth-child(1) { animation-delay: 0.52s; }
+.hero-ecommerce .hero-actions > :nth-child(2) { animation-delay: 0.6s; }
+.hero-ecommerce .hero-rating { animation-delay: 0.7s; }
+.hero-ecommerce .hero-assurances li:nth-child(1) { animation-delay: 0.78s; }
+.hero-ecommerce .hero-assurances li:nth-child(2) { animation-delay: 0.84s; }
+.hero-ecommerce .hero-assurances li:nth-child(3) { animation-delay: 0.9s; }
+@keyframes kmRise { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
+
+/* Surlignage safran du titre : passé au pinceau */
+.hero-ecommerce h1 .accent {
+  background-size: 100% 100%;
+  animation: kmBrush 0.9s var(--km-out) 0.7s backwards;
+}
+@keyframes kmBrush { from { background-size: 0% 100%; } }
+
+/* Prix : posé comme un tampon, puis souligné d'un trait terracotta (une seule fois) */
+.hero-ecommerce .hero-price strong {
+  position: relative;
+  transform-origin: 30% 70%;
+  animation: kmStamp 0.75s var(--km-spring) 0.38s backwards;
+}
+.hero-ecommerce .hero-price strong::after {
+  content: '';
+  position: absolute;
+  left: 2%;
+  right: 4%;
+  bottom: -7px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--k-terra);
+  transform-origin: 0 50%;
+  animation: kmLine 0.6s var(--km-out) 1s backwards;
+  pointer-events: none;
+}
+@keyframes kmStamp {
+  from { opacity: 0; transform: scale(1.35) rotate(-6deg); }
+  45% { opacity: 1; }
+}
+@keyframes kmLine { from { transform: scaleX(0); } }
+
+/* Éventail : inclinaison 3D au survol de chaque carte (souris seulement, js/motion.js) */
+@media (hover: hover) and (pointer: fine) {
+  .fan-card-flip {
+    transform: rotateX(var(--km-rx, 0deg)) rotateY(var(--km-ry, 0deg));
+    transition: transform 0.6s var(--km-out);
+  }
+  .fan-card.km-tilt .fan-card-flip { transition-duration: 0.14s; transition-timing-function: linear; }
+}
+
+/* ---------- Accueil : bandeau défilant ---------- */
+.kyran-ticker__track { will-change: transform; }
+.kyran-ticker:hover .kyran-ticker__track,
+.kyran-ticker.km-off .kyran-ticker__track { animation-play-state: paused; }
+.kyran-ticker.km-off .kyran-ticker__track { will-change: auto; }
+
+/* ---------- Accueil : frise des manches 7 → 1 ---------- */
+.round-strip__list { perspective: 700px; }
+.round-strip.is-visible .round-strip__list li {
+  animation: kmDeal 0.75s var(--km-spring) backwards;
+}
+.round-strip.is-visible .round-strip__list li:nth-child(1) { animation-delay: 0.1s; }
+.round-strip.is-visible .round-strip__list li:nth-child(2) { animation-delay: 0.17s; }
+.round-strip.is-visible .round-strip__list li:nth-child(3) { animation-delay: 0.24s; }
+.round-strip.is-visible .round-strip__list li:nth-child(4) { animation-delay: 0.31s; }
+.round-strip.is-visible .round-strip__list li:nth-child(5) { animation-delay: 0.38s; }
+.round-strip.is-visible .round-strip__list li:nth-child(6) { animation-delay: 0.45s; }
+.round-strip.is-visible .round-strip__list li.round-strip__mystic {
+  animation: kmDeal 0.75s var(--km-spring) 0.62s backwards, kmMystic 0.9s var(--km-out) 1.35s 1;
+}
+@keyframes kmDeal {
+  from { opacity: 0; transform: translate3d(-34px, -26px, 0) rotate(-16deg) rotateY(85deg); }
+  55% { opacity: 1; }
+}
+@keyframes kmMystic {
+  0%, 100% { transform: none; }
+  40% { transform: translateY(-6px) rotate(-6deg) scale(1.12); }
+}
+
+/* ---------- Accueil : révélations en cascade (états cachés posés par js/motion.js) ---------- */
+.reveal-on-scroll { transform: translate3d(0, var(--km-rise), 0); transition-duration: var(--km-dur); }
+.reveal-on-scroll.is-visible { transform: none; }
+.km-js .km-stagger.reveal-on-scroll { opacity: 1; transform: none; transition: none; }
+.km-js .km-reveal:not(.is-visible),
+.km-js .km-stagger:not(.is-visible) > * {
+  opacity: 0;
+  transform: translate3d(0, var(--km-rise), 0) scale(0.985);
+}
+.km-js .km-reveal:not(.km-done),
+.km-js .km-stagger:not(.km-done) > * {
+  transition: opacity var(--km-dur) ease-out, transform var(--km-dur) var(--km-out);
+  transition-delay: calc(var(--km-i, 0) * var(--km-step));
+}
+
+/* ---------- Mouvement réduit : tout est coupé, rien n'est caché ---------- */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .km-js .km-reveal,
+  .km-js .km-stagger > *,
+  .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-ecommerce *,
+  .round-strip__list li,
+  .nav-drawer-link,
+  header.site-header,
+  header.site-header .nav,
+  .logo img { animation: none !important; transition: none !important; }
+  html.km-compact header.site-header,
+  html.km-compact header.site-header .nav,
+  html.km-compact .logo img { transform: none; }
+  main details::details-content { transition: none !important; }
+  .kyran-ticker__track { animation: none !important; will-change: auto; }
+}

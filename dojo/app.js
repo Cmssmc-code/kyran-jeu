@@ -72,6 +72,7 @@ const $ = (sel, ctx = ROOT) => ctx.querySelector(sel);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const reduceMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const SPEED = { lent: 1.6, normal: 1, rapide: 0.5 };
+const SPEED_LABEL = { lent: 'Lent', normal: 'Normal', rapide: 'Rapide' };
 const speed = () => SPEED[store.settings.speed] || 1;
 const plural = (n, w) => `${n} ${w}${n > 1 ? 's' : ''}`;
 
@@ -130,7 +131,7 @@ function cardName(card) {
   return `carte ${card.value}`;
 }
 
-/** Élément carte. opts : back, button, small, value (valeur effective affichée). */
+/** Élément carte. opts : back, button, index (valeur rappelée dans le coin, pour une main en éventail). */
 function cardEl(card, opts = {}) {
   const tag = opts.button ? 'button' : 'div';
   const el = h(tag, {
@@ -145,6 +146,9 @@ function cardEl(card, opts = {}) {
   el.appendChild(img);
   if (!opts.back && card) {
     el.appendChild(h('span', { class: 'dj-card-fallback', 'aria-hidden': 'true', text: card.kind === 'mystique' ? 'M' : String(card.value) }));
+    // Dans une main resserrée, les cartes se chevauchent et cachent leur chiffre central :
+    // la valeur est rappelée dans le coin visible.
+    if (opts.index) el.appendChild(h('span', { class: 'dj-idx is-' + card.kind, 'aria-hidden': 'true', text: card.kind === 'mystique' ? '0/37' : String(card.value) }));
   }
   return el;
 }
@@ -252,8 +256,12 @@ function startSession(lesson) {
   };
   renderGame();
   if (!ROOT.classList.contains('is-immersive')) {
+    // L'en-tête du site reste collé en haut (sa barre d'annonce de 36 px défile) : la table
+    // se cale juste dessous, pour tenir entière entre l'en-tête et la barre mobile du bas.
+    const header = document.querySelector('kyran-header');
+    const offset = (header ? Math.max(0, header.offsetHeight - 36) : 0) + 2;
     const top = ROOT.getBoundingClientRect().top;
-    if (top < 0 || top > 120) window.scrollTo({ top: window.scrollY + top - 70, behavior: reduceMotion() ? 'auto' : 'smooth' });
+    if (top < offset - 2 || top > offset + 56) window.scrollTo({ top: window.scrollY + top - offset, behavior: reduceMotion() ? 'auto' : 'smooth' });
   }
   const sess = S;
   track(lesson ? 'dojo_lesson_start' : 'dojo_game_start', lesson ? { lesson: lesson.id } : { opponents: setup.players.length - 1, level: store.settings.level });
@@ -388,7 +396,7 @@ function defaultTip(sess, pend) {
   if (pend.type === 'bet') {
     if (r.mystic) return 'Manche Mystique : ta carte est cachée, regarde celles des autres. Gagneras-tu le pli (1) ou non (0) ?';
     const forb = E.forbiddenBet(st, 0);
-    let t = `À toi d’annoncer : combien de plis vas-tu gagner sur ${r.cards} ?`;
+    let t = `Combien de plis vas-tu gagner sur ${r.cards} ?`;
     if (forb != null) t += ` Tu parles en dernier : la règle d’or t’interdit <b>${forb}</b>.`;
     return t;
   }
@@ -424,6 +432,7 @@ async function onEvent(sess, ev) {
       const label = ev.tiebreak ? 'Départage : manche Mystique' : r.mystic ? 'Manche Mystique' : `Manche à ${plural(r.cards, 'carte')}`;
       log(`${label}. ${name(ev.dealer)} distribue.`);
       announce(label);
+      roundBanner(label, `${ev.dealer === 0 ? 'Tu distribues' : name(ev.dealer) + ' distribue'}`);
       await wait(r.cards * 70 + 450, sess);
       if (r.mystic) {
         renderSeats();
@@ -558,6 +567,8 @@ async function onEvent(sess, ev) {
       await wait(350, sess);
       const slot = slotFor(ev.pid);
       if (slot) slot.classList.add('is-winner');
+      const trickEl = $('#dj-trick');
+      if (trickEl) trickEl.classList.add('is-won');
       const p = st.players[ev.pid];
       log(`${p.name === 'Toi' ? 'Tu remportes' : p.name + ' remporte'} le pli avec ${ev.card.kind === 'mystique' ? 'la Mystique' : ev.value}.`);
       announce(`${p.name === 'Toi' ? 'Tu gagnes' : p.name + ' gagne'} le pli`);
@@ -610,6 +621,8 @@ const ICONS = {
   soundOff: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',
   full: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>',
   close: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  bulb: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>',
+  crown: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" stroke="none"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5L3 7z"/></svg>',
   speed: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 19 22 12 13 5v14zM2 19l9-7-9-7v14z"/></svg>'
 };
 
@@ -621,7 +634,10 @@ function renderGame() {
   setModalOpen(false);
   ROOT.classList.add('is-playing');
   const title = L ? L.title : 'Partie libre';
-  const speedLabel = { lent: 'Lent', normal: 'Normal', rapide: 'Rapide' };
+  // Vitesse et son : dans la barre du haut sur grand écran, dans le panneau du journal partout
+  // (sur téléphone, la barre ne garde que journal, plein écran et quitter).
+  const speedBtn = extra => h('button', { type: 'button', class: 'dj-chip-btn dj-speed-btn' + (extra || ''), title: 'Vitesse du jeu', 'aria-label': 'Vitesse du jeu : ' + SPEED_LABEL[store.settings.speed], onclick: cycleSpeed }, h('span', { 'aria-hidden': 'true', html: ICONS.speed }), h('span', { class: 'dj-speed-label', text: SPEED_LABEL[store.settings.speed] }));
+  const soundBtn = extra => iconBtn(store.settings.sound ? 'Couper le son' : 'Activer le son', store.settings.sound ? ICONS.soundOn : ICONS.soundOff, toggleSound, { class: 'dj-icon-btn dj-sound-btn' + (extra || '') });
   const game = h('div', { class: 'dj-game' },
     h('header', { class: 'dj-top' },
       h('div', { class: 'dj-top-title' },
@@ -630,9 +646,9 @@ function renderGame() {
         h('span', { class: 'dj-round', id: 'dj-round' })
       ),
       h('div', { class: 'dj-top-actions' },
-        h('button', { type: 'button', class: 'dj-chip-btn', id: 'dj-speed', title: 'Vitesse du jeu', onclick: cycleSpeed }, h('span', { 'aria-hidden': 'true', html: ICONS.speed }), h('span', { text: speedLabel[store.settings.speed] })),
-        iconBtn('Journal de la partie', ICONS.log, toggleLog, { id: 'dj-log-btn', 'aria-expanded': 'false', 'aria-controls': 'dj-log' }),
-        iconBtn(store.settings.sound ? 'Couper le son' : 'Activer le son', store.settings.sound ? ICONS.soundOn : ICONS.soundOff, toggleSound, { id: 'dj-sound' }),
+        speedBtn(' is-wide-only'),
+        soundBtn(' is-wide-only'),
+        iconBtn('Journal et réglages', ICONS.log, toggleLog, { id: 'dj-log-btn', 'aria-expanded': 'false', 'aria-controls': 'dj-log' }),
         iconBtn('Plein écran', ICONS.full, toggleImmersive, { id: 'dj-full' }),
         iconBtn('Quitter la partie', ICONS.close, confirmQuit)
       )
@@ -644,9 +660,10 @@ function renderGame() {
     ),
     h('div', { class: 'dj-coach', id: 'dj-coach', role: 'region', 'aria-label': 'Bokonon, devin du Fa' },
       h('div', { class: 'dj-sensei', 'aria-hidden': 'true' }),
+      // Boutons avant le texte : ils flottent à droite et le texte les contourne (bulle compacte)
       h('div', { class: 'dj-coach-body' },
-        h('p', { class: 'dj-coach-text', id: 'dj-coach-text' }),
-        h('div', { class: 'dj-coach-actions', id: 'dj-coach-actions' })
+        h('div', { class: 'dj-coach-actions', id: 'dj-coach-actions' }),
+        h('p', { class: 'dj-coach-text', id: 'dj-coach-text' })
       )
     ),
     h('div', { class: 'dj-me', role: 'region', 'aria-label': 'Ton jeu' },
@@ -655,7 +672,7 @@ function renderGame() {
       h('div', { class: 'dj-actions', id: 'dj-actions' })
     ),
     h('aside', { class: 'dj-log', id: 'dj-log', hidden: true, 'aria-label': 'Journal de la partie' },
-      h('div', { class: 'dj-log-head' }, h('strong', { text: 'Journal' }), iconBtn('Fermer le journal', ICONS.close, toggleLog)),
+      h('div', { class: 'dj-log-head' }, h('strong', { text: 'Journal' }), h('div', { class: 'dj-log-tools' }, speedBtn(), soundBtn(), iconBtn('Fermer le journal', ICONS.close, toggleLog))),
       h('ol', { id: 'dj-log-list' })
     ),
     h('div', { class: 'dj-live', id: 'dj-live', 'aria-live': 'polite', 'aria-atomic': 'true' }),
@@ -712,6 +729,7 @@ function renderSeats() {
   wrap.innerHTML = '';
   const n = st.players.length;
   wrap.style.setProperty('--seats', n - 1);
+  wrap.classList.toggle('is-crowded', n - 1 >= 4);
   for (let k = 1; k < n; k++) {
     const p = st.players[k];
     const persona = personaOf(p);
@@ -729,12 +747,14 @@ function renderSeats() {
       h('span', { class: 'dj-think' }, h('i'), h('i'), h('i'))
     ),
     h('div', { class: 'dj-seat-name', text: p.name }),
-    livesEl(p, st.opts.lives),
-    h('div', { class: 'dj-seat-score' + (need === 0 ? ' is-ok' : need < 0 ? ' is-over' : '') },
-      p.bet != null ? h('span', { html: `<b>${p.tricks}</b>/${p.bet}` }) : h('span', { class: 'dj-muted', text: inRound ? '…' : '—' })
+    h('div', { class: 'dj-seat-row' },
+      livesEl(p, st.opts.lives),
+      h('div', { class: 'dj-seat-score' + (need === 0 ? ' is-ok' : need < 0 ? ' is-over' : ''), title: 'Plis gagnés / pari' },
+        p.bet != null ? h('span', { html: `<b>${p.tricks}</b>/${p.bet}` }) : h('span', { class: 'dj-muted', text: inRound ? '…' : '—' })
+      ),
+      r && !r.mystic && inRound ? h('div', { class: 'dj-seat-cards', 'aria-hidden': 'true' }, ...p.hand.map(() => h('i'))) : null
     ),
-    r && r.mystic && inRound && p.hand.length ? h('div', { class: 'dj-front' }, cardEl(p.hand[0])) : null,
-    r && !r.mystic && inRound ? h('div', { class: 'dj-seat-cards', 'aria-hidden': 'true' }, ...p.hand.map(() => h('i'))) : null
+    r && r.mystic && inRound && p.hand.length ? h('div', { class: 'dj-front' }, cardEl(p.hand[0])) : null
     );
     wrap.appendChild(seat);
   }
@@ -773,11 +793,13 @@ function bubbleMe(text) {
   setTimeout(() => b.remove(), 1600);
 }
 
+/** Effet d'une carte (Pouvoir, Mystique) : bandeau en haut de la table, nommé, qui ne déborde jamais de l'écran. */
 function toast(pid, text) {
-  const slot = slotFor(pid);
-  const host = slot || $('#dj-trick');
-  if (!host) return;
-  const t = h('span', { class: 'dj-toast', text });
+  const host = $('.dj-table');
+  if (!host || !S) return;
+  host.querySelectorAll('.dj-toast').forEach(x => x.remove());
+  const who = S.state.players[pid];
+  const t = h('span', { class: 'dj-toast' }, who ? h('b', { text: (who.human ? 'Toi' : who.name) + ' : ' }) : null, text);
   host.appendChild(t);
   setTimeout(() => t.remove(), 2200 * speed());
 }
@@ -838,9 +860,48 @@ function renderTrick(orderOverride) {
       slot.appendChild(el);
       slot.classList.add('is-filled');
     }
-    const cell = h('div', { class: 'dj-slot-wrap' }, slot, h('span', { class: 'dj-slot-label' }, avatarImg(p, 'dj-mini-avatar'), p.name));
+    const cell = h('div', { class: 'dj-slot-wrap' + (pid === 0 ? ' is-me' : ''), title: p.name }, slot, h('span', { class: 'dj-slot-label' }, avatarImg(p, 'dj-mini-avatar'), h('span', { class: 'dj-slot-name', text: p.name })));
     wrap.appendChild(cell);
   }
+  layoutTrick();
+}
+
+/** Taille des emplacements du pli : la plus grande qui tient sur une ligne, quel que soit le nombre de joueurs. */
+function layoutTrick() {
+  const wrap = $('#dj-trick');
+  if (!wrap) return;
+  const n = wrap.querySelectorAll('.dj-slot-wrap').length;
+  wrap.style.removeProperty('--tw');
+  if (!n) return;
+  const cs = getComputedStyle(wrap);
+  // Plafond : la variable CSS --tw-max, et 9 % de la hauteur de l'écran (paysage)
+  const max = Math.min(parseFloat(cs.getPropertyValue('--tw-max')) || 84, Math.round(window.innerHeight * 0.09));
+  const gap = parseFloat(cs.columnGap) || 6;
+  const fit = Math.floor((wrap.clientWidth - (n - 1) * gap) / n);
+  const tw = Math.max(36, Math.min(max, fit));
+  wrap.style.setProperty('--tw', tw + 'px');
+  // Emplacements étroits : l'avatar suffit à reconnaître les adversaires
+  wrap.classList.toggle('is-tight', tw < 60);
+}
+
+/** Bandeau bref au centre de la table à chaque nouvelle manche (transform et opacité seulement). */
+function roundBanner(title, sub) {
+  const table = $('.dj-table');
+  if (!table) return;
+  table.querySelectorAll('.dj-banner').forEach(b => b.remove());
+  const b = h('div', { class: 'dj-banner', 'aria-hidden': 'true' }, h('strong', { text: title }), sub ? h('span', { text: sub }) : null);
+  table.appendChild(b);
+  if (reduceMotion()) {
+    setTimeout(() => b.remove(), 900 * speed());
+    return;
+  }
+  const a = b.animate([
+    { opacity: 0, transform: 'translate(-50%, -50%) scale(0.86)' },
+    { opacity: 1, transform: 'translate(-50%, -50%) scale(1)', offset: 0.18 },
+    { opacity: 1, transform: 'translate(-50%, -50%) scale(1)', offset: 0.78 },
+    { opacity: 0, transform: 'translate(-50%, -50%) scale(1.04)' }
+  ], { duration: 1300 * speed(), easing: 'ease-out', fill: 'forwards' });
+  a.onfinish = () => b.remove();
 }
 
 function slotFor(pid) {
@@ -872,6 +933,8 @@ function fly(el, from) {
 function collectTrick(pid) {
   const target = pid === 0 ? $('#dj-me-bar') : ROOT.querySelector(`.dj-seat[data-pid="${pid}"] .dj-avatar`);
   const cards = ROOT.querySelectorAll('#dj-trick .dj-card');
+  const trickEl = $('#dj-trick');
+  if (trickEl) trickEl.classList.remove('is-won');
   if (!target || reduceMotion()) {
     cards.forEach(c => c.remove());
     return;
@@ -910,7 +973,7 @@ function renderHand(opts = {}) {
   }
   me.hand.forEach((card, i) => {
     const allowed = !sess.gate || !sess.gate.cards || sess.gate.cards.includes(card.id);
-    const el = cardEl(card, { button: true });
+    const el = cardEl(card, { button: true, index: true });
     el.style.setProperty('--i', i);
     if (opts.deal && !reduceMotion()) el.classList.add('is-dealt');
     // Hors de ton tour, les cartes restent lisibles (évaluation de la main) mais inactives
@@ -928,16 +991,35 @@ function renderHand(opts = {}) {
   layoutHand();
 }
 
+// Partie visible minimale de chaque carte d'une main resserrée : une cible tactile d'au moins 44 px.
+const MIN_VISIBLE = 44;
+
+/**
+ * Main en éventail : les cartes se resserrent pour tenir sur une ligne, sans jamais laisser
+ * moins de 44 px visibles par carte ; au-delà, la main défile horizontalement.
+ */
 function layoutHand() {
   const wrap = $('#dj-hand');
   if (!wrap) return;
-  const cards = wrap.querySelectorAll('.dj-card');
-  if (!cards.length) return;
-  const w = cards[0].getBoundingClientRect().width || 70;
-  const avail = wrap.clientWidth - 8;
+  const cards = [...wrap.querySelectorAll('.dj-card')];
   const n = cards.length;
-  const gap = n > 1 ? Math.min(8, (avail - n * w) / (n - 1)) : 0;
+  if (!n) return;
+  const w = cards[0].offsetWidth || 70;
+  // Marge pour l'inclinaison des cartes du bord (éventail)
+  const avail = wrap.clientWidth - 6 - (n > 2 ? 8 : 0);
+  let gap = n > 1 ? Math.min(10, (avail - n * w) / (n - 1)) : 0;
+  const scroll = n > 1 && w + gap < MIN_VISIBLE;
+  if (scroll) gap = MIN_VISIBLE - w;
+  wrap.classList.toggle('is-scroll', scroll);
   wrap.style.setProperty('--ov', gap.toFixed(1) + 'px');
+  // Léger éventail quand les cartes se chevauchent
+  const fan = !scroll && n > 2 && gap < 2;
+  const mid = (n - 1) / 2;
+  cards.forEach((c, i) => {
+    const k = i - mid;
+    c.style.setProperty('--rot', fan ? (k / (mid || 1) * 2.5).toFixed(2) + 'deg' : '0deg');
+    c.style.setProperty('--lift', fan ? ((k * k) / (mid * mid || 1) * 7).toFixed(1) + 'px' : '0px');
+  });
 }
 
 function onCardClick(card) {
@@ -1122,7 +1204,7 @@ function setCoachHint(on) {
   const old = actions.querySelector('.dj-hint-btn');
   if (old) old.remove();
   if (!on) return;
-  actions.appendChild(h('button', { type: 'button', class: 'dj-btn dj-btn-ghost dj-btn-sm dj-hint-btn', onclick: showAdvice }, h('span', { 'aria-hidden': 'true', text: '💡 ' }), 'Conseil'));
+  actions.appendChild(h('button', { type: 'button', class: 'dj-btn dj-btn-ghost dj-btn-sm dj-hint-btn', onclick: showAdvice }, h('span', { 'aria-hidden': 'true', html: ICONS.bulb }), 'Conseil'));
 }
 
 function showAdvice() {
@@ -1200,13 +1282,12 @@ function toggleLog() {
 function toggleSound() {
   store.settings.sound = !store.settings.sound;
   saveStore();
-  const btn = $('#dj-sound');
-  if (btn) {
+  ROOT.querySelectorAll('.dj-sound-btn').forEach(btn => {
     btn.innerHTML = '';
     btn.appendChild(h('span', { 'aria-hidden': 'true', html: store.settings.sound ? ICONS.soundOn : ICONS.soundOff }));
     btn.setAttribute('aria-label', store.settings.sound ? 'Couper le son' : 'Activer le son');
     btn.title = btn.getAttribute('aria-label');
-  }
+  });
   sound('bet');
 }
 
@@ -1214,8 +1295,10 @@ function cycleSpeed() {
   const order = ['lent', 'normal', 'rapide'];
   store.settings.speed = order[(order.indexOf(store.settings.speed) + 1) % order.length];
   saveStore();
-  const btn = $('#dj-speed span:last-child');
-  if (btn) btn.textContent = { lent: 'Lent', normal: 'Normal', rapide: 'Rapide' }[store.settings.speed];
+  ROOT.querySelectorAll('.dj-speed-btn').forEach(btn => {
+    btn.querySelector('.dj-speed-label').textContent = SPEED_LABEL[store.settings.speed];
+    btn.setAttribute('aria-label', 'Vitesse du jeu : ' + SPEED_LABEL[store.settings.speed]);
+  });
 }
 
 function toggleImmersive() {
@@ -1226,14 +1309,14 @@ function toggleImmersive() {
     if (on && ROOT.requestFullscreen && !document.fullscreenElement) ROOT.requestFullscreen().catch(() => {});
     else if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
   } catch (e) { /* plein écran indisponible : le mode immersif CSS suffit */ }
-  setTimeout(layoutHand, 60);
+  setTimeout(() => { layoutHand(); layoutTrick(); }, 60);
 }
 
 document.addEventListener('fullscreenchange', () => {
   if (!document.fullscreenElement && ROOT && ROOT.classList.contains('is-immersive')) {
     ROOT.classList.remove('is-immersive');
     document.documentElement.classList.remove('dj-lock');
-    setTimeout(layoutHand, 60);
+    setTimeout(() => { layoutHand(); layoutTrick(); }, 60);
   }
 });
 
@@ -1359,28 +1442,40 @@ async function finish(sess) {
   if (L) return lessonResult(sess);
   track('dojo_game_end', { win, rounds: st.history.length });
   if (win) celebrate();
-  const ranking = st.players.slice().sort((a, b) => b.lives - a.lives || (st.winners.includes(b.id) ? 1 : 0) - (st.winners.includes(a.id) ? 1 : 0));
-  const list = h('ol', { class: 'dj-ranking' }, ranking.map((p, i) => {
-    const persona = personaOf(p);
-    return h('li', { class: p.id === 0 ? 'is-me' : '' },
-      h('span', { class: 'dj-rank', text: st.winners.includes(p.id) ? '👑' : String(i + 1) }),
-      h('span', { class: 'dj-rank-name' }, avatarImg(p, 'dj-mini-avatar'), p.name),
-      livesEl(p, st.opts.lives),
-      h('span', { class: 'dj-muted', text: `${p.stats.exact}/${p.stats.bets} paris` })
-    );
-  }));
+  const isWinner = p => st.winners.includes(p.id);
+  const ranking = st.players.slice().sort((a, b) => b.lives - a.lives || (isWinner(b) ? 1 : 0) - (isWinner(a) ? 1 : 0));
+  // Rang partagé en cas d'égalité de Vies ; les gagnants (départage compris) sont seuls premiers
+  const rankOf = p => 1 + st.players.filter(q => q.lives > p.lives || (q.lives === p.lives && isWinner(q) && !isWinner(p))).length;
+  const myRank = rankOf(me);
+  const list = h('ol', { class: 'dj-ranking' }, ranking.map(p => h('li', { class: (p.id === 0 ? 'is-me' : '') + (isWinner(p) ? ' is-winner' : '') },
+    isWinner(p)
+      ? h('span', { class: 'dj-rank is-crown', title: 'Gagnant', 'aria-label': 'Gagnant', html: ICONS.crown })
+      : h('span', { class: 'dj-rank', text: String(rankOf(p)) }),
+    h('span', { class: 'dj-rank-name' }, avatarImg(p, 'dj-mini-avatar'), p.name),
+    livesEl(p, st.opts.lives),
+    h('span', { class: 'dj-rank-bets', text: `${p.stats.exact}/${p.stats.bets} paris` })
+  )));
   const title = win ? (st.winners.length > 1 ? 'Victoire partagée !' : 'Tu es Maître des Mystiques !') : 'Fin de la partie';
-  const body = h('div', {},
-    last ? resultsTable(st, last.results) : null,
+  const place = myRank === 1 ? '1ʳᵉ' : myRank + 'ᵉ';
+  const lead = win
+    ? `Tu gagnes avec ${plural(me.lives, 'Vie')} en ${plural(st.history.length, 'manche')}.`
+    : `Tu finis à la ${place} place sur ${st.players.length}, avec ${plural(me.lives, 'Vie')}.`;
+  const body = h('div', { class: 'dj-end' },
+    h('p', { class: 'dj-end-lead', text: lead }),
+    h('dl', { class: 'dj-end-stats' },
+      h('div', {}, h('dt', { text: 'Vies' }), h('dd', { text: String(me.lives) })),
+      h('div', {}, h('dt', { text: 'Paris exacts' }), h('dd', { text: `${me.stats.exact}/${me.stats.bets}` })),
+      h('div', {}, h('dt', { text: 'Manches' }), h('dd', { text: String(st.history.length) }))
+    ),
     h('h4', { class: 'dj-subtitle', text: 'Classement' }),
     list,
-    h('p', { class: 'dj-note', text: `Tes paris exacts : ${me.stats.exact} sur ${me.stats.bets}. ${win ? 'Prêt à défier tes amis autour d’une vraie table ?' : 'Une revanche, ici ou autour d’une vraie table ?'}` }),
+    last ? h('details', { class: 'dj-details' }, h('summary', { text: 'Détail de la dernière manche' }), resultsTable(st, last.results)) : null,
     ctaBox(win)
   );
   const again = await modal({
     title,
     body,
-    className: win ? 'is-good' : '',
+    className: 'is-end' + (win ? ' is-good' : ''),
     sess,
     dismissible: false,
     buttons: [{ label: 'Retour à l’accueil', value: 'lobby' }, { label: 'Rejouer', value: 'again', primary: true }]
@@ -1390,13 +1485,13 @@ async function finish(sess) {
 }
 
 function ctaBox(win) {
-  return h('a', { class: 'dj-cta', href: '/commander.html', onclick: () => track('dojo_cta_click', { win }) },
+  return h('div', { class: 'dj-cta' },
     h('img', { src: '/boite-recto-kyran-thumb.webp', alt: 'Boîte du jeu KYRAN', width: 64, height: 64, loading: 'lazy' }),
-    h('span', { class: 'dj-cta-text' },
+    h('div', { class: 'dj-cta-text' },
       h('b', { text: win ? 'Rejoue ta victoire en vrai' : 'Prends ta revanche en vrai' }),
-      h('span', { text: '3 à 6 joueurs, 30 minutes, la manche Mystique carte sur le front.' })
-    ),
-    h('span', { class: 'dj-cta-price', text: '9,99 €' })
+      h('span', { text: '3 à 6 joueurs, environ 30 minutes, dès 8 ans.' }),
+      h('a', { class: 'dj-btn dj-btn-cta', href: '/commander.html', onclick: () => track('dojo_cta_click', { win }) }, 'Commander le jeu · 9,99 €')
+    )
   );
 }
 
@@ -1582,7 +1677,7 @@ function renderLobby(keepFocus) {
 function settingsHelp() {
   const s = store.settings;
   const n = s.opponents + 1;
-  const len = s.length === 'rapide' ? 'manches de 4, 3, 2 cartes puis la manche Mystique' : 'cycles de 7 à 2 cartes puis la manche Mystique, jusqu’à la première élimination';
+  const len = s.length === 'rapide' ? 'manches de 4, 3, 2 cartes puis la manche Mystique' : 'cycles de 7 à 2 cartes puis la manche Mystique, jusqu’à ce qu’un joueur n’ait plus de Vies';
   const rules = s.rules === 'initiation' ? 'sans carte Pouvoir ni Mystique (variante d’initiation)' : `avec la Mystique et ${n >= 5 ? 'les 8 cartes Pouvoir' : 'les 4 cartes Pouvoir'}`;
   return `${n} joueurs, ${len}, ${rules}.`;
 }
@@ -1594,7 +1689,7 @@ function init() {
   ROOT.removeAttribute('aria-busy');
   renderLobby();
   let t;
-  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layoutHand, 120); });
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutHand(); layoutTrick(); }, 120); });
   document.addEventListener('keydown', e => {
     if (!S || !S.resolveHuman || e.target.closest('input,textarea,select')) return;
     if ($('#dj-modal-layer .dj-modal')) return;

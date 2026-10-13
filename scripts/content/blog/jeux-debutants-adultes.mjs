@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-debutants-adultes',
   title: 'Jeux de société pour débutants adultes : par où commencer',
   shortTitle: 'Jeux pour débutants adultes',
-  metaTitle: 'Jeux de société pour débutants adultes : 5 jeux pour commencer',
+  metaTitle: 'Jeux de société pour débutants adultes : par où commencer',
   description: 'Jamais joué à un jeu moderne ? La réponse d’abord, puis cinq jeux de cartes rangés en escalier, de Timeline au pari sur les plis, jargon traduit.',
   category: 'Famille',
   date: '2026-05-25',

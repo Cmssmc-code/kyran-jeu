@@ -183,6 +183,8 @@ const html = `<!DOCTYPE html>
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escAttr(title)}" />
+  <meta name="twitter:description" content="${escAttr(description)}" />
   <meta name="twitter:image" content="${SITE}/og-kyran.jpg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -235,6 +237,7 @@ const html = `<!DOCTYPE html>
             <span class="blog-index-stat__label">mots par guide</span>
           </div>
         </div>
+        <h2 class="sr-only">Tous les guides du blog</h2>
         <kyran-blog-filters></kyran-blog-filters>
         <kyran-blog-grid>
       <div class="blog-grid">

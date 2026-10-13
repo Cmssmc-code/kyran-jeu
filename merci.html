@@ -6,8 +6,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="/error-reporter.js?v=d95ff8dcc6"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Merci pour votre commande ! — KYRAN</title>
-  <meta name="description" content="Confirmation de votre commande KYRAN. Votre jeu de cartes est en cours de préparation." />
+  <title>Merci pour votre commande — KYRAN</title>
+  <meta name="description" content="Confirmation de votre commande KYRAN : votre jeu de cartes part sous 24 à 48 h ouvrées, en envoi suivi." />
   <link rel="canonical" href="https://kyran-jeu.fr/merci.html" />
   <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#231F22" />
@@ -22,70 +22,82 @@
   <script src="components.js?v=eb2a397287" defer></script>
 
   <style>
+    /* Le client vient de payer : pas d'incitation à commander de nouveau. */
+    body.is-merci-page .top-announcement-bar,
+    body.is-merci-page .mobile-nav-tab--highlight,
+    body.is-merci-page .cta-desktop,
+    body.is-merci-page .nav-drawer-footer .btn-primary { display: none !important; }
+
     .merci-section {
-      padding: var(--space-6) 0 var(--space-7);
-      text-align: center;
+      padding: var(--space-5) 0 var(--space-7);
     }
     .merci-card {
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto;
       background: #ffffff;
-      border: 1px solid #e7e2d9;
-      border-radius: var(--radius-lg, 24px);
-      padding: var(--space-5) var(--space-4);
-      box-shadow: 0 10px 32px rgba(69, 26, 3, 0.08);
+      border: 2px solid var(--k-ink);
+      border-radius: 22px;
+      box-shadow: 6px 6px 0 var(--k-saffron);
+      padding: clamp(24px, 5vw, 40px) clamp(18px, 5vw, 40px);
+      text-align: center;
+      animation: merciIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes merciIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
     }
     .merci-icon {
-      width: 68px;
-      height: 68px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
-      background: rgba(16, 185, 129, 0.1);
-      border: 2px solid #059669;
+      background: var(--k-saffron);
+      border: 2px solid var(--k-ink);
+      color: var(--k-ink);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
       margin-bottom: var(--space-3);
     }
     .merci-title {
       font-family: var(--font-display);
-      font-size: 2.4rem;
-      letter-spacing: 0;
-      margin-bottom: var(--space-2);
-      color: var(--text-main);
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 600;
       line-height: 1.12;
-      font-weight: 700; }
+      letter-spacing: 0;
+      color: var(--k-ink);
+      margin: 0 0 var(--space-2);
+    }
     .merci-text {
       color: var(--text-sub);
       font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: var(--space-4);
+      line-height: 1.6;
+      margin: 0 0 var(--space-4);
     }
     .merci-steps {
-      background: #faf7f2;
-      border: 1px solid #ede7dc;
-      border-radius: 16px;
+      list-style: none;
+      margin: 0 0 var(--space-4);
       padding: var(--space-3);
+      background: var(--k-cream);
+      border: 1px solid var(--k-sand);
+      border-radius: 16px;
       text-align: left;
-      margin-bottom: var(--space-4);
+      display: grid;
+      gap: 14px;
     }
-    .merci-step-item {
+    .merci-steps li {
       display: flex;
       gap: 14px;
-      margin-bottom: 12px;
       align-items: flex-start;
     }
-    .merci-step-item:last-child {
-      margin-bottom: 0;
-    }
     .step-num {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-      color: #ffffff;
+      background: var(--k-saffron);
+      border: 1.5px solid var(--k-ink);
+      color: var(--k-ink);
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -93,12 +105,33 @@
     }
     .step-content strong {
       display: block;
-      color: var(--text-main);
-      font-size: 0.95rem;
+      color: var(--k-ink);
+      font-size: 0.98rem;
     }
     .step-content span {
-      color: var(--text-muted);
-      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .merci-box {
+      border: 1px solid var(--k-sand);
+      border-radius: 16px;
+      padding: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+    .merci-box--kraft { background: var(--k-kraft); }
+    .merci-box-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--k-ink);
+      margin: 0 0 6px;
+    }
+    .merci-box p:not(.merci-box-title) {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-sub);
+      margin: 0 0 12px;
     }
     .merci-actions {
       display: flex;
@@ -107,9 +140,12 @@
       justify-content: center;
       margin-top: var(--space-4);
     }
+    @media (prefers-reduced-motion: reduce) {
+      .merci-card { animation: none; }
+    }
   </style>
 </head>
-<body>
+<body class="is-merci-page">
   <a href="#contenu-principal" class="skip-link">Aller au contenu</a>
   <kyran-header active="order" data-ssr="1">
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
@@ -211,79 +247,61 @@
     <section class="merci-section">
       <div class="container">
         <div class="merci-card">
-          <div class="merci-icon" aria-hidden="true">✓</div>
-          <h1 class="merci-title">Merci pour votre <span class="accent">commande</span> !</h1>
-          <p class="merci-text">
-            Votre paiement a bien été validé par Stripe. Nous préparons votre boîte du jeu <strong>KYRAN</strong> avec le plus grand soin.
-          </p>
-
-          <div class="merci-steps">
-            <div class="merci-step-item">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <strong>Confirmation immédiate par email</strong>
-                <span>Un email récapitulatif complet avec votre accès à l'Initiation en ligne vous a été envoyé.</span>
-              </div>
-            </div>
-            <div class="merci-step-item">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <strong>Expédition soignée sous 24-48h</strong>
-                <span>Votre colis sera expédié avec suivi postal à l'adresse renseignée.</span>
-              </div>
-            </div>
-            <div class="merci-step-item">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <strong>Assistance directe</strong>
-                <span>Une question ? Contactez l'auteur à <a href="mailto:contact@kyran-jeu.fr" class="text-link">contact@kyran-jeu.fr</a>.</span>
-              </div>
-            </div>
+          <div class="merci-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
+          <h1 class="merci-title">Merci pour votre commande</h1>
+          <p class="merci-text">Votre paiement est validé. Nous préparons votre boîte de <strong>KYRAN</strong>.</p>
 
-          <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 14px; padding: var(--space-3); margin-bottom: var(--space-4); text-align: center;">
-            <p style="font-weight: 700; color: #8A3220; margin-bottom: 6px; font-size: 1rem;">
-              Préparez vos amis avant l'arrivée de la boîte ! 🃏
-            </p>
-            <p style="font-size: 0.88rem; color: #A33B22; margin-bottom: 12px;">
-              Partagez le simulateur de l'Initiation pour qu'ils s'entraînent déjà à bluffer :
-            </p>
-            <a 
-              href="https://api.whatsapp.com/send?text=Je%20viens%20de%20commander%20le%20jeu%20de%20cartes%20KYRAN%20!%20D%C3%A9couvre%20les%20r%C3%A8gles%20et%20teste%20le%20simulateur%20gratuit%20ici%20:%20https%3A%2F%2Fkyran-jeu.fr%2Fminijeu.html" 
-              target="_blank" 
+          <ol class="merci-steps">
+            <li>
+              <span class="step-num" aria-hidden="true">1</span>
+              <span class="step-content">
+                <strong>Un courriel de confirmation</strong>
+                <span>Il vous a été envoyé, avec un lien vers l'Initiation en ligne.</span>
+              </span>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">2</span>
+              <span class="step-content">
+                <strong>Expédition sous 24 à 48&nbsp;h ouvrées</strong>
+                <span>En envoi suivi, à l'adresse indiquée. Le numéro de suivi vous est envoyé par courriel.</span>
+              </span>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">3</span>
+              <span class="step-content">
+                <strong>Une question&nbsp;?</strong>
+                <span>Écrivez à l'auteur&nbsp;: <a href="mailto:contact@kyran-jeu.fr" class="text-link">contact@kyran-jeu.fr</a>.</span>
+              </span>
+            </li>
+          </ol>
+
+          <div class="merci-box merci-box--kraft">
+            <p class="merci-box-title">Préparez vos amis</p>
+            <p>Envoyez-leur l'Initiation&nbsp;: ils apprennent les règles avant l'arrivée de la boîte.</p>
+            <a
+              href="https://api.whatsapp.com/send?text=Je%20viens%20de%20commander%20le%20jeu%20de%20cartes%20KYRAN%20!%20D%C3%A9couvre%20les%20r%C3%A8gles%20et%20teste%20le%20simulateur%20gratuit%20ici%20:%20https%3A%2F%2Fkyran-jeu.fr%2Fminijeu.html"
+              target="_blank"
               rel="noopener noreferrer"
-              class="btn"
-              style="background: #25d366; color: #ffffff; font-weight: 600; font-size: 0.88rem; padding: 8px 18px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px;"
-            >
-              <span>Partager sur WhatsApp</span>
-            </a>
+              class="btn btn-secondary"
+            >Partager sur WhatsApp</a>
           </div>
 
-          <div style="background: #ffffff; border: 1px solid #e7e2d9; border-radius: 14px; padding: var(--space-3); margin-bottom: var(--space-4); text-align: center;">
-            <p style="font-weight: 700; margin-bottom: 6px; font-size: 1rem;">
-              Un coup de pouce pour un jeu d'auteur indépendant
-            </p>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
-              KYRAN n'est pas en magasin&nbsp;: il se fait connaître par ses joueurs. Après votre première partie, une photo de la manche carte sur le front avec <a class="text-link" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer">@kyran.jeu</a> nous aide plus qu'une publicité, et elle peut rejoindre la page <a class="text-link" href="/communaute.html">Communauté</a>.
-            </p>
+          <div class="merci-box">
+            <p class="merci-box-title">Un coup de pouce pour un jeu d'auteur</p>
+            <p>KYRAN n'est pas en magasin&nbsp;: il se fait connaître par ses joueurs. Après votre première partie, une photo de la manche carte sur le front avec <a class="text-link" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer">@kyran.jeu</a> nous aide beaucoup. Elle peut rejoindre la page <a class="text-link" href="/communaute.html">Communauté</a>.</p>
             <a
               href="https://api.whatsapp.com/send?text=Id%C3%A9e%20cadeau%20%3A%20KYRAN%2C%20un%20jeu%20de%20cartes%20o%C3%B9%20quelqu%27un%20se%20trompe%20%C3%A0%20chaque%20manche%20(3%20%C3%A0%206%20joueurs%2C%209%2C99%20%E2%82%AC)%20%3A%20https%3A%2F%2Fkyran-jeu.fr%2Fcommander.html%3Futm_source%3Dwhatsapp%26utm_medium%3Dpartage%26utm_campaign%3Dmerci"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-secondary"
-              style="font-size: 0.88rem; padding: 8px 18px; border-radius: 50px;"
-            >
-              Suggérer KYRAN à un proche
-            </a>
+            >Suggérer KYRAN à un proche</a>
           </div>
 
-          <p style="font-size: 0.92rem; color: var(--gold-dark); margin-bottom: var(--space-3);">
-            En attendant la réception, maîtrisez déjà les plis et les paris de KYRAN !
-          </p>
-
           <div class="merci-actions">
-            <a href="minijeu.html" class="btn btn-primary">Jouer à l'Initiation interactive</a>
-            <a href="regle.html" class="btn btn-secondary">Lire les règles complètes</a>
+            <a href="minijeu.html" class="btn btn-primary">Jouer à l'Initiation</a>
+            <a href="regle.html" class="btn btn-secondary">Lire les règles</a>
             <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
           </div>
         </div>

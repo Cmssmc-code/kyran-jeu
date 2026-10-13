@@ -47,6 +47,7 @@ Point de départ : [`docs/rapports/audit-ventes-2026-10-12.md`](rapports/audit-v
 | Date | Mesure (28 j) | Action | PR |
 |---|---|---|---|
 | 2026-10-12 | Google ≈ 3 clics/jour ; accueil 13 clics en 3 mois ; `/commander.html` 0 clic organique | Audit complet ; port aligné sur Stripe (3,99 €) ; quantité Stripe ; fin du prix barré ; accueil mobile ; message de Noël automatique | #46 |
+| 2026-10-13 | 15 sept. → 12 oct. : ≈ 74 clics (2,6/jour). `/tarot-africain.html` 1re page (14 clics, 1 387 impr., pos. 7,6) ; `/` 4 clics, 133 impr. ; `/commander.html` 0 clic, 14 impr. ; `cadeau-noel` 1 clic, 4 impr. ; `cadeau-anniversaire` 0, 15 impr. ; « kyran » 3 clics, 57 impr., pos. 1,7. Stripe (lecture) : 9,99 € + 3,99 € = 13,98 €, conforme au site ; pays BE, FR, LU, MC, CH seulement (le site promet aussi DE, IT, ES, AD, UK) ; description « 55 cartes » toujours fausse | Encart KYRAN tôt dans `/tarot-africain.html` (pas de tarot ou six joueurs) au lieu du seul encart de fin de page ; page d'origine transmise à Stripe : `/commander.html?ref=…` → `client_reference_id` (à lire sur chaque paiement du tableau de bord Stripe : `tarot-africain-materiel`, `tarot-africain-kyran`) | #49 |
 
 ## En attente du propriétaire
 

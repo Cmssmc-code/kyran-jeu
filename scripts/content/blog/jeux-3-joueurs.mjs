@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-3-joueurs',
   title: 'Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois',
   shortTitle: 'Jeux à 3 joueurs',
-  metaTitle: 'Jeux de cartes à 3 joueurs : 6 jeux vraiment réglés pour trois',
+  metaTitle: 'Jeux de cartes à 3 joueurs : 6 jeux réglés pour trois',
   description: 'Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s\'affronter, et que faire des duels.',
   category: 'Soirée',
   date: '2026-05-21',

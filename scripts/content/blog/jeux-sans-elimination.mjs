@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-sans-elimination',
   title: 'Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table',
   shortTitle: 'Jeux sans élimination',
-  metaTitle: 'Jeux sans élimination : 5 jeux de cartes où tout le monde joue',
+  metaTitle: 'Jeux sans élimination : 5 jeux de cartes où personne ne sort',
   description: 'Sushi Go!, Timeline, Hanabi, No Thanks!, Skyjo : cinq jeux de cartes où personne ne sort, la règle de fin de chacun, et comment vérifier une autre boîte.',
   category: 'Famille',
   date: '2026-06-14',

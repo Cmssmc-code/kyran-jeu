@@ -43,8 +43,9 @@ export const PRODUCT = {
   releaseDate: '2026-01-31',
   language: 'Français',
   shipping: {
-    // cgv.html art. 5 et commander.html (tableau des délais).
-    countries: ['FR', 'BE', 'LU', 'DE', 'CH', 'IT', 'ES', 'MC', 'AD', 'GB'],
+    // Pays acceptés par la page de paiement Stripe (vérifiée le 2026-10-13, _notes/memoire.md § 1) :
+    // la même liste que commander.html, la FAQ et llms.txt.
+    countries: ['FR', 'BE', 'LU', 'CH', 'MC'],
     handlingDays: { min: 1, max: 2 }, // « expédition sous 24 à 48 heures ouvrées »
     // Seul le port France est connu : 2,99 € par commande, quel que soit le nombre de boîtes
     // (décision du propriétaire du 2026-10-13 ; cgv.html art. 3). Stripe facturait encore 3,99 €

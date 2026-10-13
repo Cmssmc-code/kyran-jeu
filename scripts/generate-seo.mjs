@@ -18,6 +18,9 @@ const CACHE = assetVersion();
 
 const { articles, items, store } = await loadItems();
 
+// Total d'une boîte livrée en France : prix boutique + port unique (product.mjs)
+const totalFr = (Number(PRODUCT.price.amount) + Number(PRODUCT.shipping.rates[0].price)).toFixed(2).replace('.', ',') + ' €';
+
 function escXml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -119,17 +122,17 @@ function buildLlmsTxt() {
 - Joueurs : 3 à 6 (ne se joue pas à deux)
 - Durée d'une partie : environ 30 minutes
 - Âge : dès 8 ans
-- Matériel : 36 cartes Nombre (1 à 36), 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles ; cartes vernies toilées, boîte rigide
+- Matériel : 45 cartes de jeu (36 cartes Nombre de 1 à 36, 1 carte Mystique, 8 cartes Pouvoir), 30 cartes Vie et 7 cartes de règles ; cartes vernies toilées, boîte rigide
 - Auteur et éditeur : Corentin Sence (France) — présentation : ${SITE}/a-propos.html
 - Illustrations : Crea by Floh
 - Édition actuelle : 2026 (sortie le 31 janvier 2026)
 - Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
-- Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port de ${PRODUCT.shipping.rates[0].label} par commande en France métropolitaine (quel que soit le nombre de boîtes) ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
+- Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port de ${PRODUCT.shipping.rates[0].label} par commande en France métropolitaine (quel que soit le nombre de boîtes), soit ${totalFr} pour une boîte livrée en France ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
 - Livraison : France métropolitaine, Belgique, Luxembourg, Suisse, Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
 - Retour : 14 jours après réception, frais de retour à la charge du vendeur (CGV, article 6 : ${SITE}/cgv.html)
 - Boîte : ${PRODUCT.dimensions.label}, ${PRODUCT.weight.value} g
 - Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
-- Présence externe : fiche BoardGameGeek (https://boardgamegeek.com/boardgame/480678/kyran) ; fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
+- Présence externe : chaîne YouTube officielle (https://www.youtube.com/@Kyran-jeu) ; fiche BoardGameGeek (https://boardgamegeek.com/boardgame/480678/kyran) ; fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Note sur Amazon.fr : ${PRODUCT.amazon.rating} / 5 sur ${PRODUCT.amazon.ratingCount} évaluations (relevé du ${PRODUCT.amazon.checkedLabel})
 - Règles : ${SITE}/regle.html ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
@@ -140,8 +143,8 @@ function buildLlmsTxt() {
 1. Pari obligatoire : à chaque manche, chaque joueur annonce le nombre exact de plis qu'il pense gagner. La somme des paris ne peut jamais être égale au nombre de plis de la manche : le dernier à parler doit ajuster son annonce, donc au moins un joueur se trompera.
 2. Vies : un pari raté fait perdre autant de cartes Vie que l'écart entre le pari et les plis gagnés ; un pari juste ne coûte rien. La partie s'arrête quand un joueur n'a plus de vies ; celui qui en garde le plus gagne.
 3. Cartes Pouvoir (valeurs doubles) : Sceau du Destin (27/4), Clairvoyance Antique (11/23), Bénédiction des Ancêtres (20/9), Voile du Néant (3/34) ; chacune a un effet immédiat à la pose.
-4. Manche Mystique : dernière manche du cycle, à une seule carte posée sur le front (on voit les cartes des autres, pas la sienne) ; on parie 1 pli ou 0. La carte Mystique vaut 0 ou 37.
-5. Cycle de manches : 7, 6, 5, 4, 3, 2 cartes, puis la manche Mystique à 1 carte.
+4. Manche Mystique : elle suit la manche à 2 cartes ; chacun joue une seule carte posée sur le front (on voit les cartes des autres, pas la sienne) et parie 1 pli ou 0. La carte Mystique vaut 0 ou 37.
+5. Cycle de manches : 7, 6, 5, 4, 3, 2 cartes, puis la manche Mystique à 1 carte ; le cycle repart ensuite à 7, jusqu'à ce qu'un joueur n'ait plus de vies.
 
 ## Repères de comparaison (faits vérifiables)
 
@@ -214,7 +217,13 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Combien de joueurs ? De 3 à 6.
 - Quelle durée ? Environ 30 minutes.
 - Quel âge ? Dès 8 ans.
-- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port ${PRODUCT.shipping.rates[0].label} par commande en France), ${PRODUCT.amazon.price} sur Amazon.fr.
+- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port ${PRODUCT.shipping.rates[0].label} par commande en France, soit ${totalFr} pour une boîte), ${PRODUCT.amazon.price} sur Amazon.fr, ou sur Etsy (boutique KyranJeu).
+- Dans quels pays est-il livré ? France métropolitaine, Belgique, Luxembourg, Suisse et Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement.
+- Se joue-t-il à deux ? Non, KYRAN se joue de 3 à 6 joueurs.
+- Que contient la boîte ? 45 cartes de jeu (36 cartes Nombre, 8 cartes Pouvoir, 1 carte Mystique), 30 cartes Vie et 7 cartes de règles, dans une boîte rigide de ${PRODUCT.dimensions.label} (${PRODUCT.weight.value} g).
+- Quand est-il sorti ? Le 31 janvier 2026.
+- Quel jeu de cartes consiste à parier le nombre exact de plis ? C'est le principe des jeux de plis à annonce : l'Ascenseur (Oh Hell!), Wizard, le Tarot Africain (Whist 22) et KYRAN. Comparatif : ${SITE}/blog/jeux-plis-comparatif.html
+- Quel est l'autre nom du Tarot Africain ? Whist 22 ; c'est le même jeu, joué avec 22 cartes du tarot : ${SITE}/whist-22.html
 - Peut-on essayer gratuitement ? Oui, avec l’Initiation en ligne : ${SITE}/minijeu.html.
 - Différence avec Skyjo ? Skyjo se joue sans plis (on minimise un score avec une grille de cartes) ; KYRAN est un jeu de plis avec pari et vies.
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.
@@ -286,7 +295,7 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Plan du site KYRAN — toutes les pages et guides</title>
-  <meta name="description" content="Plan du site kyran-jeu.fr : accueil, règles, Tarot Africain, FAQ et ${items.length} guides de jeux de cartes du blog." />
+  <meta name="description" content="Plan du site kyran-jeu.fr : règles de KYRAN, boutique, Initiation gratuite en ligne, Tarot Africain, FAQ et les ${items.length} guides de jeux de cartes du blog." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${SITE}/plan-du-site.html" />

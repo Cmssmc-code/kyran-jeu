@@ -53,7 +53,7 @@ soit 12,98 € pour une boîte. Le 13 octobre 2026, le Payment Link Stripe factu
 | `shipping` | France : 2,99 EUR par commande, 2 à 4 jours ouvrés | décision du 2026-10-13, CGV art. 3 et 5 |
 | `product_detail` | joueurs, durée, âge, langue, contenu, auteur, illustrateur | |
 
-Le port des autres pays (BE, LU, DE, CH, IT, ES, MC, AD, GB) n'est **pas** dans le flux : il est
+Le port des autres pays (BE, LU, CH, MC : seuls pays acceptés par la page Stripe le 13 octobre 2026) n'est **pas** dans le flux : il est
 calculé par Stripe au paiement et le site n'en donne pas le montant. Un prix inventé ferait
 refuser la fiche (écart entre le flux et la page de paiement).
 
@@ -89,8 +89,8 @@ Points à vérifier par le propriétaire :
     jours ouvrés du lundi au vendredi, heure limite de commande à choisir.
   - Autres pays desservis : créer un service par pays **seulement** avec le tarif réellement
     facturé par Stripe (à relever sur la page de paiement avec une adresse du pays, sans payer).
-    Transit 3 à 6 jours ouvrés (CGV art. 5). Pour la Suisse et le Royaume-Uni (hors zone
-    euro), vérifier dans Merchant Center les conditions de devise avant d'activer ces pays.
+    Transit 3 à 6 jours ouvrés (CGV art. 5). Pour la Suisse (hors zone
+    euro), vérifier dans Merchant Center les conditions de devise avant d'activer ce pays.
 - **Retours** (Paramètres > Expédition et retours > Retours), d'après CGV art. 6 :
   - délai : 14 jours après la réception ;
   - frais de retour : **gratuits** (pris en charge par le vendeur) ;

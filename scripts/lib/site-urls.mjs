@@ -52,6 +52,7 @@ export const STATIC_PAGES = [
   },
   { path: '/minijeu.html', title: 'Initiation KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
+  { path: '/idee-cadeau.html', title: 'Idée cadeau de Noël : offrir le jeu de cartes KYRAN', section: 'Boutique' },
   {
     path: '/jeu-apero.html',
     title: 'KYRAN — jeu de cartes pour l\'apéro',

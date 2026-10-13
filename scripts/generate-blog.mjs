@@ -3,7 +3,7 @@
  * Les articles rédigés à la main (roster.handwritten) ne sont pas touchés.
  * Run: node scripts/generate-blog.mjs
  */
-import { writeFileSync, mkdirSync, existsSync } from 'fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { GAME_LINKS } from './lib/game-links.mjs';
@@ -23,6 +23,11 @@ function slugify(name) {
   return name.toLowerCase()
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/** Typographie française des titres affichés : espace insécable avant « : ; ? ! ». */
+function frenchSpacing(html) {
+  return String(html).replace(/ ([:;?!])/g, ' $1');
 }
 
 function padRank(n) {
@@ -152,7 +157,8 @@ function renderCompareTable(article) {
   }).join('\n');
   return `<section class="article-compare" id="comparatif" aria-labelledby="compare-title">
   <h2 id="compare-title" class="article-section-label">${label}</h2>
-  <div class="compare-table-wrap">
+  <p class="compare-table-hint" aria-hidden="true">Faites glisser le tableau pour voir toutes les colonnes.</p>
+  <div class="compare-table-wrap" role="region" aria-labelledby="compare-title" tabindex="0">
     <table class="compare-table">
       <caption class="sr-only">Comparatif des ${article.games.length} jeux : joueurs, durée, âge, prix et type</caption>
       <thead><tr><th scope="col">Jeu</th><th scope="col">Joueurs</th><th scope="col">Durée</th><th scope="col">Âge</th><th scope="col">Prix</th><th scope="col">Type</th></tr></thead>
@@ -301,12 +307,81 @@ function renderCrossLinks(article, itemsBySlug) {
 </section>`;
 }
 
+/**
+ * Faits KYRAN des encarts d'achat. Prix et port : /commander.html (Stripe) ; note Amazon :
+ * reviews-data.json (relevée par scripts/fetch-amazon-reviews.mjs). Aucun autre chiffre.
+ */
+const KYRAN_PRICE = '9,99&nbsp;€';
+const KYRAN_SHIPPING = '2,99&nbsp;€';
+const KYRAN_RATING = (() => {
+  try {
+    const r = JSON.parse(readFileSync(join(ROOT, 'reviews-data.json'), 'utf8'));
+    if (!r.averageRating || !r.totalReviews) return null;
+    return { value: String(r.averageRating).replace('.', ','), count: r.totalReviews };
+  } catch {
+    return null;
+  }
+})();
+const KYRAN_BOX = '/boite-recto-kyran-740.webp';
+const KYRAN_BOX_DIMS = existsSync(join(ROOT, KYRAN_BOX)) ? imageSize(join(ROOT, KYRAN_BOX)) : null;
+
+function kyranFacts() {
+  const facts = ['3 à 6 joueurs', 'environ 30&nbsp;min', 'dès 8&nbsp;ans'];
+  return `<ul class="kyran-pitch__facts">${facts.map(f => `<li>${f}</li>`).join('')}</ul>`;
+}
+
+function kyranRating() {
+  if (!KYRAN_RATING) return '';
+  return `<p class="kyran-pitch__rating"><span class="kyran-pitch__stars" aria-hidden="true">★</span> ${KYRAN_RATING.value}/5 sur Amazon <span class="kyran-pitch__count">(${KYRAN_RATING.count}&nbsp;évaluations)</span></p>`;
+}
+
+function kyranButtons() {
+  return `<div class="kyran-pitch__actions">
+    <a class="btn btn-primary" href="/commander.html">Commander</a>
+    <a class="btn btn-secondary" href="/minijeu.html">Essayer en ligne</a>
+  </div>`;
+}
+
+/** Encart court, placé après l'introduction et le résumé. */
+function renderKyranPitch() {
+  return `<aside class="kyran-pitch" aria-label="Notre jeu, KYRAN">
+  <div class="kyran-pitch__text">
+    <p class="kyran-pitch__eyebrow">Notre jeu</p>
+    <p class="kyran-pitch__title">KYRAN, le jeu de plis où l’on parie sur ses levées</p>
+    ${kyranFacts()}
+    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
+    ${kyranRating()}
+  </div>
+  ${kyranButtons()}
+</aside>`;
+}
+
+/** Encart de fin d'article : la règle en une phrase, les faits, les deux actions. */
+function renderKyranEnd() {
+  const box = KYRAN_BOX_DIMS
+    ? `<img class="kyran-pitch__box" src="${KYRAN_BOX}" alt="Boîte du jeu de cartes KYRAN" width="${KYRAN_BOX_DIMS.width}" height="${KYRAN_BOX_DIMS.height}" loading="lazy" decoding="async" />`
+    : '';
+  return `<aside class="kyran-pitch kyran-pitch--end" aria-labelledby="kyran-end-title">
+  ${box}
+  <div class="kyran-pitch__text">
+    <p class="kyran-pitch__eyebrow">Notre jeu</p>
+    <h2 class="kyran-pitch__title" id="kyran-end-title">Et si la prochaine partie était KYRAN&nbsp;?</h2>
+    <p class="kyran-pitch__lead">Chacun annonce le nombre de plis qu’il va gagner, mais la somme des paris ne peut jamais tomber juste&nbsp;: à chaque manche, au moins un joueur se trompe.</p>
+    ${kyranFacts()}
+    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
+    ${kyranRating()}
+    ${kyranButtons()}
+    <p class="kyran-pitch__note">KYRAN est édité par l’auteur de ce blog.</p>
+  </div>
+</aside>`;
+}
+
 function renderSidebarCta() {
   return `<div class="article-sidebar-cta">
-  <p class="article-sidebar-cta__label">Le jeu KYRAN</p>
-  <p class="article-sidebar-cta__text">Plis, paris et manche Mystique — 3 à 6 joueurs, ~30 min.</p>
-  <a class="btn btn-primary btn--sm" href="/regle.html">Voir les règles</a>
-  <a class="btn btn-secondary btn--sm" href="/minijeu.html">Essayer l’Initiation</a>
+  <p class="article-sidebar-cta__label">KYRAN · ${KYRAN_PRICE}</p>
+  <p class="article-sidebar-cta__text">Plis et paris, 3 à 6 joueurs, environ 30&nbsp;min.</p>
+  <a class="btn btn-primary btn--sm" href="/commander.html">Commander</a>
+  <a class="article-sidebar-cta__link" href="/minijeu.html">Essayer en ligne</a>
 </div>`;
 }
 
@@ -443,8 +518,8 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   add(faqBlock.html, faqBlock.html ? [{ href: '#faq', label: heading(article, 'faq', 'Questions fréquentes'), short: 'FAQ' }] : []);
 
   const tocEntries = blocks.flatMap(b => b.toc);
-  const tocLinks = tocEntries.map((t, i) => `<a href="${t.href}"><span class="toc-num">${i + 1}</span>${esc(t.label)}</a>`).join('');
-  const jumpLinks = tocEntries.map(t => `<a href="${t.href}">${esc(t.short)}</a>`).join('');
+  const tocLinks = tocEntries.map((t, i) => `<a href="${t.href}"><span class="toc-num">${i + 1}</span>${frenchSpacing(esc(t.label))}</a>`).join('');
+  const jumpLinks = tocEntries.map(t => `<a href="${t.href}">${frenchSpacing(esc(t.short))}</a>`).join('');
   const bodyHtml = blocks.map(b => b.html).join('\n');
 
   return compactHtml(`<!DOCTYPE html>
@@ -487,6 +562,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
+  <link rel="stylesheet" href="/css/blog-article.css?v=${CACHE}" />
   <script src="/blog-data.js?v=${CACHE}" defer></script>
   <script src="/components.js?v=${CACHE}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
@@ -504,14 +580,14 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
       <div class="container blog-article-hero__content">
         <kyran-breadcrumb items='${JSON.stringify([{ label: 'Accueil', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: article.shortTitle }])}'></kyran-breadcrumb>
         <span class="blog-article-hero__category">${article.category}</span>
-        <h1 class="blog-article-hero__title">${article.heroTitle}</h1>
-        <p class="blog-article-hero__subtitle">${article.heroSubtitle}</p>
+        <h1 class="blog-article-hero__title">${frenchSpacing(article.heroTitle)}</h1>
+        <p class="blog-article-hero__subtitle">${frenchSpacing(article.heroSubtitle)}</p>
         <ul class="blog-article-hero__meta">
-          <li><span class="meta-label">Auteur</span> <a href="/a-propos.html">Corentin Sence</a></li>
-          <li><span class="meta-label">Publié</span> <time datetime="${article.date}">${article.dateFormatted}</time></li>
-          <li><span class="meta-label">Mis à jour</span> <time datetime="${article.modifiedDate}">${article.modifiedDate.split('-').reverse().join('/')}</time></li>
-          <li><span class="meta-label">Lecture</span> ${article.readMinutes} min</li>
-          <li><span class="meta-label">Sélection</span> ${gameCount} jeux</li>
+          <li>Par <a href="/a-propos.html">Corentin Sence</a></li>
+          <li>Publié le <time datetime="${article.date}">${article.dateFormatted}</time></li>
+          ${article.modifiedDate !== article.date ? `<li>Mis à jour le <time datetime="${article.modifiedDate}">${formatDateFr(article.modifiedDate)}</time></li>` : ''}
+          <li>${article.readMinutes}&nbsp;min de lecture</li>
+          <li>${gameCount}&nbsp;jeux</li>
         </ul>
       </div>
     </header>
@@ -525,11 +601,13 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
         <div class="article-layout">
           <article class="article-main prose prose-wide">
             ${renderIntro(article.intro)}
-            ${renderAuthorCard()}
-            ${renderShareBar(url)}
             ${layout.summaryBox === false ? '' : renderLLMBox(article)}
+            ${renderKyranPitch()}
             ${bodyHtml}
             ${guideBlock}
+            ${renderKyranEnd()}
+            ${renderAuthorCard()}
+            ${renderShareBar(url)}
             ${renderCrossLinks(article, itemsBySlug)}
           </article>
           <aside class="article-sidebar" aria-label="Sommaire de l'article">
@@ -540,7 +618,6 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
             ${renderSidebarCta()}
           </aside>
         </div>
-        <kyran-cta-band text="Envie de plis, paris et manche Mystique ? KYRAN se joue en une soirée."></kyran-cta-band>
       </div>
     </section>
   </main>

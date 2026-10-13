@@ -455,7 +455,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <title>${esc(article.metaTitle)}</title>
   <meta name="description" content="${esc(article.description)}" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${url}" />
   <link rel="alternate" hreflang="fr-FR" href="${url}" />
   <link rel="alternate" hreflang="x-default" href="${url}" />
@@ -484,7 +484,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   ${webpOf(article.heroImage) ? `<link rel="preload" as="image" href="${webpOf(article.heroImage)}" type="image/webp" fetchpriority="high" />` : `<link rel="preload" as="image" href="${article.heroImage}" fetchpriority="high" />`}
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <script src="/blog-data.js?v=${CACHE}" defer></script>

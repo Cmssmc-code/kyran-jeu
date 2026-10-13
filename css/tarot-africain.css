@@ -20,7 +20,7 @@
 }
 .ta-meta a {
   color: var(--gold-dark);
-  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+  border-bottom: 1px solid rgba(201, 138, 14, 0.35);
 }
 .ta-meta a:hover {
   color: var(--gold);
@@ -60,7 +60,7 @@
 }
 .ta-quick dd a {
   color: var(--gold-dark);
-  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+  border-bottom: 1px solid rgba(201, 138, 14, 0.35);
 }
 .ta-quick dd a:hover {
   color: var(--gold);
@@ -80,7 +80,7 @@
   font-size: 0.85rem;
   font-style: italic;
   color: var(--text-muted);
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #EADFCB;
 }
 .ta-table--wide {
   min-width: 620px;
@@ -97,9 +97,9 @@
 }
 .ta-table .ta-total td,
 .ta-table .ta-total th {
-  background: #f8fafc;
+  background: #FBF6EC;
   font-weight: 600;
-  color: #0f172a;
+  color: #231F22;
 }
 .ta-table .ta-fail {
   color: #b91c1c;
@@ -128,10 +128,11 @@
   background: #ffffff;
   box-shadow: 0 1px 2px rgba(69, 26, 3, 0.1);
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.09rem;
   line-height: 1.5;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
   color: var(--text-main);
+  font-weight: 600;
 }
 .ta-card--excuse {
   background: var(--accent-cream);
@@ -166,7 +167,7 @@
   margin: 0;
   padding: 18px 20px 18px 64px;
   background: #ffffff;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
   border-radius: var(--radius);
   box-shadow: 0 2px 10px rgba(69, 26, 3, 0.04);
 }
@@ -184,9 +185,10 @@
   background: var(--gold-muted);
   border: 1px solid var(--gold-border);
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.19rem;
   line-height: 1;
   color: var(--gold-dark);
+  font-weight: 600;
 }
 .ta-steps > li > strong:first-child {
   display: block;
@@ -205,7 +207,7 @@
 }
 .ta-download:hover {
   transform: none;
-  border-color: #e7e2d9;
+  border-color: #E8DCC4;
   box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
 }
 .ta-download__text {
@@ -214,9 +216,10 @@
 .prose .ta-download__title {
   margin: 0 0 6px;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
+  font-size: 1.32rem;
+  letter-spacing: 0;
   color: var(--text-main);
+  font-weight: 600;
 }
 .prose .ta-download__desc {
   margin: 0;
@@ -239,14 +242,14 @@
 }
 .ta-kyran:hover {
   transform: none;
-  border-color: #e7e2d9;
+  border-color: #E8DCC4;
   box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
 }
 .ta-kyran img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
 }
 .prose .ta-kyran h2 {
   margin: 0 0 var(--space-1);
@@ -288,7 +291,7 @@
   height: 100%;
   padding: 16px 18px;
   background: #ffffff;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
   border-radius: var(--radius);
   font-size: 0.92rem;
   line-height: 1.5;
@@ -302,7 +305,7 @@
 }
 .ta-related a:hover {
   border-color: var(--gold-bright);
-  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.1);
+  box-shadow: 0 6px 18px rgba(201, 138, 14, 0.1);
 }
 
 /* Sources */
@@ -315,7 +318,7 @@
 }
 .prose .ta-sources a {
   color: var(--gold-dark);
-  border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+  border-bottom: 1px solid rgba(201, 138, 14, 0.35);
 }
 
 @media (max-width: 640px) {

@@ -6,7 +6,7 @@ export default {
   description: 'Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.',
   category: 'Soirée',
   date: '2026-05-05',
-  heroTitle: 'Jeux <span class="accent">entre amis</span> : 10 jeux pour une soirée réussie, selon votre groupe',
+  heroTitle: 'Jeux <span class="accent">entre amis</span> : 10 jeux pour une soirée réussie, selon votre groupe',
   heroSubtitle: 'Ambiance, bluff ou partie à enjeu : chaque jeu est rangé selon le type de tablée et la durée de la soirée, avec son point faible.',
   heroImage: '/blog/images/codenames.jpg',
   heroCaption: 'Codenames — déduction et fous rires en équipe.',

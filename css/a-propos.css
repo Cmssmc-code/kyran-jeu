@@ -58,7 +58,7 @@
 .about-toc a {
   display: inline-block;
   padding: 6px 14px;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
   border-radius: var(--radius-pill);
   background: #ffffff;
   color: var(--text-sub);
@@ -108,7 +108,7 @@
   margin: 0;
   padding: 12px;
   background: #ffffff;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
   border-radius: var(--radius);
   box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
 }
@@ -137,7 +137,7 @@
 .about-fact {
   padding: 14px 16px;
   background: #ffffff;
-  border: 1px solid #e7e2d9;
+  border: 1px solid #E8DCC4;
   border-radius: 14px;
 }
 
@@ -185,7 +185,7 @@
 .about-contact-list li {
   list-style: none;
   padding: 10px 0;
-  border-bottom: 1px solid #e7e2d9;
+  border-bottom: 1px solid #E8DCC4;
   overflow-wrap: anywhere;
 }
 

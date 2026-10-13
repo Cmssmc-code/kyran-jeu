@@ -52,6 +52,11 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - `blog.js` et `blog-data.js` (données générées) ;
   - `reviews.js`, `reviews-data.json` et `reviews-data.js` (avis Amazon) ;
   - `hero-visual.js`, `error-reporter.js`, `style.css`, `css/`, `fonts/`, `vendor/` (canvas-confetti).
+- **Direction artistique** (couche « 12. DIRECTION ARTISTIQUE KYRAN » en fin de `style.css`, jetons `--k-*` dans `:root`) :
+  - couleurs de la boîte : safran `#E6AB26`, encre `#231F22`, terracotta `#B8432A`, crème `#FBF6EC`, kraft `#F3E7CF` ; couleurs des cartes Nombre (`--k-red`, `--k-blue`…) ;
+  - titres en **Fredoka** variable auto-hébergée (`fonts/fredoka-latin.woff2`, lettrage arrondi du logo), texte en Poppins ; Bebas Neue a été retirée ;
+  - motifs wax : bande `--wax-band` (SVG en data URI) et `img/motif-wax.svg` (bords du hero) ; boutons « étiquette » cernés d'encre ;
+  - en-tête collant : `kyran-header` a `top: -36px` (la barre d'annonce, 36 px, défile) ; `html`, `body` et `main` utilisent `overflow-x: clip` (un `hidden` casse le sticky) et le menu mobile bloque le défilement sur `<html>`, jamais sur `<body>`.
 - **`seo-config.js`** : `ASSET_VERSION` (posé par le build) ; `googleSiteVerification`, `bingSiteVerification` et `ga4MeasurementId` sont vides. GA4 est désactivé : RGPD, il faudrait un bandeau de consentement.
 - **`seo-keywords.json`** : clusters de requêtes cibles par page (primaires et secondaires) et KPI. Mis à jour le 2026-10-04.
 - **Fichiers SEO et IA générés** : `sitemap.xml`, `llms.txt`, `llms-full.txt`, `robots.txt`, `blog/feed.xml`.

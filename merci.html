@@ -10,16 +10,16 @@
   <meta name="description" content="Confirmation de votre commande KYRAN. Votre jeu de cartes est en cours de préparation." />
   <link rel="canonical" href="https://kyran-jeu.fr/merci.html" />
   <meta name="robots" content="noindex, follow" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <meta name="author" content="Corentin Sence" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=6ea28f5960" defer></script>
-  <link rel="stylesheet" href="style.css?v=6ea28f5960" />
-  <script src="components.js?v=6ea28f5960" defer></script>
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="seo-config.js?v=a664bf8bf6" defer></script>
+  <link rel="stylesheet" href="style.css?v=a664bf8bf6" />
+  <script src="components.js?v=a664bf8bf6" defer></script>
 
   <style>
     .merci-section {
@@ -49,11 +49,12 @@
     }
     .merci-title {
       font-family: var(--font-display);
-      font-size: 3rem;
-      letter-spacing: 1px;
+      font-size: 2.4rem;
+      letter-spacing: 0;
       margin-bottom: var(--space-2);
       color: var(--text-main);
-    }
+      line-height: 1.12;
+      font-weight: 700; }
     .merci-text {
       color: var(--text-sub);
       font-size: 1.05rem;
@@ -122,7 +123,8 @@
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="/" class="logo" aria-label="KYRAN - Accueil">
-              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+              <img src="/logo.png" alt="" width="44" height="44" decoding="async" />
+              <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
@@ -240,10 +242,10 @@
           </div>
 
           <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 14px; padding: var(--space-3); margin-bottom: var(--space-4); text-align: center;">
-            <p style="font-weight: 700; color: #92400e; margin-bottom: 6px; font-size: 1rem;">
+            <p style="font-weight: 700; color: #8A3220; margin-bottom: 6px; font-size: 1rem;">
               Préparez vos amis avant l'arrivée de la boîte ! 🃏
             </p>
-            <p style="font-size: 0.88rem; color: #b45309; margin-bottom: 12px;">
+            <p style="font-size: 0.88rem; color: #A33B22; margin-bottom: 12px;">
               Partagez le simulateur de l'Initiation pour qu'ils s'entraînent déjà à bluffer :
             </p>
             <a 
@@ -293,7 +295,7 @@
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <p class="footer-heading">KYRAN</p>
+            <p class="footer-heading footer-brand"><img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">

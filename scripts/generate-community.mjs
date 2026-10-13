@@ -243,7 +243,7 @@ const html = `<!DOCTYPE html>
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}" />
   <meta name="robots" content="${indexable ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' : 'noindex, follow'}" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${URL}" />
   <link rel="alternate" hreflang="fr-FR" href="${URL}" />
   <link rel="alternate" hreflang="x-default" href="${URL}" />
@@ -266,7 +266,7 @@ const html = `<!DOCTYPE html>
   <meta name="twitter:image" content="${esc(ogImage)}" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <link rel="stylesheet" href="/css/communaute.css?v=${CACHE}" />

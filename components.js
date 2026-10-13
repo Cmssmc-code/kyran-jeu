@@ -118,7 +118,8 @@ function renderHeaderHtml(active, pathname) {
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
-              <img src="${ROOT}logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+              <img src="${ROOT}logo.png" alt="" width="44" height="44" decoding="async" />
+              <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
@@ -241,15 +242,22 @@ class KyranHeader extends HTMLElement {
     function closeMenu() {
       if (!body.classList.contains('menu-open')) return;
       body.classList.remove('menu-open');
-      body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Ouvrir le menu');
       backdrop.hidden = true;
     }
 
+    const siteHeader = this.querySelector('.site-header');
+
     function openMenu() {
+      // Le tiroir démarre sous la barre de navigation, où qu'elle soit (barre d'annonce visible ou non).
+      if (siteHeader) {
+        var top = Math.max(0, Math.round(siteHeader.getBoundingClientRect().bottom));
+        document.documentElement.style.setProperty('--nav-drawer-top', top + 'px');
+      }
       body.classList.add('menu-open');
-      body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
       navToggle.setAttribute('aria-expanded', 'true');
       navToggle.setAttribute('aria-label', 'Fermer le menu');
       backdrop.hidden = false;
@@ -323,7 +331,7 @@ function renderFooterHtml() {
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <p class="footer-heading">KYRAN</p>
+            <p class="footer-heading footer-brand"><img src="${ROOT}logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">

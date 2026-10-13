@@ -12,7 +12,7 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <meta name="author" content="Corentin Sence" />
   <link rel="alternate" hreflang="fr-FR" href="https://kyran-jeu.fr/commander.html" />
   <link rel="alternate" hreflang="x-default" href="https://kyran-jeu.fr/commander.html" />
@@ -42,13 +42,13 @@
   <link rel="preload" as="image" href="boite-recto-kyran.webp" type="image/webp" fetchpriority="high" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=6ea28f5960" defer></script>
-  <link rel="stylesheet" href="style.css?v=6ea28f5960" />
-  <link rel="stylesheet" href="/css/commerce-pages.css?v=6ea28f5960" />
-  <script src="components.js?v=6ea28f5960" defer></script>
-  <script src="reviews-data.js?v=6ea28f5960" defer></script>
-  <script src="reviews.js?v=6ea28f5960" defer></script>
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="seo-config.js?v=a664bf8bf6" defer></script>
+  <link rel="stylesheet" href="style.css?v=a664bf8bf6" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=a664bf8bf6" />
+  <script src="components.js?v=a664bf8bf6" defer></script>
+  <script src="reviews-data.js?v=a664bf8bf6" defer></script>
+  <script src="reviews.js?v=a664bf8bf6" defer></script>
 
   <script type="application/ld+json">
   {
@@ -527,7 +527,7 @@
       background: #ffffff;
       color: var(--gold-dark);
       border-color: var(--gold);
-      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.24);
+      box-shadow: 0 6px 18px rgba(201, 138, 14, 0.24);
       transform: translateY(-50%) scale(1.08);
       opacity: 1;
     }
@@ -574,11 +574,11 @@
     .product-thumb:hover {
       border-color: var(--gold);
       transform: scale(1.04);
-      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.16);
+      box-shadow: 0 2px 8px rgba(201, 138, 14, 0.16);
     }
     .product-thumb.active {
       border-color: var(--gold-dark);
-      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.35);
+      box-shadow: 0 0 0 2px rgba(201, 138, 14, 0.35);
       transform: scale(1.04);
     }
     .product-thumb-play-icon {
@@ -589,7 +589,7 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: rgba(217, 119, 6, 0.92);
+      background: rgba(201, 138, 14, 0.92);
       color: #ffffff;
       display: flex;
       align-items: center;
@@ -654,7 +654,7 @@
       width: 28px;
       height: 28px;
       border-radius: 8px;
-      background: rgba(217, 119, 6, 0.09);
+      background: rgba(201, 138, 14, 0.09);
       color: var(--gold-dark);
       display: inline-flex;
       align-items: center;
@@ -684,7 +684,7 @@
       transition: border-color var(--speed);
     }
     .order-specs-accordion:hover {
-      border-color: rgba(217, 119, 6, 0.4);
+      border-color: rgba(201, 138, 14, 0.4);
     }
     .order-specs-summary {
       padding: 13px 18px;
@@ -824,7 +824,7 @@
       font-weight: 700;
     }
     .amazon-order-rating-pill .star-gold {
-      color: #f59e0b;
+      color: #E6AB26;
       font-size: 0.95rem;
     }
     .amazon-order-rating-pill .amazon-rating-count {
@@ -835,12 +835,12 @@
 
     .order-title {
       font-family: var(--font-display);
-      font-size: clamp(1.45rem, 2.4vw, 1.75rem);
-      letter-spacing: 0.5px;
+      font-size: clamp(1.28rem, 1.92vw, 1.54rem);
+      letter-spacing: 0;
       margin-bottom: 2px;
       color: var(--text-main);
       line-height: 1.15;
-    }
+  font-weight: 600; }
     .order-desc {
       color: var(--text-muted);
       font-size: 0.84rem;
@@ -977,10 +977,10 @@
     }
     .order-total-amount {
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.19rem;
       font-weight: 700;
       color: var(--gold-dark);
-      letter-spacing: 0.5px;
+      letter-spacing: 0;
     }
 
     /* Bloc CTA de Conversion */
@@ -996,31 +996,27 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 11px 18px;
-      font-size: 0.98rem;
+      padding: 13px 18px;
+      font-size: 1.02rem;
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: 0;
       border-radius: 999px;
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-      color: #ffffff !important;
+      background: var(--k-saffron, #E6AB26);
+      color: var(--k-ink, #231F22) !important;
       text-decoration: none;
-      border: none;
+      border: 2px solid var(--k-ink, #231F22);
       cursor: pointer;
-      box-shadow: 
-        0 4px 14px rgba(217, 119, 6, 0.28),
-        0 8px 22px -3px rgba(217, 119, 6, 0.35);
-      transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease, filter 0.18s ease;
+      box-shadow: 0 4px 0 var(--k-ink, #231F22);
+      transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.15s ease, background-color 0.15s ease;
     }
     .order-btn-stripe:hover {
       transform: translateY(-2px);
-      filter: brightness(1.05);
-      box-shadow: 
-        0 8px 24px rgba(217, 119, 6, 0.38),
-        0 14px 30px -4px rgba(217, 119, 6, 0.45);
+      background: var(--k-saffron-hi, #F2C14E);
+      box-shadow: 0 6px 0 var(--k-ink, #231F22);
     }
     .order-btn-stripe:active {
-      transform: scale(0.98) translateY(1px);
-      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 var(--k-ink, #231F22);
     }
     .order-qty-hint,
     .order-gift-note {
@@ -1035,7 +1031,7 @@
       border-radius: 10px;
       background: var(--accent-cream, #fdf6ec);
       border: 1px solid var(--accent-cream-border, #f3dfbf);
-      color: var(--text-main, #1c1917);
+      color: var(--text-main, #231F22);
     }
     .order-qty-hint[hidden],
     .order-xmas-note[hidden] { display: none; }
@@ -1099,11 +1095,11 @@
       width: 100%;
       padding: 7px 14px;
       border-radius: 999px;
-      border: 1px solid #d6cebf;
-      background: #faf7f2;
-      color: var(--text-sub);
+      border: 1.5px solid var(--k-ink, #231F22);
+      background: #ffffff;
+      color: var(--k-ink, #231F22);
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-align: center;
       transition: all 0.18s ease;
@@ -1294,13 +1290,13 @@
       font-size: 0.96rem;
       font-weight: 700;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-      color: #ffffff;
+      background: var(--k-saffron, #E6AB26);
+      color: var(--k-ink, #231F22);
       text-decoration: none;
-      border: none;
+      border: 2px solid var(--k-ink, #231F22);
       cursor: pointer;
       white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+      box-shadow: 0 3px 0 var(--k-ink, #231F22);
       flex-shrink: 0;
       transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.18s ease;
     }
@@ -1441,7 +1437,7 @@
         margin-bottom: 10px;
       }
       .order-title {
-        font-size: 1.85rem;
+        font-size: 1.63rem;
       }
       .order-desc {
         font-size: 0.86rem;
@@ -1492,7 +1488,7 @@
         padding-top: 8px;
       }
       .order-total-amount {
-        font-size: 1.35rem;
+        font-size: 1.19rem;
       }
       .order-btn-stripe {
         padding: 14px 18px;
@@ -1564,7 +1560,8 @@
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="/" class="logo" aria-label="KYRAN - Accueil">
-              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+              <img src="/logo.png" alt="" width="44" height="44" decoding="async" />
+              <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
@@ -2310,7 +2307,7 @@
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <p class="footer-heading">KYRAN</p>
+            <p class="footer-heading footer-brand"><img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">

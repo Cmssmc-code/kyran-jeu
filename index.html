@@ -21,7 +21,7 @@
 
   <meta name="description" content="KYRAN, jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs : parties de 30 min, cartes Pouvoir, manche Mystique à l'aveugle. 9,99 € en direct." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <meta name="author" content="Corentin Sence" />
   <meta name="msvalidate.01" content="F67AABF730136D5F9561C7B513BF6F6E" />
   <link rel="canonical" href="https://kyran-jeu.fr/" />
@@ -58,14 +58,14 @@
   <link rel="preload" as="image" href="boite-recto-kyran-740.webp" type="image/webp" fetchpriority="high" imagesrcset="boite-recto-kyran-740.webp 517w, boite-recto-kyran.webp 1048w" imagesizes="(max-width: 900px) 190px, 240px" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=6ea28f5960" defer></script>
-  <link rel="stylesheet" href="style.css?v=6ea28f5960" />
-  <script src="blog-data.js?v=6ea28f5960" defer></script>
-  <script src="components.js?v=6ea28f5960" defer></script>
-  <script src="reviews-data.js?v=6ea28f5960" defer></script>
-  <script src="reviews.js?v=6ea28f5960" defer></script>
-  <script src="hero-visual.js?v=6ea28f5960" defer></script>
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="seo-config.js?v=a664bf8bf6" defer></script>
+  <link rel="stylesheet" href="style.css?v=a664bf8bf6" />
+  <script src="blog-data.js?v=a664bf8bf6" defer></script>
+  <script src="components.js?v=a664bf8bf6" defer></script>
+  <script src="reviews-data.js?v=a664bf8bf6" defer></script>
+  <script src="reviews.js?v=a664bf8bf6" defer></script>
+  <script src="hero-visual.js?v=a664bf8bf6" defer></script>
 
   <script type="application/ld+json">
   {
@@ -362,7 +362,8 @@
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="/" class="logo" aria-label="KYRAN - Accueil">
-              <img src="/logo.png" alt="KYRAN" width="44" height="44" decoding="async" />
+              <img src="/logo.png" alt="" width="44" height="44" decoding="async" />
+              <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
 
             <nav class="nav-primary" id="nav-primary" aria-label="Navigation principale">
@@ -535,13 +536,6 @@
             </div>
           </div>
 
-          <div class="hero-reassurance-micro">
-            <span class="reassurance-item"><svg viewBox="0 0 3 2" width="15" height="10" style="vertical-align:baseline;display:inline-block;border-radius:1px;box-shadow:0 0 1px rgba(0,0,0,0.3);margin-right:4px;" aria-hidden="true"><rect width="1" height="2" fill="#0026e6"/><rect width="1" height="2" x="1" fill="#ffffff"/><rect width="1" height="2" x="2" fill="#ed2939"/></svg>Édition française</span>
-            <span class="reassurance-dot">·</span>
-            <span class="reassurance-item">📦 Expédié sous 24-48h</span>
-            <span class="reassurance-dot">·</span>
-            <span class="reassurance-item">🔒 Paiement Stripe sécurisé</span>
-          </div>
         </div>
 
         <div class="hero-visual">
@@ -653,6 +647,10 @@
         </div>
       </div>
     </section>
+
+    <div class="kyran-ticker" aria-hidden="true">
+      <div class="kyran-ticker__track"><span>Annonce tes plis</span><i></i><span>Bluffe</span><i></i><span>Parie juste</span><i></i><span>Sceau du Destin</span><i></i><span>Clairvoyance Antique</span><i></i><span>Bénédiction des Ancêtres</span><i></i><span>Voile du Néant</span><i></i><span>Manche Mystique</span><i></i><span>Garde tes Vies</span><i></i><span>Deviens Maître des Mystiques</span><i></i><span>Annonce tes plis</span><i></i><span>Bluffe</span><i></i><span>Parie juste</span><i></i><span>Sceau du Destin</span><i></i><span>Clairvoyance Antique</span><i></i><span>Bénédiction des Ancêtres</span><i></i><span>Voile du Néant</span><i></i><span>Manche Mystique</span><i></i><span>Garde tes Vies</span><i></i><span>Deviens Maître des Mystiques</span><i></i></div>
+    </div>
 
     <!-- Présentation factuelle (définition de l'entité KYRAN) -->
     <section id="presentation" class="section-presentation">
@@ -770,8 +768,8 @@
           <div class="power-card-item" data-card="sceau">
             <img src="carte-pouvoir-sceau-27.webp" alt="Carte Pouvoir Sceau du Destin" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-sceau" />
             <div class="power-val-toggle" role="group" aria-label="Valeurs Sceau du Destin">
-              <button type="button" class="power-pill active" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-27.webp', '27')">Val. 27</button>
-              <button type="button" class="power-pill" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-4.webp', '4')">Val. 4</button>
+              <button type="button" class="power-pill active" aria-pressed="true" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-27.webp', '27')">Val. 27</button>
+              <button type="button" class="power-pill" aria-pressed="false" onclick="switchPowerCard('sceau', 'carte-pouvoir-sceau-4.webp', '4')">Val. 4</button>
             </div>
             <h3>Sceau du Destin</h3>
             <p>Tirez une carte au hasard dans la main d'un joueur : il est forcé de la jouer tout de suite.</p>
@@ -781,8 +779,8 @@
           <div class="power-card-item" data-card="clairvoyance">
             <img src="carte-pouvoir-clairvoyance-11.webp" alt="Carte Pouvoir Clairvoyance Antique" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-clairvoyance" />
             <div class="power-val-toggle" role="group" aria-label="Valeurs Clairvoyance Antique">
-              <button type="button" class="power-pill active" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-11.webp', '11')">Val. 11</button>
-              <button type="button" class="power-pill" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-23.webp', '23')">Val. 23</button>
+              <button type="button" class="power-pill active" aria-pressed="true" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-11.webp', '11')">Val. 11</button>
+              <button type="button" class="power-pill" aria-pressed="false" onclick="switchPowerCard('clairvoyance', 'carte-pouvoir-clairvoyance-23.webp', '23')">Val. 23</button>
             </div>
             <h3>Clairvoyance</h3>
             <p>Regardez en secret la plus forte carte d'un joueur pour deviner son jeu.</p>
@@ -792,8 +790,8 @@
           <div class="power-card-item" data-card="benediction">
             <img src="carte-pouvoir-benediction-20.webp" alt="Carte Pouvoir Bénédiction des Ancêtres" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-benediction" />
             <div class="power-val-toggle" role="group" aria-label="Valeurs Bénédiction des Ancêtres">
-              <button type="button" class="power-pill active" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-20.webp', '20')">Val. 20</button>
-              <button type="button" class="power-pill" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-9.webp', '9')">Val. 9</button>
+              <button type="button" class="power-pill active" aria-pressed="true" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-20.webp', '20')">Val. 20</button>
+              <button type="button" class="power-pill" aria-pressed="false" onclick="switchPowerCard('benediction', 'carte-pouvoir-benediction-9.webp', '9')">Val. 9</button>
             </div>
             <h3>Bénédiction</h3>
             <p>Forcez un adversaire à jouer sa plus faible carte pour ruiner son plan.</p>
@@ -803,8 +801,8 @@
           <div class="power-card-item" data-card="voile">
             <img src="carte-pouvoir-voile-3.webp" alt="Carte Pouvoir Voile du Néant" class="power-card-thumb" width="130" height="191" loading="lazy" id="thumb-voile" />
             <div class="power-val-toggle" role="group" aria-label="Valeurs Voile du Néant">
-              <button type="button" class="power-pill active" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-3.webp', '3')">Val. 3</button>
-              <button type="button" class="power-pill" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-34.webp', '34')">Val. 34</button>
+              <button type="button" class="power-pill active" aria-pressed="true" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-3.webp', '3')">Val. 3</button>
+              <button type="button" class="power-pill" aria-pressed="false" onclick="switchPowerCard('voile', 'carte-pouvoir-voile-34.webp', '34')">Val. 34</button>
             </div>
             <h3>Voile du Néant</h3>
             <p>Échangez le chiffre de votre carte avec une carte déjà posée sur la table.</p>
@@ -966,10 +964,10 @@
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                   </svg>
-                  <span>Commander sur la boutique officielle · 9,99&euro;</span>
+                  <span>Commander en direct · 9,99&nbsp;&euro;</span>
                 </a>
                 <a class="btn btn-secondary store-amazon-alt" href="https://www.amazon.fr/dp/B0G217LD87" target="_blank" rel="noopener noreferrer">
-                  <span>Commander sur Amazon (Livraison Prime · 17,99€)</span>
+                  <span>Ou sur Amazon Prime · 17,99&nbsp;€</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -1143,7 +1141,7 @@
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <p class="footer-heading">KYRAN</p>
+            <p class="footer-heading footer-brand"><img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
             <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
             <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
             <div class="footer-follow">
@@ -1272,15 +1270,17 @@
         thumb.style.transform = 'scale(0.96)';
         setTimeout(function() {
           thumb.src = imgSrc;
-          thumb.style.opacity = '1';
-          thumb.style.transform = 'none';
+          thumb.style.opacity = '';
+          thumb.style.transform = '';
         }, 120);
       }
       var container = thumb ? thumb.closest('.power-card-item') : null;
       if (container) {
         var btns = container.querySelectorAll('.power-pill');
         btns.forEach(function(btn) {
-          btn.classList.toggle('active', btn.textContent.indexOf(valText) !== -1);
+          var on = btn.textContent.trim() === 'Val. ' + valText;
+          btn.classList.toggle('active', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
       }
     }

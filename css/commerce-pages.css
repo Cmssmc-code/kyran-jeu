@@ -41,7 +41,7 @@
 }
 .card--static:hover {
   transform: none;
-  border-color: #e7e2d9;
+  border-color: #E8DCC4;
   box-shadow: 0 4px 18px rgba(69, 26, 3, 0.04);
 }
 .prose .grid {

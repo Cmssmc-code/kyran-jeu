@@ -285,7 +285,7 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <title>Plan du site KYRAN — toutes les pages et guides</title>
   <meta name="description" content="Plan du site kyran-jeu.fr : accueil, règles, Tarot Africain, FAQ et ${items.length} guides de jeux de cartes du blog." />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${SITE}/plan-du-site.html" />
   <link rel="alternate" hreflang="fr-FR" href="${SITE}/plan-du-site.html" />
   <link rel="alternate" hreflang="x-default" href="${SITE}/plan-du-site.html" />
@@ -304,7 +304,7 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <script src="/blog-data.js?v=${CACHE}" defer></script>

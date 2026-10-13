@@ -14,7 +14,7 @@
       ],
       "type": "stdio"
     },
-    "stripe": {
+    "stripe-kyran": {
       "type": "stdio",
       "command": "npx",
       "args": [

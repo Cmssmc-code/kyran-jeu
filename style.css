@@ -3259,7 +3259,7 @@ article {
   .footer-col a {
     min-height: unset !important;
     display: inline-block !important;
-    padding: 3px 0 !important;
+    padding: 10px 0 !important;
     font-size: 0.83rem !important;
     line-height: 1.35 !important;
     word-break: normal;
@@ -4369,3 +4369,17 @@ main kyran-stat-bar .stat-bar--specs .stat-svg { color: var(--k-terra); }
 footer :focus-visible,
 .top-announcement-bar :focus-visible,
 .mobile-bottom-nav :focus-visible { outline-color: var(--k-saffron); }
+
+/* Cibles tactiles (contrôle du 2026-10-13) : au moins 44 px de haut sur écran tactile,
+   sans déplacer la mise en page quand c'est possible (padding compensé par une marge négative). */
+@media (pointer: coarse) {
+  .announcement-link { display: inline-flex; align-items: center; min-height: 36px; padding: 8px 4px; margin: -8px -4px; }
+  .mobile-bottom-nav .mobile-nav-tab--highlight { min-height: 44px; }
+  footer .footer-follow a,
+  footer .footer-bgg-link { display: inline-flex; align-items: center; min-height: 44px; }
+  footer .footer-seo-links a { display: inline-block !important; padding: 11px 6px !important; }
+}
+@media (max-width: 900px) {
+  .logo-word small { font-size: 0.5625rem; }
+}
+.stat-bar--specs .stat-desc { font-size: 0.72rem; }

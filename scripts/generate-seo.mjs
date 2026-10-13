@@ -11,6 +11,7 @@ import { loadItems } from './lib/items.mjs';
 import { readNormalizedPage } from './lib/lastmod.mjs';
 import { assetVersion, stampHtml } from './lib/asset-version.mjs';
 import { GAMES } from './lib/article-model.mjs';
+import { PRODUCT } from './lib/product.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = assetVersion();
@@ -123,11 +124,13 @@ function buildLlmsTxt() {
 - Illustrations : Crea by Floh
 - Édition actuelle : 2026 (sortie le 31 janvier 2026)
 - Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
-- Livraison : France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni ; retours gratuits (14 jours)
-- Prix : 9,99 € sur ${SITE}/commander.html ; 17,99 € sur Amazon.fr (https://www.amazon.fr/dp/B0G217LD87)
+- Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port de ${PRODUCT.shipping.rates[0].label} par commande en France métropolitaine (quel que soit le nombre de boîtes) ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
+- Livraison : France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
+- Retour : 14 jours après réception, frais de retour à la charge du vendeur (CGV, article 6 : ${SITE}/cgv.html)
+- Boîte : ${PRODUCT.dimensions.label}, ${PRODUCT.weight.value} g
 - Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
 - Présence externe : fiche BoardGameGeek (https://boardgamegeek.com/boardgame/480678/kyran) ; fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
-- Avis : 4,7 / 5 sur Amazon.fr (33 avis vérifiés à la date de dernière mise à jour du site)
+- Note sur Amazon.fr : ${PRODUCT.amazon.rating} / 5 sur ${PRODUCT.amazon.ratingCount} évaluations (relevé du ${PRODUCT.amazon.checkedLabel})
 - Règles : ${SITE}/regle.html ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
@@ -211,7 +214,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Combien de joueurs ? De 3 à 6.
 - Quelle durée ? Environ 30 minutes.
 - Quel âge ? Dès 8 ans.
-- Où acheter ? 9,99 € sur ${SITE}/commander.html, 17,99 € sur Amazon.fr.
+- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port ${PRODUCT.shipping.rates[0].label} par commande en France), ${PRODUCT.amazon.price} sur Amazon.fr.
 - Peut-on essayer gratuitement ? Oui, avec l’Initiation en ligne : ${SITE}/minijeu.html.
 - Différence avec Skyjo ? Skyjo se joue sans plis (on minimise un score avec une grille de cartes) ; KYRAN est un jeu de plis avec pari et vies.
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), s'appuie sur des cartes Pouvoir et se termine par la manche Mystique.

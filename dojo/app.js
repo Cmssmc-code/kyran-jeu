@@ -5,7 +5,7 @@
  */
 import * as E from './engine.js?v=617bc536b5';
 import * as AI from './ai.js?v=cf654c11eb';
-import { LESSONS, BEAD_IMAGES } from './lessons.js?v=a1ebc70b43';
+import { LESSONS, BEAD_IMAGES } from './lessons.js?v=44365dbe43';
 
 const ROOT = document.getElementById('dojo');
 
@@ -78,8 +78,8 @@ const plural = (n, w) => `${n} ${w}${n > 1 ? 's' : ''}`;
 const PERSONA_COLORS = { oraculus: '#a78bfa', titan: '#f59e0b', viper: '#22c55e', loki: '#ec4899', gaia: '#2dd4bf' };
 
 // Sur le site, card-3/11/20/27.jpg montrent les cartes Pouvoir de même valeur : ces quatre
-// cartes Nombre sont recomposées à partir des vraies cartes (même motif, mêmes chiffres).
-const REBUILT = new Set([3, 11, 20, 27]);
+// cartes Nombre sont recomposées à partir des vraies cartes (dojo/img/nombre-*.jpg, même motif,
+// mêmes chiffres) ; leurs versions WebP sont dojo/img/cartes/carte-3/11/20/27.webp.
 
 // Visuels tirés des cartes : icônes des cartes Pouvoir et motif de la carte Vie.
 const AVATARS = {
@@ -95,11 +95,33 @@ function avatarImg(p, cls) {
   return src ? h('img', { class: cls, src, alt: '', width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
 }
 
+// Cartes allégées du mini-jeu (WebP 200 px, générées par scripts/derive-images.py) ;
+// carte-37.webp est la Mystique.
+const CARD_DIR = '/dojo/img/cartes/';
+const CARD_BACK = CARD_DIR + 'dos.webp';
+const numberImage = v => `${CARD_DIR}carte-${v}.webp`;
+
 function cardImage(card) {
-  if (card.kind === 'mystique') return '/card-37.jpg';
-  if (card.kind === 'power') return `/carte-pouvoir-${card.power}-${card.value}.webp`;
-  if (REBUILT.has(card.value)) return `/dojo/img/nombre-${card.value}.jpg`;
-  return `/card-${card.value}.jpg`;
+  if (card.kind === 'mystique') return numberImage(37);
+  if (card.kind === 'power') return `${CARD_DIR}pouvoir-${card.power}-${card.value}.webp`;
+  return numberImage(card.value);
+}
+
+// Préchargement discret des cartes, au lancement de la première partie ou du premier rite
+// (rien sur l'accueil du mini-jeu) : fluidité des premières donnes.
+let preloaded = false;
+function preloadCards(setup) {
+  if (preloaded) return;
+  preloaded = true;
+  const run = () => {
+    const srcs = [CARD_BACK];
+    for (let v = 1; v <= 36; v++) srcs.push(numberImage(v));
+    if (setup.mystique !== false) srcs.push(numberImage(37));
+    if (setup.powers !== false) for (const p of Object.values(E.POWERS)) for (const v of p.values) srcs.push(cardImage({ kind: 'power', power: p.key, value: v }));
+    for (const src of srcs) { const i = new Image(); i.decoding = 'async'; i.src = src; }
+  };
+  if ('requestIdleCallback' in window) window.requestIdleCallback(run, { timeout: 3000 });
+  else setTimeout(run, 1500);
 }
 
 function cardName(card) {
@@ -118,7 +140,7 @@ function cardEl(card, opts = {}) {
     'aria-label': opts.back ? 'carte face cachée' : cardName(card),
     role: opts.button ? null : 'img'
   });
-  const img = h('img', { src: opts.back ? '/back.jpg' : cardImage(card), alt: '', width: 304, height: 452, decoding: 'async', draggable: 'false' });
+  const img = h('img', { src: opts.back ? CARD_BACK : cardImage(card), alt: '', width: 200, height: 297, decoding: 'async', draggable: 'false' });
   img.addEventListener('error', () => el.classList.add('no-img'));
   el.appendChild(img);
   if (!opts.back && card) {
@@ -216,6 +238,7 @@ function freeGameSetup() {
 function startSession(lesson) {
   const setup = lesson ? { ...lesson.setup } : freeGameSetup();
   const state = E.createGame(setup);
+  preloadCards(setup);
   S = {
     id: ++sessionSeq,
     state,
@@ -1368,7 +1391,7 @@ async function finish(sess) {
 
 function ctaBox(win) {
   return h('a', { class: 'dj-cta', href: '/commander.html', onclick: () => track('dojo_cta_click', { win }) },
-    h('img', { src: '/boite-recto-kyran-740.webp', alt: 'Boîte du jeu KYRAN', width: 64, height: 64, loading: 'lazy' }),
+    h('img', { src: '/boite-recto-kyran-thumb.webp', alt: 'Boîte du jeu KYRAN', width: 64, height: 64, loading: 'lazy' }),
     h('span', { class: 'dj-cta-text' },
       h('b', { text: win ? 'Rejoue ta victoire en vrai' : 'Prends ta revanche en vrai' }),
       h('span', { text: '3 à 6 joueurs, 30 minutes, la manche Mystique carte sur le front.' })
@@ -1436,8 +1459,8 @@ function showCrash() {
 
 // ── Accueil de l’Initiation ────────────────────────────────────────────────────────
 
-function beadIcon(bead, big) {
-  return h('img', { class: 'dj-bead' + (big ? ' is-big' : ''), src: BEAD_IMAGES[bead], alt: '', width: 96, height: 96, 'aria-hidden': 'true' });
+function beadIcon(bead, big, lazy) {
+  return h('img', { class: 'dj-bead' + (big ? ' is-big' : ''), src: BEAD_IMAGES[bead], alt: '', width: 96, height: 96, loading: lazy ? 'lazy' : null, decoding: 'async', 'aria-hidden': 'true' });
 }
 
 function openLesson(L, retry) {
@@ -1519,7 +1542,7 @@ function renderLobby(keepFocus) {
       const isNext = nl === L;
       return h('li', {},
         h('button', { type: 'button', class: 'dj-lesson' + (done ? ' is-done' : '') + (isNext ? ' is-next' : ''), onclick: () => openLesson(L) },
-          beadIcon(L.bead),
+          beadIcon(L.bead, false, true),
           h('span', { class: 'dj-lesson-text' },
             h('span', { class: 'dj-lesson-kicker', text: `Rite ${i + 1} · ${L.beadName}` }),
             h('b', { text: L.title }),
@@ -1581,12 +1604,6 @@ function init() {
       if (E.legalBets(S.state, 0).includes(b) && (!S.gate || !S.gate.bets || S.gate.bets.includes(b))) act0({ type: 'bet', pid: 0, value: b });
     }
   });
-  // Préchargement discret des images de cartes (fluidité des premières donnes)
-  const preload = () => {
-    for (let v = 1; v <= 37; v++) { const i = new Image(); i.src = REBUILT.has(v) ? `/dojo/img/nombre-${v}.jpg` : `/card-${v}.jpg`; }
-  };
-  if ('requestIdleCallback' in window) window.requestIdleCallback(preload, { timeout: 4000 });
-  else setTimeout(preload, 2500);
 }
 
 if (ROOT) init();

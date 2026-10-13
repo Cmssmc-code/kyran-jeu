@@ -266,11 +266,11 @@ export const LESSONS = [
 
 /** Perle gagnée à chaque rite : motif des cartes Nombre de la même couleur, puis la Mystique. */
 export const BEAD_IMAGES = {
-  mauve: '/dojo/img/perle-mauve.png',
-  bleue: '/dojo/img/perle-bleue.png',
-  verte: '/dojo/img/perle-verte.png',
-  jaune: '/dojo/img/perle-jaune.png',
-  orange: '/dojo/img/perle-orange.png',
-  rouge: '/dojo/img/perle-rouge.png',
-  mystique: '/dojo/img/perle-mystique.png'
+  mauve: '/dojo/img/perle-mauve.webp',
+  bleue: '/dojo/img/perle-bleue.webp',
+  verte: '/dojo/img/perle-verte.webp',
+  jaune: '/dojo/img/perle-jaune.webp',
+  orange: '/dojo/img/perle-orange.webp',
+  rouge: '/dojo/img/perle-rouge.webp',
+  mystique: '/dojo/img/perle-mystique.webp'
 };

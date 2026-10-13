@@ -118,7 +118,7 @@ function renderHeaderHtml(active, pathname) {
         <div class="container nav">
           <div class="nav-brand-group">
             <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
-              <img src="${ROOT}logo.png" alt="" width="44" height="44" decoding="async" />
+              <img src="${ROOT}logo-96.webp" alt="" width="44" height="44" decoding="async" />
               <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
 
@@ -331,7 +331,7 @@ function renderFooterHtml() {
       <footer>
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
-            <p class="footer-heading footer-brand"><img src="${ROOT}logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
+            <p class="footer-heading footer-brand"><img src="${ROOT}logo-96.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
             <p>Jeu de cartes de plis et de paris &middot; 3 &agrave; 6 joueurs &middot; 30&nbsp;min &middot; d&egrave;s 8 ans</p>
             <p class="footer-desc">Le jeu o&ugrave; il faut gagner le nombre exact de plis annonc&eacute;s. Ni plus, ni moins.</p>
             <div class="footer-follow">

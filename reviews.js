@@ -60,7 +60,7 @@
 
   function buildOrderBadgeHtml(n) {
     return '<a href="#avis" class="amazon-order-rating-pill" style="text-decoration:none;cursor:pointer;" title="Voir les avis des joueurs">' +
-      '<span class="star-gold">★</span> <strong>' + n.avg.toFixed(1) + '/5</strong> sur Amazon ' +
+      '<span class="star-gold">★</span> <strong>' + n.avg.toFixed(1).replace('.', ',') + '/5</strong> sur Amazon ' +
       '<span class="amazon-rating-count">(' + n.total + ' évaluations)</span>' +
       '</a>';
   }
@@ -72,34 +72,21 @@
     var reviewsUrl = n.reviewsUrl;
     var html = '';
 
-    // 1. Synthèse globale Amazon avec répartition des notes
+    // 1. Synthèse : note et nombre d'évaluations relevés sur Amazon.fr (reviews-data.json).
+    // La répartition par étoiles n'est pas connue : elle n'est pas affichée.
     html += '<div class="amazon-summary-card">';
-    html += '  <div class="amazon-summary-score">';
-    html += '    <div class="amazon-score-header">';
-    html += '      <div class="amazon-score-number">' + avg.toFixed(1) + '<span>/5</span></div>';
-    html += '      <div>';
-    html += '        <div class="amazon-score-stars">' + renderStars(avg) + '</div>';
-    html += '        <div class="amazon-score-total">Basé sur <strong>' + total + ' évaluations</strong> sur Amazon.fr</div>';
-    html += '      </div>';
-    html += '    </div>';
-    html += '    <div class="amazon-breakdown-bars">';
-    html += '      <div class="amazon-bar-row"><span>5 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div><span>82%</span></div>';
-    html += '      <div class="amazon-bar-row"><span>4 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 18%;"></div></div><span>18%</span></div>';
-    html += '      <div class="amazon-bar-row muted"><span>3, 2, 1 étoiles</span><div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div><span>0%</span></div>';
+    html += '  <div class="amazon-score-header">';
+    html += '    <div class="amazon-score-number">' + avg.toFixed(1).replace('.', ',') + '<span>/5</span></div>';
+    html += '    <div>';
+    html += '      <div class="amazon-score-stars">' + renderStars(avg) + '</div>';
+    html += '      <div class="amazon-score-total"><strong>' + total + ' évaluations</strong> sur Amazon.fr</div>';
     html += '    </div>';
     html += '  </div>';
-    html += '  <div class="amazon-summary-badge">';
-    html += '    <div class="amazon-prime-tag">';
-    html += '      <span class="amazon-verified-pill"><span class="check-icon">✓</span> 100% avis vérifiés &amp; testeurs</span>';
-    html += '    </div>';
-    html += '    <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-amazon-link">';
-    html += '      Voir les ' + total + ' évaluations sur Amazon.fr <span aria-hidden="true">↗</span>';
-    html += '    </a>';
-    html += '  </div>';
+    html += '  <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="amazon-summary-link">Lire tous les avis sur Amazon <span aria-hidden="true">↗</span></a>';
     html += '</div>';
 
     // 2. Grille de TOUS les avis clients (100% visibles directement)
-    html += '<div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>👉 Glissez pour faire défiler les avis</span></div></div>';
+    html += '<div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>Glissez pour voir les avis</span></div></div>';
     html += '<div class="amazon-reviews-grid" id="amazon-reviews-list">';
 
     reviews.forEach(function (rev, index) {
@@ -148,13 +135,6 @@
       html += '</div>';
     });
 
-    html += '</div>';
-
-    // 3. Bouton direct vers Amazon.fr
-    html += '<div class="amazon-reviews-actions">';
-    html += '  <a href="' + reviewsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-outline">';
-    html += '    <span>Consulter toutes les ' + total + ' évaluations sur Amazon.fr ↗</span>';
-    html += '  </a>';
     html += '</div>';
 
     return html;

@@ -30,14 +30,14 @@ const ACTIVE_BY_PATH = {
   'merci.html': 'order',
   'regle.html': 'rules',
   'minijeu.html': 'game',
-  'dossier-presse.html': 'press',
+  'dossier-presse.html': 'discover',
   'jeu-apero.html': 'discover',
   'tarot-africain.html': 'discover',
   'tarot-africain-a-3-joueurs.html': 'discover',
   'whist-22.html': 'discover',
   'a-propos.html': 'discover',
   'communaute.html': 'discover',
-  'faq.html': 'discover',
+  'faq.html': 'faq',
   'plan-du-site.html': 'discover',
   'mentions-legales.html': 'legal',
   'cgv.html': 'legal',
@@ -62,9 +62,9 @@ const DISCOVER_ITEMS = [
   { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Règles, variantes et comptage' },
   { href: '/whist-22.html', title: 'Whist 22', desc: 'Définition et jeux proches' },
   { href: '/blog/jeux-plis-comparatif.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
-  { href: '/faq.html', title: 'FAQ', desc: 'Questions fréquentes' },
   { href: '/communaute.html', title: 'Communauté', desc: 'Vos parties en photos et vidéos' },
-  { href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' }
+  { href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' },
+  { href: '/dossier-presse.html', title: 'Presse', desc: 'Communiqué, visuels et contact' }
 ];
 
 const FALLBACK_FOOTER_BLOG_ITEMS = [
@@ -98,7 +98,7 @@ function formatBlogDate(isoDate) {
 
 function renderHeaderHtml(active, pathname) {
     const activePage = resolveActivePage(active, pathname);
-    const discoverActive = ['discover', 'apero', 'skyjo', 'tarot', 'whist', 'plis', 'faq'].includes(activePage);
+    const discoverActive = ['discover', 'apero', 'skyjo', 'tarot', 'whist', 'plis', 'press'].includes(activePage);
     const submenu = DISCOVER_ITEMS.map(function (item) {
       return `<li><a href="${item.href}">${item.title}<span class="sub-desc">${item.desc}</span></a></li>`;
     }).join('');
@@ -110,7 +110,7 @@ function renderHeaderHtml(active, pathname) {
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
         <div class="container announcement-content">
           <span class="announcement-pill">Idée cadeau</span>
-          <span class="announcement-text">Le jeu complet <strong>9,99€</strong> en direct du créateur<span class="announcement-extra"> · expédié sous 24-48h, suivi La Poste</span></span>
+          <span class="announcement-text"><strong>9,99&nbsp;&euro;</strong> en direct du créateur<span class="announcement-extra"> · expédié sous 24 à 48&nbsp;h, suivi La Poste</span></span>
           <a href="${ORDER_URL}" class="announcement-link">Commander &rarr;</a>
         </div>
       </div>
@@ -126,7 +126,8 @@ function renderHeaderHtml(active, pathname) {
               <ul class="nav-list" id="menu-principal">
                 <li><a href="${ROOT}" class="nav-link ${activePage === 'home' ? 'active' : ''}">Accueil</a></li>
                 <li><a href="${ROOT}regle.html" class="nav-link ${activePage === 'rules' ? 'active' : ''}">R&egrave;gles</a></li>
-                <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Initiation</a></li>
+                <li><a href="${ROOT}minijeu.html" class="nav-link ${activePage === 'game' ? 'active' : ''}">Essayer en ligne</a></li>
+                <li><a href="${ROOT}faq.html" class="nav-link ${activePage === 'faq' ? 'active' : ''}">FAQ</a></li>
                 <li class="nav-dropdown nav-desktop-only">
                   <button type="button" class="nav-link nav-link--menu ${discoverActive ? 'active' : ''}" aria-haspopup="true" aria-expanded="false" aria-controls="nav-discover-menu" id="nav-discover-trigger">
                     D&eacute;couvrir<span class="nav-chevron" aria-hidden="true"></span>
@@ -140,12 +141,11 @@ function renderHeaderHtml(active, pathname) {
                   </details>
                 </li>
                 <li><a href="${ROOT}blog/" class="nav-link ${activePage === 'blog' ? 'active' : ''}">Blog</a></li>
-                <li><a href="${ROOT}dossier-presse.html" class="nav-link ${activePage === 'press' ? 'active' : ''}">Presse</a></li>
               </ul>
               <div class="nav-drawer-footer nav-mobile-only">
                 <a class="btn btn-primary btn-block" href="${ORDER_URL}">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  <span>Commander — 9,99&euro;</span>
+                  <span>Commander · 9,99&nbsp;&euro;</span>
                 </a>
                 ${instagramLinkHtml('social-link social-link--instagram social-link--block', 'Suivre sur Instagram')}
               </div>
@@ -190,14 +190,14 @@ function renderHeaderHtml(active, pathname) {
           <span class="mobile-nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
           </span>
-          <span class="mobile-nav-label">Initiation</span>
+          <span class="mobile-nav-label">Essayer</span>
         </a>
         <a href="${ORDER_URL}" class="mobile-nav-tab mobile-nav-tab--highlight ${activePage === 'order' ? 'active' : ''}">
           <span class="mobile-nav-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
           </span>
           <span class="mobile-nav-label">Acheter</span>
-          <span class="mobile-nav-pill">9,99€</span>
+          <span class="mobile-nav-pill">9,99&nbsp;€</span>
         </a>
       </nav>
     `;
@@ -332,8 +332,8 @@ function renderFooterHtml() {
         <div class="footer-grid">
           <div class="footer-col footer-col--brand">
             <p class="footer-heading footer-brand"><img src="${ROOT}logo.png" alt="" width="40" height="40" loading="lazy" decoding="async" /><span>KYRAN</span></p>
-            <p>Jeu de cartes &middot; Ap&eacute;ro &middot; 3&ndash;6 joueurs &middot; ~30 min</p>
-            <p class="footer-desc">Le jeu de cartes strat&eacute;gique o&ugrave; perdre est aussi important que gagner.</p>
+            <p>Jeu de cartes de plis et de paris &middot; 3 &agrave; 6 joueurs &middot; 30&nbsp;min &middot; d&egrave;s 8 ans</p>
+            <p class="footer-desc">Le jeu o&ugrave; il faut gagner le nombre exact de plis annonc&eacute;s. Ni plus, ni moins.</p>
             <div class="footer-follow">
               <p class="footer-follow-label">Suivez le jeu</p>
               ${instagramLinkHtml('social-link social-link--instagram')}
@@ -348,7 +348,7 @@ function renderFooterHtml() {
           <div class="footer-col footer-col--contact">
             <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
-            <p><a href="${ROOT}minijeu.html">Initiation interactive</a></p>
+            <p><a href="${ROOT}minijeu.html">Essayer en ligne</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>
@@ -359,7 +359,7 @@ function renderFooterHtml() {
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-trust-note">🔒 Paiement sécurisé Stripe · 📦 Expédition suivie 24-48h · 🇫🇷 Édition indépendante</p>
+          <p class="footer-trust-note">Paiement sécurisé par Stripe · Expédié sous 24 à 48&nbsp;h avec suivi · Édité en France</p>
           <p class="footer-seo-links">
             <a href="${ROOT}mentions-legales.html">Mentions légales</a>
             <span aria-hidden="true"> · </span>
@@ -658,11 +658,11 @@ function renderCtaBandHtml(attr) {
         <h2>${title}</h2>
         <p>${text}</p>
         <div class="cta-band-actions">
-          <a class="btn btn-primary" href="${ORDER_URL}">Commander — 9,99&euro;</a>
+          <a class="btn btn-primary" href="${ORDER_URL}">Commander · 9,99&nbsp;&euro;</a>
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
-          ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer l’Initiation</a>' : ''}
+          ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Essayer en ligne</a>' : ''}
         </div>
-        <p class="cta-band-gift">Idée cadeau&nbsp;: une boîte de poche de 175&nbsp;g, expédiée sous 24-48&nbsp;h avec suivi.</p>
+        <p class="cta-band-gift">Une boîte de 175&nbsp;g, expédiée sous 24 à 48&nbsp;h avec suivi.</p>
       </div>
     `;
 }

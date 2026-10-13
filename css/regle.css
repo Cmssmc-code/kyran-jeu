@@ -1,3 +1,7 @@
+/* ── Règles extraites de style.css (chargé avant ce fichier) ── */
+.video-container--teaser { max-width: 620px; }
+
+/* ── Règles propres à ce fichier ── */
 /* =========================================================
    Page des règles (regle.html) — styles spécifiques, complète style.css.
    Lecture sur téléphone autour d'une table : sommaire collant, accès

@@ -28,9 +28,10 @@
     if (!target) return;
     var offset = getStickyOffset();
     var top = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - offset;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({
       top: Math.max(0, top),
-      behavior: 'smooth'
+      behavior: reduce ? 'auto' : 'smooth'
     });
   }
 

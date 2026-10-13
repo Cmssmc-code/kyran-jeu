@@ -33,7 +33,7 @@ function mainText(file) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   if (/<meta http-equiv="refresh"/.test(html)) return null;
   const $ = cheerio.load(html);
-  $('script, style, nav, kyran-header, kyran-footer, kyran-cta-band, kyran-related-articles, .article-cross-links, .article-share-bar, .article-sidebar, .blog-jump-nav').remove();
+  $('script, style, nav, kyran-header, kyran-footer, kyran-cta-band, kyran-related-articles, .article-cross-links, .article-share-bar, .article-sidebar, .blog-jump-nav, .kyran-pitch').remove();
   return $('main').text().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 

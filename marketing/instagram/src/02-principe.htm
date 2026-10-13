@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>02 · Le principe</title>
+<link rel="stylesheet" href="commun.css">
+<style>
+  body { background: var(--cream); }
+  .fan { position: absolute; left: 50%; top: 96px; width: 0; height: 420px; }
+  .fan img { position: absolute; width: 210px; left: -105px; top: 70px; border-radius: 14px; border: 4px solid var(--ink); transform-origin: 50% 260%; box-shadow: 6px 8px 0 rgba(35,31,34,.9); }
+  .fan img:nth-child(1) { transform: rotate(-27deg); }
+  .fan img:nth-child(2) { transform: rotate(-9deg); }
+  .fan img:nth-child(3) { transform: rotate(9deg); }
+  .fan img:nth-child(4) { transform: rotate(27deg); }
+  .bubble {
+    position: absolute; left: 72px; top: 420px; z-index: 4;
+    background: var(--saffron); border: 4px solid var(--ink); border-radius: 28px;
+    padding: 20px 30px 18px; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 46px;
+    box-shadow: 6px 6px 0 var(--ink); transform: rotate(-4deg);
+  }
+  .bubble::after { content: ''; position: absolute; right: 60px; top: -24px; bottom: auto; transform: rotate(225deg); width: 36px; height: 36px; background: var(--saffron); border-right: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+  .text { position: absolute; left: 72px; right: 72px; top: 610px; }
+  h1 { font-size: 92px; }
+  h1 em { font-style: normal; color: var(--terra); }
+  .rows { margin-top: 44px; display: flex; flex-direction: column; gap: 20px; }
+  .row { display: flex; gap: 24px; align-items: center; background: var(--kraft); border: 3px solid var(--ink); border-radius: 22px; padding: 22px 28px; }
+  .row .ico { flex: none; width: 74px; height: 74px; border-radius: 50%; border: 3px solid var(--ink); display: grid; place-items: center; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 44px; color: var(--cream); }
+  .ok .ico { background: var(--green); }
+  .ko .ico { background: var(--terra); }
+  .row p { font-size: 36px; line-height: 1.25; font-weight: 600; }
+  .row p span { font-weight: 400; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="band top"></div>
+  <div class="fan">
+    <img src="../../../card-5.jpg" alt="">
+    <img src="../../../card-14.jpg" alt="">
+    <img src="../../../card-23.jpg" alt="">
+    <img src="../../../card-32.jpg" alt="">
+  </div>
+  <div class="bubble">J’annonce 2&nbsp;plis</div>
+  <div class="text">
+    <h1>Annoncez le nombre exact de plis.<br><em>Ni plus, ni moins.</em></h1>
+    <div class="rows">
+      <div class="row ok"><div class="ico"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 21l8 8 16-17" fill="none" stroke="#FBF6EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Pari juste&nbsp;: <span>vous gardez vos Vies.</span></p></div>
+      <div class="row ko"><div class="ico"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M10 10l20 20M30 10L10 30" fill="none" stroke="#FBF6EC" stroke-width="6" stroke-linecap="round"/></svg></div><p>Pari raté&nbsp;: <span>vous perdez autant de Vies que l’écart.</span></p></div>
+    </div>
+  </div>
+  <div class="band bottom"></div>
+</div>
+</body>
+</html>

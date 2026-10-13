@@ -43,12 +43,12 @@
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=eb2a397287" defer></script>
-  <link rel="stylesheet" href="style.css?v=eb2a397287" />
-  <link rel="stylesheet" href="/css/commerce-pages.css?v=eb2a397287" />
-  <script src="components.js?v=eb2a397287" defer></script>
-  <script src="reviews-data.js?v=eb2a397287" defer></script>
-  <script src="reviews.js?v=eb2a397287" defer></script>
+  <script src="seo-config.js?v=dbf2f1aca2" defer></script>
+  <link rel="stylesheet" href="style.css?v=dbf2f1aca2" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=dbf2f1aca2" />
+  <script src="components.js?v=dbf2f1aca2" defer></script>
+  <script src="reviews-data.js?v=dbf2f1aca2" defer></script>
+  <script src="reviews.js?v=dbf2f1aca2" defer></script>
 
   <script type="application/ld+json">
   {
@@ -140,66 +140,12 @@
             "value": "Français"
           }
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.7",
-          "reviewCount": "33",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Patrice Q."
-            },
-            "datePublished": "2026-07-03",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "name": "Nickel",
-            "reviewBody": "Jeu simple et facile"
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "patrick"
-            },
-            "datePublished": "2026-01-26",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "name": "Un indispensable pour des soirées animées !!",
-            "reviewBody": "Ce jeu de cartes est une excellente surprise. Les règles sont simples et s'expliquent en deux minutes, ce qui permet de lancer une partie immédiatement."
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Agathe"
-            },
-            "datePublished": "2026-02-05",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "name": "Super jeu",
-            "reviewBody": "Super jeu à faire en famille ou entre amis. Nous aimons les jeux de société et le kyran est une belle découverte. Idéal pour un cadeau."
-          }
-        ],
         "offers": {
           "@type": "Offer",
           "name": "Boutique KYRAN",
           "price": "9.99",
           "priceCurrency": "EUR",
-          "validFrom": "2024-01-01",
+          "validFrom": "2026-01-31",
           "priceValidUntil": "2026-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
@@ -217,12 +163,10 @@
                 "value": "2.99",
                 "currency": "EUR"
               },
-              "shippingDestination": [
-                {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "FR"
-                }
-              ],
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "FR"
+              },
               "deliveryTime": {
                 "@type": "ShippingDeliveryTime",
                 "handlingTime": {
@@ -238,53 +182,17 @@
                   "unitCode": "DAY"
                 }
               }
-            },
-            {
-              "@type": "OfferShippingDetails",
-              "shippingLabel": "Livraison suivie dans les autres pays desservis",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "2.99",
-                "currency": "EUR"
-              },
-              "shippingDestination": [
-                {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "BE"
-                },
-                {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "LU"
-                },
-                {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "CH"
-                },
-                {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "MC"
-                }
-              ],
-              "deliveryTime": {
-                "@type": "ShippingDeliveryTime",
-                "handlingTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 1,
-                  "maxValue": 2,
-                  "unitCode": "DAY"
-                },
-                "transitTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 3,
-                  "maxValue": 6,
-                  "unitCode": "DAY"
-                }
-              }
             }
           ],
           "hasMerchantReturnPolicy": {
             "@type": "MerchantReturnPolicy",
-            "applicableCountry": ["FR", "BE", "LU", "CH", "MC"],
+            "applicableCountry": [
+              "FR",
+              "BE",
+              "LU",
+              "CH",
+              "MC"
+            ],
             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
             "merchantReturnDays": 14,
             "returnMethod": "https://schema.org/ReturnByMail",

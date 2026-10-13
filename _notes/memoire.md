@@ -32,7 +32,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - À 3 ou 4 joueurs : 4 Pouvoirs + la Mystique. À 5 ou 6 : toutes les cartes.
   - Variante d'initiation : sans Pouvoirs ni Mystique.
 - **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 2,99 € par commande (décision du propriétaire le 2026-10-13, comme Etsy ; Stripe facturait 3,99 € au 2026-10-12 : à vérifier sur la page Stripe) ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
-- **Livraison :** France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni. Retours gratuits sous 14 jours (`FreeReturn`).
+- **Livraison :** France métropolitaine, Belgique, Luxembourg, Suisse, Monaco. Retours gratuits sous 14 jours (`FreeReturn`).
 - **Héritage :** Tarot Africain / Whist 22 (pages `/tarot-africain.html`, `/whist-22.html`, `/tarot-africain-a-3-joueurs.html`).
 - **Interdits rédactionnels :** ne jamais écrire que KYRAN est « sans élimination » (le premier joueur à zéro Vie termine la partie) ni « sans hasard ». Ne jamais inventer de pouvoir.
 - **Présence externe :**

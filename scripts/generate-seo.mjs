@@ -125,7 +125,7 @@ function buildLlmsTxt() {
 - Édition actuelle : 2026 (sortie le 31 janvier 2026)
 - Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
 - Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port de ${PRODUCT.shipping.rates[0].label} par commande en France métropolitaine (quel que soit le nombre de boîtes) ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
-- Livraison : France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
+- Livraison : France métropolitaine, Belgique, Luxembourg, Suisse, Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
 - Retour : 14 jours après réception, frais de retour à la charge du vendeur (CGV, article 6 : ${SITE}/cgv.html)
 - Boîte : ${PRODUCT.dimensions.label}, ${PRODUCT.weight.value} g
 - Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie

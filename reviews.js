@@ -145,10 +145,9 @@
       return;
     }
 
+    // La note Amazon reste en texte visible : elle n'est pas injectée dans le JSON-LD
+    // (Google refuse les notes agrégées depuis un autre site).
     var n = normalizeData(data);
-    var avg = n.avg;
-    var total = n.total;
-    var reviews = n.reviews;
 
     // Rendu badge compact pour la page de commande si présente (cliquable vers #avis)
     var orderBadge = document.getElementById('amazon-order-badge');
@@ -157,10 +156,7 @@
     }
 
     var container = document.getElementById('amazon-reviews-widget');
-    if (!container) {
-      updateStructuredData(avg, total, reviews);
-      return;
-    }
+    if (!container) return;
 
     // Rendu statique déjà présent (scripts/prerender.mjs) : on n'écrase pas, on branche seulement les boutons
     if (!container.hasAttribute('data-ssr')) container.innerHTML = buildWidgetHtml(n);
@@ -180,64 +176,8 @@
     if (typeof initMobileCarouselDots === 'function') {
       setTimeout(initMobileCarouselDots, 100);
     }
-
-    // Mise à jour dynamique du Schema.org pour SEO Google Rich Snippet
-    updateStructuredData(avg, total, reviews);
   }
 
-  function updateStructuredData(avg, total, reviews) {
-    try {
-      var scripts = document.querySelectorAll('script[type="application/ld+json"]');
-      for (var s = 0; s < scripts.length; s++) {
-        var text = scripts[s].textContent;
-        if (text.indexOf('"@id": "https://kyran-jeu.fr/#boardgame"') !== -1 || text.indexOf('"KYRAN"') !== -1) {
-          var schema = JSON.parse(text);
-          var graph = schema['@graph'] || [schema];
-          var bg = null;
-          for (var g = 0; g < graph.length; g++) {
-            var item = graph[g];
-            var t = item['@type'];
-            var isTarget = (item['@id'] === 'https://kyran-jeu.fr/#boardgame') ||
-              (Array.isArray(t) ? (t.indexOf('Product') !== -1 || t.indexOf('BoardGame') !== -1) : (t === 'BoardGame' || t === 'Product'));
-            if (isTarget) {
-              bg = item;
-              break;
-            }
-          }
-          if (bg) {
-            // Google Review Snippets requiert Product en type scalaire unique
-            bg['@type'] = 'Product';
-            bg.aggregateRating = {
-              '@type': 'AggregateRating',
-              'ratingValue': avg.toFixed(1),
-              'reviewCount': total.toString(),
-              'bestRating': '5',
-              'worstRating': '1'
-            };
-            if (reviews && reviews.length) {
-              bg.review = reviews.slice(0, 5).map(function (r) {
-                return {
-                  '@type': 'Review',
-                  'author': { '@type': 'Person', 'name': r.author },
-                  'reviewRating': {
-                    '@type': 'Rating',
-                    'ratingValue': r.rating.toString(),
-                    'bestRating': '5'
-                  },
-                  'reviewBody': r.body,
-                  'name': r.title || 'Avis Amazon sur KYRAN'
-                };
-              });
-            }
-            scripts[s].textContent = JSON.stringify(schema, null, 2);
-          }
-          break;
-        }
-      }
-    } catch (e) {
-      // ignore silently if JSON parse fails
-    }
-  }
 
   if (typeof window !== 'undefined') {
     window.KyranReviews = {

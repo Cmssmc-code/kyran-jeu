@@ -2,13 +2,28 @@
   "mcpServers": {
     "gsc": {
       "command": "node",
-      "args": ["scripts/mcp/gsc.mjs"],
+      "args": [
+        "scripts/mcp/gsc.mjs"
+      ],
       "type": "stdio"
     },
     "bing-webmaster": {
       "command": "node",
-      "args": ["scripts/mcp/bing.mjs"],
+      "args": [
+        "scripts/mcp/bing.mjs"
+      ],
       "type": "stdio"
+    },
+    "stripe": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@stripe/mcp",
+        "--tools=all",
+        "--api-key=${STRIPE_SECRET_KEY}"
+      ],
+      "env": {}
     }
   }
 }

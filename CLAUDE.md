@@ -36,3 +36,23 @@ Pipeline décrit dans [`docs/AUTO-HEAL.md`](docs/AUTO-HEAL.md) (portage du pipel
 Pour un bug de production : lire d'abord `_notes/lecon.md`, l'historique du workflow « Hourly
 Auto-Heal » et les logs Railway (préfixe `[AutoHeal]`). Une fausse alerte se corrige par un filtre
 précis dans `isBenignClientError`, jamais en masquant une vraie panne.
+
+## Directives Stripe - Projet KYRAN
+
+- **Compte cible** : KYRAN uniquement (`acct_1UBHzpPe2ed8eDFC`), JAMAIS Majordia (`acct_1TcQiAGThve4pFmw`).
+  Le connecteur Stripe de claude.ai pointe sur Majordia : ne pas l'utiliser pour KYRAN.
+- **Outils prioritaires** : serveur MCP `stripe` déclaré au niveau projet dans `.mcp.json`. La clé n'y est
+  jamais écrite : `.mcp.json` est versionné, il lit `${STRIPE_SECRET_KEY}` dans l'environnement. Avant de
+  lancer Claude Code, exporter la variable depuis `.env` (ex. PowerShell :
+  `$env:STRIPE_SECRET_KEY = (Select-String '^STRIPE_SECRET_KEY=' .env).Line.Split('=',2)[1]`).
+- **Vérifications obligatoires avant toute modification** :
+  1. Vérifier que le produit cible est bien `prod_VBfXBJYQzElac4` (KYRAN — Jeu de cartes).
+  2. Vérifier que le lien de paiement cible est bien `plink_1UBIC0Pe2ed8eDFCuudRl3Nq`
+     (`https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00`).
+  3. Ne JAMAIS modifier sans accord :
+     - Prix unitaire : 9,99 €
+     - Frais de port : 2,99 €
+     - URL de redirection après paiement : `https://kyran-jeu.fr/merci.html`
+- **Sécurité** :
+  - Ne jamais commiter `.env` ni de clé Stripe (ni dans `.mcp.json`).
+  - Toujours vérifier la présence de `.env` dans `.gitignore`.

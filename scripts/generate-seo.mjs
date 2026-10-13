@@ -310,6 +310,8 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
+  <link rel="stylesheet" href="/css/motion.css?v=${CACHE}" />
+  <script src="/js/motion.js?v=${CACHE}" defer></script>
   <script src="/blog-data.js?v=${CACHE}" defer></script>
   <script src="/components.js?v=${CACHE}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>

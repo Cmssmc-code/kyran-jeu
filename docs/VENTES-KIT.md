@@ -56,28 +56,59 @@ direct du site.
 
 **Objet :** KYRAN, le jeu de plis où quelqu'un se trompe à chaque manche (boîte offerte)
 
-> Bonjour [Prénom],
->
-> Je suis Corentin Sence, auteur et éditeur de KYRAN, un petit jeu de cartes sorti le 31 janvier
-> 2026. Je suis tombé sur [votre chronique de … / votre vidéo sur …] et je pense que KYRAN peut
-> plaire à votre communauté.
->
-> Le principe tient en une phrase : chacun parie sur le nombre exact de plis qu'il va gagner, mais
-> le total des paris ne peut jamais tomber juste, donc quelqu'un se trompe à chaque manche. La
-> dernière manche se joue la carte sur le front. Il y a aussi quatre cartes Pouvoir. C'est pour 3 à
-> 6 joueurs, dès 8 ans, en 30 minutes, dans une boîte de poche à 9,99 €.
->
-> Je serais ravi de vous envoyer une boîte, sans aucune obligation de publication. Vous pouvez aussi
-> voir le jeu en vidéo (Ludochrono de Ludovox) : https://kyran-jeu.fr/video-regles.html, et
-> l'essayer en ligne : https://kyran-jeu.fr/minijeu.html.
->
-> Dossier de presse et visuels : https://kyran-jeu.fr/dossier-presse.html
->
-> À quelle adresse puis-je vous l'envoyer ?
->
-> Belle journée,
-> Corentin Sence — KYRAN
-> contact@kyran-jeu.fr
+Modèle validé par le propriétaire le 13 octobre 2026, à réutiliser tel quel pour tous les
+prochains emails. Seule la deuxième phrase change d'une personne à l'autre : elle doit prouver
+qu'on connaît son travail (un test, une vidéo, un épisode précis).
+
+```text
+Bonjour [Prénom],
+
+Je vous écris parce que [accroche personnalisée : votre vidéo sur… / votre test de…].
+[Une phrase qui relie ce contenu à KYRAN.]
+
+Je suis Corentin Sence, auteur et éditeur de KYRAN, un petit jeu de cartes sorti le 31 janvier 2026.
+
+Le principe tient en une phrase : chacun parie sur le nombre exact de plis qu'il va gagner, mais
+le total des paris ne peut jamais tomber juste. Quelqu'un se trompe donc à chaque manche. Les
+manches passent de 7 cartes à 2, puis la dernière se joue la carte sur le front : on voit celles
+des autres, jamais la sienne. Quatre cartes Pouvoir peuvent renverser un pli.
+
+3 à 6 joueurs · dès 8 ans · environ 30 min
+45 cartes toilées + 30 cartes Vie, boîte de poche
+9,99 € · illustrations Crea by Floh
+Inspiré du Tarot Africain (Whist 22)
+
+Je serais ravi de vous envoyer un exemplaire, sans aucune obligation de publication.
+
+Pour vous faire une idée avant :
+- la règle en vidéo : https://kyran-jeu.fr/video-regles.html (Ludochrono de Ludovox, 5 min)
+- l'initiation jouable en ligne : https://kyran-jeu.fr/minijeu.html, gratuite
+- le dossier de presse et les visuels : https://kyran-jeu.fr/dossier-presse.html
+- la fiche BoardGameGeek : https://boardgamegeek.com/boardgame/480678/kyran
+
+À quelle adresse puis-je vous l'envoyer ?
+
+Belle journée,
+
+Corentin Sence
+Auteur et éditeur de KYRAN
+contact@kyran-jeu.fr · https://kyran-jeu.fr · @kyran.jeu
+```
+
+Mise en forme de la version HTML (brouillon Gmail) :
+
+- Police Arial 15 px, interligne 1,55, texte `#1c1917`, largeur maximale 600 px.
+- En gras : « KYRAN » dans la présentation, la phrase « chacun parie… tomber juste », « la carte
+  sur le front », « 9,99 € », l'offre « sans aucune obligation… » et la question finale.
+- Les quatre lignes de faits dans un encadré : simple trait gauche de 3 px `#d97706`, texte 14 px.
+  Pas d'image ni de fond coloré : Gmail les supprime des brouillons.
+- Liens cliquables sur le texte (pas d'URL nue), couleur `#b45309`, soulignés. Liens vers le site
+  avec `?utm_source=presse&utm_medium=email&utm_campaign=sp-2026` (influenceurs :
+  `utm_source=influence`). La signature lie l'email (`mailto:`), le site et Instagram.
+- Toujours joindre aussi la version texte brut ci-dessus.
+- Pour un influenceur hors jeux de société (famille, étudiants, colocation), remplacer « sans
+  aucune obligation de publication » par « sans aucune obligation d'en parler » et ajouter une
+  phrase sur son public (soirée en famille, apéro entre colocs…).
 
 Conseils :
 

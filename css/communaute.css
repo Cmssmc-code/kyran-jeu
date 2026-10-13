@@ -121,3 +121,8 @@
   height: 640px; /* sans légende, une intégration Instagram fait environ 540 à 630 px de haut */
   border: 0;
 }
+
+/* Bouton de commande sous « Apparaître sur cette page ». */
+.ugc-buy {
+  margin-top: var(--space-3);
+}

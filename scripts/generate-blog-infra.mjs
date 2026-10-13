@@ -241,6 +241,7 @@ const html = `<!DOCTYPE html>
 ${cards}
       </div>
     </kyran-blog-grid>
+        <kyran-cta-band title="Et si votre prochain jeu était KYRAN&#160;?" text="Un jeu de plis et de paris pour 3 à 6 joueurs, en 30 minutes." secondary-href="regle.html" secondary-label="Voir les règles" show-dojo="false"></kyran-cta-band>
       </div>
     </section>
   </main>

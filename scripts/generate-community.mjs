@@ -270,6 +270,8 @@ const html = `<!DOCTYPE html>
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <link rel="stylesheet" href="/css/communaute.css?v=${CACHE}" />
+  <link rel="stylesheet" href="/css/motion.css?v=${CACHE}" />
+  <script src="/js/motion.js?v=${CACHE}" defer></script>
   <script src="/blog-data.js?v=${CACHE}" defer></script>
   <script src="/components.js?v=${CACHE}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema(title, description, previousDateModified()))}</script>

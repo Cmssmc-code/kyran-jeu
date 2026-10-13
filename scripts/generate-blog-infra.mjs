@@ -166,7 +166,7 @@ const html = `<!DOCTYPE html>
   <title>${title}</title>
   <meta name="description" content="${escAttr(description)}" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${url}" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="alternate" hreflang="fr-FR" href="${url}" />
@@ -187,7 +187,7 @@ const html = `<!DOCTYPE html>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <script src="/blog-data.js?v=${CACHE}" defer></script>
@@ -241,6 +241,7 @@ const html = `<!DOCTYPE html>
 ${cards}
       </div>
     </kyran-blog-grid>
+        <kyran-cta-band title="Et si votre prochain jeu était KYRAN&#160;?" text="Un jeu de plis et de paris pour 3 à 6 joueurs, en 30 minutes." secondary-href="regle.html" secondary-label="Voir les règles" show-dojo="false"></kyran-cta-band>
       </div>
     </section>
   </main>

@@ -184,11 +184,11 @@ async function handleOrderCompleted(session) {
 
   const totalAmount = session.amount_total != null
     ? (session.amount_total / 100).toFixed(2).replace('.', ',') + ' €'
-    : '13,98 €';
+    : '12,98 €';
 
   const shippingCents = session.total_details?.amount_shipping != null
     ? session.total_details.amount_shipping
-    : (session.shipping_cost?.amount_total != null ? session.shipping_cost.amount_total : 399);
+    : (session.shipping_cost?.amount_total != null ? session.shipping_cost.amount_total : 299);
   const shippingCost = (shippingCents / 100).toFixed(2).replace('.', ',') + ' €';
 
   const subtotalCents = session.amount_subtotal != null
@@ -274,7 +274,7 @@ async function handleChargeRefunded(charge) {
 
   const refundAmount = charge.amount_refunded
     ? (charge.amount_refunded / 100).toFixed(2).replace('.', ',') + ' €'
-    : '13,98 €';
+    : '12,98 €';
 
   const { html, text } = renderRefundEmail({
     customerName,

@@ -6,7 +6,7 @@
 >
   <url>
     <loc>https://kyran-jeu.fr/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/boite-recto-kyran.jpg</image:loc>
       <image:title>KYRAN – Jeu de cartes de plis, de bluff et de paris (boîte)</image:title>
@@ -16,7 +16,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Règles du jeu KYRAN</image:title>
@@ -26,7 +26,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/video-regles.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/aconMJG9uSQ/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Comment jouer à KYRAN — les règles en vidéo (Ludochrono)</video:title>
@@ -40,7 +40,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/minijeu.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
@@ -49,8 +49,13 @@
   </url>
 
   <url>
+    <loc>https://kyran-jeu.fr/idee-cadeau.html</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+
+  <url>
     <loc>https://kyran-jeu.fr/jeu-apero.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/jeu-kyran-ami.webp</image:loc>
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
@@ -64,27 +69,27 @@
 
   <url>
     <loc>https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/whist-22.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/faq.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/a-propos.html</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/dossier-presse.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Kit média et communiqué de presse KYRAN</image:title>
@@ -94,12 +99,12 @@
 
   <url>
     <loc>https://kyran-jeu.fr/communaute.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <url>
@@ -120,7 +125,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
       <image:title>Jeux de cartes et cerveau : ce que disent les études</image:title>
@@ -248,7 +253,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
       <image:title>Jeux de plis : le comparatif et le guide pour bien choisir</image:title>
@@ -336,7 +341,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
       <image:title>Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</image:title>

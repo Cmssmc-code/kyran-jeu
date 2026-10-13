@@ -35,7 +35,7 @@ if (type === 'shipping') {
   html = renderRefundEmail({
     customerName: 'Ami joueur',
     orderId: 'TEST-12345',
-    refundAmount: '13,98 €',
+    refundAmount: '12,98 €',
     reason: 'Rétractation client'
   });
 } else {
@@ -45,8 +45,8 @@ if (type === 'shipping') {
     orderId: 'TEST-12345',
     quantity: 1,
     unitPrice: '9,99 €',
-    shippingCost: '3,99 €',
-    totalAmount: '13,98 €',
+    shippingCost: '2,99 €',
+    totalAmount: '12,98 €',
     shippingAddress: {
       name: 'Ami joueur',
       line1: '12 rue de la Victoire',

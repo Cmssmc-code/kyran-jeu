@@ -243,7 +243,7 @@ const html = `<!DOCTYPE html>
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}" />
   <meta name="robots" content="${indexable ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' : 'noindex, follow'}" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${URL}" />
   <link rel="alternate" hreflang="fr-FR" href="${URL}" />
   <link rel="alternate" hreflang="x-default" href="${URL}" />
@@ -266,7 +266,7 @@ const html = `<!DOCTYPE html>
   <meta name="twitter:image" content="${esc(ogImage)}" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/bebas-neue-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="/seo-config.js?v=${CACHE}" defer></script>
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <link rel="stylesheet" href="/css/communaute.css?v=${CACHE}" />
@@ -290,7 +290,7 @@ const html = `<!DOCTYPE html>
     <section id="galerie">
       <div class="container ugc-wrap">
         <div class="prose ugc-intro">
-          <p class="article-lead">Ces photos et vidéos ont été prises par des joueurs de KYRAN, le jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs, puis republiées sur le compte Instagram officiel <a class="text-link" href="https://www.instagram.com/${OWN_HANDLE}/" target="_blank" rel="noopener noreferrer me">@${OWN_HANDLE}</a> ou publiées en collaboration avec lui. Chaque publication est créditée à son auteur et renvoie vers la publication d'origine.</p>
+          <p class="article-lead">Ces photos et vidéos viennent de joueurs de KYRAN, le jeu de plis et de paris pour 3 à 6 joueurs. Elles ont été republiées par le compte Instagram officiel <a class="text-link" href="https://www.instagram.com/${OWN_HANDLE}/" target="_blank" rel="noopener noreferrer me">@${OWN_HANDLE}</a>, ou publiées avec lui en collaboration. Chaque publication est créditée à son auteur et renvoie vers l'original.</p>
         </div>
         ${galleryHtml()}
       </div>
@@ -300,9 +300,10 @@ const html = `<!DOCTYPE html>
       <div class="container ugc-wrap">
         <div class="prose">
           <h2>Apparaître sur cette page</h2>
-          <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram, ou invitez-le comme collaborateur. Quand nous republions votre photo ou votre vidéo, ou acceptons votre collaboration, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
-          <p>Chaque photo et chaque vidéo reste la propriété de son auteur. Vous figurez sur cette page et préférez être retiré&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: la publication est retirée du site.</p>
-          <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a>, entraînez-vous gratuitement dans l’<a class="text-link" href="/minijeu.html">Initiation</a> ou <a class="text-link" href="/commander.html">commandez KYRAN</a>.</p>
+          <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram, ou invitez-le comme collaborateur. Si nous republions votre photo ou votre vidéo, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
+          <p>Chaque photo et chaque vidéo reste la propriété de son auteur. Vous figurez sur cette page et préférez ne plus y être&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: nous retirons la publication du site.</p>
+          <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a> ou entraînez-vous gratuitement dans l’<a class="text-link" href="/minijeu.html">Initiation</a>.</p>
+          <p class="ugc-buy"><a class="btn btn-primary" href="/commander.html">Commander KYRAN · 9,99&nbsp;€</a></p>
         </div>
       </div>
     </section>

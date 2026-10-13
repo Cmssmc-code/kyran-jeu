@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>03 · Le déroulé des manches</title>
+<link rel="stylesheet" href="commun.css">
+<style>
+  body { background: var(--kraft); }
+  .head { position: absolute; left: 72px; right: 72px; top: 110px; }
+  h1 { font-size: 84px; margin-top: 26px; }
+  .lead { font-size: 36px; line-height: 1.35; margin-top: 18px; }
+  .track { position: absolute; left: 72px; right: 72px; top: 440px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 26px; }
+  .step { background: var(--cream); border: 4px solid var(--ink); border-radius: 26px; padding: 18px 10px 16px; text-align: center; box-shadow: 6px 6px 0 var(--ink); }
+  .step b { display: block; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 96px; line-height: 1; }
+  .step span { font-size: 28px; font-weight: 600; }
+  .s7 b { color: var(--red); } .s6 b { color: var(--orange); } .s5 b { color: var(--saffron-deep); }
+  .s4 b { color: var(--green); } .s3 b { color: var(--blue); } .s2 b { color: var(--violet); }
+  .myst { position: absolute; left: 72px; right: 72px; top: 870px; display: flex; gap: 34px; align-items: center; background: var(--ink); color: var(--cream); border-radius: 30px; padding: 30px 36px; }
+  .myst img { width: 150px; flex: none; border-radius: 12px; border: 3px solid var(--saffron); transform: rotate(-6deg); }
+  .myst h2 { font-size: 52px; color: var(--saffron); }
+  .myst p { font-size: 30px; line-height: 1.35; margin-top: 10px; }
+  .loop { position: absolute; left: 72px; right: 72px; top: 1172px; display: flex; align-items: center; gap: 22px; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 50px; }
+  .loop svg { flex: none; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="band top"></div>
+  <div class="head">
+    <span class="eyebrow">Le déroulé</span>
+    <h1>Une carte de moins à&nbsp;chaque manche</h1>
+  </div>
+  <div class="track">
+    <div class="step s7"><b>7</b><span>cartes</span></div>
+    <div class="step s6"><b>6</b><span>cartes</span></div>
+    <div class="step s5"><b>5</b><span>cartes</span></div>
+    <div class="step s4"><b>4</b><span>cartes</span></div>
+    <div class="step s3"><b>3</b><span>cartes</span></div>
+    <div class="step s2"><b>2</b><span>cartes</span></div>
+  </div>
+  <div class="myst">
+    <img src="../../../hero-carte-dos.webp" alt="">
+    <div>
+      <h2>Puis la manche Mystique</h2>
+      <p>1&nbsp;carte posée sur le front. Vous voyez celles des autres, pas la vôtre.</p>
+    </div>
+  </div>
+  <div class="loop">
+    <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M50 22a22 22 0 1 0 4 18" fill="none" stroke="#B8432A" stroke-width="7" stroke-linecap="round"/><path d="M40 20h14V6" fill="none" stroke="#B8432A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Et on repart à 7&nbsp;cartes.</span>
+  </div>
+  <div class="band bottom"></div>
+</div>
+</body>
+</html>

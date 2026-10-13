@@ -31,8 +31,8 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - La Mystique vaut 0 ou 37 au choix.
   - À 3 ou 4 joueurs : 4 Pouvoirs + la Mystique. À 5 ou 6 : toutes les cartes.
   - Variante d'initiation : sans Pouvoirs ni Mystique.
-- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 3,99 € par commande d'après la page Stripe au 2026-10-12 ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
-- **Livraison :** France métropolitaine, Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni. Retours gratuits sous 14 jours (`FreeReturn`).
+- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 2,99 € par commande (décision du propriétaire le 2026-10-13, comme Etsy ; Stripe facturait 3,99 € au 2026-10-12 : à vérifier sur la page Stripe) ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
+- **Livraison :** France métropolitaine, Belgique, Luxembourg, Suisse, Monaco. Retours gratuits sous 14 jours (`FreeReturn`).
 - **Héritage :** Tarot Africain / Whist 22 (pages `/tarot-africain.html`, `/whist-22.html`, `/tarot-africain-a-3-joueurs.html`).
 - **Interdits rédactionnels :** ne jamais écrire que KYRAN est « sans élimination » (le premier joueur à zéro Vie termine la partie) ni « sans hasard ». Ne jamais inventer de pouvoir.
 - **Présence externe :**
@@ -52,6 +52,11 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - `blog.js` et `blog-data.js` (données générées) ;
   - `reviews.js`, `reviews-data.json` et `reviews-data.js` (avis Amazon) ;
   - `hero-visual.js`, `error-reporter.js`, `style.css`, `css/`, `fonts/`, `vendor/` (canvas-confetti).
+- **Direction artistique** (couche « 12. DIRECTION ARTISTIQUE KYRAN » en fin de `style.css`, jetons `--k-*` dans `:root`) :
+  - couleurs de la boîte : safran `#E6AB26`, encre `#231F22`, terracotta `#B8432A`, crème `#FBF6EC`, kraft `#F3E7CF` ; couleurs des cartes Nombre (`--k-red`, `--k-blue`…) ;
+  - titres en **Fredoka** variable auto-hébergée (`fonts/fredoka-latin.woff2`, lettrage arrondi du logo), texte en Poppins ; Bebas Neue a été retirée ;
+  - motifs wax : bande `--wax-band` (SVG en data URI) et `img/motif-wax.svg` (bords du hero) ; boutons « étiquette » cernés d'encre ;
+  - en-tête collant : `kyran-header` a `top: -36px` (la barre d'annonce, 36 px, défile) ; `html`, `body` et `main` utilisent `overflow-x: clip` (un `hidden` casse le sticky) et le menu mobile bloque le défilement sur `<html>`, jamais sur `<body>`.
 - **`seo-config.js`** : `ASSET_VERSION` (posé par le build) ; `googleSiteVerification`, `bingSiteVerification` et `ga4MeasurementId` sont vides. GA4 est désactivé : RGPD, il faudrait un bandeau de consentement.
 - **`seo-keywords.json`** : clusters de requêtes cibles par page (primaires et secondaires) et KPI. Mis à jour le 2026-10-04.
 - **Fichiers SEO et IA générés** : `sitemap.xml`, `llms.txt`, `llms-full.txt`, `robots.txt`, `blog/feed.xml`.

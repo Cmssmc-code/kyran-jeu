@@ -6,7 +6,7 @@ export default {
   description: `Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.`,
   category: 'Alternatives',
   date: '2026-05-29',
-  heroTitle: 'Jeux de <span class="accent">plis</span> : le comparatif',
+  heroTitle: 'Jeux de <span class="accent">plis</span> : le comparatif',
   heroSubtitle: `Annonce de plis, coopération, rangées : comprendre les mécanismes avant d'acheter.`,
   heroImage: '/blog/images/wizard.jpg',
   heroCaption: 'Wizard — point de départ du comparatif.',

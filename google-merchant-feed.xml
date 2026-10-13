@@ -1,133 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Généré par scripts/generate-merchant-feed.mjs (sources : scripts/lib/product.mjs). Ne pas éditer à la main. -->
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>KYRAN - Boutique Officielle</title>
+    <title>KYRAN — boutique kyran-jeu.fr</title>
     <link>https://kyran-jeu.fr/</link>
-    <description>Boutique officielle du jeu de cartes tactique KYRAN (3 à 6 joueurs).</description>
+    <description>Flux produit du jeu de cartes KYRAN pour Google Merchant Center.</description>
     <item>
       <g:id>KYRAN-01</g:id>
-      <g:title>KYRAN – Jeu de Cartes de Société Ambiance &amp; Stratégie | Plis, Bluff et Paris (3 à 6 Joueurs, Dès 8 Ans)</g:title>
-      <g:description>Jeu de cartes tactique, rapide et convivial pour 3 à 6 joueurs (~30 min). Héritier moderne du Tarot Africain et du Whist, mêlant paris, estimation de plis, cartes Pouvoir et manche Mystique à l'aveugle. Contient 45 cartes de jeu toilées 300g finition lin vernie haute durabilité (36 Nombre, 1 Mystique, 8 Pouvoir), 30 cartes Vie et 7 cartes de règles en français (règles apprises en 2 minutes). Boîte cloche rigide compacte (11,5 × 8,5 × 2,8 cm - 175 g) facile à emporter partout. Idéal pour soirées jeux, apéro entre amis ou parties en famille. Expédition suivie rapide sous 24-48h.</g:description>
-      <g:link>https://kyran-jeu.fr/commander.html</g:link>
+      <g:title>KYRAN – Maître des Mystiques, jeu de cartes de plis et de paris, 3 à 6 joueurs</g:title>
+      <g:description>KYRAN est un jeu de cartes de plis avec pari obligatoire, pour 3 à 6 joueurs, dès 8 ans. Une partie dure environ 30 minutes. À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner. La somme des paris ne peut jamais égaler le nombre de plis : au moins un joueur se trompe. Un pari raté fait perdre autant de cartes Vie que l'écart. Les cartes Pouvoir changent le cours d'un pli, et la manche Mystique se joue avec une carte posée sur le front. Contenu : 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles en français. Cartes toilées, boîte rigide de 11,5 × 8,5 × 2,8 cm, 175 g. Conçu et édité en France par Corentin Sence. Illustrations de Crea by Floh.</g:description>
+      <g:link>https://kyran-jeu.fr/</g:link>
       <g:image_link>https://kyran-jeu.fr/boite-recto-kyran.jpg</g:image_link>
-      <g:additional_image_link>https://kyran-jeu.fr/boite-verso-kyran.webp</g:additional_image_link>
-      <g:additional_image_link>https://kyran-jeu.fr/kyran-cartes-table.webp</g:additional_image_link>
-      <g:additional_image_link>https://kyran-jeu.fr/kyran-cartes-pouvoirs.webp</g:additional_image_link>
+      <g:additional_image_link>https://kyran-jeu.fr/kyran-cartes-table.jpg</g:additional_image_link>
       <g:additional_image_link>https://kyran-jeu.fr/jeu-kyran-ami.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>9.99 EUR</g:price>
       <g:brand>KYRAN</g:brand>
-      <g:condition>new</g:condition>
       <g:gtin>3770040368015</g:gtin>
-      <g:mpn>KYRAN-01</g:mpn>
-      <g:identifier_exists>true</g:identifier_exists>
-      <g:google_product_category>1088</g:google_product_category>
-      <g:product_type>Jeux et jouets &gt; Jeux &gt; Jeux de société &gt; Jeux de cartes</g:product_type>
-      <g:age_group>all_ages</g:age_group>
-      <g:gender>unisex</g:gender>
-      <g:color>Noir et Or</g:color>
-      <g:material>Carton toilé 300g finition lin</g:material>
-      <g:min_handling_time>0</g:min_handling_time>
-      <g:max_handling_time>1</g:max_handling_time>
-      <g:shipping_length>11.5 cm</g:shipping_length>
-      <g:shipping_width>8.5 cm</g:shipping_width>
-      <g:shipping_height>2.8 cm</g:shipping_height>
-      <g:shipping_weight>175 g</g:shipping_weight>
-      <g:custom_label_0>Jeu de societe</g:custom_label_0>
-      <g:custom_label_1>Jeu de plis</g:custom_label_1>
-      <g:custom_label_2>3 a 6 joueurs</g:custom_label_2>
-      <g:custom_label_3>Moins de 10 euros</g:custom_label_3>
-      <g:custom_label_4>Top Vente</g:custom_label_4>
+      <g:condition>new</g:condition>
+      <g:google_product_category>1247</g:google_product_category>
+      <g:product_type>Jeux de société &gt; Jeux de cartes &gt; Jeux de plis</g:product_type>
+      <g:product_weight>175 g</g:product_weight>
+      <g:product_length>11.5 cm</g:product_length>
+      <g:product_width>8.5 cm</g:product_width>
+      <g:product_height>2.8 cm</g:product_height>
+      <g:ships_from_country>FR</g:ships_from_country>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>2</g:max_handling_time>
       <g:shipping>
         <g:country>FR</g:country>
-        <g:service>Livraison suivie France</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>1</g:min_transit_time>
-        <g:max_transit_time>3</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>BE</g:country>
-        <g:service>Livraison suivie Belgique</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
+        <g:price>2.99 EUR</g:price>
         <g:min_transit_time>2</g:min_transit_time>
         <g:max_transit_time>4</g:max_transit_time>
       </g:shipping>
-      <g:shipping>
-        <g:country>LU</g:country>
-        <g:service>Livraison suivie Luxembourg</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>2</g:min_transit_time>
-        <g:max_transit_time>4</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>DE</g:country>
-        <g:service>Livraison suivie Allemagne</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>2</g:min_transit_time>
-        <g:max_transit_time>5</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>CH</g:country>
-        <g:service>Livraison suivie Suisse</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>3</g:min_transit_time>
-        <g:max_transit_time>6</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>IT</g:country>
-        <g:service>Livraison suivie Italie</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>3</g:min_transit_time>
-        <g:max_transit_time>5</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>ES</g:country>
-        <g:service>Livraison suivie Espagne</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>3</g:min_transit_time>
-        <g:max_transit_time>5</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>MC</g:country>
-        <g:service>Livraison suivie Monaco</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>1</g:min_transit_time>
-        <g:max_transit_time>3</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>AD</g:country>
-        <g:service>Livraison suivie Andorre</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>2</g:min_transit_time>
-        <g:max_transit_time>4</g:max_transit_time>
-      </g:shipping>
-      <g:shipping>
-        <g:country>GB</g:country>
-        <g:service>Livraison suivie Royaume-Uni</g:service>
-        <g:price>3.99 EUR</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>1</g:max_handling_time>
-        <g:min_transit_time>3</g:min_transit_time>
-        <g:max_transit_time>6</g:max_transit_time>
-      </g:shipping>
+      <g:product_detail>
+        <g:section_name>Caractéristiques</g:section_name>
+        <g:attribute_name>Nombre de joueurs</g:attribute_name>
+        <g:attribute_value>3 à 6</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Caractéristiques</g:section_name>
+        <g:attribute_name>Durée d'une partie</g:attribute_name>
+        <g:attribute_value>Environ 30 minutes</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Caractéristiques</g:section_name>
+        <g:attribute_name>Âge minimum</g:attribute_name>
+        <g:attribute_value>8 ans</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Caractéristiques</g:section_name>
+        <g:attribute_name>Langue</g:attribute_name>
+        <g:attribute_value>Français</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Contenu</g:section_name>
+        <g:attribute_name>Cartes</g:attribute_name>
+        <g:attribute_value>36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles en français</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Édition</g:section_name>
+        <g:attribute_name>Auteur</g:attribute_name>
+        <g:attribute_value>Corentin Sence</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Édition</g:section_name>
+        <g:attribute_name>Illustrations</g:attribute_name>
+        <g:attribute_value>Crea by Floh</g:attribute_value>
+      </g:product_detail>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" width="400" height="800">
+  <defs>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <rect width="10" height="10" fill="#E6AB26"/>
+      <rect width="3.4" height="10" fill="#231F22"/>
+    </pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#C2462A"/>
+      <circle cx="4" cy="4" r="2.2" fill="#F7EFDD"/>
+      <circle cx="11" cy="11" r="2.2" fill="#F7EFDD"/>
+    </pattern>
+    <pattern id="waves" width="24" height="12" patternUnits="userSpaceOnUse">
+      <rect width="24" height="12" fill="#3A3538"/>
+      <path d="M0 6 Q6 0 12 6 T24 6" fill="none" stroke="#B9B2A6" stroke-width="2"/>
+    </pattern>
+    <pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+      <rect width="12" height="12" fill="#F2E3BE"/>
+      <path d="M0 0H12M0 0V12" stroke="#C98A0E" stroke-width="2.2"/>
+    </pattern>
+    <pattern id="stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
+      <rect width="8" height="8" fill="#231F22"/>
+      <rect width="2.6" height="8" fill="#F7EFDD"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="800" fill="#231F22"/>
+  <g stroke="#231F22" stroke-width="6">
+    <path d="M-60 120 C 60 -20 260 -10 330 60 C 220 150 40 190 -60 120Z" fill="url(#hatch)"/>
+    <path d="M120 250 C 200 120 380 100 460 160 C 380 270 220 320 120 250Z" fill="url(#dots)"/>
+    <path d="M-80 330 C 40 230 200 250 260 330 C 170 420 0 430 -80 330Z" fill="url(#waves)"/>
+    <path d="M170 470 C 240 360 420 360 470 430 C 400 530 250 560 170 470Z" fill="url(#grid)"/>
+    <path d="M-50 560 C 50 450 230 470 290 560 C 190 650 30 660 -50 560Z" fill="url(#hatch)"/>
+    <path d="M140 700 C 220 600 400 600 460 680 C 380 780 220 800 140 700Z" fill="url(#stripes)"/>
+    <path d="M-70 820 C 30 720 190 720 250 800 C 160 900 0 900 -70 820Z" fill="url(#dots)"/>
+    <path d="M230 -40 C 300 -120 440 -110 480 -40 C 420 40 300 50 230 -40Z" fill="url(#waves)"/>
+    <path d="M260 110 C 320 40 430 50 470 110 C 410 180 310 190 260 110Z" fill="url(#stripes)"/>
+    <path d="M-40 -20 C 20 -90 150 -80 190 -20 C 130 40 20 50 -40 -20Z" fill="url(#grid)"/>
+    <path d="M250 330 C 300 270 420 270 460 330 C 410 400 300 400 250 330Z" fill="url(#hatch)"/>
+    <path d="M-60 440 C -10 380 120 380 160 440 C 110 510 -10 510 -60 440Z" fill="url(#stripes)"/>
+    <path d="M250 570 C 300 510 420 510 460 570 C 410 640 300 640 250 570Z" fill="url(#waves)"/>
+    <path d="M-60 690 C -10 630 110 630 150 690 C 100 760 -10 760 -60 690Z" fill="url(#grid)"/>
+  </g>
+  <g fill="none" stroke="#E6AB26" stroke-width="2" opacity=".85">
+    <circle cx="330" cy="300" r="10"/><circle cx="60" cy="460" r="7"/><circle cx="350" cy="560" r="6"/><circle cx="40" cy="220" r="5"/>
+  </g>
+</svg>

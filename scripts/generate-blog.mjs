@@ -564,6 +564,8 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <link rel="stylesheet" href="/style.css?v=${CACHE}" />
   <link rel="stylesheet" href="/css/article.css?v=${CACHE}" />
   <link rel="stylesheet" href="/css/blog-article.css?v=${CACHE}" />
+  <link rel="stylesheet" href="/css/motion.css?v=${CACHE}" />
+  <script src="/js/motion.js?v=${CACHE}" defer></script>
   <script src="/blog-data.js?v=${CACHE}" defer></script>
   <script src="/components.js?v=${CACHE}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema)}</script>

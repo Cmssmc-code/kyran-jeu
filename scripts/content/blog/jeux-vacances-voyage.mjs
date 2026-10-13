@@ -2,7 +2,7 @@ export default {
   slug: `jeux-vacances-voyage`,
   title: `Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter`,
   shortTitle: `Jeux de vacances et voyage`,
-  metaTitle: `Jeux de cartes de vacances : 7 jeux pour train, plage et gîte`,
+  metaTitle: `Jeux de cartes de vacances : 7 jeux pour train, plage, gîte`,
   description: `Sept jeux de cartes rangés par situation : tablette de train, serviette de plage, terrasse ou table de gîte, avec ce que le vent et les pauses leur font.`,
   category: `Cartes`,
   date: `2026-05-27`,

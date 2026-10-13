@@ -1006,6 +1006,27 @@ canvas.dj-confetti { position: fixed; inset: 0; width: 100%; height: 100%; point
   .dj-coach-text { font-size: 1rem; }
 }
 
+/* PC à écran peu haut (portable 768 à 960 px de haut) : la table tient sous l'en-tête collant (76 px) sans défiler */
+@media (min-width: 900px) and (max-height: 960px) {
+  .dj-game { --cw: clamp(56px, 9svh, 84px); --tw: clamp(46px, 8svh, 76px); min-height: 0; padding: 12px 18px 10px; gap: 6px; }
+  .dj-top { padding-bottom: 6px; }
+  .dj-seat { padding-top: 6px; padding-bottom: 6px; gap: 2px; }
+  .dj-avatar { width: 38px; height: 38px; font-size: 1.2rem; }
+  .dj-table { min-height: 0; padding: 10px 8px 8px; gap: 6px; }
+  .dj-coach { min-height: 0; }
+  .dj-sensei { width: 40px; height: 40px; }
+  .dj-me { padding-top: 6px; gap: 2px; }
+  .dj-hand { padding: 14px 3px 4px; min-height: calc(var(--cw) * 1.487 + 18px); }
+  .dj-actions { min-height: 0; }
+  .dj-bet { height: 44px; }
+}
+@media (min-width: 900px) and (max-height: 820px) {
+  .dj-game { --cw: clamp(54px, 8.4svh, 80px); --tw: clamp(44px, 7.2svh, 70px); }
+  /* Le Bokonon pose déjà la question : le panneau garde l'essentiel */
+  .dj-panel-title span, .dj-panel-bet .dj-panel-note { display: none; }
+  .dj-seat-cards { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dj *, .dj *::before, .dj *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }

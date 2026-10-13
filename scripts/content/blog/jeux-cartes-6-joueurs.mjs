@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-cartes-6-joueurs',
   title: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table',
   shortTitle: 'Jeux à 5 ou 6 joueurs',
-  metaTitle: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table',
+  metaTitle: 'Jeux de cartes à 5 ou 6 joueurs : 8 jeux pour toute la table',
   description: `Jeux de cartes à 5 ou 6 joueurs : For Sale, 6 qui prend !, Codenames, Skull, KYRAN… 8 jeux, et ce qui change entre cinq et six joueurs.`,
   category: 'Cartes',
   date: '2026-09-11',

@@ -31,8 +31,9 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - La Mystique vaut 0 ou 37 au choix.
   - À 3 ou 4 joueurs : 4 Pouvoirs + la Mystique. À 5 ou 6 : toutes les cartes.
   - Variante d'initiation : sans Pouvoirs ni Mystique.
-- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 2,99 € par commande (décision du propriétaire le 2026-10-13, comme Etsy ; Stripe facturait 3,99 € au 2026-10-12 : à vérifier sur la page Stripe) ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
-- **Livraison :** France métropolitaine, Belgique, Luxembourg, Suisse, Monaco. Retours gratuits sous 14 jours (`FreeReturn`).
+- **Prix :** 9,99 € sur kyran-jeu.fr (`/commander.html`, Stripe Payment Link, port 2,99 € par commande (décision du propriétaire le 2026-10-13, comme Etsy ; page Stripe vérifiée le 2026-10-13 : total 12,98 € pour une boîte, pays FR BE LU MC CH, description « 45 cartes de jeu, 30 cartes Vie et 7 cartes de règles ») ; quantité modifiable sur la page Stripe, `?quantity=` est ignoré), 17,99 € sur Amazon.fr (ASIN B0G217LD87), 9,99 € + 2,99 € de port sur Etsy (boutique KyranJeu). `priceValidUntil` vaut 2026-12-31 dans le JSON-LD : **à renouveler avant cette date**.
+- **Livraison :** France métropolitaine, Belgique, Luxembourg, Suisse, Monaco (seuls pays acceptés par la page Stripe). Retour sous 14 jours, frais de retour à la charge du vendeur (CGV art. 6, `FreeReturn`).
+- **Ton :** le site vouvoie ; le mini-jeu (`minijeu.html`, `dojo/`) tutoie, choix du propriétaire du 2026-10-13 : ne pas le changer.
 - **Héritage :** Tarot Africain / Whist 22 (pages `/tarot-africain.html`, `/whist-22.html`, `/tarot-africain-a-3-joueurs.html`).
 - **Interdits rédactionnels :** ne jamais écrire que KYRAN est « sans élimination » (le premier joueur à zéro Vie termine la partie) ni « sans hasard ». Ne jamais inventer de pouvoir.
 - **Présence externe :**

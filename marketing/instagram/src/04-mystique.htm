@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>04 · La carte Mystique</title>
+<link rel="stylesheet" href="commun.css">
+<style>
+  body { background: var(--ink); color: var(--cream); }
+  .wax { position: absolute; left: 50%; top: 40px; width: 1000px; height: 1000px; margin-left: -500px; border-radius: 50%; background: radial-gradient(circle, rgba(230,171,38,.28) 0%, rgba(230,171,38,.08) 45%, rgba(230,171,38,0) 70%); }
+  .card { position: absolute; width: 470px; left: 50%; margin-left: -235px; top: 96px; transform: rotate(-4deg); filter: drop-shadow(14px 16px 0 #E6AB26); }
+  .val { position: absolute; top: 300px; width: 190px; height: 190px; border-radius: 50%; border: 5px solid var(--ink); display: grid; place-items: center; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 104px; color: var(--ink); box-shadow: 8px 8px 0 rgba(0,0,0,.45); }
+  .v0 { left: 60px; background: var(--cream); transform: rotate(-8deg); }
+  .v37 { right: 60px; background: var(--saffron); transform: rotate(8deg); }
+  .text { position: absolute; left: 72px; right: 72px; top: 860px; text-align: center; }
+  .eyebrow { background: var(--saffron); color: var(--ink); border-color: var(--saffron); }
+  h1 { font-size: 104px; margin-top: 26px; color: var(--cream); }
+  h1 em { font-style: normal; color: var(--saffron); }
+  p { font-size: 38px; line-height: 1.35; margin-top: 22px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="wax"></div>
+  <div class="band top"></div>
+  <img class="card" src="../../../carte-mystique.webp" alt="">
+  <div class="val v0">0</div>
+  <div class="val v37">37</div>
+  <div class="text">
+    <span class="eyebrow">La carte Mystique</span>
+    <h1>Elle vaut <em>0</em> ou <em>37</em>.</h1>
+    <p>Vous choisissez au moment de la poser.<br>À 37, elle est la carte la plus forte du jeu.</p>
+  </div>
+  <div class="band bottom"></div>
+</div>
+</body>
+</html>

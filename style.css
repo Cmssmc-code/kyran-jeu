@@ -7141,6 +7141,8 @@ section { scroll-margin-top: 84px; }
   color: var(--k-ink);
   box-shadow: none;
 }
+a.announcement-pill { text-decoration: none; }
+a.announcement-pill:hover { background: var(--k-saffron-hi); }
 .announcement-text { color: #EFE6D6; }
 .announcement-link { color: var(--k-saffron-hi); }
 .announcement-link:hover { color: #ffffff; }

@@ -27,6 +27,7 @@ function instagramLinkHtml(className, label) {
 const ACTIVE_BY_PATH = {
   'index.html': 'home',
   'commander.html': 'order',
+  'idee-cadeau.html': 'discover',
   'merci.html': 'order',
   'regle.html': 'rules',
   'minijeu.html': 'game',
@@ -57,6 +58,7 @@ function resolveActivePage(explicit, pathname) {
 }
 
 const DISCOVER_ITEMS = [
+  { href: '/idee-cadeau.html', title: 'Idée cadeau', desc: 'Offrir KYRAN, délais de livraison' },
   { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
   { href: '/blog/jeux-comme-skyjo.html', title: 'Jeux comme Skyjo', desc: '10 alternatives et variantes' },
   { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Règles, variantes et comptage' },
@@ -109,7 +111,7 @@ function renderHeaderHtml(active, pathname) {
     return `
       <div class="top-announcement-bar" role="region" aria-label="Offre et livraison">
         <div class="container announcement-content">
-          <span class="announcement-pill">Idée cadeau</span>
+          <a href="${rootPath('idee-cadeau.html')}" class="announcement-pill">Idée cadeau</a>
           <span class="announcement-text"><strong>9,99&nbsp;&euro;</strong> en direct du créateur<span class="announcement-extra"> · expédié sous 24 à 48&nbsp;h, suivi La Poste</span></span>
           <a href="${ORDER_URL}" class="announcement-link">Commander &rarr;</a>
         </div>

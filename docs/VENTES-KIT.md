@@ -158,58 +158,62 @@ Liste vérifiée le 12 octobre 2026 : chaque adresse a été lue sur le site du 
 - Plateau Marmots : la page contact est polluée par du texte de casino (site peut-être compromis) et
   le public visé est trop jeune.
 
-### Influenceurs de 5 000 à 50 000 abonnés (recherche du 13 octobre 2026)
+### Influenceurs France et Belgique, de 5 000 à 50 000 abonnés (recherche du 13 octobre 2026)
 
-Comptes actifs en 2026, abonnés relevés le 13 octobre sur YouTube et TikTok. Instagram bloque la
-lecture automatique : vérifier à la main le compte Instagram de chacun avant l'envoi (il peut
-dépasser 50 000). Les adresses ne figurent pas ici, car ce sont des adresses personnelles : elles
-sont dans les brouillons Gmail. Lien suivi : `utm_source=influence`.
+Seulement des créateurs installés en France ou en Belgique, pays livrés par Stripe. Comptes actifs
+en 2026, abonnés relevés le 13 octobre sur YouTube et TikTok, pays lu sur la chaîne, la bio ou les
+vidéos. Instagram bloque la lecture automatique : vérifier à la main le compte Instagram de chacun
+avant l'envoi (il peut dépasser 50 000). Les adresses ne figurent pas ici, car ce sont des adresses
+personnelles : elles sont dans les brouillons Gmail. Lien suivi : `utm_source=influence`.
 
-**Brouillon Gmail prêt (16)**, modèle du § 3 :
+**Brouillon Gmail prêt (19)**, modèle du § 3 :
 
-| Créateur | Plateforme et abonnés | Univers | Accroche |
-|---|---|---|---|
-| Dis, on joue ? | YouTube 16,8 k | Jeux, pour débutants | « Les meilleurs jeux de 2026 » |
-| Jeu DésCouvre | YouTube 15,7 k | Tests de jeux | Tests posés et neutres |
-| Objectif dés Jeux | YouTube 5,7 k | Papa qui teste avec ses 2 enfants | « 10 jeux validés par mes enfants » |
-| Un Monde de jeux (Martin Vidberg) | YouTube 40,4 k + blog | Jeux | Petits jeux de toutes tailles |
-| Eva Antoine | TikTok 35 k · YouTube 8,3 k | Étudiante à Paris | Soirées entre amis |
-| Lyysx | TikTok 24,3 k · YouTube 14,3 k | Étudiante, vacances entre amis | Jeu de poche pour les vacances |
-| tsoonumy (Sarah) | TikTok 39,4 k · YouTube 32,3 k | Vie étudiante | « UNI VLOG » soirées, cours, cafés |
-| Solea | YouTube 6,1 k | Vie étudiante | Pause entre deux révisions |
-| Dee's Universe | YouTube 10,3 k | La vingtaine | Soirées entre amis |
-| Lolaaa Plz | YouTube 5 k | Rentrée étudiante | Premières soirées de l'année |
-| LYDIE (via Iris Management) | YouTube 43,2 k | Étudiante internationale | Agence : risque de demande payante |
-| Mams'elle Hibou | YouTube 5,8 k | Famille recomposée, 4 filles | Déjà des vidéos jeux en famille |
-| À nous 6 (Emeline) | YouTube 5,4 k | 4 garçons, instruction en famille | Compter et anticiper |
-| So It's Me (Sofia) | TikTok 48,9 k · YouTube 19,2 k | 4 filles dont des ados | Petits et grands dès 8 ans |
-| Tania Mum of 4 | TikTok 38,2 k · YouTube 11,1 k | 4 filles, défis en famille | Un défi à chaque manche |
-| Famille Radifaz | YouTube 41,5 k · TikTok 53,7 k | Sketchs de famille | Fou rire quand on se trompe |
+| Créateur | Pays | Plateforme et abonnés | Univers | Accroche |
+|---|---|---|---|---|
+| Dis, on joue ? (Coralie) | 🇧🇪 / 🇫🇷 | YouTube 16,8 k · Instagram ≈ 44 k | Jeux, pour débutants | « Les meilleurs jeux de 2026 » |
+| Jeu DésCouvre | 🇫🇷 | YouTube 15,7 k | Tests de jeux | Tests posés et neutres |
+| Objectif dés Jeux | 🇫🇷 | YouTube 5,7 k | Papa qui teste avec ses 2 enfants | « 10 jeux validés par mes enfants » |
+| Un Monde de jeux (Martin Vidberg) | 🇫🇷 | YouTube 40,4 k + blog | Jeux | Petits jeux de toutes tailles |
+| Eva Antoine | 🇫🇷 Paris | TikTok 35 k · YouTube 8,3 k | Étudiante en droit | Soirées entre amis |
+| Lyysx | 🇫🇷 Bordeaux | TikTok 24,3 k · YouTube 14,3 k | Étudiante, vacances entre amis | Jeu de poche pour les vacances |
+| Solea | 🇫🇷 Paris | YouTube 6,1 k | Vie étudiante | Pause entre deux révisions |
+| Dee's Universe | 🇫🇷 (probable) | YouTube 10,3 k | La vingtaine | Soirées entre amis |
+| Lolaaa Plz | pays non trouvé | YouTube 5 k | Rentrée étudiante | Premières soirées de l'année |
+| Mams'elle Hibou | 🇫🇷 | YouTube 5,8 k | Famille recomposée, 4 filles | Déjà des vidéos jeux en famille |
+| À nous 6 (Emeline) | 🇫🇷 | YouTube 5,4 k | 4 garçons, instruction en famille | Compter et anticiper |
+| So It's Me (Sofia) | 🇫🇷 (originaire de Mayotte) | TikTok 48,9 k · YouTube 19,2 k | 4 filles dont des ados | Petits et grands dès 8 ans |
+| Tania Mum of 4 | pays non trouvé | TikTok 38,2 k · YouTube 11,1 k | 4 filles, défis en famille | Un défi à chaque manche |
+| Famille Radifaz | pays non trouvé | YouTube 41,5 k · TikTok 53,7 k | Sketchs de famille | Fou rire quand on se trompe |
+| coucoumae | 🇧🇪 Bruxelles | YouTube 25,8 k | Étudiante, vlogs cosy | Vlog « cookies, café & jeux de société » |
+| Leïla (@Nasalya_love) | 🇧🇪 | YouTube 47,9 k | Maman de 4, idées d'activités | Soirées en famille |
+| Vince (via BeInfluence) | 🇧🇪 | TikTok 13,1 k · Instagram 34,5 k | Streamer Twitch | Streams CAP48 |
+| Kenza (@kenzalamaizi) | 🇧🇪 Mons | TikTok 25,2 k | Loisirs cosy | Soirée tranquille entre amis |
+| Léa Caps | 🇧🇪 Bruxelles | YouTube 20,2 k | Vie de jeune adulte | Quotidien à Bruxelles |
 
 **Message privé seulement** (pas d'adresse publique), version courte du § 3 :
 
-| Créateur | Plateforme et abonnés | Univers |
-|---|---|---|
-| Penelope Gaming | YouTube 13,5 k (Instagram @penelope_gaming) | Jeux ; refuse les partenariats payants, exemplaire offert seulement |
-| Nixx | YouTube 7,8 k | Jeux, financement participatif |
-| TU JOUES OU QUOI !!! | YouTube 9,2 k | Nouveautés et prototypes |
-| Tatiana dot Game | YouTube 11,4 k | Jeux méconnus |
-| Marine (@marinedugrenier) | TikTok 30,9 k | Jeux de société, coautrice de BINGMO |
-| Les Chroniques des Meeples | Instagram ≈ 10 k (non vérifié) | Jeux |
-| Passion jeux de société (@passionjeuxvf) | Instagram ≈ 5,3 k (non vérifié) | Jeux |
-| Emmaa dbr | TikTok 31,3 k · YouTube 9 k | Lifestyle jeune |
-| lea (@leavtrl) | YouTube 9,5 k | « Une semaine à la fac » |
-| ines (@inesprst) | YouTube 35,3 k | Vie étudiante |
-| Emma Mty | YouTube 9,2 k · Instagram 16 k | Lycéenne ; vérifier l'âge, accord parental si mineure |
-| Les Colocs Podcast | YouTube 22,7 k · TikTok 52,4 k | Colocation |
-| Tony & Nao | YouTube 27,3 k | Jeune couple |
-| Béa Maman Nature | YouTube 13,2 k | Famille nombreuse, déjà une vidéo jeux de société |
-| Leïla (@Nasalya_love) | YouTube 47,9 k | Maman de 4, idées d'activités |
-| Une Maman Loutre | Blog + Instagram (formulaire) | Teste des jeux pour enfants de 8 ans |
+| Créateur | Pays | Plateforme et abonnés | Univers |
+|---|---|---|---|
+| Penelope Gaming | 🇫🇷 | YouTube 13,5 k (Instagram @penelope_gaming) | Jeux ; refuse les partenariats payants, exemplaire offert seulement |
+| Nixx | 🇫🇷 | YouTube 7,8 k | Jeux, financement participatif |
+| TU JOUES OU QUOI !!! | 🇫🇷 | YouTube 9,2 k | Nouveautés et prototypes |
+| Marine (@marinedugrenier) | 🇫🇷 Paris | TikTok 30,9 k | Jeux de société, coautrice de BINGMO |
+| Les Chroniques des Meeples | 🇫🇷 Seine-Maritime | Instagram ≈ 10 k (non vérifié) | Jeux |
+| Tatiana dot Game | 🇧🇪 | YouTube 11,4 k · Instagram ≈ 15 k | Jeux méconnus |
+| Des jeux en cravate | 🇧🇪 | YouTube 9,6 k | Jeux, plutôt experts |
+| Njoy Games | 🇧🇪 Mons | TikTok 15,1 k | Bar à jeux : aussi un revendeur possible |
+| Emmaa dbr | 🇫🇷 | TikTok 31,3 k · YouTube 9 k | Lifestyle jeune |
+| lea (@leavtrl) | 🇫🇷 Paris | YouTube 9,5 k | « Une semaine à la fac » |
+| ines (@inesprst) | 🇫🇷 Paris | YouTube 35,3 k | Vie étudiante |
+| Emma Mty | 🇫🇷 ou 🇧🇪 | YouTube 9,2 k · Instagram 16 k | Lycéenne ; vérifier l'âge, accord parental si mineure |
+| Em' (@emydeale) | 🇧🇪 Liège | TikTok 10 k | Vie étudiante à Liège, soirée kot |
+| Such a Girl (Géraldine) | 🇧🇪 Bruxelles | TikTok 17,7 k · YouTube 19,4 k | Bons plans sorties |
+| Tony & Nao | 🇫🇷 (probable) | YouTube 27,3 k | Jeune couple |
+| Béa Maman Nature | 🇫🇷 (probable) | YouTube 13,2 k | Famille nombreuse, déjà une vidéo jeux de société |
+| Une Maman Loutre | 🇫🇷 (probable) | Blog + Instagram (formulaire) | Teste des jeux pour enfants de 8 ans |
 
-**Hors des pays livrés par Stripe** (envoi à part, port plus cher) : Es-Tu Game ?, L'École du jeu,
-On Joue-Tu ?, Zone Jeux de Société (Québec), noemmmiiieee, Sara Mom Lifestyle (Canada), Nordic
-Mama (Finlande), Aissa (New York).
+Retirés car installés hors de France et de Belgique : tsoonumy (Montréal), LYDIE (Istanbul),
+Les Colocs Podcast (Canada) et les chaînes québécoises.
 
 **Autres comptes Instagram** : aucune adresse n'a été vérifiée. Passer par un message privé (§ 3, version courte),
 en visant des comptes de 2 000 à 30 000 abonnés trouvés avec #jeudesociete et #jeudecartes. Seul

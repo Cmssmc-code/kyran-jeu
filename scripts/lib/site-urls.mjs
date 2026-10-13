@@ -89,7 +89,7 @@ export const STATIC_PAGES = [
   { path: '/blog/', title: 'Blog KYRAN — guides de jeux de cartes et de société', section: 'Blog' },
   { path: '/plan-du-site.html', title: 'Plan du site — kyran-jeu.fr', section: 'Ressources', noSitemap: true },
   { path: '/mentions-legales.html', title: 'Mentions légales', section: 'Légal & Vente', noSitemap: true },
-  { path: '/cgv.html', title: 'Conditions Générales de Vente (CGV)', section: 'Légal & Vente', noSitemap: true },
+  { path: '/cgv.html', title: 'Conditions générales de vente (CGV)', section: 'Légal & Vente', noSitemap: true },
   { path: '/confidentialite.html', title: 'Politique de confidentialité (RGPD)', section: 'Légal & Vente', noSitemap: true }
 ];
 

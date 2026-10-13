@@ -54,14 +54,14 @@ Parier juste, bluffer ses adversaires et survivre aux manches dégressives : la 
 - **Titre** : `KYRAN`
 - **Sous-titre** : `Jeu de cartes de plis, bluff et paris`
 - **Année** : `2026`
-- **Mois** : `Février`
+- **Mois** : `Janvier` (sortie le 31 janvier 2026)
 - **Éditeur** : `Auto-édition / Corentin Sence`
 - **Auteur** : `Corentin Sence`
 - **Illustrateur** : `Crea by Floh`
 - **Nombre de joueurs** : `3 à 6` (Configuration idéale : `4 à 5`)
 - **Âge minimum** : `8 ans`
 - **Durée moyenne** : `30 minutes`
-- **EAN / Code-barres** : `3770038977005` (ou référence SKU `KYRAN-01`)
+- **EAN / Code-barres** : `3770040368015` (ou référence SKU `KYRAN-01`)
 - **Prix indicatif** : `9,99 €` (Boutique) / `17,99 €` (Amazon)
 - **Type** : `Jeu de cartes / Jeu d'ambiance / Jeu de société`
 - **Mécanismes MyLudo** : `Plis`, `Paris`, `Bluff`, `Gestion de main`

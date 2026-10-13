@@ -55,7 +55,7 @@ jobs:
         run: |
           mkdir -p _site
           git ls-files -z \
-            | grep -zvE '^(scripts|server|worker|\.github|node_modules)/' \
+            | grep -zvE '^(scripts|server|worker|marketing|\.github|node_modules)/' \
             | grep -zvE '(^|/)[^/]*\.md$' \
             | grep -zvE '^(package\.json|package-lock\.json|\.env\.example|\.gitignore|seo-keywords\.json|blog/images/download-log\.json)$' \
             | xargs -0 cp --parents -t _site

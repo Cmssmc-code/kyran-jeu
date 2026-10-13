@@ -2591,6 +2591,16 @@
       var stripeBtn = document.getElementById('stripe-checkout-link');
       var btnTotalDisplay = document.getElementById('btn-total-display');
 
+      // Page d'origine de la vente (/commander.html?ref=…) transmise à Stripe en
+      // client_reference_id, paramètre reconnu des Payment Links : visible sur chaque
+      // paiement du tableau de bord Stripe.
+      var checkoutRefQuery = '';
+      var checkoutRef = new URLSearchParams(window.location.search).get('ref');
+      if (checkoutRef && /^[A-Za-z0-9_-]{1,64}$/.test(checkoutRef)) {
+        checkoutRefQuery = '?client_reference_id=' + checkoutRef;
+        if (stripeBtn) stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + checkoutRefQuery;
+      }
+
       function updateTotal() {
         qtyVal.textContent = qty;
         var subtotalNum = unitPrice * qty;
@@ -2606,7 +2616,7 @@
         if (btnTotalDisplay) btnTotalDisplay.textContent = subtotalStr;
 
         if (stripeBtn) {
-          stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00';
+          stripeBtn.href = 'https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00' + checkoutRefQuery;
         }
         // Le Payment Link Stripe ignore toute quantité passée dans l'URL : la quantité
         // se choisit sur la page de paiement (« Qté »). On le dit au client.

@@ -16,8 +16,8 @@ const { html: orderHtml } = renderOrderEmail({
   orderId: 'cs_live_a1b2c3d4e5f6g7h8',
   quantity: 1,
   subtotalAmount: '9,99 €',
-  shippingCost: '3,99 €',
-  totalAmount: '13,98 €',
+  shippingCost: '2,99 €',
+  totalAmount: '12,98 €',
   shippingAddress: {
     name: 'Alexandre Dupont',
     line1: '14 rue des Lilas',
@@ -44,7 +44,7 @@ fs.writeFileSync(path.join(outputDir, 'shipping-notification.html'), shippingHtm
 const { html: refundHtml } = renderRefundEmail({
   customerName: 'Alexandre Dupont',
   orderId: 're_3Mbcdef12345678',
-  refundAmount: '13,98 €',
+  refundAmount: '12,98 €',
   reason: 'Rétractation client (14 jours)'
 });
 fs.writeFileSync(path.join(outputDir, 'refund-confirmation.html'), refundHtml, 'utf8');

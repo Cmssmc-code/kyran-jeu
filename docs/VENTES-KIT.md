@@ -19,8 +19,8 @@ Tableau de bord Stripe → Catalogue de produits → KYRAN — Jeu de cartes →
 
 Points à vérifier dans le même écran :
 
-- **Frais de port** : la page facture 3,99 €. Le site affiche maintenant 3,99 €. Pour revenir à
-  2,99 €, changer le tarif dans Stripe puis demander à Claude de remettre 2,99 € sur le site.
+- **Frais de port** : décision du 2026-10-13 : 2,99 € par commande, comme sur Etsy. Le site
+  affiche 2,99 €. Vérifier que la page Stripe facture bien 2,99 € (et non plus 3,99 €).
 - **Pays de livraison** : Stripe n'accepte que France, Belgique, Luxembourg, Monaco et Suisse. Le
   site et les CGV citent aussi l'Allemagne, l'Italie, l'Espagne, Andorre et le Royaume-Uni. Ajouter
   ces pays dans Stripe, ou demander à Claude de les retirer des pages.

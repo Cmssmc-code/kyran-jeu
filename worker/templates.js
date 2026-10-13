@@ -101,8 +101,8 @@ export function renderOrderEmail({
   orderId = '',
   quantity = 1,
   subtotalAmount = '9,99 €',
-  totalAmount = '13,98 €',
-  shippingCost = '3,99 €',
+  totalAmount = '12,98 €',
+  shippingCost = '2,99 €',
   shippingAddress = null,
   estimatedDelivery = '3 à 5 jours ouvrés'
 }) {
@@ -269,7 +269,7 @@ Une question ? Répondez directement à cet email.
 export function renderRefundEmail({
   customerName = 'Cher joueur',
   orderId = '',
-  refundAmount = '13,98 €',
+  refundAmount = '12,98 €',
   reason = 'Demande client'
 }) {
   const contentHtml = `

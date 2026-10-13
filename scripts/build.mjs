@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Régénère tout ce qui est généré (articles, redirections, données du blog, page communauté,
- * sitemap, llms.txt,
+ * sitemap, llms.txt, flux Google Merchant Center,
  * plan du site, rendu statique des composants, versions de l’Initiation (ex-Dojo), CSP). À lancer après toute modification de
  * scripts/content/, des composants (components.js, reviews.js) ou des pages.
  */
@@ -16,6 +16,7 @@ const steps = [
   'generate-blog-infra.mjs',
   'generate-community.mjs',
   'generate-seo.mjs',
+  'generate-merchant-feed.mjs',
   'prerender.mjs',
   'stamp-dojo.mjs',
   'apply-csp.mjs'

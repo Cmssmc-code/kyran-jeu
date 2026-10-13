@@ -60,7 +60,7 @@
 - [Communauté KYRAN — photos et vidéos de joueurs](https://kyran-jeu.fr/communaute.html)
 - [Blog KYRAN — guides de jeux de cartes et de société](https://kyran-jeu.fr/blog/)
 - [Mentions légales](https://kyran-jeu.fr/mentions-legales.html)
-- [Conditions Générales de Vente (CGV)](https://kyran-jeu.fr/cgv.html)
+- [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
 ## Blog — 32 guides

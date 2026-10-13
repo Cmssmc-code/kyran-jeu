@@ -82,6 +82,9 @@
     .sheet--score { page: score; width: 297mm; min-height: 210mm; break-after: auto; page-break-after: auto; }
   }
 
+  @media screen and (max-width: 1160px) {
+    .sheet--score { width: auto; max-width: 297mm; overflow-x: auto; }
+  }
   @media screen and (max-width: 900px) {
     .sheet, .sheet--score { width: auto; min-height: 0; margin: 0 0 16px; padding: 18px 16px; }
     .cols { grid-template-columns: minmax(0, 1fr); }

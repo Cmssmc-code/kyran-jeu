@@ -59,9 +59,8 @@ refuser la fiche (écart entre le flux et la page de paiement).
 
 Points à vérifier par le propriétaire :
 
-- **GTIN** : comparer `3770040368015` au code-barres imprimé sur la boîte. `NETLINKING_ANNUAIRES.md`
-  donne un autre code (`3770038977005`) dont la clé de contrôle est fausse : c'est celui-là
-  qu'il faut corriger. Si la boîte n'a pas de code-barres GS1, retirer `gtin` du générateur et
+- **GTIN** : comparer `3770040368015` au code-barres imprimé sur la boîte (c'est le code des
+  mentions légales et des CGV ; `NETLINKING_ANNUAIRES.md` a été aligné dessus le 2026-10-13). Si la boîte n'a pas de code-barres GS1, retirer `gtin` du générateur et
   y écrire `identifier_exists` à `no` à la place.
 - **Prix** : tant que le prix ou le port changent sur Stripe, le flux doit être mis à jour le
   même jour.

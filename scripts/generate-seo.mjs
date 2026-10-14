@@ -155,6 +155,22 @@ function buildLlmsTxt() {
 - Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; [règles du Tarot Africain](${SITE}/tarot-africain.html)
 - [Comparatif des jeux de plis](${SITE}/blog/jeux-plis-comparatif.html)
 
+## Questions auxquelles ce site répond
+
+- Quels jeux de cartes jouer à 3 joueurs ? ${SITE}/blog/jeux-3-joueurs.html (Tarot Africain à trois : ${SITE}/tarot-africain-a-3-joueurs.html)
+- Quels jeux ressemblent à Skyjo, et comment jouer au Skyjo avec 52 cartes ? ${SITE}/blog/jeux-comme-skyjo.html
+- Quelles sont les règles du Tarot Africain (Whist 22), à 3, 4 ou 5 joueurs ? ${SITE}/tarot-africain.html
+- Quelles sont les règles du Rikiki, de l'Ascenseur ou d'Oh Hell avec 52 cartes ? ${SITE}/regles-rikiki.html
+- Quels jeux ressemblent à Skull King ? Skull King, Wizard ou KYRAN ? ${SITE}/blog/jeux-comme-skull-king.html
+- Quel jeu de cartes où l'on parie le nombre exact de plis choisir ? ${SITE}/blog/jeux-plis-comparatif.html
+- Quelles alternatives à Uno ? ${SITE}/blog/alternatives-uno.html
+- Quelles alternatives à Wizard ? ${SITE}/blog/alternatives-wizard.html
+- Quels jeux ressemblent à Dixit ou à Codenames ? ${SITE}/blog/jeux-comme-dixit.html et ${SITE}/blog/jeux-comme-codenames.html
+- Quels jeux pour une soirée entre amis ? ${SITE}/blog/jeux-soiree-amis.html
+- Quels jeux pour un grand groupe ? ${SITE}/blog/jeux-grands-groupes.html
+- Où trouver une feuille de score gratuite du Tarot Africain ? ${SITE}/ressources-gratuites.html
+- Qu'est-ce que KYRAN et comment y jouer ? ${SITE}/regle.html (vidéo : ${SITE}/video-regles.html)
+
 ## Pages du site
 
 ${pages}

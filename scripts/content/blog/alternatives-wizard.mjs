@@ -116,6 +116,19 @@ export default {
     html: `<p>Votre table veut continuer à annoncer ses plis : prenez KYRAN si vous êtes trois à six et que la partie doit tenir en trente minutes, Oh Hell si le budget est nul et que le groupe aime compter les atouts. S'il manque un joueur, ou si la soirée doit se jouer sans rivalité, The Crew garde couleur à fournir et atout en version coopérative, avec une variante à deux joueurs. Si la table a surtout envie de rire, 6 qui prend ! accueille jusqu'à dix personnes. Skull et Parade sont des paris plus risqués pour des fans d'annonce : le premier remplace les cartes par des regards, le second supprime toute prédiction. Prenez-les en complément de Wizard, pas à sa place.</p>`
   },
   conclusion: `<p>Aucun de ces six jeux n'oblige à ranger Wizard : il reste la référence des longues soirées de calcul à quatre ou cinq. Mieux vaut faire tourner les formats : un soir d'annonce avec Oh Hell ou KYRAN, un soir d'équipage avec The Crew, un soir de chahut avec 6 qui prend !. Si un convive découvre les plis à cette occasion, commencez par la première famille : c'est elle qui prépare le mieux à revenir un jour aux Magiciens et aux Fous.</p>`,
+  extraSections: [
+    {
+      id: 'skull-king-pili-pili-cat-in-the-box',
+      heading: 'Et Skull King, Pili Pili ou Cat in the Box ?',
+      html: `<p>Trois jeux récents gardent l'annonce de Wizard sans figurer dans les fiches ci-dessus, parce qu'ils s'en éloignent sur un point précis.</p>
+<ul>
+<li><strong>Skull King</strong> reprend presque mot pour mot le décompte des Magiciens (vingt points par pari juste, plus dix par pli) mais fait montrer les paris tous ensemble, avec les doigts, et remplace Magiciens et Fous par des pirates, des sirènes, une Tigresse et le Skull King. Il monte jusqu'à huit joueurs, deux de plus que Wizard.</li>
+<li><strong>Pili Pili</strong>, sorti en 2025 chez ATM Gaming, supprime les couleurs (cinquante-cinq cartes numérotées) et change la règle à chaque manche avec des cartes Mission.</li>
+<li><strong>Cat in the Box</strong>, publié en France par Matagot, laisse chacun déclarer la couleur de sa carte au moment de la poser : un casse-tête pour habitués, déconseillé à une table qui découvre les plis.</li>
+</ul>
+<p>Le détail, avec un tableau Skull King, Wizard et KYRAN, se trouve dans notre sélection de <a class="text-link" href="/blog/jeux-comme-skull-king.html">jeux comme Skull King</a>. Et pour revenir à la source commune, voyez les <a class="text-link" href="/regles-rikiki.html">règles du Rikiki</a>, l'Ascenseur à 52 cartes.</p>`
+    }
+  ],
   faq: [
     {
       q: 'Quel est le jeu le plus proche de Wizard ?',

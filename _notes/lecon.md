@@ -9,11 +9,18 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
-### 2026-10-14 — Accueil mobile : texte fantôme sous l'en-tête, boutons du hero de 200 px
+### 2026-10-14 — Accueil : carte touchée de l'éventail coincée derrière la boîte
 
-- **Symptôme :** sur mobile, le texte du hero restait lisible à travers l'en-tête et la barre du bas au défilement ; les boutons « Commander le jeu » et « Comment on joue ? » faisaient 200 px de haut (gros ovale jaune).
-- **Cause :** `view-transition-name` posé sur `kyran-header` (`css/motion.css`) en fait une racine de flou : les `backdrop-filter` de l'en-tête et de la barre mobile (enfants de `kyran-header`) ne voyaient plus la page, et leurs fonds à 92-97 % laissaient passer le texte. Les boutons : `flex: 1 1 200px` dans `.hero-actions` passé en colonne sous 540 px, la base devient la hauteur.
-- **Correctif :** fonds opaques pour l'en-tête et la barre mobile (`style.css`), `flex: 0 0 auto` sous 540 px (`css/home.css`). Règle : ne jamais compter sur `backdrop-filter` sous un élément qui a `view-transition-name`, un filtre ou une opacité ; une base `flex` en px se relit chaque fois que le conteneur passe en colonne.
+- **Symptôme :** au toucher d'une carte de l'éventail, la carte montait mais restait derrière la boîte, sous le voile crème, au lieu de venir devant en grand.
+- **Cause :** la refonte du 13 octobre a ajouté `.hero-product-stage > * { position: relative; z-index: 1; }` dans `css/home.css`. Placée après les règles de la scène, elle écrasait le `z-index` des calques (voile 20, boîte 5…) et faisait de `.hero-card-fan` un contexte d'empilement : le `z-index: 30` de la carte présentée ne valait plus qu'à l'intérieur de l'éventail.
+- **Correctif :** la règle passe en `:where(.hero-product-stage) > *` et `.hero-card-fan` repasse en `z-index: auto`. Règle : sur la scène du hero, ne jamais donner de `z-index` à `.hero-card-fan` ; vérifier au toucher qu'une carte présentée passe devant la boîte.
+
+### 2026-10-14 — Accueil mobile : texte fantôme sous l'en-tête
+
+- **Symptôme :** sur mobile, le texte du hero restait lisible à travers l'en-tête et la barre du bas au défilement.
+- **Cause :** `view-transition-name` posé sur `kyran-header` (`css/motion.css`) en fait une racine de flou : les `backdrop-filter` de l'en-tête et de la barre mobile (enfants de `kyran-header`) ne voyaient plus la page, et leurs fonds à 92-97 % laissaient passer le texte.
+- **Correctif :** fonds opaques pour l'en-tête et la barre mobile (`style.css`). Règle : ne jamais compter sur `backdrop-filter` sous un élément qui a `view-transition-name`, un filtre ou une opacité.
+- **À ne pas « corriger » :** les boutons du hero font 200 px de haut sous 540 px (`flex: 1 1 200px` en colonne). C'est voulu par le propriétaire : réduits par erreur dans #60, rétablis aussitôt.
 
 ### 2026-10-12 — Boutique : port affiché 2,99 €, facturé 3,99 € par Stripe ; quantité perdue
 

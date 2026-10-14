@@ -1525,7 +1525,10 @@
   animation: kyranSpin 80s linear infinite;
 }
 @keyframes kyranSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
-.hero-product-stage > * { position: relative; z-index: 1; }
+/* :where() : les calques gardent leur propre z-index (voile 20, boîte 5…) ; l'éventail reste
+   sans contexte d'empilement pour que la carte présentée (z-index 30) passe devant la boîte */
+:where(.hero-product-stage) > * { position: relative; z-index: 1; }
+.hero-product-stage > .hero-card-fan { z-index: auto; }
 .hero-product-stage > .hero-card-fan,
 .hero-product-stage > .hero-box-wrap,
 .hero-product-stage > .hero-stage-shadow,

@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-14 — Accueil : carte touchée de l'éventail coincée derrière la boîte
+
+- **Symptôme :** au toucher d'une carte de l'éventail, la carte montait mais restait derrière la boîte, sous le voile crème, au lieu de venir devant en grand.
+- **Cause :** la refonte du 13 octobre a ajouté `.hero-product-stage > * { position: relative; z-index: 1; }` dans `css/home.css`. Placée après les règles de la scène, elle écrasait le `z-index` des calques (voile 20, boîte 5…) et faisait de `.hero-card-fan` un contexte d'empilement : le `z-index: 30` de la carte présentée ne valait plus qu'à l'intérieur de l'éventail.
+- **Correctif :** la règle passe en `:where(.hero-product-stage) > *` et `.hero-card-fan` repasse en `z-index: auto`. Règle : sur la scène du hero, ne jamais donner de `z-index` à `.hero-card-fan` ; vérifier au toucher qu'une carte présentée passe devant la boîte.
+
 ### 2026-10-14 — Accueil mobile : texte fantôme sous l'en-tête
 
 - **Symptôme :** sur mobile, le texte du hero restait lisible à travers l'en-tête et la barre du bas au défilement.

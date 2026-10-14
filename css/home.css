@@ -1867,6 +1867,10 @@
   .hero-ecommerce .hero-buy { max-width: 480px; }
   .hero-ecommerce .hero-actions .btn { flex: 1 1 200px; }
 }
+/* En colonne (≤ 540 px), une base de 200 px deviendrait la hauteur des boutons */
+@media (max-width: 540px) {
+  .hero-ecommerce .hero-actions .btn { flex: 0 0 auto; }
+}
 @media (pointer: coarse) {
   .power-pill { min-height: 44px; min-width: 64px; padding: 6px 14px; font-size: 0.85rem; }
 }

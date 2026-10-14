@@ -19,6 +19,8 @@
 
 /* ---------- Transitions de page (View Transitions API) ---------- */
 @view-transition { navigation: auto; }
+/* view-transition-name fait de kyran-header une « racine de flou » : les backdrop-filter
+   de l'en-tête et de la barre mobile n'y voient plus la page. Fonds opaques dans style.css. */
 kyran-header { view-transition-name: km-header; }
 ::view-transition-group(km-header) { animation-duration: 0.3s; animation-timing-function: var(--km-out); }
 ::view-transition-old(root) { animation: kmPageOut 0.16s ease-in both; }

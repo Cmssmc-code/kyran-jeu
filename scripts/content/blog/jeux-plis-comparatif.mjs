@@ -83,7 +83,7 @@ export default {
       pick: 'Pour jouer les plis sans rivalité, y compris à deux',
       paragraphs: [
         `The Crew conserve la mécanique du pli (fournir, couper avec les fusées, entame) pour l'utiliser sans annonce. Chaque mission distribue des cartes Tâche : un joueur doit remporter une carte précise dans un pli, parfois dans un ordre imposé. Tout le monde gagne ou perd en même temps.`,
-        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle ; la <a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs et des missions de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
+        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle ; la <a class="text-link" href="https://iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs et des missions de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
       ]
     },
     {

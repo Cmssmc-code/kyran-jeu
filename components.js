@@ -119,7 +119,7 @@ function renderHeaderHtml(active, pathname) {
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
+            <a href="${ROOT}" class="logo" aria-label="KYRAN, retour à l'accueil">
               <img src="${ROOT}logo-96.webp" alt="" width="44" height="44" decoding="async" />
               <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>

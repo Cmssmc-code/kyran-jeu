@@ -8,7 +8,7 @@
  */
 
 export const PRODUCT = {
-  id: 'KYRAN-01', // SKU du JSON-LD (index.html, commander.html)
+  id: 'KYRAN-01', // SKU du JSON-LD (commander.html, nœud Product unique #boardgame)
   brand: 'KYRAN',
   name: 'KYRAN',
   subtitle: 'Maître des Mystiques', // titre imprimé sur la boîte (boite-recto-kyran.jpg)

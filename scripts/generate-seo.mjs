@@ -296,7 +296,7 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Plan du site KYRAN — toutes les pages et guides</title>
   <meta name="description" content="Plan du site kyran-jeu.fr : règles de KYRAN, boutique, Initiation gratuite en ligne, Tarot Africain, FAQ et les ${items.length} guides de jeux de cartes du blog." />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#231F22" />
   <link rel="canonical" href="${SITE}/plan-du-site.html" />
   <link rel="alternate" hreflang="fr-FR" href="${SITE}/plan-du-site.html" />

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <script src="/error-reporter.js?v=d95ff8dcc6"></script>
+  <script src="/error-reporter.js?v=d95ff8dcc6" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Acheter KYRAN, jeu de cartes de plis et de paris | 9,99 €</title>
   <meta name="description" content="Commandez KYRAN, jeu de cartes de plis et de paris pour 3 à 6 joueurs : 9,99 € + 2,99 € de port par commande en France, expédié sous 24 à 48 h ouvrées." />
@@ -43,15 +43,15 @@
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=efb6ff9b4a" defer></script>
-  <link rel="stylesheet" href="style.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="/css/boutique.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="/css/commerce-pages.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="/css/motion.css?v=efb6ff9b4a" />
-  <script src="/js/motion.js?v=efb6ff9b4a" defer></script>
-  <script src="components.js?v=efb6ff9b4a" defer></script>
-  <script src="reviews-data.js?v=efb6ff9b4a" defer></script>
-  <script src="reviews.js?v=efb6ff9b4a" defer></script>
+  <script src="seo-config.js?v=ac4261d69b" defer></script>
+  <link rel="stylesheet" href="style.css?v=ac4261d69b" />
+  <link rel="stylesheet" href="/css/boutique.css?v=ac4261d69b" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=ac4261d69b" />
+  <link rel="stylesheet" href="/css/motion.css?v=ac4261d69b" />
+  <script src="/js/motion.js?v=ac4261d69b" defer></script>
+  <script src="components.js?v=ac4261d69b" defer></script>
+  <script src="reviews-data.js?v=ac4261d69b" defer></script>
+  <script src="reviews.js?v=ac4261d69b" defer></script>
 
   <script type="application/ld+json">
   {
@@ -76,12 +76,14 @@
       },
       {
         "@type": "Product",
-        "@id": "https://kyran-jeu.fr/commander.html#product",
+        "@id": "https://kyran-jeu.fr/#boardgame",
         "name": "KYRAN — Jeu de cartes de plis et de paris",
         "description": "KYRAN est un jeu de cartes de plis à pari obligatoire pour 3 à 6 joueurs, d'environ 30 minutes, à partir de 8 ans. À chaque manche, chaque joueur annonce le nombre exact de plis qu'il va gagner ; la somme des paris ne peut jamais égaler le nombre de plis, donc au moins un joueur se trompe, et un pari raté fait perdre autant de cartes Vie que l'écart. La boîte contient 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et des cartes de règles en français ; la manche Mystique se joue avec une carte posée sur le front. Boîte cloche rigide de 11,5 × 8,5 × 2,8 cm (175 g), cartes toilées vernies de 300 g/m². Créé et édité en France par Corentin Sence, illustrations de Crea by Floh.",
         "sku": "KYRAN-01",
         "mpn": "KYRAN-01",
         "gtin13": "3770040368015",
+        "releaseDate": "2026-01-31",
+        "additionalType": "https://schema.org/Game",
         "url": "https://kyran-jeu.fr/commander.html",
         "image": [
           "https://kyran-jeu.fr/boite-recto-kyran.png",
@@ -96,6 +98,21 @@
         },
         "category": "Jeux de société > Jeux de cartes",
         "inLanguage": "fr-FR",
+        "disambiguatingDescription": "Jeu de cartes tactique français de plis et de paris obligatoires pour 3 à 6 joueurs (~30 min), avec cartes Pouvoir et manche Mystique à l'aveugle.",
+        "isFamilyFriendly": true,
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 6
+        },
+        "timeRequired": "PT30M",
+        "genre": [
+          "Jeu de cartes",
+          "Stratégie",
+          "Bluff",
+          "Jeu de plis",
+          "Jeu d'apéro"
+        ],
         "audience": {
           "@type": "PeopleAudience",
           "suggestedMinAge": 8
@@ -203,6 +220,19 @@
             "refundType": "https://schema.org/FullRefund",
             "merchantReturnLink": "https://kyran-jeu.fr/cgv.html#art6"
           }
+        },
+        "sameAs": [
+          "https://www.instagram.com/kyran.jeu/",
+          "https://www.amazon.fr/dp/B0G217LD87",
+          "https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie",
+          "https://boardgamesflix.com/boardgames/kyran",
+          "https://boardgamegeek.com/boardgame/480678/kyran",
+          "https://www.youtube.com/@Kyran-jeu",
+          "https://www.youtube.com/watch?v=y0YVn-lZMAc",
+          "https://www.youtube.com/watch?v=aconMJG9uSQ"
+        ],
+        "isPartOf": {
+          "@id": "https://kyran-jeu.fr/#website"
         }
       },
       {
@@ -1019,7 +1049,7 @@
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="/" class="logo" aria-label="KYRAN - Accueil">
+            <a href="/" class="logo" aria-label="KYRAN, retour à l'accueil">
               <img src="/logo-96.webp" alt="" width="44" height="44" decoding="async" />
               <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>

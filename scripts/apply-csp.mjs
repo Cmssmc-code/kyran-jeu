@@ -15,7 +15,7 @@
  * admin-emails.html a sa propre politique, plus stricte, et est ignorée ici.
  *
  * Insère aussi, juste après la CSP, le script de remontée d'erreurs (error-reporter.js,
- * pipeline Auto-Heal) : chargé avant tous les autres scripts pour capter leurs erreurs.
+ * pipeline Auto-Heal) : premier script différé de la page, pour capter les erreurs des suivants.
  */
 import fs from 'fs';
 import path from 'path';
@@ -53,7 +53,9 @@ const REPORTER_VERSION = crypto
   .update(fs.readFileSync(path.join(ROOT, 'error-reporter.js')))
   .digest('hex')
   .slice(0, 10);
-const REPORTER = `<script src="/error-reporter.js?v=${REPORTER_VERSION}"></script>`;
+// defer : ne bloque plus le rendu (Lighthouse, audit SEO du 14/10/2026). Premier script différé
+// de la page, il s'exécute avant les autres scripts `defer` et capte donc toujours leurs erreurs.
+const REPORTER = `<script src="/error-reporter.js?v=${REPORTER_VERSION}" defer></script>`;
 const SKIP_DIRS = new Set(['node_modules', '.git', 'server', 'worker', 'scripts', 'email-previews', 'vendor']);
 const SKIP_FILES = new Set(['admin-emails.html']);
 
@@ -75,7 +77,7 @@ for (const file of htmlFiles(ROOT)) {
   const src = fs.readFileSync(file, 'utf8');
   let out = src.replace(/^[ \t]*<meta http-equiv="Content-Security-Policy"[^>]*>[ \t]*\r?\n/gim, '');
   out = out.replace(/^[ \t]*<meta name="referrer"[^>]*>[ \t]*\r?\n/gim, '');
-  out = out.replace(/^[ \t]*<script src="\/error-reporter\.js[^"]*"><\/script>[ \t]*\r?\n/gim, '');
+  out = out.replace(/^[ \t]*<script src="\/error-reporter\.js[^"]*"[^>]*><\/script>[ \t]*\r?\n/gim, '');
   const charset = out.match(/([ \t]*)<meta charset=["']?utf-8["']?\s*\/?>/i);
   if (!charset) {
     missing.push(path.relative(ROOT, file));

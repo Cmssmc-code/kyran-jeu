@@ -53,3 +53,9 @@ test('le GTIN a une clé de contrôle EAN-13 valide', () => {
   const sum = d.slice(0, 12).reduce((a, x, i) => a + x * (i % 2 ? 3 : 1), 0);
   assert.equal((10 - (sum % 10)) % 10, d[12]);
 });
+
+test('le lien du flux est la page d’achat, comme offers.url du JSON-LD', () => {
+  assert.equal(g('link').text(), PRODUCT.orderUrl);
+  const html = readFileSync(join(ROOT, 'commander.html'), 'utf8');
+  assert.match(html, new RegExp(`"url": "${PRODUCT.orderUrl}"`));
+});

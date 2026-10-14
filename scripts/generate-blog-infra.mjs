@@ -107,6 +107,39 @@ const distinctGames = new Set(articles.flatMap(a => a.games.map(g => g.id)));
 const avgWords = Math.round(articles.reduce((s, a) => s + a.wordCount, 0) / articles.length / 100) * 100;
 const N = items.length;
 
+// Regroupements par intention (audit SEO du 14/10/2026, T1.4) : seuls les slugs publiés sont liés.
+const INTENTS = [
+  { label: 'Selon le nombre de joueurs', links: [
+    ['jeux-duo-couples', 'À deux'], ['jeux-3-joueurs', 'À 3 joueurs'], ['jeux-cartes-4-joueurs', 'À 4 joueurs'],
+    ['jeux-cartes-6-joueurs', 'À 5 ou 6 joueurs'], ['jeux-grands-groupes', 'À 7 joueurs et plus']] },
+  { label: 'Selon l’occasion', links: [
+    ['jeux-soiree-amis', 'Soirée entre amis'], ['meilleurs-jeux-apero', 'Apéro et afterwork'], ['jeux-famille', 'En famille'],
+    ['jeux-vacances-voyage', 'Vacances et voyage'], ['jeux-30-minutes', 'En 30 minutes ou moins'],
+    ['cadeau-noel', 'Cadeau de Noël'], ['cadeau-anniversaire', 'Cadeau d’anniversaire']] },
+  { label: 'Selon le public', links: [
+    ['jeux-debutants-adultes', 'Adultes débutants'], ['jeux-cartes-adultes', 'Entre adultes'],
+    ['jeux-cartes-ados', 'Ados'], ['jeux-cartes-seniors', 'Seniors']] },
+  { label: 'Si vous aimez déjà…', links: [
+    ['jeux-comme-skyjo', 'Skyjo'], ['jeux-comme-skull-king', 'Skull King'], ['alternatives-wizard', 'Wizard'],
+    ['alternatives-uno', 'Uno'], ['alternatives-belote-coinche', 'La belote, la coinche'], ['jeux-comme-dixit', 'Dixit'],
+    ['jeux-comme-codenames', 'Codenames'], ['jeux-comme-6-qui-prend', '6 qui prend !'], ['jeux-comme-exploding-kittens', 'Exploding Kittens']] },
+  { label: 'Selon le style de jeu', links: [
+    ['jeux-plis-comparatif', 'Jeux de plis'], ['jeux-bluff-pari', 'Bluff et pari'], ['jeux-coop-cartes', 'Coopératifs'],
+    ['jeux-strategie-legere', 'Stratégie légère'], ['jeux-draft-encheres', 'Draft et enchères'],
+    ['jeux-sans-elimination', 'Sans élimination'], ['jeux-memoire-concentration', 'Mémoire et concentration']] }
+];
+const published = new Set(items.map(i => i.slug));
+const intentsHtml = INTENTS.map(g => {
+  const li = g.links.filter(([slug]) => published.has(slug))
+    .map(([slug, label]) => `              <li><a href="/blog/${slug}.html">${label}</a></li>`).join('\n');
+  return li ? `          <div>
+            <h3 class="blog-intents__label">${g.label}</h3>
+            <ul>
+${li}
+            </ul>
+          </div>` : '';
+}).filter(Boolean).join('\n');
+
 const cards = items.map(i => {
   const gamesBadge = i.gameCount ? `\n            <span class="blog-card-games">${i.gameCount} jeux</span>` : '';
   return `        <a href="/blog/${i.slug}.html" class="blog-card" data-category="${i.category}">
@@ -239,6 +272,13 @@ const html = `<!DOCTYPE html>
             <span class="blog-index-stat__label">mots par guide</span>
           </div>
         </div>
+        <nav class="blog-intents" aria-labelledby="blog-intents-title">
+          <h2 id="blog-intents-title" class="blog-intents__title">Trouver le bon guide selon votre besoin</h2>
+          <p class="blog-intents__lead">Le blog répond à cinq questions : combien vous êtes, à quelle occasion vous jouez, avec qui, quel jeu vous aimez déjà et quel style de partie vous cherchez. Chaque guide compare de cinq à dix jeux et dit lesquels éviter pour cet usage, KYRAN compris quand il ne convient pas (il ne se joue pas à deux, ni au-delà de six). Pour apprendre une règle plutôt que choisir un jeu, voyez les règles du <a class="text-link" href="/tarot-africain.html">Tarot Africain</a> et de <a class="text-link" href="/regle.html">KYRAN</a>.</p>
+          <div class="blog-intents__grid">
+${intentsHtml}
+          </div>
+        </nav>
         <h2 class="sr-only">Tous les guides du blog</h2>
         <kyran-blog-filters></kyran-blog-filters>
         <kyran-blog-grid>

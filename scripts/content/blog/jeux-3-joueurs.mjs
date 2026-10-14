@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-3-joueurs',
   title: 'Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois',
   shortTitle: 'Jeux à 3 joueurs',
-  metaTitle: 'Jeux de cartes à 3 joueurs : 6 jeux réglés pour trois',
+  metaTitle: 'Jeux à 3 joueurs : top 3 et 6 jeux de cartes pensés pour trois',
   description: 'Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s\'affronter, et que faire des duels.',
   category: 'Soirée',
   date: '2026-05-21',
@@ -32,7 +32,7 @@ export default {
   heroSubtitle: 'Six jeux dont la règle prévoit un vrai réglage pour trois : trois pour gagner ensemble, trois pour s\'affronter, et une issue pour les duels.',
   heroImage: '/blog/images/the-crew.jpg',
   heroCaption: 'The Crew — jeu de plis coopératif, très à l\'aise à trois.',
-  intro: `<p>Trois est le nombre que beaucoup de boîtes acceptent sans vraiment l'aimer : impossible de former deux équipes, et le moindre duel laisse quelqu'un spectateur. Cette page ne retient donc que des jeux de cartes dont la règle ajuste quelque chose pour trois joueurs (taille des mains, vies, matériel, nombre de manches gagnantes), et elle les range selon la question que se pose votre trio : jouer ensemble contre le paquet, ou chacun pour soi. La réponse courte vient juste en dessous ; les fiches détaillent ensuite ce que le passage à trois change pour chaque jeu, défauts compris. Schotten Totten, Lost Cities et Star Realms n'y figurent pas comme des jeux à trois : ce sont des duels, et une section dédiée explique comment les sortir malgré tout.</p>`,
+  intro: `<p><strong>Les trois meilleurs jeux de cartes à 3 joueurs sont The Crew, Hanabi et Love Letter</strong> : les deux premiers pour gagner ensemble contre le paquet, le troisième pour s'affronter en vingt minutes. Trois est un nombre que beaucoup de boîtes acceptent sans l'aimer : impossible de former deux équipes, et le moindre duel laisse quelqu'un spectateur. Cette page ne retient donc que des jeux dont la règle ajuste quelque chose pour trois (taille des mains, vies, matériel, manches gagnantes), rangés selon la question de votre trio : jouer ensemble, ou chacun pour soi. Les fiches détaillent ce que le passage à trois change pour chaque jeu, défauts compris. Schotten Totten, Lost Cities et Star Realms n'y figurent pas : ce sont des duels, traités dans une section à part.</p>`,
   criteria: {
     heading: 'Qu\'est-ce qui fait qu\'un jeu tient la route à trois ?',
     html: `<p>Trois est un nombre ingrat : impossible de former deux équipes égales, impossible de jouer en duel sans laisser quelqu'un au bord de la table, et la moindre alliance transforme la partie en deux contre un. Un bon jeu à trois a donc été pensé pour ce nombre précis, avec une mise en place propre, et pas seulement un « 3 » imprimé en bas de la boîte.</p>
@@ -112,7 +112,7 @@ export default {
     }
   ],
   verdict: {
-    heading: 'La réponse courte : quels jeux sortir à trois ?',
+    heading: 'Jeux de cartes à 3 joueurs : notre top 3',
     html: `<p>Pour jouer aux cartes à trois, retenez <strong>The Crew</strong>, <strong>Hanabi</strong> et <strong>Love Letter</strong>. The Crew est le plus durable : ses missions de plis se jouent en équipe et se reprennent d'une soirée à l'autre. Hanabi demande plus de patience, mais récompense un trio qui accepte de s'entendre sur quelques conventions. Love Letter est le choix compétitif le plus court, avec une règle qui prévoit ses propres réglages pour trois. Ensuite, tout dépend de votre trio : <strong>KYRAN</strong> pour parier sur ses plis pendant une demi-heure, Sushi Go! pour une partie sans discussion, The Mind pour une expérience silencieuse plus que pour une stratégie. Les duels, eux, se jouent en tournoi.</p>`
   },
   conclusion: `<p>À trois, le plus simple est de garder deux jeux sous la main : un coopératif pour les soirées fatiguées, un compétitif pour les soirées animées. Les deux groupes de cette page sont faits pour être piochés ainsi, un titre de chaque côté. Quand un quatrième joueur se présente, la sélection des <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">jeux à quatre</a> prend le relais, avec la possibilité nouvelle de jouer en équipes.</p>`,

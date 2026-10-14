@@ -240,7 +240,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée
 
 - URL : https://kyran-jeu.fr/blog/jeux-soiree-amis.html
-- Résumé : Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.
+- Résumé : Jeux à faire entre amis : 10 jeux de soirée, d’ambiance et de bluff classés selon votre groupe (4, 6, 8 et plus) et la durée, avec leurs défauts.
 - Jeux comparés : Codenames (2 à 8+ joueurs, ~15 min, Déduction par équipes) ; Just One (3 à 7 joueurs, ~20 min, Coopératif) ; Dobble (2 à 8 joueurs, ~15 min, Réflexe) ; Dixit (3 à 6 joueurs, ~30 min, Imagination) ; Skull (3 à 6 joueurs, ~30 min, Bluff) ; Coup (2 à 6 joueurs, ~15 min, Bluff express) ; Saboteur (3 à 10 joueurs, ~30 min, Déduction sociale) ; Bang! (4 à 7 joueurs, ~30 min, Western, rôles secrets) ; Colt Express (2 à 6 joueurs, ~40 min, Programmation) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus

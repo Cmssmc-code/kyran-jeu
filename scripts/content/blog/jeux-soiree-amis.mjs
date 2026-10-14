@@ -2,8 +2,8 @@ export default {
   slug: 'jeux-soiree-amis',
   title: 'Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée',
   shortTitle: 'Jeux entre amis',
-  metaTitle: 'Jeux entre amis : 10 jeux d’ambiance pour une soirée réussie',
-  description: 'Jeux à faire entre amis : 10 jeux d’ambiance, de bluff et de cartes classés selon votre groupe et la durée de la soirée, avec leurs défauts.',
+  metaTitle: 'Jeux entre amis : 10 jeux de soirée classés par groupe (2026)',
+  description: 'Jeux à faire entre amis : 10 jeux de soirée, d’ambiance et de bluff classés selon votre groupe (4, 6, 8 et plus) et la durée, avec leurs défauts.',
   category: 'Soirée',
   date: '2026-05-05',
   heroTitle: 'Jeux <span class="accent">entre amis</span> : 10 jeux pour une soirée réussie, selon votre groupe',
@@ -158,6 +158,26 @@ export default {
     html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne. Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte du calcul, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
   },
   extraSections: [
+    {
+      id: 'jeux-entre-amis-par-situation',
+      heading: 'Quel jeu entre amis selon le nombre et le temps disponible ?',
+      html: `<p>Le tableau croise les situations les plus fréquentes avec les jeux de cette sélection. Les plages de joueurs et les durées sont celles des éditeurs ; la dernière colonne dit ce qui fait pencher la balance.</p>
+<div class="compare-table-wrap">
+<table class="compare-table">
+<caption>Jeux de soirée entre amis : le bon choix selon la situation</caption>
+<thead><tr><th scope="col">Situation</th><th scope="col">Premier choix</th><th scope="col">Autres options</th><th scope="col">Ce qui décide</th></tr></thead>
+<tbody>
+<tr><td><strong>À 4 joueurs</strong></td><td>Skull</td><td>Coup, KYRAN, Codenames à deux contre deux</td><td>Le bluff se lit mieux à quatre ; les jeux de rôles comme Bang! démarrent à peine.</td></tr>
+<tr><td><strong>À 6 joueurs</strong></td><td>KYRAN</td><td>Skull, Dixit, Colt Express, Bang!</td><td>Six est le plafond de la plupart de ces boîtes : le jeu tourne à plein effectif.</td></tr>
+<tr><td><strong>À 8 et plus</strong></td><td>Codenames</td><td>Saboteur (jusqu’à 10), Dobble (jusqu’à 8)</td><td>Les équipes et les tours simultanés évitent d’attendre son tour dix minutes.</td></tr>
+<tr><td><strong>Sans préparation</strong></td><td>Dobble</td><td>Coup, Just One</td><td>Une boîte qu’on ouvre et qu’on joue sans trier de cartes ni lire de livret.</td></tr>
+<tr><td><strong>En 15 minutes</strong></td><td>Coup</td><td>Dobble, une manche de Codenames</td><td>Trois parties dans le temps d’un seul jeu principal : la revanche est immédiate.</td></tr>
+<tr><td><strong>Avec des amis qui n’aiment pas les jeux</strong></td><td>Just One</td><td>Dobble, Dixit</td><td>Coopératif ou sans bonne réponse : personne ne se sent jugé sur sa stratégie.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Au-delà de dix personnes, aucune boîte de cette liste ne suffit : séparez le groupe en deux tables ou passez aux <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a>.</p>`
+    },
     {
       heading: 'Trois programmes de soirée prêts à l’emploi',
       html: `<p>Pour ne rien improviser, voici trois enchaînements construits avec les jeux de la liste.</p>

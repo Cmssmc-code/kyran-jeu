@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <script src="/error-reporter.js?v=d95ff8dcc6"></script>
+  <script src="/error-reporter.js?v=d95ff8dcc6" defer></script>
   <!-- QR imprimé (boîte) : index.html#video → page de lecture de la vidéo des règles (Ludochrono) -->
   <script>
     (function () {
@@ -17,7 +17,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>KYRAN : jeu de cartes de plis, de bluff et de paris</title>
+  <title>KYRAN – jeu de cartes de plis et de paris (3-6 joueurs)</title>
 
   <meta name="description" content="KYRAN, jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs : parties de 30 min, cartes Pouvoir, manche Mystique à l'aveugle. 9,99 € en direct." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -40,7 +40,7 @@
   <meta property="og:site_name" content="KYRAN" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KYRAN : jeu de cartes de plis, de bluff et de paris" />
+  <meta property="og:title" content="KYRAN – jeu de cartes de plis et de paris (3-6 joueurs)" />
   <meta property="og:description" content="Annoncez vos plis, bluffez, et gardez vos vies : un jeu de cartes pour 3 à 6 joueurs, 30 minutes, dès 8 ans." />
   <meta property="og:url" content="https://kyran-jeu.fr/" />
   <meta property="og:image" content="https://kyran-jeu.fr/og-kyran.jpg" />
@@ -50,7 +50,7 @@
   <meta property="og:image:alt" content="Boîte du jeu de cartes KYRAN" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KYRAN : jeu de cartes de plis, de bluff et de paris" />
+  <meta name="twitter:title" content="KYRAN – jeu de cartes de plis et de paris (3-6 joueurs)" />
   <meta name="twitter:description" content="Un jeu de cartes rapide et malin pour 3 à 6 joueurs : plis, paris, bluff." />
   <meta name="twitter:image" content="https://kyran-jeu.fr/og-kyran.jpg" />
   <meta name="twitter:image:alt" content="Boîte du jeu de cartes KYRAN" />
@@ -59,17 +59,17 @@
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="seo-config.js?v=efb6ff9b4a" defer></script>
-  <link rel="stylesheet" href="style.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="css/boutique.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="css/home.css?v=efb6ff9b4a" />
-  <link rel="stylesheet" href="/css/motion.css?v=efb6ff9b4a" />
-  <script src="/js/motion.js?v=efb6ff9b4a" defer></script>
-  <script src="blog-data.js?v=efb6ff9b4a" defer></script>
-  <script src="components.js?v=efb6ff9b4a" defer></script>
-  <script src="reviews-data.js?v=efb6ff9b4a" defer></script>
-  <script src="reviews.js?v=efb6ff9b4a" defer></script>
-  <script src="hero-visual.js?v=efb6ff9b4a" defer></script>
+  <script src="seo-config.js?v=2db9c31614" defer></script>
+  <link rel="stylesheet" href="style.css?v=2db9c31614" />
+  <link rel="stylesheet" href="css/boutique.css?v=2db9c31614" />
+  <link rel="stylesheet" href="css/home.css?v=2db9c31614" />
+  <link rel="stylesheet" href="/css/motion.css?v=2db9c31614" />
+  <script src="/js/motion.js?v=2db9c31614" defer></script>
+  <script src="blog-data.js?v=2db9c31614" defer></script>
+  <script src="components.js?v=2db9c31614" defer></script>
+  <script src="reviews-data.js?v=2db9c31614" defer></script>
+  <script src="reviews.js?v=2db9c31614" defer></script>
+  <script src="hero-visual.js?v=2db9c31614" defer></script>
 
   <script type="application/ld+json">
   {
@@ -152,124 +152,20 @@
         }
       },
       {
-        "@type": "Product",
-        "@id": "https://kyran-jeu.fr/#boardgame",
-        "releaseDate": "2026-01-31",
-        "name": "KYRAN",
-        "sku": "KYRAN-01",
-        "gtin13": "3770040368015",
-        "additionalType": "https://schema.org/Game",
-        "inLanguage": "fr-FR",
-        "disambiguatingDescription": "Jeu de cartes tactique français de plis et de paris obligatoires pour 3 à 6 joueurs (~30 min), avec cartes Pouvoir et manche Mystique à l'aveugle.",
-        "description": "Jeu de cartes rapide et stratégique pour 3 à 6 joueurs mêlant pari, bluff et timing. Héritier moderne du Tarot Africain et du Whist.",
-        "keywords": "jeu de cartes, jeu de plis, jeu apéro, alternative Skyjo, alternative Wizard, Tarot Africain moderne, jeu de société 30 minutes, jeu de bluff",
-        "isFamilyFriendly": true,
-        "numberOfPlayers": {
-          "@type": "QuantitativeValue",
-          "minValue": 3,
-          "maxValue": 6
-        },
-        "timeRequired": "PT30M",
-        "audience": {
-          "@type": "PeopleAudience",
-          "suggestedMinAge": 8
-        },
-        "genre": [
-          "Jeu de cartes",
-          "Stratégie",
-          "Bluff",
-          "Jeu de plis",
-          "Jeu d'apéro"
-        ],
-        "brand": {
-          "@type": "Brand",
-          "name": "KYRAN"
-        },
-        "image": [
-          "https://kyran-jeu.fr/boite-recto-kyran.jpg",
-          "https://kyran-jeu.fr/logo.png"
-        ],
-        "sameAs": [
-          "https://www.instagram.com/kyran.jeu/",
-          "https://www.amazon.fr/dp/B0G217LD87",
-          "https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie",
-          "https://boardgamesflix.com/boardgames/kyran",
-          "https://boardgamegeek.com/boardgame/480678/kyran",
-          "https://www.youtube.com/@Kyran-jeu",
-          "https://www.youtube.com/watch?v=y0YVn-lZMAc",
-          "https://www.youtube.com/watch?v=aconMJG9uSQ"
-        ],
+        "@type": "WebPage",
+        "@id": "https://kyran-jeu.fr/#webpage",
         "url": "https://kyran-jeu.fr/",
+        "name": "KYRAN – jeu de cartes de plis et de paris (3-6 joueurs)",
+        "inLanguage": "fr-FR",
         "isPartOf": {
           "@id": "https://kyran-jeu.fr/#website"
         },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Boutique officielle KYRAN",
-            "availability": "https://schema.org/InStock",
-            "price": "9.99",
-            "priceCurrency": "EUR",
-            "validFrom": "2026-01-31",
-            "priceValidUntil": "2026-12-31",
-            "itemCondition": "https://schema.org/NewCondition",
-            "url": "https://kyran-jeu.fr/commander.html",
-            "seller": {
-              "@type": "Person",
-              "name": "Corentin Sence"
-            },
-            "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "2.99",
-                "currency": "EUR"
-              },
-              "shippingDestination": {
-                "@type": "DefinedRegion",
-                "addressCountry": "FR"
-              },
-              "deliveryTime": {
-                "@type": "ShippingDeliveryTime",
-                "handlingTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 1,
-                  "maxValue": 2,
-                  "unitCode": "DAY"
-                },
-                "transitTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 2,
-                  "maxValue": 4,
-                  "unitCode": "DAY"
-                }
-              }
-            },
-            "hasMerchantReturnPolicy": {
-              "@type": "MerchantReturnPolicy",
-              "applicableCountry": "FR",
-              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-              "merchantReturnDays": 14,
-              "returnMethod": "https://schema.org/ReturnByMail",
-              "returnFees": "https://schema.org/FreeReturn"
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Amazon France (Prime)",
-            "availability": "https://schema.org/InStock",
-            "price": "17.99",
-            "priceCurrency": "EUR",
-            "validFrom": "2026-01-31",
-            "priceValidUntil": "2026-12-31",
-            "itemCondition": "https://schema.org/NewCondition",
-            "url": "https://www.amazon.fr/dp/B0G217LD87",
-            "seller": {
-              "@type": "Organization",
-              "name": "Amazon"
-            }
-          }
-        ]
+        "about": {
+          "@id": "https://kyran-jeu.fr/#game"
+        },
+        "mainEntity": {
+          "@id": "https://kyran-jeu.fr/#boardgame"
+        }
       },
       {
         "@type": "Game",
@@ -339,7 +235,7 @@
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="/" class="logo" aria-label="KYRAN - Accueil">
+            <a href="/" class="logo" aria-label="KYRAN, retour à l'accueil">
               <img src="/logo-96.webp" alt="" width="44" height="44" decoding="async" />
               <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
@@ -826,6 +722,21 @@
         </div>
         <div style="text-align: center;"><div class="mobile-swipe-indicator" aria-hidden="true"><span>Glissez pour voir les articles</span></div></div>
         <kyran-blog-grid limit="3" data-ssr="1"><div class="blog-grid">
+        <a href="/blog/jeux-comme-skull-king.html" class="blog-card" data-category="Alternatives">
+          <div class="blog-card-image">
+            <picture><source srcset="/blog/images/oh-hell.webp" type="image/webp" /><img src="/blog/images/oh-hell.jpg" alt="Jeux comme Skull King : 6 alternatives, avec ou sans pirates" width="400" height="225" loading="lazy" decoding="async" /></picture>
+            <span class="blog-badge">Alternatives</span>
+            <span class="blog-card-games">6 jeux</span>
+            <span class="blog-card-read">11 min</span>
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-meta">14 octobre 2026</p>
+            <h3>Jeux comme Skull King : 6 alternatives, avec ou sans pirates</h3>
+            <p class="blog-card-excerpt">Jeux comme Skull King : Wizard, Pili Pili, KYRAN et l’Ascenseur gardent le pari sur les plis ; Cat in the Box et The Crew le transforment. Comparatif.</p>
+            <span class="card-arrow">Lire l'article</span>
+          </div>
+        </a>
+      
         <a href="/blog/jeux-cartes-ados.html" class="blog-card" data-category="Soirée">
           <div class="blog-card-image">
             <picture><source srcset="/blog/images/skull.webp" type="image/webp" /><img src="/blog/images/skull.jpg" alt="Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis" width="400" height="225" loading="lazy" decoding="async" /></picture>
@@ -855,21 +766,6 @@
             <span class="card-arrow">Lire l'article</span>
           </div>
         </a>
-      
-        <a href="/blog/science-jeux-de-cartes-cerveau.html" class="blog-card" data-category="Cartes">
-          <div class="blog-card-image">
-            <img src="/kyran-cartes-table.webp" alt="Jeux de cartes et cerveau : ce que disent les études" width="400" height="225" loading="lazy" decoding="async" />
-            <span class="blog-badge">Cartes</span>
-            
-            <span class="blog-card-read">14 min</span>
-          </div>
-          <div class="blog-card-body">
-            <p class="blog-card-meta">16 septembre 2026</p>
-            <h3>Jeux de cartes et cerveau : ce que disent les études</h3>
-            <p class="blog-card-excerpt">Mémoire de travail, fonctions exécutives, cohortes PAQUID et Lothian : ce que les études observent sur les jeux de cartes, et ce qu’elles ne prouvent pas.</p>
-            <span class="card-arrow">Lire l'article</span>
-          </div>
-        </a>
       </div></kyran-blog-grid>
         <nav class="home-guides" aria-labelledby="home-guides-title">
           <h3 id="home-guides-title" class="home-guides__title">Trouver le bon jeu de cartes</h3>
@@ -887,6 +783,7 @@
             <div>
               <p class="home-guides__label">Selon l'occasion</p>
               <ul>
+                <li><a href="/blog/jeux-soiree-amis.html">Soirée entre amis</a></li>
                 <li><a href="/blog/meilleurs-jeux-apero.html">Apéro et afterwork</a></li>
                 <li><a href="/blog/jeux-30-minutes.html">Partie de 30 minutes</a></li>
                 <li><a href="/blog/jeux-vacances-voyage.html">Vacances et voyage</a></li>
@@ -910,6 +807,7 @@
             <div>
               <p class="home-guides__label">Si vous aimez déjà…</p>
               <ul>
+                <li><a href="/blog/jeux-comme-skull-king.html">Skull King</a></li>
                 <li><a href="/blog/alternatives-wizard.html">Wizard</a></li>
                 <li><a href="/blog/alternatives-belote-coinche.html">La belote, la coinche</a></li>
                 <li><a href="/blog/alternatives-uno.html">Uno</a></li>
@@ -963,11 +861,12 @@
             <p class="footer-heading">Explorer</p>
             <p><a href="/idee-cadeau.html">Idée cadeau</a></p><p><a href="/jeu-apero.html">Jeu apéro</a></p><p><a href="/blog/jeux-comme-skyjo.html">Jeux comme Skyjo</a></p><p><a href="/tarot-africain.html">Tarot Africain</a></p><p><a href="/whist-22.html">Whist 22</a></p><p><a href="/blog/jeux-plis-comparatif.html">Jeux de plis</a></p><p><a href="/communaute.html">Communauté</a></p><p><a href="/a-propos.html">À propos</a></p><p><a href="/dossier-presse.html">Presse</a></p>
           </div>
-          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-cartes-ados.html">Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis</a></p><p><a href="/blog/jeux-cartes-seniors.html">Jeux de cartes pour seniors : 6 jeux à jouer sans écran</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que disent les études</a></p><p><a href="/blog/jeux-cartes-6-joueurs.html">Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table</a></p><p><a href="/blog/jeux-cartes-adultes.html">Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend</a></p><p><a href="/blog/">Tous les articles</a></p></div>
+          <div class="footer-col footer-col--blog"><p class="footer-heading">Blog</p><p><a href="/blog/jeux-comme-skull-king.html">Jeux comme Skull King : 6 alternatives, avec ou sans pirates</a></p><p><a href="/blog/jeux-cartes-ados.html">Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis</a></p><p><a href="/blog/jeux-cartes-seniors.html">Jeux de cartes pour seniors : 6 jeux à jouer sans écran</a></p><p><a href="/blog/science-jeux-de-cartes-cerveau.html">Jeux de cartes et cerveau : ce que disent les études</a></p><p><a href="/blog/jeux-cartes-6-joueurs.html">Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table</a></p><p><a href="/blog/">Tous les articles</a></p></div>
           <div class="footer-col footer-col--contact">
             <p class="footer-heading">Contact</p>
             <p><a href="/regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="/minijeu.html">Essayer en ligne</a></p>
+            <p><a href="/ressources-gratuites.html">Ressources gratuites</a></p>
             <p><a href="/dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>

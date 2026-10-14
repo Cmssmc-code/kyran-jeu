@@ -338,3 +338,16 @@
     left: 14px;
   }
 }
+
+/* Liens à copier (ressources-gratuites.html) */
+.ta-page .prose pre {
+  margin: 0 0 var(--space-3);
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #F3E7CF;
+  border: 1px solid #E8DCC4;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

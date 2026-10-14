@@ -110,7 +110,7 @@ export default {
       pick: 'Pour trois à cinq adultes, ou deux en variante, qui veulent gagner ensemble',
       paragraphs: [
         `The Crew transforme le jeu de plis en aventure coopérative : l'équipage doit accomplir 50 missions de plus en plus périlleuses, en se coordonnant sans parler de sa main. Chaque joueur dispose d'un jeton Radio, utilisable une seule fois par mission, pour donner une indication minimale.`,
-        `Il a reçu le Kennerspiel des Jahres 2020 et l'As d'Or Expert 2021. La <a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs, dès 10 ans ; une variante à deux figure dans les règles. Attendez-vous à rejouer plusieurs fois la même mission : l'échec fait partie du jeu, et une table qui supporte mal de perdre ensemble risque de se lasser.`
+        `Il a reçu le Kennerspiel des Jahres 2020 et l'As d'Or Expert 2021. La <a class="text-link" href="https://iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs, dès 10 ans ; une variante à deux figure dans les règles. Attendez-vous à rejouer plusieurs fois la même mission : l'échec fait partie du jeu, et une table qui supporte mal de perdre ensemble risque de se lasser.`
       ]
     },
     {

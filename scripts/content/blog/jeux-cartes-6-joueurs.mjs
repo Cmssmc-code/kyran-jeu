@@ -42,7 +42,7 @@ export default {
     related: 'Pour un autre nombre de joueurs'
   },
   criteria: {
-    heading: 'Ce qui change entre cinq et six joueurs',
+    heading: 'Jeux de cartes à 5 joueurs : ce qui change entre cinq et six',
     html: `<p>Cinq et six sont des effectifs confortables pour recevoir, plus ingrats pour le jeu lui-même : chaque joueur ajouté allonge le tour de table, et celui qui réfléchit longtemps se paie par quatre ou cinq spectateurs. Si chacun prend quarante-cinq secondes par coup, à six on passe près de quatre minutes à regarder les autres avant de rejouer. Un jeu bien calibré pour ces effectifs raccourcit les tours, ou les supprime.</p>
 <h3>Cinq n'est pas six</h3>
 <ul>

@@ -36,6 +36,8 @@ const ACTIVE_BY_PATH = {
   'tarot-africain.html': 'discover',
   'tarot-africain-a-3-joueurs.html': 'discover',
   'whist-22.html': 'discover',
+  'ressources-gratuites.html': 'discover',
+  'regles-rikiki.html': 'discover',
   'a-propos.html': 'discover',
   'communaute.html': 'discover',
   'faq.html': 'faq',
@@ -119,7 +121,7 @@ function renderHeaderHtml(active, pathname) {
       <header class="site-header">
         <div class="container nav">
           <div class="nav-brand-group">
-            <a href="${ROOT}" class="logo" aria-label="KYRAN - Accueil">
+            <a href="${ROOT}" class="logo" aria-label="KYRAN, retour à l'accueil">
               <img src="${ROOT}logo-96.webp" alt="" width="44" height="44" decoding="async" />
               <span class="logo-word" aria-hidden="true">KYRAN<small>Ma&icirc;tre des Mystiques</small></span>
             </a>
@@ -351,6 +353,7 @@ function renderFooterHtml() {
             <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="${ROOT}minijeu.html">Essayer en ligne</a></p>
+            <p><a href="${ROOT}ressources-gratuites.html">Ressources gratuites</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
           </div>

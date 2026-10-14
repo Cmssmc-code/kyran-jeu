@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { fileToUrl, isRedirectStub, urlsForChangedFiles } from '../lib/indexnow-urls.mjs';
+import { fileToUrl, isRedirectStub, urlsForChangedFiles, normalizeForDiff } from '../lib/indexnow-urls.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const roster = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'content', 'roster.json'), 'utf8'));
@@ -22,4 +22,14 @@ test('les pages de redirection ne sont jamais envoyées à IndexNow', () => {
   for (const f of stubs) assert.ok(isRedirectStub(fs.readFileSync(path.join(ROOT, f), 'utf8')), `${f} devrait être une redirection`);
   const urls = urlsForChangedFiles([...stubs, 'tarot-africain.html', 'blog/supprime-pour-test.html'], ROOT);
   assert.deepEqual(urls, ['https://kyran-jeu.fr/tarot-africain.html', 'https://kyran-jeu.fr/blog/supprime-pour-test.html']);
+});
+
+test('une page dont seules les versions d’assets ont changé n’est pas renvoyée', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'tarot-africain.html'), 'utf8');
+  const restamped = html.replace(/\?v=[\w-]+/g, '?v=0000000000');
+  assert.equal(normalizeForDiff(restamped), normalizeForDiff(html));
+  assert.deepEqual(urlsForChangedFiles(['tarot-africain.html'], ROOT, () => restamped), []);
+  const edited = html.replace('</h1>', ' modifié</h1>');
+  assert.deepEqual(urlsForChangedFiles(['tarot-africain.html'], ROOT, () => edited), ['https://kyran-jeu.fr/tarot-africain.html']);
+  assert.deepEqual(urlsForChangedFiles(['tarot-africain.html'], ROOT, () => null), ['https://kyran-jeu.fr/tarot-africain.html']);
 });

@@ -45,7 +45,14 @@ function sitemapUrls() {
 function changedUrls(base, head) {
   if (!base || /^0+$/.test(base)) return sitemapUrls();
   const out = execFileSync('git', ['diff', '--name-only', '--diff-filter=ACMRD', base, head], { cwd: ROOT, encoding: 'utf8' });
-  return urlsForChangedFiles(out.split('\n').filter(Boolean), ROOT);
+  const readOld = file => {
+    try {
+      return execFileSync('git', ['show', `${base}:${file}`], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    } catch {
+      return null; // fichier nouveau
+    }
+  };
+  return urlsForChangedFiles(out.split('\n').filter(Boolean), ROOT, readOld);
 }
 
 async function waitForKey(key) {

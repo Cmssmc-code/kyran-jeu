@@ -30,7 +30,8 @@
     "jeux-draft-encheres",
     "jeux-cartes-adultes",
     "jeux-cartes-ados",
-    "jeux-cartes-seniors"
+    "jeux-cartes-seniors",
+    "jeux-comme-skull-king"
   ],
   "handwritten": [
     "science-jeux-de-cartes-cerveau"
@@ -66,6 +67,8 @@
     "/dossier-presse.html",
     "/blog/",
     "/tarot-africain-a-3-joueurs.html",
-    "/whist-22.html"
+    "/whist-22.html",
+    "/regles-rikiki.html",
+    "/ressources-gratuites.html"
   ]
 }

@@ -24,17 +24,37 @@ export function isRedirectStub(html) {
 }
 
 /**
+ * Retire d'une page ce que le build change à chaque déploiement sans toucher au contenu :
+ * versions d'assets (`?v=`), politique CSP, horodatage du rendu statique (`data-ssr`).
+ */
+export function normalizeForDiff(html) {
+  return html
+    .replace(/\?v=[\w-]+/g, '')
+    .replace(/<meta http-equiv="Content-Security-Policy"[^>]*>/gi, '')
+    .replace(/\sdata-ssr="[^"]*"/g, '');
+}
+
+/**
  * URL à notifier pour une liste de fichiers modifiés. Les pages de redirection sont exclues :
  * l'ancienne URL ne doit pas être présentée comme une page à indexer. Un fichier supprimé
  * est gardé (IndexNow sert aussi à signaler les 404).
+ *
+ * `readOld(file)` (facultatif) rend la version précédente du fichier, ou null s'il est nouveau :
+ * une page dont seules les versions d'assets ont changé n'est pas renvoyée (audit du 14/10/2026 :
+ * 153 URL envoyées en 8 h parce que chaque build re-tamponne toutes les pages).
  */
-export function urlsForChangedFiles(files, root) {
+export function urlsForChangedFiles(files, root, readOld = null) {
   const urls = new Set();
   for (const f of files) {
     const u = fileToUrl(f);
     if (!u) continue;
     const abs = path.join(root, f);
-    if (fs.existsSync(abs) && isRedirectStub(fs.readFileSync(abs, 'utf8'))) continue;
+    if (fs.existsSync(abs)) {
+      const html = fs.readFileSync(abs, 'utf8');
+      if (isRedirectStub(html)) continue;
+      const old = readOld ? readOld(f) : null;
+      if (old != null && normalizeForDiff(old) === normalizeForDiff(html)) continue;
+    }
     urls.add(u);
   }
   return [...urls];

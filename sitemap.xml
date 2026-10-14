@@ -6,7 +6,7 @@
 >
   <url>
     <loc>https://kyran-jeu.fr/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/boite-recto-kyran.jpg</image:loc>
       <image:title>KYRAN – Jeu de cartes de plis, de bluff et de paris (boîte)</image:title>
@@ -16,7 +16,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Règles du jeu KYRAN</image:title>
@@ -26,7 +26,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/video-regles.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/aconMJG9uSQ/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Comment jouer à KYRAN — les règles en vidéo (Ludochrono)</video:title>
@@ -40,22 +40,22 @@
 
   <url>
     <loc>https://kyran-jeu.fr/minijeu.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/commander.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/idee-cadeau.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/jeu-apero.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/jeu-kyran-ami.webp</image:loc>
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
@@ -64,32 +64,46 @@
 
   <url>
     <loc>https://kyran-jeu.fr/tarot-africain.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/whist-22.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/regles-rikiki.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/oh-hell.jpg</image:loc>
+      <image:title>Un pli de Rikiki (Ascenseur) avec un jeu de 52 cartes</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/ressources-gratuites.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/faq.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/a-propos.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
     <loc>https://kyran-jeu.fr/dossier-presse.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Kit média et communiqué de presse KYRAN</image:title>
@@ -99,7 +113,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/communaute.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
 
   <url>
@@ -107,6 +121,14 @@
     <lastmod>2026-10-14</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-skull-king.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/oh-hell.jpg</image:loc>
+      <image:title>Jeux comme Skull King : 6 alternatives, avec ou sans pirates</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-ados.html</loc>
     <lastmod>2026-10-12</lastmod>
@@ -125,7 +147,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
       <image:title>Jeux de cartes et cerveau : ce que disent les études</image:title>
@@ -133,7 +155,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
       <image:title>Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table</image:title>
@@ -141,7 +163,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/kyran-cartes-table.webp</image:loc>
       <image:title>Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend</image:title>
@@ -213,7 +235,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-grands-groupes.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/6-qui-prend.jpg</image:loc>
       <image:title>Jeux pour grands groupes : 9 jeux de cartes de 7 à 10 joueurs et plus</image:title>
@@ -245,7 +267,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-dixit.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/kyran-cartes-pouvoirs.webp</image:loc>
       <image:title>10 jeux comme Dixit : alternatives créatives et indices malins</image:title>
@@ -253,7 +275,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
       <image:title>Jeux de plis : le comparatif et le guide pour bien choisir</image:title>
@@ -285,7 +307,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-3-joueurs.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/the-crew.jpg</image:loc>
       <image:title>Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois</image:title>
@@ -301,7 +323,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/uno.jpg</image:loc>
       <image:title>Alternatives à Uno : 8 jeux de cartes rapides pour changer</image:title>
@@ -309,7 +331,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-wizard.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/wizard.jpg</image:loc>
       <image:title>Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose</image:title>
@@ -341,7 +363,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-soiree-amis.html</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/codenames.jpg</image:loc>
       <image:title>Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée</image:title>
@@ -357,7 +379,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
       <image:title>10 jeux comme Skyjo : les meilleures alternatives en 2026</image:title>

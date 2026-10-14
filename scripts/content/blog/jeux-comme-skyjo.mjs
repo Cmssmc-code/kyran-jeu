@@ -2,18 +2,28 @@ export default {
   slug: 'jeux-comme-skyjo',
   title: '10 jeux comme Skyjo : les meilleures alternatives en 2026',
   shortTitle: 'Jeux comme Skyjo',
-  metaTitle: '10 jeux comme Skyjo (2026) : les meilleures alternatives',
-  description: `10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.`,
+  metaTitle: 'Jeux comme Skyjo : 10 alternatives + Skyjo avec 52 cartes',
+  description: `10 jeux comme Skyjo classés selon ce que vous aimiez, Skyjo Action et Junior, 5 variantes de règles et Skyjo avec un jeu de 52 cartes classique.`,
   category: 'Alternatives',
   date: '2026-05-01',
   heroTitle: '10 jeux comme <span class="accent">Skyjo</span>',
   heroSubtitle: `Dix alternatives classées selon ce que vous aimiez dans Skyjo, cinq variantes de règles pour relancer la boîte, et de quoi y jouer avec un paquet de cartes ordinaire.`,
   heroImage: '/blog/images/skyjo.jpg',
   heroCaption: 'Skyjo et ses alternatives — jeux de cartes accessibles.',
-  intro: `<p>Vous cherchez un <strong>jeu comme Skyjo</strong> parce que la boîte tourne depuis des mois, ou parce que votre tablée dépasse désormais les huit places ? Le problème : aucun jeu ne reproduit exactement une grille de douze cartes cachées où chaque retournement est un pari. Autant chercher ce qui vous plaisait vraiment : le score à garder bas, le choix entre pioche et défausse, les parties sans élimination, ou le confort d’un jeu qu’on explique en deux phrases.</p><p>Voici dix <strong>jeux similaires à Skyjo</strong>, chacun présenté selon le trait qu’il prolonge, avec ses limites. Plus bas, cinq variantes de règles permettent de relancer Skyjo lui-même, et une adaptation détaillée vous laisse jouer à la manière de Skyjo avec un simple jeu de 52 cartes, quand la boîte est restée à la maison. Pour élargir la recherche, consultez aussi nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> et nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux à petit prix</a>.</p>`,
+  intro: `<p><strong>Les meilleurs jeux comme Skyjo sont Llama, Parade et 6 qui prend !</strong> : Llama garde la vitesse et le score à tenir bas, Parade ajoute de la réflexion, 6 qui prend ! accueille les tablées de plus de huit. Sans la boîte, Skyjo se joue aussi avec un jeu de 52 cartes, règle détaillée plus bas.</p><p>La boîte de Skyjo tourne depuis des mois, ou votre tablée dépasse huit places ? Le problème : aucun jeu ne reproduit exactement une grille de douze cartes cachées où chaque retournement est un pari. Autant chercher ce qui vous plaisait vraiment : le score à garder bas, le choix entre pioche et défausse, les parties sans élimination, ou le confort d’un jeu qu’on explique en deux phrases.</p><p>Voici dix <strong>jeux similaires à Skyjo</strong>, chacun présenté selon le trait qu’il prolonge, avec ses limites. Plus bas, cinq variantes de règles permettent de relancer Skyjo lui-même, et une adaptation détaillée vous laisse jouer à la manière de Skyjo avec un simple jeu de 52 cartes, quand la boîte est restée à la maison. Pour élargir la recherche, consultez aussi nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> et nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux à petit prix</a>.</p>`,
   criteria: {
     heading: 'Quel jeu choisir quand on aime Skyjo ?',
-    html: `<p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
+    html: `<h3 id="skyjo-en-bref">Skyjo en bref</h3>
+<ul>
+<li><strong>Auteur et éditeur :</strong> Alexander Bernhardt, qui publie le jeu dans sa propre maison d’édition, Magilano, installée à Hachenburg, en Allemagne. Première édition : 2015.</li>
+<li><strong>Format :</strong> 2 à 8 joueurs, dès 8 ans, environ 30 minutes.</li>
+<li><strong>Matériel :</strong> 150 cartes de -2 à 12 (5 cartes -2, 10 cartes -1, 15 cartes 0, puis 10 cartes de chaque valeur de 1 à 12).</li>
+<li><strong>But :</strong> garder le total le plus bas sur une grille de douze cartes ; la partie s’arrête quand un joueur atteint 100 points, et le plus petit total gagne.</li>
+<li><strong>Versions :</strong> <strong>Skyjo Action</strong> (2019) ajoute des cartes Action et des cartes Étoile pour le même public ; <strong>Skyjo Junior</strong> est illustré de fruits pour les plus jeunes ; une édition Voyage existe aussi.</li>
+<li><strong>Succès :</strong> selon Wikipédia, plus de 3 millions d’exemplaires vendus en France en 2024.</li>
+</ul>
+<p>Sources : <a class="text-link" href="https://magilano.com/products/skyjo" rel="noopener">fiche officielle Magilano</a> et <a class="text-link" href="https://fr.wikipedia.org/wiki/Skyjo" rel="noopener">article Skyjo de Wikipédia</a>.</p>
+<p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
 <h3>Ce que vous retenez de Skyjo</h3>
 <ul>
 <li><strong>Le score à garder bas.</strong> Éviter les grosses valeurs et cumuler le moins de points possible au fil des manches : No Thanks !, 6 qui prend ! et Llama fonctionnent sur ce principe.</li>
@@ -135,8 +145,8 @@ export default {
     },
     {
       id: 'skyjo-cartes-classiques',
-      heading: 'Jouer au Skyjo avec un jeu de 52 cartes classique',
-      html: `<p>Un vrai Skyjo se joue avec sa propre boîte : 150 cartes numérotées de -2 à 12. Sans elle, un paquet ordinaire permet de retrouver l’essentiel, la grille cachée, le dilemme entre pioche et défausse, les colonnes qui disparaissent. Ce qui suit est une <strong>adaptation de table</strong>, pas la règle de l’éditeur. Elle se rapproche d’un jeu plus ancien, le Golf, répandu dans les pays anglophones, dont une version à neuf cartes disposées en carré compte déjà pour zéro une colonne de trois cartes identiques.</p>
+      heading: 'Skyjo avec un jeu de cartes classique : la règle à 52 cartes',
+      html: `<p>Un vrai Skyjo se joue avec sa propre boîte : 150 cartes numérotées de -2 à 12. Sans elle, un paquet ordinaire permet de retrouver l’essentiel, la grille cachée, le dilemme entre pioche et défausse, les colonnes qui disparaissent. Ce qui suit est une <strong>adaptation de table</strong>, pas la règle de l’éditeur. Elle se rapproche d’un jeu plus ancien, le <a class="text-link" href="https://www.pagat.com/draw/golf.html" rel="noopener">Golf</a>, répandu dans les pays anglophones et dont Skyjo s’inspire selon Wikipédia en allemand, dont une version à neuf cartes disposées en carré compte déjà pour zéro une colonne de trois cartes identiques.</p>
 <h3>Le matériel et la valeur des cartes</h3>
 <ul>
 <li><strong>Un paquet de 52 cartes pour deux joueurs</strong>, deux paquets mélangés de trois à six joueurs, trois paquets à sept ou huit. Avec un seul paquet à trois, il reste peu de cartes à piocher une fois les grilles distribuées.</li>

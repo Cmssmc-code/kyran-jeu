@@ -1,14 +1,14 @@
 {
   "/": {
-    "hash": "851b4ad24fc49247",
-    "lastmod": "2026-10-13"
+    "hash": "40d0b5101814233d",
+    "lastmod": "2026-10-14"
   },
   "/a-propos.html": {
-    "hash": "ab9599c708e13743",
-    "lastmod": "2026-10-13"
+    "hash": "3e5cd6fbe4c50ef4",
+    "lastmod": "2026-10-14"
   },
   "/blog/": {
-    "hash": "5294083d94c70836",
+    "hash": "553a4062ee07824d",
     "lastmod": "2026-10-14"
   },
   "/blog/alternatives-belote-coinche.html": {
@@ -16,12 +16,12 @@
     "lastmod": "2026-10-12"
   },
   "/blog/alternatives-uno.html": {
-    "hash": "41d30b723c142887",
-    "lastmod": "2026-10-12"
+    "hash": "fe07fa59a2716568",
+    "lastmod": "2026-10-14"
   },
   "/blog/alternatives-wizard.html": {
-    "hash": "d32469c229c10d01",
-    "lastmod": "2026-10-12"
+    "hash": "c85b78268f9720dc",
+    "lastmod": "2026-10-14"
   },
   "/blog/cadeau-anniversaire.html": {
     "hash": "aa562fc8485b6c81",
@@ -32,8 +32,8 @@
     "lastmod": "2026-10-14"
   },
   "/blog/jeux-3-joueurs.html": {
-    "hash": "45799ffd045a8fac",
-    "lastmod": "2026-10-13"
+    "hash": "ac67efacee30726a",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-30-minutes.html": {
     "hash": "2c277fce832d37d8",
@@ -56,16 +56,16 @@
     "lastmod": "2026-10-02"
   },
   "/blog/jeux-cartes-6-joueurs.html": {
-    "hash": "a9d245ae99d910c2",
-    "lastmod": "2026-10-13"
+    "hash": "9d5fa9babc0b1cf8",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-cartes-ados.html": {
     "hash": "65fd5dc090988938",
     "lastmod": "2026-10-12"
   },
   "/blog/jeux-cartes-adultes.html": {
-    "hash": "f8d4063d93360d78",
-    "lastmod": "2026-10-12"
+    "hash": "790d29429d5ef5f9",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-cartes-pas-chers.html": {
     "hash": "36aabe12977e4b70",
@@ -84,16 +84,20 @@
     "lastmod": "2026-10-12"
   },
   "/blog/jeux-comme-dixit.html": {
-    "hash": "3a648391fab74ea8",
-    "lastmod": "2026-10-12"
+    "hash": "415f9efd613defb4",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-comme-exploding-kittens.html": {
     "hash": "b36bd427e988f09c",
     "lastmod": "2026-10-12"
   },
+  "/blog/jeux-comme-skull-king.html": {
+    "hash": "5f6708b5ae108ae0",
+    "lastmod": "2026-10-14"
+  },
   "/blog/jeux-comme-skyjo.html": {
-    "hash": "dc0c0a9d3d667e0f",
-    "lastmod": "2026-10-12"
+    "hash": "d11ef6ebeba27dd1",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-coop-cartes.html": {
     "hash": "b6bc577c042d0016",
@@ -116,24 +120,24 @@
     "lastmod": "2026-10-12"
   },
   "/blog/jeux-grands-groupes.html": {
-    "hash": "cc3bb90aa8e7c688",
-    "lastmod": "2026-10-12"
+    "hash": "4d3129d536674d7a",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-memoire-concentration.html": {
     "hash": "e7e0979e307e6fa7",
     "lastmod": "2026-10-12"
   },
   "/blog/jeux-plis-comparatif.html": {
-    "hash": "6afa12a3594e61f5",
-    "lastmod": "2026-10-13"
+    "hash": "7907ce0b953c249d",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-sans-elimination.html": {
     "hash": "52f9cc031fdaa6f9",
     "lastmod": "2026-10-13"
   },
   "/blog/jeux-soiree-amis.html": {
-    "hash": "742166312c826fbb",
-    "lastmod": "2026-10-13"
+    "hash": "09cf08a84b0ba421",
+    "lastmod": "2026-10-14"
   },
   "/blog/jeux-strategie-legere.html": {
     "hash": "e5d18c50da85e05d",
@@ -148,71 +152,79 @@
     "lastmod": "2026-10-12"
   },
   "/blog/science-jeux-de-cartes-cerveau.html": {
-    "hash": "6b01a81eab7cd9d6",
-    "lastmod": "2026-10-13"
+    "hash": "7b9e3ffaf86df080",
+    "lastmod": "2026-10-14"
   },
   "/cgv.html": {
-    "hash": "db3bc48104e3d6f2",
-    "lastmod": "2026-10-13"
+    "hash": "7c0fd0ba56fc7245",
+    "lastmod": "2026-10-14"
   },
   "/commander.html": {
-    "hash": "876b0f49a0af14fe",
-    "lastmod": "2026-10-13"
+    "hash": "d53b410e49d7a9f6",
+    "lastmod": "2026-10-14"
   },
   "/communaute.html": {
-    "hash": "62c3da281bf17397",
-    "lastmod": "2026-10-13"
+    "hash": "db947ff0c865c174",
+    "lastmod": "2026-10-14"
   },
   "/confidentialite.html": {
-    "hash": "76bf2e0dc45d587d",
-    "lastmod": "2026-10-13"
+    "hash": "3429906571d8a641",
+    "lastmod": "2026-10-14"
   },
   "/dossier-presse.html": {
-    "hash": "e25a469ea21a6102",
-    "lastmod": "2026-10-13"
+    "hash": "efb65eac4225ee2e",
+    "lastmod": "2026-10-14"
   },
   "/faq.html": {
-    "hash": "b419314f36dd8fc5",
-    "lastmod": "2026-10-13"
+    "hash": "3b61c8404aad77d0",
+    "lastmod": "2026-10-14"
   },
   "/idee-cadeau.html": {
-    "hash": "d85f93e5a074fca6",
-    "lastmod": "2026-10-13"
+    "hash": "2568dbf1e9f11f28",
+    "lastmod": "2026-10-14"
   },
   "/jeu-apero.html": {
-    "hash": "029b8b8e1ecfa50c",
-    "lastmod": "2026-10-13"
+    "hash": "f9be737e86cded40",
+    "lastmod": "2026-10-14"
   },
   "/mentions-legales.html": {
-    "hash": "91ad1ebf6f90777f",
-    "lastmod": "2026-10-13"
+    "hash": "3bab060f0c2e7fb6",
+    "lastmod": "2026-10-14"
   },
   "/minijeu.html": {
-    "hash": "4d7eec406eca83de",
-    "lastmod": "2026-10-13"
+    "hash": "f277c79716e7299f",
+    "lastmod": "2026-10-14"
   },
   "/plan-du-site.html": {
-    "hash": "aedc18a97e3fcf36",
+    "hash": "68c02e1e7288ccfd",
     "lastmod": "2026-10-14"
   },
   "/regle.html": {
-    "hash": "5c5fec67cfd2f8eb",
-    "lastmod": "2026-10-13"
+    "hash": "6e9c7a093278e5a1",
+    "lastmod": "2026-10-14"
+  },
+  "/regles-rikiki.html": {
+    "hash": "dc32707149a9f3b7",
+    "lastmod": "2026-10-14"
+  },
+  "/ressources-gratuites.html": {
+    "hash": "43c032eba07f08f4",
+    "lastmod": "2026-10-14"
   },
   "/tarot-africain-a-3-joueurs.html": {
-    "hash": "c5fc46025fed38f6",
-    "lastmod": "2026-10-13"
+    "hash": "c2ba3490fc4758ac",
+    "lastmod": "2026-10-14"
   },
   "/tarot-africain.html": {
-    "hash": "5e0a6648564ad431",
-    "lastmod": "2026-10-13"
+    "hash": "8e6799dc3813a020",
+    "lastmod": "2026-10-14"
   },
   "/video-regles.html": {
-    "hash": "9e53907e4703447e",
-    "lastmod": "2026-10-13"
+    "hash": "7ad30deda9a4d3aa",
+    "lastmod": "2026-10-14"
   },
   "/whist-22.html": {
-    "hash": "05cc96dfd694fa6a",
-    "lastmod": "2026-10-13"
+    "hash": "acea9ac56bde12de",
+    "lastmod": "2026-10-14"
   }
 }

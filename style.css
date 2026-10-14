@@ -3727,6 +3727,17 @@ section > .container {
 .compare-table tbody tr.col-kyran th,
 .compare-table tbody tr.col-kyran td { background: rgba(201, 138, 14, 0.06); }
 
+/* Regroupements par intention de l'index du blog (scripts/generate-blog-infra.mjs) */
+.blog-intents { margin: 0 auto var(--space-5); padding: var(--space-4); max-width: 1100px; border-radius: var(--radius); background: #ffffff; border: 1px solid #E8DCC4; }
+.blog-intents__title { margin: 0 0 var(--space-2); text-align: center; font-size: 1.3rem; }
+.blog-intents__lead { max-width: 78ch; margin: 0 auto var(--space-3); line-height: 1.7; color: var(--text-sub); }
+.blog-intents__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-3); }
+.blog-intents__label { margin: 0 0 8px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); }
+.blog-intents ul { margin: 0; padding: 0; list-style: none; }
+.blog-intents li { margin: 0 0 6px; }
+.blog-intents a:not(.text-link) { color: #2E292C; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.blog-intents a:not(.text-link):hover { color: var(--gold-dark); }
+
 .blog-index-intro {
   max-width: 78ch;
   margin: 0 auto var(--space-4);

@@ -298,6 +298,28 @@ const html = `<!DOCTYPE html>
       </div>
     </section>
 
+    <section id="ce-que-retiennent-les-joueurs">
+      <div class="container ugc-wrap">
+        <div class="prose">
+          <h2>Ce que les joueurs retiennent de KYRAN</h2>
+          <p>Les publications réunies ici ne sont pas des publicités&nbsp;: ce sont des parties, des présentations et des avis de joueurs, de créateurs de contenu ludique et de lieux qui font découvrir le jeu. Trois thèmes y reviennent souvent.</p>
+          <ul>
+            <li><strong>Le pari plutôt que la course aux plis.</strong> La plupart des présentations commencent par la règle centrale&nbsp;: annoncer le nombre exact de plis que l'on va gagner, ni plus ni moins. Les <a class="text-link" href="/regle.html">règles complètes</a> détaillent la contrainte sur le dernier pari.</li>
+            <li><strong>Les cartes Pouvoir qui renversent une manche.</strong> Un pari qui semblait calculé peut tomber sur un Sceau du Destin ou un Voile du Néant&nbsp;: c'est souvent le moment que les joueurs filment.</li>
+            <li><strong>L'héritage du Tarot Africain.</strong> Ceux qui y ont joué reconnaissent l'annonce contrainte, enrichie de pouvoirs et de la manche Mystique. Le <a class="text-link" href="/tarot-africain.html">guide du Tarot Africain</a> explique cette filiation.</li>
+          </ul>
+          <h2>Bien photographier une partie</h2>
+          <p>Quelques repères pour une photo ou une vidéo que d'autres joueurs auront envie de regarder&nbsp;:</p>
+          <ul>
+            <li><strong>La manche Mystique est la plus parlante&nbsp;:</strong> chaque joueur porte sa carte sur le front sans la voir, et l'image se comprend sans légende.</li>
+            <li><strong>Montrez les cartes Pouvoir</strong> face visible, posées au centre de la table au moment où elles changent le pli.</li>
+            <li><strong>Cadrez à hauteur de table,</strong> en lumière naturelle et sans flash&nbsp;: les cartes vernies renvoient la lumière.</li>
+            <li><strong>Demandez l'accord des personnes visibles</strong> avant de publier, surtout s'il y a des enfants autour de la table.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="participer" class="section-alt">
       <div class="container ugc-wrap">
         <div class="prose">

@@ -3,7 +3,7 @@ export default {
   title: 'Jeux de plis : le comparatif et le guide pour bien choisir',
   shortTitle: 'Comparatif des jeux de plis',
   metaTitle: 'Jeux de plis : le comparatif 2026 pour bien choisir',
-  description: `Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif de six jeux de plis (Wizard, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.`,
+  description: `Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif des jeux de plis (Wizard, Skull King, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.`,
   category: 'Alternatives',
   date: '2026-05-29',
   heroTitle: 'Jeux de <span class="accent">plis</span> : le comparatif',
@@ -83,7 +83,7 @@ export default {
       pick: 'Pour jouer les plis sans rivalité, y compris à deux',
       paragraphs: [
         `The Crew conserve la mécanique du pli (fournir, couper avec les fusées, entame) pour l'utiliser sans annonce. Chaque mission distribue des cartes Tâche : un joueur doit remporter une carte précise dans un pli, parfois dans un ordre imposé. Tout le monde gagne ou perd en même temps.`,
-        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle ; la <a class="text-link" href="https://www.iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs et des missions de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
+        `La difficulté monte au fil des missions, et l'on ne peut parler de sa main que par un jeton de communication. La boîte française annonce 3 à 5 joueurs, avec une variante à deux dans la règle ; la <a class="text-link" href="https://iello.fr/jeux/the-crew/" rel="noopener">fiche d'Iello</a> annonce 3 à 5 joueurs et des missions de 5 à 20 minutes. Il permet d'apprendre à fournir et à lire les défausses, sans la moindre pénalité entre joueurs.`
       ]
     },
     {
@@ -111,14 +111,17 @@ export default {
     {
       id: 'parier-nombre-de-plis',
       heading: 'Jeux de cartes où l\'on parie son nombre de plis',
-      html: `<p>Dans cette famille, tout se joue avant la première carte : chacun regarde sa main et déclare combien de plis il remportera, ni plus ni moins. Selon les tables, on parle d'annonce, de pari ou de contrat, mais le principe ne varie pas. Quatre jeux le portent, et ils se séparent sur deux points : ce que le dernier à parler a le droit d'annoncer, et ce que coûte une prévision ratée.</p>
+      html: `<p>Dans cette famille, tout se joue avant la première carte : chacun regarde sa main et déclare combien de plis il remportera, ni plus ni moins. Selon les tables, on parle d'annonce, de pari ou de contrat, mais le principe ne varie pas. Sept jeux le portent, et ils se séparent sur deux points : ce que le dernier à parler a le droit d'annoncer, et ce que coûte une prévision ratée.</p>
 <ul>
 <li><strong>Oh Hell!</strong> : 52 cartes ordinaires et, le plus souvent, un atout désigné par une carte retournée. Selon la <a class="text-link" href="https://www.pagat.com/exact/ohhell.html" rel="noopener">référence en ligne Pagat</a>, le donneur, qui annonce en dernier, n'a pas le droit de choisir le chiffre qui ferait égaler le total des paris au nombre de plis (le « hook ») ; certaines tables jouent sans cette règle. C'est le point à trancher avant de distribuer.</li>
 <li><strong>Wizard</strong> : la règle de base accepte que le total des annonces corresponde exactement aux plis disponibles. Une variante (« plus ou moins 1 », décrite dans l'édition anniversaire d'Amigo) interdit au dernier à parler d'équilibrer ce total. Zarbis et Nazes rendent chaque prévision plus fragile qu'avec un paquet ordinaire.</li>
 <li><strong>Tarot Africain</strong> : les 22 cartes d'un tarot, et une interdiction faite au dernier annonceur : le total des annonces ne doit pas égaler le nombre de plis de la donne.</li>
 <li><strong>KYRAN</strong> : la même interdiction, appliquée à toutes les manches, avec des cartes Vie en guise de score : chacun en perd autant que l'écart entre son pari et les plis réellement gagnés.</li>
+<li><strong>Skull King</strong> (Grandpa Beck's Games, 2 à 8 joueurs) : les paris se montrent tous en même temps, avec les doigts, donc personne ne parle en dernier. Un pari de zéro rapporte ou coûte dix points par carte de la manche, ce qui en fait le coup le plus risqué de la famille. Nos <a class="text-link" href="/blog/jeux-comme-skull-king.html">alternatives à Skull King</a> le comparent à Wizard et à KYRAN.</li>
+<li><strong>Pili Pili</strong> (ATM Gaming, 2025) : 55 cartes sans couleur, des missions qui modifient la règle à chaque manche et, d'après l'aide de Board Game Arena, la même interdiction sur la somme des paris ; chaque pli d'écart donne un malus.</li>
+<li><strong>Cat in the Box</strong> (Matagot en France) : on annonce ses plis, mais les cartes n'ont pas de couleur imprimée ; on la déclare en jouant, et un joueur bloqué provoque un « paradoxe » qui lui fait perdre des points et annule son pari.</li>
 </ul>
-<p>Cette règle de la somme change la nature de la partie. Quand le total peut tomber juste, toute la table peut réussir en même temps ; quand il est interdit, le dernier à parler sait qu'au moins un joueur, lui peut-être, va rater, et son annonce devient un coup tactique autant qu'une prévision. Pour essayer ce principe avec un simple jeu de tarot, nos règles du <a class="text-link" href="/tarot-africain-a-3-joueurs.html">Tarot Africain à 3 joueurs</a> en donnent la version la plus resserrée.</p>`
+<p>Cette règle de la somme change la nature de la partie. Quand le total peut tomber juste, toute la table peut réussir en même temps ; quand il est interdit, le dernier à parler sait qu'au moins un joueur, lui peut-être, va rater, et son annonce devient un coup tactique autant qu'une prévision. Avec un jeu de 52 cartes, les <a class="text-link" href="/regles-rikiki.html">règles du Rikiki</a> permettent de l'essayer ce soir ; avec un simple jeu de tarot, nos règles du <a class="text-link" href="/tarot-africain-a-3-joueurs.html">Tarot Africain à 3 joueurs</a> en donnent la version la plus resserrée.</p>`
     },
     {
       id: 'guide-jeux-de-plis',

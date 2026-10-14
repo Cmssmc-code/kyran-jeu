@@ -35,7 +35,7 @@ KYRAN is a strategic and fast-paced French card game for 3 to 6 players, moderni
 In KYRAN, the goal is not to win the most tricks, but to fulfill your exact contract. At the beginning of each round, players must bid the exact number of tricks they plan to win. The golden rule is ruthless: the total sum of all bids cannot equal the total number of tricks available, ensuring mathematically that at least one player fails each round.
 
 Key Features:
-- 55 linen-finish cards in a premium Dark & Gold aesthetic.
+- 45 linen-finish playing cards (36 Number cards, 8 Power cards, 1 Mystic card), plus 30 Life cards and 7 rules cards.
 - 4 unique Power Cards (Ancient Clairvoyance, Destiny Seal, Ancestor Blessing, Void Veil) to disrupt opponents.
 - Physical Star-Life cards replacing paper score sheets for intense visual tension.
 - The Mystique Round: a final round played blind (card on the forehead) for memorable showdowns.

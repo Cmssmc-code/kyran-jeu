@@ -27,6 +27,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    **Depuis l'audit commercial du 12 octobre 2026** (`docs/rapports/audit-ventes-2026-10-12.md`),
    à valeur égale, préférez les sujets à intention d'achat (cadeau, Noël, jeu à moins de 15 €, jeu
    pour un repas de famille) aux listes « jeux comme X », qui attirent du trafic sans acheteurs.
+   **Variété (demandée par le propriétaire le 14 octobre 2026)** : les passes reprennent trop souvent les
+   mêmes jeux. Relevé du 14 octobre sur 31 articles (`games.json` ne compte que 31 jeux, tous déjà
+   utilisés) : KYRAN 29 articles (produit du site, c'est voulu, mais une ligne suffit), Skull 15,
+   Love Letter 11, Skyjo 11, The Crew 10, No Thanks! 9, Coup 9. Règle : un article neuf ou rafraîchi ne
+   reprend pas par défaut ces jeux ; il comporte **au moins deux jeux absents des trois derniers
+   articles du journal** et, quand le sujet s'y prête, au moins un jeu absent de `games.json`, ajouté
+   avec ses faits sourcés (joueurs, âge, durée, prix, auteur, image avec crédit, lien BGG contrôlé).
+   Relancer le relevé avant de choisir :
+   `grep -ho "id: \`[a-z0-9-]*\`" scripts/content/blog/*.mjs | sort | uniq -c | sort -rn`.
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
    éditeurs, Philibert…). Faits KYRAN : uniquement le dépôt. Aucun chiffre, prix, règle ou citation
    sans source liée.
@@ -104,6 +113,11 @@ Rafraîchissements repérés (par ordre de priorité) :
    Philibert affiche « dès 14 ans », Z-Man 10+). `jeux-3-joueurs` est précisé (7 octobre) ; `games.json` affiche encore « 2 à 4 » et les autres articles
    qui parlent de « seize cartes » ou de « 2 à 4 joueurs » restent à préciser (`jeux-vacances-voyage` fait le 12 octobre ; restent `alternatives-uno`, `cadeau-anniversaire`, `jeux-30-minutes`, `jeux-cartes-4-joueurs`, `jeux-comme-skyjo`, `jeux-debutants-adultes`, `jeux-famille`, `meilleurs-jeux-apero`). Jungle Speed : année incertaine selon les
    sources (BGG 1997, Wikipédia 1991 ou 1996) : ne pas l'afficher sans source primaire.
+
+3. **Jeux à ajouter à `games.json`** (variété, voir protocole § 3). Candidats à rechercher, rien n'est
+   sourcé à ce stade : Skull King, Trio, Cabo, Papayoo, Mille Bornes, Dos, Les Loups-Garous de
+   Thiercelieux, The Fox in the Forest, Tichu, Exploding Kittens (l'article `jeux-comme-exploding-kittens`
+   existe déjà). Ne rien écrire sur eux sans fiche d'éditeur ou règle ouverte.
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
 (#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque

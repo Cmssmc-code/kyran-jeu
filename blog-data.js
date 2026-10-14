@@ -419,7 +419,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes à offrir à Noël : 7 idées selon le destinataire",
     "category": "Cadeaux",
     "date": "2026-05-11",
-    "readMinutes": 11,
+    "readMinutes": 12,
     "excerpt": "Quel jeu offrir à Noël ? Sept idées rangées par destinataire (tablée du réveillon, couple, ado, amateur de cartes), avec durée de partie et budget.",
     "image": "/blog/images/hanabi.jpg",
     "webp": "/blog/images/hanabi.webp",

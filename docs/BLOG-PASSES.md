@@ -85,16 +85,17 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-12 | Article neuf (intention absente du blog : adolescents) : 6 jeux (Skull, Saboteur, Jungle Speed, 6 qui prend!, Skyjo, KYRAN), structure propre (3 groupes par ambiance, avis d'abord). Sources ouvertes : Esprit Jeu (Saboteur), Play-in (Skyjo ; 6 qui prend! édition 30 ans), Victory Point Games (Skull), Bonne Promo (Jungle Speed) ; âges divergents entre fiches, signalés dans le texte. **Sujet pris : ne pas le reprendre.** | `jeux-cartes-ados` | jeux de cartes pour ados | (cette PR) |
 | 2026-10-12 | **Audit factuel de tout le blog** (10 relecteurs indépendants : 9 lots d'articles, `games.json` et liens ; sources ouvertes : règles Mattel et Skyjo en PDF, Pagat, Wikipédia, BGG via geekdo, Esprit Jeu, Play-in, 64 Ounce Games, Iello, Indie Boards & Cards, Stanford Center on Longevity). ~150 corrections : Wizard (le 13, premier Magicien seul gagnant, Fous), The Crew (3 à 5, variante à deux), Love Letter (deux éditions partout), Star Realms (variantes à plusieurs), gagnant de KYRAN (plus de vies), Timeline (égalité de fin de tour, 2 à 6), Oh Hell (prix retiré), Jungle Speed (auteur, année retirée), prix `games.json` (Dobble, Uno, Timeline, The Crew, Wizard…), âge de Coup (13+ éditeur), article science (le −15 % de démence n'est plus significatif après ajustement MMSE et dépression ; vitesse de traitement). Affirmations d'opinion non sourcées retirées. | tous les articles | — | (cette PR) |
 | 2026-10-12 | Article neuf (intention absente du blog : seniors et grands-parents) : 6 jeux (Schotten Totten, No Thanks!, Uno, Skyjo, 6 qui prend!, KYRAN), structure propre (3 groupes selon la table), aucune promesse de santé. Sources ouvertes : Esprit Jeu (Schotten Totten, Uno), 64 Ounce Games (No Thanks!), notice Mattel et règle française de Skyjo (PDF lus), Play-in (Skyjo, 6 qui prend!). Relecture adversariale indépendante (17 constats) appliquée. **Sujet pris : ne pas le reprendre.** | `jeux-cartes-seniors` | jeux de cartes pour seniors | (cette PR) |
+| 2026-10-14 | Rafraîchissement **Noël 2026** (priorité 0) : date limite du site (16 décembre, `commander.html`, CGV art. 5), prix revérifiés (Dixit 28,95 € et 3 à 8 joueurs ; Timeline Clutch Box 2 à 6 joueurs ; Codenames 21,50 € et fiches divergentes 2-8 / 4-8, 10 à 14 ans ; The Crew 16,50 € ; Hanabi 2 à 5), prix Amazon de KYRAN retiré, KYRAN présenté avec le lien commercial du site dit en clair. Sources ouvertes : Philibert (Dixit, Timeline, Lost Cities, The Crew, Hanabi), Asmodee Canada (Codenames CGE), Bonne Promo (Codenames IELLO 2025). **Sujet pris : ne pas le reprendre.** | `cadeau-noel` | cadeau noël jeu de cartes | (cette PR) |
 
 ## En attente
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-0. **Avant le 1er novembre 2026 (fenêtre de Noël)** : rafraîchir `cadeau-noel` pour Noël 2026
+0. **Fait le 14 octobre 2026 pour `cadeau-noel` ; reste l'article neuf ci-dessous.** (Demande d'origine : rafraîchir `cadeau-noel` pour Noël 2026
    (intention d'achat, la seule page du blog qui vise un acheteur en novembre-décembre), avec KYRAN
    présenté honnêtement parmi les choix et la date limite de commande du site (16 décembre). Puis,
    si le sujet est absent du blog, un article « jeux de cartes à moins de 15 € à offrir ».
-   Demandé par l'audit commercial du 12 octobre 2026.
+   Demandé par l'audit commercial du 12 octobre 2026.)
 1. **Contenu de première main** demandé au propriétaire dans `docs/SEO-GEO.md` § 9 (photos de parties,
    retours de test, `authorNote`) : à intégrer dès qu'il est fourni, en commençant par les articles
    du « jour 1 ».
@@ -115,7 +116,7 @@ la même façon.
 
 | Jeu | `games.json` | Source officielle ou boutique |
 |---|---|---|
-| Codenames | 2 à 8+, ~20 € | Nouvelle édition 2025 : 4 à 8+ (CGE, IELLO) ; 21,95 € chez Philibert ; `cadeau-anniversaire` dit « 15 à 20 € » |
+| Codenames | 2 à 8+, ~20 € | Nouvelle édition 2025 : 4 à 8, 14+ (Czech Games Edition, fiche Asmodee Canada) ; 2 à 8, dès 12 ans (IELLO, Bonne Promo, 14 octobre) ; 21,95 € chez Philibert ; `cadeau-anniversaire` dit « 15 à 20 € » |
 | Dixit | 3 à 6 | Édition actuelle : 3 à 8 (Libellud) ; 3 à 6 pour l'édition de 2008 |
 | Coup | 10+, ~14 € | 13+ (Indie Boards & Cards, relevé le 12 octobre sur Miniature Market ; Wikipédia 14+, Leisure Games 10+) ; VO 20,50 € chez Philibert ; la VF « Complots » (Ferti) est un autre produit (2 à 8 joueurs) |
 | 6 qui prend ! | 10+ | 8+ sur les fiches Gigamic et Amigo actuelles ; 10 ans dans la règle française de 2012 et chez Philibert |

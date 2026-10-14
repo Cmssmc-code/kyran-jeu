@@ -51,7 +51,7 @@ export default {
 <h3>Le bon moment : après le dessert</h3>
 <p>Un réveillon laisse rarement plus d’une heure de jeu, et l’énergie baisse à mesure que le repas avance. Les parties de quinze à trente minutes, qui n’exigent pas de relire un livret, s’y glissent bien. Un jeu coopératif ou de culture générale y trouve mieux sa place qu’un jeu d’élimination, qui transforme un convive en spectateur pendant que les autres rient.</p>
 <h3>Emballage, âge, prix et délais</h3>
-<p>Une boîte rectangulaire plate s’emballe sans bosses, alors qu’un format atypique se devine d’avance. Contrôlez l’âge minimum imprimé : plusieurs titres commencent à huit ans, d’autres à dix. Côté budget, la plupart des boîtes de cette page se situent entre environ 12 et 20 €, avec une exception autour de 30 € et une autre sous les 10 €. Les fiches renvoient vers une boutique en ligne plutôt que vers une fiche technique, parce que les prix varient d’un vendeur à l’autre : vérifiez-les le jour de l’achat. Enfin, anticipez la livraison : un cadeau commandé le dernier week-end dépend du transporteur, pas de vous. Glissez dans le paquet un mot qui résume la règle ; un jeu offert sans explication risque de rester dans son emballage.</p>`
+<p>Une boîte rectangulaire plate s’emballe sans bosses, alors qu’un format atypique se devine d’avance. Contrôlez l’âge minimum imprimé : plusieurs titres commencent à huit ans, d’autres à dix. Côté budget, la plupart des boîtes de cette page se situent entre environ 11 et 23 €, avec une exception autour de 29 € (Dixit) et une autre sous les 10 € (KYRAN, 9,99 € sur le site). Les fiches renvoient vers une boutique en ligne plutôt que vers une fiche technique, parce que les prix varient d’un vendeur à l’autre : vérifiez-les le jour de l’achat. Enfin, anticipez la livraison : un cadeau commandé le dernier week-end dépend du transporteur, pas de vous. Pour KYRAN, le site recommande de commander avant le 16 décembre. Glissez dans le paquet un mot qui résume la règle ; un jeu offert sans explication risque de rester dans son emballage.</p>`
   },
   games: [
     {
@@ -68,9 +68,9 @@ export default {
       id: `timeline`,
       subtitle: `pour la grande tablée`,
       type: `Culture et chronologie`,
-      pick: `Pour la tablée de six à huit qui ne joue jamais`,
+      pick: `Pour la grande tablée qui ne joue jamais (six ou plus)`,
       paragraphs: [
-        `Quand on ignore si les invités ont déjà ouvert une boîte de jeu, Timeline limite la casse. Chaque joueur doit placer une carte d’événement dans la frise, en devinant si elle se situe avant ou après celles déjà alignées ; la date n’apparaît qu’une fois la carte posée. Avec Codenames, c’est l’un des deux seuls jeux de la page qui accueillent huit joueurs, pour des parties d’environ quinze minutes qui s’achèvent avant que le café refroidisse.`,
+        `Quand on ignore si les invités ont déjà ouvert une boîte de jeu, Timeline limite la casse. Chaque joueur doit placer une carte d’événement dans la frise, en devinant si elle se situe avant ou après celles déjà alignées ; la date n’apparaît qu’une fois la carte posée. La boîte vendue chez Philibert (Clutch Box, 10,90 €) annonce deux à six joueurs ; d’autres boîtes de la série montent à huit, d’où la mention « selon la boîte » : lisez le chiffre imprimé avant d’acheter. Les parties durent environ quinze minutes et s’achèvent avant que le café refroidisse.`,
         `Les générations n’y partent pas à égalité, mais elles se complètent : le grand-père domine les dates anciennes, l’adolescent les inventions récentes. Le point faible tient à la durée de vie, car à force de rejouer, certaines cartes reviennent en mémoire, et il faudra une autre boîte thématique pour relancer l’intérêt. Pour les familles qui se réunissent à beaucoup, il reste néanmoins le pari le plus sûr de cette page.`
       ]
     },
@@ -110,8 +110,8 @@ export default {
       type: `Équipes et indices`,
       pick: `Pour l’adolescent et la bande d’amis qui parle beaucoup`,
       paragraphs: [
-        `Offrir Codenames à un adolescent, c’est lui donner un jeu qui sert dès que quatre personnes se trouvent dans la même pièce, sans livret à rallonge. Deux équipes se disputent une grille de vingt-cinq mots ; un maître espion souffle un indice d’un seul mot, accompagné d’un nombre, que ses coéquipiers doivent relier aux bons mots, en évitant l’assassin. À environ 20 €, la boîte reste dans la moyenne haute de cette liste.`,
-        `Les équipes se forment sans effort à quatre ; la partie standard se joue à partir de quatre ; à deux ou trois, il existe une variante à part. Le piège du cadeau tient aux références : les indices reposent sur des mots, et un grand-parent n’a pas toujours les repères d’un adolescent. Le mélange des générations peut devenir un atout, à condition de ne pas regrouper tous les adultes dans la même équipe, et la boîte dépanne aussi le soir du réveillon quand la table compte six ou huit convives.`
+        `Offrir Codenames à un adolescent, c’est lui donner un jeu qui sert dès que quatre personnes se trouvent dans la même pièce, sans livret à rallonge. Deux équipes se disputent une grille de vingt-cinq mots ; un maître espion souffle un indice d’un seul mot, accompagné d’un nombre, que ses coéquipiers doivent relier aux bons mots, en évitant l’assassin. Comptez entre 20 et 23 € selon le revendeur (21,50 € relevé chez un détaillant le 14 octobre 2026), ce qui place la boîte dans la moyenne haute de cette liste.`,
+        `Les équipes se forment sans effort à quatre, et c’est le minimum annoncé pour la nouvelle édition de l’éditeur tchèque Czech Games Edition (quatre à huit joueurs, dès 14 ans, selon la fiche d’Asmodee Canada) ; la fiche de l’éditeur français IELLO, elle, indique deux à huit joueurs, et les revendeurs donnent des âges de 10 à 14 ans : lisez la boîte. Le piège du cadeau tient aux références : les indices reposent sur des mots, et un grand-parent n’a pas toujours les repères d’un adolescent. Le mélange des générations peut devenir un atout, à condition de ne pas regrouper tous les adultes dans la même équipe, et la boîte dépanne aussi le soir du réveillon quand la table compte six ou huit convives.`
       ]
     },
     {
@@ -120,14 +120,14 @@ export default {
       type: `Plis et paris`,
       pick: `Pour l’amateur de belote ou de tarot, de trois à six joueurs`,
       paragraphs: [
-        `Ce cadeau s’adresse à ceux qui ont grandi avec les jeux de cartes à plis. KYRAN conserve le principe de la levée, mais impose un pari avant chaque manche : la somme des paris ne peut jamais égaler le nombre de plis, si bien qu’au moins un joueur se trompe toujours. Il se joue de trois à six, en environ trente minutes, dès huit ans, dans une boîte rigide avec des cartes toilées. Son principe descend du tarot africain.`,
-        `Côté pratique, la boutique le propose à 9,99 € et expédie sous 24 à 48 heures ; le reste dépend du transporteur et aucune date n’est garantie, donc commandez tôt sur la <a class="text-link" href="/commander.html">page de commande de KYRAN</a>. KYRAN ne se joue pas à deux, ce qui l’écarte pour un couple. Le pari obligatoire demande une manche d’apprentissage : la variante d’initiation, sans cartes Pouvoir ni Mystique, aide à démarrer, et les <a class="text-link" href="/video-regles.html">règles en vidéo</a> durent cinq minutes.`
+        `Ce cadeau s’adresse à ceux qui ont grandi avec les jeux de cartes à plis. KYRAN conserve le principe de la levée, mais impose un pari avant chaque manche : la somme des paris ne peut jamais égaler le nombre de plis, si bien qu’au moins un joueur se trompe toujours. Il se joue de trois à six, en environ trente minutes, dès huit ans, dans une boîte rigide avec des cartes toilées. Son principe descend du tarot africain. Autre précision d’honnêteté : KYRAN est un jeu récent (sorti le 31 janvier 2026) d’un petit éditeur indépendant, et cette page est publiée par le site qui le vend ; les six autres boîtes sont des jeux établis, que nous ne vendons pas.`,
+        `Côté pratique, la boutique le propose à 9,99 € et expédie sous 24 à 48 heures ; le reste dépend du transporteur et aucune date n’est garantie, donc commandez tôt sur la <a class="text-link" href="/commander.html">page de commande de KYRAN</a> : pour Noël, le site recommande de commander avant le 16 décembre (colis expédié sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés d’acheminement en France). KYRAN ne se joue pas à deux, ce qui l’écarte pour un couple. Le pari obligatoire demande une manche d’apprentissage : la variante d’initiation, sans cartes Pouvoir ni Mystique, aide à démarrer, et les <a class="text-link" href="/video-regles.html">règles en vidéo</a> durent cinq minutes.`
       ]
     }
   ],
   verdict: {
     heading: `Le cadeau que nous mettrions sous le sapin`,
-    html: `<p>Pour une tablée mixte de quatre à six personnes peu habituée aux jeux, offrez Dixit : il se comprend en une phrase, ne fabrique pas de perdant humilié et a l’allure d’un vrai cadeau, malgré son prix plus élevé. Pour huit convives, Timeline ; pour un couple qui joue déjà ensemble, Lost Cities ; pour un duo parent et adolescent, The Crew et sa campagne de missions. Codenames vise l’adolescent entouré d’amis, KYRAN l’amateur de belote ou de tarot. À éviter : Lost Cities pour quelqu’un sans partenaire attitré, Hanabi pour une famille impatiente, et KYRAN pour un couple, puisqu’il ne se joue pas à deux.</p>`
+    html: `<p>Pour une tablée mixte de quatre à six personnes peu habituée aux jeux, offrez Dixit : il se comprend en une phrase, ne fabrique pas de perdant humilié et a l’allure d’un vrai cadeau, malgré son prix plus élevé. Pour une grande tablée, Timeline (vérifiez que la boîte annonce autant de joueurs que de convives) ; pour un couple qui joue déjà ensemble, Lost Cities ; pour un duo parent et adolescent, The Crew et sa campagne de missions. Codenames vise l’adolescent entouré d’amis, KYRAN l’amateur de belote ou de tarot. À éviter : Lost Cities pour quelqu’un sans partenaire attitré, Hanabi pour une famille impatiente, et KYRAN pour un couple, puisqu’il ne se joue pas à deux.</p>`
   },
   conclusion: `<p>Avant d’emballer, vérifiez deux détails que l’on oublie souvent : le nombre minimum de joueurs et l’âge imprimé sur la boîte. Précisez dans un mot à quelle table et à quelle heure vous imaginez la première partie, et proposez d’expliquer la règle vous-même autour du dessert. Si le budget le permet, une seconde boîte plus légère glissée dans le même paquet laisse au destinataire le choix du jeu de la soirée.</p>`,
   faq: [
@@ -137,7 +137,7 @@ export default {
     },
     {
       q: `Quel jeu de cartes offrir à un adolescent pour Noël ?`,
-      a: `Codenames s’il joue avec ses amis, The Crew s’il aime les défis coopératifs. Les deux se jouent dès dix ans et ne ressemblent pas à des jeux d’enfants. Vérifiez qu’il dispose d’au moins trois ou quatre partenaires de jeu potentiels avant d’emballer.`
+      a: `Codenames s’il joue avec ses amis, The Crew s’il aime les défis coopératifs. The Crew est indiqué dès dix ans ; pour Codenames, les fiches vont de dix à quatorze ans selon l’éditeur et le revendeur. Aucun des deux ne ressemble à un jeu d’enfants. Vérifiez qu’il dispose d’au moins trois ou quatre partenaires de jeu potentiels avant d’emballer.`
     },
     {
       q: `Quel jeu offrir à un couple pour Noël ?`,
@@ -145,11 +145,11 @@ export default {
     },
     {
       q: `Quel budget prévoir pour un jeu de société cadeau de Noël ?`,
-      a: `Comptez environ 12 à 20 € pour la plupart des jeux de cartes de cette page, et autour de 30 € pour Dixit. KYRAN est vendu 9,99 € sur kyran-jeu.fr, contre 17,99 € chez Amazon : comparez toujours les vendeurs avant de commander.`
+      a: `Comptez environ 11 à 23 € pour la plupart des jeux de cartes de cette page, et autour de 29 € pour Dixit (28,95 € chez Philibert). KYRAN est vendu 9,99 € sur kyran-jeu.fr, hors frais de port. Les prix des autres boîtes varient d’un vendeur à l’autre : comparez-les le jour de l’achat.`
     },
     {
       q: `Jusqu’à quand commander un jeu pour qu’il arrive avant Noël ?`,
-      a: `Le plus tôt possible. Sur kyran-jeu.fr, les commandes partent sous 24 à 48 heures, mais le délai du transporteur s’ajoute et aucune date de livraison n’est garantie à l’avance. En magasin, achetez avant le dernier week-end pour avoir le choix entre plusieurs boîtes.`
+      a: `Le plus tôt possible. Pour KYRAN, le site recommande de commander avant le 16 décembre : le colis part sous 24 à 48 heures ouvrées et met 2 à 4 jours ouvrés à arriver en France ; passé cette date, la livraison avant Noël n’est plus garantie. Pour les autres boîtes, vérifiez le délai annoncé par le vendeur, ou achetez en magasin avant le dernier week-end pour avoir le choix.`
     }
   ],
   related: [`cadeau-anniversaire`, `jeux-duo-couples`, `jeux-famille`]

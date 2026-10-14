@@ -78,6 +78,15 @@
   </url>
 
   <url>
+    <loc>https://kyran-jeu.fr/regles-rikiki.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/oh-hell.jpg</image:loc>
+      <image:title>Un pli de Rikiki (Ascenseur) avec un jeu de 52 cartes</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://kyran-jeu.fr/ressources-gratuites.html</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
@@ -112,6 +121,14 @@
     <lastmod>2026-10-14</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-skull-king.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/oh-hell.jpg</image:loc>
+      <image:title>Jeux comme Skull King : 6 alternatives, avec ou sans pirates</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-ados.html</loc>
     <lastmod>2026-10-12</lastmod>
@@ -362,7 +379,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
       <image:title>10 jeux comme Skyjo : les meilleures alternatives en 2026</image:title>

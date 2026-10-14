@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-comme-skull-king",
+    "title": "Jeux comme Skull King : 6 alternatives, avec ou sans pirates",
+    "category": "Alternatives",
+    "date": "2026-10-14",
+    "readMinutes": 11,
+    "excerpt": "Jeux comme Skull King : Wizard, Pili Pili, KYRAN et l’Ascenseur gardent le pari sur les plis ; Cat in the Box et The Crew le transforment. Comparatif.",
+    "image": "/blog/images/oh-hell.jpg",
+    "webp": "/blog/images/oh-hell.webp",
+    "gameCount": 6,
+    "related": [
+      "alternatives-wizard",
+      "jeux-plis-comparatif",
+      "jeux-bluff-pari"
+    ]
+  },
+  {
     "slug": "jeux-cartes-ados",
     "title": "Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis",
     "category": "Soirée",
@@ -498,8 +514,8 @@ const BLOG_ITEMS = [
     "title": "10 jeux comme Skyjo : les meilleures alternatives en 2026",
     "category": "Alternatives",
     "date": "2026-05-01",
-    "readMinutes": 16,
-    "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, 5 variantes de règles et une adaptation pour y jouer avec un jeu de 52 cartes classique.",
+    "readMinutes": 17,
+    "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, Skyjo Action et Junior, 5 variantes de règles et Skyjo avec un jeu de 52 cartes classique.",
     "image": "/blog/images/skyjo.jpg",
     "webp": "/blog/images/skyjo.webp",
     "gameCount": 10,

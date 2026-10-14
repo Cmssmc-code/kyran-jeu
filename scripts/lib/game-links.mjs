@@ -140,6 +140,26 @@ export const GAME_LINKS = {
     year: 2019,
     imageCredit: 'Photo — KOSMOS'
   },
+  // Ajoutés le 14 octobre 2026 : identifiants BGG contrôlés par api.geekdo.com, pages boutique en 200.
+  'skull-king': {
+    bgg: 'https://boardgamegeek.com/boardgame/150145/skull-king',
+    shop: 'https://www.philibertnet.com/fr/grandpa-beck-s-games/108413-skull-king-3770000282771.html',
+    designer: 'Brent et Jeffrey Beck',
+    year: 2013
+  },
+  'cat-in-the-box': {
+    bgg: 'https://boardgamegeek.com/boardgame/345972/cat-in-the-box-deluxe-edition',
+    wiki: 'https://en.wikipedia.org/wiki/Cat_in_the_Box',
+    shop: 'https://www.philibertnet.com/fr/matagot/125618-cat-in-the-box-3760372231705.html',
+    designer: 'Muneyuki Yokouchi',
+    year: 2020
+  },
+  'pili-pili': {
+    // Pas de fiche BoardGameGeek trouvée : la fiche renvoie vers la boutique.
+    shop: 'https://www.philibertnet.com/fr/atm-gaming/158493-pili-pili-3770011991860.html',
+    designer: 'Ben et JB',
+    year: 2025
+  },
   'oh-hell': {
     bgg: 'https://boardgamegeek.com/boardgame/1116/oh-hell',
     wiki: 'https://fr.wikipedia.org/wiki/Ascenseur_(jeu_de_cartes)',

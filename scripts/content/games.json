@@ -307,5 +307,35 @@
     "image": "/blog/images/monopoly-deal.jpg",
     "designer": "Katharine Chapman",
     "year": 2008
+  },
+  "skull-king": {
+    "name": "Skull King",
+    "players": "2 à 8",
+    "duration": "~30 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": false,
+    "designer": "Brent et Jeffrey Beck",
+    "year": 2013
+  },
+  "cat-in-the-box": {
+    "name": "Cat in the Box",
+    "players": "2 à 5",
+    "duration": "~20 min",
+    "age": "12+",
+    "price": "~26 €",
+    "image": false,
+    "designer": "Muneyuki Yokouchi",
+    "year": 2020
+  },
+  "pili-pili": {
+    "name": "Pili Pili",
+    "players": "2 à 8",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~14 €",
+    "image": false,
+    "designer": "Ben et JB",
+    "year": 2025
   }
 }

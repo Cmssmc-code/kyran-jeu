@@ -37,6 +37,7 @@ const ACTIVE_BY_PATH = {
   'tarot-africain-a-3-joueurs.html': 'discover',
   'whist-22.html': 'discover',
   'ressources-gratuites.html': 'discover',
+  'regles-rikiki.html': 'discover',
   'a-propos.html': 'discover',
   'communaute.html': 'discover',
   'faq.html': 'faq',

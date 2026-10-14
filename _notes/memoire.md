@@ -44,7 +44,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
 
 ## 2. Architecture du site (statique, GitHub Pages)
 
-- **Pages HTML à la racine** : `index.html`, `regle.html`, `commander.html`, `merci.html`, `faq.html`, `a-propos.html`, `dossier-presse.html`, `jeu-apero.html`, `tarot-africain*.html`, `whist-22.html`, `video-regles.html` (page de lecture de la vidéo Ludochrono), `minijeu.html`, `communaute.html`, `plan-du-site.html`, `cgv.html`, `mentions-legales.html`, `confidentialite.html`, `404.html` et `admin-emails.html` + `admin-emails.js` (interface d'administration des emails, protégée par `ADMIN_SECRET`).
+- **Pages HTML à la racine** : `index.html`, `regle.html`, `commander.html`, `merci.html`, `faq.html`, `a-propos.html`, `dossier-presse.html`, `jeu-apero.html`, `tarot-africain*.html`, `whist-22.html`, `regles-rikiki.html` (Rikiki / Ascenseur / Oh Hell à 52 cartes), `ressources-gratuites.html` (feuille de score, liens à copier), `video-regles.html` (page de lecture de la vidéo Ludochrono), `minijeu.html`, `communaute.html`, `plan-du-site.html`, `cgv.html`, `mentions-legales.html`, `confidentialite.html`, `404.html` et `admin-emails.html` + `admin-emails.js` (interface d'administration des emails, protégée par `ADMIN_SECRET`).
 - **Anciennes URL** : `alternative-skyjo.html`, `comparatif-jeux-plis.html` et `whist-moderne.html` sont de petites pages de redirection.
 - **`components.js`** : Web Components rendus en HTML statique par `scripts/prerender.mjs`.
   - `<kyran-header>`, `-footer`, `-breadcrumb`, `-page-hero`, `-discover-grid`, `-blog-grid`, `-blog-filters`, `-related-articles`, `-stat-bar`, `-cta-band`.
@@ -59,6 +59,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
   - motifs wax : bande `--wax-band` (SVG en data URI) et `img/motif-wax.svg` (bords du hero) ; boutons « étiquette » cernés d'encre ;
   - en-tête collant : `kyran-header` a `top: -36px` (la barre d'annonce, 36 px, défile) ; `html`, `body` et `main` utilisent `overflow-x: clip` (un `hidden` casse le sticky) et le menu mobile bloque le défilement sur `<html>`, jamais sur `<body>`.
 - **`seo-config.js`** : `ASSET_VERSION` (posé par le build) ; `googleSiteVerification`, `bingSiteVerification` et `ga4MeasurementId` sont vides. GA4 est désactivé : RGPD, il faudrait un bandeau de consentement.
+- **Audit SEO/GEO du 2026-10-14** (rapport externe) : appliqué dans la PR « audit SEO/GEO » ; un seul nœud `Product` complet (`#boardgame`, déclaré sur `/commander.html`, référencé ailleurs), plan du site en `noindex`, IndexNow ignore les pages dont seules les versions d'assets changent. Fichiers pour Corentin : `_notes/outreach/` (netlinking), `_notes/wikidata-kyran.md`, `_notes/geo-tests.md`.
 - **`seo-keywords.json`** : clusters de requêtes cibles par page (primaires et secondaires) et KPI. Mis à jour le 2026-10-04.
 - **Fichiers SEO et IA générés** : `sitemap.xml`, `llms.txt`, `llms-full.txt`, `robots.txt`, `blog/feed.xml`.
 - **Autres fichiers SEO :** `google-merchant-feed.xml` / `.tsv`, `BingSiteAuth.xml`, la clé IndexNow (`<clé>.txt` à la racine, publique), `NETLINKING_ANNUAIRES.md`.

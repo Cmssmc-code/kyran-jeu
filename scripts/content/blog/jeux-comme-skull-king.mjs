@@ -45,10 +45,10 @@ export default {
 <h3>Les cartes spéciales qui renversent un pli</h3>
 <p>Les pirates, la Tigresse, le Skull King et les sirènes forment un petit cycle : le Skull King bat les pirates, les sirènes battent le Skull King, les pirates battent les sirènes. C’est ce qui rend un pli imprévisible jusqu’à la dernière carte. Wizard n’a que deux types de cartes spéciales, les Magiciens et les Fous ; KYRAN remplace ce cycle par des cartes Pouvoir qui agissent sur la main d’un adversaire ; l’Ascenseur n’en a aucune.</p>
 <h3>La taille de la tablée et la durée</h3>
-<p>Skull King accepte de deux à huit joueurs. Peu de jeux de pari sur les plis montent aussi haut : Pili Pili aussi, l’Ascenseur jusqu’à sept, Wizard et KYRAN jusqu’à six. Côté durée, Skull King se joue en dix manches, de une à dix cartes. Si vos parties s’étirent, préférez un jeu dont la partie s’arrête sur un seuil, comme KYRAN (dès qu’un joueur n’a plus de Vies) ou Pili Pili (dès qu’un joueur atteint six pilis).</p>
+<p>Skull King accepte de deux à huit joueurs. Peu de jeux de pari sur les plis montent aussi haut : Pili Pili aussi, l’Ascenseur jusqu’à sept, Wizard et KYRAN jusqu’à six. Côté durée, Skull King se joue en dix manches, de une à dix cartes (huit au plus à huit joueurs). Si vos parties s’étirent, préférez un jeu dont la partie s’arrête sur un seuil, comme KYRAN (dès qu’un joueur n’a plus de Vies) ou Pili Pili (dès qu’un joueur atteint six pilis).</p>
 <h3>Trois questions pour trancher</h3>
 <ul>
-<li><strong>Votre table est-elle souvent à sept ou huit ?</strong> Gardez Skull King ou passez à Pili Pili ; les autres plafonnent plus bas.</li>
+<li><strong>Votre table est-elle souvent à sept ou huit ?</strong> Gardez Skull King ou passez à Pili Pili ; à sept, l’Ascenseur suit aussi, les autres plafonnent à six.</li>
 <li><strong>Aimez-vous compter les cartes tombées ?</strong> L’Ascenseur et Wizard récompensent la mémoire ; Cat in the Box la rend indispensable.</li>
 <li><strong>Cherchez-vous une soirée sans perdant ?</strong> The Crew est le seul jeu coopératif de la liste.</li>
 </ul>`
@@ -60,7 +60,7 @@ export default {
       type: 'Pari sur les plis',
       pick: 'Pour retrouver le score de Skull King avec un atout tiré',
       paragraphs: [
-        `Ken Fisher a publié Wizard en 1984, près de trente ans avant Skull King, et la parenté saute aux yeux : soixante cartes, quatre familles numérotées de 1 à 13, quatre Magiciens qui gagnent le pli et quatre Fous qui le perdent. Le décompte de l’édition française de Gigamic est celui que les amateurs de pirates connaissent : vingt points pour un pari juste, plus dix par pli, et dix points perdus par pli d’écart.`,
+        `Ken Fisher a publié Wizard en 1984, près de trente ans avant Skull King, et la parenté saute aux yeux : soixante cartes, quatre familles numérotées de 1 à 13, quatre Magiciens qui gagnent le pli et quatre Fous qui le perdent. Le décompte de l’édition française de Gigamic rappelle celui des pirates sans être identique : vingt points pour un pari juste plus dix par pli (Skull King paie vingt points par pli annoncé), et dix points perdus par pli d’écart.`,
         `La différence tient à l’atout. Après la donne, la carte retournée sur le talon fixe la couleur maîtresse de la manche, alors que Skull King garde toujours le noir. Les annonces se font à tour de rôle, sans contrainte pour le dernier. Comptez trois à six joueurs et une partie plus longue, d’environ trois quarts d’heure.`
       ]
     },
@@ -71,7 +71,7 @@ export default {
       pick: 'Pour une grande table qui veut une règle qui bouge',
       paragraphs: [
         `Pili Pili, édité en 2025 par ATM Gaming, garde la tablée de Skull King, jusqu’à huit joueurs, mais retire les couleurs : cinquante-cinq cartes numérotées de 1 à 55, et la plus haute remporte le pli. Un Joker prend la valeur que son joueur annonce. Le sel vient des cartes Mission, qui changent la règle à chaque manche et obligent à réévaluer sa main.`,
-        `Chaque pli d’écart entre le pari et le résultat donne un « pili », une carte malus, et la partie s’arrête dès qu’un joueur en accumule six. Comme dans KYRAN, le dernier à parier ne peut pas rendre la somme des paris égale au nombre de plis. Le jeu n’a pas de fiche BoardGameGeek à ce jour : nos informations viennent de la boîte décrite par Philibert et de l’aide de jeu de Board Game Arena.`
+        `Chaque pli d’écart entre le pari et le résultat donne un « pili », une carte malus, et la partie s’arrête dès qu’un joueur en accumule six. Comme dans KYRAN, le dernier à parier ne peut pas rendre la somme des paris égale au nombre de plis. Nos informations viennent de la boîte décrite par Philibert et de l’aide de jeu de Board Game Arena.`
       ]
     },
     {
@@ -81,7 +81,7 @@ export default {
       pick: 'Pour trois à six joueurs qui veulent une partie de 30 minutes',
       paragraphs: [
         `KYRAN reprend le pari exact de Skull King avec une contrainte de plus : la somme des paris ne peut jamais égaler le nombre de plis, donc au moins un joueur se trompe à chaque manche. Pas de points à additionner : chaque pli d’écart coûte une carte Vie, et la partie se termine dès qu’un joueur n’en a plus. Les manches descendent de 7 à 2 cartes.`,
-        `À la place du cycle pirates, sirènes et Skull King, quatre cartes Pouvoir agissent sur les adversaires (forcer une carte au hasard, regarder la plus forte carte d’un joueur), et la manche Mystique se joue avec une carte posée sur le front. Limites : trois joueurs minimum, six au maximum, pas de version à deux. Les <a class="text-link" href="/regle.html">règles de KYRAN</a> tiennent en sept cartes, et la boîte coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique</a>.`
+        `À la place du cycle pirates, sirènes et Skull King, quatre pouvoirs (huit cartes, quatre seulement à trois ou quatre joueurs) agissent sur les adversaires (forcer une carte au hasard, regarder la plus forte carte d’un joueur), et la manche Mystique se joue avec une carte posée sur le front. Limites : trois joueurs minimum, six au maximum, pas de version à deux. Les <a class="text-link" href="/regle.html">règles de KYRAN</a> tiennent en sept cartes, et la boîte coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique</a>.`
       ]
     },
     {
@@ -111,13 +111,13 @@ export default {
       pick: 'Pour une soirée où personne ne doit perdre',
       paragraphs: [
         `The Crew, de Thomas Sing, conserve le pli, la couleur à fournir et l’atout, mais supprime l’affrontement : toute la table gagne ou perd ensemble. À la place du pari, chaque mission attribue à un joueur des cartes précises à remporter, et la communication est rationnée. L’édition française d’IELLO propose cinquante missions de difficulté croissante.`,
-        `Un amateur de Skull King y retrouve le plaisir de lire les plis des autres, sans le bluff ni les zéros risqués. Le jeu se joue de trois à cinq, en vingt minutes par mission. Ses limites : pas de score, pas de vainqueur, et une table qui aime se chambrer s’y ennuiera. D’autres jeux du même registre figurent parmi nos <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux de cartes coopératifs</a>.`
+        `Un amateur de Skull King y retrouve le plaisir de lire les plis des autres, sans le bluff ni les zéros risqués. Le jeu se joue de trois à cinq, pour des parties d’une vingtaine de minutes. Ses limites : pas de score, pas de vainqueur, et une table qui aime se chambrer s’y ennuiera. D’autres jeux du même registre figurent parmi nos <a class="text-link" href="/blog/jeux-coop-cartes.html">jeux de cartes coopératifs</a>.`
       ]
     }
   ],
   verdict: {
     heading: 'Notre choix pour remplacer Skull King',
-    html: `<p>Pour une table de six ou moins qui aime le score de Skull King, prenez <strong>Wizard</strong> : même décompte, même tension sur chaque pli, avec un atout qui change à chaque manche. Pour une grande tablée de sept ou huit, <strong>Pili Pili</strong> est le seul à suivre, et ses missions renouvellent les parties. Pour une demi-heure de pari contraint à trois à six, <strong>KYRAN</strong>. Pour tester le principe gratuitement, sortez un jeu de 52 cartes et jouez à l’Ascenseur. Évitez Cat in the Box avec des débutants : la règle du paradoxe décourage avant d’amuser.</p>`
+    html: `<p>Pour une table de six ou moins qui aime le score de Skull King, prenez <strong>Wizard</strong> : un décompte voisin, la même tension sur chaque pli, avec un atout qui change à chaque manche. À huit, <strong>Pili Pili</strong> est le seul à suivre (l’Ascenseur monte à sept), et ses missions renouvellent les parties. Pour une demi-heure de pari contraint à trois à six, <strong>KYRAN</strong>. Pour tester le principe gratuitement, sortez un jeu de 52 cartes et jouez à l’Ascenseur. Évitez Cat in the Box avec des débutants : la règle du paradoxe décourage avant d’amuser.</p>`
   },
   extraSections: [
     {
@@ -134,21 +134,21 @@ export default {
 <tr><th scope="row">Âge</th><td>8+</td><td>10+</td><td>8+</td></tr>
 <tr><th scope="row">Prix indicatif</th><td>~15 €</td><td>~15 €</td><td>9,99 €</td></tr>
 <tr><th scope="row">Paquet</th><td>74 cartes de jeu (56 de couleur, 14 spéciales, 4 d’extension)</td><td>60 cartes (52 de couleur, 4 Magiciens, 4 Fous)</td><td>45 cartes de jeu (36 Nombre, 8 Pouvoir, 1 Mystique)</td></tr>
-<tr><th scope="row">Manches</th><td>10, de 1 à 10 cartes</td><td>Jusqu’à épuiser le paquet</td><td>7 à 2 cartes, puis manche Mystique, jusqu’à la fin</td></tr>
+<tr><th scope="row">Manches</th><td>10, de 1 à 10 cartes (8 au plus à 8 joueurs)</td><td>Jusqu’à épuiser le paquet</td><td>7 à 2 cartes, puis manche Mystique, jusqu’à la fin</td></tr>
 <tr><th scope="row">Annonce</th><td>Simultanée, avec les doigts</td><td>À tour de rôle, libre</td><td>À tour de rôle ; la somme ne doit pas égaler le nombre de plis</td></tr>
-<tr><th scope="row">Pari raté</th><td>−10 points par pli d’écart</td><td>−10 points par pli d’écart</td><td>Une carte Vie perdue par pli d’écart</td></tr>
+<tr><th scope="row">Pari raté</th><td>−10 points par pli d’écart (zéro raté : −10 par carte de la manche)</td><td>−10 points par pli d’écart</td><td>Une carte Vie perdue par pli d’écart</td></tr>
 <tr><th scope="row">Fin de partie</th><td>Après la 10e manche</td><td>Quand le paquet ne suffit plus</td><td>Dès qu’un joueur n’a plus de Vies</td></tr>
 <tr><th scope="row">Cartes spéciales</th><td>Pirates, Tigresse, Skull King, sirènes, fuites</td><td>Magiciens et Fous</td><td>Cartes Pouvoir (effets sur les adversaires), Mystique 0 ou 37</td></tr>
 </tbody>
 </table>
 </div>
-<p>En résumé : Skull King est le plus souple sur le nombre de joueurs, Wizard le plus proche par le score, KYRAN le plus court et le plus contraint, puisqu’un pari raté coûte une Vie et non des points.</p>`
+<p>En résumé : Skull King est le plus souple sur le nombre de joueurs, Wizard le plus proche par le score, KYRAN le plus contraint : un pari raté coûte une Vie et non des points, et la partie s’arrête dès qu’un joueur n’en a plus.</p>`
     },
     {
       id: 'skull-king-en-bref',
       heading: 'Skull King en bref',
       html: `<ul>
-<li><strong>Auteurs :</strong> Brent et Jeffrey Beck ; éditeur : Grandpa Beck’s Games (édition française 2022). Première édition : 2013.</li>
+<li><strong>Auteurs :</strong> Brent, Tauni et Jeff Beck selon la règle française (Brent et Jeffrey Beck sur BoardGameGeek) ; éditeur : Grandpa Beck’s Games (édition française 2022). Première édition : 2013.</li>
 <li><strong>Tablée :</strong> de deux à huit joueurs à partir de 8 ans, pour une partie d’une demi-heure environ.</li>
 <li><strong>Matériel :</strong> 56 cartes de couleur numérotées de 1 à 14 (vert, violet, jaune et noir, le noir servant d’atout), 14 cartes spéciales (5 pirates, la Tigresse, le Skull King, 2 sirènes, 5 fuites) et 4 cartes d’extension (2 Butins, le Kraken, la Baleine blanche).</li>
 <li><strong>Score :</strong> 20 points par pli pour un pari juste, 10 points perdus par pli d’écart ; un pari de zéro vaut 10 points par carte de la manche, gagnés ou perdus. Des bonus récompensent les 14 capturés et les captures entre cartes spéciales.</li>
@@ -161,7 +161,7 @@ export default {
   faq: [
     {
       q: 'Quel jeu ressemble le plus à Skull King ?',
-      a: 'Wizard, dont Skull King reprend le décompte : vingt points par pari juste plus dix par pli, dix points perdus par pli d’écart. Pili Pili s’en rapproche par la taille de la tablée, jusqu’à huit joueurs. KYRAN garde le pari exact mais compte les erreurs en cartes Vie.'
+      a: 'Wizard, dont le décompte est proche : vingt points par pari juste plus dix par pli chez Wizard, vingt points par pli annoncé chez Skull King, et dix points perdus par pli d’écart dans les deux. Pili Pili s’en rapproche par la taille de la tablée, jusqu’à huit joueurs. KYRAN garde le pari exact mais compte les erreurs en cartes Vie.'
     },
     {
       q: 'Peut-on jouer à un jeu comme Skull King avec un jeu de cartes classique ?',
@@ -173,11 +173,11 @@ export default {
     },
     {
       q: 'Existe-t-il un jeu de pari sur les plis pour deux joueurs ?',
-      a: 'Skull King prévoit une variante à deux avec un joueur fantôme, et Cat in the Box accepte deux joueurs. Wizard, KYRAN et l’Ascenseur commencent à trois. Pour d’autres idées en duo, voyez nos <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a>.'
+      a: 'Skull King prévoit une variante à deux avec un joueur fantôme ; Pili Pili et Cat in the Box acceptent aussi deux joueurs. Wizard, KYRAN et l’Ascenseur commencent à trois. Pour d’autres idées en duo, voyez nos <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a>.'
     },
     {
       q: 'Pourquoi le pari de zéro est-il si risqué dans Skull King ?',
-      a: 'Parce qu’il est indexé sur la manche : réussi, il rapporte dix points par carte distribuée, raté, il en coûte autant. À la dixième manche, un zéro vaut donc cent points dans un sens ou dans l’autre, plus que la plupart des paris ordinaires.'
+      a: 'Parce qu’il est indexé sur la manche : réussi, il rapporte dix points par carte distribuée, raté, il en coûte autant. À la dixième manche, jusqu’à sept joueurs, un zéro vaut donc cent points dans un sens ou dans l’autre, plus que la plupart des paris ordinaires.'
     }
   ],
   related: ['alternatives-wizard', 'jeux-plis-comparatif', 'jeux-bluff-pari']

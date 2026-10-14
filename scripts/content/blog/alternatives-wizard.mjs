@@ -120,9 +120,9 @@ export default {
     {
       id: 'skull-king-pili-pili-cat-in-the-box',
       heading: 'Et Skull King, Pili Pili ou Cat in the Box ?',
-      html: `<p>Trois jeux récents gardent l'annonce de Wizard sans figurer dans les fiches ci-dessus, parce qu'ils s'en éloignent sur un point précis.</p>
+      html: `<p>Trois jeux plus modernes gardent l'annonce de Wizard sans figurer dans les fiches ci-dessus, parce qu'ils s'en éloignent sur un point précis.</p>
 <ul>
-<li><strong>Skull King</strong> reprend presque mot pour mot le décompte des Magiciens (vingt points par pari juste, plus dix par pli) mais fait montrer les paris tous ensemble, avec les doigts, et remplace Magiciens et Fous par des pirates, des sirènes, une Tigresse et le Skull King. Il monte jusqu'à huit joueurs, deux de plus que Wizard.</li>
+<li><strong>Skull King</strong> garde l'esprit du décompte des Magiciens (dix points perdus par pli d'écart) mais paie vingt points par pli annoncé, compte un pari de zéro à dix points par carte de la manche, et fait montrer les paris tous ensemble, avec les doigts, et remplace Magiciens et Fous par des pirates, des sirènes, une Tigresse et le Skull King. Il monte jusqu'à huit joueurs, deux de plus que Wizard.</li>
 <li><strong>Pili Pili</strong>, sorti en 2025 chez ATM Gaming, supprime les couleurs (cinquante-cinq cartes numérotées) et change la règle à chaque manche avec des cartes Mission.</li>
 <li><strong>Cat in the Box</strong>, publié en France par Matagot, laisse chacun déclarer la couleur de sa carte au moment de la poser : un casse-tête pour habitués, déconseillé à une table qui découvre les plis.</li>
 </ul>

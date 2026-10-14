@@ -155,7 +155,7 @@ export const GAME_LINKS = {
     year: 2020
   },
   'pili-pili': {
-    // Pas de fiche BoardGameGeek trouvée : la fiche renvoie vers la boutique.
+    bgg: 'https://boardgamegeek.com/boardgame/453584/pili-pili',
     shop: 'https://www.philibertnet.com/fr/atm-gaming/158493-pili-pili-3770011991860.html',
     designer: 'Ben et JB',
     year: 2025

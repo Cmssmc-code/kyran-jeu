@@ -172,11 +172,11 @@ export default {
 <tr><td><strong>À 8 et plus</strong></td><td>Codenames</td><td>Saboteur (jusqu’à 10), Dobble (jusqu’à 8)</td><td>Les équipes et les tours simultanés évitent d’attendre son tour dix minutes.</td></tr>
 <tr><td><strong>Sans préparation</strong></td><td>Dobble</td><td>Coup, Just One</td><td>Une boîte qu’on ouvre et qu’on joue sans trier de cartes ni lire de livret.</td></tr>
 <tr><td><strong>En 15 minutes</strong></td><td>Coup</td><td>Dobble, une manche de Codenames</td><td>Trois parties dans le temps d’un seul jeu principal : la revanche est immédiate.</td></tr>
-<tr><td><strong>Avec des amis qui n’aiment pas les jeux</strong></td><td>Just One</td><td>Dobble, Dixit</td><td>Coopératif ou sans bonne réponse : personne ne se sent jugé sur sa stratégie.</td></tr>
+<tr><td><strong>Avec des amis qui n’aiment pas les jeux</strong></td><td>Just One</td><td>Dobble, Dixit</td><td>Pas de stratégie à maîtriser : on participe dès le premier tour sans se sentir jugé.</td></tr>
 </tbody>
 </table>
 </div>
-<p>Au-delà de dix personnes, aucune boîte de cette liste ne suffit : séparez le groupe en deux tables ou passez aux <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a>.</p>`
+<p>Au-delà de dix personnes, seul Codenames tient encore en grandes équipes : sinon, séparez le groupe en deux tables ou passez aux <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a>.</p>`
     },
     {
       heading: 'Trois programmes de soirée prêts à l’emploi',

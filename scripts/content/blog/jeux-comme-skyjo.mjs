@@ -19,7 +19,7 @@ export default {
 <li><strong>Format :</strong> 2 à 8 joueurs, dès 8 ans, environ 30 minutes.</li>
 <li><strong>Matériel :</strong> 150 cartes de -2 à 12 (5 cartes -2, 10 cartes -1, 15 cartes 0, puis 10 cartes de chaque valeur de 1 à 12).</li>
 <li><strong>But :</strong> garder le total le plus bas sur une grille de douze cartes ; la partie s’arrête quand un joueur atteint 100 points, et le plus petit total gagne.</li>
-<li><strong>Versions :</strong> <strong>Skyjo Action</strong> (2019) ajoute des cartes Action et des cartes Étoile pour le même public ; <strong>Skyjo Junior</strong> remplace les chiffres par des fruits pour les plus jeunes ; une édition Voyage existe aussi.</li>
+<li><strong>Versions :</strong> <strong>Skyjo Action</strong> (2019) ajoute des cartes Action et des cartes Étoile pour le même public ; <strong>Skyjo Junior</strong> est illustré de fruits pour les plus jeunes ; une édition Voyage existe aussi.</li>
 <li><strong>Succès :</strong> selon Wikipédia, plus de 3 millions d’exemplaires vendus en France en 2024.</li>
 </ul>
 <p>Sources : <a class="text-link" href="https://magilano.com/products/skyjo" rel="noopener">fiche officielle Magilano</a> et <a class="text-link" href="https://fr.wikipedia.org/wiki/Skyjo" rel="noopener">article Skyjo de Wikipédia</a>.</p>

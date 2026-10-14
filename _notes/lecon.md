@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-14 — Accueil mobile : texte fantôme sous l'en-tête, boutons du hero de 200 px
+
+- **Symptôme :** sur mobile, le texte du hero restait lisible à travers l'en-tête et la barre du bas au défilement ; les boutons « Commander le jeu » et « Comment on joue ? » faisaient 200 px de haut (gros ovale jaune).
+- **Cause :** `view-transition-name` posé sur `kyran-header` (`css/motion.css`) en fait une racine de flou : les `backdrop-filter` de l'en-tête et de la barre mobile (enfants de `kyran-header`) ne voyaient plus la page, et leurs fonds à 92-97 % laissaient passer le texte. Les boutons : `flex: 1 1 200px` dans `.hero-actions` passé en colonne sous 540 px, la base devient la hauteur.
+- **Correctif :** fonds opaques pour l'en-tête et la barre mobile (`style.css`), `flex: 0 0 auto` sous 540 px (`css/home.css`). Règle : ne jamais compter sur `backdrop-filter` sous un élément qui a `view-transition-name`, un filtre ou une opacité ; une base `flex` en px se relit chaque fois que le conteneur passe en colonne.
+
 ### 2026-10-12 — Boutique : port affiché 2,99 €, facturé 3,99 € par Stripe ; quantité perdue
 
 - **Symptôme :** `/commander.html` annonçait 12,98 € (9,99 € + 2,99 € de port) ; la page Stripe facturait 13,98 € (port 3,99 €). La quantité choisie sur le site n'arrivait pas à Stripe (« Qté 1 »). La description du produit sur Stripe disait encore « 55 cartes, livret de règles ».

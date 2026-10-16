@@ -514,7 +514,7 @@ const BLOG_ITEMS = [
     "title": "10 jeux comme Skyjo : les meilleures alternatives en 2026",
     "category": "Alternatives",
     "date": "2026-05-01",
-    "readMinutes": 17,
+    "readMinutes": 18,
     "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, Skyjo Action et Junior, 5 variantes de règles et Skyjo avec un jeu de 52 cartes classique.",
     "image": "/blog/images/skyjo.jpg",
     "webp": "/blog/images/skyjo.webp",

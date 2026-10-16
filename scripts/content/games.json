@@ -337,5 +337,25 @@
     "image": false,
     "designer": "Ben et JB",
     "year": 2025
+  },
+  "cabo": {
+    "name": "Cabo",
+    "players": "2 à 4",
+    "duration": "< 20 min",
+    "age": "8+",
+    "price": "~11 €",
+    "image": false,
+    "designer": "Mandy Henning et Melissa Limes",
+    "year": 2010
+  },
+  "papayoo": {
+    "name": "Papayoo",
+    "players": "3 à 8",
+    "duration": "~30 min",
+    "age": "7+",
+    "price": "~15 €",
+    "image": false,
+    "designer": null,
+    "year": null
   }
 }

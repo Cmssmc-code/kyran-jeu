@@ -26,14 +26,14 @@ export default {
 <p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
 <h3>Ce que vous retenez de Skyjo</h3>
 <ul>
-<li><strong>Le score à garder bas.</strong> Éviter les grosses valeurs et cumuler le moins de points possible au fil des manches : No Thanks !, 6 qui prend ! et Llama fonctionnent sur ce principe.</li>
-<li><strong>Le pari sur l’inconnu.</strong> Retourner une carte sans savoir ce qu’elle vaut, ou préférer la défausse à la pioche : Lost Cities reprend ce dilemme, Llama garde le risque de la main, Love Letter le réduit à une seule carte en main.</li>
+<li><strong>Le score à garder bas.</strong> Éviter les grosses valeurs et cumuler le moins de points possible au fil des manches : No Thanks !, 6 qui prend !, Llama, Cabo et Papayoo fonctionnent sur ce principe.</li>
+<li><strong>Le pari sur l’inconnu.</strong> Retourner une carte sans savoir ce qu’elle vaut, ou préférer la défausse à la pioche : Cabo et Lost Cities reprennent ce dilemme, Llama garde le risque de la main, Love Letter le réduit à une seule carte en main.</li>
 <li><strong>La grande tablée.</strong> Skyjo accepte jusqu’à huit joueurs. Si ce critère compte, tournez-vous vers 6 qui prend ! ou Uno, qui montent tous deux à dix.</li>
 <li><strong>L’absence d’élimination.</strong> Personne ne quitte la table avant la fin. Presque tous les jeux de la liste respectent cette règle ; seul Love Letter élimine en cours de manche, compensé par des manches de quelques minutes ; dans KYRAN, la partie s’arrête dès qu’un joueur n’a plus de vies.</li>
 </ul>
 <h3>Trois pièges à éviter</h3>
 <p><strong>Chercher un clone.</strong> Une part de la chance de Skyjo se joue au départ, au moment où l’on retourne ses premières cartes. Plusieurs alternatives, comme Lost Cities, Parade ou KYRAN, demandent davantage de lecture et peuvent déstabiliser une famille venue chercher un jeu détendu.</p>
-<p><strong>Oublier l’effectif.</strong> Skyjo se joue de 2 à 8 ; Lost Cities exige exactement deux joueurs, Love Letter en accepte de 2 à 4 (édition classique ; 2 à 6 dans l’édition Z-Man de 2025), No Thanks ! de 3 à 7, KYRAN de 3 à 6. Vérifiez la plage avant l’achat plutôt qu’en sortant la boîte un soir de fête.</p>
+<p><strong>Oublier l’effectif.</strong> Skyjo se joue de 2 à 8 ; Cabo de 2 à 4 (édition française), Papayoo de 3 à 8 ; Lost Cities exige exactement deux joueurs, Love Letter en accepte de 2 à 4 (édition classique ; 2 à 6 dans l’édition Z-Man de 2025), No Thanks ! de 3 à 7, KYRAN de 3 à 6. Vérifiez la plage avant l’achat plutôt qu’en sortant la boîte un soir de fête.</p>
 <p><strong>Sous-estimer la solution gratuite.</strong> Si l’envie de changer vient de la répétition, une <strong>règle alternative pour Skyjo</strong> coûte moins cher qu’un nouveau jeu. La section dédiée, plus bas, propose cinq ajustements à tester avec le matériel que vous possédez déjà.</p>
 <p>Pour trancher : gardez le score et la vitesse avec Llama, la grande tablée avec 6 qui prend !, le duo avec Lost Cities, et une dose de tactique avec KYRAN ou Parade.</p>`
   },
@@ -93,21 +93,21 @@ export default {
       ]
     },
     {
-      id: 'the-mind',
-      type: 'Coopératif',
-      pick: 'Pour les tables lassées de compter leurs points',
+      id: 'cabo',
+      type: 'Mémoire, échange',
+      pick: 'Pour qui aime les cartes cachées à échanger, à deux, trois ou quatre',
       paragraphs: [
-        `Changement de cap complet : plus de score individuel, l’équipe affronte la pioche. Chacun reçoit des cartes de 1 à 100 et il faut les poser dans l’ordre croissant, sans parler ni se faire de signe. Le point commun avec Skyjo est la tension du chiffre inconnu : on hésite sur sa plus petite carte comme on hésite devant une carte retournée, sauf qu’ici l’erreur coûte une vie à tous.`,
-        `À réserver aux groupes qui veulent changer de registre. La partie ne fonctionne que si chacun joue le jeu du silence, et un joueur sceptique peut la faire tourner à vide. Il se joue de 2 à 4, sans mise en place, par niveaux courts qui se succèdent. Excellent en soi, mais c’est le plus éloigné des sensations de Skyjo.`
+        `Cabo est le cousin le plus direct de Skyjo : chacun a quatre cartes face cachée devant soi, n’en a regardé que deux au départ, et cherche à finir avec le total le plus bas. À son tour, on pioche ou l’on prend la défausse pour échanger l’une de ses cartes, en se souvenant de ce qu’on a vu. La mémoire remplace ici le hasard du retournement de Skyjo. Selon Wikipédia, le jeu prolonge un ancien jeu de cartes appelé Golf.`,
+        `Autre différence : c’est un joueur qui arrête la manche en annonçant « Cabo », après quoi les autres jouent un dernier tour avant de retourner leurs cartes. Un appel raté coûte cher (10 points dans la seconde édition, d’après Wikipédia). Comptez de 2 à 4 joueurs dans l’édition française d’Origames, moins de 20 minutes et un âge conseillé de 8 ans. Vérifiez la disponibilité : la fiche de Ludum le signalait en rupture de stock lors de notre relevé du 16 octobre 2026.`
       ]
     },
     {
-      id: 'sushi-go',
-      type: 'Draft rapide',
-      pick: 'Pour les familles qui veulent des cartes à combiner sans attente',
+      id: 'papayoo',
+      type: 'Plis, points à éviter',
+      pick: 'Pour les tablées de 3 à 8 qui veulent fuir les points aux plis',
       paragraphs: [
-        `Sushi Go! garde de Skyjo la comptabilité de cartes alignées devant soi, mais change leur source : au lieu de piocher, chacun choisit une carte dans sa main puis passe le reste à son voisin. La partie se déroule en trois manches, et l’on gagne en assemblant des ensembles de plats qui rapportent plus lorsqu’ils sont complets.`,
-        `Aucune prise de risque sur des cartes cachées, mais un vrai plaisir à lire son voisin : quel plat va-t-il me laisser ? Les dessins mignons et les règles lisibles en font un bon relais pour les plus jeunes, dès 8 ans, de 2 à 5 joueurs. Prévoyez une explication des combinaisons la première fois, c’est là que les débutants hésitent.`
+        `Papayoo garde de Skyjo l’objectif, finir avec le moins de points, mais passe aux plis. Les cartes de la couleur Payoo valent leur numéro, de 1 à 20, et un dé à huit faces, lancé à chaque manche, désigne le 7 qui devient le Papayoo, à 40 points. Avant de jouer, chacun passe trois à cinq cartes à son voisin de gauche, selon le nombre de joueurs : on se débarrasse des points qu’on redoute, et l’on reçoit ceux dont l’autre ne voulait plus.`,
+        `La règle prévoit de 3 à 8 joueurs et environ quatre manches, fixées avant de commencer. Les fiches de Philibert et d’Esprit Jeu indiquent un âge conseillé de 7 ans et une demi-heure de jeu ; Philibert le vend 14,90 €. Il demande de connaître le principe du pli, et de fournir la couleur demandée quand on le peut, ce que Skyjo n’exige pas : c’est le choix pour une table qui veut changer de mécanique en gardant le même but, pas un remplaçant fidèle de la grille.`
       ]
     },
     {
@@ -174,13 +174,13 @@ export default {
   },
   verdict: {
     heading: 'L’alternative à Skyjo que nous retiendrions',
-    html: `<p>Si vous ne deviez en retenir qu’un, prenez <strong>Llama</strong> : il conserve la vitesse de Skyjo, le score à tenir bas et le dilemme entre risque et sécurité, pour une douzaine d’euros et dans une boîte qui voyage. Les groupes qui veulent davantage de réflexion iront vers <strong>KYRAN</strong> (à trois joueurs ou plus, jamais à deux) ou Parade ; ceux qui dépassent huit joueurs, vers 6 qui prend !. À deux, Lost Cities est la seule option cohérente.</p><p>Le moins pertinent pour un fan de Skyjo reste The Mind : très bon jeu, mais il ne prolonge aucune des sensations qui vous ont fait aimer la grille. À essayer par curiosité, pas comme remplaçant.</p>`
+    html: `<p>Si vous ne deviez en retenir qu’un, prenez <strong>Llama</strong> : il conserve la vitesse de Skyjo, le score à tenir bas et le dilemme entre risque et sécurité, pour une douzaine d’euros et dans une boîte qui voyage. Les groupes qui veulent davantage de réflexion iront vers <strong>KYRAN</strong> (à trois joueurs ou plus, jamais à deux) ou Parade ; ceux qui dépassent huit joueurs, vers 6 qui prend !. À deux, Lost Cities est la seule option cohérente.</p><p>Cabo est le cousin le plus direct de la grille, avec ses cartes cachées à échanger et son score bas, mais son édition française se trouve moins facilement : vérifiez la disponibilité avant de compter dessus. Papayoo est le plus éloigné des sensations de Skyjo : un jeu de plis où l’on évite les points, à essayer pour changer de mécanique, pas comme remplaçant.</p>`
   },
   conclusion: `<p>Un jeu de remplacement ne dispense pas de varier les formats : alterner une soirée à score bas à minimiser et une soirée de lecture adverse entretient mieux l’envie qu’un clone. Commencez par une variante de règles ou par Llama pour tester l’appétit de votre table, puis ajoutez un jeu de plis si elle en redemande. Pour comparer ces jeux entre eux, notre <a class="text-link" href="/blog/jeux-plis-comparatif.html">comparatif des jeux de plis</a> est un bon point de départ.</p>`,
   faq: [
     {
       q: 'Quel jeu ressemble le plus à Skyjo ?',
-      a: `Llama est le plus proche par le rythme, l’accumulation de pénalités et la décision de piocher ou de s’arrêter. No Thanks ! repose lui aussi sur un score à garder bas, sans grille. Si c’est le confort d’un jeu simple sur une grande table que vous cherchez, 6 qui prend ! monte à dix joueurs.`
+      a: `Llama est le plus proche par le rythme, l’accumulation de pénalités et la décision de piocher ou de s’arrêter. Cabo est le cousin le plus direct : cartes cachées à échanger et score bas, mais il se joue de 2 à 4. No Thanks ! repose lui aussi sur un score à garder bas, sans grille. Si c’est le confort d’un jeu simple sur une grande table que vous cherchez, 6 qui prend ! monte à dix joueurs.`
     },
     {
       q: 'Existe-t-il un jeu comme Skyjo pour deux joueurs ?',

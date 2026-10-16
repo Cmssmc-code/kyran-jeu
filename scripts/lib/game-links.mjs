@@ -6,6 +6,16 @@
  * Utilisé par generate-blog.mjs pour liens et JSON-LD.
  */
 export const GAME_LINKS = {
+  cabo: {
+    wiki: 'https://en.wikipedia.org/wiki/Cabo_(game)',
+    shop: 'https://www.ludum.fr/jeux-de-strategie-en-famille/cabo-2557',
+    designer: 'Mandy Henning et Melissa Limes',
+    year: 2010
+  },
+  papayoo: {
+    shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=papayoo',
+    year: null
+  },
   skyjo: {
     bgg: 'https://boardgamegeek.com/boardgame/204135/skyjo',
     wiki: 'https://fr.wikipedia.org/wiki/Skyjo',

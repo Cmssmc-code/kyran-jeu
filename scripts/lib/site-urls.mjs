@@ -63,7 +63,7 @@ export const STATIC_PAGES = [
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
     </image:image>`
   },
-  { path: '/tarot-africain.html', title: 'Tarot Africain : règles simples, 3 à 5 joueurs + feuille PDF', section: 'Guides' },
+  { path: '/tarot-africain.html', title: 'Tarot Africain (Whist 22) : règles + feuille de score PDF', section: 'Guides' },
   { path: '/tarot-africain-a-3-joueurs.html', title: 'Tarot Africain à 3 joueurs : cartes par manche et exemple', section: 'Guides' },
   { path: '/whist-22.html', title: 'Whist 22 : règles du jeu, origine du nom et jeux proches', section: 'Guides' },
   {

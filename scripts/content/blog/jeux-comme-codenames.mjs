@@ -2,7 +2,7 @@ export default {
   slug: 'jeux-comme-codenames',
   title: '8 jeux comme Codenames : équipes, indices et déduction',
   shortTitle: 'Jeux comme Codenames',
-  metaTitle: 'Jeux comme Codenames : 8 alternatives de 2 à 10 joueurs (2026)',
+  metaTitle: 'Jeux comme Codenames : 8 alternatives de 2 à 10 joueurs',
   description: `Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).`,
   category: 'Alternatives',
   date: '2026-06-04',

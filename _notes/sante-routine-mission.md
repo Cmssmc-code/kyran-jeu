@@ -7,8 +7,8 @@ Portage de la routine « Santé quotidienne de Majordia » (dépôt `Cmssmc-code
 
 Demande du propriétaire (2026-10-19) : vérifier chaque nuit la santé générale de **kyran-jeu.fr** (site statique
 GitHub Pages, serveur webhook Railway `kyran-webhook`, paiement Stripe, e-mails, Auto-Heal, workflows GitHub,
-initiation jouable, blog), **tout réparer directement si quelque chose ne va pas**, et publier un rapport dans le
-Google Drive de l'organisation, lisible par tous les agents de l'équipe Claude.
+initiation jouable, blog), **tout réparer directement si quelque chose ne va pas**, et écrire le rapport **dans le
+dépôt** (décision du propriétaire, 2026-10-19 : ni Google Drive ni Gmail), lisible par tous les agents.
 
 Lire avant tout : `CLAUDE.md`, `AGENTS.md`, `_notes/lecon.md` (en entier, il est court), `_notes/memoire.md`
 (§ 2 architecture et build, § 3 serveur, § 7 workflows, § 8 Auto-Heal, § 14 routines), `docs/AUTO-HEAL.md` et les
@@ -83,11 +83,12 @@ npm ci --no-audit --no-fund   # en arrière-plan (Node 22 requis pour node --tes
 ```
 
 - SHA de référence « il y a 24 h » : `git rev-list -1 --before="24 hours ago" origin/main`.
-- Outils : `ToolSearch` pour `mcp__github__*` (PR, runs de workflows, issues), Railway (`list-deployments`,
-  `get-logs`, `http-error-rate`, `http-response-time`, `get-service-metrics`), `PushNotification`. Dans la
-  session dédiée, les outils des connecteurs peuvent apparaître sous un préfixe technique (`mcp__<uuid>__get-logs`) :
-  chercher par nom d'outil (constaté pour Majordia le 2026-10-19). Google Drive et Google Docs n'y sont présents
-  qu'une fois le connecteur connecté sur claude.ai.
+- Outils : `ToolSearch` pour `mcp__github__*` (PR, runs et journaux de workflows, `actions_run_trigger`, issues),
+  Railway (`list-deployments`, `describe-environment`, `get-service-config`, `get-logs`, `http-error-rate`,
+  `http-response-time`, `get-service-metrics`), `PushNotification`. Dans la session dédiée, les outils des
+  connecteurs peuvent apparaître sous un préfixe technique (`mcp__<uuid>__get-logs`) : chercher par nom d'outil
+  (constaté pour Majordia le 2026-10-19). Railway absent de la session : la partie serveur se limite à `/health`
+  et s'écrit « Railway non vérifié : connecteur absent ». Ni Gmail ni Google Drive : inutiles ici.
 - Playwright : Chromium préinstallé, `executablePath: '/opt/pw-browsers/chromium'` ; ne pas lancer
   `playwright install`.
 
@@ -131,8 +132,13 @@ Projet `365539aa-a674-49b3-845f-b0793b952dbd`, environnement `production` (`2346
 
 - `curl -s https://kyran-webhook-production.up.railway.app/health` : `status` `ok`, `hasWebhookSecret` `true`,
   `adminEnabled` `true`, `emailTransport` attendu (`resend`).
-- `list-deployments` : dernier déploiement `SUCCESS`, SHA = tête de `main`. `CRASHED` / `FAILED` →
-  `get-deployment-diagnosis`, journaux de build, réparation.
+- Configuration relevée le 2026-10-19 (`get-service-config`) : racine `/server`, `watchPatterns` `/server/**`,
+  démarrage `node server.js`, healthcheck `/health`, 1 réplique en `us-east4`, volume `kyran-incidents` (500 Mo)
+  sur `/data`. Toute dérive de cette configuration se signale.
+- `list-deployments` : un push qui ne touche pas `server/` donne un déploiement `SKIPPED` (normal). Le dernier
+  `SUCCESS` doit porter le SHA du dernier commit qui touche `server/` (`git log -1 --format=%H origin/main --
+  server/`). `CRASHED` / `FAILED`, ou `SUCCESS` plus ancien que ce commit → `get-deployment-diagnosis`, journaux de
+  build, réparation.
 - `get-logs` sur 24 h, par mot-clé (`error`, `warn`, `[AutoHeal]`, `uncaught`, `unhandled`) : regrouper par
   message ; un avertissement répété à chaque démarrage est un bug.
 - `http-error-rate` et `http-response-time` sur 24 h : 5xx > 1 % ou p95 en nette hausse par rapport au run
@@ -150,9 +156,14 @@ Projet `365539aa-a674-49b3-845f-b0793b952dbd`, environnement `production` (`2346
 
 ### 5. Erreurs applicatives et Auto-Heal (15 min)
 
-- Workflow « Hourly Auto-Heal » (`auto-heal-hourly.yml`) sur 24 h : 24 passages attendus ; job `check` vert ;
-  job `heal` lancé ou non, et pourquoi. Un `check` rouge (OIDC, `KYRAN_API_URL`, serveur injoignable) = pipeline
-  aveugle : priorité haute.
+- Workflow « Hourly Auto-Heal » (`auto-heal-hourly.yml`) sur 24 h : GitHub saute souvent des créneaux planifiés
+  (quelques passages par jour sont normaux, aucun en 24 h ne l'est) ; job `check` vert ; job `heal` vert quand il
+  tourne. Un run rouge = pipeline aveugle : priorité haute, lire le journal du job (`get_job_logs`). En cas de
+  doute sur l'auth, lancer le test sans génération facturée : `actions_run_trigger` `run_workflow`,
+  `auto-heal-hourly.yml`, `ref` `main`, entrée `smoke_test: true` (attention : sur une autre branche que `main`, la
+  fédération d'identité Anthropic peut refuser le jeton). Auth Anthropic : WIF d'abord, secret `ANTHROPIC_API_KEY`
+  en repli seulement (`lecon.md`, 19/10). Les deux refusés → secret ou règle de fédération à refaire par le
+  propriétaire : « À décider » avec les étapes, et alerte.
 - Incidents : le relevé `GET /api/auto-heal/incidents` exige le jeton OIDC du workflow ou `CRON_SECRET`, absents
   de la session ; lire donc les journaux du job `check` (incidents en attente, quota) et les logs Railway
   `[AutoHeal]`. Incident `failed` (3 tentatives) ou en attente depuis plus de 24 h → cause racine et correctif
@@ -194,10 +205,8 @@ Projet `365539aa-a674-49b3-845f-b0793b952dbd`, environnement `production` (`2346
 
 ### 9. Rapport (15 min)
 
-**a) Google Drive (rapport pour l'équipe).** Dossier « KYRAN - Santé » à la racine du Drive (le créer s'il
-n'existe pas ; le propriétaire le partage avec l'organisation). Un document par run nommé
-`Santé KYRAN AAAA-MM-JJ` : Google Doc si le connecteur sait en créer, sinon fichier `.md` téléversé sous ce nom.
-Contenu, en français simple :
+**a) Rapport complet dans le dépôt.** Un fichier par run : `docs/rapports/sante/AAAA-MM-JJ.md` (les `.md` ne sont
+pas publiés sur le site, `pages.yml`). Contenu, en français simple :
 
 1. Verdict en une ligne : **OK**, **À surveiller** ou **Incident** (+ ce qui est encore cassé).
 2. Tableau `Domaine | État | Constat (preuve) | Action` : Site, Pages et workflows, Serveur Railway, Paiements et
@@ -208,11 +217,8 @@ Contenu, en français simple :
 6. Points ouverts des runs précédents et leur suivi.
 7. SHA de `main` contrôlé, heure de début et durée du run.
 
-Connecteur Google Drive absent de la session : écrire « Rapport Drive non publié : connecteur Google Drive absent »
-en tête du journal et du message final, sans le remplacer par autre chose.
-
 **b) Journal du dépôt.** Entrée en tête de [`suivi-sante.md`](suivi-sante.md) : date, verdict, tableau court,
-réparations (PR), points ouverts, lien du document Drive. Dans la PR du run, ou PR
+réparations (PR), points ouverts, lien vers le rapport complet. Rapport et journal dans la PR du run, ou PR
 `docs(sante): journal du run AAAA-MM-JJ` si aucune réparation ; build, tests, fusion avant 06:30.
 
 **c) Alerte.** Incident encore ouvert à la fin du run (site ou paiement cassé, webhook Stripe en échec, sécurité) :

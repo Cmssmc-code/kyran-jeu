@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  isForbiddenEdit, isForbiddenRead, repoPath, redactSecrets, parseVerdict, insertLecon, buildIncidentPrompt
+  isForbiddenEdit, isForbiddenRead, repoPath, redactSecrets, parseVerdict, insertLecon, buildIncidentPrompt,
+  selectAnthropicAuth
 } from '../auto-heal-worker.mjs';
 
 test('périmètre : fichiers sensibles interdits à l\'agent', () => {
@@ -52,4 +53,21 @@ test('prompt d\'incident compact et sans secret', () => {
   assert.match(p, /JS-ABC123/);
   assert.match(p, /\/regle\.html/);
   assert.doesNotMatch(p, /supersecret|zzz/);
+});
+
+test('auth Anthropic : WIF d\'abord, clé de repli seulement si WIF échoue', async () => {
+  const ok = async () => {};
+  const ko = async () => { throw new Error('401 invalid'); };
+
+  const wif = { ANTHROPIC_API_KEY_FALLBACK: 'k-fallback' };
+  assert.equal(await selectAnthropicAuth(ok, wif), 'wif');
+  assert.equal(wif.ANTHROPIC_API_KEY, undefined);
+
+  const repli = { ANTHROPIC_API_KEY_FALLBACK: 'k-fallback', ANTHROPIC_IDENTITY_TOKEN_FILE: '/tmp/x' };
+  assert.equal(await selectAnthropicAuth(ko, repli), 'key-fallback');
+  assert.equal(repli.ANTHROPIC_API_KEY, 'k-fallback');
+  assert.equal(repli.ANTHROPIC_IDENTITY_TOKEN_FILE, undefined);
+
+  await assert.rejects(selectAnthropicAuth(ko, {}), /401/);
+  assert.equal(await selectAnthropicAuth(ko, { ANTHROPIC_API_KEY: 'k' }), 'key');
 });

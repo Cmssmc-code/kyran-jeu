@@ -18,6 +18,7 @@
 6. idée cadeau jeu de cartes moins de 15 euros
 7. jeu comme Skull King
 8. c'est quoi le jeu KYRAN
+9. jeu de cartes de plis français récent (2026)
 
 ## Repères Bing (Copilot)
 
@@ -25,7 +26,16 @@ Bing Webmaster Tools > AI Performance donne les citations Copilot réelles. Rele
 (audit du 14/10/2026, 3 mois) : 600 citations, dont 257 pour `/blog/jeux-3-joueurs.html` ;
 requêtes « jeux à 3 joueur » (112), « jeux 3 joueurs » (70), « jeu a faire a 3 » (28).
 
-## Relevés
+## Relevés de la routine SEO (approximation WebSearch)
+
+La routine nocturne (`_notes/seo-routine-mission.md` § 3) passe 3 requêtes par nuit (les 9 le lundi) par
+WebSearch, le moteur utilisé par Claude : c'est une approximation, pas la réponse de ChatGPT, Perplexity, Gemini
+ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste plus d'une fois par mois.
+
+| Date | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total C+M | Cités à la place |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+
+## Relevés manuels
 
 | Mois | Requête | ChatGPT | Perplexity | Gemini | Copilot | Claude | Remarques |
 |---|---|---|---|---|---|---|---|

@@ -1,4 +1,10 @@
-# Fiche Wikidata à créer : KYRAN (jeu de cartes)
+# Fiche Wikidata : KYRAN (jeu de cartes)
+
+> **Mise à jour du 2026-10-19 : l'élément existe déjà, [Q141623753](https://www.wikidata.org/wiki/Q141623753)**
+> (libellés fr et en ; déclarations P31, P2093, P577, P1872, P1873, P856 site officiel, P407 ; aucune
+> référence, aucun lien de site). Ne pas en créer un second. Restent : ajouter des références (BoardGameGeek,
+> Ludovox, BoardGamesFlix) aux déclarations (compte Wikidata de Corentin), et citer l'élément dans les `sameAs`
+> du site (routine SEO, `_notes/seo/backlog.md`). La suite de ce fichier est la préparation du 2026-10-14.
 
 > Préparée le 2026-10-14 (audit SEO/GEO, § G1). **À créer par Corentin** sur
 > https://www.wikidata.org/wiki/Special:NewItem (compte Wikidata requis). Wikidata exige des

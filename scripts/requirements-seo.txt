@@ -1,0 +1,4 @@
+# Rapports SEO en lecture seule (scripts/seo-kpi-daily.py, scripts/seo-health.py).
+# pip install -r scripts/requirements-seo.txt
+google-api-python-client>=2.100
+google-auth>=2.20

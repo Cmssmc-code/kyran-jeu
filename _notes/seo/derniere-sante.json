@@ -1,0 +1,178 @@
+{
+ "date": "2026-10-19",
+ "resume": {
+  "date": "2026-10-19",
+  "urls_sitemap": 50,
+  "urls_testees": 50,
+  "http_200": 50,
+  "redirections": 0,
+  "http_4xx": 0,
+  "http_5xx": 0,
+  "erreurs_reseau": 0,
+  "noindex_dans_sitemap": 0,
+  "canonical_faux": 0,
+  "titre_absent": 0,
+  "titre_trop_long": 0,
+  "description_absente": 0,
+  "description_hors_limites": 0,
+  "h1_pas_unique": 0,
+  "hreflang_absent": 0,
+  "jsonld_invalide": 0,
+  "og_image_absente": 0,
+  "ttfb_median_ms": 186,
+  "html_median_ko": 61,
+  "robots_ok": 1,
+  "robots_ia_bloques": "",
+  "llms_txt_ok": 1,
+  "gsc_inspectees": 20,
+  "gsc_indexees": 18,
+  "psi_perf_mobile_accueil": "",
+  "crux_lcp_p75_ms": "",
+  "crux_inp_p75_ms": "",
+  "crux_cls_p75": ""
+ },
+ "anomalies": [],
+ "inspection": [
+  {
+   "url": "https://kyran-jeu.fr/",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-07T22:34:48Z",
+   "canonical_google": "https://kyran-jeu.fr/"
+  },
+  {
+   "url": "https://kyran-jeu.fr/regle.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:08:57Z",
+   "canonical_google": "https://kyran-jeu.fr/regle.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/tarot-africain.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:06:51Z",
+   "canonical_google": "https://kyran-jeu.fr/tarot-africain.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/commander.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:08:57Z",
+   "canonical_google": "https://kyran-jeu.fr/commander.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/",
+   "verdict": "NEUTRAL",
+   "couverture": "Discovered - currently not indexed",
+   "derniere_exploration": null,
+   "canonical_google": null
+  },
+  {
+   "url": "https://kyran-jeu.fr/minijeu.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-08T11:06:56Z",
+   "canonical_google": "https://kyran-jeu.fr/minijeu.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/faq.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-04T13:22:35Z",
+   "canonical_google": "https://kyran-jeu.fr/faq.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/idee-cadeau.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:04:56Z",
+   "canonical_google": "https://kyran-jeu.fr/idee-cadeau.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/commander.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:08:57Z",
+   "canonical_google": "https://kyran-jeu.fr/commander.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/alternatives-wizard.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-11T11:39:21Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/alternatives-wizard.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-09T10:58:09Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html",
+   "verdict": "NEUTRAL",
+   "couverture": "Crawled - currently not indexed",
+   "derniere_exploration": "2026-07-21T15:24:57Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-draft-encheres.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-09-27T22:15:56Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-draft-encheres.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/regle.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:08:57Z",
+   "canonical_google": "https://kyran-jeu.fr/regle.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/idee-cadeau.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:04:56Z",
+   "canonical_google": "https://kyran-jeu.fr/idee-cadeau.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-07T22:35:58Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-09-17T18:25:42Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-14T08:19:01Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-comme-skull-king.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-18T13:04:44Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-comme-skull-king.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/whist-22.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-11T11:33:11Z",
+   "canonical_google": "https://kyran-jeu.fr/whist-22.html"
+  }
+ ],
+ "pagespeed": {}
+}

@@ -1,5 +1,7 @@
 # Fiches de Soumission Officielles : Annuaires & Bases de Données Ludiques (Backlinks SEO)
 
+> **Ne pas copier les textes de ce fichier** (audit du 19/10/2026) : ils contiennent des faits faux (pouvoirs inventés, « Player Elimination », « manche finale », « Dark & Gold »). Textes vérifiés : [`_notes/outreach/textes-fiches.md`](_notes/outreach/textes-fiches.md).
+
 Guide complet pour inscrire le jeu de cartes **KYRAN** sur les 4 plateformes ludiques incontournables et obtenir des backlinks d'autorité do-follow.
 
 ---

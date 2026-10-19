@@ -24,7 +24,7 @@
 | P2 | `seo-keywords.json` | 11 pages sans cible ; 9 requêtes partagées entre pages | Une cible par page, une page par requête | 2026-10-19 |
 | P3 | GEO Tarot africain | Les AI Overviews reprennent `tarot-africain.html` sans nommer KYRAN | Phrase-réponse en tête qui nomme KYRAN comme héritier moderne ; faits datés | 2026-10-19 |
 | P3 | Anciennes URL encore classées | `jeux-comme-hanabi`, `jeux-cartes-5-joueurs`, `jeux-comme-the-crew`, `jeux-trahison-cachee` : 17 clics sur 28 j ; ChatGPT cite `/comparatif-jeux-plis.html` | Plus aucun lien interne vers elles ; canonical et `meta refresh` vérifiés | 2026-10-19 |
-| P3 | Docs fausses | `NETLINKING_ANNUAIRES.md` (pouvoirs inventés, « Player Elimination », fiche BGG « à créer ») ; `docs/SEO-GEO.md` § 8 (pays de livraison) | Corriger d'après `_notes/memoire.md` § 1 | 2026-10-19 |
+| P3 | Docs fausses | `NETLINKING_ANNUAIRES.md` (pouvoirs inventés, « Player Elimination », fiche BGG « à créer ») ; `docs/SEO-GEO.md` § 8 (pays de livraison) | Corriger d'après `_notes/memoire.md` § 1. 19/10 (PR suivante de #78) : bandeau « ne pas copier » sur `NETLINKING_ANNUAIRES.md`, textes vérifiés dans `_notes/outreach/textes-fiches.md`, genre Wikidata corrigé (Q1191150) ; reste `docs/SEO-GEO.md` § 8 | 2026-10-19 |
 | P4 | Performance | CSS bloquant ~700 ms en 4G lente ; images de l'accueil ~400 Ko sur mobile | Image plus légère, `fetchpriority` ; CSS : « À décider » (design) | 2026-10-19 |
 
 ## Hors périmètre : signalé, non modifié

@@ -14,6 +14,10 @@ Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` �
 (interface), `dojo.css`, visuels tirés des cartes dans `dojo/img/`. Tests : `scripts/test/dojo.test.mjs`. Les `?v=` sont posés par
 `scripts/stamp-dojo.mjs` (inclus dans `npm run build`).
 
+## SEO & GEO : où tout trouver
+
+Tout le référencement de kyran-jeu.fr (Google, Bing, moteurs de réponse IA) est suivi dans **[`_notes/seo/`](_notes/seo/README.md)**. Commencer par [`_notes/seo/README.md`](_notes/seo/README.md) (index du dossier), puis [`base-connaissances.md`](_notes/seo/base-connaissances.md) (état complet : jeu, offre, pages, mots-clés, technique, concurrents, mentions, GEO, règles) et [`backlog.md`](_notes/seo/backlog.md) (priorités). Chiffres jour par jour : [`kpi-quotidiens.csv`](_notes/seo/kpi-quotidiens.csv). Journal nuit après nuit : [`_notes/suivi-seo.md`](_notes/suivi-seo.md). Une routine Claude met tout à jour chaque nuit à minuit selon [`_notes/seo-routine-mission.md`](_notes/seo-routine-mission.md). Tableau partagé : https://claude.ai/code/artifact/5d4cf936-dfeb-4516-bb57-2141b081edee. Toute question ou tâche SEO/GEO (titres, descriptions, sitemap, `llms.txt`, indexation, netlinking, citations IA) part de ce dossier ; après la tâche, mettre à jour la base et le journal.
+
 ## Style de réponse : caveman
 
 Toujours parler comme caveman dans les réponses au user (chat). Phrases courtes. Mots simples.

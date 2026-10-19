@@ -51,11 +51,45 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    conseils d'usage. Même exigence de sérieux : sources fiables réellement ouvertes, aucun chiffre
    ni citation sans source liée, KYRAN mentionné seulement quand il a sa place.
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
-   éditeurs, Philibert…). Faits KYRAN : uniquement le dépôt. Aucun chiffre, prix, règle ou citation
-   sans source liée.
+   éditeurs, Philibert, études, communiqués d'éditeurs, presse spécialisée…). Faits KYRAN : uniquement
+   le dépôt. Aucun chiffre, prix, règle ou citation sans source liée.
+   **Même rigueur que le blog Majordia** (demandé par le propriétaire le 19 octobre 2026 ;
+   référence : `_notes/blog-routine-mission.md` du dépôt Majordia). Règles anti-invention, non
+   négociables :
+   - interdit d'inventer un chiffre, une statistique, une citation, une étude, un nom ou une URL ;
+   - chaque chiffre porte valeur, année, source nommée et lien cliquable vers la page **réellement lue**
+     (jamais un extrait de moteur de recherche) ; une page illisible ne se remplace pas par un site
+     commercial : on retire l'affirmation ou on écrit que la page n'a pas pu être lue ;
+   - un calcul propre n'est permis qu'à partir de chiffres sourcés, avec la méthode indiquée ;
+   - une citation est mot pour mot, avec auteur, fonction, source et lien, sinon on reformule sans
+     guillemets ;
+   - source introuvable ou douteuse : supprimer l'affirmation ; trop de manques : changer de sujet ;
+   - pour chaque donnée, noter valeur, année, source, URL et passage exact (dans la PR).
 5. **Rédiger** au format généré (`scripts/content/blog/<slug>.mjs`), avec une structure propre à
    l'article (le validateur signale le gabarit par défaut), sans jamais éditer le HTML généré.
    KYRAN : réponse honnête, jamais « sans élimination » ni « sans hasard ».
+   **Exigences de fond (toujours)** :
+   - **1 500 mots minimum** (visée 1 800 à 2 500), le validateur le vérifie ;
+   - **des photos** : une image d'en-tête et 2 à 4 images dans le texte, en lien direct avec le sujet,
+     libres de droits (Wikimedia Commons avec licence vérifiée sur la page du fichier, ou visuels du
+     dépôt), chacune avec texte alternatif descriptif et crédit (auteur, lien, licence) ; jamais de
+     logo, d'illustration ou de photo protégés ; regardez chaque image avec l'outil de lecture ;
+   - **des sources** : au moins 5 sources distinctes réellement ouvertes, 4 à 8 liens externes vers
+     elles dans le corps, chacun vérifié (HTTP 200) ;
+   - **GEO** : chaque section commence par une réponse autonome de 1 à 2 phrases ; une définition en
+     une phrase ; chiffres datés et sourcés dans la phrase même ; tableaux ou listes numérotées quand
+     ils servent ; un résumé « à retenir » ; une FAQ ;
+   - **SEO** : le mot-clé principal s'écrit comme les gens le tapent et ouvre `metaTitle` ; une seule
+     intention par page (contrôler la cannibalisation avec `seo-keywords.json`, les serveurs MCP `gsc`
+     et `bing-webmaster`, `docs/MCP_SEO.md`) ; `description` qui promet seulement ce que la page
+     apporte ; 4 à 8 liens internes vers des pages existantes, en chemin canonique ;
+   - **ton** : un joueur qui parle à un autre joueur, vouvoiement, sans remplissage ni tournures
+     génériques d'IA, sans jargon inutile ;
+   - **dynamisme** : un angle, une idée propre, des exemples concrets de table de jeu, pas une liste
+     de fiches interchangeables ; l'envie de l'écrire doit se sentir ;
+   - mention « Dernière vérification des sources : <date> ».
+   **Maillage entrant** : à chaque article neuf, ajouter 1 à 3 liens vers lui depuis des articles
+   proches (dans le corps du texte, jamais en fin de page), et vérifier qu'il n'est pas orphelin.
 6. **Contrôler** : relecture adversariale de chaque fait, liens (200), `node scripts/validate-articles.mjs <slug>`,
    `npm run build`, `npm test`.
 7. **PR** : sources, images (crédit + licence), section « À vérifier par le relecteur », résultat des

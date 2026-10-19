@@ -242,6 +242,15 @@ si aucune action.
 
 ---
 
+## Leçons du chantier « SEO intense » du 19/10/2026
+
+- **Ne jamais additionner les lignes requête × page** pour chiffrer une requête : les ancres `#…` comptent chacune leurs impressions. Pour une requête, interroger la dimension `query` seule (le rapport du 18/10 avait ainsi 1 134 impressions au lieu de 221).
+- **Inspecter aussi les URL hors sitemap** (redirections `meta refresh` de `roster.json`, `/blog/index.html`) : une redirection n'est prise en compte qu'à la réexploration ; une page « Détectée, non indexée » ne se règle pas par des liens internes quand elle en a déjà 50, mais par une demande d'indexation.
+- **IndexNow part avant la mise en ligne** (30 runs sur 30) : ne pas compter sur lui pour une page neuve ; soumettre aussi par l'API Bing après la fin de `pages.yml`.
+- **Lighthouse local** : ajouter `--proxy-server=$HTTPS_PROXY` aux `--chrome-flags` dans le cloud ; 3 passes, garder la médiane ; regarder l'élément LCP réel (`largest-contentful-paint-element`, `lcp-discovery-insight`) avant de toucher au CSS.
+- **Une fois par mois**, audit complet A à K (crawl, performance, données structurées, indexation, Bing/IA, contenu, boutique, conformité, infra, autorité, critique de complétude) avec vérification contradictoire de chaque constat ; consigne et format dans `docs/rapports/seo-intense-2026-10-19.md`.
+- **Vérifier ce que publie `pages.yml`** : `curl -s -o /dev/null -w '%{http_code}' https://kyran-jeu.fr/_notes/seo/kpi-quotidiens.csv` doit répondre 404.
+
 ## Réévaluation des actions passées
 
 Chaque run relit le journal : toute action arrivée à J+14 ou J+28 est mesurée (même requête, même page, même

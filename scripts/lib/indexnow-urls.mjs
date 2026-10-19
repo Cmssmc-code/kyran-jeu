@@ -18,6 +18,11 @@ export function fileToUrl(file) {
   return SITE + '/' + file;
 }
 
+/** Page en noindex (plan du site, pages légales, version imprimable) : ne pas la proposer à l'index. */
+export function isNoindex(html) {
+  return /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+}
+
 /** Page de redirection (meta refresh, scripts/generate-redirects.mjs). */
 export function isRedirectStub(html) {
   return /<meta\s+http-equiv="refresh"/i.test(html);
@@ -53,6 +58,8 @@ export function urlsForChangedFiles(files, root, readOld = null) {
       const html = fs.readFileSync(abs, 'utf8');
       if (isRedirectStub(html)) continue;
       const old = readOld ? readOld(f) : null;
+      // Une page noindex n'est envoyée qu'au moment où elle le devient, pour que Bing la retire vite.
+      if (isNoindex(html) && (old == null || isNoindex(old))) continue;
       if (old != null && normalizeForDiff(old) === normalizeForDiff(html)) continue;
     }
     urls.add(u);

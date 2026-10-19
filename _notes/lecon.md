@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-19 — Notes internes publiées sur le site ; encart de vente perdu dans une fusion
+
+- **Symptôme :** `https://kyran-jeu.fr/_notes/seo/kpi-quotidiens.csv` (KPI Search Console), `mouvements.json`, `.claude/settings.json` et `.mcp.json` répondaient 200. Sur `/tarot-africain.html`, l'encart KYRAN ajouté le 13/10 (#49) avait disparu.
+- **Cause :** `pages.yml` publie tout fichier suivi sauf une liste noire (dossiers techniques et `*.md`) : les CSV/JSON de la routine SEO créés le 19/10 passaient. L'encart a été effacé par la résolution de fusion 49ab825 d'une branche plus ancienne.
+- **Correctif :** PR #78 : `_notes/`, `docs/`, `.claude/`, `.mcp.json` exclus, contrôle « ne doit pas être publié » étendu ; encart rétabli. Règle : tout nouveau dossier ou type de fichier interne → vérifier par `curl` qu'il répond 404 en ligne ; avant de pousser une fusion, relire `git diff <main avant>..<fusion>` sur les pages de vente.
+
 ### 2026-10-19 — Auto-Heal muet depuis le 13 octobre : clé API Anthropic invalide
 
 - **Symptôme :** les 30 derniers runs « Hourly Auto-Heal » (14 au 19 octobre) étaient rouges ; 5 incidents attendaient sans être traités. Personne ne l'a vu : le rapport 24 h ne part que si le système a agi.

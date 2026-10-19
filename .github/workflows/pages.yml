@@ -55,14 +55,15 @@ jobs:
         run: |
           mkdir -p _site
           git ls-files -z \
-            | grep -zvE '^(scripts|server|worker|marketing|\.github|node_modules)/' \
+            | grep -zvE '^(scripts|server|worker|marketing|\.github|\.claude|_notes|docs|node_modules)/' \
             | grep -zvE '(^|/)[^/]*\.md$' \
-            | grep -zvE '^(package\.json|package-lock\.json|\.env\.example|\.gitignore|seo-keywords\.json|blog/images/download-log\.json)$' \
+            | grep -zvE '^(package\.json|package-lock\.json|\.env\.example|\.gitignore|\.mcp\.json|seo-keywords\.json|blog/images/download-log\.json)$' \
             | xargs -0 cp --parents -t _site
           for f in index.html CNAME commander.html admin-emails.html vendor/canvas-confetti-1.6.0.browser.js; do
             test -f "_site/$f" || { echo "::error::$f manquant dans _site"; exit 1; }
           done
-          for f in server/server.js scripts/presse-outreach.json package.json .env.example; do
+          # Notes internes (KPI Search Console de la routine SEO), réglages Claude Code : jamais publiés.
+          for f in server/server.js scripts/presse-outreach.json package.json .env.example .mcp.json .claude/settings.json _notes/seo/kpi-quotidiens.csv; do
             test ! -e "_site/$f" || { echo "::error::$f ne doit pas être publié"; exit 1; }
           done
           echo "$(find _site -type f | wc -l) fichiers publiés"

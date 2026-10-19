@@ -1,9 +1,22 @@
 # Journal de la routine « Santé quotidienne de KYRAN »
 
 Consigne : [`sante-routine-mission.md`](sante-routine-mission.md). Une entrée par run, la plus récente en haut.
-Rapport complet de chaque run : Google Drive, dossier « KYRAN - Santé », document `Santé KYRAN AAAA-MM-JJ`.
+Rapport complet de chaque run : `docs/rapports/sante/AAAA-MM-JJ.md`.
 
 ---
+
+## 2026-10-19 — contrôle manuel (avant le premier run)
+
+Verdict : **Incident** (Auto-Heal en panne depuis le 13/10, correctif livré, auth à refaire par le propriétaire).
+Rapport complet : [`docs/rapports/sante/2026-10-19.md`](../docs/rapports/sante/2026-10-19.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Serveur Railway | OK | dernier `SUCCESS` sur `249dd83` (13/10), qui contient le dernier commit touchant `server/` (`1f0b02c`) ; pushs suivants `SKIPPED` (`watchPatterns` `/server/**`) ; 5xx 0 % (24 requêtes en 24 h) ; mémoire 0,06–0,10 Go sur 8 ; volume `/data` 0,03 Go |
+| Erreurs et Auto-Heal | Incident | 30 derniers runs « Hourly Auto-Heal » rouges (14/10 → 19/10), dernier vert le 13/10 16:02 UTC : `invalid x-api-key` (secret `ANTHROPIC_API_KEY`) ; WIF refusé aussi (« Token exchange failed with status 401 ») au test sur branche |
+
+Réparation : WIF d'abord, clé en repli (PR du 19/10). Point ouvert : test `smoke_test` sur `main` après fusion ;
+si toujours 401, secret ou règle de fédération à refaire (voir rapport).
 
 ## 2026-10-19 — mise en place (avant le premier run)
 

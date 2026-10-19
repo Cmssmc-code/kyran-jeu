@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-19 — Auto-Heal muet depuis le 13 octobre : clé API Anthropic invalide
+
+- **Symptôme :** les 30 derniers runs « Hourly Auto-Heal » (14 au 19 octobre) étaient rouges ; 5 incidents attendaient sans être traités. Personne ne l'a vu : le rapport 24 h ne part que si le système a agi.
+- **Cause :** le secret `ANTHROPIC_API_KEY` (invalide : « invalid x-api-key ») passait avant la fédération d'identité (WIF) ; le worker n'essayait donc jamais WIF. Testé sur branche, WIF est aussi refusé (règle de fédération à vérifier, peut-être limitée à `main`).
+- **Correctif :** WIF d'abord, clé en repli seulement (`selectAnthropicAuth`, secret passé en `ANTHROPIC_API_KEY_FALLBACK`). Règle : un workflow planifié rouge plusieurs jours est une panne ; la routine santé quotidienne (`_notes/sante-routine-mission.md`) lit chaque nuit les runs Auto-Heal et lance `smoke_test` en cas de doute.
+
 ### 2026-10-14 — Accueil : carte touchée de l'éventail coincée derrière la boîte
 
 - **Symptôme :** au toucher d'une carte de l'éventail, la carte montait mais restait derrière la boîte, sous le voile crème, au lieu de venir devant en grand.

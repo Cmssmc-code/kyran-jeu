@@ -68,8 +68,8 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 
 - `scripts/seo-health.py --sample 0` (50 URL) : 100 % en 200, 0 anomalie (canonical, titres, descriptions, H1,
   JSON-LD, `og:image`) ; TTFB médian 270 ms ; HTML médian 61 Ko.
-- Inspection Google (20 URL) : 17 indexées ; `/blog/` « Découverte, non indexée » ; `/a-propos.html` inconnue de
-  Google ; au 18/10 aussi : `video-regles`, `jeux-comme-skull-king` (détectées), `ressources-gratuites`,
+- Inspection Google (2 relevés de 20 URL le 19/10) : 17 puis 18 indexées ; `/blog/` « Découverte, non indexée » ;
+  `meilleurs-jeux-apero` « Explorée, non indexée » ; `/a-propos.html` inconnue de Google ; au 18/10 aussi : `video-regles`, `jeux-comme-skull-king` (détectées), `ressources-gratuites`,
   `regles-rikiki` (inconnues). `idee-cadeau` est indexée depuis le 18/10.
 - PageSpeed mobile (11/10) : accueil 97, Tarot 98, Skyjo 92, 3 joueurs 99 ; SEO 100 ; CSS bloquant ~700 ms en 4G
   lente, `style.css` 117 Ko.

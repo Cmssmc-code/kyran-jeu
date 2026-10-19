@@ -8,7 +8,7 @@
 
 | Prio | Sujet | Constat (preuve) | Action proposée | Ajouté le |
 |---|---|---|---|---|
-| P1 | Pages hors index | Inspection du 19/10 : `/blog/` « Découverte, non indexée », `/a-propos.html` inconnue ; au 18/10 : `video-regles`, `jeux-comme-skull-king`, `ressources-gratuites`, `regles-rikiki` | Liens internes depuis les pages fortes (accueil, Tarot africain, Skyjo, Dixit), contenu propre vérifié, inspection chaque nuit | 2026-10-19 |
+| P1 | Pages hors index | Inspection du 19/10 : `/blog/` « Découverte, non indexée », `meilleurs-jeux-apero` « Explorée, non indexée », `/a-propos.html` inconnue ; au 18/10 : `video-regles`, `jeux-comme-skull-king`, `ressources-gratuites`, `regles-rikiki` | Liens internes depuis les pages fortes (accueil, Tarot africain, Skyjo, Dixit), contenu propre vérifié, inspection chaque nuit | 2026-10-19 |
 | P2 | Wikidata absent des `sameAs` | Q141623753 existe (site officiel renseigné) mais n'est cité nulle part sur le site | Ajouter l'URL Wikidata aux `sameAs` de `#organization`, `#game` et `#boardgame`, et à `llms.txt` (« Présence externe ») ; corriger `_notes/wikidata-kyran.md` | 2026-10-19 |
 | P2 | Images de partage | `logo.png` 512 × 512 sur 10 pages (`tarot-africain`, `regle`, `faq`, `whist-22`, `tarot-africain-a-3-joueurs`…) ; PNG de 1,96 Mo sur `commander.html` | Images 1200 × 630 tirées des visuels existants, WebP/JPEG légers | 2026-10-19 |
 | P2 | `jeux-3-joueurs` et `jeux-soiree-amis` | Positions 30,5 et 22,7 ; titres de 62 et 61 caractères ; `jeux-3-joueurs` = page la plus citée par Copilot | Contenu qui répond à la requête, maillage avec ancre exacte, titres raccourcis (règle des 28 jours) | 2026-10-19 |

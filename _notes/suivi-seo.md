@@ -17,8 +17,9 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
   (+32 %) ; 28 j : 125 clics, 5 662 impressions, CTR 2,21 %, position 9,3. Dernières 24 h : 8 clics, 355
   impressions (303 une semaine plus tôt). Marque « kyran » : 1 → 6 clics sur 7 j.
 - **Bing** : 7 j au 17/10 : 6 clics, 146 impressions (+23 %) ; 56 pages dans l'index.
-- **Technique** (`seo-health.py`, 50 URL du sitemap) : 0 anomalie ; inspection Google : 17 URL sur 20 indexées,
-  `/blog/` « Découverte, non indexée », `/a-propos.html` inconnue.
+- **Technique** (`seo-health.py`, 50 URL du sitemap) : 0 anomalie ; inspection Google : 17 puis 18 URL sur 20
+  indexées, `/blog/` « Découverte, non indexée », `meilleurs-jeux-apero` « Explorée, non indexée »,
+  `/a-propos.html` inconnue.
 - **Veille** : règles du blog durcies le 19/10 ; refonte des 13-14/10 suivie de la meilleure semaine depuis
   juillet ; 0 lien entrant ; Wikidata Q141623753 existe mais n'est pas dans les `sameAs`.
 - **Mis en place** : `_notes/seo/` (base, backlog, historique KPI sur 90 jours), `scripts/seo-kpi-daily.py`,

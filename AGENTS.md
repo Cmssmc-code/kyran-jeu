@@ -27,6 +27,10 @@ Worker (`worker/`), initiation jouable dans `dojo/` (`minijeu.html`).
 - Jamais d'adresse e-mail Majordia dans un e-mail KYRAN ; jamais de secret ni de `.env` commité.
 - Le dépôt reste public (GitHub Pages gratuit).
 
+## Santé quotidienne du site
+
+Une routine Claude vérifie chaque nuit à minuit la santé de kyran-jeu.fr (site, Pages, serveur Railway, Stripe en lecture, e-mails, Auto-Heal, CI) et répare ce qui ne va pas : mission [`_notes/sante-routine-mission.md`](_notes/sante-routine-mission.md), journal [`_notes/suivi-sante.md`](_notes/suivi-sante.md).
+
 ## SEO & GEO : où tout trouver
 
 Tout le référencement de kyran-jeu.fr (Google, Bing, moteurs de réponse IA) est suivi dans **[`_notes/seo/`](_notes/seo/README.md)**. Commencer par [`_notes/seo/README.md`](_notes/seo/README.md) (index du dossier), puis [`base-connaissances.md`](_notes/seo/base-connaissances.md) (état complet : jeu, offre, pages, mots-clés, technique, concurrents, mentions, GEO, règles) et [`backlog.md`](_notes/seo/backlog.md) (priorités). Chiffres jour par jour : [`kpi-quotidiens.csv`](_notes/seo/kpi-quotidiens.csv). Journal nuit après nuit : [`_notes/suivi-seo.md`](_notes/suivi-seo.md). Une routine Claude met tout à jour chaque nuit à minuit selon [`_notes/seo-routine-mission.md`](_notes/seo-routine-mission.md). Tableau partagé : https://claude.ai/code/artifact/5d4cf936-dfeb-4516-bb57-2141b081edee. Toute question ou tâche SEO/GEO (titres, descriptions, sitemap, `llms.txt`, indexation, netlinking, citations IA) part de ce dossier ; après la tâche, mettre à jour la base et le journal.

@@ -33,3 +33,10 @@ test('une page dont seules les versions d’assets ont changé n’est pas renvo
   assert.deepEqual(urlsForChangedFiles(['tarot-africain.html'], ROOT, () => edited), ['https://kyran-jeu.fr/tarot-africain.html']);
   assert.deepEqual(urlsForChangedFiles(['tarot-africain.html'], ROOT, () => null), ['https://kyran-jeu.fr/tarot-africain.html']);
 });
+
+test('les pages noindex ne sont envoyées qu’au moment où elles le deviennent', () => {
+  assert.deepEqual(urlsForChangedFiles(['plan-du-site.html', 'cgv.html'], ROOT), []);
+  const cgv = fs.readFileSync(path.join(ROOT, 'cgv.html'), 'utf8');
+  assert.deepEqual(urlsForChangedFiles(['cgv.html'], ROOT, () => cgv.replace('noindex', 'index') + ' '), ['https://kyran-jeu.fr/cgv.html']);
+  assert.deepEqual(urlsForChangedFiles(['cgv.html'], ROOT, () => cgv + ' modifié'), []);
+});

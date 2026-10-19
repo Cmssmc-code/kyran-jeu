@@ -495,14 +495,14 @@ const BLOG_ITEMS = [
   },
   {
     "slug": "meilleurs-jeux-apero",
-    "title": "Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table",
+    "title": "Meilleurs jeux de cartes pour l’apéro et l’afterwork : 10 choix selon la table",
     "category": "Apéro",
     "date": "2026-05-03",
-    "readMinutes": 13,
-    "excerpt": "Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.",
+    "readMinutes": 14,
+    "excerpt": "Quels jeux de cartes sortir à l’apéro ou en afterwork ? 10 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.",
     "image": "/blog/images/jungle-speed.jpg",
     "webp": "/blog/images/jungle-speed.webp",
-    "gameCount": 9,
+    "gameCount": 10,
     "related": [
       "jeux-soiree-amis",
       "jeux-grands-groupes",

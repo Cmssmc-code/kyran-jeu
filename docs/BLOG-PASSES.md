@@ -96,6 +96,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-12 | Article neuf (intention absente du blog : seniors et grands-parents) : 6 jeux (Schotten Totten, No Thanks!, Uno, Skyjo, 6 qui prend!, KYRAN), structure propre (3 groupes selon la table), aucune promesse de santé. Sources ouvertes : Esprit Jeu (Schotten Totten, Uno), 64 Ounce Games (No Thanks!), notice Mattel et règle française de Skyjo (PDF lus), Play-in (Skyjo, 6 qui prend!). Relecture adversariale indépendante (17 constats) appliquée. **Sujet pris : ne pas le reprendre.** | `jeux-cartes-seniors` | jeux de cartes pour seniors | (cette PR) |
 | 2026-10-14 | Rafraîchissement **Noël 2026** (priorité 0) : date limite du site (16 décembre, `commander.html`, CGV art. 5), prix revérifiés (Dixit 28,95 € et 3 à 8 joueurs ; Timeline Clutch Box 2 à 6 joueurs ; Codenames 21,50 € et fiches divergentes 2-8 / 4-8, 10 à 14 ans ; The Crew 16,50 € ; Hanabi 2 à 5), prix Amazon de KYRAN retiré, KYRAN présenté avec le lien commercial du site dit en clair. Sources ouvertes : Philibert (Dixit, Timeline, Lost Cities, The Crew, Hanabi), Asmodee Canada (Codenames CGE), Bonne Promo (Codenames IELLO 2025). **Sujet pris : ne pas le reprendre.** | `cadeau-noel` | cadeau noël jeu de cartes | (cette PR) |
 | 2026-10-16 | Rafraîchissement (cluster « jeu style / type / comme skyjo », la plus forte demande Search Console du 16 septembre au 14 octobre) avec **variété** : The Mind et Sushi Go! remplacés par **Cabo** et **Papayoo** (nouveaux dans `games.json`). Cabo : 2 à 4 joueurs dans l'édition française Origames (Ludum), 2 à 5 pour l'édition d'origine et la 3e édition (Wikipédia), en rupture chez Ludum au 16 octobre ; Papayoo : 3 à 8, dès 7 ans, ~30 min, 14,90 € chez Philibert. Sources ouvertes : Ludum (Cabo), Wikipédia (Cabo), Esprit Jeu, Play-in et Philibert (Papayoo), Board Game Quest (Papayoo), regles-du-jeu.net (Papayoo). **Sujet pris : ne pas le reprendre.** | `jeux-comme-skyjo` | jeu comme skyjo | (cette PR) |
+| 2026-10-19 | Rafraîchissement avec **variété** : **Exploding Kittens** ajouté (10e jeu, nouveau dans `games.json`) à l'article apéro ; Love Letter et les autres jeux de l'article déjà corrigés par l'audit du 12 octobre. EK : 2 à 5 joueurs, dès 7 ans (6 ans chez Play-in), ~15 min (10 à 20 selon Wikipédia), 18,95 € chez Philibert, Édition Festive 2 à 10 joueurs à 28,95 € ; BGG 172225 contrôlé par l'API geekdo (nom, trois auteurs, 2015). Sources ouvertes : Esprit Jeu, Philibert, Wikipédia, API geekdo, Play-in, Ludum. **Sujet pris : ne pas le reprendre.** | `meilleurs-jeux-apero` | jeux de cartes apéro | (cette PR) |
 
 ## En attente
 
@@ -116,10 +117,11 @@ Rafraîchissements repérés (par ordre de priorité) :
    sources (BGG 1997, Wikipédia 1991 ou 1996) : ne pas l'afficher sans source primaire.
 
 3. **Jeux à ajouter à `games.json`** (variété, voir protocole § 3). Cabo et Papayoo ajoutés le 16 octobre ;
-   Skull King, Cat in the Box et Pili Pili l'étaient déjà. Candidats restants à rechercher, rien n'est
-   sourcé à ce stade : Trio, Mille Bornes, Dos, Les Loups-Garous de
-   Thiercelieux, The Fox in the Forest, Tichu, Exploding Kittens (l'article `jeux-comme-exploding-kittens`
-   existe déjà). Ne rien écrire sur eux sans fiche d'éditeur ou règle ouverte.
+   Skull King, Cat in the Box et Pili Pili l'étaient déjà ; Exploding Kittens ajouté le 19 octobre.
+   Candidats restants à rechercher, rien n'est sourcé à ce stade : Trio, Mille Bornes, Les Loups-Garous de
+   Thiercelieux, The Fox in the Forest, Tichu. Dos (Mattel) : fiches contradictoires sur le nombre de
+   joueurs (2 à 4 ou 2) et la condition de victoire ; lire la notice officielle Mattel (service.mattel.com,
+   HNN01) avant de l'utiliser. Ne rien écrire sur eux sans fiche d'éditeur ou règle ouverte.
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
 (#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque

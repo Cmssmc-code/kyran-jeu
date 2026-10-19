@@ -35,6 +35,9 @@ titres de `docs/SUIVI-BLOG-SEO.md` et la liste des PR ouvertes.
 4. **Journal** : entrée en tête de [`suivi-seo.md`](suivi-seo.md) ; tout titre ou description changé va aussi dans
    le journal des titres de `docs/SUIVI-BLOG-SEO.md` (source unique de la règle des 28 jours).
 5. **Message final** de la session en style caveman (`CLAUDE.md`).
+6. **Retrouvable par toute IA** : `_notes/seo/README.md` (index du dossier) reste exact ; si un fichier du dossier
+   change de nom ou de rôle, mettre à jour l'index et la section « SEO & GEO : où tout trouver » de `CLAUDE.md`,
+   `AGENTS.md` et `.github/copilot-instructions.md`.
 
 ---
 

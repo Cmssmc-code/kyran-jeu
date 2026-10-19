@@ -6,6 +6,7 @@
 > Pilotage SEO & GEO » (https://claude.ai/code/artifact/5d4cf936-dfeb-4516-bb57-2141b081edee).
 >
 > État initial : 2026-10-19 (inventaire du dépôt, API Search Console et Bing, relevé web).
+> Index de tout le dossier : [`README.md`](README.md).
 
 ## 1. Le jeu et l'offre (faits canoniques, `_notes/memoire.md` § 1)
 

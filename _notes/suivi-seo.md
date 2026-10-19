@@ -21,6 +21,7 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 - **Netlinking** : connecteur Gmail absent de la session : 2 messages prêts dans le doc (Ludovox, formulaire ; Règles2jeux, adresse à trouver, site en 503 cette nuit).
 - **À décider** : inchangé (Merchant Center, `priceValidUntil` 2027, pages légales, domaine GitHub, fiches externes) ; brancher Gmail dans l'environnement de la routine pour les prises de contact.
 - **Effet** : changement d'image de partage = `lastmod` du 19/10 sur 4 pages (le build compte la méta comme contenu) ; réévaluation de `/regle.html` et `/tarot-africain.html` le 17/11/2026.
+- **Doc partagé** : tableau de bord, veille, journal (4 lignes) et messages de netlinking prêts ; `rev` 26.
 
 ### 2026-10-19 (soir) : chantier « SEO intense » (session interactive, audit A à K)
 

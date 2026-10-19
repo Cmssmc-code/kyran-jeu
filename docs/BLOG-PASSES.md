@@ -96,6 +96,27 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    tests ; puis fusion aux conditions ci-dessus. Personne ne relit : un fait sans source fiable est
    retiré avant la fusion, jamais laissé à un relecteur.
 8. **Après la fusion** : vérifiez la page en ligne (kyran-jeu.fr/blog/<slug>.html, sitemap, flux).
+9. **Suivi SEO du lundi** (demandé par le propriétaire le 19 octobre 2026, calqué sur l'étape 9 de la
+   mission Majordia). Le lundi, en plus de l'article ou du rafraîchissement, dans la même PR :
+   1. **Mesurer** (lecture seule) avec les serveurs MCP `gsc` (propriété `sc-domain:kyran-jeu.fr`) et
+      `bing-webmaster` (`docs/MCP_SEO.md`) : clics, impressions, CTR et position par page sur 28 jours,
+      requêtes principales par page. N'appelez jamais leurs outils d'écriture. Si un serveur ne se
+      connecte pas, écrivez « non mesuré » ; n'inventez aucun chiffre.
+   2. **Pistes CTR** (page 1, CTR inférieur à 2 %) : pour **au plus 3** pages de blog dont le dernier
+      changement de titre a plus de 28 jours (`git log -1 --format=%ad --date=short -G 'metaTitle|description' -- scripts/content/blog/<slug>.mjs`
+      et le journal de `docs/SUIVI-BLOG-SEO.md`), réécrivez `metaTitle` et `description` seulement :
+      partez de la requête n° 1 de la page, mot-clé écrit comme on le tape, bénéfice concret ensuite,
+      promesse que la page tient. Ne changez ni le H1 ni le corps.
+   3. **Pistes classement** (position supérieure à 15) : le titre n'y peut rien. Ajoutez 2 à 3 liens
+      internes vers la page, avec une ancre qui contient sa requête, depuis des articles proches ; si la
+      page est trop mince face à la requête, notez-la comme sujet d'enrichissement dans « En attente ».
+   4. **Pages explorées ou détectées mais non indexées** (`index_inspect`) : les lister, et traiter
+      d'abord celles-là (voir § 9 de `docs/SEO-GEO.md`).
+   5. **Consigner** dans `docs/SUIVI-BLOG-SEO.md` : une ligne au journal des titres par titre changé, avec
+      sa date de réévaluation à J+28, et un bilan en haut (pages et clusters publiés sur 7 jours, clics,
+      impressions, CTR, position sur 28 jours comparés au bilan précédent, actions menées, trois sujets
+      proposés à partir des requêtes réelles). Ces trois sujets alimentent le choix de l'article neuf.
+   6. Même règle de fusion que le reste ; un titre déjà changé depuis moins de 28 jours ne se retouche pas.
 
 ## Pièges connus
 

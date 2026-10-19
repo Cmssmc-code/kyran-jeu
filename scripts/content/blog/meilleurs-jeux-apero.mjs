@@ -1,16 +1,16 @@
 export default {
   slug: 'meilleurs-jeux-apero',
-  title: 'Meilleurs jeux de cartes pour l’apéro et l’afterwork : 9 choix selon la table',
+  title: 'Meilleurs jeux de cartes pour l’apéro et l’afterwork : 10 choix selon la table',
   shortTitle: 'Jeux apéro et afterwork',
-  metaTitle: 'Jeux de cartes apéro et afterwork : 9 jeux brise-glace',
-  description: 'Quels jeux de cartes sortir à l’apéro ou en afterwork ? 9 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.',
+  metaTitle: 'Jeux de cartes apéro et afterwork : 10 jeux brise-glace',
+  description: 'Quels jeux de cartes sortir à l’apéro ou en afterwork ? 10 jeux brise-glace pour tables encombrées, arrivées par vagues et collègues qui se connaissent peu.',
   category: 'Apéro',
   date: '2026-05-03',
   heroTitle: 'Jeux de cartes <span class="accent">pour l’apéro</span>',
-  heroSubtitle: 'Neuf jeux qui tiennent entre les verres, se rejoignent en route et brisent la glace entre collègues.',
+  heroSubtitle: 'Dix jeux qui tiennent entre les verres, se rejoignent en route et brisent la glace entre collègues.',
   heroImage: '/blog/images/jungle-speed.jpg',
   heroCaption: 'Jungle Speed — le reflexe en apéro.',
-  intro: `<p>Un apéro n’est pas une soirée jeux. La table est couverte de verres et de bols, les invités arrivent à des heures différentes, la musique couvre la voix de celui qui lit la règle, et personne ne veut rester coincé quarante minutes dans une partie. Un bon <strong>jeu de cartes pour l’apéro</strong> se juge donc sur des critères très concrets : encombrement, entrée en cours de route, bruit, temps d’explication, durée des manches. Un <strong>afterwork</strong> ajoute une contrainte : les participants se connaissent peu, et le <strong>jeu brise-glace</strong> doit les faire parler sans mettre personne mal à l’aise. Les neuf jeux ci-dessous couvrent ces cas, de quatre amis installés à dix collègues qui vont et viennent ; une section dédiée à l’afterwork les classe ensuite selon ce qu’ils exposent. Le format dédié à KYRAN est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a> ; pour une soirée qui s’étire, voyez plutôt les <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a>.</p>`,
+  intro: `<p>Un apéro n’est pas une soirée jeux. La table est couverte de verres et de bols, les invités arrivent à des heures différentes, la musique couvre la voix de celui qui lit la règle, et personne ne veut rester coincé quarante minutes dans une partie. Un bon <strong>jeu de cartes pour l’apéro</strong> se juge donc sur des critères très concrets : encombrement, entrée en cours de route, bruit, temps d’explication, durée des manches. Un <strong>afterwork</strong> ajoute une contrainte : les participants se connaissent peu, et le <strong>jeu brise-glace</strong> doit les faire parler sans mettre personne mal à l’aise. Les dix jeux ci-dessous couvrent ces cas, de quatre amis installés à dix collègues qui vont et viennent ; une section dédiée à l’afterwork les classe ensuite selon ce qu’ils exposent. Le format dédié à KYRAN est détaillé sur la page <a class="text-link" href="/jeu-apero.html">jeu apéro</a> ; pour une soirée qui s’étire, voyez plutôt les <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a>.</p>`,
   criteria: {
     heading: 'Quels critères pour un jeu de cartes d’apéro ?',
     html: `<p>Le même jeu se comporte très différemment autour d’une table d’apéro et lors d’une soirée jeux planifiée. Une boîte qui brille un samedi soir avec quatre passionnés peut s’avérer impraticable un vendredi, au milieu des chips et des invités qui sonnent à la porte. Cinq contraintes reviennent systématiquement.</p>
@@ -109,6 +109,16 @@ export default {
       ]
     },
     {
+      id: 'exploding-kittens',
+      subtitle: 'quinze minutes de suspense à la pioche',
+      type: 'Chaos express',
+      pick: 'Tablées de 2 à 5 qui veulent une partie de quinze minutes',
+      paragraphs: [
+        `Exploding Kittens se joue avec une pioche et rien d’autre sur la table : à son tour, on pioche, et celui qui retourne un chaton explosif saute, sauf s’il détient une carte de désamorçage. D’autres cartes servent à se défendre, à faire piocher les voisins ou à regarder les cartes à venir, et le dernier joueur encore en jeu gagne. Cette règle se dit en une phrase, ce qui compte à l’apéro, et la table se regarde plus qu’elle ne regarde ses cartes.`,
+        `Le défaut est l’élimination : le premier à exploser attend la fin de la partie, mais à environ quinze minutes, il rejoint la suivante. La boîte de base se joue de 2 à 5, dès 7 ans ; pour une tablée plus large, Philibert référence une Édition Festive annoncée de 2 à 10 joueurs, plus chère (28,95 € contre 18,95 € pour le jeu de base, relevé le 19 octobre 2026). L’humour de chats et d’explosions est caricatural : il convient à un groupe détendu, moins à un afterwork très formel.`
+      ]
+    },
+    {
       id: 'kyran',
       subtitle: 'pour la tablée déjà installée',
       type: 'Plis et paris',
@@ -121,7 +131,7 @@ export default {
   ],
   headings: {
     selection: 'Du premier verre à la table installée',
-    compare: 'Les neuf jeux d’apéro en un tableau',
+    compare: 'Les dix jeux d’apéro en un tableau',
     conclusion: 'Deux paquets plutôt qu’un',
     faq: 'Questions d’apéro et d’afterwork',
     related: 'Quand l’apéro se prolonge'
@@ -167,7 +177,7 @@ export default {
     },
     {
       q: 'Combien de temps dure un jeu d’apéro ou d’afterwork ?',
-      a: 'Entre quinze et trente minutes. Dobble, Love Letter, Coup, Timeline et Jungle Speed tiennent en un quart d’heure environ, Skull et KYRAN demandent une demi-heure. En afterwork, l’heure de fin compte : une partie de plus de quarante minutes reste souvent inachevée quand les premiers partent pour leur train.'
+      a: 'Entre quinze et trente minutes. Dobble, Love Letter, Coup, Exploding Kittens, Timeline et Jungle Speed tiennent en un quart d’heure environ, Skull et KYRAN demandent une demi-heure. En afterwork, l’heure de fin compte : une partie de plus de quarante minutes reste souvent inachevée quand les premiers partent pour leur train.'
     },
     {
       q: 'KYRAN convient-il à un apéro entre amis ou à un afterwork ?',

@@ -6,6 +6,13 @@
  * Utilisé par generate-blog.mjs pour liens et JSON-LD.
  */
 export const GAME_LINKS = {
+  'exploding-kittens': {
+    bgg: 'https://boardgamegeek.com/boardgame/172225/exploding-kittens',
+    wiki: 'https://fr.wikipedia.org/wiki/Exploding_Kittens',
+    shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=exploding+kittens',
+    designer: 'Elan Lee, Matthew Inman et Shane Small',
+    year: 2015
+  },
   cabo: {
     wiki: 'https://en.wikipedia.org/wiki/Cabo_(game)',
     shop: 'https://www.ludum.fr/jeux-de-strategie-en-famille/cabo-2557',

@@ -357,5 +357,15 @@
     "image": false,
     "designer": null,
     "year": null
+  },
+  "exploding-kittens": {
+    "name": "Exploding Kittens",
+    "players": "2 à 5",
+    "duration": "~15 min",
+    "age": "7+",
+    "price": "~19 €",
+    "image": false,
+    "designer": "Elan Lee, Matthew Inman et Shane Small",
+    "year": 2015
   }
 }

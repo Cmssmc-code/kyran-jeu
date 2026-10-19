@@ -41,8 +41,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    rafraîchissement. Avant de choisir le type, relire le journal : si les passes de la semaine en
    cours (lundi à vendredi) ne comptent encore aucun article neuf, la passe du vendredi en écrit un
    obligatoirement, et dès le mercredi si le lundi était déjà un rafraîchissement et qu'un sujet
-   tient. Seule exception : aucun sujet ne tient (le dire dans le journal), jamais pour rafraîchir
-   à la place.
+   tient. **Aucune exception** (précisé par le propriétaire le 19 octobre 2026) : il y a toujours un
+   sujet, il suffit de chercher assez loin. Ne jamais rafraîchir à la place.
+   **Sujets : voir large, en macro** (même précision). Un article neuf n'est pas forcément un guide
+   « quels jeux de cartes / de société pour… » ni un comparatif. Le champ couvre les jeux de cartes
+   et de société dans leur globalité : études et enquêtes (pratiques de jeu, marché, bienfaits du
+   jeu, chiffres publics), actualité des éditeurs, fournisseurs, revendeurs et boutiques (sorties,
+   salons, nouveautés, évolutions de gamme), histoire et culture du jeu, règles et vie à la table,
+   conseils d'usage. Même exigence de sérieux : sources fiables réellement ouvertes, aucun chiffre
+   ni citation sans source liée, KYRAN mentionné seulement quand il a sa place.
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
    éditeurs, Philibert…). Faits KYRAN : uniquement le dépôt. Aucun chiffre, prix, règle ou citation
    sans source liée.

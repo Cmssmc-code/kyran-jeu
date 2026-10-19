@@ -36,6 +36,13 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    avec ses faits sourcés (joueurs, âge, durée, prix, auteur, image avec crédit, lien BGG contrôlé).
    Relancer le relevé avant de choisir :
    `grep -ho "id: \`[a-z0-9-]*\`" scripts/content/blog/*.mjs | sort | uniq -c | sort -rn`.
+   **Au moins un article neuf par semaine (demandé par le propriétaire le 19 octobre 2026)** : sur les
+   trois passes de la semaine (lun/mer/ven), **au moins une** crée un **nouvel article**, pas un
+   rafraîchissement. Avant de choisir le type, relire le journal : si les passes de la semaine en
+   cours (lundi à vendredi) ne comptent encore aucun article neuf, la passe du vendredi en écrit un
+   obligatoirement, et dès le mercredi si le lundi était déjà un rafraîchissement et qu'un sujet
+   tient. Seule exception : aucun sujet ne tient (le dire dans le journal), jamais pour rafraîchir
+   à la place.
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
    éditeurs, Philibert…). Faits KYRAN : uniquement le dépôt. Aucun chiffre, prix, règle ou citation
    sans source liée.

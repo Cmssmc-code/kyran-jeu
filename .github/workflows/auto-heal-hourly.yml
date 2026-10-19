@@ -119,9 +119,10 @@ jobs:
 
       - name: Run Auto-Heal worker
         env:
-          # Workload Identity Federation : le SDK Anthropic échange lui-même le jeton OIDC GitHub
-          # (le worker rafraîchit ce jeton avant chaque incident). Secret ANTHROPIC_API_KEY : repli facultatif.
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Workload Identity Federation d'abord : le SDK Anthropic échange lui-même le jeton OIDC GitHub
+          # (le worker rafraîchit ce jeton avant chaque incident). Le secret ANTHROPIC_API_KEY ne sert que
+          # de repli si l'échange WIF échoue : une clé révoquée ne doit plus bloquer le pipeline (401 du 13/10).
+          ANTHROPIC_API_KEY_FALLBACK: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_FEDERATION_RULE_ID: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID || 'fdrl_01YA6haXm2AP2TpbNaE5qwjq' }}
           ANTHROPIC_ORGANIZATION_ID: 2117f365-70c3-48c6-9ec9-849419fa4745
           ANTHROPIC_SERVICE_ACCOUNT_ID: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID || 'svac_01Fta4onswAz6gWVWrmcjRP2' }}
@@ -133,8 +134,6 @@ jobs:
           AUTO_HEAL_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
           AUTO_HEAL_SMOKE: ${{ inputs.smoke_test && '1' || '0' }}
         run: |
-          # Clé API vide = absente (sinon le SDK tenterait une clé vide au lieu de WIF)
-          [ -n "$ANTHROPIC_API_KEY" ] || unset ANTHROPIC_API_KEY
           node scripts/auto-heal-worker.mjs
 
       # Les pushs faits avec GITHUB_TOKEN ne déclenchent pas les workflows `push` :

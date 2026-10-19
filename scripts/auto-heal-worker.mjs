@@ -156,6 +156,34 @@ function anthropicClient(maxRetries) {
   return new Anthropic({ maxRetries, defaultHeaders });
 }
 
+/**
+ * Choix de l'auth Anthropic : WIF d'abord, clé API de repli (ANTHROPIC_API_KEY_FALLBACK) seulement si la
+ * sonde WIF échoue. Une clé révoquée passée en premier bloquait tout le pipeline (401 « invalid x-api-key »
+ * du 13 au 19 octobre 2026). `probe` ne génère rien (lecture d'un modèle). Renvoie 'key', 'wif' ou 'key-fallback'.
+ */
+export async function selectAnthropicAuth(probe, env = process.env) {
+  if (env.ANTHROPIC_API_KEY) return 'key';
+  const fallback = env.ANTHROPIC_API_KEY_FALLBACK?.trim();
+  try {
+    await probe();
+    return 'wif';
+  } catch (err) {
+    if (!fallback) throw err;
+    console.warn(`[AutoHeal] Auth WIF refusée (${redactSecrets(String(err)).slice(0, 200)}) : repli sur la clé API.`);
+    env.ANTHROPIC_API_KEY = fallback;
+    delete env.ANTHROPIC_IDENTITY_TOKEN_FILE;
+    return 'key-fallback';
+  }
+}
+
+async function ensureAnthropicAuth() {
+  const mode = await selectAnthropicAuth(async () => {
+    await refreshAnthropicIdentityToken();
+    await anthropicClient(1).models.retrieve(MODEL);
+  });
+  console.log(`[AutoHeal] Auth Anthropic : ${mode}.`);
+}
+
 // ---------------------------------------------------------------------------
 // API du serveur KYRAN (Railway)
 // ---------------------------------------------------------------------------
@@ -576,6 +604,7 @@ function commitAndPush(incident, verdict) {
 
 /** Vérifie la chaîne d'auth (OIDC GitHub → WIF → API Anthropic, et OIDC → serveur KYRAN) sans génération facturée. */
 async function smokeTest() {
+  await ensureAnthropicAuth();
   await refreshAnthropicIdentityToken();
   const client = anthropicClient(2);
   const model = await client.models.retrieve(MODEL);
@@ -610,6 +639,8 @@ async function main() {
   const incidents = data.incidents ?? [];
   const budget = Math.max(0, (data.max24h ?? 30) - (data.count24h ?? 0));
   console.log(`[AutoHeal] ${incidents.length} incident(s) — quota restant ${budget} — modèle ${MODEL} (effort ${EFFORT})${DRY_RUN ? ' — DRY RUN' : ''}`);
+
+  if (incidents.length) await ensureAnthropicAuth();
 
   let fixed = 0;
   for (const incident of incidents) {

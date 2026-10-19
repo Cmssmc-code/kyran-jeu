@@ -10,6 +10,17 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-19 (soir) : chantier « SEO intense » (session interactive, audit A à K)
+
+- **Verdict : En progrès.** Base de référence et audit complet dans `docs/rapports/seo-intense-2026-10-19.md` et le Google Doc « Audit et plan SEO de kyran-jeu.fr (19 octobre 2026) ».
+- **Google** (API, données au 17/10) : 28 j 118 clics, 5 492 impressions, CTR 2,15 %, position 9,4 (28 j précédents : 51 / 3 705) ; 90 j 307 / 17 083. Inspection des 74 URL connues : 44/50 du sitemap indexées ; 10 anciennes URL `meta refresh` encore indexées ; `/blog/index.html` indexée à la place de `/blog/`.
+- **Bing** : 28 j 17 clics / 425 impressions, 56 pages en index, 0 lien entrant ; 5 pages d'octobre inconnues.
+- **Lighthouse mobile local** (médiane de 3) : accueil 98, commander 99, règle 99, Skyjo 97, Tarot 99.
+- **Audit** : 101 constats retenus après vérification contradictoire (P1 4, tous hors code ; P2 20 ; P3 77), 5 écartés. Analyses K1 (chute du blog depuis la mise à jour anti-spam du 18-21/08) et K2 (demande de recherche) non menées faute de quota : au backlog.
+- **PR #78** : `pages.yml` ne publie plus `_notes/` ni `.claude/` (KPI internes servis en 200), IndexNow sans pages noindex, préchargement de l'élément LCP de l'accueil, comparatif Amazon et nombre de cartes Pouvoir corrigés, `llms*.txt` exacts, Wikidata dans `sameAs`, encart KYRAN rétabli sur `/tarot-africain.html`, lien ODR mort retiré des CGV. Aucun title ni description touché.
+- **À décider** : Merchant Center, `priceValidUntil` 2027, pages légales, vérification du domaine sur GitHub, fiches externes (BGG, Tric Trac, Lokidia).
+- **Piège de mesure** : le rapport du 18/10 additionnait les lignes requête × page (ancres comprises) ; « tarot africain » 9-17/10 = 221 impressions, CTR 0,9 % au niveau requête, pas 1 134 et 0,2 %.
+
 ### 2026-10-19 : état initial (mise en place, session interactive)
 
 - **Verdict : En progrès.**

@@ -87,7 +87,7 @@ npm ci --no-audit --no-fund   # en arrière-plan (Node 22 requis pour node --tes
   Railway (`list-deployments`, `describe-environment`, `get-service-config`, `get-logs`, `http-error-rate`,
   `http-response-time`, `get-service-metrics`), `PushNotification`. Dans la session dédiée, les outils des
   connecteurs peuvent apparaître sous un préfixe technique (`mcp__<uuid>__get-logs`) : chercher par nom d'outil
-  (constaté pour Majordia le 2026-10-19). Railway absent de la session : la partie serveur se limite à `/health`
+  (constaté le 2026-10-19 : Railway y est `mcp__aa5c2fbf-8870-4e28-ac33-9f9f6b7f85ff__<outil>`). Railway absent de la session : la partie serveur se limite à `/health`
   et s'écrit « Railway non vérifié : connecteur absent ». Ni Gmail ni Google Drive : inutiles ici.
 - Playwright : Chromium préinstallé, `executablePath: '/opt/pw-browsers/chromium'` ; ne pas lancer
   `playwright install`.

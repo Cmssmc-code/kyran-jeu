@@ -15,8 +15,9 @@ Rapport complet : [`docs/rapports/sante/2026-10-19.md`](../docs/rapports/sante/2
 | Serveur Railway | OK | dernier `SUCCESS` sur `249dd83` (13/10), qui contient le dernier commit touchant `server/` (`1f0b02c`) ; pushs suivants `SKIPPED` (`watchPatterns` `/server/**`) ; 5xx 0 % (24 requêtes en 24 h) ; mémoire 0,06–0,10 Go sur 8 ; volume `/data` 0,03 Go |
 | Erreurs et Auto-Heal | Incident | 30 derniers runs « Hourly Auto-Heal » rouges (14/10 → 19/10), dernier vert le 13/10 16:02 UTC : `invalid x-api-key` (secret `ANTHROPIC_API_KEY`) ; WIF refusé aussi (« Token exchange failed with status 401 ») au test sur branche |
 
-Réparation : WIF d'abord, clé en repli (PR du 19/10). Point ouvert : test `smoke_test` sur `main` après fusion ;
-si toujours 401, secret ou règle de fédération à refaire (voir rapport).
+Réparation : WIF d'abord, clé en repli (PR #76). `smoke_test` sur `main` après fusion : toujours 401 (WIF et clé).
+Point ouvert : clé API ou règle de fédération à refaire par le propriétaire (étapes dans le rapport), puis
+`smoke_test` à relancer. Session de la routine : connecteur Railway présent (outils `mcp__aa5c2fbf…__*`).
 
 ## 2026-10-19 — mise en place (avant le premier run)
 

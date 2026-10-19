@@ -10,6 +10,19 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-20 : premier run nocturne
+
+- **Verdict : En progrès** (pas d'alerte ; aucune mise à jour Google en cours : spam de septembre finie vers le 08/10).
+- **Google** (`dataState: all`, 13 → 19/10, dernier jour provisoire) : 7 j 48 clics (+50 %), 1 912 impressions (+22 %) ; 28 j 123 clics, 5 652 impressions, CTR 2,18 %, position 9,3. Dernières 24 h (jusqu'au 19/10 12 h) : 8 clics, 339 impressions (J-7 : 11 / 280). Marque « kyran » : 1 → 6 clics sur 7 j, position 4,2 → 2,4.
+- **Bing** (11 → 17/10) : 6 clics (+100 %), 146 impressions (+23 %) ; 56 pages dans l'index ; 0 erreur d'exploration ; sitemap et flux RSS déjà déclarés (lus le 19/10).
+- **Technique** : 50/50 URL du sitemap en 200, 0 anomalie, TTFB médian 306 ms. Inspection Google (30 URL) : 26 indexées ; hors index `/blog/`, `/a-propos.html`, `/video-regles.html` (détectées), `/blog/cadeau-anniversaire.html` (explorée le 29/08, non indexée). Accueil réexploré le 19/10 (après la refonte).
+- **Veille** : BGG 480678 a maintenant une description (vide le 19/10), toujours 0 note et pas de site ; WebSearch ne trouve ni « KYRAN Maître des Mystiques » ni « kyran-jeu.fr » (homonymes footballeurs) ; GEO (WebSearch, prompts 1 à 3) : 0 sur 3, cités à la place Skull King, Chouineurs, Pili Pili, regles2jeux, BGA, World of Geek.
+- **Actions** (PR du run) : images de partage 1200 × 630 (`og-kyran.jpg`) au lieu du logo carré sur 10 pages ; réponse directe « jeu de carte où l'on annonce le nombre de plis » sur `/regle.html` (requête : 37 impressions, position 10 sur 28 j) + cible dans `seo-keywords.json` ; réponse rapide « version moderne du Tarot Africain » qui nomme KYRAN (`/tarot-africain.html`, GEO) ; pays de livraison exacts dans `docs/SEO-GEO.md`. Hors PR : 8 URL soumises à Bing (`SubmitUrlBatch`) : idee-cadeau, video-regles, ressources-gratuites, regles-rikiki, jeux-comme-skull-king, `/blog/`, whist-22, a-propos. Aucun title ni description changé.
+- **Netlinking** : connecteur Gmail absent de la session : 2 messages prêts dans le doc (Ludovox, formulaire ; Règles2jeux, adresse à trouver, site en 503 cette nuit).
+- **À décider** : inchangé (Merchant Center, `priceValidUntil` 2027, pages légales, domaine GitHub, fiches externes) ; brancher Gmail dans l'environnement de la routine pour les prises de contact.
+- **Effet** : changement d'image de partage = `lastmod` du 19/10 sur 4 pages (le build compte la méta comme contenu) ; réévaluation de `/regle.html` et `/tarot-africain.html` le 17/11/2026.
+- **Doc partagé** : tableau de bord, veille, journal (4 lignes) et messages de netlinking prêts ; `rev` 26.
+
 ### 2026-10-19 (soir) : chantier « SEO intense » (session interactive, audit A à K)
 
 - **Verdict : En progrès.** Base de référence et audit complet dans `docs/rapports/seo-intense-2026-10-19.md` et le Google Doc « Audit et plan SEO de kyran-jeu.fr (19 octobre 2026) ».

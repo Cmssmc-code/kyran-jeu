@@ -67,3 +67,5 @@
 
 | Date | Cible | Canal | Objet | Résultat |
 |---|---|---|---|---|
+| 2026-10-20 | Ludovox (Ludochrono Kyran, Fredovox) | formulaire https://ludovox.fr/contact/ | Ajout du lien kyran-jeu.fr | Non envoyé : Gmail absent de la session, pas d'adresse publique ; message prêt dans le doc partagé pour Corentin |
+| 2026-10-20 | Règles2jeux (règle du tarot africain) | à trouver (site en 503 la nuit) | Feuille de score gratuite (modèle 2) | Non envoyé : message prêt dans le doc partagé |

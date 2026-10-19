@@ -106,9 +106,11 @@
       "primary_queries": [
         "kyran règles",
         "règles jeu de plis",
-        "comment jouer kyran"
+        "comment jouer kyran",
+        "jeu de carte annonce nombre de plis"
       ],
       "secondary_queries": [
+        "jeu de carte pari nombre de plis",
         "manche mystique",
         "cartes pouvoir kyran"
       ]

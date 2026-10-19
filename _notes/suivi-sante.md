@@ -5,6 +5,25 @@ Rapport complet de chaque run : `docs/rapports/sante/AAAA-MM-JJ.md`.
 
 ---
 
+## 2026-10-20 — run de la routine
+
+Verdict : **Incident** (Auto-Heal toujours sans auth Anthropic, action du propriétaire ; le reste va bien).
+Rapport complet : [`docs/rapports/sante/2026-10-20.md`](../docs/rapports/sante/2026-10-20.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 17 pages en 200, 404 propre, 50/50 URL du sitemap saines (`seo-health.py`), Playwright 1280/390 px sans erreur ; TLS non vérifié (proxy) |
+| Initiation et boutique | OK | partie lancée et carte jouée ; page Stripe 9,99 € + 2,99 € = 12,98 €, comme le site |
+| Pages et workflows | OK | dépôt public, Pages publié sur `3c3c79d`, CI, IndexNow et Instagram verts |
+| Serveur Railway | OK | `/health` ok ; config inchangée ; dernier `SUCCESS` couvre `server/` ; 0 5xx sur 26 requêtes |
+| Erreurs et Auto-Heal | Incident | 4 runs rouges en 24 h : WIF 401 puis clé `invalid x-api-key` ; `JS-095C84` (`:is()` dans `js/motion.js`) corrigé |
+| Code et CI | OK | build sans diff, `npm test` vert, `npm audit` 0 faille |
+| Contenus | À surveiller | aucun article neuf depuis le 14/10 (routine blog) |
+
+Réparation : `js/motion.js` sans `:is()` + test `client-js.test.mjs` (PR du run).
+Points ouverts : auth Auto-Heal (propriétaire) puis 5 incidents en attente ; PR #26 et branche
+`claude/gallant-hamilton-jadoob` à trancher ; TLS à contrôler hors proxy.
+
 ## 2026-10-19 — contrôle manuel (avant le premier run)
 
 Verdict : **Incident** (Auto-Heal en panne depuis le 13/10, correctif livré, auth à refaire par le propriétaire).

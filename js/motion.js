@@ -43,8 +43,10 @@
   /* ── Accueil : révélations en cascade ── */
   if (hasIO && d.querySelector('.hero-ecommerce')) {
     var STAGGER = '.steps-grid, .powers-grid, .box-list, .avis-highlight__quotes, .faq-accordion--home, .blog-grid, .amazon-store-grid';
-    var SINGLE = 'main section:not(.hero) :is(.eyebrow, .section-title, .section-divider, .section-sub):not(.reveal-on-scroll), ' +
-      '.avis-highlight__photo, #amazon-reviews-widget, .heritage-visual, .heritage-copy > p, .section-actions';
+    // pas de :is() : querySelectorAll lève une SyntaxError sur les navigateurs qui l'ignorent (Safari < 14)
+    var SINGLE = ['.eyebrow', '.section-title', '.section-divider', '.section-sub'].map(function (c) {
+      return 'main section:not(.hero) ' + c + ':not(.reveal-on-scroll)';
+    }).join(', ') + ', .avis-highlight__photo, #amazon-reviews-widget, .heritage-visual, .heritage-copy > p, .section-actions';
     var vh = w.innerHeight, plan = [];
     // lecture groupée des positions, puis écriture des classes (pas de reflow en boucle)
     each(STAGGER, function (el) { plan.push([el, 1, el.getBoundingClientRect().top > vh]); });

@@ -27,7 +27,7 @@
 | Propriété | Valeur | Source à citer |
 |---|---|---|
 | nature de l'élément (P31) | jeu de cartes (Q142714) | https://boardgamegeek.com/boardgame/480678/kyran |
-| genre (P136) | jeu de levées (Q1361226) | BGG (mécanique Trick-taking) |
+| genre (P136) | jeu de levées (Q1191150) — Q1361226 est une plante, ne pas l'utiliser | BGG (mécanique Trick-taking) |
 | auteur (P50) | Corentin Sence (texte : P2093 « auteur sous forme de chaîne ») | BGG, https://ludovox.fr/ludochrono-kyran/ |
 | éditeur (P123) | Corentin Sence / Kyran (chaîne, pas d'élément) | https://kyran-jeu.fr/mentions-legales.html |
 | illustrateur (P110) | Crea by Floh (chaîne) | https://kyran-jeu.fr/a-propos.html |
@@ -38,7 +38,6 @@
 | nombre maximal de joueurs (P1873) | 6 | BGG |
 | âge minimal recommandé (P2899) | 8 ans | BGG |
 | durée de jeu (P2047) | 30 minutes | BGG |
-| inspiré de (P941) | Ascenseur (jeu de cartes) (Q973596) — dont le Tarot Africain est une variante | https://fr.wikipedia.org/wiki/Ascenseur_(jeu_de_cartes) |
 | site officiel (P856) | https://kyran-jeu.fr/ | — |
 | identifiant BoardGameGeek (P2339) | 480678 | — |
 | identifiant de chaîne YouTube (P2397) | à relever sur la chaîne @Kyran-jeu (identifiant `UC…`) | — |

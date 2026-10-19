@@ -1,7 +1,7 @@
 # Google Merchant Center : fiche produit KYRAN
 
 Ce document explique le flux produit du site et ce que le propriétaire doit faire lui-même
-dans Merchant Center. Mis à jour le 13 octobre 2026.
+dans Merchant Center. Mis à jour le 19 octobre 2026.
 
 ## 1. Le flux
 
@@ -21,17 +21,14 @@ dans Merchant Center. Mis à jour le 13 octobre 2026.
   `age_group: all_ages` (valeur non reconnue), étiquette « Top Vente », couleur et matière
   non sourcées.
 
-### Prérequis avant toute soumission : le port sur Stripe
+### Prérequis avant toute soumission : le port sur Stripe (rempli)
 
 Le port France est fixé à **2,99 € par commande** (décision du propriétaire du 13 octobre 2026),
-soit 12,98 € pour une boîte. Le 13 octobre 2026, le Payment Link Stripe facturait encore
-**3,99 €**. Merchant Center compare le flux à la page de paiement : tant que Stripe facture
-3,99 €, la fiche sera refusée pour prix de livraison incorrect.
-
-1. Dans Stripe, changer le tarif de livraison France du Payment Link à 2,99 €.
-2. Ouvrir la vraie page de paiement (sans payer) et vérifier : 9,99 € + 2,99 € = 12,98 € pour
-   une boîte, port inchangé pour plusieurs boîtes (`docs/VENTES-PASSES.md`, étape 2).
-3. Seulement ensuite, soumettre le flux.
+soit 12,98 € pour une boîte. La page de paiement Stripe facture ce montant depuis le 13 octobre
+au soir (`_notes/memoire.md` § 1) ; l'audit du 19 octobre 2026 l'a relu : un tarif unique de
+2,99 € pour les 5 pays autorisés (FR, BE, LU, CH, MC). Le prérequis est donc rempli : le flux peut
+être soumis. Avant chaque soumission, refaire l'étape 2 de `docs/VENTES-PASSES.md` (ouvrir la
+vraie page de paiement sans payer et comparer).
 
 ### Contenu du flux
 

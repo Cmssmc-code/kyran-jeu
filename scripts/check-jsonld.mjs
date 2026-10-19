@@ -23,6 +23,10 @@ const GLOBAL_IDS = new Set([
   'https://kyran-jeu.fr/a-propos.html#corentin-sence'
 ]);
 
+// Types que Google n'affiche plus (HowTo, retiré en 2023) : ne pas les republier.
+const BANNED_TYPES = new Set(['HowTo']);
+const bannedFound = [];
+
 function* htmlFiles(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (entry.name.startsWith('.')) continue;
@@ -37,6 +41,7 @@ function collectIds(node, ids, refs) {
   if (Array.isArray(node)) return node.forEach(n => collectIds(n, ids, refs));
   if (!node || typeof node !== 'object') return;
   const keys = Object.keys(node);
+  if (node['@type'] && [].concat(node['@type']).some(t => BANNED_TYPES.has(t))) bannedFound.push(node['@type']);
   if (node['@id']) {
     if (keys.length === 1) refs.add(node['@id']);
     else ids.add(node['@id']);
@@ -73,6 +78,7 @@ for (const file of htmlFiles(root)) {
     }
     collectIds(data, ids, refs);
   }
+  for (const t of bannedFound.splice(0)) problems.push(`${rel}: type de données structurées à ne plus publier : ${t}`);
   for (const r of refs) {
     if (!ids.has(r) && !GLOBAL_IDS.has(r)) problems.push(`${rel}: référence @id sans définition : ${r}`);
   }

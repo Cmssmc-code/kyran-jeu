@@ -4,7 +4,9 @@
 > Bing : « liens entrants insuffisants depuis des domaines de qualité ». Objectif : 10 liens de
 > sites ludiques francophones d'ici mi-décembre 2026.
 >
-> Colonnes « Contact » et « Statut » à compléter par Corentin. Modèles de messages :
+> Depuis le 2026-10-19, la routine SEO nocturne (`_notes/seo-routine-mission.md` § 7) remplit les colonnes
+> « Contact » et « Statut », envoie au plus 2 prises de contact par nuit depuis le Gmail connecté et journalise
+> chaque envoi et chaque réponse en bas de ce fichier. Colonnes « Contact » et « Statut » complétables aussi par Corentin. Modèles de messages :
 > [`modeles-mails.md`](modeles-mails.md). Ne rien promettre qui ne soit pas vrai (pas de
 > « jeu primé », pas de chiffres de ventes non publiés).
 
@@ -60,3 +62,8 @@
 - Après chaque lien obtenu : noter la date et l'URL ici, puis vérifier dans Search Console
   (Liens > Liens externes) sous 2 à 4 semaines.
 - Ne jamais acheter de liens ni passer par des réseaux de sites : risque de pénalité.
+
+## Journal des contacts
+
+| Date | Cible | Canal | Objet | Résultat |
+|---|---|---|---|---|

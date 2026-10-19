@@ -1,0 +1,2 @@
+date,urls_sitemap,urls_testees,http_200,redirections,http_4xx,http_5xx,erreurs_reseau,noindex_dans_sitemap,canonical_faux,titre_absent,titre_trop_long,description_absente,description_hors_limites,h1_pas_unique,hreflang_absent,jsonld_invalide,og_image_absente,ttfb_median_ms,html_median_ko,robots_ok,robots_ia_bloques,llms_txt_ok,gsc_inspectees,gsc_indexees,psi_perf_mobile_accueil,crux_lcp_p75_ms,crux_inp_p75_ms,crux_cls_p75
+2026-10-19,50,50,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,186,61,1,,1,20,18,,,,

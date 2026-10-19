@@ -74,7 +74,8 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
   `regles-rikiki` (inconnues). `idee-cadeau` est indexée depuis le 18/10.
 - PageSpeed mobile (11/10) : accueil 97, Tarot 98, Skyjo 92, 3 joueurs 99 ; SEO 100 ; CSS bloquant ~700 ms en 4G
   lente, `style.css` 117 Ko.
-- Images de partage : `logo.png` 512 × 512 sur 10 pages ; PNG de 1,96 Mo sur `commander.html`.
+- Images de partage : `og-kyran.jpg` 1200 × 630 partout depuis le 20/10, sauf `commander.html` (PNG de 1,96 Mo).
+- 20/10 : inspection de 30 URL : 26 indexées ; hors index `/blog/`, `a-propos`, `video-regles`, `cadeau-anniversaire` (explorée 29/08, non indexée).
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
 - `priceValidUntil` du Product : 31/12/2026.
 
@@ -126,13 +127,13 @@ Serveurs MCP (`.mcp.json`, `docs/MCP_SEO.md`) : `gsc` (présent dans la session 
 |---|---|
 | Ludovox, Ludochrono (31/01/2026) | vidéo 5 min, aucun lien vers le site |
 | Le Pirate Ludique (YouTube) | vidéo « Kyran maître des mystiques » |
-| BoardGameGeek 480678 | 0 note, 0 possesseur, description vide, mécanique « Predictive Bid » seule |
+| BoardGameGeek 480678 | 0 note, 0 possesseur ; description remplie (constat du 20/10, vide le 19/10), champ site toujours vide, 88 vues |
 | Wikidata Q141623753 | libellés fr et en, P31, P2093, P577, P1872, P1873, P856 (site), P407 ; 0 référence ; absent des `sameAs` du site |
 | Amazon.fr | 4,7/5 sur 33 évaluations |
 | BoardGamesFlix | fiche descriptive |
 | YouTube @Kyran-jeu | 1 vidéo, 101 vues |
 | Trictrac, MyLudo, Philibert, presse | rien |
-| Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque |
+| Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque ; 20/10 : WebSearch (moteur de Claude) ne sort pas kyran-jeu.fr sur « KYRAN jeu de cartes Maître des Mystiques » |
 
 Liens entrants : **0** (Search Console et Bing).
 

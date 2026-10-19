@@ -34,6 +34,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 
 | Date | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total C+M | Cités à la place |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-20 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Chouineurs, Pili Pili, Cat in the Box, Luz (espritjeu, ludum, gusandco) ; 2 : regles2jeux, Board Game Arena ; 3 : World of Geek, Ludum |
 
 ## Relevés manuels
 

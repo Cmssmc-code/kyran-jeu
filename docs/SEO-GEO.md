@@ -110,7 +110,7 @@ Tranchés (2 octobre 2026) :
 | Nombre de cartes | 36 Nombre + 1 Mystique + 8 Pouvoir (45 cartes de jeu) + 30 Vie + **7 cartes de règles** (confirmé par l'éditeur le 2 octobre 2026). « 55 cartes » retiré partout (site, CGV, flux Merchant, barre de stats). |
 | Avis « Amélie » | Citation supprimée de l'accueil. Les citations de Toto et Patrick sont maintenant des extraits exacts de leurs avis. |
 | Retours | Retours gratuits confirmés : CGV (art. 6), page commander, FAQ et JSON-LD alignés (`FreeReturn`). |
-| Livraison | France métropolitaine et pays limitrophes : Belgique, Luxembourg, Allemagne, Suisse, Italie, Espagne, Monaco, Andorre, Royaume-Uni (liste du flux Merchant). CGV, JSON-LD, page commander et FAQ alignés. |
+| Livraison | France métropolitaine, Belgique, Luxembourg, Suisse et Monaco : seuls pays acceptés par la page Stripe (vérifiée le 13/10/2026, `_notes/memoire.md` § 1). Corrigé le 20/10/2026 (la liste précédente, reprise d'un ancien flux Merchant, était fausse). |
 | Prix | 9,99 € sur kyran-jeu.fr (confirmé). |
 | Flux Merchant | « Dès 10 ans » corrigé en « Dès 8 ans ». |
 | Kbis | Cohérent avec les mentions légales (SIREN 840 817 548, RCS Nanterre). Activité commencée le 10/09/2025 : ajoutée dans `llms.txt` et au JSON-LD de l'Organisation (`foundingDate`). Le domicile du Kbis n'est pas republié. |

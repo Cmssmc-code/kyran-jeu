@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-20 — Accueil : `js/motion.js` coupé par un sélecteur `:is()` sur les vieux navigateurs
+
+- **Symptôme :** incident `JS-095C84` le 19/10 : « Uncaught SyntaxError: Failed to execute 'querySelectorAll' … `:is(.eyebrow, …)` ». Sur ces navigateurs, la suite du script (inclinaison de l'éventail, retournement des cartes Pouvoir) ne tournait plus.
+- **Cause :** `js/motion.js` (13/10) passait `main section:not(.hero) :is(…)` à `querySelectorAll` ; un navigateur sans `:is()` (Safari < 14, Chrome < 88) lève une exception au lieu de ne rien trouver.
+- **Correctif :** sélecteur développé sans `:is()` (mêmes 20 éléments sur l'accueil) ; test `scripts/test/client-js.test.mjs` qui refuse `:is(`, `:where(` et `:has(` dans une chaîne des scripts du site. Règle : ces pseudo-classes vont en CSS, jamais dans `querySelector`.
+
 ### 2026-10-19 — Notes internes publiées sur le site ; encart de vente perdu dans une fusion
 
 - **Symptôme :** `https://kyran-jeu.fr/_notes/seo/kpi-quotidiens.csv` (KPI Search Console), `mouvements.json`, `.claude/settings.json` et `.mcp.json` répondaient 200. Sur `/tarot-africain.html`, l'encart KYRAN ajouté le 13/10 (#49) avait disparu.

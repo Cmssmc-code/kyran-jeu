@@ -191,7 +191,7 @@ function validate(slug, a, errors, warns, cache) {
   if (/kyran[^.]{0,80}sans élimination/i.test(text)) err('KYRAN ne peut pas être décrit comme « sans élimination »');
 
   const total = wordCount(text);
-  if (total < 1200) err(`${total} mots au total (≥ 1200)`);
+  if (total < 1500) err(`${total} mots au total (≥ 1500)`);
   cache.words = total;
   cache.sentences = sentences(text);
   cache.shingles = shingles(text);

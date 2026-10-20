@@ -5,8 +5,8 @@
 > sites ludiques francophones d'ici mi-décembre 2026.
 >
 > Depuis le 2026-10-19, la routine SEO nocturne (`_notes/seo-routine-mission.md` § 7) remplit les colonnes
-> « Contact » et « Statut », envoie au plus 2 prises de contact par nuit depuis le Gmail connecté et journalise
-> chaque envoi et chaque réponse en bas de ce fichier. Colonnes « Contact » et « Statut » complétables aussi par Corentin. Modèles de messages :
+> « Contact » et « Statut », prépare au plus 2 messages par nuit, prêts à copier dans le doc partagé (pas d'envoi
+> automatique ni de Gmail : décision du 2026-10-20), et journalise en bas de ce fichier ce qui a été préparé, envoyé par Corentin et reçu. Colonnes « Contact » et « Statut » complétables aussi par Corentin. Modèles de messages :
 > [`modeles-mails.md`](modeles-mails.md). Ne rien promettre qui ne soit pas vrai (pas de
 > « jeu primé », pas de chiffres de ventes non publiés).
 

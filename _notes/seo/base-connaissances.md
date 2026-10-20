@@ -28,7 +28,7 @@
 - Build `npm run build` (`scripts/build.mjs`, 9 étapes : blog, redirections, infra du blog, communauté, SEO
   (sitemap, `llms*.txt`, plan du site, `dateModified`, `?v=`), flux Merchant, prerender, stamp-dojo, CSP).
 - Registres : `scripts/lib/site-urls.mjs` (pages), `scripts/content/roster.json` (articles, redirections),
-  `scripts/lastmod-manifest.json` (dates, jamais à la main), `seo-keywords.json` (39 clusters, mis à jour le 04/10).
+  `scripts/lastmod-manifest.json` (dates, jamais à la main), `seo-keywords.json` (50 clusters, une cible par page du sitemap depuis le 21/10).
 - CI « Contrôles du site » (`ci.yml`) : JSON-LD, validation du blog, `check:site`, doublons, build à jour, tests.
   IndexNow à chaque push (`indexnow.yml`). Workflow `pages.yml` publie ; un push par `GITHUB_TOKEN` ne le
   déclenche pas.
@@ -75,7 +75,8 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 - PageSpeed mobile (11/10) : accueil 97, Tarot 98, Skyjo 92, 3 joueurs 99 ; SEO 100 ; CSS bloquant ~700 ms en 4G
   lente, `style.css` 117 Ko.
 - Images de partage : `og-kyran.jpg` 1200 × 630 partout depuis le 20/10, sauf `commander.html` (PNG de 1,96 Mo).
-- 20/10 : inspection de 30 URL : 26 indexées ; hors index `/blog/`, `a-propos`, `video-regles`, `cadeau-anniversaire` (explorée 29/08, non indexée).
+- 21/10 : inspection de 30 URL : 27 indexées ; hors index `/blog/`, `video-regles` ; `jeux-comme-skull-king`, `regles-rikiki` indexées. Le 20/10 : `a-propos` et `cadeau-anniversaire` aussi hors index (non inspectées le 21).
+- Bing : les 5 pages d'octobre soumises le 20/10 sont découvertes et explorées le 21/10.
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
 - `priceValidUntil` du Product : 31/12/2026.
 

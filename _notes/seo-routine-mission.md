@@ -65,11 +65,12 @@ titres de `docs/SUIVI-BLOG-SEO.md` et la liste des PR ouvertes.
    respectant `scripts/content/README.md` et les vérifications de liens BGG et Wikipédia (`lecon.md`, 04/10).
 6. **Netlinking propre.** Jamais de lien acheté, d'échange en masse, de faux avis, de commentaire ou de profil
    créé pour un lien, ni de compte créé au nom du propriétaire. Contacter un site est permis (autorisation du
-   propriétaire, 2026-10-19) : au plus **2 prises de contact par run**, personnalisées, vers une adresse éditoriale
-   publique, depuis le connecteur Gmail (compte corentin.sence@gmail.com, signé « Corentin Sence, auteur de
-   KYRAN », libellé « SEO netlinking KYRAN »), **jamais avec une adresse Majordia** (`lecon.md`, 03/10). Modèles :
-   `_notes/outreach/modeles-mails.md`. Une seule relance, pas avant 14 jours ; chaque run lit d'abord les réponses
-   reçues et met à jour `_notes/outreach/cibles.md`. Connecteur absent : message prêt à envoyer dans le doc.
+   propriétaire, 2026-10-19) : au plus **2 messages préparés par run**, personnalisés, vers une adresse éditoriale
+   publique ou un formulaire de contact. **Pas d'envoi par la routine** (décision du propriétaire, 2026-10-20 : pas
+   de Gmail) : chaque message est mis, prêt à copier, dans la section Netlinking du doc partagé ; Corentin l'envoie
+   s'il le souhaite, signé « Corentin Sence, auteur de KYRAN », **jamais depuis une adresse Majordia** (`lecon.md`,
+   03/10). Modèles : `_notes/outreach/modeles-mails.md`. Une seule relance, pas avant 14 jours ; chaque run reporte
+   dans `_notes/outreach/cibles.md` ce que Corentin a noté (envois, réponses, liens obtenus).
 7. **Prix, port, pays de livraison, Stripe, avis Amazon** : jamais modifiés ; tout écart vu entre le site et la
    page Stripe → « À décider » et alerte (`lecon.md`, 12/10).
 8. **Secrets** : jamais affichés ni écrits (nom de variable seulement). Rapport sans donnée personnelle.
@@ -115,7 +116,7 @@ npm ci --no-audit --no-fund   # en arrière-plan
 - Outils : `ToolSearch` pour `WebSearch`, `WebFetch`, `mcp__github__*` (PR : `create_pull_request`,
   `pull_request_read`, `merge_pull_request`), les outils Claude Docs (`read`, `update`, `batch`, `guide` ; préfixe
   technique `mcp__<uuid>__` dans la session dédiée : chercher par nom d'outil, jamais par `mcp__Claude_Docs__`),
-  Gmail (`search_threads`, `create_draft`, `send_message`, `create_label`), Railway (`get-logs`, projet
+  Railway (`get-logs`, projet
   `kyran-webhook`), et s'ils existent `mcp__gsc__*` / `mcp__bing-webmaster__*` (souvent lents au démarrage : les
   scripts suffisent). Avant le premier appel au doc partagé : skill `anthropic-skills:docs` s'il est listé, sinon
   `guide(items=["topic.index"])`.
@@ -211,9 +212,9 @@ Opportunités notées (impact × confiance ÷ effort), **3 à 5** retenues :
 
 ### 7. Netlinking et présence externe (15 min)
 
-- Réponses reçues (Gmail, libellé « SEO netlinking KYRAN ») → statuts dans `_notes/outreach/cibles.md` ; liens
+- Envois et réponses notés par Corentin (doc partagé, `_notes/outreach/cibles.md`) → statuts à jour ; liens
   obtenus vérifiés en ligne puis notés avec la date.
-- 1 à 2 prises de contact personnalisées (règle 6), ressource gratuite à l'appui (feuille de score PDF, initiation,
+- 1 à 2 messages personnalisés prêts à copier dans le doc (règle 6, pas d'envoi par la routine), ressource gratuite à l'appui (feuille de score PDF, initiation,
   comparatif des jeux de plis, synthèse « cartes et cerveau », exemplaire de test).
 - Présence propriétaire (BGG, Trictrac, MyLudo, Wikidata, Merchant Center) : textes et étapes à faire par Corentin,
   ne rien créer soi-même.

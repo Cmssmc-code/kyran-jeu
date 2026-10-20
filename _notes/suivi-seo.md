@@ -10,6 +10,18 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-21 : run nocturne n° 2
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 14 → 20/10, dernier jour provisoire) : 7 j 44 clics (+19 %), 1 889 impressions (+10 %) ; 28 j 122 clics, 5 832 impressions, CTR 2,09 %, position 9,2. Dernières 24 h (jusqu'au 20/10 11 h) : 2 clics, 288 impressions (J-7 : 6 / 184), variation d'un jour, pas d'action. « kyran » : 0 → 6 clics sur 7 j, position 2,2.
+- **Bing** (12 → 18/10) : 7 clics, 137 impressions ; 56 pages dans l'index ; 0 erreur. Les pages soumises le 20/10 sont maintenant découvertes et explorées (`GetUrlInfo` : idee-cadeau, jeux-comme-skull-king).
+- **Technique** : 50/50 en 200, 0 anomalie, TTFB médian 282 ms. Inspection (30 URL) : 27 indexées ; hors index `/blog/` et `/video-regles.html` (détectées). `jeux-comme-skull-king` et `regles-rikiki` sont indexées (inconnues le 18/10).
+- **Veille** : 24 h : routine ventes (refs d'origine sur le blog) et santé (Auto-Heal : règle WIF de Majordia) ; GEO (WebSearch, prompts 4 à 6) : 0 sur 3 (Trio, 13 Feuilles, The Last Wizard cités) ; « Kyran Corentin Sence » introuvable dans WebSearch : la marque n'a pas de mentions externes indexées.
+- **Actions** (PR du run) : section « Jouer au Tarot Africain en ligne » (`#en-ligne`, requête « tarot africain en ligne » : 24 impressions, position 10,6 sur 28 j ; réponse rapide reliée) ; cibles de requête pour les 11 pages du sitemap qui n'en avaient pas (`seo-keywords.json`). Aucun title ni description : aucun n'a 28 jours (journal des titres, réévaluation à partir du 05/11).
+- **Netlinking** : rien de neuf noté par Corentin ; pas de nouveau message (les 2 du 20/10 attendent).
+- **À décider** : inchangé.
+- **Doc partagé** : tableau de bord, veille, journal (2 lignes) ; `rev` 27.
+
 ### 2026-10-20 : premier run nocturne
 
 - **Verdict : En progrès** (pas d'alerte ; aucune mise à jour Google en cours : spam de septembre finie vers le 08/10).

@@ -5,6 +5,23 @@ Rapport complet de chaque run : `docs/rapports/sante/AAAA-MM-JJ.md`.
 
 ---
 
+## 2026-10-21 — run de la routine
+
+Verdict : **Incident** (Auto-Heal toujours sans auth Anthropic, action du propriétaire ; tout le reste OK, aucune
+réparation). Rapport complet : [`docs/rapports/sante/2026-10-21.md`](../docs/rapports/sante/2026-10-21.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 17 pages en 200, 50/50 URL du sitemap saines, Playwright 1280/390 px sans erreur ; TLS jusqu'au 14/12 |
+| Initiation et boutique | OK | partie jouée ; Stripe 9,99 € + 2,99 € = 12,98 €, comme le site |
+| Pages et workflows | OK | dépôt public ; Pages, CI, IndexNow et Instagram verts |
+| Serveur Railway | OK | `/health` ok, config inchangée, 0 5xx sur 16 requêtes, aucun log en 24 h |
+| Erreurs et Auto-Heal | Incident | 5 runs rouges en 24 h : WIF 401 puis `invalid x-api-key` |
+| Code et CI | OK | build sans diff, `npm test` vert, `npm audit` 0 faille |
+| Contenus | À surveiller | aucun article neuf depuis le 14/10 |
+
+Points ouverts : auth Auto-Heal (propriétaire, `docs/AUTO-HEAL.md` § 5) puis 5 incidents ; blog à revoir le 22/10.
+
 ## 2026-10-20 — run de la routine
 
 Verdict : **Incident** (Auto-Heal toujours sans auth Anthropic, action du propriétaire ; le reste va bien).

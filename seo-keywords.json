@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-21",
   "property": "https://kyran-jeu.fr/",
   "clusters": [
     {
@@ -564,6 +564,105 @@
       "primary_queries": [
         "kyran jeu auteur",
         "corentin sence kyran"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/commander.html",
+      "primary_queries": [
+        "acheter kyran",
+        "kyran jeu de cartes prix"
+      ],
+      "secondary_queries": [
+        "kyran"
+      ]
+    },
+    {
+      "page": "/idee-cadeau.html",
+      "primary_queries": [
+        "idée cadeau jeu de cartes",
+        "cadeau jeu de cartes noël"
+      ],
+      "secondary_queries": [
+        "jeu de cartes à offrir"
+      ]
+    },
+    {
+      "page": "/video-regles.html",
+      "primary_queries": [
+        "kyran règles vidéo",
+        "ludochrono kyran"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/regles-rikiki.html",
+      "primary_queries": [
+        "règles rikiki",
+        "règle ascenseur jeu de cartes"
+      ],
+      "secondary_queries": [
+        "oh hell règles",
+        "rikiki 52 cartes"
+      ]
+    },
+    {
+      "page": "/ressources-gratuites.html",
+      "primary_queries": [
+        "feuille de score tarot africain",
+        "règle tarot africain pdf"
+      ],
+      "secondary_queries": [
+        "feuille de score à imprimer"
+      ]
+    },
+    {
+      "page": "/dossier-presse.html",
+      "primary_queries": [
+        "kyran presse",
+        "kyran communiqué"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/communaute.html",
+      "primary_queries": [
+        "kyran avis joueurs",
+        "kyran photos parties"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/blog/jeux-comme-skull-king.html",
+      "primary_queries": [
+        "jeux comme skull king",
+        "alternative skull king"
+      ],
+      "secondary_queries": [
+        "jeu de pari sur les plis"
+      ]
+    },
+    {
+      "page": "/blog/jeux-cartes-ados.html",
+      "primary_queries": [
+        "jeu de cartes ado",
+        "jeux de cartes pour ados"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/blog/jeux-cartes-seniors.html",
+      "primary_queries": [
+        "jeux de cartes seniors",
+        "jeu de cartes personnes âgées"
+      ],
+      "secondary_queries": []
+    },
+    {
+      "page": "/blog/science-jeux-de-cartes-cerveau.html",
+      "primary_queries": [
+        "jeux de cartes et cerveau",
+        "jeux de cartes mémoire études"
       ],
       "secondary_queries": []
     }

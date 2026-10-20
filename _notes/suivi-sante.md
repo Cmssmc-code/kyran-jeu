@@ -21,8 +21,11 @@ Rapport complet : [`docs/rapports/sante/2026-10-20.md`](../docs/rapports/sante/2
 | Contenus | À surveiller | aucun article neuf depuis le 14/10 (routine blog) |
 
 Réparation : `js/motion.js` sans `:is()` + test `client-js.test.mjs` (PR du run).
-Points ouverts : auth Auto-Heal (propriétaire) puis 5 incidents en attente ; PR #26 et branche
-`claude/gallant-hamilton-jadoob` à trancher ; TLS à contrôler hors proxy.
+Points ouverts : auth Auto-Heal (propriétaire) puis 5 incidents en attente.
+
+Suite du 20/10 : cause du refus WIF trouvée (règle de fédération de Majordia réutilisée, réparation dans
+`docs/AUTO-HEAL.md` § 5) ; fausse alerte vidéo filtrée dans `error-reporter.js` ; TLS valide jusqu'au 14/12
+(site) et 26/12 (Railway) ; PR #26 fermée ; branche `gallant-hamilton` déjà fusionnée (#65).
 
 ## 2026-10-19 — contrôle manuel (avant le premier run)
 

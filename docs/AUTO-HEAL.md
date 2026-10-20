@@ -89,6 +89,12 @@ avant chaque correctif.
 - Auth Anthropic : Workload Identity Federation (mêmes identifiants que Majordia, surchargeables par
   les variables de dépôt `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`,
   `ANTHROPIC_WORKSPACE_ID`) ; repli : secret `ANTHROPIC_API_KEY`.
+  La règle `fdrl_01YA6haXm2AP2TpbNaE5qwjq` vient de Majordia (`Cmssmc-code/Majordia`) : tant qu'elle
+  n'accepte pas aussi le jeton OIDC de `Cmssmc-code/kyran-jeu` (sujet `repo:Cmssmc-code/kyran-jeu:ref:refs/heads/main`,
+  audience `https://api.anthropic.com`), l'échange WIF répond 401 « Authentication failed ». Deux réparations
+  possibles dans la console Anthropic (page Workload identity, qui montre aussi le journal des refus) : ajouter
+  ce sujet à la règle, ou créer une règle propre à KYRAN et mettre son identifiant dans la variable de dépôt
+  `ANTHROPIC_FEDERATION_RULE_ID` (aucun changement de code). Puis lancer le workflow avec `smoke_test`.
 - Lancement manuel : `smoke_test` (vérifie l'auth Anthropic et serveur sans générer), `dry_run`.
 - Après un correctif poussé avec `GITHUB_TOKEN` : relance de `ci.yml` et `pages.yml` ; Railway
   redéploie le serveur tout seul (dossier `server/`).

@@ -46,7 +46,17 @@
     if (target && target !== window && (target.src || target.href)) {
       var url = target.currentSrc || target.src || target.href;
       if (!/^https:\/\/(www\.)?kyran-jeu\.fr\//.test(url)) return;
-      send({ kind: 'resource', message: 'Ressource introuvable : <' + target.tagName.toLowerCase() + '> ' + url, file: url });
+      var tag = target.tagName.toLowerCase();
+      var report = { kind: 'resource', message: 'Ressource introuvable : <' + tag + '> ' + url, file: url };
+      // Vidéo ou son : une coupure réseau du visiteur déclenche aussi « error » (fichier pourtant en ligne,
+      // incident JS-894824) ; on ne signale que si le fichier manque vraiment.
+      if (/^(video|audio|source)$/.test(tag) && window.fetch) {
+        fetch(url, { method: 'HEAD', cache: 'no-store', credentials: 'omit' }).then(function (res) {
+          if (!res.ok) send(report);
+        }, function () { /* hors ligne : rien à signaler */ });
+        return;
+      }
+      send(report);
       return;
     }
     var err = event.error;

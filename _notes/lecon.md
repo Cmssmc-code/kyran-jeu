@@ -9,6 +9,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-20 — Auto-Heal : règle de fédération de Majordia réutilisée ; fausses alertes vidéo
+
+- **Symptôme :** échange WIF toujours en 401 « Authentication failed » sur `main` ; incident `JS-894824` (« Ressource introuvable : `<source>` `teaser-kyran.mp4` », 4 fois) alors que la vidéo répond 200.
+- **Cause :** le portage depuis Majordia a recopié `fdrl_01YA6haXm2AP2TpbNaE5qwjq`, le compte de service et le workspace de Majordia ; cette règle vient de Majordia (citée dans son `_notes/lecon-archive.md`) et refuse le jeton OIDC de `kyran-jeu`, très probablement parce qu'elle ne vise que le dépôt Majordia (à confirmer dans le journal Workload identity de la console). KYRAN n'a jamais marché en WIF : avant le 13/10, il passait par la clé API. Côté vidéo, le navigateur déclenche `error` sur `<source>` / `<video>` aussi quand le réseau du visiteur coupe le chargement.
+- **Correctif :** cause et réparation (sujet à ajouter à la règle, ou règle KYRAN dans la variable `ANTHROPIC_FEDERATION_RULE_ID`) écrites dans `docs/AUTO-HEAL.md` § 5, à faire par le propriétaire dans la console. `error-reporter.js` vérifie par `HEAD` qu'un média manque vraiment avant de le signaler (test `scripts/test/error-reporter.test.mjs`). Règle : en portant un pipeline d'un autre produit, ne jamais réutiliser ses identifiants d'auth sans vérifier qu'ils acceptent ce dépôt.
+
 ### 2026-10-20 — Accueil : `js/motion.js` coupé par un sélecteur `:is()` sur les vieux navigateurs
 
 - **Symptôme :** incident `JS-095C84` le 19/10 : « Uncaught SyntaxError: Failed to execute 'querySelectorAll' … `:is(.eyebrow, …)` ». Sur ces navigateurs, la suite du script (inclinaison de l'éventail, retournement des cartes Pouvoir) ne tournait plus.

@@ -67,12 +67,20 @@ function getGameMeta(game) {
  * ~33 liens externes par article) : la fiche BoardGameGeek, ou la boutique pour les guides
  * d'achat (article.layout.shopLinks).
  */
+/**
+ * Lien vers la boutique avec la page et l'endroit d'origine : /commander.html transmet `ref`
+ * à Stripe en client_reference_id, visible sur chaque paiement (docs/VENTES-PASSES.md).
+ */
+function orderHref(article, place) {
+  return `/commander.html?ref=blog-${article.slug}-${place}`;
+}
+
 function renderGameLinks(game, article) {
   const meta = getGameMeta(game);
   const links = [];
 
   if (game.isKyran) {
-    links.push(`<a class="game-link game-link--primary" href="/commander.html">Commander (9,99&nbsp;€)</a>`);
+    links.push(`<a class="game-link game-link--primary" href="${orderHref(article, 'fiche')}">Commander (9,99&nbsp;€)</a>`);
     links.push(`<a class="game-link" href="/regle.html">Règles</a>`);
     links.push(`<a class="game-link" href="/minijeu.html">Initiation</a>`);
   } else {
@@ -335,15 +343,15 @@ function kyranRating() {
   return `<p class="kyran-pitch__rating"><span class="kyran-pitch__stars" aria-hidden="true">★</span> ${KYRAN_RATING.value}/5 sur Amazon <span class="kyran-pitch__count">(${KYRAN_RATING.count}&nbsp;évaluations)</span></p>`;
 }
 
-function kyranButtons() {
+function kyranButtons(article, place) {
   return `<div class="kyran-pitch__actions">
-    <a class="btn btn-primary" href="/commander.html">Commander</a>
+    <a class="btn btn-primary" href="${orderHref(article, place)}">Commander</a>
     <a class="btn btn-secondary" href="/minijeu.html">Essayer en ligne</a>
   </div>`;
 }
 
 /** Encart court, placé après l'introduction et le résumé. */
-function renderKyranPitch() {
+function renderKyranPitch(article) {
   return `<aside class="kyran-pitch" aria-label="Notre jeu, KYRAN">
   <div class="kyran-pitch__text">
     <p class="kyran-pitch__eyebrow">Notre jeu</p>
@@ -352,12 +360,12 @@ function renderKyranPitch() {
     <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
     ${kyranRating()}
   </div>
-  ${kyranButtons()}
+  ${kyranButtons(article, 'debut')}
 </aside>`;
 }
 
 /** Encart de fin d'article : la règle en une phrase, les faits, les deux actions. */
-function renderKyranEnd() {
+function renderKyranEnd(article) {
   const box = KYRAN_BOX_DIMS
     ? `<img class="kyran-pitch__box" src="${KYRAN_BOX}" alt="Boîte du jeu de cartes KYRAN" width="${KYRAN_BOX_DIMS.width}" height="${KYRAN_BOX_DIMS.height}" loading="lazy" decoding="async" />`
     : '';
@@ -370,17 +378,17 @@ function renderKyranEnd() {
     ${kyranFacts()}
     <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
     ${kyranRating()}
-    ${kyranButtons()}
+    ${kyranButtons(article, 'fin')}
     <p class="kyran-pitch__note">KYRAN est édité par l’auteur de ce blog.</p>
   </div>
 </aside>`;
 }
 
-function renderSidebarCta() {
+function renderSidebarCta(article) {
   return `<div class="article-sidebar-cta">
   <p class="article-sidebar-cta__label">KYRAN · ${KYRAN_PRICE}</p>
   <p class="article-sidebar-cta__text">Plis et paris, 3 à 6 joueurs, environ 30&nbsp;min.</p>
-  <a class="btn btn-primary btn--sm" href="/commander.html">Commander</a>
+  <a class="btn btn-primary btn--sm" href="${orderHref(article, 'cote')}">Commander</a>
   <a class="article-sidebar-cta__link" href="/minijeu.html">Essayer en ligne</a>
 </div>`;
 }
@@ -605,10 +613,10 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
           <article class="article-main prose prose-wide">
             ${renderIntro(article.intro)}
             ${layout.summaryBox === false ? '' : renderLLMBox(article)}
-            ${renderKyranPitch()}
+            ${renderKyranPitch(article)}
             ${bodyHtml}
             ${guideBlock}
-            ${renderKyranEnd()}
+            ${renderKyranEnd(article)}
             ${renderAuthorCard()}
             ${renderShareBar(url)}
             ${renderCrossLinks(article, itemsBySlug)}
@@ -618,7 +626,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
               <p class="sticky-toc__title">Dans cet article</p>
               ${tocLinks}
             </nav>
-            ${renderSidebarCta()}
+            ${renderSidebarCta(article)}
           </aside>
         </div>
       </div>

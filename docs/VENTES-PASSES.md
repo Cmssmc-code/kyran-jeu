@@ -48,12 +48,13 @@ Point de départ : [`docs/rapports/audit-ventes-2026-10-12.md`](rapports/audit-v
 |---|---|---|---|
 | 2026-10-12 | Google ≈ 3 clics/jour ; accueil 13 clics en 3 mois ; `/commander.html` 0 clic organique | Audit complet ; port aligné sur Stripe (3,99 €) ; quantité Stripe ; fin du prix barré ; accueil mobile ; message de Noël automatique | #46 |
 | 2026-10-13 | 15 sept. → 12 oct. : ≈ 74 clics (2,6/jour). `/tarot-africain.html` 1re page (14 clics, 1 387 impr., pos. 7,6) ; `/` 4 clics, 133 impr. ; `/commander.html` 0 clic, 14 impr. ; `cadeau-noel` 1 clic, 4 impr. ; `cadeau-anniversaire` 0, 15 impr. ; « kyran » 3 clics, 57 impr., pos. 1,7. Stripe (lecture) : 9,99 € + 3,99 € = 13,98 €, conforme au site ; pays BE, FR, LU, MC, CH seulement (le site promet aussi DE, IT, ES, AD, UK) ; description « 55 cartes » toujours fausse | Encart KYRAN tôt dans `/tarot-africain.html` (pas de tarot ou six joueurs) au lieu du seul encart de fin de page ; page d'origine transmise à Stripe : `/commander.html?ref=…` → `client_reference_id` (à lire sur chaque paiement du tableau de bord Stripe : `tarot-africain-materiel`, `tarot-africain-kyran`) | #49 |
+| 2026-10-20 | 22 sept. → 19 oct. : 113 clics (4/jour, contre 74), 5 240 impr. `/tarot-africain.html` 21 clics, 1 676 impr. (pos. 7,3) ; `/` 10 clics, 197 impr. ; `/commander.html` 0 clic, 32 impr. ; `cadeau-noel` 2 clics, 11 impr. (pos. 17,7) ; `cadeau-anniversaire` 0, 10 impr. ; « kyran » 7 clics, 63 impr. (pos. 2,8) ; aucune autre requête d'achat. Stripe (lecture) : 9,99 € + 2,99 € = 12,98 €, pays FR BE LU MC CH, description juste (45 cartes de jeu, 30 cartes Vie, 7 cartes de règles) : **conforme au site**. Mesure de #49 cassée : les deux `?ref=` de `/tarot-africain.html` perdus lors du rétablissement de l'encart (19/10) | Attribution réparée et étendue : `?ref=` rétablis sur `/tarot-africain.html` ; tous les liens d'achat des articles du blog (première source de trafic) portent `ref=blog-<article>-<debut\|fin\|cote\|fiche>` ; test `scripts/test/ventes-ref.test.mjs` pour ne plus les perdre | #82 |
 
 ## En attente du propriétaire
 
 Ces actions sont reprises de l'audit, § 7. Cocher une action quand elle est faite.
 
-- [ ] Stripe : description du produit (« 55 cartes, livret » est faux), montant du port, pays de livraison.
+- [x] Stripe : description du produit, port (2,99 €) et pays de livraison alignés avec le site (vérifié le 2026-10-20).
 - [ ] Amazon : prix entre 12,90 et 14,90 €, titre et puces du kit, nom du vendeur.
 - [ ] Service presse : 20 à 30 boîtes envoyées avant le 31 octobre.
 - [ ] Marchés de Noël et salons réservés pour la période du 20 novembre au 20 décembre.

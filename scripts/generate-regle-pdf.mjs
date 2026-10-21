@@ -1,5 +1,5 @@
 /**
- * Génère /regle-kyran.pdf (règles officielles, A4, 4 pages) à partir de scripts/pdf/regle-kyran.html.
+ * Génère /regle-kyran.pdf (règles officielles sur une page A4) à partir de scripts/pdf/regle-kyran.html.
  * Utilise Playwright (Chromium) : `node scripts/generate-regle-pdf.mjs`.
  * À relancer après toute modification des règles (regle.html et scripts/pdf/regle-kyran.html).
  */

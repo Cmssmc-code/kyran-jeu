@@ -50,6 +50,24 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    salons, nouveautés, évolutions de gamme), histoire et culture du jeu, règles et vie à la table,
    conseils d'usage. Même exigence de sérieux : sources fiables réellement ouvertes, aucun chiffre
    ni citation sans source liée, KYRAN mentionné seulement quand il a sa place.
+   **Fini les guides à la chaîne (demandé par le propriétaire le 21 octobre 2026).** Les guides
+   comparatifs et guides d'achat (« N jeux pour… », « jeux comme X », « meilleurs jeux de… », idées
+   cadeau, tableaux comparatifs) passent **au plus une fois toutes les deux semaines** : avant d'en
+   choisir un, relire le journal ; si un guide neuf date de moins de 14 jours, on écrit autre chose.
+   Le rafraîchissement d'un guide existant ne compte pas dans cette limite. Les autres passes
+   utilisent le **format « essai »** (`format: 'essai'`, voir `scripts/content/README.md`), avec le même
+   sérieux que l'article `science-jeux-de-cartes-cerveau` (références vérifiées avec DOI quand ce sont des
+   études, limites dites, aucune promesse) et ces angles, à alterner :
+   - **études et vulgarisation** (psychologie, cognition, lien social, générations, bien-être), seulement
+     à partir d'articles scientifiques réellement ouverts ; jamais de promesse de santé ;
+   - **histoire et origines** d'un jeu, d'un type de cartes ou d'une mécanique (plis, paris, pioche) ;
+   - **règles en profondeur** : cas litigieux, erreurs fréquentes, variantes officielles d'un jeu ;
+   - **analyses chiffrées** : probabilités ou combinatoire d'une donne, calculées à partir des règles
+     officielles, méthode et formule indiquées, calcul refait et vérifié ;
+   - **actualité du secteur** : marché, éditeurs, salons, prix, sorties, avec les chiffres publics des sources ;
+   - **vie à la table** : étiquette, parties mixtes (âges, niveaux), organisation d'une soirée, règles de maison ;
+   - **coulisses de KYRAN**, **portrait ou entretien** : seulement avec un contenu fourni par le propriétaire.
+   Dans le journal, la colonne « Type » indique « Guide », « Essai » ou « Rafraîchissement ».
    **Un article « Majordia » environ une fois par mois** (demandé par le propriétaire le 21 octobre 2026).
    Majordia (majordia.fr) est l'autre site du propriétaire : un livret d'accueil digital pour les hôtes
    Airbnb et les petites conciergeries. Environ une fois par mois, une passe d'article **neuf** (le

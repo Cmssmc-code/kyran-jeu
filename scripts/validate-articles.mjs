@@ -55,10 +55,115 @@ function htmlFields(a) {
   return f.filter(([, v]) => v);
 }
 
+/**
+ * Format « essai » (étude, histoire, analyse, règles en profondeur…) : pas de liste de jeux.
+ * Même rigueur que les guides : sources liées, texte long, structure propre, aucun gabarit.
+ */
+function validateEssay(slug, a, err, warn, cache) {
+  if (a.slug !== slug) err(`slug « ${a.slug} » ≠ nom de fichier`);
+  for (const k of ['title', 'shortTitle', 'metaTitle', 'description', 'category', 'date', 'heroTitle', 'heroSubtitle', 'heroImage', 'heroCaption', 'intro', 'conclusion']) {
+    if (!a[k]) err(`champ « ${k} » manquant`);
+  }
+  if (!CATEGORIES.includes(a.category)) err(`catégorie invalide : ${a.category}`);
+  if (a.shortTitle && a.shortTitle.length > 32) err(`shortTitle > 32 caractères (${a.shortTitle.length})`);
+  if (a.metaTitle && (a.metaTitle.length < 35 || a.metaTitle.length > 66)) err(`metaTitle ${a.metaTitle.length} caractères (35–66)`);
+  if (a.description && (a.description.length < 100 || a.description.length > 165)) err(`description ${a.description.length} caractères (100–165)`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(a.date || '')) err('date invalide (AAAA-MM-JJ)');
+  if (a.games && a.games.length) err('format « essai » : pas de champ games (utiliser sections)');
+
+  const introW = wordCount(a.intro);
+  if (introW < 70 || introW > 200) err(`intro ${introW} mots (70–200)`);
+  const concW = wordCount(a.conclusion);
+  if (concW < 35 || concW > 160) err(`conclusion ${concW} mots (35–160)`);
+
+  const sections = a.sections || [];
+  if (sections.length < 4 || sections.length > 10) err(`${sections.length} sections (4–10)`);
+  const ids = new Set();
+  sections.forEach((sec, i) => {
+    const at = `sections[${i}]`;
+    if (!sec.heading || /<h[1-6]/i.test(sec.heading)) err(`${at}: heading manquant ou balisé`);
+    const w = wordCount(sec.html);
+    if (w < 150) err(`${at}: ${w} mots (≥ 150)`);
+    if (sec.id !== undefined) {
+      if (typeof sec.id !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(sec.id)) err(`${at}: id invalide`);
+      else if (['sources', 'faq', 'conclusion', 'mot-auteur'].includes(sec.id) || ids.has(sec.id)) err(`${at}: id réservé ou en double`);
+      ids.add(sec.id);
+    }
+  });
+  const sources = a.sources || [];
+  if (sources.length < 5) err(`${sources.length} sources (≥ 5)`);
+  const urls = new Set();
+  sources.forEach((r, i) => {
+    if (!r.label || !/^https:\/\/[^\s"]+$/.test(r.url || '')) err(`sources[${i}]: label et url https obligatoires`);
+    if (urls.has(r.url)) err(`sources[${i}]: url en double`);
+    urls.add(r.url);
+  });
+  if (!a.keyPoints || !a.keyPoints.html) err('keyPoints.html manquant (encadré « En bref » : 3 à 5 points sourcés)');
+  for (const [i, ph] of (a.photos || []).entries()) {
+    if (!ph.src || !ph.alt || !ph.caption) err(`photos[${i}] : src, alt et caption obligatoires`);
+    else if (!existsSync(join(ROOT, ph.src))) err(`photos[${i}] : fichier introuvable ${ph.src}`);
+  }
+  if (!a.photos || a.photos.length < 1) warn('aucune photo : prévoir 1 à 4 images créditées (voir docs/BLOG-PASSES.md)');
+  for (const [k, v] of Object.entries(a.headings || {})) {
+    if (!['conclusion', 'faq', 'related', 'sources'].includes(k)) err(`headings.${k} inconnu`);
+    if (typeof v !== 'string' || !v.trim() || /<h[1-6]/i.test(v)) err(`headings.${k} : texte simple attendu`);
+  }
+
+  const faq = a.faq || [];
+  if (faq.length < 4 || faq.length > 6) err(`${faq.length} questions FAQ (4–6)`);
+  faq.forEach((f, i) => {
+    const w = wordCount(f.a || '');
+    if (!f.q || !/\?\s*$/.test(f.q)) err(`faq[${i}]: la question doit finir par « ? »`);
+    if (w < 20 || w > 110) err(`faq[${i}]: réponse ${w} mots (20–110)`);
+  });
+  if (!Array.isArray(a.related) || a.related.length < 3) err('related : 3 slugs requis');
+  else for (const r of a.related) {
+    if (!articleSlugs.has(r)) err(`related : « ${r} » n'existe pas dans le roster`);
+    if (r === slug) err('related contient l\'article lui-même');
+  }
+
+  let contextual = 0;
+  const fields = [['intro', a.intro], ['conclusion', a.conclusion], ['keyPoints', a.keyPoints && a.keyPoints.html],
+    ...sections.map((sec, i) => [`sections[${i}]`, sec.html]), ...faq.map((f, i) => [`faq[${i}].a`, f.a]),
+    ...(a.authorNote ? [['authorNote', a.authorNote.html]] : [])].filter(([, v]) => v);
+  for (const [field, html] of fields) {
+    if (/<h[12][\s>]/i.test(html)) err(`${field}: <h1>/<h2> interdit`);
+    if (/<script|onclick=|style=/i.test(html)) err(`${field}: script / onclick / style interdit`);
+    for (const m of String(html).matchAll(/href="([^"]+)"/g)) {
+      const h = m[1];
+      if (/^https?:/.test(h)) continue;
+      const path = h.split('#')[0];
+      const blogSlug = (path.match(/^\/blog\/([\w-]+)\.html$/) || [])[1];
+      if (path === '/blog/index.html') err(`${field}: utiliser /blog/ et non /blog/index.html`);
+      else if (redirectSources.has(path)) err(`${field}: lien vers une page fusionnée ${path}`);
+      else if (blogSlug) {
+        if (!articleSlugs.has(blogSlug)) err(`${field}: article inconnu ${path}`);
+        else if (blogSlug !== slug) contextual++;
+      } else if (!knownPages.has(path)) err(`${field}: lien interne inconnu ${path}`);
+      else contextual++;
+    }
+  }
+  if (contextual < 3) err(`${contextual} lien(s) contextuel(s) interne(s) (≥ 3)`);
+  const external = fields.flatMap(([, html]) => [...String(html).matchAll(/href="(https?:[^"]+)"/g)].map(m => m[1])).length;
+  if (external < 4) err(`${external} lien(s) externe(s) vers des sources dans le texte (≥ 4)`);
+
+  const text = articleText(a);
+  const low = text.toLowerCase();
+  for (const b of BANNED) if (low.includes(b)) err(`formulation à éviter : « ${b} »`);
+  for (const b of KYRAN_WRONG) if (low.includes(b)) err(`fait KYRAN erroné : « ${b} »`);
+  if (/kyran[^.]{0,80}sans élimination/i.test(text)) err('KYRAN ne peut pas être décrit comme « sans élimination »');
+  const total = wordCount(text);
+  if (total < 1500) err(`${total} mots au total (≥ 1500)`);
+  cache.words = total;
+  cache.sentences = sentences(text);
+  cache.shingles = shingles(text);
+}
+
 function validate(slug, a, errors, warns, cache) {
   const err = m => errors.push(`${slug}: ${m}`);
   const warn = m => warns.push(`${slug}: ${m}`);
   const brief = BRIEFS.find(b => b.slug === slug) || {};
+  if (a.format === 'essai') return validateEssay(slug, a, err, warn, cache);
 
   if (a.slug !== slug) err(`slug « ${a.slug} » ≠ nom de fichier`);
   for (const k of ['title', 'shortTitle', 'metaTitle', 'description', 'category', 'date', 'heroTitle', 'heroSubtitle', 'heroImage', 'heroCaption', 'intro', 'conclusion']) {

@@ -822,3 +822,13 @@
   .blog-article-page *::after { transition: none !important; scroll-behavior: auto !important; }
   .blog-article-page .reading-progress__bar { transition: none; }
 }
+
+/* Format « essai » : liste numérotée des sources */
+.article-sources__list {
+  margin: 0 0 1.2em 1.4rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #2E292C;
+}
+.article-sources__list li { list-style: decimal; margin-bottom: 0.6em; padding-left: 0.2em; }
+.article-sources__list a { overflow-wrap: anywhere; }

@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-21 — Serveur Railway sur un Node non corrigé (failles du 21/10) ; Wrangler 3 vulnérable
+
+- **Symptôme :** veille sécurité du 21/10 (PHP2Shell côté PHP, sans effet ici ; correctif Node.js 26.12.1 / 24.22.1 / 22.23.4 contre 10 CVE dont CVE-2026-111497, Brotli → exécution de code). Le serveur `kyran-webhook` tournait sur un Node 22 construit le 13/10, donc non corrigé ; deux workflows tournaient encore sur Node 20 (fin de vie, plus aucun correctif) ; `worker/` dépendait de `wrangler@^3` (7 failles `npm audit`, dont 5 hautes : `ws`, etc.).
+- **Cause :** aucune version de Node fixée pour Railway (`server/package.json` sans `engines`) : Railpack prend la version du moment de la construction, et rien ne reconstruit le service quand Node publie un correctif. Pas de lockfile dans `worker/`, donc rien à auditer.
+- **Correctif :** `engines.node` fixé à `26.12.1` (dernière version corrigée, demande du propriétaire : toujours la plus récente) dans `server/package.json`, version de Node écrite au démarrage dans les logs Railway ; tous les workflows passent à Node 26 ; `compatibility_date` du Worker 2024-04-01 → 2026-10-21 (vérifié avec `wrangler dev` : santé, webhook signé 200, signature fausse 400, `/api/shipping` sans jeton 401) ; `wrangler@^4.151.3` avec `worker/package-lock.json` (0 faille) ; actions GitHub à jour (`checkout` v7.0.1, `setup-node` v7.1.0, épinglées par SHA) ; `vendor/canvas-confetti` 1.6.0 → 1.9.4 ; API Graph Instagram v23.0 → v26.0 ; `.mcp.json` : `@stripe/mcp@0.3.3` épinglé, option `--tools=all` retirée (supprimée par Stripe : les droits viennent désormais de la clé restreinte). Règle : à chaque version de sécurité de Node, monter `engines.node` dans `server/package.json` (ce qui reconstruit le service) et vérifier la ligne `(Node vX)` du log de démarrage ; jamais de workflow sur une version de Node en fin de vie.
+
 ### 2026-10-21 — [Auto-Heal] JS-29AAB2, JS-B632F4 et 6 autres — ressources « introuvables » pourtant en ligne
 
 - **Symptôme :** 8 incidents « Ressource introuvable » (scripts `motion.js`, `components.js`, `seo-config.js`, `logo.png`, images du hero) alors que chaque fichier répond 200 ; chaque rafale venait d'un seul appareil, toutes les ressources en échec à la même milliseconde. Aussi JS-29330B (transition de page interrompue, sans fichier ni pile) et JS-11F231 (`window.ethereum`, portefeuille crypto injecté).

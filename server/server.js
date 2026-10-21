@@ -762,7 +762,7 @@ async function routeAutoHeal(req, res, pathname, url) {
 
 if (process.env.NODE_ENV !== 'test') {
   server.listen(PORT, () => {
-    console.log(`🚀 Serveur KYRAN Webhook v${VERSION} actif sur port ${PORT}`);
+    console.log(`🚀 Serveur KYRAN Webhook v${VERSION} actif sur port ${PORT} (Node ${process.version})`);
   });
 }
 

@@ -46,7 +46,7 @@ jobs:
 
       - name: Checkout du code
         if: steps.mode.outputs.enabled == 'true'
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -59,7 +59,7 @@ jobs:
             | grep -zvE '(^|/)[^/]*\.md$' \
             | grep -zvE '^(package\.json|package-lock\.json|\.env\.example|\.gitignore|\.mcp\.json|seo-keywords\.json|blog/images/download-log\.json)$' \
             | xargs -0 cp --parents -t _site
-          for f in index.html CNAME commander.html admin-emails.html vendor/canvas-confetti-1.6.0.browser.js; do
+          for f in index.html CNAME commander.html admin-emails.html vendor/canvas-confetti-1.9.4.browser.js; do
             test -f "_site/$f" || { echo "::error::$f manquant dans _site"; exit 1; }
           done
           # Notes internes (KPI Search Console de la routine SEO), réglages Claude Code : jamais publiés.

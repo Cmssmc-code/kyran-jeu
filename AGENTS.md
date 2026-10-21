@@ -11,7 +11,7 @@ Worker (`worker/`), initiation jouable dans `dojo/` (`minijeu.html`).
 
 ## À lire avant d'agir
 
-1. [`CLAUDE.md`](CLAUDE.md) : règles du dépôt (build, PR, Auto-Heal, Stripe).
+1. [`CLAUDE.md`](CLAUDE.md) : règles du dépôt (build, PR, Auto-Heal et routine de surveillance, Stripe).
 2. [`_notes/lecon.md`](_notes/lecon.md) : leçons anti-récidive.
 3. [`_notes/memoire.md`](_notes/memoire.md) : mémoire condensée (faits canoniques du jeu § 1, architecture, CI,
    routines).
@@ -27,9 +27,9 @@ Worker (`worker/`), initiation jouable dans `dojo/` (`minijeu.html`).
 - Jamais d'adresse e-mail Majordia dans un e-mail KYRAN ; jamais de secret ni de `.env` commité.
 - Le dépôt reste public (GitHub Pages gratuit).
 
-## Santé quotidienne du site
+## Surveillance & réparation quotidiennes du site
 
-Une routine Claude vérifie chaque nuit à minuit la santé de kyran-jeu.fr (site, Pages, serveur Railway, Stripe en lecture, e-mails, Auto-Heal, CI) et répare ce qui ne va pas : mission [`_notes/sante-routine-mission.md`](_notes/sante-routine-mission.md), journal [`_notes/suivi-sante.md`](_notes/suivi-sante.md).
+Une routine Claude « Surveillance & réparation » tourne chaque jour à 05:07 (Europe/Paris) : recherche poussée (journal d'incidents du serveur, Railway, workflows, crawl Playwright de tout le site, parcours critiques, Stripe en lecture, e-mails, `npm audit`, veille), réparation des incidents (PR fusionnée, vérifiée en ligne, incident clôturé), rapport email quotidien à kyran.jeu@gmail.com. Mission [`_notes/surveillance-reparation-routine-mission.md`](_notes/surveillance-reparation-routine-mission.md), journal [`_notes/suivi-surveillance.md`](_notes/suivi-surveillance.md), rapports `docs/rapports/surveillance/`. Elle remplace depuis le 2026-10-21 la routine « Santé » de minuit (historique : [`_notes/suivi-sante.md`](_notes/suivi-sante.md)).
 
 ## SEO & GEO : où tout trouver
 

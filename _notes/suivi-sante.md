@@ -1,6 +1,6 @@
 # Journal de la routine « Santé quotidienne de KYRAN »
 
-Consigne : [`sante-routine-mission.md`](sante-routine-mission.md). Une entrée par run, la plus récente en haut.
+Consigne (jusqu'au 2026-10-21) : [`sante-routine-mission.md`](sante-routine-mission.md), remplacée par [`surveillance-reparation-routine-mission.md`](surveillance-reparation-routine-mission.md) (journal [`suivi-surveillance.md`](suivi-surveillance.md)). Une entrée par run, la plus récente en haut.
 Rapport complet de chaque run : `docs/rapports/sante/AAAA-MM-JJ.md`.
 
 ---

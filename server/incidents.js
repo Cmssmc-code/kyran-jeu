@@ -264,6 +264,17 @@ export class IncidentStore {
     this.data.meta.lastDailyReportAt = nowIso(now);
     this.save();
   }
+
+  /** Rapport de la routine Claude : un seul par jour (clé « JJ/MM » de l'objet). */
+  routineReportSentFor(day) {
+    return this.data.meta.lastRoutineReportDay === day;
+  }
+
+  markRoutineReportSent(day, now = Date.now()) {
+    this.data.meta.lastRoutineReportDay = day;
+    this.data.meta.lastRoutineReportAt = nowIso(now);
+    this.save();
+  }
 }
 
 function cleanReport(report) {

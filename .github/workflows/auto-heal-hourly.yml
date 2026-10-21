@@ -1,6 +1,14 @@
 name: Hourly Auto-Heal (Claude)
 
-# Passe horaire (portage du pipeline Majordia) : si des incidents de production sont en attente
+# MANUEL SEULEMENT : la réparation passe par la routine Claude depuis le 2026-10-21
+# (mission _notes/surveillance-reparation-routine-mission.md). La passe horaire échouait à chaque
+# passage faute d'auth Anthropic (WIF 401 puis « invalid x-api-key », _notes/suivi-sante.md des 20 et
+# 21/10). Le planning est retiré ; le lancement manuel reste pour un test (smoke_test, dry_run,
+# test_email) le jour où l'auth Anthropic sera réparée. Le rapport 24 h (daily-report) n'est plus appelé :
+# un seul email par jour, celui de la routine. Journal d'incidents depuis la routine :
+# .github/workflows/auto-heal-incidents.yml.
+#
+# Ancienne passe horaire (portage du pipeline Majordia) : si des incidents de production sont en attente
 # sur le serveur Railway (erreurs du site remontées par error-reporter.js, erreurs du serveur),
 # un agent Claude les corrige, valide (build + tests du site), puis pousse sur main.
 # Auth Anthropic : Workload Identity Federation (jeton OIDC GitHub, aucun secret API stocké).
@@ -8,8 +16,6 @@ name: Hourly Auto-Heal (Claude)
 # Documentation : docs/AUTO-HEAL.md
 
 on:
-  schedule:
-    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -74,15 +80,6 @@ jobs:
           echo "::add-mask::$TOKEN"
           curl -sS --fail-with-body --max-time 60 -X POST -H "Authorization: Bearer $TOKEN" "${API_PUBLIC_URL%/}/api/auto-heal/test-email"
 
-      - name: Daily report (08:xx UTC, dédupliqué côté serveur)
-        if: always()
-        run: |
-          if [ "$(date -u +%H)" = "08" ]; then
-            TOKEN=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kyran-auto-heal" | jq -r '.value')
-            echo "::add-mask::$TOKEN"
-            curl -fsS --max-time 60 -H "Authorization: Bearer $TOKEN" "${API_PUBLIC_URL%/}/api/auto-heal/daily-report" || true
-          fi
 
   heal:
     name: Auto-Heal (Claude)
@@ -96,7 +93,7 @@ jobs:
       actions: write
       pages: write
     steps:
-      # Branche du déclenchement (main pour le cron) : l'agent ne pousse que sur cette branche.
+      # Branche du déclenchement : l'agent ne pousse que sur cette branche.
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:

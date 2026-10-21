@@ -244,6 +244,19 @@ test('rapport 24 h : envoyé (simulé sans Resend) une seule fois par jour', asy
   assert.equal(second.reason, 'already_sent_today');
 });
 
+test('rapport de la routine : objet imposé, destinataire fixe, un seul envoi par jour', async () => {
+  const body = { subject: 'KYRAN — surveillance & réparation du 21/10', html: '<p>OK</p>', text: 'OK', to: 'tiers@example.com' };
+  assert.equal((await fetch(`${BASE}/api/auto-heal/routine-report`, { method: 'POST', body: JSON.stringify(body) })).status, 401);
+  assert.equal((await cron('/api/auto-heal/routine-report', { ...body, subject: 'Promo' })).status, 400);
+  assert.equal((await cron('/api/auto-heal/routine-report', { ...body, html: ' ' })).status, 400);
+  const first = await (await cron('/api/auto-heal/routine-report', body)).json();
+  assert.equal(first.sent, true);
+  assert.equal(first.sender, 'contact@kyran-jeu.fr');
+  const second = await (await cron('/api/auto-heal/routine-report', body)).json();
+  assert.equal(second.sent, false);
+  assert.equal(second.reason, 'already_sent_today');
+});
+
 test('email de test : authentification requise, envoi (simulé sans transport) depuis une adresse KYRAN', async () => {
   assert.equal((await fetch(`${BASE}/api/auto-heal/test-email`, { method: 'POST' })).status, 401);
   const res = await (await cron('/api/auto-heal/test-email', {})).json();

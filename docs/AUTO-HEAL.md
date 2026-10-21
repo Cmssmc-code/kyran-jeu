@@ -1,20 +1,26 @@
 # Auto-Heal — remontée et correction automatique des erreurs de production
 
-Portage, pour kyran-jeu.fr, du pipeline Auto-Heal de Majordia (alertes `support@majordia.fr`
-→ table `production_incidents` → passe horaire Claude qui corrige, teste et pousse sur `main`).
+Portage, pour kyran-jeu.fr, d'un pipeline Auto-Heal existant (journal d'incidents → agent Claude qui
+corrige, teste et pousse).
+
+> **Depuis le 2026-10-21, la réparation passe par la routine Claude quotidienne « Surveillance &
+> réparation »** (05:07, Europe/Paris), mission
+> [`_notes/surveillance-reparation-routine-mission.md`](../_notes/surveillance-reparation-routine-mission.md).
+> La passe horaire GitHub Actions (§ 4 et § 5) n'est plus planifiée : elle échouait à chaque passage faute
+> d'auth Anthropic. La remontée des erreurs (§ 1) et le journal (§ 2) ne changent pas.
 
 ## Vue d'ensemble
 
 ```
-Navigateur (kyran-jeu.fr)                 Serveur Railway (kyran-webhook)            GitHub Actions (toutes les heures, :17)
-error-reporter.js ── POST /api/client-error ──► isBenignClientError (filtre)       auto-heal-hourly.yml
-                                              │                                      │ 1. GET /api/auto-heal/incidents (OIDC)
-server.js : webhook Stripe, notification ───►  IncidentStore (/data/incidents.json) ◄─┤ 2. agent Claude (scripts/auto-heal-worker.mjs)
-de vente, exceptions → recordServerIncident     agrégation par empreinte             │ 3. npm run build + npm test
-                                                                                     │ 4. commit + push sur main
-                                              ◄── resolve / fail / ignore ───────────┤ 5. relance CI + Pages ; Railway redéploie seul
-                                              ◄── daily-report (08:xx UTC) ──────────┘
-                                              email depuis contact@kyran-jeu.fr → AUTO_HEAL_REPORT_EMAILS (kyran.jeu@gmail.com)
+Navigateur (kyran-jeu.fr)                 Serveur Railway (kyran-webhook)            Routine Claude (05:07) + GitHub Actions
+error-reporter.js ── POST /api/client-error ──► isBenignClientError (filtre)       routine « Surveillance & réparation »
+                                              │                                      │ 1. auto-heal-incidents.yml list (OIDC)
+server.js : webhook Stripe, notification ───►  IncidentStore (/data/incidents.json) ◄─┤ 2. diagnostic + correctif en PR
+de vente, exceptions → recordServerIncident     agrégation par empreinte             │ 3. npm run build + npm test, CI verte, fusion
+                                                                                     │ 4. vérification en ligne (Pages, Railway)
+                                              ◄── resolve / fail / ignore ───────────┤ 5. auto-heal-incidents.yml resolve|fail|ignore
+                                              ◄── routine-report (1 par jour) ───────┘
+                                              email depuis contact@kyran-jeu.fr → kyran.jeu@gmail.com (destinataire fixé dans le code)
 ```
 
 ## 1. Remontée des erreurs
@@ -52,12 +58,15 @@ Pas de base de données : fichier JSON sur le volume Railway monté sur `/data`
 | `POST /api/auto-heal/incidents/resolve` | `{ incidentId, commitSha, resolutionSummary, report }` |
 | `POST /api/auto-heal/incidents/fail` | `{ incidentId, reason, report }` (3 tentatives max) |
 | `POST /api/auto-heal/incidents/ignore` | `{ incidentId, reason, report }` |
-| `GET /api/auto-heal/daily-report` | Email 24 h, seulement si au moins un correctif ou un abandon ; une fois par 20 h |
+| `GET /api/auto-heal/daily-report` | Email 24 h, seulement si au moins un correctif ou un abandon ; une fois par 20 h. **Plus appelé** : son seul appelant était l'étape « Daily report » de la passe horaire planifiée, retirée le 2026-10-21 (un seul email par jour, celui de la routine) |
+| `POST /api/auto-heal/routine-report` | `{ subject, html, text? }` : rapport de la routine, objet « KYRAN — surveillance & réparation du JJ/MM », destinataire fixe kyran.jeu@gmail.com, un seul par jour |
 
 Authentification : **jeton OIDC GitHub Actions** (audience `kyran-auto-heal`, dépôt
 `Cmssmc-code/kyran-jeu`) vérifié par `server/githubOidc.js` — aucun secret à partager entre GitHub et
 Railway. Repli manuel : en-tête `X-Cron-Secret` si la variable Railway `CRON_SECRET` (32 caractères
-min.) est définie. Destinataires du rapport : `AUTO_HEAL_REPORT_EMAILS` (kyran.jeu@gmail.com sur Railway),
+min.) est définie — elle ne l'est pas (2026-10-21), et le connecteur Railway de Claude ne rend que les
+noms des variables. La routine passe donc par le workflow `auto-heal-incidents.yml` (OIDC, ci-dessous).
+Tout workflow du dépôt peut obtenir ce jeton (le serveur ne vérifie que le dépôt et l'audience). Destinataires du rapport : `AUTO_HEAL_REPORT_EMAILS` (kyran.jeu@gmail.com sur Railway),
 sinon `ADMIN_NOTIFICATION_EMAILS`.
 
 Expéditeur de **tous** les emails KYRAN (`server/mailer.js`) : une adresse `@kyran-jeu.fr` (défaut
@@ -83,9 +92,27 @@ puis `npm test` (JSON-LD, blog, cohérence du site, doublons, tests unitaires et
 Chaque correctif ajoute une entrée dans [`_notes/lecon.md`](../_notes/lecon.md), consulté par l'agent
 avant chaque correctif.
 
-## 5. Workflow (`.github/workflows/auto-heal-hourly.yml`)
+## 5. Workflows
 
-- Toutes les heures à :17 : vérification rapide (0 token) des incidents en attente, puis agent si besoin.
+### `.github/workflows/auto-heal-incidents.yml` (lancé par la routine)
+
+Lancement manuel par l'API GitHub (`gh api -X POST …/actions/workflows/auto-heal-incidents.yml/dispatches`),
+entrée `action` :
+
+- `list` : incidents en attente + quota, affichés dans le journal du job (champs utiles au diagnostic ; ni
+  navigateur complet ni URL avec paramètres, car les journaux d'Actions d'un dépôt public sont publics) ;
+- `resolve` (`incident_id`, `commit_sha`, `reason`), `fail` et `ignore` (`incident_id`, `reason`) ;
+- `report` (`report_subject`, `report_html`) : rapport quotidien de la routine, envoyé par le serveur.
+
+Commandes exactes : mission, § A1, B et D.
+
+### `.github/workflows/auto-heal-hourly.yml` (manuel seulement)
+
+**Plus de passe horaire depuis le 2026-10-21** : le `schedule:` est retiré, la routine Claude fait la
+réparation. Le workflow reste en lancement manuel (`smoke_test`, `dry_run`, `test_email`) pour le jour où
+l'auth Anthropic ci-dessous sera réparée ; son étape « Daily report » est retirée.
+
+- Ancien fonctionnement : toutes les heures à :17, vérification rapide (0 token) des incidents en attente, puis agent si besoin.
 - Auth Anthropic : Workload Identity Federation (mêmes identifiants que Majordia, surchargeables par
   les variables de dépôt `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`,
   `ANTHROPIC_WORKSPACE_ID`) ; repli : secret `ANTHROPIC_API_KEY`.
@@ -103,7 +130,9 @@ avant chaque correctif.
 ## Diagnostic
 
 ```bash
-# Incidents en attente (avec CRON_SECRET défini sur Railway)
+# Incidents en attente, sans secret (journal du job à lire ensuite)
+gh api -X POST repos/Cmssmc-code/kyran-jeu/actions/workflows/auto-heal-incidents.yml/dispatches -f ref=main -f 'inputs[action]=list'
+# Avec CRON_SECRET défini sur Railway (ce n'est pas le cas au 2026-10-21)
 curl -s -H "X-Cron-Secret: $CRON_SECRET" https://kyran-webhook-production.up.railway.app/api/auto-heal/incidents?limit=20
 # Logs serveur : préfixe [AutoHeal] dans les logs Railway (projet kyran-webhook)
 ```

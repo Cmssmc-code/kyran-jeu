@@ -1,15 +1,15 @@
 export default {
-  slug: 'marche-jeux-de-cartes-2025',
-  title: 'Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché',
-  shortTitle: 'Marché des jeux de cartes',
-  metaTitle: 'Marché du jeu de cartes 2025 : chiffres et 5 best-sellers',
-  description: 'Les cartes progressent de 78 % en 2025, mais lesquelles ? Les chiffres Circana lus de près, et les cinq jeux de cartes de table qui se vendent à moins de 15 €.',
+  slug: 'marche-jeux-de-cartes-2026-2027',
+  title: 'Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers',
+  shortTitle: 'Marché cartes 2026-2027',
+  metaTitle: 'Marché du jeu de cartes 2026-2027 : chiffres et tendances',
+  description: 'Après +78 % en 2025, les cartes à collectionner ralentissent à +18 % en 2026. Chiffres Circana, tendances 2027 et cinq jeux de cartes de table à moins de 15 €.',
   category: 'Cartes',
   date: '2026-10-21',
-  heroTitle: 'Jeux de cartes : <span class="accent">le marché 2025</span>',
-  heroSubtitle: 'Un chiffre de croissance qui fait la une, un autre qui explique les rayons : ce que les données publiques permettent d’affirmer.',
+  heroTitle: 'Jeux de cartes : <span class="accent">le marché 2026-2027</span>',
+  heroSubtitle: 'Le bilan 2025, les premiers chiffres de 2026 et ce que les sorties annoncées laissent attendre pour 2027, avec les limites des sources.',
   heroImage: '/blog/images/skyjo.jpg',
-  heroCaption: 'Skyjo, sorti en 2015 et toujours dans les meilleures ventes de jeux de cartes de table de 2025.',
+  heroCaption: 'Skyjo, sorti en 2015 et toujours dans les meilleures ventes de jeux de cartes de table.',
   layout: {
     answerFirst: true,
     criteriaAfter: true,
@@ -32,12 +32,12 @@ export default {
   },
   headings: {
     selection: 'Cinq jeux de cartes qui se vendent aujourd’hui',
-    compare: 'Prix, durée et effectif des cinq best-sellers',
-    conclusion: 'Ce que la hausse change pour une table de jeu',
+    compare: 'Prix, durée et effectif des cinq best-sellers du moment',
+    conclusion: 'Ce que 2026 et 2027 changent pour une table de jeu',
     faq: 'Hausse, périmètre, prix : les questions que posent les chiffres',
     related: 'Pour passer des chiffres à la table'
   },
-  intro: `<p>En 2025, le marché français des jeux et jouets a progressé de 7,1 % en valeur et atteint 4,7 milliards d’euros, selon <a class="text-link" href="https://gusandco.net/wp-content/uploads/2026/08/CP-FFJP-_-FCJPE-_-CIRCANA_140126.pdf">le communiqué que Circana a publié le 14 janvier 2026</a> avec les fédérations du jouet. Dans ce communiqué, les « cartes stratégiques » gagnent 78 %, Pokémon en tête. Ce chiffre ne dit rien des jeux de cartes qu’on pose sur la table du salon : il parle des cartes à collectionner. Les jeux de cartes à jouer, eux, figurent simplement parmi les segments qui progressent le plus, sans pourcentage. Pour savoir ce qui se vend vraiment, cette page croise le communiqué avec les <a class="text-link" href="https://ludiquement.fr/barometre-jeu-de-societe-2026/">meilleures ventes de boutiques spécialisées</a>, et donne la fiche de chacun des cinq titres.</p>`,
+  intro: `<p>Le marché français des jeux et jouets a progressé de 7,1 % en 2025 et atteint 4,7 milliards d’euros, selon <a class="text-link" href="https://gusandco.net/wp-content/uploads/2026/08/CP-FFJP-_-FCJPE-_-CIRCANA_140126.pdf">le communiqué que Circana a publié le 14 janvier 2026</a> avec les fédérations du jouet. Les « cartes stratégiques », autrement dit les cartes à collectionner, y gagnent 78 %, Pokémon en tête. Selon <a class="text-link" href="https://lexpress-franchise.com/articles/ouvrir-magasin-cartes-tcg/">L’Express Franchise (14 octobre 2026)</a>, qui cite le même panel, elles ajoutent encore 18 % au premier semestre 2026 : la hausse continue, en ralentissant. Ces chiffres ne mesurent pas les jeux de cartes qu’on pose sur la table du salon. Cette page sépare les deux marchés, résume ce que 2026 a montré, ce que 2027 permet d’anticiper, puis fiche cinq jeux de cartes de table qui se vendent aujourd’hui.</p>`,
   criteria: {
     heading: 'Lire un chiffre de marché sans se tromper',
     html: `<p>Un pourcentage de croissance ne vaut que par ce qu’il mesure. Quatre précautions permettent de ne pas lui faire dire ce qu’il ne dit pas.</p>
@@ -99,23 +99,38 @@ export default {
   ],
   verdict: {
     heading: 'Ce que les données permettent d’affirmer, et ce qu’elles laissent ouvert',
-    html: `<p>Établi par le communiqué Circana : le marché des jeux et jouets progresse de 7,1 % en 2025, les cartes à collectionner de 78 %, et les jeux de cartes à jouer figurent parmi les segments en forte hausse. Établi par les boutiques : les cinq jeux de cartes de table les plus vendus coûtent environ 12 à 15 euros et se jouent en 15 à 30 minutes. Reste ouvert : le poids exact des jeux de cartes de table dans la croissance, faute de chiffre publié. Lisez donc « le jeu de cartes explose » avec ce garde-fou.</p>`
+    html: `<p>Établi : le marché des jeux et jouets a progressé de 7,1 % en 2025, les cartes à collectionner de 78 % puis de 18 % au premier semestre 2026, et les jeux de cartes à jouer figurent parmi les segments en forte hausse (Circana). Établi par les boutiques : les cinq jeux de cartes de table les plus vendus coûtent environ 12 à 15 euros et se jouent en 15 à 30 minutes. Ouvert : le poids des jeux de cartes de table dans la croissance, et toute prévision chiffrée pour 2027, que les sources lues ne donnent pas. Lisez « le jeu de cartes explose » avec ce garde-fou.</p>`
   },
   extraSections: [
+    {
+      heading: '2026 : un marché qui ralentit sans reculer',
+      html: `<p>Dès janvier, Circana présentait 2026 comme une année « sous le signe de la consolidation et du plaisir » : licences et collaborations, achats hors saison en plus de Noël, innovation. Elle citait aussi les trente ans de Pokémon et un calendrier de films chargé (<a class="text-link" href="https://gusandco.net/wp-content/uploads/2026/08/CP-FFJP-_-FCJPE-_-CIRCANA_140126.pdf">communiqué du 14 janvier 2026</a>). Les premiers chiffres vont dans ce sens pour les cartes à collectionner : +18 % au premier semestre 2026 après +78 % en 2025, d’après L’Express Franchise. C’est une hausse qui se poursuit à un rythme plus calme, pas un recul.</p>
+<h3>Ce que cela dit des jeux de cartes de table</h3>
+<p>Rien de chiffré : aucune des sources lues ne publie de croissance pour les jeux de cartes à jouer en 2026. Un indice qualitatif existe : dans sa <a class="text-link" href="https://www.asmodee.fr/les-10-meilleurs-jeux-de-societe-2026-1ere-partie-de-lannee/">rétrospective du premier semestre 2026</a>, Asmodee France, qui reconnaît une sélection subjective, met en avant des jeux de cartes courts : dnup (Space Cowboys, 15 minutes), Bloops (Zygomatic, 10 minutes) et Collect (CMON, 15 minutes), tous de 2 à 5 joueurs dès 8 ans.</p>`
+    },
+    {
+      heading: '2027 : ce que l’on peut anticiper, et ce qu’on ne peut pas',
+      html: `<p>Aucune des sources ouvertes ne publie de prévision chiffrée pour 2027 sur les jeux de cartes. Reste le calendrier des sorties, avec une réserve : la page de Ludum du 18 septembre 2026 est signalée comme sponsorisée. Elle annonce plusieurs jeux de cartes sous licence, dont une version de Love Letter sur le thème de K-Pop Demon Hunters chez Z-Man Games, ainsi que Cat 40, inspiré du blackjack. Elle présente aussi La Meute, de Sylex, comme l’un des plus beaux jeux du début d’année 2027.</p>
+<p>Notre lecture, qui n’est pas une prévision publiée : les licences pèsent déjà 30 % des ventes de jouets en 2025 selon Circana, et les éditeurs de jeux de cartes les utilisent à leur tour. Pour une table de jeu, le plus sûr reste de choisir sur le nombre de joueurs, la durée et l’âge, pas sur la nouveauté.</p>`
+    },
     {
       heading: 'Où se place KYRAN dans ce paysage',
       html: `<p>KYRAN n’apparaît dans aucune des sources citées ici, et aucune donnée de vente ne permet de le situer. Ce que l’on peut dire, c’est ce qui le distingue : un jeu de plis où l’on annonce son nombre exact de plis, de 3 à 6 joueurs, pour environ 30 minutes, publié le 31 janvier 2026 par le site qui le vend. Son prix, 9,99 euros sur <a class="text-link" href="/commander.html">la boutique officielle</a>, le place sous les cinq jeux ci-dessus, et ses <a class="text-link" href="/regle.html">règles</a> se lisent en ligne avant d’acheter.</p>`
     }
   ],
-  conclusion: `<p>Derrière les titres sur l’explosion des cartes, deux phénomènes se superposent : un engouement pour la collection, et un goût durable pour de petits jeux vite expliqués, vendus quinze euros ou moins. Pour choisir une boîte à offrir, mieux vaut suivre ce second phénomène : regardez le nombre de joueurs, la durée annoncée et l’âge de vos invités, et consultez nos idées de <a class="text-link" href="/blog/cadeau-noel.html">cadeaux pour Noël</a>. Dernière vérification des sources : 21 octobre 2026.</p>`,
+  conclusion: `<p>Derrière les titres sur l’explosion des cartes, deux phénomènes se superposent : un engouement pour la collection, qui ralentit en 2026 sans s’arrêter, et un goût durable pour de petits jeux vite expliqués, vendus quinze euros ou moins. Pour choisir une boîte à offrir, suivez ce second phénomène : regardez le nombre de joueurs, la durée annoncée et l’âge de vos invités, et consultez nos idées de <a class="text-link" href="/blog/cadeau-noel.html">cadeaux pour Noël</a>. Dernière vérification des sources : 21 octobre 2026.</p>`,
   faq: [
     {
-      q: 'Le marché du jeu de cartes explose-t-il vraiment en France ?',
-      a: 'Les données publiques disent que les cartes à collectionner ont progressé de 78 % en 2025 et que les jeux de cartes à jouer figurent parmi les segments en forte croissance, selon Circana. Aucun pourcentage n’est publié pour les jeux de cartes de table seuls : parler d’explosion pour eux dépasse les sources.'
+      q: 'Le marché du jeu de cartes continue-t-il de croître en 2026 ?',
+      a: 'Pour les cartes à collectionner, oui : +18 % au premier semestre 2026 après +78 % en 2025, selon Circana cité par L’Express Franchise. Pour les jeux de cartes de table, aucune source lue ne publie de chiffre 2026 : l’affirmer dépasserait les données.'
     },
     {
       q: 'Les +78 % de Circana concernent-ils Skyjo ou Trio ?',
       a: 'Non. Dans le communiqué du 14 janvier 2026, ce chiffre porte sur les « cartes stratégiques », avec Pokémon en tête de file. Skyjo, Trio et les autres jeux de cartes vendus en boîte relèvent d’un autre segment, que le communiqué cite sans le chiffrer.'
+    },
+    {
+      q: 'Existe-t-il une prévision pour le marché en 2027 ?',
+      a: 'Pas dans les sources ouvertes pour cette page. Circana parle de consolidation pour 2026, et les sorties annoncées pour début 2027 ne forment pas une prévision de ventes. Toute estimation chiffrée pour 2027 serait donc une supposition.'
     },
     {
       q: 'Pourquoi les chiffres de marché ne s’accordent-ils pas entre eux ?',
@@ -123,7 +138,7 @@ export default {
     },
     {
       q: 'Combien coûte un jeu de cartes de table aujourd’hui ?',
-      a: 'Chez Ludum, Trio coûte 11,90 euros, Flip 7 13,50 euros, Dékal et Cabanga 14,90 euros. Circana indique un prix moyen de 18 euros pour l’ensemble des jeux et jouets : ces boîtes se situent donc sous la moyenne du secteur.'
+      a: 'Chez Ludum, Trio coûte 11,90 euros, Flip 7 13,50 euros, Dékal et Cabanga 14,90 euros. Circana indique un prix moyen de 18 euros pour l’ensemble des jeux et jouets en 2025 : ces boîtes se situent donc sous la moyenne du secteur.'
     },
     {
       q: 'Une liste de meilleures ventes reflète-t-elle le marché entier ?',

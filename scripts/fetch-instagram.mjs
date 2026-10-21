@@ -33,7 +33,7 @@ import {
 } from './lib/community.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const API_VERSION = 'v23.0';
+const API_VERSION = 'v26.0';
 const MAX_POSTS = 1000;
 const MAX_IMAGE_BYTES = 15 * 1024 * 1024;
 const MAX_VIDEO_BYTES = 90 * 1024 * 1024; // GitHub refuse les fichiers de plus de 100 Mo

@@ -68,7 +68,7 @@ Préparation :
 ```bash
 git fetch origin --prune && git checkout -B claude/surveillance-$(TZ=Europe/Paris date +%F) origin/main
 date -u; git log -1 --oneline origin/main
-npm ci --no-audit --no-fund   # en arrière-plan ; Node 22
+npm ci --no-audit --no-fund   # en arrière-plan ; Node 24 (version de server/package.json)
 ```
 
 Outils : `ToolSearch` (`select:<nom>`) pour Railway (`list-deployments`, `get-logs`, `get-service-config`,
@@ -175,7 +175,8 @@ URL `https://kyran-webhook-production.up.railway.app`.
   `signature`, `checkout.session.completed`, `charge.refunded`, et « Stripe non vérifié : connecteur absent ».
 - E-mails : erreurs d'envoi dans les journaux Railway (`resend`, `smtp`, `mailer`, `Email`) ; une vente sans e-mail
   client ou sans alerte admin est bloquante.
-- `npm audit --omit=dev --audit-level=high` puis `npm audit` (racine ; `server/` n'a pas de dépendance).
+- `npm audit --omit=dev --audit-level=high` puis `npm audit` (racine), et `npm audit` dans `worker/` (`server/` n'a
+  pas de dépendance npm).
 - Sur `origin/main` : `npm run build` puis `git status --porcelain` (aucun diff hors `scripts/lastmod-manifest.json`),
   puis `npm test` vert.
 - Branches et PR ouvertes avec des commits absents de `main` : les signaler (règle C7).
@@ -183,10 +184,38 @@ URL `https://kyran-webhook-production.up.railway.app`.
 ### A6. Veille (15 min)
 
 `WebSearch` / `WebFetch`, changelogs et dépréciations des 7 derniers jours : GitHub Pages et Actions
-(github.blog/changelog), Railway (railway.com/changelog), Node.js (versions, fin de vie de Node 22), Resend, API
+(github.blog/changelog), Railway (railway.com/changelog), Node.js (versions de sécurité, nodejs.org/en/blog/vulnerability ; fin de vie des lignes), Resend, API
 Stripe (versions, dépréciations Payment Links / webhooks), Instagram Graph API (jetons, versions), Cloudflare
 Workers. Pour chacun : ce qui change, si KYRAN est touché, **la source (URL)**. Rien de neuf → « rien de neuf »
 avec la source consultée.
+
+### A7. Mises à jour de versions, en autonomie (accord du propriétaire du 2026-10-21)
+
+Le propriétaire délègue **toutes** les mises à jour de versions : pas besoin de son accord, même pour un
+composant qu'il ne connaît pas. Chaque jour, relever et mettre à jour vers la **dernière version stable** :
+
+- **Node.js du serveur Railway** : `engines.node` exact dans `server/package.json`, sur la dernière version de la
+  dernière ligne **LTS** (pas une ligne « Current » non LTS : c'est la version stable recommandée pour la
+  production). Une version de sécurité Node publiée → bump le jour même (bloquant). Changement de ligne LTS (ex.
+  24 → 26 quand 26 devient LTS) : le faire aussi, après les tests ci-dessous.
+- **Workflows** : `node-version` sur la même ligne LTS ; actions GitHub (`actions/checkout`, `setup-node`,
+  `upload-pages-artifact`, `deploy-pages`) sur leur dernière version, **épinglées par SHA** avec la version en
+  commentaire (`git ls-remote --tags https://github.com/actions/<nom>.git`), après lecture de leurs notes de
+  version (changements cassants : `pull_request_target`, `registry-url`, cache).
+- **Dépendances npm** : racine (`npm outdated`, `npm update`, majeures comprises après lecture du changelog) et
+  `worker/` (`wrangler`, lockfile commité) ; `npm audit` à 0 faille haute.
+- **Intégrations externes** : serveur MCP Stripe (`@stripe/mcp@<version>` épinglé dans `.mcp.json`), version de
+  l'API Graph Meta (`API_VERSION` de `scripts/fetch-instagram.mjs`, dernière version du tableau
+  developers.facebook.com/docs/graph-api/changelog/versions), API Stripe et Resend (dépréciations annoncées),
+  `compatibility_date` de `worker/wrangler.toml`.
+- **Bibliothèques copiées** dans `vendor/` (canvas-confetti…) : dernière version, fichier renommé avec sa version,
+  références mises à jour (`minijeu.html`, `pages.yml`).
+
+Méthode, sans exception : tests en local **sur la nouvelle version** (télécharger le Node visé depuis nodejs.org si
+besoin), `npm run build` + `npm test` verts, page concernée rejouée dans Chromium (Playwright) sans erreur console ;
+PR fusionnée selon B ; puis **vérification en ligne** : déploiement Railway `SUCCESS`, ligne `(Node vX)` du log de
+démarrage égale à la version visée, `/health` en `ok`, `pages.yml` vert, pages clés en 200. Régression → revert
+immédiat. Chaque mise à jour figure dans le rapport (avant → après, source de la version).
 
 ---
 

@@ -19,8 +19,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@stripe/mcp",
-        "--tools=all",
+        "@stripe/mcp@0.3.3",
         "--api-key=${STRIPE_SECRET_KEY}"
       ],
       "env": {}

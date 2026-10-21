@@ -3,7 +3,7 @@
  * Chargé en tête de chaque page (inséré par scripts/apply-csp.mjs) pour capter aussi
  * les erreurs des scripts suivants. Chaque erreur est envoyée une seule fois par page,
  * 5 au maximum, sans aucune donnée personnelle (ni cookie, ni saisie de formulaire).
- * Le serveur agrège les erreurs ; un agent Claude les corrige toutes les heures.
+ * Le serveur agrège les erreurs ; la routine Claude « Surveillance & réparation » les corrige chaque jour.
  */
 (function () {
   'use strict';
@@ -48,9 +48,11 @@
       if (!/^https:\/\/(www\.)?kyran-jeu\.fr\//.test(url)) return;
       var tag = target.tagName.toLowerCase();
       var report = { kind: 'resource', message: 'Ressource introuvable : <' + tag + '> ' + url, file: url };
-      // Vidéo ou son : une coupure réseau du visiteur déclenche aussi « error » (fichier pourtant en ligne,
-      // incident JS-894824) ; on ne signale que si le fichier manque vraiment.
-      if (/^(video|audio|source)$/.test(tag) && window.fetch) {
+      // Une coupure réseau du visiteur (ou une page quittée en plein chargement) déclenche aussi « error »
+      // sur un fichier pourtant en ligne : vidéo (JS-894824), images et scripts (JS-29AAB2, JS-B632F4…,
+      // toutes les ressources d'une page en échec à la même milliseconde). On ne signale que si le fichier
+      // manque vraiment (HEAD en erreur HTTP) ; HEAD impossible (hors ligne) : rien à signaler.
+      if (window.fetch) {
         fetch(url, { method: 'HEAD', cache: 'no-store', credentials: 'omit' }).then(function (res) {
           if (!res.ok) send(report);
         }, function () { /* hors ligne : rien à signaler */ });

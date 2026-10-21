@@ -3,12 +3,12 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
-    "slug": "marche-jeux-de-cartes-2025",
-    "title": "Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché",
+    "slug": "marche-jeux-de-cartes-2026-2027",
+    "title": "Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers",
     "category": "Cartes",
     "date": "2026-10-21",
-    "readMinutes": 8,
-    "excerpt": "Les cartes progressent de 78 % en 2025, mais lesquelles ? Les chiffres Circana lus de près, et les cinq jeux de cartes de table qui se vendent à moins de 15 €.",
+    "readMinutes": 10,
+    "excerpt": "Après +78 % en 2025, les cartes à collectionner ralentissent à +18 % en 2026. Chiffres Circana, tendances 2027 et cinq jeux de cartes de table à moins de 15 €.",
     "image": "/blog/images/skyjo.jpg",
     "webp": "/blog/images/skyjo.webp",
     "gameCount": 5,

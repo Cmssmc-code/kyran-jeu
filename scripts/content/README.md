@@ -120,6 +120,60 @@ Générés automatiquement (ne pas écrire) : tableau comparatif, sommaire, temp
 - Aucune balise `<h1>`/`<h2>` dans les champs HTML ; `<h3>` autorisé dans `criteria.html`.
 - Pas de style en ligne, pas d'attribut `onclick`, pas de script.
 
+## Format « essai » : articles qui ne sont pas des guides de jeux
+
+Pour une étude, une histoire, une analyse, un décryptage de règles ou l'actualité du secteur
+(voir `docs/BLOG-PASSES.md` § 3), ajoutez `format: 'essai'` : plus de `games`, `criteria` ni `verdict`.
+Modèle de référence pour le ton et la rigueur : l'article rédigé à la main
+`blog/science-jeux-de-cartes-cerveau.html` (références avec DOI, limites des études, aucune promesse).
+
+```js
+export default {
+  slug: 'histoire-du-whist',
+  format: 'essai',
+  title, shortTitle, metaTitle, description, category, date, heroTitle, heroSubtitle, heroImage, heroCaption,
+  intro: '<p>…</p>',                      // 70–200 mots, la réponse d'abord
+  keyPoints: { heading?: 'En bref', html: '<ul><li>…</li></ul>' },   // 3 à 5 points sourcés
+  sections: [                             // 4 à 10 sections, ≥ 150 mots chacune ; <h3> autorisé
+    { id?: 'origines', heading: '…', html: '<p>…</p>' }
+  ],
+  photos: [{ src: '/blog/images/…', alt: '…', caption: '… (auteur, licence, lien)' }],  // 1 à 4, créditées
+  sources: [{ label: 'Auteur, titre, revue (année)', url: 'https://…', note?: 'ce que la source établit' }],  // ≥ 5
+  conclusion: '<p>…</p>',                 // 35–160 mots
+  faq: [{ q: '… ?', a: '…' }],            // 4 à 6
+  related: ['slug-1', 'slug-2', 'slug-3'],
+  headings: { sources?, conclusion?, faq?, related? }   // libellés de section facultatifs
+};
+```
+
+### Jeu de données ouvert (`dataset`) : devenir une source citable
+
+Un article « essai » peut publier ses propres données, consolidées et vérifiées, pour que moteurs de
+recherche et IA les citent (voir `docs/BLOG-PASSES.md` § 3). Fichiers sous `data/<slug>/` (CSV UTF-8 ou JSON),
+déclarés dans l'article :
+
+```js
+dataset: {
+  description: '…',                       // ce que contient le jeu de données
+  methodology: '…',                       // comment les valeurs ont été relevées, contrôlées, calculées
+  update: 'mensuelle',                    // fréquence de mise à jour
+  license: { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
+  lastVerified: '2026-10-21',             // date du dernier contrôle (≥ la plus récente ligne)
+  files: [{ path: '/data/<slug>/jeux.csv', format: 'csv', description: '…' }]
+}
+```
+
+Règle d'exactitude, vérifiée par `validate-articles.mjs` : **chaque ligne porte `source_url` (https) et
+`verifie_le` (AAAA-MM-JJ, jamais dans le futur)**, 5 lignes au moins, colonnes cohérentes. Une valeur qu'on
+n'a pas pu contrôler ne s'écrit pas : on laisse la case vide et on le dit dans la méthode. Le build ajoute à la page
+un bloc « Les données, en accès libre » (fichiers, méthode, licence, date, citation) et un nœud JSON-LD `Dataset`.
+Une passe de rafraîchissement met à jour les lignes (nouvelle `verifie_le`) plutôt que d'en écrire de nouvelles.
+
+Règles : 1 500 mots minimum ; au moins 3 liens internes et 4 liens externes vers les sources dans le texte ;
+les sources de la liste ont été réellement ouvertes ; les limites de ce qu'on peut conclure sont dites.
+`node scripts/validate-articles.mjs <slug>` applique ces contrôles ; le build produit page, sitemap, flux et
+`llms.txt` comme pour les autres articles. Pas d'encart « Notre jeu » en tête, seulement en fin d'article.
+
 ## KYRAN — faits canoniques (source : /regle.html)
 
 - Jeu de plis avec **pari obligatoire**, 3 à 6 joueurs, environ 30 minutes, dès 8 ans. Auteur et

@@ -75,6 +75,10 @@ export function articleText(a) {
   for (const g of a.games || []) parts.push(...(g.paragraphs || []), g.pick || '');
   for (const f of a.faq || []) parts.push(f.q, f.a);
   for (const s of a.extraSections || []) parts.push(s.html);
+  for (const s of a.sections || []) parts.push(s.html);
+  if (a.keyPoints) parts.push(a.keyPoints.html);
+  if (a.dataset) parts.push(a.dataset.description, a.dataset.methodology);
+  for (const r of a.sources || []) parts.push(r.note || '');
   for (const g of (a.layout && a.layout.groups) || []) parts.push(g.html || '');
   if (a.authorNote) parts.push(a.authorNote.html);
   return parts.filter(Boolean).map(stripHtml).join('\n');
@@ -82,7 +86,7 @@ export function articleText(a) {
 
 /** Article prêt à générer : faits des jeux fusionnés, date FR, temps de lecture. */
 export function normalizeArticle(raw) {
-  const games = raw.games.map(g => {
+  const games = (raw.games || []).map(g => {
     if (g.id === 'kyran') {
       return {
         ...KYRAN_FACTS,

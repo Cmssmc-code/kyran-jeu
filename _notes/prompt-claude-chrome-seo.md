@@ -11,9 +11,8 @@
 
 | Tâche | Preuve |
 |---|---|
-| BoardGameGeek : fiche réglée par Corentin (21/10), plus rien à y faire | décision de Corentin |
+| BoardGamesFlix : fiche réglée par Corentin (21/10), plus rien à y faire | décision de Corentin |
 | Chaîne YouTube @Kyran-jeu : description et liens (site, règles, Instagram) | page « À propos » de la chaîne |
-| BoardGamesFlix : auteur et illustratrice crédités | page publique de la fiche |
 | Bing : `/blog/` et `whist-22` connues et soumises (API, 20/10) ; 0 lien entrant (API) | Bing Webmaster API |
 | Pages déjà indexées et explorées récemment : accueil (21/10), `regle`, `tarot-africain`, `idee-cadeau`, `ressources-gratuites` (18/10) | inspection d'URL |
 
@@ -94,7 +93,13 @@ e) Paramètres > « Livraison et retours » (ou Shopping) : s'il existe et n'est
 BLOC 3 — Bing Webmaster Tools (site https://kyran-jeu.fr/), lecture seule
 Rapport « AI Performance » (citations Copilot) : total sur 3 mois, les 5 pages et les 5 requêtes les plus citées.
 
-BLOC 4 — (BoardGameGeek : rien à faire, réglé par Corentin le 21/10. Ne va pas sur BGG.)
+BLOC 4 — BoardGameGeek, https://boardgamegeek.com/boardgame/480678/kyran (compte Kyranjeu)
+Relevé le 21/10 : la description est DÉJÀ corrigée (n'y touche pas). Il manque encore, sauf si c'est en
+attente de validation ou déjà soumis (regarde l'historique des corrections de la fiche) :
+  Website = https://kyran-jeu.fr/ (vide) ; Alternate Name « Kyran: Maître des Mystiques » (aucun) ;
+  Categories « Card Game » et « Bluffing » (aucune) ; Mechanisms : garder « Predictive Bid », ajouter
+  « Trick-taking » ; Videos (0) : les 3 vidéos de la section « 1. BoardGameGeek » ; Files : les règles en PDF
+  (https://kyran-jeu.fr/regle-kyran.pdf), si la fiche n'en a pas déjà.
 
 BLOC 5 — Tric Trac, https://trictrac.net/jeu-de-societe/kyran
 Relevé le 21/10 : aucun lien vers kyran-jeu.fr sur la fiche. Section « 2. Tric Trac » : ajoute les ressources
@@ -112,12 +117,7 @@ a) Lokidia Games https://www.lokidia-games.fr/contact : la fiche https://www.lok
    envoie le message de la section « 3. Lokidia ».
 b) Ludovox https://ludovox.fr/contact/ : l'article https://ludovox.fr/ludochrono-kyran/ n'a toujours aucun lien
    vers kyran-jeu.fr (21/10). Si c'est toujours le cas, envoie le message de la section « 5. Ludovox ».
-c) BoardGamesFlix https://boardgamesflix.com/contact : auteur et illustratrice sont DÉJÀ corrigés ; il manque
-   seulement le lien vers https://kyran-jeu.fr/. S'il manque toujours, envoie ce message court :
-   « Bonjour, merci d'avoir crédité Corentin Sence et Crea by Floh sur la fiche https://boardgamesflix.com/boardgames/kyran.
-   Pourriez-vous y ajouter le site officiel de l'éditeur, https://kyran-jeu.fr/ (règles : https://kyran-jeu.fr/regle.html) ?
-   Le lien Okkazeo de la fiche pointe vers une recherche ; la fiche du jeu existe :
-   https://www.okkazeo.com/jeux/94411/kyran-maitre-des-mystiques. Merci, Corentin Sence, auteur de KYRAN — contact@kyran-jeu.fr »
+c) BoardGamesFlix : rien à faire, réglé par Corentin le 21/10. N'y va pas.
 d) Myludo https://www.myludo.fr/#!/game/kyran-95533 : si l'année affiche encore 2025 ou si l'illustratrice
    manque, « Proposer une modification » avec la section « 8. Myludo », SANS la ligne « prix ».
 e) Okkazeo https://www.okkazeo.com/jeux/94411/kyran-maitre-des-mystiques : si l'illustrateur ou l'éditeur

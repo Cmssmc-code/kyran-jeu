@@ -68,7 +68,7 @@ Préparation :
 ```bash
 git fetch origin --prune && git checkout -B claude/surveillance-$(TZ=Europe/Paris date +%F) origin/main
 date -u; git log -1 --oneline origin/main
-npm ci --no-audit --no-fund   # en arrière-plan ; Node 24 (version de server/package.json)
+npm ci --no-audit --no-fund   # en arrière-plan ; Node 26 (version de server/package.json)
 ```
 
 Outils : `ToolSearch` (`select:<nom>`) pour Railway (`list-deployments`, `get-logs`, `get-service-config`,
@@ -194,11 +194,11 @@ avec la source consultée.
 Le propriétaire délègue **toutes** les mises à jour de versions : pas besoin de son accord, même pour un
 composant qu'il ne connaît pas. Chaque jour, relever et mettre à jour vers la **dernière version stable** :
 
-- **Node.js du serveur Railway** : `engines.node` exact dans `server/package.json`, sur la dernière version de la
-  dernière ligne **LTS** (pas une ligne « Current » non LTS : c'est la version stable recommandée pour la
-  production). Une version de sécurité Node publiée → bump le jour même (bloquant). Changement de ligne LTS (ex.
-  24 → 26 quand 26 devient LTS) : le faire aussi, après les tests ci-dessous.
-- **Workflows** : `node-version` sur la même ligne LTS ; actions GitHub (`actions/checkout`, `setup-node`,
+- **Node.js du serveur Railway** : `engines.node` exact dans `server/package.json`, sur la **dernière version
+  publiée** de la ligne la plus récente (choix du propriétaire, 2026-10-21 : toujours la plus récente). Une version de
+  sécurité Node publiée → bump le jour même (bloquant). Nouvelle ligne majeure (ex. 26 → 27) : la prendre aussi,
+  après les tests ci-dessous.
+- **Workflows** : `node-version` sur la même ligne que le serveur ; actions GitHub (`actions/checkout`, `setup-node`,
   `upload-pages-artifact`, `deploy-pages`) sur leur dernière version, **épinglées par SHA** avec la version en
   commentaire (`git ls-remote --tags https://github.com/actions/<nom>.git`), après lecture de leurs notes de
   version (changements cassants : `pull_request_target`, `registry-url`, cache).
@@ -207,7 +207,8 @@ composant qu'il ne connaît pas. Chaque jour, relever et mettre à jour vers la 
 - **Intégrations externes** : serveur MCP Stripe (`@stripe/mcp@<version>` épinglé dans `.mcp.json`), version de
   l'API Graph Meta (`API_VERSION` de `scripts/fetch-instagram.mjs`, dernière version du tableau
   developers.facebook.com/docs/graph-api/changelog/versions), API Stripe et Resend (dépréciations annoncées),
-  `compatibility_date` de `worker/wrangler.toml`.
+  `compatibility_date` de `worker/wrangler.toml` (à la date du jour, testée avec `wrangler dev` : `/health`,
+  webhook signé, signature fausse, `/api/shipping` sans jeton).
 - **Bibliothèques copiées** dans `vendor/` (canvas-confetti…) : dernière version, fichier renommé avec sa version,
   références mises à jour (`minijeu.html`, `pages.yml`).
 

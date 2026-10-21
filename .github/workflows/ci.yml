@@ -31,8 +31,8 @@ jobs:
       - name: Configuration de Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          # Node 24 (LTS) : `node --test` y interprète les motifs glob de `npm run test:security` (Node 20 non)
-          node-version: '24'
+          # Node 26 : `node --test` y interprète les motifs glob de `npm run test:security` (Node 20 non)
+          node-version: '26'
 
       - name: Installation des dépendances (versions verrouillées)
         run: npm ci --ignore-scripts

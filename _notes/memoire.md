@@ -175,7 +175,7 @@ Projet Railway `kyran-webhook`, URL publique `https://kyran-webhook-production.u
   - `test:unit` : `node --test scripts/test/*.test.mjs` (article-model, auto-heal-worker, community, dojo).
   - `test:security` : tests de `server/` et `worker/`.
 - `test:seo` : `audit-seo.mjs`.
-- Node 22 ou plus est requis pour les globs de `node --test` ; CI et serveur Railway sur Node 24 LTS (`engines.node` de `server/package.json`).
+- Node 22 ou plus est requis pour les globs de `node --test` ; CI et serveur Railway sur Node 26 (`engines.node` de `server/package.json`).
 
 **Images et données**
 
@@ -193,7 +193,7 @@ Toutes les actions sont épinglées sur un SHA de commit.
 
 | Fichier | Déclencheur | Rôle |
 |---|---|---|
-| `ci.yml` (« Contrôles du site ») | PR, push sur `main`, manuel | JSON-LD, validation du blog, `check:site`, doublons, **build à jour** (`git diff --exit-code`, sauf `lastmod-manifest.json`), tests unitaires et de sécurité (Node 24) |
+| `ci.yml` (« Contrôles du site ») | PR, push sur `main`, manuel | JSON-LD, validation du blog, `check:site`, doublons, **build à jour** (`git diff --exit-code`, sauf `lastmod-manifest.json`), tests unitaires et de sécurité (Node 26) |
 | `pages.yml` | push sur `main`, manuel | Ne publie que les fichiers publics. Exclus : `scripts/`, `server/`, `worker/`, `.github/`, `*.md`, `package*.json`, `.env.example`, `seo-keywords.json`. Ne fait rien si Pages n'est pas en mode « GitHub Actions » (le site est alors servi depuis la branche) |
 | `indexnow.yml` | push sur `main` (pages modifiées), manuel (`all` : tout le sitemap) | Notifie Bing et Copilot via `scripts/indexnow.mjs --wait` |
 | `instagram.yml` | cron `17 5 * * *` (vers 7 h, heure de Paris), manuel | Voir détail ci-dessous |

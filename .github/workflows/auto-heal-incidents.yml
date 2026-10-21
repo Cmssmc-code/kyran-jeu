@@ -41,9 +41,9 @@ on:
         type: string
         default: ""
 
-concurrency:
-  group: auto-heal-incidents
-  cancel-in-progress: false
+# Pas de groupe « concurrency » : il ne garde qu'un run en attente et annule les autres (trois clôtures
+# perdues le 2026-10-21). Les transitions côté serveur ne valent que depuis « pending » : deux runs
+# simultanés sur le même incident sont sans danger.
 
 permissions:
   contents: read

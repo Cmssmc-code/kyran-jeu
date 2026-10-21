@@ -1,12 +1,25 @@
 # Mission : routine « Surveillance & réparation KYRAN » (quotidienne)
 
-- **Quand :** tous les jours à **05:07 (Europe/Paris)**, routine Claude Code (`CRON_TZ=Europe/Paris 7 5 * * *`).
-- **Où :** une **session neuve à chaque déclenchement**, avec le dépôt `Cmssmc-code/kyran-jeu` attaché dès la
-  création (une session ouverte sans dépôt n'a pas `add_repo`, `lecon.md` du 07/10).
-- **Connecteurs :** Railway (obligatoire), Resend (envoi du rapport s'il est connecté), Gmail (compte personnel
-  du propriétaire : envoi du rapport à kyran.jeu@gmail.com si Resend ne peut pas, lecture sinon) ;
-  Stripe peut manquer (le connecteur Stripe de claude.ai pointe sur un autre compte : ne jamais l'utiliser ici).
+- **Quand :** tous les jours à **05:07 (Europe/Paris)**, routine Claude Code `trig_01Dw3TeebMHnAaihXuQnjntu`
+  (l'ancienne routine « Santé », renommée et déplacée à 05:07 le 2026-10-21).
+- **Où :** elle réveille la **session dédiée** `session_01T9bSGDeknHi8e94Rgo2ufR`, dépôt `Cmssmc-code/kyran-jeu`
+  attaché. Sa consigne figée renvoie à `_notes/sante-routine-mission.md`, qui renvoie ici : ce fichier fait foi, et
+  ses livrables remplacent ceux de la consigne (plus de `suivi-sante.md`).
+- **Connecteurs : aucun garanti.** La routine n'a aucun connecteur attaché (`mcp_connections` vide) : Railway,
+  Resend, Gmail et Stripe peuvent tous manquer. Chercher chaque outil avec `ToolSearch` au début du passage et
+  noter dans le rapport ce qui est présent. Replis prévus partout (voir « Sans connecteur » ci-dessous). Le
+  connecteur Stripe de claude.ai pointe sur un autre compte : ne jamais l'utiliser ici.
 - **Fait foi :** ce fichier, relu sur `origin/main` à chaque passage. Le modifier modifie le passage suivant.
+
+### Sans connecteur : replis
+
+| Besoin | Avec connecteur | Sans connecteur |
+|---|---|---|
+| Journal d'incidents, clôtures | — (toujours par le workflow) | workflow `auto-heal-incidents.yml` via `gh api` (jeton OIDC, aucun secret) |
+| Serveur Railway | `list-deployments`, `get-logs`, métriques | `curl …/health` + temps de réponse ; dernier commit `server/` comparé à la `version` de `/health` ; journaux, 5xx, CPU/mémoire « non vérifiés : connecteur Railway absent » |
+| Rapport e-mail | Resend (domaine vérifié) puis Gmail | voie serveur : `auto-heal-incidents.yml` action `report` (`contact@kyran-jeu.fr` → kyran.jeu@gmail.com, destinataire codé en dur, testé) |
+| Stripe | lecture `acct_1UBHzpPe2ed8eDFC` | page du Payment Link ouverte avec Playwright sans payer ; « Stripe non vérifié » pour le reste |
+| GitHub | `gh api` (REST) marche dans la session (constaté le 2026-10-21, même si `gh auth status` dit le jeton invalide) | `mcp__github__*` si présent |
 
 Remplace depuis le 2026-10-21 la routine « Santé quotidienne » (`_notes/sante-routine-mission.md`, minuit) et la
 passe horaire GitHub Actions « Hourly Auto-Heal » (`.github/workflows/auto-heal-hourly.yml`, désormais manuelle :
@@ -68,7 +81,10 @@ probable**.
 
 ### A1. Journal d'incidents du serveur (en premier)
 
-- **Lecture :** lancer le workflow `auto-heal-incidents.yml` (action `list`), puis lire le journal du job :
+- **Lecture :** lancer le workflow `auto-heal-incidents.yml` (action `list`), puis lire le journal du job.
+  **Un appel à la fois** : attendre la fin du run (`status` `completed`) avant d'en lancer un autre (le
+  2026-10-21, trois clôtures lancées en rafale ont été annulées par la file d'attente ; corrigé, mais vérifier
+  toujours la conclusion de chaque run) :
 
   ```bash
   gh api -X POST repos/Cmssmc-code/kyran-jeu/actions/workflows/auto-heal-incidents.yml/dispatches \
@@ -97,6 +113,9 @@ Projet `365539aa-a674-49b3-845f-b0793b952dbd`, environnement `production`
 (`2346a967-c9f6-4920-bbc9-9d0955e62922`), service `kyran-webhook` (`8cb1b665-67fd-4592-950f-7ba78fff4d8d`),
 URL `https://kyran-webhook-production.up.railway.app`.
 
+- Panne Railway possible : `https://status.railway.com/` (`WebFetch`) ; le 2026-10-21, « builds paused » : aucun
+  déploiement créé pour 4 pushs sur `main`, serveur resté en ligne sur l'ancienne version. Dans ce cas : noter,
+  ne pas clôturer les incidents dont le correctif est dans `server/`, revérifier en fin de passage.
 - `list-deployments` : un push qui ne touche pas `server/` donne `SKIPPED` (normal). Le dernier `SUCCESS` doit
   porter le dernier commit qui touche `server/` (`git log -1 --format=%H origin/main -- server/`, ou le commit de
   fusion qui le contient). `CRASHED` / `FAILED` / `SUCCESS` trop ancien → `get-deployment-diagnosis`, réparation.
@@ -143,8 +162,11 @@ URL `https://kyran-webhook-production.up.railway.app`.
   - initiation `/minijeu.html` : modules `dojo/` chargés (aucun 404 sur `?v=`), une partie démarre, une carte se
     joue sans erreur ;
   - blog : `/blog/`, l'article le plus récent (200, dans `sitemap.xml` et `blog/feed.xml`).
-- TLS : `openssl s_client -connect <hôte>:443 -servername <hôte> </dev/null | openssl x509 -noout -enddate` pour
-  `kyran-jeu.fr`, `www.kyran-jeu.fr`, `kyran-webhook-production.up.railway.app` ; alerte sous 21 jours.
+- TLS : **pas `openssl s_client`** (le proxy de la session présente son propre certificat, échéance = J+30) ;
+  lire les journaux Certificate Transparency :
+  `curl -s "https://api.certspotter.com/v1/issuances?domain=kyran-jeu.fr&include_subdomains=true&expand=dns_names"`
+  et `…?domain=up.railway.app&expand=dns_names` (dernier `not_after`) ; alerte sous 21 jours. Réponse en objet
+  (limite de débit) : attendre 5 s et relancer.
 
 ### A5. Stripe, e-mails, dépendances
 
@@ -201,7 +223,8 @@ avec la source consultée.
 
   Contrat serveur (`server/server.js`, `routeAutoHeal`) : `POST /api/auto-heal/incidents/resolve`
   `{incidentId, commitSha, resolutionSummary, report}`, `…/fail` et `…/ignore` `{incidentId, reason, report}` ;
-  transitions seulement depuis `pending` (404 sinon) ; `fail` compte une tentative, l'incident passe `failed` à la
+  transitions seulement depuis `pending` (404 sinon) ; correctif dans `server/` → clôture seulement après
+  déploiement Railway `SUCCESS` du SHA (sinon l'incident reste `pending` jusqu'au passage suivant) ; `fail` compte une tentative, l'incident passe `failed` à la
   3ᵉ. Un run de workflow rouge = clôture non faite : lire son journal.
 - **3 tentatives au plus par problème** (un `fail` par tentative ratée) ; ensuite « Décision du propriétaire ».
 - Chaque correctif notable → entrée en tête de `_notes/lecon.md`, titre `### AAAA-MM-JJ — [Auto-Heal] <code ou
@@ -254,12 +277,14 @@ ligne, pas d'image, tableaux simples), sans secret ni donnée personnelle. Conte
 1. **Resend** (`mcp__Resend__send-email` ou outil Resend équivalent) **si le connecteur est connecté et** le domaine
    `kyran-jeu.fr` **vérifié** dans son compte (outil Resend de liste des domaines, statut `verified`). Expéditeur
    `KYRAN <contact@kyran-jeu.fr>`.
-2. **Sinon Gmail** (`mcp__Gmail__send_message`, compte Gmail personnel du propriétaire connecté au connecteur),
+2. **Sinon Gmail** si le connecteur est présent (`mcp__Gmail__send_message`, compte Gmail personnel du propriétaire),
    `to` = `kyran.jeu@gmail.com` seulement, corps en `htmlBody` (+ `body` texte). Constaté le 2026-10-21 : connecteur
    Resend non connecté (« connect_incomplete », aucun outil `mcp__Resend__*`) → voie Gmail. Avant l'envoi, vérifier
    que l'expéditeur du connecteur n'est pas une adresse d'un autre produit (sinon passer à 3).
-3. Sinon, **serveur KYRAN** (`contact@kyran-jeu.fr` par son propre Resend, destinataire kyran.jeu@gmail.com fixé
-   dans le code, un seul rapport par jour) :
+3. Sinon (cas normal dans la session dédiée, sans connecteur), **serveur KYRAN** : route
+   `POST /api/auto-heal/routine-report` (`contact@kyran-jeu.fr` par le Resend du serveur, destinataire
+   kyran.jeu@gmail.com **codé en dur**, objet imposé, un seul rapport par jour ; test
+   `server/test/auto-heal.test.mjs`), appelée par le workflow OIDC :
 
    ```bash
    gh api -X POST repos/Cmssmc-code/kyran-jeu/actions/workflows/auto-heal-incidents.yml/dispatches \

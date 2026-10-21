@@ -229,6 +229,27 @@ function renderLLMBox(article) {
 </aside>`;
 }
 
+/** Format « essai » (étude, histoire, analyse…) : encadré « En bref » sans liste de jeux. */
+function renderEssayBox(article) {
+  const kp = article.keyPoints;
+  return `<aside class="article-llm-box" aria-label="Résumé de l’article">
+  <p class="article-llm-box__label">${(kp && kp.heading) || 'En bref'}</p>
+  <p class="article-llm-box__text">${article.description}</p>
+  ${kp ? `<div class="article-llm-box__list">${kp.html}</div>` : ''}
+  <p class="article-llm-box__footer">Dossier KYRAN · ${article.category} · ${(article.sources || []).length} sources · ~${article.readMinutes} min · <a class="text-link" href="/a-propos.html">Notre méthode</a></p>
+</aside>`;
+}
+
+/** Sources d'un essai : liste numérotée de liens externes, avec une note facultative. */
+function renderSources(article) {
+  const list = (article.sources || []).map(r =>
+    `<li><a class="text-link" href="${r.url}" rel="noopener">${r.label}</a>${r.note ? ` — ${r.note}` : ''}</li>`).join('');
+  return `<section class="article-sources" id="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title" class="article-section-label">${heading(article, 'sources', 'Sources')}</h2>
+  <ol class="article-sources__list">${list}</ol>
+</section>`;
+}
+
 function renderAuthorCard() {
   return `<div class="article-author-card">
   <div class="article-author-card__avatar" aria-hidden="true">CS</div>
@@ -398,7 +419,8 @@ function renderArticle(article, itemsBySlug) {
   const keywords = (article.queries || []).join(', ');
   const faqBlock = renderFAQ(article);
   const gameCount = article.games.length;
-  const extras = article.extraSections || [];
+  const isEssay = article.format === 'essai';
+  const extras = isEssay ? (article.sections || []) : (article.extraSections || []);
 
   const heroDims = imageSize(join(ROOT, article.heroImage)) || { width: 1200, height: 675 };
   // Une image trop petite fait un mauvais aperçu social : repli sur l'image de marque 1200×630
@@ -412,7 +434,9 @@ function renderArticle(article, itemsBySlug) {
 
   // Sélection : liste unique, ou groupes thématiques ayant chacun leur titre (layout.groups)
   let gameHtml;
-  if (layout.groups) {
+  if (isEssay) {
+    gameHtml = '';
+  } else if (layout.groups) {
     let n = 0;
     gameHtml = layout.groups.map((grp, gi) => {
       const gid = grp.id || `groupe-${gi + 1}`;
@@ -455,20 +479,20 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
       wordCount: article.wordCount,
       articleSection: article.category,
       keywords,
-      about: buildAboutGames(article.games),
+      ...(isEssay ? { citation: (article.sources || []).map(r => ({ '@type': 'CreativeWork', name: stripHtml(r.label), url: r.url })) } : { about: buildAboutGames(article.games) }),
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['.article-lead', '.article-llm-box__text', '.game-pick__title']
       },
       isPartOf: { '@type': 'Blog', name: 'Blog KYRAN', url: SITE + '/blog/' }
     },
-    {
+    ...(isEssay ? [] : [{
       '@type': 'ItemList',
       name: article.title,
       description: article.description,
       numberOfItems: gameCount,
       itemListElement: buildItemList(article)
-    }
+    }])
   ];
   if (faqBlock.schema) schemaGraph.push(faqBlock.schema);
   const schema = { '@context': 'https://schema.org', '@graph': schemaGraph };
@@ -481,7 +505,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
     ? `<div class="editorial-callout editorial-callout--soft">${article.guideLinks}</div>`
     : '';
 
-  const verdictLabel = article.verdict.heading || 'Notre avis tranché';
+  const verdictLabel = isEssay ? '' : (article.verdict.heading || 'Notre avis tranché');
   const conclusionLabel = heading(article, 'conclusion', 'Conclusion');
 
   // Ordre des sections propre à l'article (layout) : réponse d'abord, critères après la
@@ -499,14 +523,14 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   const compareBlock = () => add(renderCompareTable(article), [{ href: '#comparatif', label: heading(article, 'compare', 'Tableau comparatif'), short: 'Comparatif' }]);
   const comparePos = layout.compare === false ? null : ((layout.compare && layout.compare.position) || 'before');
 
-  if (layout.answerFirst) verdictBlock();
+  if (!isEssay && layout.answerFirst) verdictBlock();
   add(renderAuthorNote(article.authorNote), article.authorNote ? [{ href: '#mot-auteur', label: 'Le mot de l’auteur', short: 'Mot de l’auteur' }] : []);
-  if (!layout.criteriaAfter) criteriaBlock();
-  if (comparePos === 'before') compareBlock();
+  if (!isEssay && !layout.criteriaAfter) criteriaBlock();
+  if (!isEssay && comparePos === 'before') compareBlock();
   add(gameHtml, gameEntries);
-  add(renderPhotos(article.photos));
-  if (comparePos === 'after') compareBlock();
-  if (layout.criteriaAfter) criteriaBlock();
+  if (!isEssay) add(renderPhotos(article.photos));
+  if (!isEssay && comparePos === 'after') compareBlock();
+  if (!isEssay && layout.criteriaAfter) criteriaBlock();
   extras.forEach((sec, i) => {
     // id stable facultatif : ancre visée par une ancienne URL fusionnée (roster.redirects)
     const sid = sec.id || `section-${i + 1}`;
@@ -515,7 +539,9 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <div class="article-extra__body">${sec.html}</div>
 </section>`, [{ href: `#${sid}`, label: stripHtml(sec.heading), short: stripHtml(sec.heading) }]);
   });
-  if (!layout.answerFirst) verdictBlock();
+  if (isEssay) add(renderPhotos(article.photos));
+  if (!isEssay && !layout.answerFirst) verdictBlock();
+  if (isEssay) add(renderSources(article), [{ href: '#sources', label: heading(article, 'sources', 'Sources'), short: 'Sources' }]);
   add(`<section class="article-outro" id="conclusion">
   <div class="article-outro__inner">
     ${article.headings && article.headings.conclusion ? '' : '<span class="article-outro__eyebrow">En résumé</span>'}
@@ -598,7 +624,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
           <li>Publié le <time datetime="${article.date}">${article.dateFormatted}</time></li>
           ${article.modifiedDate !== article.date ? `<li>Mis à jour le <time datetime="${article.modifiedDate}">${formatDateFr(article.modifiedDate)}</time></li>` : ''}
           <li>${article.readMinutes}&nbsp;min de lecture</li>
-          <li>${gameCount}&nbsp;jeux</li>
+          <li>${isEssay ? `${(article.sources || []).length}&nbsp;sources` : `${gameCount}&nbsp;jeux`}</li>
         </ul>
       </div>
     </header>
@@ -612,8 +638,8 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
         <div class="article-layout">
           <article class="article-main prose prose-wide">
             ${renderIntro(article.intro)}
-            ${layout.summaryBox === false ? '' : renderLLMBox(article)}
-            ${renderKyranPitch(article)}
+            ${isEssay ? renderEssayBox(article) : (layout.summaryBox === false ? '' : renderLLMBox(article))}
+            ${isEssay ? '' : renderKyranPitch(article)}
             ${bodyHtml}
             ${guideBlock}
             ${renderKyranEnd(article)}

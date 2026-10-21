@@ -19,6 +19,22 @@ const BLOG_ITEMS = [
     ]
   },
   {
+    "slug": "jeux-cartes-week-end-gite",
+    "title": "Week-end entre amis en gîte : 7 jeux de cartes pour les soirées",
+    "category": "Soirée",
+    "date": "2026-10-21",
+    "readMinutes": 8,
+    "excerpt": "Sept jeux de cartes pour un week-end entre amis en gîte : grandes tablées de 6 à 8, soirées à voix basse, un jeu bruyant à garder pour le jour.",
+    "image": "/blog/images/jungle-speed.jpg",
+    "webp": "/blog/images/jungle-speed.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-vacances-voyage",
+      "jeux-grands-groupes",
+      "meilleurs-jeux-apero"
+    ]
+  },
+  {
     "slug": "jeux-comme-skull-king",
     "title": "Jeux comme Skull King : 6 alternatives, avec ou sans pirates",
     "category": "Alternatives",

@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 34 guides
+## Blog — 35 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -132,6 +132,7 @@
 
 ## Blog : Soirée
 
+- [Week-end entre amis en gîte : 7 jeux de cartes pour les soirées](https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html): 7 jeux comparés
 - [Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis](https://kyran-jeu.fr/blog/jeux-cartes-ados.html): 6 jeux comparés
 - [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés
 - [Jeux de cartes à deux : 7 idées pour un duo ou un couple](https://kyran-jeu.fr/blog/jeux-duo-couples.html): 7 jeux comparés
@@ -189,7 +190,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), ajoute quatre pouvoirs (huit cartes Pouvoir) et une manche Mystique jouée la carte sur le front, après laquelle le cycle repart à 7 cartes ; la partie s'arrête dès qu'un joueur n'a plus de Vies.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 34 guides du blog
+## Résumé des 35 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -388,6 +389,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html
 - Résumé : Après +78 % en 2025, les cartes à collectionner ralentissent à +18 % en 2026. Chiffres Circana, tendances 2027 et cinq jeux de cartes de table à moins de 15 €.
 - Jeux comparés : Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Skyjo (2 à 8 joueurs, ~30 min, Grille à minimiser) ; Dékal (2 à 6 joueurs, ~15 min, Grille et glissement) ; Cabanga (3 à 6 joueurs, ~20 min, Défausse et alerte)
+
+### Week-end entre amis en gîte : 7 jeux de cartes pour les soirées
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html
+- Résumé : Sept jeux de cartes pour un week-end entre amis en gîte : grandes tablées de 6 à 8, soirées à voix basse, un jeu bruyant à garder pour le jour.
+- Jeux comparés : Papayoo (3 à 8 joueurs, ~30 min, Plis à éviter) ; Skull King (2 à 8 joueurs, ~30 min, Plis et paris) ; Skyjo (2 à 8 joueurs, ~30 min, Grille à minimiser) ; Just One (3 à 7 joueurs, ~20 min, Mots, coopératif) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexes, totem)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

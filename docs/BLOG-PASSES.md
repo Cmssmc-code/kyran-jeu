@@ -24,7 +24,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 3. **Choisir** : données réelles d'abord (§ 9 : pages « explorées / détectées, non indexées ») ;
    sinon rafraîchir un article vieillissant ou rédigé à la main ; un article neuf seulement pour une
    intention de recherche absente du blog.
-   **Depuis l'audit commercial du 12 octobre 2026** (`docs/rapports/audit-ventes-2026-10-12.md`),
+   **[Remplacé le 21 octobre 2026 par la priorité aux contenus de référence ci-dessous.] Depuis l'audit commercial du 12 octobre 2026** (`docs/rapports/audit-ventes-2026-10-12.md`),
    à valeur égale, préférez les sujets à intention d'achat (cadeau, Noël, jeu à moins de 15 €, jeu
    pour un repas de famille) aux listes « jeux comme X », qui attirent du trafic sans acheteurs.
    **Variété (demandée par le propriétaire le 14 octobre 2026)** : les passes reprennent trop souvent les
@@ -50,6 +50,26 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    salons, nouveautés, évolutions de gamme), histoire et culture du jeu, règles et vie à la table,
    conseils d'usage. Même exigence de sérieux : sources fiables réellement ouvertes, aucun chiffre
    ni citation sans source liée, KYRAN mentionné seulement quand il a sa place.
+   **But du blog, précisé par le propriétaire le 21 octobre 2026 : devenir une source de référence** pour
+   le SEO et le GEO, c'est-à-dire des pages que d'autres sites et les IA citent parce qu'elles contiennent
+   des **données et des consolidations que l'on ne trouve pas ailleurs**, toujours vérifiées, **100 % exactes**.
+   Les guides ne sont pas ce chemin (voir plus bas). Priorité aux **contenus de référence**, publiés en
+   format « essai » avec un jeu de données ouvert (`dataset`, voir `scripts/content/README.md`) :
+   - **base ouverte de fiches de jeux de cartes** : joueurs, âge, durée, éditeur, auteur, année, prix constaté
+     (date et revendeur), tout relevé sur la fiche de l'éditeur ou d'un revendeur ouverte le jour même ;
+     chaque passe vérifie et ajoute des jeux, jamais de valeur reprise de `games.json` sans nouveau contrôle ;
+   - **relevé de prix** de jeux de cartes dans au moins trois boutiques, avec date, répété à intervalles
+     réguliers (une série dans le temps qu'aucun autre site ne publie) ;
+   - **palmarès consolidés** (As d'Or, Spiel des Jahres…) lus sur les sites officiels des prix ;
+   - **règles comparées** relevées dans les règles officielles (conditions de fin de partie, nombre de
+     joueurs, mécaniques), chaque ligne renvoyant à la règle ;
+   - **chiffres du marché** réunis de plusieurs sources publiques, avec leurs périmètres et leurs écarts ;
+   - **calendrier des salons et sorties** relevé sur les sites des organisateurs et des éditeurs ;
+   - **analyses calculées** (probabilités d'une donne) avec le script de calcul publié dans le dépôt.
+   Règles : une ligne sans `source_url` et sans date de contrôle ne se publie pas ; une valeur douteuse se
+   laisse vide ; les données se mettent à jour par les passes de rafraîchissement (nouvelle date de contrôle) ;
+   les écarts entre sources sont montrés, pas lissés. **Les guides d'achat saisonniers neufs (Noël, Pâques,
+   fêtes des mères ou des pères, rentrée…) sont abandonnés** : on ne rafraîchit que `cadeau-noel`, déjà publié.
    **Fini les guides à la chaîne (demandé par le propriétaire le 21 octobre 2026).** Les guides
    comparatifs et guides d'achat (« N jeux pour… », « jeux comme X », « meilleurs jeux de… », idées
    cadeau, tableaux comparatifs) passent **au plus une fois toutes les deux semaines** : avant d'en
@@ -214,7 +234,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-0. **Fait le 14 octobre 2026 pour `cadeau-noel` ; reste l'article neuf ci-dessous.** (Demande d'origine : rafraîchir `cadeau-noel` pour Noël 2026
+0. **Fait le 14 octobre 2026 pour `cadeau-noel` ; l'article neuf « jeux de cartes à moins de 15 € à offrir » est ABANDONNÉ (guide d'achat, décision du 21 octobre 2026).** (Demande d'origine : rafraîchir `cadeau-noel` pour Noël 2026
    (intention d'achat, la seule page du blog qui vise un acheteur en novembre-décembre), avec KYRAN
    présenté honnêtement parmi les choix et la date limite de commande du site (16 décembre). Puis,
    si le sujet est absent du blog, un article « jeux de cartes à moins de 15 € à offrir ».

@@ -146,6 +146,29 @@ export default {
 };
 ```
 
+### Jeu de données ouvert (`dataset`) : devenir une source citable
+
+Un article « essai » peut publier ses propres données, consolidées et vérifiées, pour que moteurs de
+recherche et IA les citent (voir `docs/BLOG-PASSES.md` § 3). Fichiers sous `data/<slug>/` (CSV UTF-8 ou JSON),
+déclarés dans l'article :
+
+```js
+dataset: {
+  description: '…',                       // ce que contient le jeu de données
+  methodology: '…',                       // comment les valeurs ont été relevées, contrôlées, calculées
+  update: 'mensuelle',                    // fréquence de mise à jour
+  license: { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
+  lastVerified: '2026-10-21',             // date du dernier contrôle (≥ la plus récente ligne)
+  files: [{ path: '/data/<slug>/jeux.csv', format: 'csv', description: '…' }]
+}
+```
+
+Règle d'exactitude, vérifiée par `validate-articles.mjs` : **chaque ligne porte `source_url` (https) et
+`verifie_le` (AAAA-MM-JJ, jamais dans le futur)**, 5 lignes au moins, colonnes cohérentes. Une valeur qu'on
+n'a pas pu contrôler ne s'écrit pas : on laisse la case vide et on le dit dans la méthode. Le build ajoute à la page
+un bloc « Les données, en accès libre » (fichiers, méthode, licence, date, citation) et un nœud JSON-LD `Dataset`.
+Une passe de rafraîchissement met à jour les lignes (nouvelle `verifie_le`) plutôt que d'en écrire de nouvelles.
+
 Règles : 1 500 mots minimum ; au moins 3 liens internes et 4 liens externes vers les sources dans le texte ;
 les sources de la liste ont été réellement ouvertes ; les limites de ce qu'on peut conclure sont dites.
 `node scripts/validate-articles.mjs <slug>` applique ces contrôles ; le build produit page, sitemap, flux et

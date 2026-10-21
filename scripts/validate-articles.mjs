@@ -6,7 +6,7 @@
  * Usage : node scripts/validate-articles.mjs [slug ...]   (sans argument : tous les fichiers présents)
  * Code de sortie 1 si une erreur est trouvée (les avertissements ne bloquent pas).
  */
-import { readdirSync, existsSync } from 'fs';
+import { readdirSync, existsSync, readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
@@ -55,6 +55,71 @@ function htmlFields(a) {
   return f.filter(([, v]) => v);
 }
 
+/** CSV minimal (guillemets, virgules, retours à la ligne dans les champs). */
+function parseCsv(text) {
+  const rows = [];
+  let row = [], field = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') q = false;
+      else field += c;
+    } else if (c === '"') q = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field); field = '';
+      if (row.some(x => x !== '')) rows.push(row);
+      row = [];
+    } else field += c;
+  }
+  if (field !== '' || row.length) { row.push(field); if (row.some(x => x !== '')) rows.push(row); }
+  return rows;
+}
+
+/**
+ * Jeu de données ouvert : chaque ligne doit porter l'URL de sa source et la date de son contrôle
+ * (colonnes source_url et verifie_le) : aucune valeur sans source, aucune valeur non contrôlée.
+ */
+function validateDataset(slug, d, err) {
+  const today = new Date().toISOString().slice(0, 10);
+  for (const k of ['description', 'methodology', 'update']) if (!d[k]) err(`dataset.${k} manquant`);
+  if (!d.license || !d.license.name || !/^https:\/\//.test(d.license.url || '')) err('dataset.license : name et url https obligatoires');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d.lastVerified || '') || d.lastVerified > today) err('dataset.lastVerified invalide ou dans le futur');
+  if (!Array.isArray(d.files) || !d.files.length) { err('dataset.files : au moins un fichier'); return; }
+  let latest = '';
+  for (const f of d.files) {
+    const at = `dataset ${f.path}`;
+    if (!/^\/data\/[\w-]+\/[\w.-]+\.(csv|json)$/.test(f.path || '')) { err(`${at} : chemin /data/<slug>/<fichier>.csv|json attendu`); continue; }
+    if (f.path.split('/')[2] !== slug) err(`${at} : le dossier doit porter le slug de l'article`);
+    if (!['csv', 'json'].includes(f.format) || !f.description) err(`${at} : format (csv|json) et description obligatoires`);
+    const abs = join(ROOT, f.path);
+    if (!existsSync(abs)) { err(`${at} : fichier introuvable`); continue; }
+    const text = readFileSync(abs, 'utf8');
+    let records;
+    if (f.path.endsWith('.csv')) {
+      const rows = parseCsv(text);
+      if (rows.length < 2) { err(`${at} : en-tête et au moins une ligne attendus`); continue; }
+      const head = rows[0];
+      records = rows.slice(1).map((r, i) => {
+        if (r.length !== head.length) err(`${at} ligne ${i + 2} : ${r.length} colonnes (${head.length} attendues)`);
+        return Object.fromEntries(head.map((h, j) => [h, r[j] || '']));
+      });
+    } else {
+      try { records = JSON.parse(text); } catch (e) { err(`${at} : JSON invalide`); continue; }
+      if (!Array.isArray(records) || !records.every(r => r && typeof r === 'object')) { err(`${at} : tableau d'objets attendu`); continue; }
+    }
+    if (records.length < 5) err(`${at} : ${records.length} lignes (≥ 5)`);
+    records.forEach((r, i) => {
+      if (!/^https:\/\/[^\s]+$/.test(r.source_url || '')) err(`${at} ligne ${i + 1} : source_url https obligatoire`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(r.verifie_le || '') || r.verifie_le > today) err(`${at} ligne ${i + 1} : verifie_le (AAAA-MM-JJ, pas dans le futur) obligatoire`);
+      else if (r.verifie_le > latest) latest = r.verifie_le;
+    });
+  }
+  if (latest && d.lastVerified && d.lastVerified < latest) err(`dataset.lastVerified (${d.lastVerified}) antérieur à la dernière ligne contrôlée (${latest})`);
+}
+
 /**
  * Format « essai » (étude, histoire, analyse, règles en profondeur…) : pas de liste de jeux.
  * Même rigueur que les guides : sources liées, texte long, structure propre, aucun gabarit.
@@ -86,7 +151,7 @@ function validateEssay(slug, a, err, warn, cache) {
     if (w < 150) err(`${at}: ${w} mots (≥ 150)`);
     if (sec.id !== undefined) {
       if (typeof sec.id !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(sec.id)) err(`${at}: id invalide`);
-      else if (['sources', 'faq', 'conclusion', 'mot-auteur'].includes(sec.id) || ids.has(sec.id)) err(`${at}: id réservé ou en double`);
+      else if (['sources', 'faq', 'conclusion', 'mot-auteur', 'donnees'].includes(sec.id) || ids.has(sec.id)) err(`${at}: id réservé ou en double`);
       ids.add(sec.id);
     }
   });
@@ -98,6 +163,7 @@ function validateEssay(slug, a, err, warn, cache) {
     if (urls.has(r.url)) err(`sources[${i}]: url en double`);
     urls.add(r.url);
   });
+  if (a.dataset) validateDataset(slug, a.dataset, err);
   if (!a.keyPoints || !a.keyPoints.html) err('keyPoints.html manquant (encadré « En bref » : 3 à 5 points sourcés)');
   for (const [i, ph] of (a.photos || []).entries()) {
     if (!ph.src || !ph.alt || !ph.caption) err(`photos[${i}] : src, alt et caption obligatoires`);
@@ -105,7 +171,7 @@ function validateEssay(slug, a, err, warn, cache) {
   }
   if (!a.photos || a.photos.length < 1) warn('aucune photo : prévoir 1 à 4 images créditées (voir docs/BLOG-PASSES.md)');
   for (const [k, v] of Object.entries(a.headings || {})) {
-    if (!['conclusion', 'faq', 'related', 'sources'].includes(k)) err(`headings.${k} inconnu`);
+    if (!['conclusion', 'faq', 'related', 'sources', 'donnees'].includes(k)) err(`headings.${k} inconnu`);
     if (typeof v !== 'string' || !v.trim() || /<h[1-6]/i.test(v)) err(`headings.${k} : texte simple attendu`);
   }
 

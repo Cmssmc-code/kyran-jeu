@@ -240,6 +240,50 @@ function renderEssayBox(article) {
 </aside>`;
 }
 
+/** Jeu de données ouvert d'un essai : fichiers à télécharger, méthode, licence, date de contrôle. */
+function renderDataset(article) {
+  const d = article.dataset;
+  const url = `${SITE}/blog/${article.slug}.html`;
+  const files = d.files.map(f =>
+    `<li><a class="text-link" href="${f.path}" download>${f.path.split('/').pop()}</a> (${f.format.toUpperCase()}) — ${f.description}</li>`).join('');
+  return `<section class="article-dataset" id="donnees" aria-labelledby="donnees-title">
+  <h2 id="donnees-title" class="article-section-label">${heading(article, 'donnees', 'Les données, en accès libre')}</h2>
+  <div class="article-dataset__body">
+    ${d.description ? `<p>${d.description}</p>` : ''}
+    <ul class="article-dataset__files">${files}</ul>
+    <h3>Méthode</h3>
+    <p>${d.methodology}</p>
+    <p><strong>Licence :</strong> <a class="text-link" href="${d.license.url}" rel="noopener">${d.license.name}</a> · <strong>Dernier contrôle :</strong> <time datetime="${d.lastVerified}">${formatDateFr(d.lastVerified)}</time> · <strong>Mise à jour :</strong> ${d.update}</p>
+    <p><strong>Pour citer :</strong> KYRAN, « ${stripHtml(article.title)} », ${formatDateFr(d.lastVerified)}, ${url}</p>
+  </div>
+</section>`;
+}
+
+function buildDatasetSchema(article) {
+  const d = article.dataset;
+  const url = `${SITE}/blog/${article.slug}.html`;
+  return {
+    '@type': 'Dataset',
+    '@id': url + '#dataset',
+    name: stripHtml(article.title),
+    description: clipText(stripHtml(d.description || article.description), 300),
+    url,
+    license: d.license.url,
+    isAccessibleForFree: true,
+    inLanguage: 'fr-FR',
+    creator: { '@type': 'Person', '@id': AUTHOR_ID, name: 'Corentin Sence', url: AUTHOR_URL },
+    publisher: { '@id': SITE + '/#organization' },
+    datePublished: article.date,
+    dateModified: d.lastVerified,
+    measurementTechnique: clipText(stripHtml(d.methodology), 300),
+    distribution: d.files.map(f => ({
+      '@type': 'DataDownload',
+      encodingFormat: f.format === 'csv' ? 'text/csv' : 'application/json',
+      contentUrl: SITE + f.path
+    }))
+  };
+}
+
 /** Sources d'un essai : liste numérotée de liens externes, avec une note facultative. */
 function renderSources(article) {
   const list = (article.sources || []).map(r =>
@@ -494,6 +538,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
       itemListElement: buildItemList(article)
     }])
   ];
+  if (isEssay && article.dataset) schemaGraph.push(buildDatasetSchema(article));
   if (faqBlock.schema) schemaGraph.push(faqBlock.schema);
   const schema = { '@context': 'https://schema.org', '@graph': schemaGraph };
 
@@ -539,6 +584,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <div class="article-extra__body">${sec.html}</div>
 </section>`, [{ href: `#${sid}`, label: stripHtml(sec.heading), short: stripHtml(sec.heading) }]);
   });
+  if (isEssay && article.dataset) add(renderDataset(article), [{ href: '#donnees', label: heading(article, 'donnees', 'Les données, en accès libre'), short: 'Données' }]);
   if (isEssay) add(renderPhotos(article.photos));
   if (!isEssay && !layout.answerFirst) verdictBlock();
   if (isEssay) add(renderSources(article), [{ href: '#sources', label: heading(article, 'sources', 'Sources'), short: 'Sources' }]);

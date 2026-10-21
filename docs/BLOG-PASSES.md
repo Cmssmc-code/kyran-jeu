@@ -53,7 +53,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    **But du blog, précisé par le propriétaire le 21 octobre 2026 : devenir une source de référence** pour
    le SEO et le GEO, c'est-à-dire des pages que d'autres sites et les IA citent parce qu'elles contiennent
    des **données et des consolidations que l'on ne trouve pas ailleurs**, toujours vérifiées, **100 % exactes**.
-   Les guides ne sont pas ce chemin (voir plus bas). Priorité aux **contenus de référence**, publiés en
+   Les guides seuls ne suffisent pas à y arriver : voir l'alternance plus bas.
    format « essai » avec un jeu de données ouvert (`dataset`, voir `scripts/content/README.md`) :
    - **base ouverte de fiches de jeux de cartes** : joueurs, âge, durée, éditeur, auteur, année, prix constaté
      (date et revendeur), tout relevé sur la fiche de l'éditeur ou d'un revendeur ouverte le jour même ;
@@ -68,14 +68,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    - **analyses calculées** (probabilités d'une donne) avec le script de calcul publié dans le dépôt.
    Règles : une ligne sans `source_url` et sans date de contrôle ne se publie pas ; une valeur douteuse se
    laisse vide ; les données se mettent à jour par les passes de rafraîchissement (nouvelle date de contrôle) ;
-   les écarts entre sources sont montrés, pas lissés. **Les guides d'achat saisonniers neufs (Noël, Pâques,
-   fêtes des mères ou des pères, rentrée…) sont abandonnés** : on ne rafraîchit que `cadeau-noel`, déjà publié.
-   **Fini les guides à la chaîne (demandé par le propriétaire le 21 octobre 2026).** Les guides
-   comparatifs et guides d'achat (« N jeux pour… », « jeux comme X », « meilleurs jeux de… », idées
-   cadeau, tableaux comparatifs) passent **au plus une fois toutes les deux semaines** : avant d'en
-   choisir un, relire le journal ; si un guide neuf date de moins de 14 jours, on écrit autre chose.
-   Le rafraîchissement d'un guide existant ne compte pas dans cette limite. Les autres passes
-   utilisent le **format « essai »** (`format: 'essai'`, voir `scripts/content/README.md`), avec le même
+   les écarts entre sources sont montrés, pas lissés. **Alternance guide / article de référence (précisée par le propriétaire le 21 octobre 2026).**
+   Les guides restent permis (jeux à moins de 15 €, guides d'achat, comparatifs, y compris saisonniers) :
+   on **alterne** un guide et un article de référence (essai, jeu de données, étude, histoire, règles en
+   profondeur…). Avant de choisir, relire la colonne « Type » du journal : si le dernier article neuf est
+   un guide, le suivant est un article de référence, et inversement. Pas deux guides neufs de suite. Le
+   rythme reste d'**au moins un article neuf par semaine** ; le rafraîchissement d'un guide existant ne
+   compte pas dans l'alternance. Les guides saisonniers (Noël, Pâques, fêtes…) ne se multiplient pas :
+   un seul à la fois, à une date utile pour l'acheteur, jamais comme remplissage.
+   Les articles de référence utilisent le **format « essai »** (`format: 'essai'`, voir `scripts/content/README.md`), avec le même
    sérieux que l'article `science-jeux-de-cartes-cerveau` (références vérifiées avec DOI quand ce sont des
    études, limites dites, aucune promesse) et ces angles, à alterner :
    - **études et vulgarisation** (psychologie, cognition, lien social, générations, bien-être), seulement
@@ -234,7 +235,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 
 Rafraîchissements repérés (par ordre de priorité) :
 
-0. **Fait le 14 octobre 2026 pour `cadeau-noel` ; l'article neuf « jeux de cartes à moins de 15 € à offrir » est ABANDONNÉ (guide d'achat, décision du 21 octobre 2026).** (Demande d'origine : rafraîchir `cadeau-noel` pour Noël 2026
+0. **Fait le 14 octobre 2026 pour `cadeau-noel` ; l'article neuf « jeux de cartes à moins de 15 € à offrir » est de nouveau à faire (guide, à placer dans l'alternance, décision du 21 octobre 2026).** (Demande d'origine : rafraîchir `cadeau-noel` pour Noël 2026
    (intention d'achat, la seule page du blog qui vise un acheteur en novembre-décembre), avec KYRAN
    présenté honnêtement parmi les choix et la date limite de commande du site (16 décembre). Puis,
    si le sujet est absent du blog, un article « jeux de cartes à moins de 15 € à offrir ».

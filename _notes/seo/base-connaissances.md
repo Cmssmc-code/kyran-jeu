@@ -134,7 +134,7 @@ Serveurs MCP (`.mcp.json`, `docs/MCP_SEO.md`) : `gsc` (présent dans la session 
 | BoardGamesFlix | fiche descriptive |
 | YouTube @Kyran-jeu | 1 vidéo, 101 vues |
 | Okkazeo 94411 | fiche avec liens vers `regle.html`, `video-regles.html`, `commander.html` (vu le 21/10) ; prix public 16,99 € ; 0 avis |
-| Tric Trac `jeu-de-societe/kyran`, Myludo 95533 | fiches existantes ; Tric Trac sans lien vers le site (21/10) |
+| Tric Trac `jeu-de-societe/kyran`, Myludo 95533 | fiches existantes ; Tric Trac sans lien vers le site (21/10)  ; Tric Trac, Myludo et Okkazeo liés depuis le site (presse, à propos, `sameAs` de `#game`, `llms.txt`) le 21/10 |
 | Philibert, presse, forums, Reddit, TikTok | rien trouvé (recherche du 21/10 : WebSearch, DuckDuckGo, YouTube) |
 | Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque ; 20/10 : WebSearch (moteur de Claude) ne sort pas kyran-jeu.fr sur « KYRAN jeu de cartes Maître des Mystiques » |
 

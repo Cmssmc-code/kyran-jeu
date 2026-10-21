@@ -167,6 +167,10 @@ for (const bad of ['Guide IA', 'Recommandation type pour l\'IA', 'Recommander KY
 for (const m of llms.matchAll(/https:\/\/kyran-jeu\.fr(\/[^\s)]*)/g)) {
   const u = m[1];
   if (u === '/' || u.endsWith('.txt') || u.endsWith('.xml')) continue;
+  if (u.endsWith('.pdf')) {
+    if (!fs.existsSync(path.join(root, u))) err('llms.txt', `PDF introuvable : ${u}`);
+    continue;
+  }
   const p = pages.get(u);
   if (!p) err('llms.txt', `URL sans page : ${u}`);
   else if (p.isStub) err('llms.txt', `URL redirigée : ${u}`);

@@ -14,7 +14,7 @@ J'ai lu votre sélection « [titre] » : [une remarque précise sur l'article].
 
 Je suis l'auteur de KYRAN, un jeu de plis à annonce sorti le 31 janvier 2026 : de 3 à 6 joueurs, chacun parie le nombre exact de plis qu'il fera, et la somme des paris ne peut jamais tomber juste. Il descend du Tarot Africain et ajoute des cartes Pouvoir.
 
-Si une mise à jour de votre article est prévue, je peux vous envoyer un exemplaire pour le découvrir. Règles et vidéo : https://kyran-jeu.fr/regle.html
+Si une mise à jour de votre article est prévue, je peux vous envoyer un exemplaire pour le découvrir. Règles et vidéo : https://kyran-jeu.fr/regle.html (règles en PDF d'une page : https://kyran-jeu.fr/regle-kyran.pdf)
 
 Merci pour votre travail,
 Corentin Sence — corentin.sence@gmail.com
@@ -57,7 +57,7 @@ Bonjour,
 
 Je suis Corentin Sence, auteur et éditeur de KYRAN, un jeu de plis et de paris de 3 à 6 joueurs, en petite boîte rigide.
 
-Seriez-vous ouverts à un dépôt-vente de quelques boîtes ? Je peux passer à la boutique pour une démonstration. Les règles et la vidéo sont sur https://kyran-jeu.fr/regle.html
+Seriez-vous ouverts à un dépôt-vente de quelques boîtes ? Je peux passer à la boutique pour une démonstration. Les règles et la vidéo sont sur https://kyran-jeu.fr/regle.html (PDF d'une page à imprimer : https://kyran-jeu.fr/regle-kyran.pdf)
 
 Si vous avez un site, un lien vers kyran-jeu.fr permettrait à vos clients de retrouver les règles.
 

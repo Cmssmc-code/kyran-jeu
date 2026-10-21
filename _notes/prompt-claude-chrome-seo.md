@@ -50,6 +50,8 @@ RÈGLES
   « Player Elimination ».
 - Textes prêts à coller : https://github.com/Cmssmc-code/kyran-jeu/blob/main/_notes/outreach/textes-fiches.md
   (prends le texte de la section indiquée, sans le réécrire).
+- Partout où un champ, une ressource ou un message le permet (fiche, liens externes, formulaire), ajoute aussi
+  les règles en PDF de mon site : https://kyran-jeu.fr/regle-kyran.pdf (une page A4 illustrée), si elles n'y sont pas déjà.
 - Une page refuse, plante ou demande quelque chose d'inconnu : passe au bloc suivant et note-le.
 - Après chaque bloc, une ligne : fait / déjà fait / bloqué.
 
@@ -96,7 +98,7 @@ BLOC 4 — (BoardGameGeek : rien à faire, réglé par Corentin le 21/10. Ne va 
 
 BLOC 5 — Tric Trac, https://trictrac.net/jeu-de-societe/kyran
 Relevé le 21/10 : aucun lien vers kyran-jeu.fr sur la fiche. Section « 2. Tric Trac » : ajoute les ressources
-externes qui manquent et la description longue si la description de la communauté est vide.
+externes qui manquent (dont le PDF des règles) et la description longue si la description de la communauté est vide.
 
 BLOC 6 — Wikidata, https://www.wikidata.org/wiki/Q141623753
 Relevé le 21/10 (dernière modification le 02/10) : 7 déclarations, 0 référence, aucun identifiant externe.

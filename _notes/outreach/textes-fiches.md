@@ -46,7 +46,7 @@ couvre que les fiches et les demandes de **correction** ou d'**ajout de lien**.
 >
 > Contenu : 36 cartes Nombre (1 à 36), 1 carte Mystique et 8 cartes Pouvoir (45 cartes de jeu), 30 cartes Vie (5 par joueur, de 1 à 5 étoiles) et 7 cartes de règles. Cartes toilées, boîte rigide de 11,5 × 8,5 × 2,8 cm.
 >
-> Site officiel, règles et vidéo : https://kyran-jeu.fr/
+> Site officiel, règles et vidéo : https://kyran-jeu.fr/ — règles en PDF (une page) : https://kyran-jeu.fr/regle-kyran.pdf
 
 **Fiche technique**
 
@@ -71,6 +71,7 @@ couvre que les fiches et les demandes de **correction** ou d'**ajout de lien**.
 |---|---|
 | Site officiel | https://kyran-jeu.fr/ |
 | Règles | https://kyran-jeu.fr/regle.html |
+| Règles en PDF (une page A4 illustrée, à imprimer) | https://kyran-jeu.fr/regle-kyran.pdf |
 | Règles en vidéo (Ludochrono de Ludovox) | https://kyran-jeu.fr/video-regles.html |
 | Initiation gratuite en ligne | https://kyran-jeu.fr/minijeu.html |
 | Acheter | https://kyran-jeu.fr/commander.html |
@@ -112,7 +113,7 @@ Où : https://boardgamegeek.com/boardgame/480678/kyran → « Edit » (correctio
 >
 > Contents: 36 Number cards (1 to 36), 1 Mystic card and 8 Power cards (45 playing cards), 30 Life cards (1 to 5 stars, 5 per player) and 7 rules cards. Linen-finish cards in a rigid box (11.5 × 8.5 × 2.8 cm).
 >
-> Official website, rules and video: https://kyran-jeu.fr/
+> Official website, rules and video: https://kyran-jeu.fr/ — rules as a one-page PDF (French): https://kyran-jeu.fr/regle-kyran.pdf
 
 Vérification après validation : `curl -s "https://api.geekdo.com/api/geekitems?objectid=480678&objecttype=thing"` → `website.url` = `https://kyran-jeu.fr/`, `boardgamecategory` non vide, description sans « final Mystic round ».
 
@@ -129,6 +130,7 @@ les ressources externes et la description de la communauté.
 |---|---|---|
 | Site officiel | KYRAN, site officiel de l'éditeur | https://kyran-jeu.fr/ |
 | Règles | Règles de KYRAN | https://kyran-jeu.fr/regle.html |
+| Règles | Règles de KYRAN en PDF (une page A4) | https://kyran-jeu.fr/regle-kyran.pdf |
 | Vidéo | Ludochrono de Ludovox (5 min) | https://ludovox.fr/ludochrono-kyran/ |
 | Vidéo | KYRAN en 60 secondes | https://www.youtube.com/watch?v=y0YVn-lZMAc |
 
@@ -214,7 +216,7 @@ Où : https://ludovox.fr/contact/
 >
 > Merci encore pour le Ludochrono de Kyran publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/), que nous citons sur notre page de règles en vidéo.
 >
-> Serait-il possible d'ajouter sous la vidéo un lien vers le site de l'éditeur, https://kyran-jeu.fr/ ? Les règles complètes y sont : https://kyran-jeu.fr/regle.html. Si vous créez une fiche jeu (la page https://ludovox.fr/jeu-de-societe/kyran/ n'existe pas encore), voici les informations utiles : jeu de plis avec pari obligatoire et bluff, 3 à 6 joueurs, dès 8 ans, environ 30 minutes, sorti le 31 janvier 2026, auteur et éditeur Corentin Sence, illustrations Crea by Floh.
+> Serait-il possible d'ajouter sous la vidéo un lien vers le site de l'éditeur, https://kyran-jeu.fr/ ? Les règles complètes y sont : https://kyran-jeu.fr/regle.html (et en PDF d'une page : https://kyran-jeu.fr/regle-kyran.pdf). Si vous créez une fiche jeu (la page https://ludovox.fr/jeu-de-societe/kyran/ n'existe pas encore), voici les informations utiles : jeu de plis avec pari obligatoire et bluff, 3 à 6 joueurs, dès 8 ans, environ 30 minutes, sorti le 31 janvier 2026, auteur et éditeur Corentin Sence, illustrations Crea by Floh.
 >
 > Bonne journée,
 > Corentin Sence, auteur de KYRAN
@@ -254,6 +256,7 @@ Où : https://www.okkazeo.com/jeux/94411/kyran-maitre-des-mystiques → « Modif
 | Éditeur | absent | Kyran (auto-édition, Corentin Sence) |
 | Prix public | 16,99 € (ne correspond à aucun prix connu) | **à décider par Corentin** : 9,99 € (prix de l'éditeur sur kyran-jeu.fr, hors port) ; Amazon.fr vend 17,99 € |
 | Vidéos | aucune | Ludochrono `https://www.youtube.com/watch?v=aconMJG9uSQ` |
+| Règles (fichier ou lien, si la fiche le permet) | — | https://kyran-jeu.fr/regle-kyran.pdf |
 | Thème « Singes » | présent | peut rester : la boîte montre un singe |
 
 ---
@@ -268,7 +271,7 @@ Où : https://www.myludo.fr/#!/game/kyran-95533 → « Proposer une modification
 > - contenu : 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles ;
 > - prix : 9,99 € sur le site de l'éditeur https://kyran-jeu.fr/ (17,99 € sur Amazon.fr) ; le 16,99 € affiché ne correspond à aucun prix de vente ;
 > - description : [coller la description longue FR] ;
-> - site officiel : https://kyran-jeu.fr/.
+> - site officiel : https://kyran-jeu.fr/ ; règles en PDF : https://kyran-jeu.fr/regle-kyran.pdf.
 > Merci !
 
 Puis « Ajouter une vidéo » : `https://www.youtube.com/watch?v=aconMJG9uSQ` (Ludochrono, le jeu est le sujet principal).

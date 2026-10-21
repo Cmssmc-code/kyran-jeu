@@ -128,12 +128,14 @@ Serveurs MCP (`.mcp.json`, `docs/MCP_SEO.md`) : `gsc` (présent dans la session 
 |---|---|
 | Ludovox, Ludochrono (31/01/2026) | vidéo 5 min, aucun lien vers le site |
 | Le Pirate Ludique (YouTube) | vidéo « Kyran maître des mystiques » |
-| BoardGameGeek 480678 | 0 note, 0 possesseur ; description remplie (constat du 20/10, vide le 19/10), champ site toujours vide, 88 vues |
+| BoardGameGeek 480678 | réglé par Corentin le 21/10 : la routine n'y passe plus |
 | Wikidata Q141623753 | libellés fr et en, P31, P2093, P577, P1872, P1873, P856 (site), P407 ; 0 référence ; absent des `sameAs` du site |
 | Amazon.fr | 4,7/5 sur 33 évaluations |
 | BoardGamesFlix | fiche descriptive |
 | YouTube @Kyran-jeu | 1 vidéo, 101 vues |
-| Trictrac, MyLudo, Philibert, presse | rien |
+| Okkazeo 94411 | fiche avec liens vers `regle.html`, `video-regles.html`, `commander.html` (vu le 21/10) ; prix public 16,99 € ; 0 avis |
+| Tric Trac `jeu-de-societe/kyran`, Myludo 95533 | fiches existantes ; Tric Trac sans lien vers le site (21/10) |
+| Philibert, presse, forums, Reddit, TikTok | rien trouvé (recherche du 21/10 : WebSearch, DuckDuckGo, YouTube) |
 | Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque ; 20/10 : WebSearch (moteur de Claude) ne sort pas kyran-jeu.fr sur « KYRAN jeu de cartes Maître des Mystiques » |
 
 Liens entrants : **0** (Search Console et Bing).

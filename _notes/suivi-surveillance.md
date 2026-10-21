@@ -24,6 +24,10 @@ le matin ; un seul envoi par jour). Rapport complet :
 Réparations : aucune. Points ouverts : quand les builds Railway reprennent, vérifier le déploiement de `server/`
 (sinon commit de version 1.6.0 pour relancer), puis clôturer JS-29330B et JS-11F231.
 
+Suivi de 19:54 UTC : builds Railway **toujours en pause** (status.railway.com : reprise par étapes, Enterprise
+vers 20:30 UTC, puis Pro, Hobby, Free) ; `/health` encore en v1.5.0. Rien poussé, incidents non clôturés ; le
+passage du 22/10 à 05:07 reprend ce point.
+
 ## 2026-10-21 — premier passage (validation de la mission)
 
 État : 🟢 site et paiement · 🟠 serveur et incidents (panne Railway, 2 incidents en attente de déploiement) ·

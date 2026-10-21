@@ -15,6 +15,7 @@
 | Ressource | URL | Pour qui |
 |---|---|---|
 | Règle + feuille de score du Tarot Africain (PDF A4) | https://kyran-jeu.fr/regle-tarot-africain.pdf | Sites de règles, clubs, profs |
+| Règles de KYRAN (PDF, une page A4 illustrée) | https://kyran-jeu.fr/regle-kyran.pdf | Fiches jeu (Tric Trac, Myludo, Okkazeo), blogs, presse, boutiques |
 | Page « ressources gratuites » (liens à copier) | https://kyran-jeu.fr/ressources-gratuites.html | Blogs, associations |
 | Initiation en ligne (simulateur gratuit) | https://kyran-jeu.fr/minijeu.html | Blogs, enseignants, médiathèques |
 | Synthèse des études sur jeux de cartes et cerveau | https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html | Presse, seniors, éducation |

@@ -134,7 +134,7 @@ function buildLlmsTxt() {
 - Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
 - Présence externe : chaîne YouTube officielle (https://www.youtube.com/@Kyran-jeu) ; fiche BoardGameGeek (https://boardgamegeek.com/boardgame/480678/kyran) ; élément Wikidata Q141623753 (https://www.wikidata.org/wiki/Q141623753) ; fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4)
 - Note sur Amazon.fr : ${PRODUCT.amazon.rating} / 5 sur ${PRODUCT.amazon.ratingCount} évaluations (relevé du ${PRODUCT.amazon.checkedLabel})
-- Règles : ${SITE}/regle.html ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
+- Règles : ${SITE}/regle.html ; règles en PDF (une page A4) : ${SITE}/regle-kyran.pdf ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 

@@ -165,7 +165,7 @@ Bing a ~2 jours de retard. Indicateurs, sources et seuils : `seo/base-connaissan
 Condenser en quatre horizons : **24 h, 48 h, 7 jours, 30 jours**.
 
 - **Marque** : WebSearch « KYRAN jeu de cartes », « Kyran Maître des Mystiques », « kyran-jeu.fr » ; Ludovox,
-  Trictrac, MyLudo, Okkazeo, Philibert,
+  BoardGameGeek (`api.geekdo.com/api/geekitems?objectid=480678&objecttype=thing`), Trictrac, MyLudo, Okkazeo, Philibert,
   Amazon (note et nombre d'avis), YouTube, Instagram @kyran.jeu, Reddit, forums. Chaque mention nouvelle : URL,
   date, ton, lien ou non → `seo/base-connaissances.md` § Mentions.
 - **SERP** : les requêtes cibles de la base (§ 3) : qui est en tête, où est KYRAN, changement depuis le dernier
@@ -216,9 +216,9 @@ Opportunités notées (impact × confiance ÷ effort), **3 à 5** retenues :
   obtenus vérifiés en ligne puis notés avec la date.
 - 1 à 2 messages personnalisés prêts à copier dans le doc (règle 6, pas d'envoi par la routine), ressource gratuite à l'appui (feuille de score PDF, initiation,
   comparatif des jeux de plis, synthèse « cartes et cerveau », exemplaire de test).
-- **BoardGameGeek : ne plus y passer** (fiche réglée par Corentin, décision du 21/10/2026) : ni relevé, ni action, ni
-  texte à préparer ; le lien BGG du site reste tel quel.
-- Présence propriétaire (Trictrac, MyLudo, Wikidata, Merchant Center) : textes et étapes à faire par Corentin,
+- **BoardGamesFlix : ne plus y passer** (fiche réglée par Corentin, décision du 21/10/2026) : ni relevé, ni demande,
+  ni texte à préparer ; les liens du site vers BoardGamesFlix restent tels quels.
+- Présence propriétaire (BGG, Trictrac, MyLudo, Wikidata, Merchant Center) : textes et étapes à faire par Corentin,
   ne rien créer soi-même.
 
 ### 8. Rapport (15 min)

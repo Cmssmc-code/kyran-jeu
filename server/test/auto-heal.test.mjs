@@ -244,6 +244,13 @@ test('rapport 24 h : envoyé (simulé sans Resend) une seule fois par jour', asy
   assert.equal(second.reason, 'already_sent_today');
 });
 
+test('filtre : transition de page interrompue et portefeuille crypto injecté = bruit (JS-29330B, JS-11F231)', () => {
+  const CHROME_UA = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36';
+  assert.equal(isBenignClientError({ kind: 'rejection', message: 'Transition was aborted because of invalid state. ViewTransition opt-in disabled' }, CHROME_UA), true);
+  assert.equal(isBenignClientError({ kind: 'error', message: "TypeError: undefined is not an object (evaluating 'window.ethereum.selectedAddress = undefined')", file: 'https://kyran-jeu.fr/tarot-africain.html' }, CHROME_UA), true);
+  assert.equal(isBenignClientError({ kind: 'error', message: 'TypeError: transition is undefined', file: 'https://kyran-jeu.fr/js/motion.js' }, CHROME_UA), false, 'une vraie erreur de nos scripts reste signalée');
+});
+
 test('rapport de la routine : objet imposé, destinataire fixe, un seul envoi par jour', async () => {
   const body = { subject: 'KYRAN — surveillance & réparation du 21/10', html: '<p>OK</p>', text: 'OK', to: 'tiers@example.com' };
   assert.equal((await fetch(`${BASE}/api/auto-heal/routine-report`, { method: 'POST', body: JSON.stringify(body) })).status, 401);

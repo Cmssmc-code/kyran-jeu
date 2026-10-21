@@ -303,7 +303,12 @@ const BENIGN_MESSAGE = [
   /Non-Error promise rejection captured/i,
   /^(TypeError: )?(Failed to fetch|NetworkError when attempting to fetch resource|Load failed|cancelled|annulé)\.?$/i,
   /AbortError|The operation was aborted|The user aborted a request/i,
-  /play\(\) (request was interrupted|failed because the user didn't interact)|NotAllowedError/i
+  /play\(\) (request was interrupted|failed because the user didn't interact)|NotAllowedError/i,
+  // Transition de page (css/motion.css, @view-transition) interrompue par le navigateur : promesse interne
+  // rejetée sans fichier ni pile, rien à corriger côté site (JS-29330B).
+  /^(InvalidStateError: |AbortError: )?Transition was (aborted|skipped) because of invalid state|ViewTransition opt-in disabled/i,
+  // Portefeuille crypto injecté par une extension ou une appli (window.ethereum) : le site n'y touche pas (JS-11F231).
+  /\bwindow\.ethereum\b|ethereum\.selectedAddress/i
 ];
 
 /**

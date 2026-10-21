@@ -56,9 +56,19 @@ test('vidéo : visiteur hors ligne (HEAD en échec) → aucun incident', async (
   assert.equal(r.reports().length, 0);
 });
 
-test('image introuvable : signalée tout de suite, sans requête HEAD', () => {
-  const r = load(() => assert.fail('pas de HEAD pour une image'));
+test('image ou script en ligne mais coupé par le réseau → aucun incident (JS-B632F4, JS-29AAB2)', async () => {
+  const r = load(() => Promise.resolve({ ok: true }));
   r.fire({ tagName: 'IMG', src: 'https://kyran-jeu.fr/logo.png' });
+  r.fire({ tagName: 'SCRIPT', src: 'https://kyran-jeu.fr/js/motion.js?v=2db9c31614' });
+  await tick();
+  assert.deepEqual(r.heads, ['https://kyran-jeu.fr/logo.png', 'https://kyran-jeu.fr/js/motion.js?v=2db9c31614']);
+  assert.equal(r.reports().length, 0);
+});
+
+test('image vraiment absente (404) → incident', async () => {
+  const r = load(() => Promise.resolve({ ok: false, status: 404 }));
+  r.fire({ tagName: 'IMG', src: 'https://kyran-jeu.fr/absente.webp' });
+  await tick();
   assert.equal(r.reports().length, 1);
-  assert.equal(r.heads.length, 0);
+  assert.match(r.reports()[0].message, /<img> https:\/\/kyran-jeu\.fr\/absente\.webp/);
 });

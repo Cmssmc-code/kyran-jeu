@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Tue, 20 Oct 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché</title>
+      <link>https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2025.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2025.html</guid>
+      <pubDate>Wed, 21 Oct 2026 08:00:00 +0200</pubDate>
+      <description>Les cartes progressent de 78 % en 2025, mais lesquelles ? Les chiffres Circana lus de près, et les cinq jeux de cartes de table qui se vendent à moins de 15 €.</description>
+    </item>
     <item>
       <title>Jeux comme Skull King : 6 alternatives, avec ou sans pirates</title>
       <link>https://kyran-jeu.fr/blog/jeux-comme-skull-king.html</link>

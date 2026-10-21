@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 33 guides
+## Blog — 34 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -112,6 +112,7 @@
 
 ## Blog : Cartes
 
+- [Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché](https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2025.html): 5 jeux comparés
 - [Jeux de cartes et cerveau : ce que disent les études](https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html)
 - [Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table](https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html): 8 jeux comparés
 - [Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi](https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html): 7 jeux comparés
@@ -188,7 +189,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), ajoute quatre pouvoirs (huit cartes Pouvoir) et une manche Mystique jouée la carte sur le front, après laquelle le cycle repart à 7 cartes ; la partie s'arrête dès qu'un joueur n'a plus de Vies.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 33 guides du blog
+## Résumé des 34 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -381,6 +382,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/jeux-comme-skull-king.html
 - Résumé : Jeux comme Skull King : Wizard, Pili Pili, KYRAN et l’Ascenseur gardent le pari sur les plis ; Cat in the Box et The Crew le transforment. Comparatif.
 - Jeux comparés : Wizard (3 à 6 joueurs, ~45 min, Pari sur les plis) ; Pili Pili (2 à 8 joueurs, ~20 min, Pari et missions) ; KYRAN (3 à 6 joueurs, ~30 min, Pari sur les plis) ; Oh Hell! (3 à 7 joueurs, ~45 min, Pari, 52 cartes) ; Cat in the Box (2 à 5 joueurs, ~20 min, Pari et déduction) ; The Crew (3 à 5 joueurs, ~20 min, Plis coopératifs)
+
+### Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché
+
+- URL : https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2025.html
+- Résumé : Les cartes progressent de 78 % en 2025, mais lesquelles ? Les chiffres Circana lus de près, et les cinq jeux de cartes de table qui se vendent à moins de 15 €.
+- Jeux comparés : Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Skyjo (2 à 8 joueurs, ~30 min, Grille à minimiser) ; Dékal (2 à 6 joueurs, ~15 min, Grille et glissement) ; Cabanga (3 à 6 joueurs, ~20 min, Défausse et alerte)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

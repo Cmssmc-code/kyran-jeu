@@ -367,5 +367,45 @@
     "image": false,
     "designer": "Elan Lee, Matthew Inman et Shane Small",
     "year": 2015
+  },
+  "flip-7": {
+    "name": "Flip 7",
+    "players": "3 et plus",
+    "duration": "20 à 30 min",
+    "age": "8+",
+    "price": "~14 €",
+    "image": false,
+    "designer": "Eric Olsen",
+    "year": 2025
+  },
+  "trio": {
+    "name": "Trio",
+    "players": "3 à 6",
+    "duration": "~15 min",
+    "age": "7+",
+    "price": "~12 €",
+    "image": false,
+    "designer": null,
+    "year": 2023
+  },
+  "dekal": {
+    "name": "Dékal",
+    "players": "2 à 6",
+    "duration": "~15 min",
+    "age": "7+",
+    "price": "~15 €",
+    "image": false,
+    "designer": "Claude Clément",
+    "year": 2024
+  },
+  "cabanga": {
+    "name": "Cabanga",
+    "players": "3 à 6",
+    "duration": "~20 min",
+    "age": "8+",
+    "price": "~15 €",
+    "image": false,
+    "designer": "Michael Modler",
+    "year": 2024
   }
 }

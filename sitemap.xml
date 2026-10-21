@@ -118,9 +118,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2025.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
+      <image:title>Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skull-king.html</loc>
     <lastmod>2026-10-14</lastmod>
@@ -339,7 +347,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-noel.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/hanabi.jpg</image:loc>
       <image:title>Jeux de cartes à offrir à Noël : 7 idées selon le destinataire</image:title>
@@ -379,7 +387,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-comme-skyjo.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
       <image:title>10 jeux comme Skyjo : les meilleures alternatives en 2026</image:title>

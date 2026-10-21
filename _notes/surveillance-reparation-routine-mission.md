@@ -3,7 +3,7 @@
 - **Quand :** tous les jours à **05:07 (Europe/Paris)**, routine Claude Code `trig_01Dw3TeebMHnAaihXuQnjntu`
   (l'ancienne routine « Santé », renommée et déplacée à 05:07 le 2026-10-21).
 - **Où :** elle réveille la **session dédiée** `session_01T9bSGDeknHi8e94Rgo2ufR`, dépôt `Cmssmc-code/kyran-jeu`
-  attaché. Sa consigne figée renvoie à `_notes/sante-routine-mission.md`, qui renvoie ici : ce fichier fait foi, et
+  attaché. Sa consigne renvoie directement à ce fichier (mise à jour le 2026-10-21) : ce fichier fait foi, et
   ses livrables remplacent ceux de la consigne (plus de `suivi-sante.md`).
 - **Connecteurs : aucun garanti.** La routine n'a aucun connecteur attaché (`mcp_connections` vide) : Railway,
   Resend, Gmail et Stripe peuvent tous manquer. Chercher chaque outil avec `ToolSearch` au début du passage et

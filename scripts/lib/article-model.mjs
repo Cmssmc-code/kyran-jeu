@@ -77,6 +77,7 @@ export function articleText(a) {
   for (const s of a.extraSections || []) parts.push(s.html);
   for (const s of a.sections || []) parts.push(s.html);
   if (a.keyPoints) parts.push(a.keyPoints.html);
+  if (a.dataset) parts.push(a.dataset.description, a.dataset.methodology);
   for (const r of a.sources || []) parts.push(r.note || '');
   for (const g of (a.layout && a.layout.groups) || []) parts.push(g.html || '');
   if (a.authorNote) parts.push(a.authorNote.html);

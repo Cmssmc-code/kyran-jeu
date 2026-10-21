@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Règles officielles de KYRAN — Maître des Mystiques</title>
+<meta name="author" content="Corentin Sence" />
+<!-- Source du PDF /regle-kyran.pdf (une page A4, à imprimer) : `node scripts/generate-regle-pdf.mjs`.
+     Le texte suit regle.html : toute règle modifiée là-bas se reporte ici. -->
+<style>
+@font-face { font-family: 'Poppins'; font-weight: 400; src: url('../../fonts/poppins-400-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 600; src: url('../../fonts/poppins-600-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 700; src: url('../../fonts/poppins-700-latin.woff2') format('woff2'); }
+/* Fredoka figée en 600 et 700 (fredoka-*.ttf) : la police variable du site serait intégrée en Type 3, bien plus lourde. */
+@font-face { font-family: 'Fredoka'; font-weight: 600; src: url('fredoka-600.ttf') format('truetype'); }
+@font-face { font-family: 'Fredoka'; font-weight: 700; src: url('fredoka-700.ttf') format('truetype'); }
+
+:root {
+  --ink: #231F22; --ink-2: #3A3538; --muted: #5E5651;
+  --saffron: #E6AB26; --saffron-deep: #C98A0E; --terra: #B8432A; --terra-dark: #8A3220;
+  --cream: #FBF6EC; --kraft: #F3E7CF; --line: rgba(35, 31, 34, .16);
+  --green: #22A34A; --red: #E0303F;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Poppins', sans-serif; font-size: 7.5pt; line-height: 1.4; color: var(--ink); background: #ccc; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+.page { width: 210mm; height: 297mm; overflow: hidden; background: var(--cream); display: flex; flex-direction: column; }
+.wax { display: block; width: 100%; height: 3mm; flex: none; }
+.wax-sm { width: 8mm; height: 2mm; }
+
+/* En-tête */
+.head { flex: none; position: relative; display: flex; align-items: center; gap: 5mm; background: var(--ink); color: var(--cream); padding: 3.6mm 10mm 3.6mm 9mm; }
+.head__logo { flex: none; width: 23mm; height: 23mm; border-radius: 50%; border: .6mm solid var(--saffron); box-shadow: 0 0 0 1.2mm var(--ink), 0 0 0 1.5mm var(--saffron-deep); }
+.head__main { flex: 1; }
+.head__kicker { display: flex; align-items: center; gap: 2mm; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 7.4pt; letter-spacing: .16em; text-transform: uppercase; color: var(--saffron); }
+.head h1 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 25pt; line-height: 1.02; margin: 1mm 0 1.2mm; }
+.head h1 span { color: var(--saffron); }
+.head__lead { font-size: 8pt; color: #EFE6D6; max-width: 112mm; }
+.chips { flex: none; display: grid; gap: 1.4mm; }
+.chip { background: var(--cream); color: var(--ink); border-radius: 99px; padding: .5mm 3mm; font-size: 7pt; font-weight: 600; border: .35mm solid var(--saffron); white-space: nowrap; }
+.chip b { font-family: 'Fredoka', sans-serif; font-size: 8.4pt; margin-right: .6mm; }
+
+/* Corps */
+.body { flex: 1; padding: 3.4mm 9mm 0; display: flex; flex-direction: column; gap: 3.2mm; }
+.row { display: grid; gap: 2.8mm; }
+.r3 { grid-template-columns: 1fr 1fr 1fr; }
+.box { background: #fff; border: .3mm solid var(--line); border-radius: 3mm; padding: 2.2mm 2.8mm; }
+.box--hard { border: .4mm solid var(--ink); box-shadow: .9mm .9mm 0 var(--ink); }
+.box--kraft { background: var(--kraft); }
+h2 { display: flex; align-items: center; gap: 1.8mm; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 10.6pt; line-height: 1.15; margin-bottom: 1.4mm; }
+h2 .n { flex: none; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--saffron); border: .35mm solid var(--ink); display: grid; place-items: center; font-size: 8pt; }
+h2 .n--dot::before { content: ''; width: 1.6mm; height: 1.6mm; background: var(--ink); transform: rotate(45deg); }
+ul.list { list-style: none; display: grid; gap: .9mm; }
+ul.list > li { position: relative; padding-left: 3.4mm; }
+ul.list > li::before { content: ''; position: absolute; left: .3mm; top: 1.35mm; width: 1.35mm; height: 1.35mm; background: var(--saffron); border: .25mm solid var(--ink); transform: rotate(45deg); }
+.key { margin-top: 1.4mm; background: #FDF3DC; border: .3mm solid var(--saffron-deep); border-left: 1.2mm solid var(--saffron); border-radius: 1.8mm; padding: 1.4mm 2.2mm; }
+.key strong:first-child { color: var(--terra-dark); }
+.ex { margin-top: 1.4mm; background: var(--kraft); border: .25mm dashed var(--saffron-deep); border-radius: 1.8mm; padding: 1.3mm 2.2mm; font-size: 6.9pt; }
+.ex strong:first-child { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--terra); margin-right: .6mm; }
+
+/* Matériel et mise en place */
+.mat { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: .4mm 1.6mm; align-items: baseline; }
+.mat b { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 10pt; text-align: right; line-height: 1.15; }
+.mat b:nth-of-type(1) { color: var(--green); }
+.mat b:nth-of-type(2) { color: var(--saffron-deep); }
+.mat b:nth-of-type(3) { color: var(--terra); }
+.mat b:nth-of-type(4) { color: var(--red); }
+.setup { display: grid; gap: 1.2mm; margin-top: 1mm; }
+.setup div { border-radius: 1.8mm; padding: 1.1mm 2mm; }
+.setup .a { background: var(--kraft); }
+.setup .b { background: var(--ink); color: var(--cream); }
+.setup b { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 8pt; }
+.setup .b b { color: var(--saffron); }
+
+/* Ordre des manches */
+.flow { display: flex; align-items: center; gap: 3mm; }
+.flow p { flex: 1; }
+.seq { flex: none; display: flex; align-items: center; gap: 1mm; }
+.seq span { width: 6.2mm; height: 7.8mm; border-radius: 1.3mm; background: #fff; border: .4mm solid var(--ink); display: grid; place-items: center; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 10pt; }
+.seq i { font-style: normal; color: var(--saffron-deep); font-weight: 700; }
+.seq .m { width: auto; padding: 0 2mm; background: var(--ink); color: var(--saffron); font-size: 7.6pt; letter-spacing: .04em; }
+
+/* Résolution */
+.res { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4mm; margin-top: 1.2mm; }
+.res div { border-radius: 1.8mm; padding: 1.2mm 1.8mm; font-size: 6.9pt; border: .3mm solid; line-height: 1.3; }
+.res b { display: block; font-family: 'Fredoka', sans-serif; font-size: 8pt; }
+.res .ok { background: #E8F5EC; border-color: var(--green); }
+.res .ok b { color: #17733A; }
+.res .ko { background: #FBE9E6; border-color: var(--terra); }
+.res .ko b { color: var(--terra-dark); }
+
+/* Manche Mystique et fin du jeu */
+.r-myst { grid-template-columns: 1.85fr 1fr; }
+.myst { position: relative; display: grid; grid-template-columns: 21mm 1fr; gap: 3.2mm; background: var(--ink); color: #EFE6D6; border-radius: 3mm; padding: 2.4mm 3.2mm; }
+.myst img { width: 21mm; border-radius: 1.6mm; border: .4mm solid var(--saffron); transform: rotate(-3deg); margin-top: 1mm; }
+.myst h2 { color: var(--cream); }
+.myst strong { color: #fff; }
+.myst ul.list > li::before { border-color: var(--cream); }
+.val { display: flex; gap: 1.6mm; margin-top: 1.4mm; }
+.val div { flex: 1; border-radius: 1.8mm; padding: .8mm 2mm; border: .3mm solid rgba(230, 171, 38, .6); font-size: 6.8pt; line-height: 1.25; }
+.val b { font-family: 'Fredoka', sans-serif; font-size: 12pt; color: var(--saffron); margin-right: 1mm; vertical-align: -.5mm; }
+.end { display: flex; flex-direction: column; }
+.end .crown { margin-top: auto; display: flex; align-items: center; gap: 2mm; padding-top: 1.6mm; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 8.4pt; color: var(--terra-dark); }
+.end .crown img { width: 8mm; height: 8mm; border-radius: 50%; }
+
+/* Cartes spéciales */
+.powers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin-top: 1mm; }
+.power { background: #fff; border: .3mm solid var(--line); border-radius: 2.4mm; padding: 1.5mm 1.6mm; text-align: center; }
+.power img { width: 14mm; height: 20.6mm; object-fit: cover; border-radius: 1.2mm; box-shadow: .6mm .6mm 0 var(--ink); }
+.power h3 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 8pt; line-height: 1.12; margin-top: 1.4mm; }
+.power .v { display: inline-block; margin: .6mm 0 .8mm; font-size: 6.2pt; font-weight: 700; letter-spacing: .05em; background: var(--kraft); border-radius: 99px; padding: 0 1.8mm; color: var(--terra-dark); }
+.power p { font-size: 6.7pt; line-height: 1.3; text-align: left; }
+.power .note { margin-top: .6mm; font-size: 6.2pt; color: var(--muted); font-style: italic; }
+.power--m { background: var(--kraft); border: .4mm solid var(--ink); }
+.powers-intro { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.powers-intro h2 { margin: 0; }
+.powers-intro p { font-size: 6.9pt; color: var(--muted); text-align: right; }
+
+/* Pied */
+.foot { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 4mm; padding: 2.2mm 9mm 3mm; font-size: 6.8pt; color: var(--muted); }
+.foot b { font-family: 'Fredoka', sans-serif; font-weight: 700; color: var(--ink); font-size: 8pt; }
+.foot .tip { flex: 1; text-align: center; }
+.foot .url { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 7.6pt; color: var(--ink); background: var(--saffron); border-radius: 99px; padding: .3mm 2.6mm; }
+</style>
+</head>
+<body>
+<!-- Motif wax en tuiles SVG vectorielles : en arrière-plan CSS ou en <pattern>, Chromium l'intègre en image (lourd). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wax" viewBox="0 0 120 28">
+      <rect width="120" height="28" fill="#231F22"/><rect width="30" height="28" fill="#E6AB26"/>
+      <path d="M5 0v28M11 0v28M17 0v28M23 0v28" stroke="#231F22" stroke-width="2.2"/>
+      <rect x="30" width="30" height="28" fill="#C2462A"/>
+      <g fill="#F7EFDD"><circle cx="37" cy="7" r="2.2"/><circle cx="45" cy="14" r="2.2"/><circle cx="53" cy="21" r="2.2"/><circle cx="37" cy="21" r="2.2"/><circle cx="53" cy="7" r="2.2"/></g>
+      <rect x="60" width="30" height="28" fill="#F7EFDD"/>
+      <path d="M60 8l5 5 5-5 5 5 5-5 5 5 5-5M60 17l5 5 5-5 5 5 5-5 5 5 5-5" fill="none" stroke="#231F22" stroke-width="2.2"/>
+      <path d="M92 21l6-8 6 8 6-8 6 8" stroke="#E6AB26" stroke-width="2.4" fill="none"/>
+      <path d="M92 7h26" stroke="#E6AB26" stroke-width="2.2" stroke-dasharray="3 3"/>
+    </symbol>
+  </defs>
+</svg>
+
+<section class="page">
+  <header class="head">
+    <img class="head__logo" src="img/logo.jpg" alt="" />
+    <div class="head__main">
+      <p class="head__kicker"><svg class="wax-sm" data-tiles="1" aria-hidden="true"></svg>Règle officielle<svg class="wax-sm" data-tiles="1" aria-hidden="true"></svg></p>
+      <h1>Règles du jeu <span>KYRAN</span></h1>
+      <p class="head__lead">Chacun annonce combien de plis il va faire, puis doit le réaliser, ni plus ni moins. Bluff, cartes Pouvoir et manche Mystique : le joueur qui garde le plus de vies devient <strong>Maître des Mystiques</strong>.</p>
+    </div>
+    <div class="chips">
+      <span class="chip"><b>3–6</b>joueurs</span>
+      <span class="chip"><b>30</b>min</span>
+      <span class="chip"><b>8</b>ans et +</span>
+    </div>
+  </header>
+  <svg class="wax" data-tiles="21" aria-hidden="true"></svg>
+
+  <div class="body">
+    <div class="row r3">
+      <div class="box box--hard">
+        <h2><span class="n n--dot"></span>Objectif</h2>
+        <p>À chaque manche, prédire le nombre exact de plis qu'on va gagner, puis jouer ses cartes (nombres ou pouvoirs). Prédiction juste : on garde ses vies. Sinon, on en perd.</p>
+        <h2 style="margin-top:2mm"><span class="n n--dot"></span>Matériel</h2>
+        <div class="mat">
+          <b>36</b><span>cartes Nombre</span>
+          <b>1</b><span>carte Mystique</span>
+          <b>8</b><span>cartes Pouvoir</span>
+          <b>30</b><span>cartes Vie</span>
+        </div>
+      </div>
+      <div class="box">
+        <h2><span class="n n--dot"></span>Mise en place</h2>
+        <p>Mélangez les cartes Nombre avec les cartes spéciales, selon le nombre de joueurs :</p>
+        <div class="setup">
+          <div class="a"><b>3 et 4 joueurs</b> : Clairvoyance (11), Sceau (27), Bénédiction (20), Voile (3) et la Mystique.</div>
+          <div class="b"><b>5 et 6 joueurs</b> : les 8 cartes Pouvoir et la Mystique.</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2><span class="n n--dot"></span>Les vies</h2>
+        <p>Chaque joueur reçoit <strong>5 cartes Vie</strong>, empilées devant lui : 5 étoiles au-dessus, puis 4, 3, 2 et 1 étoile en bas. Elles restent toujours visibles par tous.</p>
+        <p style="margin-top:1.2mm">Le donneur change à chaque manche, dans le sens des aiguilles d'une montre.</p>
+      </div>
+    </div>
+
+    <div class="box box--kraft flow">
+      <h2 style="margin:0;flex:none"><span class="n n--dot"></span>Ordre des manches</h2>
+      <div class="seq"><span>7</span><i>›</i><span>6</span><i>›</i><span>5</span><i>›</i><span>4</span><i>›</i><span>3</span><i>›</i><span>2</span><i>›</i><span class="m">MYSTIQUE · 1</span></div>
+      <p>Cartes distribuées par manche. Puis un nouveau cycle repart à 7, jusqu'à ce qu'un joueur n'ait plus de vie.</p>
+    </div>
+
+    <div class="row r3">
+      <div class="box box--hard">
+        <h2><span class="n">1</span>Phase de paris</h2>
+        <p>En commençant à gauche du donneur, chacun annonce à voix haute le nombre exact de plis qu'il va remporter.</p>
+        <div class="key"><strong>Règle d'or :</strong> la somme des paris n'est <em>jamais</em> égale au nombre de plis en jeu. Le dernier joueur ajuste son annonce si besoin.</div>
+        <div class="ex"><strong>Exemple</strong> À 5 cartes, paris 1, 2 et 1 (total 4) : le dernier ne peut pas dire 1. Il dit 0, 2, 3, 4 ou 5.</div>
+      </div>
+      <div class="box box--hard">
+        <h2><span class="n">2</span>Phase de jeu</h2>
+        <ul class="list">
+          <li>Le joueur à gauche du donneur commence ; chacun joue une carte face visible, dans le sens horaire.</li>
+          <li>Une carte Pouvoir s'active <strong>dès qu'elle est posée</strong>.</li>
+          <li>Le gagnant ramasse le pli et entame le suivant.</li>
+        </ul>
+        <div class="key"><strong>Qui gagne ?</strong> La carte la plus forte. Égalité entre un Nombre et un Pouvoir : le Pouvoir l'emporte.</div>
+      </div>
+      <div class="box box--hard">
+        <h2><span class="n">3</span>Fin de manche</h2>
+        <p>Chacun compare son pari aux plis réellement remportés.</p>
+        <div class="res">
+          <div class="ok"><b>Pari réussi</b>Aucune carte Vie perdue.</div>
+          <div class="ko"><b>Pari raté</b>1 vie perdue par pli d'écart.</div>
+        </div>
+        <div class="ex"><strong>Exemple</strong> Pari de 3, 1 seul pli gagné : écart de 2, il perd 2 cartes Vie.</div>
+      </div>
+    </div>
+
+    <div class="row r-myst">
+      <div class="myst">
+        <img src="img/mystique.jpg" alt="Carte Mystique" />
+        <div>
+          <h2>La manche Mystique <span style="font-family:'Poppins';font-weight:600;font-size:7pt;color:var(--saffron);letter-spacing:.08em">À 1 CARTE, À L'AVEUGLE</span></h2>
+          <ul class="list">
+            <li>Chacun pioche <strong>1 carte</strong> et la tient contre son front : visible par tous, sauf par lui.</li>
+            <li>En regardant les cartes des autres, chacun parie s'il remporte le pli (1) ou non (0).</li>
+            <li>Tous abattent leur carte en même temps. Les effets des cartes Pouvoir ne s'activent pas.</li>
+            <li>Pari réussi : aucune vie perdue. Pari raté : <strong>1 carte Vie</strong> perdue.</li>
+          </ul>
+          <div class="val">
+            <div><b>37</b>si son propriétaire a parié qu'il remportait le pli</div>
+            <div><b>0</b>s'il a parié ne pas le remporter</div>
+          </div>
+        </div>
+      </div>
+      <div class="box box--kraft end">
+        <h2><span class="n n--dot"></span>Fin du jeu</h2>
+        <ul class="list">
+          <li>Dès qu'un joueur perd sa dernière carte Vie, il est éliminé et la partie s'arrête.</li>
+          <li>Le joueur qui a le plus de vies restantes gagne.</li>
+          <li>Égalité : ultime manche Mystique entre les survivants.</li>
+        </ul>
+        <p class="crown"><img src="img/logo-sm.jpg" alt="" />Maître des Mystiques</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="powers-intro">
+        <h2><span class="n n--dot"></span>Les cartes aux effets spéciaux</h2>
+        <p>Une carte Pouvoir gagne toujours l'égalité avec une carte Nombre de même valeur.</p>
+      </div>
+      <div class="powers">
+        <div class="power power--m">
+          <img src="img/mystique.jpg" alt="Carte Mystique" />
+          <h3>La Mystique</h3><span class="v">0 OU 37</span>
+          <p>Carte suprême. Hors manche Mystique, on choisit 0 ou 37 en la posant : à 37, elle garantit le pli.</p>
+        </div>
+        <div class="power">
+          <img src="img/sceau.jpg" alt="Carte Sceau du Destin" />
+          <h3>Sceau du Destin</h3><span class="v">27 &amp; 4</span>
+          <p>Piochez au hasard une carte dans la main d'un joueur : il doit la jouer tout de suite.</p>
+          <p class="note">Annulé si vous jouez en dernier.</p>
+        </div>
+        <div class="power">
+          <img src="img/clairvoyance.jpg" alt="Carte Clairvoyance Antique" />
+          <h3>Clairvoyance Antique</h3><span class="v">11 &amp; 23</span>
+          <p>Regardez en secret la carte la plus forte du joueur de votre choix.</p>
+        </div>
+        <div class="power">
+          <img src="img/benediction.jpg" alt="Carte Bénédiction des Ancêtres" />
+          <h3>Bénédiction des Ancêtres</h3><span class="v">20 &amp; 9</span>
+          <p>Un joueur ciblé doit abattre tout de suite sa carte la plus faible.</p>
+          <p class="note">Annulé si vous jouez en dernier.</p>
+        </div>
+        <div class="power">
+          <img src="img/voile.jpg" alt="Carte Voile du Néant" />
+          <h3>Voile du Néant</h3><span class="v">3 &amp; 34</span>
+          <p>Échangez la valeur de votre carte avec une carte déjà posée par un adversaire.</p>
+          <p class="note">Annulé si vous jouez en premier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span><b>KYRAN</b> · Maître des Mystiques</span>
+    <span class="tip"><strong>Première partie ?</strong> Jouez sans carte Pouvoir ni Mystique pour apprendre les paris.</span>
+    <span class="url">kyran-jeu.fr</span>
+  </footer>
+</section>
+
+<script>
+  // Pose les tuiles wax : n tuiles de 120 × 28 côte à côte, étirées à la largeur du bandeau.
+  for (const svg of document.querySelectorAll('svg[data-tiles]')) {
+    const n = Number(svg.dataset.tiles);
+    svg.setAttribute('viewBox', `0 0 ${n * 120} 28`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.innerHTML = Array.from({ length: n }, (_, i) => `<use href="#wax" x="${i * 120}" width="120" height="28"/>`).join('');
+  }
+</script>
+</body>
+</html>

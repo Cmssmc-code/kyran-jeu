@@ -19,6 +19,25 @@ export const GAME_LINKS = {
     designer: 'Mandy Henning et Melissa Limes',
     year: 2010
   },
+  'flip-7': {
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/flip-7-8516',
+    designer: 'Eric Olsen',
+    year: 2025
+  },
+  trio: {
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/trio-4542',
+    year: 2023
+  },
+  dekal: {
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/dekal-7670',
+    designer: 'Claude Clément',
+    year: 2024
+  },
+  cabanga: {
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/cabanga-7055',
+    designer: 'Michael Modler',
+    year: 2024
+  },
   papayoo: {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=papayoo',
     year: null

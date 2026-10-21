@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "marche-jeux-de-cartes-2025",
+    "title": "Jeux de cartes en 2025 : ce que disent vraiment les chiffres du marché",
+    "category": "Cartes",
+    "date": "2026-10-21",
+    "readMinutes": 8,
+    "excerpt": "Les cartes progressent de 78 % en 2025, mais lesquelles ? Les chiffres Circana lus de près, et les cinq jeux de cartes de table qui se vendent à moins de 15 €.",
+    "image": "/blog/images/skyjo.jpg",
+    "webp": "/blog/images/skyjo.webp",
+    "gameCount": 5,
+    "related": [
+      "jeux-comme-skyjo",
+      "jeux-cartes-4-joueurs",
+      "cadeau-noel"
+    ]
+  },
+  {
     "slug": "jeux-comme-skull-king",
     "title": "Jeux comme Skull King : 6 alternatives, avec ou sans pirates",
     "category": "Alternatives",

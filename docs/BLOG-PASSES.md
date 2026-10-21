@@ -166,6 +166,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-10-14 | Rafraîchissement **Noël 2026** (priorité 0) : date limite du site (16 décembre, `commander.html`, CGV art. 5), prix revérifiés (Dixit 28,95 € et 3 à 8 joueurs ; Timeline Clutch Box 2 à 6 joueurs ; Codenames 21,50 € et fiches divergentes 2-8 / 4-8, 10 à 14 ans ; The Crew 16,50 € ; Hanabi 2 à 5), prix Amazon de KYRAN retiré, KYRAN présenté avec le lien commercial du site dit en clair. Sources ouvertes : Philibert (Dixit, Timeline, Lost Cities, The Crew, Hanabi), Asmodee Canada (Codenames CGE), Bonne Promo (Codenames IELLO 2025). **Sujet pris : ne pas le reprendre.** | `cadeau-noel` | cadeau noël jeu de cartes | (cette PR) |
 | 2026-10-16 | Rafraîchissement (cluster « jeu style / type / comme skyjo », la plus forte demande Search Console du 16 septembre au 14 octobre) avec **variété** : The Mind et Sushi Go! remplacés par **Cabo** et **Papayoo** (nouveaux dans `games.json`). Cabo : 2 à 4 joueurs dans l'édition française Origames (Ludum), 2 à 5 pour l'édition d'origine et la 3e édition (Wikipédia), en rupture chez Ludum au 16 octobre ; Papayoo : 3 à 8, dès 7 ans, ~30 min, 14,90 € chez Philibert. Sources ouvertes : Ludum (Cabo), Wikipédia (Cabo), Esprit Jeu, Play-in et Philibert (Papayoo), Board Game Quest (Papayoo), regles-du-jeu.net (Papayoo). **Sujet pris : ne pas le reprendre.** | `jeux-comme-skyjo` | jeu comme skyjo | (cette PR) |
 | 2026-10-19 | Rafraîchissement avec **variété** : **Exploding Kittens** ajouté (10e jeu, nouveau dans `games.json`) à l'article apéro ; Love Letter et les autres jeux de l'article déjà corrigés par l'audit du 12 octobre. EK : 2 à 5 joueurs, dès 7 ans (6 ans chez Play-in), ~15 min (10 à 20 selon Wikipédia), 18,95 € chez Philibert, Édition Festive 2 à 10 joueurs à 28,95 € ; BGG 172225 contrôlé par l'API geekdo (nom, trois auteurs, 2015). Sources ouvertes : Esprit Jeu, Philibert, Wikipédia, API geekdo, Play-in, Ludum. **Sujet pris : ne pas le reprendre.** | `meilleurs-jeux-apero` | jeux de cartes apéro | (cette PR) |
+| 2026-10-21 | **Article neuf** (sujet « macro », demandé le 19 octobre) : marché français des jeux de cartes en 2025. Communiqué Circana/FFJP/FCJPE du 14 janvier 2026 (+7,1 %, 4,7 Md€, « cartes stratégiques » +78 % = cartes à collectionner, pas jeux de table), périmètres divergents (1,1 Md€ / 1 017 M€ / 624 M€), cinq best-sellers de boutiques (Flip 7, Trio, Skyjo, Dékal, Cabanga). Sources lues : communiqué Circana (PDF), Ludiquement, Ludum (4 fiches), Gus & Co, L'Éclaireur Fnac, Esprit Jeu. Jeux ajoutés à `games.json` : Flip 7, Trio, Dékal, Cabanga. Pas de photo des nouveaux jeux (Commons sans fichier ni licence vérifiés) : seule l'image de Skyjo, déjà créditée. | `marche-jeux-de-cartes-2025` | marché jeux de cartes France 2025 | (cette PR) |
 
 ## En attente
 
@@ -187,10 +188,16 @@ Rafraîchissements repérés (par ordre de priorité) :
 
 3. **Jeux à ajouter à `games.json`** (variété, voir protocole § 3). Cabo et Papayoo ajoutés le 16 octobre ;
    Skull King, Cat in the Box et Pili Pili l'étaient déjà ; Exploding Kittens ajouté le 19 octobre.
-   Candidats restants à rechercher, rien n'est sourcé à ce stade : Trio, Mille Bornes, Les Loups-Garous de
+   Candidats restants à rechercher, rien n'est sourcé à ce stade : (Trio ajouté le 21 octobre), Mille Bornes, Les Loups-Garous de
    Thiercelieux, The Fox in the Forest, Tichu. Dos (Mattel) : fiches contradictoires sur le nombre de
    joueurs (2 à 4 ou 2) et la condition de victoire ; lire la notice officielle Mattel (service.mattel.com,
    HNN01) avant de l'utiliser. Ne rien écrire sur eux sans fiche d'éditeur ou règle ouverte.
+
+4. **Sujets « macro » à creuser** (idées, rien n'est sourcé) : palmarès As d'Or 2026 du Festival de Cannes
+   (vainqueurs lus sur palaisdesfestivals.com : Toy Battle, The Island of the Mookies, Zenith, Civolution) et
+   ce qu'ils disent des jeux de cartes ; résultats du Spiel des Jahres 2026 ; calendrier des salons et
+   sorties d'éditeurs de l'automne ; études sur le jeu et le bien-être (sources scientifiques seulement).
+   Une photo libre de droits par article reste à trouver (Commons limite les requêtes : espacer d'une minute).
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
 (#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque

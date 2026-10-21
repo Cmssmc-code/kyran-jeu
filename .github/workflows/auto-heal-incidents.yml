@@ -1,0 +1,117 @@
+name: Journal d'incidents (routine Claude)
+
+# Pont entre la routine Claude « Surveillance & réparation » et le journal d'incidents du serveur
+# Railway. La routine n'a ni jeton OIDC ni CRON_SECRET (le connecteur Railway ne rend pas les valeurs
+# des variables) : elle lance ce workflow par l'API GitHub, qui s'authentifie auprès du serveur avec
+# son jeton OIDC (audience kyran-auto-heal, vérifié par server/githubOidc.js). Aucun secret stocké.
+#   list    : incidents en attente + quota (champs utiles au diagnostic, sans navigateur complet
+#             ni URL avec paramètres : les journaux d'Actions de ce dépôt public sont publics).
+#   resolve : incident_id + commit_sha + reason (résumé du correctif).
+#   fail / ignore : incident_id + reason.
+#   report  : envoie le rapport quotidien (report_subject + report_html) à kyran.jeu@gmail.com,
+#             depuis l'adresse @kyran-jeu.fr du serveur ; un seul par jour (dédupliqué côté serveur).
+# Mission : _notes/surveillance-reparation-routine-mission.md ; documentation : docs/AUTO-HEAL.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "list, resolve, fail, ignore ou report"
+        type: choice
+        options: [list, resolve, fail, ignore, report]
+        default: list
+      incident_id:
+        description: "Identifiant (UUID) de l'incident pour resolve / fail / ignore"
+        type: string
+        default: ""
+      commit_sha:
+        description: "SHA du correctif fusionné (resolve)"
+        type: string
+        default: ""
+      reason:
+        description: "Résumé du correctif (resolve) ou raison (fail / ignore), 600 caractères max"
+        type: string
+        default: ""
+      report_subject:
+        description: "Objet du rapport : « KYRAN — surveillance & réparation du JJ/MM » (report)"
+        type: string
+        default: ""
+      report_html:
+        description: "Corps HTML du rapport (report)"
+        type: string
+        default: ""
+
+concurrency:
+  group: auto-heal-incidents
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  API_PUBLIC_URL: ${{ vars.KYRAN_API_URL || 'https://kyran-webhook-production.up.railway.app' }}
+
+jobs:
+  journal:
+    name: Journal d'incidents (${{ inputs.action }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      id-token: write
+    steps:
+      - name: Appel du serveur
+        env:
+          ACTION: ${{ inputs.action }}
+          INCIDENT_ID: ${{ inputs.incident_id }}
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+          REASON: ${{ inputs.reason }}
+          REPORT_SUBJECT: ${{ inputs.report_subject }}
+          REPORT_HTML: ${{ inputs.report_html }}
+        run: |
+          set -euo pipefail
+          TOKEN=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=kyran-auto-heal" | jq -r '.value')
+          echo "::add-mask::$TOKEN"
+          API="${API_PUBLIC_URL%/}/api/auto-heal"
+          post() {
+            curl -sS --max-time 60 -o resp.json -w '%{http_code}' -X POST \
+              -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
+              --data-binary @body.json "$API/$1"
+          }
+          case "$ACTION" in
+            list)
+              curl -fsS --retry 3 --retry-all-errors --max-time 30 \
+                -H "Authorization: Bearer $TOKEN" "$API/incidents?limit=20" > resp.json
+              jq '{quotaReached, count24h, max24h, pending: (.incidents | length), incidents: [.incidents[] | {
+                    id, display_code, source, error_code, http_status, status, occurrences, resolution_attempts,
+                    first_seen_at, last_seen_at, path, pages,
+                    message: (.message // "" | .[0:600]),
+                    stack: (.stack // "" | .[0:1500]),
+                    file: (.details.file // null), line: (.details.line // null), column: (.details.column // null),
+                    assetVersion: (.details.assetVersion // null),
+                    browser: ((.details.browser // "") | [scan("(?:Firefox|Edg|OPR|SamsungBrowser|CriOS|Chrome|Version|Safari)/[0-9.]+")] | join(" ")),
+                    platform: ((.details.browser // "") | (capture("\\((?<p>[^)]{0,80})") // {p: null}).p),
+                    lastResolution: .resolution_summary }]}' resp.json
+              ;;
+            resolve|fail|ignore)
+              [[ "$INCIDENT_ID" =~ ^[0-9a-f-]{36}$ ]] || { echo "::error::incident_id (UUID) requis"; exit 1; }
+              if [ "$ACTION" = resolve ]; then
+                [[ "$COMMIT_SHA" =~ ^[0-9a-f]{7,40}$ ]] || { echo "::error::commit_sha requis pour resolve"; exit 1; }
+                jq -n --arg id "$INCIDENT_ID" --arg sha "$COMMIT_SHA" --arg s "$REASON" \
+                  '{incidentId: $id, commitSha: $sha, resolutionSummary: $s, report: {explanation: $s}}' > body.json
+              else
+                [ -n "$REASON" ] || { echo "::error::reason requis"; exit 1; }
+                jq -n --arg id "$INCIDENT_ID" --arg r "$REASON" \
+                  '{incidentId: $id, reason: $r, report: {analysis: $r}}' > body.json
+              fi
+              CODE=$(post "incidents/$ACTION"); cat resp.json; echo
+              [ "$CODE" = 200 ] || { echo "::error::HTTP $CODE (404 = incident inconnu ou déjà sorti de pending)"; exit 1; }
+              ;;
+            report)
+              [ -n "$REPORT_SUBJECT" ] && [ -n "$REPORT_HTML" ] || { echo "::error::report_subject et report_html requis"; exit 1; }
+              jq -n --arg s "$REPORT_SUBJECT" --arg h "$REPORT_HTML" '{subject: $s, html: $h}' > body.json
+              CODE=$(post routine-report); cat resp.json; echo
+              [ "$CODE" = 200 ] || { echo "::error::HTTP $CODE : rapport non envoyé"; exit 1; }
+              ;;
+            *) echo "::error::action inconnue : $ACTION"; exit 1 ;;
+          esac

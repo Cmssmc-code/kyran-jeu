@@ -130,11 +130,12 @@ Projet Railway `kyran-webhook`, URL publique `https://kyran-webhook-production.u
 | `POST /api/client-error` | Public : origines `ALLOWED_ORIGINS`, 20 requêtes/h/IP, 16 Ko max |
 | `GET /api/auto-heal/incidents?limit=N` | Incidents en attente + quota (auth OIDC) |
 | `POST /api/auto-heal/incidents/{resolve,fail,ignore}` | Changement de statut d'un incident |
-| `GET`/`POST /api/auto-heal/daily-report` | Rapport email (08 h UTC, au plus une fois par 20 h, seulement si le système a agi) |
+| `GET`/`POST /api/auto-heal/daily-report` | Rapport email 24 h (au plus une fois par 20 h, seulement si le système a agi). **Plus appelé depuis le 2026-10-21** (seul appelant : l'ancienne passe horaire planifiée) |
+| `POST /api/auto-heal/routine-report` | Rapport quotidien de la routine « Surveillance & réparation » : objet imposé « KYRAN — surveillance & réparation du JJ/MM », destinataire fixé dans le code (kyran.jeu@gmail.com), un seul par jour |
 | `POST /api/auto-heal/test-email` | Email de test |
 
 - Routes d'administration : en-tête lié à `ADMIN_SECRET`. Sans secret d'au moins 32 caractères, elles sont **désactivées** (fail closed).
-- Auth Auto-Heal : jeton OIDC GitHub, audience `kyran-auto-heal`, dépôt `Cmssmc-code/kyran-jeu`. Repli manuel : en-tête `X-Cron-Secret` (`CRON_SECRET`, 32 caractères min.).
+- Auth Auto-Heal : jeton OIDC GitHub, audience `kyran-auto-heal`, dépôt `Cmssmc-code/kyran-jeu` (tout workflow du dépôt). Repli manuel : en-tête `X-Cron-Secret` (`CRON_SECRET`, 32 caractères min.) ; **`CRON_SECRET` n'est pas défini sur Railway** (2026-10-21) et le connecteur Railway ne rend que les noms des variables : la routine passe par le workflow `auto-heal-incidents.yml`.
 - Logs Railway : préfixe `[AutoHeal]`.
 
 ## 4. `worker/` : Cloudflare Worker (variante)
@@ -197,7 +198,8 @@ Toutes les actions sont épinglées sur un SHA de commit.
 | `indexnow.yml` | push sur `main` (pages modifiées), manuel (`all` : tout le sitemap) | Notifie Bing et Copilot via `scripts/indexnow.mjs --wait` |
 | `instagram.yml` | cron `17 5 * * *` (vers 7 h, heure de Paris), manuel | Voir détail ci-dessous |
 | `update-reviews.yml` | **manuel seulement** (cron désactivé : captchas Amazon) | `fetch-amazon-reviews.mjs` puis `prerender`, commit des avis, relance de Pages |
-| `auto-heal-hourly.yml` | cron `17 * * * *`, manuel (`dry_run`, `smoke_test`, `test_email`) | Pipeline Auto-Heal (section 8) |
+| `auto-heal-hourly.yml` | **manuel seulement** depuis le 2026-10-21 (`dry_run`, `smoke_test`, `test_email`) ; ancien cron `17 * * * *` retiré | Ancien agent Auto-Heal (section 8), sans auth Anthropic valide |
+| `auto-heal-incidents.yml` | manuel (`action` : `list`, `resolve`, `fail`, `ignore`, `report`), lancé par la routine via `gh api` | Pont OIDC entre la routine « Surveillance & réparation » et le journal d'incidents du serveur ; envoi du rapport quotidien |
 
 Détail d'`instagram.yml` :
 
@@ -219,8 +221,9 @@ Les pushs faits avec `GITHUB_TOKEN` ne déclenchent aucun autre workflow. Il fau
    - Statuts : `pending` → `auto_fixed` | `ignored` | `failed` (après 3 tentatives).
    - Quota : 30 correctifs par 24 h. Rétention : 30 jours, 500 incidents.
    - Rattachement à un incident existant s'il est en attente, ou ignoré/abandonné depuis moins de 7 jours, ou corrigé depuis moins de 6 h.
-4. **Workflow horaire**
-   - Job `check` : 0 token consommé, sortie rapide. Il envoie aussi le rapport quotidien à 08 h UTC.
+4. **Réparation (depuis le 2026-10-21)** : routine Claude « Surveillance & réparation KYRAN (quotidienne) », 05:07 Europe/Paris, mission `_notes/surveillance-reparation-routine-mission.md`. Elle lit le journal et clôture les incidents par `auto-heal-incidents.yml` (OIDC), répare en PR fusionnée et vérifiée en ligne, envoie un seul rapport email par jour.
+   **Ancien workflow horaire** (`auto-heal-hourly.yml`, désormais manuel ; il échouait à chaque passage : WIF 401 puis `invalid x-api-key`) :
+   - Job `check` : 0 token consommé, sortie rapide (le rapport de 08 h UTC en a été retiré).
    - Job `heal` : lance `scripts/auto-heal-worker.mjs`.
    - Paramètres : modèle et effort fixés dans le workflow (`ANTHROPIC_MODEL`, `AUTO_HEAL_EFFORT`), 5 incidents max.
    - Auth Anthropic : Workload Identity Federation (OIDC). Repli : secret `ANTHROPIC_API_KEY`.
@@ -230,7 +233,7 @@ Les pushs faits avec `GITHUB_TOKEN` ne déclenchent aucun autre workflow. Il fau
    - Avant tout push : `npm run build` puis `npm test`. En cas d'échec : `git reset --hard origin/main` et incident marqué `failed`.
    - Commits signés de l'auteur `auto-heal@kyran-jeu.fr`. Chaque correctif ajoute une entrée dans `_notes/lecon.md`.
 6. **Après un push** : relance de `ci.yml` et `pages.yml`. Railway redéploie tout seul. Secret facultatif `AUTO_HEAL_PUSH_TOKEN` si `main` est protégée.
-7. **Rapport 24 h** : envoyé depuis `contact@kyran-jeu.fr` à `AUTO_HEAL_REPORT_EMAILS` (sinon `ADMIN_NOTIFICATION_EMAILS`), seulement si le système a agi.
+7. **Rapport** : depuis le 2026-10-21, un seul email par jour, celui de la routine (`kyran.jeu@gmail.com`, depuis une adresse `@kyran-jeu.fr`). L'ancien rapport 24 h (`daily-report`) n'est plus appelé.
 
 ## 9. `docs/` : points clés
 
@@ -326,7 +329,8 @@ Routines du compte du propriétaire (claude.ai → Routines).
 | « Blog KYRAN passes lun/mer/ven (session dédiée) » (`trig_01CV4VUee9BDx4jf2PT9BfWS`) | `CRON_TZ=Europe/Paris 50 6 * * 1,3,5` | « Blog KYRAN — passes lun/mer/ven (session dédiée) » (`session_01UtBssiigx8y6ySwNcWS6r5`), dépôt kyran-jeu attaché | Suit `docs/BLOG-PASSES.md` : un article neuf, un rafraîchissement ou rien ; PR puis fusion automatique si CI verte, aucun conflit, aucun commentaire ouvert |
 | « Ventes KYRAN passe du mardi (session dédiée) » (`trig_01AHgEuNRov1qwkJXNXQgt3P`) | `CRON_TZ=Europe/Paris 47 6 * * 2` | « Ventes KYRAN — passe du mardi (session dédiée) » (`session_01PRGykNczy1E2qLe6ZBk7Dj`), dépôt kyran-jeu attaché | Suit `docs/VENTES-PASSES.md` : contrôle prix/port Stripe vs site, une amélioration de conversion par semaine, journal ; PR puis fusion automatique (créée le 2026-10-12, suite à `docs/rapports/audit-ventes-2026-10-12.md`) |
 | « SEO & GEO quotidienne KYRAN (session dédiée) » (`trig_01MHUsZiM1JZiw1DHGHBhphi`, créée le 2026-10-19) | `CRON_TZ=Europe/Paris 0 0 * * *` | « SEO & GEO KYRAN — routine quotidienne (session dédiée) » (`session_01VsKUWwrZ4NnxRCubDJY5sX`), dépôt kyran-jeu attaché | Suit `_notes/seo-routine-mission.md` : base de connaissances `_notes/seo/`, mesures fraîches (Search Console `dataState: all` et horaire, inspection d'URL, Bing, site en direct : `scripts/seo-kpi-daily.py`, `scripts/seo-health.py`), veille 24 h / 48 h / 7 j / 30 j, actions SEO/GEO sur la surface autorisée (jamais moteur du jeu, paiement, serveur), netlinking (2 contacts par nuit au plus, Gmail), doc partagé « KYRAN — Pilotage SEO & GEO » (https://claude.ai/code/artifact/5d4cf936-dfeb-4516-bb57-2141b081edee), journal `_notes/suivi-seo.md` ; PR puis fusion automatique avant 06:30 |
-| « Santé quotidienne KYRAN (session dédiée) » (`trig_01Dw3TeebMHnAaihXuQnjntu`, créée le 2026-10-19) | `CRON_TZ=Europe/Paris 0 0 * * *` | « Santé KYRAN — vérification quotidienne (session dédiée) » (`session_01T9bSGDeknHi8e94Rgo2ufR`), dépôt kyran-jeu attaché | Suit `_notes/sante-routine-mission.md` (portage de la routine santé de Majordia) : site en direct (pages, sitemap, TLS, Playwright, initiation, page Stripe en lecture), Pages et workflows, serveur Railway `kyran-webhook` (déploiements, logs, 5xx), webhooks Stripe et e-mails, Auto-Heal, build + tests sur `main`, branches et PR orphelines ; répare directement (PR fusionnée, vérifiée en ligne) ; rapport `docs/rapports/sante/AAAA-MM-JJ.md` et journal `_notes/suivi-sante.md` (ni Drive ni Gmail, décision du 2026-10-19) |
+| « Surveillance & réparation KYRAN (quotidienne) » (`trig_À_REMPLIR`, créée le 2026-10-21) | `CRON_TZ=Europe/Paris 7 5 * * *` | session neuve à chaque déclenchement, dépôt kyran-jeu attaché ; connecteurs Railway, Resend (si connecté), Gmail (envoi du rapport si Resend ne peut pas) | Suit `_notes/surveillance-reparation-routine-mission.md` : recherche poussée (journal d'incidents par `auto-heal-incidents.yml`, Railway, workflows, crawl Playwright de tout le sitemap en 1280/390, parcours critiques dont la page Stripe sans payer, TLS, e-mails, `npm audit`, veille), réparation (PR fusionnée, vérifiée en ligne, incident clôturé), rapport email quotidien à kyran.jeu@gmail.com, journal `_notes/suivi-surveillance.md`, rapport `docs/rapports/surveillance/AAAA-MM-JJ.md`. Remplace la routine santé et la passe horaire Auto-Heal |
+| ~~« Santé quotidienne KYRAN (session dédiée) »~~ **remplacée le 2026-10-21** par la précédente (`trig_01Dw3TeebMHnAaihXuQnjntu`, créée le 2026-10-19) | `CRON_TZ=Europe/Paris 0 0 * * *` | « Santé KYRAN — vérification quotidienne (session dédiée) » (`session_01T9bSGDeknHi8e94Rgo2ufR`), dépôt kyran-jeu attaché | Suit `_notes/sante-routine-mission.md` (portage de la routine santé de Majordia) : site en direct (pages, sitemap, TLS, Playwright, initiation, page Stripe en lecture), Pages et workflows, serveur Railway `kyran-webhook` (déploiements, logs, 5xx), webhooks Stripe et e-mails, Auto-Heal, build + tests sur `main`, branches et PR orphelines ; répare directement (PR fusionnée, vérifiée en ligne) ; rapport `docs/rapports/sante/AAAA-MM-JJ.md` et journal `_notes/suivi-sante.md` (ni Drive ni Gmail, décision du 2026-10-19) |
 
 Montage du 2026-10-07 (soir). Chaque routine réveille une **session dédiée** créée avec son dépôt
 attaché (`create_session` avec `source_url`) : le dépôt y est cloné avec des droits d'écriture et les
@@ -335,11 +339,14 @@ routines `trig_016HyCXEDoFKD9uBLFXbq2xt` et `trig_01Bx6MzhsHYAea6mEMstNjSs`, dé
 une session neuve ouverte par une routine n'a **pas** l'outil `add_repo` (« No such tool available »)
 et ne peut donc ni cloner un dépôt privé ni pousser. Voir `_notes/lecon.md` (2026-10-07).
 
+- Exception : « Surveillance & réparation KYRAN » ouvre une **session neuve** à chaque déclenchement, avec le
+  dépôt attaché dès la création (le dépôt est cloné, aucun `add_repo` nécessaire) ; l'ancienne routine santé
+  (`trig_01Dw3TeebMHnAaihXuQnjntu`) est à désactiver par l'orchestrateur.
 - Un lancement manuel (« Run now » ou `fire_trigger`) ouvre lui aussi une session neuve sans dépôt :
   pour tester, programmer plutôt une routine unique (`run_once_at`) vers la session dédiée.
 - Ne pas archiver les sessions dédiées : la routine ne pourrait plus les réveiller.
 - Pour changer la consigne : modifier le prompt de la routine (claude.ai → Routines) ou, mieux, le
   fichier de mission dans le dépôt, que chaque run relit sur `origin/main`.
 
-Workflows GitHub planifiés (indépendants des routines) : `auto-heal-hourly.yml` (`17 * * * *`) et
-`instagram.yml` (`17 5 * * *`), voir § 7.
+Workflows GitHub planifiés (indépendants des routines) : `instagram.yml` (`17 5 * * *`) seulement, voir § 7.
+`auto-heal-hourly.yml` n'est plus planifié depuis le 2026-10-21 (la réparation passe par la routine).

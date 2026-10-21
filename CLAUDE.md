@@ -14,9 +14,9 @@ Initiation (`minijeu.html`, anciennement « Dojo ») : modules ES dans `dojo/` �
 (interface), `dojo.css`, visuels tirés des cartes dans `dojo/img/`. Tests : `scripts/test/dojo.test.mjs`. Les `?v=` sont posés par
 `scripts/stamp-dojo.mjs` (inclus dans `npm run build`).
 
-## Santé quotidienne du site
+## Surveillance & réparation quotidiennes du site
 
-Une routine Claude vérifie chaque nuit à minuit la santé de kyran-jeu.fr (site, Pages, serveur Railway, Stripe en lecture, e-mails, Auto-Heal, CI) et répare ce qui ne va pas : mission [`_notes/sante-routine-mission.md`](_notes/sante-routine-mission.md), journal [`_notes/suivi-sante.md`](_notes/suivi-sante.md).
+Une routine Claude « Surveillance & réparation » tourne chaque jour à 05:07 (Europe/Paris) : recherche poussée (journal d'incidents du serveur, Railway, workflows, crawl Playwright de tout le site, parcours critiques, Stripe en lecture, e-mails, `npm audit`, veille), réparation des incidents (PR fusionnée, vérifiée en ligne, incident clôturé), rapport email quotidien à kyran.jeu@gmail.com. Mission [`_notes/surveillance-reparation-routine-mission.md`](_notes/surveillance-reparation-routine-mission.md), journal [`_notes/suivi-surveillance.md`](_notes/suivi-surveillance.md), rapports `docs/rapports/surveillance/`. Elle remplace depuis le 2026-10-21 la routine « Santé » de minuit (historique : [`_notes/suivi-sante.md`](_notes/suivi-sante.md)).
 
 ## SEO & GEO : où tout trouver
 
@@ -39,12 +39,18 @@ Pipeline décrit dans [`docs/AUTO-HEAL.md`](docs/AUTO-HEAL.md) (portage du pipel
 
 1. Erreurs du site (`error-reporter.js`) et du serveur (`recordServerIncident`) → journal
    `server/incidents.js` sur le volume Railway `/data` (projet Railway `kyran-webhook`).
-2. Passe horaire `.github/workflows/auto-heal-hourly.yml` → `scripts/auto-heal-worker.mjs`
-   (Claude corrige, `npm run build` + `npm test`, push sur `main`).
-3. Rapport email 24 h vers `ADMIN_NOTIFICATION_EMAILS` seulement si le système a agi.
+2. Réparation par la routine Claude « Surveillance & réparation » (quotidienne, 05:07) depuis le
+   2026-10-21 : elle lit le journal par le workflow `.github/workflows/auto-heal-incidents.yml` (jeton OIDC,
+   aucun secret), corrige en PR (`npm run build` + `npm test`, fusion quand la CI est verte), vérifie en
+   ligne puis clôture l'incident (`resolve` / `fail` / `ignore`). Mission :
+   [`_notes/surveillance-reparation-routine-mission.md`](_notes/surveillance-reparation-routine-mission.md).
+   L'ancienne passe horaire `auto-heal-hourly.yml` (agent `scripts/auto-heal-worker.mjs`) est manuelle :
+   elle n'a plus d'auth Anthropic valide.
+3. Un seul email par jour : le rapport de la routine, à kyran.jeu@gmail.com (le rapport 24 h du serveur,
+   `daily-report`, n'est plus appelé).
 
-Pour un bug de production : lire d'abord `_notes/lecon.md`, l'historique du workflow « Hourly
-Auto-Heal » et les logs Railway (préfixe `[AutoHeal]`). Une fausse alerte se corrige par un filtre
+Pour un bug de production : lire d'abord `_notes/lecon.md`, le journal d'incidents (workflow
+`auto-heal-incidents.yml`, action `list`) et les logs Railway (préfixe `[AutoHeal]`). Une fausse alerte se corrige par un filtre
 précis dans `isBenignClientError`, jamais en masquant une vraie panne.
 
 ## Gestion multi-comptes Stripe

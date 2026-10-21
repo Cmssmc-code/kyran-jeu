@@ -46,6 +46,11 @@ const AUTO_HEAL_REPORT_EMAILS = (process.env.AUTO_HEAL_REPORT_EMAILS || '')
   .map(e => e.trim())
   .filter(Boolean);
 const MAX_CLIENT_REPORT_BYTES = 16384;
+// Rapport quotidien de la routine Claude « Surveillance & réparation » : destinataire unique fixé ici,
+// jamais fourni par l'appelant (aucun envoi possible à un tiers).
+const ROUTINE_REPORT_TO = 'kyran.jeu@gmail.com';
+const ROUTINE_REPORT_SUBJECT = /^KYRAN — surveillance & réparation du (\d{2}\/\d{2})$/;
+const MAX_ROUTINE_REPORT_BYTES = 262144;
 const incidents = new IncidentStore();
 
 if (!ADMIN_ENABLED) {
@@ -662,6 +667,35 @@ async function handleDailyReport(res) {
   }
 }
 
+// Rapport de la routine Claude (un seul par jour, objet imposé, destinataire fixe).
+async function handleRoutineReport(req, res) {
+  let data;
+  try {
+    data = parseJsonBody(await readBody(req, MAX_ROUTINE_REPORT_BYTES));
+  } catch (err) {
+    return sendJson(res, err.status || 400, { error: 'Bad Request' });
+  }
+  if (!data) return sendJson(res, 400, { error: 'JSON invalide' });
+  const subject = cleanLine(data.subject, 120);
+  const match = subject.match(ROUTINE_REPORT_SUBJECT);
+  if (!match) return sendJson(res, 400, { error: 'objet attendu : « KYRAN — surveillance & réparation du JJ/MM »' });
+  const html = typeof data.html === 'string' ? data.html : '';
+  if (!html.trim()) return sendJson(res, 400, { error: 'html requis' });
+  const text = typeof data.text === 'string' && data.text.trim() ? cleanText(data.text, 100000) : undefined;
+  if (incidents.routineReportSentFor(match[1])) {
+    return sendJson(res, 200, { ok: true, sent: false, reason: 'already_sent_today' });
+  }
+  if (rateLimited('autoheal:routine-report', 3, 20 * 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Trop d\'envois, réessayez plus tard' });
+  try {
+    const result = await sendEmail({ to: [ROUTINE_REPORT_TO], subject, html, text });
+    incidents.markRoutineReportSent(match[1]);
+    return sendJson(res, 200, { ok: true, sent: true, sender: mailer.sender, transport: mailer.transport, id: result?.id || null });
+  } catch (err) {
+    console.error('[AutoHeal] Rapport de la routine non envoyé :', err.message);
+    return sendJson(res, 502, { ok: false, error: cleanLine(err.message, 300), sender: mailer.sender, transport: mailer.transport });
+  }
+}
+
 // Email de test vers les destinataires du rapport : vérifie l'envoi (SMTP / Resend) de bout en bout.
 async function handleTestEmail(res) {
   if (rateLimited('autoheal:test-email', 3, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Trop de tests, réessayez plus tard' });
@@ -696,6 +730,9 @@ async function routeAutoHeal(req, res, pathname, url) {
   }
   if (pathname === '/api/auto-heal/daily-report' && (req.method === 'GET' || req.method === 'POST')) {
     return handleDailyReport(res);
+  }
+  if (pathname === '/api/auto-heal/routine-report' && req.method === 'POST') {
+    return handleRoutineReport(req, res);
   }
   if (pathname === '/api/auto-heal/test-email' && req.method === 'POST') {
     return handleTestEmail(res);

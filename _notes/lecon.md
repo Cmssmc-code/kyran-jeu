@@ -1,13 +1,20 @@
 # Leçons anti-récidive — KYRAN
 
 Journal des causes de bugs de production et de leur correctif, pour ne pas les reproduire.
-L'agent Auto-Heal (`scripts/auto-heal-worker.mjs`) le consulte avant chaque correctif et y ajoute
-une entrée à chaque correctif déployé. Fonctionnement du pipeline : [`docs/AUTO-HEAL.md`](../docs/AUTO-HEAL.md).
+La routine « Surveillance & réparation » (`_notes/surveillance-reparation-routine-mission.md`), comme l'ancien
+agent Auto-Heal (`scripts/auto-heal-worker.mjs`), le consulte avant chaque correctif et y ajoute une entrée
+à chaque correctif déployé. Fonctionnement du pipeline : [`docs/AUTO-HEAL.md`](../docs/AUTO-HEAL.md).
 
 Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis trois puces
 **Symptôme**, **Cause**, **Correctif**. Entrées les plus récentes en haut.
 
 <!-- auto-heal:entries -->
+
+### 2026-10-21 — Auto-Heal GitHub sans auth Anthropic : la réparation passe par une routine Claude
+
+- **Symptôme :** « Hourly Auto-Heal » rouge à chaque passage depuis le 13/10 (WIF 401 « Authentication failed », puis clé de repli « invalid x-api-key ») ; 5 incidents en attente sans traitement ; la routine santé de minuit le constatait chaque nuit sans pouvoir le réparer (action du propriétaire dans la console Anthropic).
+- **Cause :** le traitement planifié dépendait d'un secret et d'une règle de fédération qui ne marchent pas pour ce dépôt. Deuxième piège trouvé en remplaçant : la routine ne pouvait pas lire le journal d'incidents par `X-Cron-Secret` (variable `CRON_SECRET` absente de Railway, et le connecteur Railway ne rend que les noms des variables).
+- **Correctif :** `schedule:` retiré de `auto-heal-hourly.yml` (manuel seulement, étape « Daily report » retirée) ; routine Claude quotidienne « Surveillance & réparation » (05:07) qui cherche, répare et clôture (`_notes/surveillance-reparation-routine-mission.md`) ; workflow `auto-heal-incidents.yml` (jeton OIDC, aucun secret) pour lire et clôturer les incidents et envoyer le rapport ; route `POST /api/auto-heal/routine-report` (destinataire fixé dans le code, un envoi par jour). **Règle :** tout traitement planifié qui dépend d'une clé ou d'un service mort se déplace (routine Claude, ou cron serveur) au lieu de rester rouge ; avant de confier un appel authentifié à une routine, vérifier qu'elle peut vraiment lire le secret (sinon passer par l'OIDC d'un workflow). Workflows encore à `schedule:` au 2026-10-21 : `instagram.yml` (`17 5 * * *`, vert chaque jour, dernier run le 20/10 ; dépend du jeton Instagram renouvelé par `instagram-token.mjs`) ; `update-reviews.yml` a son `schedule:` en commentaire (manuel, captchas Amazon, derniers runs planifiés rouges en septembre) ; `auto-heal-hourly.yml` n'en a plus.
 
 ### 2026-10-20 — Auto-Heal : règle de fédération de Majordia réutilisée ; fausses alertes vidéo
 

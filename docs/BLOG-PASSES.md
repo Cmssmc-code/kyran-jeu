@@ -50,6 +50,29 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    salons, nouveautés, évolutions de gamme), histoire et culture du jeu, règles et vie à la table,
    conseils d'usage. Même exigence de sérieux : sources fiables réellement ouvertes, aucun chiffre
    ni citation sans source liée, KYRAN mentionné seulement quand il a sa place.
+   **Un article « Majordia » environ une fois par mois** (demandé par le propriétaire le 21 octobre 2026).
+   Majordia (majordia.fr) est l'autre site du propriétaire : un livret d'accueil digital pour les hôtes
+   Airbnb et les petites conciergeries. Environ une fois par mois, une passe d'article **neuf** (le
+   vendredi de préférence) traite un sujet de **séjour en location ou en gîte** utile à un lecteur de
+   jeux de cartes, et y cite Majordia là où cela aide le lecteur. Avant de choisir : `grep -l "majordia.fr"
+   scripts/content/blog/*.mjs` et le tableau « Angles Majordia » de « En attente » ; s'il y a déjà un
+   article du mois en cours qui cite Majordia, on n'en écrit pas un second. Règles :
+   - **Un angle utile et différent à chaque fois**, avec sa propre intention de recherche : jamais deux
+     articles sur la même idée (liste et statut dans « Angles Majordia » ; ajouter chaque nouvel angle).
+   - **Majordia cité au plus une fois dans le corps**, par un lien vers la page utile (par exemple
+     `https://www.majordia.fr/livret-accueil-digital` pour « les règles de la maison (bruit, heures) sont
+     souvent dans le livret d'accueil du logement »), jamais en conclusion promotionnelle. Quand le sujet
+     n'en a pas besoin (cadeau pour un hôte), on peut ne pas le citer : on n'en force pas la mention.
+   - **Transparence** : écrire, à l'endroit de la mention, que Majordia est un autre site de l'auteur de KYRAN.
+   - **Faits sur Majordia vérifiés sur majordia.fr le jour de la passe** (WebFetch) et réduits à ce qui est
+     stable : livret propre à chaque logement, ouvert par un QR code, sans application ni compte pour le
+     voyageur, en six langues ; règles de la maison, Wi-Fi, guide local ; livret gratuit sans inscription
+     (formule « Essentiel »). **Aucun prix, aucune promotion, aucun chiffre de gain** : le 21 octobre 2026,
+     les prix de la page tarifs de Majordia se contredisaient (4,05 € ou 4,50 € par mois). Ne jamais
+     modifier le dépôt Majordia depuis cette routine.
+   - **KYRAN présenté honnêtement** parmi les choix (3 à 6 joueurs, dès 8 ans, environ 30 minutes, ne se
+     joue pas à deux), avec ses limites ; central seulement quand l'angle est l'achat d'un jeu (cadeau).
+   - Mêmes exigences que tout article neuf (1 500 mots, photos créditées, sources lues, aucune donnée inventée).
 4. **Rechercher** : au moins 5 sources fiables réellement ouvertes (règles officielles en PDF, fiches
    éditeurs, Philibert, études, communiqués d'éditeurs, presse spécialisée…). Faits KYRAN : uniquement
    le dépôt. Aucun chiffre, prix, règle ou citation sans source liée.
@@ -198,6 +221,16 @@ Rafraîchissements repérés (par ordre de priorité) :
    ce qu'ils disent des jeux de cartes ; résultats du Spiel des Jahres 2026 ; calendrier des salons et
    sorties d'éditeurs de l'automne ; études sur le jeu et le bien-être (sources scientifiques seulement).
    Une photo libre de droits par article reste à trouver (Commons limite les requêtes : espacer d'une minute).
+
+5. **Angles Majordia** (un par mois, voir protocole § 3 ; propositions du propriétaire, 21 octobre 2026) :
+
+   | Statut | Angle | Intention | Remarques |
+   |---|---|---|---|
+   | à faire | « Week-end entre amis en gîte : 7 jeux de cartes pour les soirées » | activités week-end gîte entre amis (différent de `jeux-vacances-voyage`, rangé par moyen de transport) | KYRAN parmi les choix ; Majordia une fois : règles de la maison (bruit, heures) dans le livret d'accueil |
+   | à faire | « Cadeau pour un propriétaire de gîte ou un hôte Airbnb : un jeu à laisser dans le logement » | intention d'achat, priorité du blog | KYRAN au centre ; Majordia pas nécessaire |
+   | à faire | « Jeux de cartes pour une réunion de famille en location (des grands-parents aux ados) » | réunion de famille en location | KYRAN dès 8 ans, 6 joueurs au plus : à présenter avec ses limites |
+
+   Aucun n'est écrit à ce jour (aucun article du blog ne cite Majordia).
 
 Liens externes des fiches de jeux (`scripts/lib/game-links.mjs`) : tous revérifiés le 4 octobre 2026
 (#18 puis passe dédiée). Chaque identifiant BGG est contrôlé par l'API geekdo (nom et auteur), chaque

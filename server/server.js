@@ -12,6 +12,7 @@ import { IncidentStore, isBenignClientError } from './incidents.js';
 import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
 import { createMailer } from './mailer.js';
+import { shippingDetails } from './stripeSession.js';
 
 const PORT = process.env.PORT || 3000;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -205,7 +206,7 @@ async function handleOrderCompleted(session) {
     ? parseInt(session.metadata.quantity, 10)
     : (Math.max(1, Math.round(subtotalCents / 999)) || 1);
 
-  const shipping = session.shipping_details || session.customer_details;
+  const shipping = shippingDetails(session);
   const shippingAddress = shipping?.address ? {
     name: shipping.name || customerName,
     line1: shipping.address.line1,

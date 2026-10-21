@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-21 — [Auto-Heal] JS-29AAB2, JS-B632F4 et 6 autres — ressources « introuvables » pourtant en ligne
+
+- **Symptôme :** 8 incidents « Ressource introuvable » (scripts `motion.js`, `components.js`, `seo-config.js`, `logo.png`, images du hero) alors que chaque fichier répond 200 ; chaque rafale venait d'un seul appareil, toutes les ressources en échec à la même milliseconde. Aussi JS-29330B (transition de page interrompue, sans fichier ni pile) et JS-11F231 (`window.ethereum`, portefeuille crypto injecté).
+- **Cause :** une coupure réseau du visiteur (ou une page quittée en plein chargement) déclenche `error` sur toutes les ressources ; seul le média passait par un contrôle HEAD (20/10). Les deux autres viennent du navigateur ou d'une extension.
+- **Correctif :** `error-reporter.js` vérifie par HEAD toute ressource avant de la signaler ; deux filtres précis dans `isBenignClientError` (tests). Règle : avant de corriger une « ressource introuvable », `curl -I` le fichier et regarder si toute la page a échoué au même instant. Autre piège du même jour : un groupe `concurrency` sur un workflow `workflow_dispatch` ne garde qu'un run en attente et **annule** les autres ; toujours vérifier la conclusion de chaque run de clôture.
+
 ### 2026-10-21 — Auto-Heal GitHub sans auth Anthropic : la réparation passe par une routine Claude
 
 - **Symptôme :** « Hourly Auto-Heal » rouge à chaque passage depuis le 13/10 (WIF 401 « Authentication failed », puis clé de repli « invalid x-api-key ») ; 5 incidents en attente sans traitement ; la routine santé de minuit le constatait chaque nuit sans pouvoir le réparer (action du propriétaire dans la console Anthropic).

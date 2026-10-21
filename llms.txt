@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 34 guides
+## Blog — 35 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -132,6 +132,7 @@
 
 ## Blog : Soirée
 
+- [Week-end entre amis en gîte : 7 jeux de cartes pour les soirées](https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html): 7 jeux comparés
 - [Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis](https://kyran-jeu.fr/blog/jeux-cartes-ados.html): 6 jeux comparés
 - [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés
 - [Jeux de cartes à deux : 7 idées pour un duo ou un couple](https://kyran-jeu.fr/blog/jeux-duo-couples.html): 7 jeux comparés

@@ -200,7 +200,8 @@ async function handleOrderCompleted(session, env) {
     : (Math.max(1, Math.round(subtotalCents / 999)) || 1);
 
   // Adresse d'expédition
-  const shipping = session.shipping_details || session.customer_details;
+  // Depuis l'API Stripe 2025-03-31 : collected_information.shipping_details (ancien shipping_details)
+  const shipping = session.collected_information?.shipping_details || session.shipping_details || session.customer_details;
   const shippingAddress = shipping?.address ? {
     name: shipping.name || customerName,
     line1: shipping.address.line1,

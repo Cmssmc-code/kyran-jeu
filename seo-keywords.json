@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "property": "https://kyran-jeu.fr/",
   "clusters": [
     {
@@ -7,13 +7,11 @@
       "primary_queries": [
         "kyran jeu cartes",
         "jeu de cartes 3 joueurs",
-        "jeu de plis",
         "kyran",
         "kyran jeu de cartes",
         "jeu de cartes de plis"
       ],
       "secondary_queries": [
-        "jeu apéro cartes",
         "jeu stratégie soirée",
         "kyran maitre des mystiques"
       ]
@@ -21,12 +19,10 @@
     {
       "page": "/jeu-apero.html",
       "primary_queries": [
-        "jeu apéro cartes",
-        "jeu de cartes apéro",
-        "jeu soirée amis"
+        "kyran apéro",
+        "jeu de cartes apéro 3 à 6 joueurs"
       ],
       "secondary_queries": [
-        "jeu 30 minutes",
         "jeu 3 à 6 joueurs"
       ]
     },
@@ -52,15 +48,11 @@
       "page": "/blog/jeux-plis-comparatif.html",
       "primary_queries": [
         "jeu de plis",
-        "alternative wizard",
         "wizard jeu cartes",
         "jeu de plis comparatif",
         "comparatif jeux plis",
         "quel jeu de plis",
-        "jeu de carte pari nombre de plis",
-        "jeu de carte annonce nombre de plis",
-        "règle jeu de plis",
-        "tarot africain"
+        "règle jeu de plis"
       ],
       "secondary_queries": [
         "oh hell jeu",
@@ -87,7 +79,6 @@
       "page": "/tarot-africain.html",
       "primary_queries": [
         "tarot africain",
-        "whist 22",
         "jeu tarot africain",
         "tarot africain regle",
         "regle tarot africain",
@@ -97,7 +88,6 @@
       "secondary_queries": [
         "héritage tarot africain",
         "jeu plis traditionnel",
-        "tarot africain a 3",
         "combien de joueurs tarot africain"
       ]
     },
@@ -573,9 +563,7 @@
         "acheter kyran",
         "kyran jeu de cartes prix"
       ],
-      "secondary_queries": [
-        "kyran"
-      ]
+      "secondary_queries": []
     },
     {
       "page": "/idee-cadeau.html",

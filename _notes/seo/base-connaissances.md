@@ -76,7 +76,8 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
   lente, `style.css` 117 Ko.
 - Images de partage : `og-kyran.jpg` 1200 × 630 partout depuis le 20/10, sauf `commander.html` (PNG de 1,96 Mo).
 - 21/10 : inspection de 30 URL : 27 indexées ; hors index `/blog/`, `video-regles` ; `jeux-comme-skull-king`, `regles-rikiki` indexées. Le 20/10 : `a-propos` et `cadeau-anniversaire` aussi hors index (non inspectées le 21).
-- Bing : les 5 pages d'octobre soumises le 20/10 sont découvertes et explorées le 21/10.
+- Bing : les 5 pages d'octobre soumises le 20/10 sont découvertes et explorées le 21/10 ; 57 pages dans l'index au 20/10.
+- 22/10 : 52 URL dans le sitemap (2 articles neufs du 21/10) ; inspection : 29/30 indexées, seule `meilleurs-jeux-apero` hors index.
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
 - `priceValidUntil` du Product : 31/12/2026.
 

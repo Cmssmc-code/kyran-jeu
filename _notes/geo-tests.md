@@ -36,6 +36,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 2026-10-20 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Chouineurs, Pili Pili, Cat in the Box, Luz (espritjeu, ludum, gusandco) ; 2 : regles2jeux, Board Game Arena ; 3 : World of Geek, Ludum |
 | 2026-10-21 | | | | — | — | — | | | | 0 / 3 | 4 : Tarot à 3, belote à 3, Trio, 13 Feuilles (regles2jeux, espritjeu) ; 5 : The Last Wizard, Wizard 30 ans (alternate, espritjeu) ; 6 : aucun jeu précis (pages catalogue) |
+| 2026-10-22 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul (play-in, espritjeu) ; 8 : aucun jeu, homonymes (Kyrandia, footballeurs) ; 9 : Chouineurs, Malédiction !, Pili Pili, Picanté ! (gusandco, ludum) |
 
 ## Relevés manuels
 

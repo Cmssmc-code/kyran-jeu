@@ -10,6 +10,17 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-22 : run nocturne n° 3 (lancé à 09:12, réveil arrivé avec 9 h de retard)
+
+- **Verdict : En progrès** (pas d'alerte ; aucune mise à jour Google en cours). Run de jour : pas de conflit avec la routine blog (jeudi).
+- **Google** (`dataState: all`, 15 → 21/10, dernier jour provisoire) : 7 j 46 clics (+15 %), 2 112 impressions (+21 %) ; 28 j 128 clics, 6 170 impressions, CTR 2,07 %, position 9,1. Dernières 24 h (jusqu'au 21/10 19 h) : 7 clics, 283 impressions (J-7 : 2 / 228). `jeux-bluff-pari` remonte (position 35,1 → 16,6) ; `tarot-africain` 7 → 10 clics, position 6,5.
+- **Bing** (13 → 19/10) : 6 clics, 129 impressions ; 57 pages dans l'index (+1) ; 0 erreur.
+- **Technique** : 52/52 URL du sitemap en 200, 0 anomalie, TTFB médian 280 ms. Inspection (30 URL) : 29 indexées ; hors index `meilleurs-jeux-apero` (explorée le 21/07, non indexée).
+- **Veille** : 48 h : deux articles neufs du blog (`jeux-cartes-week-end-gite`, `marche-jeux-de-cartes-2026-2027`, ancien slug 2025 redirigé) : title, description, canonical, sitemap, `llms.txt` et liens internes vérifiés ; PDF des règles et fiches Tric Trac, Myludo, Okkazeo liés (21/10) ; routine Surveillance à 05:07 remplace la routine Santé. GEO (WebSearch, prompts 7 à 9) : 0 sur 3 ; « c'est quoi le jeu KYRAN » ne trouve pas le site (homonymes).
+- **Actions** (PR du run) : `seo-keywords.json` : 12 requêtes partagées entre plusieurs pages ramenées à une page chacune, d'après la page que Google montre (Search Console, 90 j) ; « jeu de cartes apéro » confié à `meilleurs-jeux-apero` seul (seule page qui ait eu des impressions sur ces requêtes). Hors PR : 7 URL soumises à Bing (2 articles neufs, 5 pages modifiées le 21/10).
+- **À décider** : inchangé.
+- **Doc partagé** : tableau de bord, veille, journal (2 lignes) ; `rev` 28.
+
 ### 2026-10-21 : run nocturne n° 2
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

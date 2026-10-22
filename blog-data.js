@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "as-dor-palmares-1988-2026",
+    "title": "As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes",
+    "category": "Cartes",
+    "date": "2026-10-22",
+    "readMinutes": 9,
+    "excerpt": "Les 36 lauréats de la catégorie principale de l’As d’Or, de 1988 à 2026, en tableau et en fichier CSV vérifié ligne à ligne sur la liste officielle du festival.",
+    "image": "/blog/images/palais-festivals-cannes.jpg",
+    "webp": "/blog/images/palais-festivals-cannes.webp",
+    "gameCount": 0,
+    "related": [
+      "marche-jeux-de-cartes-2026-2027",
+      "jeux-coop-cartes",
+      "jeux-comme-dixit"
+    ]
+  },
+  {
     "slug": "marche-jeux-de-cartes-2026-2027",
     "title": "Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers",
     "category": "Cartes",

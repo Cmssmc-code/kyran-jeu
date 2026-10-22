@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Wed, 21 Oct 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes</title>
+      <link>https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html</guid>
+      <pubDate>Thu, 22 Oct 2026 08:00:00 +0200</pubDate>
+      <description>Les 36 lauréats de la catégorie principale de l’As d’Or, de 1988 à 2026, en tableau et en fichier CSV vérifié ligne à ligne sur la liste officielle du festival.</description>
+    </item>
     <item>
       <title>Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers</title>
       <link>https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html</link>

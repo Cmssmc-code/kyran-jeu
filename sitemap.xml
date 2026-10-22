@@ -118,9 +118,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/palais-festivals-cannes.jpg</image:loc>
+      <image:title>As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html</loc>
     <lastmod>2026-10-21</lastmod>

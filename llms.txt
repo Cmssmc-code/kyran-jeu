@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 35 guides
+## Blog — 36 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -112,6 +112,7 @@
 
 ## Blog : Cartes
 
+- [As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes](https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html)
 - [Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers](https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html): 5 jeux comparés
 - [Jeux de cartes et cerveau : ce que disent les études](https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html)
 - [Jeux de cartes à 5 ou 6 joueurs : 8 jeux qui tiennent la table](https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html): 8 jeux comparés

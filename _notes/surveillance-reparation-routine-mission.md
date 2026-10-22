@@ -17,7 +17,7 @@
 |---|---|---|
 | Journal d'incidents, clôtures | — (toujours par le workflow) | workflow `auto-heal-incidents.yml` via `gh api` (jeton OIDC, aucun secret) |
 | Serveur Railway | `list-deployments`, `get-logs`, métriques | `curl …/health` + temps de réponse ; dernier commit `server/` comparé à la `version` de `/health` ; journaux, 5xx, CPU/mémoire « non vérifiés : connecteur Railway absent » |
-| Rapport e-mail | Resend (domaine vérifié) puis Gmail | voie serveur : `auto-heal-incidents.yml` action `report` (`contact@kyran-jeu.fr` → kyran.jeu@gmail.com, destinataire codé en dur, testé) |
+| Rapport e-mail | — (Resend et Gmail demandent une validation, C.11) | voie serveur : `auto-heal-incidents.yml` action `report` (`contact@kyran-jeu.fr` → kyran.jeu@gmail.com, destinataire codé en dur, testé) |
 | Stripe | lecture `acct_1UBHzpPe2ed8eDFC` | page du Payment Link ouverte avec Playwright sans payer ; « Stripe non vérifié » pour le reste |
 | GitHub | `gh api` (REST) marche dans la session (constaté le 2026-10-21, même si `gh auth status` dit le jeton invalide) | `mcp__github__*` si présent |
 
@@ -280,9 +280,13 @@ immédiat. Chaque mise à jour figure dans le rapport (avant → après, source 
    signaler ; terminée et travail fini → relecture adverse, CI, fusion ; inachevé → le signaler. Aucune branche ne
    se supprime depuis le cloud.
 8. **Budget : 4 h.** Au-delà, rapport avec ce qui reste.
-9. Limite d'utilisation Claude atteinte : commit « wip » sur la branche, `send_later` à la remise à zéro + 5 min,
-   reprise sans attendre le propriétaire (`lecon.md`).
+9. Limite d'utilisation Claude atteinte : commit « wip » sur la branche poussée, entrée « interrompu » dans
+   `suivi-surveillance.md`, puis s'arrêter : le passage du lendemain reprend.
 10. Ne crée ni ne supprime aucune routine.
+11. **Aucun outil soumis à validation** : personne ne répond aux demandes de permission dans la session dédiée, une
+    seule demande bloque tout le passage (constaté le 2026-10-22 : passage arrêté à 03:23 UTC sur un `send-email`
+    Resend). Jamais d'outil d'envoi Resend ou Gmail, jamais `send_later` ni autre outil `claude-code-remote`. Le
+    rapport passe **toujours** par la voie serveur (D, envoi 3).
 
 ---
 
@@ -304,14 +308,7 @@ ligne, pas d'image, tableaux simples), sans secret ni donnée personnelle. Conte
 
 **Envoi** (dans cet ordre ; la voie utilisée est **dite dans le rapport et le journal**) :
 
-1. **Resend** (`mcp__Resend__send-email` ou outil Resend équivalent) **si le connecteur est connecté et** le domaine
-   `kyran-jeu.fr` **vérifié** dans son compte (outil Resend de liste des domaines, statut `verified`). Expéditeur
-   `KYRAN <contact@kyran-jeu.fr>`.
-2. **Sinon Gmail** si le connecteur est présent (`mcp__Gmail__send_message`, compte Gmail personnel du propriétaire),
-   `to` = `kyran.jeu@gmail.com` seulement, corps en `htmlBody` (+ `body` texte). Constaté le 2026-10-21 : connecteur
-   Resend non connecté (« connect_incomplete », aucun outil `mcp__Resend__*`) → voie Gmail. Avant l'envoi, vérifier
-   que l'expéditeur du connecteur n'est pas une adresse d'un autre produit (sinon passer à 3).
-3. Sinon (cas normal dans la session dédiée, sans connecteur), **serveur KYRAN** : route
+1. **Serveur KYRAN** (seule voie, garde-fou C.11 ; Resend et Gmail demandent une validation que personne ne donne) : route
    `POST /api/auto-heal/routine-report` (`contact@kyran-jeu.fr` par le Resend du serveur, destinataire
    kyran.jeu@gmail.com **codé en dur**, objet imposé, un seul rapport par jour ; test
    `server/test/auto-heal.test.mjs`), appelée par le workflow OIDC :
@@ -323,7 +320,7 @@ ligne, pas d'image, tableaux simples), sans secret ni donnée personnelle. Conte
    ```
 
    (corps HTML ≤ 60 000 caractères ; run vert avec `"sent":true` = envoyé ; `already_sent_today` = ne pas renvoyer).
-4. Rien de possible : **ne jamais envoyer depuis une adresse d'un autre produit**. Écrire **« Rapport email non
+2. Voie serveur impossible (panne Railway, serveur pas à jour) : **ne jamais envoyer depuis une adresse d'un autre produit**. Écrire **« Rapport email non
    envoyé : <raison exacte> »** en tête de l'entrée du journal, notification `PushNotification` si l'outil existe,
    et le mettre dans « Décision du propriétaire ».
 

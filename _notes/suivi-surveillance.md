@@ -6,6 +6,26 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-22 — passage planifié (03:08 UTC)
+
+État : 🟢 site et paiement · 🟠 serveur et incidents (panne Railway, builds en pause : serveur toujours sur le build
+du 13/10) · 🟢 workflows, code et veille. Rapport email : **envoyé par Resend** (`contact@kyran-jeu.fr` →
+kyran.jeu@gmail.com, domaine `kyran-jeu.fr` vérifié). Rapport complet :
+[`docs/rapports/surveillance/2026-10-22.md`](../docs/rapports/surveillance/2026-10-22.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 52 URL × 1280/390 px sans erreur ; 326 liens, 0 interne cassé ; TLS → 14/12 |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | À surveiller | `/health` ok, 0 5xx sur 43 requêtes ; builds Railway en pause, `server/` non déployé depuis le 13/10 |
+| Incidents | 2 en attente | JS-29330B, JS-11F231 (aucun nouveau) : attendent le déploiement |
+| Workflows, code | OK | CI, Pages, IndexNow, Instagram verts ; build sans diff, tests verts, 0 faille (racine et Worker) |
+| Versions | 2 mises à jour | SDK Anthropic 1.0.0 → 1.1.0, `compatibility_date` du Worker → 2026-10-22 ; le reste est à jour |
+
+Réparations : PR #110 (fusion `2fe9609`), vérifiée en ligne. Incidents clôturés : aucun.
+Points ouverts : déployer `server/` dès le retour des builds Railway (Node 26.12.1 et ses correctifs de sécurité),
+puis clôturer JS-29330B et JS-11F231, puis rotation des secrets Railway.
+
 ## 2026-10-22 — nuit : déploiement Railway tenté, builds toujours en pause
 
 Session de mise à jour du 21/10 (PR #106, #107 : Node 26.12.1, SDK Anthropic 1.0, adresse Stripe

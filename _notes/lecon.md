@@ -10,6 +10,11 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-22 — Routine de surveillance bloquée sur une demande de permission (Resend)
+
+- **Contexte :** premier passage automatique : la session dédiée attendait depuis 03:23 UTC la validation d'un `send-email` Resend (connecteur connecté la veille au soir). Personne ne répond : passage arrêté, interrompu et relancé par la session de pilotage.
+- **Règle :** une routine sans humain n'appelle que des outils qui passent sans validation ; rapport KYRAN toujours par la voie serveur (`auto-heal-incidents.yml` action `report`) ; jamais `send_later` (limite d'utilisation : commit wip puis arrêt). Mission, garde-fou C.11.
+
 ### 2026-10-21 — Serveur Railway sur un Node non corrigé (failles du 21/10) ; Wrangler 3 vulnérable
 
 - **Symptôme :** veille sécurité du 21/10 (PHP2Shell côté PHP, sans effet ici ; correctif Node.js 26.12.1 / 24.22.1 / 22.23.4 contre 10 CVE dont CVE-2026-111497, Brotli → exécution de code). Le serveur `kyran-webhook` tournait sur un Node 22 construit le 13/10, donc non corrigé ; deux workflows tournaient encore sur Node 20 (fin de vie, plus aucun correctif) ; `worker/` dépendait de `wrangler@^3` (7 failles `npm audit`, dont 5 hautes : `ws`, etc.).

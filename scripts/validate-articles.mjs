@@ -102,7 +102,7 @@ function validateDataset(slug, d, err) {
   let latest = '';
   for (const f of d.files) {
     const at = `dataset ${f.path}`;
-    if (!/^\/data\/[\w-]+\/[\w.-]+\.(csv|json)$/.test(f.path || '')) { err(`${at} : chemin /data/<slug>/<fichier>.csv|json attendu`); continue; }
+    if (!/^\/donnees\/[\w-]+\/[\w.-]+\.(csv|json)$/.test(f.path || '')) { err(`${at} : chemin /donnees/<slug>/<fichier>.csv|json attendu`); continue; }
     if (f.path.split('/')[2] !== slug) err(`${at} : le dossier doit porter le slug de l'article`);
     if (!['csv', 'json'].includes(f.format) || !f.description) err(`${at} : format (csv|json) et description obligatoires`);
     const abs = join(ROOT, f.path);

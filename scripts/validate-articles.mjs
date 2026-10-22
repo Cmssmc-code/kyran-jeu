@@ -55,6 +55,17 @@ function htmlFields(a) {
   return f.filter(([, v]) => v);
 }
 
+/**
+ * Règle du propriétaire (22 octobre 2026) : tout article qui parle de Majordia contient au moins un lien
+ * vers majordia.fr (le site, une page ou un article de son blog).
+ */
+function checkMajordiaLink(a, err) {
+  const raw = JSON.stringify(a);
+  const mentioned = /majordia/i.test(raw.replace(/https?:\/\/[^"\s\\]*/gi, ''));
+  const linked = /href=\\"https:\/\/(www\.)?majordia\.fr(\/|\\")/.test(raw);
+  if (mentioned && !linked) err('Majordia est cité sans lien vers majordia.fr (au moins un lien : site, page ou article du blog)');
+}
+
 /** CSV minimal (guillemets, virgules, retours à la ligne dans les champs). */
 function parseCsv(text) {
   const rows = [];
@@ -218,6 +229,7 @@ function validateEssay(slug, a, err, warn, cache) {
   for (const b of BANNED) if (low.includes(b)) err(`formulation à éviter : « ${b} »`);
   for (const b of KYRAN_WRONG) if (low.includes(b)) err(`fait KYRAN erroné : « ${b} »`);
   if (/kyran[^.]{0,80}sans élimination/i.test(text)) err('KYRAN ne peut pas être décrit comme « sans élimination »');
+  checkMajordiaLink(a, err);
   const total = wordCount(text);
   if (total < 1500) err(`${total} mots au total (≥ 1500)`);
   cache.words = total;
@@ -361,6 +373,7 @@ function validate(slug, a, errors, warns, cache) {
   for (const b of KYRAN_WRONG) if (low.includes(b)) err(`fait KYRAN erroné : « ${b} »`);
   if (/kyran[^.]{0,80}sans élimination/i.test(text)) err('KYRAN ne peut pas être décrit comme « sans élimination »');
 
+  checkMajordiaLink(a, err);
   const total = wordCount(text);
   if (total < 1500) err(`${total} mots au total (≥ 1500)`);
   cache.words = total;

@@ -98,10 +98,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
    article du mois en cours qui cite Majordia, on n'en écrit pas un second. Règles :
    - **Un angle utile et différent à chaque fois**, avec sa propre intention de recherche : jamais deux
      articles sur la même idée (liste et statut dans « Angles Majordia » ; ajouter chaque nouvel angle).
-   - **Majordia cité au plus une fois dans le corps**, par un lien vers la page utile (par exemple
-     `https://www.majordia.fr/livret-accueil-digital` pour « les règles de la maison (bruit, heures) sont
-     souvent dans le livret d'accueil du logement »), jamais en conclusion promotionnelle. Quand le sujet
-     n'en a pas besoin (cadeau pour un hôte), on peut ne pas le citer : on n'en force pas la mention.
+   - **Au moins un lien vers Majordia dans chaque article qui en parle** (demandé par le propriétaire le
+     22 octobre 2026), sans exception : vers le site (`https://www.majordia.fr/`), vers une page utile
+     (par exemple `https://www.majordia.fr/livret-accueil-digital` pour « les règles de la maison (bruit,
+     heures) sont souvent dans le livret d'accueil du logement ») ou vers un article du blog de Majordia
+     (`https://www.majordia.fr/blog/<slug>`, ouvert et répondant 200 le jour de la passe). Le lien se place
+     là où il aide le lecteur, jamais en conclusion promotionnelle ; un à trois liens suffisent. Le validateur
+     bloque un article qui cite Majordia sans lien. Un article du mois sur ce thème qui n'a pas de raison
+     naturelle de citer Majordia (idée cadeau pour un hôte) y renvoie quand même, par exemple vers le livret
+     d'accueil comme objet à laisser dans le logement.
    - **Transparence** : écrire, à l'endroit de la mention, que Majordia est un autre site de l'auteur de KYRAN.
    - **Faits sur Majordia vérifiés sur majordia.fr le jour de la passe** (WebFetch) et réduits à ce qui est
      stable : livret propre à chaque logement, ouvert par un QR code, sans application ni compte pour le
@@ -267,7 +272,7 @@ Rafraîchissements repérés (par ordre de priorité) :
    | Statut | Angle | Intention | Remarques |
    |---|---|---|---|
    | **fait le 21 octobre 2026** (`jeux-cartes-week-end-gite`) | « Week-end entre amis en gîte : 7 jeux de cartes pour les soirées » | activités week-end gîte entre amis (différent de `jeux-vacances-voyage`, rangé par moyen de transport) | KYRAN parmi les choix ; Majordia une fois : règles de la maison (bruit, heures) dans le livret d'accueil |
-   | à faire | « Cadeau pour un propriétaire de gîte ou un hôte Airbnb : un jeu à laisser dans le logement » | intention d'achat, priorité du blog | KYRAN au centre ; Majordia pas nécessaire |
+   | à faire | « Cadeau pour un propriétaire de gîte ou un hôte Airbnb : un jeu à laisser dans le logement » | intention d'achat, priorité du blog | KYRAN au centre ; lien vers Majordia obligatoire (par exemple le livret d'accueil, à côté du jeu laissé dans le logement) |
    | à faire | « Jeux de cartes pour une réunion de famille en location (des grands-parents aux ados) » | réunion de famille en location | KYRAN dès 8 ans, 6 joueurs au plus : à présenter avec ses limites |
 
    Premier angle écrit le 21 octobre 2026 ; prochain article Majordia : pas avant fin novembre (un par mois).

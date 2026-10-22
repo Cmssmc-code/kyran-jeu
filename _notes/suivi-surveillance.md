@@ -6,6 +6,31 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-22 — nuit : déploiement Railway tenté, builds toujours en pause
+
+Session de mise à jour du 21/10 (PR #106, #107 : Node 26.12.1, SDK Anthropic 1.0, adresse Stripe
+`collected_information`). Le propriétaire a demandé de déployer `server/` la nuit et de réessayer jusqu'au succès.
+
+| Heure (UTC) | Constat |
+|---|---|
+| 00:30, 01:04, 01:35, 02:07, 02:38 | Builds Railway en pause (incident QH8L8B3E, dernier point 02:19 UTC : « still working to bring builds back online ») ; aucun déploiement pour `450abf6` ni `f90718c` ; `/health` ok sur l'ancienne version 1.5.0 (build du 13/10, Node 22) |
+
+À faire par la routine dès que les builds reviennent :
+
+1. Déployer le dernier commit de `main` sur le service `kyran-webhook`. Railway peut le rattraper seul ; sinon
+   commit `server/` (version 1.6.0). Ne pas utiliser `create-deployment` (crée un nouveau service) ni `redeploy`
+   (relance l'ancien build du 13/10).
+2. Vérifier : log de démarrage `(Node v26.12.1)`, `/health` ok, webhook sans signature refusé (400). Si le serveur
+   casse : rollback vers `b5934fae`.
+3. Clôturer JS-29330B et JS-11F231 (`resolve`, commit `a7d5a9a`), l'un après l'autre.
+
+Incident de sécurité Railway du 21/10 (blog.railway.com/p/security-disclosure-wednesday-october-21st : des
+variables d'environnement ont pu être lues) : les 4 secrets du service (`RESEND_API_KEY`, `SMTP_PASSWORD`,
+`STRIPE_WEBHOOK_SECRET`, `ADMIN_SECRET`) sont à changer. **Ne rien révoquer tant que les déploiements sont en pause**
+(le serveur garderait l'ancien secret : e-mails de vente cassés). Propriétaire prévenu : il change lui-même le mot
+de passe de sa boîte mail et le secret du webhook Stripe ; la clé Resend et `ADMIN_SECRET` attendent son accord.
+Contrôle Resend du 22/10 00:32 UTC : aucun appel ni envoi inconnu (seuls l'appli Majordia et les outils MCP).
+
 ## 2026-10-21 — passage de test (13:47 UTC, lancé par le propriétaire)
 
 État : 🟢 site et paiement · 🟠 serveur et incidents (panne Railway toujours en cours, correctifs `server/` du

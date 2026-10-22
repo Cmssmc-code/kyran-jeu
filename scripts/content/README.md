@@ -149,7 +149,7 @@ export default {
 ### Jeu de données ouvert (`dataset`) : devenir une source citable
 
 Un article « essai » peut publier ses propres données, consolidées et vérifiées, pour que moteurs de
-recherche et IA les citent (voir `docs/BLOG-PASSES.md` § 3). Fichiers sous `data/<slug>/` (CSV UTF-8 ou JSON),
+recherche et IA les citent (voir `docs/BLOG-PASSES.md` § 3). Fichiers sous `donnees/<slug>/` (le dossier `data/` est ignoré par git) (CSV UTF-8 ou JSON),
 déclarés dans l'article :
 
 ```js
@@ -159,7 +159,7 @@ dataset: {
   update: 'mensuelle',                    // fréquence de mise à jour
   license: { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
   lastVerified: '2026-10-21',             // date du dernier contrôle (≥ la plus récente ligne)
-  files: [{ path: '/data/<slug>/jeux.csv', format: 'csv', description: '…' }]
+  files: [{ path: '/donnees/<slug>/jeux.csv', format: 'csv', description: '…' }]
 }
 ```
 

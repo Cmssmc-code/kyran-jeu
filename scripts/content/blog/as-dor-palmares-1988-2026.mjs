@@ -53,7 +53,7 @@ export default {
     "lastVerified": "2026-10-22",
     "files": [
       {
-        "path": "/data/as-dor-palmares-1988-2026/jeu-de-l-annee.csv",
+        "path": "/donnees/as-dor-palmares-1988-2026/jeu-de-l-annee.csv",
         "format": "csv",
         "description": "38 lignes, colonnes annee, categorie, titre, auteurs, editeurs, remarque, source_url, verifie_le"
       }

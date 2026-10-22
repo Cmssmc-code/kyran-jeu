@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-23 : run nocturne n° 4
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 7 j glissants) : 42 clics (−2 %), 2 071 impressions (+15 %) ; 28 j CTR 2,09 %, position 9,0.
+- **Bing** : 6 clics (+100 %), 129 impressions (−2 %) ; 57 pages dans l'index ; 0 erreur.
+- **Technique** : sitemap 100 % en 200, 0 anomalie (`seo-health.py`, inspection de 30 URL).
+- **Veille** : GEO (WebSearch, prompts 1 à 3) : 0 sur 3, mêmes sources que le 20/10 (Skull King, Chouineurs, Pili Pili ; regles2jeux et Board Game Arena pour le tarot africain ; World of Geek pour Skyjo). Les homonymes de « KYRAN » (22/10) motivent l'action du run.
+- **Actions** (PR du run) : nom complet « KYRAN, Maître des Mystiques » ajouté en `alternateName` du nœud `#game` (JSON-LD de l'accueil) et en tête de `llms.txt` / `llms-full.txt`, pour lier la marque au jeu dans les moteurs et les IA.
+- **À décider** : inchangé.
+
 ### 2026-10-22 : run nocturne n° 3 (lancé à 09:12, réveil arrivé avec 9 h de retard)
 
 - **Verdict : En progrès** (pas d'alerte ; aucune mise à jour Google en cours). Run de jour : pas de conflit avec la routine blog (jeudi).

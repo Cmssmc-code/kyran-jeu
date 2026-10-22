@@ -113,11 +113,11 @@ function buildLlmsTxt() {
   const ageOf = id => GAMES[id].age.replace('+', ' ans et plus');
   return `# KYRAN — kyran-jeu.fr
 
-> KYRAN est un jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs (environ 30 minutes, dès 8 ans), conçu et édité en France par Corentin Sence. Le principe : annoncer le nombre exact de plis que l'on va gagner, avec une règle qui empêche la table de « boucler » son total. Héritier du Tarot Africain (Whist 22).
+> KYRAN (nom complet : « KYRAN, Maître des Mystiques ») est un jeu de cartes de plis, de bluff et de paris pour 3 à 6 joueurs (environ 30 minutes, dès 8 ans), conçu et édité en France par Corentin Sence. Le principe : annoncer le nombre exact de plis que l'on va gagner, avec une règle qui empêche la table de « boucler » son total. Héritier du Tarot Africain (Whist 22).
 
 ## Fiche technique
 
-- Nom : KYRAN
+- Nom : KYRAN (nom complet sur la boîte : KYRAN, Maître des Mystiques)
 - Type : jeu de cartes de plis avec pari obligatoire
 - Joueurs : 3 à 6 (ne se joue pas à deux)
 - Durée d'une partie : environ 30 minutes

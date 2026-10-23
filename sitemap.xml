@@ -118,9 +118,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/hanabi.jpg</image:loc>
+      <image:title>Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html</loc>
     <lastmod>2026-10-22</lastmod>
@@ -131,7 +139,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/skyjo.jpg</image:loc>
       <image:title>Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers</image:title>
@@ -363,7 +371,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-noel.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/hanabi.jpg</image:loc>
       <image:title>Jeux de cartes à offrir à Noël : 7 idées selon le destinataire</image:title>

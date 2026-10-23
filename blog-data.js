@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-cartes-moins-de-15-euros",
+    "title": "Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026",
+    "category": "Cartes",
+    "date": "2026-10-23",
+    "readMinutes": 10,
+    "excerpt": "Neuf jeux de cartes à moins de 15 euros, avec le prix affiché en boutique le 23 octobre 2026, le nombre de joueurs et ce que chacun demande à la table.",
+    "image": "/blog/images/hanabi.jpg",
+    "webp": "/blog/images/hanabi.webp",
+    "gameCount": 9,
+    "related": [
+      "cadeau-noel",
+      "jeux-coop-cartes",
+      "marche-jeux-de-cartes-2026-2027"
+    ]
+  },
+  {
     "slug": "as-dor-palmares-1988-2026",
     "title": "As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes",
     "category": "Cartes",
@@ -483,7 +499,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes à offrir à Noël : 7 idées selon le destinataire",
     "category": "Cadeaux",
     "date": "2026-05-11",
-    "readMinutes": 12,
+    "readMinutes": 13,
     "excerpt": "Quel jeu offrir à Noël ? Sept idées rangées par destinataire (tablée du réveillon, couple, ado, amateur de cartes), avec durée de partie et budget.",
     "image": "/blog/images/hanabi.jpg",
     "webp": "/blog/images/hanabi.webp",

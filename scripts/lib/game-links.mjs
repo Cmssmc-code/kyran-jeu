@@ -39,7 +39,7 @@ export const GAME_LINKS = {
     year: 2024
   },
   papayoo: {
-    shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=papayoo',
+    shop: 'https://www.ludum.fr/jeu-dambiance/papayoo-1624',
     year: null
   },
   skyjo: {
@@ -61,7 +61,7 @@ export const GAME_LINKS = {
   hanabi: {
     bgg: 'https://boardgamegeek.com/boardgame/98778/hanabi',
     wiki: 'https://fr.wikipedia.org/wiki/Hanabi_(jeu)',
-    shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=hanabi',
+    shop: 'https://www.ludum.fr/jeu-dambiance/hanabi-496',
     designer: 'Antoine Bauza',
     year: 2010,
     imageCredit: 'Photo — Wikimedia Commons'
@@ -179,7 +179,7 @@ export const GAME_LINKS = {
   // Ajoutés le 14 octobre 2026 : identifiants BGG contrôlés par api.geekdo.com, pages boutique en 200.
   'skull-king': {
     bgg: 'https://boardgamegeek.com/boardgame/150145/skull-king',
-    shop: 'https://www.philibertnet.com/fr/grandpa-beck-s-games/108413-skull-king-3770000282771.html',
+    shop: 'https://www.ludum.fr/jeux-de-strategie-en-famille/skull-king-505',
     designer: 'Brent et Jeffrey Beck',
     year: 2013
   },
@@ -238,7 +238,7 @@ export const GAME_LINKS = {
   'the-mind': {
     bgg: 'https://boardgamegeek.com/boardgame/244992/the-mind',
     wiki: 'https://fr.wikipedia.org/wiki/The_Mind',
-    shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+mind',
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/the-mind-227',
     designer: 'Wolfgang Warsch',
     year: 2018
   },

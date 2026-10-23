@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-24 : run nocturne n° 5
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 17 → 23/10, dernier jour provisoire) : 7 j 45 clics (−2 %), 2 075 impressions (+10 %) ; 28 j 135 clics, 6 375 impressions, CTR 2,12 %, position 8,9. Dernières 24 h (jusqu'au 23/10 13 h) : 9 clics, 316 impressions (J-7 : 10 / 244). `tarot-africain` 9 → 11 clics, 761 impressions ; `jeux-comme-codenames` 1 → 5 clics.
+- **Bing** (13 → 19/10, pas de jour neuf) : 6 clics, 129 impressions ; 57 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 282 ms. Inspection : 30/30 indexées ; nouvel article `jeux-cartes-moins-de-15-euros` indexé le jour même (23/10) ; `/blog/` désormais indexé ; toujours hors index : `meilleurs-jeux-apero` (explorée le 21/07), `video-regles` (détectée).
+- **Veille** : 24 h : article de la routine blog `jeux-cartes-moins-de-15-euros` (sitemap, `llms.txt`, 60 pages le lient), routine Surveillance (wrangler, `/health` 1.6.0). GEO (WebSearch, prompts 4 à 6) : 0 sur 3.
+- **Actions** (PR du run) : `tarot-africain.html` : question « Où jouer au Tarot Africain en ligne ? » dans la FAQ visible et le JSON-LD `FAQPage` (requête « tarot africain en ligne » : 29 impressions, position 10,5 sur 28 j). Réévaluation : 2026-11-21.
+- **À décider** : inchangé.
+
 ### 2026-10-23 : run nocturne n° 4
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

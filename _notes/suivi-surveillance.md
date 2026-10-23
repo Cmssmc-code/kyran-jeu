@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-23 — passage planifié (03:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (`auto-heal-incidents.yml` `report`, run 39894225608, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-10-23.md`](../docs/rapports/surveillance/2026-10-23.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 53 URL × 1280/390 px sans erreur ; 335 liens, 0 interne cassé ; TLS → 14/12 |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | déployé le 22/10 18:46 UTC puis le 23/10 03:16 UTC (`c199957`) : Node v26.12.1, `/health` 1.6.0, 0 5xx |
+| Incidents | 0 en attente | JS-29330B et JS-11F231 clôturés (`resolve`, `f687d50`) |
+| Workflows, code | OK | CI, Pages, IndexNow, Instagram verts ; 0 faille ; build sans diff, tests verts |
+| Versions | 1 mise à jour | wrangler 4.152.0, `compatibility_date` 2026-10-23 ; le reste à jour |
+
+Réparations : PR #117 (`VERSION` 1.6.0, wrangler, date du Worker), vérifiée en ligne.
+Points ouverts : rotation des secrets Railway (décision du propriétaire).
+
 ## 2026-10-22 — passage planifié (03:08 UTC)
 
 État : 🟢 site et paiement · 🟠 serveur et incidents (panne Railway, builds en pause : serveur toujours sur le build

@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 36 guides
+## Blog — 37 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -112,6 +112,7 @@
 
 ## Blog : Cartes
 
+- [Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026](https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html): 9 jeux comparés
 - [As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes](https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html)
 - [Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers](https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html): 5 jeux comparés
 - [Jeux de cartes et cerveau : ce que disent les études](https://kyran-jeu.fr/blog/science-jeux-de-cartes-cerveau.html)

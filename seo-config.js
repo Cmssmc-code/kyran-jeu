@@ -13,7 +13,7 @@
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster
    */
-  var ASSET_VERSION = '5c9705dcc2';
+  var ASSET_VERSION = '9e02a7364a';
 
   var config = {
     googleSiteVerification: '',

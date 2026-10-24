@@ -25,7 +25,7 @@ export default {
       },
       {
         heading: 'Parier sur sa main : annonces et enchères',
-        html: `<p>Personne n'est tenu de mentir : chacun s'engage ou mise sur ce que sa main rapportera, en plis ou en chèques. Wizard et KYRAN appartiennent à la famille des jeux à annonce exacte de plis, celle du Tarot Africain, que beaucoup appellent <a class="text-link" href="/whist-22.html">Whist 22</a> ; les <a class="text-link" href="/tarot-africain.html">règles du Tarot Africain</a> en donnent la version la plus dépouillée, avec 22 cartes de tarot. For Sale transpose cet engagement aux enchères.</p>`,
+        html: `<p>Personne n'est tenu de mentir : chacun s'engage ou mise sur ce que sa main rapportera, en plis ou en chèques. Wizard et KYRAN appartiennent à la famille des jeux à annonce exacte de plis, celle du Tarot Africain, que beaucoup appellent <a class="text-link" href="/whist-22.html">Whist 22</a> ; les <a class="text-link" href="/tarot-africain.html">règles du Tarot Africain</a> en donnent la version la plus dépouillée, avec 22 cartes de tarot. For Sale transpose cet engagement aux enchères, une mécanique comparée dans notre sélection de <a class="text-link" href="/blog/jeux-draft-encheres.html">jeux de draft et d’enchères</a>.</p>`,
         ids: ['wizard', 'kyran', 'for-sale']
       }
     ]

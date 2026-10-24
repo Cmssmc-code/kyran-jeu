@@ -16,7 +16,7 @@ export default {
     html: `<p>Une <strong>alternative à 6 qui prend</strong> doit d’abord répondre à une question : qu’est-ce qui vous plaît dans le modèle ? Il combine quatre éléments qu’aucune autre boîte ne rassemble en même temps.</p>
 <h3>Les éléments à repérer</h3>
 <ul>
-<li><strong>Le choix simultané.</strong> Tout le monde pose sa carte face cachée, puis la révèle. Dans notre liste, ce plaisir se retrouve à la fin de For Sale, et sous forme de réflexes dans Jungle Speed.</li>
+<li><strong>Le choix simultané.</strong> Tout le monde pose sa carte face cachée, puis la révèle. Dans notre liste, ce plaisir se retrouve à la fin de For Sale (voir les <a class="text-link" href="/blog/jeux-draft-encheres.html">jeux de draft et d’enchères</a>), et sous forme de réflexes dans Jungle Speed.</li>
 <li><strong>Les rangées qui punissent.</strong> Une série qui se remplit et que quelqu’un devra ramasser. Parade en propose une version en cortège unique, The Game une version coopérative.</li>
 <li><strong>Les pénalités cumulées.</strong> Un total qui s’alourdit manche après manche, sans élimination : No Thanks ! et Llama fonctionnent ainsi.</li>
 <li><strong>La grande tablée.</strong> Dix joueurs sans temps mort. Seul Jungle Speed suit à ce niveau ; No Thanks ! s’arrête à sept, et les six autres jeux à six ou cinq.</li>

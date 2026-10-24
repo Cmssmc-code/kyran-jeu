@@ -1,6 +1,6 @@
 name = "kyran-stripe-webhook"
 main = "index.js"
-compatibility_date = "2026-10-23"
+compatibility_date = "2026-10-24"
 
 # Variables d'environnement non sensibles
 [vars]

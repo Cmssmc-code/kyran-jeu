@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-24 — passage planifié (03:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 40057675840, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-10-24.md`](../docs/rapports/surveillance/2026-10-24.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 54 URL × 1280/390 px ; 1 × 503 passagère de Pages sur `css/a-propos.css` (200 ensuite) ; 340 liens, 0 interne cassé |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | `9220a04` déployé, `/health` 1.6.1, Node v26.12.1, 0 5xx |
+| Incidents | 0 en attente | JS-C914F6 (Safari, transition de page sautée) filtré et clôturé |
+| Workflows, code | OK | tout vert ; faille haute `undici` du Worker corrigée (`overrides` 7.30.1) |
+| Versions | 2 mises à jour | SDK Anthropic 1.3.0, `compatibility_date` 2026-10-24 ; le reste à jour |
+
+Réparations : PR #121, vérifiée en ligne. Points ouverts : rotation des secrets Railway (décision du propriétaire).
+
 ## 2026-10-23 — passage planifié (03:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

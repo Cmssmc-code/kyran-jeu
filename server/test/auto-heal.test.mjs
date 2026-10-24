@@ -251,6 +251,13 @@ test('filtre : transition de page interrompue et portefeuille crypto injecté = 
   assert.equal(isBenignClientError({ kind: 'error', message: 'TypeError: transition is undefined', file: 'https://kyran-jeu.fr/js/motion.js' }, CHROME_UA), false, 'une vraie erreur de nos scripts reste signalée');
 });
 
+test('filtre : transition de page sautée par Safari = bruit (JS-C914F6)', () => {
+  const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1';
+  assert.equal(isBenignClientError({ kind: 'rejection', message: 'Skipping view transition because skipTransition() was called.' }, IOS_UA), true);
+  assert.equal(isBenignClientError({ kind: 'rejection', message: 'AbortError: Skipping view transition because skipTransition() was called.' }, IOS_UA), true);
+  assert.equal(isBenignClientError({ kind: 'error', message: 'TypeError: skipTransition is not a function', file: 'https://kyran-jeu.fr/js/motion.js' }, IOS_UA), false, 'une vraie erreur de nos scripts reste signalée');
+});
+
 test('rapport de la routine : objet imposé, destinataire fixe, un seul envoi par jour', async () => {
   const body = { subject: 'KYRAN — surveillance & réparation du 21/10', html: '<p>OK</p>', text: 'OK', to: 'tiers@example.com' };
   assert.equal((await fetch(`${BASE}/api/auto-heal/routine-report`, { method: 'POST', body: JSON.stringify(body) })).status, 401);

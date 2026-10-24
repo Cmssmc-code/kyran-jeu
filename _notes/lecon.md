@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-10-24 — [Auto-Heal] JS-C914F6 — transition de page sautée par Safari, fausse alerte
+
+- **Symptôme :** incident « Skipping view transition because skipTransition() was called. » sur `/blog/jeux-comme-skull-king.html`, iPhone (Safari 26.6), sans fichier ni pile.
+- **Cause :** promesse interne de la transition de page (`@view-transition` de `css/motion.css`) rejetée par Safari quand il saute l'animation ; le site n'appelle jamais `skipTransition()`. Même famille que JS-29330B (Chrome), mais formulée autrement.
+- **Correctif :** filtre précis dans `isBenignClientError` (message exact), test dans `server/test/auto-heal.test.mjs` ; une vraie erreur de nos scripts reste signalée. Règle : chaque navigateur formule ses rejets de transition à sa façon, filtrer le message exact, jamais tout ce qui contient « transition ».
+
 ### 2026-10-22 — Routine de surveillance bloquée sur une demande de permission (Resend)
 
 - **Contexte :** premier passage automatique : la session dédiée attendait depuis 03:23 UTC la validation d'un `send-email` Resend (connecteur connecté la veille au soir). Personne ne répond : passage arrêté, interrompu et relancé par la session de pilotage.

@@ -305,8 +305,10 @@ const BENIGN_MESSAGE = [
   /AbortError|The operation was aborted|The user aborted a request/i,
   /play\(\) (request was interrupted|failed because the user didn't interact)|NotAllowedError/i,
   // Transition de page (css/motion.css, @view-transition) interrompue par le navigateur : promesse interne
-  // rejetée sans fichier ni pile, rien à corriger côté site (JS-29330B).
+  // rejetée sans fichier ni pile, rien à corriger côté site (JS-29330B ; Safari : JS-C914F6, le site n'appelle
+  // jamais skipTransition()).
   /^(InvalidStateError: |AbortError: )?Transition was (aborted|skipped) because of invalid state|ViewTransition opt-in disabled/i,
+  /^(InvalidStateError: |AbortError: )?Skipping view transition because skipTransition\(\) was called\.?$/i,
   // Portefeuille crypto injecté par une extension ou une appli (window.ethereum) : le site n'y touche pas (JS-11F231).
   /\bwindow\.ethereum\b|ethereum\.selectedAddress/i
 ];

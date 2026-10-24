@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-25 : run nocturne n° 6
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours). Le −28 % de clics sur 7 j vient du 24/10, jour provisoire (0 clic, 212 impressions à 17 h) : pas d'action (règle 12).
+- **Google** (`dataState: all`, 18 → 24/10) : 7 j 39 clics (−28 %, dernier jour provisoire), 2 104 impressions (+7 %) ; 28 j 141 clics, 6 663 impressions, CTR 2,12 %, position 8,9. `tarot-africain` 9 → 12 clics, 826 impressions.
+- **Bing** (16 → 22/10) : 6 clics (+50 %), 126 impressions ; 59 pages dans l'index (+2).
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 274 ms. Inspection : 29/30 ; `blog/jeux-draft-encheres` « explorée, non indexée » (exploration du 24/10 ; 0 impression sur 90 j ; un seul lien depuis un article).
+- **Veille** : 24 h : routine Surveillance (undici du Worker, SDK, filtre Safari de l'Auto-Heal), rien sur la surface SEO. GEO (WebSearch, prompts 7 à 9) : 0 sur 3 ; « c'est quoi le jeu KYRAN » toujours sur des homonymes (nom complet ajouté le 23/10 : trop tôt). Gus & Co publie une « sélection des meilleurs jeux de plis récents » (11/01/2026) : cible de netlinking possible.
+- **Actions** (PR du run) : liens contextuels vers `jeux-draft-encheres` depuis `jeux-bluff-pari` (section enchères) et `jeux-comme-6-qui-prend` (For Sale). Réévaluation : inspection au prochain passage de Googlebot, puis 2026-11-22.
+- **À décider** : inchangé.
+
 ### 2026-10-24 : run nocturne n° 5
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

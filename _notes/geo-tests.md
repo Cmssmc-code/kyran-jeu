@@ -40,6 +40,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 | 2026-10-23 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Chouineurs, Pili Pili, Cat in the Box (helloasso, espritjeu, ludum, gusandco) ; 2 : regles2jeux, Board Game Arena (inchangé depuis le 20/10) ; 3 : World of Geek (Hilo), Ludum |
 | 2026-10-24 | | | | — | — | — | | | | 0 / 3 | 4 : Tarot à 3, belote à 3, Trio, 13 Feuilles (regles2jeux, espritjeu, ludum) ; 5 : traductions du mot « wizard », aucun jeu ; 6 : bol.com, Esprit Jeu (catalogues) ; l'article `jeux-cartes-moins-de-15-euros` (publié le 23/10, indexé) n'apparaît pas encore |
 | 2026-10-25 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul (play-in, espritjeu, ludum) ; 8 : homonymes (Kyrandia, Far Cry 4 « Kyrat », roman Travane) malgré le nom complet ajouté le 23/10 (trop tôt) ; 9 : Chouineurs, Pili Pili, Malédiction !, Picanté ! (play-in, ludum, gusandco « sélection jeux de plis » du 11/01/2026) |
+| 2026-10-26 | — | — | — | — | — | — | — | — | — | 0 / 9 | Lundi, 9 prompts. 1 : Skull King, Chouineurs, Pili Pili, Luz ; 2 : regles2jeux, Board Game Arena ; 3 : World of Geek ; 4 : Tarot à 3, belote à 3, Trio, 13 Feuilles ; 5 : Sorcières, The Last Wizard, Ascenseur (alternate.fr, play-in) ; 6 : catalogues (Paris Friendly, Zazzle, Esprit Jeu) ; 7 : Skull King seul ; 8 : homonymes (Kyrandia, Far Cry 4, Krynow) ; 9 : Chouineurs, Malédiction !, Pili Pili, Gus & Co |
 
 ## Relevés manuels
 

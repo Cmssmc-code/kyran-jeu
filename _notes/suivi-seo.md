@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-26 : run nocturne n° 7 (lundi)
+
+- **Verdict : À surveiller** (pas d'incident ; aucune mise à jour Google en cours). Clics 7 j −30 % mais impressions +15 % et position stable : le recul vient du week-end (24-25/10 : 4 et 5 clics, le 25 provisoire, contre 12 et 10 le week-end précédent) ; requêtes des pages en baisse masquées par Google (`jeux-comme-dixit` 9 → 3 clics). Pas d'action sur titre (règle 12) ; à revoir avec la semaine complète.
+- **Google** (`dataState: all`, 19 → 25/10) : 7 j 38 clics (−30 %), 2 318 impressions (+15 %) ; 28 j 148 clics, 7 076 impressions, CTR 2,09 %, position 8,8. Hausse : `tarot-africain` 934 impressions, `jeux-cartes-4-joueurs` 2 → 4 clics (position 10,2 → 7,9).
+- **Bing** (17 → 23/10) : 6 clics, 120 impressions (−15 %) ; 62 pages dans l'index (+3) ; 0 problème d'exploration ; `GetLinkCounts` : aucun lien entrant remonté.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 286 ms. Inspection : 28/30 ; hors index `communaute` (détectée, jamais explorée) et `meilleurs-jeux-apero` (explorée le 21/07).
+- **Veille** : 24 h : routine Surveillance (compatibility_date du Worker), rien sur la surface SEO. GEO (lundi, 9 prompts) : 0 sur 9.
+- **Actions** (PR du run) : `faq.html` : question « Qu'est-ce que le jeu KYRAN ? » en tête (FAQ visible et JSON-LD `FAQPage`) : nom complet, genre, auteur, date de sortie, filiation Tarot Africain. Réévaluation : test GEO n° 8 chaque lundi, puis 2026-11-23.
+- **À décider** : inchangé.
+
 ### 2026-10-25 : run nocturne n° 6
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours). Le −28 % de clics sur 7 j vient du 24/10, jour provisoire (0 clic, 212 impressions à 17 h) : pas d'action (règle 12).

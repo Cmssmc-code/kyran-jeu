@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-25 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 40161252874, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-10-25.md`](../docs/rapports/surveillance/2026-10-25.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 54 URL × 1280/390 px sans erreur ; 340 liens, 0 interne cassé |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | v1.6.1, Node v26.12.1, 0 5xx, aucun log d'erreur |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; tout à jour |
+
+Mise à jour : PR #124 (`compatibility_date` 2026-10-25). Points ouverts : rotation des secrets Railway (décision du
+propriétaire).
+
 ## 2026-10-24 — passage planifié (03:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

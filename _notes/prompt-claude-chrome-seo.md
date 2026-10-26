@@ -58,12 +58,14 @@ BLOC 1 — Google Search Console, demandes d'indexation (propriété « sc-domai
 Pour chaque URL : « Inspecter l'URL ». Ne demande l'indexation QUE si la page est « non indexée », ou si sa
 « Dernière exploration » est antérieure à la date indiquée. Google limite à une dizaine par jour : arrête-toi
 au message de quota et liste celles qui restent.
-État relevé le 21/10 (vérifie quand même : il a pu changer) :
+État relevé le 27/10 (vérifie quand même : il a pu changer ; /blog/, a-propos et cadeau-anniversaire
+sont indexées depuis le 21/10) :
 Priorité 1, hors index :
-  https://kyran-jeu.fr/blog/                         (Découverte, non indexée)
-  https://kyran-jeu.fr/video-regles.html             (Découverte, non indexée)
-  https://kyran-jeu.fr/a-propos.html                 (Découverte, non indexée)
-  https://kyran-jeu.fr/blog/cadeau-anniversaire.html (Explorée le 29/08, non indexée)
+  https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html             (Explorée le 21/07, non indexée)
+  https://kyran-jeu.fr/blog/jeux-draft-encheres.html              (Explorée le 24/10, non indexée ; liens ajoutés le 25/10)
+  https://kyran-jeu.fr/video-regles.html                          (Découverte, non indexée)
+  https://kyran-jeu.fr/communaute.html                            (Découverte, non indexée)
+  https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html (article du 26/10, découvert, non exploré)
 Priorité 2, indexées mais modifiées après leur dernière exploration (demander si exploration avant le 21/10) :
   https://kyran-jeu.fr/tarot-africain.html           (explorée le 18/10, modifiée les 20 et 21/10)
   https://kyran-jeu.fr/regle.html                    (explorée le 18/10, modifiée le 20/10)

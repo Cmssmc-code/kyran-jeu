@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-27 : run nocturne n° 8
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 20 → 26/10, dernier jour provisoire) : 7 j 41 clics (−18 %), 2 369 impressions (+12 %) ; 28 j 150 clics, 7 300 impressions, CTR 2,05 %, position 8,8. Requête « kyran » 6 → 0 clic (20 impressions, position 2,5) et accueil 10 → 1 clic : les 6 clics de marque des 21 derniers jours tombent tous entre le 13 et le 18/10 (1 à 2 par jour) ; position stable, pas de défaut SEO, pic de notoriété passé. Hausse : `jeux-comme-codenames` 3 → 6 clics, `jeux-cartes-4-joueurs` 1 → 4 clics.
+- **Bing** (18 → 24/10) : 8 clics (+33 %), 130 impressions ; 63 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 287 ms. Inspection : 30/30 indexées ; nouvel article `spiel-des-jahres-gagnants-1979-2026` (26/10) détecté, pas encore exploré ; toujours hors index : `jeux-draft-encheres` (explorée le 24/10, avant les liens du 25/10), `communaute` (détectée).
+- **Veille** : 24 h : article de la routine blog « Spiel des Jahres 1979-2026 » (essai et données ouvertes) : sitemap et `llms.txt` à jour, soumis à Bing. GEO (WebSearch, prompts 1 à 3) : 0 sur 3.
+- **Actions** (PR du run) : `jeux-cartes-4-joueurs` : FAQ « jeux de cartes à 4 avec 52 cartes » enrichie (Whist, Dame de pique, Président, Oh Hell!, belote à 32 cartes) ; requête « jeu de carte à 4 » : 35 impressions, position 10,8 (90 j). Réévaluation : 2026-11-24. Note : le contrôle de longueur des réponses FAQ (20 à 90 mots) fait partie de `npm test`, vérifier son code de sortie et pas seulement les lignes TAP.
+- **À décider** : inchangé.
+
 ### 2026-10-26 : run nocturne n° 7 (lundi)
 
 - **Verdict : À surveiller** (pas d'incident ; aucune mise à jour Google en cours). Clics 7 j −30 % mais impressions +15 % et position stable : le recul vient du week-end (24-25/10 : 4 et 5 clics, le 25 provisoire, contre 12 et 10 le week-end précédent) ; requêtes des pages en baisse masquées par Google (`jeux-comme-dixit` 9 → 3 clics). Pas d'action sur titre (règle 12) ; à revoir avec la semaine complète.

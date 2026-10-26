@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "spiel-des-jahres-gagnants-1979-2026",
+    "title": "Spiel des Jahres : les 90 lauréats de 1979 à 2026, en données ouvertes",
+    "category": "Cartes",
+    "date": "2026-10-26",
+    "readMinutes": 12,
+    "excerpt": "Les 48 Spiel, 16 Kennerspiel et 26 Kinderspiel des Jahres, de 1979 à 2026, en tableau et en CSV vérifié fiche par fiche sur la base officielle du jury.",
+    "image": "/blog/images/hanabi.jpg",
+    "webp": "/blog/images/hanabi.webp",
+    "gameCount": 0,
+    "related": [
+      "jeux-coop-cartes",
+      "jeux-cartes-moins-de-15-euros",
+      "as-dor-palmares-1988-2026"
+    ]
+  },
+  {
     "slug": "jeux-cartes-moins-de-15-euros",
     "title": "Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026",
     "category": "Cartes",

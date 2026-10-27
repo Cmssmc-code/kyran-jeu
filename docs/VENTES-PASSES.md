@@ -6,8 +6,8 @@ une session qui a ce dépôt attaché (voir `_notes/memoire.md` § 14). La passe
 tient. Comme pour le blog, elle ouvre sa PR et la fusionne elle-même si la CI est verte, sans conflit
 ni commentaire ouvert (`CLAUDE.md`).
 
-Point de départ : [`docs/rapports/audit-ventes-2026-10-12.md`](rapports/audit-ventes-2026-10-12.md)
-(diagnostic et plan) et [`docs/VENTES-KIT.md`](VENTES-KIT.md) (textes de démarchage).
+Point de départ : [`docs/rapports/audit-ventes-2026-10-27.md`](rapports/audit-ventes-2026-10-27.md)
+(diagnostic et plan les plus récents ; premier audit : [`audit-ventes-2026-10-12.md`](rapports/audit-ventes-2026-10-12.md)) et [`docs/VENTES-KIT.md`](VENTES-KIT.md) (textes de démarchage).
 
 ## Protocole
 

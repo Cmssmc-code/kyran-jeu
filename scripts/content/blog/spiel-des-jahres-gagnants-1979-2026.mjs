@@ -1,7 +1,7 @@
 export default {
   "slug": "spiel-des-jahres-gagnants-1979-2026",
   "format": "essai",
-  "title": "Spiel des Jahres : les 90 lauréats de 1979 à 2026, en données ouvertes",
+  "title": "Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes",
   "shortTitle": "Palmarès Spiel des Jahres",
   "metaTitle": "Spiel des Jahres : 90 lauréats 1979-2026, données ouvertes",
   "description": "Les 48 Spiel, 16 Kennerspiel et 26 Kinderspiel des Jahres, de 1979 à 2026, en tableau et en CSV vérifié fiche par fiche sur la base officielle du jury.",
@@ -13,7 +13,7 @@ export default {
   "heroCaption": "Hanabi, d’Antoine Bauza, désigné Spiel des Jahres en 2013 : le seul lauréat de la catégorie principale que la fiche officielle qualifie de jeu de cartes.",
   "intro": "<p>Le Spiel des Jahres est le prix de jeux de société le plus suivi du monde germanophone, décerné chaque année par un jury de critiques. Le jury publie une <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/spiele/\">base de données de ses fiches</a> : 912 fiches, avec leur année, leur distinction, leurs auteurs, leur éditeur, le nombre de joueurs, l’âge et la durée. Cette page en extrait les 90 lauréats des trois prix, en tableau et en fichier CSV, vérifiés fiche par fiche le 26 octobre 2026, puis en tire quelques décomptes. Elle ne dit pas quel jeu est le meilleur : elle dit ce que le jury a choisi.</p>",
   "keyPoints": {
-    "html": "<ul><li>90 lauréats de 1979 à 2026 : 48 Spiel des Jahres, 16 Kennerspiel (depuis 2011) et 26 Kinderspiel (depuis 2001).</li><li>Un seul des 48 Spiel des Jahres est qualifié de « Kartenspiel » par sa fiche officielle : Hanabi (2013). Deux Kennerspiel sont des « Stichspiel », des jeux de plis : Broom Service (2015) et Die Crew (2020).</li><li>La durée officielle médiane des Spiel des Jahres passe de 60 minutes (1979-1999) à 45 (2000-2012), puis 30 (2013-2026).</li><li>Le fichier est ouvert (CC BY 4.0) : chaque ligne porte l’adresse de sa fiche officielle et la date du contrôle.</li></ul>"
+    "html": "<ul><li>90 lauréats de 1979 à 2026 : 48 Spiel des Jahres, 16 Kennerspiel (depuis 2011) et 26 Kinderspiel (depuis 2001).</li><li>Un seul des 48 Spiel des Jahres est qualifié de « Kartenspiel » par sa fiche officielle : Hanabi (2013). Deux Kennerspiel sont des « Stichspiel », des jeux de plis : Broom Service (2015) et Die Crew (2020).</li><li>La durée officielle médiane des Spiel des Jahres passe de 60 minutes (1979-1999) à 45 (2000-2012), puis 30 (2013-2026).</li><li>Un second fichier réunit 770 nominés et recommandés : le mot « Kartenspiel » figure dans 53 de ces fiches, dont 5 finalistes la désignent bien comme un jeu de cartes.</li><li>Les fichiers sont ouverts (CC BY 4.0) : chaque ligne porte l’adresse de sa fiche officielle et la date du contrôle.</li></ul>"
   },
   "sections": [
     {
@@ -30,6 +30,11 @@ export default {
       "id": "cartes",
       "heading": "Les jeux de cartes au palmarès : ce que disent les fiches",
       "html": "<p>Le jury ne classe pas ses jeux par type, et sa <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/faq/\">foire aux questions</a> précise qu’il lui est égal de juger un petit jeu de cartes ou un grand jeu de plateau. Pour compter les jeux de cartes, il faut donc lire les fiches. Nous ne retenons que les cas où la fiche emploie elle-même le mot « Kartenspiel » (jeu de cartes) ou « Stichspiel » (jeu de plis) pour désigner le jeu. Cette règle est stricte et laisse de côté des jeux qui reposent sur des cartes sans que leur fiche le dise.</p><p>Sur les 48 Spiel des Jahres, un seul répond à ce critère : <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/spiele/hanabi/\">Hanabi</a>, d’Antoine Bauza, lauréat en 2013. La fiche le décrit comme « ein ungewöhnliches kooperatives und kommunikatives Kartenspiel ». Parmi les 16 Kennerspiel, deux sont des jeux de plis : <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/spiele/broom-service/\">Broom Service</a> (2015), que la fiche appelle un « Stichspiel », et <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/spiele/die-crew/\">Die Crew</a> (2020), un « kooperatives Stichspiel ». Aucun des 26 Kinderspiel ne répond au critère.</p><p>Les jeux de cartes sont plus présents parmi les finalistes. La base indique « Nominiert zum Spiel des Jahres » pour <a class=\"text-link\" href=\"https://www.spiel-des-jahres.de/spiele/the-mind/\">The Mind</a> en 2018, pour L.A.M.A. en 2019 et pour Scout en 2022, trois jeux que leurs extraits nomment « Kartenspiel ». Der Fuchs im Wald (2020) et Meister Makatsu (2026) figurent sur la liste des recommandations. Ce décompte vaut pour le texte des fiches, pas pour un classement absolu : un autre lecteur compterait d’autres jeux.</p>"
+    },
+    {
+      "id": "finalistes",
+      "heading": "Nominés et recommandés : 770 fiches de plus",
+      "html": "<p>Depuis le 28 octobre 2026, un second fichier complète le premier : <strong>770 fiches</strong> de jeux nominés ou recommandés, de 1979 à 2026. Il compte 167 nominés (les trois finalistes de chaque catégorie) et 603 jeux de la liste de recommandations. Chaque fiche a été téléchargée et contrôlée comme celles des lauréats. Six entrées de la base n’y figurent pas : Zenith, Mein erstes Abenteuer, Top Ten et Chess Challenger Voice, dont la fiche n’indique pas un nombre de joueurs ou une durée exploitables, Acquire, dont la fiche n’a pas pu être récupérée, et Buzzle, dont la liste ne donne aucune année.</p><p>Le mot « Kartenspiel » figure dans 53 de ces 770 fiches, dont 7 chez les finalistes. Pour être exact, la colonne du fichier s’appelle « mot_cartes_dans_fiche » : elle signale la présence du mot, pas la nature du jeu. Sur les sept finalistes, cinq sont désignés par leur propre fiche comme un jeu de cartes : Ohne Furcht und Adel (Spiel 2000), Im Märchenwald (Kinderspiel 2001), The Mind (2018), L.A.M.A. (2019) et Scout (2022). Dans les deux autres, Lauras Sternenspiel (2003) et Taco Katze Pizza Junior (2024), le mot sert à parler d’autre chose.</p><p>Le fichier permet aussi de compter les auteurs sur l’ensemble des 860 lignes des deux fichiers. Reiner Knizia en compte 37 (3 lauréats et 34 jeux nominés ou recommandés), Wolfgang Kramer 28 (5 et 23), Michael Kiesling 12 (3 et 9), Bruno Cathala 11 (2 et 9), Klaus Teuber 9 (4 et 5). Ces totaux comptent chaque nom tel que la fiche l’écrit : un co-auteur compte une fois pour chaque jeu, et une orthographe différente ne serait pas rattachée au même auteur.</p><p>Les mêmes limites qu’avant s’appliquent : la base est celle du jury, pas une liste exhaustive des jeux de l’année, et un jeu absent de ces fichiers n’a pas forcément été écarté, il peut ne pas avoir été examiné.</p>"
     },
     {
       "id": "durees",
@@ -58,19 +63,24 @@ export default {
     }
   ],
   "dataset": {
-    "description": "Les 90 lauréats du Spiel des Jahres (48), du Kennerspiel des Jahres (16) et du Kinderspiel des Jahres (26), de 1979 à 2026, avec auteurs, éditeur, nombre de joueurs, âge, durée officielle, adresse de la fiche et date du contrôle.",
-    "methodology": "La liste de la base du jury (spiel-des-jahres.de/spiele/, 102 pages) a été téléchargée le 26 octobre 2026 ; les gagnants des trois prix ont été retenus. La fiche de chacun des 90 lauréats a ensuite été téléchargée, et chaque titre, auteur, éditeur, âge, durée et terme de jeu de cartes a été vérifié comme figurant mot pour mot dans le texte de la fiche. Les noms sont recopiés sans correction. La colonne terme_officiel_cartes n’est remplie que si la fiche emploie elle-même le mot Kartenspiel ou Stichspiel pour désigner le jeu.",
+    "description": "Deux fichiers : les 90 lauréats du Spiel des Jahres (48), du Kennerspiel des Jahres (16) et du Kinderspiel des Jahres (26), et 770 jeux nominés (167) ou recommandés (603), de 1979 à 2026, avec auteurs, éditeur, nombre de joueurs, âge, durée officielle, adresse de la fiche et date du contrôle.",
+    "methodology": "La liste de la base du jury (spiel-des-jahres.de/spiele/, 102 pages) a été téléchargée le 26 octobre 2026 ; les gagnants des trois prix ont été retenus. La fiche de chacun des 90 lauréats a ensuite été téléchargée, et chaque titre, auteur, éditeur, âge, durée et terme de jeu de cartes a été vérifié comme figurant mot pour mot dans le texte de la fiche. Les noms sont recopiés sans correction. Le 28 octobre 2026, la même méthode a été appliquée aux fiches des jeux nominés et recommandés (second fichier) : 770 fiches contrôlées, six entrées écartées (cinq fiches inexploitables ou introuvables, une liste sans année). Dans ce second fichier, la colonne mot_cartes_dans_fiche signale seulement la présence du mot Kartenspiel ou Stichspiel dans la fiche, même quand il désigne un autre jeu. Dans le premier fichier, la colonne terme_officiel_cartes n’est remplie que si la fiche emploie elle-même le mot Kartenspiel ou Stichspiel pour désigner le jeu.",
     "update": "après la remise des prix de juillet, recontrôle trimestriel",
     "license": {
       "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/deed.fr"
     },
-    "lastVerified": "2026-10-26",
+    "lastVerified": "2026-10-28",
     "files": [
       {
         "path": "/donnees/spiel-des-jahres-gagnants-1979-2026/gagnants.csv",
         "format": "csv",
         "description": "90 lignes, colonnes annee, categorie, titre, auteurs, editeur, joueurs_min, joueurs_max, age_min, duree_officielle, terme_officiel_cartes, source_url, verifie_le"
+      },
+      {
+        "path": "/donnees/spiel-des-jahres-gagnants-1979-2026/nomines-recommandes.csv",
+        "format": "csv",
+        "description": "770 lignes, colonnes annee, distinction, titre, auteurs, editeur, joueurs_min, joueurs_max, age_min, duree_officielle, mot_cartes_dans_fiche, source_url, verifie_le"
       }
     ]
   },
@@ -133,6 +143,10 @@ export default {
     {
       "q": "Quel auteur a remporté le plus de Spiel des Jahres ?",
       "a": "D’après le fichier, Wolfgang Kramer, nommé sur cinq fiches de Spiel des Jahres entre 1986 et 2000, devant Klaus Teuber, quatre fois entre 1988 et 1995. Ce décompte compte chaque nom tel que la fiche l’écrit, y compris pour les co-auteurs."
+    },
+    {
+      "q": "Combien de jeux de cartes figurent parmi les nominés du Spiel des Jahres ?",
+      "a": "Selon leurs propres fiches, au moins cinq finalistes sont des jeux de cartes : Ohne Furcht und Adel (2000), Im Märchenwald (2001), The Mind (2018), L.A.M.A. (2019) et Scout (2022). Ce décompte est un minimum : il repose sur le mot que la fiche emploie, et d’autres finalistes peuvent en être sans que leur fiche le dise."
     },
     {
       "q": "Peut-on réutiliser ces données ?",

@@ -4,10 +4,10 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 const BLOG_ITEMS = [
   {
     "slug": "spiel-des-jahres-gagnants-1979-2026",
-    "title": "Spiel des Jahres : les 90 lauréats de 1979 à 2026, en données ouvertes",
+    "title": "Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes",
     "category": "Cartes",
     "date": "2026-10-26",
-    "readMinutes": 12,
+    "readMinutes": 14,
     "excerpt": "Les 48 Spiel, 16 Kennerspiel et 26 Kinderspiel des Jahres, de 1979 à 2026, en tableau et en CSV vérifié fiche par fiche sur la base officielle du jury.",
     "image": "/blog/images/hanabi.jpg",
     "webp": "/blog/images/hanabi.webp",

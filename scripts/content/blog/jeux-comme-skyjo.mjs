@@ -195,8 +195,8 @@ export default {
       a: `Parade, Lost Cities et KYRAN demandent davantage de lecture des adversaires. Parade et Lost Cities restent dans la famille pioche et défausse ; KYRAN passe aux plis avec paris, de 3 à 6 joueurs. La première partie demande une explication un peu plus longue que Skyjo, mais les manches y gagnent en réflexion.`
     },
     {
-      q: 'Peut-on modifier les règles de Skyjo pour ne pas s’en lasser ?',
-      a: `Oui, entre amis, à condition de l’annoncer avant la partie : seuil de fin à 50 points, trois cartes retournées au départ, clôture sans doublement ou mode inversé. Ces règles alternatives ne sont pas celles de l’éditeur ; elles servent à tester un autre rythme avec le même matériel.`
+      q: 'Quelles variantes de Skyjo essayer pour ne pas s’en lasser ?',
+      a: `Cinq variantes de table, à annoncer avant la partie : seuil de fin à 50 points, trois cartes retournées au départ, lignes de quatre cartes identiques défaussées comme les colonnes, clôture sans doublement des points, et mode inversé où le plus gros total gagne. Ces règles alternatives ne sont pas celles de l’éditeur ; elles servent à tester un autre rythme avec le même matériel.`
     },
     {
       q: 'Peut-on jouer au Skyjo avec un jeu de cartes classique ?',

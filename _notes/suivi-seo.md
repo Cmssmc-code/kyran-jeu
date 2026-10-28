@@ -10,6 +10,17 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-29 : run nocturne n° 9 (pas de run le 28/10)
+
+- **Run du 28/10 non exécuté** : le réveil programmé du 27/10 à 23:10 UTC n'a atteint la session que le 28/10 à 23:08 UTC, en même temps que celui du 29/10 ; un seul run, celui-ci.
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours). Les clics repartent : 7 j 50 clics (+4 %).
+- **Google** (`dataState: all`, 22 → 28/10, dernier jour provisoire) : 50 clics (+4 %), 2 356 impressions (+8 %) ; 28 j 161 clics, 7 616 impressions, CTR 2,11 %, position 8,8. Hausse : `jeux-cartes-4-joueurs` 0 → 5 clics, `jeux-comme-codenames` 2 → 6, `jeux-cartes-5-joueurs` 1 → 4, `regle` 1 → 3. « tarot africain » : 286 impressions, position 10,0, 0 clic (titre modifié le 18/10 : réévaluable le 15/11).
+- **Bing** (19 → 25/10) : 7 clics, 140 impressions ; 63 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 288 ms. Inspection : 29/30 ; `jeux-draft-encheres` toujours « explorée, non indexée » (pas réexplorée depuis le 24/10 : demande manuelle dans le prompt Chrome).
+- **Veille** : 48 h : routine blog (Spiel des Jahres étendu aux 770 nominés et recommandés, second fichier de données), routine ventes (date limite de Noël concrète sur `idee-cadeau`, `js/livraison.js` ; audit commercial du 27/10), routine Surveillance (wrangler). GEO (WebSearch, prompts 4 à 6) : 0 sur 3.
+- **Actions** (PR du run) : `jeux-comme-skyjo` : question de FAQ reformulée en « Quelles variantes de Skyjo essayer pour ne pas s'en lasser ? », réponse qui nomme les cinq variantes de l'article (requêtes « variante skyjo » 66 impressions, position 10,6 ; « skyjo variante » 28, position 9,9, sur octobre). Réévaluation : 2026-11-26.
+- **À décider** : inchangé.
+
 ### 2026-10-27 : run nocturne n° 8
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

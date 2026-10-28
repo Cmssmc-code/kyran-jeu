@@ -112,7 +112,7 @@
 
 ## Blog : Cartes
 
-- [Spiel des Jahres : les 90 lauréats de 1979 à 2026, en données ouvertes](https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html)
+- [Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes](https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html)
 - [Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026](https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html): 9 jeux comparés
 - [As d’Or de Cannes : le palmarès complet de 1988 à 2026, en données ouvertes](https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html)
 - [Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers](https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html): 5 jeux comparés
@@ -405,7 +405,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Résumé : Les 36 lauréats de la catégorie principale de l’As d’Or, de 1988 à 2026, en tableau et en fichier CSV vérifié ligne à ligne sur la liste officielle du festival.
 - Jeux comparés : 
 
-### Spiel des Jahres : les 90 lauréats de 1979 à 2026, en données ouvertes
+### Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes
 
 - URL : https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html
 - Résumé : Les 48 Spiel, 16 Kennerspiel et 26 Kinderspiel des Jahres, de 1979 à 2026, en tableau et en CSV vérifié fiche par fiche sur la base officielle du jury.

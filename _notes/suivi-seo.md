@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-30 : run nocturne n° 10
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 23 → 29/10, dernier jour provisoire) : 7 j 45 clics (−10 %), 2 236 impressions (−2 %) ; 28 j 165 clics, 7 703 impressions, CTR 2,14 %, position 8,7. Hausse : `jeux-cartes-4-joueurs` 1 → 4 clics, `jeux-cartes-5-joueurs` 1 → 4, `regle` 1 → 3.
+- **Bing** (21 → 27/10) : 5 clics, 142 impressions (+13 %) ; 64 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 279 ms. Inspection : 27/30 ; « explorées, non indexées » : `jeux-memoire-concentration` (exploration du 27/09) et `jeux-debutants-adultes` (22/09), relevées par la rotation, plus `jeux-draft-encheres` (24/10). Toutes ont moins de 10 impressions en 90 jours et 2 à 5 liens depuis d'autres articles : signal de faible demande plutôt que défaut technique ; ajoutées au bloc 1 du prompt Chrome (demande manuelle).
+- **Veille** : 24 h : routine Surveillance (wrangler, Node 26.13 sur Railway), rien sur la surface SEO. GEO (WebSearch, prompts 7 à 9) : 0 sur 3.
+- **Actions** : pas de modification de page (les pistes du jour sont déjà traitées : « annonce nombre de plis » sur `regle`, « tarot congolais » sur `tarot-africain`, titre Tarot Africain bloqué jusqu'au 15/11). Netlinking : 2 messages prêts dans le doc partagé (Gus&Co, World of Geek), journalisés dans `_notes/outreach/cibles.md`. Prompt Chrome : 2 pages ajoutées au bloc 1.
+- **À décider** : inchangé.
+
 ### 2026-10-29 : run nocturne n° 9 (pas de run le 28/10)
 
 - **Run du 28/10 non exécuté** : le réveil programmé du 27/10 à 23:10 UTC n'a atteint la session que le 28/10 à 23:08 UTC, en même temps que celui du 29/10 ; un seul run, celui-ci.

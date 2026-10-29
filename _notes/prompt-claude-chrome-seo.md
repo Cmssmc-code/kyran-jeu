@@ -66,6 +66,8 @@ Priorité 1, hors index :
   https://kyran-jeu.fr/video-regles.html                          (Découverte, non indexée)
   https://kyran-jeu.fr/communaute.html                            (Découverte, non indexée)
   https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html (article du 26/10, découvert, non exploré)
+  https://kyran-jeu.fr/blog/jeux-memoire-concentration.html       (Explorée le 27/09, non indexée ; relevé du 30/10)
+  https://kyran-jeu.fr/blog/jeux-debutants-adultes.html           (Explorée le 22/09, non indexée ; relevé du 30/10)
 Priorité 2, indexées mais modifiées après leur dernière exploration (demander si exploration avant le 21/10) :
   https://kyran-jeu.fr/tarot-africain.html           (explorée le 18/10, modifiée les 20 et 21/10)
   https://kyran-jeu.fr/regle.html                    (explorée le 18/10, modifiée le 20/10)

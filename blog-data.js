@@ -356,7 +356,7 @@ const BLOG_ITEMS = [
     "title": "8 jeux comme Codenames : équipes, indices et déduction",
     "category": "Alternatives",
     "date": "2026-06-04",
-    "readMinutes": 9,
+    "readMinutes": 10,
     "excerpt": "Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).",
     "image": "/blog/images/codenames.jpg",
     "webp": "/blog/images/codenames.webp",

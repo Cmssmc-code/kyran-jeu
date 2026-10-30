@@ -44,6 +44,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 | 2026-10-27 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Chouineurs, Pili Pili ; 2 : regles2jeux, Board Game Arena ; 3 : World of Geek (Hilo) |
 | 2026-10-29 | | | | — | — | — | | | | 0 / 3 | 4 : Tarot à 3, Skat (BGA), Trio, 13 Feuilles ; 5 : traductions du mot « wizard » ; 6 : Paris Friendly, Zazzle, Esprit Jeu (catalogues) |
 | 2026-10-30 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul ; 8 : homonymes (Kyrandia, Far Cry 4, footballeur) ; 9 : Chouineurs, Pili Pili, Malédiction !, Picanté !, Gus & Co |
+| 2026-10-31 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Pili Pili, Chouineurs, Luz (BGA, Esprit Jeu, Ludum) ; 2 : regles2jeux (et le Tiar), Board Game Arena ; 3 : Skyjo Action (Ludum), World of Geek (cite Skull King comme jeu de plis), Règles du Jeu |
 
 ## Relevés manuels
 

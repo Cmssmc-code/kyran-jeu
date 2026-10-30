@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-10-31 : run nocturne n° 11
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 24 → 30/10, dernier jour provisoire) : 7 j 45 clics (−12 %), 2 250 impressions (−3 %) ; 28 j 168 clics, 7 875 impressions, CTR 2,13 %, position 8,7. Dernières 24 h (jusqu'au 30/10 15 h) : 8 clics, 310 impressions (J-7 : 9 / 316). Hausse : `jeux-comme-codenames` 239 impressions, `alternatives-belote-coinche` position 12,2 → 8,4. Nouvelle requête conversationnelle « quel est le meilleur jeu de société coopératif comme codenames ? » : 1 → 37 impressions, position 6,6.
+- **Bing** (22 → 28/10) : 6 clics, 129 impressions ; 64 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 274 ms. Inspection : 28/30 ; hors index `communaute` (détectée) et `jeux-draft-encheres` (explorée le 24/10).
+- **Veille** : 24 h : routine blog (dossier marché : section Essen, marché allemand), horaires des routines revus le 30/10 (blog lun/mer/ven 13:50, ventes mardi 15:47), Surveillance (myludo.fr compté comme bruit), prompt Chrome « proposer KYRAN » (PR #150) et contact World of Geek (PR #148) à la demande de Corentin. GEO (WebSearch, prompts 1 à 3) : 0 sur 3.
+- **Actions** (PR du run) : `jeux-comme-codenames` : FAQ « Quel est le meilleur jeu coopératif comme Codenames ? » (Just One, Letter Jam, The Mind, Codenames Duet, faits de l'article). Réévaluation : 2026-11-28. Mission : horaires des autres routines mis à jour, PR du run fusionnées avant 05:00 (Surveillance à 05:07).
+- **À décider** : inchangé.
+
 ### 2026-10-30 : run nocturne n° 10
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

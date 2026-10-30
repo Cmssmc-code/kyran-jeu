@@ -58,7 +58,7 @@ titres de `docs/SUIVI-BLOG-SEO.md` et la liste des PR ouvertes.
    son dernier changement (journal de `docs/SUIVI-BLOG-SEO.md` et `git log -1 --format=%ad --date=short -G
    'metaTitle|<title>' -- <fichier>`). Mesurer avant. Au plus **3 titres ou descriptions par run**. Chaque
    changement : hypothèse, requête visée, date de réévaluation (J+28) dans le journal des titres.
-5. **Blog : la routine blog en est propriétaire** (lun/mer/ven 06:50, `docs/BLOG-PASSES.md`). Ne jamais créer
+5. **Blog : la routine blog en est propriétaire** (lun/mer/ven 13:50 depuis le 30/10/2026, `docs/BLOG-PASSES.md`). Ne jamais créer
    d'article ; ne pas toucher un article qu'une PR ouverte modifie ; proposer des sujets dans la liste « En
    attente » de `docs/BLOG-PASSES.md` (une ligne, requête et source GSC). Améliorer un article **publié** est
    permis dans sa source `scripts/content/blog/<slug>.mjs` (méta sous la règle 4, maillage, FAQ, fait corrigé), en
@@ -77,8 +77,8 @@ titres de `docs/SUIVI-BLOG-SEO.md` et la liste des PR ouvertes.
 9. **Décisions du propriétaire** (prix, offre, pages légales, suppression de page, design, mesure d'audience) :
    ne pas trancher, les écrire dans « À décider ».
 10. **Un run à la fois.** Si le run précédent de cette session n'est pas fini, le terminer d'abord ou dire
-    pourquoi. Les PR du run sont fusionnées **avant 06:30** (la routine blog démarre à 06:50, la routine ventes
-    le mardi à 06:47).
+    pourquoi. Les PR du run sont fusionnées **avant 05:00** (la routine Surveillance démarre à 05:07 ; horaires
+    revus le 30/10/2026 : blog lun/mer/ven 13:50, ventes mardi 15:47).
 11. **Budget : 2 h 30.** Priorité : site cassé ou désindexé > chute brutale > gains rapides (CTR en page 1,
     positions 8 à 20, pages hors index) > GEO > netlinking > dette. Mieux vaut 3 actions finies, fusionnées et
     vérifiées que 8 commencées.

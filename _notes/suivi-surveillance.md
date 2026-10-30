@@ -21,8 +21,8 @@ voie serveur** (run 41001905120, `"sent":true`). Rapport complet :
 | Workflows, code | OK | tout vert ; 0 faille |
 | Versions | 1 mise à jour | wrangler 4.156.0, `compatibility_date` 2026-10-30 ; Node 27 alpha non retenu |
 
-Mise à jour : PR #143. Points ouverts : rotation des secrets Railway ; lien myludo.fr à vérifier dans un navigateur
-(décisions du propriétaire).
+Mise à jour : PR #143. Points ouverts : rotation des secrets Railway (décision du propriétaire). Lien myludo.fr :
+vérifié par le propriétaire dans son navigateur le 30/10, il marche ; compté comme bruit dans la mission (A4).
 
 ## 2026-10-29 — passage planifié (04:08 UTC)
 

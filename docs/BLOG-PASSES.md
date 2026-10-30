@@ -1,6 +1,6 @@
 # Passes éditoriales du blog
 
-Le blog reçoit trois passes par semaine (lundi, mercredi, vendredi). À 6 h 50, heure de Paris, la
+Le blog reçoit trois passes par semaine (lundi, mercredi, vendredi). À 13 h 50, heure de Paris (6 h 50 avant le 2026-10-30), la
 routine « Blog KYRAN passes lun/mer/ven (session dédiée) » réveille la session « Blog KYRAN —
 passes lun/mer/ven (session dédiée) », qui a ce dépôt attaché (voir `_notes/memoire.md` § 14). Chaque passe produit **un** article neuf ou **un**
 rafraîchissement, ou rien si aucun sujet ne tient. Le propriétaire a choisi, le 4 octobre 2026, une

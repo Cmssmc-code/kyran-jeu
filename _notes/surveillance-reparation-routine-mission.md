@@ -152,6 +152,8 @@ URL `https://kyran-webhook-production.up.railway.app`.
   des accordéons, défilement jusqu'en bas : erreurs console (CSP comprises), `pageerror`, requêtes en échec, réponses
   4xx/5xx, images cassées, **débordement horizontal**. Liens de toutes les pages : internes en GET, externes en
   HEAD puis GET (un 403 d'un site qui bloque les robots, BGG par exemple, est du bruit, à noter comme tel).
+  `www.myludo.fr` coupe la connexion TLS depuis les sessions cloud (`ws_closed_mid_exchange`, 39 octets reçus) mais
+  s'ouvre dans un navigateur (vérifié par le propriétaire le 2026-10-30) : bruit, comme Okkazeo (Cloudflare).
 - Codes HTTP : une URL inconnue répond 404 avec `404.html` ; `https://www.kyran-jeu.fr/` et `http://kyran-jeu.fr/`
   redirigent vers `https://kyran-jeu.fr/` ; `robots.txt`, `sitemap.xml`, `llms.txt`, `blog/feed.xml` en 200 ;
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).

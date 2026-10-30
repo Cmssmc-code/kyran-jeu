@@ -113,6 +113,10 @@ export default {
       a: `Just One est le plus proche : même principe de faire deviner un mot avec des indices d’un seul mot, mais en coopération. Letter Jam va plus loin dans la construction de mots, sur 45 minutes. Pour retrouver aussi les équipes, aucun jeu de la liste ne le fait vraiment, hormis Saboteur sous une forme cachée.`
     },
     {
+      q: 'Quel est le meilleur jeu coopératif comme Codenames ?',
+      a: `Just One : on y fait deviner un mot avec des indices d’un seul mot, comme dans Codenames, mais toute la table joue dans le même camp, de 3 à 7 joueurs en une vingtaine de minutes. Letter Jam est l’option coopérative plus longue (45 minutes, de 2 à 6), The Mind la plus silencieuse, et Codenames Duet la version coopérative officielle pour deux.`
+    },
+    {
       q: 'Existe-t-il un jeu comme Codenames pour deux joueurs ?',
       a: `Codenames possède une déclinaison coopérative pour deux, nommée Duet, vendue séparément. Dans notre liste, Letter Jam, The Mind et Coup acceptent deux joueurs sur la boîte. Just One et Dixit demandent au moins trois joueurs, et KYRAN ne se joue pas à deux.`
     },

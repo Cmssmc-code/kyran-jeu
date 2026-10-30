@@ -55,7 +55,7 @@ const BLOG_ITEMS = [
     "title": "Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers",
     "category": "Cartes",
     "date": "2026-10-21",
-    "readMinutes": 10,
+    "readMinutes": 12,
     "excerpt": "Après +78 % en 2025, les cartes à collectionner ralentissent à +18 % en 2026. Chiffres Circana, tendances 2027 et cinq jeux de cartes de table à moins de 15 €.",
     "image": "/blog/images/skyjo.jpg",
     "webp": "/blog/images/skyjo.webp",

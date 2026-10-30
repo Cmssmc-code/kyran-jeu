@@ -9,6 +9,11 @@ elle-même dès que toutes ces conditions sont réunies : CI verte sur le dernie
 aucun commentaire de relecture ouvert, et chaque point incertain sourcé ou retiré de l'article. Sinon
 la PR reste ouverte et dit pourquoi. Publication visée : 9 h 30 le jour de la passe.
 
+**Le mercredi, la passe est une passe « ventes »** (regroupement des routines du 2026-10-30) : au lieu du
+blog, suivre [`docs/VENTES-PASSES.md`](VENTES-PASSES.md) en entier (branche `ventes/passe-<AAAA-MM-JJ>`, mêmes
+règles de PR et de fusion), puis s'arrêter. Le lundi et le vendredi restent des passes blog, dont au moins
+un article neuf par semaine (règle a).
+
 Ce fichier est lu en premier par chaque passe. Mettez-le à jour dans la PR de la passe : une ligne au
 journal, et la liste « En attente » si un sujet est traité ou découvert.
 

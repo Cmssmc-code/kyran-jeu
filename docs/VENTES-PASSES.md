@@ -1,7 +1,8 @@
 # Passes « ventes » hebdomadaires
 
-Une passe par semaine, le mardi. La routine « Ventes KYRAN passe du mardi (session dédiée) » réveille
-une session qui a ce dépôt attaché (voir `_notes/memoire.md` § 14). La passe relit ce fichier sur
+Une passe par semaine, le mercredi (le mardi jusqu'au 2026-10-30). Depuis le regroupement des routines du
+2026-10-30, c'est la routine du blog (« Blog KYRAN passes lun/mer/ven ») qui la fait : le mercredi,
+`docs/BLOG-PASSES.md` l'envoie ici. Elle tourne dans une session qui a ce dépôt attaché (voir `_notes/memoire.md` § 14). La passe relit ce fichier sur
 `origin/main` à chaque fois. Elle vise **une** amélioration mesurable des ventes, ou rien si rien ne
 tient. Comme pour le blog, elle ouvre sa PR et la fusionne elle-même si la CI est verte, sans conflit
 ni commentaire ouvert (`CLAUDE.md`).

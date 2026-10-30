@@ -29,7 +29,7 @@
 | Ludum — « Les 40 meilleurs jeux de plis » | https://www.ludum.fr/blog/jeux-de-societe/les-40-meilleurs-jeux-de-plis | Jeu de plis à annonce français, 3 à 6 joueurs, héritier du Tarot Africain ; proposer un exemplaire | | |
 | Gus&Co — « Sélection jeux de plis » (janv. 2026) | https://gusandco.net/2026/01/11/selection-jeux-de-plis-guide/ | Sorti le 31/01/2026, après la sélection : candidat pour une mise à jour | contact@gusandco.net (presse-outreach.json) | |
 | Play-in — « Notre top des meilleurs jeux de plis » | https://www.play-in.com/article/700-notre_top_des_meilleurs_jeux_de_plis | Même angle ; Play-in est aussi revendeur (dépôt possible) | | |
-| World of Geek — « Jeux comme Skyjo » | https://worldofgeek.fr/jeux-comme-skyjo/ | Alternative à Skyjo pour adultes, 9,99 € | | |
+| World of Geek — « Jeux comme Skyjo » | https://worldofgeek.fr/jeux-comme-skyjo/ | Alternative à Skyjo pour adultes, 9,99 € | paul@worldofgeek.fr (rédaction, page « Infos et contact », relevé le 30/10/2026) ; général : contact@worldofgeek.fr ; pas de formulaire | Message prêt (30/10) |
 
 ## Priorité 2 — sites de règles (ressource gratuite)
 
@@ -71,4 +71,4 @@
 | 2026-10-20 | Ludovox (Ludochrono Kyran, Fredovox) | formulaire https://ludovox.fr/contact/ | Ajout du lien kyran-jeu.fr | Non envoyé : Gmail absent de la session, pas d'adresse publique ; message prêt dans le doc partagé pour Corentin |
 | 2026-10-20 | Règles2jeux (règle du tarot africain) | à trouver (site en 503 la nuit) | Feuille de score gratuite (modèle 2) | Non envoyé : message prêt dans le doc partagé |
 | 2026-10-30 | Gus&Co (sélection jeux de plis, 11/01/2026) | contact@gusandco.net | Ajout de KYRAN à une mise à jour (modèle 1) | Non envoyé : message prêt dans le doc partagé pour Corentin |
-| 2026-10-30 | World of Geek (« Jeux comme Skyjo ») | formulaire du site (à trouver) | Alternative à Skyjo pour adultes (modèle 1) | Non envoyé : message prêt dans le doc partagé pour Corentin |
+| 2026-10-30 | World of Geek (« Jeux comme Skyjo ») | paul@worldofgeek.fr (rédaction) | Alternative à Skyjo pour adultes (modèle 1) | Non envoyé : message prêt dans le doc partagé pour Corentin |

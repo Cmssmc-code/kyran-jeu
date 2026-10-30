@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-10-30 — passage planifié (04:08 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 41001905120, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-10-30.md`](../docs/rapports/surveillance/2026-10-30.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 55 URL × 1280/390 px sans erreur ; 355 liens, 0 interne cassé ; `myludo.fr` non vérifié (TLS coupé depuis la session, 2e jour) |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille |
+| Versions | 1 mise à jour | wrangler 4.156.0, `compatibility_date` 2026-10-30 ; Node 27 alpha non retenu |
+
+Mise à jour : PR #143. Points ouverts : rotation des secrets Railway ; lien myludo.fr à vérifier dans un navigateur
+(décisions du propriétaire).
+
 ## 2026-10-29 — passage planifié (04:08 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

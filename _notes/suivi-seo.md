@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-01 : run nocturne n° 12
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).
+- **Google** (`dataState: all`, 25 → 31/10, dernier jour provisoire) : 7 j 44 clics (+2 %), 1 987 impressions (−18 %) ; 28 j 169 clics, 7 832 impressions, CTR 2,16 %, position 8,7. La baisse d'impressions vient surtout des ancres de `tarot-africain` (#joueurs, #regle-or, #exemple, #erreurs : 103 → 1), pas de la page elle-même. Hausse : `whist-22` position 13,2 → 5,6 (28 impressions), `jeux-comme-skull-king` 13 → 40 impressions ; la requête « … coopératif comme codenames ? » reste à 38 impressions, position 6,5 (FAQ en ligne depuis le 31/10, trop tôt).
+- **Bing** (23 → 29/10) : 8 clics (+33 %), 145 impressions (+15 %) ; 64 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 246 ms. Inspection : 27/30 ; hors index : `video-regles` (détectée), `jeux-memoire-concentration`, `jeux-debutants-adultes` (explorées en septembre) ; toutes au bloc 1 du prompt Chrome.
+- **Veille** : 24 h : routine Surveillance (rapport du 31/10), rien sur la surface SEO. GEO (WebSearch, prompts 4 à 6) : 0 sur 3.
+- **Actions** : aucune modification de page. Pistes examinées et écartées : requêtes Whist (moins de 5 impressions chacune ; `whist-moderne` est une redirection vers `whist-22` qui garde des impressions résiduelles), titre `tarot-africain` réévaluable le 15/11 seulement.
+- **À décider** : inchangé.
+
 ### 2026-10-31 : run nocturne n° 11
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

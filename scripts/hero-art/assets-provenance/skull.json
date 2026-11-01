@@ -1,0 +1,19 @@
+{
+ "id": "skull",
+ "name": "Skull",
+ "editeur": "Asmodee / Space Cowboys (Hervé Marly)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/14958/skull.jpg",
+   "largeur": 869,
+   "hauteur": 1024,
+   "remarque": "boîte française Skull, page produit Ludum"
+  }
+ ],
+ "credit": "© Asmodee / Space Cowboys",
+ "manque": [
+  "logo"
+ ]
+}

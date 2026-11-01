@@ -1,0 +1,19 @@
+{
+ "id": "the-crew",
+ "name": "The Crew",
+ "editeur": "Iello (Kosmos)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/12050/the-crew.jpg",
+   "largeur": 1091,
+   "hauteur": 1600,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). The Crew : En quête de la neuvième planète, édition française Iello"
+  }
+ ],
+ "credit": "© Iello / Kosmos",
+ "manque": [
+  "logo"
+ ]
+}

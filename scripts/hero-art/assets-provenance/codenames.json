@@ -1,0 +1,19 @@
+{
+ "id": "codenames",
+ "name": "Codenames",
+ "editeur": "Iello / Czech Games Edition",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42926/codenames.jpg",
+   "largeur": 925,
+   "hauteur": 1492,
+   "remarque": "boîte française nouvelle édition, rendu 3D; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Iello / Czech Games Edition",
+ "manque": [
+  "logo"
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "id": "coup",
+ "name": "Coup (édition française : Complots)",
+ "editeur": "Ferti Games",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/13479/complots.jpg",
+   "largeur": 1475,
+   "hauteur": 1500,
+   "remarque": "Édition française « Complots a.k.a Coup » (Ferti Games), faute d'édition « Coup » française ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Ferti Games",
+ "manque": [
+  "logo"
+ ]
+}

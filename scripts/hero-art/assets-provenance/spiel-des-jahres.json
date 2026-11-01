@@ -1,0 +1,51 @@
+{
+ "id": "spiel-des-jahres",
+ "name": "Spiel des Jahres (jury)",
+ "editeur": "Spiel des Jahres e.V.",
+ "files": [
+  {
+   "file": "logo-spiel-des-jahres-2026.png",
+   "kind": "logo",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2026/03/2026-SpieldesJahres-RGB-scaled.png",
+   "largeur": 1652,
+   "hauteur": 2560,
+   "remarque": "signe officiel Spiel des Jahres, pion à couronne de laurier, millésime 2026, fond transparent (page presse 2026)"
+  },
+  {
+   "file": "logo-kennerspiel-2026.png",
+   "kind": "logo",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2026/03/2026-Kennerspiel-RGB-scaled.png",
+   "largeur": 1723,
+   "hauteur": 2560,
+   "remarque": "signe Kennerspiel des Jahres 2026, fond transparent"
+  },
+  {
+   "file": "logo-kinderspiel-2026.png",
+   "kind": "logo",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2026/03/2026-KinderspieldesJahres-RGB.png",
+   "largeur": 1674,
+   "hauteur": 2193,
+   "remarque": "signe Kinderspiel des Jahres 2026, fond transparent"
+  },
+  {
+   "file": "logo-trois-signes.png",
+   "kind": "logo",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2023/05/DreierLogoSDJ-1.png",
+   "largeur": 2447,
+   "hauteur": 1853,
+   "remarque": "les trois pions ensemble (Kenner, Spiel, Kinder) sans millésime ; le libellé SPIEL DES JAHRES en bas est gris foncé sur transparent (invisible sur fond sombre)"
+  },
+  {
+   "file": "logo-pion-icone-192.png",
+   "kind": "logo",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2023/05/sdj.png",
+   "largeur": 192,
+   "hauteur": 192,
+   "remarque": "petite icône du site (pion rouge sur deux pions pâles), 192 px seulement, à ne pas utiliser en grand"
+  }
+ ],
+ "credit": "© Spiel des Jahres e.V.",
+ "manque": [
+  "version SVG"
+ ]
+}

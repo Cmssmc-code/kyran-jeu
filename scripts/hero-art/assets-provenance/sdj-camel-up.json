@@ -1,0 +1,19 @@
+{
+ "id": "sdj-camel-up",
+ "name": "Camel Up (Spiel des Jahres 2014)",
+ "editeur": "Pegasus Spiele / eggertspiele",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/02/2014_CamelUp_WEB.jpg",
+   "largeur": 1503,
+   "hauteur": 1500,
+   "remarque": "édition allemande 2014 avec sceau"
+  }
+ ],
+ "credit": "© Pegasus Spiele / eggertspiele (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

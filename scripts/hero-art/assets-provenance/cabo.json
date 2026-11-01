@@ -1,0 +1,19 @@
+{
+ "id": "cabo",
+ "name": "Cabo",
+ "editeur": "Origames / Bézier Games",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/7338/cabo.jpg",
+   "largeur": 1000,
+   "hauteur": 1000,
+   "remarque": "Édition française Origames ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Origames / Bézier Games",
+ "manque": [
+  "logo"
+ ]
+}

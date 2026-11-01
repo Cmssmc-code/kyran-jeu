@@ -1,0 +1,19 @@
+{
+ "id": "for-sale",
+ "name": "For Sale",
+ "editeur": "Iello (Stefan Dorra)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/1618/for-sale.jpg",
+   "largeur": 1068,
+   "hauteur": 1426,
+   "remarque": "édition Mini Games Iello, fond noir dans la source, page produit Ludum"
+  }
+ ],
+ "credit": "© Iello",
+ "manque": [
+  "logo"
+ ]
+}

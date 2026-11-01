@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Alternatives à la <span class="accent">belote</span> et à la coinche',
   heroSubtitle: `Atout, contrat, partenaire : ce que six jeux modernes gardent de la belote, et ce qu'ils vous obligent à lâcher.`,
   heroImage: "/blog/images/alternatives-belote-coinche.jpg",
-  heroCaption: "Illustration créée pour KYRAN : une table ronde vue de dessus avec quatre joueurs, chacun tenant une main de cartes face cachée, au centre une pioche et une carte retournée portant un pique, et en bas à gauche six médaillons colorés à motifs.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Schotten Totten (© Iello), Skull (© Asmodee / Space Cowboys), The Crew (© Iello / Kosmos), Oh Hell! (© University Games) et Wizard (© AMIGO Spiel + Freizeit GmbH) : quatre mains tenant chacune un éventail de cartes face cachée autour d'une carte d'atout retournée portant un pique, et cinq boîtes de jeu en pile en bas à droite.",
   layout: {
     criteriaAfter: true,
     criteriaShort: 'Bien choisir',

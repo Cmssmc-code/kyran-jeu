@@ -9,7 +9,7 @@ export default {
   heroTitle: `Jeux à offrir <span class="accent">à Noël</span>`,
   heroSubtitle: `Sept boîtes, trois profils de destinataires : qui l’ouvrira, à quelle heure on y jouera, combien elle coûte.`,
   heroImage: "/blog/images/cadeau-noel.jpg",
-  heroCaption: "Illustration créée pour KYRAN : vue de dessus de sept cadeaux, six paquets emballés de rubans et une boîte ouverte d'où sort un éventail de cinq cartes, sur un disque vert entouré d'une étoile gravée.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Codenames, The Crew, Hanabi, Dixit, Timeline et Lost Cities (© Iello / Czech Games Edition, Iello / Kosmos, Cocktail Games / Abacusspiele, Libellud, Asmodee) : une cheminée de Noël avec six bas suspendus, trois boîtes sur le manteau et trois au pied du sapin.",
   layout: {
     shopLinks: true,
     compare: false,

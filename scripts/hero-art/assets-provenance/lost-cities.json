@@ -1,0 +1,19 @@
+{
+ "id": "lost-cities",
+ "name": "Lost Cities",
+ "editeur": "Iello / Kosmos",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/517/lost-cities--le-duel.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "Lost Cities - Le Duel, édition française Iello ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Iello / Kosmos",
+ "manque": [
+  "logo"
+ ]
+}

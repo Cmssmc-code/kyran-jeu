@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de <span class="accent">plis</span> : le comparatif',
   heroSubtitle: `Annonce de plis, coopération, rangées : comprendre les mécanismes avant d'acheter.`,
   heroImage: "/blog/images/jeux-plis-comparatif.jpg",
-  heroCaption: "Illustration créée pour KYRAN : quatre joueurs vus de dessus autour d'une table ronde, chacun avec quatre cartes en main, quatre cartes jouées en croix au centre (carreau, trèfle, cœur, pique) dont le pique mis en valeur, et une pile de jetons de pari devant chaque joueur.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Wizard, Oh Hell!, The Crew, 6 qui prend ! et Parade (© AMIGO Spiel + Freizeit GmbH, University Games, Iello / Kosmos, Gigamic, Z-Man Games / Filosofia) : une main ramasse un pli de cinq cartes disposées en étoile sur un tapis vert, deux piles de cartes face cachée à gauche et les cinq boîtes alignées sur une étagère.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

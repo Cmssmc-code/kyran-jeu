@@ -1,0 +1,19 @@
+{
+ "id": "6-qui-prend",
+ "name": "6 qui prend !",
+ "editeur": "Gigamic",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/29094/6-qui-prend-.jpg",
+   "largeur": 1181,
+   "hauteur": 1772,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française Gigamic"
+  }
+ ],
+ "credit": "© Gigamic",
+ "manque": [
+  "logo"
+ ]
+}

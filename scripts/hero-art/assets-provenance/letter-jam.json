@@ -1,0 +1,19 @@
+{
+ "id": "letter-jam",
+ "name": "Letter Jam",
+ "editeur": "Czech Games Edition",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://boardgamegeek.com/image/4853794/letter-jam",
+   "largeur": 1913,
+   "hauteur": 2740,
+   "remarque": "couverture finale (édition anglaise CGE) via BoardGameGeek ; pas de boîte française trouvée"
+  }
+ ],
+ "credit": "© Czech Games Edition",
+ "manque": [
+  "logo"
+ ]
+}

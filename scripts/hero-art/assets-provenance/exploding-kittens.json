@@ -1,0 +1,19 @@
+{
+ "id": "exploding-kittens",
+ "name": "Exploding Kittens",
+ "editeur": "Exploding Kittens / Asmodee",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42620/exploding-kittens.jpg",
+   "largeur": 1190,
+   "hauteur": 1082,
+   "remarque": "Édition originale française, page produit Ludum"
+  }
+ ],
+ "credit": "© Exploding Kittens",
+ "manque": [
+  "logo"
+ ]
+}

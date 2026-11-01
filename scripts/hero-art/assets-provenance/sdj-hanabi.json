@@ -1,0 +1,19 @@
+{
+ "id": "sdj-hanabi",
+ "name": "Hanabi (Spiel des Jahres 2013)",
+ "editeur": "Abacusspiele",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/02/2013_hanabi.jpg",
+   "largeur": 1174,
+   "hauteur": 1500,
+   "remarque": "édition allemande Abacusspiele, sans sceau"
+  }
+ ],
+ "credit": "© Abacusspiele (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

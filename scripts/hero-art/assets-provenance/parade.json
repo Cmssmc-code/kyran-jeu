@@ -1,0 +1,19 @@
+{
+ "id": "parade",
+ "name": "Parade",
+ "editeur": "Z-Man Games / Filosofia (éd. FR)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42823/parade.jpg",
+   "largeur": 751,
+   "hauteur": 1181,
+   "remarque": "Boîte Z-Man Games (Filosofia pour la VF), image de la page Ludum ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Z-Man Games / Filosofia (éd. FR)",
+ "manque": [
+  "logo"
+ ]
+}

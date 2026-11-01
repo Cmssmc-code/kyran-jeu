@@ -1,0 +1,19 @@
+{
+ "id": "sdj-dito",
+ "name": "Dito! (Spiel des Jahres 2026)",
+ "editeur": "Game Factory",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2026/05/Dito-1.png",
+   "largeur": 1170,
+   "hauteur": 1493,
+   "remarque": "édition allemande 2026 ; la fiche propose aussi dito_vor.png en 600x720 (même visuel, plus petit)"
+  }
+ ],
+ "credit": "© Game Factory (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

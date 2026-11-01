@@ -1,0 +1,19 @@
+{
+ "id": "no-thanks",
+ "name": "No Thanks! (Non Merci!)",
+ "editeur": "Gigamic / Amigo",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/38195/non-merci.jpg",
+   "largeur": 800,
+   "hauteur": 800,
+   "remarque": "édition française Non Merci!, page produit Ludum"
+  }
+ ],
+ "credit": "© Gigamic / AMIGO",
+ "manque": [
+  "logo"
+ ]
+}

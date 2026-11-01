@@ -1,0 +1,19 @@
+{
+ "id": "the-game",
+ "name": "The Game",
+ "editeur": "Oya",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/46668/the-game.jpg",
+   "largeur": 886,
+   "hauteur": 1200,
+   "remarque": "Édition française Oya ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Oya",
+ "manque": [
+  "logo"
+ ]
+}

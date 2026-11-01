@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux comme <span class="accent">Skull King</span>',
   heroSubtitle: 'Quatre jeux qui gardent le pari sur le nombre de plis, deux qui le réinventent, et un tableau Skull King, Wizard et KYRAN pour trancher.',
   heroImage: "/blog/images/jeux-comme-skull-king.jpg",
-  heroCaption: "Illustration créée pour KYRAN : un navire à trois mâts et six voiles ornées de losanges, sous un grand soleil, naviguant sur des vagues, avec au premier plan quatre cartes verte, violette, jaune et noire.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Skull King (© Grandpa Beck's Games), Wizard (© AMIGO Spiel + Freizeit GmbH), Pili Pili (© ATM Gaming), Oh Hell! (© University Games), Cat in the Box (© Matagot) et The Crew (© Iello / Kosmos) : un galion pirate de profil, voiles marquées d'un crâne et pavillons noirs, sur des vagues en couches où flottent six boîtes de jeu, Skull King en grand à droite.",
   layout: {
     answerFirst: true,
     numbered: false,

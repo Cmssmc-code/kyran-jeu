@@ -1,0 +1,19 @@
+{
+ "id": "dixit",
+ "name": "Dixit",
+ "editeur": "Libellud",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/5996/dixit.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "édition française récente (Odyssey/Voyage), page produit Ludum"
+  }
+ ],
+ "credit": "© Libellud",
+ "manque": [
+  "logo"
+ ]
+}

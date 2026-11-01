@@ -1,0 +1,19 @@
+{
+ "id": "hanabi",
+ "name": "Hanabi",
+ "editeur": "Cocktail Games / Abacusspiele",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/18929/hanabi.jpg",
+   "largeur": 946,
+   "hauteur": 1023,
+   "remarque": "Édition française récente Cocktail Games, PNG fond transparent ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Cocktail Games / Abacusspiele",
+ "manque": [
+  "logo"
+ ]
+}

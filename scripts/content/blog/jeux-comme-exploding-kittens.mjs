@@ -9,7 +9,7 @@ export default {
   heroImage: "/blog/images/jeux-comme-exploding-kittens.jpg",
   heroTitle: 'Jeux comme <span class="accent">Exploding Kittens</span>',
   heroSubtitle: `Six jeux pour retrouver la carte qui fait trembler, les coups bas et les éclats de rire, avec ou sans élimination.`,
-  heroCaption: "Illustration créée pour KYRAN : six cartes disposées en deux rangées sur un disque à rayons, cinq dos de couleur ornés d'une tête de chat et une carte retournée où un chaton noir en forme de bombe a une mèche allumée.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels d'Exploding Kittens, Coup, Bang!, Uno, Jungle Speed et Saboteur (© Exploding Kittens, Ferti Games, dV Giochi, Mattel, Asmodee / Zygomatic, Gigamic) : un chat noir bondit de la boîte d'Exploding Kittens, devant une explosion rouge et jaune d'où jaillissent les cinq autres boîtes.",
   layout: {
     answerFirst: true,
     compare: false,

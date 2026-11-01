@@ -1,0 +1,19 @@
+{
+ "id": "oh-hell",
+ "name": "Oh Hell!",
+ "editeur": "University Games (édition US; jeu traditionnel sans éditeur unique, FR: Ascenseur)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://boardgamegeek.com/image/616572",
+   "largeur": 711,
+   "hauteur": 1210,
+   "remarque": "seule boîte commerciale 'Oh Hell!' sur BGG ; édition University Games, petite résolution ; pas de visuel officiel de 'Ascenseur'"
+  }
+ ],
+ "credit": "© University Games",
+ "manque": [
+  "logo"
+ ]
+}

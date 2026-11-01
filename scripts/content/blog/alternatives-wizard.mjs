@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Alternatives à <span class="accent">Wizard</span>',
   heroSubtitle: `Deux familles de remplaçants : ceux qui font toujours annoncer ses plis, et ceux qui gardent un autre morceau du jeu.`,
   heroImage: "/blog/images/alternatives-wizard.jpg",
-  heroCaption: "Illustration créée pour KYRAN : un chapeau pointu de magicien violet orné d'étoiles et d'un croissant de lune, devant un soleil gravé, avec six piles de cartes face cachée, deux d'un côté et quatre de l'autre.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Oh Hell! (© University Games), The Crew (© Iello / Kosmos), 6 qui prend ! (© Gigamic), Skull (© Asmodee / Space Cowboys), Parade (© Z-Man Games / Filosofia) et KYRAN (© KYRAN, kyran-jeu.fr) : un chapeau pointu de magicien violet orné de motifs gravés, couché sur le flanc, d'où jaillissent les six boîtes en éventail et des cartes face cachée.",
   layout: {
     answerFirst: true,
     compare: { position: 'after' },

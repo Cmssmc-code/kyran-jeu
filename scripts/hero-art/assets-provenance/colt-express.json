@@ -1,0 +1,27 @@
+{
+ "id": "colt-express",
+ "name": "Colt Express",
+ "editeur": "Ludonaute",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludonaute.fr/wp-content/uploads/2022/10/3DBOX_ColtExpress_2021.png",
+   "largeur": 1535,
+   "hauteur": 1535,
+   "remarque": "boîte 3D du site officiel ludonaute.fr (FR)"
+  },
+  {
+   "file": "cards.png",
+   "kind": "cartes",
+   "source_url": "https://www.data.ludonaute.fr/Colt_Express/CONTENTS/Colt_Express_Materiel_Eclate.png",
+   "largeur": 710,
+   "hauteur": 459,
+   "remarque": "matériel éclaté, site ludonaute.fr (basse résolution)"
+  }
+ ],
+ "credit": "© Ludonaute",
+ "manque": [
+  "logo"
+ ]
+}

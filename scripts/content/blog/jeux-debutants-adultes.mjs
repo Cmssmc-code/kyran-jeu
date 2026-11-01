@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux pour <span class="accent">débutants</span> adultes',
   heroSubtitle: 'La réponse d’abord, puis cinq jeux rangés comme des marches : chacun n’ajoute qu’une notion à la précédente.',
   heroImage: "/blog/images/jeux-debutants-adultes.jpg",
-  heroCaption: "Illustration créée pour KYRAN : un escalier de cinq marches gravées de motifs différents, avec une carte sur la première marche puis deux, trois, quatre et cinq cartes en éventail sur la dernière, devant un soleil.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Timeline (© Asmodee), Uno (© Mattel), Skyjo (© Magilano) et Love Letter (© Z-Man Games / Asmodee) : quatre boîtes posées chacune sur une marche d'un escalier, qui mène à une porte ouverte donnant sur un soleil levant.",
   intro: `<p>Le premier obstacle d’un adulte qui découvre les jeux de société n’est pas la difficulté des règles, c’est le vocabulaire : on lui parle de main, de défausse ou de pli comme s’il l’avait toujours su. Cette page répond d’abord à la question que vous vous posez, <strong>par quel jeu commencer</strong>, puis présente cinq jeux de cartes rangés comme les marches d’un escalier. Chacun n’ajoute qu’une seule notion à celui qui le précède : un geste unique avec Timeline, la main et la défausse avec Uno, une vraie décision avec Skyjo, une carte à protéger avec Love Letter, enfin le pli et le pari avec KYRAN. Le petit lexique et les conseils pour passer d’une marche à l’autre viennent ensuite, une fois les jeux en tête.</p>`,
   layout: {
     answerFirst: true,

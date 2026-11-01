@@ -1,0 +1,19 @@
+{
+ "id": "cat-in-the-box",
+ "name": "Cat in the Box",
+ "editeur": "Matagot",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/50759/cat-in-the-box.jpg",
+   "largeur": 1200,
+   "hauteur": 1192,
+   "remarque": "boîte française Matagot Collection; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Matagot",
+ "manque": [
+  "logo"
+ ]
+}

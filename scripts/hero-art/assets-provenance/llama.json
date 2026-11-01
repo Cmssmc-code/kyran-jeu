@@ -1,0 +1,19 @@
+{
+ "id": "llama",
+ "name": "Lama (Llama)",
+ "editeur": "Gigamic",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/30129/lama.jpg",
+   "largeur": 800,
+   "hauteur": 800,
+   "remarque": "édition française intitulée Lama, PNG transparent; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Gigamic",
+ "manque": [
+  "logo"
+ ]
+}

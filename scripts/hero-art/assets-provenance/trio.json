@@ -1,0 +1,19 @@
+{
+ "id": "trio",
+ "name": "Trio",
+ "editeur": "Cocktail Games (Elo Spiele)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/13076/trio.jpg",
+   "largeur": 945,
+   "hauteur": 1023,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française"
+  }
+ ],
+ "credit": "© Cocktail Games",
+ "manque": [
+  "logo"
+ ]
+}

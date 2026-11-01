@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-02 : run nocturne n° 13 (lundi)
+
+- **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google confirmée, recherche du 02/11 : dernière en date, mai 2026).
+- **Google** (`dataState: all`, 26/10 → 01/11, dernier jour provisoire) : 7 j 44 clics (+2 %), 1 930 impressions (−23 %) ; 28 j 173 clics, 7 975 impressions, CTR 2,17 %, position 8,6. La baisse d'impressions vient de la semaine de comparaison (24 et 25/10 : 520 et 428 impressions) et du 01/11 provisoire (131) ; « tarot africain » 236 → 158 impressions, position stable (10,0). Hausse : `jeux-comme-skyjo` 0 → 6 clics (FAQ variantes du 29/10), `jeux-3-joueurs` position 22,5 → 16,7, `jeux-comme-skull-king` 19 → 54 impressions. Semaines complètes : 19/10 43 clics, 26/10 44 (graphique du doc mis à jour).
+- **Bing** (24 → 30/10) : 6 clics, 150 impressions (+25 %) ; 64 pages dans l'index ; `GetCrawlIssues` vide ; `GetLinkCounts` : aucun lien entrant remonté.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, `og:image` partout malgré la refonte des images d'en-tête du blog (37 articles, 01/11), TTFB médian 266 ms. Inspection : 29/30 ; hors index `jeux-debutants-adultes`. Lighthouse local (3 passes, médiane) : accueil performance 95, SEO 100, LCP 2,4 s, CLS 0, TBT 90 ms ; `tarot-africain` performance 98, SEO 100, LCP 2,2 s, CLS 0.
+- **Veille** : 24-48 h : routine blog (images d'en-tête recomposées avec les visuels officiels des jeux, vue mobile de la liste des articles), Surveillance (rotation des secrets Railway close). Moteurs : rien de neuf sur Search Central ni sur le blog Bing (AI Performance : citations, intents, citation share depuis juin). GEO (lundi, 9 prompts) : 0 sur 9.
+- **Actions** : aucune modification de page (pistes du jour bloquées par la règle des 28 jours : `jeux-3-joueurs` réévaluable le 11/11, `tarot-africain` le 15/11).
+- **À décider** : inchangé.
+
 ### 2026-11-01 : run nocturne n° 12
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google en cours).

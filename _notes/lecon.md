@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-01 — Blog mobile : chiffres débordants, carrousel de 38 articles, tableaux illisibles
+
+- **Symptôme :** sur `/blog/` en 375 px, la 3e case des chiffres (« 2300+ mots par guide ») sortait de l'écran ; les 38 articles défilaient dans un carrousel horizontal (une carte et demie visible) ; dans les articles, la 1re colonne des comparatifs disparaissait au glissement, la légende était coupée et un dégradé blanc glissait au milieu du tableau.
+- **Cause :** `.blog-index-stats { grid-template-columns: 1fr }` (média 720 px) était écrasé par la règle de base, placée plus bas dans `style.css` ; le carrousel mobile `.blog-grid` (pensé pour les 3 articles de l'accueil) s'appliquait aussi au blog ; le `::after` absolu de `.compare-table-wrap` défile avec le contenu.
+- **Correctif :** bloc « Blog (/blog/) : vue mobile » en fin de `style.css` (chiffres sur 3 colonnes serrées, intentions en pastilles, liste verticale ciblée par `kyran-blog-grid:not([limit])`) ; dans `css/blog-article.css`, 1re colonne figée (`position: sticky`), légende à gauche, `::after` retiré. Règle : une règle de média doit venir **après** la règle de base qu'elle corrige ; vérifier en capture 375 px après toute retouche CSS du blog.
+
 ### 2026-10-24 — [Auto-Heal] JS-C914F6 — transition de page sautée par Safari, fausse alerte
 
 - **Symptôme :** incident « Skipping view transition because skipTransition() was called. » sur `/blog/jeux-comme-skull-king.html`, iPhone (Safari 26.6), sans fichier ni pile.

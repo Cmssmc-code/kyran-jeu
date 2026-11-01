@@ -149,7 +149,15 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
      (zigzags, points, arcs concentriques en traits blancs), fond crème, safran `#E6AB26`, terracotta `#B8432A`,
      noir encre `#231F22`, touches de rouge, orange, vert, bleu et violet (les six couleurs des cartes KYRAN),
      vue de dessus ou scène simple, de la place vide à gauche pour le titre, **aucun texte, aucun chiffre, aucun
-     logo, aucun nom de marque, aucun personnage réel**. Le sujet de l'image raconte le sujet de l'article (un objet
+     logo, aucun nom de marque, aucun personnage réel**. **Marques des jeux cités (demande du propriétaire du
+     1er novembre 2026 : « dignes d'un designer qui travaille pour les marques »)** : pour chaque jeu nommé dans
+     l'article, relever sa **palette réelle** (couleurs de la boîte et des cartes, lues sur la fiche de l'éditeur ou
+     la photo officielle) et son **symbole signature** (feu d'artifice pour Hanabi, vague de mains pour The Mind,
+     crâne et roses pour Skull…) puis les **réinterpréter dans la gravure KYRAN** : même teinte dominante, même
+     motif, même ambiance, mais dessinés à nouveau. **Jamais le logo, le titre en lettres, la boîte ni les
+     illustrations d'origine** (marques et droits d'auteur des éditeurs ; risque de laisser croire à un partenariat) ;
+     un logo officiel n'entre que sur autorisation écrite de l'éditeur, à garder dans le dépôt. Un article de
+     comparaison à plusieurs jeux combine deux ou trois de ces motifs, jamais tous. Le sujet de l'image raconte le sujet de l'article (un objet
      ou une scène précise, pas un décor générique). Chaîne : (1) `mcp__Canva__generate-image` (format
      `LANDSCAPE_16_9`), prompt en anglais décrivant scène + DA + interdits ; interroger `get-generate-image-job` jusqu'au
      succès ; regarder le rendu et refaire si un texte, un logo ou un défaut apparaît ; (2) **`generate-image` ne

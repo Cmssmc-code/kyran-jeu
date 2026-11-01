@@ -30,8 +30,8 @@ export default {
   },
   heroTitle: 'Jeux de cartes à <span class="accent">3 joueurs</span>',
   heroSubtitle: 'Six jeux dont la règle prévoit un vrai réglage pour trois : trois pour gagner ensemble, trois pour s\'affronter, et une issue pour les duels.',
-  heroImage: '/blog/images/the-crew.jpg',
-  heroCaption: 'The Crew — jeu de plis coopératif, très à l\'aise à trois.',
+  heroImage: "/blog/images/jeux-3-joueurs.jpg",
+  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : trois singes mystiques couronnés de feuilles, assis autour d'une table ronde, chacun tenant des cartes en main, trois cartes posées au centre.",
   intro: `<p><strong>Les trois meilleurs jeux de cartes à 3 joueurs sont The Crew, Hanabi et Love Letter</strong> : les deux premiers pour gagner ensemble contre le paquet, le troisième pour s'affronter en vingt minutes. Trois est un nombre que beaucoup de boîtes acceptent sans l'aimer : impossible de former deux équipes, et le moindre duel laisse quelqu'un spectateur. Cette page ne retient donc que des jeux dont la règle ajuste quelque chose pour trois (taille des mains, vies, matériel, manches gagnantes), rangés selon la question de votre trio : jouer ensemble, ou chacun pour soi. Les fiches détaillent ce que le passage à trois change pour chaque jeu, défauts compris. Schotten Totten, Lost Cities et Star Realms n'y figurent pas : ce sont des duels, traités dans une section à part.</p>`,
   criteria: {
     heading: 'Qu\'est-ce qui fait qu\'un jeu tient la route à trois ?',

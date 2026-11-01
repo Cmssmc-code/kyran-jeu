@@ -8,8 +8,8 @@ export default {
   date: '2026-09-05',
   heroTitle: 'Jeux de cartes à <span class="accent">4 joueurs</span>',
   heroSubtitle: 'En équipe ou chacun pour soi : sept jeux pour la tablée la plus courante, et ce que le chiffre quatre change à chacun.',
-  heroImage: '/blog/images/love-letter.jpg',
-  heroCaption: 'Des cartes idéales pour une tablée de quatre convives.',
+  heroImage: "/blog/images/jeux-cartes-4-joueurs.jpg",
+  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : vue de dessus d'une table carrée autour de laquelle quatre joueurs, un par côté, tiennent chacun un éventail de cartes, avec quelques cartes posées au centre.",
   layout: {
     criteriaShort: 'Le format à quatre',
     groups: [

@@ -8,8 +8,8 @@ export default {
   date: '2026-09-11',
   heroTitle: 'Jeux de cartes pour <span class="accent">adultes</span>',
   heroSubtitle: `Parier, mentir, coopérer en silence ou s'affronter à deux : sept jeux qui respectent l'intelligence de la table.`,
-  heroImage: '/kyran-cartes-table.webp',
-  heroCaption: 'KYRAN, jeu de plis à pari obligatoire (3 à 6 joueurs).',
+  heroImage: "/blog/images/jeux-cartes-adultes.jpg",
+  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : une table ronde sculptée portant un éventail de cartes face cachée, des piles de jetons, un sablier et un masque sculpté mi-noir mi-terracotta.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

@@ -8,8 +8,8 @@ export default {
   date: '2026-10-21',
   heroTitle: 'Week-end en gîte : <span class="accent">7 jeux de cartes</span>',
   heroSubtitle: 'Après le dîner, la cheminée, huit adultes et un voisin de l’autre côté du mur : quels jeux sortir de la valise, et lesquels laisser dans le coffre.',
-  heroImage: '/blog/images/jungle-speed.jpg',
-  heroCaption: 'Jungle Speed et son totem en bois : le plus bruyant des sept jeux de cette page.',
+  heroImage: "/blog/images/jeux-cartes-week-end-gite.jpg",
+  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : six amis assis autour d'une table en bois, cartes en main, devant une cheminée allumée dans une pièce aux murs de pierre, avec des verres et une bougie.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

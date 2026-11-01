@@ -8,8 +8,8 @@ export default {
   date: '2026-05-01',
   heroTitle: '10 jeux comme <span class="accent">Skyjo</span>',
   heroSubtitle: `Dix alternatives classées selon ce que vous aimiez dans Skyjo, cinq variantes de règles pour relancer la boîte, et de quoi y jouer avec un paquet de cartes ordinaire.`,
-  heroImage: '/blog/images/skyjo.jpg',
-  heroCaption: 'Skyjo et ses alternatives — jeux de cartes accessibles.',
+  heroImage: "/blog/images/jeux-comme-skyjo.jpg",
+  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : vue de dessus d'une grille de douze cartes en trois rangées de quatre, dont la plupart sont face cachée et cinq de couleur unie retournées, avec à droite une pile de cartes et une carte posée à côté, et une main qui retourne une carte de la grille.",
   intro: `<p><strong>Les meilleurs jeux comme Skyjo sont Llama, Parade et 6 qui prend !</strong> : Llama garde la vitesse et le score à tenir bas, Parade ajoute de la réflexion, 6 qui prend ! accueille les tablées de plus de huit. Sans la boîte, Skyjo se joue aussi avec un jeu de 52 cartes, règle détaillée plus bas.</p><p>La boîte de Skyjo tourne depuis des mois, ou votre tablée dépasse huit places ? Le problème : aucun jeu ne reproduit exactement une grille de douze cartes cachées où chaque retournement est un pari. Autant chercher ce qui vous plaisait vraiment : le score à garder bas, le choix entre pioche et défausse, les parties sans élimination, ou le confort d’un jeu qu’on explique en deux phrases.</p><p>Voici dix <strong>jeux similaires à Skyjo</strong>, chacun présenté selon le trait qu’il prolonge, avec ses limites. Plus bas, cinq variantes de règles permettent de relancer Skyjo lui-même, et une adaptation détaillée vous laisse jouer à la manière de Skyjo avec un simple jeu de 52 cartes, quand la boîte est restée à la maison. Pour élargir la recherche, consultez aussi nos <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> et nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux à petit prix</a>.</p>`,
   criteria: {
     heading: 'Quel jeu choisir quand on aime Skyjo ?',

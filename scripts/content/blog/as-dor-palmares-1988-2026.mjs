@@ -9,8 +9,8 @@ export default {
   "date": "2026-10-22",
   "heroTitle": "As d’Or de Cannes : <span class=\"accent\">le palmarès 1988-2026</span>",
   "heroSubtitle": "Trente-six lauréats, au moins trois jeux de cartes depuis 2009, et un fichier ouvert dont chaque ligne renvoie à sa source.",
-  "heroImage": "/blog/images/palais-festivals-cannes.jpg",
-  "heroCaption": "Le Palais des Festivals et des Congrès de Cannes, qui organise le Festival international des jeux.",
+  "heroImage": "/blog/images/as-dor-palmares-1988-2026.jpg",
+  "heroCaption": "Illustration créée par intelligence artificielle pour KYRAN : une grande carte dorée ornée d'un pique, posée sur un socle noir au bout d'un tapis rouge au bord de la mer, avec des tuiles de mosaïque colorées, un éventail de cartes oniriques et des mains posées les unes sur les autres.",
   "intro": "<p>Le Festival international des jeux de Cannes décerne l’As d’Or, un prix de jeux de société. Sa <a class=\"text-link\" href=\"https://www.festivaldesjeux-cannes.com/en/as-dor-label/the-list-of-winners/\">liste officielle des lauréats</a> remonte à 1988, mais elle se présente en un long bloc de texte, où les catégories changent de nom au fil des années. Cette page en tire un tableau et un fichier CSV de la seule catégorie principale, vérifié ligne à ligne sur la page du festival le 22 octobre 2026. Elle donne aussi quelques décomptes, calculés à partir du fichier, et signale les coquilles de la source. Elle ne dit pas quel jeu est « le meilleur » : elle dit ce que le festival a récompensé.</p>",
   "keyPoints": {
     "html": "<ul><li>La catégorie principale compte 36 lauréats de 1988 à 2026 : la page officielle n’a pas d’entrée pour 1991 et réunit 2004 et 2005 sur une même ligne.</li><li>Sur toute la liste, Repos Production est l’éditeur le plus présent (quatre mentions, dont une co-édition), devant Gigamic et Asmodee (trois mentions chacun).</li><li>Au moins trois lauréats depuis 2009 sont des jeux dont la boîte contient surtout des cartes d’après leurs fiches de boutique : Dixit (2009), The Mind (2019), Trio (2024).</li><li>Le jeu de données est ouvert (CC BY 4.0) : chaque ligne porte l’adresse de sa source et la date de son contrôle.</li></ul>"
@@ -84,11 +84,6 @@ export default {
       "label": "L’Éclaireur de la Fnac, « As d’Or 2024 : que vaut Trio, élu meilleur jeu de l’année ? »",
       "url": "https://leclaireur.fnac.com/article/441906-as-dor-2024-que-vaut-trio-elu-meilleur-jeu-de-lannee/",
       "note": "article du 27 février 2024"
-    },
-    {
-      "label": "Photo d’en-tête : Palais des Festivals et des Congrès de Cannes, par Timantha102938 (Wikimedia Commons)",
-      "url": "https://commons.wikimedia.org/wiki/File:Cannes_Palais_des_Festivals_et_des_Congr%C3%A8s.jpg",
-      "note": "domaine public, licence vérifiée sur la page du fichier le 22 octobre 2026"
     }
   ],
   "conclusion": "<p>Un palmarès devient une source quand on peut le citer sans le re-vérifier : c’est le rôle de ce fichier, dont chaque ligne renvoie à la page du festival et à la date de son contrôle. Il vous suffit de citer la page et la date. Les prochaines mises à jour suivront l’édition de février 2027 du festival, avec la même méthode et les mêmes limites.</p>",

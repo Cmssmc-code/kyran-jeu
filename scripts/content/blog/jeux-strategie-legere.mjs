@@ -8,8 +8,8 @@ export default {
   date: '2026-06-18',
   heroTitle: 'Jeux de <span class="accent">stratégie légère</span>',
   heroSubtitle: 'Gérer sa main ou tenir une annonce : sept jeux de cartes où chaque tour pèse, rangés par mécanique.',
-  heroImage: '/blog/images/star-realms.jpg',
-  heroCaption: 'Star Realms, stratégie compacte et nerveuse.',
+  heroImage: "/blog/images/jeux-strategie-legere.jpg",
+  heroCaption: "Illustration créée pour KYRAN : deux joueurs vus de dessus, face à face à une table rectangulaire à motifs, tenant chacun cinq cartes, avec entre eux sept colonnes de cartes de couleurs différentes, quatre cartes retournées (cœur, pique, carreau, trèfle) et des losanges le long d'une ligne médiane.",
   layout: {
     compare: false,
     numbered: false,

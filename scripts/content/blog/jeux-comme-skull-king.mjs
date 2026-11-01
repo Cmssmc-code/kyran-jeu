@@ -8,8 +8,8 @@ export default {
   date: '2026-10-14',
   heroTitle: 'Jeux comme <span class="accent">Skull King</span>',
   heroSubtitle: 'Quatre jeux qui gardent le pari sur le nombre de plis, deux qui le réinventent, et un tableau Skull King, Wizard et KYRAN pour trancher.',
-  heroImage: '/blog/images/oh-hell.jpg',
-  heroCaption: 'Un pli à quatre cartes avec un jeu classique : l’Ascenseur, ancêtre des jeux de pari comme Skull King.',
+  heroImage: "/blog/images/jeux-comme-skull-king.jpg",
+  heroCaption: "Illustration créée pour KYRAN : un navire à trois mâts et six voiles ornées de losanges, sous un grand soleil, naviguant sur des vagues, avec au premier plan quatre cartes verte, violette, jaune et noire.",
   layout: {
     answerFirst: true,
     numbered: false,

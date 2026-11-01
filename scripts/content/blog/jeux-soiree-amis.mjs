@@ -8,8 +8,8 @@ export default {
   date: '2026-05-05',
   heroTitle: 'Jeux <span class="accent">entre amis</span> : 10 jeux pour une soirée réussie, selon votre groupe',
   heroSubtitle: 'Ambiance, bluff ou partie à enjeu : chaque jeu est rangé selon le type de tablée et la durée de la soirée, avec son point faible.',
-  heroImage: '/blog/images/codenames.jpg',
-  heroCaption: 'Codenames — déduction et fous rires en équipe.',
+  heroImage: "/blog/images/jeux-soiree-amis.jpg",
+  heroCaption: "Illustration créée pour KYRAN : huit amis vus de dessus, assis autour d'une table ronde à motifs africains, trois cartes en main, avec au centre une grille de dix cartes en deux rangées de cinq, dont deux retournées (un pique et un cœur).",
   intro: `<p>Pour choisir un jeu de soirée entre amis, trois réponses couvrent l’essentiel. <strong>Un groupe mixte de quatre à huit, avec des habitués et des occasionnels :</strong> Codenames ou Just One, qui pardonnent l’approximation. <strong>Un groupe qui aime bluffer et se chambrer :</strong> Skull ou Coup, deux jeux de mensonge qui se règlent en une demi-heure ou moins. <strong>Une petite tablée de trois à six qui veut une vraie partie à enjeu :</strong> KYRAN et ses paris de plis. Le reste dépend du bruit que vos invités supportent, de la place sur la table et de l’heure de fin de soirée, ce que détaillent les critères ci-dessous. Pour un format plus léger, voyez les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes d’apéro</a> ; au-delà de huit invités, la sélection <a class="text-link" href="/blog/jeux-grands-groupes.html">grands groupes</a> prend le relais.</p>`,
   criteria: {
     heading: 'Comment choisir un jeu selon le groupe et la durée de la soirée ?',

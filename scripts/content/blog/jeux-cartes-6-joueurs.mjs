@@ -8,8 +8,8 @@ export default {
   date: '2026-09-11',
   heroTitle: 'Jeux de cartes à <span class="accent">5 ou 6 joueurs</span>',
   heroSubtitle: `Table impaire ou table pleine : huit jeux de cartes réglés pour cinq comme pour six.`,
-  heroImage: '/blog/images/6-qui-prend.jpg',
-  heroCaption: `6 qui prend ! — les cartes se révèlent toutes en même temps, à cinq comme à six.`,
+  heroImage: "/blog/images/jeux-cartes-6-joueurs.jpg",
+  heroCaption: "Illustration créée pour KYRAN : une table ronde vue de dessus avec six joueurs aux vêtements et coiffures variés, chacun tenant une main de cartes face cachée, et au centre six cartes retournées disposées en couronne.",
   intro: `<p>Cinq ou six autour de la table, c'est l'effectif des soirées où l'on a invité « un couple de plus », et celui où beaucoup de boîtes montrent leurs limites. Le problème n'est pas la place, c'est l'attente : à cinq, on regarde quatre joueurs avant de rejouer ; à six, cinq. Les huit <strong>jeux de cartes pour 5 ou 6 joueurs</strong> retenus ici règlent ce problème de trois façons : faire jouer tout le monde en même temps, répartir la table en camps, ou donner du poids à chaque carte posée par un voisin. Tous se jouent à cinq comme à six ; pour chacun, nous indiquons ce qui change d'un effectif à l'autre (rôles, cartes, jetons) et le défaut à connaître. Si votre groupe tourne plutôt à quatre, la sélection des <a class="text-link" href="/blog/jeux-cartes-4-joueurs.html">jeux de cartes à 4 joueurs</a> est plus adaptée.</p>`,
   layout: {
     answerFirst: true,

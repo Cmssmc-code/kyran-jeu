@@ -8,8 +8,8 @@ export default {
   date: '2026-05-29',
   heroTitle: 'Jeux de <span class="accent">plis</span> : le comparatif',
   heroSubtitle: `Annonce de plis, coopération, rangées : comprendre les mécanismes avant d'acheter.`,
-  heroImage: '/blog/images/wizard.jpg',
-  heroCaption: 'Wizard — point de départ du comparatif.',
+  heroImage: "/blog/images/jeux-plis-comparatif.jpg",
+  heroCaption: "Illustration créée pour KYRAN : quatre joueurs vus de dessus autour d'une table ronde, chacun avec quatre cartes en main, quatre cartes jouées en croix au centre (carreau, trèfle, cœur, pique) dont le pique mis en valeur, et une pile de jetons de pari devant chaque joueur.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

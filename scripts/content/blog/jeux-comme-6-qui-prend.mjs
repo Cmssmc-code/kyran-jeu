@@ -6,10 +6,10 @@ export default {
   description: `Alternative à 6 qui prend : 8 jeux de rangées, de choix secrets et de pénalités, avec ce qu’on perd selon le nombre de joueurs, jusqu’à dix.`,
   category: 'Alternatives',
   date: '2026-09-05',
-  heroImage: '/blog/images/6-qui-prend.jpg',
+  heroImage: "/blog/images/jeux-comme-6-qui-prend.jpg",
   heroTitle: 'Jeux comme <span class="accent">6 qui prend !</span>',
   heroSubtitle: `Huit alternatives qui reprennent, chacune, un morceau du modèle : rangées, choix secret ou pénalités qui tombent sur le voisin.`,
-  heroCaption: 'Des bœufs et des pièges — les meilleures alternatives à 6 qui prend.',
+  heroCaption: "Illustration créée pour KYRAN : quatre rangées de deux, trois, deux et cinq cartes ornées d'une tête de bœuf, une sixième carte violette posée à côté de la dernière rangée, et des piles de jetons à tête de bœuf sur le tapis.",
   intro: `<p>6 qui prend ! repose sur un instant précis : tout le monde dévoile sa carte en même temps, et la table découvre qui vient de se piéger. Personne ne peut protester, car personne n’a joué après un autre. Si c’est ce choc simultané qui vous plaît, ou le fait que le jeu tienne jusqu’à dix, trouver un <strong>jeu comme 6 qui prend</strong> est plus délicat qu’il n’y paraît : peu de titres réunissent à la fois les rangées, le secret et la grande tablée.</p><p>Voici huit alternatives qui reprennent chacune un morceau du modèle de Wolfgang Kramer, avec ce qui se perd en chemin. Plusieurs se jouent au tour par tour : nous le signalons à chaque fois. Pour comparer avec d’autres jeux de pénalités, voyez aussi nos <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a>, ou notre guide des <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a> si l’effectif est votre contrainte.</p>`,
   criteria: {
     heading: 'Comment remplacer 6 qui prend ! sans perdre ce qui le rend unique ?',

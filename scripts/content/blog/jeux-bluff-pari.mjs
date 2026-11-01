@@ -8,8 +8,8 @@ export default {
   date: '2026-05-23',
   heroTitle: 'Jeux de <span class="accent">bluff</span> et de pari',
   heroSubtitle: `Mentir en face, cacher son camp ou parier sur sa main : sept jeux, trois manières de faire douter la table.`,
-  heroImage: '/boite-recto-kyran.jpg',
-  heroCaption: 'KYRAN — paris, plis et manche Mystique.',
+  heroImage: "/blog/images/jeux-bluff-pari.jpg",
+  heroCaption: "Illustration créée pour KYRAN : un masque bicolore couronné sur un losange safran, sept disques face cachée alignés en dessous, un éventail de cinq cartes et quatre pièces.",
   layout: {
     groups: [
       {

@@ -19,8 +19,8 @@ export default {
   },
   heroTitle: 'Jeux de cartes <span class="accent">à deux</span>',
   heroSubtitle: 'Sept jeux pour une soirée en tête-à-tête : quatre duels, trois jeux où l\'on gagne du même côté, et un guide pour trancher une fois les fiches lues.',
-  heroImage: '/blog/images/lost-cities.jpg',
-  heroCaption: 'Lost Cities, un duel élégant pour deux joueurs.',
+  heroImage: "/blog/images/jeux-duo-couples.jpg",
+  heroCaption: "Illustration créée pour KYRAN : deux joueurs assis face à face sur des tabourets autour d'une table, cinq colonnes de cartes colorées devant chacun, cinq piles de défausse au milieu et deux tasses.",
   intro: `<p>À deux, la première question n'est pas « quel jeu ? » mais « contre ou avec ? ». Cette page commence donc par les jeux eux-mêmes : quatre duels (Lost Cities, Schotten Totten, Love Letter, Star Realms), puis trois jeux coopératifs où le couple affronte le paquet (The Crew, Hanabi, The Game). Tous se jouent à deux, The Crew grâce à une variante de sa règle (la boîte annonce 3 à 5). Les jeux qui commencent à trois joueurs, comme Skull, Wizard, For Sale ou notre propre jeu KYRAN, ont été écartés, car leur règle de base ne prévoit pas de variante à deux. Le guide de choix arrive après les fiches, une fois chaque mécanique présentée. Et le soir où un ami se joint à vous, la sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a> prend le relais.</p>`,
   criteria: {
     heading: 'Après les fiches : quel jeu pour quel couple ?',

@@ -8,8 +8,8 @@ export default {
   date: '2026-09-05',
   heroTitle: 'Alternatives à la <span class="accent">belote</span> et à la coinche',
   heroSubtitle: `Atout, contrat, partenaire : ce que six jeux modernes gardent de la belote, et ce qu'ils vous obligent à lâcher.`,
-  heroImage: '/blog/images/wizard.jpg',
-  heroCaption: 'Des cartes modernes pour renouveler le plaisir traditionnel des plis.',
+  heroImage: "/blog/images/alternatives-belote-coinche.jpg",
+  heroCaption: "Illustration créée pour KYRAN : une table ronde vue de dessus avec quatre joueurs, chacun tenant une main de cartes face cachée, au centre une pioche et une carte retournée portant un pique, et en bas à gauche six médaillons colorés à motifs.",
   layout: {
     criteriaAfter: true,
     criteriaShort: 'Bien choisir',

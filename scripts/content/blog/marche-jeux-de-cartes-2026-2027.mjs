@@ -8,8 +8,8 @@ export default {
   date: '2026-10-21',
   heroTitle: 'Jeux de cartes : <span class="accent">le marché 2026-2027</span>',
   heroSubtitle: 'Le bilan 2025, les premiers chiffres de 2026 et ce que les sorties annoncées laissent attendre pour 2027, avec les limites des sources.',
-  heroImage: '/blog/images/skyjo.jpg',
-  heroCaption: 'Skyjo, sorti en 2015 et toujours dans les meilleures ventes de jeux de cartes de table.',
+  heroImage: "/blog/images/marche-jeux-de-cartes-2026-2027.jpg",
+  heroCaption: "Illustration créée pour KYRAN : un étal de boutique à auvent rayé avec sept colonnes de cartes de couleurs différentes qui montent puis se stabilisent, une flèche pointillée de tendance et deux piles de pièces sur le comptoir.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

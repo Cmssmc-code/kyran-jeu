@@ -46,6 +46,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 | 2026-10-30 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul ; 8 : homonymes (Kyrandia, Far Cry 4, footballeur) ; 9 : Chouineurs, Pili Pili, Malédiction !, Picanté !, Gus & Co |
 | 2026-10-31 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Pili Pili, Chouineurs, Luz (BGA, Esprit Jeu, Ludum) ; 2 : regles2jeux (et le Tiar), Board Game Arena ; 3 : Skyjo Action (Ludum), World of Geek (cite Skull King comme jeu de plis), Règles du Jeu |
 | 2026-11-01 | | | | — | — | — | | | | 0 / 3 | 4 : Tarot à 3, Skat, belote, rami, Président, 99, Trio, 13 Feuilles ; 5 : traductions du mot « wizard » ; 6 : bol.com, Paris Friendly, Zazzle, Esprit Jeu |
+| 2026-11-02 | — | — | — | — | — | — | — | — | — | 0 / 9 | Lundi, 9 prompts. 1 : Skull King, Pili Pili, Chouineurs, Luz, bridge ; 2 : regles2jeux (et Tiar), BGA ; 3 : Skyjo Action, World of Geek (Skull King) ; 4 : Tarot à 3, Skat, belote, Trio, 13 Feuilles, Skull (regles-du-jeu.net) ; 5 : The Last Wizard, Wizards Cup, Ascenseur ; 6 : catalogues ; 7 : Skull King seul ; 8 : homonymes (Kyrandia, Far Cry 4) ; 9 : Chouineurs, Malédiction !, Pili Pili, Kings Tricktakers, Picanté !, Ludum et Gus & Co |
 
 ## Relevés manuels
 

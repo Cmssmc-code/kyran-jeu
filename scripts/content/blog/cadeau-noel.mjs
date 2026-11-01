@@ -8,8 +8,8 @@ export default {
   date: `2026-05-11`,
   heroTitle: `Jeux à offrir <span class="accent">à Noël</span>`,
   heroSubtitle: `Sept boîtes, trois profils de destinataires : qui l’ouvrira, à quelle heure on y jouera, combien elle coûte.`,
-  heroImage: `/blog/images/hanabi.jpg`,
-  heroCaption: `Hanabi — coopération sous le sapin.`,
+  heroImage: "/blog/images/cadeau-noel.jpg",
+  heroCaption: "Illustration créée pour KYRAN : vue de dessus de sept cadeaux, six paquets emballés de rubans et une boîte ouverte d'où sort un éventail de cinq cartes, sur un disque vert entouré d'une étoile gravée.",
   layout: {
     shopLinks: true,
     compare: false,

@@ -8,8 +8,8 @@ export default {
   "date": "2026-10-23",
   "heroTitle": "Jeux de cartes <span class=\"accent\">à moins de 15 €</span>",
   "heroSubtitle": "Neuf jeux, de 9,99 € à 14,90 €, avec le prix relevé le 23 octobre 2026 et ce qu’on gagne ou perd à chaque palier.",
-  "heroImage": "/blog/images/hanabi.jpg",
-  "heroCaption": "Hanabi, jeu coopératif à 11,90 € chez Ludum le 23 octobre 2026.",
+  "heroImage": "/blog/images/jeux-cartes-moins-de-15-euros.jpg",
+  "heroCaption": "Illustration créée pour KYRAN : neuf paquets de cartes face cachée de couleurs et de motifs différents, rangés en grille de trois par trois sur un grand disque safran, avec une bourse en tissu, une étiquette de prix sans texte et sept pièces.",
   "layout": {
     "answerFirst": true,
     "criteriaAfter": true,

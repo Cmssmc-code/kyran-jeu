@@ -8,8 +8,8 @@ export default {
   date: `2026-10-12`,
   heroTitle: `Jeux de cartes <span class="accent">pour ados</span>`,
   heroSubtitle: `Bluff, réflexes, paris : six jeux choisis pour l’ambiance qu’ils créent autour de la table, pas pour l’âge écrit sur la boîte.`,
-  heroImage: `/blog/images/skull.jpg`,
-  heroCaption: `Skull — le bluff réduit à un geste : poser face cachée.`,
+  heroImage: "/blog/images/jeux-cartes-ados.jpg",
+  heroCaption: "Illustration créée pour KYRAN : une table hexagonale vue de dessus avec six joueurs aux coiffures variées, chacun posant devant lui une carte face cachée, et au centre un totem de bois sculpté de motifs sur un tapis safran.",
   intro: `<p>Trouver un jeu de cartes pour des adolescents, c’est viser deux cibles à la fois : un jeu assez rapide pour survivre à l’attention d’un groupe d’amis, et assez fin pour ne pas passer pour un jeu d’enfant. Cette page retient <strong>six jeux de cartes</strong> pour la dynamique qu’ils créent autour de la table (mensonge, course, prise de risque, paris) plutôt que pour un âge imprimé sur une boîte. Cet âge varie d’ailleurs d’un revendeur à l’autre pour plusieurs d’entre eux, et il ne dit rien de l’effet réel sur une bande de quinze ans. Tous se jouent sans écran et sans plateau. Pour un public mêlant petits et grands, voyez plutôt les <a class="text-link" href="/blog/jeux-famille.html">jeux de cartes en famille</a> ; pour une soirée entre adultes, les <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux de cartes à sortir entre amis</a>.</p>`,
   criteria: {
     heading: `Ce qui fait tenir un jeu de cartes face à des ados`,

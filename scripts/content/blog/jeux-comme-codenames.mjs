@@ -6,10 +6,10 @@ export default {
   description: `Jeux comme Codenames en 2026 : 8 alternatives de 2 à 10 joueurs, de l’indice à un mot (Just One, Letter Jam) au bluff sans vocabulaire (Coup, Skull).`,
   category: 'Alternatives',
   date: '2026-06-04',
-  heroImage: '/blog/images/codenames.jpg',
+  heroImage: "/blog/images/jeux-comme-codenames.jpg",
   heroTitle: 'Jeux comme <span class="accent">Codenames</span>',
   heroSubtitle: `Huit jeux pour retrouver la tension d’un indice à un mot, avec ou sans équipes, selon la taille de votre tablée.`,
-  heroCaption: 'Codenames, roi des jeux d’équipes rapides.',
+  heroCaption: "Illustration créée pour KYRAN : une grille de vingt-cinq cartes en cinq lignes de cinq, avec neuf cartes rouges, huit bleues, sept beiges vierges et une carte noire, sur un plateau décoré de zigzags.",
   intro: `<p>Codenames tient sur un rapport de force simple : un joueur voit la solution, son équipe ne la voit pas, et un seul mot doit suffire à les relier. La tension naît du doute, quand l’indice « océan » désigne à la fois la mer, la plage et un assassin à ne surtout pas toucher. Reproduire cette alchimie demande de choisir ce qu’on veut garder : le <strong>duel d’équipes</strong>, l’<strong>indice minimal</strong> ou la <strong>déduction à plusieurs</strong>.</p><p>Voici huit <strong>jeux comme Codenames</strong>, une partie par équipes, d’autres coopératifs ou individuels, classés selon ce qu’ils prolongent de l’original. Si vous aimez aussi les indices plus poétiques, nos <a class="text-link" href="/blog/jeux-comme-dixit.html">jeux comme Dixit</a> complètent ce panorama, et nos <a class="text-link" href="/blog/jeux-grands-groupes.html">jeux pour grands groupes</a> aident quand la table dépasse huit personnes.</p>`,
   criteria: {
     heading: 'Que chercher dans une alternative à Codenames ?',

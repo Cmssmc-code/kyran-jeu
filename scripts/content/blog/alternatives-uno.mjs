@@ -8,8 +8,8 @@ export default {
   date: '2026-05-17',
   heroTitle: 'Alternatives à <span class="accent">Uno</span>',
   heroSubtitle: `Du jeu de réflexe dès 6 ans au bluff entre adultes : huit manières de quitter la pioche et les +4.`,
-  heroImage: '/blog/images/uno.jpg',
-  heroCaption: 'Uno — et au-delà.',
+  heroImage: "/blog/images/alternatives-uno.jpg",
+  heroCaption: "Illustration créée pour KYRAN : huit cartes de couleurs différentes, chacune marquée d'un symbole gravé, disposées en cercle autour d'une étoile centrale.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

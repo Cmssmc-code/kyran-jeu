@@ -8,8 +8,8 @@ export default {
   date: `2026-05-19`,
   heroTitle: `Jeux de cartes en <span class="accent">30 minutes ou moins</span>`,
   heroSubtitle: `La durée de la boîte n’est qu’une partie du temps réel : neuf jeux rangés en trois créneaux, avec ce qui les allonge ou les raccourcit.`,
-  heroImage: `/blog/images/skyjo.jpg`,
-  heroCaption: `Skyjo — une demi-heure bien remplie.`,
+  heroImage: "/blog/images/jeux-30-minutes.jpg",
+  heroCaption: "Illustration créée pour KYRAN : trois sabliers de tailles différentes posés sur une table, chacun devant un éventail de trois cartes, soit neuf cartes au total.",
   intro: `<p>Une partie annoncée pour vingt minutes dure rarement exactement vingt minutes : il faut sortir les cartes, expliquer, jouer, puis ranger. Cette sélection part de ce temps réel. Neuf jeux de cartes y sont rangés en <strong>trois créneaux</strong>, selon la durée indiquée sur leur boîte : un quart d’heure, une vingtaine de minutes, une demi-heure pleine. Pour chacun, nous indiquons ce qui allonge ou raccourcit vraiment la partie : le nombre de joueurs, la condition de fin, l’attente entre deux tours. De quoi remplir une pause déjeuner, une soirée de semaine ou un enchaînement de plusieurs jeux courts à la place d’un seul long. Pour jouer dans le train ou à la plage, voyez les <a class="text-link" href="/blog/jeux-vacances-voyage.html">jeux de vacances</a> ; pour un budget précis, nos <a class="text-link" href="/blog/cadeau-anniversaire.html">jeux de cartes triés par prix</a>.</p>`,
   criteria: {
     heading: `Comment mesurer la vraie durée d’un jeu court ?`,

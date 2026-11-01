@@ -6,10 +6,10 @@ export default {
   description: `Alternative à Exploding Kittens : 6 jeux à pièges, éliminations et coups de théâtre, avec l’âge, le nombre de joueurs et le ton de chacun.`,
   category: 'Alternatives',
   date: '2026-09-05',
-  heroImage: '/blog/images/bang.jpg',
+  heroImage: "/blog/images/jeux-comme-exploding-kittens.jpg",
   heroTitle: 'Jeux comme <span class="accent">Exploding Kittens</span>',
   heroSubtitle: `Six jeux pour retrouver la carte qui fait trembler, les coups bas et les éclats de rire, avec ou sans élimination.`,
-  heroCaption: 'Des cartes explosives pour des soirées pleines de rires.',
+  heroCaption: "Illustration créée pour KYRAN : six cartes disposées en deux rangées sur un disque à rayons, cinq dos de couleur ornés d'une tête de chat et une carte retournée où un chaton noir en forme de bombe a une mèche allumée.",
   layout: {
     answerFirst: true,
     compare: false,

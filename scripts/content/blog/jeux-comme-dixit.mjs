@@ -6,10 +6,10 @@ export default {
   description: `Jeux comme Dixit en 2026 : 10 alternatives pour 2 à 8 joueurs, en mots (Just One, Codenames), en bluff (Skull, Coup) ou en silence (The Mind).`,
   category: 'Alternatives',
   date: '2026-06-02',
-  heroImage: '/kyran-cartes-pouvoirs.webp',
+  heroImage: "/blog/images/jeux-comme-dixit.jpg",
   heroTitle: 'Jeux comme <span class="accent">Dixit</span>',
   heroSubtitle: `Dix jeux qui prolongent le plaisir de se faire comprendre à demi-mot, avec ce qui rappelle Dixit et ce qui change.`,
-  heroCaption: 'Quatre cartes Pouvoir de KYRAN et la carte Mystique, illustrées par Crea by Floh.',
+  heroCaption: "Illustration créée pour KYRAN : six cartes illustrées de scènes oniriques (lune sur la mer, poisson volant, arbre aux fruits dorés, échelle vers une étoile, montgolfière, porte lumineuse) en éventail devant un grand croissant de lune, avec des nuages.",
   intro: `<p><strong>Les jeux les plus proches de Dixit sont Just One, Codenames et Coup</strong> : Just One pour le travail sur l’indice, de 3 à 7 joueurs, Codenames pour s’affronter en équipes dès quatre, Coup pour le plaisir de convaincre plutôt que de raconter.</p><p>Ce qui rend Dixit singulier tient en une contrainte : l’indice du conteur doit être compris par une partie de la table, pas par tous. Trop clair, personne ne marque ; trop obscur, non plus. Cette zone étroite explique pourquoi il est difficile de trouver un <strong>jeu qui ressemble à Dixit</strong> : une bonne alternative doit conserver ce travail d’interprétation, ou en proposer une version neuve.</p><p>Nos dix propositions se répartissent en trois familles : les jeux d’indices en mots, ceux où l’on devine les intentions des autres, et ceux qui reposent sur une entente silencieuse. Pour chacun, nous précisons ce qui rappelle Dixit, ce qui change et le nombre de joueurs qui lui convient. Si votre goût va plutôt vers l’esprit d’équipe, notre sélection de <a class="text-link" href="/blog/jeux-comme-codenames.html">jeux comme Codenames</a> prend le relais.</p>`,
   criteria: {
     heading: 'Comment choisir une alternative à Dixit ?',

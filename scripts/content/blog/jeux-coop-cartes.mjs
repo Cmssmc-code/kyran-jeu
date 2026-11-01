@@ -8,8 +8,8 @@ export default {
   date: '2026-06-08',
   heroTitle: 'Jeux <span class="accent">coopératifs</span> de cartes',
   heroSubtitle: 'Indices codés, signal unique ou silence complet : la règle de communication décide du jeu qui conviendra à votre table.',
-  heroImage: '/blog/images/the-crew.jpg',
-  heroCaption: 'The Crew, une référence coopérative moderne.',
+  heroImage: "/blog/images/jeux-coop-cartes.jpg",
+  heroCaption: "Illustration créée pour KYRAN : quatre joueurs autour d'une table ronde tenant chacun un éventail de cartes tourné vers les autres, avec au centre quatre piles de cartes marquées de chevrons et une pioche.",
   layout: {
     answerFirst: true
   },

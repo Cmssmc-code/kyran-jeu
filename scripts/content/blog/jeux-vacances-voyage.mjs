@@ -8,8 +8,8 @@ export default {
   date: `2026-05-27`,
   heroTitle: `Jeux de cartes <span class="accent">pour les vacances</span>`,
   heroSubtitle: `Tablette de train, serviette de plage, table de gîte : sept jeux rangés selon l’endroit où ils sortent du sac.`,
-  heroImage: `/blog/images/love-letter.jpg`,
-  heroCaption: `Love Letter — le roi du format poche.`,
+  heroImage: "/blog/images/jeux-vacances-voyage.jpg",
+  heroCaption: "Illustration créée pour KYRAN : une voiture de train vue de côté, sur une voie qui longe la mer, avec un grand soleil, des nuages et des voiliers ; dans la grande fenêtre du milieu, un éventail de quatre cartes, une boîte ronde en métal et une pochette zippée posés sur la tablette.",
   intro: `<p>Un jeu de vacances se juge autrement qu’un jeu de salon : il doit tenir dans un sac, résister à une serviette humide, se jouer sur une tablette de train ou une table de camping bancale, et supporter qu’on le laisse en plan pour aller se baigner. Plutôt qu’un classement, cette page range sept jeux de cartes selon <strong>l’endroit où vous les sortirez</strong> : le trajet, la journée dehors, puis la soirée au gîte. Elle garde aussi une place aux jeux dont on dit « encore une manche » sans y penser, parce que les longues soirées sans écran réclament des parties qu’on recommence. Pour un format encore plus bref, voyez les <a class="text-link" href="/blog/jeux-30-minutes.html">jeux de 30 minutes ou moins</a> ; si le prix compte autant que le poids, nos <a class="text-link" href="/blog/cadeau-anniversaire.html">idées de jeux de cartes classées par budget</a> donnent des repères.</p>`,
   criteria: {
     heading: `Que doit savoir faire un jeu de vacances ?`,

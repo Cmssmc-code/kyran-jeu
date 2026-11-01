@@ -8,8 +8,8 @@ export default {
   date: `2026-05-09`,
   heroTitle: `Jeux à offrir <span class="accent">pour un anniversaire</span>`,
   heroSubtitle: `Moins de 15 €, autour de 20 € ou cadeau marquant : le jeu qui se déballe, se joue le soir même et revient ensuite sur la table.`,
-  heroImage: `/blog/images/love-letter.jpg`,
-  heroCaption: `Love Letter — petit format, grand effet cadeau.`,
+  heroImage: "/blog/images/cadeau-anniversaire.jpg",
+  heroCaption: "Illustration créée pour KYRAN : vue de dessus d'une boîte-cadeau ouverte d'où sort un éventail de neuf cartes, avec une part de gâteau à la cerise sur une assiette, un petit paquet emballé et des confettis.",
   intro: `<p>À un anniversaire, le paquet s’ouvre devant les invités, souvent une part de gâteau à la main, et la question suivante arrive aussitôt : « on y joue ? ». C’est ce qui distingue le jeu offert pour cette occasion : il doit pouvoir sortir de sa boîte le soir même, avec les personnes présentes. Cette sélection part donc de l’enveloppe dont vous disposez plutôt que d’un profil de joueur : neuf jeux rangés en trois budgets, des <strong>jeux de cartes pas chers</strong> à moins de 15 € jusqu’au cadeau d’environ 30 € qui fait son effet. Pour les petits prix, nous regardons surtout le nombre de parties qu’on en tirera, car un jeu bon marché qui reste au placard n’a rien d’une économie. Si le cadeau tombe plutôt en décembre, notre page <a class="text-link" href="/blog/cadeau-noel.html">jeux à offrir à Noël</a> part du destinataire et du contexte familial.</p>`,
   layout: {
     shopLinks: true,

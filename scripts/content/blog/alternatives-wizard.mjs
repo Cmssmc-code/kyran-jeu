@@ -8,8 +8,8 @@ export default {
   date: '2026-05-15',
   heroTitle: 'Alternatives à <span class="accent">Wizard</span>',
   heroSubtitle: `Deux familles de remplaçants : ceux qui font toujours annoncer ses plis, et ceux qui gardent un autre morceau du jeu.`,
-  heroImage: '/blog/images/wizard.jpg',
-  heroCaption: 'Wizard — la référence des jeux de plis.',
+  heroImage: "/blog/images/alternatives-wizard.jpg",
+  heroCaption: "Illustration créée pour KYRAN : un chapeau pointu de magicien violet orné d'étoiles et d'un croissant de lune, devant un soleil gravé, avec six piles de cartes face cachée, deux d'un côté et quatre de l'autre.",
   layout: {
     answerFirst: true,
     compare: { position: 'after' },

@@ -8,8 +8,8 @@ export default {
   date: '2026-06-14',
   heroTitle: 'Jeux <span class="accent">sans élimination</span>',
   heroSubtitle: 'Cinq jeux où chacun garde ses cartes en main jusqu’au dernier tour, et la grille pour juger les autres.',
-  heroImage: '/blog/images/skyjo.jpg',
-  heroCaption: 'Skyjo, un exemple populaire sans sortie précoce.',
+  heroImage: "/blog/images/jeux-sans-elimination.jpg",
+  heroCaption: "Illustration créée pour KYRAN : cinq joueurs de teintes et de coiffures variées, vus de dessus, assis autour d'une table ronde gravée de zigzags, chacun tenant cinq cartes, avec une pioche, une carte pique retournée et cinq piles de jetons au centre.",
   layout: {
     criteriaAfter: true,
     criteriaShort: 'Vérifier',

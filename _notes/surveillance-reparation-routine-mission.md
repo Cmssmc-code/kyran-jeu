@@ -129,6 +129,9 @@ URL `https://kyran-webhook-production.up.railway.app`.
   `true`, `emailTransport` `resend` ; temps de réponse noté.
 - Redéployer ou redémarrer un service `CRASHED` / `FAILED` est permis. Jamais supprimer un service, un volume, un
   domaine ou une variable ; une variable ne change que si la cause est prouvée, nom seulement dans les écrits.
+- Avis de sécurité Railway du 2026-10-21 : le propriétaire a décidé le 2026-11-01 de ne pas changer les secrets de
+  ce projet (`SMTP_PASSWORD`, `STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `ADMIN_SECRET`). Ne plus le proposer dans
+  le rapport ; le reposer seulement si une fuite est prouvée (journaux, alerte Railway, usage anormal d'une clé).
 
 ### A3. Workflows GitHub
 

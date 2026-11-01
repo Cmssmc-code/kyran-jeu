@@ -1,0 +1,19 @@
+{
+ "id": "sdj-catan",
+ "name": "Die Siedler von Catan (Spiel des Jahres 1995)",
+ "editeur": "KOSMOS",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/04/1995DieSiedlervonCatan_RGBlow.jpg",
+   "largeur": 1000,
+   "hauteur": 993,
+   "remarque": "édition allemande 1995 avec sceau"
+  }
+ ],
+ "credit": "© KOSMOS (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

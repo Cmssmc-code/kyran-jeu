@@ -1,0 +1,19 @@
+{
+ "id": "sdj-zug-um-zug",
+ "name": "Zug um Zug / Les Aventuriers du Rail (Spiel des Jahres 2004)",
+ "editeur": "Days of Wonder",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/04/2004ZugumZug_RGB_WEB.jpg",
+   "largeur": 1512,
+   "hauteur": 1500,
+   "remarque": "édition allemande 2004 avec sceau ; film plastique visible"
+  }
+ ],
+ "credit": "© Days of Wonder (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "id": "sdj-azul",
+ "name": "Azul (Spiel des Jahres 2018)",
+ "editeur": "Next Move Games / Plan B Games",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/03/Azul2DNextMove_slide.jpg",
+   "largeur": 590,
+   "hauteur": 590,
+   "remarque": "couverture allemande (Next Move) ; 590 px seulement, la plus grande trouvée sur la fiche (l'autre version fait 350 px)"
+  }
+ ],
+ "credit": "© Next Move Games (visuel publié par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

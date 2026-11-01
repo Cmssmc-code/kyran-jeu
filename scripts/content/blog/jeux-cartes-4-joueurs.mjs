@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de cartes à <span class="accent">4 joueurs</span>',
   heroSubtitle: 'En équipe ou chacun pour soi : sept jeux pour la tablée la plus courante, et ce que le chiffre quatre change à chacun.',
   heroImage: "/blog/images/jeux-cartes-4-joueurs.jpg",
-  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : vue de dessus d'une table carrée autour de laquelle quatre joueurs, un par côté, tiennent chacun un éventail de cartes, avec quelques cartes posées au centre.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Codenames, The Crew, Wizard, Skull, Love Letter et Skyjo (© Iello / Czech Games Edition, Iello / Kosmos, AMIGO Spiel + Freizeit GmbH, Asmodee / Space Cowboys, Z-Man Games / Asmodee, Magilano) : quatre joueurs en deux équipes, rouge en haut et en bas, bleue à gauche et à droite, autour d'une table carrée où les six boîtes forment une croix.",
   layout: {
     criteriaShort: 'Le format à quatre',
     groups: [

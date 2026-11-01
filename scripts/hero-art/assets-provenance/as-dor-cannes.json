@@ -1,0 +1,52 @@
+{
+ "id": "as-dor-cannes",
+ "name": "As d'Or - Jeu de l'Année (Cannes)",
+ "editeur": "Festival International des Jeux de Cannes",
+ "files": [
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "https://www.festivaldesjeux-cannes.com/app/uploads/cannes-festi-jeux/2026/07/thumbs/384/ratio_free/as-or-rayons-ss-date-1920x1920.webp",
+   "largeur": 1920,
+   "hauteur": 1920,
+   "remarque": "label As d'Or Jeu de l'Année, médaillon doré à rayons, fichier individuel du site (page /label-as-d-or/), webp converti en png, fond blanc opaque"
+  },
+  {
+   "file": "logo_transparent.png",
+   "kind": "logo",
+   "source_url": "idem logo.png",
+   "largeur": 1920,
+   "hauteur": 1920,
+   "remarque": "même image, fond blanc extérieur rendu transparent par remplissage depuis les coins (PIL) ; léger halo clair possible autour de l'anneau"
+  },
+  {
+   "file": "logo-festival-blanc.svg",
+   "kind": "logo",
+   "source_url": "https://www.festivaldesjeux-cannes.com/app/themes/cannes-festi-jeux/logo.svg",
+   "largeur": 129,
+   "hauteur": 110,
+   "remarque": "logo Cannes Festival International des Jeux, SVG vectoriel mais entièrement BLANC (invisible sur fond clair) ; pas de version colorée trouvée ; dimensions viewBox 129x110"
+  },
+  {
+   "file": "source_as-or-rayons.webp",
+   "kind": "logo",
+   "source_url": "idem logo.png",
+   "largeur": 1920,
+   "hauteur": 1920,
+   "remarque": "fichier source webp du label seul"
+  },
+  {
+   "file": "source_bandeau-4-labels.webp",
+   "kind": "logo",
+   "source_url": "https://www.festivaldesjeux-cannes.com/app/uploads/cannes-festi-jeux/2026/08/thumbs/1012/ratio_3_1/bandeau-logos-ad-dor-1-1920x640.webp",
+   "largeur": 1920,
+   "hauteur": 640,
+   "remarque": "bandeau des 4 labels (As d'Or, Enfant, Initié, Expert), fond blanc ; gardé pour référence, non découpé car le label seul est fourni"
+  }
+ ],
+ "credit": "© Festival International des Jeux de Cannes",
+ "manque": [
+  "logo festival en couleur",
+  "SVG du label As d'Or"
+ ]
+}

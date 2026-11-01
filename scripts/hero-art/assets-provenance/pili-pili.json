@@ -1,0 +1,19 @@
+{
+ "id": "pili-pili",
+ "name": "Pili Pili",
+ "editeur": "ATM Gaming",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/50748/pili-pili.jpg",
+   "largeur": 887,
+   "hauteur": 1200,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française ATM Gaming (jeu de base, pas Extra Spicy)"
+  }
+ ],
+ "credit": "© ATM Gaming",
+ "manque": [
+  "logo"
+ ]
+}

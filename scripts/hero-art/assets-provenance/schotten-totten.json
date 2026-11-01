@@ -1,0 +1,19 @@
+{
+ "id": "schotten-totten",
+ "name": "Schotten Totten",
+ "editeur": "Iello",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/524/schotten-totten.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte française Mini Games, rendu 3D sur fond blanc; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Iello",
+ "manque": [
+  "logo"
+ ]
+}

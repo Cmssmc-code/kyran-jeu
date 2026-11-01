@@ -1,0 +1,27 @@
+{
+ "id": "skyjo",
+ "name": "Skyjo",
+ "editeur": "Magilano",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://cdn.shopify.com/s/files/1/0019/1696/0881/files/SKYJO_CardGame_01_topbox.png?v=1713255874",
+   "largeur": 1350,
+   "hauteur": 2325,
+   "remarque": "visuel boîte du site officiel magilano.com (édition anglaise 'Card Game')"
+  },
+  {
+   "file": "cards.png",
+   "kind": "cartes",
+   "source_url": "https://cdn.shopify.com/s/files/1/0019/1696/0881/files/SKYJO_CardGame_08_SKYJOcardcompilation.png?v=1713965296",
+   "largeur": 2100,
+   "hauteur": 1824,
+   "remarque": "cartes et dos, site officiel magilano.com"
+  }
+ ],
+ "credit": "© Magilano",
+ "manque": [
+  "logo"
+ ]
+}

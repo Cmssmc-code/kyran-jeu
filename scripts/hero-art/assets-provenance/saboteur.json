@@ -1,0 +1,19 @@
+{
+ "id": "saboteur",
+ "name": "Saboteur",
+ "editeur": "Gigamic",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/46994/saboteur.jpg",
+   "largeur": 753,
+   "hauteur": 1200,
+   "remarque": "boîte française, rendu 3D; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Gigamic",
+ "manque": [
+  "logo"
+ ]
+}

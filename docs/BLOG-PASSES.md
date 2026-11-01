@@ -149,33 +149,44 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
      (zigzags, points, arcs concentriques en traits blancs), fond crème, safran `#E6AB26`, terracotta `#B8432A`,
      noir encre `#231F22`, touches de rouge, orange, vert, bleu et violet (les six couleurs des cartes KYRAN),
      vue de dessus ou scène simple, de la place vide à gauche pour le titre, **aucun texte, aucun chiffre, aucun
-     logo, aucun nom de marque, aucun personnage réel**. **Marques des jeux cités (précisé par le propriétaire le
-     1er novembre 2026 : « pas de logo, rien d'inventé ou de similaire, tout est parfait »)** : **aucun logo, aucun
-     titre en lettres, aucune boîte, aucune illustration d'origine, et rien qui les imite ou leur ressemble** (marques et
-     droits d'auteur des éditeurs ; risque de laisser croire à un partenariat). On garde seulement ce qui est factuel et
-     libre : les **couleurs réelles** du jeu (lues sur la fiche de l'éditeur) et son **thème réel** (ce dont parle le
-     jeu : feux d'artifice pour Hanabi, courses de chameaux pour Camel Up…), dessinés dans la gravure KYRAN. Un logo
-     officiel n'entre que sur autorisation écrite de l'éditeur, à garder dans le dépôt. Un article à plusieurs jeux
-     combine deux ou trois de ces thèmes, jamais tous. **Contrôle de qualité avant d'enregistrer** : ouvrir l'image
-     en pleine taille ; la refaire si elle montre un texte ou des pseudo-lettres, un logo ou un symbole de marque, des
-     objets déformés (cartes, pions, mains, doigts), un nombre d'objets incohérent avec l'article, ou un détail
-     inventé sur un jeu ; légende et texte alternatif ne décrivent que ce que l'on voit. Le sujet de l'image raconte le sujet de l'article (un objet
-     ou une scène précise, pas un décor générique). **Méthode retenue le 1er novembre 2026 : illustration vectorielle dessinée en code** (le générateur d'images de Canva
-     est limité par un quota de crédits et ne rend qu'une miniature de 200 px). Écrire un script qui s'appuie sur
-     `scripts/hero-art/kyran_art.py` et produit un SVG (voir `scripts/hero-art/README.md`), l'exporter avec
-     `scripts/hero-art/render.js` (Chromium, 1920 × 1080), **regarder le rendu en pleine taille, lister les défauts,
-     corriger, recommencer (3 passes au moins, 6 au plus)** ; personnages, animaux, trains et objets dessinés avec de
-     bonnes formes (courbes, proportions justes), comptes exacts (le titre donne un nombre de jeux ou de joueurs : l'image
-     montre ce nombre). Livrer `blog/images/<slug>.jpg` (1200 × 675, JPEG qualité 82), lancer
-     `node scripts/optimize-images.mjs` puis **annuler les autres WebP régénérés par effet de bord**
-     (`git ls-files -m | grep '\.webp$' | xargs git checkout --`), garder la source dans `scripts/hero-art/<slug>.svg`.
-     Légende : « Illustration créée pour KYRAN : … » (dessin vectoriel) ou « … créée par intelligence artificielle … »
-     (image générée), qui décrit **uniquement ce que l'on voit** (compter les objets et les personnages ; ne pas deviner
-     des âges ou des liens de parenté). **Logos et images officielles** : seulement avec des droits explicites (licence
-     libre lue sur la page : par exemple les photos du jury du Spiel des Jahres sont en CC BY-SA 4.0, mais ses logos n'ont
-     aucune licence indiquée et la FAQ du jury dit que le signe est sa propriété) ; sinon, aucun. Avant de choisir, vérifier
-     qu'aucun autre article n'a la même image :
-     `grep -ho "heroImage[^,]*" scripts/content/blog/*.mjs | sort | uniq -c | sort -rn`.
+     logo, aucun nom de marque, aucun personnage réel**. **Visuels officiels des jeux et prix cités (décision du propriétaire du 1er novembre 2026 : « tu prends les logos
+   et les visuels des jeux à fond, même sans licence libre, tu prends tout »)** : l'image d'en-tête **intègre les vrais
+   visuels officiels** (boîtes françaises de préférence, logos, pions et labels de prix) des jeux et prix que l'article
+   cite, pris sur les sources de l'éditeur, du jury ou d'un grand revendeur, **jamais redessinés ni inventés**. Garde-fous
+   (pour limiter le risque juridique, qui reste réel puisque les éditeurs n'ont pas donné de licence) : **ne jamais
+   modifier un visuel officiel** (pas d'étirement, de recoloration ni de découpe de son contenu ; rotation légère et mise
+   à l'échelle proportionnelle seulement), **créditer l'éditeur dans la légende** (« © éditeur », champ `credit` du
+   `provenance.json`), **ne rien suggérer qui laisse croire à un partenariat ou à un avis** (mot « partenaire » interdit,
+   aucun slogan prêté à l'éditeur), garder l'usage éditorial (illustrer l'article qui parle du jeu) et **retirer sans
+   discuter un visuel dès qu'un éditeur le demande**. Les visuels sont collectés une fois (images détourées dans un
+   dossier de travail, `provenance.json` par jeu avec l'URL source) ; les provenances sont gardées dans
+   `scripts/hero-art/assets-provenance/`. **Les compositions ne se répètent pas** : avant d'en dessiner une nouvelle,
+   fabriquer la **planche contact** de toutes les images d'en-tête (`blog/images/*.jpg` des articles) et en choisir une
+   qui n'y ressemble pas (scène, décor, couleur de fond, cadrage) ; sont déjà pris : mains seules autour d'une carte
+   d'atout, étagère de boutique, chapeau de magicien, podium, paquet-cadeau géant, cheminée de Noël, triangle de mains,
+   sablier géant, masque et éventail, table carrée à quatre, bar rond à six, galion pirate, ronde de personnages, grille
+   de cartes en perspective, salon de nuit, cordée d'alpinistes, échiquier isométrique, portants de prix, escalier,
+   valise, terrasse sous glycine, salle des ventes, courbe sans chiffres, gîte en coupe, fauteuils face à face, bar à
+   cocktails, pâturage, maison familiale, étagères de lauréats, banquet en perspective, nuit de Dixit, éléphant-palanquin,
+   pli de cartes, chambre d'ado, soirée sur une terrasse. **Aucun chiffre inventé dans une image** (pas de piles de
+   hauteur croissante, pas de courbe qui suggère des ventes). **Contrôle de qualité avant d'enregistrer** : ouvrir
+   l'image en pleine taille ; la refaire si elle montre des objets déformés (cartes, pions, mains, doigts), des boîtes
+   cachées à plus d'un quart, un nombre d'objets incohérent avec l'article ou le titre, ou un détail inventé ; légende
+   et texte alternatif ne décrivent que ce que l'on voit. Le sujet de l'image raconte le sujet de l'article (un objet
+   ou une scène précise, pas un décor générique). **Méthode : illustration vectorielle dessinée en code** (le
+   générateur d'images de Canva est limité par un quota et ne rend qu'une miniature de 200 px). Écrire un script qui
+   s'appuie sur `scripts/hero-art/kyran_art.py` et produit un SVG (voir `scripts/hero-art/README.md`), l'exporter avec
+   `scripts/hero-art/render.js` (Chromium, 1920 × 1080), **regarder le rendu en pleine taille, lister les défauts,
+   corriger, recommencer (3 passes au moins, 6 au plus)** ; personnages, animaux et objets dessinés avec de bonnes
+   formes, comptes exacts (le titre donne un nombre de jeux ou de joueurs : l'image montre ce nombre). Livrer
+   `blog/images/<slug>.jpg` (1200 × 675, JPEG qualité 82), lancer `node scripts/optimize-images.mjs` puis **annuler les
+   autres WebP régénérés par effet de bord** (`git ls-files -m | grep '\.webp$' | xargs git checkout --`). Les SVG
+   des images qui embarquent des visuels officiels pèsent plusieurs mégaoctets : on garde le script et les
+   provenances, pas le SVG. Légende : « Illustration créée pour KYRAN, avec les visuels officiels de <jeux visibles>
+   (© éditeurs) : <ce que l'on voit>. » (ou « Illustration créée pour KYRAN : … » sans visuel officiel), qui décrit
+   **uniquement ce que l'on voit** (compter les objets et les personnages ; ne pas deviner des âges ou des liens de
+   parenté). Avant de choisir, vérifier qu'aucun autre article n'a la même image :
+   `grep -ho "heroImage[^,]*" scripts/content/blog/*.mjs | sort | uniq -c | sort -rn`.
    - **des photos** : une image d'en-tête et 2 à 4 images dans le texte, en lien direct avec le sujet,
      libres de droits (Wikimedia Commons avec licence vérifiée sur la page du fichier, ou visuels du
      dépôt), chacune avec texte alternatif descriptif et crédit (auteur, lien, licence) ; jamais de
@@ -282,6 +293,7 @@ journal, et la liste « En attente » si un sujet est traité ou découvert.
 | 2026-11-01 | **Correction et nouvelle règle d'images** (demandées par le propriétaire : deux cartes du blog affichaient la même image ; « pour tous les articles, existants et futurs, une image principale toujours bien choisie, créée de A à Z par IA dans la DA de l'article, ultra adaptée et personnalisée ») : `spiel-des-jahres-gagnants-1979-2026` reçoit sa **propre illustration générée** (Canva `generate-image`, gravure colorée aux six couleurs des cartes KYRAN, couronne de laurier, pions), exportée en 1920 × 1080 puis réduite à 1200 × 675, légende qui dit « créée par intelligence artificielle ». **Chaîne retenue** (voir la section « Image principale » du protocole) : `generate-image` ne rend que des miniatures de 200 px ; il faut placer l'image dans un design Canva puis `export-design` en JPG. Reste à faire : les autres articles qui reprennent une photo de jeu tierce ou une image déjà utilisée. | Rafraîchissement | `spiel-des-jahres-gagnants-1979-2026` | — | (cette PR) |
 | 2026-11-01 | **Images d'en-tête refaites, premier lot** (demande du propriétaire : une image par article, créée par IA d'après le sujet réel, « de A à Z » pour tous les articles) : 8 articles reçoivent leur illustration générée (Canva `generate-image`, export 1920 × 1080 via un design, contrôle en pleine taille) : `spiel-des-jahres-gagnants-1979-2026`, `as-dor-palmares-1988-2026` (la photo de Cannes et sa ligne de crédit sont retirées ; le label officiel de l'As d'Or, vu sur le site du festival, n'est pas imité), `jeux-3-joueurs`, `jeux-cartes-4-joueurs`, `jeux-cartes-adultes`, `jeux-cartes-week-end-gite`, `jeux-comme-skyjo`, `jeux-grands-groupes`, et l'article écrit à la main `science-jeux-de-cartes-cerveau` (HTML modifié à la main : og:image, twitter:image, préchargement, image d'en-tête, JSON-LD). **Blocage : Canva répond « quota de crédits dépassé »** (compte du propriétaire) pour les 29 autres articles ; une image (`alternatives-belote-coinche`) est refusée à la relecture (bloc rectangulaire coupé net, médaillons peu lisibles). Légendes relues contre l'image (Skyjo : « une pile et une carte posée à côté », pas « deux piles »). Reste 29 articles : voir « En attente » (point 0b). | Rafraîchissement | 9 articles | — | (cette PR) |
 | 2026-11-01 | **Images d'en-tête refaites, deuxième lot : 29 articles en vectoriel** (le quota Canva est épuisé ; demande du propriétaire : « tout par vecteur, toujours super bien, sans rien inventer ; personnages, animaux, trains avec de bonnes formes ; voir, améliorer, revoir »). Six agents ont dessiné les 29 images restantes en SVG (3 à 5 passes de relecture chacune) ; **relecture de chaque image en pleine taille par la session principale** (comptes exacts, aucun texte, aucun logo, aucune boîte). Légendes corrigées : plus d'âges ni de liens de parenté devinés, plus de nombre de cartes en main quand il n'est pas lisible. L'ancienne image refusée de `alternatives-belote-coinche` est remplacée. Sources SVG et script d'export dans `scripts/hero-art/`. **Logos officiels : aucun intégré** (voir règle « image principale »). Reste à décider avec le propriétaire : refaire en vectoriel les 9 images générées par IA pour l'homogénéité. | Rafraîchissement | 29 articles | — | (cette PR) |
+| 2026-11-01 | **Images d'en-tête refaites, troisième lot : 37 articles, visuels officiels intégrés** (décision du propriétaire : « tu prends les logos et les visuels des jeux à fond, même sans licence libre » ; « des visuels différents de tous ceux d'avant, belles, neuves, originales, ultra adaptées »). Six agents ont collecté 41 boîtes françaises (Ludum, Philibert, éditeurs), les pions Spiel des Jahres, le label As d'Or et les visuels KYRAN (provenances dans `scripts/hero-art/assets-provenance/`) ; dix agents ont recomposé chaque image avec une scène imposée et différente (3 à 5 passes), relecture en pleine taille par la session principale, trois retouches (courbe du marché sans fausse donnée, visage dégagé sur le bluff). Légendes créditant les éditeurs. **Écarts connus** : aucun logo de titre séparé trouvé (Wikimedia et BGG refusent les accès automatiques), uniquement boîtes, pions et label ; quelques boîtes en anglais ou allemand faute d'édition française (Wizard, Oh Hell!, Letter Jam, Parade) ; Jungle Speed édition Eco ; risque juridique accepté par le propriétaire (retrait sans discussion si un éditeur le demande). Règle mise à jour dans « image principale ». | Rafraîchissement | 37 articles | — | (cette PR) |
 
 ## En attente
 

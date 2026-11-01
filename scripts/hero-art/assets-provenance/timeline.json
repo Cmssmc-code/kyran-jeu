@@ -1,0 +1,19 @@
+{
+ "id": "timeline",
+ "name": "Timeline",
+ "editeur": "Asmodee",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/29260/timeline.jpg",
+   "largeur": 987,
+   "hauteur": 1024,
+   "remarque": "Édition classique Asmodee 2025 ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Asmodee",
+ "manque": [
+  "logo"
+ ]
+}

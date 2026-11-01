@@ -1,0 +1,19 @@
+{
+ "id": "sdj-carcassonne",
+ "name": "Carcassonne (Spiel des Jahres 2001)",
+ "editeur": "Hans im Glück",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/04/2001Carcassonne_RGB_WEB.jpg",
+   "largeur": 1032,
+   "hauteur": 1500,
+   "remarque": "édition allemande 2001 avec sceau"
+  }
+ ],
+ "credit": "© Hans im Glück (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

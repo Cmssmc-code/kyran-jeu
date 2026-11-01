@@ -1,0 +1,19 @@
+{
+ "id": "the-mind",
+ "name": "The Mind",
+ "editeur": "Oya / Pegasus (Wolfgang Warsch)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/46660/the-mind.jpg",
+   "largeur": 910,
+   "hauteur": 1200,
+   "remarque": "édition française Oya, page produit Ludum"
+  }
+ ],
+ "credit": "© Oya / Nürnberger-Spielkarten-Verlag",
+ "manque": [
+  "logo"
+ ]
+}

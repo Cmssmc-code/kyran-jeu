@@ -1,0 +1,19 @@
+{
+ "id": "sushi-go",
+ "name": "Sushi Go!",
+ "editeur": "Cocktail Games (Gamewright)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42827/sushi-go.jpg",
+   "largeur": 796,
+   "hauteur": 942,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française en boîte métal, fond blanc"
+  }
+ ],
+ "credit": "© Cocktail Games",
+ "manque": [
+  "logo"
+ ]
+}

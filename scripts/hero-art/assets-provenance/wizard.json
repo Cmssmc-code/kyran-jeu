@@ -1,0 +1,19 @@
+{
+ "id": "wizard",
+ "name": "Wizard",
+ "editeur": "Amigo",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/477366-thickbox_default/wizard-vo-4007396069006.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte allemande (VO) via Philibert ; édition française non trouvée"
+  }
+ ],
+ "credit": "© AMIGO Spiel + Freizeit GmbH",
+ "manque": [
+  "logo"
+ ]
+}

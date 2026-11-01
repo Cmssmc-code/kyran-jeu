@@ -1,0 +1,27 @@
+{
+ "id": "star-realms",
+ "name": "Star Realms",
+ "editeur": "White Wizard Games / IELLO",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/348562-thickbox_default/star-realms-vf-3760175512582.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte VF IELLO via Philibert"
+  },
+  {
+   "file": "cards.jpg",
+   "kind": "cartes",
+   "source_url": "https://cdn1.philibertnet.com/819069-thickbox_default/star-realms-vf-3760175512582.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "cartes VF, fiche Philibert"
+  }
+ ],
+ "credit": "© White Wizard Games / IELLO",
+ "manque": [
+  "logo"
+ ]
+}

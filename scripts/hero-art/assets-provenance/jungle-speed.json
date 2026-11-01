@@ -1,0 +1,19 @@
+{
+ "id": "jungle-speed",
+ "name": "Jungle Speed",
+ "editeur": "Asmodee (Zygomatic)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/44523/jungle-speed-eco.jpg",
+   "largeur": 728,
+   "hauteur": 1200,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française éco-conçue (totem bois, sac coton bio), image de la fiche Ludum"
+  }
+ ],
+ "credit": "© Asmodee / Zygomatic",
+ "manque": [
+  "logo"
+ ]
+}

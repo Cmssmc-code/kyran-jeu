@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux <span class="accent">coopératifs</span> de cartes',
   heroSubtitle: 'Indices codés, signal unique ou silence complet : la règle de communication décide du jeu qui conviendra à votre table.',
   heroImage: "/blog/images/jeux-coop-cartes.jpg",
-  heroCaption: "Illustration créée pour KYRAN : quatre joueurs autour d'une table ronde tenant chacun un éventail de cartes tourné vers les autres, avec au centre quatre piles de cartes marquées de chevrons et une pioche.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de The Game (© Oya), Letter Jam (© Czech Games Edition), Hanabi (© Cocktail Games / Abacusspiele), The Crew (© Iello / Kosmos) et The Mind (© Oya / Nürnberger-Spielkarten-Verlag) : quatre alpinistes reliés par une corde gravissent une pente enneigée, et chacune des cinq boîtes est posée sur une corniche rocheuse, comme une étape.",
   layout: {
     answerFirst: true
   },

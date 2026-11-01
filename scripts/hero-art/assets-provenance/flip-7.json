@@ -1,0 +1,19 @@
+{
+ "id": "flip-7",
+ "name": "Flip 7",
+ "editeur": "Catch Up Games / The OP Games",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/47232/flip-7.jpg",
+   "largeur": 822,
+   "hauteur": 1200,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). édition française Catch Up Games"
+  }
+ ],
+ "credit": "© Catch Up Games / The OP Games",
+ "manque": [
+  "logo"
+ ]
+}

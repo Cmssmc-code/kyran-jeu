@@ -1,0 +1,19 @@
+{
+ "id": "papayoo",
+ "name": "Papayoo",
+ "editeur": "Gigamic",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/29967/papayoo.jpg",
+   "largeur": 613,
+   "hauteur": 600,
+   "remarque": "résolution modeste (613x600), PNG transparent; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Gigamic",
+ "manque": [
+  "logo"
+ ]
+}

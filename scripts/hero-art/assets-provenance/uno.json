@@ -1,0 +1,19 @@
+{
+ "id": "uno",
+ "name": "Uno",
+ "editeur": "Mattel",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludifolie.com/617-product_main_2x/uno.jpg",
+   "largeur": 548,
+   "hauteur": 800,
+   "remarque": "boîte Uno W2087 recadrée ; texte multilingue d'Europe de l'Est, pas FR ; visuel revendeur Ludifolie"
+  }
+ ],
+ "credit": "© Mattel",
+ "manque": [
+  "logo"
+ ]
+}

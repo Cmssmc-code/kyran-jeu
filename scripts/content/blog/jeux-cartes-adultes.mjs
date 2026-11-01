@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de cartes pour <span class="accent">adultes</span>',
   heroSubtitle: `Parier, mentir, coopérer en silence ou s'affronter à deux : sept jeux qui respectent l'intelligence de la table.`,
   heroImage: "/blog/images/jeux-cartes-adultes.jpg",
-  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : une table ronde sculptée portant un éventail de cartes face cachée, des piles de jetons, un sablier et un masque sculpté mi-noir mi-terracotta.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de The Crew (© Iello / Kosmos), Wizard (© AMIGO Spiel + Freizeit GmbH), Schotten Totten (© Iello), Star Realms (© White Wizard Games / IELLO), Coup (© Ferti Games), KYRAN (© KYRAN, kyran-jeu.fr) et Skull (© Asmodee / Space Cowboys) : sept boîtes posées sur une table basse, entre un fauteuil club, une fenêtre de nuit, une lampe et un verre de vin.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

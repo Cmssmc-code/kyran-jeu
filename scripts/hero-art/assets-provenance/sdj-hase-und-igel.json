@@ -1,0 +1,19 @@
+{
+ "id": "sdj-hase-und-igel",
+ "name": "Hase und Igel (Spiel des Jahres 1979)",
+ "editeur": "Ravensburger / Otto Maier Verlag",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.spiel-des-jahres.de/wp-content/uploads/2019/04/1979HaseundIgel_RGB_low.jpg",
+   "largeur": 500,
+   "hauteur": 369,
+   "remarque": "édition allemande 1979 avec sceau Spiel des Jahres/Kritikerpreis ; seulement 500 px de large"
+  }
+ ],
+ "credit": "© Ravensburger (couverture publiée par spiel-des-jahres.de)",
+ "manque": [
+  "logo du jeu (non demandé : couverture seule)"
+ ]
+}

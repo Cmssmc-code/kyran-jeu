@@ -1,0 +1,19 @@
+{
+ "id": "love-letter",
+ "name": "Love Letter",
+ "editeur": "Z-Man Games / Asmodee",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/31887/love-letter.jpg",
+   "largeur": 659,
+   "hauteur": 1023,
+   "remarque": "rendu 3D de la boîte (édition Z-Man); image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Z-Man Games / Asmodee",
+ "manque": [
+  "logo"
+ ]
+}

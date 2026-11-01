@@ -9,7 +9,7 @@ export default {
   "heroTitle": "Jeux de cartes <span class=\"accent\">à moins de 15 €</span>",
   "heroSubtitle": "Neuf jeux, de 9,99 € à 14,90 €, avec le prix relevé le 23 octobre 2026 et ce qu’on gagne ou perd à chaque palier.",
   "heroImage": "/blog/images/jeux-cartes-moins-de-15-euros.jpg",
-  "heroCaption": "Illustration créée pour KYRAN : neuf paquets de cartes face cachée de couleurs et de motifs différents, rangés en grille de trois par trois sur un grand disque safran, avec une bourse en tissu, une étiquette de prix sans texte et sept pièces.",
+  "heroCaption": "Illustration créée pour KYRAN, avec les visuels officiels de Trio (© Cocktail Games), Hanabi (© Cocktail Games / Abacusspiele), The Mind (© Oya / Nürnberger-Spielkarten-Verlag), Flip 7 (© Catch Up Games / The OP Games), Skull King (© Grandpa Beck's Games), Papayoo (© Gigamic), Dékal (© Gigamic), Cabanga (© Gigamic / AMIGO) et KYRAN (© KYRAN) : neuf boîtes suspendues par des fils à deux portants, avec des étiquettes rondes vides et une tirelire en forme de singe.",
   "layout": {
     "answerFirst": true,
     "criteriaAfter": true,

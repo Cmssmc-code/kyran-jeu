@@ -1,0 +1,19 @@
+{
+ "id": "dobble",
+ "name": "Dobble",
+ "editeur": "Asmodee / Zygomatic",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/494047-thickbox_default/dobble-3558380078180.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte métal Dobble classique, fiche Philibert, fond blanc"
+  }
+ ],
+ "credit": "© Asmodee / Zygomatic",
+ "manque": [
+  "logo"
+ ]
+}

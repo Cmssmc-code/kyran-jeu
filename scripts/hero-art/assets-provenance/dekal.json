@@ -1,0 +1,19 @@
+{
+ "id": "dekal",
+ "name": "Dékal",
+ "editeur": "Gigamic",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/46990/dekal.jpg",
+   "largeur": 753,
+   "hauteur": 1200,
+   "remarque": "Édition Gigamic ; fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Gigamic",
+ "manque": [
+  "logo"
+ ]
+}

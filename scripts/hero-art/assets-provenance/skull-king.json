@@ -1,0 +1,19 @@
+{
+ "id": "skull-king",
+ "name": "Skull King",
+ "editeur": "Grandpa Beck's Games",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/43203/skull-king.jpg",
+   "largeur": 814,
+   "hauteur": 1214,
+   "remarque": "boîte française; image servie par la fiche produit Ludum.fr"
+  }
+ ],
+ "credit": "© Grandpa Beck's Games",
+ "manque": [
+  "logo"
+ ]
+}

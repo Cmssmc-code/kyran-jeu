@@ -1,0 +1,19 @@
+{
+ "id": "bang",
+ "name": "Bang!",
+ "editeur": "dV Giochi / Da Vinci Editrice",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/405993-thickbox_default/bang-3558380005605.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte FR via Philibert ; pastille imprimée '500 000 exemplaires vendus' sur la boîte"
+  }
+ ],
+ "credit": "© dV Giochi",
+ "manque": [
+  "logo"
+ ]
+}

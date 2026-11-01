@@ -1,0 +1,19 @@
+{
+ "id": "cabanga",
+ "name": "Cabanga",
+ "editeur": "Gigamic / Amigo",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/23039/cabanga.jpg",
+   "largeur": 1900,
+   "hauteur": 1900,
+   "remarque": "édition française Gigamic, fond blanc, page produit Ludum"
+  }
+ ],
+ "credit": "© Gigamic / AMIGO",
+ "manque": [
+  "logo"
+ ]
+}

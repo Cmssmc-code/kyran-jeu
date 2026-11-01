@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de <span class="accent">stratégie légère</span>',
   heroSubtitle: 'Gérer sa main ou tenir une annonce : sept jeux de cartes où chaque tour pèse, rangés par mécanique.',
   heroImage: "/blog/images/jeux-strategie-legere.jpg",
-  heroCaption: "Illustration créée pour KYRAN : deux joueurs vus de dessus, face à face à une table rectangulaire à motifs, tenant chacun cinq cartes, avec entre eux sept colonnes de cartes de couleurs différentes, quatre cartes retournées (cœur, pique, carreau, trèfle) et des losanges le long d'une ligne médiane.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Lost Cities (© Iello / Kosmos), Wizard (© AMIGO Spiel + Freizeit GmbH), Star Realms (© White Wizard Games / IELLO), Parade (© Z-Man Games / Filosofia), Schotten Totten (© Iello) et Oh Hell! (© University Games) : un échiquier en vue isométrique où des cartes dressées tiennent lieu de pièces, et où les six boîtes se tiennent sur les cases.",
   layout: {
     compare: false,
     numbered: false,

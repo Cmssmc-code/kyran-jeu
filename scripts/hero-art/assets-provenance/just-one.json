@@ -1,0 +1,19 @@
+{
+ "id": "just-one",
+ "name": "Just One",
+ "editeur": "Repos Production",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/35094/just-one.jpg",
+   "largeur": 657,
+   "hauteur": 1023,
+   "remarque": "image de boîte via Ludum.fr (fiche produit). nouvelle version française (550 mots inédits)"
+  }
+ ],
+ "credit": "© Repos Production",
+ "manque": [
+  "logo"
+ ]
+}

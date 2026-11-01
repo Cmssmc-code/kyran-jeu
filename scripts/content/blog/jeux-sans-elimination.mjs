@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux <span class="accent">sans élimination</span>',
   heroSubtitle: 'Cinq jeux où chacun garde ses cartes en main jusqu’au dernier tour, et la grille pour juger les autres.',
   heroImage: "/blog/images/jeux-sans-elimination.jpg",
-  heroCaption: "Illustration créée pour KYRAN : cinq joueurs de teintes et de coiffures variées, vus de dessus, assis autour d'une table ronde gravée de zigzags, chacun tenant cinq cartes, avec une pioche, une carte pique retournée et cinq piles de jetons au centre.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Sushi Go! (© Cocktail Games), Timeline (© Asmodee), Hanabi (© Cocktail Games / Abacusspiele), No Thanks! (© Gigamic / AMIGO) et Skyjo (© Magilano) : cinq personnages en robes à motifs qui se tiennent la main en ronde sur un tapis en losange, et cinq boîtes de jeu disposées en gerbe au-dessus d'eux, sous une guirlande de fanions.",
   layout: {
     criteriaAfter: true,
     criteriaShort: 'Vérifier',

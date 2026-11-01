@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Week-end en gîte : <span class="accent">7 jeux de cartes</span>',
   heroSubtitle: 'Après le dîner, la cheminée, huit adultes et un voisin de l’autre côté du mur : quels jeux sortir de la valise, et lesquels laisser dans le coffre.',
   heroImage: "/blog/images/jeux-cartes-week-end-gite.jpg",
-  heroCaption: "Illustration créée par intelligence artificielle pour KYRAN : six amis assis autour d'une table en bois, cartes en main, devant une cheminée allumée dans une pièce aux murs de pierre, avec des verres et une bougie.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Papayoo, Skull King, Skyjo, Just One, Flip 7 et Jungle Speed (© Gigamic, Grandpa Beck's Games, Magilano, Repos Production, Catch Up Games / The OP Games, Asmodee / Zygomatic) : un gîte en pierre vu en coupe, avec cheminée allumée, trois lits à l'étage et six boîtes de jeux sur la table de ferme.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

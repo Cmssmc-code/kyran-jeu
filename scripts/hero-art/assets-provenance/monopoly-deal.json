@@ -1,0 +1,19 @@
+{
+ "id": "monopoly-deal",
+ "name": "Monopoly Deal",
+ "editeur": "Hasbro",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/684954-thickbox_default/shuffle-monopoly-deal-5010996236982.jpg",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "boîte FR Hasbro Gaming via Philibert"
+  }
+ ],
+ "credit": "© Hasbro",
+ "manque": [
+  "logo"
+ ]
+}

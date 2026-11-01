@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de <span class="accent">bluff</span> et de pari',
   heroSubtitle: `Mentir en face, cacher son camp ou parier sur sa main : sept jeux, trois manières de faire douter la table.`,
   heroImage: "/blog/images/jeux-bluff-pari.jpg",
-  heroCaption: "Illustration créée pour KYRAN : un masque bicolore couronné sur un losange safran, sept disques face cachée alignés en dessous, un éventail de cinq cartes et quatre pièces.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de For Sale, Wizard, Saboteur, Skull, Bang!, Coup (© Iello, AMIGO Spiel + Freizeit GmbH, Gigamic, Asmodee / Space Cowboys, dV Giochi, Ferti Games) et de KYRAN : un personnage lève un masque tribal safran devant un regard en coin, face à sept boîtes alignées en arc léger devant onze cartes face cachée rouges et noires.",
   layout: {
     groups: [
       {

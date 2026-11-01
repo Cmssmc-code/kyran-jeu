@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Alternatives à <span class="accent">Uno</span>',
   heroSubtitle: `Du jeu de réflexe dès 6 ans au bluff entre adultes : huit manières de quitter la pioche et les +4.`,
   heroImage: "/blog/images/alternatives-uno.jpg",
-  heroCaption: "Illustration créée pour KYRAN : huit cartes de couleurs différentes, chacune marquée d'un symbole gravé, disposées en cercle autour d'une étoile centrale.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Jungle Speed, Love Letter, Dobble, Saboteur, Llama, Skyjo, Monopoly Deal et KYRAN (© Asmodee / Zygomatic, Z-Man Games / Asmodee, Gigamic, Magilano, Hasbro, KYRAN) : huit boîtes de jeux de cartes rangées sur un rayonnage de bois à deux niveaux, sous un panneau vide.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

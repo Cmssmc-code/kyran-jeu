@@ -1,0 +1,49 @@
+{
+ "id": "kyran",
+ "name": "KYRAN - Maître des Mystiques",
+ "editeur": "propriétaire du site kyran-jeu.fr",
+ "files": [
+  {
+   "file": "boite-recto-kyran.jpg",
+   "kind": "boite",
+   "source_url": "/home/user/kyran-jeu/boite-recto-kyran.jpg",
+   "largeur": 1048,
+   "hauteur": 1500,
+   "remarque": "visuels du propriétaire du site ; boîte en 3/4 avec tranche visible"
+  },
+  {
+   "file": "kyran-cartes-table.jpg",
+   "kind": "cards",
+   "source_url": "/home/user/kyran-jeu/kyran-cartes-table.jpg",
+   "largeur": 1080,
+   "hauteur": 1440,
+   "remarque": "visuels du propriétaire du site ; boîte posée sur cartes Nombre étalées"
+  },
+  {
+   "file": "kyran-cartes-pouvoirs.webp",
+   "kind": "cards",
+   "source_url": "/home/user/kyran-jeu/kyran-cartes-pouvoirs.webp",
+   "largeur": 1500,
+   "hauteur": 1500,
+   "remarque": "visuels du propriétaire du site ; visuel marketing « Des cartes aux pouvoirs fantastiques »"
+  },
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "/home/user/kyran-jeu/logo.png",
+   "largeur": 512,
+   "hauteur": 512,
+   "remarque": "visuels du propriétaire du site ; singe mystique sur disque ocre, fond transparent"
+  },
+  {
+   "file": "og-kyran.jpg",
+   "kind": "autre",
+   "source_url": "/home/user/kyran-jeu/og-kyran.jpg",
+   "largeur": 1200,
+   "hauteur": 630,
+   "remarque": "visuels du propriétaire du site ; image de partage social"
+  }
+ ],
+ "credit": "© KYRAN (kyran-jeu.fr)",
+ "manque": []
+}

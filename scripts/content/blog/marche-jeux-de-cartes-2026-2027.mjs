@@ -9,7 +9,7 @@ export default {
   heroTitle: 'Jeux de cartes : <span class="accent">le marché 2026-2027</span>',
   heroSubtitle: 'Le bilan 2025, les premiers chiffres de 2026 et ce que les sorties annoncées laissent attendre pour 2027, avec les limites des sources.',
   heroImage: "/blog/images/marche-jeux-de-cartes-2026-2027.jpg",
-  heroCaption: "Illustration créée pour KYRAN : un étal de boutique à auvent rayé avec sept colonnes de cartes de couleurs différentes qui montent puis se stabilisent, une flèche pointillée de tendance et deux piles de pièces sur le comptoir.",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Flip 7, Trio, Skyjo, Dékal et Cabanga (© Catch Up Games / The OP Games, Cocktail Games, Magilano, Gigamic, Gigamic / AMIGO) : cinq stands de marché identiques à auvent rayé, chacun présentant une boîte sur un socle de même hauteur, sous une flèche montante.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,

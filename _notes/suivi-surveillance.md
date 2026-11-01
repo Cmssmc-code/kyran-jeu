@@ -21,7 +21,8 @@ voie serveur** (run 41272367909, `"sent":true`). Rapport complet :
 | Workflows, code | OK | tout vert ; 0 faille |
 | Versions | à jour | rien à prendre ; `compatibility_date` gardée au 2026-10-30 (`wrangler dev` refuse le 2026-11-01) |
 
-Aucune réparation. Point ouvert : rotation des secrets Railway (décision du propriétaire).
+Aucune réparation. Rotation des secrets Railway : **close**, le propriétaire a décidé le 01/11 de ne pas changer
+les secrets de ce projet (consigne ajoutée en A2 de la mission). Plus aucun point ouvert.
 
 ## 2026-10-31 — passage planifié (04:08 UTC)
 

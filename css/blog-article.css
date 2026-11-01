@@ -620,6 +620,7 @@
 }
 .blog-article-page .compare-table tbody tr:last-child > * { border-bottom: 0; }
 .blog-article-page .compare-table tbody th { font-weight: 700; color: var(--k-ink); min-width: 8.5em; }
+.blog-article-page .compare-table caption { caption-side: top; padding: 12px 14px 8px; text-align: left; font-size: 0.85rem; font-weight: 700; color: var(--k-ink); }
 .blog-article-page .compare-table-hint { display: none; margin: 0 0 8px; font-size: 0.85rem; color: #6B625C; }
 .blog-article-page .article-main table:not(.compare-table) { display: block; max-width: 100%; overflow-x: auto; }
 
@@ -806,6 +807,24 @@
   .blog-article-page .game-pick__overview { grid-template-columns: 1fr; }
   .blog-article-page .game-link { flex: 1 1 calc(50% - 8px); }
   .blog-article-page .compare-table-hint { display: block; }
+  /* Tableaux : première colonne figée pendant le glissement, cellules plus serrées */
+  .blog-article-page .compare-table { min-width: 500px; font-size: 0.86rem; }
+  .blog-article-page .compare-table th,
+  .blog-article-page .compare-table td { padding: 10px 10px; }
+  .blog-article-page .compare-table thead th:first-child,
+  .blog-article-page .compare-table tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 7.5em;
+    max-width: 9.5em;
+    box-shadow: 1px 0 0 var(--k-line), 6px 0 8px -6px rgba(35, 31, 34, 0.25);
+  }
+  .blog-article-page .compare-table tbody th { background: #fff; }
+  .blog-article-page .compare-table tbody tr.col-kyran th { background: #FCF8F1; }
+  /* Le dégradé ::after de style.css glisse avec le contenu : l'ombre de défilement du cadre suffit */
+  .blog-article-page .compare-table-wrap::after { content: none; }
+  .blog-article-page .compare-table thead th:first-child { background: var(--k-kraft); z-index: 2; }
   .kyran-pitch { padding: 18px 16px; box-shadow: 3px 3px 0 var(--k-ink); }
   .blog-article-page .kyran-pitch__facts { gap: 2px 14px; }
   .kyran-pitch__facts li + li::before { content: none; }

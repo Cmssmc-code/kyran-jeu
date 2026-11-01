@@ -9,8 +9,8 @@ const BLOG_ITEMS = [
     "date": "2026-10-26",
     "readMinutes": 14,
     "excerpt": "Les 48 Spiel, 16 Kennerspiel et 26 Kinderspiel des Jahres, de 1979 à 2026, en tableau et en CSV vérifié fiche par fiche sur la base officielle du jury.",
-    "image": "/blog/images/hanabi.jpg",
-    "webp": "/blog/images/hanabi.webp",
+    "image": "/blog/images/spiel-des-jahres-gagnants-1979-2026.jpg",
+    "webp": "/blog/images/spiel-des-jahres-gagnants-1979-2026.webp",
     "gameCount": 0,
     "related": [
       "jeux-coop-cartes",

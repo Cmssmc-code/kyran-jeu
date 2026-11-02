@@ -42,11 +42,20 @@
    "largeur": 1920,
    "hauteur": 640,
    "remarque": "bandeau des 4 labels (As d'Or, Enfant, Initié, Expert), fond blanc ; gardé pour référence, non découpé car le label seul est fourni"
+  },
+  {
+   "file": "logo-festival-icone-1024.png",
+   "kind": "logo",
+   "source_url": "https://www.festivaldesjeux-cannes.com/app/dist/cannes-festi-jeux/favicon/favicon/apple-touch-icon-1024x1024.8fe6eb06ee.png",
+   "largeur": 1024,
+   "hauteur": 1024,
+   "remarque": "icône tactile du site : logo blanc sur dégradé violet-vert opaque (pas un logo coloré à fond transparent)"
   }
  ],
  "credit": "© Festival International des Jeux de Cannes",
  "manque": [
-  "logo festival en couleur",
-  "SVG du label As d'Or"
+  "logo festival en couleur (le site n'expose que des versions blanches : logo.svg, Logoblanc.svg)",
+  "SVG du label As d'Or (le site ne sert que du webp)",
+  "label avec vrai fond transparent (non trouvé ; logo_transparent.png reste un détourage PIL)"
  ]
 }

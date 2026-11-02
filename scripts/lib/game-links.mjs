@@ -55,7 +55,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=skyjo',
     designer: 'Alexander Bernhardt',
     year: 2015,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Magilano'
   },
   'love-letter': {
     bgg: 'https://boardgamegeek.com/boardgame/129622/love-letter',
@@ -63,7 +63,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=love+letter',
     designer: 'Seiji Kanai',
     year: 2012,
-    imageCredit: 'Visuel de la boîte — Z-Man Games (via Philibert)'
+    imageCredit: 'Visuel de la boîte — © Z-Man Games / Asmodee'
   },
   hanabi: {
     bgg: 'https://boardgamegeek.com/boardgame/98778/hanabi',
@@ -71,7 +71,7 @@ export const GAME_LINKS = {
     shop: 'https://www.ludum.fr/jeu-dambiance/hanabi-496',
     designer: 'Antoine Bauza',
     year: 2010,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Cocktail Games / Abacusspiele'
   },
   kyran: {
     shop: 'https://www.amazon.fr/dp/B0G217LD87',
@@ -87,14 +87,14 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=lost+cities',
     designer: 'Reiner Knizia',
     year: 1999,
-    imageCredit: 'Photo — zizou man (Flickr), CC BY 2.0, via Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Iello / Kosmos'
   },
   timeline: {
     bgg: 'https://boardgamegeek.com/boardgame/257284/timeline-classic',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=timeline+classic',
     designer: 'Frédéric Henry',
     year: 2011,
-    imageCredit: 'Visuel de la boîte — Zygomatic / Asmodee (via Philibert)'
+    imageCredit: 'Visuel de la boîte — © Asmodee'
   },
   dobble: {
     bgg: 'https://boardgamegeek.com/boardgame/63268/spot-it',
@@ -102,7 +102,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=dobble',
     designer: 'Denis Blanchot',
     year: 2009,
-    imageCredit: 'Photo — Philibert / Asmodee'
+    imageCredit: 'Visuel de la boîte — © Asmodee / Zygomatic ; logo du jeu'
   },
   'jungle-speed': {
     bgg: 'https://boardgamegeek.com/boardgame/8098/jungle-speed',
@@ -110,7 +110,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=jungle+speed',
     designer: 'Thomas Vuarchex et Pierric Yakovenko',
     year: null,
-    imageCredit: 'Photo — Nicosmos, Wikimedia Commons, CC BY-SA 3.0'
+    imageCredit: 'Visuel de la boîte — © Asmodee / Zygomatic ; logo du jeu'
   },
   uno: {
     bgg: 'https://boardgamegeek.com/boardgame/2223/uno',
@@ -118,7 +118,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=uno',
     designer: 'Merle Robbins',
     year: 1971,
-    imageCredit: 'Logo — Mattel, Wikimedia Commons (domaine public)'
+    imageCredit: 'Visuel de la boîte — © Mattel ; logo du jeu'
   },
   saboteur: {
     bgg: 'https://boardgamegeek.com/boardgame/9220/saboteur',
@@ -126,7 +126,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=saboteur',
     designer: 'Frédéric Moyersoen',
     year: 2004,
-    imageCredit: 'Photo — Philibert / Gigamic'
+    imageCredit: 'Visuel de la boîte — © Gigamic'
   },
   codenames: {
     bgg: 'https://boardgamegeek.com/boardgame/178900/codenames',
@@ -134,7 +134,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=codenames',
     designer: 'Vlaada Chvátil',
     year: 2015,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Iello / Czech Games Edition'
   },
   skull: {
     bgg: 'https://boardgamegeek.com/boardgame/92415/skull',
@@ -142,7 +142,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=skull',
     designer: 'Hervé Marly',
     year: 2011,
-    imageCredit: 'Photo — Asmodee'
+    imageCredit: 'Visuel de la boîte — © Asmodee / Space Cowboys ; logo du jeu'
   },
   bang: {
     bgg: 'https://boardgamegeek.com/boardgame/3955/bang',
@@ -150,7 +150,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=bang',
     designer: 'Emiliano Sciarra',
     year: 2002,
-    imageCredit: 'Photo — dV Giochi'
+    imageCredit: 'Visuel de la boîte — © dV Giochi'
   },
   dixit: {
     bgg: 'https://boardgamegeek.com/boardgame/39856/dixit',
@@ -166,7 +166,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=wizard',
     designer: 'Ken Fisher',
     year: 1984,
-    imageCredit: 'Logo — Ken Fisher, vectorisé par TheWanderingTraders, Wikimedia Commons, CC BY-SA 4.0'
+    imageCredit: 'Visuel de la boîte — © AMIGO Spiel + Freizeit GmbH'
   },
   'colt-express': {
     bgg: 'https://boardgamegeek.com/boardgame/158899/colt-express',
@@ -174,7 +174,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=colt+express',
     designer: 'Christophe Raimbault',
     year: 2014,
-    imageCredit: 'Visuel promotionnel (illustration) — Ludonaute'
+    imageCredit: 'Visuel de la boîte — © Ludonaute ; logo du jeu'
   },
   'the-crew': {
     bgg: 'https://boardgamegeek.com/boardgame/284083/the-crew-the-quest-for-planet-nine',
@@ -182,7 +182,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+crew',
     designer: 'Thomas Sing',
     year: 2019,
-    imageCredit: 'Photo — KOSMOS'
+    imageCredit: 'Visuel de la boîte — © Iello / Kosmos'
   },
   // Ajoutés le 14 octobre 2026 : identifiants BGG contrôlés par api.geekdo.com, pages boutique en 200.
   'skull-king': {
@@ -213,7 +213,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=oh+hell',
     designer: 'Traditionnel',
     year: null,
-    imageCredit: 'Photo — Newwhist, Wikimedia Commons, CC BY-SA 4.0'
+    imageCredit: 'Visuel de la boîte — © University Games'
   },
   '6-qui-prend': {
     bgg: 'https://boardgamegeek.com/boardgame/432/take-5',
@@ -221,14 +221,14 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=6+qui+prend',
     designer: 'Wolfgang Kramer',
     year: 1994,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Gigamic'
   },
   parade: {
     bgg: 'https://boardgamegeek.com/boardgame/56692/parade',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=parade+z-man',
     designer: 'Naoki Homma',
     year: 2007,
-    imageCredit: 'Photo — Z-Man Games'
+    imageCredit: 'Visuel de la boîte — © Z-Man Games / Filosofia (éd. FR)'
   },
   'schotten-totten': {
     bgg: 'https://boardgamegeek.com/boardgame/372/schotten-totten',
@@ -236,7 +236,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=schotten+totten',
     designer: 'Reiner Knizia',
     year: 1999,
-    imageCredit: 'Photo — PS Games'
+    imageCredit: 'Visuel de la boîte — © Iello'
   },
   'sushi-go': {
     bgg: 'https://boardgamegeek.com/boardgame/133473/sushi-go',
@@ -244,7 +244,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=sushi+go',
     designer: 'Phil Walker-Harding',
     year: 2013,
-    imageCredit: 'Visuel de la boîte (édition française) — éditeur'
+    imageCredit: 'Visuel de la boîte — © Cocktail Games'
   },
   'the-mind': {
     bgg: 'https://boardgamegeek.com/boardgame/244992/the-mind',
@@ -276,7 +276,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=star+realms',
     designer: 'Darwin Kastle et Robert Dougherty',
     year: 2014,
-    imageCredit: 'Photo — Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © White Wizard Games / IELLO ; logo du jeu'
   },
   'no-thanks': {
     bgg: 'https://boardgamegeek.com/boardgame/12942/no-thanks',
@@ -284,14 +284,14 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=no+thanks',
     designer: 'Thorsten Gimmler',
     year: 2004,
-    imageCredit: 'Photo — CMYK (édition Magenta), Wikimedia Commons'
+    imageCredit: 'Visuel de la boîte — © Gigamic / AMIGO'
   },
   'letter-jam': {
     bgg: 'https://boardgamegeek.com/boardgame/275467/letter-jam',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=letter+jam',
     designer: 'Ondra Skoupý',
     year: 2019,
-    imageCredit: 'Visuel de la boîte (édition française) — Czech Games Edition / IELLO'
+    imageCredit: 'Visuel de la boîte — © Czech Games Edition'
   },
   'for-sale': {
     bgg: 'https://boardgamegeek.com/boardgame/172/for-sale',
@@ -307,7 +307,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=monopoly+deal',
     designer: 'Katharine Chapman',
     year: 2008,
-    imageCredit: 'Visuel de la boîte (édition française) — Hasbro Gaming'
+    imageCredit: 'Visuel de la boîte — © Hasbro ; logo du jeu'
   },
   llama: {
     bgg: 'https://boardgamegeek.com/boardgame/266083/llama',
@@ -321,7 +321,7 @@ export const GAME_LINKS = {
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=the+game+cartes',
     designer: 'Steffen Benndorf',
     year: 2015,
-    imageCredit: 'Photo — Philibert / Oya'
+    imageCredit: 'Visuel de la boîte — © Oya'
   }
 };
 

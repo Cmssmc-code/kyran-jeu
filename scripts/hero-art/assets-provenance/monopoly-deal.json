@@ -10,10 +10,16 @@
    "largeur": 1024,
    "hauteur": 1024,
    "remarque": "boîte FR Hasbro Gaming via Philibert"
+  },
+  {
+   "file": "logo.svg",
+   "kind": "logo",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Monopoly_game_logo.svg",
+   "remarque": "Wikimedia Commons File:Monopoly game logo.svg, SVG ; logo Monopoly (pas spécifique à Deal), marque Hasbro"
   }
  ],
  "credit": "© Hasbro",
  "manque": [
-  "logo"
+  "boite2"
  ]
 }

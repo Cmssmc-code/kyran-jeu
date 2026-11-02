@@ -10,10 +10,18 @@
    "largeur": 925,
    "hauteur": 1492,
    "remarque": "boîte française nouvelle édition, rendu 3D; image servie par la fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.png",
+   "kind": "boite",
+   "source_url": "https://cdn.prod.website-files.com/67d17a45b4e1484b40ea8869/6836d01be6d1472eccb6fb20_web-box.webp",
+   "largeur": 1000,
+   "hauteur": 1500,
+   "remarque": "boîte anglaise nouvelle édition CGE, rendu 3D angulaire, PNG transparent (converti depuis WebP); site czechgames.com/en/codenames"
   }
  ],
  "credit": "© Iello / Czech Games Edition",
  "manque": [
-  "logo"
+  "logo (aucun logo de jeu isolé trouvé en source officielle ; Commons API 429, sites éditeurs sans fichier logo)"
  ]
 }

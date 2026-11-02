@@ -46,7 +46,7 @@ export default {
       pick: 'Pour discuter librement sans citer un chiffre, de un à cinq',
       paragraphs: [
         `The Game est le plus bavard des coopératifs de cette page, et c’est sa singularité. L’équipe doit écouler 98 cartes numérotées de 2 à 99 sur quatre piles communes : deux montent à partir de 1, deux descendent à partir de 100. On a le droit de parler de tout, sauf des valeurs exactes. D’où un langage d’approximations, du genre « évitez la pile de gauche, j’ai une carte très proche ».`,
-        `La subtilité tient au retour en arrière : une carte inférieure d’exactement dix sur une pile montante, ou supérieure de dix sur une descendante, la fait reculer et redonne de l’air. C’est aussi le seul jeu de la sélection jouable en solo, de 1 à 5 joueurs, dès 8 ans, en vingt minutes environ. Revers de la parole libre : le joueur le plus loquace peut finir par organiser la partie à la place des autres.`
+        `La subtilité tient au retour en arrière : une carte inférieure d’exactement dix sur une pile montante, ou supérieure de dix sur une descendante, la fait reculer et redonne de l’air. C’est aussi le seul jeu de la sélection jouable en solo (notre page sur les <a class="text-link" href="/blog/jeux-cartes-solo.html">jeux de cartes à jouer seul</a> en présente d’autres), de 1 à 5 joueurs, dès 8 ans, en vingt minutes environ. Revers de la parole libre : le joueur le plus loquace peut finir par organiser la partie à la place des autres.`
       ]
     },
     {

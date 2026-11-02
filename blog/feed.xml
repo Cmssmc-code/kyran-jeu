@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 01 Nov 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-solo.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-solo.html</guid>
+      <pubDate>Mon, 02 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Cinq jeux de cartes à jouer seul (Vendredi, Onirim, Palm Island, Megalopolis, The Game) et la patience classique, avec les prix relevés le 2 novembre 2026.</description>
+    </item>
     <item>
       <title>Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes</title>
       <link>https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html</link>

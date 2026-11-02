@@ -322,6 +322,33 @@ export const GAME_LINKS = {
     designer: 'Steffen Benndorf',
     year: 2015,
     imageCredit: 'Visuel de la boîte — © Oya'
+  },
+  vendredi: {
+    bgg: 'https://boardgamegeek.com/boardgame/43570/friday',
+    shop: 'https://www.ludum.fr/jeux-de-strategie-inities/vendredi-309',
+    designer: 'Friedemann Friese',
+    year: 2011,
+    imageCredit: 'Visuel de la boîte — © 2F-Spiele / Matagot'
+  },
+  onirim: {
+    bgg: 'https://boardgamegeek.com/boardgame/71836/onirim',
+    shop: 'https://www.ludum.fr/jeux-de-strategie-inities/onirim-3233',
+    designer: 'Shadi Torbey',
+    year: 2010,
+    imageCredit: 'Visuel de la boîte — © InPatience'
+  },
+  'palm-island': {
+    shop: 'https://www.ludum.fr/jeux-de-strategie-inities/palm-island-296',
+    designer: 'Jon Mietling',
+    year: 2019,
+    imageCredit: 'Visuel de la boîte — © Nuts Publishing / Portal Dragon'
+  },
+  megalopolis: {
+    bgg: 'https://boardgamegeek.com/boardgame/251658/sprawlopolis',
+    shop: 'https://www.espritjeu.com/jeux-de-strategie/megalopolis.html',
+    designer: 'Steven Aramini, Danny Devine et Paul Kluka',
+    year: 2018,
+    imageCredit: 'Visuel de la boîte — © Matagot / Button Shy'
   }
 };
 

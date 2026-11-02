@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-03 : run nocturne n° 14
+
+- **Verdict : À surveiller** (pas d'incident ; aucune mise à jour Google confirmée). La requête « tarot africain » passe de 25 à 60 impressions par jour (6 → 26/10) à 2 à 14 depuis le 27/10, position moyenne inchangée (8 à 10) ; la page `tarot-africain` perd moins (910 → 618 impressions sur 7 j). Ni cause technique (page indexée, canonical correct, JSON-LD valide, 0 anomalie) ni effet de nos changements : Google n'a pas réexploré la page depuis le 21/10, avant la FAQ « en ligne » du 24/10. Pas d'action sur le titre (règle 12, réévaluable le 15/11) ; demande de réexploration ajoutée en tête du bloc 1 du prompt Chrome.
+- **Google** (`dataState: all`, 27/10 → 02/11, dernier jour provisoire) : 7 j 45 clics (−2 %), 1 847 impressions (−28 %) ; 28 j 173 clics, 8 100 impressions, CTR 2,14 %, position 8,7. Hausse : `jeux-3-joueurs` position 22,1 → 15,3 (103 impressions), accueil 1 → 4 clics, `regle` 2 → 4 clics.
+- **Bing** (25 → 31/10) : 4 clics (−50 %), 146 impressions (+12 %) ; 63 pages dans l'index.
+- **Technique** : sitemap 100 % en 200, 0 anomalie, TTFB médian 292 ms. Inspection : 26/30 ; hors index `communaute` (désormais « URL inconnue de Google »), `video-regles`, `jeux-memoire-concentration`, `jeux-draft-encheres`.
+- **Veille** : 24 h : article de la routine blog « jeux de cartes à jouer seul » (`jeux-cartes-solo`, sitemap et `llms.txt` à jour, 62 pages le lient), Surveillance (wrangler). GEO (WebSearch, prompts 7 à 9) : 0 sur 3.
+- **Actions** : aucune modification de page. Prompt Chrome : réexploration de `tarot-africain` et `faq` (priorité 2), `jeux-cartes-solo` ajouté (priorité 1).
+- **À décider** : inchangé.
+
 ### 2026-11-02 : run nocturne n° 13 (lundi)
 
 - **Verdict : Stable** (pas d'alerte ; aucune mise à jour Google confirmée, recherche du 02/11 : dernière en date, mai 2026).

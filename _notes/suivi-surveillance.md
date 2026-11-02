@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-02 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 41387475465, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-02.md`](../docs/rapports/surveillance/2026-11-02.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 55 URL × 1280/390 px sans erreur (nouvelles images du blog saines) ; 358 liens, 0 interne cassé |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert (2 CI annulés sur une branche blog = remplacés) ; 0 faille |
+| Versions | 1 mise à jour | wrangler 4.156.1, `compatibility_date` 2026-11-02 |
+
+Mise à jour : PR #166. Aucun point ouvert.
+
 ## 2026-11-01 — passage planifié (04:08 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

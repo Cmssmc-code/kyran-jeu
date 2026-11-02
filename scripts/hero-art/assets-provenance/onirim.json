@@ -1,0 +1,19 @@
+{
+ "id": "onirim",
+ "name": "Onirim",
+ "editeur": "InPatience",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/9558/onirim.jpg",
+   "largeur": 3000,
+   "hauteur": 2182,
+   "remarque": "édition InPatience 2022, fond blanc, fiche produit Ludum"
+  }
+ ],
+ "credit": "© InPatience",
+ "manque": [
+  "logo"
+ ]
+}

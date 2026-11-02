@@ -1,0 +1,19 @@
+{
+ "id": "vendredi",
+ "name": "Vendredi",
+ "editeur": "Matagot / Edge (VO 2F-Spiele)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42925/vendredi.jpg",
+   "largeur": 986,
+   "hauteur": 1024,
+   "remarque": "édition française, fiche produit Ludum (boîte en 3/4)"
+  }
+ ],
+ "credit": "© 2F-Spiele / Matagot",
+ "manque": [
+  "logo"
+ ]
+}

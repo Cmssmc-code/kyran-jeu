@@ -1,0 +1,19 @@
+{
+ "id": "megalopolis",
+ "name": "Megalopolis",
+ "editeur": "Matagot (VO Button Shy, Sprawlopolis)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.espritjeu.com/upload/image/megalopolis--ex-sprawlopolis--p-image-90917-grande.jpg",
+   "largeur": 487,
+   "hauteur": 358,
+   "remarque": "édition française Matagot, fiche produit Esprit Jeu ; source petite (487 px), agrandie ×1,25 pour la fiche"
+  }
+ ],
+ "credit": "© Matagot / Button Shy",
+ "manque": [
+  "logo"
+ ]
+}

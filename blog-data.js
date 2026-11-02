@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-cartes-solo",
+    "title": "Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026",
+    "category": "Cartes",
+    "date": "2026-11-02",
+    "readMinutes": 12,
+    "excerpt": "Cinq jeux de cartes à jouer seul (Vendredi, Onirim, Palm Island, Megalopolis, The Game) et la patience classique, avec les prix relevés le 2 novembre 2026.",
+    "image": "/blog/images/jeux-cartes-solo.jpg",
+    "webp": "/blog/images/jeux-cartes-solo.webp",
+    "gameCount": 5,
+    "related": [
+      "jeux-coop-cartes",
+      "jeux-vacances-voyage",
+      "jeux-cartes-moins-de-15-euros"
+    ]
+  },
+  {
     "slug": "spiel-des-jahres-gagnants-1979-2026",
     "title": "Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes",
     "category": "Cartes",

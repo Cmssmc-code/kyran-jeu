@@ -1,0 +1,19 @@
+{
+ "id": "palm-island",
+ "name": "Palm Island",
+ "editeur": "Nuts Publishing (VO Portal Dragon)",
+ "files": [
+  {
+   "file": "box.jpg",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/49328/palm-island.jpg",
+   "largeur": 750,
+   "hauteur": 1200,
+   "remarque": "édition française Nuts Publishing, fiche produit Ludum"
+  }
+ ],
+ "credit": "© Nuts Publishing / Portal Dragon",
+ "manque": [
+  "logo"
+ ]
+}

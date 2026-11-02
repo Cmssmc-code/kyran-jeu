@@ -118,9 +118,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-solo.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-solo.jpg</image:loc>
+      <image:title>Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html</loc>
     <lastmod>2026-11-01</lastmod>
@@ -291,7 +299,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-coop-cartes.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-coop-cartes.jpg</image:loc>
       <image:title>Jeux de cartes coopératifs : de Hanabi à The Crew, cinq façons de jouer ensemble</image:title>
@@ -323,7 +331,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-vacances-voyage.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-vacances-voyage.jpg</image:loc>
       <image:title>Jeux de cartes pour les vacances et le voyage : 7 jeux à emporter</image:title>

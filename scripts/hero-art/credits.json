@@ -437,5 +437,15 @@
    "sdj-kinder"
   ],
   "legende": "Illustration créée pour KYRAN, avec les visuels officiels de Hase und Igel (© Ravensburger), Die Siedler von Catan (© KOSMOS), Carcassonne (© Hans im Glück), Zug um Zug (© Days of Wonder), Hanabi (© Abacusspiele), Camel Up (© Pegasus Spiele / eggertspiele), Azul (© Next Move Games), Dito (© Game Factory) et des trois pions Spiel, Kennerspiel et Kinderspiel des Jahres (© Spiel des Jahres e.V.) : huit couvertures de lauréats sur deux étagères, entre le pion Spiel des Jahres à gauche et les pions Kennerspiel et Kinderspiel à droite."
+ },
+ "jeux-cartes-solo": {
+  "assets": [
+   "onirim",
+   "vendredi",
+   "the-game",
+   "palm-island",
+   "megalopolis"
+  ],
+  "legende": "Illustration créée pour KYRAN, avec les visuels officiels d’Onirim (© InPatience), Vendredi (© 2F-Spiele / Matagot), The Game (© Oya), Palm Island (© Nuts Publishing / Portal Dragon) et Megalopolis (© Matagot / Button Shy) : une banquette sous une fenêtre cintrée au lever du soleil, une patience en sept colonnes étalée sur le coussin, une tasse fumante et les cinq boîtes posées à droite."
  }
 }

@@ -219,7 +219,7 @@ function renderIntro(intro) {
 
 function renderLLMBox(article) {
   const gamesList = article.games.map((g, i) =>
-    `<li><strong>${i + 1}. ${g.name}</strong> — ${g.players} joueurs, ${g.duration}, ${g.price}${g.type ? ' · ' + g.type : ''}</li>`
+    `<li><strong>${i + 1}. ${g.name}</strong> — ${g.players} ${g.players === '1' ? 'joueur' : 'joueurs'}, ${g.duration}, ${g.price}${g.type ? ' · ' + g.type : ''}</li>`
   ).join('');
   return `<aside class="article-llm-box" aria-label="Résumé de la sélection">
   <p class="article-llm-box__label">En bref</p>

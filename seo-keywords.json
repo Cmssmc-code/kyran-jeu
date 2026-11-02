@@ -653,6 +653,19 @@
         "jeux de cartes mémoire études"
       ],
       "secondary_queries": []
+    },
+    {
+      "page": "/blog/jeux-cartes-solo.html",
+      "primary_queries": [
+        "jeu de cartes solo",
+        "jeux de cartes à jouer seul",
+        "jeu de cartes pour jouer seul"
+      ],
+      "secondary_queries": [
+        "jeu de société solo cartes",
+        "réussite cartes seul",
+        "patience jeu de cartes"
+      ]
     }
   ],
   "kpis_monthly": [

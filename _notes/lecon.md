@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-02 — Build sous Windows : `?v=` faux à cause des fins de ligne CRLF
+
+- **Symptôme :** dans un worktree Windows (`core.autocrlf=true`), `npm run build` réécrit les `?v=` de presque toutes les pages (y compris `error-reporter.js?v=`, fichier non modifié) : les versions sont des empreintes SHA-1 des octets bruts, et les fichiers extraits en CRLF n'ont pas les mêmes octets que sur la CI Linux. La CI (« fichiers générés à jour ») échouerait.
+- **Correctif :** commiter les sources, puis réextraire les fichiers suivis en LF (`git ls-files -z | xargs -0 rm -f && git -c core.autocrlf=false checkout -- .`) et relancer `npm run build` : seuls les vrais changements restent. Ne pas modifier `core.autocrlf` dans la configuration partagée du dépôt.
+- **Contrôle :** après le build, `git diff` ne doit pas toucher `error-reporter.js?v=` si `error-reporter.js` n'a pas changé.
+
 ### 2026-11-01 — Blog mobile : chiffres débordants, carrousel de 38 articles, tableaux illisibles
 
 - **Symptôme :** sur `/blog/` en 375 px, la 3e case des chiffres (« 2300+ mots par guide ») sortait de l'écran ; les 38 articles défilaient dans un carrousel horizontal (une carte et demie visible) ; dans les articles, la 1re colonne des comparatifs disparaissait au glissement, la légende était coupée et un dégradé blanc glissait au milieu du tableau.

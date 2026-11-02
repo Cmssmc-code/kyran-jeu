@@ -10,6 +10,14 @@
    "largeur": 1000,
    "hauteur": 1000,
    "remarque": "Édition française Origames ; fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.png",
+   "kind": "boite",
+   "source_url": "https://www.origames.fr/wp-content/uploads/2022/06/Cabo-BOX.png",
+   "largeur": 1117,
+   "hauteur": 1118,
+   "remarque": "Boîte FR Origames en 3/4 (comme box.jpg), PNG transparent un peu plus grand ; site Origames.fr"
   }
  ],
  "credit": "© Origames / Bézier Games",

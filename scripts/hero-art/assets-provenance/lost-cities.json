@@ -10,6 +10,14 @@
    "largeur": 1024,
    "hauteur": 1024,
    "remarque": "Lost Cities - Le Duel, édition française Iello ; fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.png",
+   "kind": "boite",
+   "source_url": "https://www.kosmos.de/cdn/shop/files/4002051694135.png?v=1786015096&width=2362",
+   "largeur": 2362,
+   "hauteur": 2327,
+   "remarque": "Boîte allemande Kosmos « Lost Cities - Das Duell », face quasi plate, PNG transparent ; fiche Kosmos.de"
   }
  ],
  "credit": "© Iello / Kosmos",

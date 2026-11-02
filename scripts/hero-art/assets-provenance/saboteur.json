@@ -10,10 +10,18 @@
    "largeur": 753,
    "hauteur": 1200,
    "remarque": "boîte française, rendu 3D; image servie par la fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.png",
+   "kind": "boite",
+   "source_url": "https://www.gigamic.com/4224-large_default/saboteur.jpg",
+   "largeur": 800,
+   "hauteur": 800,
+   "remarque": "face avant plate française, PNG transparent (converti depuis WebP), léger recadrage bas/droite; fiche gigamic.com"
   }
  ],
  "credit": "© Gigamic",
  "manque": [
-  "logo"
+  "logo (aucun logo de jeu isolé trouvé en source officielle ; Commons API 429, sites éditeurs sans fichier logo)"
  ]
 }

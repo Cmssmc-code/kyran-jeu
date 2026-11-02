@@ -10,10 +10,18 @@
    "largeur": 1024,
    "hauteur": 1024,
    "remarque": "boîte métal Dobble classique, fiche Philibert, fond blanc"
+  },
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "https://cdn.svc.asmodee.net/production-zygomatic/uploads/image-converter/2025/10/Dobble-%C2%B7-Universe-Logo.webp",
+   "largeur": 1500,
+   "hauteur": 500,
+   "remarque": "site zygomatic-games.com, WebP converti en PNG transparent (médaillon jaune + main)"
   }
  ],
  "credit": "© Asmodee / Zygomatic",
  "manque": [
-  "logo"
+  "boite2"
  ]
 }

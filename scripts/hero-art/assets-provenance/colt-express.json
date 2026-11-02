@@ -18,10 +18,18 @@
    "largeur": 710,
    "hauteur": 459,
    "remarque": "matériel éclaté, site ludonaute.fr (basse résolution)"
+  },
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "https://www.data.ludonaute.fr/Colt_Express/LOGOS/Colt_Express_LOGO.png",
+   "largeur": 7870,
+   "hauteur": 2204,
+   "remarque": "dossier LOGOS du site data.ludonaute.fr, PNG transparent"
   }
  ],
  "credit": "© Ludonaute",
  "manque": [
-  "logo"
+  "boite2"
  ]
 }

@@ -10,10 +10,18 @@
    "largeur": 869,
    "hauteur": 1024,
    "remarque": "boîte française Skull, page produit Ludum"
+  },
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "https://cdn.svc.asmodee.net/production-asmodeefrv2/uploads/image-converter/2024/07/SCSK02FR_LOGO_20230109.webp",
+   "largeur": 1024,
+   "hauteur": 342,
+   "remarque": "logo officiel du jeu, PNG transparent (converti depuis webp), page produit Asmodee FR"
   }
  ],
  "credit": "© Asmodee / Space Cowboys",
  "manque": [
-  "logo"
+  "box2 (aucune boîte plus nette, seule image 3D identique)"
  ]
 }

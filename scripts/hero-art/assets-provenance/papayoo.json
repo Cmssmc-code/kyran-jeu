@@ -10,10 +10,18 @@
    "largeur": 613,
    "hauteur": 600,
    "remarque": "résolution modeste (613x600), PNG transparent; image servie par la fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.jpg",
+   "kind": "boite",
+   "source_url": "https://www.gigamic.com/3517-large_default/papayoo.jpg",
+   "largeur": 800,
+   "hauteur": 800,
+   "remarque": "face avant plate de la boîte française, fond blanc (converti depuis WebP); fiche gigamic.com"
   }
  ],
  "credit": "© Gigamic",
  "manque": [
-  "logo"
+  "logo (aucun logo de jeu isolé trouvé en source officielle ; Commons API 429, sites éditeurs sans fichier logo)"
  ]
 }

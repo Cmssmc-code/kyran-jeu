@@ -10,10 +10,14 @@
    "largeur": 728,
    "hauteur": 1200,
    "remarque": "image de boîte via Ludum.fr (fiche produit). édition française éco-conçue (totem bois, sac coton bio), image de la fiche Ludum"
+  },
+  {
+   "file": "logo.svg",
+   "kind": "logo",
+   "source_url": "https://upload.wikimedia.org/wikipedia/fr/f/ff/JungleSpeedLogo.svg",
+   "remarque": "logo issu de Wikimedia Commons (fr), vérifié"
   }
  ],
  "credit": "© Asmodee / Zygomatic",
- "manque": [
-  "logo"
- ]
+ "manque": []
 }

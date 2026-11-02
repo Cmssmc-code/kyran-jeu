@@ -10,10 +10,16 @@
    "largeur": 548,
    "hauteur": 800,
    "remarque": "boîte Uno W2087 recadrée ; texte multilingue d'Europe de l'Est, pas FR ; visuel revendeur Ludifolie"
+  },
+  {
+   "file": "logo.svg",
+   "kind": "logo",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/UNO_Logo.svg",
+   "remarque": "Wikimedia Commons File:UNO Logo.svg, SVG vectoriel fond transparent, logo marque Mattel (marque déposée)"
   }
  ],
  "credit": "© Mattel",
  "manque": [
-  "logo"
+  "boite2"
  ]
 }

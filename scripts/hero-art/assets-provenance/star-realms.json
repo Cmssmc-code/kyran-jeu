@@ -18,10 +18,18 @@
    "largeur": 1024,
    "hauteur": 1024,
    "remarque": "cartes VF, fiche Philibert"
+  },
+  {
+   "file": "logo.png",
+   "kind": "logo",
+   "source_url": "https://www.starrealms.com/images/Core/star_realms_logo_big.webp",
+   "largeur": 512,
+   "hauteur": 512,
+   "remarque": "site officiel starrealms.com, WebP converti en PNG transparent, avec mention 'Deckbuilding Game'"
   }
  ],
  "credit": "© White Wizard Games / IELLO",
  "manque": [
-  "logo"
+  "boite2"
  ]
 }

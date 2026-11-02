@@ -10,10 +10,18 @@
    "largeur": 800,
    "hauteur": 800,
    "remarque": "édition française intitulée Lama, PNG transparent; image servie par la fiche produit Ludum.fr"
+  },
+  {
+   "file": "box2.jpg",
+   "kind": "boite",
+   "source_url": "https://www.gigamic.com/3343-large_default/lama.jpg",
+   "largeur": 800,
+   "hauteur": 800,
+   "remarque": "face avant plate française, fond blanc, légèrement recadrée en bas (converti depuis WebP); fiche gigamic.com"
   }
  ],
  "credit": "© Gigamic",
  "manque": [
-  "logo"
+  "logo (aucun logo de jeu isolé trouvé en source officielle ; Commons API 429, sites éditeurs sans fichier logo)"
  ]
 }

@@ -11,36 +11,43 @@ export const GAME_LINKS = {
     wiki: 'https://fr.wikipedia.org/wiki/Exploding_Kittens',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=exploding+kittens',
     designer: 'Elan Lee, Matthew Inman et Shane Small',
-    year: 2015
+    year: 2015,
+    imageCredit: 'Visuel de la boîte — © Exploding Kittens'
   },
   cabo: {
     wiki: 'https://en.wikipedia.org/wiki/Cabo_(game)',
     shop: 'https://www.ludum.fr/jeux-de-strategie-en-famille/cabo-2557',
     designer: 'Mandy Henning et Melissa Limes',
-    year: 2010
+    year: 2010,
+    imageCredit: 'Visuel de la boîte — © Origames / Bézier Games'
   },
   'flip-7': {
     shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/flip-7-8516',
     designer: 'Eric Olsen',
-    year: 2025
+    year: 2025,
+    imageCredit: 'Visuel de la boîte — © Catch Up Games / The OP Games'
   },
   trio: {
     shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/trio-4542',
-    year: 2023
+    year: 2023,
+    imageCredit: 'Visuel de la boîte — © Cocktail Games'
   },
   dekal: {
     shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/dekal-7670',
     designer: 'Claude Clément',
-    year: 2024
+    year: 2024,
+    imageCredit: 'Visuel de la boîte — © Gigamic'
   },
   cabanga: {
     shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/cabanga-7055',
     designer: 'Michael Modler',
-    year: 2024
+    year: 2024,
+    imageCredit: 'Visuel de la boîte — © Gigamic / AMIGO'
   },
   papayoo: {
     shop: 'https://www.ludum.fr/jeu-dambiance/papayoo-1624',
-    year: null
+    year: null,
+    imageCredit: 'Visuel de la boîte — © Gigamic'
   },
   skyjo: {
     bgg: 'https://boardgamegeek.com/boardgame/204135/skyjo',
@@ -150,7 +157,8 @@ export const GAME_LINKS = {
     wiki: 'https://fr.wikipedia.org/wiki/Dixit_(jeu)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=dixit',
     designer: 'Jean-Louis Roubira',
-    year: 2008
+    year: 2008,
+    imageCredit: 'Visuel de la boîte — © Libellud'
   },
   wizard: {
     bgg: 'https://boardgamegeek.com/boardgame/1465/wizard',
@@ -181,20 +189,23 @@ export const GAME_LINKS = {
     bgg: 'https://boardgamegeek.com/boardgame/150145/skull-king',
     shop: 'https://www.ludum.fr/jeux-de-strategie-en-famille/skull-king-505',
     designer: 'Brent et Jeffrey Beck',
-    year: 2013
+    year: 2013,
+    imageCredit: 'Visuel de la boîte — © Grandpa Beck\'s Games'
   },
   'cat-in-the-box': {
     bgg: 'https://boardgamegeek.com/boardgame/345972/cat-in-the-box-deluxe-edition',
     wiki: 'https://en.wikipedia.org/wiki/Cat_in_the_Box',
     shop: 'https://www.philibertnet.com/fr/matagot/125618-cat-in-the-box-3760372231705.html',
     designer: 'Muneyuki Yokouchi',
-    year: 2020
+    year: 2020,
+    imageCredit: 'Visuel de la boîte — © Matagot'
   },
   'pili-pili': {
     bgg: 'https://boardgamegeek.com/boardgame/453584/pili-pili',
     shop: 'https://www.philibertnet.com/fr/atm-gaming/158493-pili-pili-3770011991860.html',
     designer: 'Ben et JB',
-    year: 2025
+    year: 2025,
+    imageCredit: 'Visuel de la boîte — © ATM Gaming'
   },
   'oh-hell': {
     bgg: 'https://boardgamegeek.com/boardgame/1116/oh-hell',
@@ -240,23 +251,24 @@ export const GAME_LINKS = {
     wiki: 'https://fr.wikipedia.org/wiki/The_Mind',
     shop: 'https://www.ludum.fr/jeux-d-ambiance-en-famille/the-mind-227',
     designer: 'Wolfgang Warsch',
-    year: 2018
+    year: 2018,
+    imageCredit: 'Visuel de la boîte — © Oya / Nürnberger-Spielkarten-Verlag'
   },
   coup: {
     bgg: 'https://boardgamegeek.com/boardgame/131357/coup',
     wiki: 'https://en.wikipedia.org/wiki/Coup_(card_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=coup',
     designer: 'Rikki Tahta',
-    year: 2012
-    // Pas d'image : aucune photo libre de Coup trouvée ; l'ancienne (une planche de loterie
-    // ancienne venue d'une recherche Commons) n'avait rien à voir avec le jeu.
+    year: 2012,
+    imageCredit: 'Visuel de la boîte — © Ferti Games'
   },
   'just-one': {
     bgg: 'https://boardgamegeek.com/boardgame/254640/just-one',
     wiki: 'https://fr.wikipedia.org/wiki/Just_One',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=just+one',
     designer: 'Ludovic Roudy et Bruno Sautter',
-    year: 2018
+    year: 2018,
+    imageCredit: 'Visuel de la boîte — © Repos Production'
   },
   'star-realms': {
     bgg: 'https://boardgamegeek.com/boardgame/147020/star-realms',
@@ -286,7 +298,8 @@ export const GAME_LINKS = {
     wiki: 'https://en.wikipedia.org/wiki/For_Sale_(board_game)',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=for+sale',
     designer: 'Stefan Dorra',
-    year: 1997
+    year: 1997,
+    imageCredit: 'Visuel de la boîte — © Iello'
   },
   'monopoly-deal': {
     bgg: 'https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game',
@@ -300,7 +313,8 @@ export const GAME_LINKS = {
     bgg: 'https://boardgamegeek.com/boardgame/266083/llama',
     shop: 'https://www.philibertnet.com/fr/recherche?controller=search&search_query=llama+jeu',
     designer: 'Reiner Knizia',
-    year: 2019
+    year: 2019,
+    imageCredit: 'Visuel de la boîte — © Gigamic'
   },
   'the-game': {
     bgg: 'https://boardgamegeek.com/boardgame/173090/the-game',

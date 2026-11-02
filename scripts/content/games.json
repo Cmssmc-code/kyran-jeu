@@ -146,8 +146,7 @@
     "age": "8+",
     "price": "~30 €",
     "designer": "Jean-Louis Roubira",
-    "year": 2008,
-    "image": false
+    "year": 2008
   },
   "lost-cities": {
     "name": "Lost Cities",
@@ -176,8 +175,7 @@
     "age": "8+",
     "price": "~13 €",
     "designer": "Wolfgang Warsch",
-    "year": 2018,
-    "image": false
+    "year": 2018
   },
   "star-realms": {
     "name": "Star Realms",
@@ -265,8 +263,7 @@
     "age": "8+",
     "price": "~20 €",
     "designer": "Ludovic Roudy et Bruno Sautter",
-    "year": 2018,
-    "image": false
+    "year": 2018
   },
   "for-sale": {
     "name": "For Sale",
@@ -275,8 +272,7 @@
     "age": "10+",
     "price": "~14 €",
     "designer": "Stefan Dorra",
-    "year": 1997,
-    "image": false
+    "year": 1997
   },
   "the-game": {
     "name": "The Game",
@@ -295,8 +291,7 @@
     "age": "8+",
     "price": "~12 €",
     "designer": "Reiner Knizia",
-    "year": 2019,
-    "image": false
+    "year": 2019
   },
   "monopoly-deal": {
     "name": "Monopoly Deal",
@@ -314,7 +309,6 @@
     "duration": "~30 min",
     "age": "8+",
     "price": "~15 €",
-    "image": false,
     "designer": "Brent et Jeffrey Beck",
     "year": 2013
   },
@@ -324,7 +318,6 @@
     "duration": "~20 min",
     "age": "12+",
     "price": "~26 €",
-    "image": false,
     "designer": "Muneyuki Yokouchi",
     "year": 2020
   },
@@ -334,7 +327,6 @@
     "duration": "~20 min",
     "age": "8+",
     "price": "~14 €",
-    "image": false,
     "designer": "Ben et JB",
     "year": 2025
   },
@@ -344,7 +336,6 @@
     "duration": "< 20 min",
     "age": "8+",
     "price": "~11 €",
-    "image": false,
     "designer": "Mandy Henning et Melissa Limes",
     "year": 2010
   },
@@ -354,7 +345,6 @@
     "duration": "~30 min",
     "age": "7+",
     "price": "~15 €",
-    "image": false,
     "designer": null,
     "year": null
   },
@@ -364,7 +354,6 @@
     "duration": "~15 min",
     "age": "7+",
     "price": "~19 €",
-    "image": false,
     "designer": "Elan Lee, Matthew Inman et Shane Small",
     "year": 2015
   },
@@ -374,7 +363,6 @@
     "duration": "20 à 30 min",
     "age": "8+",
     "price": "~14 €",
-    "image": false,
     "designer": "Eric Olsen",
     "year": 2025
   },
@@ -384,7 +372,6 @@
     "duration": "~15 min",
     "age": "7+",
     "price": "~12 €",
-    "image": false,
     "designer": null,
     "year": 2023
   },
@@ -394,7 +381,6 @@
     "duration": "~15 min",
     "age": "7+",
     "price": "~15 €",
-    "image": false,
     "designer": "Claude Clément",
     "year": 2024
   },
@@ -404,7 +390,6 @@
     "duration": "~20 min",
     "age": "8+",
     "price": "~15 €",
-    "image": false,
     "designer": "Michael Modler",
     "year": 2024
   }

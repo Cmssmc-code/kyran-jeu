@@ -64,12 +64,15 @@ Priorité 1, hors index :
   https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html             (Explorée le 21/07, non indexée)
   https://kyran-jeu.fr/blog/jeux-draft-encheres.html              (Explorée le 24/10, non indexée ; liens ajoutés le 25/10)
   https://kyran-jeu.fr/video-regles.html                          (Découverte, non indexée)
-  https://kyran-jeu.fr/communaute.html                            (Découverte, non indexée)
+  https://kyran-jeu.fr/communaute.html                            (« URL inconnue de Google » le 03/11)
   https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html (article du 26/10, découvert, non exploré)
+  https://kyran-jeu.fr/blog/jeux-cartes-solo.html                 (article du 02/11)
   https://kyran-jeu.fr/blog/jeux-memoire-concentration.html       (Explorée le 27/09, non indexée ; relevé du 30/10)
   https://kyran-jeu.fr/blog/jeux-debutants-adultes.html           (Explorée le 22/09, non indexée ; relevé du 30/10)
-Priorité 2, indexées mais modifiées après leur dernière exploration (demander si exploration avant le 21/10) :
-  https://kyran-jeu.fr/tarot-africain.html           (explorée le 18/10, modifiée les 20 et 21/10)
+Priorité 2, indexées mais modifiées après leur dernière exploration (demander si exploration avant la date de modification) :
+  https://kyran-jeu.fr/tarot-africain.html           (explorée le 21/10, FAQ « en ligne » ajoutée le 24/10 ; À FAIRE EN PREMIER :
+                                                      impressions de « tarot africain » en forte baisse depuis le 27/10)
+  https://kyran-jeu.fr/faq.html                      (« Qu'est-ce que le jeu KYRAN ? » ajoutée le 26/10)
   https://kyran-jeu.fr/regle.html                    (explorée le 18/10, modifiée le 20/10)
 Priorité 3, indexées mais pas explorées depuis plus de 3 semaines (demander si exploration avant le 30/09) :
   https://kyran-jeu.fr/dossier-presse.html           (02/09)

@@ -20,6 +20,72 @@ titres de `docs/SUIVI-BLOG-SEO.md` et la liste des PR ouvertes.
 
 ---
 
+## Cadre d'exécution Trio (prioritaire sur les commandes du déroulé ci-dessous)
+
+Depuis le 2026-11-03 cette routine tourne dans **Claude Trio sur le PC Windows de Corentin** (worktree réservé
+`wt-routine-seo`, un run à minuit), plus dans une session cloud. Là où le déroulé dit autre chose, ceci l'emporte :
+
+- Shell : Git Bash. Python s'appelle `python` (jamais `python3`). Environnement : `python -m venv .venv` puis
+  `.venv/Scripts/python -m pip install -q -r scripts/requirements-seo.txt` (jamais `/tmp/seovenv`, `apt-get`,
+  `pip --break-system-packages`). Chemins Windows : pas de `/opt/pw-browsers` ; Lighthouse : `npx -y lighthouse@12`
+  avec le Chrome du PC si trouvé, sinon « non mesuré ».
+- GitHub : `gh` (connecté), pas d'outils `mcp__github__*`. Règle du dépôt : PR vers `main`, fusion automatique quand « Contrôles du site » est verte (`CLAUDE.md`).
+- Search Console / Bing : serveurs MCP `gsc` et `bing-webmaster` du `.mcp.json` (clés dans `.secrets/`) ou les
+  scripts `seo-*.py` ; si rien ne répond : « non mesuré », on continue.
+- Doc partagé : connecteur Claude Docs du compte (via ToolSearch). S'il est absent, le noter en tête du journal.
+- Pas de `send_later` ni de `PushNotification` direct : une alerte tient dans le message final (Trio la relaie).
+  Limite d'usage atteinte : commit « wip » sur la branche et arrêt, Trio relance la routine.
+- Rien de visible : aucune fenêtre, aucun navigateur ouvert. Un run à la fois (le précédent a fini ou est cité).
+
+## Ce qui est établi sur le SEO et le GEO (relevé du 2026-11-03, à réévaluer chaque mois)
+
+À appliquer à chaque run ; sources à rouvrir le lundi (§ Bonnes pratiques) avant de s'y fier, car plusieurs chiffres
+viennent de blogs de vendeurs d'outils et ne sont pas vérifiés.
+
+1. **Google dit que le GEO reste du SEO** (guide Search Central sur les AI Overviews et le mode IA, mai 2026,
+   d'après la presse spécialisée : à relire sur `developers.google.com/search`). Pas de balisage spécial pour les
+   AI Overviews, `llms.txt` non requis par Google, et les règles anti-spam s'appliquent aussi aux réponses IA :
+   **aucune manipulation** (texte caché, citations inventées, avis faux). On garde `llms.txt` pour les autres
+   moteurs IA, sans en attendre un effet Google.
+2. **Search Console a un rapport « performance IA générative »** (impressions seulement, depuis mai 2026) : le
+   relever à chaque run dans les mesures s'il est exposé par le MCP ou l'API ; sinon le noter une fois dans
+   « À décider » (relevé manuel par Corentin). C'est le seul vrai indicateur GEO de Google : il remplace le
+   proxy « 0 sur 3 prompts » comme indicateur principal, qui reste un complément.
+3. **Le SEO classique porte le GEO** : la grande majorité des pages citées par les AI Overviews sont déjà en
+   top 10 Google, et la récupération de ChatGPT recoupe surtout les résultats de Bing. Donc : l'**index Bing** et
+   les positions 8 à 20 restent la priorité, avant tout travail « spécial IA ».
+4. **Ce qui augmente la citation par une IA** (étude de Princeton, KDD 2024, à relire dans le papier avant de
+   citer un chiffre) : chiffres précis et datés, citations de sources dans le texte, définitions en tête de
+   section (« X est … »), réponses courtes directement sous la question, tableaux comparatifs. À appliquer sur les
+   pages visées par les requêtes de la base, **avec des faits vérifiés uniquement**.
+5. **Fraîcheur réelle** : une page importante non revue depuis un trimestre perd en citations (étude AirOps à
+   confirmer). Rafraîchir = changer un fait ou une donnée, puis `dateModified` et `lastmod` ; **jamais** une date
+   modifiée sans changement de fond (pratique que Google sanctionne).
+6. **Corroboration par des tiers** : les IA citent surtout Wikipedia, Reddit, les plateformes d'avis et la presse.
+   Pour kyran-jeu.fr : mentions, fiches, avis sur des sites tiers, par des gestes propres (règle Netlinking), jamais
+   de faux avis ni de profil créé pour un lien.
+
+## Règle « un run sans action est une exception »
+
+Les derniers runs concluent souvent « aucune modification de page » parce que la règle des 28 jours bloque la
+piste la plus évidente. Cette règle protège les **titres et descriptions** seulement. Chaque run doit donc livrer
+**au moins une amélioration vérifiable** prise dans cette rotation, dans l'ordre, en sautant ce qui est déjà fait :
+
+1. Page en position 8 à 20 : section « réponse directe » en tête (2 à 3 phrases, chiffre daté, source) et FAQ visible
+   alignée sur la requête réelle ; maillage avec ancre exacte depuis 2 pages fortes.
+2. Page clé dont les faits ont plus de 90 jours : relecture contre la source, correction, `dateModified`.
+3. Page orpheline ou hors index : liens entrants depuis des pages indexées, inspection d'URL.
+4. Données structurées : valider (`npm run check:jsonld` ou équivalent), compléter `sameAs`, `Organization`,
+   `FAQPage` seulement quand la FAQ est visible sur la page.
+5. Un test GEO sur une requête **nouvelle** (pas seulement les prompts fixes) : qui est cité, pourquoi, quel
+   manque sur nos pages (donnée, tableau, définition) ; le comblement va au backlog ou dans le run.
+6. Netlinking : un message préparé, ou un lien obtenu vérifié.
+
+Si malgré tout aucune action n'est faite, le journal dit laquelle des six a été examinée et pourquoi elle est
+écartée (preuve), jamais « rien à faire ». Exemples pour KYRAN : bloc « réponse directe » sur Tarot africain, Whist 22, Rikiki ; dossier marché et palmarès du blog comme sources de chiffres datés.
+
+---
+
 ## Livrables de chaque run
 
 1. **Doc partagé « KYRAN — Pilotage SEO & GEO »** (Claude Docs) :

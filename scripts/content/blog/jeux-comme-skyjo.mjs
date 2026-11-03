@@ -52,7 +52,7 @@ export default {
       type: 'Pénalités et jetons',
       pick: 'Pour ceux qui préfèrent éviter les points plutôt que les gagner',
       paragraphs: [
-        `Skyjo fait craindre les grosses cartes ; No Thanks ! transforme cette crainte en négociation. Une carte de 3 à 35 est exposée et chacun choisit de l’encaisser ou de payer un jeton pour la renvoyer au voisin. Plus personne n’en veut, plus le tas de jetons posé dessus grossit, et celui qui finit par craquer ramasse le tout.`,
+        `Skyjo fait craindre les grosses cartes ; No Thanks ! transforme cette crainte en négociation. Une carte de 3 à 35 est exposée et chacun choisit de l’encaisser ou de payer un jeton pour la renvoyer au voisin. Plus personne n’en veut, plus le tas de jetons posé dessus grossit, et celui qui finit par craquer ramasse le tout. Ce mécanisme d’enchère au jeton est comparé à Sushi Go!, For Sale et Skull dans notre sélection de <a class="text-link" href="/blog/jeux-draft-encheres.html">jeux de draft et d’enchères</a>.`,
         `Tout se joue sur les suites : seule la plus petite carte d’une série compte au décompte, si bien que ramasser un 24 quand on détient déjà le 25 revient presque à une opération blanche. Neuf cartes sont écartées sans être vues, ce qui empêche de tout calculer. Pas de grille à retourner, donc moins de suspense visuel, mais des parties d’environ vingt minutes et très peu de temps mort.`
       ]
     },
@@ -97,7 +97,7 @@ export default {
       type: 'Mémoire, échange',
       pick: 'Pour qui aime les cartes cachées à échanger, à deux, trois ou quatre',
       paragraphs: [
-        `Cabo est le cousin le plus direct de Skyjo : chacun a quatre cartes face cachée devant soi, n’en a regardé que deux au départ, et cherche à finir avec le total le plus bas. À son tour, on pioche ou l’on prend la défausse pour échanger l’une de ses cartes, en se souvenant de ce qu’on a vu. La mémoire remplace ici le hasard du retournement de Skyjo. Selon Wikipédia, le jeu prolonge un ancien jeu de cartes appelé Golf.`,
+        `Cabo est le cousin le plus direct de Skyjo : chacun a quatre cartes face cachée devant soi, n’en a regardé que deux au départ, et cherche à finir avec le total le plus bas. À son tour, on pioche ou l’on prend la défausse pour échanger l’une de ses cartes, en se souvenant de ce qu’on a vu. La mémoire remplace ici le hasard du retournement de Skyjo (d’autres <a class="text-link" href="/blog/jeux-memoire-concentration.html">jeux de cartes de mémoire et de concentration</a> sont classés selon l’effort qu’ils demandent). Selon Wikipédia, le jeu prolonge un ancien jeu de cartes appelé Golf.`,
         `Autre différence : c’est un joueur qui arrête la manche en annonçant « Cabo », après quoi les autres jouent un dernier tour avant de retourner leurs cartes. Un appel raté coûte cher (10 points dans la seconde édition, d’après Wikipédia). Comptez de 2 à 4 joueurs dans l’édition française d’Origames, moins de 20 minutes et un âge conseillé de 8 ans. Vérifiez la disponibilité : la fiche de Ludum le signalait en rupture de stock lors de notre relevé du 16 octobre 2026.`
       ]
     },

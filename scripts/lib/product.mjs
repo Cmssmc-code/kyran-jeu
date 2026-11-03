@@ -61,7 +61,7 @@ export const PRODUCT = {
   // à afficher en texte avec sa source, jamais en données structurées (consignes Google).
   amazon: {
     url: 'https://www.amazon.fr/dp/B0G217LD87',
-    price: '17,99 €',
+    price: '14,90 €',
     rating: '4,7',
     ratingCount: 33,
     checked: '2026-10-13',

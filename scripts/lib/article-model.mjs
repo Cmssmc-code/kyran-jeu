@@ -26,7 +26,7 @@ const KYRAN_FACTS = {
   players: '3 à 6',
   duration: '~30 min',
   age: '8+',
-  price: '9,99&nbsp;€ (boutique) / 17,99&nbsp;€ (Amazon)',
+  price: '9,99&nbsp;€ (boutique) / 14,90&nbsp;€ (Amazon)',
   caption: 'KYRAN — jeu de cartes de plis'
 };
 

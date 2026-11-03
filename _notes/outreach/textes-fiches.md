@@ -254,7 +254,7 @@ Où : https://www.okkazeo.com/jeux/94411/kyran-maitre-des-mystiques → « Modif
 |---|---|---|
 | Illustrateur | absent | Crea by Floh |
 | Éditeur | absent | Kyran (auto-édition, Corentin Sence) |
-| Prix public | 16,99 € (ne correspond à aucun prix connu) | **à décider par Corentin** : 9,99 € (prix de l'éditeur sur kyran-jeu.fr, hors port) ; Amazon.fr vend 17,99 € |
+| Prix public | 16,99 € (ne correspond à aucun prix connu) | **à décider par Corentin** : 9,99 € (prix de l'éditeur sur kyran-jeu.fr, hors port) ; Amazon.fr vend 14,90 € |
 | Vidéos | aucune | Ludochrono `https://www.youtube.com/watch?v=aconMJG9uSQ` |
 | Règles (fichier ou lien, si la fiche le permet) | — | https://kyran-jeu.fr/regle-kyran.pdf |
 | Thème « Singes » | présent | peut rester : la boîte montre un singe |
@@ -269,7 +269,7 @@ Où : https://www.myludo.fr/#!/game/kyran-95533 → « Proposer une modification
 > - année : 2026 (sortie le 31 janvier 2026), et non 2025 ;
 > - illustrations : Crea by Floh ; éditeur : Kyran (auto-édition, Corentin Sence) ;
 > - contenu : 36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles ;
-> - prix : 9,99 € sur le site de l'éditeur https://kyran-jeu.fr/ (17,99 € sur Amazon.fr) ; le 16,99 € affiché ne correspond à aucun prix de vente ;
+> - prix : 9,99 € sur le site de l'éditeur https://kyran-jeu.fr/ (14,90 € sur Amazon.fr) ; le 16,99 € affiché ne correspond à aucun prix de vente ;
 > - description : [coller la description longue FR] ;
 > - site officiel : https://kyran-jeu.fr/ ; règles en PDF : https://kyran-jeu.fr/regle-kyran.pdf.
 > Merci !

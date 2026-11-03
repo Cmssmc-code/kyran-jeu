@@ -64,7 +64,7 @@ Parier juste, bluffer ses adversaires et survivre aux manches dégressives : la 
 - **Âge minimum** : `8 ans`
 - **Durée moyenne** : `30 minutes`
 - **EAN / Code-barres** : `3770040368015` (ou référence SKU `KYRAN-01`)
-- **Prix indicatif** : `9,99 €` (Boutique) / `17,99 €` (Amazon)
+- **Prix indicatif** : `9,99 €` (Boutique) / `14,90 €` (Amazon)
 - **Type** : `Jeu de cartes / Jeu d'ambiance / Jeu de société`
 - **Mécanismes MyLudo** : `Plis`, `Paris`, `Bluff`, `Gestion de main`
 - **Site officiel** : `https://kyran-jeu.fr`

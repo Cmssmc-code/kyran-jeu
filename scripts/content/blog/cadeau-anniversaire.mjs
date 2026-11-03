@@ -139,7 +139,7 @@ export default {
       type: `Plis et paris`,
       pick: `Pour qui aime la belote ou le tarot, avec un petit budget`,
       paragraphs: [
-        `Dans l’enveloppe des petits cadeaux, KYRAN est affiché 9,99 € sur kyran-jeu.fr, contre 17,99 € chez Amazon : à vous de choisir où l’acheter. Il s’adresse à la personne qui joue déjà aux plis et accepte de parier sur le nombre de levées qu’elle va remporter, la somme des paris ne pouvant jamais tomber juste pour tous. De trois à six joueurs, environ trente minutes, dès huit ans.`,
+        `Dans l’enveloppe des petits cadeaux, KYRAN est affiché 9,99 € sur kyran-jeu.fr, contre 14,90 € chez Amazon : à vous de choisir où l’acheter. Il s’adresse à la personne qui joue déjà aux plis et accepte de parier sur le nombre de levées qu’elle va remporter, la somme des paris ne pouvant jamais tomber juste pour tous. De trois à six joueurs, environ trente minutes, dès huit ans.`,
         `La boîte rigide et les cartes toilées lui donnent l’allure d’un vrai cadeau, et les <a class="text-link" href="/regle.html">règles</a> existent en vidéo de cinq minutes, ce qui aide si vous devez les expliquer en pleine fête. Côté durée de vie, chaque donne et chaque série d’annonces créent une situation nouvelle, de la manche à sept cartes jusqu’à la manche Mystique. Il ne se joue pas à deux : pour un couple, préférez Love Letter. Pour quelqu’un qui n’a jamais joué aux plis, la variante d’initiation, sans Pouvoir ni Mystique, ouvre la voie, et l’<a class="text-link" href="/minijeu.html">Initiation gratuite</a> permet de s’entraîner avant d’offrir.`
       ]
     }
@@ -156,7 +156,7 @@ export default {
 <li><strong>La vitesse :</strong> Dobble se rejoue parce que le plus rapide varie selon l’humeur, mais il offre peu de décisions, et des adultes s’en lassent plus vite.</li>
 </ul>
 <h3>Ce que l’étiquette ne dit pas</h3>
-<p>Vérifiez les bornes du nombre de joueurs : un jeu jouable de trois à huit personnes sort plus souvent qu’un jeu limité à quatre. Comparez au moins deux vendeurs, car un même jeu peut changer de prix du simple au double : KYRAN coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique du site</a> et 17,99 € sur Amazon. Enfin, deux petites boîtes choisies pour deux tables différentes servent souvent davantage qu’un seul jeu à 30 € qui exige cinq joueurs. Pour un couple, la sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux à deux</a> propose d’autres petites boîtes.</p>`
+<p>Vérifiez les bornes du nombre de joueurs : un jeu jouable de trois à huit personnes sort plus souvent qu’un jeu limité à quatre. Comparez au moins deux vendeurs, car un même jeu peut coûter nettement plus cher d’un vendeur à l’autre : KYRAN coûte 9,99 € sur la <a class="text-link" href="/commander.html">boutique du site</a> et 14,90 € sur Amazon. Enfin, deux petites boîtes choisies pour deux tables différentes servent souvent davantage qu’un seul jeu à 30 € qui exige cinq joueurs. Pour un couple, la sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux à deux</a> propose d’autres petites boîtes.</p>`
     }
   ],
   verdict: {
@@ -171,7 +171,7 @@ export default {
     },
     {
       q: `Combien dépenser pour un jeu de société cadeau d’anniversaire ?`,
-      a: `Environ 10 à 15 € suffisent pour un petit cadeau : Love Letter, Dobble ou KYRAN. Comptez 15 à 20 € pour Skyjo, Skull, Codenames ou Bang!, et autour de 30 € pour un cadeau qui marque, comme Dixit ou Colt Express. Comparez deux vendeurs : KYRAN coûte 9,99 € en direct et 17,99 € sur Amazon.`
+      a: `Environ 10 à 15 € suffisent pour un petit cadeau : Love Letter, Dobble ou KYRAN. Comptez 15 à 20 € pour Skyjo, Skull, Codenames ou Bang!, et autour de 30 € pour un cadeau qui marque, comme Dixit ou Colt Express. Comparez deux vendeurs : KYRAN coûte 9,99 € en direct et 14,90 € sur Amazon.`
     },
     {
       q: `Quels jeux de cartes pas chers offrir, à moins de 15 € ?`,

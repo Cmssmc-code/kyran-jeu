@@ -157,6 +157,8 @@ URL `https://kyran-webhook-production.up.railway.app`.
   HEAD puis GET (un 403 d'un site qui bloque les robots, BGG par exemple, est du bruit, à noter comme tel).
   `www.myludo.fr` coupe la connexion TLS depuis les sessions cloud (`ws_closed_mid_exchange`, 39 octets reçus) mais
   s'ouvre dans un navigateur (vérifié par le propriétaire le 2026-10-30) : bruit, comme Okkazeo (Cloudflare).
+  `www.play-in.com` : délai dépassé en `curl`, 403 « Just a moment… » (défi anti-robot Cloudflare) dans Chromium
+  (2026-11-03) : bruit, comme Okkazeo.
 - Codes HTTP : une URL inconnue répond 404 avec `404.html` ; `https://www.kyran-jeu.fr/` et `http://kyran-jeu.fr/`
   redirigent vers `https://kyran-jeu.fr/` ; `robots.txt`, `sitemap.xml`, `llms.txt`, `blog/feed.xml` en 200 ;
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).

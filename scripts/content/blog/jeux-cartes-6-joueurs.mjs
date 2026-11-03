@@ -52,7 +52,7 @@ export default {
 </ul>
 <h3>Trois règles pour une soirée à cinq ou six</h3>
 <ul>
-<li><strong>Préférez le simultané ou les tours éclair.</strong> Les révélations de 6 qui prend !, la vente finale de For Sale ou les refus de No Thanks! occupent tout le monde en même temps. Dans un jeu de plis comme KYRAN, chaque carte jouée peut faire tomber le pari d'un voisin, ce qui garde la table attentive.</li>
+<li><strong>Préférez le simultané ou les tours éclair.</strong> Les révélations de 6 qui prend !, la vente finale de For Sale (détaillée avec nos <a class="text-link" href="/blog/jeux-draft-encheres.html">jeux de draft et d'enchères</a>) ou les refus de No Thanks! occupent tout le monde en même temps. Dans un jeu de plis comme KYRAN, chaque carte jouée peut faire tomber le pari d'un voisin, ce qui garde la table attentive.</li>
 <li><strong>Méfiez-vous de l'élimination précoce.</strong> Un joueur sorti au bout de dix minutes d'une partie qui en dure quarante finit sur son téléphone. Bang! et Skull éliminent ; Saboteur, For Sale et 6 qui prend ! gardent chacun en jeu jusqu'au décompte. Notre page sur les <a class="text-link" href="/blog/jeux-sans-elimination.html">jeux sans élimination</a> approfondit ce critère.</li>
 <li><strong>Gardez de la place sur la table.</strong> À six, il faut caser les verres et les mains de chacun : une main de cartes ou quatre disques par joueur passent mieux qu'un plateau. La grille de Codenames et le réseau de galeries de Saboteur réclament en revanche un vrai espace au centre.</li>
 </ul>

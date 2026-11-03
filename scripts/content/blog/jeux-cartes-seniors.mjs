@@ -134,7 +134,7 @@ export default {
     },
     {
       q: `Ces jeux ont-ils un effet sur la mémoire ?`,
-      a: `Aucun jeu de cette page n’a été testé dans ce but. Les études disponibles observent des liens entre jeux et santé cognitive sans prouver de cause : voir <a class="text-link" href="/blog/science-jeux-de-cartes-cerveau.html">notre article sur le cerveau</a>. Jouer reste un loisir, pas un traitement.`
+      a: `Aucun jeu de cette page n’a été testé dans ce but. Les études disponibles observent des liens entre jeux et santé cognitive sans prouver de cause : voir <a class="text-link" href="/blog/science-jeux-de-cartes-cerveau.html">notre article sur le cerveau</a>. Jouer reste un loisir, pas un traitement. Pour savoir ce que chaque jeu demande de retenir, voir nos <a class="text-link" href="/blog/jeux-memoire-concentration.html">jeux de mémoire et de concentration</a>.`
     },
     {
       q: `Quel jeu de cartes pour une grande tablée de famille ?`,

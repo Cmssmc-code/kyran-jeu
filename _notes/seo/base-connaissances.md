@@ -16,7 +16,7 @@
 | Règle | Chacun annonce son nombre exact de plis ; la somme des paris ne peut pas égaler le nombre de plis ; un pari raté coûte autant de Vies que l'écart ; manches de 7, 6, 5, 4, 3, 2 cartes puis manche Mystique à 1 carte sur le front ; fin quand un joueur n'a plus de Vies |
 | Matériel | 36 cartes Nombre, 1 Mystique (0 ou 37), 8 Pouvoir (Sceau du Destin 27/4, Clairvoyance Antique 11/23, Bénédiction des Ancêtres 20/9, Voile du Néant 3/34), 30 cartes Vie, 7 cartes de règles ; boîte 11,5 × 8,5 × 2,8 cm, 175 g |
 | Auteur | Corentin Sence (auteur et éditeur, EI) ; illustrations Crea by Floh |
-| Vente | Lien Stripe 9,99 € + 2,99 € de port ; Amazon 14,90 € (ASIN B0G217LD87, 4,7/5 sur 33 avis au 19/10) ; Etsy 9,99 € + 2,99 € ; livraison FR, BE, LU, CH, MC ; GTIN 3770040368015 |
+| Vente | Lien Stripe 9,99 € + 2,99 € de port ; Amazon 14,90 € (ASIN B0G217LD87, 4,7/5 sur 33 avis au 19/10), liens tagués Amazon Attribution depuis le 2026-11-03 (#174) ; Etsy 9,99 € + 2,99 € ; livraison FR, BE, LU, CH, MC ; GTIN 3770040368015 |
 | Interdits | « 55 cartes », « février 2026 », « 2024 », « sans élimination », « sans hasard », « jeu primé », chiffres de ventes ; prix barré trompeur ; jamais d'adresse Majordia |
 
 ## 2. Le site
@@ -95,6 +95,9 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 
 Serveurs MCP (`.mcp.json`, `docs/MCP_SEO.md`) : `gsc` (présent dans la session de routine), `bing-webmaster`
 (connexion lente), `stripe-kyran` (sans clé dans le cloud). Claude Docs porte un préfixe `mcp__<uuid>__`.
+Depuis le 2026-11-04, la routine tourne dans Claude Trio (PC Windows, worktree `wt-routine-seo`) : sans
+`.secrets/gsc-service-account.json` ni `.secrets/bing-webmaster-api-key.txt` dans le worktree, `gsc` et
+`bing-webmaster` ne se connectent pas et Google/Bing sont « non mesurés ».
 
 ## 6. Indicateurs suivis
 
@@ -179,6 +182,8 @@ ne pas le réutiliser tel quel.
 
 ## 13. À faire par le propriétaire (comptes, décisions)
 
+- Copier `.secrets/gsc-service-account.json` et `.secrets/bing-webmaster-api-key.txt` dans le worktree
+  `wt-routine-seo` (absents au 2026-11-04 : Google et Bing non mesurés dans Trio).
 - `PAGESPEED_API_KEY` (clé Google gratuite) dans l'environnement cloud : Core Web Vitals chaque nuit.
 - Mesure d'audience sans cookie (à décider) ; Merchant Center (flux prêt) ; livraison et retours dans Search Console.
 - BGG (description, mécanique « Trick-taking », site), Trictrac, MyLudo, Philibert, références Wikidata.

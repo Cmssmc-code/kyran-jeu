@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-04 : run nocturne n° 15 (premier run dans Claude Trio, PC Windows)
+
+- **Doc partagé non mis à jour : connecteur Claude Docs présent mais run sans `rev` de référence ni mesures Google/Bing à reporter** ; tableau de bord à compléter au prochain run mesuré.
+- **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée, recherche du 04/11 : dernière en date, mai 2026).
+- **Google et Bing : non mesurés.** Les serveurs MCP `gsc` et `bing-webmaster` ne démarrent pas : aucun identifiant sur le PC (`.secrets/` absent du worktree et du dépôt principal, ni `GSC_SERVICE_ACCOUNT_JSON` ni `BING_WEBMASTER_API_KEY`). Inspection d'URL : non mesurée pour la même raison. Ventes : non mesurées.
+- **Technique** (`seo-health.py --sample 0`, site en direct) : 56 URL du sitemap, 56 en 200, 0 anomalie (canonical, titres, descriptions, H1, JSON-LD, `og:image`), `robots.txt` et `llms.txt` OK, TTFB médian 156 ms.
+- **Veille** : 24 h : prix Amazon affiché passé à 14,90 € (PR #172, déjà dans la base) ; les 11 liens « Acheter sur Amazon » du site passent par Amazon Attribution (PR #174, JSON-LD sans paramètre) ; mission de la routine adaptée à Trio (#173). Marque : WebSearch « KYRAN jeu de cartes Maître des Mystiques » ne trouve toujours aucune page sur le jeu (homonymes Yu-Gi-Oh!, Magic). GEO (WebSearch, prompts 1 à 3) : 0 sur 3, cités : Skull King, Pili Pili, Chouineurs, Luz (espritjeu, ludum, BGA) ; regles2jeux et BGA (inchangé) ; World of Geek, Skyjo Action.
+- **Actions** (rotation, piste 3 : pages hors index) : pistes 1 et 2 examinées et écartées (réponse directe déjà en tête de `tarot-africain`, `whist-22`, `regles-rikiki`, `jeux-3-joueurs` ; aucune page du sitemap avec un `lastmod` de plus de 90 jours, la plus ancienne date du 14/10). `jeux-memoire-concentration` et `jeux-draft-encheres` (« explorées, non indexées », 6 pages liantes chacune) : liens contextuels à ancre descriptive depuis `jeux-comme-skyjo` (fiches Cabo et No Thanks!), `jeux-cartes-seniors` (FAQ sur la mémoire) et `jeux-cartes-6-joueurs` (For Sale) ; 8 pages liantes chacune. Réévaluation : inspection d'URL au prochain run mesuré, puis 2026-12-02.
+- **À décider / à faire par Corentin** : copier `.secrets/gsc-service-account.json` et `.secrets/bing-webmaster-api-key.txt` dans le worktree `wt-routine-seo` (ou définir les variables d'environnement), sans quoi chaque run Trio reste sans mesure Google ni Bing.
+
 ### 2026-11-03 : run nocturne n° 14
 
 - **Verdict : À surveiller** (pas d'incident ; aucune mise à jour Google confirmée). La requête « tarot africain » passe de 25 à 60 impressions par jour (6 → 26/10) à 2 à 14 depuis le 27/10, position moyenne inchangée (8 à 10) ; la page `tarot-africain` perd moins (910 → 618 impressions sur 7 j). Ni cause technique (page indexée, canonical correct, JSON-LD valide, 0 anomalie) ni effet de nos changements : Google n'a pas réexploré la page depuis le 21/10, avant la FAQ « en ligne » du 24/10. Pas d'action sur le titre (règle 12, réévaluable le 15/11) ; demande de réexploration ajoutée en tête du bloc 1 du prompt Chrome.

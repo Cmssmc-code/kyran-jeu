@@ -6,7 +6,7 @@
  * manche (Monte-Carlo) pour choisir pari et carte ; les mêmes calculs alimentent les conseils
  * expliqués au joueur.
  */
-import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=619946f30c';
+import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=617bc536b5';
 
 export const PERSONAS = [
   { key: 'griot', name: 'Griot', emoji: '🪘', bias: 0, chaos: 0, motto: 'gardien des récits, il calcule et parie juste' },

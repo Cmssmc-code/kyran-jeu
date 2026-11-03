@@ -3,9 +3,9 @@
  * Les règles vivent dans engine.js, les adversaires et conseils dans ai.js, les leçons dans
  * lessons.js. Ce fichier ne fait qu'afficher l'état et transmettre les choix du joueur.
  */
-import * as E from './engine.js?v=619946f30c';
-import * as AI from './ai.js?v=f3855851de';
-import { LESSONS, BEAD_IMAGES } from './lessons.js?v=ac1fd61c68';
+import * as E from './engine.js?v=617bc536b5';
+import * as AI from './ai.js?v=cf654c11eb';
+import { LESSONS, BEAD_IMAGES } from './lessons.js?v=44365dbe43';
 
 const ROOT = document.getElementById('dojo');
 

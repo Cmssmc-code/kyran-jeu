@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-03 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 41577216625, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-03.md`](../docs/rapports/surveillance/2026-11-03.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 56 URL × 1280/390 px sans erreur (nouveau guide solo sain) ; 373 liens, 0 interne cassé ; fiche Skyjo de play-in.com derrière l'anti-robot Cloudflare = bruit (ajouté en A4) |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille |
+| Versions | 2 mises à jour | wrangler 4.156.2, `compatibility_date` 2026-11-03, `@anthropic-ai/sdk` 1.4.0 |
+
+Mise à jour : PR #170. Aucun point ouvert.
+
 ## 2026-11-02 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

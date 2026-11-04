@@ -73,12 +73,13 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
   `meilleurs-jeux-apero` « Explorée, non indexée » ; `/a-propos.html` inconnue de Google ; au 18/10 aussi : `video-regles`, `jeux-comme-skull-king` (détectées), `ressources-gratuites`,
   `regles-rikiki` (inconnues). `idee-cadeau` est indexée depuis le 18/10.
 - PageSpeed mobile (11/10) : accueil 97, Tarot 98, Skyjo 92, 3 joueurs 99 ; SEO 100 ; CSS bloquant ~700 ms en 4G
-  lente, `style.css` 117 Ko. API PageSpeed (04/11) : accueil mobile 95 ; pas de données CrUX (trafic trop faible).
+  lente, `style.css` 117 Ko. API PageSpeed : accueil mobile 95 (04/11), 96 (05/11) ; pas de données CrUX (trafic trop faible).
 - Images de partage : `og-kyran.jpg` 1200 × 630 partout depuis le 20/10, sauf `commander.html` (PNG de 1,96 Mo).
 - 21/10 : inspection de 30 URL : 27 indexées ; hors index `/blog/`, `video-regles` ; `jeux-comme-skull-king`, `regles-rikiki` indexées. Le 20/10 : `a-propos` et `cadeau-anniversaire` aussi hors index (non inspectées le 21).
 - Bing : les 5 pages d'octobre soumises le 20/10 sont découvertes et explorées le 21/10 ; 57 pages dans l'index au 20/10.
 - 22/10 : 52 URL dans le sitemap (2 articles neufs du 21/10) ; inspection : 29/30 indexées, seule `meilleurs-jeux-apero` hors index.
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
+- 05/11 : 56 URL dans le sitemap, toutes en 200, 0 anomalie ; inspection 27/30 indexées, hors index `video-regles` et `communaute` (inconnues de Google), `blog/jeux-debutants-adultes` (explorée, non indexée, dernière exploration 22/09). Bing : 62 pages dans l'index (01/11).
 - `priceValidUntil` du Product : 31/12/2026.
 
 ## 5. Mesure : sources, fraîcheur, outils

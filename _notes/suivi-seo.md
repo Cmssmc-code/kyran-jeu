@@ -10,6 +10,17 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-05 : run nocturne n° 16
+
+- **Verdict : À surveiller** (pas d'incident ; aucune mise à jour Google confirmée : Search Status Dashboard, dernière « September 2026 spam update » du 24/09 ; Search Engine Roundtable signale une volatilité non confirmée les 4 et 5/11). `tarot-africain` continue de baisser : 899 → 443 impressions sur 7 j, position 6,9 → 5,9 ; la requête « tarot africain » 268 → 53 impressions, position 10,0 → 8,9. Même tendance que le 03/11, sans cause technique (0 anomalie, page indexée). Titre réévaluable le 15/11.
+- **Google** (`dataState: all`, 29/10 → 04/11, dernier jour provisoire) : 7 j 50 clics (−6 %), 1 798 impressions (−28 %) ; 28 j 191 clics, 8 220 impressions, CTR 2,32 %, position 8,7 ; 24 h (jusqu'au 04/11 16 h) 10 clics, 266 impressions (9 et 273 sept jours plus tôt). Hausse : `jeux-3-joueurs` position 23,2 → 13,7 (108 impressions), `jeux-coop-cartes` 14,1 → 5,7. Baisse : `jeux-cartes-ados` 7,5 → 12,5.
+- **Bing** (27/10 → 02/11) : 6 clics (+20 %), 150 impressions (+10 %) ; 62 pages dans l'index (01/11).
+- **Technique** (`seo-health.py --inspect 30 --psi`) : 56 URL du sitemap, 56 en 200, 0 anomalie, `robots.txt` et `llms.txt` OK, TTFB médian 156 ms. PageSpeed mobile accueil 96, CrUX vide. Inspection : 27/30 indexées ; hors index `video-regles` et `communaute` (inconnues de Google), `jeux-debutants-adultes` (explorée, non indexée, dernière exploration 22/09). `jeux-memoire-concentration` et `jeux-draft-encheres` hors de l'échantillon du jour. Robots d'IA : non mesurés (GitHub Pages, pas de Cloudflare). Ventes : non mesurées.
+- **Veille** : 24 h : run n° 15 et branchement des accès Search Console, Bing et PageSpeed (#179). Marque : WebSearch « KYRAN jeu de cartes Maître des Mystiques » ne trouve toujours aucune page sur le jeu (homonymes Mystick Domination, Yu-Gi-Oh!, Magic). GEO (WebSearch, prompts 4 à 6) : 0 sur 3. Requête ajoutée « jeu de cartes moderne inspiré du tarot africain » : KYRAN absent, cités African Tarot (tarot.nl), collection NDOP (Afrikrea), regles2jeux. Nouvelle cible : article Gus&Co « jeux de cartes traditionnels d'Afrique » (05/10/2025).
+- **Actions** (piste 4 : requêtes en position 8 à 20) : « jeu de carte a 3 » (61 impressions, position 41) et « jeu de carte a 4 » (37 impressions, position 10,7) : liens contextuels à ancre exacte « jeux de cartes à 3 joueurs » et « jeux de cartes à 4 joueurs » depuis `jeux-comme-skyjo` (paragraphe « Oublier l'effectif ») et `jeux-comme-codenames` (paragraphe « L'effectif »), sans toucher titres ni descriptions (règle des 28 jours). Réévaluation : 2026-12-03. `tzdata` ajouté à `scripts/requirements-seo.txt` (fuseau Europe/Paris introuvable sous Windows, `seo-kpi-daily.py` plantait). Netlinking : cible Gus&Co (Afrique) ajoutée à `cibles.md`, complément du message Gus&Co du 30/10 (même contact, pas de second message).
+- **Doc partagé** : tableau de bord, veille condensée, journal des actions et complément du message Gus&Co mis à jour (rev 43).
+- **À décider** : inchangé.
+
 ### 2026-11-04 : run nocturne n° 15 (premier run dans Claude Trio, PC Windows)
 
 - **Doc partagé non mis à jour : connecteur Claude Docs présent mais run sans `rev` de référence ni mesures Google/Bing à reporter** ; tableau de bord à compléter au prochain run mesuré.

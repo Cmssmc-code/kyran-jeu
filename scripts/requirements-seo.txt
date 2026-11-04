@@ -2,3 +2,4 @@
 # pip install -r scripts/requirements-seo.txt
 google-api-python-client>=2.100
 google-auth>=2.20
+tzdata>=2024.1  # Windows : fuseau Europe/Paris pour zoneinfo

@@ -31,8 +31,9 @@ python3 scripts/seo-health.py --sample 0 --inspect 20  # tout le sitemap + index
 npm run check:site && npm run test:seo                 # contrôles du dépôt
 ```
 
-Identifiants lus dans l'environnement, jamais affichés : `GSC_SERVICE_ACCOUNT_JSON` (Search Console, propriété
-`sc-domain:kyran-jeu.fr`) et `BING_WEBMASTER_API_KEY` (site `https://kyran-jeu.fr/`). Détail :
+Identifiants lus dans l'environnement, sinon dans `.secrets/` du dépôt (`scripts/seo_secrets.py`), jamais
+affichés : `GSC_SERVICE_ACCOUNT_JSON` (Search Console, propriété `sc-domain:kyran-jeu.fr`),
+`BING_WEBMASTER_API_KEY` (site `https://kyran-jeu.fr/`) et `PAGESPEED_API_KEY` (`seo-health.py --psi`). Détail :
 [`../../docs/MCP_SEO.md`](../../docs/MCP_SEO.md).
 
 ## Règles à respecter avant de toucher au SEO

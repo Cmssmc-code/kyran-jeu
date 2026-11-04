@@ -20,7 +20,10 @@ Tant qu'un identifiant manque, le lanceur s'arrête avec un message explicite et
 « failed to connect ». C'est sans effet sur le reste de la session.
 
 Prérequis : Node 18+ pour GSC, et [`uv`](https://docs.astral.sh/uv/) pour Bing (installé par le hook de
-session cloud [`.claude/hooks/session-start.sh`](../.claude/hooks/session-start.sh) s'il manque).
+session cloud [`.claude/hooks/session-start.sh`](../.claude/hooks/session-start.sh) s'il manque). Sous Windows :
+`python -m pip install --user uv`, puis `uv.exe` et `uvx.exe` copiés dans un dossier du PATH (par exemple
+`%USERPROFILE%\.local\bin`). Le lanceur Bing met `mcp[cli]<2` entre guillemets sous Windows : sans eux,
+cmd.exe lit `<2` comme une redirection et le serveur ne démarre pas.
 
 ## 1. Google Search Console
 
@@ -72,6 +75,27 @@ Dans les outils, le site s'écrit `https://kyran-jeu.fr/`. Outils principaux en 
 `get_query_stats`, `get_page_stats`, `get_crawl_stats`, `get_crawl_issues`, `get_url_info`,
 `get_link_counts`, `get_related_keywords`. La soumission d'URL reste gérée par IndexNow
 ([`scripts/indexnow.mjs`](../scripts/indexnow.mjs), [`SEO-GEO.md`](SEO-GEO.md) § 4).
+
+## 3. Secrets locaux des scripts SEO (PC, routine Claude Trio)
+
+Sur le PC, la routine SEO tourne dans Claude Trio (worktree `wt-routine-seo`), sans variables d'environnement
+cloud. Les scripts Python lisent les identifiants via [`scripts/seo_secrets.py`](../scripts/seo_secrets.py) :
+une variable d'environnement définie garde la priorité, sinon le fichier `.secrets/` du dépôt la remplit. Les
+valeurs ne sont jamais affichées. Le module passe aussi la sortie en UTF-8 (la console Windows cp1252 plantait
+sur les flèches des résumés).
+
+| Variable | Fichier `.secrets/` | Usage | Où la régénérer |
+|---|---|---|---|
+| `GSC_SERVICE_ACCOUNT_JSON` | `gsc-service-account.json` | Search Console (KPI, inspections d'URL, MCP `gsc`) | Google Cloud, projet `majordia-seo`, compte `claude-gsc` → Clés (même fichier que Majordia) |
+| `BING_WEBMASTER_API_KEY` | `bing-webmaster-api-key.txt` | Bing (KPI, MCP `bing-webmaster`) | Bing Webmaster → Paramètres → Accès API (même clé que Majordia) |
+| `PAGESPEED_API_KEY` | `pagespeed-api-key.txt` | `seo-health.py --psi` (PageSpeed mobile + CrUX) | Google Cloud, projet `majordia-seo` → Identifiants (même clé que Majordia) |
+
+Le même dossier `.secrets/` est copié dans chaque copie de travail qui en a besoin (`kyran-site`,
+`wt-routine-seo`). Après une régénération côté Majordia, recopier le fichier ici aussi. Dans `kyran-site`, le
+dossier est ignoré par `info/exclude` du dépôt tant que son `.gitignore` local n'a pas la ligne `.secrets/`.
+
+Scripts concernés : `seo-kpi-daily.py` et `seo-health.py` (`--inspect 30 --psi`). Pas de relevé Cloudflare des
+robots d'IA : le site est servi par GitHub Pages, sans proxy Cloudflare ni journaux d'accès.
 
 ## Vérifier
 

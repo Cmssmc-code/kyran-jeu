@@ -26,9 +26,13 @@ if (!apiKey) {
 }
 
 // mcp<2 : le serveur importe FastMCP, renommé dans le SDK Python 2.x.
-const child = spawn('uvx', ['--from', SOURCE, '--with', 'mcp[cli]<2', 'mcp-server-bing-webmaster'], {
+// Sous Windows, shell: true passe par cmd.exe, qui lit « <2 » comme une
+// redirection : l'argument doit y être entre guillemets.
+const isWin = process.platform === 'win32';
+const mcpSpec = isWin ? '"mcp[cli]<2"' : 'mcp[cli]<2';
+const child = spawn('uvx', ['--from', SOURCE, '--with', mcpSpec, 'mcp-server-bing-webmaster'], {
   stdio: 'inherit',
-  shell: process.platform === 'win32',
+  shell: isWin,
   env: { ...process.env, BING_WEBMASTER_API_KEY: apiKey },
 });
 child.on('error', () => {

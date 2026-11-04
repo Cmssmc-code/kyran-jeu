@@ -73,7 +73,7 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
   `meilleurs-jeux-apero` « Explorée, non indexée » ; `/a-propos.html` inconnue de Google ; au 18/10 aussi : `video-regles`, `jeux-comme-skull-king` (détectées), `ressources-gratuites`,
   `regles-rikiki` (inconnues). `idee-cadeau` est indexée depuis le 18/10.
 - PageSpeed mobile (11/10) : accueil 97, Tarot 98, Skyjo 92, 3 joueurs 99 ; SEO 100 ; CSS bloquant ~700 ms en 4G
-  lente, `style.css` 117 Ko.
+  lente, `style.css` 117 Ko. API PageSpeed (04/11) : accueil mobile 95 ; pas de données CrUX (trafic trop faible).
 - Images de partage : `og-kyran.jpg` 1200 × 630 partout depuis le 20/10, sauf `commander.html` (PNG de 1,96 Mo).
 - 21/10 : inspection de 30 URL : 27 indexées ; hors index `/blog/`, `video-regles` ; `jeux-comme-skull-king`, `regles-rikiki` indexées. Le 20/10 : `a-propos` et `cadeau-anniversaire` aussi hors index (non inspectées le 21).
 - Bing : les 5 pages d'octobre soumises le 20/10 sont découvertes et explorées le 21/10 ; 57 pages dans l'index au 20/10.
@@ -89,15 +89,16 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 | Inspection d'URL | même compte ; 2 000/jour | temps réel | `scripts/seo-health.py --inspect N` |
 | Bing Webmaster (`https://kyran-jeu.fr/`) | `BING_WEBMASTER_API_KEY` | ~J-2 | `seo-kpi-daily.py` ; `GetCrawlIssues`, `GetQueryStats`, `GetPageStats`, `GetLinkCounts`, `GetUrlLinks` |
 | Site en ligne | `curl`, Playwright (`/opt/pw-browsers/chromium`) | temps réel | `seo-health.py`, `npm run check:site` |
-| PageSpeed / CrUX | `PAGESPEED_API_KEY` absente (quota anonyme en 429) | 28 j | `seo-health.py --psi` |
+| PageSpeed / CrUX | `PAGESPEED_API_KEY` (`.secrets/`, depuis le 04/11) ; CrUX vide (trafic trop faible) | 28 j | `seo-health.py --psi` |
 | Ventes | journaux Railway `kyran-webhook` (`checkout.session.completed`) ; Stripe (`stripe-kyran`) sans clé dans le cloud | temps réel | — |
 | Rapport « IA générative » (GSC), « AI Performance » (Bing, citations Copilot) | interface seulement | — | relevé manuel du propriétaire |
 
 Serveurs MCP (`.mcp.json`, `docs/MCP_SEO.md`) : `gsc` (présent dans la session de routine), `bing-webmaster`
 (connexion lente), `stripe-kyran` (sans clé dans le cloud). Claude Docs porte un préfixe `mcp__<uuid>__`.
-Depuis le 2026-11-04, la routine tourne dans Claude Trio (PC Windows, worktree `wt-routine-seo`) : sans
-`.secrets/gsc-service-account.json` ni `.secrets/bing-webmaster-api-key.txt` dans le worktree, `gsc` et
-`bing-webmaster` ne se connectent pas et Google/Bing sont « non mesurés ».
+Depuis le 2026-11-04, la routine tourne dans Claude Trio (PC Windows, worktree `wt-routine-seo`). Les clés sont
+dans `.secrets/` (ignoré par git) : les scripts les lisent via `scripts/seo_secrets.py`, les lanceurs MCP aussi.
+Search Console, Bing, inspections et PageSpeed sont mesurés dans Trio depuis le 04/11 (`docs/MCP_SEO.md` § 3).
+Robots d'IA : pas de mesure possible (GitHub Pages, pas de proxy Cloudflare).
 
 ## 6. Indicateurs suivis
 
@@ -182,9 +183,8 @@ ne pas le réutiliser tel quel.
 
 ## 13. À faire par le propriétaire (comptes, décisions)
 
-- Copier `.secrets/gsc-service-account.json` et `.secrets/bing-webmaster-api-key.txt` dans le worktree
-  `wt-routine-seo` (absents au 2026-11-04 : Google et Bing non mesurés dans Trio).
-- `PAGESPEED_API_KEY` (clé Google gratuite) dans l'environnement cloud : Core Web Vitals chaque nuit.
+- ~~Clés Search Console, Bing et PageSpeed pour la routine Trio~~ : fait le 2026-11-04 (`.secrets/` du worktree,
+  `docs/MCP_SEO.md` § 3).
 - Mesure d'audience sans cookie (à décider) ; Merchant Center (flux prêt) ; livraison et retours dans Search Console.
 - BGG (description, mécanique « Trick-taking », site), Trictrac, MyLudo, Philibert, références Wikidata.
 - Relevé mensuel « AI Performance » (Bing) et « IA générative » (Search Console).

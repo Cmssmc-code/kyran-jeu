@@ -33,6 +33,10 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
+import seo_secrets  # noqa: E402  (scripts/ est sur sys.path)
+
+seo_secrets.load()
+
 GSC_SITE = "sc-domain:kyran-jeu.fr"
 BING_SITE = "https://kyran-jeu.fr/"
 NOTES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "_notes", "seo")

@@ -10,6 +10,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-04 — Routine SEO dans Claude Trio : aucune mesure Google/Bing, lanceur MCP Bing cassé sous Windows
+
+- **Symptôme :** premier run SEO dans Trio (PC Windows) : `gsc` et `bing-webmaster` « failed to connect », Google, Bing et PageSpeed « non mesurés ». Après copie des clés, `seo-kpi-daily.py` plantait en `UnicodeEncodeError` (flèche `→` sur la console cp1252) et `uvx` ne démarrait pas le serveur Bing.
+- **Cause :** les scripts ne lisaient que les variables d'environnement de la session cloud ; aucune n'existe dans Trio. `uv` n'était pas installé sur le PC, et `spawn(..., {shell: true})` passe par cmd.exe, qui lit `<2` de `mcp[cli]<2` comme une redirection.
+- **Correctif :** `scripts/seo_secrets.py` remplit les variables absentes depuis `.secrets/` (ignoré par git) et passe la sortie en UTF-8 ; `seo-kpi-daily.py` et `seo-health.py` l'appellent. `bing.mjs` met l'argument entre guillemets sous Windows. `uv` installé par `python -m pip install --user uv`, puis copié dans un dossier du PATH.
+- **Contrôle :** `python scripts/seo-kpi-daily.py` affiche Google et Bing ; un `initialize` JSON-RPC envoyé à `node scripts/mcp/bing.mjs` et `gsc.mjs` renvoie `serverInfo`.
+
 ### 2026-11-02 — Build sous Windows : `?v=` faux à cause des fins de ligne CRLF
 
 - **Symptôme :** dans un worktree Windows (`core.autocrlf=true`), `npm run build` réécrit les `?v=` de presque toutes les pages (y compris `error-reporter.js?v=`, fichier non modifié) : les versions sont des empreintes SHA-1 des octets bruts, et les fichiers extraits en CRLF n'ont pas les mêmes octets que sur la CI Linux. La CI (« fichiers générés à jour ») échouerait.

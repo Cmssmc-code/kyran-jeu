@@ -36,6 +36,10 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+import seo_secrets  # noqa: E402  (scripts/ est sur sys.path)
+
+seo_secrets.load()
+
 SITE = "https://kyran-jeu.fr"
 GSC_SITE = "sc-domain:kyran-jeu.fr"
 KEY_PATHS = ["/", "/regle.html", "/tarot-africain.html", "/commander.html", "/blog/", "/minijeu.html",

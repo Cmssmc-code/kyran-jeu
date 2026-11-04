@@ -30,8 +30,11 @@ Depuis le 2026-11-03 cette routine tourne dans **Claude Trio sur le PC Windows d
   `pip --break-system-packages`). Chemins Windows : pas de `/opt/pw-browsers` ; Lighthouse : `npx -y lighthouse@12`
   avec le Chrome du PC si trouvé, sinon « non mesuré ».
 - GitHub : `gh` (connecté), pas d'outils `mcp__github__*`. Règle du dépôt : PR vers `main`, fusion automatique quand « Contrôles du site » est verte (`CLAUDE.md`).
-- Search Console / Bing : serveurs MCP `gsc` et `bing-webmaster` du `.mcp.json` (clés dans `.secrets/`) ou les
-  scripts `seo-*.py` ; si rien ne répond : « non mesuré », on continue.
+- Search Console / Bing / PageSpeed : branchés le 2026-11-04. Les scripts `seo-*.py` lisent seuls les clés de
+  `.secrets/` (`scripts/seo_secrets.py`, détail `docs/MCP_SEO.md` § 3) ; les serveurs MCP `gsc` et
+  `bing-webmaster` du `.mcp.json` aussi. À chaque run : `python scripts/seo-kpi-daily.py` puis
+  `python scripts/seo-health.py --inspect 30 --psi` (environ 3 min, en arrière-plan). Si rien ne répond :
+  « non mesuré », on le signale en tête du journal et on continue.
 - Doc partagé : connecteur Claude Docs du compte (via ToolSearch). S'il est absent, le noter en tête du journal.
 - Pas de `send_later` ni de `PushNotification` direct : une alerte tient dans le message final (Trio la relaie).
   Limite d'usage atteinte : commit « wip » sur la branche et arrêt, Trio relance la routine.
@@ -217,10 +220,11 @@ Bing a ~2 jours de retard. Indicateurs, sources et seuils : `seo/base-connaissan
 - **Site en direct** (`seo-health.py`) : codes HTTP, canonical, titres, descriptions, H1, JSON-LD, `og:image`, TTFB,
   `robots.txt`, `llms.txt`. Les contrôles du dépôt complètent : `npm run check:site`, `npm run test:seo`,
   `npm run check:jsonld`.
-- **Performance** : `--psi` seulement si `PAGESPEED_API_KEY` existe ; sinon le lundi, Lighthouse en local
+- **Performance** : `--psi` à chaque run (clé dans `.secrets/pagespeed-api-key.txt`) ; si PageSpeed ne répond pas, le lundi, Lighthouse en local
   (`CHROME_PATH=/opt/pw-browsers/chromium npx -y lighthouse@12 <url> --only-categories=performance,seo
   --output=json --quiet --chrome-flags="--headless=new --no-sandbox"`) sur l'accueil et `tarot-africain.html`.
-- **Robots d'IA** : GitHub Pages ne donne pas de journaux : « non mesuré ».
+- **Robots d'IA** : GitHub Pages ne donne pas de journaux et aucun proxy Cloudflare n'est devant le site (le
+  relevé `seo-cloudflare-bots.py` de Majordia ne s'applique pas) : « non mesuré ».
 - **Ventes** : journaux Railway du projet `kyran-webhook` (événements `checkout.session.completed`), nombre par
   jour seulement ; sinon « non mesuré ». Jamais de nom ni d'e-mail de client.
 - **Effet du travail SEO récent** : pour chaque page modifiée sur `main` depuis 14 jours, clics, impressions et

@@ -329,7 +329,9 @@ ${list.map(a => `    <li><a href="/blog/${a.slug}.html">${escXml(a.title)}</a>${
   <meta name="twitter:title" content="Plan du site — KYRAN" />
   <meta name="twitter:description" content="${total} pages publiques sur kyran-jeu.fr." />
   <meta name="twitter:image" content="${SITE}/og-kyran.jpg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />

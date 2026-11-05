@@ -39,7 +39,9 @@ function stub(target) {
   <link rel="canonical" href="${abs}" />
   <meta http-equiv="refresh" content="0; url=${target}" />
   <script>location.replace(${js});</script>
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 <body>
   <p>Cette page a été déplacée. <a href="${target}">Continuer vers ${abs}</a>.</p>

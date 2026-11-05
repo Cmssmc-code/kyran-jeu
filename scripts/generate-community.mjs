@@ -249,7 +249,9 @@ const html = `<!DOCTYPE html>
   <link rel="alternate" hreflang="x-default" href="${URL}" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta property="og:site_name" content="KYRAN" />

@@ -10,6 +10,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-05 — Surveillance : `npx stripe-mcp` a lancé un paquet tiers homonyme
+
+- **Symptôme :** pour vérifier `@stripe/mcp` 0.3.4, la routine a tapé `npx stripe-mcp --help` ; npm a installé et lancé `stripe-mcp` 1.1.0, un paquet sans lien avec Stripe (arrêt aussitôt, clé absente ; seule une clé factice était dans l'environnement).
+- **Cause :** `npx <nom>` cherche un paquet de ce nom sur le registre quand aucune commande locale ne correspond ; le binaire de `@stripe/mcp` n'est pas `stripe-mcp`.
+- **Correctif :** cache npx du paquet tiers supprimé ; test refait avec `node node_modules/@stripe/mcp/dist/index.js --api-key=<factice>` dans un dossier temporaire.
+- **Règle :** pour tester un paquet, l'installer par son nom exact puis lancer le chemin de son `bin` (lu dans son `package.json`) ; jamais `npx` sur un nom de commande deviné ; jamais de vraie clé dans ces tests.
+
 ### 2026-11-04 — Routine SEO dans Claude Trio : aucune mesure Google/Bing, lanceur MCP Bing cassé sous Windows
 
 - **Symptôme :** premier run SEO dans Trio (PC Windows) : `gsc` et `bing-webmaster` « failed to connect », Google, Bing et PageSpeed « non mesurés ». Après copie des clés, `seo-kpi-daily.py` plantait en `UnicodeEncodeError` (flèche `→` sur la console cp1252) et `uvx` ne démarrait pas le serveur Bing.

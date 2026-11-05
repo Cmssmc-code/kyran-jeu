@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-05 — passage planifié (04:08 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 41966722835, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-05.md`](../docs/rapports/surveillance/2026-11-05.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 56 URL × 1280/390 px sans erreur ; 374 liens, 0 interne cassé ; auchan.fr derrière DataDome = bruit (ajouté en A4) |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert (1 Pages annulé puis remplacé) ; 0 faille ; aucun secret dans le diff des accès SEO |
+| Versions | 3 mises à jour | `@stripe/mcp` 0.3.4, `@anthropic-ai/sdk` 1.5.0, `compatibility_date` 2026-11-05 |
+
+Mise à jour : PR #181. Leçon ajoutée (`npx` sur un nom deviné). Aucun point ouvert.
+
 ## 2026-11-04 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

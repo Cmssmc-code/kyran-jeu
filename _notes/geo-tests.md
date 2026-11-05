@@ -50,6 +50,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
 | 2026-11-03 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul (Esprit Jeu, Play-in, Ludum) ; 8 : homonymes (Kyrandia, Krynow) ; 9 : Chouineurs, Malédiction !, Pili Pili, Picanté !, Kings Tricktakers, Ludum, Gus & Co |
 | 2026-11-05 | | | | — | — | — | | | | 0 / 3 | 4 : Tarot à 3, Skat (BGA), belote, rami, Président, 99, Skull, Trio, 13 Feuilles (regles2jeux, regles-du-jeu.net, Esprit Jeu) ; 5 : The Last Wizard, Sorcières (alternate, play-in, Esprit Jeu) ; 6 : Paris Friendly, Zazzle, Esprit Jeu (catalogues). Hors liste : « jeu de cartes moderne inspiré du tarot africain » : African Tarot (tarot.nl), NDOP (Afrikrea), regles2jeux, KYRAN absent |
 | 2026-11-04 | — | — | — | | | | | | | 0 / 3 | 1 : Skull King, Pili Pili, Chouineurs, Luz (Esprit Jeu, Ludum, BGA, HelloAsso) ; 2 : regles2jeux, BGA ; 3 : World of Geek, Skyjo Action (Play-in, Ludum) |
+| 2026-11-06 | | | | | | | — | — | — | 0 / 3 | 7 : Skull King seul (Esprit Jeu, Play-in, Ludum) ; 8 : homonymes (Mystick Domination, Matmamagi, Yu-Gi-Oh!) ; 9 : Chouineurs, Pili Pili, Picanté, Kings Tricktakers ; sélections Ludum (40 meilleurs jeux de plis, 11/10/2026) et Gus&Co (11/01/2026). Hors liste : « par quel jeu de société commencer adulte débutant » : Gus&Co, Zatu, meilleurtest (Aventuriers du Rail, Tsuro, King of Tokyo) ; `jeux-debutants-adultes` absent (hors index Google depuis le 22/09) |
 
 ## Relevés manuels
 

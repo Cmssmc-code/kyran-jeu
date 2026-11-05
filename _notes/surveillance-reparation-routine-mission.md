@@ -159,6 +159,8 @@ URL `https://kyran-webhook-production.up.railway.app`.
   s'ouvre dans un navigateur (vérifié par le propriétaire le 2026-10-30) : bruit, comme Okkazeo (Cloudflare).
   `www.play-in.com` : délai dépassé en `curl`, 403 « Just a moment… » (défi anti-robot Cloudflare) dans Chromium
   (2026-11-03) : bruit, comme Okkazeo.
+  `www.auchan.fr` : 403 en `curl` comme dans Chromium, en-tête `x-datadome: protected` (anti-robot DataDome,
+  2026-11-05) : bruit.
 - Codes HTTP : une URL inconnue répond 404 avec `404.html` ; `https://www.kyran-jeu.fr/` et `http://kyran-jeu.fr/`
   redirigent vers `https://kyran-jeu.fr/` ; `robots.txt`, `sitemap.xml`, `llms.txt`, `blog/feed.xml` en 200 ;
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).

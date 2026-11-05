@@ -635,7 +635,9 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
   <meta name="twitter:title" content="${esc(article.metaTitle)}" />
   <meta name="twitter:description" content="${esc(article.description)}" />
   <meta name="twitter:image" content="${ogImage}" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
   ${webpOf(article.heroImage) ? `<link rel="preload" as="image" href="${webpOf(article.heroImage)}" type="image/webp" fetchpriority="high" />` : `<link rel="preload" as="image" href="${article.heroImage}" fetchpriority="high" />`}
   <link rel="preload" href="/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />

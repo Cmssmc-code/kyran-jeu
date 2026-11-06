@@ -1,188 +1,170 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-07",
  "pages": {
   "hausses": [
-   {
-    "page": "https://kyran-jeu.fr/blog/jeux-3-joueurs.html",
-    "clics": 1,
-    "clics_avant": 1,
-    "impressions": 99,
-    "impressions_avant": 59,
-    "position": 14.9,
-    "position_avant": 19.2
-   },
    {
     "page": "https://kyran-jeu.fr/blog/alternatives-uno.html",
     "clics": 2,
     "clics_avant": 1,
-    "impressions": 107,
-    "impressions_avant": 90,
+    "impressions": 111,
+    "impressions_avant": 83,
     "position": 7.4,
-    "position_avant": 7.6
+    "position_avant": 7.9
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-comme-dixit.html",
     "clics": 4,
     "clics_avant": 1,
-    "impressions": 85,
-    "impressions_avant": 113,
-    "position": 5.2,
-    "position_avant": 5.4
-   },
-   {
-    "page": "https://kyran-jeu.fr/blog/jeux-comme-skull-king.html",
-    "clics": 1,
-    "clics_avant": 1,
-    "impressions": 59,
-    "impressions_avant": 27,
-    "position": 5.2,
-    "position_avant": 6.9
+    "impressions": 84,
+    "impressions_avant": 106,
+    "position": 5.3,
+    "position_avant": 5.5
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-coop-cartes.html",
     "clics": 1,
     "clics_avant": 0,
-    "impressions": 24,
-    "impressions_avant": 18,
-    "position": 5.6,
-    "position_avant": 12.4
+    "impressions": 29,
+    "impressions_avant": 13,
+    "position": 5.3,
+    "position_avant": 13.8
    },
    {
     "page": "https://kyran-jeu.fr/blog/guide-jeux-de-plis.html",
     "clics": 3,
     "clics_avant": 1,
-    "impressions": 7,
-    "impressions_avant": 23,
-    "position": 5.1,
-    "position_avant": 7.7
+    "impressions": 8,
+    "impressions_avant": 21,
+    "position": 5.9,
+    "position_avant": 7.6
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-comme-skull-king.html",
+    "clics": 1,
+    "clics_avant": 1,
+    "impressions": 56,
+    "impressions_avant": 35,
+    "position": 5.3,
+    "position_avant": 6.6
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-3-joueurs.html",
+    "clics": 1,
+    "clics_avant": 1,
+    "impressions": 88,
+    "impressions_avant": 71,
+    "position": 13.6,
+    "position_avant": 19.0
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-duo-couples.html",
     "clics": 0,
     "clics_avant": 0,
+    "impressions": 27,
+    "impressions_avant": 12,
+    "position": 24.5,
+    "position_avant": 18
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-soiree-amis.html",
+    "clics": 0,
+    "clics_avant": 0,
     "impressions": 26,
-    "impressions_avant": 13,
-    "position": 24,
-    "position_avant": 19.3
-   },
-   {
-    "page": "https://kyran-jeu.fr/tarot-africain.html#variantes",
-    "clics": 0,
-    "clics_avant": 0,
-    "impressions": 65,
-    "impressions_avant": 59,
-    "position": 7.1,
-    "position_avant": 5.9
-   },
-   {
-    "page": "https://kyran-jeu.fr/tarot-africain.html#joueurs",
-    "clics": 0,
-    "clics_avant": 0,
-    "impressions": 65,
-    "impressions_avant": 59,
-    "position": 7.1,
-    "position_avant": 5.9
-   },
-   {
-    "page": "https://kyran-jeu.fr/tarot-africain.html#a-4-et-5-joueurs",
-    "clics": 0,
-    "clics_avant": 0,
-    "impressions": 64,
-    "impressions_avant": 59,
-    "position": 7.1,
-    "position_avant": 5.9
+    "impressions_avant": 18,
+    "position": 22.6,
+    "position_avant": 21.3
    }
   ],
   "baisses": [
    {
     "page": "https://kyran-jeu.fr/tarot-africain.html",
-    "clics": 6,
-    "clics_avant": 8,
-    "impressions": 414,
-    "impressions_avant": 839,
-    "position": 6.2,
-    "position_avant": 6.7
-   },
-   {
-    "page": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html",
-    "clics": 3,
-    "clics_avant": 5,
-    "impressions": 165,
-    "impressions_avant": 256,
-    "position": 8.3,
-    "position_avant": 8.2
+    "clics": 4,
+    "clics_avant": 9,
+    "impressions": 392,
+    "impressions_avant": 811,
+    "position": 6.6,
+    "position_avant": 6.5
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-comme-codenames.html",
     "clics": 4,
     "clics_avant": 5,
-    "impressions": 128,
+    "impressions": 116,
     "impressions_avant": 232,
-    "position": 6.1,
-    "position_avant": 5.1
+    "position": 5.9,
+    "position_avant": 5.2
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html",
+    "clics": 3,
+    "clics_avant": 5,
+    "impressions": 152,
+    "impressions_avant": 245,
+    "position": 8.3,
+    "position_avant": 8.1
+   },
+   {
+    "page": "https://kyran-jeu.fr/",
+    "clics": 1,
+    "clics_avant": 5,
+    "impressions": 38,
+    "impressions_avant": 72,
+    "position": 3.7,
+    "position_avant": 4.0
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html",
     "clics": 1,
     "clics_avant": 3,
-    "impressions": 62,
-    "impressions_avant": 128,
-    "position": 8.4,
-    "position_avant": 9.2
+    "impressions": 59,
+    "impressions_avant": 117,
+    "position": 7.3,
+    "position_avant": 9.9
    },
    {
-    "page": "https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html",
-    "clics": 2,
-    "clics_avant": 4,
-    "impressions": 39,
-    "impressions_avant": 54,
-    "position": 4.8,
-    "position_avant": 5.9
-   },
-   {
-    "page": "https://kyran-jeu.fr/blog/jeux-cartes-ados.html",
-    "clics": 1,
+    "page": "https://kyran-jeu.fr/whist-moderne.html",
+    "clics": 0,
     "clics_avant": 2,
-    "impressions": 24,
-    "impressions_avant": 48,
-    "position": 12.5,
-    "position_avant": 8.5
-   },
-   {
-    "page": "https://kyran-jeu.fr/blog/alternatives-belote-coinche.html",
-    "clics": 1,
-    "clics_avant": 2,
-    "impressions": 39,
-    "impressions_avant": 59,
-    "position": 7.4,
-    "position_avant": 8.6
-   },
-   {
-    "page": "https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html",
-    "clics": 1,
-    "clics_avant": 1,
-    "impressions": 20,
-    "impressions_avant": 55,
-    "position": 6,
-    "position_avant": 10.5
+    "impressions": 5,
+    "impressions_avant": 23,
+    "position": 28.8,
+    "position_avant": 11.0
    },
    {
     "page": "https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html",
     "clics": 2,
     "clics_avant": 3,
-    "impressions": 27,
-    "impressions_avant": 39,
-    "position": 4.1,
+    "impressions": 22,
+    "impressions_avant": 43,
+    "position": 4.4,
     "position_avant": 3.7
    },
    {
-    "page": "https://kyran-jeu.fr/",
-    "clics": 3,
+    "page": "https://kyran-jeu.fr/blog/jeux-cartes-ados.html",
+    "clics": 1,
+    "clics_avant": 2,
+    "impressions": 27,
+    "impressions_avant": 42,
+    "position": 12,
+    "position_avant": 8.7
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-cartes-6-joueurs.html",
+    "clics": 1,
+    "clics_avant": 1,
+    "impressions": 22,
+    "impressions_avant": 56,
+    "position": 7.5,
+    "position_avant": 10.1
+   },
+   {
+    "page": "https://kyran-jeu.fr/blog/jeux-cartes-5-joueurs.html",
+    "clics": 2,
     "clics_avant": 3,
-    "impressions": 45,
-    "impressions_avant": 74,
-    "position": 3.8,
-    "position_avant": 3.9
+    "impressions": 36,
+    "impressions_avant": 49,
+    "position": 5.1,
+    "position_avant": 5.9
    }
   ]
  },
@@ -193,55 +175,55 @@
     "query": "tarot africain",
     "clics": 0,
     "clics_avant": 0,
-    "impressions": 62,
-    "impressions_avant": 240,
-    "position": 9.0,
-    "position_avant": 10.1
+    "impressions": 75,
+    "impressions_avant": 205,
+    "position": 9.3,
+    "position_avant": 10.2
    },
    {
     "query": "tarot africain règle",
-    "clics": 2,
+    "clics": 1,
     "clics_avant": 2,
-    "impressions": 35,
-    "impressions_avant": 93,
-    "position": 4.5,
-    "position_avant": 4.3
+    "impressions": 30,
+    "impressions_avant": 91,
+    "position": 5.0,
+    "position_avant": 4.2
    },
    {
     "query": "quel est le meilleur jeu de société coopératif comme codenames ?",
     "clics": 0,
     "clics_avant": 0,
-    "impressions": 8,
-    "impressions_avant": 37,
-    "position": 6.4,
-    "position_avant": 6.6
+    "impressions": 6,
+    "impressions_avant": 38,
+    "position": 6.5,
+    "position_avant": 6.5
+   },
+   {
+    "query": "regle tarot africain",
+    "clics": 0,
+    "clics_avant": 0,
+    "impressions": 13,
+    "impressions_avant": 34,
+    "position": 4.7,
+    "position_avant": 4.6
    },
    {
     "query": "kyran",
     "clics": 0,
     "clics_avant": 1,
     "impressions": 20,
-    "impressions_avant": 21,
-    "position": 2.2,
-    "position_avant": 2.6
-   },
-   {
-    "query": "regle tarot africain",
-    "clics": 0,
-    "clics_avant": 0,
-    "impressions": 18,
-    "impressions_avant": 33,
-    "position": 4.6,
-    "position_avant": 4.6
+    "impressions_avant": 20,
+    "position": 2.1,
+    "position_avant": 2.3
    },
    {
     "query": "tarot africain en ligne",
     "clics": 0,
     "clics_avant": 1,
-    "impressions": 26,
-    "impressions_avant": 15,
-    "position": 8.8,
-    "position_avant": 9.3
+    "impressions": 23,
+    "impressions_avant": 17,
+    "position": 8.7,
+    "position_avant": 9.2
    }
   ]
  }

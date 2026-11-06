@@ -161,6 +161,7 @@ URL `https://kyran-webhook-production.up.railway.app`.
   (2026-11-03) : bruit, comme Okkazeo.
   `www.auchan.fr` : 403 en `curl` comme dans Chromium, en-tête `x-datadome: protected` (anti-robot DataDome,
   2026-11-05) : bruit.
+  `boardgamesflix.com` (lien `sameAs` de `/commander.html`) : 403 « Just a moment… » (Cloudflare, 2026-11-06) : bruit.
 - Codes HTTP : une URL inconnue répond 404 avec `404.html` ; `https://www.kyran-jeu.fr/` et `http://kyran-jeu.fr/`
   redirigent vers `https://kyran-jeu.fr/` ; `robots.txt`, `sitemap.xml`, `llms.txt`, `blog/feed.xml` en 200 ;
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).

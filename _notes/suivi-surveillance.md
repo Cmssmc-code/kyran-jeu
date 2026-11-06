@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-06 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 42161411978, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-06.md`](../docs/rapports/surveillance/2026-11-06.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 56 URL × 1280/390 px sans 4xx/5xx ; 374 liens, 0 interne cassé ; favicons (PR #183) en 200 ; `sameAs` Wikidata et Trictrac en 200 |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` tout vert (1 CI rouge sur une branche, réparé avant fusion) ; 0 faille ; aucun secret |
+| Versions | 2 mises à jour | wrangler 4.158.0, `compatibility_date` 2026-11-06, `@anthropic-ai/sdk` 1.6.0 |
+
+Mise à jour : PR #185. boardgamesflix.com ajouté au bruit (A4). Aucun point ouvert.
+
 ## 2026-11-05 — passage planifié (04:08 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

@@ -185,15 +185,11 @@ export default {
     },
     {
       q: 'Quel est le meilleur jeu de cartes rapide comme Skyjo ?',
-      a: `Llama, si vous voulez garder le tempo de Skyjo : des manches de quelques minutes, un total de pénalités à tenir bas et, à chaque tour, le choix de jouer une carte, de piocher ou de se retirer, de 2 à 6 joueurs. No Thanks ! tient en une vingtaine de minutes la partie, de 3 à 7 joueurs, avec le même score à garder bas. Au-delà de huit joueurs, 6 qui prend ! accepte jusqu’à dix personnes.`
+      a: `Llama garde le tempo de Skyjo : manches de quelques minutes, pénalités à tenir bas et, à chaque tour, le choix de jouer, de piocher ou de se retirer, de 2 à 6 joueurs. No Thanks ! tient en une vingtaine de minutes la partie, de 3 à 7 joueurs, avec le même score à garder bas. Au-delà de huit joueurs, 6 qui prend ! et Uno montent à dix.`
     },
     {
       q: 'Existe-t-il un jeu comme Skyjo pour deux joueurs ?',
       a: `Lost Cities est conçu pour deux et reprend le choix entre pioche et défausse avec davantage de planification. Llama et Love Letter fonctionnent aussi en duo, de 2 à 6 et de 2 à 4 joueurs (2 à 6 pour l’édition Z-Man de 2025 de Love Letter). Skyjo lui-même accepte les duos : une variante de règles peut suffire à relancer la partie.`
-    },
-    {
-      q: 'Quel jeu comme Skyjo pour plus de huit joueurs ?',
-      a: `6 qui prend ! et Uno acceptent chacun jusqu’à dix joueurs. 6 qui prend ! garde le principe de pénalités à minimiser, Uno est plus léger et accessible dès 7 ans. À cette taille de table, la chance domine : prévoyez des parties courtes plutôt qu’une tactique fine.`
     },
     {
       q: 'Quelle alternative à Skyjo est plus tactique ?',

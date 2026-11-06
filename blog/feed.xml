@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Thu, 05 Nov 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026</title>
+      <link>https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html</guid>
+      <pubDate>Fri, 06 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Prix de 22 jeux de cartes (Uno, Dixit, Trio, Skyjo…) relevés le 6 novembre 2026 chez Ludum, Philibert, Esprit Jeu et Agorajeux, en CSV ouvert.</description>
+    </item>
     <item>
       <title>Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026</title>
       <link>https://kyran-jeu.fr/blog/jeux-cartes-solo.html</link>

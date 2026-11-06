@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "prix-jeux-de-cartes-releve",
+    "title": "Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026",
+    "category": "Cartes",
+    "date": "2026-11-06",
+    "readMinutes": 14,
+    "excerpt": "Prix de 22 jeux de cartes (Uno, Dixit, Trio, Skyjo…) relevés le 6 novembre 2026 chez Ludum, Philibert, Esprit Jeu et Agorajeux, en CSV ouvert.",
+    "image": "/blog/images/prix-jeux-de-cartes-releve.jpg",
+    "webp": "/blog/images/prix-jeux-de-cartes-releve.webp",
+    "gameCount": 0,
+    "related": [
+      "jeux-cartes-moins-de-15-euros",
+      "cadeau-noel",
+      "marche-jeux-de-cartes-2026-2027"
+    ]
+  },
+  {
     "slug": "jeux-cartes-solo",
     "title": "Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026",
     "category": "Cartes",
@@ -39,7 +55,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes à moins de 15 € : 9 jeux aux prix relevés le 23 octobre 2026",
     "category": "Cartes",
     "date": "2026-10-23",
-    "readMinutes": 10,
+    "readMinutes": 11,
     "excerpt": "Neuf jeux de cartes à moins de 15 euros, avec le prix affiché en boutique le 23 octobre 2026, le nombre de joueurs et ce que chacun demande à la table.",
     "image": "/blog/images/jeux-cartes-moins-de-15-euros.jpg",
     "webp": "/blog/images/jeux-cartes-moins-de-15-euros.webp",

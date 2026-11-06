@@ -21,6 +21,7 @@ export default {
 <li><strong>But :</strong> garder le total le plus bas sur une grille de douze cartes ; la partie s’arrête quand un joueur atteint 100 points, et le plus petit total gagne.</li>
 <li><strong>Versions :</strong> <strong>Skyjo Action</strong> (2019) ajoute des cartes Action et des cartes Étoile pour le même public ; <strong>Skyjo Junior</strong> est illustré de fruits pour les plus jeunes ; une édition Voyage existe aussi.</li>
 <li><strong>Succès :</strong> selon Wikipédia, plus de 3 millions d’exemplaires vendus en France en 2024.</li>
+<li><strong>Prix :</strong> la boîte standard coûtait 14,90 € chez Ludum et Philibert et 15,50 € chez Agorajeux le 6 novembre 2026, d’après notre <a class="text-link" href="/blog/prix-jeux-de-cartes-releve.html">relevé des prix des jeux de cartes</a> dans quatre boutiques.</li>
 </ul>
 <p>Sources : <a class="text-link" href="https://magilano.com/products/skyjo" rel="noopener">fiche officielle Magilano</a> et <a class="text-link" href="https://fr.wikipedia.org/wiki/Skyjo" rel="noopener">article Skyjo de Wikipédia</a>.</p>
 <p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
@@ -181,6 +182,10 @@ export default {
     {
       q: 'Quel jeu ressemble le plus à Skyjo ?',
       a: `Llama est le plus proche par le rythme, l’accumulation de pénalités et la décision de piocher ou de s’arrêter. Cabo est le cousin le plus direct : cartes cachées à échanger et score bas, mais il se joue de 2 à 4. No Thanks ! repose lui aussi sur un score à garder bas, sans grille. Si c’est le confort d’un jeu simple sur une grande table que vous cherchez, 6 qui prend ! monte à dix joueurs.`
+    },
+    {
+      q: 'Quel est le meilleur jeu de cartes rapide comme Skyjo ?',
+      a: `Llama, si vous voulez garder le tempo de Skyjo : des manches de quelques minutes, un total de pénalités à tenir bas et, à chaque tour, le choix de jouer une carte, de piocher ou de se retirer, de 2 à 6 joueurs. No Thanks ! tient en une vingtaine de minutes la partie, de 3 à 7 joueurs, avec le même score à garder bas. Au-delà de huit joueurs, 6 qui prend ! accepte jusqu’à dix personnes.`
     },
     {
       q: 'Existe-t-il un jeu comme Skyjo pour deux joueurs ?',

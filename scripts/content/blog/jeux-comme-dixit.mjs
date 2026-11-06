@@ -25,7 +25,8 @@ export default {
 <p><strong>La langue et le vocabulaire.</strong> Les jeux de mots dépendent de ce que chacun connaît. Une table qui mêle des enfants, des invités dont le français n’est pas la langue maternelle ou des joueurs peu à l’aise avec les mots trouvera Just One ou Letter Jam plus ardus qu’ils n’en ont l’air.</p>
 <p><strong>L’effectif.</strong> Dixit se joue de 3 à 6 dans l’édition de 2008 (3 à 8 sur la boîte actuelle). La plupart des alternatives couvrent une plage voisine, mais The Mind plafonne à quatre et KYRAN ne se joue pas à deux. Si vous êtes régulièrement six autour de la table, rayez d’emblée ce qui s’arrête à quatre ou cinq.</p>
 <p><strong>Le ton de la soirée.</strong> Dixit est doux : personne n’y est jamais mis en cause. Coup et Skull introduisent la méfiance, ce qui peut gêner avec des enfants sensibles ou des convives qui n’aiment pas être soupçonnés.</p>
-<p>Pour trancher : si votre groupe adore commenter ses indices après coup, prenez Just One ou Codenames ; s’il préfère débattre des intentions, Skull ou Coup ; s’il cherche simplement une ambiance paisible et un jeu familial, Timeline ou Sushi Go! sont plus sages, même s’ils s’éloignent davantage de l’original.</p>`
+<p>Pour trancher : si votre groupe adore commenter ses indices après coup, prenez Just One ou Codenames ; s’il préfère débattre des intentions, Skull ou Coup ; s’il cherche simplement une ambiance paisible et un jeu familial, Timeline ou Sushi Go! sont plus sages, même s’ils s’éloignent davantage de l’original.</p>
+<p>Côté budget, la boîte de base de Dixit coûtait de 24,61 € (Philibert) à 29,90 € (Agorajeux) le 6 novembre 2026, contre 19,90 à 19,95 € pour Just One, 21,95 à 22,50 € pour Codenames et 12,00 à 14,90 € pour The Mind, d’après notre <a class="text-link" href="/blog/prix-jeux-de-cartes-releve.html">relevé des prix des jeux de cartes</a> dans quatre boutiques en ligne.</p>`
   },
   games: [
     {

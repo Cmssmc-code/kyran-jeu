@@ -447,5 +447,16 @@
    "megalopolis"
   ],
   "legende": "Illustration créée pour KYRAN, avec les visuels officiels d’Onirim (© InPatience), Vendredi (© 2F-Spiele / Matagot), The Game (© Oya), Palm Island (© Nuts Publishing / Portal Dragon) et Megalopolis (© Matagot / Button Shy) : une banquette sous une fenêtre cintrée au lever du soleil, une patience en sept colonnes étalée sur le coussin, une tasse fumante et les cinq boîtes posées à droite."
+ },
+ "prix-jeux-de-cartes-releve": {
+  "assets": [
+   "dixit",
+   "trio",
+   "the-mind",
+   "flip-7",
+   "uno",
+   "dobble"
+  ],
+  "legende": "Illustration créée pour KYRAN, avec les visuels officiels de Dixit (© Libellud), Trio (© Cocktail Games), The Mind (© Oya / Nürnberger-Spielkarten-Verlag), Flip 7 (© Catch Up Games / The OP Games), Uno (© Mattel) et Dobble (© Asmodee / Zygomatic) : une balance de Roberval sur un comptoir, Dixit et Trio sur un plateau, des piles de pièces et une pièce qui tombe sur l’autre, une loupe posée devant, quatre boîtes à droite."
  }
 }

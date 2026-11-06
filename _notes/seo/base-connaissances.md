@@ -80,6 +80,7 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 - 22/10 : 52 URL dans le sitemap (2 articles neufs du 21/10) ; inspection : 29/30 indexées, seule `meilleurs-jeux-apero` hors index.
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
 - 05/11 : 56 URL dans le sitemap, toutes en 200, 0 anomalie ; inspection 27/30 indexées, hors index `video-regles` et `communaute` (inconnues de Google), `blog/jeux-debutants-adultes` (explorée, non indexée, dernière exploration 22/09). Bing : 62 pages dans l'index (01/11).
+- 07/11 : 57 URL dans le sitemap (article « Relevé des prix des jeux de cartes » publié le 06/11), toutes en 200, 0 anomalie ; inspection 27/30 indexées, hors index `jeux-memoire-concentration` (explorée, non indexée, 27/09), `video-regles` et `blog/prix-jeux-de-cartes-releve` (inconnues) ; `meilleurs-jeux-apero` et `cadeau-anniversaire` indexées. Le relevé reçoit des liens contextuels depuis `jeux-cartes-moins-de-15-euros`, `jeux-comme-skyjo`, `alternatives-uno` et `jeux-comme-dixit` (prix datés du 6/11).
 - `priceValidUntil` du Product : 31/12/2026.
 
 ## 5. Mesure : sources, fraîcheur, outils

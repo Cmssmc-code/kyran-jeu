@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-07 — passage planifié (04:08 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 42337761038, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-07.md`](../docs/rapports/surveillance/2026-11-07.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 57 URL × 1280/390 px sans 4xx/5xx (essai « prix » et `prix.csv` sains) ; 387 liens, 0 interne cassé |
+| Lien externe | à revoir | `trictrac.net` : certificat Let's Encrypt expiré le 07/11 03:29 UTC (côté Tric Trac) |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; 1 échec local du lanceur `node:test` (Node 22 de la session), 4 relances vertes, CI verte |
+| Versions | à jour | `compatibility_date` 2026-11-07 |
+
+Mise à jour : PR #189. Point ouvert : revérifier le certificat de trictrac.net au prochain passage.
+
 ## 2026-11-06 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

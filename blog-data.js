@@ -262,7 +262,7 @@ const BLOG_ITEMS = [
     "title": "Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi",
     "category": "Cartes",
     "date": "2026-09-05",
-    "readMinutes": 10,
+    "readMinutes": 11,
     "excerpt": "Deux contre deux, tous ensemble ou chacun pour soi ? Codenames, The Crew, Wizard, KYRAN et trois autres jeux de cartes pour une table de quatre.",
     "image": "/blog/images/jeux-cartes-4-joueurs.jpg",
     "webp": "/blog/images/jeux-cartes-4-joueurs.webp",

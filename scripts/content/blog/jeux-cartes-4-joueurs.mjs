@@ -11,6 +11,7 @@ export default {
   heroImage: "/blog/images/jeux-cartes-4-joueurs.jpg",
   heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de Codenames, The Crew, Wizard, Skull, Love Letter et Skyjo (© Iello / Czech Games Edition, Iello / Kosmos, AMIGO Spiel + Freizeit GmbH, Asmodee / Space Cowboys, Z-Man Games / Asmodee, Magilano) : quatre joueurs en deux équipes, rouge en haut et en bas, bleue à gauche et à droite, autour d'une table carrée où les six boîtes forment une croix.",
   layout: {
+    answerFirst: true,
     criteriaShort: 'Le format à quatre',
     groups: [
       {
@@ -113,7 +114,8 @@ export default {
   ],
   verdict: {
     heading: 'Le jeu à sortir quand vous êtes quatre',
-    html: `<p>Une seule boîte pour une table de quatre ? <strong>The Crew</strong> : 40 cartes pour quatre mains de dix, une campagne qui se renouvelle et aucun perdant. Pour une table qui préfère le chacun pour soi, <strong>KYRAN</strong> rend une partie complète en une demi-heure, là où Wizard en demande souvent davantage ; Wizard reste préférable pour ceux qui aiment les longues soirées de calcul. Codenames fonctionne à quatre mais gagne en intérêt à six joueurs ou plus, et Skyjo est le plus sûr dès que des enfants de huit ans s'installent à la table. Love Letter, enfin, sert d'entracte entre deux jeux plus longs plutôt que de plat principal.</p>`
+    html: `<p>Une seule boîte pour une table de quatre ? <strong>The Crew</strong> : 40 cartes pour quatre mains de dix, une campagne qui se renouvelle et aucun perdant. Pour une table qui préfère le chacun pour soi, <strong>KYRAN</strong> rend une partie complète en une demi-heure, là où Wizard en demande souvent davantage ; Wizard reste préférable pour ceux qui aiment les longues soirées de calcul. Codenames fonctionne à quatre mais gagne en intérêt à six joueurs ou plus, et Skyjo est le plus sûr dès que des enfants de huit ans s'installent à la table. Love Letter, enfin, sert d'entracte entre deux jeux plus longs plutôt que de plat principal.</p>
+<p>Côté budget, le 6 novembre 2026, The Crew coûtait de 15,90 € (Ludum, Esprit Jeu, Agorajeux) à 16,50 € (Philibert), Codenames en édition française de 21,95 € (Philibert) à 22,50 €, Skyjo de 14,90 € (Ludum, Philibert) à 15,50 € (Agorajeux) et Love Letter de 11,90 à 11,95 €, d'après notre <a class="text-link" href="/blog/prix-jeux-de-cartes-releve.html">relevé des prix des jeux de cartes</a> dans quatre boutiques en ligne.</p>`
   },
   conclusion: `<p>Une table de quatre accepte presque tout, ce qui rend le choix plus délicat qu'il n'y paraît : mieux vaut viser deux jeux complémentaires, l'un en équipe et l'autre chacun pour soi, que six boîtes que l'on n'ouvrira qu'une fois. Si l'un de vos invités déclare forfait, la page <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux à 3 joueurs</a> vous aide à ajuster la soirée.</p>`,
   faq: [

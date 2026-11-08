@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-09 — Routine SEO : la réextraction LF efface les mesures non commitées
+
+- **Symptôme :** les fichiers écrits par `seo-kpi-daily.py` et `seo-health.py` (`kpi-quotidiens.csv`, `mouvements.json`, `derniere-sante.json`, `kpi-technique.csv`) ont disparu après la réextraction en LF prévue par la leçon du 02/11 ; les scripts ont dû être relancés (inspection d'URL refaite, 30 requêtes de quota en plus).
+- **Cause :** `git ls-files -z | xargs -0 rm -f && git checkout -- .` remet **tous** les fichiers suivis à l'état du dernier commit, y compris les modifications non commitées hors des sources.
+- **Correctif :** relance des deux scripts. Règle : avant la réextraction LF, commiter aussi les fichiers de mesure (`_notes/seo/`) ou lancer les scripts de mesure après le build.
+
 ### 2026-11-05 — Surveillance : `npx stripe-mcp` a lancé un paquet tiers homonyme
 
 - **Symptôme :** pour vérifier `@stripe/mcp` 0.3.4, la routine a tapé `npx stripe-mcp --help` ; npm a installé et lancé `stripe-mcp` 1.1.0, un paquet sans lien avec Stripe (arrêt aussitôt, clé absente ; seule une clé factice était dans l'environnement).

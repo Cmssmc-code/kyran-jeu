@@ -135,7 +135,7 @@ Robots d'IA : pas de mesure possible (GitHub Pages, pas de proxy Cloudflare).
 |---|---|
 | Ludovox, Ludochrono (31/01/2026) | vidéo 5 min, aucun lien vers le site |
 | Le Pirate Ludique (YouTube) | vidéo « Kyran maître des mystiques » |
-| BoardGameGeek 480678 | 0 note ; description corrigée ; site, catégories, « Trick-taking » et vidéos encore vides (API, 21/10) |
+| BoardGameGeek 480678 | 0 note ; description corrigée ; site, catégories, « Trick-taking » et vidéos encore vides (API, 21/10 ; site et catégories toujours vides le 09/11) |
 | Wikidata Q141623753 | libellés fr et en, P31, P2093, P577, P1872, P1873, P856 (site), P407 ; 0 référence ; dans les `sameAs` de `#game` (accueil, 19/10) et de `#boardgame` (commander, 06/11) |
 | Amazon.fr | 4,7/5 sur 33 évaluations |
 | BoardGamesFlix | fiche avec auteur et illustratrice ; réglée par Corentin le 21/10, la routine n'y passe plus |
@@ -145,7 +145,7 @@ Robots d'IA : pas de mesure possible (GitHub Pages, pas de proxy Cloudflare).
 | Philibert, presse, forums, Reddit, TikTok | rien trouvé (recherche du 21/10 : WebSearch, DuckDuckGo, YouTube) |
 | Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque ; 20/10 : WebSearch (moteur de Claude) ne sort pas kyran-jeu.fr sur « KYRAN jeu de cartes Maître des Mystiques » |
 
-Liens entrants : **0** (Search Console et Bing).
+Liens entrants : **0** (Search Console et Bing ; Bing `GetLinkCounts` du 09/11 : 0).
 
 ## 9. GEO
 
@@ -174,7 +174,8 @@ ne pas le réutiliser tel quel.
   Overviews.
 - Pages courtes et ciblées plus citées par ChatGPT que les « guides ultimes » (Kevin Indig, 13/04/2026).
 - Titre : une hypothèse, 4 semaines d'écart, rien pendant une core update ; `lastmod` faux pire qu'absent.
-- Dernières mises à jour Google : core 21/05/2026 ; spam 24/09 → ~07/10/2026.
+- Dernières mises à jour Google : core 21/05/2026 ; spam 24/09 → ~08/10/2026 ; aucune autre au 09/11 ([Search Status Dashboard](https://status.search.google.com/summary)).
+- 09/11 : étude arXiv 2610.15033 (préprint, 10/10/2026, 468 037 citations IA) : à l'intérieur d'un site, les pages dont titres et paragraphes reprennent la question posée sont plus citées ; ChatGPT ne cite que ce que trouvent ses sous-requêtes. Google prévoit un contrôle partagé « entraînement IA » dans `robots.txt` (brouillon IETF du 30/10, début 2027) : rien à faire avant, Google-Extended reste le levier. Sources à rouvrir avant de citer un chiffre.
 
 ## 12. Ce qui marche sur kyran-jeu.fr
 

@@ -1641,7 +1641,7 @@ function renderLobby(keepFocus) {
       h('div', { class: 'dj-necklace', role: 'img', 'aria-label': `${earned} perles sur ${LESSONS.length} à ton collier` }, LESSONS.map((L, i) => h('img', { class: 'dj-necklace-bead' + (store.belts[L.id] ? ' is-on' : ''), src: BEAD_IMAGES[L.bead], alt: '', width: 96, height: 96, style: { '--i': i }, title: L.beadName }))),
       h('div', { class: 'dj-hero-cta' },
         nl ? h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-lg', onclick: () => openLesson(nl) }, earned ? `Continuer : ${nl.title}` : 'Commencer le premier rite') : null,
-        h('button', { type: 'button', class: 'dj-btn ' + (nl ? 'dj-btn-ghost' : 'dj-btn-primary') + ' dj-btn-lg', onclick: () => startSession(null) }, earned ? 'Partie libre' : 'Je connais les règles : jouer')
+        h('button', { type: 'button', class: 'dj-btn ' + (nl ? 'dj-btn-ghost' : 'dj-btn-primary') + ' dj-btn-lg', 'data-action': 'free-game', onclick: () => startSession(null) }, earned ? 'Partie libre' : 'Je connais les règles : jouer')
       )
     )
   );
@@ -1673,7 +1673,7 @@ function renderLobby(keepFocus) {
     segmented('Durée', 'length', [['rapide', 'Rapide · 4 manches'], ['complete', 'Complète']]),
     segmented('Règles', 'rules', [['completes', 'Toutes'], ['initiation', 'Sans Pouvoirs']]),
     h('p', { class: 'dj-field-help', text: settingsHelp() }),
-    h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-block', onclick: () => startSession(null) }, 'Lancer la partie'),
+    h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-block', 'data-action': 'free-game', onclick: () => startSession(null) }, 'Lancer la partie'),
     st.games || st.bets ? h('dl', { class: 'dj-stats' },
       h('div', {}, h('dt', { text: 'Parties' }), h('dd', { text: String(st.games) })),
       h('div', {}, h('dt', { text: 'Victoires' }), h('dd', { text: String(st.wins) })),

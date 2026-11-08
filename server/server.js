@@ -13,7 +13,7 @@ import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
 import { createMailer } from './mailer.js';
 import { shippingDetails } from './stripeSession.js';
-import { createStripeEventLog, EVENT_STATE } from './stripeEvents.js';
+import { createStripeEventLog, defaultEventsFile, EVENT_STATE } from './stripeEvents.js';
 
 const PORT = process.env.PORT || 3000;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -124,7 +124,7 @@ function sendJson(res, status, body) {
 }
 
 // Idempotence anti-doublon : cycle de vie new → processing → done (voir stripeEvents.js).
-const stripeEvents = createStripeEventLog();
+const stripeEvents = createStripeEventLog({ file: defaultEventsFile() });
 
 export function verifyStripeSignature(payload, signatureHeader, secret, now = Date.now()) {
   if (!signatureHeader || !secret) return false;

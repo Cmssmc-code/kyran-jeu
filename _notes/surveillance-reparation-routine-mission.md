@@ -169,8 +169,10 @@ URL `https://kyran-webhook-production.up.railway.app`.
   - accueil, `/regle.html` : chargés sans erreur, éventail de cartes et menu mobile fonctionnels ;
   - `/commander.html` → bouton d'achat → **page Stripe du Payment Link ouverte SANS payer** : prix unitaire
     9,99 € et port 2,99 € lus sur la page Stripe et comparés à ceux du site (écart → décision du propriétaire) ;
-  - initiation `/minijeu.html` : modules `dojo/` chargés (aucun 404 sur `?v=`), une partie démarre, une carte se
-    joue sans erreur ;
+  - initiation `/minijeu.html` : `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core
+    CHROMIUM_PATH=/opt/pw-browsers/chromium node scripts/smoke-initiation.mjs` joue une manche complète en
+    suivant `#dojo[data-state]` (aucun 404 sur `/dojo/`, aucune erreur JS, jamais `crash`). Sortie 1 → lire
+    les états affichés (`États : …`) pour savoir où la partie s'est bloquée ;
   - blog : `/blog/`, l'article le plus récent (200, dans `sitemap.xml` et `blog/feed.xml`).
 - TLS : **pas `openssl s_client`** (le proxy de la session présente son propre certificat, échéance = J+30) ;
   lire les journaux Certificate Transparency :

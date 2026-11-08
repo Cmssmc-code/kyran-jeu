@@ -17,6 +17,23 @@ const MAX_INCIDENTS_KEPT = 500;
 const RETENTION_MS = 30 * 24 * 3600 * 1000;
 const HOUR = 3600 * 1000;
 
+/**
+ * Cycle de vie d'un incident. Seul `pending` accepte une transition (`transition()`),
+ * les trois autres états sont terminaux :
+ *
+ *   pending ──markResolved──▶ auto_fixed   (rattache les rechutes pendant 6 h)
+ *   pending ──markIgnored───▶ ignored      (rattache les rechutes pendant 7 j)
+ *   pending ──markFailed────▶ pending      (tentative + 1, tant que < MAX_ATTEMPTS)
+ *           └──────────────▶ failed       (à MAX_ATTEMPTS ; rattache 7 j)
+ */
+export const INCIDENT_STATUS = Object.freeze({
+  PENDING: 'pending',
+  AUTO_FIXED: 'auto_fixed',
+  FAILED: 'failed',
+  IGNORED: 'ignored'
+});
+const { PENDING, AUTO_FIXED, FAILED, IGNORED } = INCIDENT_STATUS;
+
 function defaultFile() {
   if (process.env.INCIDENTS_FILE) return process.env.INCIDENTS_FILE;
   // Volume Railway monté sur /data ; à défaut (dev, tests), dossier local.
@@ -116,7 +133,7 @@ export class IncidentStore {
 
   prune(now = Date.now()) {
     const list = this.data.incidents.filter(
-      inc => inc.status === 'pending' || now - Date.parse(inc.last_seen_at) < RETENTION_MS
+      inc => inc.status === PENDING || now - Date.parse(inc.last_seen_at) < RETENTION_MS
     );
     list.sort((a, b) => Date.parse(b.last_seen_at) - Date.parse(a.last_seen_at));
     this.data.incidents = list.slice(0, MAX_INCIDENTS_KEPT);
@@ -137,13 +154,13 @@ export class IncidentStore {
     const existing = this.data.incidents
       .filter(inc => inc.fingerprint === fingerprint)
       .filter(inc => {
-        if (inc.status === 'pending') return true;
+        if (inc.status === PENDING) return true;
         const since = now - Date.parse(inc.resolved_at || inc.last_seen_at);
-        if (inc.status === 'ignored' || inc.status === 'failed') return since < 7 * 24 * HOUR;
-        if (inc.status === 'auto_fixed') return since < 6 * HOUR;
+        if (inc.status === IGNORED || inc.status === FAILED) return since < 7 * 24 * HOUR;
+        if (inc.status === AUTO_FIXED) return since < 6 * HOUR;
         return false;
       })
-      .sort((a, b) => (b.status === 'pending') - (a.status === 'pending'))[0];
+      .sort((a, b) => (b.status === PENDING) - (a.status === PENDING))[0];
 
     if (existing) {
       existing.occurrences += 1;
@@ -169,7 +186,7 @@ export class IncidentStore {
       path: cleanPath(input.path),
       pages: [cleanPath(input.path)],
       details: input.details || {},
-      status: 'pending',
+      status: PENDING,
       occurrences: 1,
       first_seen_at: nowIso(now),
       last_seen_at: nowIso(now),
@@ -187,7 +204,7 @@ export class IncidentStore {
 
   fixedLast24h(now = Date.now()) {
     return this.data.incidents.filter(
-      inc => inc.status === 'auto_fixed' && now - Date.parse(inc.resolved_at) < 24 * HOUR
+      inc => inc.status === AUTO_FIXED && now - Date.parse(inc.resolved_at) < 24 * HOUR
     ).length;
   }
 
@@ -198,7 +215,7 @@ export class IncidentStore {
     }
     const safeLimit = Number.isFinite(limit) ? Math.min(20, Math.max(1, Math.trunc(limit))) : 5;
     const incidents = this.data.incidents
-      .filter(inc => inc.status === 'pending' && inc.resolution_attempts < MAX_ATTEMPTS)
+      .filter(inc => inc.status === PENDING && inc.resolution_attempts < MAX_ATTEMPTS)
       .sort((a, b) => b.occurrences - a.occurrences || Date.parse(b.last_seen_at) - Date.parse(a.last_seen_at))
       .slice(0, safeLimit);
     return { quotaReached: false, count24h, max24h: MAX_DAILY_AUTO_FIXES, incidents };
@@ -207,7 +224,7 @@ export class IncidentStore {
   /** Transitions uniquement depuis `pending` (un double appel du worker est sans effet). */
   transition(id, update, report, now = Date.now()) {
     const inc = this.get(id);
-    if (!inc || inc.status !== 'pending') return false;
+    if (!inc || inc.status !== PENDING) return false;
     update(inc, now);
     const clean = cleanReport(report);
     if (clean) inc.details = { ...(inc.details || {}), autoHeal: clean };
@@ -217,7 +234,7 @@ export class IncidentStore {
 
   markResolved(id, commitSha, summary, report, now) {
     return this.transition(id, (inc, t) => {
-      inc.status = 'auto_fixed';
+      inc.status = AUTO_FIXED;
       inc.resolved_at = nowIso(t);
       inc.commit_sha = clip(commitSha, 80);
       inc.resolution_summary = clip(summary, 300);
@@ -229,7 +246,7 @@ export class IncidentStore {
       inc.resolution_attempts += 1;
       inc.resolution_summary = clip(reason, 600);
       if (inc.resolution_attempts >= MAX_ATTEMPTS) {
-        inc.status = 'failed';
+        inc.status = FAILED;
         inc.resolved_at = nowIso(t);
       }
     }, report, now);
@@ -237,7 +254,7 @@ export class IncidentStore {
 
   markIgnored(id, reason, report, now) {
     return this.transition(id, (inc, t) => {
-      inc.status = 'ignored';
+      inc.status = IGNORED;
       inc.resolved_at = nowIso(t);
       inc.resolution_summary = clip(reason, 600);
     }, report, now);
@@ -249,9 +266,9 @@ export class IncidentStore {
       inc => inc.resolved_at && now - Date.parse(inc.resolved_at) < 24 * HOUR
     );
     return {
-      fixed: recent.filter(inc => inc.status === 'auto_fixed'),
-      failed: recent.filter(inc => inc.status === 'failed'),
-      ignored: recent.filter(inc => inc.status === 'ignored')
+      fixed: recent.filter(inc => inc.status === AUTO_FIXED),
+      failed: recent.filter(inc => inc.status === FAILED),
+      ignored: recent.filter(inc => inc.status === IGNORED)
     };
   }
 

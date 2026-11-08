@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Ordre des dépendances : un module n'importe que des modules situés avant lui.
-const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'app.js'];
+const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js'];
 const hash = text => crypto.createHash('sha1').update(text).digest('hex').slice(0, 10);
 
 const versions = {};

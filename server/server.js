@@ -13,6 +13,7 @@ import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
 import { createMailer } from './mailer.js';
 import { shippingDetails } from './stripeSession.js';
+import { createStripeEventLog, EVENT_STATE } from './stripeEvents.js';
 
 const PORT = process.env.PORT || 3000;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -122,23 +123,8 @@ function sendJson(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-// Cache d'idempotence anti-doublon (mémoire vive 24h)
-const processedEventIds = new Map();
-
-function isAlreadyProcessed(id) {
-  if (!id) return false;
-  const now = Date.now();
-  for (const [key, time] of processedEventIds.entries()) {
-    if (now - time > 86400000) processedEventIds.delete(key);
-  }
-  return processedEventIds.has(id);
-}
-
-// Marqué uniquement après un traitement réussi : si l'envoi échoue, la relance
-// automatique de Stripe pourra retraiter l'événement.
-function markProcessed(id) {
-  if (id) processedEventIds.set(id, Date.now());
-}
+// Idempotence anti-doublon : cycle de vie new → processing → done (voir stripeEvents.js).
+const stripeEvents = createStripeEventLog();
 
 export function verifyStripeSignature(payload, signatureHeader, secret, now = Date.now()) {
   if (!signatureHeader || !secret) return false;
@@ -448,10 +434,15 @@ async function handleStripeWebhook(req, res, rawBody) {
   const event = parseJsonBody(rawBody);
   if (!event) return sendJson(res, 400, { error: 'Invalid JSON' });
 
-  // Idempotence : évite double envoi si Stripe relance
-  if (event.id && isAlreadyProcessed(event.id)) {
+  // Idempotence : évite double envoi si Stripe relance, y compris pendant un traitement en cours
+  const claim = stripeEvents.claim(event.id);
+  if (claim === EVENT_STATE.DONE) {
     console.log(`ℹ️ Événement Stripe ${event.id} déjà traité (idempotence).`);
     return sendJson(res, 200, { received: true, deduplicated: true });
+  }
+  if (claim === EVENT_STATE.PROCESSING) {
+    console.log(`ℹ️ Événement Stripe ${event.id} en cours de traitement : relance différée.`);
+    return sendJson(res, 409, { error: 'Event already processing' });
   }
 
   try {
@@ -465,9 +456,10 @@ async function handleStripeWebhook(req, res, rawBody) {
       default:
         console.log(`Événement Stripe ignoré: ${event.type}`);
     }
-    markProcessed(event.id);
+    stripeEvents.settle(event.id, true);
     sendJson(res, 200, { received: true });
   } catch (err) {
+    stripeEvents.settle(event.id, false);
     console.error('Erreur traitement event Stripe:', err);
     recordServerIncident(err, { path: '/webhook', errorCode: 'STRIPE_EVENT_PROCESSING', httpStatus: 500, details: { eventType: cleanLine(event.type, 80) } });
     sendJson(res, 500, { error: 'Processing error' });

@@ -6,6 +6,7 @@ import {
 } from '../../dojo/engine.js';
 import { decide, adviseBet, advisePlay, mysticOdds, PERSONAS } from '../../dojo/ai.js';
 import { LESSONS } from '../../dojo/lessons.js';
+import { uiStateOf } from '../../dojo/ui-state.js';
 
 const TABLE4 = [{ name: 'Toi', human: true }, { name: 'A' }, { name: 'B' }, { name: 'C' }];
 
@@ -262,4 +263,21 @@ test('Voile du Néant joué en fin de pli : l’événement porte les cartes éc
   assert.equal(swap.mineCard.id, 'p3');
   assert.equal(swap.theirsCard.id, 'n31');
   assert.equal(s.trick.no, 2, 'le moteur est déjà passé au pli suivant');
+});
+
+test('interface : un seul état publié, avec priorité entre drapeaux', () => {
+  const st = createGame({ players: TABLE4, seed: 1 });
+  act(st, { type: 'start' });
+  const sess = { state: st };
+  assert.equal(uiStateOf(null, false), 'lobby');
+  assert.equal(uiStateOf(sess, false), 'auto');
+  sess.resolveHuman = () => {};
+  assert.equal(uiStateOf(sess, false), 'turn:' + st.pending.type);
+  sess.coachHold = true;
+  assert.equal(uiStateOf(sess, false), 'coach');
+  assert.equal(uiStateOf(sess, true), 'dialog');
+  sess.pause = {};
+  assert.equal(uiStateOf(sess, true), 'paused');
+  sess.crashed = true;
+  assert.equal(uiStateOf(sess, true), 'crash');
 });

@@ -6,6 +6,7 @@
 import * as E from './engine.js?v=617bc536b5';
 import * as AI from './ai.js?v=cf654c11eb';
 import { LESSONS, BEAD_IMAGES } from './lessons.js?v=44365dbe43';
+import { uiStateOf } from './ui-state.js?v=9581c975f3';
 
 const ROOT = document.getElementById('dojo');
 
@@ -224,6 +225,11 @@ function guard(sess) {
   if (sess !== S) throw new Aborted();
 }
 
+/** Publie l'état de l'interface sur #dojo[data-state] (voir ui-state.js). */
+function syncState() {
+  if (ROOT) ROOT.dataset.state = uiStateOf(S, ROOT.classList.contains('has-modal'));
+}
+
 function freeGameSetup() {
   const st = store.settings;
   const personas = AI.PERSONAS.slice().sort(() => Math.random() - 0.5).slice(0, st.opponents);
@@ -255,6 +261,7 @@ function startSession(lesson) {
     log: []
   };
   renderGame();
+  syncState();
   if (!ROOT.classList.contains('is-immersive')) {
     // L'en-tête du site reste collé en haut (sa barre d'annonce de 36 px défile) : la table
     // se cale juste dessous, pour tenir entière entre l'en-tête et la barre mobile du bas.
@@ -381,8 +388,10 @@ function humanTurn(sess, pend) {
       sess.gate = null;
       sess.selected = null;
       clearActions();
+      syncState();
       resolve(action);
     };
+    syncState();
     renderActions(sess, pend);
     renderHand();
     setCoachHint(pend.type !== 'reveal');
@@ -1179,6 +1188,7 @@ function coachSay(html, opts = {}) {
   [...actions.querySelectorAll('.dj-ack')].forEach(b => b.remove());
   if (!opts.ack) return Promise.resolve();
   if (S) S.coachHold = true;
+  syncState();
   return new Promise((resolve, reject) => {
     const sess = opts.sess;
     const btn = h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-sm dj-ack' }, 'Continuer');
@@ -1186,6 +1196,7 @@ function coachSay(html, opts = {}) {
     const done = () => {
       btn.remove();
       if (S) S.coachHold = false;
+      syncState();
       if (off) off();
       if (sess && sess !== S) reject(new Aborted());
       else resolve();
@@ -1325,12 +1336,14 @@ async function confirmQuit() {
   if (!sess || sess.pause) return;
   let release;
   sess.pause = { promise: new Promise(r => { release = r; }) };
+  syncState();
   const ok = await modal({
     title: 'Quitter la partie ?',
     body: h('p', { text: 'La partie en cours sera perdue.' }),
     buttons: [{ label: 'Continuer à jouer', value: false }, { label: 'Quitter', value: true, primary: true }]
   });
   sess.pause = null;
+  syncState();
   release();
   if (ok && sess === S) exitToLobby();
 }
@@ -1348,6 +1361,7 @@ function exitToLobby() {
 function setModalOpen(on) {
   ROOT.classList.toggle('has-modal', on);
   document.documentElement.classList.toggle('dj-modal-open', on);
+  syncState();
 }
 
 function modal({ title, body, buttons, className, sess, dismissible }) {
@@ -1544,6 +1558,7 @@ function celebrate() {
 
 function showCrash() {
   const layer = $('#dj-modal-layer') || ROOT;
+  if (S) S.crashed = true;
   setModalOpen(true);
   layer.appendChild(h('div', { class: 'dj-modal', role: 'alertdialog' }, h('div', { class: 'dj-modal-card' },
     h('h3', { class: 'dj-modal-title', text: 'Oups, la partie s’est interrompue' }),
@@ -1608,6 +1623,7 @@ function renderLobby(keepFocus) {
   const focusedGroup = focusedText && document.activeElement.closest('.dj-seg') ? document.activeElement.closest('.dj-seg').getAttribute('aria-label') : null;
   S = null;
   resetUi();
+  syncState();
   ROOT.innerHTML = '';
   ROOT.classList.remove('is-playing');
   setModalOpen(false);

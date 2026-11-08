@@ -28,13 +28,19 @@ Bokonon attend « Continuer »), `dialog` (bilan, fin de partie), `paused` (« Q
 - Tests navigateur et agents : attendre `#dojo[data-state="turn:play"]` plutôt qu'un délai.
 - CSS : cibler `.dj[data-state^="turn:"]` plutôt que recalculer l'état.
 - Nouveau drapeau dans `app.js` : l'ajouter à `uiStateOf()` et appeler `syncState()` quand il change.
+- Test de fumée navigateur : `node scripts/smoke-initiation.mjs [url]` joue une manche complète
+  en suivant `data-state` (lancement par `[data-action="free-game"]`). Variables
+  `PLAYWRIGHT_CORE` (chemin du module) et `CHROMIUM_PATH`. Sortie 1 en cas d'erreur JS, de 404
+  sur `/dojo/`, d'état `crash` ou de manche non terminée en 2 min.
 
 ## Événement Stripe (`server/stripeEvents.js`)
 
 Un doublon reçu pendant `processing` reçoit **409** (Stripe relance plus tard) au lieu d'être
 retraité : avant, deux livraisons simultanées envoyaient deux fois l'e-mail de commande. Un échec
-oublie l'événement pour que la relance Stripe le retraite. Mémoire vive : un redémarrage du
-serveur vide le journal (Stripe peut alors redélivrer un événement déjà traité).
+oublie l'événement pour que la relance Stripe le retraite. Les `done` (24 h) sont gardés sur le
+volume Railway (`/data/stripe-events.json`, écriture atomique, ou `STRIPE_EVENTS_FILE`) : un
+redémarrage n'oublie plus les commandes déjà traitées. `processing` reste en mémoire, pour qu'un
+traitement coupé par un redémarrage soit relancé par Stripe.
 
 La variante `worker/` (Cloudflare) n'a pas d'idempotence : elle ne doit pas être branchée en
 même temps que Railway (voir l'en-tête de `worker/index.js`).

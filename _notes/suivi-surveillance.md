@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-08 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 42446088936, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-08.md`](../docs/rapports/surveillance/2026-11-08.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 57 URL × 1280/390 px sans erreur ; 387 liens, 0 interne cassé |
+| Lien externe | levé | `trictrac.net` : certificat renouvelé (jusqu'au 05/02/2027), fiche en 200 |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; partie jouée |
+| Serveur | OK | Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | à jour | `compatibility_date` 2026-11-08 |
+
+Mise à jour : PR #192. Aucun point ouvert.
+
 ## 2026-11-07 — passage planifié (04:08 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

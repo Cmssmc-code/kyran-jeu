@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 40 guides
+## Blog — 41 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -89,6 +89,7 @@
 
 ## Blog : Alternatives
 
+- [Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026](https://kyran-jeu.fr/blog/jeux-comme-president.html): 6 jeux comparés
 - [Jeux comme Skull King : 6 alternatives, avec ou sans pirates](https://kyran-jeu.fr/blog/jeux-comme-skull-king.html): 6 jeux comparés
 - [8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas](https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html): 8 jeux comparés
 - [6 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre](https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html): 6 jeux comparés

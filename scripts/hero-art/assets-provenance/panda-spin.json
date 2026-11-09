@@ -1,0 +1,20 @@
+{
+ "id": "panda-spin",
+ "name": "Panda Spin",
+ "editeur": "Matagot",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/28165-large_default/panda-spin.jpg",
+   "largeur": 425,
+   "hauteur": 650,
+   "remarque": "édition Matagot, fiche produit Ludum, fond blanc retiré par remplissage depuis les bords",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Matagot",
+ "manque": [
+  "logo"
+ ]
+}

@@ -2,8 +2,8 @@ export default {
   slug: 'alternatives-uno',
   title: 'Alternatives à Uno : 8 jeux de cartes rapides pour changer',
   shortTitle: 'Alternatives à Uno',
-  metaTitle: 'Alternatives à Uno : 8 jeux de cartes plus fun en 2026',
-  description: `Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.`,
+  metaTitle: 'Alternative à Uno : 8 jeux de cartes, dès 6 ans ou entre adultes',
+  description: `Un jeu comme le Uno, mais différent ? Huit jeux de cartes rapides, du réflexe dès 6 ans au bluff entre adultes : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN…`,
   category: 'Alternatives',
   date: '2026-05-17',
   heroTitle: 'Alternatives à <span class="accent">Uno</span>',
@@ -47,7 +47,7 @@ export default {
     html: `<p>Uno cumule trois plaisirs : se débarrasser de ses cartes avant les autres, faire subir une pénalité au voisin, et garder une table réactive grâce à des tours qui durent quelques secondes. Les huit jeux ci-dessous n'en gardent en général qu'un ou deux et échangent le reste.</p>
 <h3>Repérer ce qui vous manque</h3>
 <ul>
-<li><strong>Se débarrasser de ses cartes</strong> : Llama, qui ajoute la possibilité de se coucher pour limiter les dégâts, et Jungle Speed, où l'on cherche à se débarrasser de sa pile de cartes.</li>
+<li><strong>Se débarrasser de ses cartes</strong> : Llama, qui ajoute la possibilité de se coucher pour limiter les dégâts, et Jungle Speed, où l'on cherche à se débarrasser de sa pile de cartes. Pour vider sa main en surenchérissant plutôt qu'en suivant la couleur, voir nos <a class="text-link" href="/blog/jeux-comme-president.html">jeux comme le Président</a>.</li>
 <li><strong>Infliger des pénalités</strong> : Monopoly Deal pour les agressions directes, Saboteur pour les sabotages adressés à un joueur précis.</li>
 <li><strong>La vitesse des tours</strong> : Dobble et Jungle Speed, où l'on se jette sur le bon symbole ou sur le totem sans attendre.</li>
 <li><strong>Le suspense du dernier tour</strong> : Skyjo, dont la fin de manche est déclenchée par le premier joueur qui retourne toutes ses cartes.</li>

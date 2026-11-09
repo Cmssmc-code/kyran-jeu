@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026</title>
+      <link>https://kyran-jeu.fr/blog/jeux-comme-president.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-comme-president.html</guid>
+      <pubDate>Mon, 09 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Six jeux de cartes dans l’esprit du Président (Trou du cul) : Grand Dalmuti, Tichu, Gang of Four, Scout, Odin et Panda Spin, prix du 9 novembre 2026.</description>
+    </item>
     <item>
       <title>Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026</title>
       <link>https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html</link>
@@ -101,7 +108,7 @@
       <link>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</guid>
       <pubDate>Fri, 11 Sep 2026 08:00:00 +0200</pubDate>
-      <description>Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s&apos;affronter à deux. Joueurs, durée et défauts de chacun.</description>
+      <description>Sept jeux de cartes pour adultes sans humour gras (Wizard, Coup, Skull, The Crew, KYRAN…) : joueurs, durée et défauts de chacun, selon votre table.</description>
     </item>
     <item>
       <title>8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas</title>
@@ -241,7 +248,7 @@
       <link>https://kyran-jeu.fr/blog/alternatives-uno.html</link>
       <guid isPermaLink="true">https://kyran-jeu.fr/blog/alternatives-uno.html</guid>
       <pubDate>Sun, 17 May 2026 08:00:00 +0200</pubDate>
-      <description>Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d&apos;autres.</description>
+      <description>Un jeu comme le Uno, mais différent ? Huit jeux de cartes rapides, du réflexe dès 6 ans au bluff entre adultes : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN…</description>
     </item>
     <item>
       <title>Alternatives à Wizard : 6 jeux qui gardent l’annonce, ou autre chose</title>

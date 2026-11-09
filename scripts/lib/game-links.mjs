@@ -349,6 +349,52 @@ export const GAME_LINKS = {
     designer: 'Steven Aramini, Danny Devine et Paul Kluka',
     year: 2018,
     imageCredit: 'Visuel de la boîte — © Matagot / Button Shy'
+  },
+  tichu: {
+    bgg: 'https://boardgamegeek.com/boardgame/215/tichu',
+    wiki: 'https://fr.wikipedia.org/wiki/Tichu',
+    shop: 'https://www.ludum.fr/jeux-de-strategie-inities/tichu-1684',
+    designer: 'Urs Hostettler',
+    year: 1991,
+    imageCredit: 'Visuel de la boîte — © Tiki Éditions'
+  },
+  scout: {
+    bgg: 'https://boardgamegeek.com/boardgame/291453/scout',
+    shop: 'https://www.agorajeux.com/14307-scout.html',
+    designer: 'Kei Kajino',
+    year: 2019,
+    imageCredit: 'Visuel de la boîte — © Oink Games'
+  },
+  'gang-of-four': {
+    bgg: 'https://boardgamegeek.com/boardgame/3085/gang-of-four',
+    wiki: 'https://fr.wikipedia.org/wiki/Gang_of_Four_(jeu)',
+    shop: 'https://www.ludum.fr/jeux-d-ambiance-inities/gang-of-four-308',
+    designer: 'Lee Yih',
+    year: 1990,
+    imageCredit: 'Visuel de la boîte — © Days of Wonder'
+  },
+  odin: {
+    bgg: 'https://boardgamegeek.com/boardgame/406854/odin',
+    wiki: 'https://fr.wikipedia.org/wiki/Odin_(jeu)',
+    shop: 'https://www.agorajeux.com/17354-odin.html',
+    designer: 'Gary Kim, Hope S. Hwang et Yohan Goh',
+    year: 2024,
+    imageCredit: 'Visuel de la boîte — © Helvetiq'
+  },
+  'grand-dalmuti': {
+    bgg: 'https://boardgamegeek.com/boardgame/929/great-dalmuti',
+    wiki: 'https://en.wikipedia.org/wiki/The_Great_Dalmuti',
+    shop: 'https://www.philibertnet.com/fr/amigo/95-le-grand-dalmuti-vo-4007396069204.html',
+    designer: 'Richard Garfield',
+    year: 1995,
+    imageCredit: 'Visuel de la boîte (édition allemande) — © Amigo'
+  },
+  'panda-spin': {
+    bgg: 'https://boardgamegeek.com/boardgame/417323/panda-spin',
+    shop: 'https://www.agorajeux.com/17364-panda-spin.html',
+    designer: 'Carl Chudyk',
+    year: 2024,
+    imageCredit: 'Visuel de la boîte — © Matagot'
   }
 };
 

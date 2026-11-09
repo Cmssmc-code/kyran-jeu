@@ -666,6 +666,20 @@
         "réussite cartes seul",
         "patience jeu de cartes"
       ]
+    },
+    {
+      "page": "/blog/jeux-comme-president.html",
+      "primary_queries": [
+        "jeux comme le président",
+        "jeu de cartes président",
+        "jeux comme trou du cul"
+      ],
+      "secondary_queries": [
+        "grand dalmuti",
+        "jeu de défausse cartes",
+        "tichu règle",
+        "jeux de cartes comme le président"
+      ]
     }
   ],
   "kpis_monthly": [

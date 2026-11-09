@@ -1,0 +1,20 @@
+{
+ "id": "scout",
+ "name": "Scout",
+ "editeur": "Oink Games",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/543395-thickbox_default/scout-4571394092576.jpg",
+   "largeur": 438,
+   "hauteur": 793,
+   "remarque": "édition française (réf. PIX1088, EAN 4571394092576), fiche produit Philibert, fond blanc retiré par remplissage depuis les bords",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Oink Games",
+ "manque": [
+  "logo"
+ ]
+}

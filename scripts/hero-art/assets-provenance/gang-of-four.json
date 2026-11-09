@@ -1,0 +1,20 @@
+{
+ "id": "gang-of-four",
+ "name": "Gang of Four",
+ "editeur": "Days of Wonder",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/42922-large_default/gang-of-four.jpg",
+   "largeur": 1200,
+   "hauteur": 887,
+   "remarque": "nouvelle édition Days of Wonder, fiche produit Ludum, fond blanc retiré par remplissage depuis les bords",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Days of Wonder",
+ "manque": [
+  "logo"
+ ]
+}

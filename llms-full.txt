@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 40 guides
+## Blog — 41 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -89,6 +89,7 @@
 
 ## Blog : Alternatives
 
+- [Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026](https://kyran-jeu.fr/blog/jeux-comme-president.html): 6 jeux comparés
 - [Jeux comme Skull King : 6 alternatives, avec ou sans pirates](https://kyran-jeu.fr/blog/jeux-comme-skull-king.html): 6 jeux comparés
 - [8 jeux comme 6 qui prend ! pour les amateurs de rangées et de coups bas](https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html): 8 jeux comparés
 - [6 jeux de cartes comme Exploding Kittens : pièges et coups de théâtre](https://kyran-jeu.fr/blog/jeux-comme-exploding-kittens.html): 6 jeux comparés
@@ -195,7 +196,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), ajoute quatre pouvoirs (huit cartes Pouvoir) et une manche Mystique jouée la carte sur le front, après laquelle le cycle repart à 7 cartes ; la partie s'arrête dès qu'un joueur n'a plus de Vies.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : https://kyran-jeu.fr/tarot-africain.html
 
-## Résumé des 40 guides du blog
+## Résumé des 41 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -236,7 +237,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### Alternatives à Uno : 8 jeux de cartes rapides pour changer
 
 - URL : https://kyran-jeu.fr/blog/alternatives-uno.html
-- Résumé : Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.
+- Résumé : Un jeu comme le Uno, mais différent ? Huit jeux de cartes rapides, du réflexe dès 6 ans au bluff entre adultes : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN…
 - Jeux comparés : Dobble (2 à 8 joueurs, ~15 min, Réflexe, symboles) ; Jungle Speed (2 à 10 joueurs, ~15 min, Réflexe et totem) ; Llama (2 à 6 joueurs, ~20 min, Défausse) ; Skyjo (2 à 8 joueurs, ~30 min, Scores et grille) ; Monopoly Deal (2 à 5 joueurs, ~15 min, Attaques et séries) ; Love Letter (2 à 4 joueurs, ~20 min, Déduction et bluff) ; Saboteur (3 à 10 joueurs, ~30 min, Rôles cachés) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris)
 
 ### Alternatives à la belote et à la coinche : 6 jeux à essayer
@@ -368,7 +369,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 ### Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend
 
 - URL : https://kyran-jeu.fr/blog/jeux-cartes-adultes.html
-- Résumé : Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.
+- Résumé : Sept jeux de cartes pour adultes sans humour gras (Wizard, Coup, Skull, The Crew, KYRAN…) : joueurs, durée et défauts de chacun, selon votre table.
 - Jeux comparés : KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Wizard (3 à 6 joueurs, ~45 min, Prédiction de plis) ; Coup (2 à 6 joueurs, ~15 min, Bluff pur) ; Skull (3 à 6 joueurs, ~30 min, Bluff et enchères) ; The Crew (3 à 5 joueurs, ~20 min, Plis coopératifs) ; Schotten Totten (2 joueurs, ~20 min, Duel de combinaisons) ; Star Realms (2 joueurs, ~20 min, Deckbuilding en duel)
 
 ### Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis
@@ -430,6 +431,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html
 - Résumé : Prix de 22 jeux de cartes (Uno, Dixit, Trio, Skyjo…) relevés le 6 novembre 2026 chez Ludum, Philibert, Esprit Jeu et Agorajeux, en CSV ouvert.
 - Jeux comparés : 
+
+### Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026
+
+- URL : https://kyran-jeu.fr/blog/jeux-comme-president.html
+- Résumé : Six jeux de cartes dans l’esprit du Président (Trou du cul) : Grand Dalmuti, Tichu, Gang of Four, Scout, Odin et Panda Spin, prix du 9 novembre 2026.
+- Jeux comparés : Le Grand Dalmuti (4 à 8 joueurs, < 30 min, Président en boîte) ; Tichu (3 à 6 joueurs, ~60 min, Défausse en équipe) ; Gang of Four (3 à 4 joueurs, 20 à 40 min, Combinaisons de poker) ; Scout (2 à 5 joueurs, ~20 min, Main figée) ; Odin (2 à 6 joueurs, ~15 min, Défausse en chiffres) ; Panda Spin (2 à 5 joueurs, 20 à 40 min, Héritier assumé)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

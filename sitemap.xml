@@ -118,9 +118,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-comme-president.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jeux-comme-president.jpg</image:loc>
+      <image:title>Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html</loc>
     <lastmod>2026-11-06</lastmod>
@@ -131,7 +139,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-solo.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-solo.jpg</image:loc>
       <image:title>Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026</image:title>
@@ -219,7 +227,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-adultes.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-adultes.jpg</image:loc>
       <image:title>Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend</image:title>
@@ -243,7 +251,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-belote-coinche.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/alternatives-belote-coinche.jpg</image:loc>
       <image:title>Alternatives à la belote et à la coinche : 6 jeux à essayer</image:title>
@@ -251,7 +259,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-4-joueurs.jpg</image:loc>
       <image:title>Meilleurs jeux de cartes à 4 joueurs : en équipes ou chacun pour soi</image:title>
@@ -331,7 +339,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-plis-comparatif.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-plis-comparatif.jpg</image:loc>
       <image:title>Jeux de plis : le comparatif et le guide pour bien choisir</image:title>
@@ -379,7 +387,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/alternatives-uno.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/alternatives-uno.jpg</image:loc>
       <image:title>Alternatives à Uno : 8 jeux de cartes rapides pour changer</image:title>

@@ -10,6 +10,12 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 
 <!-- auto-heal:entries -->
 
+### 2026-11-10 — Routine SEO : build Windows en CRLF = empreintes ?v= fausses, CI rouge
+
+- **Symptôme** : « Les fichiers générés sont à jour » rouge, 70 fichiers avec un autre `?v=` que la CI.
+- **Cause** : `npm run build` lancé sur un worktree extrait en CRLF (autocrlf) : le hash des sources change.
+- **Correctif** : `git config core.autocrlf false`, `git rm --cached -r -q . && git reset -q --hard` (sources en LF), puis rebuild et commit ; toujours le faire avant le build de la routine.
+
 ### 2026-11-09 — Routine SEO : la réextraction LF efface les mesures non commitées
 
 - **Symptôme :** les fichiers écrits par `seo-kpi-daily.py` et `seo-health.py` (`kpi-quotidiens.csv`, `mouvements.json`, `derniere-sante.json`, `kpi-technique.csv`) ont disparu après la réextraction en LF prévue par la leçon du 02/11 ; les scripts ont dû être relancés (inspection d'URL refaite, 30 requêtes de quota en plus).

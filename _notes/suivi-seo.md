@@ -10,6 +10,16 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-10 : run nocturne n° 21
+
+- **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée). Google (`dataState: all`, 03/11 → 09/11, dernier jour provisoire) : 7 j 47 clics (−10 %), 1 918 impressions (−2 %) ; 28 j 195 clics, 8 553 impressions, CTR 2,28 %, position 8,7 ; 24 h (jusqu'au 09/11 15 h) 8 clics, 370 impressions (6 et 268 sept jours plus tôt). Hausse : `alternatives-uno` 85 → 160 impressions, `spiel-des-jahres-gagnants-1979-2026` 1 → 25 ; « tarot africain » 70 → 152 impressions.
+- **Bing** (31/10 → 06/11) : 4 clics (−33 %), 148 impressions (−1 %) ; 61 pages dans l'index (03/11). Search Console MCP `gsc` : connexion expirée, les scripts ont répondu.
+- **Technique** : 57 URL du sitemap en 200, 1 anomalie (titre de 66 caractères sur `blog/jeux-cartes-adultes`, non touché : règle des 28 jours), `robots.txt` et `llms.txt` OK, inspection 29/30 indexées, PageSpeed mobile accueil 96. Robots d'IA, ventes, rapport « IA générative » de Search Console : non mesurés.
+- **Veille** : GEO (WebSearch, « meilleur jeu de cartes à 3 joueurs ») : 0 sur 1 ; cités Ludum, Zatu, regles-du-jeu.net, Trio, The Mind. Pas de nouvelle mention de marque examinée ce soir (run court).
+- **Action** (piste 1) : `blog/jeux-3-joueurs` (« jeu de carte a 3 », position 20,7) : paragraphe « budget » avec prix datés du relevé du 6/11 dans la conclusion (le verdict dépasse déjà la limite de 170 mots) ; PR #202. Titre et description inchangés. Mesure à J+14 (24/11) et J+28 (08/12).
+- **Leçon** : un build Windows sur sources en CRLF fausse les `?v=` (CI rouge) ; corrigé et noté dans `lecon.md`.
+- **Doc partagé** : non mis à jour ce soir (budget du run). **À décider** : inchangé.
+
 ### 2026-11-09 : run nocturne n° 20 (lundi)
 
 - **Verdict : Stable** (pas d'incident ; aucune mise à jour Google depuis la « September 2026 spam update », terminée vers le 08/10, d'après le Search Status Dashboard). Impressions 7 j −12 %, la baisse se résorbe (−34 % le 07/11, −26 % le 08/11) ; clics stables (−2 %). `tarot-africain` 601 → 499 impressions mais « tarot africain » remonte (114 → 136 impressions, position 9,5).

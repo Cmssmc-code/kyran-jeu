@@ -16,6 +16,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Cause :** `git ls-files -z | xargs -0 rm -f && git checkout -- .` remet **tous** les fichiers suivis à l'état du dernier commit, y compris les modifications non commitées hors des sources.
 - **Correctif :** relance des deux scripts. Règle : avant la réextraction LF, commiter aussi les fichiers de mesure (`_notes/seo/`) ou lancer les scripts de mesure après le build.
 
+### 2026-11-09 — Serveur changé sans monter `VERSION` : `/health` muet sur le code en ligne
+
+- **Symptôme :** les PR #194 et #195 (08/11) ont changé `server/` (journal Stripe persistant, doublons en 409, machines à états) ; Railway a bien redéployé, mais `/health` affichait encore `1.6.1`.
+- **Cause :** `const VERSION` de `server/server.js` n'est monté par aucun outil ; il faut y penser à la main.
+- **Correctif :** `VERSION` 1.7.0 (PR #197), vérifié en ligne (`/health` et ligne de démarrage Railway « v1.7.0 »).
+- **Règle :** toute PR qui change le comportement de `server/` monte `VERSION` (correctif : dernier chiffre ; fonction : chiffre du milieu), pour que `/health` et le log de démarrage disent quel code tourne.
+
 ### 2026-11-05 — Surveillance : `npx stripe-mcp` a lancé un paquet tiers homonyme
 
 - **Symptôme :** pour vérifier `@stripe/mcp` 0.3.4, la routine a tapé `npx stripe-mcp --help` ; npm a installé et lancé `stripe-mcp` 1.1.0, un paquet sans lien avec Stripe (arrêt aussitôt, clé absente ; seule une clé factice était dans l'environnement).

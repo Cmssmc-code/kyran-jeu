@@ -6,6 +6,23 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-09 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la
+voie serveur** (run 42560731686, `"sent":true`). Rapport complet :
+[`docs/rapports/surveillance/2026-11-09.md`](../docs/rapports/surveillance/2026-11-09.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 57 URL × 1280/390 px sans erreur ; 387 liens, 0 interne cassé |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; `smoke-initiation.mjs` : manche complète, 4 cartes, 0 erreur |
+| Serveur | réparé | code du 08/11 en ligne mais `/health` en 1.6.1 ; `VERSION` 1.7.0 (PR #197), redéployé `32497a6a`, démarrage propre |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | à jour | `compatibility_date` 2026-11-09 |
+
+Réparation : PR #197. Leçon ajoutée (monter `VERSION` à chaque changement de `server/`). Aucun point ouvert.
+
 ## 2026-11-08 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport email : **envoyé par la

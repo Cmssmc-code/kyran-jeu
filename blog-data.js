@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-comme-president",
+    "title": "Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026",
+    "category": "Alternatives",
+    "date": "2026-11-09",
+    "readMinutes": 14,
+    "excerpt": "Six jeux de cartes dans l’esprit du Président (Trou du cul) : Grand Dalmuti, Tichu, Gang of Four, Scout, Odin et Panda Spin, prix du 9 novembre 2026.",
+    "image": "/blog/images/jeux-comme-president.jpg",
+    "webp": "/blog/images/jeux-comme-president.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-plis-comparatif",
+      "jeux-cartes-4-joueurs",
+      "alternatives-uno"
+    ]
+  },
+  {
     "slug": "prix-jeux-de-cartes-releve",
     "title": "Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026",
     "category": "Cartes",
@@ -23,7 +39,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026",
     "category": "Cartes",
     "date": "2026-11-02",
-    "readMinutes": 12,
+    "readMinutes": 13,
     "excerpt": "Cinq jeux de cartes à jouer seul (Vendredi, Onirim, Palm Island, Megalopolis, The Game) et la patience classique, avec les prix relevés le 2 novembre 2026.",
     "image": "/blog/images/jeux-cartes-solo.jpg",
     "webp": "/blog/images/jeux-cartes-solo.webp",
@@ -199,7 +215,7 @@ const BLOG_ITEMS = [
     "category": "Soirée",
     "date": "2026-09-11",
     "readMinutes": 10,
-    "excerpt": "Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.",
+    "excerpt": "Sept jeux de cartes pour adultes sans humour gras (Wizard, Coup, Skull, The Crew, KYRAN…) : joueurs, durée et défauts de chacun, selon votre table.",
     "image": "/blog/images/jeux-cartes-adultes.jpg",
     "webp": "/blog/images/jeux-cartes-adultes.webp",
     "gameCount": 7,
@@ -519,7 +535,7 @@ const BLOG_ITEMS = [
     "category": "Alternatives",
     "date": "2026-05-17",
     "readMinutes": 12,
-    "excerpt": "Uno vous lasse ? Huit jeux de cartes rapides, du réflexe aux coups bas et au bluff : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN et d'autres.",
+    "excerpt": "Un jeu comme le Uno, mais différent ? Huit jeux de cartes rapides, du réflexe dès 6 ans au bluff entre adultes : Jungle Speed, Llama, Skyjo, Saboteur, KYRAN…",
     "image": "/blog/images/alternatives-uno.jpg",
     "webp": "/blog/images/alternatives-uno.webp",
     "gameCount": 8,

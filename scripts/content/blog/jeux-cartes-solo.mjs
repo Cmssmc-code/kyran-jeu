@@ -64,7 +64,7 @@ export default {
       paragraphs: [
         `Dans Onirim, vous êtes perdu dans un labyrinthe de rêve et devez trouver les huit cartes Porte pour en sortir. Chaque carte a une couleur (rouge, bleu, vert ou jaune) et un symbole (Soleil, Lune ou Clé). On ne pose jamais deux symboles identiques à la suite, et trois cartes d’une même couleur posées d’affilée ouvrent une porte de cette couleur, d’après la fiche de Play-in.`,
         `Défausser une Clé déclenche une Prophétie : on regarde les cinq prochaines cartes de la pioche, on en défausse une et on réordonne les autres. La main se complète toujours à cinq cartes, et des cauchemars viennent la perturber. Créé par Shadi Torbey et illustré par Élise Plessis, il est réédité par InPatience (édition parue en 2022) avec sept extensions combinables dans la boîte.`,
-        `Il se joue à 1 ou 2 joueurs, dès 10 ans, en une quinzaine de minutes. Le 2 novembre 2026, il est affiché à 17,90 € chez Ludum, 18,00 € chez Esprit Jeu et 19,90 € chez Play-in, les trois en stock. C’est le bon choix pour qui veut aussi jouer à deux : la même boîte sert en coopératif.`
+        `Il se joue à 1 ou 2 joueurs, dès 10 ans, en une quinzaine de minutes. Le 2 novembre 2026, il est affiché à 17,90 € chez Ludum, 18,00 € chez Esprit Jeu et 19,90 € chez Play-in, les trois en stock. C’est le bon choix pour qui veut aussi jouer à deux : la même boîte sert en coopératif. D’autres <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a> sont réunis dans notre sélection pour couples.`
       ]
     },
     {

@@ -75,6 +75,21 @@ function orderHref(article, place) {
   return `/commander.html?ref=blog-${article.slug}-${place}`;
 }
 
+/** Libellé du lien boutique d'une fiche, d'après le domaine réel du lien. */
+const SHOP_NAMES = {
+  'philibertnet.com': 'Philibert',
+  'ludum.fr': 'Ludum',
+  'espritjeu.com': 'Esprit Jeu',
+  'agorajeux.com': 'Agorajeux',
+  'play-in.com': 'Play-in',
+  'amazon.fr': 'Amazon'
+};
+function shopLabel(url) {
+  let host = '';
+  try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { /* lien relatif ou invalide */ }
+  return SHOP_NAMES[host] ? `Voir chez ${SHOP_NAMES[host]}` : 'Voir en boutique';
+}
+
 function renderGameLinks(game, article) {
   const meta = getGameMeta(game);
   const links = [];
@@ -85,9 +100,9 @@ function renderGameLinks(game, article) {
     links.push(`<a class="game-link" href="/minijeu.html">Initiation</a>`);
   } else {
     const preferShop = article.layout && article.layout.shopLinks;
-    if (preferShop && meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">Voir chez Philibert ↗</a>`);
+    if (preferShop && meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">${shopLabel(meta.shop)} ↗</a>`);
     else if (meta.bgg) links.push(`<a class="game-link" href="${meta.bgg}" rel="noopener noreferrer">Fiche BoardGameGeek ↗</a>`);
-    else if (meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">Voir chez Philibert ↗</a>`);
+    else if (meta.shop) links.push(`<a class="game-link game-link--shop" href="${meta.shop}" rel="noopener noreferrer">${shopLabel(meta.shop)} ↗</a>`);
   }
 
   if (!links.length) return '';

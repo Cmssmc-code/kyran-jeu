@@ -6,7 +6,7 @@
 import * as E from './engine.js?v=617bc536b5';
 import * as AI from './ai.js?v=cf654c11eb';
 import { LESSONS, BEAD_IMAGES } from './lessons.js?v=44365dbe43';
-import { uiStateOf } from './ui-state.js?v=9581c975f3';
+import { uiStateOf } from './ui-state.js?v=21c3ebf052';
 
 const ROOT = document.getElementById('dojo');
 

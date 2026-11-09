@@ -10,6 +10,18 @@ Plus récent en premier. Pour chaque lundi : pages et clusters publiés sur 7 jo
 CTR et position sur 28 jours, comparés au bilan précédent ; actions menées ; trois sujets proposés à
 partir des requêtes réelles.
 
+### Lundi 9 novembre 2026
+
+- **Mesure** : les serveurs MCP `gsc` et `bing-webmaster` ne se sont pas connectés (« connection closed »). Search Console a été lue directement par l'API (compte de service de la routine SEO, portée `webmasters.readonly`, aucune écriture) ; **Bing non mesuré**. Période : 28 jours du 11 octobre au 7 novembre 2026, comparés aux 28 jours du 13 septembre au 10 octobre.
+- **Site entier** : 199 clics, 8 515 impressions, CTR 2,34 %, position moyenne 8,6 (contre 70 clics, 4 331 impressions, 1,62 %, 9,1). **Blog** (`/blog/`) : 133 clics, 5 268 impressions, CTR 2,52 %, position 9,8 (contre 49 clics, 2 483 impressions, 1,97 %, 10,2). Les chiffres du bilan du 2 novembre venaient du relevé nocturne sur une autre fenêtre : ils ne se comparent pas ligne à ligne.
+- **Pages du blog** : `jeux-comme-skyjo` en tête (17 clics, 922 impressions, CTR 1,84 %, position 8,4 ; requête n° 1 « variante skyjo », 74 impressions, position 10,5). En page 1 sous 2 % de CTR : `alternatives-uno` (1,39 %, position 7,5), `jeux-cartes-adultes` (1,33 %, 8,0), `jeux-cartes-seniors` (0 %, 7,8), `alternatives-belote-coinche` (1,73 %, 8,8). Au-delà de la position 15 : `jeux-3-joueurs` (18,9 ; « jeu de carte a 3 » en 38), `jeux-bluff-pari` (24,6 ; « jeux de bluff » en 45), `jeux-duo-couples` (18,8 ; « jeux de carte a deux » en 36), `jeux-soiree-amis` (24,1), `jeux-plis-comparatif` (15,1 ; « jeux de plis » en 27).
+- **Réévaluation des titres du 8 au 11 octobre** (prévue le 5 novembre) : `/tarot-africain.html` passe de 14 clics, 1 441 impressions, CTR 0,97 %, position 7,7 à 35 clics, 2 583 impressions, CTR 1,36 %, position 6,6. Titre conservé.
+- **Pistes CTR** : titres réécrits pour `alternatives-uno` (dernier changement le 2 octobre) et `jeux-cartes-adultes` (4 octobre), voir le journal des titres. Non retouchés car changés il y a 28 jours ou moins : `jeux-comme-skyjo` (14 octobre), `jeux-cartes-seniors` et `alternatives-belote-coinche` (12 octobre) ; à revoir lundi prochain.
+- **Pistes classement** : un lien interne avec la requête en ancre vers chaque page mal classée : « jeux de cartes de bluff » depuis `jeux-cartes-adultes` vers `jeux-bluff-pari`, « jeux de cartes à deux » depuis `jeux-cartes-solo` vers `jeux-duo-couples`, « jeux de cartes à 3 » depuis `alternatives-belote-coinche` vers `jeux-3-joueurs`.
+- **Pages non indexées** : `jeux-30-minutes` (« Explorée, non indexée ») et `communaute.html` (« URL inconnue »). Non traitées dans cette passe : notées dans « En attente » de `docs/BLOG-PASSES.md`.
+- **Publié sur 7 jours** : `prix-jeux-de-cartes-releve` (6 novembre, essai), prix datés du relevé du 6 novembre dans `jeux-comme-skyjo`, `alternatives-uno`, `jeux-comme-dixit`, `jeux-cartes-4-joueurs` et `jeux-cartes-6-joueurs` (7 au 9 novembre), `jeux-comme-president` (9 novembre, guide neuf, cette PR).
+- **Sujets proposés** (requêtes réelles) : variantes de règles de Skyjo (« variante skyjo », 74 impressions, position 10,5), à traiter en enrichissement de `jeux-comme-skyjo` ; enrichissement de `jeux-bluff-pari` face à « jeux de bluff » (position 45) ; enrichissement de `jeux-3-joueurs` face à « jeu de carte a 3 » (position 38).
+
 ### Lundi 2 novembre 2026
 
 - **Mesure** : les serveurs MCP `gsc` et `bing-webmaster` n'ont pas pu se connecter pendant la passe (« connection closed ») : requêtes, pages classées, pages hors index et CTR par page, **non mesurés**. Aucun titre n'a été réécrit : la réévaluation des titres changés du 8 au 11 octobre est fixée au 5 novembre.
@@ -30,4 +42,6 @@ Un titre (`metaTitle` et `description`) ne se retouche pas avant 28 jours. Réé
 
 | Date | Page | Requête n° 1 | Ancien `metaTitle` | Nouveau `metaTitle` | Réévaluer le |
 |---|---|---|---|---|---|
+| 2026-11-09 | `/blog/alternatives-uno.html` | alternative uno (ex aequo avec « jeu comme le uno ») | Alternatives à Uno : 8 jeux de cartes plus fun en 2026 | Alternative à Uno : 8 jeux de cartes, dès 6 ans ou entre adultes | 2026-12-07 |
+| 2026-11-09 | `/blog/jeux-cartes-adultes.html` | jeu de cartes pour adultes | Jeux de cartes pour adultes : 7 choix selon la table | Jeu de cartes pour adultes : 7 jeux pour parier, bluffer, coopérer | 2026-12-07 |
 | 2026-10-08 à 11 | `/tarot-africain.html`, autres pages (rapport du 13 octobre) | voir `docs/rapports/seo-mesure-2026-10-18.md` | — | — | 2026-11-05 |

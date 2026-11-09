@@ -1,0 +1,20 @@
+{
+ "id": "tichu",
+ "name": "Tichu",
+ "editeur": "Tiki Éditions (VO Fata Morgana Spiele)",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/4142-large_default/tichu.jpg",
+   "largeur": 704,
+   "hauteur": 1046,
+   "remarque": "édition française Tiki Éditions, fiche produit Ludum (boîte en 3/4, fond transparent)",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Tiki Éditions",
+ "manque": [
+  "logo"
+ ]
+}

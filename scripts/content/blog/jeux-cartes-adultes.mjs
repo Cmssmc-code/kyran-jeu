@@ -2,8 +2,8 @@ export default {
   slug: 'jeux-cartes-adultes',
   title: 'Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend',
   shortTitle: 'Jeux de cartes adultes',
-  metaTitle: 'Jeux de cartes pour adultes : 7 choix selon la table',
-  description: `Sept jeux de cartes pour adultes, sans humour gras : parier, bluffer, coopérer ou s'affronter à deux. Joueurs, durée et défauts de chacun.`,
+  metaTitle: 'Jeu de cartes pour adultes : 7 jeux pour parier, bluffer, coopérer',
+  description: `Sept jeux de cartes pour adultes sans humour gras (Wizard, Coup, Skull, The Crew, KYRAN…) : joueurs, durée et défauts de chacun, selon votre table.`,
   category: 'Soirée',
   date: '2026-09-11',
   heroTitle: 'Jeux de cartes pour <span class="accent">adultes</span>',
@@ -24,7 +24,7 @@ export default {
       },
       {
         heading: 'Mentir en face',
-        html: `<p>Le bluff pur : une affirmation fausse, un défi, une sanction immédiate. Les parties sont brèves, mais les deux jeux retenus éliminent des joueurs avant la fin, ce qu'il vaut mieux annoncer avant de commencer.</p>`,
+        html: `<p>Le bluff pur : une affirmation fausse, un défi, une sanction immédiate. Les parties sont brèves, mais les deux jeux retenus éliminent des joueurs avant la fin, ce qu'il vaut mieux annoncer avant de commencer. D'autres <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de cartes de bluff</a> sont comparés aux jeux de pari dans notre sélection dédiée.</p>`,
         ids: ['coup', 'skull']
       },
       {

@@ -1,0 +1,20 @@
+{
+ "id": "grand-dalmuti",
+ "name": "Le Grand Dalmuti",
+ "editeur": "Amigo (VO allemande « Der Große Dalmuti »)",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://cdn1.philibertnet.com/304876-thickbox_default/le-grand-dalmuti-vo-4007396069204.jpg",
+   "largeur": 342,
+   "hauteur": 456,
+   "remarque": "édition allemande vendue par Philibert (EAN 4007396069204, traduction française en téléchargement selon la fiche), fond blanc retiré par remplissage depuis les bords ; aucune édition française en vente trouvée",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Amigo",
+ "manque": [
+  "logo"
+ ]
+}

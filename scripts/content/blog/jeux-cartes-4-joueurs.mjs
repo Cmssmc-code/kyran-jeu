@@ -129,7 +129,7 @@ export default {
     },
     {
       q: 'Quels jeux de cartes à 4 joueurs avec un jeu de 52 cartes ?',
-      a: `Avec un paquet complet de 52 cartes, quatre joueurs ont le choix : le Whist en deux équipes de deux, la Dame de pique (Hearts) chacun pour soi, où l'on évite les cœurs et la dame de pique, le Président, jeu de défausse où l'ordre d'arrivée fixe les rôles suivants, et Oh Hell!, qui ajoute un pari sur le nombre de plis. La belote et la coinche, elles, n'utilisent que 32 de ces cartes. Le Tarot Africain accepte aussi quatre joueurs, avec 22 cartes de tarot.`
+      a: `Avec un paquet complet de 52 cartes, quatre joueurs ont le choix : le Whist en deux équipes de deux, la Dame de pique (Hearts) chacun pour soi, où l'on évite les cœurs et la dame de pique, le <a class="text-link" href="/blog/jeux-comme-president.html">Président</a>, jeu de défausse où l'ordre d'arrivée fixe les rôles suivants, et Oh Hell!, qui ajoute un pari sur le nombre de plis. La belote et la coinche, elles, n'utilisent que 32 de ces cartes. Le Tarot Africain accepte aussi quatre joueurs, avec 22 cartes de tarot.`
     },
     {
       q: 'Quels jeux de cartes à 4 joueurs pour des enfants ?',

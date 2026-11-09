@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'Que jouer à trois quand il manque un joueur à la belote ?',
-      a: `Oh Hell, Wizard, KYRAN et Skull démarrent à trois joueurs, The Crew se joue à trois ou plus, avec une variante à deux dans sa règle. Ce sont des tailles de table où la belote classique ne se joue pas, alors que ces jeux fonctionnent naturellement.`
+      a: `Oh Hell, Wizard, KYRAN et Skull démarrent à trois joueurs, The Crew se joue à trois ou plus, avec une variante à deux dans sa règle. Ce sont des tailles de table où la belote classique ne se joue pas, alors que ces jeux fonctionnent naturellement. D'autres idées dans nos <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux de cartes à 3</a>.`
     },
     {
       q: 'Le Tarot Africain est-il proche de la belote ?',

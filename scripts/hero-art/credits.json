@@ -458,5 +458,16 @@
    "dobble"
   ],
   "legende": "Illustration créée pour KYRAN, avec les visuels officiels de Dixit (© Libellud), Trio (© Cocktail Games), The Mind (© Oya / Nürnberger-Spielkarten-Verlag), Flip 7 (© Catch Up Games / The OP Games), Uno (© Mattel) et Dobble (© Asmodee / Zygomatic) : une balance de Roberval sur un comptoir, Dixit et Trio sur un plateau, des piles de pièces et une pièce qui tombe sur l’autre, une loupe posée devant, quatre boîtes à droite."
+ },
+ "jeux-comme-president": {
+  "assets": [
+   "tichu",
+   "scout",
+   "gang-of-four",
+   "odin",
+   "grand-dalmuti",
+   "panda-spin"
+  ],
+  "legende": "Illustration créée pour KYRAN, avec les visuels officiels de Tichu (© Tiki Éditions), Scout (© Oink Games), Gang of Four (© Days of Wonder), Odin (© Helvetiq), Le Grand Dalmuti (© Amigo) et Panda Spin (© Matagot) : un trône en bois sculpté devant un soleil à rayons en zigzag, sur un mur brun à motifs, une couronne posée sur son coussin rouge, six cartes lancées en arc vers une corbeille tressée pleine de cartes, et les six boîtes posées sur une natte jaune."
  }
 }

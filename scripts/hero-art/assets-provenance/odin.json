@@ -1,0 +1,20 @@
+{
+ "id": "odin",
+ "name": "Odin",
+ "editeur": "Helvetiq",
+ "files": [
+  {
+   "file": "box.png",
+   "kind": "boite",
+   "source_url": "https://www.ludum.fr/46397-large_default/odin.jpg",
+   "largeur": 846,
+   "hauteur": 1190,
+   "remarque": "édition française Helvetiq avec la pastille As d'Or 2025, fiche produit Ludum, fond blanc retiré par remplissage depuis les bords",
+   "telecharge_le": "2026-11-09"
+  }
+ ],
+ "credit": "© Helvetiq",
+ "manque": [
+  "logo"
+ ]
+}

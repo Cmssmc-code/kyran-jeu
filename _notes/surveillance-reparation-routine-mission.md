@@ -302,9 +302,23 @@ immédiat. Chaque mise à jour figure dans le rapport (avant → après, source 
 
 ---
 
-## D. Rapport quotidien, **toujours envoyé**, même sans rien à signaler
+## D. Rapport e-mail **seulement en cas de gros problème** (décision du propriétaire, 2026-11-09)
 
-**Un seul e-mail HTML par jour**, à **kyran.jeu@gmail.com**, objet exact
+**Par défaut, aucun e-mail.** Le propriétaire ne veut plus de rapport quotidien quand tout va bien ou quand les
+problèmes sont mineurs ou déjà réparés. Le rapport complet et le journal (ci-dessous) restent écrits dans le dépôt
+à chaque passage.
+
+**Envoyer l'e-mail uniquement si au moins une de ces conditions est vraie à la fin du passage :**
+
+- une pastille 🔴 rouge dans l'état global ;
+- un problème **bloquant** encore ouvert (site ou page clé hors ligne, paiement ou commande cassé, serveur en panne,
+  ventes ou e-mails de commande perdus, faille de sécurité ou secret exposé) ;
+- une décision **urgente** du propriétaire est nécessaire (action à faire par lui avant le prochain passage).
+
+Sinon (tout 🟢, ou seulement 🟠 / gênant / mineur / bruit, ou tout réparé) : **ne pas envoyer**, et écrire
+« Rapport e-mail non envoyé : pas de gros problème » dans le journal.
+
+Quand il est envoyé : **un seul e-mail HTML par jour**, à **kyran.jeu@gmail.com**, objet exact
 **« KYRAN — surveillance & réparation du JJ/MM »**. Sobre, lisible sur mobile (une colonne, 600 px max, styles en
 ligne, pas d'image, tableaux simples), sans secret ni donnée personnelle. Contenu :
 
@@ -318,7 +332,7 @@ ligne, pas d'image, tableaux simples), sans secret ni donnée personnelle. Conte
 6. **Veille** avec sources (liens).
 7. **Comparaison avec la veille** (nouveau, résolu, toujours ouvert).
 
-**Envoi** (dans cet ordre ; la voie utilisée est **dite dans le rapport et le journal**) :
+**Envoi** (seulement si une condition ci-dessus est vraie ; dans cet ordre ; la voie utilisée est **dite dans le rapport et le journal**) :
 
 1. **Serveur KYRAN** (seule voie, garde-fou C.11 ; Resend et Gmail demandent une validation que personne ne donne) : route
    `POST /api/auto-heal/routine-report` (`contact@kyran-jeu.fr` par le Resend du serveur, destinataire

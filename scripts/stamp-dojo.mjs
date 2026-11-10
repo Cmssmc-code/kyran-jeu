@@ -13,11 +13,13 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { readLf, toLf } from './lib/lf.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Ordre des dépendances : un module n'importe que des modules situés avant lui.
 const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js'];
-const hash = text => crypto.createHash('sha1').update(text).digest('hex').slice(0, 10);
+// Empreinte calculée sur le texte en LF : même résultat sous Windows (CRLF) et sur la CI.
+const hash = text => crypto.createHash('sha1').update(toLf(text)).digest('hex').slice(0, 10);
 
 const versions = {};
 let changed = 0;
@@ -31,7 +33,7 @@ for (const name of MODULES) {
   if (out !== src) { fs.writeFileSync(file, out); changed++; }
   versions[name] = hash(out);
 }
-versions['dojo.css'] = hash(fs.readFileSync(path.join(ROOT, 'dojo', 'dojo.css'), 'utf8'));
+versions['dojo.css'] = hash(readLf(path.join(ROOT, 'dojo', 'dojo.css')));
 
 const page = path.join(ROOT, 'minijeu.html');
 const html = fs.readFileSync(page, 'utf8');

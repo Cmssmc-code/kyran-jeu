@@ -22,6 +22,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Cause :** `git ls-files -z | xargs -0 rm -f && git checkout -- .` remet **tous** les fichiers suivis à l'état du dernier commit, y compris les modifications non commitées hors des sources.
 - **Correctif :** relance des deux scripts. Règle : avant la réextraction LF, commiter aussi les fichiers de mesure (`_notes/seo/`) ou lancer les scripts de mesure après le build.
 
+### 2026-11-10 — Empreintes `?v=` : CRLF de Windows neutralisé dans le build
+
+- **Symptôme :** le 09/11, trois CI rouges sur des branches (`claude/blog-passe-2026-11-09` ×2, `claude/seo-geo-2026-11-10`), chacune réparée par un commit « empreintes ?v= recalculées en LF » ; les contournements manuels des 02/11 et 10/11 n'empêchaient pas la récidive.
+- **Cause :** `scripts/lib/asset-version.mjs`, `scripts/stamp-dojo.mjs` et `scripts/apply-csp.mjs` calculaient les empreintes sur les octets bruts ; un checkout Windows (`core.autocrlf=true`) a des CRLF, donc d'autres empreintes que la CI Linux.
+- **Correctif :** `scripts/lib/lf.mjs` (`readLf`, `toLf`) : les trois scripts hachent le texte ramené en LF. Pour un fichier en LF, l'empreinte ne change pas (aucun `?v=` modifié sur la CI). Test `scripts/test/lf-hash.test.mjs`.
+- **Contrôle :** copie du dépôt passée entièrement en CRLF puis `node scripts/build.mjs` : 0 page avec un `?v=` différent (82 avec l'ancien code). Les étapes manuelles de réextraction en LF des entrées du 02/11 et du 10/11 ne sont plus nécessaires pour les `?v=`.
+
 ### 2026-11-09 — Serveur changé sans monter `VERSION` : `/health` muet sur le code en ligne
 
 - **Symptôme :** les PR #194 et #195 (08/11) ont changé `server/` (journal Stripe persistant, doublons en 409, machines à états) ; Railway a bien redéployé, mais `/health` affichait encore `1.6.1`.

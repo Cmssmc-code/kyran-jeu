@@ -10,6 +10,13 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-10 : rapport mensuel Bing d'octobre (session interactive)
+
+- **Rapport** (mail Bing Webmaster du 09/11, vérifié par l'API) : octobre 591 impressions (+186 %), 22 clics (+29 %) ; septembre 207 / 17, août 83 / 6. Novembre (1er au 7) : 144 impressions, 6 clics. `GetCrawlIssues` : aucun problème. Les tableaux « mots clés » et « pages » du mail sont vides : limite du mail, les données existent dans l'API.
+- **Pages** (octobre) : `tarot-africain` 57 impressions, position 8,4, 0 clic ; `jeux-comme-skyjo` 55 / 1 ; `jeux-cartes-4-joueurs` 53 / 4 ; `jeux-comme-dixit` 36 / 4 ; `jeux-30-minutes` 34, position 2,4, 1 clic ; `jeux-comme-codenames` 33 / 6 ; `alternatives-uno` 24 / 3 ; `ressources-gratuites` 16, position 8, 0 clic.
+- **Requêtes** : « tarot africain » 64 impressions, position 8,5, 0 clic (51 sur `tarot-africain`, 12 sur `ressources-gratuites`) ; marque « kyra jeu de carte » 13 (position 4,8) et « kyran » 6 (position 5,3), 0 clic : Bing ne met pas le site en tête sur sa propre marque (homonymes) ; « meilleurs jeux de cartes rapides en moins de 30 minutes » et variantes : 16 impressions, position 2 à 3, 0 clic.
+- **Action** : `blog/jeux-30-minutes` (classée 2 sur Bing mais sans clic, hors index Google) : `metaTitle` et description alignés sur la requête « meilleurs jeux de cartes rapides en moins de 30 minutes ». Journal des titres mis à jour, réévaluation le 08/12. URL soumise à Bing après déploiement.
+- **Non touché** : `tarot-africain` (page n° 1 de Google, titre stable depuis le 08/10) ; marque sur Bing (levier hors code : liens entrants, fiches externes, déjà au backlog).
 ### 2026-11-10 : run nocturne n° 21
 
 - **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée). Google (`dataState: all`, 03/11 → 09/11, dernier jour provisoire) : 7 j 47 clics (−10 %), 1 918 impressions (−2 %) ; 28 j 195 clics, 8 553 impressions, CTR 2,28 %, position 8,7 ; 24 h (jusqu'au 09/11 15 h) 8 clics, 370 impressions (6 et 268 sept jours plus tôt). Hausse : `alternatives-uno` 85 → 160 impressions, `spiel-des-jahres-gagnants-1979-2026` 1 → 25 ; « tarot africain » 70 → 152 impressions.

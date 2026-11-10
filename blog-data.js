@@ -519,7 +519,7 @@ const BLOG_ITEMS = [
     "category": "Soirée",
     "date": "2026-05-19",
     "readMinutes": 11,
-    "excerpt": "Neuf jeux de cartes rangés en trois créneaux, 15, 20 ou 30 minutes : explication, nombre de joueurs et ce qui fait déborder la partie.",
+    "excerpt": "Les meilleurs jeux de cartes rapides, en moins de 30 minutes : neuf jeux rangés en trois créneaux (15, 20, 30 min), nombre de joueurs et pièges de durée.",
     "image": "/blog/images/jeux-30-minutes.jpg",
     "webp": "/blog/images/jeux-30-minutes.webp",
     "gameCount": 9,

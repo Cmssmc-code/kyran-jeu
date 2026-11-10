@@ -21,6 +21,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { readLf } from './lib/lf.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -50,7 +51,7 @@ const metaFor = rel => {
 const REFERRER = '<meta name="referrer" content="strict-origin-when-cross-origin" />';
 const REPORTER_VERSION = crypto
   .createHash('sha1')
-  .update(fs.readFileSync(path.join(ROOT, 'error-reporter.js')))
+  .update(readLf(path.join(ROOT, 'error-reporter.js')))
   .digest('hex')
   .slice(0, 10);
 // defer : ne bloque plus le rendu (Lighthouse, audit SEO du 14/10/2026). Premier script différé

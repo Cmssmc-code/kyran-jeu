@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { readLf } from './lf.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FILES = ['style.css', 'components.js', 'blog-data.js', 'blog.js', 'reviews.js', 'reviews-data.js', 'hero-visual.js', 'js/motion.js'];
@@ -17,11 +18,11 @@ export function assetVersion() {
   const extra = fs.existsSync(cssDir) ? fs.readdirSync(cssDir).filter(f => f.endsWith('.css')).sort().map(f => 'css/' + f) : [];
   for (const f of [...FILES, ...extra]) {
     const p = path.join(ROOT, f);
-    if (fs.existsSync(p)) h.update(f).update(fs.readFileSync(p));
+    if (fs.existsSync(p)) h.update(f).update(readLf(p));
   }
   // seo-config.js : on ignore sa propre constante de version
   const seo = path.join(ROOT, 'seo-config.js');
-  if (fs.existsSync(seo)) h.update(fs.readFileSync(seo, 'utf8').replace(/ASSET_VERSION = '[^']*'/, ''));
+  if (fs.existsSync(seo)) h.update(readLf(seo).replace(/ASSET_VERSION = '[^']*'/, ''));
   return h.digest('hex').slice(0, 10);
 }
 

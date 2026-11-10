@@ -10,6 +10,12 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-10 : page Skyjo, intention « variantes » en tête (session interactive)
+
+- **Mesure** (Google, 28 j) : la requête principale de `/blog/jeux-comme-skyjo.html` est « variante skyjo » (101 impressions, position ~10), loin devant « jeux comme skyjo » (4 impressions, position 22) ; « skyjo avec jeu de carte classique » en position 21,5.
+- **Constat** : les sections `#variantes-skyjo` et `#skyjo-cartes-classiques` et la FAQ couvraient déjà ces sujets, mais ni le titre, ni la description, ni l'intro ne les annonçaient.
+- **Action** : metaTitle « Skyjo : 5 variantes, règle à 52 cartes et 10 jeux similaires », description réordonnée (variantes, 52 cartes, puis jeux similaires), intro qui annonce les variantes et la règle à 52 cartes. Réévaluation le 2026-12-08 (règle des 28 jours).
+
 ### 2026-11-10 : page Tarot africain, intention « jouer en ligne » (session interactive)
 
 - **Mesure** (Google, 12/10 → 08/11 contre les 28 j d'avant) : page 35 clics / 2 600 impressions, CTR 1,3 %, position 6,6 (16 / 1 509, position 7,5). « tarot africain » 695 impressions, position 9,6, 3 clics ; « tarot africain règle » 234, position 4,1, 7 clics ; « tarot africain en ligne » 73, position 9,5 ; « tarot africain a 3 » 41 et « a 2 » 21, 0 clic. Bing (octobre) : « tarot africain » 64 impressions, position 8,5, 0 clic.

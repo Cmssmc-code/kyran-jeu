@@ -647,7 +647,7 @@ const BLOG_ITEMS = [
     "category": "Alternatives",
     "date": "2026-05-01",
     "readMinutes": 18,
-    "excerpt": "10 jeux comme Skyjo classés selon ce que vous aimiez, Skyjo Action et Junior, 5 variantes de règles et Skyjo avec un jeu de 52 cartes classique.",
+    "excerpt": "5 variantes de Skyjo pour relancer la boîte, la règle pour y jouer avec un jeu de 52 cartes classique, puis 10 jeux similaires classés selon vos goûts.",
     "image": "/blog/images/jeux-comme-skyjo.jpg",
     "webp": "/blog/images/jeux-comme-skyjo.webp",
     "gameCount": 10,

@@ -10,6 +10,12 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-10 : page Tarot africain, intention « jouer en ligne » (session interactive)
+
+- **Mesure** (Google, 12/10 → 08/11 contre les 28 j d'avant) : page 35 clics / 2 600 impressions, CTR 1,3 %, position 6,6 (16 / 1 509, position 7,5). « tarot africain » 695 impressions, position 9,6, 3 clics ; « tarot africain règle » 234, position 4,1, 7 clics ; « tarot africain en ligne » 73, position 9,5 ; « tarot africain a 3 » 41 et « a 2 » 21, 0 clic. Bing (octobre) : « tarot africain » 64 impressions, position 8,5, 0 clic.
+- **SERP** (Bing, 10/11 ; Google bloqué dans le navigateur de Trio) : les premiers résultats sur « tarot africain » sont des sites pour jouer (app.tarot-africain.fr, tarot-africain.fr de Becvert Prod, tarot.antoinecairey.com) et des pages de règles (jeutexplique, jejeu, jeutarot.org). La page ne citait que Board Game Arena pour jouer en ligne.
+- **Action** : section `#en-ligne`, réponse rapide et FAQ (texte + JSON-LD) : ajout de l'application Tarot-Africain de Becvert Prod (Android, iOS, web ; solo contre l'IA, en ligne entre amis ; variantes « à l'aveugle » et « à la mexicaine », noms locaux cités par l'éditeur). Description : « où jouer en ligne ». `metaTitle` inchangé. `dateModified` 10/11. Réévaluation le 08/12.
+
 ### 2026-11-10 : rapport mensuel Bing d'octobre (session interactive)
 
 - **Rapport** (mail Bing Webmaster du 09/11, vérifié par l'API) : octobre 591 impressions (+186 %), 22 clics (+29 %) ; septembre 207 / 17, août 83 / 6. Novembre (1er au 7) : 144 impressions, 6 clics. `GetCrawlIssues` : aucun problème. Les tableaux « mots clés » et « pages » du mail sont vides : limite du mail, les données existent dans l'API.

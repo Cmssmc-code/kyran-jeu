@@ -10,6 +10,17 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-11 : run nocturne n° 22
+
+- **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée). Google (`dataState: all`, 04/11 → 10/11, dernier jour provisoire) : 7 j 37 clics (−31 %), 1 909 impressions (−2 %) ; 28 j 190 clics, 8 485 impressions, CTR 2,24 %, position 8,4 ; 24 h (jusqu'au 10/11 15 h) 1 clic, 254 impressions (12 et 217 sept jours plus tôt). Les clics baissent par petits nombres (accueil 5 → 0, `jeux-comme-6-qui-prend` 4 → 0, `jeux-3-joueurs` 2 → 0, position 14 → 18) : variation sur de très faibles volumes, pas d'action. Hausse : `spiel-des-jahres-gagnants-1979-2026` (3 clics), `jeux-cartes-6-joueurs` (1 → 4 clics), `jeux-comme-exploding-kittens` (3 clics), « tarot africain » 54 → 161 impressions.
+- **Bing** (02/11 → 08/11) : 4 clics (−33 %), 141 impressions (+1 %) ; 61 pages dans l'index (03/11).
+- **Technique** (`seo-health.py --inspect 30 --psi`) : 58 URL du sitemap, 0 `noindex`, PageSpeed mobile accueil 96, 1 anomalie (titre de 66 caractères sur `blog/jeux-cartes-adultes`, règle des 28 jours). Inspection 28/30 indexées ; hors index `video-regles` (découverte, non indexée) et `blog/jeux-debutants-adultes` (explorée le 22/09, non indexée). `check:jsonld` 62 blocs OK, `check:site` OK. MCP `gsc` : connexion expirée au démarrage (les scripts ont répondu). Robots d'IA, ventes, rapport « IA générative » : non mesurés.
+- **Indexation** (`indexer.py run --site kyran`) : 58 URL, 0 nouvelle ou modifiée, 3 envoyées à Bing (IndexNow 3), 23 inspectées, 0 nouvellement indexée, 6 hors index (`jeux-30-minutes`, `jeux-debutants-adultes`, `jeux-draft-encheres`, `jeux-memoire-concentration`, `communaute`, `video-regles`), `a-pousser-kyran.md` vide. **Demandes Google non faites** : le profil `kyran` du navigateur de Trio est connecté en tant que l'autre compte Google (pas celui de la propriété) et répond « vous n'avez pas accès à cette propriété » ; le profil `corentin` aussi. Pas de nouvel essai. À faire par Corentin : connecter au profil `kyran` le compte propriétaire de `sc-domain:kyran-jeu.fr`.
+- **Veille** : GEO (WebSearch, prompts 7 à 9) : 0 sur 3 ; cités Skull Queen, Skull, Oh Hell!, Wizard (prompt 7), homonymes Mage Noir, Wyz, Yu-Gi-Oh! (prompt 8), Gus&Co, Ludum « 40 meilleurs jeux de plis », Chouineurs (prompt 9).
+- **Action** (piste 1) : `whist-22.html`, requête « whist variante » (18 impressions, position 8,2, sur l'ancienne URL `whist-moderne`, redirigée) : question FAQ visible et JSON-LD « Quelles sont les variantes du Whist ? » (Boston, Whist à trois, Whist-préférence, Whist cayenne, Whist à la couleur ; naissance du bridge), faits tirés de Wikipédia (Whist) relu ce jour. Titre et description inchangés. `dateModified` 11/11. Réévaluation le 09/12.
+- **Vers le blog** : `sujets-kyran.md` réécrit (4 requêtes seulement répondent au critère).
+- **Doc partagé** : non mis à jour ce soir (budget du run). **À décider** : inchangé.
+
 ### 2026-11-10 : page Skyjo, intention « variantes » en tête (session interactive)
 
 - **Mesure** (Google, 28 j) : la requête principale de `/blog/jeux-comme-skyjo.html` est « variante skyjo » (101 impressions, position ~10), loin devant « jeux comme skyjo » (4 impressions, position 22) ; « skyjo avec jeu de carte classique » en position 21,5.

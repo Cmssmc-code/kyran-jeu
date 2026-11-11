@@ -372,6 +372,8 @@ function renderFooterHtml() {
             <span aria-hidden="true"> · </span>
             <a href="${ROOT}confidentialite.html">Confidentialité</a>
             <span aria-hidden="true"> · </span>
+            <a href="#" data-kyran-cookies>Gérer les cookies</a>
+            <span aria-hidden="true"> · </span>
             <a href="${ROOT}plan-du-site.html">Plan du site</a>
             <span aria-hidden="true"> · </span>
             <a href="${ROOT}sitemap.xml">Sitemap</a>

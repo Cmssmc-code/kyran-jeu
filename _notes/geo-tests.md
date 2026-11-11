@@ -76,3 +76,7 @@ ou Copilot. Les relevés manuels ci-dessous font foi. Ne pas changer la liste pl
   (réponse directe en tête ? tableau ? date de mise à jour ?) et noter l'écart dans une issue.
 - Fait faux sur KYRAN dans une réponse : vérifier `llms.txt` et la page source ; corriger la
   formulation sur le site si elle prête à confusion.
+
+## Mesure hebdomadaire du jeudi (20 questions)
+
+Depuis le 12/11/2026, la routine mesure chaque jeudi 20 questions sur Google mode IA, Gemini, Copilot, Perplexity, ChatGPT et WebSearch (hors dépôt : `C:/Users/coren/routines-trio/geo/`, fichiers `questions-kyran.md` et `kpi-geo-kyran.csv`). Première mesure (12/11) : Google mode IA 9/20, Gemini 5/20, ChatGPT sans compte 2/20, WebSearch 0/20 ; Copilot et Perplexity exigent une connexion. Détail dans `_notes/suivi-seo.md`.

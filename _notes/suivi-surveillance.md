@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-11 — passage planifié (04:08 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-11.md`](../docs/rapports/surveillance/2026-11-11.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 58 URL × 1280/390 px sans erreur ; 415 liens, 0 interne cassé |
+| Lien externe | levé | Curia : 200 en `curl`, 403 seulement dans Chromium sans écran = bruit (ajouté en A4) |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; `smoke-initiation.mjs` : manche complète |
+| Serveur | OK | v1.7.0, Node v26.13.0, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert, aucun CI rouge sur les branches ; 0 faille |
+| Versions | 2 mises à jour | wrangler 4.160.0, `compatibility_date` 2026-11-11, `@anthropic-ai/sdk` 1.8.0 |
+
+Mise à jour : PR #209. Aucun point ouvert.
+
 ## 2026-11-10 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

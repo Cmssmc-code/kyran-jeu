@@ -81,7 +81,7 @@ export const STATIC_PAGES = [
   { path: '/a-propos.html', title: 'À propos de KYRAN : l\'auteur, le jeu et notre méthode', section: 'KYRAN' },
   {
     path: '/dossier-presse.html',
-    title: 'Espace presse KYRAN',
+    title: 'Espace presse KYRAN : communiqué, dossier PDF, kit média ZIP, revue de presse',
     section: 'KYRAN',
     sitemapExtra: `
     <image:image>

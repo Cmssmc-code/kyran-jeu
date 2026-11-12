@@ -1,0 +1,42 @@
+KYRAN, Maître des Mystiques : kit presse
+=========================================
+
+Mis à jour le {{DATE}}. Version en ligne : https://kyran-jeu.fr/dossier-presse.html
+
+CONTENU
+-------
+01-dossier-de-presse/   Dossier de presse PDF (3 pages) et communiqué en texte brut
+02-logos/               Logo complet, emblème rond et singe seul (PNG transparents, 1600 px)
+03-boite/               Boîte recto (PNG 1048 x 1500) et verso
+04-cartes/              Cartes HD 745 x 1040 : Mystique, 8 Pouvoir, 6 Nombre, Vie, dos
+05-photos/              Photos de parties et visuel des cartes Pouvoir (JPG)
+06-regles/              Règles complètes, une page A4 (PDF)
+07-video/               « KYRAN en 60 secondes » (MP4 1280 x 720, sans son)
+
+DROITS D'UTILISATION
+--------------------
+Visuels, logos, photos et vidéo : libres pour un usage éditorial (article, chronique,
+vidéo, publication sur les réseaux sociaux) consacré à KYRAN.
+Crédit souhaité : « KYRAN / Crea by Floh ».
+Merci de ne pas modifier le logo ni les illustrations des cartes.
+
+FICHE EXPRESS
+-------------
+Jeu de plis et de paris, 3 à 6 joueurs (pas à deux), environ 30 minutes, dès 8 ans.
+Auteur et éditeur : Corentin Sence. Illustrations : Crea by Floh.
+45 cartes de jeu, 30 cartes Vie, 7 cartes de règles. Boîte rigide, cartes toilées.
+Sortie : 31 janvier 2026. Prix : 9,99 € sur kyran-jeu.fr, 14,90 € sur Amazon.fr.
+
+LIENS
+-----
+Site et commande        https://kyran-jeu.fr
+Règles                  https://kyran-jeu.fr/regle.html
+Essai gratuit en ligne  https://kyran-jeu.fr/minijeu.html
+Ludochrono (Ludovox)    https://ludovox.fr/ludochrono-kyran/
+BoardGameGeek           https://boardgamegeek.com/boardgame/480678/kyran
+Instagram               https://www.instagram.com/kyran.jeu/
+
+CONTACT PRESSE
+--------------
+Corentin Sence, auteur et éditeur : contact@kyran-jeu.fr
+Exemplaire de test, interview, visuels sur mesure : réponse sous 48 h ouvrées.

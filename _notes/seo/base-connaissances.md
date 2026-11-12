@@ -81,6 +81,7 @@ plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain 
 - Bing : 56 pages dans l'index, 0 erreur d'exploration.
 - 05/11 : 56 URL dans le sitemap, toutes en 200, 0 anomalie ; inspection 27/30 indexées, hors index `video-regles` et `communaute` (inconnues de Google), `blog/jeux-debutants-adultes` (explorée, non indexée, dernière exploration 22/09). Bing : 62 pages dans l'index (01/11).
 - 08/11 : 57 URL dans le sitemap, toutes en 200, 0 anomalie ; inspection 26/30 indexées, hors index `jeux-memoire-concentration` (27/09), `jeux-debutants-adultes` (22/09), `jeux-draft-encheres` (24/10), toutes explorées et non indexées, et `communaute` (découverte, non indexée). Bing : 61 pages dans l'index (03/11), aucun problème d'exploration. Le relevé « Relevé des prix des jeux de cartes » (06/11) reçoit des liens contextuels depuis `jeux-cartes-moins-de-15-euros`, `jeux-comme-skyjo`, `alternatives-uno`, `jeux-comme-dixit` et, depuis le 08/11, `jeux-cartes-4-joueurs` (verdict en tête, prix datés du 6/11).
+- 13/11 : 58 URL dans le sitemap, toutes en 200, 0 `noindex`, inspection 29/30 indexées ; indexées depuis le 12/11 après demande d'indexation : `communaute`, `blog/jeux-30-minutes`, `blog/jeux-memoire-concentration`, `blog/jeux-draft-encheres` ; hors index : `video-regles` (découverte, non indexée) et `blog/jeux-debutants-adultes` (explorée, non indexée), toutes deux déjà demandées le 12/11, à réinspecter à J+7 (19/11).
 - `priceValidUntil` du Product : 31/12/2026.
 
 ## 5. Mesure : sources, fraîcheur, outils

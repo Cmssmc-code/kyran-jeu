@@ -11,7 +11,7 @@ CONTENU
 04-cartes/              Cartes HD 745 x 1040 : Mystique, 8 Pouvoir, 6 Nombre, Vie, dos
 05-photos/              Photos de parties et visuel des cartes Pouvoir (JPG)
 06-regles/              Règles complètes, une page A4 (PDF)
-07-video/               « KYRAN en 60 secondes » (MP4 1280 x 720, sans son)
+07-video/               « KYRAN en 60 secondes », sans son : MP4 1280 x 720 et vertical 1080 x 1920
 
 DROITS D'UTILISATION
 --------------------

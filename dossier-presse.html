@@ -170,6 +170,7 @@
     .press-refs span { font-size: .82rem; color: var(--text-sub); }
     /* Fiche, pouvoirs */
     .press-power { display: flex; gap: 16px; align-items: center; }
+    .press-power h3 { color: var(--gold-dark); font-size: 1.23rem; font-weight: 600; margin: 0 0 5px; }
     .press-power img { border-radius: 6px; box-shadow: 0 3px 10px rgba(0,0,0,.1); flex-shrink: 0; }
     .tech-list li { gap: 16px; }
     .tech-list li span { text-align: right; }
@@ -395,7 +396,7 @@
         <p class="section-sub">Libres pour un usage éditorial consacré à KYRAN. Crédit&nbsp;: «&nbsp;KYRAN / Crea by Floh&nbsp;». Merci de ne pas modifier le logo ni les illustrations.</p>
         <ul class="press-assets">
           <li class="press-asset">
-            <a href="/presse/visuels/kyran-logo.png" download><span class="press-asset__img press-asset__img--light"><img src="/presse/visuels/kyran-logo.png" alt="Logo complet KYRAN, Maître des Mystiques" width="160" height="164" loading="lazy" decoding="async" /></span>
+            <a href="/presse/visuels/kyran-logo.png" download><span class="press-asset__img press-asset__img--light"><img src="/presse/visuels/kyran-logo-320.webp" alt="Logo complet KYRAN, Maître des Mystiques" width="160" height="164" loading="lazy" decoding="async" /></span>
             <strong>Logo complet</strong><span>PNG transparent · 1557 × 1600 · 760 Ko</span></a>
           </li>
           <li class="press-asset">
@@ -512,7 +513,7 @@
           <li class="press-mention">
             <span class="press-tag press-tag--ig">Avis</span>
             <a class="press-mention__title" href="https://www.instagram.com/p/DV0Di6oDGo8/" target="_blank" rel="noopener noreferrer">@kev_clz_aimelesjeux</a>
-            <span class="press-mention__meta">13 mars 2026 · le Tarot Africain modernisé · <a href="https://www.instagram.com/p/DVxex7HjDQN/" target="_blank" rel="noopener noreferrer">règles expliquées</a></span>
+            <span class="press-mention__meta">13 mars 2026 · le Tarot Africain modernisé · <a href="https://www.instagram.com/reel/DVvChYMDcmT/" target="_blank" rel="noopener noreferrer">présentation</a> · <a href="https://www.instagram.com/p/DVxex7HjDQN/" target="_blank" rel="noopener noreferrer">règles expliquées</a></span>
           </li>
           <li class="press-mention">
             <span class="press-tag press-tag--ig">Bar à jeux</span>
@@ -523,6 +524,11 @@
             <span class="press-tag press-tag--ig">Reel</span>
             <a class="press-mention__title" href="https://www.instagram.com/reel/DV9BYIsjJgU/" target="_blank" rel="noopener noreferrer">@le.pirate.ludique</a>
             <span class="press-mention__meta">16 mars 2026 · présentation du jeu</span>
+          </li>
+          <li class="press-mention">
+            <span class="press-tag press-tag--ig">Reel</span>
+            <a class="press-mention__title" href="https://www.instagram.com/reel/DVJImawjIEy/" target="_blank" rel="noopener noreferrer">@o.jeux_de_phoenix</a>
+            <span class="press-mention__meta">24 février 2026 · «&nbsp;super petit jeu à emporter partout&nbsp;»</span>
           </li>
         </ul>
         <p class="press-more">Toutes les photos et vidéos de joueurs sont réunies sur la page <a class="text-link" href="/communaute.html">Communauté</a>. Compte officiel&nbsp;: <a class="text-link" href="https://www.instagram.com/kyran.jeu/" target="_blank" rel="noopener noreferrer me">@kyran.jeu</a>.</p>
@@ -543,6 +549,9 @@
 
     <section id="details" class="section-alt">
       <div class="container press-wrap">
+        <p class="eyebrow eyebrow-center">Le jeu</p>
+        <h2 class="section-title">Fiche technique et règles</h2>
+        <div class="section-divider" aria-hidden="true"></div>
         <div class="grid grid-2">
           <div class="card">
             <h3>Fiche technique</h3>
@@ -593,7 +602,7 @@
           <div class="card power-card press-power">
             <img src="carte-pouvoir-sceau-27.webp" alt="Carte Sceau du Destin" width="60" height="88" loading="lazy" />
             <div>
-              <h4>Sceau du Destin</h4>
+              <h3>Sceau du Destin</h3>
               <div class="power-values">Valeurs 4 et 27</div>
               <p>Le joueur tire au hasard une carte dans la main d'un adversaire, qui doit la jouer tout de suite.</p>
             </div>
@@ -602,7 +611,7 @@
           <div class="card power-card press-power">
             <img src="carte-pouvoir-clairvoyance-11.webp" alt="Carte Clairvoyance Antique" width="60" height="88" loading="lazy" />
             <div>
-              <h4>Clairvoyance Antique</h4>
+              <h3>Clairvoyance Antique</h3>
               <div class="power-values">Valeurs 11 et 23</div>
               <p>Le joueur regarde en secret la carte la plus forte d'un adversaire.</p>
             </div>
@@ -611,7 +620,7 @@
           <div class="card power-card press-power">
             <img src="carte-pouvoir-benediction-20.webp" alt="Carte Bénédiction des Ancêtres" width="60" height="88" loading="lazy" />
             <div>
-              <h4>Bénédiction des Ancêtres</h4>
+              <h3>Bénédiction des Ancêtres</h3>
               <div class="power-values">Valeurs 9 et 20</div>
               <p>Un joueur choisi doit jouer tout de suite sa carte la plus faible.</p>
             </div>
@@ -620,7 +629,7 @@
           <div class="card power-card press-power">
             <img src="carte-pouvoir-voile-3.webp" alt="Carte Voile du Néant" width="60" height="88" loading="lazy" />
             <div>
-              <h4>Voile du Néant</h4>
+              <h3>Voile du Néant</h3>
               <div class="power-values">Valeurs 3 et 34</div>
               <p>Le joueur échange la valeur de sa carte avec une carte déjà posée pendant ce tour.</p>
             </div>
@@ -649,7 +658,7 @@
               <p>Sortie du jeu, sur <a href="/commander.html" class="text-link">kyran-jeu.fr</a> et sur Amazon. Le même jour, Ludovox publie son Ludochrono.</p>
             </li>
             <li>
-              <strong>Mars à juin 2026</strong>
+              <strong>Février à juin 2026</strong>
               <p>Premières chroniques sur Instagram, vidéo du Pirate Ludique, soirées découverte au bar à jeux La Luciole.</p>
             </li>
             <li>

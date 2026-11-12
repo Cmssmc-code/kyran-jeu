@@ -142,6 +142,7 @@ Robots d'IA : pas de mesure possible (GitHub Pages, pas de proxy Cloudflare).
 | YouTube @Kyran-jeu | 1 vidéo, 101 vues |
 | Okkazeo 94411 | fiche avec liens vers `regle.html`, `video-regles.html`, `commander.html` (vu le 21/10) ; prix public 16,99 € ; 0 avis |
 | Tric Trac `jeu-de-societe/kyran`, Myludo 95533 | fiches existantes ; Tric Trac sans lien vers le site (21/10)  ; Tric Trac, Myludo et Okkazeo liés depuis le site (presse, à propos, `sameAs` de `#game`, `llms.txt`) le 21/10 ; aussi dans les `sameAs` de `#boardgame` (commander) le 06/11 |
+| Instagram (publications identifiées @kyran.jeu) | 9 au 12/11 : @o.jeux_de_phoenix (24/02), @kev_clz_aimelesjeux (présentation, règles, avis 13/03), La Luciole (08/03), Le Pirate Ludique (16/03), @marie_et_cie5.8 (24/03), @un_vrai_jeu_d_enfant (07/05), @ariaflore (11/06) ; toutes sur `dossier-presse.html` |
 | Philibert, presse, forums, Reddit, TikTok | rien trouvé (recherche du 21/10 : WebSearch, DuckDuckGo, YouTube) |
 | Bruit | homonymes « Kyran » (footballeurs) ; PR publiques du dépôt (« audit SEO/GEO ») visibles sur la marque ; 20/10 : WebSearch (moteur de Claude) ne sort pas kyran-jeu.fr sur « KYRAN jeu de cartes Maître des Mystiques » |
 

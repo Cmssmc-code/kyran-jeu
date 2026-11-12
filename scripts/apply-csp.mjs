@@ -26,6 +26,8 @@ import { readLf } from './lib/lf.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
+// GA4 (après consentement) envoie aussi ses mesures à https://www.google.com/g/collect : sans cette
+// origine dans connect-src, la CSP bloque l'envoi (constaté le 12/11/2026).
 export const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
@@ -33,7 +35,7 @@ export const CSP = [
   "font-src 'self'",
   "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
   "media-src 'self'",
-  "connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+  "connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com",
   "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
   "object-src 'none'",
   "base-uri 'self'",

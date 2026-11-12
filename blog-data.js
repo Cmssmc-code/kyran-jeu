@@ -518,7 +518,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes de 30 minutes ou moins : 9 parties express",
     "category": "Soirée",
     "date": "2026-05-19",
-    "readMinutes": 11,
+    "readMinutes": 13,
     "excerpt": "Les meilleurs jeux de cartes rapides, en moins de 30 minutes : neuf jeux rangés en trois créneaux (15, 20, 30 min), nombre de joueurs et pièges de durée.",
     "image": "/blog/images/jeux-30-minutes.jpg",
     "webp": "/blog/images/jeux-30-minutes.webp",

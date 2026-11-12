@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-12 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème (tout réparé). Rapport complet :
+[`docs/rapports/surveillance/2026-11-12.md`](../docs/rapports/surveillance/2026-11-12.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 58 URL × 1280/390 px sans erreur ; 421 liens, 0 interne cassé |
+| GA4 (ajout du 11/11) | réparé | bandeau conforme (rien avant clic, « Refuser » respecté) ; après « Accepter », CSP bloquait `www.google.com/g/collect` → `connect-src` élargi (PR #213), 0 erreur en ligne |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; `smoke-initiation.mjs` : manche complète |
+| Serveur | réparé | Node 26.13.1 (sécurité, failles High http2/tls) en ligne, démarrage propre ; 1 5xx = bascule du redéploiement |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | 2 mises à jour | Node 26.13.1, wrangler 4.160.1, `compatibility_date` 2026-11-12 |
+
+Réparation : PR #213. Leçon ajoutée (tester un script tiers après consentement). Aucun point ouvert.
+
 ## 2026-11-11 — passage planifié (04:08 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

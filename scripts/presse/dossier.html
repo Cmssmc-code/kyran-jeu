@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>KYRAN, Maître des Mystiques : dossier de presse</title>
+<style>
+  @font-face { font-family: 'Poppins'; font-weight: 400; src: url('../../fonts/poppins-400-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Poppins'; font-weight: 600; src: url('../../fonts/poppins-600-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Poppins'; font-weight: 700; src: url('../../fonts/poppins-700-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Fredoka'; src: url('../../fonts/fredoka-latin.woff2') format('woff2'); }
+  @page { size: A4; margin: 0; }
+  :root { --ink:#231F22; --saffron:#E6AB26; --deep:#C98A0E; --terra:#B8432A; --cream:#FBF6EC; --kraft:#F3E7CF; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 10pt/1.55 'Poppins', sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 16mm 17mm 14mm; position: relative; overflow: hidden; page-break-after: always; background: var(--cream); }
+  .page:last-child { page-break-after: auto; }
+  .band { position: absolute; left: 0; right: 0; height: 7mm; background: url('../../img/motif-wax.svg') repeat-x, var(--ink); background-size: auto 100%; }
+  .band.top { top: 0; } .band.bottom { bottom: 0; }
+  h1, h2, h3 { font-family: 'Fredoka', 'Poppins', sans-serif; font-weight: 600; margin: 0; line-height: 1.15; }
+  h2 { font-size: 17pt; margin: 0 0 4mm; }
+  h2 span, .accent { color: var(--terra); }
+  h3 { font-size: 11.5pt; margin: 0 0 1.5mm; }
+  p { margin: 0 0 3mm; }
+  a { color: var(--terra); text-decoration: none; }
+  .eyebrow { font-size: 8pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--deep); margin-bottom: 2mm; }
+  .cover { background: var(--ink); color: var(--cream); padding-top: 22mm; }
+  .cover .eyebrow { color: var(--saffron); }
+  .cover h1 { font-size: 40pt; color: var(--saffron); letter-spacing: .02em; }
+  .cover .sub { font-size: 14pt; margin: 2mm 0 7mm; }
+  .cover-grid { display: grid; grid-template-columns: 76mm 1fr; gap: 9mm; align-items: start; }
+  .cover-grid img { width: 76mm; border-radius: 3mm; box-shadow: 0 4mm 10mm rgba(0,0,0,.45); }
+  .pitch { font-size: 12.5pt; line-height: 1.5; margin-bottom: 6mm; }
+  .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3mm; margin-bottom: 6mm; }
+  .fact { border: .4mm solid rgba(230,171,38,.5); border-radius: 2.5mm; padding: 2.5mm 3mm; }
+  .fact b { display: block; font-family: 'Fredoka', sans-serif; font-size: 15pt; color: var(--saffron); font-weight: 600; }
+  .fact span { font-size: 8.5pt; opacity: .85; }
+  .cover .contact { font-size: 9.5pt; border-top: .3mm solid rgba(251,246,236,.25); padding-top: 4mm; }
+  .cover .contact a { color: var(--saffron); }
+  .cover-cards { position: absolute; left: 17mm; right: 17mm; bottom: 16mm; display: flex; gap: 4mm; justify-content: center; }
+  .cover-cards img { width: 30mm; border-radius: 2mm; box-shadow: 0 2mm 6mm rgba(0,0,0,.5); }
+  .release { font-size: 10pt; }
+  .release p { margin-bottom: 2.4mm; }
+  .release .lead { font-size: 12pt; font-weight: 600; }
+  .dateline { font-weight: 700; color: var(--terra); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .two.tech { grid-template-columns: 1.05fr 1fr; }
+  .box { background: #fff; border: .35mm solid rgba(35,31,34,.12); border-radius: 3mm; padding: 4.5mm 5mm; }
+  .box.kraft { background: var(--kraft); }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  td { padding: 1.4mm 0; border-bottom: .25mm solid rgba(35,31,34,.1); vertical-align: top; }
+  td:first-child { font-weight: 600; width: 27mm; padding-right: 2mm; }
+  .powers { display: grid; gap: 2.2mm; }
+  .power { display: flex; gap: 3mm; align-items: center; font-size: 8.8pt; }
+  .power img { width: 11mm; border-radius: 1mm; }
+  .power b { display: block; font-size: 9.5pt; }
+  .quote { font-style: italic; border-left: 1.2mm solid var(--saffron); padding: 1mm 0 1mm 4mm; margin: 0 0 4mm; font-size: 10.5pt; }
+  .quote cite { display: block; font-style: normal; font-size: 8.5pt; color: var(--terra); margin-top: 1mm; }
+  ul.links { list-style: none; padding: 0; margin: 0; font-size: 8.8pt; }
+  ul.links li { padding: 1.5mm 0; border-bottom: .25mm solid rgba(35,31,34,.1); }
+  ul.links li b { color: var(--ink); }
+  ul.links small { color: #5b5457; }
+  .foot { position: absolute; left: 17mm; right: 17mm; bottom: 10mm; font-size: 7.5pt; color: #6b6467; display: flex; justify-content: space-between; }
+  .cover .foot { color: rgba(251,246,236,.6); }
+  .angles li { margin-bottom: 2mm; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 : couverture -->
+<section class="page cover">
+  <div class="band top"></div>
+  <p class="eyebrow">Dossier de presse · mis à jour le {{DATE}}</p>
+  <h1>KYRAN</h1>
+  <p class="sub">Maître des Mystiques · le jeu de plis où le pari est obligatoire</p>
+  <div class="cover-grid">
+    <img src="../../boite-recto-kyran-740.webp" alt="Boîte de KYRAN">
+    <div>
+      <p class="pitch">Annoncez le nombre exact de plis que vous allez gagner. Ni plus, ni moins. La somme des paris ne tombe jamais juste&nbsp;: à chaque manche, quelqu'un se trompe.</p>
+      <div class="facts">
+        <div class="fact"><b>3 à 6</b><span>joueurs, pas à deux</span></div>
+        <div class="fact"><b>30 min</b><span>par partie</span></div>
+        <div class="fact"><b>8 ans +</b><span>famille et adultes</span></div>
+        <div class="fact"><b>9,99&nbsp;€</b><span>en direct du créateur</span></div>
+        <div class="fact"><b>4,7/5</b><span>sur Amazon.fr (33 évaluations)</span></div>
+        <div class="fact"><b>31/01/2026</b><span>date de sortie</span></div>
+      </div>
+      <div class="contact">
+        <strong>Contact presse</strong> · Corentin Sence, auteur et éditeur<br>
+        <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a><br><a href="https://kyran-jeu.fr/dossier-presse.html">kyran-jeu.fr/dossier-presse.html</a><br>
+        Exemplaire de test offert aux médias, blogs et créateurs de contenu.
+      </div>
+    </div>
+  </div>
+  <div class="cover-cards">
+    <img src="../../carte-mystique-300.webp" alt="">
+    <img src="../../carte-pouvoir-sceau-27-300.webp" alt="">
+    <img src="../../carte-pouvoir-clairvoyance-11-300.webp" alt="">
+    <img src="../../carte-pouvoir-benediction-20-300.webp" alt="">
+    <img src="../../carte-pouvoir-voile-34-300.webp" alt="">
+  </div>
+  <div class="band bottom"></div>
+</section>
+
+<!-- Page 2 : communiqué + fiche technique -->
+<section class="page">
+  <div class="band top"></div>
+  <p class="eyebrow">Communiqué de presse</p>
+  <h2>KYRAN, un jeu de plis <span>où le pari est obligatoire</span></h2>
+  <div class="release">
+    <p class="lead"><span class="dateline">{{DATE}}.</span> Sorti le 31 janvier 2026, KYRAN, Maître des Mystiques, est un jeu de cartes de plis et de paris pour 3 à 6 joueurs, dès 8 ans. Une partie dure environ 30 minutes. Il modernise le Tarot Africain, aussi appelé Whist 22, joué en famille de l'Afrique de l'Ouest aux Antilles.</p>
+    <p>Le but n'est pas de gagner le plus de plis, mais d'en gagner exactement le nombre annoncé. La somme des paris ne peut jamais égaler le nombre de plis&nbsp;: au moins un joueur se trompe donc à chaque manche. Une main faible n'est pas perdue&nbsp;: parier zéro et ne faire aucun pli est un pari réussi.</p>
+    <p>Chaque erreur coûte des cartes Vie, posées devant le joueur à la place d'une feuille de score. Les manches raccourcissent (7 cartes, puis 6… jusqu'à 2), puis vient la manche Mystique&nbsp;: une seule carte tenue sur le front, que tout le monde voit sauf son propriétaire. Quatre pouvoirs et la carte Mystique, qui vaut 0 ou 37, peuvent renverser un pli.</p>
+    <p>KYRAN est conçu et édité par Corentin Sence, auteur indépendant, avec des illustrations de Crea by Floh&nbsp;: safran, encre, terracotta et motifs inspirés du wax. Depuis sa sortie, le jeu a été présenté en vidéo par Ludovox (Ludochrono) et Le Pirate Ludique, partagé par des bars à jeux et des joueurs sur Instagram, et il se découvre gratuitement en ligne grâce à une initiation jouable dans le navigateur.</p>
+    <p>KYRAN est vendu 9,99&nbsp;€ sur kyran-jeu.fr, 14,90&nbsp;€ sur Amazon.fr, et sur Etsy.</p>
+  </div>
+  <div class="two tech">
+    <div class="box">
+      <h3>Fiche technique</h3>
+      <table>
+        <tr><td>Titre</td><td>KYRAN, Maître des Mystiques</td></tr>
+        <tr><td>Auteur, éditeur</td><td>Corentin Sence</td></tr>
+        <tr><td>Illustrations</td><td>Crea by Floh</td></tr>
+        <tr><td>Genre</td><td>Plis, paris et bluff</td></tr>
+        <tr><td>Joueurs</td><td>3 à 6 · 30 min · dès 8 ans</td></tr>
+        <tr><td>Matériel</td><td>45 cartes de jeu (36 Nombre, 8 Pouvoir, 1 Mystique), 30 cartes Vie, 7 cartes de règles</td></tr>
+        <tr><td>Boîte</td><td>Rigide, 11,5 × 8,5 × 2,8 cm, 175 g, cartes toilées</td></tr>
+                <tr><td>Prix</td><td>9,99 € kyran-jeu.fr · 14,90 € Amazon</td></tr>
+        <tr><td>Sortie</td><td>31 janvier 2026</td></tr>
+      </table>
+    </div>
+    <div class="box kraft">
+      <h3>Les quatre pouvoirs</h3>
+      <div class="powers">
+        <div class="power"><img src="../../carte-pouvoir-sceau-27-300.webp" alt=""><div><b>Sceau du Destin</b>4 et 27 · tire une carte au hasard chez un adversaire, qui doit la jouer.</div></div>
+        <div class="power"><img src="../../carte-pouvoir-clairvoyance-11-300.webp" alt=""><div><b>Clairvoyance Antique</b>11 et 23 · regarde la plus forte carte d'un adversaire.</div></div>
+        <div class="power"><img src="../../carte-pouvoir-benediction-20-300.webp" alt=""><div><b>Bénédiction des Ancêtres</b>9 et 20 · un joueur joue tout de suite sa plus faible carte.</div></div>
+        <div class="power"><img src="../../carte-pouvoir-voile-3-300.webp" alt=""><div><b>Voile du Néant</b>3 et 34 · échange la valeur de sa carte avec une carte posée.</div></div>
+      </div>
+      <p style="margin:3mm 0 0;font-size:8.8pt"><b>La Mystique</b> vaut 0 ou 37, au choix de celui qui la pose.</p>
+    </div>
+  </div>
+  <div class="foot"><span>KYRAN · dossier de presse</span><span>kyran-jeu.fr · contact@kyran-jeu.fr</span></div>
+  <div class="band bottom"></div>
+</section>
+
+<!-- Page 3 : ils en parlent, angles, contact -->
+<section class="page">
+  <div class="band top"></div>
+  <p class="eyebrow">Ils en parlent</p>
+  <h2>KYRAN <span>dans les médias et sur les plateformes</span></h2>
+  <div class="two">
+    <div>
+      <p class="quote">«&nbsp;Un jeu fluide, malin et plein de petits rebondissements qui modernise très bien le genre.&nbsp;»<cite>@kev_clz_aimelesjeux, Instagram, mars 2026</cite></p>
+      <p class="quote">«&nbsp;Simple sur le papier, redoutable en vrai. […] Un beau renouveau du jeu de plis&nbsp;!&nbsp;»<cite>@un_vrai_jeu_d_enfant, Instagram, mai 2026</cite></p>
+      <p class="quote">4,7/5 sur Amazon.fr<cite>33 évaluations, relevé de novembre 2026</cite></p>
+      <h3>Angles possibles pour un sujet</h3>
+      <ul class="angles">
+        <li><b>Un jeu de famille modernisé&nbsp;:</b> du Tarot Africain joué enfant à une boîte éditée en France.</li>
+        <li><b>Auteur indépendant&nbsp;:</b> conçu, édité et expédié par son créateur, à 9,99&nbsp;€.</li>
+        <li><b>Le pari exact&nbsp;:</b> une règle qui fait que quelqu'un se trompe à chaque manche.</li>
+        <li><b>Jouable en ligne&nbsp;:</b> une initiation gratuite dans le navigateur, sans inscription.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Liens à citer</h3>
+      <ul class="links">
+        <li><b>Ludovox</b> · Ludochrono, les règles en vidéo (31/01/2026)<br><small>ludovox.fr/ludochrono-kyran</small></li>
+        <li><b>Le Pirate Ludique</b> · vidéo « Kyran, maître des mystiques » (16/03/2026)<br><small>youtube.com/shorts/5W0KNuoPUt4</small></li>
+        <li><b>Instagram</b> · avis de @ariaflore, @kev_clz_aimelesjeux, @un_vrai_jeu_d_enfant, La Luciole…<br><small>kyran-jeu.fr/communaute.html</small></li>
+        <li><b>BoardGameGeek</b> · fiche 480678<br><small>boardgamegeek.com/boardgame/480678/kyran</small></li>
+        <li><b>Tric Trac</b> · fiche du jeu<br><small>trictrac.net/jeu-de-societe/kyran</small></li>
+        <li><b>BoardGamesFlix</b> · fiche et vidéos<br><small>boardgamesflix.com/boardgames/kyran</small></li>
+        <li><b>Myludo · Okkazeo</b> · fiches du jeu<br><small>myludo.fr · okkazeo.com/jeux/94411</small></li>
+        <li><b>Wikidata</b> · Q141623753<br><small>wikidata.org/wiki/Q141623753</small></li>
+      </ul>
+    </div>
+  </div>
+  <div class="box kraft" style="margin-top:5mm">
+    <h3>Ressources et contact</h3>
+    <p style="margin:0">Visuels HD, logos, vidéo et règles&nbsp;: <a href="https://kyran-jeu.fr/presse/kyran-kit-presse.zip">kyran-jeu.fr/presse/kyran-kit-presse.zip</a><br>
+    Règles complètes&nbsp;: <a href="https://kyran-jeu.fr/regle.html">kyran-jeu.fr/regle.html</a> · Essai gratuit&nbsp;: <a href="https://kyran-jeu.fr/minijeu.html">kyran-jeu.fr/minijeu.html</a><br>
+    Exemplaire de test, interview, visuels sur mesure&nbsp;: <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a> (réponse sous 48&nbsp;h ouvrées)<br>
+    Instagram <a href="https://www.instagram.com/kyran.jeu/">@kyran.jeu</a> · YouTube <a href="https://www.youtube.com/@Kyran-jeu">@Kyran-jeu</a></p>
+  </div>
+  <div class="foot"><span>Visuels libres de droits pour un usage éditorial, crédit « KYRAN / Crea by Floh »</span><span>kyran-jeu.fr</span></div>
+  <div class="band bottom"></div>
+</section>
+
+</body>
+</html>

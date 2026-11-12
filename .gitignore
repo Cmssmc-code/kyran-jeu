@@ -42,3 +42,7 @@ server/data/
 
 # Suivi privé des contacts influenceurs / bars à jeux (jamais publié : .nojekyll sert tout le repo)
 _outreach/
+
+# Kit presse (le .gitignore global de la machine ignore *.zip et *.pdf)
+!presse/kyran-kit-presse.zip
+!presse/kyran-dossier-de-presse.pdf

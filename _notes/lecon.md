@@ -22,6 +22,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Cause :** `git ls-files -z | xargs -0 rm -f && git checkout -- .` remet **tous** les fichiers suivis à l'état du dernier commit, y compris les modifications non commitées hors des sources.
 - **Correctif :** relance des deux scripts. Règle : avant la réextraction LF, commiter aussi les fichiers de mesure (`_notes/seo/`) ou lancer les scripts de mesure après le build.
 
+### 2026-11-12 — GA4 : mesures bloquées par la CSP après « Accepter »
+
+- **Symptôme :** GA4 et son bandeau de consentement ajoutés le 11/11 ; après « Accepter », la console affiche `Refused to connect to 'https://www.google.com/g/collect…'` : une partie des mesures est perdue.
+- **Cause :** `connect-src` de `scripts/apply-csp.mjs` listait `*.google-analytics.com`, `*.analytics.google.com` et `*.googletagmanager.com`, pas `https://www.google.com`, où GA4 envoie aussi ses mesures. Le crawl ne clique pas sur le bandeau : rien ne le voyait.
+- **Correctif :** `https://www.google.com` ajouté à `connect-src` (PR #213), pages régénérées.
+- **Règle :** tout script tiers ajouté au site se teste en ligne APRÈS le consentement (clic sur « Accepter », console sans erreur CSP), pas seulement au chargement.
+
 ### 2026-11-10 — Empreintes `?v=` : CRLF de Windows neutralisé dans le build
 
 - **Symptôme :** le 09/11, trois CI rouges sur des branches (`claude/blog-passe-2026-11-09` ×2, `claude/seo-geo-2026-11-10`), chacune réparée par un commit « empreintes ?v= recalculées en LF » ; les contournements manuels des 02/11 et 10/11 n'empêchaient pas la récidive.

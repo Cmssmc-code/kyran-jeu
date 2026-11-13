@@ -141,6 +141,10 @@ export default {
   conclusion: `<p>Le bluff fonctionne quand chacun sait à quoi il s'expose. Dites avant la première carte si l'on va mentir, cacher son camp ou simplement parier, et précisez ce qui arrive à celui qui perd : spectateur, ou toujours dans la partie. Cette mise au point évite le malaise du joueur qui découvre en cours de route qu'il est le traître, ou qu'il va passer la fin de soirée sur le canapé.</p>`,
   faq: [
     {
+      q: 'Qu’est-ce qu’un jeu de bluff aux cartes ?',
+      a: `Un jeu de bluff est un jeu où l'on gagne en faisant croire quelque chose aux autres joueurs. Cette page en distingue trois familles : le mensonge en face (Skull, Coup), le rôle secret à tenir (Saboteur, Bang!) et le pari sur sa propre main, sans mensonge à prononcer (Wizard, KYRAN, For Sale).`
+    },
+    {
       q: 'Quel jeu de bluff choisir à trois joueurs ?',
       a: `Skull, qui démarre à trois et donne tout de suite la sensation du bluff. Coup accepte aussi trois joueurs. Saboteur se joue à trois, mais avec un seul saboteur au plus, le soupçon retombe vite : gardez-le pour les tables plus nombreuses.`
     },

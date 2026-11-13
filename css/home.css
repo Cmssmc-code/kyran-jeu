@@ -1776,14 +1776,7 @@
 .round-strip__list li:nth-child(5) { color: var(--k-blue); }
 .round-strip__list li:nth-child(6) { color: var(--k-violet); }
 .round-strip__list .round-strip__mystic { background: var(--k-ink); color: var(--k-saffron); }
-.round-strip.is-visible .round-strip__list li { animation: kyranDeal 0.5s cubic-bezier(0.3, 1.3, 0.5, 1) backwards; }
-.round-strip.is-visible .round-strip__list li:nth-child(2) { animation-delay: 0.06s; }
-.round-strip.is-visible .round-strip__list li:nth-child(3) { animation-delay: 0.12s; }
-.round-strip.is-visible .round-strip__list li:nth-child(4) { animation-delay: 0.18s; }
-.round-strip.is-visible .round-strip__list li:nth-child(5) { animation-delay: 0.24s; }
-.round-strip.is-visible .round-strip__list li:nth-child(6) { animation-delay: 0.3s; }
-.round-strip.is-visible .round-strip__list li:nth-child(7) { animation-delay: 0.42s; }
-@keyframes kyranDeal { from { opacity: 0; transform: translateY(-14px) rotate(-8deg); } }
+/* Distribution des manches en cascade : css/motion.css */
 
 .powers-note { text-align: center; color: #CFC5B5; font-size: 0.9rem; margin: var(--space-4) auto 0; max-width: 560px; }
 
@@ -1860,7 +1853,6 @@
 .reveal-on-scroll { transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .round-strip.is-visible .round-strip__list li { animation: none; }
 }
 #heritage .heritage-visual { display: flex; justify-content: center; width: 100%; min-width: 0; }
 #heritage .heritage-visual img { width: min(100%, 340px); }

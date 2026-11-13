@@ -110,12 +110,11 @@ html.km-compact header.site-header { box-shadow: 0 12px 26px -20px rgba(35, 31, 
 /* ---------- Menu mobile : liens en cascade ---------- */
 @media (max-width: 900px) {
   body.menu-open .nav-list > li { animation-duration: 0.42s; animation-timing-function: var(--km-out); }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link { animation: kmDrawerLink 0.32s var(--km-out) backwards; }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(2) { animation-delay: 0.03s; }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(3) { animation-delay: 0.06s; }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(4) { animation-delay: 0.09s; }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(5) { animation-delay: 0.12s; }
-  body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(n+6) { animation-delay: 0.15s; }
+  body.menu-open .nav-discover-details[open] .nav-drawer-link {
+    animation: kmDrawerLink 0.32s var(--km-out) backwards;
+    /* +30 ms par lien, plafond au 6e (150 ms) */
+    animation-delay: calc((min(sibling-index(), 6) - 1) * 0.03s);
+  }
 }
 @keyframes kmDrawerLink { from { opacity: 0; transform: translateX(14px); } }
 
@@ -147,12 +146,9 @@ html.km-compact header.site-header { box-shadow: 0 12px 26px -20px rgba(35, 31, 
 .hero-ecommerce h1 { animation-delay: 0.12s; animation-duration: 0.85s; }
 .hero-ecommerce .hero-lead { animation-delay: 0.26s; }
 .hero-ecommerce .hero-price > span { animation-delay: 0.5s; }
-.hero-ecommerce .hero-actions > :nth-child(1) { animation-delay: 0.52s; }
-.hero-ecommerce .hero-actions > :nth-child(2) { animation-delay: 0.6s; }
+.hero-ecommerce .hero-actions > * { animation-delay: calc(0.44s + sibling-index() * 0.08s); }
 .hero-ecommerce .hero-rating { animation-delay: 0.7s; }
-.hero-ecommerce .hero-assurances li:nth-child(1) { animation-delay: 0.78s; }
-.hero-ecommerce .hero-assurances li:nth-child(2) { animation-delay: 0.84s; }
-.hero-ecommerce .hero-assurances li:nth-child(3) { animation-delay: 0.9s; }
+.hero-ecommerce .hero-assurances li { animation-delay: calc(0.72s + sibling-index() * 0.06s); }
 @keyframes kmRise { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
 
 /* Surlignage safran du titre : passé au pinceau */
@@ -206,13 +202,9 @@ html.km-compact header.site-header { box-shadow: 0 12px 26px -20px rgba(35, 31, 
 .round-strip__list { perspective: 700px; }
 .round-strip.is-visible .round-strip__list li {
   animation: kmDeal 0.75s var(--km-spring) backwards;
+  /* 100 ms puis +70 ms par carte ; la carte mystique garde son propre délai */
+  animation-delay: calc(0.03s + sibling-index() * 0.07s);
 }
-.round-strip.is-visible .round-strip__list li:nth-child(1) { animation-delay: 0.1s; }
-.round-strip.is-visible .round-strip__list li:nth-child(2) { animation-delay: 0.17s; }
-.round-strip.is-visible .round-strip__list li:nth-child(3) { animation-delay: 0.24s; }
-.round-strip.is-visible .round-strip__list li:nth-child(4) { animation-delay: 0.31s; }
-.round-strip.is-visible .round-strip__list li:nth-child(5) { animation-delay: 0.38s; }
-.round-strip.is-visible .round-strip__list li:nth-child(6) { animation-delay: 0.45s; }
 .round-strip.is-visible .round-strip__list li.round-strip__mystic {
   animation: kmDeal 0.75s var(--km-spring) 0.62s backwards, kmMystic 0.9s var(--km-out) 1.35s 1;
 }
@@ -257,4 +249,26 @@ html.km-compact header.site-header { box-shadow: 0 12px 26px -20px rgba(35, 31, 
   html.km-compact .logo img { transform: none; }
   main details::details-content { transition: none !important; }
   .kyran-ticker__track { animation: none !important; will-change: auto; }
+}
+@supports not (animation-delay: calc(sibling-index() * 1ms)) {
+  /* Secours sans sibling-index() (Firefox < 154, Safari < 26.2) : mêmes délais qu'avant */
+  @media (max-width: 900px) {
+    body.menu-open .nav-discover-details[open] .nav-drawer-link { animation-delay: 0s; }
+    body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(2) { animation-delay: 0.03s; }
+    body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(3) { animation-delay: 0.06s; }
+    body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(4) { animation-delay: 0.09s; }
+    body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(5) { animation-delay: 0.12s; }
+    body.menu-open .nav-discover-details[open] .nav-drawer-link:nth-child(n+6) { animation-delay: 0.15s; }
+  }
+  .hero-ecommerce .hero-actions > :nth-child(1) { animation-delay: 0.52s; }
+  .hero-ecommerce .hero-actions > :nth-child(2) { animation-delay: 0.6s; }
+  .hero-ecommerce .hero-assurances li:nth-child(1) { animation-delay: 0.78s; }
+  .hero-ecommerce .hero-assurances li:nth-child(2) { animation-delay: 0.84s; }
+  .hero-ecommerce .hero-assurances li:nth-child(3) { animation-delay: 0.9s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(1) { animation-delay: 0.1s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(2) { animation-delay: 0.17s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(3) { animation-delay: 0.24s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(4) { animation-delay: 0.31s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(5) { animation-delay: 0.38s; }
+  .round-strip.is-visible .round-strip__list li:nth-child(6) { animation-delay: 0.45s; }
 }

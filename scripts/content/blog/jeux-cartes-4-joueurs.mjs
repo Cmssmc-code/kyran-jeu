@@ -21,7 +21,7 @@ export default {
       },
       {
         heading: 'Chacun pour soi : quatre rivaux, un seul gagnant',
-        html: `<p>Sans équipe, chacun mesure son jeu à celui de trois adversaires. Les cinq titres retenus couvrent tout l'éventail : plis à annonce (Wizard, KYRAN), bluff (Skull), déduction express (Love Letter) et jeu de points pour mêler les âges (Skyjo). À quatre, aucun ne tourne à vide ; Love Letter y atteint son maximum, quand Wizard, KYRAN et Skull gardent encore de la marge jusqu'à six.</p>`,
+        html: `<p>Sans équipe, chacun mesure son jeu à celui de trois adversaires. Les cinq titres retenus couvrent tout l'éventail : plis à annonce (Wizard, KYRAN), <a class="text-link" href="/blog/jeux-bluff-pari.html">jeu de bluff</a> (Skull), déduction express (Love Letter) et jeu de points pour mêler les âges (Skyjo). À quatre, aucun ne tourne à vide ; Love Letter y atteint son maximum, quand Wizard, KYRAN et Skull gardent encore de la marge jusqu'à six.</p>`,
         ids: ['wizard', 'kyran', 'skull', 'love-letter', 'skyjo']
       }
     ]

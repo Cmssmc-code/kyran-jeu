@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "skyjo-magilano-chiffres-reference",
+    "title": "Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources",
+    "category": "Cartes",
+    "date": "2026-11-14",
+    "readMinutes": 13,
+    "excerpt": "Qui est Magilano, quand Skyjo est sorti, combien s’en est vendu en France, ce que dit la règle officielle sur le doublement des points : chiffres sourcés.",
+    "image": "/blog/images/skyjo-magilano-chiffres-reference.jpg",
+    "webp": "/blog/images/skyjo-magilano-chiffres-reference.webp",
+    "gameCount": 0,
+    "related": [
+      "jeux-comme-skyjo",
+      "prix-jeux-de-cartes-releve",
+      "marche-jeux-de-cartes-2026-2027"
+    ]
+  },
+  {
     "slug": "jeux-comme-president",
     "title": "Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026",
     "category": "Alternatives",
@@ -103,7 +119,7 @@ const BLOG_ITEMS = [
     "title": "Marché du jeu de cartes 2026-2027 : chiffres, tendances et best-sellers",
     "category": "Cartes",
     "date": "2026-10-21",
-    "readMinutes": 12,
+    "readMinutes": 13,
     "excerpt": "Après +78 % en 2025, les cartes à collectionner ralentissent à +18 % en 2026. Chiffres Circana, tendances 2027 et cinq jeux de cartes de table à moins de 15 €.",
     "image": "/blog/images/marche-jeux-de-cartes-2026-2027.jpg",
     "webp": "/blog/images/marche-jeux-de-cartes-2026-2027.webp",

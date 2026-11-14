@@ -74,7 +74,7 @@ export default {
       type: 'Grille à minimiser',
       pick: 'Pour les tables de 2 à 8 qui veulent peu de règles',
       paragraphs: [
-        `Skyjo est le doyen de cette sélection : conçu par Alexander Bernhardt en 2015, il figure pourtant dans la liste des meilleures ventes 2025 relevée par Ludiquement, à côté de titres de 2023 à 2025. Chacun dispose d’une grille de cartes à retourner, et le but est de finir avec le moins de points. La partie s’arrête quand un joueur atteint 100 points.`,
+        `Skyjo est le doyen de cette sélection : conçu par Alexander Bernhardt en 2015, il figure pourtant dans la liste des meilleures ventes 2025 relevée par Ludiquement, à côté de titres de 2023 à 2025. Chacun dispose d’une grille de cartes à retourner, et le but est de finir avec le moins de points. La partie s’arrête quand un joueur atteint 100 points. Les dates et les chiffres de vente de Skyjo sont détaillés dans <a class="text-link" href="/blog/skyjo-magilano-chiffres-reference.html">notre dossier sur Skyjo et Magilano</a>.`,
         `Sa longévité éclaire une partie des chiffres : le marché ne renouvelle pas tout chaque année, il ajoute des nouveautés à des valeurs sûres. Le jeu se joue de 2 à 8, dès 8 ans, pour environ une demi-heure et une quinzaine d’euros. Le détail de ses règles et de ses alternatives se trouve dans notre sélection de <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a>.`
       ]
     },

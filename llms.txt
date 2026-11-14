@@ -81,7 +81,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 41 guides
+## Blog — 42 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -113,6 +113,7 @@
 
 ## Blog : Cartes
 
+- [Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources](https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html)
 - [Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026](https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html)
 - [Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026](https://kyran-jeu.fr/blog/jeux-cartes-solo.html): 5 jeux comparés
 - [Spiel des Jahres : lauréats et finalistes 1979-2026, en données ouvertes](https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html)

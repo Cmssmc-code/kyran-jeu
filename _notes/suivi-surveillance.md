@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-14 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-14.md`](../docs/rapports/surveillance/2026-11-14.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 59 URL × 1280/390 px sans 4xx/5xx ; 456 liens, 0 interne cassé ; essai Skyjo/Magilano et CSV en 200 |
+| CSS (PR #220) | OK | cascades `sibling-index()` avec repli `@supports not` pour les vieux navigateurs |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; `smoke-initiation.mjs` : manche complète ; GA4 sans erreur CSP |
+| Serveur | OK | v1.7.0, Node v26.13.1, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | 1 mise à jour | wrangler 4.162.0, `compatibility_date` 2026-11-14 |
+
+Mise à jour : PR #223. Aucun point ouvert.
+
 ## 2026-11-13 — passage planifié (04:09 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

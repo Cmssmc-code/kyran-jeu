@@ -23,7 +23,7 @@ export default {
 <li><strong>Succès :</strong> selon Wikipédia, plus de 3 millions d’exemplaires vendus en France en 2024.</li>
 <li><strong>Prix :</strong> la boîte standard coûtait 14,90 € chez Ludum et Philibert et 15,50 € chez Agorajeux le 6 novembre 2026, d’après notre <a class="text-link" href="/blog/prix-jeux-de-cartes-releve.html">relevé des prix des jeux de cartes</a> dans quatre boutiques.</li>
 </ul>
-<p>Sources : <a class="text-link" href="https://magilano.com/products/skyjo" rel="noopener">fiche officielle Magilano</a> et <a class="text-link" href="https://fr.wikipedia.org/wiki/Skyjo" rel="noopener">article Skyjo de Wikipédia</a>.</p>
+<p>Sources : <a class="text-link" href="https://magilano.com/products/skyjo" rel="noopener">fiche officielle Magilano</a> et <a class="text-link" href="https://fr.wikipedia.org/wiki/Skyjo" rel="noopener">article Skyjo de Wikipédia</a>. Pour les dates, les chiffres de vente et la règle du doublement vérifiés dans les sources, voyez notre <a class="text-link" href="/blog/skyjo-magilano-chiffres-reference.html">dossier sur Skyjo et Magilano</a>.</p>
 <p>Skyjo réunit en réalité plusieurs plaisirs distincts, et un <strong>jeu qui ressemble au Skyjo</strong> n’en conserve généralement qu’un ou deux. Avant d’acheter, identifiez celui qui vous manquerait le plus.</p>
 <h3>Ce que vous retenez de Skyjo</h3>
 <ul>

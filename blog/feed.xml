@@ -5,13 +5,20 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Fri, 13 Nov 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources</title>
+      <link>https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html</guid>
+      <pubDate>Sat, 14 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Qui est Magilano, quand Skyjo est sorti, combien s’en est vendu en France, ce que dit la règle officielle sur le doublement des points : chiffres sourcés.</description>
+    </item>
     <item>
       <title>Jeux comme le Président : 6 jeux de cartes à essayer, prix du 9 novembre 2026</title>
       <link>https://kyran-jeu.fr/blog/jeux-comme-president.html</link>

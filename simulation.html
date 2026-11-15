@@ -659,7 +659,7 @@
             <li><strong>13</strong><b>tests de règles</b><span>Un scénario par règle, du nombre de cartes à 3 joueurs jusqu'au départage. Tous au vert.</span></li>
             <li><strong>168&nbsp;Mo</strong><b>de CSV</b><span>1&nbsp;560&nbsp;487 lignes&nbsp;: 10&nbsp;000 parties, 45&nbsp;000 joueurs, 268&nbsp;086 manches-joueur, 1&nbsp;237&nbsp;401 cartes posées.</span></li>
             <li><strong>10,65&nbsp;h</strong><b>de calcul cumulé</b><span>Somme des temps de chaque partie (colonne <code>ms</code> de games.csv)&nbsp;: 3,8&nbsp;s par partie en moyenne, IA maîtres comprises.</span></li>
-            <li><strong>≈&nbsp;1&nbsp;h</strong><b>pour 10&nbsp;000 parties</b><span>Temps réel mesuré à la relance du 15 novembre 2026 sur 11 workers&nbsp;: 6&nbsp;000 parties en 38 minutes, soit 2,6 parties par seconde.</span></li>
+            <li><strong>61&nbsp;min</strong><b>pour 10&nbsp;000 parties</b><span>Temps réel mesuré de bout en bout le 15 novembre 2026 sur 11 workers&nbsp;: 10&nbsp;000 parties en 61&nbsp;min&nbsp;21&nbsp;s, soit 2,7 parties par seconde, 0 erreur.</span></li>
             <li><strong>12</strong><b>threads</b><span>Intel Core i5-12450H (8 cœurs, 12 threads), 16&nbsp;Go de RAM&nbsp;: un ordinateur portable, pas un serveur.</span></li>
             <li><strong>v26</strong><b>Node.js</b><span>Node.js 26.13, Python 3.12.10, pandas 3.0.6. Rien d'autre à installer pour jouer les parties.</span></li>
           </ul>
@@ -696,7 +696,7 @@
           </figure>
           <figure class="sim-shot sim-shot--wide">
             <img src="/images/simulation/determinisme.webp" alt="Terminal : la même campagne de 100 parties, graine 7, lancée avec 1 worker puis avec 4 workers ; les empreintes SHA-256 des fichiers triés sont identiques : a2296e5f1d4df6d1ca1595b937f5530631042b5e148d8cb178a6bb21bf88bcb1 pour les deux" width="1506" height="1190" loading="lazy" decoding="async" />
-            <figcaption><strong>Même graine, même résultat, au bit près.</strong> 100 parties lancées sur 1 puis sur 4 processus&nbsp;: une fois les lignes triées, les fichiers ont la même empreinte SHA-256. Rejouez l'étape 4 de « Reproduire chez vous » pour le vérifier vous-même.</figcaption>
+            <figcaption><strong>Même graine, même résultat, au bit près.</strong> 100 parties lancées sur 1 puis sur 4 processus&nbsp;: une fois les lignes triées, les fichiers ont la même empreinte SHA-256. Et en grand&nbsp;: les 10&nbsp;000 parties officielles, rejouées de zéro le 15 novembre 2026, redonnent exactement les mêmes 4 fichiers (1,56 million de lignes&nbsp;; empreinte de plays.csv&nbsp;: <code>484a6eee…f3a8</code>). Rejouez l'étape 4 de « Reproduire chez vous » pour le vérifier vous-même.</figcaption>
           </figure>
           <figure class="sim-shot">
             <img src="/images/simulation/rapport.webp" alt="Éditeur de code : début du fichier rapport.md de l'échantillon, 200 parties, 900 joueurs, 24 401 cartes posées, 0 erreur moteur, puis le tableau de durée par nombre de joueurs (10,5 minutes à 3 joueurs, 19,7 à 6)" width="1506" height="1112" loading="lazy" decoding="async" />

@@ -24,7 +24,8 @@ de gros problème. Rapport complet :
 | Versions | à jour | `compatibility_date` 2026-11-15 |
 
 Réparations : PR #226, #227. Scripts Playwright de la routine réécrits (dossier temporaire purgé). Point ouvert : lien
-de la préfecture à revérifier.
+de la préfecture à revérifier. Défaut connu du lanceur `node:test` de Node 22 en local (`mailer.test.mjs`,
+2e fois après le 07/11) : 1 essai rouge sur 4, CI verte.
 
 ## 2026-11-14 — passage planifié (04:07 UTC)
 

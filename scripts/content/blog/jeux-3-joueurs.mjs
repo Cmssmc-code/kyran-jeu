@@ -106,6 +106,17 @@ export default {
   ],
   extraSections: [
     {
+      id: 'classiques-a-3',
+      heading: 'Jeux de cartes classiques à 3 joueurs : que sortir avec un jeu de 32 ou 52 cartes ?',
+      html: `<p>Sans boîte spéciale, un simple jeu de cartes suffit pour jouer à trois. Selon la sélection de <a class="text-link" href="https://www.regles-du-jeu.net/quels-jeux-de-cartes-pour-3-joueurs/" rel="noopener">regles-du-jeu.net</a>, relue le 16 novembre 2026, la Belote, le Rami, le Président, le 99 et la Canasta se jouent à trois. Le tableau indique le paquet à prendre et ce que devient la règle autour d'une table de trois joueurs.</p><div class="compare-table-wrap">
+<table class="compare-table">
+<caption>Jeux de cartes classiques jouables à trois, avec le paquet nécessaire</caption>
+<thead><tr><th scope="col">Jeu</th><th scope="col">Paquet</th><th scope="col">À trois</th><th scope="col">Principe</th></tr></thead>
+<tbody><tr><th scope="row">Belote</th><td>32 cartes</td><td>un joueur contre les deux autres</td><td>remporter des plis riches en cartes de valeur</td></tr><tr><th scope="row">Rami</th><td>52 cartes (jokers possibles)</td><td>règle inchangée</td><td>former des combinaisons et vider sa main le premier</td></tr><tr><th scope="row">Président</th><td>52 cartes</td><td>chacun pour soi</td><td>jouer des cartes plus fortes pour vider sa main en premier</td></tr><tr><th scope="row">Le 99</th><td>52 cartes</td><td>chacun pour soi</td><td>poser des cartes pour atteindre 99 sans le dépasser</td></tr><tr><th scope="row">Canasta</th><td>54 cartes, jokers compris</td><td>un joueur contre une équipe de deux</td><td>former des combinaisons appelées canastas</td></tr><tr><th scope="row">Oh Hell!</th><td>52 cartes</td><td>de 3 à 7 joueurs</td><td>annoncer le nombre de plis que l'on va gagner</td></tr></tbody>
+</table>
+</div><p>Deux de ces classiques, la Belote et la Canasta, se jouent à trois en un contre deux : c'est le défaut de l'alliance décrit plus haut, et le joueur seul a rarement le beau rôle. Les trois autres lignes se jouent chacun pour soi. Pour un jeu de plis avec annonces, <strong>Oh Hell!</strong> et le <a class="text-link" href="/tarot-africain-a-3-joueurs.html">Tarot Africain à 3 joueurs</a> demandent seulement de prévoir ses plis, sans équipe ni élimination.</p>`
+    },
+    {
       heading: 'Schotten Totten, Lost Cities, Star Realms : et si l\'on est trois quand même ?',
       html: `<p>Schotten Totten et Lost Cities sont conçus pour deux joueurs, et leurs règles ne prévoient pas de variante à trois ; Star Realms est un duel, même si des formats à plusieurs existent comme variantes à part. Les présenter comme des jeux à trois serait trompeur : <strong>Schotten Totten</strong> oppose deux camps autour de neuf bornes, <strong>Lost Cities</strong> met deux explorateurs en concurrence sur cinq expéditions et <strong>Star Realms</strong> est un duel de deck-building. Si vous êtes trois ce soir et que l'un d'entre vous adore l'un de ces duels, la solution honnête est un mini-tournoi : A contre B, puis B contre C, puis A contre C. Chacun joue deux parties et regarde la troisième ; on compte les victoires, et on rejoue en cas d'égalité.</p>
 <p>Pour la configuration inverse, deux joueurs réguliers sans troisième, notre sélection de <a class="text-link" href="/blog/jeux-duo-couples.html">jeux de cartes à deux</a> détaille ces trois duels, aux côtés de jeux coopératifs qui fonctionnent en tête-à-tête.</p>`
@@ -127,8 +138,8 @@ export default {
       a: `Non, ces deux jeux sont conçus pour deux joueurs et n'ont pas de règle à trois. La seule option propre est un mini-tournoi où chacun affronte successivement les deux autres pendant que le troisième regarde. Si vous êtes souvent trois, choisissez plutôt l'un des jeux de cette page.`
     },
     {
-      q: 'Quel jeu faire à trois avec un simple jeu de cartes ?',
-      a: `Oh Hell!, un jeu de plis avec paris, se joue de 3 à 7 joueurs avec un jeu de 52 cartes classique. Avec un jeu de tarot, le Tarot Africain n'utilise que 22 cartes ; nos <a class="text-link" href="/tarot-africain-a-3-joueurs.html">règles du Tarot Africain à 3 joueurs</a> détaillent la donne à sept cartes de la première manche et la contrainte d'annonce du donneur.`
+      q: 'Quel jeu de cartes classique jouer à 3 avec un simple paquet ?',
+      a: `Avec 52 cartes, le Rami, le Président, le 99 et Oh Hell! se jouent à trois ; avec 32 cartes, la Belote se joue à trois, un joueur contre les deux autres. Oh Hell!, un jeu de plis avec paris, accepte de 3 à 7 joueurs. Avec un jeu de tarot, le Tarot Africain n'utilise que 22 cartes ; nos <a class="text-link" href="/tarot-africain-a-3-joueurs.html">règles du Tarot Africain à 3 joueurs</a> détaillent la donne à sept cartes de la première manche et la contrainte d'annonce du donneur.`
     },
     {
       q: 'Quel jeu à trois joueurs pour une soirée de moins de 20 minutes ?',

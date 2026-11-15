@@ -518,7 +518,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de cartes à 3 joueurs : les meilleurs pour jouer vraiment à trois",
     "category": "Soirée",
     "date": "2026-05-21",
-    "readMinutes": 12,
+    "readMinutes": 13,
     "excerpt": "Jeux de cartes à 3 joueurs : The Crew, Hanabi et The Mind pour coopérer, Love Letter, KYRAN et Sushi Go! pour s'affronter, et que faire des duels.",
     "image": "/blog/images/jeux-3-joueurs.jpg",
     "webp": "/blog/images/jeux-3-joueurs.webp",

@@ -10,6 +10,10 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-15 : page `/simulation.html` (hors routine)
+
+- Nouvelle page « Comment gagner à KYRAN : 10 000 parties simulées par algorithme » (Article, Dataset, FAQPage), ajoutée au sitemap, au plan du site et à `llms*.txt` ; preuves dans `/simulation/`.
+
 ### 2026-11-15 : run nocturne n° 26 (dimanche)
 
 - **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée). Google (`dataState: all`, 08/11 → 14/11, dernier jour provisoire) : 7 j 31 clics (−40 %), 2 056 impressions (+8 %) ; 28 j 176 clics, 8 601 impressions, CTR 2,05 %, position 8,5 ; 24 h (jusqu'au 14/11 16 h) 2 clics, 311 impressions (6 et 298 sept jours plus tôt). Les clics reculent par très petits nombres (`jeux-comme-skyjo` 5 → 1, `jeux-comme-dixit` 4 → 0, `alternatives-uno` 3 → 1) ; `tarot-africain` stable en clics (6 → 6) avec 503 → 565 impressions, position 6,3 ; Search Console signale « tarot africain » +213 % d'impressions. Pas d'action sur une variation de quelques clics.

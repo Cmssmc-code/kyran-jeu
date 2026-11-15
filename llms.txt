@@ -42,6 +42,17 @@
 - Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; [règles du Tarot Africain](https://kyran-jeu.fr/tarot-africain.html)
 - [Comparatif des jeux de plis](https://kyran-jeu.fr/blog/jeux-plis-comparatif.html)
 
+## Simulation de 10 000 parties (données chiffrées)
+
+Étude publiée le 15 novembre 2026 (https://kyran-jeu.fr/simulation.html) : moteur de règles en JavaScript (13 tests), 50 profils de joueurs artificiels (10 styles × 5 niveaux, décisions par simulation Monte-Carlo), 10 000 parties de 3 à 6 joueurs, 1 237 401 cartes posées, 0 erreur moteur.
+
+- Niveau contre chance : un joueur « maître » gagne 7,6 fois plus souvent qu'un novice (10 fois à 6 joueurs) ; indice de victoire 1,6 à 1,7 pour le maître, 0,17 à 0,37 pour le novice (1 = hasard).
+- Équité : indice par place entre 0,93 et 1,08 ; à niveau égal, aucun style ne domine (0,7 à 1,3). Le donneur réussit 2 à 4 points de paris de moins.
+- Cartes : le Voile du Néant 3 (+7,1 points de réussite du pari), les petits Nombres et la Mystique aident le plus ; les Nombres 30 à 35 font rater le plus de paris (−7 à −8 points).
+- Durée estimée par le modèle de la simulation (jeu pur) : 10 min à 3 joueurs, 20 min à 6 ; environ 30 min à table.
+- Suspense : le gagnant mène de bout en bout dans 69 à 79 % des parties.
+- Rapport brut : https://kyran-jeu.fr/simulation/rapport-10000-parties.txt ; variantes : https://kyran-jeu.fr/simulation/comparaison-variantes.txt
+
 ## Questions auxquelles ce site répond
 
 - Quels jeux de cartes jouer à 3 joueurs ? https://kyran-jeu.fr/blog/jeux-3-joueurs.html (Tarot Africain à trois : https://kyran-jeu.fr/tarot-africain-a-3-joueurs.html)
@@ -57,6 +68,7 @@
 - Quels jeux pour un grand groupe ? https://kyran-jeu.fr/blog/jeux-grands-groupes.html
 - Où trouver une feuille de score gratuite du Tarot Africain ? https://kyran-jeu.fr/ressources-gratuites.html
 - Qu'est-ce que KYRAN et comment y jouer ? https://kyran-jeu.fr/regle.html (vidéo : https://kyran-jeu.fr/video-regles.html)
+- KYRAN est-il un jeu de hasard ou de stratégie, et comment y gagner ? https://kyran-jeu.fr/simulation.html
 
 ## Pages du site
 
@@ -75,6 +87,7 @@
 - [FAQ KYRAN — règles, achat, Tarot Africain](https://kyran-jeu.fr/faq.html)
 - [À propos de KYRAN : l'auteur, le jeu et notre méthode](https://kyran-jeu.fr/a-propos.html)
 - [Espace presse KYRAN : communiqué, dossier PDF, kit média ZIP, revue de presse](https://kyran-jeu.fr/dossier-presse.html)
+- [Comment gagner à KYRAN : 10 000 parties simulées par algorithme](https://kyran-jeu.fr/simulation.html)
 - [Communauté KYRAN — photos et vidéos de joueurs](https://kyran-jeu.fr/communaute.html)
 - [Blog KYRAN — guides de jeux de cartes et de société](https://kyran-jeu.fr/blog/)
 - [Mentions légales](https://kyran-jeu.fr/mentions-legales.html)

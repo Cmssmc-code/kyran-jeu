@@ -155,6 +155,17 @@ function buildLlmsTxt() {
 - Tarot Africain (Whist 22) : jeu de plis à annonce joué avec les 22 atouts du tarot ; [règles du Tarot Africain](${SITE}/tarot-africain.html)
 - [Comparatif des jeux de plis](${SITE}/blog/jeux-plis-comparatif.html)
 
+## Simulation de 10 000 parties (données chiffrées)
+
+Étude publiée le 15 novembre 2026 (${SITE}/simulation.html) : moteur de règles en JavaScript (13 tests), 50 profils de joueurs artificiels (10 styles × 5 niveaux, décisions par simulation Monte-Carlo), 10 000 parties de 3 à 6 joueurs, 1 237 401 cartes posées, 0 erreur moteur.
+
+- Niveau contre chance : un joueur « maître » gagne 7,6 fois plus souvent qu'un novice (10 fois à 6 joueurs) ; indice de victoire 1,6 à 1,7 pour le maître, 0,17 à 0,37 pour le novice (1 = hasard).
+- Équité : indice par place entre 0,93 et 1,08 ; à niveau égal, aucun style ne domine (0,7 à 1,3). Le donneur réussit 2 à 4 points de paris de moins.
+- Cartes : le Voile du Néant 3 (+7,1 points de réussite du pari), les petits Nombres et la Mystique aident le plus ; les Nombres 30 à 35 font rater le plus de paris (−7 à −8 points).
+- Durée estimée par le modèle de la simulation (jeu pur) : 10 min à 3 joueurs, 20 min à 6 ; environ 30 min à table.
+- Suspense : le gagnant mène de bout en bout dans 69 à 79 % des parties.
+- Rapport brut : ${SITE}/simulation/rapport-10000-parties.txt ; variantes : ${SITE}/simulation/comparaison-variantes.txt
+
 ## Questions auxquelles ce site répond
 
 - Quels jeux de cartes jouer à 3 joueurs ? ${SITE}/blog/jeux-3-joueurs.html (Tarot Africain à trois : ${SITE}/tarot-africain-a-3-joueurs.html)
@@ -170,6 +181,7 @@ function buildLlmsTxt() {
 - Quels jeux pour un grand groupe ? ${SITE}/blog/jeux-grands-groupes.html
 - Où trouver une feuille de score gratuite du Tarot Africain ? ${SITE}/ressources-gratuites.html
 - Qu'est-ce que KYRAN et comment y jouer ? ${SITE}/regle.html (vidéo : ${SITE}/video-regles.html)
+- KYRAN est-il un jeu de hasard ou de stratégie, et comment y gagner ? ${SITE}/simulation.html
 
 ## Pages du site
 
@@ -244,6 +256,8 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Différence avec Skyjo ? Skyjo se joue sans plis (on minimise un score avec une grille de cartes) ; KYRAN est un jeu de plis avec pari et vies.
 - Différence avec Wizard ? Les deux sont des jeux de plis à annonce. KYRAN est plus court (environ 30 minutes contre environ 45 pour Wizard), ajoute quatre pouvoirs (huit cartes Pouvoir) et une manche Mystique jouée la carte sur le front, après laquelle le cycle repart à 7 cartes ; la partie s'arrête dès qu'un joueur n'a plus de Vies.
 - KYRAN est-il lié au Tarot Africain ? Oui, il en reprend le principe d'annonce avec la règle qui empêche la somme des annonces d'égaler le nombre de plis : ${SITE}/tarot-africain.html
+- KYRAN est-il un jeu de hasard ? Non, surtout de stratégie : sur 10 000 parties simulées, un joueur de niveau maître gagne 7,6 fois plus souvent qu'un novice, et aucune place à table ne donne d'avantage notable : ${SITE}/simulation.html
+- Comment gagner à KYRAN ? Parier juste plutôt que gros (3 grosses cartes en main : 42 à 50 % de paris exacts, aucune : 71 à 74 %), garder petites cartes et Mystique pour la fin, prendre la tête tôt et ne jamais laisser filer deux Vies : ${SITE}/simulation.html
 
 ## Résumé des ${items.length} guides du blog
 ${digest}`;

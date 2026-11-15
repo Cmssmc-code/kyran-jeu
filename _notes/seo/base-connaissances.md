@@ -65,6 +65,13 @@ Pages sans cible dans `seo-keywords.json` : `video-regles`, `commander`, `idee-c
 plusieurs pages : « jeu de plis », « jeu apéro cartes », « tarot africain », « whist 22 », « jeu 30 minutes »,
 « alternative wizard », « jeu soirée amis ».
 
+Page `/simulation.html` (15/11/2026) : « Comment gagner à KYRAN : 10 000 parties simulées par algorithme ».
+Cibles : « comment gagner à kyran », « stratégie kyran », « kyran hasard ou stratégie », public dev/data/IA.
+JSON-LD Article + Dataset + FAQPage ; preuves `/simulation/rapport-10000-parties.txt`,
+`/simulation/comparaison-variantes.txt`, `/simulation/kyran-simulation-source.zip` ; 4 captures réelles dans
+`images/simulation/`. Chiffres clés : maître 7,6 × plus de victoires que novice, place 0,93–1,08, 0 erreur sur
+1 237 401 cartes. Durée de la simulation = modèle (10–20 min de jeu pur), le site garde « environ 30 min ».
+
 ## 4. État technique (19/10/2026)
 
 - `scripts/seo-health.py --sample 0` (50 URL) : 100 % en 200, 0 anomalie (canonical, titres, descriptions, H1,
@@ -155,6 +162,8 @@ Liens entrants : **0** (Search Console et Bing ; Bing `GetLinkCounts` du 09/11 :
   11/10 (cite encore `/comparatif-jeux-plis.html`). Google AI Overviews : reprend `tarot-africain.html` sans nommer
   KYRAN.
 - `llms.txt` factuel (13 Ko), `llms-full.txt` 40 Ko ; 17 robots IA autorisés dans `robots.txt`.
+- Données chiffrées citables : section « Simulation de 10 000 parties » dans `llms.txt` et deux réponses dans
+  `llms-full.txt` (hasard ou stratégie, comment gagner), source `/simulation.html` (15/11/2026).
 - Prompts : `_notes/geo-tests.md`.
 
 ## 10. Netlinking

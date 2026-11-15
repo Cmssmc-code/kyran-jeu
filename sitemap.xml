@@ -112,6 +112,16 @@
   </url>
 
   <url>
+    <loc>https://kyran-jeu.fr/simulation.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/images/simulation/run.webp</image:loc>
+      <image:title>Simulation de parties de KYRAN dans un terminal</image:title>
+      <image:caption>Sortie réelle du simulateur : 200 parties, 0 erreur</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://kyran-jeu.fr/communaute.html</loc>
     <lastmod>2026-11-12</lastmod>
   </url>

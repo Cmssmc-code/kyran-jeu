@@ -91,6 +91,17 @@ export const STATIC_PAGES = [
     </image:image>`
   },
   {
+    path: '/simulation.html',
+    title: 'Comment gagner à KYRAN : 10 000 parties simulées par algorithme',
+    section: 'KYRAN',
+    sitemapExtra: `
+    <image:image>
+      <image:loc>${SITE}/images/simulation/run.webp</image:loc>
+      <image:title>Simulation de parties de KYRAN dans un terminal</image:title>
+      <image:caption>Sortie réelle du simulateur : 200 parties, 0 erreur</image:caption>
+    </image:image>`
+  },
+  {
     path: '/communaute.html',
     title: 'Communauté KYRAN — photos et vidéos de joueurs',
     section: 'KYRAN',

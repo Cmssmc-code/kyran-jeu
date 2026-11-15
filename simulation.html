@@ -82,7 +82,7 @@
         "description": "Un moteur de règles en JavaScript, 50 profils de joueurs artificiels et une analyse pandas : ce que 10 000 parties simulées révèlent du jeu KYRAN.",
         "datePublished": "2026-11-15",
         "dateModified": "2026-11-15",
-        "image": ["https://kyran-jeu.fr/images/simulation/run.webp", "https://kyran-jeu.fr/images/simulation/tests.webp"],
+        "image": ["https://kyran-jeu.fr/images/simulation/run.webp", "https://kyran-jeu.fr/images/simulation/tests.webp", "https://kyran-jeu.fr/images/simulation/determinisme.webp", "https://kyran-jeu.fr/images/simulation/csv.webp"],
         "author": {"@type": "Person", "@id": "https://kyran-jeu.fr/a-propos.html#corentin-sence", "name": "Corentin Sence", "url": "https://kyran-jeu.fr/a-propos.html"},
         "publisher": {"@id": "https://kyran-jeu.fr/#organization"},
         "mainEntityOfPage": {"@id": "https://kyran-jeu.fr/simulation.html#webpage"},
@@ -130,7 +130,7 @@
     /* En-tête */
     .sim-hero { position: relative; background: var(--k-ink); color: #F7EFDD; padding: clamp(36px, 6vw, 72px) 0 clamp(44px, 6vw, 80px); overflow: hidden; }
     .sim-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: var(--wax-band) repeat-x; background-size: auto 14px; }
-    .sim-hero__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
+    .sim-hero__grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
     .sim-hero__grid > * { min-width: 0; }
     .sim-hero h1 { color: #FFF8EA; font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.1; margin: 8px 0 16px; }
     .sim-hero h1 .accent { color: var(--k-saffron); background: none; padding: 0; box-shadow: none; text-shadow: none; }
@@ -251,10 +251,104 @@
     .sim-limits { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; list-style: disc; }
     .sim-limits li { line-height: 1.65; }
     .sim-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
+    /* Sommaire collant + barre de lecture */
+    main section[id], .sim-anchor { scroll-margin-top: 136px; }
+    .sim-toc { position: sticky; top: 66px; z-index: 50; background: #FBF6EC; isolation: isolate; border-bottom: 1px solid var(--k-line); box-shadow: 0 6px 16px rgba(35,31,34,.06); }
+    .sim-toc__in { position: static; display: flex; align-items: center; gap: 12px; }
+    .sim-toc__label { flex: none; font-family: 'Fredoka', 'Poppins', sans-serif; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--k-terra-dark); }
+    .sim-toc ol { list-style: none; margin: 0; padding: 9px 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .sim-toc ol::-webkit-scrollbar { display: none; }
+    .sim-toc li { flex: none; padding: 0; }
+    .sim-toc li::before { content: none; }
+    .sim-toc a { display: block; padding: 6px 12px; border-radius: 999px; font-size: .86rem; font-weight: 600; color: var(--text-main); text-decoration: none; white-space: nowrap; }
+    .sim-toc a:hover { background: var(--k-kraft); }
+    .sim-toc a[aria-current="true"] { background: var(--k-ink); color: #FFF8EA; }
+    .sim-toc a:focus-visible { outline: 3px solid var(--k-saffron-deep); outline-offset: 1px; }
+    .sim-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: var(--k-terra); pointer-events: none; }
+    /* Sous le capot */
+    .sim-tech { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .sim-tech > li { padding: 16px; background: #fff; border: 1px solid var(--k-line); border-radius: 14px; display: flex; flex-direction: column; gap: 4px; }
+    .sim-tech > li::before { content: none; }
+    .sim-tech strong { font-family: 'Fredoka', 'Poppins', sans-serif; font-size: clamp(1.45rem, 2.6vw, 1.9rem); line-height: 1.1; color: var(--k-ink); font-variant-numeric: tabular-nums; }
+    .sim-tech b { font-size: .92rem; color: var(--text-main); }
+    .sim-tech span { font-size: .84rem; line-height: 1.5; color: var(--text-sub); }
+    .sim-tech code { font-size: .78rem; }
+    /* Figures terminal pleine largeur */
+    .sim-shot--wide { grid-column: 1 / -1; }
+    .sim-shot--wide img, .sim-shot--wide figcaption { max-width: 900px; margin-left: auto; margin-right: auto; display: block; }
+    /* Graphiques */
+    .sim-fig { margin: 18px 0 0; background: #fff; border: 1px solid var(--k-line); border-radius: 14px; padding: 16px 18px; }
+    .sim-fig > figcaption { font-weight: 700; font-size: .98rem; margin: 0 0 4px; color: var(--text-main); }
+    .sim-legend { list-style: none; margin: 6px 0 12px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .84rem; color: var(--text-sub); }
+    .sim-legend li { display: inline-flex; align-items: center; gap: 7px; padding: 0; }
+    .sim-legend li::before { content: none; }
+    .sim-legend i { display: inline-block; flex: none; width: 16px; height: 4px; border-radius: 2px; background: var(--c); }
+    .sim-legend i.sq { width: 12px; height: 12px; border-radius: 3px; }
+    .sim-legend i.band { width: 18px; height: 10px; border-radius: 2px; }
+    .sim-legend i.tick { width: 3px; height: 14px; border-radius: 2px; background: var(--k-ink); }
+    .sim-legend i.dia { width: 9px; height: 9px; border-radius: 1px; transform: rotate(45deg); background: var(--k-ink); margin: 0 2px; }
+    .sim-svg { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; }
+    .sim-svg text { font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; fill: #3F393B; }
+    .sim-svg .grid { stroke: rgba(35,31,34,.10); stroke-width: 1; }
+    .sim-svg .base { stroke: rgba(35,31,34,.45); stroke-width: 1; }
+    .sim-svg .ref { stroke: #6F676A; stroke-width: 1; stroke-dasharray: 4 4; }
+    .sim-svg .ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .sim-svg .pt { stroke: #fff; stroke-width: 2; }
+    .sim-svg .lab { font-weight: 700; fill: #231F22; }
+    .sim-data { margin-top: 12px; }
+    .sim-data summary { cursor: pointer; font-size: .88rem; font-weight: 600; color: var(--k-terra-dark); padding: 4px 0; }
+    .sim-data .sim-table-wrap { max-height: 420px; overflow: auto; }
+    /* Colonnes divergentes (effet des cartes) */
+    .sim-cols-box { position: relative; padding: 0 0 26px 34px; margin-top: 6px; }
+    .sim-cols-y { position: absolute; left: 0; top: 0; bottom: 26px; width: 28px; margin: 0; padding: 0; list-style: none; font-size: .72rem; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+    .sim-cols-y li { position: absolute; right: 0; transform: translateY(-50%); padding: 0; line-height: 1; }
+    .sim-cols-y li::before { content: none; }
+    .sim-cols { list-style: none; margin: 0; padding: 0; height: 230px; display: grid; grid-template-columns: repeat(36, 1fr) 6px 1fr; column-gap: 2px; background: linear-gradient(to bottom, rgba(35,31,34,.09) 1px, transparent 1px) 0 0 / 100% 25%; border-bottom: 1px solid rgba(35,31,34,.09); }
+    .sim-cols li { position: relative; padding: 0; min-width: 0; }
+    .sim-cols li::before { content: ""; position: absolute; left: -1px; right: -1px; top: 50%; height: 1px; background: rgba(35,31,34,.45); }
+    .sim-cols .bar { position: absolute; left: 10%; right: 10%; height: var(--h); }
+    .sim-cols .pos .bar { bottom: 50%; background: #1A7FA3; border-radius: 3px 3px 0 0; }
+    .sim-cols .neg .bar { top: 50%; background: var(--k-terra); border-radius: 0 0 3px 3px; }
+    .sim-cols li:hover .bar { filter: brightness(.82); }
+    .sim-cols .pw { position: absolute; left: 50%; top: calc(50% - var(--y)); width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--k-ink); transform: rotate(45deg); box-shadow: 0 0 0 2px #fff; z-index: 1; }
+    .sim-cols .x { position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%); font-size: .72rem; line-height: 1; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+    .sim-cols .sim-cols__m { grid-column: 38; }
+    .sim-cols__m .x { font-weight: 700; color: var(--text-main); }
+    /* Plages de durée */
+    .sim-range { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+    .sim-range li { display: grid; grid-template-columns: 5.6em 1fr; align-items: center; column-gap: 10px; row-gap: 4px; padding: 0; font-size: .88rem; }
+    .sim-range li::before { content: none; }
+    .sim-range .lbl { font-weight: 600; }
+    .sim-range .track { position: relative; height: 18px; background: linear-gradient(to right, rgba(35,31,34,.12) 1px, transparent 1px) 0 0 / 33.333% 100%, var(--k-kraft); border-radius: 4px; }
+    .sim-range .p90, .sim-range .p75 { position: absolute; left: var(--a); width: calc(var(--b) - var(--a)); }
+    .sim-range .p90 { top: 4px; bottom: 4px; background: #E39A7E; border-radius: 4px; }
+    .sim-range .p75 { top: 0; bottom: 0; background: var(--k-terra); border-radius: 3px; }
+    .sim-range .med { position: absolute; top: -3px; bottom: -3px; left: var(--m); width: 3px; margin-left: -1.5px; background: var(--k-ink); border-radius: 2px; box-shadow: 0 0 0 1.5px #fff; }
+    .sim-range .val { grid-column: 2; font-size: .8rem; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+    .sim-range .val strong { color: var(--text-main); }
+    .sim-range-x { display: flex; justify-content: space-between; margin: 8px 0 0 calc(5.6em + 10px); font-size: .74rem; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+    /* Reproduire chez vous */
+    .sim-steps { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 16px; max-width: 900px; counter-reset: st; }
+    .sim-steps > li { position: relative; padding: 16px 18px 16px 62px; background: #fff; border: 1px solid var(--k-line); border-radius: 14px; counter-increment: st; min-width: 0; }
+    .sim-steps > li::before { content: counter(st); position: absolute; left: 16px; top: 14px; width: 32px; height: 32px; border-radius: 50%; background: var(--k-ink); color: var(--k-saffron); font-family: 'Fredoka', 'Poppins', sans-serif; display: grid; place-items: center; font-size: 1.05rem; }
+    .sim-steps h3 { font-size: 1.02rem; margin: 2px 0 4px; }
+    .sim-steps p { font-size: .9rem; line-height: 1.6; color: var(--text-sub); margin: 0 0 10px; }
+    .sim-cmd { position: relative; margin: 0; }
+    .sim-cmd pre { margin: 0; background: #1D1A1C; color: #EDE5D8; border-radius: 10px; padding: 12px 14px; padding-right: 96px; overflow-x: auto; font-family: Consolas, 'Cascadia Mono', 'SFMono-Regular', Menlo, monospace; font-size: .8rem; line-height: 1.6; }
+    .sim-cmd pre code { font: inherit; color: inherit; background: none; padding: 0; white-space: pre; }
+    .sim-cmd .c { color: #A8A097; }
+    .sim-copy { position: absolute; top: 8px; right: 8px; min-height: 32px; padding: 5px 12px; border-radius: 8px; border: 1px solid rgba(247,239,221,.35); background: #3A3538; color: #FFF8EA; font: 600 .78rem 'Poppins', system-ui, sans-serif; cursor: pointer; }
+    .sim-copy:hover { background: #4A4447; }
+    .sim-copy:focus-visible { outline: 3px solid var(--k-saffron); outline-offset: 2px; }
+    .sim-copy[data-done] { background: #1A7FA3; border-color: #1A7FA3; }
+    /* Tableaux larges : indication de défilement */
+    .sim-table-wrap { background: linear-gradient(to right, #fff 30%, rgba(255,255,255,0)) left center / 28px 100% no-repeat local, linear-gradient(to left, #fff 30%, rgba(255,255,255,0)) right center / 28px 100% no-repeat local, radial-gradient(farthest-side at 0 50%, rgba(35,31,34,.18), transparent) left center / 10px 100% no-repeat scroll, radial-gradient(farthest-side at 100% 50%, rgba(35,31,34,.18), transparent) right center / 10px 100% no-repeat scroll, #fff; }
+    .sim-table thead th { background-color: var(--k-kraft); }
     @media (max-width: 960px) {
       .sim-pipe { grid-template-columns: repeat(2, 1fr); }
       .sim-pipe li:last-child { grid-column: 1 / -1; }
       .sim-facts { grid-template-columns: repeat(3, 1fr); row-gap: 18px; }
+      .sim-tech { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 760px) {
       .sim-hero__grid, .sim-code-grid, .sim-shots, .sim-two, .sim-verdict, .sim-tips, .sim-dl { grid-template-columns: 1fr; }
@@ -268,8 +362,26 @@
       .sim-table { font-size: .8rem; }
       .sim-table th, .sim-table td { padding: 8px 7px; }
       .sim-table caption { position: sticky; left: 0; max-width: calc(100vw - 40px); white-space: normal; }
+      .sim-toc { top: 64px; }
+      .sim-toc__label { display: none; }
+      .sim-toc ol { padding: 7px 0; }
+      .sim-toc a { padding: 6px 11px; font-size: .84rem; }
+      main section[id], .sim-anchor { scroll-margin-top: 116px; }
+      .sim-tech { gap: 10px; }
+      .sim-tech > li { padding: 13px; }
+      .sim-fig { padding: 14px 12px; }
+      .sim-cols-box { padding-left: 28px; }
+      .sim-cols-y { width: 24px; }
+      .sim-cols { height: 200px; column-gap: 1px; }
+      .sim-cols .pw { width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; }
+      .sim-cols .x { font-size: .66rem; }
+      .sim-range li { grid-template-columns: 4.6em 1fr; font-size: .84rem; }
+      .sim-range-x { margin-left: calc(4.6em + 10px); }
+      .sim-steps > li { padding: 56px 14px 14px; }
+      .sim-cmd pre { font-size: .76rem; padding-right: 14px; padding-top: 48px; }
     }
     @media (prefers-reduced-motion: reduce) { .sim-dl a { transition: none; } .sim-dl a:hover { transform: none; } }
+    @media (forced-colors: active) { .sim-cols .bar, .sim-range .p75, .sim-range .p90, .sim-progress { background: CanvasText; } .sim-cols .pw { background: Highlight; } }
   </style>
 </head>
 <body>
@@ -404,6 +516,25 @@
       </div>
     </section>
 
+    <nav class="sim-toc" aria-label="Sommaire de l'étude" data-sim-toc>
+      <div class="container sim-wrap sim-toc__in">
+        <span class="sim-toc__label" aria-hidden="true">Sommaire</span>
+        <ol>
+          <li><a href="#en-bref">En bref</a></li>
+          <li><a href="#methode">Méthode</a></li>
+          <li><a href="#sous-le-capot">Sous le capot</a></li>
+          <li><a href="#captures">Captures</a></li>
+          <li><a href="#resultats">Résultats</a></li>
+          <li><a href="#verdict">Bilan</a></li>
+          <li><a href="#strategie">Stratégie</a></li>
+          <li><a href="#reproduire">Reproduire</a></li>
+          <li><a href="#limites">Limites</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+      <span class="sim-progress" aria-hidden="true"></span>
+    </nav>
+
     <section id="en-bref">
       <div class="container sim-wrap">
         <div class="sim-narrow sim-prose">
@@ -518,6 +649,21 @@
           <p>Elle ne triche pas&nbsp;: elle ne voit que sa main et les cartes posées. Avant de parier, elle redistribue au hasard les cartes qu'elle ne voit pas (en gardant celles qu'elle a aperçues grâce à la Clairvoyance), joue la fin de la manche pour chaque pari possible et garde celui qui coûte le moins de Vies en moyenne. Elle recommence 64 fois. C'est une simulation Monte-Carlo&nbsp;: la même famille de méthodes que les IA de bridge ou de poker, en beaucoup plus simple. Toutes les options sont comparées sur la même donne cachée, pour réduire le bruit.</p>
           <p>Les donnes et le tirage du Sceau du Destin utilisent deux générateurs séparés&nbsp;: à graine égale, les cartes distribuées sont les mêmes quels que soient les choix des joueurs. Un test le vérifie.</p>
         </div>
+
+        <div id="sous-le-capot" class="sim-anchor" style="margin-top:44px">
+          <h3 class="section-title" style="font-size:clamp(1.35rem, 2.8vw, 1.8rem)">Sous le capot</h3>
+          <p class="section-sub">Les chiffres de la machine, mesurés sur le code et les fichiers produits (commandes <code>wc -l</code>, <code>du -h</code>, <code>node --test</code>), sans arrondi flatteur.</p>
+          <ul class="sim-tech">
+            <li><strong>1&nbsp;792</strong><b>lignes de code</b><span>1&nbsp;292 de moteur, d'IA et de lanceur, 161 de tests, 339 de Python pour l'analyse.</span></li>
+            <li><strong>0</strong><b>dépendance npm</b><span>Node.js seul&nbsp;: <code>worker_threads</code> pour le parallélisme, <code>node:test</code> pour les tests. Côté Python&nbsp;: pandas et numpy.</span></li>
+            <li><strong>13</strong><b>tests de règles</b><span>Un scénario par règle, du nombre de cartes à 3 joueurs jusqu'au départage. Tous au vert.</span></li>
+            <li><strong>168&nbsp;Mo</strong><b>de CSV</b><span>1&nbsp;560&nbsp;487 lignes&nbsp;: 10&nbsp;000 parties, 45&nbsp;000 joueurs, 268&nbsp;086 manches-joueur, 1&nbsp;237&nbsp;401 cartes posées.</span></li>
+            <li><strong>10,65&nbsp;h</strong><b>de calcul cumulé</b><span>Somme des temps de chaque partie (colonne <code>ms</code> de games.csv)&nbsp;: 3,8&nbsp;s par partie en moyenne, IA maîtres comprises.</span></li>
+            <li><strong>≈&nbsp;1&nbsp;h</strong><b>pour 10&nbsp;000 parties</b><span>Temps réel mesuré à la relance du 15 novembre 2026 sur 11 workers&nbsp;: 6&nbsp;000 parties en 38 minutes, soit 2,6 parties par seconde.</span></li>
+            <li><strong>12</strong><b>threads</b><span>Intel Core i5-12450H (8 cœurs, 12 threads), 16&nbsp;Go de RAM&nbsp;: un ordinateur portable, pas un serveur.</span></li>
+            <li><strong>v26</strong><b>Node.js</b><span>Node.js 26.13, Python 3.12.10, pandas 3.0.6. Rien d'autre à installer pour jouer les parties.</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -526,15 +672,31 @@
         <p class="eyebrow eyebrow-center">Preuves à l'écran</p>
         <h2 class="section-title">Ce qu'on voit quand on lance la simulation</h2>
         <div class="section-divider" aria-hidden="true"></div>
-        <p class="section-sub">Sorties réelles, capturées le 15 novembre 2026 sur un échantillon de 200 parties (graine 1). Les chiffres de la page viennent, eux, du lot de 10&nbsp;000 parties (graine 2026).</p>
+        <p class="section-sub">Sorties réelles, capturées le 15 novembre 2026, sans retouche du texte. Le lancement, le rapport et le classeur montrent un échantillon de 200 parties (graine 1)&nbsp;; les données brutes et le journal de manche viennent du lot de 10&nbsp;000 parties (graine 2026) qui nourrit toute la page.</p>
         <div class="sim-shots">
-          <figure class="sim-shot">
-            <img src="/images/simulation/tests.webp" alt="Terminal : node --test tests/ exécute 13 tests du moteur KYRAN (matériel, cycle des manches, règle d'or, pli, Mystique, Sceau, Bénédiction, Voile, Clairvoyance, manche Mystique, Vies, parties complètes, même graine = même partie) ; résultat : 13 réussis, 0 échec, en 22 secondes" width="1506" height="884" loading="lazy" decoding="async" />
-            <figcaption><strong>Les 13 tests du moteur.</strong> Chaque règle a son test, du nombre de cartes à 3 joueurs jusqu'au départage par la manche Mystique. Le plus long fait jouer des parties complètes avec tous les profils.</figcaption>
+          <figure class="sim-shot sim-shot--wide">
+            <img src="/images/simulation/tests.webp" alt="Terminal : node --test --test-reporter=spec tests/ affiche les 13 tests du moteur KYRAN avec leur durée : matériel (41 cartes à 3-4 joueurs, 45 à 5-6), cycle des manches, règle d'or, pli, Mystique, Sceau, Bénédiction, Voile, Clairvoyance, manche Mystique, Vies, parties complètes, même graine = même partie ; bilan : 13 réussis, 0 échec, 48 secondes" width="1506" height="940" loading="lazy" decoding="async" />
+            <figcaption><strong>Les 13 tests du moteur, un par règle.</strong> Le lanceur intégré à Node.js, en mode détaillé. Presque tout le temps passe dans deux tests&nbsp;: des parties complètes avec tous les profils, et la même graine rejouée pour vérifier qu'elle redonne la même partie.</figcaption>
           </figure>
           <figure class="sim-shot">
             <img src="/images/simulation/run.webp" alt="Terminal : simulation de 200 parties avec la graine 1, progression de 0 à 100 % en 68 secondes, « Terminé : 200 parties en 68 s, 0 erreur(s) », puis python analyse.py qui écrit rapport.md et tableaux.xlsx" width="1506" height="674" loading="lazy" decoding="async" />
             <figcaption><strong>200 parties en 68 secondes.</strong> Même code que pour les 10&nbsp;000 parties, sur un petit lot. L'analyse produit un rapport de 97 blocs et un classeur de 75 onglets.</figcaption>
+          </figure>
+          <figure class="sim-shot">
+            <img src="/images/simulation/arborescence.webp" alt="Terminal : la liste des 8 fichiers du projet (README, analyse.py, compare.py, src/ai.mjs, engine.mjs, game.mjs, run.mjs, tests/regles.test.mjs), leur nombre de lignes (1 792 au total, dont 458 pour le moteur et 472 pour l'IA) et les 12 dossiers de résultats (lot officiel, contrôle, six variantes de règles)" width="1506" height="1296" loading="lazy" decoding="async" />
+            <figcaption><strong>Tout le projet tient en 8 fichiers.</strong> 1&nbsp;792 lignes en tout&nbsp;: 458 pour le moteur de règles, 472 pour les joueurs artificiels, aucune dépendance npm. À côté, les dossiers de résultats&nbsp;: le lot officiel, un lot de contrôle et six variantes de règles.</figcaption>
+          </figure>
+          <figure class="sim-shot">
+            <img src="/images/simulation/csv.webp" alt="Terminal : taille des fichiers du lot officiel (games.csv 1,7 Mo, players.csv 4,4 Mo, rounds.csv 37 Mo, plays.csv 125 Mo), nombre de lignes (1 560 491 au total, dont 1 237 402 cartes posées) et extrait des 5 premières parties de games.csv : graine, nombre de joueurs, manches, gagnant, Vies restantes, durée estimée, plis, changements de meneur" width="1506" height="940" loading="lazy" decoding="async" />
+            <figcaption><strong>Les données brutes du lot officiel.</strong> Quatre fichiers CSV, 168&nbsp;Mo&nbsp;: une ligne par partie, par joueur, par manche et par carte posée. Chaque partie garde sa propre graine, donc chacune peut être rejouée seule.</figcaption>
+          </figure>
+          <figure class="sim-shot">
+            <img src="/images/simulation/journal.webp" alt="Terminal : la manche 1 de la partie 1 du lot officiel, à 3 joueurs et 7 cartes. Paris : 3, 0 et 5 (le dernier n'a pas le droit de dire 4). Puis les 7 plis carte par carte, dont une Bénédiction appliquée et un Sceau annulé, et le bilan : deux paris tenus, un raté d'un pli qui fait passer le joueur de 5 à 4 Vies" width="1506" height="656" loading="lazy" decoding="async" />
+            <figcaption><strong>Une manche rejouée pli par pli.</strong> Reconstituée depuis plays.csv par un petit script de lecture (aucune donnée ajoutée)&nbsp;: les paris avec la règle d'or, chaque carte posée, les pouvoirs appliqués ou annulés, puis les Vies.</figcaption>
+          </figure>
+          <figure class="sim-shot sim-shot--wide">
+            <img src="/images/simulation/determinisme.webp" alt="Terminal : la même campagne de 100 parties, graine 7, lancée avec 1 worker puis avec 4 workers ; les empreintes SHA-256 des fichiers triés sont identiques : a2296e5f1d4df6d1ca1595b937f5530631042b5e148d8cb178a6bb21bf88bcb1 pour les deux" width="1506" height="1190" loading="lazy" decoding="async" />
+            <figcaption><strong>Même graine, même résultat, au bit près.</strong> 100 parties lancées sur 1 puis sur 4 processus&nbsp;: une fois les lignes triées, les fichiers ont la même empreinte SHA-256. Rejouez l'étape 4 de « Reproduire chez vous » pour le vérifier vous-même.</figcaption>
           </figure>
           <figure class="sim-shot">
             <img src="/images/simulation/rapport.webp" alt="Éditeur de code : début du fichier rapport.md de l'échantillon, 200 parties, 900 joueurs, 24 401 cartes posées, 0 erreur moteur, puis le tableau de durée par nombre de joueurs (10,5 minutes à 3 joueurs, 19,7 à 6)" width="1506" height="1112" loading="lazy" decoding="async" />
@@ -634,16 +796,22 @@
           <h3>Durée d'une partie</h3>
           <p>La simulation estime la durée avec un modèle simple (temps de distribution, de pari et de pose de chaque carte). C'est du jeu pur&nbsp;: autour d'une table, avec les explications et les discussions, comptez plutôt 30 minutes.</p>
           <div class="sim-two">
-            <div class="sim-panel">
-              <h4>Durée moyenne estimée (minutes)</h4>
-              <ul class="sim-bars">
-                <li><span class="lbl">3 joueurs</span><span class="track"><span class="fill" style="--w:34.8%"></span></span><span class="val">10,4</span></li>
-                <li><span class="lbl">4 joueurs</span><span class="track"><span class="fill" style="--w:45.7%"></span></span><span class="val">13,7</span></li>
-                <li><span class="lbl">5 joueurs</span><span class="track"><span class="fill" style="--w:55.9%"></span></span><span class="val">16,8</span></li>
-                <li><span class="lbl">6 joueurs</span><span class="track"><span class="fill" style="--w:66.1%"></span></span><span class="val">19,8</span></li>
+            <figure class="sim-fig" style="margin-top:0">
+              <figcaption>Durée estimée d'une partie (minutes)</figcaption>
+              <ul class="sim-legend" aria-hidden="true">
+                <li><i class="band" style="--c:#E39A7E"></i>8 parties sur 10</li>
+                <li><i class="band" style="--c:#B8432A"></i>la moitié centrale</li>
+                <li><i class="tick"></i>médiane</li>
               </ul>
-              <p class="sim-note">Échelle&nbsp;: barre pleine = 30 minutes. 1 partie sur 10 dépasse 14,9 min à 3 joueurs et 28,7 min à 6.</p>
-            </div>
+              <ul class="sim-range">
+                <li><span class="lbl">3 joueurs</span><span class="track" aria-hidden="true"><span class="p90" style="--a:23%;--b:49.7%"></span><span class="p75" style="--a:29%;--b:41%"></span><span class="med" style="--m:34.3%"></span></span><span class="val">médiane <strong>10,3&nbsp;min</strong> · 8 parties sur 10 entre 6,9 et 14,9</span></li>
+                <li><span class="lbl">4 joueurs</span><span class="track" aria-hidden="true"><span class="p90" style="--a:28%;--b:65.3%"></span><span class="p75" style="--a:35.3%;--b:52%"></span><span class="med" style="--m:44%"></span></span><span class="val">médiane <strong>13,2&nbsp;min</strong> · 8 sur 10 entre 8,4 et 19,6</span></li>
+                <li><span class="lbl">5 joueurs</span><span class="track" aria-hidden="true"><span class="p90" style="--a:35.7%;--b:81.3%"></span><span class="p75" style="--a:44%;--b:70.3%"></span><span class="med" style="--m:54.7%"></span></span><span class="val">médiane <strong>16,4&nbsp;min</strong> · 8 sur 10 entre 10,7 et 24,4</span></li>
+                <li><span class="lbl">6 joueurs</span><span class="track" aria-hidden="true"><span class="p90" style="--a:43.3%;--b:95.7%"></span><span class="p75" style="--a:50.3%;--b:80.3%"></span><span class="med" style="--m:62.7%"></span></span><span class="val">médiane <strong>18,8&nbsp;min</strong> · 8 sur 10 entre 13,0 et 28,7</span></li>
+              </ul>
+              <div class="sim-range-x" aria-hidden="true"><span>0</span><span>10</span><span>20</span><span>30&nbsp;min</span></div>
+              <p class="sim-note">Moyennes&nbsp;: 10,4 / 13,7 / 16,8 / 19,8 minutes. Bandes&nbsp;: 10e à 90e centile (clair) et 25e à 75e centile (foncé), calculées sur la colonne <code>est_minutes</code> de games.csv.</p>
+            </figure>
             <div class="sim-table-wrap">
               <table class="sim-table">
                 <caption>Rythme des parties</caption>
@@ -686,35 +854,189 @@
               </table>
             </div>
           </div>
+          <figure class="sim-fig">
+            <figcaption>Indice de victoire selon le classement après chaque manche (4 joueurs)</figcaption>
+            <ul class="sim-legend" aria-hidden="true">
+              <li><i style="--c:#7A2A1A"></i>1er</li>
+              <li><i style="--c:#B8432A"></i>2e</li>
+              <li><i style="--c:#CF6A4C"></i>3e</li>
+              <li><i style="--c:#E39A7E"></i>4e</li>
+              <li><i style="--c:#6F676A;height:0;border-top:2px dashed #6F676A;background:none"></i>hasard (1)</li>
+            </ul>
+            <svg class="sim-svg" viewBox="0 0 400 236" role="img" aria-label="Indice de victoire selon le classement après chaque manche, parties à 4 joueurs" aria-describedby="g1-d">
+              <desc id="g1-d">Le joueur en tête après la 1re manche a un indice de 1,49 ; en tête après la 4e manche, 2,45 ; après la 7e, 2,65. Le 2e descend de 0,65 à 0,31, le 3e de 0,39 à 0,05, le 4e de 0,17 à 0,02.</desc>
+              <g aria-hidden="true">
+                <line class="grid" x1="44" x2="320" y1="20" y2="20" />
+                <line class="grid" x1="44" x2="320" y1="80" y2="80" />
+                <line class="ref" x1="44" x2="320" y1="140" y2="140" />
+                <line class="base" x1="44" x2="320" y1="200" y2="200" />
+                <text x="36" y="24" text-anchor="end">3</text>
+                <text x="36" y="84" text-anchor="end">2</text>
+                <text x="36" y="144" text-anchor="end">1</text>
+                <text x="36" y="204" text-anchor="end">0</text>
+                <text x="44" y="218" text-anchor="middle">1</text>
+                <text x="90" y="218" text-anchor="middle">2</text>
+                <text x="136" y="218" text-anchor="middle">3</text>
+                <text x="182" y="218" text-anchor="middle">4</text>
+                <text x="228" y="218" text-anchor="middle">5</text>
+                <text x="274" y="218" text-anchor="middle">6</text>
+                <text x="320" y="218" text-anchor="middle">7</text>
+                <text x="182" y="234" text-anchor="middle">classement mesuré après la manche n°</text>
+                <polyline class="ln" stroke="#E39A7E" points="44,189.7 90,196.8 136,197.6 182,198.3 228,198.3 274,199.1 320,198.6" />
+                <polyline class="ln" stroke="#CF6A4C" points="44,176.5 90,183.2 136,191.8 182,194.6 228,195.7 274,195.6 320,196.9" />
+                <polyline class="ln" stroke="#B8432A" points="44,161.2 90,163.3 136,168.7 182,176.2 228,180.2 274,184.9 320,181.2" />
+                <polyline class="ln" stroke="#7A2A1A" points="44,110.5 90,86.6 136,65.6 182,52.9 228,44.3 274,43 320,41.1" />
+                <g fill="#7A2A1A">
+                  <circle class="pt" cx="44" cy="110.5" r="4" />
+                  <circle class="pt" cx="90" cy="86.6" r="4" />
+                  <circle class="pt" cx="136" cy="65.6" r="4" />
+                  <circle class="pt" cx="182" cy="52.9" r="4" />
+                  <circle class="pt" cx="228" cy="44.3" r="4" />
+                  <circle class="pt" cx="274" cy="43" r="4" />
+                  <circle class="pt" cx="320" cy="41.1" r="4" />
+                </g>
+                <g fill="#B8432A">
+                  <circle class="pt" cx="44" cy="161.2" r="4" />
+                  <circle class="pt" cx="182" cy="176.2" r="4" />
+                  <circle class="pt" cx="320" cy="181.2" r="4" />
+                </g>
+                <text class="lab" x="328" y="45">1er · 2,65</text>
+                <text class="lab" x="328" y="180">2e · 0,31</text>
+                <text class="lab" x="328" y="194">3e · 0,05</text>
+                <text class="lab" x="328" y="208">4e · 0,02</text>
+                <text x="48" y="134">hasard</text>
+              </g>
+            </svg>
+            <details class="sim-data">
+              <summary>Voir les valeurs</summary>
+              <div class="sim-table-wrap">
+                <table class="sim-table">
+                  <caption>Indice de victoire selon le classement après la manche (4 joueurs, 1 = hasard)</caption>
+                  <thead><tr><th scope="col">Classement</th><th scope="col">M1</th><th scope="col">M2</th><th scope="col">M3</th><th scope="col">M4</th><th scope="col">M5</th><th scope="col">M6</th><th scope="col">M7</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">1er</th><td>1,49</td><td>1,89</td><td>2,24</td><td class="hi">2,45</td><td>2,60</td><td>2,62</td><td>2,65</td></tr>
+                    <tr><th scope="row">2e</th><td>0,65</td><td>0,61</td><td>0,52</td><td>0,40</td><td>0,33</td><td>0,25</td><td>0,31</td></tr>
+                    <tr><th scope="row">3e</th><td>0,39</td><td>0,28</td><td>0,14</td><td>0,09</td><td>0,07</td><td>0,07</td><td>0,05</td></tr>
+                    <tr><th scope="row">4e</th><td>0,17</td><td>0,05</td><td>0,04</td><td>0,03</td><td>0,03</td><td>0,02</td><td>0,02</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+            <p class="sim-note">Lecture&nbsp;: un joueur en tête après la 4e manche gagne 2,45 fois plus souvent que le hasard (1 sur 4). Source&nbsp;: rapport, section 9.</p>
+          </figure>
           <p class="sim-note">Le meneur après la 4e manche gagne 2,1 à 2,8 fois plus souvent que le hasard. Ces chiffres sont ceux d'IA qui ne «&nbsp;s'acharnent&nbsp;» pas sur le meneur&nbsp;; entre humains, viser le premier avec le Sceau ou la Bénédiction peut relancer la partie.</p>
         </div>
 
         <div class="sim-block">
           <h3>Classement des cartes&nbsp;: lesquelles aident à réussir son pari&nbsp;?</h3>
           <p>Pour chaque carte, on compare la réussite du pari des joueurs qui l'avaient en main à la réussite attendue dans la même situation (même nombre de cartes, de joueurs et même niveau). L'écart est exprimé en points de pourcentage.</p>
-          <div class="sim-panel" style="margin-top:18px">
-            <h4>Effet sur la réussite du pari (points)</h4>
-            <ul class="sim-div">
-              <li class="pos"><span>Voile du Néant 3</span><span class="axis"><span class="fill" style="--w:44.7%"></span></span><span class="val">+7,1</span></li>
-              <li class="pos"><span>Nombre 2</span><span class="axis"><span class="fill" style="--w:39.3%"></span></span><span class="val">+6,3</span></li>
-              <li class="pos"><span>Nombre 1</span><span class="axis"><span class="fill" style="--w:36.9%"></span></span><span class="val">+5,9</span></li>
-              <li class="pos"><span>Nombre 3</span><span class="axis"><span class="fill" style="--w:35.5%"></span></span><span class="val">+5,7</span></li>
-              <li class="pos"><span>Bénédiction 9</span><span class="axis"><span class="fill" style="--w:34.4%"></span></span><span class="val">+5,5</span></li>
-              <li class="pos"><span>Sceau du Destin 4</span><span class="axis"><span class="fill" style="--w:29.7%"></span></span><span class="val">+4,7</span></li>
-              <li class="pos"><span>Mystique (0 ou 37)</span><span class="axis"><span class="fill" style="--w:23.9%"></span></span><span class="val">+3,8</span></li>
-              <li class="pos"><span>Clairvoyance 11</span><span class="axis"><span class="fill" style="--w:18.4%"></span></span><span class="val">+2,9</span></li>
-              <li class="mid"><span>Nombres 18 et 19</span><span class="axis"><span class="fill"></span></span><span class="val">+0,2</span></li>
-              <li class="mid"><span>Bénédiction 20</span><span class="axis"><span class="fill"></span></span><span class="val">+0,1</span></li>
-              <li class="mid"><span>Voile du Néant 34</span><span class="axis"><span class="fill"></span></span><span class="val">−0,1</span></li>
-              <li class="neg"><span>Clairvoyance 23</span><span class="axis"><span class="fill" style="--w:14.8%"></span></span><span class="val">−2,4</span></li>
-              <li class="neg"><span>Sceau du Destin 27</span><span class="axis"><span class="fill" style="--w:35%"></span></span><span class="val">−5,6</span></li>
-              <li class="neg"><span>Nombre 36</span><span class="axis"><span class="fill" style="--w:37.9%"></span></span><span class="val">−6,1</span></li>
-              <li class="neg"><span>Nombre 30</span><span class="axis"><span class="fill" style="--w:44.5%"></span></span><span class="val">−7,1</span></li>
-              <li class="neg"><span>Nombre 33</span><span class="axis"><span class="fill" style="--w:46.5%"></span></span><span class="val">−7,4</span></li>
-              <li class="neg"><span>Nombre 35</span><span class="axis"><span class="fill" style="--w:48.5%"></span></span><span class="val">−7,8</span></li>
+          <figure class="sim-fig">
+            <figcaption>Effet de chaque carte sur la réussite du pari (points de pourcentage)</figcaption>
+            <ul class="sim-legend" aria-hidden="true">
+              <li><i class="sq" style="--c:#1A7FA3"></i>Nombre qui aide (au-dessus de 0)</li>
+              <li><i class="sq" style="--c:#B8432A"></i>Nombre qui gêne (en dessous)</li>
+              <li><i class="dia"></i>Pouvoir de même valeur</li>
             </ul>
-            <p class="sim-note">Échelle&nbsp;: demi-barre pleine = 8 points. Les petits Nombres 4 à 12 sont tous entre +3,3 et +5,4&nbsp;; les gros Nombres 28 à 35 entre −6 et −7,8.</p>
-          </div>
+            <div class="sim-cols-box" role="img" aria-label="Effet de chaque carte sur la réussite du pari. Les petits Nombres aident (+6,3 points pour le 2), l'effet baisse à mesure que la valeur monte, passe sous zéro au Nombre 20, puis les gros Nombres gênent de plus en plus (−7,8 points pour le 35). Pouvoirs : Voile du Néant 3 +7,1, Bénédiction 9 +5,5, Sceau du Destin 4 +4,7, Clairvoyance 11 +2,9, Bénédiction 20 +0,1, Voile du Néant 34 −0,1, Clairvoyance 23 −2,4, Sceau du Destin 27 −5,6. Mystique +3,8.">
+              <ul class="sim-cols-y" aria-hidden="true"><li style="top:0">+8</li><li style="top:25%">+4</li><li style="top:50%">0</li><li style="top:75%">−4</li><li style="top:100%">−8</li></ul>
+              <ol class="sim-cols" aria-hidden="true">
+                <li class="pos" style="--h:36.9%" title="Nombre 1 : +5,9 points"><span class="bar"></span><span class="x">1</span></li>
+                <li class="pos" style="--h:39.3%" title="Nombre 2 : +6,3 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:35.5%" title="Nombre 3 : +5,7 points · Voile du Néant 3 : +7,1"><span class="bar"></span><span class="pw" style="--y:44.7%" title="Voile du Néant 3 : +7,1 points"></span></li>
+                <li class="pos" style="--h:33.4%" title="Nombre 4 : +5,3 points · Sceau du Destin 4 : +4,7"><span class="bar"></span><span class="pw" style="--y:29.7%" title="Sceau du Destin 4 : +4,7 points"></span></li>
+                <li class="pos" style="--h:33.3%" title="Nombre 5 : +5,3 points"><span class="bar"></span><span class="x">5</span></li>
+                <li class="pos" style="--h:34.5%" title="Nombre 6 : +5,5 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:33.7%" title="Nombre 7 : +5,4 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:28.1%" title="Nombre 8 : +4,5 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:30.5%" title="Nombre 9 : +4,9 points · Bénédiction 9 : +5,5"><span class="bar"></span><span class="pw" style="--y:34.4%" title="Bénédiction 9 : +5,5 points"></span></li>
+                <li class="pos" style="--h:28.7%" title="Nombre 10 : +4,6 points"><span class="bar"></span><span class="x">10</span></li>
+                <li class="pos" style="--h:25.9%" title="Nombre 11 : +4,1 points · Clairvoyance 11 : +2,9"><span class="bar"></span><span class="pw" style="--y:18.4%" title="Clairvoyance 11 : +2,9 points"></span></li>
+                <li class="pos" style="--h:20.5%" title="Nombre 12 : +3,3 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:17.2%" title="Nombre 13 : +2,8 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:16.5%" title="Nombre 14 : +2,6 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:13.4%" title="Nombre 15 : +2,1 points"><span class="bar"></span><span class="x">15</span></li>
+                <li class="pos" style="--h:11.9%" title="Nombre 16 : +1,9 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:5.7%" title="Nombre 17 : +0,9 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:1.2%" title="Nombre 18 : +0,2 points"><span class="bar"></span></li>
+                <li class="pos" style="--h:1.6%" title="Nombre 19 : +0,3 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:4.6%" title="Nombre 20 : −0,7 points · Bénédiction 20 : +0,1"><span class="bar"></span><span class="pw" style="--y:0.5%" title="Bénédiction 20 : +0,1 points"></span><span class="x">20</span></li>
+                <li class="neg" style="--h:9.5%" title="Nombre 21 : −1,5 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:10.0%" title="Nombre 22 : −1,6 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:14.6%" title="Nombre 23 : −2,3 points · Clairvoyance 23 : −2,4"><span class="bar"></span><span class="pw" style="--y:-14.8%" title="Clairvoyance 23 : −2,4 points"></span></li>
+                <li class="neg" style="--h:19.6%" title="Nombre 24 : −3,1 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:24.5%" title="Nombre 25 : −3,9 points"><span class="bar"></span><span class="x">25</span></li>
+                <li class="neg" style="--h:29.4%" title="Nombre 26 : −4,7 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:29.2%" title="Nombre 27 : −4,7 points · Sceau du Destin 27 : −5,6"><span class="bar"></span><span class="pw" style="--y:-35.0%" title="Sceau du Destin 27 : −5,6 points"></span></li>
+                <li class="neg" style="--h:37.4%" title="Nombre 28 : −6,0 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:36.9%" title="Nombre 29 : −5,9 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:44.5%" title="Nombre 30 : −7,1 points"><span class="bar"></span><span class="x">30</span></li>
+                <li class="neg" style="--h:44.9%" title="Nombre 31 : −7,2 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:44.5%" title="Nombre 32 : −7,1 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:46.5%" title="Nombre 33 : −7,4 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:47.2%" title="Nombre 34 : −7,5 points · Voile du Néant 34 : −0,1"><span class="bar"></span><span class="pw" style="--y:-0.8%" title="Voile du Néant 34 : −0,1 points"></span></li>
+                <li class="neg" style="--h:48.5%" title="Nombre 35 : −7,8 points"><span class="bar"></span></li>
+                <li class="neg" style="--h:37.9%" title="Nombre 36 : −6,1 points"><span class="bar"></span><span class="x">36</span></li>
+                <li class="pos sim-cols__m" style="--h:23.9%" title="Mystique (0 ou 37) : +3,8 points"><span class="bar"></span><span class="x">M</span></li>
+              </ol>
+            </div>
+            <p class="sim-note">Axe horizontal&nbsp;: valeur de la carte, de 1 à 36, puis M pour la Mystique. Survolez une colonne pour lire sa valeur. Le Voile 34 (≈&nbsp;0) fait beaucoup mieux que le Nombre 34 (−7,5)&nbsp;: on peut l'échanger.</p>
+            <details class="sim-data">
+              <summary>Voir les 45 cartes, de la plus utile à la plus gênante</summary>
+              <div class="sim-table-wrap">
+                <table class="sim-table">
+                  <caption>Effet sur la réussite du pari, par carte (points de pourcentage)</caption>
+                  <thead><tr><th scope="col">Carte</th><th scope="col">Type</th><th scope="col">Effet</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Voile du Néant 3</th><td>Pouvoir</td><td>+7,1</td></tr>
+                    <tr><th scope="row">Nombre 2</th><td>Nombre</td><td>+6,3</td></tr>
+                    <tr><th scope="row">Nombre 1</th><td>Nombre</td><td>+5,9</td></tr>
+                    <tr><th scope="row">Nombre 3</th><td>Nombre</td><td>+5,7</td></tr>
+                    <tr><th scope="row">Nombre 6</th><td>Nombre</td><td>+5,5</td></tr>
+                    <tr><th scope="row">Bénédiction 9</th><td>Pouvoir</td><td>+5,5</td></tr>
+                    <tr><th scope="row">Nombre 7</th><td>Nombre</td><td>+5,4</td></tr>
+                    <tr><th scope="row">Nombre 4</th><td>Nombre</td><td>+5,3</td></tr>
+                    <tr><th scope="row">Nombre 5</th><td>Nombre</td><td>+5,3</td></tr>
+                    <tr><th scope="row">Nombre 9</th><td>Nombre</td><td>+4,9</td></tr>
+                    <tr><th scope="row">Sceau du Destin 4</th><td>Pouvoir</td><td>+4,7</td></tr>
+                    <tr><th scope="row">Nombre 10</th><td>Nombre</td><td>+4,6</td></tr>
+                    <tr><th scope="row">Nombre 8</th><td>Nombre</td><td>+4,5</td></tr>
+                    <tr><th scope="row">Nombre 11</th><td>Nombre</td><td>+4,1</td></tr>
+                    <tr><th scope="row">Mystique (0 ou 37)</th><td>Mystique</td><td>+3,8</td></tr>
+                    <tr><th scope="row">Nombre 12</th><td>Nombre</td><td>+3,3</td></tr>
+                    <tr><th scope="row">Clairvoyance 11</th><td>Pouvoir</td><td>+2,9</td></tr>
+                    <tr><th scope="row">Nombre 13</th><td>Nombre</td><td>+2,8</td></tr>
+                    <tr><th scope="row">Nombre 14</th><td>Nombre</td><td>+2,6</td></tr>
+                    <tr><th scope="row">Nombre 15</th><td>Nombre</td><td>+2,1</td></tr>
+                    <tr><th scope="row">Nombre 16</th><td>Nombre</td><td>+1,9</td></tr>
+                    <tr><th scope="row">Nombre 17</th><td>Nombre</td><td>+0,9</td></tr>
+                    <tr><th scope="row">Nombre 19</th><td>Nombre</td><td>+0,3</td></tr>
+                    <tr><th scope="row">Nombre 18</th><td>Nombre</td><td>+0,2</td></tr>
+                    <tr><th scope="row">Bénédiction 20</th><td>Pouvoir</td><td>+0,1</td></tr>
+                    <tr><th scope="row">Voile du Néant 34</th><td>Pouvoir</td><td>−0,1</td></tr>
+                    <tr><th scope="row">Nombre 20</th><td>Nombre</td><td>−0,7</td></tr>
+                    <tr><th scope="row">Nombre 21</th><td>Nombre</td><td>−1,5</td></tr>
+                    <tr><th scope="row">Nombre 22</th><td>Nombre</td><td>−1,6</td></tr>
+                    <tr><th scope="row">Nombre 23</th><td>Nombre</td><td>−2,3</td></tr>
+                    <tr><th scope="row">Clairvoyance 23</th><td>Pouvoir</td><td>−2,4</td></tr>
+                    <tr><th scope="row">Nombre 24</th><td>Nombre</td><td>−3,1</td></tr>
+                    <tr><th scope="row">Nombre 25</th><td>Nombre</td><td>−3,9</td></tr>
+                    <tr><th scope="row">Nombre 27</th><td>Nombre</td><td>−4,7</td></tr>
+                    <tr><th scope="row">Nombre 26</th><td>Nombre</td><td>−4,7</td></tr>
+                    <tr><th scope="row">Sceau du Destin 27</th><td>Pouvoir</td><td>−5,6</td></tr>
+                    <tr><th scope="row">Nombre 29</th><td>Nombre</td><td>−5,9</td></tr>
+                    <tr><th scope="row">Nombre 28</th><td>Nombre</td><td>−6,0</td></tr>
+                    <tr><th scope="row">Nombre 36</th><td>Nombre</td><td>−6,1</td></tr>
+                    <tr><th scope="row">Nombre 32</th><td>Nombre</td><td>−7,1</td></tr>
+                    <tr><th scope="row">Nombre 30</th><td>Nombre</td><td>−7,1</td></tr>
+                    <tr><th scope="row">Nombre 31</th><td>Nombre</td><td>−7,2</td></tr>
+                    <tr><th scope="row">Nombre 33</th><td>Nombre</td><td>−7,4</td></tr>
+                    <tr><th scope="row">Nombre 34</th><td>Nombre</td><td>−7,5</td></tr>
+                    <tr><th scope="row">Nombre 35</th><td>Nombre</td><td>−7,8</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </figure>
           <p class="sim-note" style="max-width:820px">Pourquoi le 36, la carte la plus forte, fait-il rater des paris&nbsp;? Il gagne 91 % des plis où il tombe&nbsp;: c'est un pli forcé, même quand on n'en veut pas. Les petites cartes, elles, permettent de perdre un pli à volonté. Le Voile 3 est la meilleure carte du jeu parce qu'il fait les deux&nbsp;: posé tel quel il perd, échangé il récupère en moyenne une valeur de 23 et gagne 58 % de ses plis. À l'inverse, le Voile 34 échangé ne gagne plus que 10 % de ses plis. La Mystique jouée à 37 gagne 94,5 % des plis.</p>
         </div>
 
@@ -823,6 +1145,47 @@
           <li><a href="/simulation/comparaison-variantes.txt" data-sim-dl="variantes"><strong>Comparaison des variantes</strong><span>La règle officielle face aux 6 variantes, indicateur par indicateur.</span><small>TXT · 6 Ko</small></a></li>
           <li><a href="/simulation/kyran-simulation-source.zip" download data-sim-dl="source"><strong>Code source du simulateur</strong><span>Moteur, IA, tests, scripts d'analyse et mode d'emploi. Lancer&nbsp;: <code>node src/run.mjs --games 10000 --seed 2026</code>.</span><small>ZIP · 32 Ko</small></a></li>
         </ul>
+
+        <div id="reproduire" class="sim-anchor" style="margin-top:52px">
+          <h3 class="section-title" style="font-size:clamp(1.35rem, 2.8vw, 1.8rem)">Reproduire chez vous</h3>
+          <p class="section-sub">Cinq commandes, du téléchargement à la campagne complète. Il faut Node.js (testé avec la version 26) et, pour l'analyse, Python 3 avec pandas, numpy et openpyxl (testé avec Python 3.12).</p>
+          <ol class="sim-steps">
+            <li>
+              <h3>Récupérer le code</h3>
+              <p>Une archive de 32&nbsp;Ko&nbsp;: moteur, IA, tests, scripts d'analyse et mode d'emploi.</p>
+              <div class="sim-cmd"><pre><code>curl -LO https://kyran-jeu.fr/simulation/kyran-simulation-source.zip
+unzip kyran-simulation-source.zip
+cd kyran-simulation</code></pre><button type="button" class="sim-copy" data-sim-copy>Copier</button></div>
+            </li>
+            <li>
+              <h3>Vérifier les règles</h3>
+              <p>Les 13 tests du moteur, avec le lanceur intégré à Node.js. Comptez de 20 à 50 secondes selon la charge de la machine.</p>
+              <div class="sim-cmd"><pre><code>node --test tests/</code></pre><button type="button" class="sim-copy" data-sim-copy>Copier</button></div>
+            </li>
+            <li>
+              <h3>Un premier lot de 200 parties</h3>
+              <p>Environ une minute sur notre machine, puis le rapport et le classeur Excel.</p>
+              <div class="sim-cmd"><pre><code>node src/run.mjs --games 200 --seed 1 --out resultats/essai
+python analyse.py resultats/essai</code></pre><button type="button" class="sim-copy" data-sim-copy>Copier</button></div>
+              <p class="sim-note">Sous Windows, lancez d'abord <code>set PYTHONIOENCODING=utf-8</code> (invite de commandes) ou <code>$env:PYTHONIOENCODING="utf-8"</code> (PowerShell) pour l'affichage des accents.</p>
+            </li>
+            <li>
+              <h3>Vérifier le déterminisme</h3>
+              <p>Même graine, nombre de workers différent&nbsp;: les fichiers doivent être identiques. L'ordre des lignes dépend des workers, d'où le <code>sort</code> avant l'empreinte (sur macOS, remplacez <code>sha256sum</code> par <code>shasum -a 256</code>).</p>
+              <div class="sim-cmd"><pre><code>node src/run.mjs --games 100 --seed 7 --workers 1 --out resultats/a
+node src/run.mjs --games 100 --seed 7 --workers 4 --out resultats/b
+sort resultats/a/plays.csv | sha256sum
+sort resultats/b/plays.csv | sha256sum</code></pre><button type="button" class="sim-copy" data-sim-copy>Copier</button></div>
+            </li>
+            <li>
+              <h3>La campagne complète</h3>
+              <p>Les 10&nbsp;000 parties de cette page, à l'identique. Environ une heure sur notre portable à 12 threads.</p>
+              <div class="sim-cmd"><pre><code>node src/run.mjs --games 10000 --seed 2026 --out resultats/officielle-10000
+python analyse.py resultats/officielle-10000</code></pre><button type="button" class="sim-copy" data-sim-copy>Copier</button></div>
+            </li>
+          </ol>
+          <p class="sr-only" role="status" aria-live="polite" data-sim-copy-status></p>
+        </div>
       </div>
     </section>
 
@@ -928,6 +1291,92 @@
       document.querySelectorAll('[data-sim-dl]').forEach(function (a) {
         a.addEventListener('click', function () {
           if (typeof window.gtag === 'function') window.gtag('event', 'file_download', { file_name: a.getAttribute('href'), link_text: 'simulation_' + a.getAttribute('data-sim-dl') });
+        });
+      });
+
+      // Sommaire : barre de lecture et lien actif
+      var toc = document.querySelector('[data-sim-toc]');
+      if (toc) {
+        var bar = toc.querySelector('.sim-progress');
+        var list = toc.querySelector('ol');
+        var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+        var ticking = false;
+        var update = function () {
+          ticking = false;
+          var doc = document.documentElement;
+          var max = doc.scrollHeight - window.innerHeight;
+          var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+          if (bar) bar.style.setProperty('--p', p.toFixed(4));
+        };
+        window.addEventListener('scroll', function () {
+          if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+        }, { passive: true });
+        window.addEventListener('resize', update, { passive: true });
+        update();
+
+        var setActive = function (id) {
+          links.forEach(function (a) {
+            if (a.getAttribute('href') === '#' + id) {
+              if (a.getAttribute('aria-current') === 'true') return;
+              a.setAttribute('aria-current', 'true');
+              if (list && list.scrollWidth > list.clientWidth) {
+                var left = a.offsetLeft - (list.clientWidth - a.offsetWidth) / 2;
+                list.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+              }
+            } else {
+              a.removeAttribute('aria-current');
+            }
+          });
+        };
+        var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+        if ('IntersectionObserver' in window && targets.length) {
+          var visible = {};
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+            for (var i = targets.length - 1; i >= 0; i--) {
+              var r = targets[i].getBoundingClientRect();
+              if (r.top < window.innerHeight * 0.35) { setActive(targets[i].id); return; }
+            }
+            for (var j = 0; j < targets.length; j++) {
+              if (visible[targets[j].id]) { setActive(targets[j].id); return; }
+            }
+          }, { rootMargin: '-120px 0px -55% 0px', threshold: 0 });
+          targets.forEach(function (t) { io.observe(t); });
+        }
+      }
+
+      // Boutons « Copier »
+      var status = document.querySelector('[data-sim-copy-status]');
+      var fallback = function (text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+        document.body.removeChild(ta);
+        return ok;
+      };
+      document.querySelectorAll('[data-sim-copy]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var code = btn.parentNode.querySelector('code');
+          if (!code) return;
+          var text = code.textContent;
+          var done = function (ok) {
+            btn.textContent = ok ? 'Copié' : 'Sélectionnez le texte';
+            if (ok) btn.setAttribute('data-done', ''); else btn.removeAttribute('data-done');
+            if (status) status.textContent = ok ? 'Commande copiée dans le presse-papiers.' : 'Copie impossible : sélectionnez le texte à la main.';
+            window.clearTimeout(btn._simT);
+            btn._simT = window.setTimeout(function () { btn.textContent = 'Copier'; btn.removeAttribute('data-done'); }, 2000);
+          };
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
+          } else {
+            done(fallback(text));
+          }
         });
       });
     })();

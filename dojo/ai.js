@@ -6,7 +6,7 @@
  * manche (Monte-Carlo) pour choisir pari et carte ; les mêmes calculs alimentent les conseils
  * expliqués au joueur.
  */
-import { POWERS, handRank, legalBets, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=617bc536b5';
+import { POWERS, handRank, legalBets, forbiddenBet, unseenFor, yetToPlay, bestPlay, cardLabel, colorOf } from './engine.js?v=617bc536b5';
 
 export const PERSONAS = [
   { key: 'griot', name: 'Griot', emoji: '🪘', bias: 0, chaos: 0, motto: 'gardien des récits, il calcule et parie juste' },
@@ -455,6 +455,32 @@ export function handStrengths(state, pid) {
   return state.players[pid].hand.map(c => ({ card: c, p: leadWinChance(c, unseen, others) }));
 }
 
+/**
+ * Enseignements de la simulation de 10 000 parties, adaptés à la main et à la position :
+ * grosses cartes (30-36) = plis non voulus, cartes souples à garder, dernier à parier = règle d'or.
+ */
+export function betTips(state, pid) {
+  const r = state.round;
+  const hand = state.players[pid].hand;
+  const tips = [];
+  const big = hand.filter(c => c.kind !== 'mystique' && handRank(c) >= 30);
+  if (big.length >= 2 && hand.length >= 3) {
+    tips.push(`Tu tiens ${big.length} grosses cartes (${big.map(cardShort).join(', ')}) : elles gagnent des plis qu’on ne veut pas. D’après 10 000 parties simulées, une main chargée réussit son pari bien moins souvent (42-50 % contre 72 % sans grosse carte). Prévois qu’elles prendront des plis et reste prudent.`);
+  }
+  const soft = hand.filter(c => c.kind === 'mystique' || (c.kind === 'number' && c.value <= 7) || (c.kind === 'power' && c.power === 'voile' && c.value <= 5));
+  if (soft.length && hand.length >= 3) {
+    tips.push(`Garde ${soft.map(cardShort).join(', ')} pour ajuster en fin de manche : petites cartes, Voile du Néant 3 et Mystique donnent de la souplesse, la qualité la plus utile du jeu.`);
+  }
+  const isLast = r.betOrder.length >= 2 && r.betOrder[r.betOrder.length - 1] === pid;
+  if (isLast) {
+    const f = forbiddenBet(state, pid);
+    tips.push(f != null
+      ? `Tu paries en dernier : la règle d’or t’interdit ${f}. Anticipe-le (le dernier est bloqué 19 à 34 % du temps) et vise le pari voisin le plus sûr.`
+      : 'Tu paries en dernier : la règle d’or ne te bloque pas cette fois.');
+  }
+  return tips;
+}
+
 /** Conseil de pari : { bet, evals, text }. */
 export function adviseBet(state, pid) {
   const r = state.round;
@@ -488,7 +514,9 @@ export function adviseBet(state, pid) {
   let text = `Ta main : ${parts.join(', ')}. J’ai consulté le Fa et simulé la manche : <b>parie ${best.bet}</b> (pari exact ${pct(best.exact)}).`;
   const top = evals.reduce((a, b) => (b.loss < a.loss ? b : a));
   if (!top.legal) text += ` Sans la règle d’or, ${top.bet} aurait été idéal.`;
-  return { bet: best.bet, evals, strengths, text };
+  const tips = betTips(state, pid);
+  if (tips.length) text += ' ' + tips.join(' ');
+  return { bet: best.bet, evals, strengths, tips, text };
 }
 
 /** Conseil de jeu : { cardId, value, evals, text }. */

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {
   buildDeck, createGame, act, legalBets, forbiddenBet, bestPlay, cardById, handRank, unseenFor
 } from '../../dojo/engine.js';
-import { decide, adviseBet, advisePlay, mysticOdds, PERSONAS } from '../../dojo/ai.js';
+import { decide, adviseBet, betTips, advisePlay, mysticOdds, PERSONAS } from '../../dojo/ai.js';
 import { LESSONS } from '../../dojo/lessons.js';
 import { uiStateOf } from '../../dojo/ui-state.js';
 
@@ -280,4 +280,22 @@ test('interface : un seul état publié, avec priorité entre drapeaux', () => {
   assert.equal(uiStateOf(sess, true), 'paused');
   sess.crashed = true;
   assert.equal(uiStateOf(sess, true), 'crash');
+});
+
+test('conseils de pari du Bokonon : grosses cartes, cartes souples, dernier à parier', () => {
+  // joueur 0 : deux grosses cartes + petites cartes ; donneur 3 donc joueur 0 parie en premier
+  const s = scripted({ 0: ['n36', 'n33', 'n2', 'n5'], 1: ['n10', 'n11', 'n12', 'n13'], 2: ['n14', 'n15', 'n16', 'n17'], 3: ['n18', 'n19', 'n20', 'n21'] });
+  const first = betTips(s, 0).join(' ');
+  assert.match(first, /grosses cartes/);
+  assert.match(first, /10 000 parties simulées/);
+  assert.match(first, /ajuster en fin de manche/);
+  assert.doesNotMatch(first, /règle d’or/);
+  assert.match(adviseBet(s, 0).text, /parie/);
+  // le dernier à parier (le donneur) reçoit le rappel de la règle d'or
+  while (s.pending.pid !== 3) act(s, decide(s));
+  assert.match(betTips(s, 3).join(' '), /règle d’or/);
+  assert.match(adviseBet(s, 3).text, /règle d’or/);
+  // main sans grosse carte : pas d'avertissement
+  const t = scripted({ 0: ['n1', 'n2', 'n3', 'n4'], 1: ['n10', 'n11', 'n12', 'n13'], 2: ['n14', 'n15', 'n16', 'n17'], 3: ['n18', 'n19', 'n20', 'n21'] });
+  assert.doesNotMatch(betTips(t, 0).join(' '), /grosses cartes/);
 });

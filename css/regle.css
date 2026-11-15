@@ -551,3 +551,13 @@
   .regle-article .rule-card-img { width: 48px; box-shadow: none; }
   .section-title, .section-sub { color: #000 !important; }
 }
+
+/* Questions fréquentes de la section « Variantes testées » */
+#variantes-testees .faq-accordion { margin: 0 0 16px; }
+#variantes-testees .faq-accordion .faq-answer {
+  padding: 0 20px 18px;
+  color: #3F393B;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}

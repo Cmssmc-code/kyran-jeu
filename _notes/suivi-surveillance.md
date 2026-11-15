@@ -6,6 +6,26 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-15 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-15.md`](../docs/rapports/surveillance/2026-11-15.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 59 URL × 1280/390 px sans erreur ; 456 liens, 0 interne cassé |
+| Lien externe | réparé | `victorypointlgs.com/products/skull` (404) → copie archivée (PR #227) |
+| Lien externe | à revoir | PDF de la préfecture des Hauts-de-Seine : blocage de la session après la vérification en rafale |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; `smoke-initiation.mjs` : manche complète ; GA4 sans erreur CSP |
+| Serveur | OK | v1.7.0, Node v26.13.1, `/health` ok, 0 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | à jour | `compatibility_date` 2026-11-15 |
+
+Réparations : PR #226, #227. Scripts Playwright de la routine réécrits (dossier temporaire purgé). Point ouvert : lien
+de la préfecture à revérifier.
+
 ## 2026-11-14 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

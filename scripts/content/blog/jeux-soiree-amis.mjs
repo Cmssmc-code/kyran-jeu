@@ -155,7 +155,7 @@ export default {
   },
   verdict: {
     heading: 'Si vous ne deviez acheter qu’un jeu pour vos soirées',
-    html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne. Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte du calcul, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
+    html: `<p>Si vous ne deviez garder qu’un jeu pour toutes vos soirées, ce serait Codenames : il passe de quatre à huit joueurs, accepte les novices et n’élimine personne (pour des <a class="text-link" href="/blog/jeux-comme-codenames.html">jeux comme Codenames</a> à d’autres effectifs, voir notre comparatif). Pour des bluffeurs, Skull gagne à six et Coup à quatre. Pour une tablée de trois à six qui veut une vraie partie, KYRAN apporte du calcul, avec le pari obligatoire comme moteur. À éviter en première soirée : Bang! avec des invités qui découvrent, et Colt Express si la table est petite ou déjà couverte de verres. Gardez Dobble pour l’échauffement ; seul, il ne tient pas une soirée.</p>`
   },
   extraSections: [
     {

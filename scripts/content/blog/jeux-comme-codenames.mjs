@@ -106,7 +106,7 @@ export default {
     heading: 'Notre avis tranché',
     html: `<p>Si vous ne deviez en retenir qu’un, prenez <strong>Just One</strong> : il conserve l’indice à un mot, limite les débats interminables et fonctionne de 3 à 7 joueurs en vingt minutes. Pour les grandes tablées qui veulent des équipes, tournez-vous vers <strong>Saboteur</strong>. Si vous voulez rester sur la lecture de l’autre sans mot, Coup est le meilleur choix.</p><p>À éviter si vous cherchez un clone : The Mind, excellent mais à l’opposé, et KYRAN, qui change de famille de jeu. Le premier se joue dans le silence, le second est individuel : ils intéressent pour des raisons différentes de Codenames, pas pour le remplacer.</p>`
   },
-  conclusion: `<p>Aucun de ces jeux ne remplace l’asymétrie unique du chef d’espions ; en revanche, ils couvrent des besoins précis : plus coopératif, plus long, plus méfiant ou plus nombreux. Une soirée idéale alterne souvent un jeu de mots et un jeu de bluff pour que chaque joueur trouve son rôle. Pour retrouver l’ambiance sociale sans équipes, pensez à nos <a class="text-link" href="/jeu-apero.html">jeux d’apéro</a>.</p>`,
+  conclusion: `<p>Aucun de ces jeux ne remplace l’asymétrie unique du chef d’espions ; en revanche, ils couvrent des besoins précis : plus coopératif, plus long, plus méfiant ou plus nombreux. Une soirée idéale alterne souvent un jeu de mots et un jeu de bluff pour que chaque joueur trouve son rôle. Pour retrouver l’ambiance sociale sans équipes, pensez à nos <a class="text-link" href="/jeu-apero.html">jeux d’apéro</a>, ou à notre classement de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a> par type de groupe.</p>`,
   faq: [
     {
       q: 'Quel jeu ressemble le plus à Codenames ?',

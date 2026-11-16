@@ -95,7 +95,7 @@ export default {
       ]
     }
   ],
-  conclusion: `<p>Un coopératif tient la distance quand on a envie de retenter la mission ou le niveau qui a résisté. Notez où votre groupe a calé et reprenez à cet endroit la fois suivante : c’est le meilleur test de longévité. Si vous êtes souvent trois autour de la table, notre sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux de cartes à trois joueurs</a> associe coopération et affrontement pour ce format délicat.</p>`,
+  conclusion: `<p>Un coopératif tient la distance quand on a envie de retenter la mission ou le niveau qui a résisté. Notez où votre groupe a calé et reprenez à cet endroit la fois suivante : c’est le meilleur test de longévité. Si vous êtes souvent trois autour de la table, notre sélection de <a class="text-link" href="/blog/jeux-3-joueurs.html">jeux de cartes à trois joueurs</a> associe coopération et affrontement pour ce format délicat. Et si vous cherchez le meilleur jeu coopératif comme Codenames, avec des indices d’un seul mot, notre comparatif de <a class="text-link" href="/blog/jeux-comme-codenames.html">jeux comme Codenames</a> place Just One en tête.</p>`,
   faq: [
     {
       q: 'Quel jeu choisir quand on a aimé Hanabi ?',

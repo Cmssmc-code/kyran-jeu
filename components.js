@@ -61,6 +61,7 @@ function resolveActivePage(explicit, pathname) {
 
 const DISCOVER_ITEMS = [
   { href: '/idee-cadeau.html', title: 'Idée cadeau', desc: 'Offrir KYRAN, délais de livraison' },
+  { href: '/simulation.html', title: '10 000 parties simulées', desc: 'Comment gagner à KYRAN' },
   { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
   { href: '/blog/jeux-comme-skyjo.html', title: 'Jeux comme Skyjo', desc: '10 alternatives et variantes' },
   { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Règles, variantes et comptage' },

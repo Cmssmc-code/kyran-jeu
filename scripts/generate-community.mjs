@@ -288,6 +288,9 @@ const html = `<!DOCTYPE html>
         <p class="eyebrow">Communauté · Instagram</p>
         <h1>Vos parties de <span class="accent">KYRAN</span> en photos et vidéos</h1>
         <p class="hero-lead">${esc(lead)}</p>
+        <div class="hero-actions">
+          <a class="social-link social-link--instagram" href="https://www.instagram.com/${OWN_HANDLE}/" target="_blank" rel="noopener noreferrer me"><span class="icon-instagram" aria-hidden="true"></span><span>Suivre @${OWN_HANDLE}</span></a>
+        </div>
       </div>
     </section>
 

@@ -14,6 +14,7 @@ const steps = [
   'generate-blog.mjs',
   'generate-redirects.mjs',
   'generate-blog-infra.mjs',
+  'generate-insta.mjs',
   'generate-community.mjs',
   'generate-seo.mjs',
   'generate-merchant-feed.mjs',

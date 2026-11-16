@@ -157,7 +157,7 @@ export default {
     heading: 'Notre avis tranché',
     html: `<p>Pour remplacer Uno sans changer de public, prenez Llama : même course à la main vide, même rythme, une vraie décision en plus. Pour une grande table bruyante, Jungle Speed. Si vos soirées se jouent entre adultes, nous recommandons Saboteur. KYRAN est le bon choix pour ceux qui veulent franchir le pas vers les plis, mais pas pour un duo. Monopoly Deal est à éviter si quelqu'un déteste se faire dépouiller : l'agression fait partie de la règle, et on la prend mal.</p>`
   },
-  conclusion: `<p>Uno n'a pas besoin d'être remplacé, seulement accompagné. Gardez-le pour les moments où il suffit de poser une carte, et sortez l'un de ces huit jeux quand la table réclame du neuf. Un seul achat bien choisi, selon l'âge des joueurs et la taille de la table, suffit souvent à relancer plusieurs soirées.</p>`,
+  conclusion: `<p>Uno n'a pas besoin d'être remplacé, seulement accompagné. Gardez-le pour les moments où il suffit de poser une carte, et sortez l'un de ces huit jeux quand la table réclame du neuf. Un seul achat bien choisi, selon l'âge des joueurs et la taille de la table, suffit souvent à relancer plusieurs soirées. Pour comparer avec d’autres jeux entre amis, voyez notre sélection de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux entre amis</a> classés par taille de groupe.</p>`,
   faq: [
     {
       q: 'Quel jeu ressemble le plus à Uno ?',

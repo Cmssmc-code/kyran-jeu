@@ -1,7 +1,7 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-17",
  "resume": {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "urls_sitemap": 60,
   "urls_testees": 60,
   "http_200": 60,
@@ -25,7 +25,7 @@
   "robots_ia_bloques": "",
   "llms_txt_ok": 1,
   "gsc_inspectees": 30,
-  "gsc_indexees": 29,
+  "gsc_indexees": 30,
   "psi_perf_mobile_accueil": 96,
   "crux_lcp_p75_ms": "",
   "crux_inp_p75_ms": "",
@@ -59,7 +59,7 @@
    "url": "https://kyran-jeu.fr/tarot-africain.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-03T00:15:04Z",
+   "derniere_exploration": "2026-11-15T23:31:58Z",
    "canonical_google": "https://kyran-jeu.fr/tarot-africain.html"
   },
   {
@@ -98,6 +98,48 @@
    "canonical_google": "https://kyran-jeu.fr/idee-cadeau.html"
   },
   {
+   "url": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-03T01:07:09Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-comme-skyjo.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-famille.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-14T08:14:39Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-famille.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-14T14:13:50Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-comme-6-qui-prend.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/idee-cadeau.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-15T20:09:27Z",
+   "canonical_google": "https://kyran-jeu.fr/idee-cadeau.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-10-22T08:54:42Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/commander.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-10T04:22:44Z",
+   "canonical_google": "https://kyran-jeu.fr/commander.html"
+  },
+  {
    "url": "https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
@@ -105,39 +147,11 @@
    "canonical_google": "https://kyran-jeu.fr/blog/spiel-des-jahres-gagnants-1979-2026.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html",
+   "url": "https://kyran-jeu.fr/blog/jeux-cartes-solo.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-14T08:19:01Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-plis-comparatif.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-03T06:43:49Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-4-joueurs.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/dossier-presse.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-28T03:06:26Z",
-   "canonical_google": "https://kyran-jeu.fr/dossier-presse.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/blog/alternatives-uno.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-15T02:15:20Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/alternatives-uno.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-23T12:23:13Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html"
+   "derniere_exploration": "2026-11-03T03:58:20Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-solo.html"
   },
   {
    "url": "https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html",
@@ -147,34 +161,6 @@
    "canonical_google": "https://kyran-jeu.fr/blog/marche-jeux-de-cartes-2026-2027.html"
   },
   {
-   "url": "https://kyran-jeu.fr/faq.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-15T13:16:05Z",
-   "canonical_google": "https://kyran-jeu.fr/faq.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/ressources-gratuites.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-15T14:04:36Z",
-   "canonical_google": "https://kyran-jeu.fr/ressources-gratuites.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/blog/jeux-comme-codenames.html",
-   "verdict": "PASS",
-   "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-09T09:28:47Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-comme-codenames.html"
-  },
-  {
-   "url": "https://kyran-jeu.fr/simulation.html",
-   "verdict": "NEUTRAL",
-   "couverture": "Discovered - currently not indexed",
-   "derniere_exploration": null,
-   "canonical_google": null
-  },
-  {
    "url": "https://kyran-jeu.fr/blog/jeux-vacances-voyage.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
@@ -182,74 +168,88 @@
    "canonical_google": "https://kyran-jeu.fr/blog/jeux-vacances-voyage.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/alternatives-wizard.html",
+   "url": "https://kyran-jeu.fr/blog/cadeau-noel.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-15T21:29:46Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/alternatives-wizard.html"
+   "derniere_exploration": "2026-11-06T04:19:41Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/cadeau-noel.html"
   },
   {
-   "url": "https://kyran-jeu.fr/tarot-africain.html",
+   "url": "https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-03T00:15:04Z",
-   "canonical_google": "https://kyran-jeu.fr/tarot-africain.html"
+   "derniere_exploration": "2026-10-27T14:29:18Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/meilleurs-jeux-apero.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/jeux-3-joueurs.html",
+   "url": "https://kyran-jeu.fr/blog/jeux-grands-groupes.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-15T08:19:44Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-3-joueurs.html"
+   "derniere_exploration": "2026-11-16T14:57:17Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-grands-groupes.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/jeux-cartes-seniors.html",
+   "url": "https://kyran-jeu.fr/blog/jeux-soiree-amis.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-21T11:22:55Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-seniors.html"
+   "derniere_exploration": "2026-11-15T19:23:17Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-soiree-amis.html"
   },
   {
-   "url": "https://kyran-jeu.fr/communaute.html",
+   "url": "https://kyran-jeu.fr/regle.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-11T23:33:05Z",
-   "canonical_google": "https://kyran-jeu.fr/communaute.html"
+   "derniere_exploration": "2026-11-15T06:19:26Z",
+   "canonical_google": "https://kyran-jeu.fr/regle.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/",
+   "url": "https://kyran-jeu.fr/whist-22.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-01T04:52:37Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/"
+   "derniere_exploration": "2026-11-01T12:05:29Z",
+   "canonical_google": "https://kyran-jeu.fr/whist-22.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/alternatives-belote-coinche.html",
+   "url": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-03T14:31:43Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/alternatives-belote-coinche.html"
+   "derniere_exploration": "2026-11-15T22:10:37Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-strategie-legere.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/jeux-cartes-ados.html",
+   "url": "https://kyran-jeu.fr/jeu-apero.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-21T11:48:55Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-ados.html"
+   "derniere_exploration": "2026-10-24T03:50:32Z",
+   "canonical_google": "https://kyran-jeu.fr/jeu-apero.html"
   },
   {
-   "url": "https://kyran-jeu.fr/regles-rikiki.html",
+   "url": "https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-10-18T13:04:56Z",
-   "canonical_google": "https://kyran-jeu.fr/regles-rikiki.html"
+   "derniere_exploration": "2026-10-23T12:23:13Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-cartes-moins-de-15-euros.html"
   },
   {
-   "url": "https://kyran-jeu.fr/blog/jeux-bluff-pari.html",
+   "url": "https://kyran-jeu.fr/",
    "verdict": "PASS",
    "couverture": "Submitted and indexed",
-   "derniere_exploration": "2026-11-06T05:34:22Z",
-   "canonical_google": "https://kyran-jeu.fr/blog/jeux-bluff-pari.html"
+   "derniere_exploration": "2026-11-15T19:16:03Z",
+   "canonical_google": "https://kyran-jeu.fr/"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/jeux-30-minutes.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-11T23:33:31Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/jeux-30-minutes.html"
+  },
+  {
+   "url": "https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html",
+   "verdict": "PASS",
+   "couverture": "Submitted and indexed",
+   "derniere_exploration": "2026-11-15T00:19:37Z",
+   "canonical_google": "https://kyran-jeu.fr/blog/as-dor-palmares-1988-2026.html"
   }
  ],
  "pagespeed": {

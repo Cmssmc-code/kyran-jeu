@@ -94,7 +94,7 @@ export default {
       pick: 'Groupes de 6 à 10 et plus, répartis en deux équipes',
       paragraphs: [
         `Codenames est annoncé de 2 à 8 joueurs et plus : au-delà de huit, on agrandit simplement les équipes, avec un seul espion par camp. Le nombre de joueurs n’allonge pas la partie, puisqu’un tour dure le temps de la discussion de l’équipe, pas le temps de chaque joueur.`,
-        `Le risque en grand groupe est qu’une ou deux voix dominent chaque équipe pendant que les autres se taisent. Désigner un porte-parole, qui annonce la réponse après concertation, rétablit l’équilibre. Autre point à prévoir : la grille de vingt-cinq cartes doit être visible de tous, ce qui impose une table où chacun peut se pencher.`
+        `Le risque en grand groupe est qu’une ou deux voix dominent chaque équipe pendant que les autres se taisent. Désigner un porte-parole, qui annonce la réponse après concertation, rétablit l’équilibre. Autre point à prévoir : la grille de vingt-cinq cartes doit être visible de tous, ce qui impose une table où chacun peut se pencher. Si la grille ne convient pas à votre table, nos <a class="text-link" href="/blog/jeux-comme-codenames.html">alternatives à Codenames</a> couvrent de 2 à 10 joueurs.`
       ]
     },
     {

@@ -311,7 +311,7 @@ function renderSources(article) {
 
 function renderAuthorCard() {
   return `<div class="article-author-card">
-  <div class="article-author-card__avatar" aria-hidden="true">CS</div>
+  <a class="article-author-card__avatar article-author-card__photo" href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me" aria-label="Instagram de Corentin Sence (@corentin_sce)"><img src="/images/corentin-sence.jpg" alt="Photo de Corentin Sence" width="150" height="150" loading="lazy" decoding="async"></a>
   <div class="article-author-card__body">
     <p class="article-author-card__name"><a href="/a-propos.html">Corentin Sence</a></p>
     <p class="article-author-card__role">Créateur de KYRAN · auteur de la sélection</p>

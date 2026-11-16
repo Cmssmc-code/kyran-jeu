@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { SITE } from './site-urls.mjs';
 
-const PRIVATE_PAGES = ['404.html', 'merci.html', 'admin-emails.html'];
+const PRIVATE_PAGES = ['404.html', 'merci.html', 'insta.html', 'admin-emails.html'];
 
 /** Fichier du dépôt → URL publique (null si la page n'est pas publique). */
 export function fileToUrl(file) {

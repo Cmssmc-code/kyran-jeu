@@ -6,6 +6,25 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-17 — passage planifié (04:07 UTC), couvre 48 h
+
+**Pas de passage le 16/11** : la consigne du 16/11 n'a été remise à la session que le 17/11, avec celle du jour.
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-17.md`](../docs/rapports/surveillance/2026-11-17.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 60 URL × 1280/390 px sans erreur, plus `/insta.html` ; 462 liens, 0 interne cassé ; lien de la préfecture revenu |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; initiation : manche complète ; GA4 sans erreur |
+| Serveur | OK | v1.7.0, Node v26.13.1, 0 5xx en 48 h, pas de vente |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | 2 CI rouges sur `main` le 16/11 (`?v=` de `insta.html`), réparées en 5 min ; 0 faille ; aucun secret |
+| Outils | réparé | scripts de contrôle versionnés (`scripts/surveillance/`) ; `npm test` avec Node 26 (défaut `node:test` du Node 22) |
+| Versions | 2 mises à jour | wrangler 4.163.0, `compatibility_date` 2026-11-17, `@anthropic-ai/sdk` 1.9.0 |
+
+Mise à jour : PR #244. Aucun point ouvert.
+
 ## 2026-11-15 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

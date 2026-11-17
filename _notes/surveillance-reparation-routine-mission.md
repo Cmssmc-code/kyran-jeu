@@ -71,6 +71,12 @@ date -u; git log -1 --oneline origin/main
 npm ci --no-audit --no-fund   # en arrière-plan ; Node 26 (version de server/package.json)
 ```
 
+`npm test` se lance avec le même Node que la CI (26, version de `server/package.json`). Le Node 22 de la session a un
+défaut du lanceur `node:test` : `server/test/mailer.test.mjs` y échoue au hasard (« Unable to deserialize cloned data
+due to invalid or unsupported version », 07/11, 15/11, 17/11), jamais en Node 26. Si `node --version` n'est pas en
+26, télécharger le binaire officiel dans le dossier temporaire (`nodejs.org/dist/v<version>/node-v<version>-linux-x64.tar.xz`,
+somme vérifiée avec `SHASUMS256.txt`) et le mettre en tête du `PATH`.
+
 Outils : `ToolSearch` (`select:<nom>`) pour Railway (`list-deployments`, `get-logs`, `get-service-config`,
 `http-error-rate`, `http-response-time`, `get-service-metrics`, `list-variables`), Resend, Gmail, `WebSearch`,
 `WebFetch`, `PushNotification` (s'il existe). Les outils d'un connecteur peuvent apparaître sous un préfixe
@@ -150,6 +156,12 @@ URL `https://kyran-webhook-production.up.railway.app`.
 
 `playwright-core` + Chromium préinstallé (`executablePath: '/opt/pw-browsers/chromium'`, module dans
 `/opt/node-tools/node_modules/playwright-core`) ; **jamais `playwright install`**.
+Scripts de la routine, dans le dépôt (le dossier temporaire de la session peut être vidé à tout moment), tous lancés
+avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH=/opt/pw-browsers/chromium` :
+`scripts/surveillance/crawl.mjs` (toutes les pages du sitemap, 1280 et 390 px, JSON des problèmes et des liens),
+`scripts/surveillance/stripe-eur.mjs` (page du Payment Link en EUR, sans payer), `scripts/surveillance/ga-consent.mjs`
+(bandeau GA4 : rien avant le clic, console vide après « Accepter »), `scripts/smoke-initiation.mjs`.
+`/insta.html` (`noindex`) n'est pas dans le sitemap : la contrôler à part.
 
 - **Toutes les pages du sitemap**, en desktop 1280 px et mobile 390 px, avec ouverture des menus, des `details` et
   des accordéons, défilement jusqu'en bas : erreurs console (CSP comprises), `pageerror`, requêtes en échec, réponses

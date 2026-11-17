@@ -82,7 +82,7 @@ export default {
       pick: 'Pour une famille qui accepte un écart de points affiché',
       paragraphs: [
         `Skyjo garde tout le monde en jeu jusqu’au bout : chaque manche se joue en entier, et la partie ne s’arrête qu’au moment où un joueur atteint 100 points cumulés, le plus petit total l’emportant. Quand quelqu’un retourne sa douzième carte, les autres disposent encore d’un tour pour améliorer leur grille. Personne ne quitte la table, y compris celui qui collectionne les grosses valeurs.`,
-        `Le défaut, pour l’angle de cette page, s’appelle l’élimination de fait. Avec soixante points de retard, le dernier sait que la partie est perdue bien avant qu’elle s’arrête. Deux réglages l’évitent : fixer un nombre de manches, ou abaisser le seuil de fin. Si la mécanique vous plaît, notre page sur les <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a> recense des voisins directs.`
+        `Le défaut, pour l’angle de cette page, s’appelle l’élimination de fait. Avec soixante points de retard, le dernier sait que la partie est perdue bien avant qu’elle s’arrête. Deux réglages l’évitent : fixer un nombre de manches, ou abaisser le seuil de fin (d’autres ajustements de table : nos <a class="text-link" href="/blog/jeux-comme-skyjo.html#variantes-skyjo">variantes de Skyjo</a>). Si la mécanique vous plaît, notre page sur les <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a> recense des voisins directs.`
       ]
     }
   ],

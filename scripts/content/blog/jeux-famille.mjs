@@ -61,7 +61,7 @@ export default {
       pick: 'Pour les familles à l’aise avec les nombres, même très nombreuses',
       paragraphs: [
         `Skyjo repose sur de l’arithmétique d’école primaire : additionner douze cartes allant de -2 à 12. Les valeurs négatives, que les plus jeunes n’ont pas toujours abordées en classe, deviennent intuitives à la table, puisque -2 vaut mieux que 0. Le hasard du tirage rattrape l’inexpérience : retourner un 12 au premier tour arrive à tout le monde, et plusieurs manches lissent les malchances.`,
-        `Le défaut familial est la durée : annoncée à une demi-heure, la partie s’étire à six ou huit joueurs, parce que chaque manche attend celui qui hésite le plus longtemps. On peut convenir avant de commencer d’un seuil de points plus bas que 100 pour raccourcir la soirée sans toucher aux règles. À trois ou quatre joueurs, le rythme reste confortable. Si la famille y prend goût, nos <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a> prolongent l’idée.`
+        `Le défaut familial est la durée : annoncée à une demi-heure, la partie s’étire à six ou huit joueurs, parce que chaque manche attend celui qui hésite le plus longtemps. On peut convenir avant de commencer d’un seuil de points plus bas que 100 pour raccourcir la soirée sans toucher aux règles ; d’autres ajustements de table figurent dans nos <a class="text-link" href="/blog/jeux-comme-skyjo.html#variantes-skyjo">variantes de Skyjo</a>. À trois ou quatre joueurs, le rythme reste confortable. Si la famille y prend goût, nos <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a> prolongent l’idée.`
       ]
     },
     {
@@ -109,7 +109,7 @@ export default {
   faq: [
     {
       q: 'Quel jeu de cartes offrir à un enfant de 8 ans ?',
-      a: `Dixit, Timeline ou Skyjo sont les plus sûrs : tous trois sont indiqués 8+, aucun ne demande de lire de longs textes et l’imagination ou le hasard compensent l’écart avec les adultes. Dobble convient même dès 6 ans. Pour d’autres idées, voyez nos <a class="text-link" href="/blog/cadeau-anniversaire.html">cadeaux d’anniversaire</a>.`
+      a: `Dixit, Timeline ou Skyjo sont les plus sûrs : tous trois sont indiqués 8+, aucun ne demande de lire de longs textes et l’imagination ou le hasard compensent l’écart avec les adultes. Dobble convient même dès 6 ans. Si Dixit vous plaît, nos <a class="text-link" href="/blog/jeux-comme-dixit.html">jeux comme Dixit</a> prolongent l’idée. Pour d’autres idées, voyez nos <a class="text-link" href="/blog/cadeau-anniversaire.html">cadeaux d’anniversaire</a>.`
     },
     {
       q: 'Comment éviter qu’un enfant boude quand il perd ?',
@@ -125,7 +125,7 @@ export default {
     },
     {
       q: 'Quels jeux de cartes pour plus de cinq joueurs en famille ?',
-      a: 'Dobble et Skyjo acceptent jusqu’à 8 joueurs, Timeline jusqu’à 6 ou 8 selon la boîte. Llama et KYRAN s’arrêtent à 6, Dixit à 6 (édition d’origine) ou 8 (édition 2022), Hanabi à 5 et Love Letter à 4 (édition classique ; 6 dans celle de 2025). Pour une grande tablée avec les cousins, Dobble est le plus simple à lancer ; Skyjo demande plus de patience, car les tours s’allongent.'
+      a: 'Dobble et Skyjo acceptent jusqu’à 8 joueurs, Timeline jusqu’à 6 ou 8 selon la boîte. Llama et KYRAN s’arrêtent à 6, Dixit à 6 (édition d’origine) ou 8 (édition 2022), Hanabi à 5 et Love Letter à 4 (édition classique ; 6 dans celle de 2025). Pour une grande tablée avec les cousins, Dobble est le plus simple à lancer ; Skyjo demande plus de patience, car les tours s’allongent. Pour une table de cinq, voyez nos <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html#criteres">jeux de cartes à 5 joueurs</a>.'
     },
     {
       q: 'KYRAN peut-il se jouer avec des enfants ?',

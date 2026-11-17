@@ -630,7 +630,7 @@ const BLOG_ITEMS = [
     "title": "Jeux entre amis : 10 jeux de cartes et d’ambiance pour votre soirée",
     "category": "Soirée",
     "date": "2026-05-05",
-    "readMinutes": 14,
+    "readMinutes": 15,
     "excerpt": "Jeux à faire entre amis : 10 jeux de soirée, d’ambiance et de bluff classés selon votre groupe (4, 6, 8 et plus) et la durée, avec leurs défauts.",
     "image": "/blog/images/jeux-soiree-amis.jpg",
     "webp": "/blog/images/jeux-soiree-amis.webp",

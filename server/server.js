@@ -6,8 +6,10 @@ import {
   renderShippingEmail,
   renderCustomMessageEmail,
   renderAdminOrderNotificationEmail,
+  renderReviewRequestEmail,
   escapeHtml
 } from './templates.js';
+import { createReviewQueue, defaultReviewFile } from './reviewRequests.js';
 import { IncidentStore, isBenignClientError } from './incidents.js';
 import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
@@ -22,6 +24,14 @@ const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
 const ADMIN_SECRET = process.env.ADMIN_SECRET || '';
 const ADMIN_ENABLED = ADMIN_SECRET.length >= 32;
 const mailer = createMailer(process.env);
+// Demande d'avis J+10 (voir reviewRequests.js). Les variables REVIEW_* de délai servent aux tests.
+const PUBLIC_BASE_URL = (process.env.PUBLIC_BASE_URL || 'https://kyran-webhook-production.up.railway.app').replace(/\/+$/, '');
+const reviewQueue = createReviewQueue({
+  file: defaultReviewFile(),
+  secret: process.env.REVIEW_UNSUB_SECRET || STRIPE_WEBHOOK_SECRET,
+  delayMs: Number(process.env.REVIEW_DELAY_MS) || undefined
+});
+const REVIEW_TICK_MS = Number(process.env.REVIEW_TICK_MS) || 60 * 60 * 1000;
 
 // Tolérance sur l'horodatage de signature Stripe (valeur par défaut des SDK Stripe)
 const STRIPE_TOLERANCE_SECONDS = 300;
@@ -243,6 +253,9 @@ async function handleOrderCompleted(session) {
     console.error('Confirmation client non envoyée :', clientMailError.message);
     recordServerIncident(clientMailError, { path: '/webhook', errorCode: 'CLIENT_ORDER_CONFIRMATION', httpStatus: 200 });
   }
+  if (customerEmail && isValidEmail(customerEmail) && reviewQueue.schedule(session.id, { email: customerEmail, name: customerName === 'Ami joueur' ? '' : customerName })) {
+    console.log(`⭐ Demande d'avis programmée pour la commande ${session.id}.`);
+  }
 
   // 2. Envoi notification d'alerte immédiate à l'administrateur (Corentin Sence)
   try {
@@ -321,7 +334,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.7.1';
+const VERSION = '1.8.0';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {
@@ -521,6 +534,13 @@ const server = http.createServer((req, res) => {
       emailTransport: mailer.transport,
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       adminEnabled: ADMIN_ENABLED
+    });
+  }
+
+  if (pathname === '/avis/desinscription') {
+    return handleReviewUnsubscribe(req, res, url).catch(err => {
+      console.error('[Avis] Erreur de désinscription :', err);
+      if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
     });
   }
 
@@ -779,7 +799,65 @@ async function routeAutoHeal(req, res, pathname, url) {
   return sendJson(res, updated ? 200 : 404, { ok: updated });
 }
 
+// ---------------------------------------------------------------------------
+// Demande d'avis J+10 : envoi des demandes échues, désinscription en un clic (GET → formulaire, POST → effet,
+// pour que les robots qui suivent les liens des mails ne désinscrivent personne).
+let reviewRunning = false;
+async function processReviewQueue(now = Date.now()) {
+  if (reviewRunning) return;
+  reviewRunning = true;
+  try {
+    reviewQueue.purge(now);
+    for (const item of reviewQueue.due(now)) {
+      try {
+        const { html, text } = renderReviewRequestEmail({
+          customerName: item.name,
+          unsubscribeUrl: `${PUBLIC_BASE_URL}/avis/desinscription?t=${item.token}`
+        });
+        await sendEmail({ to: item.email, subject: 'Alors, cette première partie de KYRAN ?', html, text });
+        reviewQueue.markSent(item.id);
+        console.log(`⭐ Demande d'avis envoyée (commande ${item.id}).`);
+      } catch (err) {
+        const outcome = reviewQueue.markFailed(item.id);
+        console.error(`[Avis] Envoi en échec (commande ${item.id}, ${outcome}) :`, err.message);
+        if (outcome === 'failed') recordServerIncident(err, { path: '-', errorCode: 'REVIEW_REQUEST', httpStatus: 0 });
+      }
+    }
+  } finally {
+    reviewRunning = false;
+  }
+}
+
+function reviewPage(title, body) {
+  return `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>${escapeHtml(title)}</title></head>
+<body style="font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; background: #FBF6EC; color: #231F22; margin: 0; padding: 48px 16px;">
+<div style="max-width: 480px; margin: 0 auto; background: #fff; border: 1px solid #e7dcc5; border-radius: 12px; padding: 28px;">
+<p style="font-weight: 800; letter-spacing: 3px; margin: 0 0 16px;">KYRAN</p><h1 style="font-size: 20px; margin: 0 0 12px;">${escapeHtml(title)}</h1>${body}
+</div></body></html>`;
+}
+
+async function handleReviewUnsubscribe(req, res, url) {
+  const send = (status, title, body) => {
+    res.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' });
+    res.end(reviewPage(title, body));
+  };
+  if (req.method === 'GET') {
+    const token = String(url.searchParams.get('t') || '');
+    if (!/^[A-Za-z0-9_-]{32}$/.test(token)) return send(400, 'Lien incomplet', '<p>Ce lien de désinscription est incomplet. Écrivez à <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a> et nous le ferons pour vous.</p>');
+    return send(200, "Ne plus recevoir de demande d’avis", `<p>Confirmez pour ne plus recevoir de demande d'avis de KYRAN à cette adresse.</p><form method="post" action="/avis/desinscription"><input type="hidden" name="t" value="${escapeHtml(token)}"><button type="submit" style="background: #231F22; color: #fff; border: 0; border-radius: 6px; padding: 10px 20px; font-size: 14px; cursor: pointer;">Confirmer</button></form>`);
+  }
+  if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method Not Allowed' });
+  if (rateLimited(`unsub:${clientIp(req)}`, 20, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Too many requests' });
+  const body = await readBody(req, 2048);
+  const token = new URLSearchParams(body.toString('utf8')).get('t') || '';
+  if (!reviewQueue.unsubscribe(token)) return send(400, 'Lien incomplet', '<p>Ce lien de désinscription est incomplet. Écrivez à <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>.</p>');
+  console.log('⭐ Désinscription des demandes d’avis enregistrée.');
+  return send(200, 'C’est noté', '<p>Vous ne recevrez plus de demande d’avis de KYRAN. Merci d’avoir joué&nbsp;!</p><p><a href="https://kyran-jeu.fr">Retour au site</a></p>');
+}
+
 if (process.env.NODE_ENV !== 'test') {
+  setTimeout(() => processReviewQueue().catch(err => console.error('[Avis]', err)), Math.min(60 * 1000, REVIEW_TICK_MS)).unref();
+  setInterval(() => processReviewQueue().catch(err => console.error('[Avis]', err)), REVIEW_TICK_MS).unref();
   server.listen(PORT, () => {
     console.log(`🚀 Serveur KYRAN Webhook v${VERSION} actif sur port ${PORT} (Node ${process.version})`);
   });

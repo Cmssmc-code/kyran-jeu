@@ -9,6 +9,7 @@ modifier une transition, c'est modifier ce fichier et son test.
 | Partie (règles) | `dojo/engine.js` : `state.phase` + `state.pending`, transitions par `act()` | `scripts/test/dojo.test.mjs` |
 | Interface de l'Initiation | `dojo/ui-state.js` : `uiStateOf()`, publié sur `#dojo[data-state]` | `scripts/test/dojo.test.mjs` |
 | Événement Stripe (webhook Railway) | `server/stripeEvents.js` : `new → processing → done` | `server/test/stripe-events.test.mjs` |
+| Demande d'avis J+10 | `server/reviewRequests.js` : `pending → sent \| failed`, désinscription | `server/test/review.test.mjs` |
 | Incident Auto-Heal | `server/incidents.js` : `INCIDENT_STATUS`, transitions depuis `pending` seulement | `server/test/auto-heal.test.mjs` |
 
 ## Partie (`dojo/engine.js`)
@@ -51,6 +52,16 @@ Tests : `server/test/checkout.test.mjs` (événements simulés, aucun paiement r
 
 La variante `worker/` (Cloudflare) n'a pas d'idempotence : elle ne doit pas être branchée en
 même temps que Railway (voir l'en-tête de `worker/index.js`).
+
+## Demande d'avis J+10 (`server/reviewRequests.js`)
+
+Une commande payée avec e-mail programme une demande (`pending`, échéance à 10 jours). Une passe
+horaire envoie les demandes échues : succès → `sent` (e-mail et prénom effacés, seul l'identifiant
+de session reste 90 jours pour qu'une relance Stripe ne reprogramme rien) ; échec → nouvel essai une
+heure plus tard, `failed` (incident `REVIEW_REQUEST`) au 3e. Désinscription : `GET
+/avis/desinscription?t=…` affiche un formulaire, seul le `POST` désinscrit (les robots qui suivent
+les liens des mails ne désinscrivent personne). Le jeton est un HMAC de l'adresse : aucune adresse
+dans le lien ni dans la liste des désinscrits. Fichier : `/data/review-requests.json`.
 
 ## Incident Auto-Heal (`server/incidents.js`)
 

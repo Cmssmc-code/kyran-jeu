@@ -120,7 +120,7 @@ export default {
   ],
   verdict: {
     heading: 'Notre avis tranché',
-    html: `<p>Si vous ne deviez en garder qu’un pour huit à dix joueurs, ce serait 6 qui prend ! : il conserve la même vitesse à dix qu’à quatre, ce que peu d’autres jeux de la liste font aussi bien. Pour un groupe qui ne joue jamais, Uno ou Dobble feront l’affaire. Pour dépasser dix, Codenames est le seul à s’étendre sans règle supplémentaire. À éviter : Just One au-delà de sept et tout jeu de plis réfléchi, KYRAN compris, dans une salle où chacun attend son tour. Pour KYRAN, voyez-le comme le jeu d’une moitié de groupe.</p>`
+    html: `<p>Si vous ne deviez en garder qu’un pour huit à dix joueurs, ce serait 6 qui prend ! : il conserve la même vitesse à dix qu’à quatre, ce que peu d’autres jeux de la liste font aussi bien ; si son rythme vous plaît, nos <a class="text-link" href="/blog/jeux-comme-6-qui-prend.html">jeux comme 6 qui prend !</a> en recensent les voisins. Pour un groupe qui ne joue jamais, Uno ou Dobble feront l’affaire. Pour dépasser dix, Codenames est le seul à s’étendre sans règle supplémentaire. À éviter : Just One au-delà de sept et tout jeu de plis réfléchi, KYRAN compris, dans une salle où chacun attend son tour. Pour KYRAN, voyez-le comme le jeu d’une moitié de groupe.</p>`
   },
   conclusion: `<p>Préparez deux jeux de nature différente plutôt qu’un seul qui force le nombre : un jeu simultané et bruyant, un jeu plus calme pour ceux qui veulent s’asseoir. Si votre groupe se compose surtout de collègues qui se connaissent peu, la section afterwork de notre page <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux de cartes pour l’apéro</a> détaille comment composer les tables.</p>`,
   faq: [

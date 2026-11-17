@@ -96,7 +96,7 @@ export default {
       pick: 'Pour ceux qui aiment le suspense du dernier tour',
       paragraphs: [
         `Skyjo remplace la course à la main vide par une grille : on aligne douze cartes en quatre colonnes de trois, face cachée, et l'on cherche à faire le plus petit total. Ce qui rappelle Uno, c'est la bascule de fin de manche : dès qu'un joueur a retourné toutes ses cartes, chacun a droit à un dernier tour, et celui qui a déclenché la fin voit ses points de la manche doublés s'il n'a pas strictement le plus petit total (la <a class="text-link" href="https://cdn.1j1ju.com/medias/ee/b8/88-skyjo-regle.pdf" rel="noopener">règle française</a> précise qu'elle ne double que les points positifs). Le suspense de la dernière carte d'Uno revient, avec un vrai calcul à la clé.`,
-        `De 2 à 8 joueurs, environ 30 minutes, dès 8 ans : le jeu tient donc mieux que la plupart des remplaçants quand la table grossit. Son défaut est la durée : on enchaîne les manches jusqu'à ce qu'un joueur atteigne 100 points, ce qui dépasse largement le rythme d'Uno. Les variantes et voisins sont détaillés dans nos <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a>.`
+        `De 2 à 8 joueurs, environ 30 minutes, dès 8 ans : le jeu tient donc mieux que la plupart des remplaçants quand la table grossit. Son défaut est la durée : on enchaîne les manches jusqu'à ce qu'un joueur atteigne 100 points, ce qui dépasse largement le rythme d'Uno. Les <a class="text-link" href="/blog/jeux-comme-skyjo.html#variantes-skyjo">variantes de Skyjo</a> et ses voisins sont détaillés dans notre page sur les <a class="text-link" href="/blog/jeux-comme-skyjo.html">jeux comme Skyjo</a>.`
       ]
     },
     {
@@ -177,7 +177,7 @@ export default {
     },
     {
       q: 'Quelle alternative à Uno pour des adultes ?',
-      a: `Saboteur, pour les tables de cinq joueurs ou plus qui aiment soupçonner, et KYRAN pour ceux qui veulent un pari de plis en trente minutes. Love Letter convient aux petits groupes de deux à quatre qui préfèrent la déduction.`
+      a: `Saboteur, pour les tables de cinq joueurs ou plus qui aiment soupçonner, et KYRAN pour ceux qui veulent un pari de plis en trente minutes. Love Letter convient aux petits groupes de deux à quatre qui préfèrent la déduction. Si vous êtes cinq autour de la table, d’autres choix figurent dans nos <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html#criteres">jeux de cartes à 5 joueurs</a>.`
     }
   ],
   related: ['jeux-famille', 'meilleurs-jeux-apero', 'jeux-grands-groupes']

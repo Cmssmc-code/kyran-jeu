@@ -201,7 +201,7 @@ export default {
 <p>Ces jeux tiennent rarement plus d’une demi-heure : si l’envie de jouer se confirme, la prochaine fois, glissez un paquet de cartes dans votre sac. Les <a class="text-link" href="/jeu-apero.html">jeux de cartes pour l’apéro</a> sont pensés pour ce genre de situation.</p>`
     }
   ],
-  conclusion: `<p>Choisissez d’après les gens, pas d’après la boîte : dans le doute, partez du jeu le plus tolérant et laissez le groupe réclamer plus de bluff ou plus de paris. Pour recevoir en plus petit comité ou réunir une équipe qui se connaît peu, la page sur les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d’apéro et d’afterwork</a> propose des formats plus courts et écarte les jeux trop exposants.</p>`,
+  conclusion: `<p>Choisissez d’après les gens, pas d’après la boîte : dans le doute, partez du jeu le plus tolérant et laissez le groupe réclamer plus de bluff ou plus de paris. Pour recevoir en plus petit comité ou réunir une équipe qui se connaît peu, la page sur les <a class="text-link" href="/blog/meilleurs-jeux-apero.html">jeux d’apéro et d’afterwork</a> propose des formats plus courts et écarte les jeux trop exposants. Pour une table de cinq ou six, voyez nos <a class="text-link" href="/blog/jeux-cartes-6-joueurs.html#criteres">jeux de cartes à 5 joueurs</a> : ils détaillent ce qui change entre cinq et six.</p>`,
   faq: [
     {
       q: 'Quel jeu choisir pour une soirée entre amis à quatre ?',

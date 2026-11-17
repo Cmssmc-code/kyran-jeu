@@ -165,14 +165,23 @@ async function sendEmail({ to, subject, html, text }) {
   return mailer.sendEmail({ to, subject: cleanLine(subject, 250), html, text });
 }
 
-async function handleOrderCompleted(session) {
-  const customerEmail = session.customer_details?.email || session.customer_email;
-  const customerName = session.customer_details?.name || 'Ami joueur';
+// Nom du pays en français (FR → France, BE → Belgique…) ; code brut si inconnu.
+const COUNTRY_NAMES = new Intl.DisplayNames(['fr'], { type: 'region' });
+function countryName(code) {
+  if (!code) return '';
+  try { return COUNTRY_NAMES.of(String(code).toUpperCase()) || code; } catch { return code; }
+}
 
-  if (!customerEmail) {
-    console.warn('Aucun email client trouvé pour la session', session.id);
+async function handleOrderCompleted(session) {
+  // Paiement différé (ex. prélèvement SEPA) : la session est « complétée » avant l'encaissement.
+  // On attend `checkout.session.async_payment_succeeded` pour confirmer la commande.
+  if (session.payment_status && !['paid', 'no_payment_required'].includes(session.payment_status)) {
+    console.log(`ℹ️ Session ${session.id} non payée (${cleanLine(session.payment_status, 40)}) : confirmation différée.`);
     return;
   }
+
+  const customerEmail = session.customer_details?.email || session.customer_email;
+  const customerName = session.customer_details?.name || 'Ami joueur';
 
   const totalAmount = session.amount_total != null
     ? (session.amount_total / 100).toFixed(2).replace('.', ',') + ' €'
@@ -188,8 +197,9 @@ async function handleOrderCompleted(session) {
     : (session.amount_total != null ? session.amount_total - shippingCents : 999);
   const subtotalAmount = (subtotalCents / 100).toFixed(2).replace('.', ',') + ' €';
 
-  const quantity = session.metadata?.quantity
-    ? parseInt(session.metadata.quantity, 10)
+  const metaQuantity = parseInt(session.metadata?.quantity, 10);
+  const quantity = Number.isInteger(metaQuantity) && metaQuantity > 0
+    ? metaQuantity
     : (Math.max(1, Math.round(subtotalCents / 999)) || 1);
 
   const shipping = shippingDetails(session);
@@ -199,27 +209,40 @@ async function handleOrderCompleted(session) {
     line2: shipping.address.line2,
     postal_code: shipping.address.postal_code,
     city: shipping.address.city,
-    country: shipping.address.country === 'FR' ? 'France' : shipping.address.country
+    country: countryName(shipping.address.country)
   } : null;
 
-  // 1. Envoi confirmation de commande au client
-  const clientEmailContent = renderOrderEmail({
-    customerName,
-    orderId: session.id,
-    quantity,
-    subtotalAmount,
-    totalAmount,
-    shippingCost,
-    shippingAddress,
-    estimatedDelivery: '3 à 5 jours ouvrés'
-  });
-
-  await sendEmail({
-    to: customerEmail,
-    subject: 'Confirmation de commande KYRAN',
-    html: clientEmailContent.html,
-    text: clientEmailContent.text
-  });
+  // 1. Confirmation au client. Un échec ne doit pas faire perdre la commande :
+  // l'administrateur est prévenu quoi qu'il arrive (étape 2) et envoie le mail à la main.
+  let clientMailError = null;
+  if (!customerEmail) {
+    clientMailError = new Error(`Aucun e-mail client pour la session ${session.id}`);
+  } else {
+    try {
+      const clientEmailContent = renderOrderEmail({
+        customerName,
+        orderId: session.id,
+        quantity,
+        subtotalAmount,
+        totalAmount,
+        shippingCost,
+        shippingAddress,
+        estimatedDelivery: '3 à 5 jours ouvrés'
+      });
+      await sendEmail({
+        to: customerEmail,
+        subject: 'Confirmation de commande KYRAN',
+        html: clientEmailContent.html,
+        text: clientEmailContent.text
+      });
+    } catch (err) {
+      clientMailError = err;
+    }
+  }
+  if (clientMailError) {
+    console.error('Confirmation client non envoyée :', clientMailError.message);
+    recordServerIncident(clientMailError, { path: '/webhook', errorCode: 'CLIENT_ORDER_CONFIRMATION', httpStatus: 200 });
+  }
 
   // 2. Envoi notification d'alerte immédiate à l'administrateur (Corentin Sence)
   try {
@@ -244,7 +267,7 @@ async function handleOrderCompleted(session) {
 
     await sendEmail({
       to: ADMIN_EMAILS,
-      subject: `🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
+      subject: `${clientMailError ? '⚠️ MAIL CLIENT NON ENVOYÉ · ' : ''}🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
       html: adminNotification.html,
       text: adminNotification.text
     });
@@ -252,6 +275,8 @@ async function handleOrderCompleted(session) {
   } catch (adminErr) {
     console.error('Erreur notification admin commande :', adminErr.message);
     recordServerIncident(adminErr, { path: '/webhook', errorCode: 'ADMIN_ORDER_NOTIFICATION', httpStatus: 200 });
+    // Personne n'a été prévenu : échec, pour que Stripe relance l'événement.
+    if (clientMailError) throw adminErr;
   }
 }
 
@@ -296,7 +321,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.7.0';
+const VERSION = '1.7.1';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {
@@ -448,6 +473,7 @@ async function handleStripeWebhook(req, res, rawBody) {
   try {
     switch (event.type) {
       case 'checkout.session.completed':
+      case 'checkout.session.async_payment_succeeded':
         await handleOrderCompleted(event.data.object);
         break;
       case 'charge.refunded':

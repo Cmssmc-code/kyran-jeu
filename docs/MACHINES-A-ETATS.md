@@ -42,6 +42,13 @@ volume Railway (`/data/stripe-events.json`, écriture atomique, ou `STRIPE_EVENT
 redémarrage n'oublie plus les commandes déjà traitées. `processing` reste en mémoire, pour qu'un
 traitement coupé par un redémarrage soit relancé par Stripe.
 
+Commande (`handleOrderCompleted`) : une session non payée (`payment_status` autre que `paid`,
+paiement différé) n'envoie rien ; la confirmation part sur `checkout.session.async_payment_succeeded`.
+Si la confirmation client échoue (ou si la session n'a pas d'e-mail), l'alerte admin part quand
+même, avec l'objet « ⚠️ MAIL CLIENT NON ENVOYÉ », et un incident `CLIENT_ORDER_CONFIRMATION` est
+consigné. L'événement n'échoue (relance Stripe) que si ni le client ni l'admin n'ont été prévenus.
+Tests : `server/test/checkout.test.mjs` (événements simulés, aucun paiement réel).
+
 La variante `worker/` (Cloudflare) n'a pas d'idempotence : elle ne doit pas être branchée en
 même temps que Railway (voir l'en-tête de `worker/index.js`).
 

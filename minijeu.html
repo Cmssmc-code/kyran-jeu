@@ -6,6 +6,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="/error-reporter.js?v=9891fdac0f" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- ?embed=1 : jeu seul (cadre itch.io) : sans en-tête, menu, pied de page ni bandeau cookies -->
+  <script>if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('kyran-embed');</script>
   <title>Initiation KYRAN : tutoriel gratuit et simulateur de plis</title>
   <meta name="description" content="Apprenez KYRAN gratuitement en ligne : 7 rites guidés par un devin du Fa (pari, règle d'or, Mystique, cartes Pouvoir), puis des parties contre l'ordinateur." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -40,13 +42,13 @@
   <link rel="preload" href="/fonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script src="vendor/canvas-confetti-1.9.4.browser.js" defer></script>
-  <script src="seo-config.js?v=d7f65d51b9" defer></script>
-  <link rel="stylesheet" href="style.css?v=d7f65d51b9" />
-  <link rel="stylesheet" href="/css/commerce-pages.css?v=d7f65d51b9" />
+  <script src="seo-config.js?v=5419431df3" defer></script>
+  <link rel="stylesheet" href="style.css?v=5419431df3" />
+  <link rel="stylesheet" href="/css/commerce-pages.css?v=5419431df3" />
   <link rel="stylesheet" href="/dojo/dojo.css?v=d5360316c1" />
-  <link rel="stylesheet" href="/css/motion.css?v=d7f65d51b9" />
-  <script src="/js/motion.js?v=d7f65d51b9" defer></script>
-  <script src="components.js?v=d7f65d51b9" defer></script>
+  <link rel="stylesheet" href="/css/motion.css?v=5419431df3" />
+  <script src="/js/motion.js?v=5419431df3" defer></script>
+  <script src="components.js?v=5419431df3" defer></script>
   <link rel="modulepreload" href="/dojo/engine.js?v=617bc536b5" />
   <link rel="modulepreload" href="/dojo/ai.js?v=a5fe162cfb" />
   <link rel="modulepreload" href="/dojo/lessons.js?v=44365dbe43" />
@@ -147,6 +149,8 @@
     .initiation-buy { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: var(--space-3); }
     .initiation-buy p { margin: 0; flex: 1 1 260px; }
     .initiation-buy .btn { min-height: 44px; }
+    .kyran-embed .skip-link, .kyran-embed kyran-header, .kyran-embed kyran-footer,
+    .kyran-embed main > :not(#mini-jeu-section) { display: none !important; }
   </style>
 </head>
 <body>

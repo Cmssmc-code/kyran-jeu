@@ -14,7 +14,7 @@
    * 3. KPIs mensuels : voir seo-keywords.json (requêtes cibles + indicateurs)
    *    Surveiller dans Search Console : impressions/clics par page cluster
    */
-  var ASSET_VERSION = 'd7f65d51b9';
+  var ASSET_VERSION = '5419431df3';
 
   var config = {
     googleSiteVerification: '',
@@ -146,7 +146,10 @@
   });
 
   // (le prérendu Node n'a pas de vrai DOM : pas de bandeau ni de GA hors navigateur)
-  if (config.ga4MeasurementId && document.body && typeof document.body.appendChild === 'function') {
+  // Mode ?embed=1 (Initiation dans un cadre, ex. itch.io) : ni bandeau ni GA, donc aucun cookie.
+  var embedded = document.documentElement && document.documentElement.classList &&
+    document.documentElement.classList.contains('kyran-embed');
+  if (!embedded && config.ga4MeasurementId && document.body && typeof document.body.appendChild === 'function') {
     var consent = readConsent();
     if (consent === 'accepted') loadGa();
     else if (consent === null) showBanner();

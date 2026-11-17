@@ -486,3 +486,64 @@ RÉFÉRENCE STRIPE :
 }
 
 
+
+// Liens d'avis (fixes) : Amazon (fiche ASIN B0G217LD87) et BoardGameGeek.
+export const REVIEW_LINKS = Object.freeze({
+  amazon: 'https://www.amazon.fr/review/create-review?asin=B0G217LD87',
+  bgg: 'https://boardgamegeek.com/boardgame/480678/kyran'
+});
+
+export function renderReviewRequestEmail({ customerName = '', unsubscribeUrl = '' }) {
+  const firstName = String(customerName || '').trim().split(/\s+/)[0] || '';
+  const hello = firstName ? `Bonjour ${firstName},` : 'Bonjour,';
+  const unsubHref = safeUrl(unsubscribeUrl);
+  const button = (href, label) => `<a href="${esc(href)}" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; margin: 0 8px 10px 0;" target="_blank">${esc(label)}</a>`;
+
+  const contentHtml = `
+    <h1 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: #0f172a; line-height: 1.3;">
+      Alors, cette première partie&nbsp;?
+    </h1>
+
+    <p style="margin: 0 0 14px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      ${esc(hello)} votre boîte de KYRAN est arrivée il y a quelques jours. J'espère que la carte sur le front a déjà fait rire (ou râler) autour de la table.
+    </p>
+
+    <p style="margin: 0 0 18px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      J'édite KYRAN moi-même, sans magasin ni publicité&nbsp;: un avis de quelques lignes aide vraiment d'autres joueurs à le découvrir. Une minute suffit, là où vous préférez&nbsp;:
+    </p>
+
+    <div style="margin: 0 0 18px 0;">
+      ${button(REVIEW_LINKS.amazon, 'Laisser un avis sur Amazon')}
+      ${button(REVIEW_LINKS.bgg, 'Noter KYRAN sur BoardGameGeek')}
+    </div>
+
+    <p style="margin: 0 0 8px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      Une remarque, une règle pas claire, un souci avec la boîte&nbsp;? Répondez simplement à ce mail, je lis tout.
+    </p>
+    <p style="margin: 0; font-size: 14px; color: #0f172a;">Corentin, auteur de KYRAN</p>
+
+    ${unsubHref ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Vous recevez ce mail une seule fois, après votre commande. <a href="${esc(unsubHref)}" style="color: #94a3b8; text-decoration: underline;">Ne plus recevoir de demande d'avis</a>.</div>` : ''}
+  `;
+
+  const html = baseLayout({
+    title: 'Votre avis sur KYRAN',
+    previewText: 'Une minute pour aider un jeu d\'auteur indépendant ?',
+    contentHtml
+  });
+
+  const text = `${hello}
+
+Votre boîte de KYRAN est arrivée il y a quelques jours. J'espère que la carte sur le front a déjà fait rire (ou râler) autour de la table.
+
+J'édite KYRAN moi-même, sans magasin ni publicité : un avis de quelques lignes aide vraiment d'autres joueurs à le découvrir.
+
+- Avis sur Amazon : ${REVIEW_LINKS.amazon}
+- Note sur BoardGameGeek : ${REVIEW_LINKS.bgg}
+
+Une remarque ou un souci ? Répondez simplement à ce mail, je lis tout.
+
+Corentin, auteur de KYRAN
+${unsubHref ? `\nVous recevez ce mail une seule fois. Ne plus recevoir de demande d'avis : ${unsubHref}\n` : ''}`;
+
+  return { html, text };
+}

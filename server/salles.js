@@ -89,7 +89,7 @@ export function createSalles({
     if (salle.sieges.some(s => s.pseudo.toLowerCase() === pseudo.toLowerCase())) throw new ErreurSalle(409, 'Ce pseudo est déjà pris dans la salle');
     const pid = salle.sieges.length;
     const jeton = randomBytes(16).toString('hex'); // 128 bits
-    salle.sieges.push({ pid, pseudo, humain: true, remplace: false });
+    salle.sieges.push({ pid, pseudo, humain: true, remplace: false, flux: 0, decoDepuis: now(), delais: 0 });
     jetons.set(jeton, { code: salle.code, pid });
     salle.activite = now();
     return { jeton, pid };
@@ -137,16 +137,24 @@ export function createSalles({
     const extra = options.ordinateurs == null ? 0 : options.ordinateurs;
     if (!Number.isInteger(extra) || extra < 0) throw new ErreurSalle(400, "Nombre d'ordinateurs invalide");
     const total = Math.min(MAX_SIEGES, Math.max(MIN_JOUEURS, humains + extra));
-    const personas = AI.PERSONAS.slice().sort(() => rng() - 0.5);
+    const personas = AI.PERSONAS.slice();
+    for (let i = personas.length - 1; i > 0; i--) { // mélange de Fisher-Yates
+      const j = Math.floor(rng() * (i + 1));
+      [personas[i], personas[j]] = [personas[j], personas[i]];
+    }
     const joueurs = salle.sieges.map(s => ({ name: s.pseudo, human: true, level: niveau })); // niveau utilisé si un humain est remplacé
+    const ordis = [];
     for (let i = joueurs.length; i < total; i++) {
       const persona = personas[(i - humains) % personas.length];
       joueurs.push({ name: persona.name, persona: persona.key, level: niveau });
-      salle.sieges.push({ pid: i, pseudo: persona.name, humain: false, remplace: false });
+      ordis.push({ pid: i, pseudo: persona.name, humain: false, remplace: false });
     }
     const pouvoirs = options.pouvoirs !== false;
+    const state = E.createGame({ players: joueurs, lives: vies, powers: pouvoirs, mystique: pouvoirs, seed: randomInt(2 ** 32) });
+    salle.sieges.push(...ordis); // sièges ajoutés seulement si createGame a réussi
     salle.niveau = niveau;
-    salle.state = E.createGame({ players: joueurs, lives: vies, powers: pouvoirs, mystique: pouvoirs, seed: randomInt(2 ** 32) });
+    salle.dernierCoup = now();
+    salle.state = state;
     const evenements = E.act(salle.state, { type: 'start' });
     salle.statut = 'jeu';
     salle.seq++;
@@ -162,7 +170,7 @@ export function createSalles({
       throw new ErreurSalle(409, err.message); // coup illégal : l'état reste intact (le moteur le garantit)
     }
     salle.seq++;
-    salle.activite = now();
+    salle.activite = salle.dernierCoup = now();
     if (salle.state.phase === 'gameOver') salle.statut = 'finie';
     return evenements;
   }
@@ -172,6 +180,9 @@ export function createSalles({
     const { salle, pid } = parJeton(jeton);
     if (salle.statut !== 'jeu') throw new ErreurSalle(409, "La partie n'est pas en cours");
     const evenements = appliquer(salle, actionPropre(action, pid));
+    const siege = salle.sieges[pid];
+    siege.delais = 0; // un humain qui joue reprend sa place
+    siege.remplace = false;
     return { seq: salle.seq, evenements: evenementsPour(evenements, pid) };
   }
 
@@ -204,20 +215,43 @@ export function createSalles({
    * « Révéler » automatique. Renvoie les événements bruts (le moteur) ou null s'il faut
    * attendre un humain. Les délais et le déclenchement viennent de l'étape 2.
    */
-  function avancer(code) {
+  function avancer(code, { force = false } = {}) {
     const salle = salleDe(code);
     if (salle.statut !== 'jeu') return null;
     const pend = salle.state.pending;
     if (!pend) return null;
     let action;
     if (pend.type === 'reveal' || pend.type === 'next') action = { type: pend.type };
-    else if (estOrdi(salle, pend.pid)) {
+    else if (estOrdi(salle, pend.pid) || force) {
+      if (!estOrdi(salle, pend.pid)) { // délai dépassé : l'ordinateur joue ce coup, 3 délais d'affilée = remplacement
+        const sg = salle.sieges[pend.pid];
+        if (++sg.delais >= 3) sg.remplace = true;
+      }
       const debut = process.hrtime.bigint();
       action = AI.decide(salle.state, rng);
       const ms = Number(process.hrtime.bigint() - debut) / 1e6;
       if (ms > salle.maxDecisionMs) salle.maxDecisionMs = ms;
     } else return null;
     return appliquer(salle, action);
+  }
+
+  /** Un flux (page ouverte) s'ouvre ou se ferme pour le siège du jeton. */
+  function connecter(jeton) {
+    const { salle, pid } = parJeton(jeton);
+    const sg = salle.sieges[pid];
+    sg.flux++;
+    sg.decoDepuis = null;
+    if (salle.statut === 'jeu' && sg.remplace) sg.remplace = false; // de retour : il reprend la main
+    salle.activite = now();
+  }
+
+  function deconnecter(jeton) {
+    const ref = jetons.get(jeton);
+    const salle = ref && salles.get(ref.code);
+    if (!salle) return;
+    const sg = salle.sieges[ref.pid];
+    sg.flux = Math.max(0, sg.flux - 1);
+    if (sg.flux === 0) sg.decoDepuis = now();
   }
 
   function fermer(code) {
@@ -233,6 +267,8 @@ export function createSalles({
     etat,
     avancer,
     remplacer,
+    connecter,
+    deconnecter,
     fermer,
     nombre: () => salles.size,
     // Pour les tests et l'étape 2 (balayage, minuteries) : jamais exposé au réseau tel quel.

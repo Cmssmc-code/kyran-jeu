@@ -3,6 +3,38 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "cadeau-moins-de-10-euros",
+    "title": "Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget",
+    "category": "Cadeaux",
+    "date": "2026-11-18",
+    "readMinutes": 11,
+    "excerpt": "Six jeux de cartes pour un cadeau à moins de 10 euros : prix relevés le 18 novembre 2026, frais de port, âge, nombre de joueurs et date limite pour Noël.",
+    "image": "/boite-recto-kyran.jpg",
+    "webp": "/boite-recto-kyran.webp",
+    "gameCount": 6,
+    "related": [
+      "cadeau-noel",
+      "jeux-cartes-moins-de-15-euros",
+      "cadeau-anniversaire"
+    ]
+  },
+  {
+    "slug": "jeux-cartes-reveillon",
+    "title": "Jeu de cartes pour le réveillon : 7 idées, de l’apéritif à minuit passé",
+    "category": "Soirée",
+    "date": "2026-11-18",
+    "readMinutes": 11,
+    "excerpt": "Quel jeu de cartes sortir au réveillon de Noël ou du Nouvel An ? Sept jeux rangés par moment de la soirée, avec nombre de joueurs, durée et âge.",
+    "image": "/blog/images/cadeau-noel.jpg",
+    "webp": "/blog/images/cadeau-noel.webp",
+    "gameCount": 7,
+    "related": [
+      "cadeau-noel",
+      "jeux-soiree-amis",
+      "jeux-grands-groupes"
+    ]
+  },
+  {
     "slug": "skyjo-magilano-chiffres-reference",
     "title": "Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources",
     "category": "Cartes",

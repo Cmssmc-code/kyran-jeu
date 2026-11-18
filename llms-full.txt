@@ -96,7 +96,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 42 guides
+## Blog — 44 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -123,6 +123,7 @@
 
 ## Blog : Cadeaux
 
+- [Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget](https://kyran-jeu.fr/blog/cadeau-moins-de-10-euros.html): 6 jeux comparés
 - [Jeux de cartes à offrir à Noël : 7 idées selon le destinataire](https://kyran-jeu.fr/blog/cadeau-noel.html): 7 jeux comparés
 - [Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant](https://kyran-jeu.fr/blog/cadeau-anniversaire.html): 9 jeux comparés
 
@@ -154,6 +155,7 @@
 
 ## Blog : Soirée
 
+- [Jeu de cartes pour le réveillon : 7 idées, de l’apéritif à minuit passé](https://kyran-jeu.fr/blog/jeux-cartes-reveillon.html): 7 jeux comparés
 - [Week-end entre amis en gîte : 7 jeux de cartes pour les soirées](https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html): 7 jeux comparés
 - [Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis](https://kyran-jeu.fr/blog/jeux-cartes-ados.html): 6 jeux comparés
 - [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés
@@ -214,7 +216,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - KYRAN est-il un jeu de hasard ? Non, surtout de stratégie : sur 10 000 parties simulées, un joueur de niveau maître gagne 7,6 fois plus souvent qu'un novice, et aucune place à table ne donne d'avantage notable : https://kyran-jeu.fr/simulation.html
 - Comment gagner à KYRAN ? Parier juste plutôt que gros (3 grosses cartes en main : 42 à 50 % de paris exacts, aucune : 71 à 74 %), garder petites cartes et Mystique pour la fin, prendre la tête tôt et ne jamais laisser filer deux Vies : https://kyran-jeu.fr/simulation.html
 
-## Résumé des 42 guides du blog
+## Résumé des 44 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -461,6 +463,18 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html
 - Résumé : Qui est Magilano, quand Skyjo est sorti, combien s’en est vendu en France, ce que dit la règle officielle sur le doublement des points : chiffres sourcés.
 - Jeux comparés : 
+
+### Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget
+
+- URL : https://kyran-jeu.fr/blog/cadeau-moins-de-10-euros.html
+- Résumé : Six jeux de cartes pour un cadeau à moins de 10 euros : prix relevés le 18 novembre 2026, frais de port, âge, nombre de joueurs et date limite pour Noël.
+- Jeux comparés : KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Megalopolis (1 à 4 joueurs, ~15 min, Coopératif de poche) ; Monopoly Deal (2 à 5 joueurs, ~15 min, Collection et coups bas) ; Dobble (2 à 8 joueurs, ~15 min, Observation et rapidité) ; Timeline (2 à 6 joueurs, ~15 min, Culture et chronologie) ; Love Letter (2 à 4 joueurs, ~20 min, Déduction et bluff)
+
+### Jeu de cartes pour le réveillon : 7 idées, de l’apéritif à minuit passé
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-reveillon.html
+- Résumé : Quel jeu de cartes sortir au réveillon de Noël ou du Nouvel An ? Sept jeux rangés par moment de la soirée, avec nombre de joueurs, durée et âge.
+- Jeux comparés : Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Just One (3 à 7 joueurs, ~20 min, Coopératif de mots) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; Skull King (2 à 8 joueurs, ~30 min, Plis et pirates) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Stop ou encore) ; Codenames (2 à 8+ joueurs, ~15 min, Mots en équipes)
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

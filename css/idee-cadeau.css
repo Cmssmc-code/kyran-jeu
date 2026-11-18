@@ -415,6 +415,7 @@
   box-shadow: 0 6px 0 var(--k-ink);
   text-align: center;
 }
+.ic-quote + .ic-quote { margin-top: 28px; }
 .ic-quote__score { margin: 0 0 10px; color: #4F4845; }
 .ic-quote__score strong {
   font-family: var(--font-display);

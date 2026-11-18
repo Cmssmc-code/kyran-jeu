@@ -1,6 +1,7 @@
 # Jeu entre amis par lien privé (multijoueur) — cahier des charges
 
-Statut : **proposition, aucun code écrit**. Le PDG doit encore dire « go ». Auteur : game design (data), 18/11/2026.
+Statut : **go du PDG (18/11/2026)**, décisions du directeur technique intégrées. Auteur : game design (data), 18/11/2026.
+Calendrier : partie test entre nous le **25/11/2026**, version réduite (étapes 0 à 3, test « vue sans fuite », smoke à 3 clients). Charge, confidentialité et mobile : après le test.
 Objectif : jouer à KYRAN en ligne avec 2 à 6 amis, sans compte, en partageant un lien. Les règles restent celles de `dojo/engine.js`.
 
 ## 1. Parcours joueur
@@ -8,13 +9,15 @@ Objectif : jouer à KYRAN en ligne avec 2 à 6 amis, sans compte, en partageant 
 1. L'hôte clique « Jouer entre amis » (page `salle.html`), choisit un pseudo : la salle est créée, le lien `https://kyran-jeu.fr/salle.html#CODE` s'affiche (le code est dans le fragment : il ne part dans aucun journal serveur).
 2. Les amis ouvrent le lien, choisissent un pseudo et arrivent dans le salon. Jusqu'à 6 sièges.
 3. L'hôte lance la partie (options : Vies 3, 5 ou 7 ; cartes Pouvoir oui/non). S'il y a moins de 3 humains, l'hôte complète avec des ordinateurs (Anansi, Griot… déjà dans `dojo/ai.js`). La boîte se joue à 3 au minimum, et **la simulation de 10 000 parties ne couvre pas 2 joueurs** (3 à 6 seulement).
-4. Chacun voit sa main, les paris, les plis. Fin de partie : classement, « Rejouer » (même salle) et lien vers la commande.
+4. Chacun voit sa main, les paris, les plis. Fin de partie : classement, puis bouton **« Commander la boîte »** mis en avant (lien Stripe actuel, nouvel onglet) et, en second, un petit lien « Nouvelle salle ». **Une seule partie complète par salle** : pas de « Rejouer ».
+Événements GA (mesure) : `salle_creee`, `salle_partie_finie`, `salle_cta_click`.
 
 ## 2. Architecture
 
 - **Serveur maître** : le Railway existant (`kyran-webhook`, racine `/server`, `node server.js`, **1 réplique**, volume `/data`). Sans nouvelle dépendance (Node natif : `http`, `crypto`).
 - **Actions** : `POST` JSON. **Mises à jour** : flux SSE (`GET`, `text/event-stream`). Pas de WebSocket.
 - **Le serveur est seul juge** : il détient l'état complet (`createGame` de `engine.js`) et applique `act()`. Le client n'envoie qu'une intention. `act()` lève déjà une erreur sur un coup illégal (pari interdit, carte absente, mauvais tour) et laisse l'état intact.
+- **Isolation du paiement** : tout le code de salle vit dans `server/salles.js` et `server/vue.js`, chargés par **import dynamique** seulement si `MULTI_ACTIF=1` (absente = aucun module de salle en mémoire, le webhook n'y touche pas). Chaque route `/salle/*` et chaque minuterie est dans un `try/catch` : une erreur de salle ne fait jamais tomber le processus, elle appelle `recordServerIncident` puis ferme la salle. Un test le prouve (étape 2). Aucune route du webhook n'est modifiée.
 - **Salles en mémoire** (`Map`). Un redémarrage du serveur (déploiement) perd les salles en cours : message clair « la salle n'existe plus », acceptable pour du jeu entre amis. Pas de base de données.
 - **Moteur partagé** : `dojo/engine.js` et `dojo/ai.js` sont copiés dans `server/moteur/` par `scripts/sync-moteur.mjs` (lancé par `npm run build`, vérifié par la CI comme les autres fichiers générés). Raison, vérifiée dans la config Railway : la racine de déploiement est `/server`, donc `../dojo` n'existe pas dans le serveur déployé. La copie retire les `?v=…` des imports. Il faut aussi ajouter `/dojo/**` aux `watchPatterns` Railway (réglage gratuit), sinon un changement de règle ne redéploierait pas.
 - **Hasard** : `seed` tirée par `crypto.randomInt` côté serveur, jamais envoyée (le défaut de `createGame` est `Math.random`).
@@ -84,7 +87,7 @@ Objectif : jouer à KYRAN en ligne avec 2 à 6 amis, sans compte, en partageant 
 
 - `MULTI_ACTIF` : le multijoueur ne marche que si elle vaut `1`. **Absente = coupé** : au premier déploiement, tout est caché.
 - Coupé : toutes les routes `/salle/*` répondent `503 { actif: false }`, le site lit `/salle/etat` et masque le bouton, les salles en cours sont fermées avec un message.
-- Réglable sans code : variable Railway (redéploiement de quelques secondes).
+- Réglable sans code : variable Railway (redéploiement de quelques secondes). Éteint par défaut en prod. Pour le test du 25/11, le directeur technique active `MULTI_ACTIF=1` sur le créneau, puis la recoupe.
 - Autres réglages : `MULTI_MAX_SALLES`, `MULTI_DELAI_COUP` (60 s).
 - Tout incident de salle passe par `recordServerIncident` (déjà en place), sans pseudo ni contenu de main.
 
@@ -95,7 +98,7 @@ Nouveaux :
 - `server/vue.js` : `vueDe()` (isolé pour être testé à part).
 - `server/moteur/engine.js`, `server/moteur/ai.js` : copies générées.
 - `scripts/sync-moteur.mjs`.
-- `salle.html`, `dojo/multi.js` (transport réseau), `dojo/multi.css` si besoin.
+- `salle.html` (en **noindex**, hors menu et hors sitemap), `dojo/multi.js` (transport réseau), `dojo/multi.css` si besoin.
 - `server/test/salles.test.mjs`, `server/test/vue.test.mjs`, `scripts/smoke-salle.mjs`.
 
 Modifiés :
@@ -117,6 +120,8 @@ Unitaires (`node:test`, horloge injectée, sans réseau) :
 6. `server/moteur/*` identique à `dojo/*` (empreinte), et `ai.js` importe bien le moteur copié.
 7. Parties complètes côté serveur avec 3 à 6 sièges d'ordinateurs : 0 erreur, règle d'or jamais violée.
 
+**Règle de chaque PR** : `npm test` (webhook et parcours d'achat compris) et `scripts/smoke-initiation.mjs` verts avant et après la fusion ; jamais de vrai paiement (mode test ou événements simulés). À écrire dans la description de chaque PR.
+
 Intégration : un vrai serveur, 3 clients `http` + SSE, une partie entière. Navigateur : `scripts/smoke-salle.mjs` (Playwright, 3 contextes, une partie), à ajouter au test quotidien. Charge : 20 salles de 6 en parallèle, avec mesure du délai du webhook Stripe pendant ce temps.
 
 ## 9. Découpage (jours ouvrés après le « go »)
@@ -126,8 +131,8 @@ Intégration : un vrai serveur, 3 clients `http` + SSE, une partie entière. Nav
 | 0 | Décisions ci-dessous ; essai d'adaptation de `app.js` | 0,5 |
 | 1 | `sync-moteur`, `vue.js` + test sans fuite, `salles.js` (création, sièges, `act`) | 2 |
 | 2 | Routes, SSE, billets, minuteries, ordinateur de remplacement, limites, coupure | 2 |
-| 3 | `salle.html` + `multi.js` : salon, lien, partie, reconnexion, fin et rejouer | 3 |
-| 4 | Intégration, charge, navigateur, mobile ; page confidentialité | 1,5 |
+| 3 | `salle.html` + `multi.js` : salon, lien, partie, reconnexion, fin de partie et « Commander la boîte » | 3 |
+| 4 | Intégration, charge (20 salles), navigateur, mobile ; page confidentialité — **après le test du 25/11** | 1,5 |
 | 5 | Déploiement coupé, essai à 3 vrais joueurs (dont Corentin), ouverture | 1 |
 
 Total : environ **10 jours ouvrés**. Chaque étape : une PR, CI verte, fusion, vérification en ligne. Tout reste coupé jusqu'à l'étape 5.
@@ -140,9 +145,10 @@ Total : environ **10 jours ouvrés**. Chaque étape : une PR, CI verte, fusion, 
 - L'ordinateur qui remplace n'a pas la force d'un humain, et l'équilibre des parties mixtes n'est pas simulé. À mesurer avec la simulation avant l'ouverture (parties de 3 à 6, niveaux Apprenti et Initié).
 - Triche entre amis : l'état complet reste sur le serveur ; la vue en liste blanche est la seule défense.
 
-## 11. Décisions à prendre
+## 11. Décisions (toutes prises)
 
-1. Go du PDG.
-2. Jeu à 2 humains : accepté avec un ordinateur qui complète à 3 (recommandé), ou refusé.
-3. Conseil du Bokonon : coupé en salle (recommandé).
-4. Délai de 60 s par coup : assez long pour des amis ?
+1. Go du PDG : oui (18/11/2026).
+2. 2 humains + 1 ordinateur : accepté.
+3. Conseil du Bokonon coupé en salle : accepté.
+4. Délai de 60 s par coup : accepté.
+5. Une seule partie par salle, bouton « Commander la boîte » en fin de partie : décidé (condition du PDG).

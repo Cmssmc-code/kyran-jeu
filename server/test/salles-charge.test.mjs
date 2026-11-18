@@ -3,7 +3,7 @@
 // Rien n'est lancé sur la production : ces tests tournent dans la CI (« npm run test:security »).
 //
 // Horloge : les limites anti-abus (20 actions / 10 s par jeton, etc.) sont comptées avec une
-// horloge 1000 fois plus rapide, sinon une CI rapide dépasserait « 20 coups en 10 s » avec des
+// horloge 50 fois plus rapide (un billet de flux, valable un temps court, doit encore l’être), sinon une CI rapide dépasserait « 20 coups en 10 s » avec des
 // joueurs automatiques qui ne réfléchissent pas. Les minuteries (60 s par coup) ne tournent pas
 // ici (horloge: false) : elles ont leurs propres tests dans salle-routes.test.mjs.
 import test from 'node:test';
@@ -15,7 +15,7 @@ import * as E from '../moteur/engine.js';
 import * as AI from '../moteur/ai.js';
 import { createSalleRoutes } from '../salle-routes.js';
 
-const ACCELERE = () => Date.now() * 1000;
+const ACCELERE = () => Date.now() * 50;
 
 async function demarrer() {
   const incidents = [];

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="/error-reporter.js?v=9891fdac0f" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salle de jeu entre amis — KYRAN</title>
+  <meta name="description" content="Jouez à KYRAN entre amis dans une salle privée, avec un simple lien." />
+  <link rel="canonical" href="https://kyran-jeu.fr/salle.html" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#231F22" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="style.css?v=058e1bb669" />
+  <style>
+    .sl-page { max-width: 640px; margin: 0 auto; padding: 20px 16px 48px; font-family: Poppins, system-ui, sans-serif; color: #231F22; }
+    .sl-page h1 { font-family: Fredoka, Poppins, sans-serif; font-size: 1.6rem; margin: 0 0 12px; }
+    .sl-bloc { background: #fff; border: 2px solid #231F22; border-radius: 18px; box-shadow: 5px 5px 0 #F4B63F; padding: 18px; }
+    .sl-bloc h2 { margin-top: 0; font-size: 1.25rem; }
+    .sl-bloc input, .sl-bloc select { font: inherit; padding: 10px; border: 2px solid #231F22; border-radius: 10px; width: 100%; box-sizing: border-box; margin: 4px 0 12px; }
+    .sl-champ { display: block; font-size: .9rem; }
+    .sl-btn { display: inline-block; font: inherit; font-weight: 700; padding: 10px 16px; min-height: 44px; border: 2px solid #231F22; border-radius: 12px; background: #fff; color: #231F22; cursor: pointer; text-decoration: none; margin: 2px 4px 2px 0; }
+    .sl-btn--ok { background: #F4B63F; }
+    .sl-btn--grand { display: block; text-align: center; font-size: 1.1rem; padding: 14px; margin: 12px 0; }
+    .sl-btn:disabled { opacity: .45; cursor: not-allowed; }
+    .sl-paris { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sl-scores, .sl-joueurs { list-style: none; padding: 0; margin: 0 0 12px; }
+    .sl-scores li { padding: 6px 8px; border-radius: 8px; }
+    .sl-actif { background: #FFF1CC; }
+    .sl-table, .sl-main, .sl-mystique { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .sl-table figure { margin: 0; text-align: center; font-size: .8rem; }
+    .sl-carte { width: 72px; padding: 0; border: 0; background: none; }
+    .sl-mystique .sl-carte { width: 40px; }
+    .sl-carte img { width: 100%; height: auto; display: block; border-radius: 6px; }
+    .sl-carte--bouton { cursor: pointer; }
+    .sl-carte--bouton:hover img, .sl-carte--bouton:focus-visible img { outline: 3px solid #F4B63F; }
+    .sl-note { font-size: .85rem; color: #555; }
+    .sl-erreur { color: #b00020; font-weight: 700; }
+    .sl-gagnant { font-size: 1.2rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="sl-page">
+    <h1>KYRAN entre amis</h1>
+    <div id="salle" aria-live="polite"><p>Chargement…</p></div>
+    <p class="sl-note"><a href="/">Retour au site KYRAN</a></p>
+  </main>
+  <script type="module" src="/dojo/multi.js"></script>
+</body>
+</html>

@@ -287,7 +287,7 @@ function buildDatasetSchema(article) {
     isAccessibleForFree: true,
     inLanguage: 'fr-FR',
     creator: { '@type': 'Person', '@id': AUTHOR_ID, name: 'Corentin Sence', url: AUTHOR_URL },
-    publisher: { '@id': SITE + '/#organization' },
+    publisher: { '@type': 'Organization', '@id': SITE + '/#organization', name: 'KYRAN', url: SITE + '/' },
     datePublished: article.date,
     dateModified: d.lastVerified,
     measurementTechnique: clipText(stripHtml(d.methodology), 300),

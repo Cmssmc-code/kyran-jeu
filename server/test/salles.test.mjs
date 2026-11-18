@@ -188,7 +188,8 @@ test('parties complètes côté serveur, 3 à 6 sièges, règle d\'or jamais vio
       const e = s.etat(a.jeton);
       assert.equal(e.statut, 'finie', `${n} sièges, pouvoirs ${pouvoirs}`);
       assert.ok(e.vue.winners && e.vue.winners.length >= 1, `vainqueur présent (${JSON.stringify(e.vue.winners)})`);
-      assert.ok(manches >= 2, `au moins 2 manches (${manches})`);
+      // La partie s'arrête à la première élimination : elle peut finir dès la 1re manche (~2 % des cas).
+      assert.ok(manches >= 1 && e.vue.players.some(p => p.lives <= 0), `un joueur éliminé à la fin (${manches} manche(s))`);
       refus(() => s.agir({ jeton: a.jeton, action: { type: 'next' } }), 409);
     }
   }

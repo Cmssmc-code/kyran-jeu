@@ -150,8 +150,8 @@ export function createSalleRoutes({
       req.on('data', c => {
         taille += c.length;
         if (taille > MAX_CORPS) {
-          reject(new ErreurSalle(413, 'Message trop long'));
-          req.destroy();
+          if (taille - c.length <= MAX_CORPS) reject(new ErreurSalle(413, 'Message trop long'));
+          morceaux.length = 0; // on ignore la suite sans couper la connexion : la réponse 413 doit partir
           return;
         }
         morceaux.push(c);

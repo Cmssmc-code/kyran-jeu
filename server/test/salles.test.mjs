@@ -50,7 +50,7 @@ test('création : code sans caractères ambigus, jeton de 128 bits, hôte au si�
 });
 
 test('pseudo : 1 à 20 caractères, sans balises, unique dans la salle', () => {
-  for (const mauvais of ['', '   ', 'x'.repeat(21), '<b>', 'a&b', 'a"b', "a'b", 'a‮b', 'a\nb', 42, null, undefined]) {
+  for (const mauvais of ['', '   ', 'x'.repeat(21), '<b>', 'a&b', 'a"b', "a'b", 'a‮b', 'a\u0007b', 42, null, undefined]) {
     assert.throws(() => pseudoValide(mauvais), ErreurSalle, String(mauvais));
   }
   assert.equal(pseudoValide('  Zoé   la  Rapide '), 'Zoé la Rapide');

@@ -505,6 +505,40 @@ async function handleStripeWebhook(req, res, rawBody) {
   }
 }
 
+// Parties entre amis : chargées seulement si MULTI_ACTIF=1, par import dynamique. Tant que le
+// module n'est pas chargé (ou s'il échoue), /salle/* répond 503 {actif:false} et le paiement
+// n'est en rien concerné.
+let salleRoutes = null;
+if (process.env.MULTI_ACTIF === '1') {
+  import('./salle-routes.js')
+    .then(m => {
+      salleRoutes = m.createSalleRoutes({ recordIncident: recordServerIncident, allowedOrigins: ALLOWED_ORIGINS });
+      console.log('[Salles] actives');
+    })
+    .catch(err => {
+      console.error('[Salles] chargement impossible, salles coupées :', err);
+      recordServerIncident(err, { path: '/salle', errorCode: 'SALLE_CHARGEMENT' });
+    });
+}
+
+function routeSalle(req, res, pathname, url) {
+  if (!salleRoutes) {
+    const origin = req.headers.origin;
+    if (origin && ALLOWED_ORIGINS.includes(origin)) res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+    return sendJson(res, 503, { actif: false });
+  }
+  try {
+    return salleRoutes.handle(req, res, pathname, url, clientIp(req)).catch(err => {
+      console.error('[Salles] Erreur de route :', err);
+      if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
+    });
+  } catch (err) {
+    console.error('[Salles] Erreur de route :', err);
+    if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
+  }
+}
+
 const server = http.createServer((req, res) => {
   let url;
   try {
@@ -518,6 +552,9 @@ const server = http.createServer((req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('Referrer-Policy', 'no-referrer');
   applyCors(req, res, pathname);
+
+  // Parties entre amis (/salle/*) : module isolé, coupé par défaut (voir salle-routes.js).
+  if (pathname.startsWith('/salle/')) return routeSalle(req, res, pathname, url);
 
   if (req.method === 'OPTIONS') {
     res.writeHead(204);

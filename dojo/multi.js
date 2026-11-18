@@ -296,7 +296,7 @@ function dessiner() {
   else if (!session || !etat) ecran = ecranAccueil();
   else if (etat.statut === 'attente') ecran = ecranSalon();
   else ecran = ecranJeu();
-  racine.replaceChildren(ecran, erreur ? h('p', { class: 'sl-erreur', role: 'alert', text: erreur }) : null);
+  racine.replaceChildren(...[ecran, erreur && h('p', { class: 'sl-erreur', role: 'alert', text: erreur })].filter(Boolean));
   racine.dataset.etat = ferme ? 'fermee' : !session || !etat ? 'accueil' : etat.statut;
   const nouveau = $('#sl-pseudo');
   if (nouveau && valeur) nouveau.value = valeur;

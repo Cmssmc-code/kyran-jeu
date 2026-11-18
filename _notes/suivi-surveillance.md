@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-18 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-18.md`](../docs/rapports/surveillance/2026-11-18.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 61 URL × 1280/390 px, plus `/insta.html` et `/merci.html` ; 2 × 503 passagers de GitHub Pages (relances en 200) |
+| Liens externes | à revoir | agorajeux.com (7 fiches, 403 même en navigateur), doc BGA (délai), préfecture des Hauts-de-Seine |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; initiation 3/3 ; GA4 sans erreur |
+| Serveur | OK | v1.8.0 (avis J+10) déployé le 17/11, démarrage propre ; 2 × 5xx aux bascules de redéploiement ; pas de vente |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | tout vert ; 0 faille ; aucun secret |
+| Versions | 2 mises à jour | wrangler 4.164.0, `compatibility_date` 2026-11-18, `@anthropic-ai/sdk` 1.10.0 |
+
+Mise à jour : PR #258. Points ouverts : trois liens externes à revérifier.
+
 ## 2026-11-17 — passage planifié (04:07 UTC), couvre 48 h
 
 **Pas de passage le 16/11** : la consigne du 16/11 n'a été remise à la session que le 17/11, avec celle du jour.

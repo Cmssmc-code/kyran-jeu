@@ -40,7 +40,9 @@
     "jeux-cartes-solo",
     "prix-jeux-de-cartes-releve",
     "jeux-comme-president",
-    "skyjo-magilano-chiffres-reference"
+    "skyjo-magilano-chiffres-reference",
+    "cadeau-moins-de-10-euros",
+    "jeux-cartes-reveillon"
   ],
   "handwritten": [
     "science-jeux-de-cartes-cerveau"
@@ -79,6 +81,7 @@
     "/tarot-africain-a-3-joueurs.html",
     "/whist-22.html",
     "/regles-rikiki.html",
-    "/ressources-gratuites.html"
+    "/ressources-gratuites.html",
+    "/idee-cadeau.html"
   ]
 }

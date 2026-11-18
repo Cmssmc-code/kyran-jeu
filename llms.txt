@@ -96,7 +96,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 42 guides
+## Blog — 44 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -123,6 +123,7 @@
 
 ## Blog : Cadeaux
 
+- [Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget](https://kyran-jeu.fr/blog/cadeau-moins-de-10-euros.html): 6 jeux comparés
 - [Jeux de cartes à offrir à Noël : 7 idées selon le destinataire](https://kyran-jeu.fr/blog/cadeau-noel.html): 7 jeux comparés
 - [Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant](https://kyran-jeu.fr/blog/cadeau-anniversaire.html): 9 jeux comparés
 
@@ -154,6 +155,7 @@
 
 ## Blog : Soirée
 
+- [Jeu de cartes pour le réveillon : 7 idées, de l’apéritif à minuit passé](https://kyran-jeu.fr/blog/jeux-cartes-reveillon.html): 7 jeux comparés
 - [Week-end entre amis en gîte : 7 jeux de cartes pour les soirées](https://kyran-jeu.fr/blog/jeux-cartes-week-end-gite.html): 7 jeux comparés
 - [Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis](https://kyran-jeu.fr/blog/jeux-cartes-ados.html): 6 jeux comparés
 - [Jeux de cartes pour adultes : 7 jeux sans humour gras, classés par ce que la table attend](https://kyran-jeu.fr/blog/jeux-cartes-adultes.html): 7 jeux comparés

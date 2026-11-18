@@ -115,7 +115,7 @@ const INTENTS = [
   { label: 'Selon l’occasion', links: [
     ['jeux-soiree-amis', 'Soirée entre amis'], ['meilleurs-jeux-apero', 'Apéro et afterwork'], ['jeux-famille', 'En famille'],
     ['jeux-vacances-voyage', 'Vacances et voyage'], ['jeux-30-minutes', 'En 30 minutes ou moins'],
-    ['cadeau-noel', 'Cadeau de Noël'], ['cadeau-anniversaire', 'Cadeau d’anniversaire']] },
+    ['cadeau-noel', 'Cadeau de Noël'], ['cadeau-moins-de-10-euros', 'Cadeau à moins de 10 €'], ['jeux-cartes-reveillon', 'Réveillon'], ['cadeau-anniversaire', 'Cadeau d’anniversaire']] },
   { label: 'Selon le public', links: [
     ['jeux-debutants-adultes', 'Adultes débutants'], ['jeux-cartes-adultes', 'Entre adultes'],
     ['jeux-cartes-ados', 'Ados'], ['jeux-cartes-seniors', 'Seniors']] },

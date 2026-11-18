@@ -47,6 +47,7 @@
 
 | Page | Requête cible | Clics / impr. | Position |
 |---|---|---|---|
+| `/jouer-en-ligne.html` (créée le 18/11/2026, titre verrouillé au 16/12) | jouer à kyran en ligne, jeu de cartes en ligne contre l'ordinateur | nouvelle | – |
 | `/tarot-africain.html` | tarot africain, règle tarot africain | 22 / 1 742 | 7,3 |
 | `/blog/jeux-comme-skyjo.html` | alternative skyjo | 12 / 665 | 8,9 |
 | `/blog/jeux-comme-dixit.html` | alternative dixit | 17 / 395 | 6,2 |

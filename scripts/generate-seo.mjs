@@ -136,6 +136,7 @@ function buildLlmsTxt() {
 - Note sur Amazon.fr : ${PRODUCT.amazon.rating} / 5 sur ${PRODUCT.amazon.ratingCount} évaluations (relevé du ${PRODUCT.amazon.checkedLabel})
 - Règles : ${SITE}/regle.html ; règles en PDF (une page A4) : ${SITE}/regle-kyran.pdf ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
+- Jouer à KYRAN en ligne contre l'ordinateur (partie libre, 2 à 5 adversaires, 3 niveaux, sans inscription) : ${SITE}/jouer-en-ligne.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques

@@ -51,6 +51,17 @@ export const STATIC_PAGES = [
     </video:video>`
   },
   { path: '/minijeu.html', title: 'Initiation KYRAN — tutoriel interactif gratuit', section: 'KYRAN' },
+  {
+    path: '/jouer-en-ligne.html',
+    title: "Jouer à KYRAN en ligne : jeu de cartes contre l'ordinateur",
+    section: 'KYRAN',
+    sitemapExtra: `
+    <image:image>
+      <image:loc>${SITE}/images/jouer-en-ligne/partie-libre-pari.webp</image:loc>
+      <image:title>Partie de KYRAN en ligne contre l'ordinateur</image:title>
+      <image:caption>Le moment du pari, contre trois adversaires</image:caption>
+    </image:image>`
+  },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   { path: '/idee-cadeau.html', title: 'Idée cadeau de Noël : offrir le jeu de cartes KYRAN', section: 'Boutique' },
   {

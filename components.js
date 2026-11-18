@@ -33,6 +33,7 @@ const ACTIVE_BY_PATH = {
   'minijeu.html': 'game',
   'dossier-presse.html': 'discover',
   'jeu-apero.html': 'discover',
+  'jouer-en-ligne.html': 'discover',
   'tarot-africain.html': 'discover',
   'tarot-africain-a-3-joueurs.html': 'discover',
   'whist-22.html': 'discover',
@@ -61,6 +62,7 @@ function resolveActivePage(explicit, pathname) {
 
 const DISCOVER_ITEMS = [
   { href: '/idee-cadeau.html', title: 'Idée cadeau', desc: 'Offrir KYRAN, délais de livraison' },
+  { href: '/jouer-en-ligne.html', title: 'Jouer en ligne', desc: 'Contre l\'ordinateur, 2 à 5 adversaires' },
   { href: '/simulation.html', title: '10 000 parties simulées', desc: 'Comment gagner à KYRAN' },
   { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
   { href: '/blog/jeux-comme-skyjo.html', title: 'Jeux comme Skyjo', desc: '10 alternatives et variantes' },

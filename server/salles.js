@@ -137,17 +137,24 @@ export function createSalles({
     const extra = options.ordinateurs == null ? 0 : options.ordinateurs;
     if (!Number.isInteger(extra) || extra < 0) throw new ErreurSalle(400, "Nombre d'ordinateurs invalide");
     const total = Math.min(MAX_SIEGES, Math.max(MIN_JOUEURS, humains + extra));
-    const personas = AI.PERSONAS.slice().sort(() => rng() - 0.5);
+    const personas = AI.PERSONAS.slice();
+    for (let i = personas.length - 1; i > 0; i--) { // mélange de Fisher-Yates
+      const j = Math.floor(rng() * (i + 1));
+      [personas[i], personas[j]] = [personas[j], personas[i]];
+    }
     const joueurs = salle.sieges.map(s => ({ name: s.pseudo, human: true, level: niveau })); // niveau utilisé si un humain est remplacé
+    const ordis = [];
     for (let i = joueurs.length; i < total; i++) {
       const persona = personas[(i - humains) % personas.length];
       joueurs.push({ name: persona.name, persona: persona.key, level: niveau });
-      salle.sieges.push({ pid: i, pseudo: persona.name, humain: false, remplace: false });
+      ordis.push({ pid: i, pseudo: persona.name, humain: false, remplace: false });
     }
     const pouvoirs = options.pouvoirs !== false;
+    const state = E.createGame({ players: joueurs, lives: vies, powers: pouvoirs, mystique: pouvoirs, seed: randomInt(2 ** 32) });
+    salle.sieges.push(...ordis); // sièges ajoutés seulement si createGame a réussi
     salle.niveau = niveau;
     salle.dernierCoup = now();
-    salle.state = E.createGame({ players: joueurs, lives: vies, powers: pouvoirs, mystique: pouvoirs, seed: randomInt(2 ** 32) });
+    salle.state = state;
     const evenements = E.act(salle.state, { type: 'start' });
     salle.statut = 'jeu';
     salle.seq++;

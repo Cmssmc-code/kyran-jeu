@@ -217,6 +217,20 @@ function whenParsed(callback) {
   else callback();
 }
 
+// Du 1er novembre au 16 décembre, le bandeau d'annonce rappelle la date limite de commande pour Noël
+// (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre). Fait au chargement,
+// car le HTML prérendu ne doit pas dépendre de la date du build.
+function initNoelAnnouncement() {
+  var now = new Date();
+  var y = now.getFullYear();
+  if (now < new Date(y, 10, 1) || now > new Date(y, 11, 16, 23, 59)) return;
+  var text = document.querySelector('.announcement-text');
+  if (!text) return;
+  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre';
+}
+
+if (typeof document !== 'undefined') whenParsed(initNoelAnnouncement);
+
 class KyranHeader extends HTMLElement {
   connectedCallback() {
     if (this.hasAttribute('data-ssr')) {

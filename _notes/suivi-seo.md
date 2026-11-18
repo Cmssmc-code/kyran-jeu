@@ -377,3 +377,4 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
   `session_01VsKUWwrZ4NnxRCubDJY5sX`.
 - **À décider** : mesure d'audience sans cookie ; `priceValidUntil` 2027 ; clé `PAGESPEED_API_KEY`.
 - **Premier run** : 2026-10-20 à 00:00 ; priorité aux pages hors index et aux `sameAs` Wikidata.
+- 18/11/2026 : itch.io publié (kyranjeu.itch.io/kyran-initiation, public, embed=1). Ajouté à llms.txt et llms-full.txt (PR 251, en ligne).

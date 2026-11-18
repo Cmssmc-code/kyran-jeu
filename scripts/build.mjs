@@ -20,6 +20,7 @@ const steps = [
   'generate-merchant-feed.mjs',
   'prerender.mjs',
   'stamp-dojo.mjs',
+  'sync-moteur.mjs',
   'apply-csp.mjs'
 ];
 

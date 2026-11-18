@@ -41,7 +41,7 @@ Objectif : jouer à KYRAN en ligne avec 2 à 6 amis, sans compte, en partageant 
 
 ## 3. Fonction de vue par joueur (point le plus sensible)
 
-`vueDe(state, pid)` produit un objet **de même forme que l'état local** que lit l'interface (pour réutiliser `dojo/app.js`), mais filtré. Règle : on construit la vue en **liste blanche** (on copie ce qui est public), on ne retire pas au cas par cas.
+`vueDe(state, pid)` produit un objet **filtré** pour l'interface dédiée de la salle (`dojo/multi.js`, décision de l'étape 0) : une main cachée vaut `hand: null` avec `handCount`. Règle : on construit la vue en **liste blanche** (on copie ce qui est public), on ne retire pas au cas par cas.
 
 - Jamais envoyés : `rng`, `opts.seed`, `deckTemplate`, `opts.deals`, jetons, adresses IP.
 - Mains : pour les autres joueurs, seulement le **nombre** de cartes.

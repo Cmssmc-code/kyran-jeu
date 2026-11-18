@@ -1665,7 +1665,7 @@ function renderLobby(keepFocus) {
     }))
   );
 
-  const free = h('div', { class: 'dj-free', role: 'region', 'aria-labelledby': 'dj-free-title' },
+  const free = h('div', { class: 'dj-free', id: 'jouer', role: 'region', 'aria-labelledby': 'dj-free-title' },
     h('h3', { id: 'dj-free-title', class: 'dj-h3', text: 'Partie libre' }),
     h('p', { class: 'dj-free-sub', text: 'Une veillée de jeu avec toutes les règles de la boîte, contre l’ordinateur. Le Bokonon reste à tes côtés : touche Conseil.' }),
     segmented('Adversaires', 'opponents', [[2, '2'], [3, '3'], [4, '4'], [5, '5']]),
@@ -1704,6 +1704,11 @@ function init() {
   ROOT.classList.add('dj');
   ROOT.removeAttribute('aria-busy');
   renderLobby();
+  // Lien direct vers la partie libre (minijeu.html#jouer) : mails de prospection, vitrine, réseaux
+  if (location.hash === '#jouer') {
+    const btn = $('#jouer [data-action="free-game"]');
+    if (btn) { $('#jouer').scrollIntoView({ block: 'center' }); btn.focus({ preventScroll: true }); track('dojo_direct_link'); }
+  }
   let t;
   window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutHand(); layoutTrick(); }, 120); });
   document.addEventListener('keydown', e => {

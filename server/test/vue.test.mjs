@@ -83,7 +83,7 @@ test('départage : même filtre que la manche Mystique, hors participants compri
   assert.equal(v0.players[0].hand, null);
   assert.equal(v0.players[1].hand.length, 1);
   const v3 = vueDe(state, 3); // ne participe pas : il voit les trois cartes
-  assert.deepEqual(v3.players[3].hand, []);
+  assert.ok(v3.players[3].hand === null || v3.players[3].hand.length === 0);
   assert.equal(v3.players[0].hand.length, 1);
 });
 

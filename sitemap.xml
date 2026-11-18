@@ -16,7 +16,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/regle.html</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/logo.png</image:loc>
       <image:title>Règles du jeu KYRAN</image:title>
@@ -44,6 +44,16 @@
   </url>
 
   <url>
+    <loc>https://kyran-jeu.fr/jouer-en-ligne.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/images/jouer-en-ligne/partie-libre-pari.webp</image:loc>
+      <image:title>Partie de KYRAN en ligne contre l'ordinateur</image:title>
+      <image:caption>Le moment du pari, contre trois adversaires</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://kyran-jeu.fr/commander.html</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
@@ -55,7 +65,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/jeu-apero.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/jeu-kyran-ami.webp</image:loc>
       <image:title>KYRAN – Jeu de cartes pour apéro</image:title>
@@ -64,7 +74,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/tarot-africain.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
 
   <url>

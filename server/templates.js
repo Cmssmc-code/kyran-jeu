@@ -130,7 +130,7 @@ export function renderOrderEmail({
 
     <p style="margin: 0 0 24px 0; font-size: 14px; color: #475569; line-height: 1.6;">
       ${mainPropre
-        ? 'Paiement validé. Votre boîte KYRAN vous est remise en main propre, sur place.'
+        ? 'Paiement reçu, merci pour votre achat.'
         : 'Paiement validé. Votre boîte KYRAN est en cours de préparation dans notre atelier.'}
     </p>
 
@@ -187,7 +187,7 @@ export function renderOrderEmail({
   const text = `Merci pour votre commande KYRAN, ${customerName} !
 
 Votre paiement a bien été validé.
-${mainPropre ? 'Votre boîte KYRAN vous est remise en main propre, sur place.' : 'Votre boîte KYRAN est en cours de préparation.'}
+${mainPropre ? 'Paiement reçu, merci pour votre achat.' : 'Votre boîte KYRAN est en cours de préparation.'}
 
 Récapitulatif :
 - Article : KYRAN — Édition Officielle × ${quantity} : ${subtotalAmount}

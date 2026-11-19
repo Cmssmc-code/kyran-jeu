@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-19 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-19.md`](../docs/rapports/surveillance/2026-11-19.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Site | OK | 61 URL × 1280/390 px + `/insta.html`, `/merci.html`, `/salle.html` sans erreur ; 476 liens, 0 interne cassé |
+| Liens externes | levé | agorajeux.com, doc BGA, préfecture : de nouveau joignables |
+| Paiement, initiation | OK | Stripe 9,99 € + 2,99 € = 12,98 € ; initiation : manche complète ; GA4 sans erreur |
+| Serveur | réparé | salles (`/salle/*`) déployées et coupées ; `VERSION` restée 1.8.0 → 1.9.0 (PR #274), en ligne ; 5xx = 503 voulus de `/salle/*` |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert (1 CI rouge le 18/11 à 13:00 UTC, réparée) ; PR #272 du propriétaire en brouillon ; 0 faille |
+| Versions | 1 mise à jour | wrangler 4.165.0, `compatibility_date` 2026-11-19 |
+
+Réparation : PR #274. Aucun point ouvert.
+
 ## 2026-11-18 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

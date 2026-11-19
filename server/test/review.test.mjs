@@ -113,3 +113,22 @@ test('serveur : désinscription par formulaire (GET sans effet, POST effectif)',
   assert.equal(r.status, 200);
   assert.match(await r.text(), /plus de demande/);
 });
+
+test('serveur : vente sur place sans adresse acceptée, avis J+10 gardé', async () => {
+  const session = {
+    id: 'cs_test_a1SurPlace0001', payment_status: 'paid', amount_total: 1998, amount_subtotal: 1998,
+    total_details: { amount_shipping: 0 }, metadata: { canal: 'sur-place' },
+    customer_details: { email: 'festival@example.com', name: null }
+  };
+  const avant = await (await fetch(BASE + '/api/sur-place?session=cs_test_a1SurPlace0001')).json();
+  assert.deepEqual(avant, { paye: false });
+  assert.equal((await fetch(BASE + '/api/sur-place?session=x')).status, 400);
+  const r = await send({ id: 'evt_sur_place', type: 'checkout.session.completed', data: { object: session } });
+  assert.equal(r.status, 200);
+  const end = Date.now() + 3000;
+  while (count(/Demande d'avis programmée/g) < 2 && Date.now() < end) await wait(50);
+  assert.equal(count(/Demande d'avis programmée/g), 2);
+  assert.doesNotMatch(logs, /Erreur notification admin commande/);
+  const apres = await (await fetch(BASE + '/api/sur-place?session=cs_test_a1SurPlace0001')).json();
+  assert.deepEqual(apres, { paye: true, quantite: 2 });
+});

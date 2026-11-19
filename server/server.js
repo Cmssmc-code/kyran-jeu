@@ -182,6 +182,19 @@ function countryName(code) {
   try { return COUNTRY_NAMES.of(String(code).toUpperCase()) || code; } catch { return code; }
 }
 
+// Ventes sur place payées (festival), gardées 48 h en mémoire : la page merci-sur-place.html
+// affiche « Payé » seulement si le webhook a vraiment reçu le paiement de cette session.
+// Lien de paiement du festival de Carrières (21/11/2026), sans livraison ; désactivé le 22/11.
+const SUR_PLACE_PAYMENT_LINK = process.env.SUR_PLACE_PAYMENT_LINK ?? 'plink_1UdZIwPe2ed8eDFC7wqvv7nY';
+const SUR_PLACE_TTL_MS = 48 * 60 * 60 * 1000;
+const surPlacePayees = new Map();
+function noterVenteSurPlace(sessionId, quantity) {
+  const now = Date.now();
+  for (const [id, v] of surPlacePayees) if (now - v.at > SUR_PLACE_TTL_MS) surPlacePayees.delete(id);
+  if (surPlacePayees.size >= 1000) surPlacePayees.delete(surPlacePayees.keys().next().value);
+  surPlacePayees.set(sessionId, { quantity, at: now });
+}
+
 async function handleOrderCompleted(session) {
   // Paiement différé (ex. prélèvement SEPA) : la session est « complétée » avant l'encaissement.
   // On attend `checkout.session.async_payment_succeeded` pour confirmer la commande.
@@ -222,6 +235,12 @@ async function handleOrderCompleted(session) {
     country: countryName(shipping.address.country)
   } : null;
 
+  // Vente sur place (festival) : lien de paiement sans livraison, marqué `canal: sur-place`
+  // dans ses métadonnées (recopiées par Stripe sur la session). Le jeu est remis en main propre.
+  const mainPropre = session.metadata?.canal === 'sur-place'
+    || (Boolean(SUR_PLACE_PAYMENT_LINK) && session.payment_link === SUR_PLACE_PAYMENT_LINK);
+  if (mainPropre && session.id) noterVenteSurPlace(session.id, quantity);
+
   // 1. Confirmation au client. Un échec ne doit pas faire perdre la commande :
   // l'administrateur est prévenu quoi qu'il arrive (étape 2) et envoie le mail à la main.
   let clientMailError = null;
@@ -237,7 +256,8 @@ async function handleOrderCompleted(session) {
         totalAmount,
         shippingCost,
         shippingAddress,
-        estimatedDelivery: '3 à 5 jours ouvrés'
+        estimatedDelivery: '3 à 5 jours ouvrés',
+        mainPropre
       });
       await sendEmail({
         to: customerEmail,
@@ -275,12 +295,13 @@ async function handleOrderCompleted(session) {
       shippingCost,
       totalAmount,
       shippingAddress,
+      mainPropre,
       orderDate: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })
     });
 
     await sendEmail({
       to: ADMIN_EMAILS,
-      subject: `${clientMailError ? '⚠️ MAIL CLIENT NON ENVOYÉ · ' : ''}🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
+      subject: `${clientMailError ? '⚠️ MAIL CLIENT NON ENVOYÉ · ' : ''}${mainPropre ? '🤝 SUR PLACE · ' : ''}🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
       html: adminNotification.html,
       text: adminNotification.text
     });
@@ -572,6 +593,16 @@ const server = http.createServer((req, res) => {
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       adminEnabled: ADMIN_ENABLED
     });
+  }
+
+  // Vente sur place : la page de remerciement demande si la session est bien payée.
+  if (req.method === 'GET' && pathname === '/api/sur-place') {
+    const id = url.searchParams.get('session') || '';
+    if (!/^cs_(test|live)_[A-Za-z0-9]{10,200}$/.test(id)) return sendJson(res, 400, { error: 'Session invalide' });
+    const vente = surPlacePayees.get(id);
+    return sendJson(res, 200, vente && Date.now() - vente.at <= SUR_PLACE_TTL_MS
+      ? { paye: true, quantite: vente.quantity }
+      : { paye: false });
   }
 
   if (pathname === '/avis/desinscription') {

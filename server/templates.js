@@ -104,9 +104,11 @@ export function renderOrderEmail({
   totalAmount = '12,98 €',
   shippingCost = '2,99 €',
   shippingAddress = null,
-  estimatedDelivery = '3 à 5 jours ouvrés'
+  estimatedDelivery = '3 à 5 jours ouvrés',
+  mainPropre = false
 }) {
-  const addressHtml = shippingAddress ? `
+  // Vente sur place : pas de livraison, ni adresse, ni ligne de port.
+  const addressHtml = !mainPropre && shippingAddress ? `
     <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #f1f5f9; font-size: 13px; color: #475569; line-height: 1.5;">
       <div style="font-weight: 600; color: #0f172a; margin-bottom: 4px;">Livraison à :</div>
       ${shippingAddress.name ? `<div>${esc(shippingAddress.name)}</div>` : ''}
@@ -127,7 +129,9 @@ export function renderOrderEmail({
     </h1>
 
     <p style="margin: 0 0 24px 0; font-size: 14px; color: #475569; line-height: 1.6;">
-      Paiement validé. Votre boîte KYRAN est en cours de préparation dans notre atelier.
+      ${mainPropre
+        ? 'Paiement validé. Votre boîte KYRAN vous est remise en main propre, sur place.'
+        : 'Paiement validé. Votre boîte KYRAN est en cours de préparation dans notre atelier.'}
     </p>
 
     <!-- Tableau simple récapitulatif -->
@@ -141,14 +145,14 @@ export function renderOrderEmail({
             ${esc(subtotalAmount)}
           </td>
         </tr>
-        <tr>
+        ${mainPropre ? '' : `<tr>
           <td style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">
             Livraison suivie (${esc(estimatedDelivery)})
           </td>
           <td align="right" style="padding: 10px 16px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">
             ${esc(shippingCost)}
           </td>
-        </tr>
+        </tr>`}
         <tr style="background-color: #fafaf9;">
           <td style="padding: 12px 16px; color: #0f172a; font-weight: 700;">
             Total réglé
@@ -164,7 +168,7 @@ export function renderOrderEmail({
 
     <!-- Lien Initiation ultra simple -->
     <div style="margin-top: 28px; padding: 18px 20px; background-color: #fafaf9; border: 1px solid #e7e5e4; border-radius: 8px; font-size: 13px; line-height: 1.5;">
-      <div style="font-weight: 600; color: #0f172a; margin-bottom: 4px;">🃏 En attendant votre colis :</div>
+      <div style="font-weight: 600; color: #0f172a; margin-bottom: 4px;">🃏 ${mainPropre ? 'Pour revoir les règles :' : 'En attendant votre colis :'}</div>
       <div style="color: #57534e; margin-bottom: 12px;">Découvrez les cartes et testez la manche Mystique sur notre simulateur en ligne gratuit.</div>
       <a href="https://kyran-jeu.fr/minijeu.html" style="display: inline-block; background-color: #0f172a; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 600;" target="_blank">
         Tester l’Initiation en ligne →
@@ -183,14 +187,14 @@ export function renderOrderEmail({
   const text = `Merci pour votre commande KYRAN, ${customerName} !
 
 Votre paiement a bien été validé.
-Votre boîte KYRAN est en cours de préparation.
+${mainPropre ? 'Votre boîte KYRAN vous est remise en main propre, sur place.' : 'Votre boîte KYRAN est en cours de préparation.'}
 
 Récapitulatif :
 - Article : KYRAN — Édition Officielle × ${quantity} : ${subtotalAmount}
-- Livraison suivie (${estimatedDelivery}) : ${shippingCost}
-- Total réglé : ${totalAmount}
+${mainPropre ? '' : `- Livraison suivie (${estimatedDelivery}) : ${shippingCost}
+`}- Total réglé : ${totalAmount}
 
-En attendant votre colis, entraînez-vous sur le simulateur interactif :
+${mainPropre ? 'Pour revoir les règles' : 'En attendant votre colis'}, entraînez-vous sur le simulateur interactif :
 https://kyran-jeu.fr/minijeu.html
 
 Une question ? Répondez directement à cet email.
@@ -385,9 +389,10 @@ export function renderAdminOrderNotificationEmail({
   shippingCost = '',
   totalAmount = '',
   shippingAddress = null,
+  mainPropre = false,
   orderDate = ''
 }) {
-  const addressFormatted = shippingAddress ? `
+  const addressFormatted = mainPropre ? 'Remis en main propre : aucun envoi, aucun bordereau.' : shippingAddress ? `
 Nom : ${shippingAddress.name || customerName}
 Adresse : ${shippingAddress.line1 || ''}${shippingAddress.line2 ? `\nComplément : ${shippingAddress.line2}` : ''}
 Ville : ${shippingAddress.postal_code || ''} ${shippingAddress.city || ''}
@@ -414,10 +419,10 @@ Pays : ${shippingAddress.country || 'France'}
           <td style="padding: 6px 0; color: #64748b;">Sous-total :</td>
           <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${esc(subtotalAmount)}</td>
         </tr>
-        <tr>
+        ${mainPropre ? '' : `<tr>
           <td style="padding: 6px 0; color: #64748b;">Frais de port :</td>
           <td align="right" style="padding: 6px 0; color: #0f172a; font-weight: 600;">${esc(shippingCost)}</td>
-        </tr>
+        </tr>`}
         <tr>
           <td style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #0f172a; font-weight: 800; font-size: 15px;">Total encaissé :</td>
           <td align="right" style="padding: 10px 0 4px 0; border-top: 1px solid #e2e8f0; color: #b45309; font-weight: 800; font-size: 16px;">${esc(totalAmount)}</td>
@@ -444,7 +449,7 @@ Pays : ${shippingAddress.country || 'France'}
     <!-- Adresse d'expédition pour bordereau -->
     <div style="background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px;">
       <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 10px;">
-        📦 Adresse de livraison (Format étiquette / bordereau)
+        ${mainPropre ? '🤝 Remis en main propre (vente sur place)' : '📦 Adresse de livraison (Format étiquette / bordereau)'}
       </div>
       <div style="font-family: monospace; font-size: 13px; color: #78350f; line-height: 1.6; white-space: pre-line;">${esc(addressFormatted)}</div>
     </div>
@@ -459,21 +464,21 @@ Pays : ${shippingAddress.country || 'France'}
 
   const html = baseLayout({
     title: `Nouvelle commande KYRAN : ${quantity} boîte(s) (${totalAmount})`,
-    previewText: `Commande de ${customerName} (${totalAmount}). Adresse : ${shippingAddress ? `${shippingAddress.city} (${shippingAddress.postal_code})` : 'Non renseignée'}.`,
+    previewText: `Commande de ${customerName} (${totalAmount}). ${mainPropre ? 'Remis en main propre.' : `Adresse : ${shippingAddress ? `${shippingAddress.city} (${shippingAddress.postal_code})` : 'Non renseignée'}.`}`,
     contentHtml
   });
 
   const text = `🚨 NOUVELLE COMMANDE KYRAN !
 
 Quantité : ${quantity} boîte(s)
-Total payé : ${totalAmount} (Sous-total: ${subtotalAmount}, Port: ${shippingCost})
+Total payé : ${totalAmount} (Sous-total: ${subtotalAmount}${mainPropre ? ', remis en main propre' : `, Port: ${shippingCost}`})
 
 CLIENT :
 - Nom : ${customerName}
 - Email : ${customerEmail}
 - Téléphone : ${customerPhone || 'Non renseigné'}
 
-ADRESSE DE LIVRAISON :
+${mainPropre ? 'LIVRAISON' : 'ADRESSE DE LIVRAISON'} :
 ${addressFormatted}
 
 RÉFÉRENCE STRIPE :

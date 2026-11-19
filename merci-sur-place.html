@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://kyran-webhook-production.up.railway.app https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="/error-reporter.js?v=9891fdac0f" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paiement reçu — KYRAN</title>
+  <meta name="description" content="Confirmation de votre achat KYRAN sur place." />
+  <link rel="canonical" href="https://kyran-jeu.fr/merci-sur-place.html" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#231F22" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <style>
+    @font-face { font-family: "Poppins"; font-weight: 700; font-display: swap; src: url("/fonts/poppins-700-latin.woff2") format("woff2"); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Poppins", system-ui, sans-serif; background: #231F22; color: #F7F1E8; line-height: 1.4; }
+    main { max-width: 520px; min-height: 100svh; margin: 0 auto; padding: 24px 20px; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 20px; }
+    .carte { border-radius: 18px; padding: 28px 20px; background: #3A3438; }
+    .carte.ok { background: #1E7A3C; }
+    .titre { font-size: 2.2rem; font-weight: 700; margin: 0 0 12px; line-height: 1.15; }
+    .consigne { font-size: 1.3rem; margin: 0; }
+    .heure { margin: 14px 0 0; opacity: .85; }
+    a { color: #F2C14E; }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="carte" class="carte" role="status" aria-live="polite">
+      <p id="titre" class="titre">Vérification du paiement…</p>
+      <p id="consigne" class="consigne">Un instant.</p>
+      <p id="heure" class="heure"></p>
+    </div>
+    <p><a href="/video-regles.html">Revoir les règles en vidéo</a> · <a href="/minijeu.html">Jouer à l'Initiation</a></p>
+  </main>
+  <script>
+    (function () {
+      var id = new URLSearchParams(location.search).get('session_id') || '';
+      var titre = document.getElementById('titre');
+      var consigne = document.getElementById('consigne');
+      var heure = document.getElementById('heure');
+      var essais = 0;
+      function attente() {
+        titre.textContent = 'Paiement en cours';
+        consigne.textContent = 'Montrez cet écran à Corentin, avec le mail de confirmation de Stripe.';
+      }
+      function paye(n) {
+        document.getElementById('carte').classList.add('ok');
+        titre.textContent = 'Payé : ' + n + (n > 1 ? ' boîtes' : ' boîte');
+        consigne.textContent = 'Montrez cet écran à Corentin, il vous remet le jeu tout de suite.';
+        heure.textContent = 'Le ' + new Date().toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
+      }
+      function verifier() {
+        essais++;
+        fetch('https://kyran-webhook-production.up.railway.app/api/sur-place?session=' + encodeURIComponent(id))
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (d && d.paye) return paye(d.quantite || 1);
+            if (essais < 15) return setTimeout(verifier, 2000);
+            attente();
+          })
+          .catch(function () { if (essais < 15) setTimeout(verifier, 2000); else attente(); });
+      }
+      if (/^cs_(test|live)_[A-Za-z0-9]{10,200}$/.test(id)) verifier(); else attente();
+    })();
+  </script>
+</body>
+</html>

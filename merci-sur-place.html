@@ -7,7 +7,7 @@
   <script src="/error-reporter.js?v=9891fdac0f" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Paiement reçu — KYRAN</title>
-  <meta name="description" content="Confirmation de votre achat KYRAN sur place." />
+  <meta name="description" content="Confirmation de votre achat KYRAN." />
   <link rel="canonical" href="https://kyran-jeu.fr/merci-sur-place.html" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#231F22" />
@@ -43,13 +43,13 @@
       var heure = document.getElementById('heure');
       var essais = 0;
       function attente() {
-        titre.textContent = 'Paiement en cours';
-        consigne.textContent = 'Montrez cet écran à Corentin, avec le mail de confirmation de Stripe.';
+        titre.textContent = 'Paiement en cours de confirmation';
+        consigne.textContent = 'Vous recevez un reçu de Stripe par e-mail.';
       }
       function paye(n) {
         document.getElementById('carte').classList.add('ok');
         titre.textContent = 'Payé : ' + n + (n > 1 ? ' boîtes' : ' boîte');
-        consigne.textContent = 'Montrez cet écran à Corentin, il vous remet le jeu tout de suite.';
+        consigne.textContent = 'Paiement reçu, merci !';
         heure.textContent = 'Le ' + new Date().toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
       }
       function verifier() {

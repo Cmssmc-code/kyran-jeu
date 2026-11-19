@@ -5,11 +5,11 @@ import { renderOrderEmail, renderAdminOrderNotificationEmail } from '../template
 
 const base = { customerName: 'Ami joueur', orderId: 'cs_test_x', quantity: 2, subtotalAmount: '19,98 €', totalAmount: '19,98 €', shippingCost: '0,00 €' };
 
-test('client : remise en main propre, aucune ligne de livraison', () => {
+test('client : paiement reçu, aucune ligne de livraison ni de vente sur place', () => {
   const { html, text } = renderOrderEmail({ ...base, mainPropre: true });
   for (const s of [html, text]) {
-    assert.match(s, /main propre/);
-    assert.doesNotMatch(s, /Livraison suivie|colis|Livraison à/);
+    assert.match(s, /Paiement reçu, merci/);
+    assert.doesNotMatch(s, /Livraison suivie|colis|Livraison à|main propre|sur place/);
   }
   assert.match(text, /× 2 : 19,98 €\n- Total réglé : 19,98 €/);
 });

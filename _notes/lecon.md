@@ -190,3 +190,10 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Besoin :** remonter automatiquement les erreurs de production du site et du serveur, et les corriger sans intervention humaine, comme sur Majordia (alertes `support@majordia.fr` → table `production_incidents` → passe horaire Claude).
 - **Mise en place :** `error-reporter.js` (inséré dans chaque page par `scripts/apply-csp.mjs`) → `POST /api/client-error` sur le serveur Railway ; erreurs serveur (webhook Stripe, notification de vente, exceptions) consignées par `recordServerIncident` ; journal `server/incidents.js` sur le volume Railway `/data` ; workflow horaire `.github/workflows/auto-heal-hourly.yml` → `scripts/auto-heal-worker.mjs`.
 - **Règles :** ne jamais envoyer un email par erreur : toujours passer par le journal d'incidents (agrégation) ; une fausse alerte se corrige par un filtre précis dans `isBenignClientError`, jamais en masquant une vraie panne ; une page générée se corrige dans sa source (`scripts/content/`, générateurs), jamais directement.
+
+## Numéro de téléphone de Corentin (19/11/2026, permanent)
+
+- Jamais dans un message à une personne (mail, message privé, signature, modèle, page de contact nouvelle).
+- Demande de numéro ou d'appel : aucune réponse, prévenir le PDG le jour même (nom, mail, demande) ; Corentin seul répond.
+- Formulaires d'inscription et codes SMS : permis.
+- Les trois pages légales (mentions, CGV, confidentialité) le gardent pour la vente à distance, en attente du choix de Corentin.

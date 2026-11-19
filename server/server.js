@@ -41,6 +41,11 @@ const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'https://kyran-jeu.fr,ht
   .split(',')
   .map(o => o.trim())
   .filter(Boolean);
+// Ventes sur place : copie de l'alerte vers une boîte lue sur le téléphone de Corentin.
+const SUR_PLACE_ALERT_EMAILS = (process.env.SUR_PLACE_ALERT_EMAILS || '')
+  .split(',')
+  .map(e => e.trim())
+  .filter(Boolean);
 
 // Destinataires des alertes administratives de vente (à définir via ADMIN_NOTIFICATION_EMAILS)
 const ADMIN_EMAILS = (process.env.ADMIN_NOTIFICATION_EMAILS || 'contact@kyran-jeu.fr')
@@ -299,13 +304,14 @@ async function handleOrderCompleted(session) {
       orderDate: new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })
     });
 
+    const adminTo = mainPropre ? [...new Set([...ADMIN_EMAILS, ...SUR_PLACE_ALERT_EMAILS])] : ADMIN_EMAILS;
     await sendEmail({
-      to: ADMIN_EMAILS,
+      to: adminTo,
       subject: `${clientMailError ? '⚠️ MAIL CLIENT NON ENVOYÉ · ' : ''}${mainPropre ? '🤝 SUR PLACE · ' : ''}🚨 VENTE KYRAN : ${quantity} boîte${quantity > 1 ? 's' : ''} (${totalAmount}) — ${cleanLine(customerName, 80)}`,
       html: adminNotification.html,
       text: adminNotification.text
     });
-    console.log(`🔔 Notification de commande envoyée à l'administrateur (${ADMIN_EMAILS.join(', ')})`);
+    console.log(`🔔 Notification de commande envoyée à l'administrateur (${adminTo.length} destinataire(s))`);
   } catch (adminErr) {
     console.error('Erreur notification admin commande :', adminErr.message);
     recordServerIncident(adminErr, { path: '/webhook', errorCode: 'ADMIN_ORDER_NOTIFICATION', httpStatus: 200 });

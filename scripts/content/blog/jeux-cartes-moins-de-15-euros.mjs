@@ -155,7 +155,7 @@ export default {
     "heading": "Quel jeu choisir selon votre table",
     "html": "<p>Pour une table de trois à six qui veut jouer en un quart d’heure, Trio à 11,90 € est le plus simple. Pour gagner ensemble, Hanabi au même prix. Pour une grande tablée jusqu’à huit, Papayoo à 14,90 € ou Skull King à 14,50 €. Pour un petit groupe qui veut réfléchir, KYRAN à 9,99 € plus 2,99 € de port. Le prix décide peu : le nombre de joueurs et l’âge, beaucoup plus.</p>"
   },
-  "conclusion": "<p>Quinze euros achètent aujourd’hui plusieurs jeux sérieux, dont certains primés. Avant de payer, vérifiez le nombre de joueurs maximal, l’âge minimum et les frais de livraison, puis lisez la règle si elle est en ligne. Pour une idée cadeau complète, notre page sur les <a class=\"text-link\" href=\"/blog/cadeau-noel.html\">cadeaux pour Noël</a> compare aussi les délais de livraison. Dernière vérification des prix : 23 octobre 2026.</p>",
+  "conclusion": "<p>Quinze euros achètent aujourd’hui plusieurs jeux sérieux, dont certains primés. Avant de payer, vérifiez le nombre de joueurs maximal, l’âge minimum et les frais de livraison, puis lisez la règle si elle est en ligne. Pour une idée cadeau complète, notre page sur les <a class=\"text-link\" href=\"/blog/cadeau-noel.html\">cadeaux pour Noël</a> compare aussi les délais de livraison, et pour un budget plus serré, notre sélection d’<a class=\"text-link\" href=\"/blog/cadeau-moins-de-10-euros.html\">idées cadeaux à moins de 10 euros</a> retient six jeux de cartes. Dernière vérification des prix : 23 octobre 2026.</p>",
   "faq": [
     {
       "q": "Quel est le jeu de cartes le moins cher de cette sélection ?",

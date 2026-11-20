@@ -835,6 +835,84 @@ function initVideoFacades() {
 
 if (typeof document !== 'undefined') whenParsed(initVideoFacades);
 
+// Festivals (permanent, décision de Corentin du 20/11/2026) : le QR du stand mène à /bienvenue.html,
+// qui redirige vers l'accueil avec ?festival=1. Ce repère est gardé dans sessionStorage et, pour ces
+// seuls visiteurs, chaque bouton d'achat ouvre un choix « en main propre » (lien Stripe du festival, sans
+// adresse) ou « livraison » (lien habituel). Tout est injecté ici : rien dans le HTML indexable.
+const FESTIVAL_KEY = 'kyranFestival';
+const FESTIVAL_STRIPE_URL = 'https://buy.stripe.com/6oU00laWzg2IflK42yaEE01';
+
+function isFestivalVisitor() {
+  try {
+    if (new URLSearchParams(location.search).get('festival') === '1') {
+      sessionStorage.setItem(FESTIVAL_KEY, '1');
+    }
+    return sessionStorage.getItem(FESTIVAL_KEY) === '1';
+  } catch (e) {
+    return false;
+  }
+}
+
+function isBuyLink(link) {
+  const href = link.getAttribute('href') || '';
+  if (href.indexOf(STRIPE_CHECKOUT_URL) === 0) return true;
+  try {
+    const url = new URL(href, location.href);
+    return url.origin === location.origin && /\/commander(\.html)?$/.test(url.pathname);
+  } catch (e) {
+    return false;
+  }
+}
+
+function initFestivalChoice() {
+  if (!isFestivalVisitor()) return;
+  const style = document.createElement('style');
+  style.textContent = [
+    '.festival-choice{border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:420px;width:calc(100% - 32px);background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
+    '.festival-choice::backdrop{background:rgba(35,31,34,.6);}',
+    '.festival-choice__body{padding:28px 22px 22px;text-align:center;}',
+    '.festival-choice h2{font-size:1.35rem;margin:0 0 6px;line-height:1.2;}',
+    '.festival-choice p{margin:0 0 20px;opacity:.85;}',
+    '.festival-choice .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:64px;padding:12px 18px;margin:0 0 16px;text-decoration:none;font-size:1.1rem;}',
+    '.festival-choice .btn small{display:block;font-size:.85rem;font-weight:500;opacity:.8;}',
+    '.festival-choice__close{background:none;border:0;color:var(--k-ink);font:inherit;text-decoration:underline;padding:8px 12px;cursor:pointer;}'
+  ].join('');
+  document.head.appendChild(style);
+
+  const dialog = document.createElement('dialog');
+  dialog.className = 'festival-choice';
+  dialog.setAttribute('aria-labelledby', 'festival-choice-title');
+  dialog.innerHTML =
+    '<div class="festival-choice__body">' +
+    '<h2 id="festival-choice-title">Comment voulez-vous votre jeu ?</h2>' +
+    '<p>Choisissez, puis payez en toute sécurité avec Stripe.</p>' +
+    '<a class="btn btn-primary" href="' + FESTIVAL_STRIPE_URL + '">En main propre : 9,99&nbsp;€<small>Sans adresse, de 1 à 10 boîtes</small></a>' +
+    '<a class="btn btn-secondary" href="' + STRIPE_CHECKOUT_URL + '">Livraison : 9,99&nbsp;€ + 2,99&nbsp;€<small>Envoyé chez vous sous 24 à 48&nbsp;h</small></a>' +
+    '<button type="button" class="festival-choice__close">Fermer</button>' +
+    '</div>';
+  document.body.appendChild(dialog);
+  dialog.querySelector('.festival-choice__close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+  // Événements GA4 nommés (envoyés en beacon : la page Stripe s'ouvre aussitôt après).
+  [['.btn-primary', 'festival_choix_main_propre'], ['.btn-secondary', 'festival_choix_livraison']].forEach(function (pair) {
+    dialog.querySelector(pair[0]).addEventListener('click', function () {
+      try {
+        if (typeof window.gtag === 'function') window.gtag('event', pair[1], { transport_type: 'beacon' });
+      } catch (e) { /* analytique facultative */ }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest && event.target.closest('a[href]');
+    if (!link || dialog.contains(link) || !isBuyLink(link)) return;
+    if (typeof dialog.showModal !== 'function') return;
+    event.preventDefault();
+    dialog.showModal();
+  }, true);
+}
+
+if (typeof document !== 'undefined') whenParsed(initFestivalChoice);
+
 // Fonctions de rendu pures, utilisées par scripts/prerender.mjs pour écrire le HTML statique.
 var KyranRender = {
   header: renderHeaderHtml,

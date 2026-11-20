@@ -65,6 +65,7 @@ Sources : `scripts/content/README.md` § « faits canoniques », `llms.txt`, `/r
 - **Autres fichiers SEO :** `google-merchant-feed.xml` / `.tsv`, `BingSiteAuth.xml`, la clé IndexNow (`<clé>.txt` à la racine, publique), `NETLINKING_ANNUAIRES.md`.
 - **MCP SEO :** serveurs `gsc` (Search Console, lecture seule) et `bing-webmaster` dans `.mcp.json`, lanceurs `scripts/mcp/`, mêmes identifiants que Majordia (`GSC_SERVICE_ACCOUNT_JSON`, `BING_WEBMASTER_API_KEY`). Voir `docs/MCP_SEO.md`.
 - **Blog** : `blog/<slug>.html` généré, `blog/index.html`, `blog/images/` (dont `parties/` pour les photos réelles).
+- **QR des festivals : `/bienvenue.html`** (permanent depuis le 2026-11-20, décision de Corentin) : redirection immédiate vers l'accueil. Garde les utm du QR (`utm_content` = affiche, essai, papier…) et complète ceux qui manquent : `utm_source=festival`, `utm_medium=qr`, `utm_campaign=<festival>`. **D'un festival à l'autre, seule la campagne change** (`FESTIVAL_CAMPAIGN` dans `bienvenue.html`, ex. `carrieres-2026-11`). Elle pose aussi le repère `festival=1` (gardé en `sessionStorage` `kyranFestival`) : pour ces visiteurs seulement, `components.js` (`initFestivalChoice`) ouvre à chaque bouton d'achat un choix « En main propre : 9,99 € » (lien Stripe du festival `plink_1UdZIw…`, sans adresse, 1 à 10 boîtes) ou « Livraison : 9,99 € + 2,99 € » (lien habituel). Événements GA4 : `festival_choix_main_propre`, `festival_choix_livraison`. Le visiteur normal ne voit rien de cela (rien dans le HTML indexable).
 
 ### Génération : `npm run build` (`scripts/build.mjs`)
 

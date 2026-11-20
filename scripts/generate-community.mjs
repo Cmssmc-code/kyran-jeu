@@ -247,7 +247,6 @@ const html = `<!DOCTYPE html>
   <link rel="canonical" href="${URL}" />
   <link rel="alternate" hreflang="fr-FR" href="${URL}" />
   <link rel="alternate" hreflang="x-default" href="${URL}" />
-  <link rel="manifest" href="/site.webmanifest" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />

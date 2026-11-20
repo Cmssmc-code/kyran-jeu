@@ -871,6 +871,8 @@ canvas.dj-confetti { position: fixed; inset: 0; width: 100%; height: 100%; point
 
 /* ── Accueil ─────────────────────────────────────────────────────────── */
 .dj-lobby { padding: 28px 20px 22px; }
+/* L'accueil n'a que deux boutons : pas de grand cadre vide sous eux */
+.dj:not(.is-playing) { min-height: 0; }
 .dj-kicker { margin: 0; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dj-saffron); }
 .dj-hero { display: flex; align-items: center; gap: 24px; padding: 6px 4px 22px; border-bottom: 1px solid var(--dj-line); }
 .dj-hero-title { margin: 6px 0 8px; font-family: var(--font-display, 'Fredoka', sans-serif); font-weight: 600; font-size: clamp(1.7rem, 4.2vw, 2.3rem); letter-spacing: 0; line-height: 1.05; color: var(--dj-cream); text-transform: none; }
@@ -915,6 +917,18 @@ canvas.dj-confetti { position: fixed; inset: 0; width: 100%; height: 100%; point
 .dj-stats div { padding: 8px 4px; border-radius: 12px; background: rgba(0, 0, 0, 0.22); text-align: center; }
 .dj-stats dt { font-size: 0.875rem; color: var(--dj-muted); line-height: 1.25; }
 .dj-stats dd { margin: 2px 0 0; font-weight: 800; font-size: 1.1rem; color: var(--dj-saffron-hi); }
+.dj-hero-cta .dj-btn-lg { min-width: 180px; }
+/* Réglages et leçons repliés sous les deux boutons de l'accueil */
+.dj-more { margin-top: 18px; padding: 0 14px; border-radius: 16px; background: var(--dj-panel); border: 1px solid var(--dj-line); }
+.dj-more > summary { display: flex; align-items: center; justify-content: center; min-height: 48px; cursor: pointer; font-weight: 700; color: var(--dj-muted); list-style: none; }
+.dj-more > summary::-webkit-details-marker { display: none; }
+.dj-more > summary::after { content: '▾'; margin-left: 8px; transition: transform 0.2s ease; }
+.dj-more[open] > summary::after { transform: rotate(180deg); }
+.dj-more[open] { padding-bottom: 14px; }
+.dj-more-title { margin: 16px 0 6px; font-size: 0.875rem; font-weight: 700; color: var(--dj-muted); }
+.dj-more .dj-lesson { min-height: 48px; padding: 6px 12px; gap: 10px; }
+.dj-more .dj-lesson .dj-bead { width: 32px; height: 32px; }
+.dj-more .dj-lesson-text { font-family: var(--font-display, 'Fredoka', sans-serif); font-weight: 600; font-size: 1rem; }
 
 /* ── Écrans étroits ──────────────────────────────────────────────────── */
 @media (max-width: 760px) {

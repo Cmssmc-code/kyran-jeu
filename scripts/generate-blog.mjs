@@ -426,7 +426,7 @@ function kyranRating() {
 function kyranButtons(article, place) {
   return `<div class="kyran-pitch__actions">
     <a class="btn btn-primary" href="${orderHref(article, place)}">Commander</a>
-    <a class="btn btn-secondary" href="/minijeu.html">Essayer en ligne</a>
+    <a class="btn btn-secondary" href="/minijeu.html">Jouer à KYRAN</a>
   </div>`;
 }
 
@@ -469,7 +469,7 @@ function renderSidebarCta(article) {
   <p class="article-sidebar-cta__label">KYRAN · ${KYRAN_PRICE}</p>
   <p class="article-sidebar-cta__text">Plis et paris, 3 à 6 joueurs, environ 30&nbsp;min.</p>
   <a class="btn btn-primary btn--sm" href="${orderHref(article, 'cote')}">Commander</a>
-  <a class="article-sidebar-cta__link" href="/minijeu.html">Essayer en ligne</a>
+  <a class="article-sidebar-cta__link" href="/minijeu.html">Jouer à KYRAN</a>
 </div>`;
 }
 

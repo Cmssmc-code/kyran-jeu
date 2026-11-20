@@ -51,6 +51,8 @@ test('paramètres Stripe : montant au centime, port de la grille, main propre sa
   assert.equal(mp.get('line_items[0][quantity]'), '25');
   assert.equal(mp.get('shipping_options[0][shipping_rate_data][type]'), null);
   assert.equal(mp.get('shipping_address_collection[allowed_countries][0]'), null);
+  assert.match(mp.get('custom_text[submit][message]'), /On convient de la remise par mail\./);
+  assert.equal(liv.get('custom_text[submit][message]'), null);
   assert.match(mp.get('success_url'), /merci-sur-place\.html\?session_id=\{CHECKOUT_SESSION_ID\}$/);
 });
 

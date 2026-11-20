@@ -9,8 +9,8 @@ const BLOG_ITEMS = [
     "date": "2026-11-18",
     "readMinutes": 11,
     "excerpt": "Six jeux de cartes pour un cadeau à moins de 10 euros : prix relevés le 18 novembre 2026, frais de port, âge, nombre de joueurs et date limite pour Noël.",
-    "image": "/boite-recto-kyran.jpg",
-    "webp": "/boite-recto-kyran.webp",
+    "image": "/blog/images/cadeau-moins-de-10-euros.jpg",
+    "webp": "/blog/images/cadeau-moins-de-10-euros.webp",
     "gameCount": 6,
     "related": [
       "cadeau-noel",

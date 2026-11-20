@@ -469,5 +469,16 @@
    "panda-spin"
   ],
   "legende": "Illustration créée pour KYRAN, avec les visuels officiels de Tichu (© Tiki Éditions), Scout (© Oink Games), Gang of Four (© Days of Wonder), Odin (© Helvetiq), Le Grand Dalmuti (© Amigo) et Panda Spin (© Matagot) : un trône en bois sculpté devant un soleil à rayons en zigzag, sur un mur brun à motifs, une couronne posée sur son coussin rouge, six cartes lancées en arc vers une corbeille tressée pleine de cartes, et les six boîtes posées sur une natte jaune."
+ },
+ "cadeau-moins-de-10-euros": {
+  "assets": [
+   "kyran",
+   "love-letter",
+   "timeline",
+   "monopoly-deal",
+   "dobble",
+   "megalopolis"
+  ],
+  "legende": "Illustration créée pour KYRAN, avec les visuels officiels de KYRAN, Love Letter, Timeline, Monopoly Deal, Dobble et Megalopolis (© KYRAN, Z-Man Games / Asmodee, Asmodee, Hasbro, Asmodee / Zygomatic, Matagot / Button Shy) : une luge en bois chargée de six boîtes de jeu debout côte à côte, sa corde rouge traînant dans la neige, devant un village enneigé au soleil couchant."
  }
 }

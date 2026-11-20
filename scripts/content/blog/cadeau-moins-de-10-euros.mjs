@@ -8,8 +8,8 @@ export default {
   date: `2026-11-18`,
   heroTitle: `Un cadeau à <span class="accent">moins de 10 euros</span>`,
   heroSubtitle: `Quatre jeux de cartes sous la barre, deux juste au-dessus : les prix du 18 novembre 2026, et ce qu’ils cachent.`,
-  heroImage: "/boite-recto-kyran.jpg",
-  heroCaption: "La boîte de KYRAN, vendue 9,99 € sur ce site, hors frais de port.",
+  heroImage: "/blog/images/cadeau-moins-de-10-euros.jpg",
+  heroCaption: "Illustration créée pour KYRAN, avec les visuels officiels de KYRAN, Love Letter, Timeline, Monopoly Deal, Dobble et Megalopolis (© KYRAN, Z-Man Games / Asmodee, Asmodee, Hasbro, Asmodee / Zygomatic, Matagot / Button Shy) : une luge en bois chargée de six boîtes de jeu debout côte à côte, sa corde rouge traînant dans la neige, devant un village enneigé au soleil couchant.",
   layout: {
     shopLinks: true,
     compare: false,

@@ -61,7 +61,7 @@ couvre que les fiches et les demandes de **correction** ou d'**ajout de lien**.
 | Durée | environ 30 minutes |
 | Langue | français |
 | Matériel | 45 cartes de jeu (36 Nombre, 1 Mystique, 8 Pouvoir), 30 cartes Vie, 7 cartes de règles |
-| Boîte | rigide, 11,5 × 8,5 × 2,8 cm, 175 g |
+| Boîte | rigide, 11,5 × 8,5 × 2,8 cm, 205 g |
 | EAN | 3770040368015 |
 | Mécaniques | plis, pari / annonce exacte, bluff |
 
@@ -99,7 +99,7 @@ Où : https://boardgamegeek.com/boardgame/480678/kyran → « Edit » (correctio
 | Description | 2 erreurs (« a final Mystic round », « Four Power cards ») | texte ci-dessous |
 | Short description | « Players bet the exact number of tricks they will win. » | peut rester, ou : « Bid the exact number of tricks you will win: the bids can never add up to the tricks available. » |
 | Videos | 0 | Ludochrono (Ludovox, French, Instructional) `aconMJG9uSQ` ; « KYRAN en 60 secondes » `y0YVn-lZMAc` ; Le Pirate Ludique `5W0KNuoPUt4` (Review) |
-| Version 818447 (French edition) | juste (31/01/2026, 11,5 × 8,5 × 2,8 cm, 175 g) | facultatif : Product code `KYRAN-01` |
+| Version 818447 (French edition) | juste (31/01/2026, 11,5 × 8,5 × 2,8 cm, 205 g) | facultatif : Product code `KYRAN-01` |
 
 **Description (EN, à coller dans « Description »)**
 

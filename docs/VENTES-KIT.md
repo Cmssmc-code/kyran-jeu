@@ -47,7 +47,7 @@ direct du site.
    peuvent renverser un pli.
 4. RÈGLES EN 2 MINUTES, PARTIE EN 30 : de 3 à 6 joueurs, dès 8 ans. Variante d'initiation sans
    Pouvoirs pour la première partie. Règle vidéo et initiation gratuite sur kyran-jeu.fr.
-5. FORMAT DE POCHE : 45 cartes toilées + 30 cartes Vie, boîte rigide de 175 g. Conçu et édité en
+5. FORMAT DE POCHE : 45 cartes toilées + 30 cartes Vie, boîte rigide de 205 g. Conçu et édité en
    France, illustrations Crea by Floh.
 
 **Première image** : la boîte, avec à côté une main qui tient une carte sur le front.
@@ -246,7 +246,7 @@ email pro est caché derrière un bouton.
 >
 > Pour vos cadeaux de fin d'année (salariés, enfants des salariés, clients), je vous propose KYRAN,
 > un jeu de cartes conçu et édité en France. Il se joue de 3 à 6, dès 8 ans, en 30 minutes, et il
-> tient dans une boîte de poche de 175 g. Il est noté 4,7/5 sur Amazon.
+> tient dans une boîte de poche de 205 g. Il est noté 4,7/5 sur Amazon.
 >
 > Tarif dégressif [à fixer, par exemple 8,50 € dès 20 boîtes et 7,50 € dès 50], livraison groupée
 > offerte en France métropolitaine.
@@ -264,7 +264,7 @@ Format vertical, 15 à 30 secondes, sous-titré, avec le jeu visible dans la pre
 2. **La manche carte sur le front** : plan serré sur les visages, réaction au moment où chacun
    découvre sa carte.
 3. **Retournement** : un Voile du Néant échange une valeur et vole le pli au dernier moment.
-4. **Unboxing de poche** : la boîte sort d'une poche de manteau. « 175 g, 45 cartes + 30 cartes Vie, 9,99 €. »
+4. **Unboxing de poche** : la boîte sort d'une poche de manteau. « 205 g, 45 cartes + 30 cartes Vie, 9,99 €. »
 5. **« Règles en 30 secondes »** : voix off rapide plus démonstration.
 6. **Avant Noël** : « Le cadeau à moins de 15 € qui fera crier toute la table au réveillon. »
 

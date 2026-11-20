@@ -36,7 +36,7 @@ export const PRODUCT = {
   // cgv.html art. 2, regle.html, _notes/memoire.md § 1.
   contents: '36 cartes Nombre, 1 carte Mystique, 8 cartes Pouvoir, 30 cartes Vie et 7 cartes de règles en français',
   // cgv.html art. 2, commander.html (JSON-LD weight / width / height / depth).
-  weight: { value: 175, unit: 'g' },
+  weight: { value: 205, unit: 'g' },
   dimensions: { length: 11.5, width: 8.5, height: 2.8, unit: 'cm', label: '11,5 × 8,5 × 2,8 cm' },
   author: 'Corentin Sence',
   illustrator: 'Crea by Floh',
@@ -47,7 +47,7 @@ export const PRODUCT = {
     // la même liste que commander.html, la FAQ et llms.txt.
     countries: ['FR', 'BE', 'LU', 'CH', 'MC'],
     handlingDays: { min: 1, max: 2 }, // « expédition sous 24 à 48 heures ouvrées »
-    // Seul le port France est connu : 2,99 € par commande, quel que soit le nombre de boîtes
+    // Seul le port France est connu : 2,99 € pour une boîte ; la grille complète (jusqu'à 99 boîtes) est dans js/tarifs.js, et le flux ne publie que le port d'une boîte
     // (décision du propriétaire du 2026-10-13 ; cgv.html art. 3). Stripe facturait encore 3,99 €
     // ce jour-là : à aligner sur Stripe avant de soumettre le flux (docs/MERCHANT.md).
     // Autres pays : calculé au paiement, montant non publié.

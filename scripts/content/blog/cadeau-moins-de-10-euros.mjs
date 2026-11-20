@@ -35,7 +35,7 @@ export default {
   intro: `<p>Dix euros, c’est le plafond d’un Père Noël secret entre collègues, le prix d’un petit paquet glissé sous le sapin à côté du gros, ou celui d’une attention pour la personne qui reçoit le 24 au soir. À ce tarif, beaucoup de rayons ne proposent que des gadgets oubliés dès janvier. Le jeu de cartes fait exception : la boîte tient dans une poche de manteau, s’emballe en une minute et ressort encore l’été suivant. Reste à savoir si le prix affiché passe réellement sous la barre. Nous avons relevé les tarifs le 18 novembre 2026 : quatre jeux coûtent moins de 10 €, deux autres la dépassent d’un ou deux euros. Les voici, avec ce que chacun demande à la table qui l’ouvrira.</p>`,
   criteria: {
     heading: `Ce qu’un billet de dix euros achète vraiment`,
-    html: `<p>Un prix sous 10 € ne dit pas tout. Commandé seul sur Internet, un petit jeu supporte des frais de port qui pèsent parfois un tiers de sa valeur. KYRAN, par exemple, coûte 9,99 € sur ce site et 2,99 € de port : 12,98 € une fois livré. Les cinq autres prix de cette page ont été relevés chez un vendeur en ligne spécialisé, Philibert, eux aussi hors livraison. Pour rester dans l’enveloppe, deux solutions : passer en boutique près de chez vous, ou regrouper plusieurs petits cadeaux dans une même commande.</p>
+    html: `<p>Un prix sous 10 € ne dit pas tout. Commandé seul sur Internet, un petit jeu supporte des frais de port qui pèsent parfois un tiers de sa valeur. KYRAN, par exemple, coûte 9,99 € sur ce site et un port à partir de 2,99 € : 12,98 € une fois livré pour une boîte. Les cinq autres prix de cette page ont été relevés chez un vendeur en ligne spécialisé, Philibert, eux aussi hors livraison. Pour rester dans l’enveloppe, deux solutions : passer en boutique près de chez vous, ou regrouper plusieurs petits cadeaux dans une même commande.</p>
 <h3>Trois vérifications avant d’emballer</h3>
 <ul>
 <li><strong>Le nombre de joueurs.</strong> Regardez la borne basse autant que la borne haute. KYRAN demande au moins trois joueurs, Megalopolis s’arrête à quatre, Dobble monte à huit. Un jeu qui ne correspond pas à la taille du foyer reste dans son emballage.</li>
@@ -54,7 +54,7 @@ export default {
       type: `Plis et paris`,
       pick: `Pour une famille ou des amis qui aiment la belote ou le tarot`,
       paragraphs: [
-        `KYRAN est le jeu de ce site : nous le vendons 9,99 €, auxquels s’ajoutent 2,99 € de port. La boîte contient 45 cartes de jeu, soit 36 cartes Nombre, 8 cartes Pouvoir et une Mystique. Avant chaque manche, chacun annonce le nombre de plis qu’il pense remporter, et chaque pli d’écart avec ce pari coûte une Vie. On commence avec sept cartes en main, puis six, puis cinq, jusqu’à la dernière manche, jouée avec une seule carte tenue contre le front, visible de tous sauf de soi. Une partie dure environ 30 minutes, de 3 à 6 joueurs, dès 8 ans.`,
+        `KYRAN est le jeu de ce site : nous le vendons 9,99 €, auxquels s’ajoute un port à partir de 2,99 €. La boîte contient 45 cartes de jeu, soit 36 cartes Nombre, 8 cartes Pouvoir et une Mystique. Avant chaque manche, chacun annonce le nombre de plis qu’il pense remporter, et chaque pli d’écart avec ce pari coûte une Vie. On commence avec sept cartes en main, puis six, puis cinq, jusqu’à la dernière manche, jouée avec une seule carte tenue contre le front, visible de tous sauf de soi. Une partie dure environ 30 minutes, de 3 à 6 joueurs, dès 8 ans.`,
         `Comme nous ne sommes pas neutres, voici un avis extérieur. Sur le blog Vin d’jeu, Vincent lui a donné 7/10 le 18 novembre 2026 et écrit que « le matériel est de bonne qualité et les cartes sont agréables à jouer ». Il note aussi que le jeu ne renouvelle pas la mécanique du pari sur les plis, qu’il pratiquait étudiant sous le nom d’Ascenseur. <a href="https://www.vindjeu.eu/prd/2026/11/18/kyran-maitre-des-mystiques/">Sa chronique complète est en ligne</a>. Si la personne possède déjà un jeu de ce genre, tenez-en compte.`,
         `Deux limites à connaître avant d’emballer : KYRAN ne se joue pas à deux, et il faut le commander avant le 16 décembre pour une livraison avant Noël. La page <a href="/idee-cadeau.html">idée cadeau</a> résume le jeu en une minute, <a href="/regle.html">la règle complète</a> se lit en ligne, et la commande se passe sur <a href="/commander.html">la page d’achat</a>.`
       ]
@@ -122,7 +122,7 @@ export default {
     },
     {
       q: `Les frais de port sont-ils compris dans ces prix ?`,
-      a: `Non. Tous les prix de cette page sont relevés hors livraison. KYRAN coûte 9,99 € plus 2,99 € de port, soit 12,98 € livré en France. Pour les autres jeux, les frais dépendent de la boutique et du montant du panier ; un achat en magasin ou une commande groupée évite de dépasser le budget.`
+      a: `Non. Tous les prix de cette page sont relevés hors livraison. KYRAN coûte 9,99 € plus un port à partir de 2,99 €, soit 12,98 € livré en France pour une boîte. Pour les autres jeux, les frais dépendent de la boutique et du montant du panier ; un achat en magasin ou une commande groupée évite de dépasser le budget.`
     },
     {
       q: `Jusqu’à quand commander KYRAN pour le recevoir avant Noël ?`,

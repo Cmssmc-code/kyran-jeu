@@ -686,7 +686,7 @@ function renderCtaBandHtml(attr) {
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
           ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Jouer à KYRAN</a>' : ''}
         </div>
-        <p class="cta-band-gift">Une boîte de 175&nbsp;g, expédiée sous 24 à 48&nbsp;h avec suivi.</p>
+        <p class="cta-band-gift">Une boîte de 205&nbsp;g, expédiée sous 24 à 48&nbsp;h avec suivi.</p>
       </div>
     `;
 }

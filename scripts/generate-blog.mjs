@@ -437,7 +437,7 @@ function renderKyranPitch(article) {
     <p class="kyran-pitch__eyebrow">Notre jeu</p>
     <p class="kyran-pitch__title">KYRAN, le jeu de plis où l’on parie sur ses levées</p>
     ${kyranFacts()}
-    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
+    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + port à partir de ${KYRAN_SHIPPING}</p>
     ${kyranRating()}
   </div>
   ${kyranButtons(article, 'debut')}
@@ -456,7 +456,7 @@ function renderKyranEnd(article) {
     <h2 class="kyran-pitch__title" id="kyran-end-title">Et si la prochaine partie était KYRAN&nbsp;?</h2>
     <p class="kyran-pitch__lead">Chacun annonce le nombre de plis qu’il va gagner, mais la somme des paris ne peut jamais tomber juste&nbsp;: à chaque manche, au moins un joueur se trompe.</p>
     ${kyranFacts()}
-    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + ${KYRAN_SHIPPING} de port par commande</p>
+    <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + port à partir de ${KYRAN_SHIPPING}</p>
     ${kyranRating()}
     ${kyranButtons(article, 'fin')}
     <p class="kyran-pitch__note">KYRAN est édité par l’auteur de ce blog.</p>

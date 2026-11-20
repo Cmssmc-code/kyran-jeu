@@ -97,13 +97,13 @@ Légende :
 
 > Dans la boîte : 36 cartes Nombre (de 1 à 36), 1 carte Mystique, 8 cartes Pouvoir, soit 45 cartes de jeu.
 > Plus 30 cartes Vie (5 par joueur) et 7 cartes de règles.
-> Cartes toilées, boîte rigide de 11,5 × 8,5 × 2,8 cm pour 175 g.
+> Cartes toilées, boîte rigide de 11,5 × 8,5 × 2,8 cm pour 205 g.
 >
 > #KYRAN #jeudecartes #jeudesociete #jeudevoyage #ideecadeau
 
 Sources :
 - Contenu : `regle.html` (« Mise en place & Matériel »), `_notes/memoire.md` §1.
-- Dimensions, poids, cartes toilées, boîte rigide : pages du site (par exemple `commander.html`, `faq.html` : « 11,5 × 8,5 × 2,8 cm pour 175 g »), `_notes/memoire.md` §1.
+- Dimensions, poids, cartes toilées, boîte rigide : pages du site (par exemple `commander.html`, `faq.html` : « 11,5 × 8,5 × 2,8 cm pour 205 g »), `_notes/memoire.md` §1.
 - Photo : `boite-recto-kyran.png`.
 
 ## 07-story-essayer.png (story)
@@ -128,13 +128,13 @@ Texte à ajouter dans Instagram : un autocollant « Lien » vers `https://kyran-
 Légende (si la story est aussi publiée en post) :
 
 > Noté 4,7/5 sur Amazon (33 évaluations).
-> Commandez KYRAN sur kyran-jeu.fr : 9,99 € la boîte, 2,99 € de port par commande, quel que soit le nombre de boîtes (12,98 € pour une boîte).
+> Commandez KYRAN sur kyran-jeu.fr : 9,99 € la boîte, port à partir de 2,99 € selon le nombre de boîtes (12,98 € pour une boîte).
 >
 > #KYRAN #jeudecartes #jeudesociete #ideecadeau
 
 Sources :
 - 4,7/5 sur 33 évaluations Amazon : `reviews-data.json` (`averageRating`, `totalReviews`), note vérifiée le 2026-10-13 (brief du chantier). La répartition des étoiles n’est pas connue : le visuel ne montre que la moyenne. À mettre à jour si la note change.
-- 9,99 € : `commander.html`, `_notes/memoire.md` §1. Port de 2,99 € par commande (total 12,98 € pour une boîte) : décision du propriétaire du 2026-10-13, transmise par le chef de projet ; les pages du site affichaient encore 3,99 € au moment du rendu, elles sont mises à jour par un autre lot.
+- 9,99 € : `commander.html`, `_notes/memoire.md` §1. Port de 2,99 € pour une boîte (total 12,98 €), grille dégressive depuis le 2026-11-20 : décision du propriétaire du 2026-10-13, transmise par le chef de projet ; les pages du site affichaient encore 3,99 € au moment du rendu, elles sont mises à jour par un autre lot.
 - Photo : `boite-recto-kyran.png`.
 
 ---

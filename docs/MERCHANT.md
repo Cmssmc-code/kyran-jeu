@@ -23,8 +23,8 @@ dans Merchant Center. Mis à jour le 19 octobre 2026.
 
 ### Prérequis avant toute soumission : le port sur Stripe (rempli)
 
-Le port France est fixé à **2,99 € par commande** (décision du propriétaire du 13 octobre 2026),
-soit 12,98 € pour une boîte. La page de paiement Stripe facture ce montant depuis le 13 octobre
+Le port France est fixé à **2,99 € pour une boîte** (décision du 13 octobre 2026), soit 12,98 €.
+Depuis le 20 novembre 2026 la grille est dégressive (js/tarifs.js, GRILLE_PORT : 2 boîtes 4,99 € ; 3-4 boîtes 5,99 € ; 5-10 boîtes 7,99 € ; 11-15 boîtes 9,99 € ; 16-40 boîtes 15,99 € ; 41-99 boîtes 25,99 €) ; le flux ne publie que le port d'une boîte. La page de paiement Stripe facture ce montant depuis le 13 octobre
 au soir (`_notes/memoire.md` § 1) ; l'audit du 19 octobre 2026 l'a relu : un tarif unique de
 2,99 € pour les 5 pays autorisés (FR, BE, LU, CH, MC). Le prérequis est donc rempli : le flux peut
 être soumis. Avant chaque soumission, refaire l'étape 2 de `docs/VENTES-PASSES.md` (ouvrir la
@@ -45,9 +45,9 @@ vraie page de paiement sans payer et comparer).
 | `gtin` | `3770040368015` | `mentions-legales.html` (« Code-barres officiel (GS1) »), CGV art. 2 ; clé EAN-13 valide |
 | `condition` | `new` | |
 | `google_product_category` | `1247` (Jeux et jouets > Jeux > Jeux de cartes) | taxonomie Google fr-FR |
-| `product_weight`, `product_length/width/height` | 175 g ; 11,5 × 8,5 × 2,8 cm | CGV art. 2 |
+| `product_weight`, `product_length/width/height` | 205 g ; 11,5 × 8,5 × 2,8 cm | CGV art. 2 |
 | `min/max_handling_time` | 1 à 2 jours ouvrés | CGV art. 5 (« 24 à 48 heures ouvrées ») |
-| `shipping` | France : 2,99 EUR par commande, 2 à 4 jours ouvrés | décision du 2026-10-13, CGV art. 3 et 5 |
+| `shipping` | France : 2,99 EUR pour 1 unité, 2 à 4 jours ouvrés | décision du 2026-10-13, CGV art. 3 et 5 |
 | `product_detail` | joueurs, durée, âge, langue, contenu, auteur, illustrateur | |
 
 Le port des autres pays (BE, LU, CH, MC : seuls pays acceptés par la page Stripe le 13 octobre 2026) n'est **pas** dans le flux : il est
@@ -82,7 +82,7 @@ Points à vérifier par le propriétaire :
 ## 3. À remplir dans le compte (le flux ne peut pas le faire)
 
 - **Livraison** (Paramètres > Expédition et retours > Livraison) :
-  - France : 2,99 € par commande (une fois Stripe aligné), préparation 1 à 2 jours ouvrés, transit 2 à 4 jours ouvrés,
+  - France : 2,99 € pour une boîte (une fois Stripe aligné), préparation 1 à 2 jours ouvrés, transit 2 à 4 jours ouvrés,
     jours ouvrés du lundi au vendredi, heure limite de commande à choisir.
   - Autres pays desservis : créer un service par pays **seulement** avec le tarif réellement
     facturé par Stripe (à relever sur la page de paiement avec une adresse du pays, sans payer).

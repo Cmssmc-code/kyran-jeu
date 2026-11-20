@@ -1648,21 +1648,25 @@ function renderLobby(keepFocus) {
 
   const more = h('details', { class: 'dj-more' },
     h('summary', { text: 'Plus de choix' }),
-    segmented('Adversaires', 'opponents', [[2, '2'], [3, '3'], [4, '4'], [5, '5']]),
-    segmented('Niveau', 'level', [['novice', 'Facile'], ['adepte', 'Moyen'], ['maitre', 'Difficile']]),
-    segmented('Durée', 'length', [['rapide', 'Courte'], ['complete', 'Longue']]),
-    segmented('Cartes Pouvoir', 'rules', [['completes', 'Oui'], ['initiation', 'Non']]),
-    h('p', { class: 'dj-more-title', text: 'Leçons' }),
-    h('ol', { class: 'dj-lessons' }, LESSONS.map(L => {
-      const done = !!store.belts[L.id];
-      return h('li', {},
-        h('button', { type: 'button', class: 'dj-lesson' + (done ? ' is-done' : '') + (nl === L ? ' is-next' : ''), onclick: () => openLesson(L) },
-          beadIcon(L.bead, false, true),
-          h('b', { class: 'dj-lesson-text', text: L.title }),
-          h('span', { class: 'dj-lesson-state', text: done ? '✓' : '' })
-        )
-      );
-    })),
+    h('div', { class: 'dj-settings' },
+      segmented('Adversaires', 'opponents', [[2, '2'], [3, '3'], [4, '4'], [5, '5']]),
+      segmented('Niveau', 'level', [['novice', 'Facile'], ['adepte', 'Moyen'], ['maitre', 'Difficile']]),
+      segmented('Durée', 'length', [['rapide', 'Courte'], ['complete', 'Longue']]),
+      segmented('Cartes Pouvoir', 'rules', [['completes', 'Oui'], ['initiation', 'Non']])
+    ),
+    // Une seule ligne compacte : une perle par leçon (le bouton « Apprendre » ouvre déjà la suivante)
+    h('div', { class: 'dj-field dj-pick' },
+      h('span', { class: 'dj-field-label', id: 'dj-pick-label', text: 'Choisir une leçon' }),
+      h('ol', { class: 'dj-pick-list', 'aria-labelledby': 'dj-pick-label' }, LESSONS.map((L, i) => {
+        const done = !!store.belts[L.id];
+        const name = `Leçon ${i + 1} : ${L.title}` + (done ? ' (réussie)' : '');
+        return h('li', {},
+          h('button', { type: 'button', class: 'dj-pick-btn' + (done ? ' is-done' : '') + (nl === L ? ' is-next' : ''), 'aria-label': name, title: name, onclick: () => openLesson(L) },
+            beadIcon(L.bead, false, true)
+          )
+        );
+      }))
+    ),
     st.games || st.bets ? h('dl', { class: 'dj-stats' },
       h('div', {}, h('dt', { text: 'Parties' }), h('dd', { text: String(st.games) })),
       h('div', {}, h('dt', { text: 'Victoires' }), h('dd', { text: String(st.wins) })),

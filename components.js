@@ -865,6 +865,8 @@ function isBuyLink(link) {
 }
 
 function initPurchaseChoice() {
+  // Rendu au build (DOM simulé) ou navigateur sans <dialog> : le lien d'achat reste tel quel.
+  if (typeof window === 'undefined' || typeof window.HTMLDialogElement !== 'function' || !document.body || typeof document.body.appendChild !== 'function') return;
   const festival = isFestivalVisitor() ? '1' : '0';
   const style = document.createElement('style');
   style.textContent = [

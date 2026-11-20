@@ -130,7 +130,7 @@ export function renderOrderEmail({
 
     <p style="margin: 0 0 24px 0; font-size: 14px; color: #475569; line-height: 1.6;">
       ${mainPropre
-        ? 'Paiement reçu, merci pour votre achat.'
+        ? 'Paiement reçu, merci pour votre achat. Remise en main propre : nous vous écrivons très vite pour convenir du lieu et de la date.'
         : 'Paiement validé. Votre boîte KYRAN est en cours de préparation dans notre atelier.'}
     </p>
 
@@ -187,7 +187,7 @@ export function renderOrderEmail({
   const text = `Merci pour votre commande KYRAN, ${customerName} !
 
 Votre paiement a bien été validé.
-${mainPropre ? 'Paiement reçu, merci pour votre achat.' : 'Votre boîte KYRAN est en cours de préparation.'}
+${mainPropre ? 'Paiement reçu, merci pour votre achat. Remise en main propre : nous vous écrivons très vite pour convenir du lieu et de la date.' : 'Votre boîte KYRAN est en cours de préparation.'}
 
 Récapitulatif :
 - Article : KYRAN — Édition Officielle × ${quantity} : ${subtotalAmount}
@@ -449,7 +449,7 @@ Pays : ${shippingAddress.country || 'France'}
     <!-- Adresse d'expédition pour bordereau -->
     <div style="background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px;">
       <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #92400e; margin-bottom: 10px;">
-        ${mainPropre ? '🤝 Remis en main propre (vente sur place)' : '📦 Adresse de livraison (Format étiquette / bordereau)'}
+        ${mainPropre ? '🤝 Remise en main propre : convenir du lieu et de la date par mail' : '📦 Adresse de livraison (Format étiquette / bordereau)'}
       </div>
       <div style="font-family: monospace; font-size: 13px; color: #78350f; line-height: 1.6; white-space: pre-line;">${esc(addressFormatted)}</div>
     </div>

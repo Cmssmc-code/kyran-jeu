@@ -12,8 +12,7 @@
     Porte d'entrée des QR des festivals (permanente) : redirection immédiate vers l'accueil.
     Les utm du QR sont gardés ; ceux qui manquent prennent les valeurs ci-dessous.
     D'un festival à l'autre, seule FESTIVAL_CAMPAIGN change.
-    Le repère festival=1 ouvre, au bouton d'achat, le choix « en main propre » ou « livraison »
-    (components.js) : permanent, décision de Corentin du 20/11/2026.
+    Le repère festival=1 (sessionStorage kyranFestival) sert aux statistiques (components.js).
   -->
   <script>
     (function () {
@@ -27,9 +26,9 @@
       location.replace('/?' + params.toString());
     })();
   </script>
-  <meta http-equiv="refresh" content="0; url=/?utm_source=festival&amp;utm_medium=qr&amp;utm_campaign=carrieres-2026-11&amp;festival=1" />
+  <meta http-equiv="refresh" content="0; url=/" />
 </head>
 <body>
-  <p><a href="/?utm_source=festival&amp;utm_medium=qr&amp;utm_campaign=carrieres-2026-11&amp;festival=1">Aller sur kyran-jeu.fr</a></p>
+  <p><a href="/">Aller sur kyran-jeu.fr</a></p>
 </body>
 </html>

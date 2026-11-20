@@ -18,7 +18,7 @@ const CACHE = assetVersion();
 
 const { articles, items, store } = await loadItems();
 
-// Total d'une boîte livrée en France : prix boutique + port unique (product.mjs)
+// Total d'une boîte livrée en France : prix boutique + port d'une boîte (product.mjs)
 const totalFr = (Number(PRODUCT.price.amount) + Number(PRODUCT.shipping.rates[0].price)).toFixed(2).replace('.', ',') + ' €';
 
 function escXml(s) {
@@ -127,7 +127,7 @@ function buildLlmsTxt() {
 - Illustrations : Crea by Floh
 - Édition actuelle : 2026 (sortie le 31 janvier 2026)
 - Entreprise : entrepreneur individuel, nom commercial Kyran, SIREN 840 817 548 (RCS Nanterre), activité de vente à distance de jeux de société commencée le 10/09/2025
-- Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port de ${PRODUCT.shipping.rates[0].label} par commande en France métropolitaine (quel que soit le nombre de boîtes), soit ${totalFr} pour une boîte livrée en France ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
+- Prix : ${PRODUCT.price.label} sur ${SITE}/commander.html ; port à partir de ${PRODUCT.shipping.rates[0].label} en France métropolitaine (2,99 € pour 1 boîte, 4,99 € pour 2, 5,99 € pour 3 à 4, 7,99 € pour 5 à 10, 9,99 € pour 11 à 15, 15,99 € pour 16 à 40, 25,99 € pour 41 à 99 boîtes), soit ${totalFr} pour une boîte livrée en France ; ${PRODUCT.amazon.price} sur Amazon.fr (${PRODUCT.amazon.url})
 - Livraison : France métropolitaine, Belgique, Luxembourg, Suisse, Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
 - Retour : 14 jours après réception, frais de retour à la charge du vendeur (CGV, article 6 : ${SITE}/cgv.html)
 - Boîte : ${PRODUCT.dimensions.label}, ${PRODUCT.weight.value} g
@@ -246,7 +246,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Combien de joueurs ? De 3 à 6.
 - Quelle durée ? Environ 30 minutes.
 - Quel âge ? Dès 8 ans.
-- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port ${PRODUCT.shipping.rates[0].label} par commande en France, soit ${totalFr} pour une boîte), ${PRODUCT.amazon.price} sur Amazon.fr, ou sur Etsy (boutique KyranJeu).
+- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port à partir de ${PRODUCT.shipping.rates[0].label} en France selon le nombre de boîtes, soit ${totalFr} pour une boîte), ${PRODUCT.amazon.price} sur Amazon.fr, ou sur Etsy (boutique KyranJeu).
 - Dans quels pays est-il livré ? France métropolitaine, Belgique, Luxembourg, Suisse et Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement.
 - Se joue-t-il à deux ? Non, KYRAN se joue de 3 à 6 joueurs.
 - Que contient la boîte ? 45 cartes de jeu (36 cartes Nombre, 8 cartes Pouvoir, 1 carte Mystique), 30 cartes Vie et 7 cartes de règles, dans une boîte rigide de ${PRODUCT.dimensions.label} (${PRODUCT.weight.value} g).

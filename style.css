@@ -4266,13 +4266,6 @@ footer .footer-copyright { color: #9A918A !important; }
   .mobile-bottom-nav .mobile-nav-tab--highlight .mobile-nav-pill { background: var(--k-ink); color: var(--k-saffron); }
 }
 
-/* Barre du bas (mobile) : port sous le prix, sur toute la largeur du bouton Acheter. */
-@media (max-width: 900px) {
-  .mobile-bottom-nav .mobile-nav-tab--highlight { flex-wrap: wrap; row-gap: 1px; height: auto; padding: 4px 12px; border-radius: 18px; }
-  .mobile-bottom-nav .mobile-nav-port { width: 0; min-width: 100%; text-align: center; font-size: 0.6rem; font-weight: 600; line-height: 1.1; color: var(--k-ink); }
-}
-@media (min-width: 901px) { .mobile-nav-port { display: none; } }
-
 /* Barre d'annonce à hauteur fixe : l'en-tête collant se cale sur sa hauteur (kyran-header top: -36px). */
 .top-announcement-bar { height: 36px; padding: 0; display: flex; align-items: center; }
 .top-announcement-bar .announcement-content { flex-wrap: nowrap; white-space: nowrap; }

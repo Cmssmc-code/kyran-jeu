@@ -37,6 +37,7 @@ export function parametresSession({ mode, quantite, ref }) {
   if (ref) p.set('client_reference_id', ref);
   if (mainPropre) {
     p.set('success_url', SITE + '/merci-sur-place.html?session_id={CHECKOUT_SESSION_ID}');
+    p.set('custom_text[submit][message]', 'Remise en main propre, sans frais de port. On convient de la remise par mail.');
     return p;
   }
   p.set('success_url', SITE + '/merci.html');

@@ -912,6 +912,7 @@ function initPurchaseChoice() {
     '.achat-choix__ligne{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;}',
     '.achat-choix__ligne--total{margin:6px 0 0;font-weight:800;font-size:1.15rem;}',
     '.achat-choix .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;font-size:1.1rem;}',
+    '.achat-choix__mp{margin:6px 0 0;font-size:.85rem;font-weight:600;}' +
     '.achat-choix__secu{margin:8px 0 0;text-align:center;font-size:.78rem;opacity:.7;}'
   ].join('');
   document.head.appendChild(style);
@@ -973,7 +974,7 @@ function initPurchaseChoice() {
     moins.disabled = q <= 1;
     plus.disabled = q >= max;
     const seuil = tarifs ? tarifs.SEUIL_ALERTE : 10;
-    alerte.textContent = q > seuil ? 'Vérifiez le nombre de boîtes.' : '';
+    alerte.textContent = q > seuil ? 'Êtes-vous sûr de commander ' + q + ' boîtes ?' : '';
     const m = mode();
     form.querySelectorAll('.achat-choix__option').forEach(function (label) {
       label.classList.toggle('est-choisi', label.querySelector('input').checked);
@@ -991,6 +992,7 @@ function initPurchaseChoice() {
     total.innerHTML = ligne(q + (q > 1 ? ' boîtes' : ' boîte') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
       ligne(m === 'main-propre' ? 'Main propre' : 'Livraison', m === 'main-propre' ? 'sans frais' : tarifs.euros(t.port)) +
       ligne('Total', tarifs.euros(t.total), ' achat-choix__ligne--total');
+    if (m === 'main-propre') total.innerHTML += '<p class="achat-choix__mp">On convient de la remise par mail.</p>';
     if (!payer.dataset.envoi) payer.textContent = 'Payer ' + tarifs.euros(t.total);
   }
 

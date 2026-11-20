@@ -32,6 +32,13 @@ export function syncMoteur() {
       changed++;
     }
   }
+  // Grille des tarifs (js/tarifs.js), lue aussi par le serveur : une seule source.
+  const tarifs = HEADER.replace('%NAME%', 'tarifs.js').replace('dojo/', 'js/') + readLf(path.join(ROOT, 'js', 'tarifs.js'));
+  const tarifsDest = path.join(ROOT, 'server', 'tarifs.js');
+  if (!fs.existsSync(tarifsDest) || readLf(tarifsDest) !== tarifs) {
+    fs.writeFileSync(tarifsDest, tarifs);
+    changed++;
+  }
   return changed;
 }
 

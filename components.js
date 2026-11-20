@@ -897,7 +897,7 @@ function initPurchaseChoice() {
     '.achat-choix__info{font-size:.8rem;opacity:.75;}',
     '.achat-choix__option input{position:absolute;opacity:0;width:1px;height:1px;}',
     '.achat-choix__option.est-choisi{background:var(--k-saffron-hi);box-shadow:0 4px 0 var(--k-ink);}',
-    '.achat-choix__option.est-choisi::after{content:"✓";position:absolute;top:8px;right:10px;font-weight:800;}',
+    '.achat-choix__option.est-choisi::after{content:"✓";position:absolute;top:-10px;right:-10px;width:24px;height:24px;border-radius:50%;background:var(--k-ink);color:#fff;font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}',
     '.achat-choix__option:focus-within{outline:3px solid var(--k-blue);outline-offset:2px;}',
     '.achat-choix__qte{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;}',
     '.achat-choix__qte label{font-weight:700;white-space:nowrap;}',

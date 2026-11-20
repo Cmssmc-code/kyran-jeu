@@ -6,64 +6,30 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="/error-reporter.js?v=9891fdac0f" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bienvenue sur KYRAN</title>
-  <meta name="description" content="KYRAN, le jeu de cartes où l'on parie sur le nombre exact de plis. Essayez-le en 5 minutes sur votre téléphone." />
-  <link rel="canonical" href="https://kyran-jeu.fr/bienvenue.html" />
+  <title>KYRAN</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#231F22" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <style>
-    @font-face { font-family: "Poppins"; font-weight: 400; font-display: swap; src: url("/fonts/poppins-400-latin.woff2") format("woff2"); }
-    @font-face { font-family: "Poppins"; font-weight: 700; font-display: swap; src: url("/fonts/poppins-700-latin.woff2") format("woff2"); }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Poppins", system-ui, sans-serif; background: #231F22; color: #F7F1E8; line-height: 1.5; }
-    main { max-width: 520px; margin: 0 auto; padding: 0 20px; }
-    .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 14px; padding: 24px 0 40px; }
-    .hero img { width: 46vw; max-width: 200px; height: auto; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.45); }
-    h1 { font-size: 1.9rem; margin: 6px 0 0; line-height: 1.15; }
-    .pitch { font-size: 1.1rem; margin: 0; }
-    .note { color: #F2C14E; font-weight: 700; margin: 0; }
-    .btn-essai { display: block; width: 100%; padding: 18px; border-radius: 14px; background: #E2574C; color: #fff; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
-    .sous { font-size: .9rem; opacity: .8; margin: 0; }
-    section { padding: 32px 0; border-top: 1px solid rgba(247,241,232,.15); }
-    h2 { font-size: 1.35rem; margin: 0 0 12px; }
-    ol { padding-left: 1.2em; margin: 0 0 16px; }
-    li { margin-bottom: 8px; }
-    a { color: #F2C14E; }
-    .fin { text-align: center; padding-bottom: 48px; }
-    .btn-achat { display: block; width: 100%; padding: 14px; border-radius: 12px; border: 2px solid #F7F1E8; color: #F7F1E8; background: transparent; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
-    .livrer { display: inline-block; margin-top: 14px; }
-  </style>
+  <link rel="canonical" href="https://kyran-jeu.fr/" />
+  <!--
+    Porte d'entrée des QR des festivals (permanente) : redirection immédiate vers l'accueil.
+    Les utm du QR sont gardés ; ceux qui manquent prennent les valeurs ci-dessous.
+    D'un festival à l'autre, seule FESTIVAL_CAMPAIGN change.
+    Le repère festival=1 (sessionStorage kyranFestival) sert aux statistiques (components.js).
+  -->
+  <script>
+    (function () {
+      var FESTIVAL_CAMPAIGN = 'carrieres-2026-11';
+      var params = new URLSearchParams(location.search);
+      if (!params.get('utm_source')) params.set('utm_source', 'festival');
+      if (!params.get('utm_medium')) params.set('utm_medium', 'qr');
+      if (!params.get('utm_campaign')) params.set('utm_campaign', FESTIVAL_CAMPAIGN);
+      params.set('festival', '1');
+      try { sessionStorage.setItem('kyranFestival', '1'); } catch (e) { /* stockage indisponible : le paramètre suffit */ }
+      location.replace('/?' + params.toString());
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/" />
 </head>
 <body>
-  <main>
-    <div class="hero">
-      <img src="/boite-recto-kyran-360.webp" alt="Boîte du jeu de cartes KYRAN" width="360" height="515" />
-      <h1>Bienvenue sur KYRAN</h1>
-      <p class="pitch">Le jeu de cartes où l'on parie sur le nombre exact de plis qu'on va gagner. 3 à 6 joueurs, 30 minutes, dès 8 ans.</p>
-      <p class="note">★ 4,7/5 sur Amazon (33 avis)</p>
-      <a class="btn-essai" href="/minijeu.html?utm_source=festival-carrieres&amp;utm_medium=qr">Essayer en 5 minutes</a>
-      <p class="sous">Sur votre téléphone, sans rien installer.</p>
-    </div>
-
-    <section>
-      <h2>Les règles en 30 secondes</h2>
-      <ol>
-        <li>Chacun reçoit des cartes Nombre (de 1 à 36) et des cartes Pouvoir. Tout le monde commence avec 5 vies.</li>
-        <li>Avant de jouer, chacun annonce combien de plis exactement il va gagner. Le total des annonces ne doit pas tomber juste.</li>
-        <li>La plus forte carte gagne le pli. Pari raté : on perd autant de vies que l'écart.</li>
-        <li>Manche Mystique : votre carte est sur votre front, vous voyez celle des autres mais pas la vôtre.</li>
-      </ol>
-      <p><a href="/video-regles.html">Voir la vidéo des règles</a></p>
-    </section>
-
-    <section class="fin">
-      <h2>Il vous a plu ?</h2>
-      <a class="btn-achat" href="https://buy.stripe.com/6oU00laWzg2IflK42yaEE01">Acheter le jeu : 9,99 €</a>
-      <a class="livrer" href="/commander.html">Me le faire livrer</a>
-      <p><a href="https://www.instagram.com/kyran.jeu/" rel="noopener">Suivez-nous sur Instagram : @kyran.jeu</a></p>
-    </section>
-  </main>
+  <p><a href="/">Aller sur kyran-jeu.fr</a></p>
 </body>
 </html>

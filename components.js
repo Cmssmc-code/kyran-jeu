@@ -835,6 +835,90 @@ function initVideoFacades() {
 
 if (typeof document !== 'undefined') whenParsed(initVideoFacades);
 
+// Choix au bouton d'achat (décision de Corentin du 20/11/2026, pour tous les visiteurs) : chaque bouton
+// d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un choix « En main propre » (lien
+// Stripe sans adresse, 1 à 10 boîtes) ou « Livraison » (lien habituel). Le repère festival=1, posé par
+// /bienvenue.html (QR des festivals) et gardé en sessionStorage, ne sert qu'aux statistiques.
+const FESTIVAL_KEY = 'kyranFestival';
+const MAIN_PROPRE_STRIPE_URL = 'https://buy.stripe.com/6oU00laWzg2IflK42yaEE01';
+
+function isFestivalVisitor() {
+  try {
+    if (new URLSearchParams(location.search).get('festival') === '1') {
+      sessionStorage.setItem(FESTIVAL_KEY, '1');
+    }
+    return sessionStorage.getItem(FESTIVAL_KEY) === '1';
+  } catch (e) {
+    return false;
+  }
+}
+
+function isBuyLink(link) {
+  const href = link.getAttribute('href') || '';
+  if (href.indexOf(STRIPE_CHECKOUT_URL) === 0) return true;
+  try {
+    const url = new URL(href, location.href);
+    return url.origin === location.origin && /\/commander(\.html)?$/.test(url.pathname);
+  } catch (e) {
+    return false;
+  }
+}
+
+function initPurchaseChoice() {
+  // Rendu au build (DOM simulé) ou navigateur sans <dialog> : le lien d'achat reste tel quel.
+  if (typeof window === 'undefined' || typeof window.HTMLDialogElement !== 'function' || !document.body || typeof document.body.appendChild !== 'function') return;
+  const festival = isFestivalVisitor() ? '1' : '0';
+  const style = document.createElement('style');
+  style.textContent = [
+    '.achat-choix{border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:420px;width:calc(100% - 32px);background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
+    '.achat-choix::backdrop{background:rgba(35,31,34,.6);}',
+    '.achat-choix__body{padding:28px 22px 22px;text-align:center;}',
+    '.achat-choix h2{font-size:1.35rem;margin:0 0 6px;line-height:1.2;}',
+    '.achat-choix p{margin:0 0 20px;opacity:.85;}',
+    '.achat-choix .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:64px;padding:12px 18px;margin:0 0 16px;text-decoration:none;font-size:1.1rem;}',
+    '.achat-choix .btn small{display:block;font-size:.85rem;font-weight:500;opacity:.8;}',
+    '.achat-choix__close{background:none;border:0;color:var(--k-ink);font:inherit;text-decoration:underline;padding:8px 12px;cursor:pointer;}'
+  ].join('');
+  document.head.appendChild(style);
+
+  const dialog = document.createElement('dialog');
+  dialog.className = 'achat-choix';
+  dialog.setAttribute('aria-labelledby', 'achat-choix-title');
+  dialog.innerHTML =
+    '<div class="achat-choix__body">' +
+    '<h2 id="achat-choix-title">Comment voulez-vous votre jeu ?</h2>' +
+    '<p>Choisissez, puis payez en toute sécurité avec Stripe.</p>' +
+    '<a class="btn btn-primary" href="' + MAIN_PROPRE_STRIPE_URL + '">En main propre : 9,99&nbsp;€<small>On convient de la remise par mail.</small></a>' +
+    '<a class="btn btn-secondary" href="' + STRIPE_CHECKOUT_URL + '">Livraison : 9,99&nbsp;€ + 2,99&nbsp;€<small>Envoyé chez vous sous 24 à 48&nbsp;h</small></a>' +
+    '<button type="button" class="achat-choix__close">Fermer</button>' +
+    '</div>';
+  document.body.appendChild(dialog);
+  const livraison = dialog.querySelector('.btn-secondary');
+  dialog.querySelector('.achat-choix__close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+  // Événements GA4 nommés (envoyés en beacon : la page Stripe s'ouvre aussitôt après).
+  [['.btn-primary', 'achat_choix_main_propre'], ['.btn-secondary', 'achat_choix_livraison']].forEach(function (pair) {
+    dialog.querySelector(pair[0]).addEventListener('click', function () {
+      try {
+        if (typeof window.gtag === 'function') window.gtag('event', pair[1], { transport_type: 'beacon', festival: festival });
+      } catch (e) { /* analytique facultative */ }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest && event.target.closest('a[href]');
+    if (!link || dialog.contains(link) || !isBuyLink(link)) return;
+    if (typeof dialog.showModal !== 'function') return;
+    event.preventDefault();
+    // Un lien Stripe de la page (ex. avec client_reference_id sur /commander.html) est gardé pour la livraison.
+    const href = link.getAttribute('href');
+    livraison.setAttribute('href', href.indexOf(STRIPE_CHECKOUT_URL) === 0 ? href : STRIPE_CHECKOUT_URL);
+    dialog.showModal();
+  }, true);
+}
+
+if (typeof document !== 'undefined') whenParsed(initPurchaseChoice);
+
 // Fonctions de rendu pures, utilisées par scripts/prerender.mjs pour écrire le HTML statique.
 var KyranRender = {
   header: renderHeaderHtml,

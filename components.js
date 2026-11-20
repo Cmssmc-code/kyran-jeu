@@ -205,7 +205,6 @@ function renderHeaderHtml(active, pathname) {
           </span>
           <span class="mobile-nav-label">Acheter</span>
           <span class="mobile-nav-pill">9,99&nbsp;€</span>
-          <span class="mobile-nav-port">+ port dès 2,99&nbsp;€</span>
         </a>
       </nav>
     `;

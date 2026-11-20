@@ -900,13 +900,13 @@ function initPurchaseChoice() {
     '.achat-choix__option.est-choisi::after{content:"✓";position:absolute;top:8px;right:10px;font-weight:800;}',
     '.achat-choix__option:focus-within{outline:3px solid var(--k-blue);outline-offset:2px;}',
     '.achat-choix__qte{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;}',
-    '.achat-choix__qte label{font-weight:700;}',
+    '.achat-choix__qte label{font-weight:700;white-space:nowrap;}',
     '.achat-choix__stepper{display:inline-flex;align-items:stretch;border:2px solid var(--k-ink);border-radius:12px;overflow:hidden;background:#fff;}',
-    '.achat-choix__stepper button{width:44px;height:44px;border:0;margin:0;padding:0;background:#fff;color:var(--k-ink);font-size:1.4rem;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}',
+    '.achat-choix__stepper button{width:42px;height:44px;border:0;margin:0;padding:0;background:#fff;color:var(--k-ink);font-size:1.4rem;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}',
     '.achat-choix__stepper button:disabled{opacity:.3;cursor:default;}',
-    '.achat-choix__stepper input{width:52px;height:44px;border:0;border-left:2px solid var(--k-ink);border-right:2px solid var(--k-ink);border-radius:0;margin:0;padding:0;text-align:center;font:inherit;font-size:1.15rem;font-weight:700;background:#fff;color:var(--k-ink);-moz-appearance:textfield;}',
+    '.achat-choix__stepper input{width:48px;height:44px;border:0;border-left:2px solid var(--k-ink);border-right:2px solid var(--k-ink);border-radius:0;margin:0;padding:0;text-align:center;font:inherit;font-size:1.15rem;font-weight:700;background:#fff;color:var(--k-ink);-moz-appearance:textfield;}',
     '.achat-choix__stepper input::-webkit-inner-spin-button,.achat-choix__stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}',
-    '.achat-choix__alerte{min-height:1.3em;margin:6px 0 8px;font-size:.85rem;font-weight:600;color:var(--k-red);text-align:right;}',
+    '.achat-choix__alerte{min-height:1.3em;margin:6px 0 8px;font-size:.85rem;font-weight:600;color:var(--k-red);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}',
     '.achat-choix__recap{margin:0 0 14px;padding:10px 0 0;border-top:2px dashed rgba(35,31,34,.25);}',
     '.achat-choix__ligne{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;}',
     '.achat-choix__ligne--total{margin:6px 0 0;font-weight:800;font-size:1.15rem;}',
@@ -924,11 +924,11 @@ function initPurchaseChoice() {
     '<button type="button" class="achat-choix__close" aria-label="Fermer">×</button></div>' +
     '<fieldset><legend>Comment voulez-vous votre jeu ?</legend>' +
     '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="main-propre">' +
-    '<span class="achat-choix__titre">En main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
+    '<span class="achat-choix__titre">Main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
     '<span class="achat-choix__info">Sans frais de port</span></label>' +
     '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
     '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ + port</span>' +
-    '<span class="achat-choix__info">Port dès 2,99&nbsp;€, sous 48&nbsp;h</span></label>' +
+    '<span class="achat-choix__info">Port dès 2,99&nbsp;€</span></label>' +
     '</fieldset>' +
     '<div class="achat-choix__qte">' +
     '<label for="achat-qte">Nombre de boîtes</label>' +
@@ -972,7 +972,7 @@ function initPurchaseChoice() {
     moins.disabled = q <= 1;
     plus.disabled = q >= max;
     const seuil = tarifs ? tarifs.SEUIL_ALERTE : 10;
-    alerte.textContent = q > seuil ? q + ' boîtes : vérifiez le nombre avant de payer.' : '';
+    alerte.textContent = q > seuil ? 'Vérifiez le nombre de boîtes.' : '';
     const m = mode();
     form.querySelectorAll('.achat-choix__option').forEach(function (label) {
       label.classList.toggle('est-choisi', label.querySelector('input').checked);

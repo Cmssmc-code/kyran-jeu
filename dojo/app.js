@@ -83,18 +83,19 @@ const PERSONA_COLORS = { oraculus: '#a78bfa', titan: '#f59e0b', viper: '#22c55e'
 // cartes Nombre sont recomposées à partir des vraies cartes (dojo/img/nombre-*.jpg, même motif,
 // mêmes chiffres) ; leurs versions WebP sont dojo/img/cartes/carte-3/11/20/27.webp.
 
-// Visuels tirés des cartes : icônes des cartes Pouvoir et motif de la carte Vie.
+// Pions des joueurs : silhouettes neutres d'une seule couleur (dojo/img/pions/*.svg).
 const AVATARS = {
-  griot: '/dojo/img/avatar-griot.jpg',
-  amazone: '/dojo/img/avatar-amazone.jpg',
-  cameleon: '/dojo/img/avatar-cameleon.jpg',
-  anansi: '/dojo/img/avatar-anansi.jpg',
-  guerisseuse: '/dojo/img/avatar-guerisseuse.jpg'
+  toi: '/dojo/img/pions/toi.svg',
+  griot: '/dojo/img/pions/griot.svg',
+  amazone: '/dojo/img/pions/amazone.svg',
+  cameleon: '/dojo/img/pions/cameleon.svg',
+  anansi: '/dojo/img/pions/anansi.svg',
+  guerisseuse: '/dojo/img/pions/guerisseuse.svg'
 };
 
 function avatarImg(p, cls) {
-  const src = AVATARS[p.persona];
-  return src ? h('img', { class: cls, src, alt: '', width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
+  const src = AVATARS[p.human ? 'toi' : p.persona];
+  return src ? h('img', { class: cls, src, alt: p.human ? 'Ton pion' : `Pion de ${p.name}`, width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
 }
 
 // Cartes allégées du mini-jeu (WebP 200 px, générées par scripts/derive-images.py) ;

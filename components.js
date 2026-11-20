@@ -883,7 +883,7 @@ function initPurchaseChoice() {
   const tarifsPromise = import('/js/tarifs.js?t=' + Math.floor(Date.now() / 600000)).catch(function () { return null; });
   const style = document.createElement('style');
   style.textContent = [
-    '.achat-choix{border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:440px;width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
+    '.achat-choix{position:fixed;inset:0;margin:auto;height:fit-content;border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:440px;width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
     '.achat-choix::backdrop{background:rgba(35,31,34,.6);}',
     '.achat-choix__body{padding:24px 20px 18px;text-align:center;}',
     '.achat-choix h2{font-size:1.35rem;margin:0 0 16px;line-height:1.2;}',

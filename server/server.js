@@ -15,10 +15,14 @@ import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
 import { createMailer } from './mailer.js';
 import { shippingDetails } from './stripeSession.js';
+import { lireCommande, creerSession } from './commande.js';
 import { createStripeEventLog, defaultEventsFile, EVENT_STATE } from './stripeEvents.js';
 
 const PORT = process.env.PORT || 3000;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
+// Clé restreinte (Checkout Sessions en écriture) : création du paiement depuis le panneau d'achat.
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || '';
+const STRIPE_API_BASE = process.env.STRIPE_API_BASE || 'https://api.stripe.com';
 // Aucun secret par défaut : sans ADMIN_SECRET (32 caractères minimum), les routes
 // d'administration sont désactivées (fail closed).
 const ADMIN_SECRET = process.env.ADMIN_SECRET || '';
@@ -311,7 +315,7 @@ async function handleOrderCompleted(session) {
       html: adminNotification.html,
       text: adminNotification.text
     });
-    console.log(`🔔 Notification de commande envoyée à l'administrateur (${adminTo.length} destinataire(s))`);
+    console.log(`🔔 Notification de commande envoyée à l'administrateur (${adminTo.length} destinataire(s), ${quantity} boîte(s)${mainPropre ? ', main propre' : ''})`);
   } catch (adminErr) {
     console.error('Erreur notification admin commande :', adminErr.message);
     recordServerIncident(adminErr, { path: '/webhook', errorCode: 'ADMIN_ORDER_NOTIFICATION', httpStatus: 200 });
@@ -597,6 +601,7 @@ const server = http.createServer((req, res) => {
       version: VERSION,
       emailTransport: mailer.transport,
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
+      hasCheckoutKey: Boolean(STRIPE_SECRET_KEY),
       adminEnabled: ADMIN_ENABLED
     });
   }
@@ -609,6 +614,15 @@ const server = http.createServer((req, res) => {
     return sendJson(res, 200, vente && Date.now() - vente.at <= SUR_PLACE_TTL_MS
       ? { paye: true, quantite: vente.quantity }
       : { paye: false });
+  }
+
+  // Panneau d'achat du site : crée la session Stripe Checkout (quantité et port selon tarifs.js).
+  if (req.method === 'POST' && pathname === '/api/commande') {
+    return handleCommande(req, res).catch(err => {
+      console.error('[Commande] Erreur :', err.message);
+      recordServerIncident(err, { path: '/api/commande', errorCode: 'CHECKOUT_SESSION', httpStatus: 502 });
+      if (!res.headersSent) sendJson(res, 502, { error: 'Paiement indisponible' });
+    });
   }
 
   if (pathname === '/avis/desinscription') {
@@ -722,6 +736,25 @@ async function isAutoHealCaller(req) {
     console.error('[AutoHeal] Vérification OIDC impossible :', err.message);
     return false;
   }
+}
+
+// Navigateur → serveur : création du paiement (panneau d'achat de components.js)
+async function handleCommande(req, res) {
+  const origin = req.headers.origin;
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return sendJson(res, 403, { error: 'Forbidden' });
+  if (!STRIPE_SECRET_KEY) return sendJson(res, 503, { error: 'Paiement indisponible' });
+  if (rateLimited(`commande:${clientIp(req)}`, 30, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Too many requests' });
+  let body;
+  try {
+    body = JSON.parse((await readBody(req, 2048)).toString('utf8'));
+  } catch {
+    return sendJson(res, 400, { error: 'Commande invalide' });
+  }
+  const commande = lireCommande(body);
+  if (commande.erreur) return sendJson(res, 400, { error: commande.erreur });
+  const url = await creerSession(commande, { cle: STRIPE_SECRET_KEY, apiBase: STRIPE_API_BASE });
+  console.log(`[Commande] Session créée : ${commande.quantite} boîte(s), ${commande.mode}.`);
+  return sendJson(res, 200, { url });
 }
 
 // Navigateur → serveur : erreurs JS et ressources cassées du site (error-reporter.js)

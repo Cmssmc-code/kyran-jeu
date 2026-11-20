@@ -5,7 +5,7 @@
  */
 import * as E from './engine.js?v=617bc536b5';
 import * as AI from './ai.js?v=a5fe162cfb';
-import { LESSONS, BEAD_IMAGES } from './lessons.js?v=44365dbe43';
+import { LESSONS, BEAD_IMAGES } from './lessons.js?v=bc2b5f9cd3';
 import { uiStateOf } from './ui-state.js?v=9581c975f3';
 
 const ROOT = document.getElementById('dojo');
@@ -642,7 +642,7 @@ function renderGame() {
   ROOT.innerHTML = '';
   setModalOpen(false);
   ROOT.classList.add('is-playing');
-  const title = L ? L.title : 'Partie libre';
+  const title = L ? L.title : 'Partie';
   // Vitesse et son : dans la barre du haut sur grand écran, dans le panneau du journal partout
   // (sur téléphone, la barre ne garde que journal, plein écran et quitter).
   const speedBtn = extra => h('button', { type: 'button', class: 'dj-chip-btn dj-speed-btn' + (extra || ''), title: 'Vitesse du jeu', 'aria-label': 'Vitesse du jeu : ' + SPEED_LABEL[store.settings.speed], onclick: cycleSpeed }, h('span', { 'aria-hidden': 'true', html: ICONS.speed }), h('span', { class: 'dj-speed-label', text: SPEED_LABEL[store.settings.speed] }));
@@ -1037,7 +1037,7 @@ function onCardClick(card) {
   const pend = sess.state.pending;
   if (!pend || pend.type !== 'play') return;
   if (sess.gate && sess.gate.cards && !sess.gate.cards.includes(card.id)) {
-    coachSay('Pas tout de suite : suis la consigne du Bokonon pour ce rite.', { tone: 'warn' });
+    coachSay('Pas tout de suite : suis la consigne du Bokonon.', { tone: 'warn' });
     return;
   }
   if (sess.selected === card.id) return playCard(card);
@@ -1515,7 +1515,6 @@ async function lessonResult(sess) {
   const res = L.success(st);
   const idx = LESSONS.indexOf(L);
   const nextL = LESSONS[idx + 1];
-  const first = res.ok && !store.belts[L.id]; // clé de stockage historique : les perles gagnées
   if (res.ok) {
     store.belts[L.id] = true;
     saveStore();
@@ -1525,15 +1524,15 @@ async function lessonResult(sess) {
   }
   const last = st.history[st.history.length - 1];
   const body = h('div', {},
-    res.ok ? h('div', { class: 'dj-bead-award' }, beadIcon(L.bead, true), h('span', { text: first ? `${L.beadName} ajoutée à ton collier !` : L.beadName })) : null,
+    res.ok ? h('div', { class: 'dj-bead-award' }, beadIcon(L.bead, true), h('span', { text: `Leçon ${LESSONS.indexOf(L) + 1} sur ${LESSONS.length}` })) : null,
     h('p', { class: 'dj-lead', text: res.text }),
     last && !L.noTable ? resultsTable(st, last.results) : null,
     res.ok && L.bead === 'mystique' ? ctaBox(true) : null
   );
   const buttons = res.ok
-    ? [{ label: 'Retour à l’accueil', value: 'lobby' }, nextL ? { label: `Rite suivant : ${nextL.title}`, value: 'next', primary: true } : { label: 'Partie libre', value: 'free', primary: true }]
+    ? [{ label: 'Retour à l’accueil', value: 'lobby' }, nextL ? { label: 'Leçon suivante', value: 'next', primary: true } : { label: 'Jouer', value: 'free', primary: true }]
     : [{ label: 'Retour à l’accueil', value: 'lobby' }, { label: 'Réessayer', value: 'retry', primary: true }];
-  const choice = await modal({ title: res.ok ? 'Rite accompli' : 'Pas tout à fait…', body, buttons, className: res.ok ? 'is-good' : 'is-bad', sess, dismissible: false });
+  const choice = await modal({ title: res.ok ? 'Leçon réussie' : 'Pas tout à fait…', body, buttons, className: res.ok ? 'is-good' : 'is-bad', sess, dismissible: false });
   if (choice === 'next') openLesson(nextL);
   else if (choice === 'retry') openLesson(L, true);
   else if (choice === 'free') startSession(null);
@@ -1581,7 +1580,7 @@ function openLesson(L, retry) {
   // L'accueil reste affiché sous la fenêtre de présentation du rite
   renderLobby();
   const body = h('div', { class: 'dj-intro' },
-    h('div', { class: 'dj-intro-head' }, beadIcon(L.bead, true), h('span', { class: 'dj-kicker', text: `Rite ${LESSONS.indexOf(L) + 1} · ${L.beadName}` })),
+    h('div', { class: 'dj-intro-head' }, beadIcon(L.bead, true), h('span', { class: 'dj-kicker', text: `Leçon ${LESSONS.indexOf(L) + 1} sur ${LESSONS.length}` })),
     h('ul', { class: 'dj-intro-list' }, L.intro.map(t => h('li', { html: t }))),
     L.showCards ? h('div', { class: 'dj-intro-cards' }, L.showCards.map(id => cardEl(E.cardById(id)))) : null
   );
@@ -1618,6 +1617,8 @@ function segmented(label, key, options) {
   return h('div', { class: 'dj-field' }, h('span', { class: 'dj-field-label', text: label }), group);
 }
 
+let moreOpen = false;
+
 function renderLobby(keepFocus) {
   const focusedText = keepFocus && document.activeElement && ROOT.contains(document.activeElement) ? document.activeElement.textContent : null;
   const focusedGroup = focusedText && document.activeElement.closest('.dj-seg') ? document.activeElement.closest('.dj-seg').getAttribute('aria-label') : null;
@@ -1632,48 +1633,36 @@ function renderLobby(keepFocus) {
   const st = store.stats;
   const pctExact = st.bets ? Math.round((st.exact / st.bets) * 100) : null;
 
+  // Accueil volontairement minimal : deux gros boutons, le reste replié dans « Plus de choix »
   const hero = h('div', { class: 'dj-hero' },
     h('div', { class: 'dj-sensei is-big', 'aria-hidden': 'true' }),
     h('div', { class: 'dj-hero-text' },
-      h('p', { class: 'dj-kicker', text: 'L’Initiation KYRAN' }),
-      h('h2', { class: 'dj-hero-title', text: earned === LESSONS.length ? 'Salut, Maître des Mystiques.' : earned ? 'Bon retour, initié.' : 'Deviens Maître des Mystiques' }),
-      h('p', { class: 'dj-hero-sub', text: earned ? `${earned} perle${earned > 1 ? 's' : ''} sur ${LESSONS.length} à ton collier d’initié. ${nl ? 'Prochain rite : ' + nl.title.charAt(0).toLowerCase() + nl.title.slice(1) + '.' : 'Ton collier est complet : défie les Maîtres en partie libre.'}` : 'Le Bokonon, devin du Fa, te guide en sept rites. Chaque rite accompli ajoute une perle à ton collier d’initié ; ensuite, défie l’ordinateur. Aucune inscription, rien à installer.' }),
-      h('div', { class: 'dj-necklace', role: 'img', 'aria-label': `${earned} perles sur ${LESSONS.length} à ton collier` }, LESSONS.map((L, i) => h('img', { class: 'dj-necklace-bead' + (store.belts[L.id] ? ' is-on' : ''), src: BEAD_IMAGES[L.bead], alt: '', width: 96, height: 96, style: { '--i': i }, title: L.beadName }))),
-      h('div', { class: 'dj-hero-cta' },
-        nl ? h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-lg', onclick: () => openLesson(nl) }, earned ? `Continuer : ${nl.title}` : 'Commencer le premier rite') : null,
-        h('button', { type: 'button', class: 'dj-btn ' + (nl ? 'dj-btn-ghost' : 'dj-btn-primary') + ' dj-btn-lg', 'data-action': 'free-game', onclick: () => startSession(null) }, earned ? 'Partie libre' : 'Je connais les règles : jouer')
+      h('h2', { class: 'dj-hero-title', text: 'Annonce tes plis' }),
+      h('p', { class: 'dj-hero-sub', text: 'Puis gagne-les. Ni plus, ni moins.' }),
+      h('div', { class: 'dj-hero-cta', id: 'jouer' },
+        h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-lg', 'data-action': 'free-game', onclick: () => startSession(null) }, 'Jouer'),
+        nl ? h('button', { type: 'button', class: 'dj-btn dj-btn-ghost dj-btn-lg', onclick: () => openLesson(nl) }, earned ? `Continuer d’apprendre · ${earned}/${LESSONS.length}` : 'Apprendre en 2 min') : null
       )
     )
   );
 
-  const path = h('div', { class: 'dj-path', role: 'region', 'aria-labelledby': 'dj-path-title' },
-    h('h3', { id: 'dj-path-title', class: 'dj-h3', text: 'Les sept rites du collier' }),
-    h('ol', { class: 'dj-lessons' }, LESSONS.map((L, i) => {
+  const more = h('details', { class: 'dj-more' },
+    h('summary', { text: 'Plus de choix' }),
+    segmented('Adversaires', 'opponents', [[2, '2'], [3, '3'], [4, '4'], [5, '5']]),
+    segmented('Niveau', 'level', [['novice', 'Facile'], ['adepte', 'Moyen'], ['maitre', 'Difficile']]),
+    segmented('Durée', 'length', [['rapide', 'Courte'], ['complete', 'Longue']]),
+    segmented('Cartes Pouvoir', 'rules', [['completes', 'Oui'], ['initiation', 'Non']]),
+    h('p', { class: 'dj-more-title', text: 'Leçons' }),
+    h('ol', { class: 'dj-lessons' }, LESSONS.map(L => {
       const done = !!store.belts[L.id];
-      const isNext = nl === L;
       return h('li', {},
-        h('button', { type: 'button', class: 'dj-lesson' + (done ? ' is-done' : '') + (isNext ? ' is-next' : ''), onclick: () => openLesson(L) },
+        h('button', { type: 'button', class: 'dj-lesson' + (done ? ' is-done' : '') + (nl === L ? ' is-next' : ''), onclick: () => openLesson(L) },
           beadIcon(L.bead, false, true),
-          h('span', { class: 'dj-lesson-text' },
-            h('span', { class: 'dj-lesson-kicker', text: `Rite ${i + 1} · ${L.beadName}` }),
-            h('b', { text: L.title }),
-            h('span', { class: 'dj-lesson-sum', text: L.summary })
-          ),
-          h('span', { class: 'dj-lesson-state', text: done ? '✓' : isNext ? 'À faire' : '' })
+          h('b', { class: 'dj-lesson-text', text: L.title }),
+          h('span', { class: 'dj-lesson-state', text: done ? '✓' : '' })
         )
       );
-    }))
-  );
-
-  const free = h('div', { class: 'dj-free', id: 'jouer', role: 'region', 'aria-labelledby': 'dj-free-title' },
-    h('h3', { id: 'dj-free-title', class: 'dj-h3', text: 'Partie libre' }),
-    h('p', { class: 'dj-free-sub', text: 'Une veillée de jeu avec toutes les règles de la boîte, contre l’ordinateur. Le Bokonon reste à tes côtés : touche Conseil.' }),
-    segmented('Adversaires', 'opponents', [[2, '2'], [3, '3'], [4, '4'], [5, '5']]),
-    segmented('Niveau', 'level', [['novice', 'Apprenti'], ['adepte', 'Initié'], ['maitre', 'Maître']]),
-    segmented('Durée', 'length', [['rapide', 'Rapide · 4 manches'], ['complete', 'Complète']]),
-    segmented('Règles', 'rules', [['completes', 'Toutes'], ['initiation', 'Sans Pouvoirs']]),
-    h('p', { class: 'dj-field-help', text: settingsHelp() }),
-    h('button', { type: 'button', class: 'dj-btn dj-btn-primary dj-btn-block', 'data-action': 'free-game', onclick: () => startSession(null) }, 'Lancer la partie'),
+    })),
     st.games || st.bets ? h('dl', { class: 'dj-stats' },
       h('div', {}, h('dt', { text: 'Parties' }), h('dd', { text: String(st.games) })),
       h('div', {}, h('dt', { text: 'Victoires' }), h('dd', { text: String(st.wins) })),
@@ -1681,21 +1670,15 @@ function renderLobby(keepFocus) {
       h('div', {}, h('dt', { text: 'Meilleure série' }), h('dd', { text: String(st.bestStreak) }))
     ) : null
   );
+  if (moreOpen) more.open = true;
+  more.addEventListener('toggle', () => { moreOpen = more.open; });
 
-  ROOT.appendChild(h('div', { class: 'dj-lobby' }, hero, h('div', { class: 'dj-cols' }, path, free)));
+  ROOT.appendChild(h('div', { class: 'dj-lobby' }, hero, more));
   ROOT.appendChild(h('div', { class: 'dj-modal-layer', id: 'dj-modal-layer' }));
   if (focusedGroup) {
     const btn = [...ROOT.querySelectorAll(`.dj-seg[aria-label="${focusedGroup}"] button`)].find(b => b.textContent === focusedText);
     if (btn) btn.focus({ preventScroll: true });
   }
-}
-
-function settingsHelp() {
-  const s = store.settings;
-  const n = s.opponents + 1;
-  const len = s.length === 'rapide' ? 'manches de 4, 3, 2 cartes puis la manche Mystique' : 'cycles de 7 à 2 cartes puis la manche Mystique, jusqu’à ce qu’un joueur n’ait plus de Vies';
-  const rules = s.rules === 'initiation' ? 'sans carte Pouvoir ni Mystique (variante d’initiation)' : `avec la Mystique et ${n >= 5 ? 'les 8 cartes Pouvoir' : 'les 4 cartes Pouvoir'}`;
-  return `${n} joueurs, ${len}, ${rules}.`;
 }
 
 // ── Démarrage ──────────────────────────────────────────────────────────────

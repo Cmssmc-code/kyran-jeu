@@ -49,7 +49,7 @@ export const LESSONS = [
     aiBets: { 1: 1, 2: 1, 3: 1 },
     aiPlays: { 1: ['n28', 'n12', 'n2'], 2: ['n30', 'n17', 'n4'], 3: ['n14', 'n35', 'n1'] },
     coach: [
-      { on: 'start', ack: true, say: 'Voici ta main : un 33 rouge, un 21 jaune et un 5 mauve. Pour ce premier rite, je fais les annonces à ta place : on se concentre sur les plis.' },
+      { on: 'start', ack: true, say: 'Voici ta main : un 33 rouge, un 21 jaune et un 5 mauve. Pour cette première leçon, je fais les annonces à ta place : on se concentre sur les plis.' },
       { on: 'play', trick: 1, allowCards: ['n33'], say: 'Tu ouvres le premier pli. Pose ton <b>33</b> : une carte rouge est très forte.' },
       { on: 'trickWon', trick: 1, ack: true, say: '33 bat 30, 28 et 14 : <b>tu remportes le pli</b>. Celui qui gagne un pli ouvre le suivant, donc c’est encore à toi.' },
       { on: 'play', trick: 2, allowCards: ['n21'], say: 'Ouvre avec ton <b>21</b>. Observe bien ce que jouent les autres.' },
@@ -243,7 +243,7 @@ export const LESSONS = [
     intro: [
       'Partie complète : manches de <b>7 à 2 cartes</b>, puis la manche Mystique, avec les cartes Pouvoir et la Mystique.',
       'La partie s’arrête dès qu’un joueur perd sa dernière Vie. Celui qui a le plus de Vies devient <b>Maître des Mystiques</b>.',
-      'Tes adversaires jouent au niveau Maître. Termine premier pour recevoir la perle Mystique.'
+      'Tes adversaires jouent au niveau Maître. Termine premier pour réussir la leçon.'
     ],
     showCards: ['n36', 'p27', 'm'],
     setup: {

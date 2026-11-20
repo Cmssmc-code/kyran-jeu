@@ -883,28 +883,35 @@ function initPurchaseChoice() {
   const tarifsPromise = import('/js/tarifs.js?t=' + Math.floor(Date.now() / 600000)).catch(function () { return null; });
   const style = document.createElement('style');
   style.textContent = [
-    '.achat-choix{position:fixed;inset:0;margin:auto;height:fit-content;border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:440px;width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
+    '.achat-choix{position:fixed;inset:0;margin:auto;height:fit-content;border:2px solid var(--k-ink);border-radius:20px;padding:0;max-width:420px;width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;background:var(--k-cream);color:var(--k-ink);box-shadow:0 8px 0 var(--k-ink);}',
     '.achat-choix::backdrop{background:rgba(35,31,34,.6);}',
-    '.achat-choix__body{padding:24px 20px 18px;text-align:center;}',
-    '.achat-choix h2{font-size:1.35rem;margin:0 0 16px;line-height:1.2;}',
-    '.achat-choix fieldset{border:0;margin:0 0 16px;padding:0;}',
+    '.achat-choix__body{padding:18px 18px 16px;}',
+    '.achat-choix__tete{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 14px;}',
+    '.achat-choix h2{font-size:1.25rem;margin:0;line-height:1.2;}',
+    '.achat-choix__close{flex:none;width:40px;height:40px;border:2px solid var(--k-ink);border-radius:50%;background:#fff;color:var(--k-ink);font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}',
+    '.achat-choix fieldset{border:0;margin:0 0 14px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}',
     '.achat-choix legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}',
-    '.achat-choix__option{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;padding:10px 16px;margin:0 0 10px;border:2px solid var(--k-ink);border-radius:14px;background:#fff;cursor:pointer;font-weight:700;font-size:1.1rem;}',
-    '.achat-choix__option small{display:block;font-size:.85rem;font-weight:500;opacity:.8;}',
+    '.achat-choix__option{position:relative;display:flex;flex-direction:column;gap:2px;padding:12px 12px 10px;border:2px solid var(--k-ink);border-radius:14px;background:#fff;cursor:pointer;line-height:1.25;}',
+    '.achat-choix__titre{font-weight:800;font-size:1.02rem;}',
+    '.achat-choix__prix{font-weight:700;font-size:.95rem;}',
+    '.achat-choix__info{font-size:.8rem;opacity:.75;}',
     '.achat-choix__option input{position:absolute;opacity:0;width:1px;height:1px;}',
     '.achat-choix__option.est-choisi{background:var(--k-saffron-hi);box-shadow:0 4px 0 var(--k-ink);}',
+    '.achat-choix__option.est-choisi::after{content:"✓";position:absolute;top:8px;right:10px;font-weight:800;}',
     '.achat-choix__option:focus-within{outline:3px solid var(--k-blue);outline-offset:2px;}',
-    '.achat-choix__qte{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 8px;}',
+    '.achat-choix__qte{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;}',
     '.achat-choix__qte label{font-weight:700;}',
-    '.achat-choix__qte button{width:48px;height:48px;border:2px solid var(--k-ink);border-radius:50%;background:#fff;color:var(--k-ink);font-size:1.5rem;font-weight:700;line-height:1;cursor:pointer;}',
-    '.achat-choix__qte button:disabled{opacity:.35;cursor:default;}',
-    '.achat-choix__qte input{width:64px;height:48px;border:2px solid var(--k-ink);border-radius:12px;text-align:center;font:inherit;font-size:1.25rem;font-weight:700;background:#fff;color:var(--k-ink);-moz-appearance:textfield;}',
-    '.achat-choix__qte input::-webkit-inner-spin-button,.achat-choix__qte input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}',
-    '.achat-choix__alerte{margin:0 0 10px;padding:8px 12px;border:2px solid var(--k-red);border-radius:12px;background:#fff;color:var(--k-red);font-weight:700;}',
-    '.achat-choix__total{margin:0 0 14px;line-height:1.5;}',
-    '.achat-choix__total strong{font-size:1.25rem;}',
-    '.achat-choix .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;font-size:1.15rem;}',
-    '.achat-choix__close{background:none;border:0;color:var(--k-ink);font:inherit;text-decoration:underline;padding:10px 12px;margin-top:6px;cursor:pointer;}'
+    '.achat-choix__stepper{display:inline-flex;align-items:stretch;border:2px solid var(--k-ink);border-radius:12px;overflow:hidden;background:#fff;}',
+    '.achat-choix__stepper button{width:44px;height:44px;border:0;margin:0;padding:0;background:#fff;color:var(--k-ink);font-size:1.4rem;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}',
+    '.achat-choix__stepper button:disabled{opacity:.3;cursor:default;}',
+    '.achat-choix__stepper input{width:52px;height:44px;border:0;border-left:2px solid var(--k-ink);border-right:2px solid var(--k-ink);border-radius:0;margin:0;padding:0;text-align:center;font:inherit;font-size:1.15rem;font-weight:700;background:#fff;color:var(--k-ink);-moz-appearance:textfield;}',
+    '.achat-choix__stepper input::-webkit-inner-spin-button,.achat-choix__stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}',
+    '.achat-choix__alerte{min-height:1.3em;margin:6px 0 8px;font-size:.85rem;font-weight:600;color:var(--k-red);text-align:right;}',
+    '.achat-choix__recap{margin:0 0 14px;padding:10px 0 0;border-top:2px dashed rgba(35,31,34,.25);}',
+    '.achat-choix__ligne{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;}',
+    '.achat-choix__ligne--total{margin:6px 0 0;font-weight:800;font-size:1.15rem;}',
+    '.achat-choix .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;font-size:1.1rem;}',
+    '.achat-choix__secu{margin:8px 0 0;text-align:center;font-size:.78rem;opacity:.7;}'
   ].join('');
   document.head.appendChild(style);
 
@@ -913,21 +920,27 @@ function initPurchaseChoice() {
   dialog.setAttribute('aria-labelledby', 'achat-choix-title');
   dialog.innerHTML =
     '<form class="achat-choix__body" method="dialog">' +
-    '<h2 id="achat-choix-title">Votre commande KYRAN</h2>' +
+    '<div class="achat-choix__tete"><h2 id="achat-choix-title">Votre commande KYRAN</h2>' +
+    '<button type="button" class="achat-choix__close" aria-label="Fermer">×</button></div>' +
     '<fieldset><legend>Comment voulez-vous votre jeu ?</legend>' +
-    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="main-propre">En main propre : 9,99&nbsp;€ la boîte<small>On convient de la remise par mail. Sans frais de port.</small></label>' +
-    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">Livraison : 9,99&nbsp;€ la boîte + port<small>Port à partir de 2,99&nbsp;€, envoyé sous 24 à 48&nbsp;h</small></label>' +
+    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="main-propre">' +
+    '<span class="achat-choix__titre">En main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
+    '<span class="achat-choix__info">Sans frais de port</span></label>' +
+    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
+    '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ + port</span>' +
+    '<span class="achat-choix__info">Port dès 2,99&nbsp;€, sous 48&nbsp;h</span></label>' +
     '</fieldset>' +
     '<div class="achat-choix__qte">' +
+    '<label for="achat-qte">Nombre de boîtes</label>' +
+    '<div class="achat-choix__stepper">' +
     '<button type="button" class="achat-choix__moins" aria-label="Une boîte de moins">−</button>' +
-    '<label for="achat-qte" class="achat-choix__qte-label">Boîtes</label>' +
     '<input id="achat-qte" type="number" inputmode="numeric" min="1" max="99" step="1" value="1">' +
     '<button type="button" class="achat-choix__plus" aria-label="Une boîte de plus">+</button>' +
-    '</div>' +
-    '<p class="achat-choix__alerte" role="alert" hidden></p>' +
-    '<p class="achat-choix__total" aria-live="polite"></p>' +
+    '</div></div>' +
+    '<p class="achat-choix__alerte" aria-live="polite"></p>' +
+    '<div class="achat-choix__recap" aria-live="polite"></div>' +
     '<button type="submit" class="btn btn-primary achat-choix__payer" value="payer">Payer</button>' +
-    '<button type="button" class="achat-choix__close">Fermer</button>' +
+    '<p class="achat-choix__secu">Paiement sécurisé par Stripe</p>' +
     '</form>';
   document.body.appendChild(dialog);
 
@@ -936,7 +949,7 @@ function initPurchaseChoice() {
   const moins = dialog.querySelector('.achat-choix__moins');
   const plus = dialog.querySelector('.achat-choix__plus');
   const alerte = dialog.querySelector('.achat-choix__alerte');
-  const total = dialog.querySelector('.achat-choix__total');
+  const total = dialog.querySelector('.achat-choix__recap');
   const payer = dialog.querySelector('.achat-choix__payer');
   let tarifs = null;
   let livraisonHref = STRIPE_CHECKOUT_URL;
@@ -959,25 +972,25 @@ function initPurchaseChoice() {
     moins.disabled = q <= 1;
     plus.disabled = q >= max;
     const seuil = tarifs ? tarifs.SEUIL_ALERTE : 10;
-    alerte.hidden = q <= seuil;
-    alerte.textContent = q > seuil ? 'Êtes-vous sûr de commander ' + q + ' boîtes ?' : '';
+    alerte.textContent = q > seuil ? q + ' boîtes : vérifiez le nombre avant de payer.' : '';
     const m = mode();
     form.querySelectorAll('.achat-choix__option').forEach(function (label) {
       label.classList.toggle('est-choisi', label.querySelector('input').checked);
     });
     payer.disabled = !m;
-    if (!tarifs) {
-      total.textContent = '';
-      return;
-    }
-    if (!m) {
-      total.textContent = 'Choisissez la remise en main propre ou la livraison.';
+    if (!tarifs || !m) {
+      total.textContent = m ? '' : 'Choisissez la remise en main propre ou la livraison.';
+      if (!payer.dataset.envoi) payer.textContent = 'Payer';
       return;
     }
     const t = tarifs.totalCommande(q, m);
-    total.innerHTML = q + (q > 1 ? ' boîtes' : ' boîte') + ' : ' + tarifs.euros(t.boites) + '<br>' +
-      (m === 'main-propre' ? 'Remise en main propre : 0,00&nbsp;€' : 'Livraison : ' + tarifs.euros(t.port)) + '<br>' +
-      '<strong>Total : ' + tarifs.euros(t.total) + '</strong>';
+    const ligne = function (libelle, montant, classe) {
+      return '<p class="achat-choix__ligne' + (classe || '') + '"><span>' + libelle + '</span><span>' + montant + '</span></p>';
+    };
+    total.innerHTML = ligne(q + (q > 1 ? ' boîtes' : ' boîte') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
+      ligne(m === 'main-propre' ? 'Main propre' : 'Livraison', m === 'main-propre' ? 'sans frais' : tarifs.euros(t.port)) +
+      ligne('Total', tarifs.euros(t.total), ' achat-choix__ligne--total');
+    if (!payer.dataset.envoi) payer.textContent = 'Payer ' + tarifs.euros(t.total);
   }
 
   function regler(n) {
@@ -1006,6 +1019,7 @@ function initPurchaseChoice() {
     const q = quantite();
     trackAchat('achat_payer', { festival: festival, mode: m, quantite: q });
     payer.disabled = true;
+    payer.dataset.envoi = '1';
     payer.textContent = 'Ouverture du paiement…';
     const ref = new URLSearchParams(location.search).get('ref') || (festival === '1' ? 'festival' : '');
     const repli = m === 'main-propre' ? MAIN_PROPRE_STRIPE_URL : livraisonHref;
@@ -1030,7 +1044,7 @@ function initPurchaseChoice() {
     // Un lien Stripe de la page (ex. avec client_reference_id sur /commander.html) sert de repli pour la livraison.
     const href = link.getAttribute('href');
     livraisonHref = href.indexOf(STRIPE_CHECKOUT_URL) === 0 ? href : STRIPE_CHECKOUT_URL;
-    payer.textContent = 'Payer';
+    delete payer.dataset.envoi;
     if (!mode()) {
       const defaut = form.querySelector('input[value="' + (festival === '1' ? 'main-propre' : 'livraison') + '"]');
       if (defaut) defaut.checked = true;
@@ -1041,7 +1055,7 @@ function initPurchaseChoice() {
 
   // Retour arrière depuis Stripe (page restaurée du cache) : le bouton redevient utilisable.
   window.addEventListener('pageshow', function () {
-    payer.textContent = 'Payer';
+    delete payer.dataset.envoi;
     maj();
   });
 }

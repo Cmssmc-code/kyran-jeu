@@ -40,6 +40,7 @@ test('validation de la commande envoyée par le site', () => {
 test('paramètres Stripe : montant au centime, port de la grille, main propre sans adresse', () => {
   const liv = parametresSession({ mode: 'livraison', quantite: 16, ref: '' });
   assert.equal(liv.get('line_items[0][quantity]'), '16');
+  assert.equal(liv.get('locale'), 'fr');
   assert.equal(liv.get('line_items[0][price_data][unit_amount]'), '999');
   assert.equal(liv.get('shipping_options[0][shipping_rate_data][fixed_amount][amount]'), '1599');
   assert.equal(liv.get('metadata[quantity]'), '16');

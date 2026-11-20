@@ -26,6 +26,7 @@ export function parametresSession({ mode, quantite, ref }) {
   const p = new URLSearchParams();
   const mainPropre = mode === 'main-propre';
   p.set('mode', 'payment');
+  p.set('locale', 'fr');
   p.set('line_items[0][quantity]', String(quantite));
   p.set('line_items[0][price_data][currency]', 'eur');
   p.set('line_items[0][price_data][product]', PRODUIT_KYRAN);

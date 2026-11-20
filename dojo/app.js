@@ -95,7 +95,7 @@ const AVATARS = {
 
 function avatarImg(p, cls) {
   const src = AVATARS[p.human ? 'toi' : p.persona];
-  return src ? h('img', { class: cls, src, alt: p.human ? 'Ton pion' : `Pion de ${p.name}`, width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
+  return src ? h('img', { class: cls, src, alt: p.human ? 'Ton pion' : `Pion ${/^[aeiouyéèêâî]/i.test(p.name) ? "d'" : 'de '}${p.name}`, width: 128, height: 128, decoding: 'async', draggable: 'false' }) : null;
 }
 
 // Cartes allégées du mini-jeu (WebP 200 px, générées par scripts/derive-images.py) ;

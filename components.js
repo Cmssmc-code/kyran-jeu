@@ -892,8 +892,8 @@ function initPurchaseChoice() {
     '.achat-choix__option{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;padding:10px 16px;margin:0 0 10px;border:2px solid var(--k-ink);border-radius:14px;background:#fff;cursor:pointer;font-weight:700;font-size:1.1rem;}',
     '.achat-choix__option small{display:block;font-size:.85rem;font-weight:500;opacity:.8;}',
     '.achat-choix__option input{position:absolute;opacity:0;width:1px;height:1px;}',
-    '.achat-choix__option:has(input:checked){background:var(--k-saffron-hi);box-shadow:0 4px 0 var(--k-ink);}',
-    '.achat-choix__option:has(input:focus-visible){outline:3px solid var(--k-blue);outline-offset:2px;}',
+    '.achat-choix__option.est-choisi{background:var(--k-saffron-hi);box-shadow:0 4px 0 var(--k-ink);}',
+    '.achat-choix__option:focus-within{outline:3px solid var(--k-blue);outline-offset:2px;}',
     '.achat-choix__qte{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 8px;}',
     '.achat-choix__qte label{font-weight:700;}',
     '.achat-choix__qte button{width:48px;height:48px;border:2px solid var(--k-ink);border-radius:50%;background:#fff;color:var(--k-ink);font-size:1.5rem;font-weight:700;line-height:1;cursor:pointer;}',
@@ -962,6 +962,9 @@ function initPurchaseChoice() {
     alerte.hidden = q <= seuil;
     alerte.textContent = q > seuil ? 'Êtes-vous sûr de commander ' + q + ' boîtes ?' : '';
     const m = mode();
+    form.querySelectorAll('.achat-choix__option').forEach(function (label) {
+      label.classList.toggle('est-choisi', label.querySelector('input').checked);
+    });
     payer.disabled = !m;
     if (!tarifs) {
       total.textContent = '';

@@ -365,7 +365,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.9.0';
+const VERSION = '1.10.0';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {

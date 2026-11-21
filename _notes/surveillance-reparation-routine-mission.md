@@ -159,7 +159,8 @@ URL `https://kyran-webhook-production.up.railway.app`.
 Scripts de la routine, dans le dépôt (le dossier temporaire de la session peut être vidé à tout moment), tous lancés
 avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH=/opt/pw-browsers/chromium` :
 `scripts/surveillance/crawl.mjs` (toutes les pages du sitemap, 1280 et 390 px, JSON des problèmes et des liens),
-`scripts/surveillance/stripe-eur.mjs` (page du Payment Link en EUR, sans payer), `scripts/surveillance/ga-consent.mjs`
+`scripts/surveillance/achat.mjs` (vrai parcours d'achat jusqu'à Stripe, sans payer),
+`scripts/surveillance/stripe-eur.mjs` (Payment Link de repli en EUR, sans payer), `scripts/surveillance/ga-consent.mjs`
 (bandeau GA4 : rien avant le clic, console vide après « Accepter »), `scripts/smoke-initiation.mjs`.
 `/insta.html` (`noindex`) n'est pas dans le sitemap : la contrôler à part.
 
@@ -183,8 +184,14 @@ avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).
 - **Parcours critiques, lecture seule, aucun formulaire rempli :**
   - accueil, `/regle.html` : chargés sans erreur, éventail de cartes et menu mobile fonctionnels ;
-  - `/commander.html` → bouton d'achat → **page Stripe du Payment Link ouverte SANS payer** : prix unitaire
-    9,99 € et port 2,99 € lus sur la page Stripe et comparés à ceux du site (écart → décision du propriétaire) ;
+  - `/commander.html` → bouton d'achat → panneau « Votre commande KYRAN » → **page Stripe ouverte SANS payer** :
+    `node scripts/surveillance/achat.mjs` (avec `PLAYWRIGHT_CORE` et `CHROMIUM_PATH`). Depuis le 20/11, le bouton
+    appelle `POST /api/commande` du serveur, qui crée la session Stripe à partir de `js/tarifs.js` (copie
+    `server/tarifs.js`) ; le Payment Link ne sert plus que de repli. Le script choisit l'euro dans le sélecteur de
+    devise de Stripe (un iframe) ; prix unitaire 9,99 € et port 2,99 € pour une boîte, lus sur la page Stripe et
+    comparés au récapitulatif du panneau (écart → décision du propriétaire). Chaque essai crée une session Stripe
+    non payée, qui expire seule : un ou deux essais par passage. `scripts/surveillance/stripe-eur.mjs` lit encore le
+    Payment Link de repli ;
   - initiation `/minijeu.html` : `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core
     CHROMIUM_PATH=/opt/pw-browsers/chromium node scripts/smoke-initiation.mjs` joue une manche complète en
     suivant `#dojo[data-state]` (aucun 404 sur `/dojo/`, aucune erreur JS, jamais `crash`). Sortie 1 → lire

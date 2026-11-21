@@ -179,6 +179,8 @@ avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH
   en 200 (2026-11-11) : bruit si `curl` passe.
   `web.archive.org` coupe la connexion depuis les sessions cloud (« Connection reset by peer », 2026-11-15 et 17) ; vérifier
   une copie par l'API `https://archive.org/wayback/available?url=…` (`"status":"200"`) : bruit si l'API répond.
+  `www.agorajeux.com` : 403 « Accès refusé » par intermittence, même dans Chromium (18/11 et 21/11 ; 200 le 19/11) :
+  anti-robot, bruit.
 - Codes HTTP : une URL inconnue répond 404 avec `404.html` ; `https://www.kyran-jeu.fr/` et `http://kyran-jeu.fr/`
   redirigent vers `https://kyran-jeu.fr/` ; `robots.txt`, `sitemap.xml`, `llms.txt`, `blog/feed.xml` en 200 ;
   `_notes/`, `docs/`, `.claude/`, `.mcp.json` en 404 (`lecon.md`, 19/10).

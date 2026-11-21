@@ -6,6 +6,26 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-21 — passage planifié (04:08 UTC), couvre 48 h
+
+**Pas de passage le 20/11** : la consigne du 20/11 n'a été remise à la session que le 21/11, avec celle du jour.
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-21.md`](../docs/rapports/surveillance/2026-11-21.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Achat | OK | nouveau parcours (`/api/commande`) vérifié jusqu'à Stripe : 9,99 € + 2,99 € = 12,98 € ; une vente le 20/11 traitée de bout en bout |
+| Site | OK | 61 URL × 1280/390 px + 4 pages hors sitemap sans erreur ; 476 liens, 0 interne cassé ; agorajeux.com ajouté au bruit |
+| Initiation, GA4 | OK | manche complète ; GA4 sans erreur |
+| Serveur | réparé | `/api/commande` ajoutée sans monter la version → 1.10.0 (PR #302), en ligne ; 3 × 5xx aux bascules de déploiement |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert ; `build-commit.yml` sûr ; 0 faille ; aucun secret |
+| Outils | ajouté | `scripts/surveillance/achat.mjs` (vrai parcours d'achat, sans payer) |
+| Versions | 2 mises à jour | wrangler 4.166.0, `compatibility_date` 2026-11-21, `@anthropic-ai/sdk` 1.12.0 |
+
+Réparation : PR #302. Aucun point ouvert.
+
 ## 2026-11-19 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

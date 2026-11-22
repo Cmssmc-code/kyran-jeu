@@ -7,6 +7,7 @@ import {
   renderCustomMessageEmail,
   renderAdminOrderNotificationEmail,
   renderReviewRequestEmail,
+  renderInscriptionEmail,
   escapeHtml
 } from './templates.js';
 import { createReviewQueue, defaultReviewFile } from './reviewRequests.js';
@@ -17,6 +18,15 @@ import { createMailer } from './mailer.js';
 import { shippingDetails } from './stripeSession.js';
 import { lireCommande, creerSession } from './commande.js';
 import { createStripeEventLog, defaultEventsFile, EVENT_STATE } from './stripeEvents.js';
+import {
+  createInscriptionStore,
+  createBrevoClient,
+  defaultInscriptionsFile,
+  normalizeEmail,
+  cleanUtm,
+  isTokenShape,
+  SOURCES as INSCRIPTION_SOURCES
+} from './inscriptions.js';
 
 const PORT = process.env.PORT || 3000;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -36,6 +46,12 @@ const reviewQueue = createReviewQueue({
   delayMs: Number(process.env.REVIEW_DELAY_MS) || undefined
 });
 const REVIEW_TICK_MS = Number(process.env.REVIEW_TICK_MS) || 60 * 60 * 1000;
+// Inscriptions par mail (voir inscriptions.js) : fichier sur le volume, Brevo seulement si configuré.
+const inscriptions = createInscriptionStore({
+  file: defaultInscriptionsFile(),
+  secret: process.env.INSCRIPTION_SECRET || process.env.REVIEW_UNSUB_SECRET || STRIPE_WEBHOOK_SECRET || ADMIN_SECRET
+});
+const brevo = createBrevoClient(process.env);
 
 // Tolérance sur l'horodatage de signature Stripe (valeur par défaut des SDK Stripe)
 const STRIPE_TOLERANCE_SECONDS = 300;
@@ -365,7 +381,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.10.0';
+const VERSION = '1.11.0';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {
@@ -602,7 +618,34 @@ const server = http.createServer((req, res) => {
       emailTransport: mailer.transport,
       hasWebhookSecret: Boolean(STRIPE_WEBHOOK_SECRET),
       hasCheckoutKey: Boolean(STRIPE_SECRET_KEY),
-      adminEnabled: ADMIN_ENABLED
+      adminEnabled: ADMIN_ENABLED,
+      brevo: Boolean(brevo)
+    });
+  }
+
+  // Inscription par mail depuis le site (bloc <kyran-inscription> de components.js).
+  if (req.method === 'POST' && pathname === '/api/inscription') {
+    return handleInscription(req, res).catch(err => {
+      console.error('[Inscription] Erreur :', err.message);
+      recordServerIncident(err, { path: '/api/inscription', errorCode: 'INSCRIPTION', httpStatus: 500 });
+      if (!res.headersSent) sendJson(res, err.status === 507 ? 507 : 500, { error: 'Inscription indisponible' });
+    });
+  }
+
+  // Compte et export des inscriptions : réservé à l'administration (Bearer ADMIN_SECRET).
+  if (req.method === 'GET' && pathname === '/api/inscriptions') {
+    if (!requireAdmin(req, res)) return;
+    const list = inscriptions.list();
+    const parSource = Object.fromEntries(INSCRIPTION_SOURCES.map(s => [s, list.filter(e => e.source === s).length]));
+    const adresses = new Set(list.map(e => e.email)).size;
+    if (url.searchParams.get('compte') === '1') return sendJson(res, 200, { total: list.length, adresses, parSource });
+    return sendJson(res, 200, { total: list.length, adresses, parSource, inscriptions: list });
+  }
+
+  if (pathname === '/inscription/desinscription') {
+    return handleInscriptionUnsubscribe(req, res, url).catch(err => {
+      console.error('[Inscription] Erreur de désinscription :', err);
+      if (!res.headersSent) sendJson(res, 500, { error: 'Internal error' });
     });
   }
 
@@ -755,6 +798,59 @@ async function handleCommande(req, res) {
   const url = await creerSession(commande, { cle: STRIPE_SECRET_KEY, apiBase: STRIPE_API_BASE });
   console.log(`[Commande] Session créée : ${commande.quantite} boîte(s), ${commande.mode}.`);
   return sendJson(res, 200, { url });
+}
+
+// Navigateur → serveur : inscription par mail (email, source, consentement, utm).
+// Origine du site obligatoire, 10 essais par IP et par heure, champ piège « site_web » pour les robots.
+async function handleInscription(req, res) {
+  const origin = req.headers.origin;
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return sendJson(res, 403, { error: 'Forbidden' });
+  if (rateLimited(`inscription:${clientIp(req)}`, 10, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Trop d\'essais, réessayez plus tard' });
+  let data;
+  try {
+    data = parseJsonBody(await readBody(req, 4096));
+  } catch (err) {
+    return sendJson(res, err.status || 400, { error: 'Bad Request' });
+  }
+  if (!data) return sendJson(res, 400, { error: 'JSON invalide' });
+  // Robot : le champ caché est rempli. Réponse identique à un succès, rien n'est enregistré.
+  if (typeof data.site_web === 'string' && data.site_web.trim()) {
+    console.log('[Inscription] Champ piège rempli : ignorée.');
+    return sendJson(res, 200, { ok: true });
+  }
+  const email = normalizeEmail(data.email);
+  if (!email) return sendJson(res, 400, { error: 'Adresse e-mail invalide' });
+  const source = typeof data.source === 'string' ? data.source : '';
+  if (!INSCRIPTION_SOURCES.includes(source)) return sendJson(res, 400, { error: 'Source inconnue' });
+  if (data.consentement !== true) return sendJson(res, 400, { error: 'Accord obligatoire' });
+
+  inscriptions.purge();
+  const statut = inscriptions.upsert({ email, source, utm: cleanUtm(data.utm) });
+  console.log(`[Inscription] ${statut === 'created' ? 'Nouvelle inscription' : 'Inscription mise à jour'} (source ${source}).`);
+
+  if (brevo) {
+    try {
+      await brevo.addContact(email, source);
+    } catch (err) {
+      console.error('[Inscription] Brevo en échec (le fichier suffit) :', err.message);
+      recordServerIncident(err, { path: '/api/inscription', errorCode: 'BREVO_CONTACT', httpStatus: 502 });
+    }
+  }
+
+  // Mail de confirmation : deux au plus par adresse et par jour (pas de rafale vers un tiers).
+  if (!rateLimited(`inscription-mail:${email}`, 2, 24 * 60 * 60 * 1000)) {
+    try {
+      const { html, text } = renderInscriptionEmail({
+        source,
+        unsubscribeUrl: `${PUBLIC_BASE_URL}/inscription/desinscription?t=${inscriptions.tokenFor(email)}`
+      });
+      await sendEmail({ to: email, subject: 'La règle du jeu KYRAN en PDF', html, text });
+    } catch (err) {
+      console.error('[Inscription] Mail de confirmation non envoyé :', err.message);
+      recordServerIncident(err, { path: '/api/inscription', errorCode: 'INSCRIPTION_MAIL', httpStatus: 502 });
+    }
+  }
+  return sendJson(res, 200, { ok: true, statut });
 }
 
 // Navigateur → serveur : erreurs JS et ressources cassées du site (error-reporter.js)
@@ -960,6 +1056,40 @@ async function handleReviewUnsubscribe(req, res, url) {
   if (!reviewQueue.unsubscribe(token)) return send(400, 'Lien incomplet', '<p>Ce lien de désinscription est incomplet. Écrivez à <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>.</p>');
   console.log('⭐ Désinscription des demandes d’avis enregistrée.');
   return send(200, 'C’est noté', '<p>Vous ne recevrez plus de demande d’avis de KYRAN. Merci d’avoir joué&nbsp;!</p><p><a href="https://kyran-jeu.fr">Retour au site</a></p>');
+}
+
+// Désinscription des mails KYRAN : GET → formulaire de confirmation, POST → l'adresse est retirée du fichier
+// (toutes sources) et de la liste Brevo. Même modèle que /avis/desinscription.
+async function handleInscriptionUnsubscribe(req, res, url) {
+  const send = (status, title, body) => {
+    res.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' });
+    res.end(reviewPage(title, body));
+  };
+  const incomplet = '<p>Ce lien de désinscription est incomplet. Écrivez à <a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a> et nous le ferons pour vous.</p>';
+  if (req.method === 'GET') {
+    const token = String(url.searchParams.get('t') || '');
+    if (!isTokenShape(token)) return send(400, 'Lien incomplet', incomplet);
+    return send(200, 'Ne plus recevoir les mails de KYRAN', `<p>Confirmez pour retirer votre adresse : vous ne recevrez plus les mails de KYRAN.</p><form method="post" action="/inscription/desinscription"><input type="hidden" name="t" value="${escapeHtml(token)}"><button type="submit" style="background: #231F22; color: #fff; border: 0; border-radius: 6px; padding: 10px 20px; font-size: 14px; cursor: pointer;">Me désinscrire</button></form>`);
+  }
+  if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method Not Allowed' });
+  if (rateLimited(`unsub:${clientIp(req)}`, 20, 60 * 60 * 1000)) return sendJson(res, 429, { error: 'Too many requests' });
+  const body = await readBody(req, 2048);
+  const token = new URLSearchParams(body.toString('utf8')).get('t') || '';
+  if (!isTokenShape(token)) return send(400, 'Lien incomplet', incomplet);
+  const removed = inscriptions.unsubscribe(token);
+  if (brevo) {
+    for (const email of removed) {
+      try {
+        await brevo.removeContact(email);
+      } catch (err) {
+        console.error('[Inscription] Retrait Brevo en échec :', err.message);
+        recordServerIncident(err, { path: '/inscription/desinscription', errorCode: 'BREVO_RETRAIT', httpStatus: 502 });
+      }
+    }
+  }
+  console.log(`[Inscription] Désinscription enregistrée (${removed.length} adresse(s) retirée(s)).`);
+  // Même réponse que l'adresse soit connue ou non : le lien ne révèle rien.
+  return send(200, 'C’est noté', '<p>Votre adresse est retirée : vous ne recevrez plus les mails de KYRAN.</p><p><a href="https://kyran-jeu.fr">Retour au site</a></p>');
 }
 
 if (process.env.NODE_ENV !== 'test') {

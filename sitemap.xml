@@ -45,12 +45,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/jouer-en-ligne.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/images/jouer-en-ligne/partie-libre-pari.webp</image:loc>
       <image:title>Partie de KYRAN en ligne contre l'ordinateur</image:title>
       <image:caption>Le moment du pari, contre trois adversaires</image:caption>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://kyran-jeu.fr/avent.html</loc>
+    <lastmod>2026-11-22</lastmod>
   </url>
 
   <url>
@@ -60,7 +65,7 @@
 
   <url>
     <loc>https://kyran-jeu.fr/idee-cadeau.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-22</lastmod>
   </url>
 
   <url>

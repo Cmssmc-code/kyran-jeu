@@ -1,0 +1,144 @@
+/*
+ * Calendrier de l'Avent KYRAN (avent.html, dojo/avent.js).
+ * Vit dans dojo/ et non dans css/ : une feuille de css/ changerait la version de tout le site.
+ * Mobile d'abord (390 px), contrastes AA sur fond crème.
+ */
+.av-app { margin: 0 auto; max-width: 960px; }
+.av-app[aria-busy="true"] { min-height: 420px; }
+
+.av-statut {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--gold-border, rgba(201, 138, 14, 0.3));
+  border-radius: 12px;
+  background: var(--accent-cream, #FDF3DC);
+  color: var(--text-main, #231F22);
+  font-weight: 600;
+}
+
+/* ── Grille des cases ─────────────────────────────────────────────────── */
+.av-grille {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+@media (min-width: 560px) { .av-grille { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.65rem; } }
+@media (min-width: 900px) { .av-grille { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+.av-case-li { margin: 0; }
+.av-case-li--essai { grid-column: 1 / -1; }
+
+.av-case {
+  position: relative;
+  width: 100%;
+  min-height: 56px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.25rem;
+  border: 2px solid var(--k-terra-dark, #8A3220);
+  border-radius: 12px;
+  background: var(--k-terra, #B8432A);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.av-case-li--essai .av-case { aspect-ratio: auto; min-height: 52px; flex-direction: row; gap: 0.5rem; }
+.av-case-num { font-family: var(--font-display, 'Fredoka', sans-serif); font-size: 1.35rem; font-weight: 700; line-height: 1; }
+.av-case-marque { font-size: 0.95rem; line-height: 1; min-height: 1em; }
+.av-case:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 14px -6px rgba(35, 31, 34, 0.5); }
+.av-case:focus-visible { outline: 3px solid var(--k-ink, #231F22); outline-offset: 3px; }
+.av-case.est-reussie { background: #1B7F3A; border-color: #135C2A; }
+.av-case.est-ratee { background: var(--k-ink-3, #3A3538); border-color: var(--k-ink, #231F22); }
+.av-case.est-active { box-shadow: 0 0 0 3px var(--k-saffron, #E6AB26); }
+.av-case.est-verrouillee {
+  cursor: not-allowed;
+  background: var(--k-sand, #E8DCC4);
+  border-color: #CDBE9F;
+  color: #4A4340;
+}
+
+/* ── Défi ─────────────────────────────────────────────────────────────── */
+.av-defi {
+  scroll-margin-top: 90px;
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--k-line, rgba(35, 31, 34, 0.12));
+  box-shadow: 0 10px 30px -18px rgba(35, 31, 34, 0.45);
+}
+@media (min-width: 700px) { .av-defi { padding: 1.75rem; } }
+.av-titre { margin: 0 0 0.35rem; font-size: 1.4rem; }
+.av-meta { margin: 0 0 1rem; color: var(--text-muted, #5E5651); font-size: 0.95rem; }
+.av-note { margin: 0 0 0.75rem; font-weight: 600; color: var(--k-terra-dark, #8A3220); }
+.av-bientot { margin: 0.5rem 0 0; }
+
+.av-table { display: grid; gap: 0.75rem; margin-bottom: 1.1rem; }
+@media (min-width: 700px) { .av-table { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.av-main {
+  padding: 0.65rem 0.75rem 0.8rem;
+  border-radius: 12px;
+  background: var(--k-cream, #FBF6EC);
+  border: 1px solid var(--k-line, rgba(35, 31, 34, 0.12));
+}
+.av-main--toi { background: var(--accent-cream, #FDF3DC); border: 2px solid var(--k-saffron-deep, #C98A0E); }
+@media (min-width: 700px) { .av-main--toi { grid-column: 1 / -1; } }
+.av-main-nom { margin: 0 0 0.5rem; font-weight: 700; font-size: 0.95rem; }
+.av-cartes { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.av-carte {
+  --w: 56px;
+  position: relative;
+  width: var(--w);
+  aspect-ratio: 304 / 452;
+  border-radius: 6px;
+  background: #e9e4d6;
+  box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.av-main--toi .av-carte { --w: 68px; }
+@media (min-width: 700px) { .av-carte { --w: 64px; } .av-main--toi .av-carte { --w: 84px; } }
+.av-carte img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.av-carte.est-power img, .av-carte.est-mystique img { object-fit: fill; }
+.av-carte-repli {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display, 'Fredoka', sans-serif);
+  font-size: 1.5rem;
+  color: var(--k-ink, #231F22);
+}
+.av-carte.sans-image img { visibility: hidden; }
+.av-carte.sans-image .av-carte-repli { display: flex; }
+
+.av-question { margin: 0.25rem 0 0.6rem; font-size: 1.15rem; font-weight: 700; }
+.av-choix { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem; }
+.av-rep { min-width: 52px; min-height: 48px; font-size: 1.1rem; justify-content: center; }
+.av-rep:disabled { opacity: 1; cursor: default; }
+.av-rep.est-choisi { outline: 3px solid var(--k-ink, #231F22); outline-offset: 2px; }
+.av-rep.est-bonne { background: #1B7F3A; border-color: #135C2A; color: #fff; }
+
+.av-verdict:empty { display: none; }
+.av-resultat { margin: 0 0 0.4rem; font-weight: 700; font-size: 1.05rem; }
+.av-resultat.est-ok { color: #135C2A; }
+.av-resultat.est-ko { color: var(--k-terra-dark, #8A3220); }
+.av-explication { margin: 0 0 1rem; }
+.av-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.av-info { margin: 0.5rem 0 0; font-size: 0.95rem; overflow-wrap: anywhere; }
+.av-info:empty { display: none; }
+
+.av-regles { margin: 0; padding-left: 1.2rem; }
+.av-regles li { margin-bottom: 0.4rem; }
+.av-cta { text-align: center; }
+.av-cta .av-actions { justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) { .av-case { transition: none; } .av-case:hover:not(:disabled) { transform: none; } }

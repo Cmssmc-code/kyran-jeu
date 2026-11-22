@@ -75,6 +75,7 @@ export const STATIC_PAGES = [
       <image:title>Cadeau Secret Santa à moins de 10 € : le jeu de cartes KYRAN</image:title>
     </image:image>`
   },
+  { path: '/kyran-en-10-reponses.html', title: 'KYRAN en 10 réponses : jeu de plis et de paris, 3 à 6 joueurs', section: 'Boutique' },
   {
     path: '/jeu-apero.html',
     title: 'KYRAN — jeu de cartes pour l\'apéro',

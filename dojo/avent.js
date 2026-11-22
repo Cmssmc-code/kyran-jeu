@@ -5,7 +5,7 @@
  *   les jours futurs restent verrouillés, même demandés par ?jour=.
  * - Avant le 1er décembre : défi d'essai jouable et compte à rebours.
  * - Réponses gardées sur l'appareil (localStorage), partage (Web Share API ou presse-papiers),
- *   lien d'achat suivi (/commander.html?ref=avent-jN, transmis à Stripe par components.js).
+ *   lien d'achat suivi (/commander.html?ref=avent, transmis à Stripe en client_reference_id).
  *
  * Les fonctions de date sont pures et exportées (scripts/test/avent.test.mjs) ; l'interface ne
  * démarre que dans une page qui contient #avent.
@@ -47,6 +47,17 @@ export function joursAvantOuverture(d) {
   return Math.max(0, diff);
 }
 
+/** Ouverture de la première case : 1er décembre à minuit, heure de Paris (UTC+1 en hiver). */
+export const OUVERTURE_UTC = Date.UTC(ANNEE, 10, 30, 23);
+
+/** Compte à rebours jusqu'à l'ouverture : { jours, heures, minutes } (null une fois ouvert). */
+export function compteARebours(maintenant = Date.now()) {
+  const reste = OUVERTURE_UTC - maintenant;
+  if (reste <= 0) return null;
+  const minutesTotal = Math.ceil(reste / 60000);
+  return { jours: Math.floor(minutesTotal / 1440), heures: Math.floor((minutesTotal % 1440) / 60), minutes: minutesTotal % 60 };
+}
+
 /** Case à montrer à l'arrivée : celle demandée par ?jour= si elle est ouverte, sinon la dernière ouverte, sinon l'essai (0). */
 export function caseAuDepart(demande, d) {
   const n = joursOuverts(d);
@@ -54,16 +65,21 @@ export function caseAuDepart(demande, d) {
   return n > 0 ? n : 0;
 }
 
-/** Texte à partager. */
-export function texteDePartage(jour, reussi) {
-  const quoi = jour === 0 ? 'défi d’essai' : 'jour ' + jour;
-  return 'Calendrier de l’Avent KYRAN, ' + quoi + ' : ' + (reussi ? 'réussi !' : 'raté, à toi de faire mieux !') + ' ' + URL_PAGE;
+/** Lien direct vers le défi d'un jour (l'essai : la page seule). */
+export function lienDuDefi(jour) {
+  return jour >= 1 && jour <= DERNIER_JOUR ? URL_PAGE + '?jour=' + jour : URL_PAGE;
 }
 
-/** Repère d'achat transmis à Stripe (client_reference_id, ^[A-Za-z0-9_-]{1,64}$). */
-export function refAchat(jour) {
-  return jour === 0 ? 'avent-essai' : 'avent-j' + jour;
+/** Texte à partager (le lien est passé à part). */
+export function texteDePartage(jour, resultat) {
+  const quoi = jour === 0 ? 'le défi d’essai' : 'le défi du ' + jour + ' décembre';
+  const bilan = resultat == null ? '' : resultat ? ' Réussi !' : ' Raté, à toi de faire mieux !';
+  return 'Calendrier de l’Avent KYRAN : ' + quoi + '. Combien de plis fais-tu ?' + bilan;
 }
+
+/** Repère d'achat transmis à Stripe (client_reference_id). */
+export const REF_ACHAT = 'avent';
+export const LIEN_ACHAT = '/commander.html?ref=' + REF_ACHAT;
 
 // ── Interface ──────────────────────────────────────────────────────────────
 
@@ -95,11 +111,11 @@ function h(tag, attrs = {}, children = []) {
 
 function cardEl(id, back) {
   const card = back ? null : cardById(id);
-  const el = h('div', { class: 'dj-card' + (back ? ' is-back' : ' is-' + card.kind), role: 'img', 'aria-label': back ? 'carte face cachée' : cardName(card) });
+  const el = h('div', { class: 'av-carte' + (back ? ' est-dos' : ' est-' + card.kind), role: 'img', 'aria-label': back ? 'carte face cachée' : cardName(card) });
   const img = h('img', { src: back ? CARD_DIR + 'dos.webp' : cardImage(card), alt: '', width: 200, height: 297, decoding: 'async', draggable: 'false' });
-  img.addEventListener('error', () => el.classList.add('no-img'));
+  img.addEventListener('error', () => el.classList.add('sans-image'));
   el.appendChild(img);
-  if (!back) el.appendChild(h('span', { class: 'dj-card-fallback', 'aria-hidden': 'true', text: card.kind === 'mystique' ? 'M' : String(card.value) }));
+  if (!back) el.appendChild(h('span', { class: 'av-carte-repli', 'aria-hidden': 'true', text: card.kind === 'mystique' ? 'M' : String(card.value) }));
   return el;
 }
 
@@ -114,7 +130,8 @@ function garderResultat(jour, choix, ok) {
   try { localStorage.setItem(CLE_STOCKAGE, JSON.stringify(r)); } catch (e) { /* stockage indisponible : tant pis */ }
 }
 
-const nomJoueur = (pid) => (pid === 0 ? 'Toi' : 'Joueur ' + (pid + 1));
+// Même numérotation que les explications : joueur 1 à ta gauche, puis dans le sens des aiguilles d'une montre.
+const nomJoueur = (pid) => (pid === 0 ? 'Toi' : 'Joueur ' + pid);
 
 function init(root) {
   const params = new URLSearchParams(location.search);
@@ -130,10 +147,15 @@ function init(root) {
   root.removeAttribute('aria-busy');
 
   function rendreStatut() {
-    const avant = joursAvantOuverture(today);
     const n = joursOuverts(today);
-    if (avant > 0) {
-      statut.textContent = 'La première case s’ouvre le 1er décembre : encore ' + avant + (avant > 1 ? ' jours' : ' jour') + '. En attendant, fais le défi d’essai.';
+    const rebours = n === 0 ? compteARebours() : null;
+    if (rebours) {
+      const pl = (v, mot) => v + ' ' + mot + (v > 1 ? 's' : '');
+      statut.textContent = 'La première case s’ouvre le 1er décembre à minuit (heure de Paris), dans '
+        + (rebours.jours ? pl(rebours.jours, 'jour') + ', ' : '') + pl(rebours.heures, 'heure') + ' et ' + pl(rebours.minutes, 'minute')
+        + '. En attendant, fais le défi d’essai.';
+    } else if (n === 0) {
+      statut.textContent = 'La première case s’ouvre dans un instant.';
     } else if (n < DERNIER_JOUR) {
       statut.textContent = 'Aujourd’hui, la case ' + n + ' est ouverte. Une nouvelle case chaque jour à minuit, heure de Paris.';
     } else {
@@ -200,12 +222,12 @@ function init(root) {
 
     const table = h('div', { class: 'av-table' });
     for (let pid = 0; pid < defi.joueurs; pid++) {
-      const visible = pid === 0 || defi.montrer === 'tous';
       const main = h('div', { class: 'av-main' + (pid === 0 ? ' av-main--toi' : '') });
-      main.appendChild(h('p', { class: 'av-main-nom', text: pid === 0 ? 'Ta main' : nomJoueur(pid) + (visible ? '' : ' (cartes cachées)') }));
+      const roles = [pid === defi.donneur ? 'donneur' : '', pid === ouvreur ? 'ouvre' : ''].filter(Boolean).join(', ');
+      main.appendChild(h('p', { class: 'av-main-nom', text: (pid === 0 ? 'Ta main' : nomJoueur(pid)) + (roles ? ' (' + roles + ')' : '') }));
       const cartes = h('div', { class: 'av-cartes' });
       const ids = defi.mains[pid] || [];
-      for (let k = 0; k < defi.cartes; k++) cartes.appendChild(cardEl(ids[k], !visible || !ids[k]));
+      for (let k = 0; k < defi.cartes; k++) cartes.appendChild(cardEl(ids[k], !ids[k]));
       main.appendChild(cartes);
       table.appendChild(main);
     }
@@ -220,7 +242,15 @@ function init(root) {
       btn.addEventListener('click', () => repondre(b));
       choix.appendChild(btn);
     }
-    panneau.append(choix, verdict);
+    const actions = h('div', { class: 'av-actions' });
+    const partager = h('button', { type: 'button', class: 'btn btn-secondary', text: 'Partager ce défi' });
+    const info = h('p', { class: 'av-info', 'aria-live': 'polite' });
+    partager.addEventListener('click', () => {
+      const r = lireResultats()[jour];
+      partagerDefi(texteDePartage(jour, r ? r.ok : null), lienDuDefi(jour), info);
+    });
+    actions.append(partager, h('a', { class: 'btn btn-primary', href: LIEN_ACHAT, text: 'Acheter le jeu KYRAN (9,99 €)' }));
+    panneau.append(choix, verdict, actions, info);
     if (deja) montrerVerdict(deja.choix, deja.ok, true);
 
     function repondre(b) {
@@ -240,12 +270,6 @@ function init(root) {
       verdict.textContent = '';
       verdict.appendChild(h('p', { class: 'av-resultat ' + (ok ? 'est-ok' : 'est-ko'), text: (ancien ? 'Ta réponse : ' + b + '. ' : '') + (ok ? 'Bonne réponse !' : 'Raté ! La bonne réponse est ' + defi.reponse + '.') }));
       verdict.appendChild(h('p', { class: 'av-explication', text: defi.explication }));
-      const actions = h('div', { class: 'av-actions' });
-      const partager = h('button', { type: 'button', class: 'btn btn-secondary', text: 'Partager mon résultat' });
-      const info = h('p', { class: 'av-info', 'aria-live': 'polite' });
-      partager.addEventListener('click', () => partagerResultat(texteDePartage(jour, ok), info));
-      actions.append(partager, h('a', { class: 'btn btn-primary', href: '/commander.html?ref=' + refAchat(jour), text: 'Acheter KYRAN (9,99 €)' }));
-      verdict.append(actions, info);
     }
   }
 
@@ -256,27 +280,31 @@ function init(root) {
   // Passage de minuit (page restée ouverte) : la nouvelle case s'ouvre sans recharger.
   setInterval(() => {
     const d = dateParis();
-    if (d.jour === today.jour && d.mois === today.mois && d.annee === today.annee) return;
+    if (d.jour === today.jour && d.mois === today.mois && d.annee === today.annee) {
+      if (joursOuverts(today) === 0) rendreStatut();
+      return;
+    }
     today = d;
     rendreStatut();
     rendreGrille();
   }, 60000);
 }
 
-async function partagerResultat(texte, info) {
+async function partagerDefi(texte, lien, info) {
+  info.textContent = '';
   if (navigator.share) {
     try {
-      await navigator.share({ text: texte });
+      await navigator.share({ title: 'Calendrier de l’Avent KYRAN', text: texte, url: lien });
       return;
     } catch (e) {
       if (e && e.name === 'AbortError') return;
     }
   }
   try {
-    await navigator.clipboard.writeText(texte);
-    info.textContent = 'Texte copié : colle-le où tu veux.';
+    await navigator.clipboard.writeText(lien);
+    info.textContent = 'Lien du défi copié : colle-le où tu veux.';
   } catch (e) {
-    info.textContent = texte;
+    info.textContent = 'Lien du défi : ' + lien;
   }
 }
 

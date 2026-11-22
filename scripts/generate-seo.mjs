@@ -137,6 +137,7 @@ function buildLlmsTxt() {
 - Règles : ${SITE}/regle.html ; règles en PDF (une page A4) : ${SITE}/regle-kyran.pdf ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
 - Jouer à KYRAN en ligne contre l'ordinateur (partie libre, 2 à 5 adversaires, 3 niveaux, sans inscription) : ${SITE}/jouer-en-ligne.html
+- Calendrier de l'Avent KYRAN (du 1er au 24 décembre, un défi de plis par jour, réponses vérifiées par le moteur du jeu) : ${SITE}/avent.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques

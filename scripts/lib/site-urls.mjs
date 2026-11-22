@@ -62,6 +62,7 @@ export const STATIC_PAGES = [
       <image:caption>Le moment du pari, contre trois adversaires</image:caption>
     </image:image>`
   },
+  { path: '/avent.html', title: "Calendrier de l'Avent KYRAN : 24 défis de cartes en décembre", section: 'KYRAN' },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   { path: '/idee-cadeau.html', title: 'Idée cadeau de Noël : offrir le jeu de cartes KYRAN', section: 'Boutique' },
   {

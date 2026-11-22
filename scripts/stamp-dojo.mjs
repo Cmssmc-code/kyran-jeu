@@ -4,7 +4,8 @@
  * navigateurs ne mélangent jamais deux versions des modules après une mise en ligne.
  *
  * Les imports entre modules (`from './engine.js?v=…'`) sont réécrits dans l'ordre des
- * dépendances, puis minijeu.html reçoit les empreintes de dojo/*.js et dojo/dojo.css. La feuille de style
+ * dépendances, puis minijeu.html et avent.html (calendrier de l'Avent) reçoivent
+ * les empreintes de dojo/*.js et de leur feuille de style (dojo/dojo.css, dojo/avent.css). La feuille de style
  * vit dans dojo/ et non dans css/ : sinon elle changerait la version de tout le site
  * (scripts/lib/asset-version.mjs).
  * Idempotent : inclus dans `npm run build`.
@@ -17,7 +18,9 @@ import { readLf, toLf } from './lib/lf.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Ordre des dépendances : un module n'importe que des modules situés avant lui.
-const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js'];
+const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js', 'avent-defis.js', 'avent.js'];
+const FEUILLES = ['dojo.css', 'avent.css'];
+const PAGES = ['minijeu.html', 'avent.html'];
 // Empreinte calculée sur le texte en LF : même résultat sous Windows (CRLF) et sur la CI.
 const hash = text => crypto.createHash('sha1').update(toLf(text)).digest('hex').slice(0, 10);
 
@@ -33,15 +36,15 @@ for (const name of MODULES) {
   if (out !== src) { fs.writeFileSync(file, out); changed++; }
   versions[name] = hash(out);
 }
-versions['dojo.css'] = hash(readLf(path.join(ROOT, 'dojo', 'dojo.css')));
+for (const css of FEUILLES) versions[css] = hash(readLf(path.join(ROOT, 'dojo', css)));
 
-const page = path.join(ROOT, 'minijeu.html');
-const html = fs.readFileSync(page, 'utf8');
-const stamped = html
-  .replace(/(\/dojo\/)([\w-]+\.js)\?v=[\w]+/g, (m, dir, name) => {
-    if (!versions[name]) throw new Error(`minijeu.html référence un module inconnu : ${name}`);
+for (const nom of PAGES) {
+  const page = path.join(ROOT, nom);
+  const html = fs.readFileSync(page, 'utf8');
+  const stamped = html.replace(/(\/dojo\/)([\w-]+\.(?:js|css))\?v=[\w]+/g, (m, dir, name) => {
+    if (!versions[name]) throw new Error(`${nom} référence un fichier du Dojo inconnu : ${name}`);
     return `${dir}${name}?v=${versions[name]}`;
-  })
-  .replace(/(\/dojo\/dojo\.css)\?v=[\w]+/g, `$1?v=${versions['dojo.css']}`);
-if (stamped !== html) { fs.writeFileSync(page, stamped); changed++; }
+  });
+  if (stamped !== html) { fs.writeFileSync(page, stamped); changed++; }
+}
 console.log(`Dojo versionné : ${changed} fichier(s) mis à jour.`);

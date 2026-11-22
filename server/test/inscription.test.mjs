@@ -21,8 +21,8 @@ import { renderInscriptionEmail, INSCRIPTION_LINKS } from '../templates.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SERVER = path.resolve(__dirname, '../server.js');
-const PORT = '39894';
-const BREVO_PORT = 39895;
+const PORT = '39941';
+const BREVO_PORT = 39942;
 const BASE = `http://127.0.0.1:${PORT}`;
 const ADMIN = 'a'.repeat(40);
 const SECRET = 'secret-inscription-test';

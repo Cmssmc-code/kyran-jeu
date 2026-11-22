@@ -66,6 +66,16 @@ export const STATIC_PAGES = [
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
   { path: '/idee-cadeau.html', title: 'Idée cadeau de Noël : offrir le jeu de cartes KYRAN', section: 'Boutique' },
   {
+    path: '/secret-santa.html',
+    title: 'Cadeau Secret Santa à moins de 10 € : un jeu de cartes',
+    section: 'Boutique',
+    sitemapExtra: `
+    <image:image>
+      <image:loc>${SITE}/images/secret-santa/entete-secret-santa.jpg</image:loc>
+      <image:title>Cadeau Secret Santa à moins de 10 € : le jeu de cartes KYRAN</image:title>
+    </image:image>`
+  },
+  {
     path: '/jeu-apero.html',
     title: 'KYRAN — jeu de cartes pour l\'apéro',
     section: 'Guides',

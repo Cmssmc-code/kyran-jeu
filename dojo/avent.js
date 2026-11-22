@@ -10,8 +10,8 @@
  * Les fonctions de date sont pures et exportées (scripts/test/avent.test.mjs) ; l'interface ne
  * démarre que dans une page qui contient #avent.
  */
-import { cardById, POWERS } from './engine.js';
-import { defiDuJour } from './avent-defis.js';
+import { cardById, POWERS } from './engine.js?v=617bc536b5';
+import { defiDuJour } from './avent-defis.js?v=3a42ce9940';
 
 export const ANNEE = 2026;
 export const DERNIER_JOUR = 24;

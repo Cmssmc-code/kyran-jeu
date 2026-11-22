@@ -24,6 +24,7 @@
 - Règles : https://kyran-jeu.fr/regle.html ; règles en PDF (une page A4) : https://kyran-jeu.fr/regle-kyran.pdf ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : https://kyran-jeu.fr/video-regles.html
 - Simulateur d'apprentissage gratuit (Initiation) : https://kyran-jeu.fr/minijeu.html
 - Jouer à KYRAN en ligne contre l'ordinateur (partie libre, 2 à 5 adversaires, 3 niveaux, sans inscription) : https://kyran-jeu.fr/jouer-en-ligne.html
+- Calendrier de l'Avent KYRAN (du 1er au 24 décembre, un défi de plis par jour, réponses vérifiées par le moteur du jeu) : https://kyran-jeu.fr/avent.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques
@@ -78,6 +79,7 @@
 - [Règles de KYRAN en vidéo (Ludochrono, 5 min)](https://kyran-jeu.fr/video-regles.html)
 - [Initiation KYRAN — tutoriel interactif gratuit](https://kyran-jeu.fr/minijeu.html)
 - [Jouer à KYRAN en ligne : jeu de cartes contre l'ordinateur](https://kyran-jeu.fr/jouer-en-ligne.html)
+- [Calendrier de l'Avent KYRAN : 24 défis de cartes en décembre](https://kyran-jeu.fr/avent.html)
 - [Commander KYRAN — boutique en ligne](https://kyran-jeu.fr/commander.html)
 - [Idée cadeau de Noël : offrir le jeu de cartes KYRAN](https://kyran-jeu.fr/idee-cadeau.html)
 - [KYRAN — jeu de cartes pour l'apéro](https://kyran-jeu.fr/jeu-apero.html)

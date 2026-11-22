@@ -324,6 +324,13 @@ immédiat. Chaque mise à jour figure dans le rapport (avant → après, source 
     seule demande bloque tout le passage (constaté le 2026-10-22 : passage arrêté à 03:23 UTC sur un `send-email`
     Resend). Jamais d'outil d'envoi Resend ou Gmail, jamais `send_later` ni autre outil `claude-code-remote`. Le
     rapport passe **toujours** par la voie serveur (D, envoi 3).
+12. **Disque C: (règle du propriétaire, 2026-11-22) : 100 Go libres en permanence.** Avant un gros travail
+    (clone, `npm install`, build, crawl Playwright), vérifier la place
+    (`powershell -NoProfile -c "(Get-PSDrive C).Free/1GB"`) ; sous 100 Go, faire d'abord le ménage. **Ménage en fin
+    de passage** : effacer ce que le passage a créé et qui se refait (copies de travail finies après fusion,
+    `node_modules` et builds de ces copies, captures temporaires). Chemins écrits en entier et relus avant
+    l'effacement, jamais `rm -rf` ou `rmdir` avec une variable qui peut être vide ; `git status` et branches non
+    poussées vérifiés avant d'effacer une copie de travail. Ne jamais toucher à ce qui n'est pas à KYRAN.
 
 ---
 

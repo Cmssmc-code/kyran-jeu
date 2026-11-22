@@ -157,6 +157,12 @@ Si malgré tout aucune action n'est faite, le journal dit laquelle des six a ét
     répond 200 (`lecon.md`, 08/10).
 14. Limite d'utilisation Claude atteinte : commit « wip » sur la branche, `send_later` à la remise à zéro + 5 min,
     reprise sans attendre le propriétaire.
+15. **Disque C: (règle du propriétaire, 2026-11-22) : 100 Go libres en permanence.** Avant un gros travail
+    (`npm install`, build, crawl), vérifier la place (`powershell -NoProfile -c "(Get-PSDrive C).Free/1GB"`) ;
+    sous 100 Go, faire d'abord le ménage. **Ménage en fin de run** : effacer ce que le run a créé et qui se refait
+    (copies de travail fusionnées, leurs `node_modules` et builds, captures temporaires), avec des chemins écrits
+    en entier et relus, jamais `rm -rf` ou `rmdir` sur une variable qui peut être vide, après `git status` et
+    contrôle des branches non poussées. Ne jamais toucher à ce qui n'est pas à KYRAN.
 
 ### Périmètre
 

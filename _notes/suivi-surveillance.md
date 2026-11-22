@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-22 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-22.md`](../docs/rapports/surveillance/2026-11-22.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Achat | OK | parcours réel jusqu'à Stripe : 9,99 € + 2,99 € = 12,98 € ; deux ventes le 21/11 traitées de bout en bout |
+| Site | OK | 61 URL × 1280/390 px sans erreur ; 476 liens, 0 interne cassé ; JSON-LD de l'offre (port 2,99 €, retours) correct |
+| Initiation, GA4 | OK | manche complète ; GA4 sans erreur |
+| Serveur | OK | v1.10.0, Node v26.13.1, 0 × 5xx |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert ; 0 faille ; aucun secret |
+| Versions | à jour | `compatibility_date` 2026-11-22 |
+
+Mise à jour : PR #305. Aucun point ouvert.
+
 ## 2026-11-21 — passage planifié (04:08 UTC), couvre 48 h
 
 **Pas de passage le 20/11** : la consigne du 20/11 n'a été remise à la session que le 21/11, avec celle du jour.

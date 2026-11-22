@@ -552,3 +552,57 @@ ${unsubHref ? `\nVous recevez ce mail une seule fois. Ne plus recevoir de demand
 
   return { html, text };
 }
+
+// Mail de confirmation d'inscription (POST /api/inscription) : court, la règle en PDF, le lien de désinscription.
+// Liens https://kyran-jeu.fr en clair, sans raccourcisseur.
+export const INSCRIPTION_LINKS = Object.freeze({
+  regle: 'https://kyran-jeu.fr/regle-kyran.pdf',
+  avent: 'https://kyran-jeu.fr/avent.html',
+  confidentialite: 'https://kyran-jeu.fr/confidentialite.html'
+});
+
+export function renderInscriptionEmail({ source = 'site', unsubscribeUrl = '' }) {
+  const unsubHref = safeUrl(unsubscribeUrl);
+  const avent = source === 'avent';
+  const link = href => `<a href="${esc(href)}" style="color: #0f172a; text-decoration: underline; word-break: break-all;" target="_blank">${esc(href)}</a>`;
+
+  const contentHtml = `
+    <h1 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: #0f172a; line-height: 1.3;">
+      Bienvenue autour de la table
+    </h1>
+
+    <p style="margin: 0 0 14px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      Bonjour, merci pour votre inscription. Voici la règle du jeu KYRAN en PDF&nbsp;:<br>
+      ${link(INSCRIPTION_LINKS.regle)}
+    </p>
+${avent ? `
+    <p style="margin: 0 0 14px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      Les défis du calendrier de l'Avent s'ouvrent chaque jour à minuit&nbsp;: ${link(INSCRIPTION_LINKS.avent)}
+    </p>
+` : ''}
+    <p style="margin: 0 0 14px 0; font-size: 14px; color: #475569; line-height: 1.6;">
+      Vous recevrez au plus un mail par semaine&nbsp;: nouveaux défis et nouvelles de KYRAN.
+    </p>
+    <p style="margin: 0; font-size: 14px; color: #0f172a;">Corentin, auteur de KYRAN</p>
+
+    ${unsubHref ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Vous recevez ce mail parce que cette adresse a été inscrite sur kyran-jeu.fr. <a href="${esc(unsubHref)}" style="color: #94a3b8; text-decoration: underline;">Se désinscrire en un clic</a>.</div>` : ''}
+  `;
+
+  const html = baseLayout({
+    title: 'La règle du jeu KYRAN',
+    previewText: 'La règle du jeu KYRAN en PDF, et un mail par semaine au plus.',
+    contentHtml
+  });
+
+  const text = `Bonjour,
+
+Merci pour votre inscription. Voici la règle du jeu KYRAN en PDF :
+${INSCRIPTION_LINKS.regle}
+${avent ? `\nLes défis du calendrier de l'Avent s'ouvrent chaque jour à minuit : ${INSCRIPTION_LINKS.avent}\n` : ''}
+Vous recevrez au plus un mail par semaine : nouveaux défis et nouvelles de KYRAN.
+
+Corentin, auteur de KYRAN
+${unsubHref ? `\nSe désinscrire en un clic : ${unsubHref}\n` : ''}`;
+
+  return { html, text };
+}

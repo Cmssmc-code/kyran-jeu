@@ -1068,6 +1068,108 @@ function initPurchaseChoice() {
 
 if (typeof document !== 'undefined') whenParsed(initPurchaseChoice);
 
+// Bloc d'inscription par mail <kyran-inscription source="festival-qr|avent|site" titre="…" [festival-only]>.
+// Rendu dans le navigateur seulement (jamais prérendu). Envoie l'adresse au serveur Railway (/api/inscription)
+// avec la source, l'accord (case obligatoire) et les utm de la visite ; champ piège « site_web » caché pour
+// les robots. Avec festival-only, le bloc n'apparaît qu'aux visiteurs venus du QR (repère kyranFestival).
+// Événement GA4 : inscription_mail (paramètre source). Défini ici, après FESTIVAL_KEY (initialisé plus haut).
+const INSCRIPTION_API = 'https://kyran-webhook-production.up.railway.app/api/inscription';
+const INSCRIPTION_SOURCES = ['festival-qr', 'avent', 'site'];
+const UTM_KEY = 'kyranUtm';
+const INSCRIPTION_ACCORD = "J'accepte de recevoir par mail la règle et les nouvelles de KYRAN (un mail par semaine au plus). Désinscription en un clic.";
+
+function visitUtm() {
+  const utm = {};
+  try {
+    const params = new URLSearchParams(location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+      const v = params.get(k);
+      if (v) utm[k] = v.slice(0, 100);
+    });
+    if (Object.keys(utm).length) sessionStorage.setItem(UTM_KEY, JSON.stringify(utm));
+    else return JSON.parse(sessionStorage.getItem(UTM_KEY) || '{}') || {};
+  } catch (e) { /* stockage indisponible */ }
+  return utm;
+}
+
+let inscriptionStyled = false;
+function styleInscription() {
+  if (inscriptionStyled) return;
+  inscriptionStyled = true;
+  const style = document.createElement('style');
+  style.textContent = [
+    '.inscription-mail{max-width:560px;margin:28px auto;padding:18px;border:2px solid var(--k-ink);border-radius:18px;background:var(--k-cream,#FBF6EC);box-shadow:0 5px 0 var(--k-ink);}',
+    '.inscription-mail h2{font-size:1.2rem;margin:0 0 6px;line-height:1.25;}',
+    '.inscription-mail p{margin:0 0 10px;}',
+    '.inscription-mail__ligne{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;}',
+    '.inscription-mail__ligne input[type=email]{flex:1 1 220px;min-height:46px;border:2px solid var(--k-ink);border-radius:12px;padding:0 12px;font:inherit;background:#fff;color:var(--k-ink);}',
+    '.inscription-mail__ligne .btn{flex:0 0 auto;min-height:46px;}',
+    '.inscription-mail__accord{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;line-height:1.4;margin:0 0 6px;}',
+    '.inscription-mail__accord input{flex:none;width:20px;height:20px;margin:1px 0 0;}',
+    '.inscription-mail__piege{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;}',
+    '.inscription-mail__etat{min-height:1.2em;font-size:.9rem;font-weight:600;margin:6px 0 0;}',
+    '.inscription-mail__etat.est-erreur{color:var(--k-red);}'
+  ].join('');
+  document.head.appendChild(style);
+}
+
+class KyranInscription extends HTMLElement {
+  connectedCallback() {
+    if (this.dataset.rendu) return;
+    const source = INSCRIPTION_SOURCES.indexOf(this.getAttribute('source')) >= 0 ? this.getAttribute('source') : 'site';
+    if (this.hasAttribute('festival-only') && !isFestivalVisitor()) return;
+    this.dataset.rendu = '1';
+    styleInscription();
+    const uid = 'inscription-' + source;
+    const titre = this.getAttribute('titre') || 'Recevez la règle du jeu en PDF par mail';
+    const texte = this.getAttribute('texte') || '';
+    this.innerHTML =
+      '<form class="inscription-mail" novalidate>' +
+      '<h2>' + titre + '</h2>' +
+      (texte ? '<p>' + texte + '</p>' : '') +
+      '<div class="inscription-mail__ligne">' +
+      '<label class="sr-only" for="' + uid + '-email">Votre adresse mail</label>' +
+      '<input id="' + uid + '-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Votre adresse mail" required maxlength="254">' +
+      '<button type="submit" class="btn btn-primary">Recevoir</button>' +
+      '</div>' +
+      '<div class="inscription-mail__piege" aria-hidden="true"><label>Site web <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>' +
+      '<label class="inscription-mail__accord"><input type="checkbox" name="accord" required>' +
+      '<span>' + INSCRIPTION_ACCORD + ' <a href="/confidentialite.html#inscription-mail">Politique de confidentialité</a></span></label>' +
+      '<p class="inscription-mail__etat" role="status" aria-live="polite"></p>' +
+      '</form>';
+    const form = this.querySelector('form');
+    const etat = form.querySelector('.inscription-mail__etat');
+    const bouton = form.querySelector('button[type=submit]');
+    const dire = function (msg, erreur) {
+      etat.textContent = msg;
+      etat.classList.toggle('est-erreur', Boolean(erreur));
+    };
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = form.elements.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) return dire('Vérifiez votre adresse mail.', true);
+      if (!form.elements.accord.checked) return dire('Cochez la case d’accord pour recevoir les mails.', true);
+      bouton.disabled = true;
+      dire('Envoi…');
+      fetch(INSCRIPTION_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: source, consentement: true, utm: visitUtm(), site_web: form.elements.site_web.value })
+      }).then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        trackAchat('inscription_mail', { source: source, festival: isFestivalVisitor() ? '1' : '0' });
+        form.innerHTML = '<h2>C’est noté&nbsp;!</h2><p>Un mail de confirmation part vers ' +
+          email.replace(/[<>&"]/g, '') + ', avec la règle du jeu KYRAN en PDF.</p>';
+      }).catch(function () {
+        bouton.disabled = false;
+        dire('L’inscription n’a pas abouti. Réessayez dans un instant.', true);
+      });
+    });
+  }
+}
+
+if (typeof customElements !== 'undefined') customElements.define('kyran-inscription', KyranInscription);
+
 // Fonctions de rendu pures, utilisées par scripts/prerender.mjs pour écrire le HTML statique.
 var KyranRender = {
   header: renderHeaderHtml,

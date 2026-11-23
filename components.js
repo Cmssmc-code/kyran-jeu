@@ -851,6 +851,28 @@ const FESTIVAL_KEY = 'kyranFestival';
 const MAIN_PROPRE_STRIPE_URL = 'https://buy.stripe.com/6oU00laWzg2IflK42yaEE01';
 const COMMANDE_API = 'https://kyran-webhook-production.up.railway.app/api/commande';
 
+// Source d'arrivée (ref, utm_*) : gardée au premier passage sur le site, en sessionStorage, pour
+// survivre de page en page jusqu'au panneau d'achat ; le serveur la valide et la garde avec la commande.
+const SOURCE_KEY = 'kyranSource';
+const SOURCE_CLES = ['ref', 'utm_source', 'utm_medium', 'utm_campaign'];
+function sourceCommande() {
+  try {
+    const q = new URLSearchParams(location.search);
+    const vue = {};
+    SOURCE_CLES.forEach(function (k) {
+      const v = q.get(k);
+      if (v && /^[A-Za-z0-9._-]{1,64}$/.test(v)) vue[k] = v;
+    });
+    if (Object.keys(vue).length && !sessionStorage.getItem(SOURCE_KEY)) {
+      sessionStorage.setItem(SOURCE_KEY, JSON.stringify(vue));
+    }
+    return JSON.parse(sessionStorage.getItem(SOURCE_KEY) || '{}') || {};
+  } catch (e) {
+    return {};
+  }
+}
+if (typeof document !== 'undefined') sourceCommande();
+
 function isFestivalVisitor() {
   try {
     if (new URLSearchParams(location.search).get('festival') === '1') {
@@ -1032,7 +1054,7 @@ function initPurchaseChoice() {
     fetch(COMMANDE_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode: m, quantite: q, ref: ref })
+      body: JSON.stringify({ mode: m, quantite: q, ref: ref, source: sourceCommande() })
     }).then(function (res) {
       return res.ok ? res.json() : null;
     }).then(function (data) {

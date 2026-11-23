@@ -141,6 +141,10 @@ export default {
   conclusion: `<p>Le bluff fonctionne quand chacun sait à quoi il s'expose. Dites avant la première carte si l'on va mentir, cacher son camp ou simplement parier, et précisez ce qui arrive à celui qui perd : spectateur, ou toujours dans la partie. Cette mise au point évite le malaise du joueur qui découvre en cours de route qu'il est le traître, ou qu'il va passer la fin de soirée sur le canapé.</p>`,
   faq: [
     {
+      q: 'Quel jeu de trahison choisir entre amis ?',
+      a: `Un jeu de trahison, c'est un jeu à rôles cachés : certains joueurs servent un camp en secret, les autres doivent les démasquer. Pour une grande tablée de 3 à 10 joueurs où personne ne sort, choisissez Saboteur : un nain dont l'outil est cassé continue de jouer ou de défausser. Pour quatre à sept joueurs qui acceptent l'élimination et les duels, choisissez Bang!.`
+    },
+    {
       q: 'Qu’est-ce qu’un jeu de bluff aux cartes ?',
       a: `Un jeu de bluff est un jeu où l'on gagne en faisant croire quelque chose aux autres joueurs. Cette page en distingue trois familles : le mensonge en face (Skull, Coup), le rôle secret à tenir (Saboteur, Bang!) et le pari sur sa propre main, sans mensonge à prononcer (Wizard, KYRAN, For Sale).`
     },
@@ -151,10 +155,6 @@ export default {
     {
       q: 'Quel jeu ressemble le plus à Skull ?',
       a: `Coup, pour le défi lancé en face et la contestation immédiate. For Sale reprend la surenchère avec des cartes de valeur, et KYRAN transpose l'annonce aux plis. Si c'est la brièveté de Skull qui vous plaît, Coup est aussi le plus rapide de cette sélection.`
-    },
-    {
-      q: 'Existe-t-il un jeu de rôles cachés où personne n’est éliminé ?',
-      a: `Oui, Saboteur : un nain dont l'outil est cassé continue de jouer ou de défausser, et les rôles changent à chaque manche. Bang! et Coup, à l'inverse, font sortir des joueurs avant la fin de la partie.`
     },
     {
       q: 'Quels jeux de cartes se jouent en annonçant ses plis ?',

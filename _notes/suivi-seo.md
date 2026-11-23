@@ -10,6 +10,21 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-24 : run nocturne n° 31 (mardi)
+
+**Verdict : En progrès.**
+
+- **Google (7 j, 15 → 21/11)** : 75 clics (+82,9 %), 2 604 impressions (+10,2 %). La hausse vient de l'accueil, `alternatives-uno`, `jeux-comme-6-qui-prend`, `jeux-comme-dixit`. `tarot-africain` recule un peu (553 impressions contre 675). Jours provisoires : 22/11 (25 / 545) et 23/11 (3 / 69).
+- **Bing** : 9 clics, 272 impressions, 68 pages indexées.
+- **Technique** : 65 URL en 200, 0 noindex, 0 canonical faux, PageSpeed 96. 72 pages sur 73 indexées ; seule `video-regles` reste hors index (demande du 19/11, contenu vérifié, rien d'autre à corriger).
+- **Indexation** : 19 URL envoyées à Bing (IndexNow), 4 pages nouvellement indexées par Google (dont `science-jeux-de-cartes-cerveau` et `jeux-debutants-adultes`). Aucune demande Google à faire aujourd'hui.
+- **Réévaluations** : `jeux-soiree-amis` position 37,95 → 16,33 ; `jeux-3-joueurs` 26,4 → 25,1 ; `jeux-comme-codenames` et `jeux-cartes-4-joueurs` à suivre (données minces).
+- **Action du jour** : FAQ « Quel jeu de trahison choisir entre amis ? » dans `blog/jeux-bluff-pari` (requête « jeu de trahison », position 17,0, 16 impressions ; réponse directe avec Saboteur et Bang!, faits déjà présents sur la page). Une question moins utile fusionnée pour rester dans la limite de 6. Mesurer le 1/12 et le 22/12.
+- **Écarté** : titres et descriptions verrouillés (`titres_verrouilles`), création d'article (routine blog), netlinking sans envoi.
+- **Vers le blog** : deux sujets écrits dans `sujets-kyran.md` (« jeu de trahison » et « le jeu du paquet anniversaire »).
+- **Non mesuré** : robots d'IA, ventes, GA4 (absent du site, choix RGPD), rapport « IA générative » de Search Console. Mesure GEO le jeudi (26/11).
+- **Doc partagé** : voir le message de fin de run.
+
 ### 2026-11-19 : run nocturne n° 30 (jeudi, mesure GEO)
 
 - **Verdict : Stable** (pas d'incident ; aucune mise à jour Google confirmée). Google (`dataState: all`, 12/11 → 18/11, dernier jour provisoire) : 7 j 43 clics (+8 %), 2 267 impressions (+2 %) ; 28 j 188 clics, 8 878 impressions, CTR 2,12 %, position 8,7 ; 24 h (jusqu'au 18/11 14 h) 8 clics, 292 impressions (5 et 263 sept jours plus tôt). Hausse : `jeux-comme-skull-king` 1 → 6 clics, accueil 0 → 5, `jeux-comme-dixit` 0 → 3. Baisse sur de très faibles volumes : `jeux-cartes-6-joueurs` 4 → 0 (position 7,7 → 10,4), `alternatives-uno` 2 → 0. Pas d'action sur une variation de quelques clics.

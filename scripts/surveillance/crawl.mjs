@@ -24,6 +24,11 @@ const spec = modPath ? pathToFileURL(path.join(modPath, 'index.mjs')).href : 'pl
 const { chromium } = await import(spec);
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 
+// Avertissement émis par les intégrations Instagram (communaute.html) quand elles servent une CSP report-only :
+// la CSP du site est une balise <meta> appliquée, jamais report-only, donc ce message ne peut pas venir du site.
+// Vu au crawl du 23/11/2026 à 1280 px, non reproduit au passage suivant.
+const CONSOLE_TIERS = /directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy/;
+
 const problems = [];
 const links = new Set();
 for (const width of [1280, 390]) {
@@ -31,7 +36,7 @@ for (const width of [1280, 390]) {
   for (const u of urls) {
     const page = await ctx.newPage();
     const errs = [];
-    page.on('console', m => { if (m.type() === 'error') errs.push('console: ' + m.text().slice(0, 200)); });
+    page.on('console', m => { if (m.type() === 'error' && !CONSOLE_TIERS.test(m.text())) errs.push('console: ' + m.text().slice(0, 200)); });
     page.on('pageerror', e => errs.push('pageerror: ' + String(e).slice(0, 200)));
     page.on('requestfailed', r => {
       if (r.url().includes('kyran-jeu.fr') && r.failure()?.errorText !== 'net::ERR_ABORTED') errs.push('failed: ' + r.url() + ' ' + r.failure()?.errorText);

@@ -29,12 +29,28 @@ test('grille de port du 20/11/2026', () => {
 });
 
 test('validation de la commande envoyée par le site', () => {
-  assert.deepEqual(lireCommande({ mode: 'livraison', quantite: 12 }), { mode: 'livraison', quantite: 12, ref: '' });
+  assert.deepEqual(lireCommande({ mode: 'livraison', quantite: 12 }), { mode: 'livraison', quantite: 12, ref: '', source: {} });
   assert.equal(lireCommande({ mode: 'main-propre', quantite: 3, ref: 'festival' }).ref, 'festival');
   assert.equal(lireCommande({ mode: 'livraison', quantite: 2, ref: '<x>' }).ref, '');
   for (const b of [null, {}, { mode: 'sur-place', quantite: 1 }, { mode: 'livraison', quantite: 100 }, { mode: 'livraison', quantite: '2' }]) {
     assert.ok(lireCommande(b).erreur);
   }
+});
+
+test('source de la commande : liste blanche, caractères sûrs, 64 max, dans les métadonnées', () => {
+  const c = lireCommande({ mode: 'livraison', quantite: 1, source: {
+    ref: 'festival', utm_source: 'insta.bio', utm_medium: 'a b', utm_campaign: 'x'.repeat(65), autre: 'ok'
+  } });
+  assert.deepEqual(c.source, { ref: 'festival', utm_source: 'insta.bio' });
+  assert.deepEqual(lireCommande({ mode: 'livraison', quantite: 1, ref: 'fest' }).source, { ref: 'fest' });
+  assert.deepEqual(lireCommande({ mode: 'livraison', quantite: 1, source: 'x' }).source, {});
+  const p = parametresSession(c);
+  assert.equal(p.get('metadata[source_ref]'), 'festival');
+  assert.equal(p.get('metadata[source_utm_source]'), 'insta.bio');
+  assert.equal(p.get('payment_intent_data[metadata][source_utm_source]'), 'insta.bio');
+  assert.equal(p.get('metadata[source_utm_medium]'), null);
+  assert.equal(p.get('metadata[source_autre]'), null);
+  assert.equal(p.get('success_url'), 'https://kyran-jeu.fr/merci.html');
 });
 
 test('paramètres Stripe : montant au centime, port de la grille, main propre sans adresse', () => {

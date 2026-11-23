@@ -10,7 +10,22 @@ const SITE = 'https://kyran-jeu.fr';
 const PAYS_LIVRES = ['FR', 'BE', 'CH', 'LU', 'MC'];
 const REF_RE = /^[A-Za-z0-9_-]{1,64}$/;
 
-/** Valide le corps JSON du site : { mode, quantite, ref? }. Rend { mode, quantite, ref } ou { erreur }. */
+// Source de la commande (lien d'arrivée) : liste blanche de clés, valeurs de 64 caractères au plus.
+export const CLES_SOURCE = ['ref', 'utm_source', 'utm_medium', 'utm_campaign'];
+const SOURCE_RE = /^[A-Za-z0-9._-]{1,64}$/;
+
+/** Ne garde de `brut` que les clés permises dont la valeur est une courte chaîne sûre. */
+export function lireSource(brut) {
+  const source = {};
+  if (!brut || typeof brut !== 'object') return source;
+  for (const k of CLES_SOURCE) {
+    const v = brut[k];
+    if (typeof v === 'string' && SOURCE_RE.test(v)) source[k] = v;
+  }
+  return source;
+}
+
+/** Valide le corps JSON du site : { mode, quantite, ref?, source? }. Rend { mode, quantite, ref, source } ou { erreur }. */
 export function lireCommande(body) {
   if (!body || typeof body !== 'object') return { erreur: 'Commande invalide' };
   const mode = body.mode;
@@ -18,11 +33,14 @@ export function lireCommande(body) {
   const quantite = body.quantite;
   if (!quantiteValide(quantite)) return { erreur: 'Quantité invalide (1 à 99)' };
   const ref = typeof body.ref === 'string' && REF_RE.test(body.ref) ? body.ref : '';
-  return { mode, quantite, ref };
+  const source = lireSource(body.source);
+  // Ancien client : seul `ref` était envoyé.
+  if (ref && !source.ref) source.ref = ref;
+  return { mode, quantite, ref, source };
 }
 
 /** Paramètres (form-urlencoded) de la session Checkout, calqués sur les liens de paiement existants. */
-export function parametresSession({ mode, quantite, ref }) {
+export function parametresSession({ mode, quantite, ref, source = {} }) {
   const p = new URLSearchParams();
   const mainPropre = mode === 'main-propre';
   p.set('mode', 'payment');
@@ -33,6 +51,11 @@ export function parametresSession({ mode, quantite, ref }) {
   p.set('line_items[0][price_data][unit_amount]', String(PRIX_BOITE_CENTS));
   p.set('metadata[quantity]', String(quantite));
   p.set('metadata[canal]', mainPropre ? 'sur-place' : 'livraison');
+  // Source : sur la session et sur le paiement, pour la retrouver dans Stripe comme dans le webhook.
+  for (const [k, v] of Object.entries(lireSource(source))) {
+    p.set(`metadata[source_${k}]`, v);
+    p.set(`payment_intent_data[metadata][source_${k}]`, v);
+  }
   p.set('cancel_url', SITE + '/');
   if (ref) p.set('client_reference_id', ref);
   if (mainPropre) {

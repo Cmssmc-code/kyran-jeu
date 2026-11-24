@@ -16,7 +16,7 @@ import { verifyGithubOidcToken } from './githubOidc.js';
 import { renderDailyReport } from './autoHealReport.js';
 import { createMailer } from './mailer.js';
 import { shippingDetails } from './stripeSession.js';
-import { lireCommande, creerSession } from './commande.js';
+import { lireCommande, lireSource, creerSession } from './commande.js';
 import { createStripeEventLog, defaultEventsFile, EVENT_STATE } from './stripeEvents.js';
 import {
   createInscriptionStore,
@@ -266,6 +266,15 @@ async function handleOrderCompleted(session) {
     || (Boolean(SUR_PLACE_PAYMENT_LINK) && session.payment_link === SUR_PLACE_PAYMENT_LINK);
   if (mainPropre && session.id) noterVenteSurPlace(session.id, quantity);
 
+  // Source de la commande (lien d'arrivée) : posée en métadonnées à la création de la session.
+  const sourceCommande = lireSource({
+    ref: session.metadata?.source_ref,
+    utm_source: session.metadata?.source_utm_source,
+    utm_medium: session.metadata?.source_utm_medium,
+    utm_campaign: session.metadata?.source_utm_campaign
+  });
+  console.log(`[Commande] Payée ${cleanLine(session.id, 80)} : source ${JSON.stringify(sourceCommande)}, canal ${cleanLine(session.metadata?.canal || 'lien', 20)}, client_reference_id ${cleanLine(session.client_reference_id || '', 64)}.`);
+
   // 1. Confirmation au client. Un échec ne doit pas faire perdre la commande :
   // l'administrateur est prévenu quoi qu'il arrive (étape 2) et envoie le mail à la main.
   let clientMailError = null;
@@ -381,7 +390,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.11.0';
+const VERSION = '1.12.0';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {
@@ -796,7 +805,7 @@ async function handleCommande(req, res) {
   const commande = lireCommande(body);
   if (commande.erreur) return sendJson(res, 400, { error: commande.erreur });
   const url = await creerSession(commande, { cle: STRIPE_SECRET_KEY, apiBase: STRIPE_API_BASE });
-  console.log(`[Commande] Session créée : ${commande.quantite} boîte(s), ${commande.mode}.`);
+  console.log(`[Commande] Session créée : ${commande.quantite} boîte(s), ${commande.mode}, source ${JSON.stringify(commande.source)}.`);
   return sendJson(res, 200, { url });
 }
 

@@ -64,6 +64,7 @@ const html = `<!DOCTYPE html>
     .insta-card-text { display: grid; gap: 2px; min-width: 0; }
     .insta-card-text strong { font-size: 0.95rem; line-height: 1.3; }
     .insta-card-text small { color: var(--text-sub); }
+    .insta-une { margin: 0 0 18px; }
     .insta-cta { display: grid; gap: 10px; margin-bottom: 18px; }
     .insta-btn { display: block; padding: 14px 16px; border: 2px solid var(--k-ink); border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--k-ink); background: #fff; }
     .insta-btn--primary { background: var(--k-saffron); }
@@ -77,11 +78,12 @@ const html = `<!DOCTYPE html>
     <img class="insta-logo" src="/logo-96.webp" alt="KYRAN" width="84" height="84" />
     <h1>KYRAN</h1>
     <p class="insta-lead">Les articles du blog KYRAN, en un clic</p>
+    <a class="insta-btn insta-btn--primary insta-une" href="/secret-santa.html?utm_source=instagram&utm_medium=social&utm_campaign=secret-santa">Cadeau Secret Santa à moins de 10 €</a>
     <ul class="insta-list">
 ${cards}
     </ul>
     <div class="insta-cta">
-      <a class="insta-btn insta-btn--primary" href="/minijeu.html?${UTM}">Essayer KYRAN gratuitement</a>
+      <a class="insta-btn insta-btn--primary" href="/minijeu.html?${UTM}">Essayer KYRAN en ligne</a>
       <a class="insta-btn" href="/commander.html?${UTM}">Acheter KYRAN</a>
     </div>
     <a class="insta-all" href="/blog/?${UTM}">Tout le blog</a>

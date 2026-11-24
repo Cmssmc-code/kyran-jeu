@@ -842,14 +842,15 @@ function initVideoFacades() {
 if (typeof document !== 'undefined') whenParsed(initVideoFacades);
 
 // Panneau d'achat (décisions de Corentin et du PDG du 20/11/2026, pour tous les visiteurs) : chaque bouton
-// d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un panneau unique : la livraison
-// (port selon la grille ; option « main propre » retirée le 24/11/2026, règle de Corentin du 19/11), la quantité avec + et − (1 à 99,
+// d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un panneau unique : deux gros choix
+// (« En main propre », port 0 € ; « Livraison », port selon la grille), la quantité avec + et − (1 à 99,
 // alerte rouge dès 11), le total qui se met à jour et le bouton « Payer ». Les prix et la grille sont lus
 // dans /js/tarifs.js, la même source que le serveur, qui crée la session Stripe (/api/commande) : le total
 // affiché est celui de Stripe, au centime. Serveur injoignable : repli sur les liens de paiement habituels.
 // Le repère festival=1, posé par /bienvenue.html (QR des festivals) et gardé en sessionStorage, ne sert
 // qu'aux statistiques.
 const FESTIVAL_KEY = 'kyranFestival';
+const MAIN_PROPRE_STRIPE_URL = 'https://buy.stripe.com/6oU00laWzg2IflK42yaEE01';
 const COMMANDE_API = 'https://kyran-webhook-production.up.railway.app/api/commande';
 
 // Source d'arrivée (ref, utm_*) : gardée au premier passage sur le site, en sessionStorage, pour
@@ -938,6 +939,7 @@ function initPurchaseChoice() {
     '.achat-choix__ligne{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;}',
     '.achat-choix__ligne--total{margin:6px 0 0;font-weight:800;font-size:1.15rem;}',
     '.achat-choix .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;font-size:1.1rem;}',
+    '.achat-choix__mp{margin:6px 0 0;font-size:.85rem;font-weight:600;}' +
     '.achat-choix__secu{margin:8px 0 0;text-align:center;font-size:.78rem;opacity:.7;}'
   ].join('');
   document.head.appendChild(style);
@@ -950,7 +952,10 @@ function initPurchaseChoice() {
     '<div class="achat-choix__tete"><h2 id="achat-choix-title">Votre commande KYRAN</h2>' +
     '<button type="button" class="achat-choix__close" aria-label="Fermer">×</button></div>' +
     '<fieldset><legend>Comment voulez-vous votre jeu ?</legend>' +
-    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison" checked>' +
+    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="main-propre">' +
+    '<span class="achat-choix__titre">Main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
+    '<span class="achat-choix__info">Sans frais de port</span></label>' +
+    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
     '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ + port</span>' +
     '<span class="achat-choix__info">Port dès 2,99&nbsp;€</span></label>' +
     '</fieldset>' +
@@ -1003,7 +1008,7 @@ function initPurchaseChoice() {
     });
     payer.disabled = !m;
     if (!tarifs || !m) {
-      total.textContent = m ? '' : 'Choisissez la livraison.';
+      total.textContent = m ? '' : 'Choisissez la remise en main propre ou la livraison.';
       if (!payer.dataset.envoi) payer.textContent = 'Payer';
       return;
     }
@@ -1012,8 +1017,9 @@ function initPurchaseChoice() {
       return '<p class="achat-choix__ligne' + (classe || '') + '"><span>' + libelle + '</span><span>' + montant + '</span></p>';
     };
     total.innerHTML = ligne(q + (q > 1 ? ' boîtes' : ' boîte') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
-      ligne('Livraison', tarifs.euros(t.port)) +
+      ligne(m === 'main-propre' ? 'Main propre' : 'Livraison', m === 'main-propre' ? 'sans frais' : tarifs.euros(t.port)) +
       ligne('Total', tarifs.euros(t.total), ' achat-choix__ligne--total');
+    if (m === 'main-propre') total.innerHTML += '<p class="achat-choix__mp">On convient de la remise par mail.</p>';
     if (!payer.dataset.envoi) payer.textContent = 'Payer ' + tarifs.euros(t.total);
   }
 
@@ -1029,7 +1035,7 @@ function initPurchaseChoice() {
   // Événements GA4 nommés : choix de l'option, puis paiement.
   form.querySelectorAll('input[name="achat-mode"]').forEach(function (radio) {
     radio.addEventListener('change', function () {
-      trackAchat('achat_choix_livraison', { festival: festival });
+      trackAchat(radio.value === 'main-propre' ? 'achat_choix_main_propre' : 'achat_choix_livraison', { festival: festival });
       maj();
     });
   });
@@ -1046,7 +1052,7 @@ function initPurchaseChoice() {
     payer.dataset.envoi = '1';
     payer.textContent = 'Ouverture du paiement…';
     const ref = new URLSearchParams(location.search).get('ref') || (festival === '1' ? 'festival' : '');
-    const repli = livraisonHref;
+    const repli = m === 'main-propre' ? MAIN_PROPRE_STRIPE_URL : livraisonHref;
     fetch(COMMANDE_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1070,7 +1076,7 @@ function initPurchaseChoice() {
     livraisonHref = href.indexOf(STRIPE_CHECKOUT_URL) === 0 ? href : STRIPE_CHECKOUT_URL;
     delete payer.dataset.envoi;
     if (!mode()) {
-      const defaut = form.querySelector('input[value="livraison"]');
+      const defaut = form.querySelector('input[value="' + (festival === '1' ? 'main-propre' : 'livraison') + '"]');
       if (defaut) defaut.checked = true;
     }
     maj();

@@ -10,7 +10,7 @@ export const PRIX_BOITE_CENTS = 999;
 export const QUANTITE_MAX = 99;
 export const SEUIL_ALERTE = 10;
 
-/** Port en livraison : jusqu'à `max` boîtes, `cents` centimes. */
+/** Port en livraison : jusqu'à `max` boîtes, `cents` centimes. Remise en main propre : 0 €. */
 export const GRILLE_PORT = [
   { max: 1, cents: 299 },
   { max: 2, cents: 499 },
@@ -26,9 +26,10 @@ export function quantiteValide(q) {
   return Number.isInteger(q) && q >= 1 && q <= QUANTITE_MAX;
 }
 
-/** Port en centimes pour `q` boîtes (livraison). */
+/** Port en centimes pour `q` boîtes ; `mode` vaut 'livraison' ou 'main-propre'. */
 export function fraisPort(q, mode = 'livraison') {
   if (!quantiteValide(q)) throw new RangeError('Quantité invalide : ' + q);
+  if (mode === 'main-propre') return 0;
   return GRILLE_PORT.find(palier => q <= palier.max).cents;
 }
 

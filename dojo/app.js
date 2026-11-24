@@ -1505,9 +1505,30 @@ function ctaBox(win) {
     h('div', { class: 'dj-cta-text' },
       h('b', { text: win ? 'Rejoue ta victoire en vrai' : 'Prends ta revanche en vrai' }),
       h('span', { text: '3 à 6 joueurs, environ 30 minutes, dès 8 ans.' }),
-      h('a', { class: 'dj-btn dj-btn-cta', href: '/commander.html', onclick: () => track('dojo_cta_click', { win }) }, 'Commander le jeu · 9,99 €')
+      amazonRating(),
+      h('div', { class: 'dj-cta-btns' },
+        h('a', { class: 'dj-btn dj-btn-cta', href: '/commander.html', onclick: () => track('dojo_cta_click', { win, where: 'site' }) }, 'Commander sur le site · 9,99 €'),
+        h('a', { class: 'dj-btn dj-btn-ghost', href: AMAZON_URL, target: '_blank', rel: 'noopener', onclick: () => track('dojo_cta_click', { win, where: 'amazon' }) }, 'Voir sur Amazon')
+      )
     )
   );
+}
+
+const AMAZON_URL = 'https://www.amazon.fr/dp/B0G217LD87';
+
+// Note Amazon tirée de /reviews-data.json (mis à jour par scripts/fetch-amazon-reviews.mjs) ;
+// la ligne reste vide si le fichier ne répond pas.
+function amazonRating() {
+  const el = h('span', { class: 'dj-cta-rating' });
+  fetch('/reviews-data.json')
+    .then(r => (r.ok ? r.json() : null))
+    .then(d => {
+      const avg = Number(d && d.averageRating);
+      const n = Number(d && d.totalReviews);
+      if (avg > 0 && n > 0) el.textContent = `★ ${avg.toLocaleString('fr-FR')}/5 sur Amazon (${n} avis)`;
+    })
+    .catch(() => {});
+  return el;
 }
 
 async function lessonResult(sess) {

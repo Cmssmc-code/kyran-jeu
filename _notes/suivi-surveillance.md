@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-24 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-24.md`](../docs/rapports/surveillance/2026-11-24.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Achat | OK | parcours réel jusqu'à Stripe : 9,99 € + 2,99 € = 12,98 € |
+| Site | OK | 62 URL × 1280/390 px sans erreur ; 484 liens, 0 interne cassé ; magilano.com (429) ajouté au bruit |
+| Serveur | réparé | source des commandes ajoutée sans monter la version → 1.12.0 (PR #322), en ligne, 0 × 5xx |
+| Tests | à surveiller | `salles-charge.test.mjs` : 1 échec (429) sur 10 passages locaux ; CI verte |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert ; 0 faille ; aucun secret |
+| Versions | 2 mises à jour | wrangler 4.167.0, `compatibility_date` 2026-11-24, `@anthropic-ai/sdk` 1.13.0 |
+
+Réparation : PR #322. Point à surveiller : test de charge des salles.
+
 ## 2026-11-23 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

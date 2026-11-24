@@ -843,7 +843,7 @@ if (typeof document !== 'undefined') whenParsed(initVideoFacades);
 
 // Panneau d'achat (décisions de Corentin et du PDG du 20/11/2026, pour tous les visiteurs) : chaque bouton
 // d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un panneau unique : la livraison
-// (port selon la grille), la quantité avec + et − (1 à 99,
+// (port selon la grille ; option « main propre » retirée le 24/11/2026, règle de Corentin du 19/11), la quantité avec + et − (1 à 99,
 // alerte rouge dès 11), le total qui se met à jour et le bouton « Payer ». Les prix et la grille sont lus
 // dans /js/tarifs.js, la même source que le serveur, qui crée la session Stripe (/api/commande) : le total
 // affiché est celui de Stripe, au centime. Serveur injoignable : repli sur les liens de paiement habituels.

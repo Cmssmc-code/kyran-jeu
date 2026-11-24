@@ -129,7 +129,7 @@ export default {
   conclusion: `<p>Commencez par un jeu court dont la règle tient en une phrase, puis gardez le plus exigeant pour la deuxième partie. Posez la boîte sur la table avant l’arrivée du groupe plutôt que de la proposer au milieu de la soirée : un jeu déjà sorti se lance plus facilement qu’un jeu qu’il faut convaincre. Laissez les adolescents choisir entre deux options plutôt que de décider pour eux.</p>`,
   faq: [
     {
-      q: `Quel jeu de cartes pour des ados en soirée ?`,
+      q: `Quel jeu de société (de cartes) pour des ados en soirée ?`,
       a: `Skull ou Saboteur pour une bande qui aime bluffer et se chambrer, Jungle Speed pour une bande qui s’agite, Skyjo pour ceux qui préfèrent jouer posément. Le bon choix tient plus à l’ambiance du groupe qu’à l’âge indiqué sur la boîte.`
     },
     {

@@ -383,7 +383,7 @@ function renderFooterHtml() {
           <div class="footer-col footer-col--credits">
             <p class="footer-heading">Cr&eacute;dits</p>
             <p>Design : <a href="https://graphiste.com/pictures/542454" target="_blank" rel="noopener noreferrer">Crea by Floh</a></p>
-            <p>Auteur : Corentin Sence</p>
+            <p>Auteur : <a href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me">Corentin Sence</a></p>
           </div>
         </div>
         <div class="footer-bottom">

@@ -135,7 +135,7 @@ function renderGamePick(game, index, article) {
   const kyranClass = game.isKyran ? ' game-pick--featured' : '';
   const badge = game.isKyran ? '<span class="game-pick__badge">Notre jeu</span>' : '';
   const designerLine = meta.designer
-    ? `<p class="game-pick__meta-line"><span>Auteur</span> ${meta.designer}${meta.year ? ' · ' + meta.year : ''}</p>`
+    ? `<p class="game-pick__meta-line"><span>Auteur</span> ${meta.designer === 'Corentin Sence' ? '<a href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me">Corentin Sence</a>' : meta.designer}${meta.year ? ' · ' + meta.year : ''}</p>`
     : '';
   const pickLine = game.pick
     ? `<p class="game-pick__pick"><strong>Pour qui ?</strong> ${game.pick}</p>`
@@ -313,7 +313,7 @@ function renderAuthorCard() {
   return `<div class="article-author-card">
   <a class="article-author-card__avatar article-author-card__photo" href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me" aria-label="Instagram de Corentin Sence (@corentin_sce)"><img src="/images/corentin-sence.jpg" alt="Photo de Corentin Sence" width="150" height="150" loading="lazy" decoding="async"></a>
   <div class="article-author-card__body">
-    <p class="article-author-card__name"><a href="/a-propos.html">Corentin Sence</a></p>
+    <p class="article-author-card__name"><a href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me">Corentin Sence</a></p>
     <p class="article-author-card__role">Créateur de KYRAN · auteur de la sélection</p>
     <p class="article-author-card__bio">KYRAN est notre jeu : nous le signalons dans chaque sélection et disons quand il n'est pas le bon choix.</p>
   </div>
@@ -683,7 +683,7 @@ ${article.games.map((g, i) => renderGamePick(g, i + 1, article)).join('\n')}`;
         <h1 class="blog-article-hero__title">${frenchSpacing(article.heroTitle)}</h1>
         <p class="blog-article-hero__subtitle">${frenchSpacing(article.heroSubtitle)}</p>
         <ul class="blog-article-hero__meta">
-          <li>Par <a href="/a-propos.html">Corentin Sence</a></li>
+          <li>Par <a href="https://www.instagram.com/corentin_sce/" target="_blank" rel="noopener me">Corentin Sence</a></li>
           <li>Publié le <time datetime="${article.date}">${article.dateFormatted}</time></li>
           ${article.modifiedDate !== article.date ? `<li>Mis à jour le <time datetime="${article.modifiedDate}">${formatDateFr(article.modifiedDate)}</time></li>` : ''}
           <li>${article.readMinutes}&nbsp;min de lecture</li>

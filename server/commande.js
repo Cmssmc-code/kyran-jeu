@@ -1,6 +1,6 @@
 // Création du paiement Stripe Checkout depuis le panneau d'achat du site (components.js) :
-// quantité libre de 1 à 99, livraison (port selon la grille de tarifs.js). Le mode « main propre »
-// est refusé depuis le 24/11/2026 (règle de Corentin du 19/11 : aucune vente sur place). Le montant facturé par Stripe est celui qu'affiche le site, au centime :
+// quantité libre de 1 à 99, remise en main propre (port 0 €) ou livraison (port selon la grille
+// de tarifs.js). Le montant facturé par Stripe est celui qu'affiche le site, au centime :
 // les deux lisent la même grille. Sans clé Stripe, la route répond 503 et le site retombe
 // sur les liens de paiement habituels.
 import { PRIX_BOITE_CENTS, quantiteValide, fraisPort } from './tarifs.js';
@@ -29,7 +29,7 @@ export function lireSource(brut) {
 export function lireCommande(body) {
   if (!body || typeof body !== 'object') return { erreur: 'Commande invalide' };
   const mode = body.mode;
-  if (mode !== 'livraison') return { erreur: 'Mode invalide' };
+  if (mode !== 'livraison' && mode !== 'main-propre') return { erreur: 'Mode invalide' };
   const quantite = body.quantite;
   if (!quantiteValide(quantite)) return { erreur: 'Quantité invalide (1 à 99)' };
   const ref = typeof body.ref === 'string' && REF_RE.test(body.ref) ? body.ref : '';
@@ -42,6 +42,7 @@ export function lireCommande(body) {
 /** Paramètres (form-urlencoded) de la session Checkout, calqués sur les liens de paiement existants. */
 export function parametresSession({ mode, quantite, ref, source = {} }) {
   const p = new URLSearchParams();
+  const mainPropre = mode === 'main-propre';
   p.set('mode', 'payment');
   p.set('locale', 'fr');
   p.set('line_items[0][quantity]', String(quantite));
@@ -49,7 +50,7 @@ export function parametresSession({ mode, quantite, ref, source = {} }) {
   p.set('line_items[0][price_data][product]', PRODUIT_KYRAN);
   p.set('line_items[0][price_data][unit_amount]', String(PRIX_BOITE_CENTS));
   p.set('metadata[quantity]', String(quantite));
-  p.set('metadata[canal]', 'livraison');
+  p.set('metadata[canal]', mainPropre ? 'sur-place' : 'livraison');
   // Source : sur la session et sur le paiement, pour la retrouver dans Stripe comme dans le webhook.
   for (const [k, v] of Object.entries(lireSource(source))) {
     p.set(`metadata[source_${k}]`, v);
@@ -57,6 +58,11 @@ export function parametresSession({ mode, quantite, ref, source = {} }) {
   }
   p.set('cancel_url', SITE + '/');
   if (ref) p.set('client_reference_id', ref);
+  if (mainPropre) {
+    p.set('success_url', SITE + '/merci-sur-place.html?session_id={CHECKOUT_SESSION_ID}');
+    p.set('custom_text[submit][message]', 'Remise en main propre, sans frais de port. On convient de la remise par mail.');
+    return p;
+  }
   p.set('success_url', SITE + '/merci.html');
   PAYS_LIVRES.forEach((pays, i) => p.set(`shipping_address_collection[allowed_countries][${i}]`, pays));
   p.set('phone_number_collection[enabled]', 'true');

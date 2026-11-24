@@ -19,18 +19,20 @@ const ORIGIN = 'https://kyran-jeu.fr';
 test('grille de port du 20/11/2026', () => {
   const attendu = { 1: 299, 2: 499, 3: 599, 4: 599, 5: 799, 10: 799, 11: 999, 15: 999, 16: 1599, 40: 1599, 41: 2599, 99: 2599 };
   for (const [q, cents] of Object.entries(attendu)) assert.equal(fraisPort(Number(q)), cents, q + ' boîte(s)');
+  for (let q = 1; q <= 99; q++) assert.equal(fraisPort(q, 'main-propre'), 0);
   assert.equal(GRILLE_PORT.at(-1).max, 99);
   assert.equal(PRIX_BOITE_CENTS, 999);
   assert.deepEqual(totalCommande(12), { boites: 11988, port: 999, total: 12987 });
+  assert.deepEqual(totalCommande(12, 'main-propre'), { boites: 11988, port: 0, total: 11988 });
   for (const q of [0, 100, 1.5, '3', -1]) assert.equal(quantiteValide(q), false);
   assert.throws(() => fraisPort(100));
 });
 
 test('validation de la commande envoyée par le site', () => {
   assert.deepEqual(lireCommande({ mode: 'livraison', quantite: 12 }), { mode: 'livraison', quantite: 12, ref: '', source: {} });
-  assert.equal(lireCommande({ mode: 'livraison', quantite: 3, ref: 'festival' }).ref, 'festival');
+  assert.equal(lireCommande({ mode: 'main-propre', quantite: 3, ref: 'festival' }).ref, 'festival');
   assert.equal(lireCommande({ mode: 'livraison', quantite: 2, ref: '<x>' }).ref, '');
-  for (const b of [null, {}, { mode: 'sur-place', quantite: 1 }, { mode: 'main-propre', quantite: 1 }, { mode: 'livraison', quantite: 100 }, { mode: 'livraison', quantite: '2' }]) {
+  for (const b of [null, {}, { mode: 'sur-place', quantite: 1 }, { mode: 'livraison', quantite: 100 }, { mode: 'livraison', quantite: '2' }]) {
     assert.ok(lireCommande(b).erreur);
   }
 });
@@ -51,7 +53,7 @@ test('source de la commande : liste blanche, caractères sûrs, 64 max, dans les
   assert.equal(p.get('success_url'), 'https://kyran-jeu.fr/merci.html');
 });
 
-test('paramètres Stripe : montant au centime, port de la grille, canal livraison', () => {
+test('paramètres Stripe : montant au centime, port de la grille, main propre sans adresse', () => {
   const liv = parametresSession({ mode: 'livraison', quantite: 16, ref: '' });
   assert.equal(liv.get('line_items[0][quantity]'), '16');
   assert.equal(liv.get('locale'), 'fr');
@@ -60,8 +62,14 @@ test('paramètres Stripe : montant au centime, port de la grille, canal livraiso
   assert.equal(liv.get('metadata[quantity]'), '16');
   assert.equal(liv.get('success_url'), 'https://kyran-jeu.fr/merci.html');
   assert.equal(liv.get('shipping_address_collection[allowed_countries][0]'), 'FR');
-  assert.equal(liv.get('metadata[canal]'), 'livraison');
+  const mp = parametresSession({ mode: 'main-propre', quantite: 25, ref: '' });
+  assert.equal(mp.get('metadata[canal]'), 'sur-place');
+  assert.equal(mp.get('line_items[0][quantity]'), '25');
+  assert.equal(mp.get('shipping_options[0][shipping_rate_data][type]'), null);
+  assert.equal(mp.get('shipping_address_collection[allowed_countries][0]'), null);
+  assert.match(mp.get('custom_text[submit][message]'), /On convient de la remise par mail\./);
   assert.equal(liv.get('custom_text[submit][message]'), null);
+  assert.match(mp.get('success_url'), /merci-sur-place\.html\?session_id=\{CHECKOUT_SESSION_ID\}$/);
 });
 
 // Faux Stripe : garde le dernier corps reçu et rend une URL de paiement.
@@ -116,7 +124,7 @@ test('POST /api/commande : session créée avec la quantité et le port de la gr
 test('POST /api/commande : origine inconnue refusée, quantité hors grille refusée', async () => {
   assert.equal((await commander({ mode: 'livraison', quantite: 2 }, 'https://exemple.com')).status, 403);
   assert.equal((await commander({ mode: 'livraison', quantite: 100 })).status, 400);
-  assert.equal((await commander({ mode: 'main-propre', quantite: 1 })).status, 400);
+  assert.equal((await commander({ mode: 'main-propre', quantite: 0 })).status, 400);
 });
 
 function envoyer(event) {

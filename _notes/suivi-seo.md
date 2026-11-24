@@ -10,6 +10,22 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-25 : run nocturne n° 32 (mercredi)
+
+**Verdict : En progrès.**
+
+- **Google (7 j, 16 → 22/11)** : 91 clics (+133 %, contre 39), 2 671 impressions (+8,2 %). Les jours du 23 et 24/11 sont provisoires (11 clics / 364 impressions et 8 clics / 172 impressions). Dernières lignes ajoutées à `kpi-quotidiens.csv`.
+- **Bing (7 j)** : 10 clics (+25 %), 295 impressions (+83 %), 68 pages indexées.
+- **Technique** : `reste-a-faire.json` lu et suivi (une URL Google à demander, aucun titre ni description verrouillé retouché). `video-regles` reste « inconnue de Google » (suivie depuis le 10/11) : canonical correct, présente au sitemap, hreflang présents, 19 pages y renvoient ; rien d'autre à corriger, on attend l'exploration.
+- **Indexation** : demande Google faite pour `kyran-en-10-reponses.html` (« Indexation demandée » lue, `mark-requested` fait). Les « sortie_index » signalés sont des erreurs HTTP 500 de l'API d'inspection Google, pas des désindexations.
+- **Action du jour** : PR #330 fusionnée, vérifiée en ligne (texte présent, accueil 200, `_notes/` en 404). Première question de la FAQ de `blog/jeux-cartes-ados` reformulée en « Quel jeu de société (de cartes) pour des ados en soirée ? » : la requête « jeu de société ados » (20 impressions sur 28 jours, position 44,8) et ses variantes arrivent sur cette page sans réponse dédiée. Une question reformulée, pas ajoutée (la page en a toujours cinq, limite du test : six). 111 tests verts.
+- **Écarté avec preuve** : `tarot-africain`, `jeux-comme-skyjo`, `jeux-3-joueurs`, `jeux-cartes-4-joueurs`, `whist-22`, `jeux-comme-codenames` (déjà optimisés ; données minces ou position déjà bonne). Titres et descriptions verrouillés, création d'article (routine blog), netlinking sans envoi.
+- **À mesurer** : FAQ « jeu de trahison » (24/11) le 01/12 et le 22/12 ; `jeux-3-joueurs` le 14/12 ; reformulation `jeux-cartes-ados` le 02/12 (requêtes « jeu de société ados », « jeux de société ado »).
+- **Vers le blog** : `sujets-kyran.md` réécrit, deux sujets seulement (« jeu de plis moderne », « palmarès Spiel des Jahres »), les autres requêtes sont déjà couvertes.
+- **Non mesuré** : robots d'IA, ventes, GA4 (absent du site, choix RGPD), rapport « IA générative » de Search Console. Mesure GEO le jeudi (26/11).
+- **Leçon du jour** : quand une question de la FAQ couvre déjà l'intention, la reformuler avec les mots de la requête plutôt qu'en ajouter une presque identique ; 1 question reformulée, 0 ajoutée, la limite de six reste libre.
+- **Doc partagé** : voir le message de fin de run.
+
 ### 2026-11-24 : run nocturne n° 31 (mardi)
 
 **Verdict : En progrès.**

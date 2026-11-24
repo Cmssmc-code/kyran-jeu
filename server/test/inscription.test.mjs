@@ -156,7 +156,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
 test('serveur : /health indique Brevo branché', async () => {
   const health = await (await fetch(BASE + '/health')).json();
-  assert.equal(health.version, '1.11.0');
+  assert.equal(health.version, '1.12.0');
   assert.equal(health.brevo, true);
 });
 

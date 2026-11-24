@@ -63,7 +63,7 @@ Deux serveurs MCP Stripe :
    - À utiliser en priorité dans ce projet pour toute action liée à KYRAN.
    - Déclaré au niveau projet dans `.mcp.json` (versionné) : la clé n'y est jamais écrite, elle est lue
      dans `${STRIPE_SECRET_KEY}`. Avant de lancer Claude Code, exporter la variable depuis `.env`
-     (PowerShell : `$env:STRIPE_SECRET_KEY = (Select-String '^STRIPE_SECRET_KEY=' .env).Line.Split('=',2)[1]`).
+     (facultatif : sinon `scripts/mcp/stripe.mjs` lit la ligne `STRIPE_SECRET_KEY=` de `.env`).
    - Produit cible : `prod_VBfXBJYQzElac4` (KYRAN — Jeu de cartes).
    - Lien de paiement : `plink_1UBIC0Pe2ed8eDFCuudRl3Nq` (`https://buy.stripe.com/eVqeVfaWz4k02yY1UqaEE00`).
    - Ne jamais modifier sans accord : prix unitaire 9,99 €, frais de port 2,99 €, redirection après

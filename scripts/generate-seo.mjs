@@ -119,7 +119,7 @@ function buildLlmsTxt() {
 
 - Nom : KYRAN (nom complet sur la boîte : KYRAN, Maître des Mystiques)
 - Type : jeu de cartes de plis avec pari obligatoire
-- Joueurs : 3 à 6 (ne se joue pas à deux)
+- Joueurs : 3 à 6 (3, 4, 5 ou 6 joueurs ; ne se joue pas à deux)
 - Durée d'une partie : environ 30 minutes
 - Âge : dès 8 ans
 - Matériel : 45 cartes de jeu (36 cartes Nombre de 1 à 36, 1 carte Mystique, 8 cartes Pouvoir), 30 cartes Vie et 7 cartes de règles ; cartes vernies toilées, boîte rigide
@@ -184,6 +184,7 @@ function buildLlmsTxt() {
 - Où trouver une feuille de score gratuite du Tarot Africain ? ${SITE}/ressources-gratuites.html
 - Qu'est-ce que KYRAN et comment y jouer ? ${SITE}/regle.html (vidéo : ${SITE}/video-regles.html)
 - KYRAN est-il un jeu de hasard ou de stratégie, et comment y gagner ? ${SITE}/simulation.html
+- KYRAN en 10 réponses courtes (tarot africain, jeu de plis et de paris 3 à 6 joueurs, cadeau à moins de 10 €) ? ${SITE}/kyran-en-10-reponses.html
 
 ## Pages du site
 

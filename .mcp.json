@@ -16,13 +16,10 @@
     },
     "stripe-kyran": {
       "type": "stdio",
-      "command": "npx",
+      "command": "node",
       "args": [
-        "-y",
-        "@stripe/mcp@0.3.4",
-        "--api-key=${STRIPE_SECRET_KEY}"
-      ],
-      "env": {}
+        "scripts/mcp/stripe.mjs"
+      ]
     }
   }
 }

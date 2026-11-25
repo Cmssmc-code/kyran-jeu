@@ -1470,6 +1470,15 @@ footer h4, footer .footer-heading { color: #fff; margin-bottom: 15px; font-famil
   flex-shrink: 0;
 }
 
+/* Les règles mobiles de .footer-col a (display: inline-block, padding vertical, !important)
+   et le soulignement animé de css/motion.css cassaient la pastille : on la rétablit. */
+.footer-col .footer-socials a.social-link {
+  display: inline-flex !important;
+  gap: 8px;
+  padding: 8px 14px !important;
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .footer-follow-label,
 .footer-contact-social {
   margin-bottom: 10px;

@@ -67,7 +67,7 @@ export default {
       id: `just-one`,
       subtitle: `une seule équipe, donc personne ne perd contre un autre`,
       type: `Coopératif de mots`,
-      pick: `Pour une tablée de non-joueurs, de trois à sept`,
+      pick: `Si personne autour de la table ne joue d’habitude`,
       paragraphs: [
         `Dans Just One, un joueur cherche un mot qu’il ne peut pas voir, tandis que ses voisins lui écrivent chacun un indice d’un seul mot sur un chevalet. Les indices en double sont retirés avant qu’il les lise, puis il tente une réponse unique. Treize mots composent une partie, soit une vingtaine de minutes, de 3 à 7 joueurs dès 8 ans.`,
         `L’explication demande deux minutes et se fait sans cartes à montrer, ce qui la rend facile à donner même au milieu d’un repas qui s’éternise. Le jeu récompense le vocabulaire plus que la vitesse, ce qui met les grands-parents à l’aise face aux plus jeunes. Comptez seulement de quoi écrire pour chacun et un coin de table dégagé, car les chevalets prennent de la place.`
@@ -77,7 +77,7 @@ export default {
       id: `kyran`,
       subtitle: `annoncer ses plis, puis les tenir`,
       type: `Plis et paris`,
-      pick: `Pour trois à six joueurs qui connaissent la belote ou le tarot`,
+      pick: `Si la famille a déjà tapé le carton à la belote ou au tarot`,
       paragraphs: [
         `KYRAN est le jeu de ce site. À chaque manche, tout le monde déclare d’avance le nombre de plis qu’il pense remporter, et chaque pli de trop ou de moins retire une Vie. Les mains rétrécissent de sept cartes jusqu’à deux, puis arrive la manche Mystique, où l’on tient une unique carte contre son front sans la voir, tandis que les autres la lisent. Une partie tient en environ 30 minutes, pour 3 à 6 joueurs dès 8 ans.`,
         `Pour l’apprendre sans tout lire, commencez par <a href="/minijeu.html">l’Initiation en ligne</a>, puis regardez la vidéo des règles. À table, expliquez uniquement le pari au départ, et gardez la manche Mystique pour le moment où elle se présente, car elle s’explique mieux en la jouant. Il se commande sur <a href="/commander.html">la page d’achat</a> à 9,99 €, port en plus, avec le 16 décembre comme date limite avant Noël.`
@@ -87,7 +87,7 @@ export default {
       id: `6-qui-prend`,
       subtitle: `tout le monde joue en même temps`,
       type: `Choix simultané`,
-      pick: `Pour une grande table, jusqu’à dix joueurs`,
+      pick: `Quand la tablée dépasse six personnes`,
       paragraphs: [
         `Chaque joueur sort une carte en secret, puis toutes sont dévoilées en même temps et rangées par ordre croissant dans l’une des quatre colonnes du centre. Celui qui complète une colonne en posant la sixième carte la ramasse, et avec elle ses têtes de bœuf, qui sont des points de pénalité à éviter. La partie accueille de 2 à 10 joueurs dès 10 ans et dure environ 45 minutes.`,
         `La règle qui décide dans quelle colonne va chaque carte demande de jouer un tour d’essai à cartes découvertes, et il vaut mieux y passer deux minutes. Ensuite, personne n’attend son tour puisque tout le monde joue ensemble, ce qui aide à garder l’attention des plus jeunes jusqu’à la fin de la partie, même quand la tablée est nombreuse.`

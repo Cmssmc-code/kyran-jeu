@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-25 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-25.md`](../docs/rapports/surveillance/2026-11-25.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Achat | OK | parcours réel jusqu'à Stripe : 9,99 € + 2,99 € = 12,98 € |
+| Site | OK | 62 URL × 1280/390 px sans erreur ; 485 liens, 0 interne cassé |
+| Serveur | OK | v1.12.0 ; « main propre » retiré puis remis le 24/11 (diff net nul) ; 0 × 5xx |
+| Tests | réparé | `salles-charge.test.mjs` : 198 × 429 ; les joueurs du test respectent la limite (PR #332), 35 passes sans échec |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert ; 0 faille ; aucun secret |
+| Versions | 2 mises à jour | `@anthropic-ai/sdk` 1.14.0, wrangler 4.168.0, `compatibility_date` 2026-11-25 |
+
+Réparation : PR #332. Aucun point ouvert.
+
 ## 2026-11-24 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

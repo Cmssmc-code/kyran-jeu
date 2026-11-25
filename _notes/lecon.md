@@ -22,6 +22,13 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Cause :** `git ls-files -z | xargs -0 rm -f && git checkout -- .` remet **tous** les fichiers suivis à l'état du dernier commit, y compris les modifications non commitées hors des sources.
 - **Correctif :** relance des deux scripts. Règle : avant la réextraction LF, commiter aussi les fichiers de mesure (`_notes/seo/`) ou lancer les scripts de mesure après le build.
 
+### 2026-11-25 — Test de charge des salles : 429 selon la vitesse de la machine
+
+- **Symptôme :** `server/test/salles-charge.test.mjs` rouge dans `npm test` (198 × `/salle/action → 429 Trop de demandes`), après un échec isolé le 24/11 ; vert en CI.
+- **Cause :** les joueurs automatiques du test jouaient aussi vite que la machine ; la limite anti-abus (20 actions / 10 s par jeton, horloge x50 dans le test) était dépassée sur une machine rapide. Le test dépendait de la vitesse du processeur.
+- **Correctif :** le client du test respecte la limite par jeton avant d'envoyer un coup (PR #332) ; serveur inchangé.
+- **Règle :** un test qui traverse une limite de débit doit faire comme un vrai client (rythme borné), jamais compter sur une machine « pas trop rapide » ; un test instable se répare à la racine, sans relance (`npm test || npm test`).
+
 ### 2026-11-12 — GA4 : mesures bloquées par la CSP après « Accepter »
 
 - **Symptôme :** GA4 et son bandeau de consentement ajoutés le 11/11 ; après « Accepter », la console affiche `Refused to connect to 'https://www.google.com/g/collect…'` : une partie des mesures est perdue.

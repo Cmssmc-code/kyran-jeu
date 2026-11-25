@@ -10,6 +10,19 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-26 : run nocturne n° 33 (jeudi)
+
+**Verdict : En progrès.**
+
+- **Google (7 j, 17 → 23/11)** : 96 clics (+118 %, contre 44), 2 728 impressions (+9,3 %). Les jours du 24 et 25/11 sont provisoires (12 clics / 377 impressions et 5 clics / 191 impressions) ; `kpi-quotidiens.csv` mis à jour (lignes 23 à 25/11).
+- **Bing (7 j)** : 11 clics (+57 %), 312 impressions (+70 %), 69 pages indexées.
+- **Santé** (`seo-health`, relevé de la routine) : 69 URL au sitemap, 69 en 200, 0 noindex, 0 canonical faux, JSON-LD valide, 73 pages indexées sur 77 inspectées. Un titre au-dessus de la longueur cible, déjà dans les pages verrouillées ou limite : rien touché.
+- **Indexation** : l'indexeur du relevé de minuit avait échoué (SSL EOF sur le sitemap) ; relancé à la main, il passe : 12 pages envoyées à Bing et IndexNow, sitemap renvoyé à Google, 12 inspectées, 3 hors index (les trois pages neuves du 25/11). Demandes Google faites et confirmées (« Indexation demandée » lue) pour `blog/apprendre-jeu-cartes-fetes`, `blog/initiation-kyran-fetes` et `quel-pli-gagne`, puis `mark-requested`.
+- **GEO (jeudi, 20 questions, mesure par sous-agent)** : Google mode IA 7/20, Gemini 7/20 (5 liens, 2 mentions), ChatGPT 3/20, WebSearch Claude 0/20 ; Copilot et Perplexity bloqués (connexion exigée). Concurrents les plus cités : philibertnet.com, ludum.fr, boardgamearena.com. Gemini compte parfois une puce « KYRAN » sans page précise ; réponses pas stables d'un essai à l'autre. Détail : `kpi-geo-kyran.csv` (dossier routines-trio/geo).
+- **Action du jour** : `blog/jeux-comme-codenames` : la question FAQ « Quel est le meilleur jeu coopératif comme Codenames ? » devient « Quel est le meilleur jeu de société coopératif comme Codenames ? », mot pour mot la requête réelle (46 impressions, position 6,5, 0 clic sur 28 j). Une question reformulée, pas ajoutée (la page en a deux). Titre et description non touchés. Build et 111 tests verts. Mesure : 03/12 et 15/12.
+- **À surveiller** : `tarot-africain` « tarot africain règle » passe de 234 impressions et 7 clics (12/10 → 08/11) à 1 387 impressions et 2 clics (28/10 → 24/11) à position 6,0 : plus d'affichages, presque plus de clics, signe d'un changement de page de résultats (réponse IA ou extrait) plutôt que d'un problème de la page. Description verrouillée jusqu'au 08/12 ; réexaminer le titre à cette date.
+- **Écarté avec preuve** : « tarot africain autre nom » (question déjà dans `faq.html` et sur la page), « tarot africain en ligne » (section `#en-ligne` et FAQ déjà en place), « palmares spiel des jahres » (page dédiée existante). Création d'article : routine blog, qui lit `sujets-kyran.md` (réécrit). Doc partagé : non mis à jour ce run (lecture trop lourde, mis à jour au prochain).
+
 ### 2026-11-25 : run nocturne n° 32 (mercredi)
 
 **Verdict : En progrès.**

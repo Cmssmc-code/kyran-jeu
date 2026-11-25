@@ -16,6 +16,9 @@ import * as AI from '../moteur/ai.js';
 import { createSalleRoutes } from '../salle-routes.js';
 
 const ACCELERE = () => Date.now() * 50;
+// Limite anti-abus des actions (salle-routes.js : limiteur(20, 10_000)).
+const LIMITE_ACTIONS = 20;
+const LIMITE_ACTIONS_MS = 10_000;
 
 async function demarrer() {
   const incidents = [];
@@ -45,12 +48,27 @@ async function demarrer() {
     if (!r.ok) erreurs.push(`${chemin} → ${r.status} ${data.error || ''}`);
     return data;
   };
+  // Un vrai client ne joue pas 20 coups en 10 s : les joueurs automatiques du test respectent la
+  // limite par jeton (20 actions / 10 s, horloge accélérée), sinon une machine rapide reçoit des 429
+  // qui ne disent rien de la charge. Une machine lente n'attend jamais.
+  const coupsParJeton = new Map();
+  const agir = async (jeton, action, ip) => {
+    for (;;) {
+      const t = ACCELERE();
+      const l = (coupsParJeton.get(jeton) || []).filter(x => t - x < LIMITE_ACTIONS_MS);
+      coupsParJeton.set(jeton, l);
+      if (l.length < LIMITE_ACTIONS - 2) break;
+      await new Promise(r => setTimeout(r, Math.ceil((l[0] + LIMITE_ACTIONS_MS - t) / 50) + 2));
+    }
+    coupsParJeton.get(jeton).push(ACCELERE());
+    return post('/salle/action', { jeton, action }, ip);
+  };
   const fin = () => {
     routes.stop();
     srv.closeAllConnections();
     srv.close();
   };
-  return { routes, base, post, mesures, erreurs, incidents, fin };
+  return { routes, base, post, agir, mesures, erreurs, incidents, fin };
 }
 
 /** Flux SSE d'un joueur : garde le dernier état reçu et tout le texte brut reçu. */
@@ -187,7 +205,7 @@ test('confidentialité : chaque état reçu par HTTP et par flux SSE, de 3 à 6 
         }
         const action = actionAuto(salle.state, rng);
         const jeton = pend.pid != null ? jetons[pend.pid] : jetons[0];
-        await s.post('/salle/action', { jeton, action }, ip);
+        await s.agir(jeton, action, ip);
       }
       assert.equal(salle.statut, 'finie', `partie ${humains}+${ordis} terminée`);
       // dernier état de chaque flux : le texte brut reçu pendant toute la partie ne contient aucune clé interne ni jeton
@@ -236,7 +254,7 @@ test(`charge : ${SALLES} salles de ${JOUEURS} joueurs en même temps, parties jo
         while (salle.statut === 'jeu' && salle.state.pending && coups < 6000) {
           const pend = salle.state.pending;
           const jeton = pend.pid != null ? joueurs[pend.pid].jeton : hote.jeton;
-          await s.post('/salle/action', { jeton, action: actionAuto(salle.state, rng) }, ip);
+          await s.agir(jeton, actionAuto(salle.state, rng), ip);
           coups++;
         }
         return { statut: salle.statut, coups };

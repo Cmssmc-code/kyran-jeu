@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "initiation-kyran-fetes",
+    "title": "S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites",
+    "category": "Famille",
+    "date": "2026-11-26",
+    "readMinutes": 8,
+    "excerpt": "Comment arriver au repas de Noël en connaissant déjà les règles de KYRAN : les sept rites de l’Initiation en ligne, dans l’ordre, avec ce que chacun apprend.",
+    "image": "/blog/images/cadeau-noel.jpg",
+    "webp": "/blog/images/cadeau-noel.webp",
+    "gameCount": 0,
+    "related": [
+      "apprendre-jeu-cartes-fetes",
+      "cadeau-noel",
+      "jeux-cartes-reveillon"
+    ]
+  },
+  {
     "slug": "apprendre-jeu-cartes-fetes",
     "title": "Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode",
     "category": "Famille",

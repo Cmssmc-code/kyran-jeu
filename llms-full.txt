@@ -103,7 +103,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 45 guides
+## Blog — 46 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -153,6 +153,7 @@
 
 ## Blog : Famille
 
+- [S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites](https://kyran-jeu.fr/blog/initiation-kyran-fetes.html)
 - [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés
 - [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés
 - [Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort](https://kyran-jeu.fr/blog/jeux-memoire-concentration.html): 6 jeux comparés
@@ -224,7 +225,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - KYRAN est-il un jeu de hasard ? Non, surtout de stratégie : sur 10 000 parties simulées, un joueur de niveau maître gagne 7,6 fois plus souvent qu'un novice, et aucune place à table ne donne d'avantage notable : https://kyran-jeu.fr/simulation.html
 - Comment gagner à KYRAN ? Parier juste plutôt que gros (3 grosses cartes en main : 42 à 50 % de paris exacts, aucune : 71 à 74 %), garder petites cartes et Mystique pour la fin, prendre la tête tôt et ne jamais laisser filer deux Vies : https://kyran-jeu.fr/simulation.html
 
-## Résumé des 45 guides du blog
+## Résumé des 46 guides du blog
 
 ### 10 jeux comme Skyjo : les meilleures alternatives en 2026
 
@@ -489,6 +490,12 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - URL : https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html
 - Résumé : Comment faire découvrir un nouveau jeu de cartes à toute la famille à Noël : cinq jeux faciles à expliquer et une méthode en quatre temps pour les règles.
 - Jeux comparés : Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Just One (3 à 7 joueurs, ~20 min, Coopératif de mots) ; KYRAN (3 à 6 joueurs, ~30 min, Plis et paris) ; 6 qui prend ! (2 à 10 joueurs, ~45 min, Choix simultané) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Stop ou encore)
+
+### S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites
+
+- URL : https://kyran-jeu.fr/blog/initiation-kyran-fetes.html
+- Résumé : Comment arriver au repas de Noël en connaissant déjà les règles de KYRAN : les sept rites de l’Initiation en ligne, dans l’ordre, avec ce que chacun apprend.
+- Jeux comparés : 
 
 ### Jeux de cartes et cerveau : ce que disent les études
 

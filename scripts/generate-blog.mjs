@@ -430,6 +430,12 @@ function kyranButtons(article, place) {
   </div>`;
 }
 
+/** Articles cadeau et réveillon : renvoi vers les dates de livraison de Noël (sans date en dur, qui vieillirait). */
+function kyranGiftNote(article) {
+  if (!/^(cadeau-|jeux-cartes-reveillon$)/.test(article.slug)) return '';
+  return `<p class="kyran-pitch__note"><a href="/idee-cadeau.html">Offrir KYRAN à Noël : date limite de commande et dates de livraison</a></p>`;
+}
+
 /** Encart court, placé après l'introduction et le résumé. */
 function renderKyranPitch(article) {
   return `<aside class="kyran-pitch" aria-label="Notre jeu, KYRAN">
@@ -438,7 +444,7 @@ function renderKyranPitch(article) {
     <p class="kyran-pitch__title">KYRAN, le jeu de plis où l’on parie sur ses levées</p>
     ${kyranFacts()}
     <p class="kyran-pitch__price"><strong>${KYRAN_PRICE}</strong> + port à partir de ${KYRAN_SHIPPING}</p>
-    ${kyranRating()}
+    ${kyranRating()}${kyranGiftNote(article)}
   </div>
   ${kyranButtons(article, 'debut')}
 </aside>`;

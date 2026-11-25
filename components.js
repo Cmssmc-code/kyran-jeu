@@ -232,7 +232,7 @@ function initNoelAnnouncement() {
   if (now < new Date(y, 10, 1) || now > new Date(y, 11, 16, 23, 59)) return;
   var text = document.querySelector('.announcement-text');
   if (!text) return;
-  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre';
+  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
 }
 
 if (typeof document !== 'undefined') whenParsed(initNoelAnnouncement);

@@ -4500,5 +4500,7 @@ footer :focus-visible,
 .where-to-buy__list a { font-weight: 600; color: var(--k-ink, #231F22); text-underline-offset: 3px; }
 .where-to-buy__list span { white-space: nowrap; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .where-to-buy__main a, .where-to-buy__main span { font-weight: 700; color: var(--k-ink, #231F22); }
+.where-to-buy__main a { white-space: nowrap; }
+.where-to-buy__main span { white-space: normal; text-align: right; }
 .where-to-buy__eu, .where-to-buy__note { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
 .where-to-buy__eu a { color: inherit; }

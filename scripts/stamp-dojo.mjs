@@ -18,9 +18,9 @@ import { readLf, toLf } from './lib/lf.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Ordre des dépendances : un module n'importe que des modules situés avant lui.
-const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js', 'avent-defis.js', 'avent.js'];
-const FEUILLES = ['dojo.css', 'avent.css'];
-const PAGES = ['minijeu.html', 'avent.html'];
+const MODULES = ['engine.js', 'lessons.js', 'ai.js', 'ui-state.js', 'app.js', 'avent-defis.js', 'avent.js', 'pli.js'];
+const FEUILLES = ['dojo.css', 'avent.css', 'pli.css'];
+const PAGES = ['minijeu.html', 'avent.html', 'quel-pli-gagne.html'];
 // Empreinte calculée sur le texte en LF : même résultat sous Windows (CRLF) et sur la CI.
 const hash = text => crypto.createHash('sha1').update(toLf(text)).digest('hex').slice(0, 10);
 

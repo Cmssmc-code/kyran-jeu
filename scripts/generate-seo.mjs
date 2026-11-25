@@ -138,6 +138,7 @@ function buildLlmsTxt() {
 - Simulateur d'apprentissage gratuit (Initiation) : ${SITE}/minijeu.html
 - Jouer à KYRAN en ligne contre l'ordinateur (partie libre, 2 à 5 adversaires, 3 niveaux, sans inscription) : ${SITE}/jouer-en-ligne.html
 - Calendrier de l'Avent KYRAN (du 1er au 24 décembre, un défi de plis par jour, réponses vérifiées par le moteur du jeu) : ${SITE}/avent.html
+- Défi « Quel pli gagne ? » (4 cartes posées, trouver la carte qui remporte le pli ; 3 plis, réponses vérifiées par le moteur du jeu) : ${SITE}/quel-pli-gagne.html
 - Contact : contact@kyran-jeu.fr — Instagram : https://www.instagram.com/kyran.jeu/
 
 ## Mécaniques

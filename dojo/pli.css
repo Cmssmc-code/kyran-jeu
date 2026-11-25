@@ -1,0 +1,35 @@
+/*
+ * « Quel pli gagne ? » (quel-pli-gagne.html, dojo/pli.js). Reprend les cartes et le cadre du
+ * calendrier de l'Avent (dojo/avent.css) ; ici, seulement la table de 4 cartes à toucher.
+ * Vit dans dojo/ et non dans css/ : une feuille de css/ changerait la version de tout le site.
+ * Mobile d'abord (390 px).
+ */
+.pli-app { margin: 0 auto; max-width: 720px; }
+.pli-app[aria-busy="true"] { min-height: 360px; }
+.pli-table { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+.pli-carte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.2rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: var(--k-cream, #FBF6EC);
+  color: var(--text-main, #231F22);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.pli-carte .av-carte { --w: 100%; max-width: 96px; }
+.pli-carte:hover:not(:disabled) { transform: translateY(-3px); border-color: var(--k-saffron, #E6AB26); }
+.pli-carte:focus-visible { outline: 3px solid var(--k-ink, #231F22); outline-offset: 2px; }
+.pli-carte:disabled { cursor: default; }
+.pli-carte.est-gagnant { border-color: #1B7F3A; background: #E3F4E8; }
+.pli-carte.est-rate { border-color: var(--k-terra-dark, #8A3220); opacity: 0.75; }
+.pli-note { font-size: 0.8rem; line-height: 1.2; color: var(--text-muted, #5E5651); text-align: center; }
+.pli-valeur { font-size: 0.85rem; font-weight: 700; line-height: 1.2; color: var(--k-terra-dark, #8A3220); text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .pli-carte { transition: none; }
+  .pli-carte:hover:not(:disabled) { transform: none; }
+}

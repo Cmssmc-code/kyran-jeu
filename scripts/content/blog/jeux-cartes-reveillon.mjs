@@ -147,7 +147,7 @@ export default {
     },
     {
       q: `Jusqu’à quand commander KYRAN pour le réveillon ?`,
-      a: `Pour le réveillon de Noël, commandez avant le 16 décembre. Le colis part sous 24 à 48 heures ouvrées et met ensuite 2 à 4 jours ouvrés en France. Pour le Nouvel An, comptez ces mêmes délais à partir du jour de votre commande et gardez quelques jours de marge.`
+      a: `Pour le réveillon de Noël, commandez avant le 16 décembre. Le colis part sous 24 à 48 heures ouvrées et met ensuite 2 à 4 jours ouvrés en France. Ensuite, remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com. Pour le Nouvel An, comptez ces mêmes délais à partir du jour de votre commande et gardez quelques jours de marge.`
     },
     {
       q: `Combien de temps dure une partie un soir de réveillon ?`,

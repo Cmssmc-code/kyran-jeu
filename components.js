@@ -224,15 +224,20 @@ function whenParsed(callback) {
 }
 
 // Du 1er novembre au 16 décembre, le bandeau d'annonce rappelle la date limite de commande pour Noël
-// (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre). Fait au chargement,
+// (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre) ; du 17 au 24 décembre,
+// il propose la remise en main propre, puis reprend son texte normal. Fait au chargement,
 // car le HTML prérendu ne doit pas dépendre de la date du build.
 function initNoelAnnouncement() {
   var now = new Date();
   var y = now.getFullYear();
-  if (now < new Date(y, 10, 1) || now > new Date(y, 11, 16, 23, 59)) return;
+  if (now < new Date(y, 10, 1) || now >= new Date(y, 11, 25)) return;
   var text = document.querySelector('.announcement-text');
   if (!text) return;
-  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
+  if (now <= new Date(y, 11, 16, 23, 59)) {
+    text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
+  } else {
+    text.innerHTML = 'Noël &middot; remise en main propre jusqu’au 24&nbsp;décembre à Fontenay-aux-Roses<span class="announcement-extra">, écrivez-nous à kyran.jeu@gmail.com</span>';
+  }
 }
 
 if (typeof document !== 'undefined') whenParsed(initNoelAnnouncement);

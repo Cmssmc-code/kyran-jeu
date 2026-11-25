@@ -126,7 +126,7 @@ export default {
     },
     {
       q: `Jusqu’à quand commander KYRAN pour le recevoir avant Noël ?`,
-      a: `Commandez avant le 16 décembre. Le colis est expédié sous 24 à 48 heures ouvrées, puis la livraison prend 2 à 4 jours ouvrés en France. Passé cette date, la réception avant le 25 décembre n’est plus assurée ; mieux vaut alors prévoir le cadeau pour le Nouvel An.`
+      a: `Commandez avant le 16 décembre. Le colis est expédié sous 24 à 48 heures ouvrées, puis la livraison prend 2 à 4 jours ouvrés en France. Passé cette date, la réception par colis avant le 25 décembre n’est plus assurée. Il reste la remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com.`
     },
     {
       q: `Quel jeu prendre pour un Père Noël secret à 10 euros ?`,

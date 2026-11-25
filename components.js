@@ -381,6 +381,7 @@ function renderFooterHtml() {
             <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="${ROOT}minijeu.html">Jouer à KYRAN</a></p>
+            <p><a href="${ROOT}commander.html#ou-acheter">Où acheter KYRAN</a></p>
             <p><a href="${ROOT}ressources-gratuites.html">Ressources gratuites</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>

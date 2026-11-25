@@ -4489,3 +4489,16 @@ footer :focus-visible,
     body.menu-open .nav-list > li:nth-child(n+7) { animation-delay: 0.28s; }
   }
 }
+
+/* Bloc « Où acheter KYRAN » (accueil et page de commande) : le site en premier, puis les autres
+   points de vente avec leur prix du jour. */
+.where-to-buy { margin-top: 1.25rem; padding: 1rem 1.1rem; border: 1px solid rgba(35, 31, 34, 0.12); border-radius: 12px; background: #fff; text-align: left; }
+.where-to-buy__title { margin: 0 0 0.5rem; font-weight: 700; font-size: 1rem; }
+.where-to-buy__list { list-style: none; margin: 0; padding: 0; }
+.where-to-buy__list li { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; min-height: 44px; border-top: 1px solid rgba(35, 31, 34, 0.08); }
+.where-to-buy__list li:first-child { border-top: 0; }
+.where-to-buy__list a { font-weight: 600; color: var(--k-ink, #231F22); text-underline-offset: 3px; }
+.where-to-buy__list span { white-space: nowrap; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.where-to-buy__main a, .where-to-buy__main span { font-weight: 700; color: var(--k-ink, #231F22); }
+.where-to-buy__eu, .where-to-buy__note { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
+.where-to-buy__eu a { color: inherit; }

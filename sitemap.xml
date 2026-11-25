@@ -165,9 +165,17 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-25</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/cadeau-noel.jpg</image:loc>
+      <image:title>Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-moins-de-10-euros.html</loc>
     <lastmod>2026-11-25</lastmod>

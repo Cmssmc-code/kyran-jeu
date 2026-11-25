@@ -101,7 +101,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 44 guides
+## Blog — 45 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -151,6 +151,7 @@
 
 ## Blog : Famille
 
+- [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés
 - [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés
 - [Jeux de cartes de mémoire et de concentration : 6 jeux classés par effort](https://kyran-jeu.fr/blog/jeux-memoire-concentration.html): 6 jeux comparés
 - [Jeux de cartes sans élimination : 5 jeux où personne ne quitte la table](https://kyran-jeu.fr/blog/jeux-sans-elimination.html): 5 jeux comparés

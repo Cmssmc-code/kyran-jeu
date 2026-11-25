@@ -3,6 +3,22 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "apprendre-jeu-cartes-fetes",
+    "title": "Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode",
+    "category": "Famille",
+    "date": "2026-11-25",
+    "readMinutes": 7,
+    "excerpt": "Comment faire découvrir un nouveau jeu de cartes à toute la famille à Noël : cinq jeux faciles à expliquer et une méthode en quatre temps pour les règles.",
+    "image": "/blog/images/cadeau-noel.jpg",
+    "webp": "/blog/images/cadeau-noel.webp",
+    "gameCount": 5,
+    "related": [
+      "cadeau-noel",
+      "jeux-cartes-reveillon",
+      "jeux-famille"
+    ]
+  },
+  {
     "slug": "cadeau-moins-de-10-euros",
     "title": "Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget",
     "category": "Cadeaux",

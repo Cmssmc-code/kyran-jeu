@@ -50,7 +50,7 @@ export default {
 <h3>4. Faire reformuler et garder une fiche</h3>
 <p>Demandez à un joueur de redire la règle avec ses propres mots : les malentendus apparaissent avant le début de la partie et non au milieu. Gardez ensuite à portée de main un résumé court, ou la règle en ligne, pour trancher sans discuter. Pour KYRAN, <a href="/video-regles.html">la vidéo des règles</a> se regarde en quelques minutes avant la soirée, et <a href="/minijeu.html">l’Initiation en ligne</a> permet de s’exercer seul sur écran.</p>
 <h3>Et si le jeu est un cadeau</h3>
-<p>Apprenez-le vous-même la veille, puis lancez une première manche d’essai que personne ne compte. Celui qui offre la boîte devient naturellement le professeur de la soirée, autant qu’il arrive préparé. Les idées classées par personne sont dans <a href="/blog/cadeau-noel.html">notre page sur les jeux de cartes à offrir à Noël</a>, et les petits budgets dans <a href="/blog/cadeau-moins-de-10-euros.html">les idées cadeaux à moins de 10 euros</a>.</p>`
+<p>Apprenez-le vous-même la veille, puis lancez une première manche d’essai que personne ne compte. Celui qui offre la boîte devient naturellement le professeur de la soirée, autant qu’il arrive préparé. Pour choisir la boîte elle-même, voyez <a href="/blog/cadeau-noel.html">les jeux de cartes à offrir à Noël</a>, ou <a href="/blog/cadeau-moins-de-10-euros.html">les idées à moins de 10 euros</a> si le budget est serré.</p>`
   },
   games: [
     {
@@ -80,7 +80,7 @@ export default {
       pick: `Pour trois à six joueurs qui connaissent la belote ou le tarot`,
       paragraphs: [
         `KYRAN est le jeu de ce site. À chaque manche, tout le monde déclare d’avance le nombre de plis qu’il pense remporter, et chaque pli de trop ou de moins retire une Vie. Les mains rétrécissent de sept cartes jusqu’à deux, puis arrive la manche Mystique, où l’on tient une unique carte contre son front sans la voir, tandis que les autres la lisent. Une partie tient en environ 30 minutes, pour 3 à 6 joueurs dès 8 ans.`,
-        `Pour l’apprendre sans tout lire, commencez par <a href="/minijeu.html">l’Initiation en ligne</a>, puis regardez la vidéo des règles. À table, expliquez uniquement le pari au départ, et gardez la manche Mystique pour le moment où elle se présente, car elle s’explique mieux en la jouant. Le jeu coûte 9,99 € sur <a href="/commander.html">la page d’achat</a>, hors port. Pour le recevoir avant Noël, commandez avant le 16 décembre.`
+        `Pour l’apprendre sans tout lire, commencez par <a href="/minijeu.html">l’Initiation en ligne</a>, puis regardez la vidéo des règles. À table, expliquez uniquement le pari au départ, et gardez la manche Mystique pour le moment où elle se présente, car elle s’explique mieux en la jouant. Il se commande sur <a href="/commander.html">la page d’achat</a> à 9,99 €, port en plus, avec le 16 décembre comme date limite avant Noël.`
       ]
     },
     {
@@ -106,9 +106,9 @@ export default {
   ],
   verdict: {
     heading: `Ce que nous retiendrions`,
-    html: `<p>Pour une première partie avec des enfants et des grands-parents, Trio ou Just One. Pour une tablée qui connaît déjà la belote ou le tarot, KYRAN de 3 à 6 joueurs ou 6 qui prend ! jusqu’à dix. Pour finir à beaucoup, Flip 7. Dans tous les cas, apprenez la règle la veille et jouez une manche d’essai à cartes découvertes. KYRAN est notre jeu, vendu 9,99 € sur ce site ; le blog Vin d’jeu lui a donné 7/10 le 18 novembre 2026.</p>`
+    html: `<p>Pour une première partie avec des enfants et des grands-parents, Trio ou Just One. Pour une tablée qui connaît déjà la belote ou le tarot, KYRAN de 3 à 6 joueurs ou 6 qui prend ! jusqu’à dix. Pour finir à beaucoup, Flip 7. Dans tous les cas, apprenez la règle la veille et jouez une manche d’essai à cartes découvertes. KYRAN est notre propre jeu, à 9,99 € sur ce site. Une chronique du blog Vin d’jeu, publiée le 18 novembre 2026, lui attribue 7/10.</p>`
   },
-  conclusion: `<p>Un jeu bien expliqué se rejoue, et c’est ce qui compte une fois les fêtes passées. Si vous retenez KYRAN, commandez avant le 16 décembre sur <a href="/commander.html">la page d’achat</a> ; <a href="/regle.html">la règle complète</a> se lit en ligne et la page <a href="/idee-cadeau.html">idée cadeau</a> donne les dates de livraison.</p>`,
+  conclusion: `<p>Un jeu bien expliqué se rejoue, et c’est ce qui compte une fois les fêtes passées. Pour KYRAN, la commande doit partir avant le 16 décembre depuis <a href="/commander.html">la page d’achat</a>. Lisez <a href="/regle.html">la règle complète</a> en ligne, et retrouvez les dates de livraison sur la page <a href="/idee-cadeau.html">idée cadeau</a>.</p>`,
   faq: [
     {
       q: `Comment expliquer les règles d’un jeu de cartes à des enfants et à des grands-parents ?`,
@@ -116,7 +116,7 @@ export default {
     },
     {
       q: `Quel jeu de cartes choisir pour une première partie en famille ?`,
-      a: `Trio (3 à 6 joueurs, dès 7 ans) et Just One (3 à 7 joueurs, dès 8 ans) s’expliquent en deux minutes et font jouer ensemble enfants et adultes.`
+      a: `Trio, de 3 à 6 joueurs dès 7 ans, et Just One, de 3 à 7 joueurs dès 8 ans, se montrent en deux minutes et mettent enfants et adultes à égalité.`
     },
     {
       q: `Peut-on apprendre KYRAN avant d’y jouer à table ?`,
@@ -124,7 +124,7 @@ export default {
     },
     {
       q: `Jusqu’à quand commander KYRAN pour Noël ?`,
-      a: `Pour le recevoir avant Noël, commandez avant le 16 décembre. Le colis part sous 24 à 48 heures ouvrées et met ensuite 2 à 4 jours ouvrés en France.`
+      a: `Pour qu’il arrive avant Noël, passez commande au plus tard le 16 décembre. L’expédition se fait sous 24 à 48 heures ouvrées, puis la livraison prend 2 à 4 jours ouvrés en France.`
     }
   ],
   related: [`cadeau-noel`, `jeux-cartes-reveillon`, `jeux-famille`]

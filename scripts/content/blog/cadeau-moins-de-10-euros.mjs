@@ -45,7 +45,7 @@ export default {
 <h3>Le cas du Père Noël secret</h3>
 <p>Quand le plafond est fixé par écrit, respectez-le au centime : un jeu à 10,90 € n’est pas un jeu à moins de 10 €, et vos collègues le savent. Dans ce cadre, privilégiez un jeu qui s’explique en une phrase, car vous ne serez pas toujours là pour lire la règle. Si vous choisissez plutôt selon la personne et que le budget monte un peu, deux autres pages vous serviront : <a href="/blog/cadeau-noel.html">les jeux de cartes à offrir à Noël selon le destinataire</a> et <a href="/blog/jeux-cartes-moins-de-15-euros.html">les jeux de cartes à moins de 15 euros</a>.</p>
 <h3>Les dates à ne pas rater</h3>
-<p>Un cadeau bon marché commandé trop tard coûte cher en livraison express. Pour KYRAN, la date limite est simple : commandez avant le 16 décembre pour le recevoir avant Noël. Le colis part sous 24 à 48 heures ouvrées, puis met 2 à 4 jours ouvrés en France. Pour les autres boutiques, vérifiez la date limite affichée sur leur page de livraison avant de valider le panier.</p>`
+<p>Un cadeau bon marché commandé trop tard coûte cher en livraison express. Pour KYRAN, la date limite est simple : commandez avant le 11 décembre pour le recevoir avant Noël. Le colis part sous 24 à 48 heures ouvrées, puis met 2 à 4 jours ouvrés en France. Pour les autres boutiques, vérifiez la date limite affichée sur leur page de livraison avant de valider le panier.</p>`
   },
   games: [
     {
@@ -56,7 +56,7 @@ export default {
       paragraphs: [
         `KYRAN est le jeu de ce site : nous le vendons 9,99 €, auxquels s’ajoute un port à partir de 2,99 €. La boîte contient 45 cartes de jeu, soit 36 cartes Nombre, 8 cartes Pouvoir et une Mystique. Avant chaque manche, chacun annonce le nombre de plis qu’il pense remporter, et chaque pli d’écart avec ce pari coûte une Vie. On commence avec sept cartes en main, puis six, puis cinq, jusqu’à la dernière manche, jouée avec une seule carte tenue contre le front, visible de tous sauf de soi. Une partie dure environ 30 minutes, de 3 à 6 joueurs, dès 8 ans.`,
         `Comme nous ne sommes pas neutres, voici un avis extérieur. Sur le blog Vin d’jeu, Vincent lui a donné 7/10 le 18 novembre 2026 et écrit que « le matériel est de bonne qualité et les cartes sont agréables à jouer ». Il note aussi que le jeu ne renouvelle pas la mécanique du pari sur les plis, qu’il pratiquait étudiant sous le nom d’Ascenseur. <a href="https://www.vindjeu.eu/prd/2026/11/18/kyran-maitre-des-mystiques/">Sa chronique complète est en ligne</a>. Si la personne possède déjà un jeu de ce genre, tenez-en compte.`,
-        `Deux limites à connaître avant d’emballer : KYRAN ne se joue pas à deux, et il faut le commander avant le 16 décembre pour une livraison avant Noël. La page <a href="/idee-cadeau.html">idée cadeau</a> résume le jeu en une minute, <a href="/regle.html">la règle complète</a> se lit en ligne, et la commande se passe sur <a href="/commander.html">la page d’achat</a>.`
+        `Deux limites à connaître avant d’emballer : KYRAN ne se joue pas à deux, et il faut le commander avant le 11 décembre pour une livraison avant Noël. La page <a href="/idee-cadeau.html">idée cadeau</a> résume le jeu en une minute, <a href="/regle.html">la règle complète</a> se lit en ligne, et la commande se passe sur <a href="/commander.html">la page d’achat</a>.`
       ]
     },
     {
@@ -114,7 +114,7 @@ export default {
     heading: `Quel jeu pour quel billet de dix euros`,
     html: `<p>Pour un budget strict de 10 €, quatre jeux tiennent au 18 novembre 2026 : Megalopolis (8,50 €) pour un joueur solitaire ou un duo, Monopoly Deal (8,90 €) pour un adolescent, Dobble (9,95 €) pour une famille avec de jeunes enfants, et KYRAN (9,99 € sur ce site) pour une tablée de 3 à 6 personnes qui aime les plis et les paris. Timeline et Love Letter demandent un ou deux euros de plus. Aucun de ces prix ne comprend la livraison : comptez 12,98 € pour un KYRAN livré. Ce jeu est le nôtre, notre regard n’est donc pas neutre ; c’est la raison pour laquelle nous citons la note de Vin d’jeu, 7/10, et la réserve qui l’accompagne.</p>`
   },
-  conclusion: `<p>Un petit prix n’oblige pas à choisir au hasard : la taille du foyer, l’âge et le goût de la personne comptent plus que l’euro d’écart entre deux boîtes. Si KYRAN vous tente, retenez la date : commande avant le 16 décembre pour une livraison avant Noël, sur <a href="/commander.html">la page d’achat</a>. La page <a href="/idee-cadeau.html">idée cadeau</a> répond aux dernières questions, et <a href="/video-regles.html">la vidéo des règles</a> montre une manche en cinq minutes.</p>`,
+  conclusion: `<p>Un petit prix n’oblige pas à choisir au hasard : la taille du foyer, l’âge et le goût de la personne comptent plus que l’euro d’écart entre deux boîtes. Si KYRAN vous tente, retenez la date : commande avant le 11 décembre pour une livraison avant Noël, sur <a href="/commander.html">la page d’achat</a>. La page <a href="/idee-cadeau.html">idée cadeau</a> répond aux dernières questions, et <a href="/video-regles.html">la vidéo des règles</a> montre une manche en cinq minutes.</p>`,
   faq: [
     {
       q: `Quel jeu de cartes choisir pour un cadeau à moins de 10 euros ?`,
@@ -126,7 +126,7 @@ export default {
     },
     {
       q: `Jusqu’à quand commander KYRAN pour le recevoir avant Noël ?`,
-      a: `Commandez avant le 16 décembre. Le colis est expédié sous 24 à 48 heures ouvrées, puis la livraison prend 2 à 4 jours ouvrés en France. Passé cette date, la réception avant le 25 décembre n’est plus assurée ; mieux vaut alors prévoir le cadeau pour le Nouvel An.`
+      a: `Commandez avant le 11 décembre. Le colis est expédié sous 24 à 48 heures ouvrées, puis la livraison prend 2 à 4 jours ouvrés en France. Passé cette date, la réception avant le 25 décembre n’est plus assurée ; mieux vaut alors prévoir le cadeau pour le Nouvel An.`
     },
     {
       q: `Quel jeu prendre pour un Père Noël secret à 10 euros ?`,

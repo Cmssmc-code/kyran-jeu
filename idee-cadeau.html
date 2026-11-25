@@ -495,9 +495,9 @@
       if (!livraison || !text) return;
       var noel = livraison.noelPhase(new Date(), [9, 1]);
       if (noel === 'avant') {
-        text.textContent = 'commandez avant le 16 décembre. ' + livraison.estimate();
+        text.textContent = 'commandez avant le 11 décembre. ' + livraison.estimate();
       } else if (noel === 'apres') {
-        text.textContent = 'après le 16 décembre, la livraison avant Noël n’est plus garantie. ' + livraison.estimate();
+        text.textContent = 'après le 11 décembre, la livraison avant Noël n’est plus garantie. ' + livraison.estimate();
       }
     })();
   </script>

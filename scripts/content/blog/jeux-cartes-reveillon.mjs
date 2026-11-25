@@ -52,7 +52,7 @@ export default {
 <li><strong>Après minuit</strong>, gardez les jeux où l’on parle et où l’on rit, pas ceux où l’on compte.</li>
 </ul>
 <h3>Si le jeu est aussi le cadeau</h3>
-<p>Une boîte déballée le 24 au soir se joue souvent dans l’heure : choisissez-la en pensant à la tablée présente ce soir-là. Les idées classées par personne sont dans <a href="/blog/cadeau-noel.html">notre page sur les jeux de cartes à offrir à Noël</a>, et les petits budgets dans <a href="/blog/cadeau-moins-de-10-euros.html">les idées cadeaux à moins de 10 euros</a>. Dans tous les cas, commandez tôt : pour KYRAN, la date limite avant Noël est le 16 décembre.</p>`
+<p>Une boîte déballée le 24 au soir se joue souvent dans l’heure : choisissez-la en pensant à la tablée présente ce soir-là. Les idées classées par personne sont dans <a href="/blog/cadeau-noel.html">notre page sur les jeux de cartes à offrir à Noël</a>, et les petits budgets dans <a href="/blog/cadeau-moins-de-10-euros.html">les idées cadeaux à moins de 10 euros</a>. Dans tous les cas, commandez tôt : pour KYRAN, la date limite avant Noël est le 11 décembre.</p>`
   },
   games: [
     {
@@ -83,7 +83,7 @@ export default {
       paragraphs: [
         `KYRAN est le jeu de ce site, et nous le plaçons après le dessert parce qu’il demande une table tranquille pendant environ 30 minutes. Avant chaque manche, chaque joueur annonce combien de plis il compte faire. Chaque pli d’écart, en trop ou en moins, lui coûte une Vie. Les mains raccourcissent de manche en manche, de sept cartes à deux, puis vient la manche Mystique : une seule carte, tenue contre le front, que tout le monde voit sauf vous. La partie s’arrête dès qu’un joueur n’a plus de Vies ; celui qui en garde le plus gagne.`,
         `Un avis extérieur vaut mieux que le nôtre. Vincent, du blog Vin d’jeu, a noté le jeu 7/10 le 18 novembre 2026 et écrit : « le matériel est de bonne qualité et les cartes sont agréables à jouer ». Il rappelle aussi que le principe du pari sur les plis existait avant KYRAN. <a href="https://www.vindjeu.eu/prd/2026/11/18/kyran-maitre-des-mystiques/">Lisez sa chronique sur Vin d’jeu</a> pour vous faire une idée complète.`,
-        `Le jeu accueille de 3 à 6 joueurs dès 8 ans : au-delà de six convives, il faut tourner ou sortir une autre boîte. La manche Mystique fait son effet devant ceux qui regardent, ce qui aide à recruter pour la partie suivante. Il coûte 9,99 € sur <a href="/commander.html">la page d’achat</a>, hors port, à commander avant le 16 décembre pour le réveillon de Noël. La page <a href="/idee-cadeau.html">idée cadeau</a> en donne un résumé.`
+        `Le jeu accueille de 3 à 6 joueurs dès 8 ans : au-delà de six convives, il faut tourner ou sortir une autre boîte. La manche Mystique fait son effet devant ceux qui regardent, ce qui aide à recruter pour la partie suivante. Il coûte 9,99 € sur <a href="/commander.html">la page d’achat</a>, hors port, à commander avant le 11 décembre pour le réveillon de Noël. La page <a href="/idee-cadeau.html">idée cadeau</a> en donne un résumé.`
       ]
     },
     {
@@ -131,7 +131,7 @@ export default {
     heading: `Les deux boîtes à poser sur la table`,
     html: `<p>Pour un réveillon, mieux vaut deux boîtes bien choisies qu’une pile de jeux. Une première pour l’apéritif, courte et sans enjeu : Trio jusqu’à six, Just One jusqu’à sept. Une seconde pour le temps calme après le dessert : KYRAN de 3 à 6 joueurs si la tablée aime les plis et les paris, Skull King si vous êtes sept ou huit, 6 qui prend ! jusqu’à dix. Après minuit, Flip 7 et Codenames demandent peu de concentration et acceptent les grandes tablées. KYRAN est notre jeu, vendu 9,99 € sur ce site ; le blog Vin d’jeu lui a donné 7/10 le 18 novembre 2026.</p>`
   },
-  conclusion: `<p>Le meilleur jeu de réveillon est celui dont quelqu’un connaît déjà la règle quand la boîte s’ouvre. Apprenez-la avant le 24 ou le 31. Si vous retenez KYRAN, passez commande avant le 16 décembre sur <a href="/commander.html">la page d’achat</a> pour le recevoir avant Noël ; la page <a href="/idee-cadeau.html">idée cadeau</a> résume ce qu’il faut savoir, et <a href="/regle.html">la règle complète</a> se lit en ligne.</p>`,
+  conclusion: `<p>Le meilleur jeu de réveillon est celui dont quelqu’un connaît déjà la règle quand la boîte s’ouvre. Apprenez-la avant le 24 ou le 31. Si vous retenez KYRAN, passez commande avant le 11 décembre sur <a href="/commander.html">la page d’achat</a> pour le recevoir avant Noël ; la page <a href="/idee-cadeau.html">idée cadeau</a> résume ce qu’il faut savoir, et <a href="/regle.html">la règle complète</a> se lit en ligne.</p>`,
   faq: [
     {
       q: `Quel jeu de cartes sortir au réveillon de Noël en famille ?`,
@@ -147,7 +147,7 @@ export default {
     },
     {
       q: `Jusqu’à quand commander KYRAN pour le réveillon ?`,
-      a: `Pour le réveillon de Noël, commandez avant le 16 décembre. Le colis part sous 24 à 48 heures ouvrées et met ensuite 2 à 4 jours ouvrés en France. Pour le Nouvel An, comptez ces mêmes délais à partir du jour de votre commande et gardez quelques jours de marge.`
+      a: `Pour le réveillon de Noël, commandez avant le 11 décembre. Le colis part sous 24 à 48 heures ouvrées et met ensuite 2 à 4 jours ouvrés en France. Pour le Nouvel An, comptez ces mêmes délais à partir du jour de votre commande et gardez quelques jours de marge.`
     },
     {
       q: `Combien de temps dure une partie un soir de réveillon ?`,

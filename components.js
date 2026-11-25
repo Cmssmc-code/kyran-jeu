@@ -223,16 +223,16 @@ function whenParsed(callback) {
   else callback();
 }
 
-// Du 1er novembre au 16 décembre, le bandeau d'annonce rappelle la date limite de commande pour Noël
-// (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre). Fait au chargement,
+// Du 1er novembre au 11 décembre, le bandeau d'annonce rappelle la date limite de commande pour Noël
+// (même règle que js/livraison.js : 11 décembre, arrivée au plus tard le 22 décembre). Fait au chargement,
 // car le HTML prérendu ne doit pas dépendre de la date du build.
 function initNoelAnnouncement() {
   var now = new Date();
   var y = now.getFullYear();
-  if (now < new Date(y, 10, 1) || now > new Date(y, 11, 16, 23, 59)) return;
+  if (now < new Date(y, 10, 1) || now > new Date(y, 11, 11, 23, 59)) return;
   var text = document.querySelector('.announcement-text');
   if (!text) return;
-  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
+  text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 11&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
 }
 
 if (typeof document !== 'undefined') whenParsed(initNoelAnnouncement);

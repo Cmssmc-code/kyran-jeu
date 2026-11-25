@@ -53,7 +53,7 @@ test('js/livraison.js : jours ouvrés, jours fériés et date limite de Noël', 
   assert.equal(iso(addBusinessDays(new Date(2026, 11, 16), 6)), '2026-12-24');
   assert.equal(noelPhase(new Date(2026, 9, 27), [10, 1]), '');
   assert.equal(noelPhase(new Date(2026, 9, 27), [9, 1]), 'avant');
-  assert.equal(noelPhase(new Date(2026, 11, 16, 20), [10, 1]), 'avant');
-  assert.equal(noelPhase(new Date(2026, 11, 17), [10, 1]), 'apres');
+  assert.equal(noelPhase(new Date(2026, 11, 11, 20), [10, 1]), 'avant');
+  assert.equal(noelPhase(new Date(2026, 11, 12), [10, 1]), 'apres');
   assert.equal(noelPhase(new Date(2026, 11, 26), [10, 1]), '');
 });

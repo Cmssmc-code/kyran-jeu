@@ -1,7 +1,8 @@
 // Délais de livraison en France, partagés par /commander.html et /idee-cadeau.html.
 // Jours ouvrés : lundi à vendredi, hors jours fériés. Préparation 24 à 48 h ouvrées
 // + acheminement 2 à 4 jours ouvrés = 3 à 6 jours ouvrés après la commande.
-// Noël : date limite conseillée le 16 décembre (16 décembre + 6 jours ouvrés = 24 décembre).
+// Noël : date limite conseillée le 11 décembre (logistique, 25/11/2026 : envoi sous 48 h ouvrées
+// + Mondial Relay 3 à 5 jours ouvrés = arrivée au plus tard le 22 décembre, 2 jours de marge).
 (function () {
   function easterSunday(y) {
     var a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4;
@@ -43,14 +44,14 @@
   }
 
   /**
-   * Période de Noël : 'avant' jusqu'au 16 décembre inclus, 'apres' du 17 au 24 décembre,
+   * Période de Noël : 'avant' jusqu'au 11 décembre inclus, 'apres' du 12 au 24 décembre,
    * sinon ''. `from` (mois 0-11, jour) borne le début : 1er novembre pour la page de commande.
    */
   function noelPhase(now, from) {
     now = now || new Date();
     var y = now.getFullYear();
     var start = from ? new Date(y, from[0], from[1]) : new Date(y, 0, 1);
-    var deadline = new Date(y, 11, 16, 23, 59);
+    var deadline = new Date(y, 11, 11, 23, 59);
     if (now >= start && now <= deadline) return 'avant';
     if (now > deadline && now < new Date(y, 11, 25)) return 'apres';
     return '';

@@ -83,21 +83,22 @@ function resolveActivePage(explicit, pathname) {
   return ACTIVE_BY_PATH[file] || '';
 }
 
+// menu: true = affiché dans le menu « Découvrir » (6 au plus, sinon le menu devient trop long).
 const DISCOVER_ITEMS = [
-  { href: '/idee-cadeau.html', title: 'Idée cadeau', desc: 'Offrir KYRAN, délais de livraison' },
-  { href: '/jouer-en-ligne.html', title: 'Jouer en ligne', desc: 'Contre l\'ordinateur, 2 à 5 adversaires' },
-  { href: '/avent.html', title: 'Calendrier de l\'Avent', desc: '24 défis de plis, un par jour' },
-  { href: '/quel-pli-gagne.html', title: 'Quel pli gagne ?', desc: 'Le défi de cartes en 3 plis' },
+  { menu: true, href: '/idee-cadeau.html', title: 'Idée cadeau', desc: 'Offrir KYRAN, délais de livraison' },
+  { menu: true, href: '/jouer-en-ligne.html', title: 'Jouer en ligne', desc: 'Contre l\'ordinateur, 2 à 5 adversaires' },
+  { menu: true, href: '/avent.html', title: 'Calendrier de l\'Avent', desc: '24 défis de plis, un par jour' },
+  { menu: true, href: '/quel-pli-gagne.html', title: 'Quel pli gagne ?', desc: 'Le défi de cartes en 3 plis' },
   { href: '/secret-santa.html', title: 'Cadeau Secret Santa', desc: 'Un jeu à moins de 10 €' },
   { href: '/kyran-en-10-reponses.html', title: 'KYRAN en 10 réponses', desc: 'Les réponses courtes' },
   { href: '/simulation.html', title: '10 000 parties simulées', desc: 'Comment gagner à KYRAN' },
-  { href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
+  { menu: true, href: '/jeu-apero.html', title: 'Jeu apéro', desc: 'Soirée 30 min, 3 à 6 joueurs' },
   { href: '/blog/jeux-comme-skyjo.html', title: 'Jeux comme Skyjo', desc: '10 alternatives et variantes' },
   { href: '/tarot-africain.html', title: 'Tarot Africain', desc: 'Règles, variantes et comptage' },
   { href: '/whist-22.html', title: 'Whist 22', desc: 'Définition et jeux proches' },
   { href: '/blog/jeux-plis-comparatif.html', title: 'Jeux de plis', desc: 'KYRAN vs Wizard, Oh Hell…' },
   { href: '/communaute.html', title: 'Communauté', desc: 'Vos parties en photos et vidéos' },
-  { href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' },
+  { menu: true, href: '/a-propos.html', title: 'À propos', desc: 'L\'auteur et notre méthode' },
   { href: '/dossier-presse.html', title: 'Presse', desc: 'Communiqué, visuels et contact' }
 ];
 
@@ -133,10 +134,11 @@ function formatBlogDate(isoDate) {
 function renderHeaderHtml(active, pathname) {
     const activePage = resolveActivePage(active, pathname);
     const discoverActive = ['discover', 'apero', 'skyjo', 'tarot', 'whist', 'plis', 'press'].includes(activePage);
-    const submenu = DISCOVER_ITEMS.map(function (item) {
+    const menuItems = DISCOVER_ITEMS.filter(function (item) { return item.menu; });
+    const submenu = menuItems.map(function (item) {
       return `<li><a href="${item.href}">${item.title}<span class="sub-desc">${item.desc}</span></a></li>`;
     }).join('');
-    const drawerDiscover = DISCOVER_ITEMS.map(function (item) {
+    const drawerDiscover = menuItems.map(function (item) {
       return `<a class="nav-drawer-link" href="${item.href}">${item.title}<span>${item.desc}</span></a>`;
     }).join('');
 
@@ -987,7 +989,7 @@ function initPurchaseChoice() {
     '<span class="achat-choix__info">Sans frais de port</span></label>' +
     '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
     '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
-    '<span class="achat-choix__info">Port calculé selon l’adresse</span></label>' +
+    '<span class="achat-choix__info">Port ajouté au paiement</span></label>' +
     '</fieldset>' +
     '<div class="achat-choix__qte">' +
     '<label for="achat-qte">Nombre de boîtes</label>' +
@@ -1046,11 +1048,13 @@ function initPurchaseChoice() {
     const ligne = function (libelle, montant, classe) {
       return '<p class="achat-choix__ligne' + (classe || '') + '"><span>' + libelle + '</span><span>' + montant + '</span></p>';
     };
+    const livraison = m !== 'main-propre';
     total.innerHTML = ligne(q + (q > 1 ? ' boîtes' : ' boîte') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
-      ligne(m === 'main-propre' ? 'Main propre' : 'Livraison', m === 'main-propre' ? 'sans frais' : tarifs.euros(t.port)) +
-      ligne('Total', tarifs.euros(t.total), ' achat-choix__ligne--total');
-    if (m === 'main-propre') total.innerHTML += '<p class="achat-choix__mp">On convient de la remise par mail.</p>';
-    if (!payer.dataset.envoi) payer.textContent = 'Payer ' + tarifs.euros(t.total);
+      ligne(livraison ? 'Livraison' : 'Main propre', livraison ? 'à l’étape suivante' : 'sans frais') +
+      ligne(livraison ? 'Sous-total' : 'Total', tarifs.euros(livraison ? t.boites : t.total), ' achat-choix__ligne--total');
+    if (livraison) total.innerHTML += '<p class="achat-choix__mp">Le port s’ajoute sur la page de paiement Stripe, une fois l’adresse saisie.</p>';
+    else total.innerHTML += '<p class="achat-choix__mp">On convient de la remise par mail.</p>';
+    if (!payer.dataset.envoi) payer.textContent = livraison ? 'Continuer vers le paiement' : 'Payer ' + tarifs.euros(t.total);
   }
 
   function regler(n) {

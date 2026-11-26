@@ -10,6 +10,11 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-26 (nuit) : contrôle technique des 24 pages cibles t101 (directeur technique)
+
+- Contrôlé : vitesse (images, scripts), JSON-LD (BlogPosting, FAQPage, ItemList), liens internes et 98 liens externes, lien vers l'accueil.
+- 5 défauts trouvés, 5 corrigés : cible « jeu de plis » vers une redirection ; 3 pages sans lien vers `/` ; image de la boîte en pleine taille (144 Ko) sur 23 pages, passée en 360/740 px. Aucun titre touché. Détail : `_notes/seo/requetes-larges.md`.
+
 ### 2026-11-26 : run nocturne n° 33 (jeudi)
 
 **Verdict : En progrès.**

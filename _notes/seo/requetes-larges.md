@@ -45,7 +45,7 @@ au-delà. Une moyenne Search Console ou Bing Webmaster n'est citée qu'à partir
 | 25 | jeu de cartes rapide | 1 000+ | moyenne | 5 | `/blog/jeux-30-minutes.html` | `blog/jeux-30-minutes.html` |
 | 26 | jeu de cartes simple à apprendre | 500+ | faible | absent | - | `blog/jeux-debutants-adultes.html` |
 | 27 | jeu de cartes voyage | 500+ | faible | absent | - | `blog/jeux-vacances-voyage.html` |
-| 28 | jeu de plis | 500+ | faible | absent | - | `blog/guide-jeux-de-plis.html` |
+| 28 | jeu de plis | 500+ | faible | absent | - | `blog/jeux-plis-comparatif.html` |
 | 29 | jeu de cartes comme uno | 500+ | faible | 4 | `/blog/alternatives-uno.html` | `blog/alternatives-uno.html` |
 | 30 | jeu comme skyjo | 500+ | faible | 3 | `/blog/jeux-comme-skyjo.html` | `blog/jeux-comme-skyjo.html` |
 
@@ -78,3 +78,15 @@ des blogs et médias pour y faire entrer KYRAN, sans jeu promis ni offert.
   jeux cités Flip 7, Trio, Skyjo, Ipso, Faraway, Dnup, Carnival of Sins, Wingspan Pocket ; sources Ludum,
   Marie Claire, Monsieur Dé, Playin, Cosmopolitan, Ludiquement, Asmodee France, Règles de jeux. Notre page
   `cadeau-noel` est 1re sur DuckDuckGo mais n'est pas citée : l'IA reprend les sélections des autres sites.
+
+## Contrôle technique des pages cibles (nuit du 26 au 27/11)
+
+24 pages cibles contrôlées (vitesse, JSON-LD, liens, lien vers l'accueil). JSON-LD valide partout
+(BlogPosting complet, FAQPage dont toutes les questions sont visibles, ItemList de jeux) ; les pages du
+blog n'ont pas de bloc Product, réservé à l'accueil et à la commande. 0 lien interne cassé, 98 liens
+externes testés sans lien mort (BoardGameGeek, Facebook, Asmodee et Magilano refusent seulement les robots).
+
+Défauts corrigés : cible de « jeu de plis » qui pointait vers une redirection (`guide-jeux-de-plis`) ;
+aucun lien vers `/` dans le corps de `idees-cadeaux-jeu-de-cartes`, `jeux-de-societe-pas-chers` et
+`meilleurs-jeux-de-cartes-2026` ; image de la boîte KYRAN servie en pleine taille (WebP 1048 px, 144 Ko)
+sur 23 pages, remplacée par les variantes 360 et 740 px (37 et 56 Ko).

@@ -8,43 +8,46 @@ Règles : aucun titre de page retouché avant 28 jours ; les pages nouvelles son
 KYRAN figure parmi d'autres jeux, comme les articles actuels du blog.
 
 Volumes : estimation d'une IA gratuite (GLM-4.7-flash, 26/11), ordre de grandeur mensuel en France en
-saison de Noël, non vérifié par un outil de mots-clés. Positions : Search Console et Bing Webmaster sur
-28 jours (29/10 → 25/11) ; « - » veut dire aucune impression (au-delà de la 5e page environ). Les positions
-Bing et Brave en direct sont relevées chaque lundi par la routine « Kyran · Relevé des 3 moteurs » dans
-[`releve-moteurs.csv`](releve-moteurs.csv) (premier passage le 30/11).
+saison de Noël, non vérifié par un outil de mots-clés.
 
-| # | Requête | Volume | Difficulté | Google 28 j | Bing 28 j | Page cible |
+Positions (règle du relevé, 26/11) : mesurées sans compte ni historique, publicités exclues. DuckDuckGo
+version HTML (index Bing) par `scripts/seo-releve-moteurs.py`, rang dans les 10 premiers résultats, « absent »
+au-delà. Une moyenne Search Console ou Bing Webmaster n'est citée qu'à partir de 20 impressions : aucune des
+30 requêtes n'y arrive au 26/11. Brave et les réponses des IA sont relevés chaque lundi par la routine
+« Kyran · Relevé des 3 moteurs » dans [`releve-moteurs.csv`](releve-moteurs.csv) (premier passage le 30/11).
+
+| # | Requête | Volume | Difficulté | DuckDuckGo 26/11 | Page qui sort | Page cible |
 |---|---------|--------|------------|-------------|-----------|------------|
-| 1 | jeux de cartes | 50 000+ | forte | - | - | `/` (maillage interne) |
-| 2 | jeu de cartes | 20 000+ | forte | - | - | `/` (maillage interne) |
-| 3 | jeux de cartes 2026 | 1 000+ | faible | - | - | à créer : `blog/meilleurs-jeux-de-cartes-2026.html` |
-| 4 | meilleur jeu de cartes 2026 | 1 000+ | faible | - | - | à créer : `blog/meilleurs-jeux-de-cartes-2026.html` |
-| 5 | jeux de cartes 2027 | 500+ | faible | - | - | à créer : `blog/nouveaux-jeux-de-cartes-2027.html` |
-| 6 | nouveau jeu de cartes | 2 000+ | moyenne | - | - | à créer : `blog/nouveaux-jeux-de-cartes-2027.html` |
-| 7 | jeux de société pas cher | 30 000+ | moyenne | - | - | à créer : `blog/jeux-de-societe-pas-chers.html` |
-| 8 | jeu de cartes pas cher | 20 000+ | forte | - | - | `blog/jeux-cartes-moins-de-15-euros.html` |
-| 9 | petit cadeau jeu de société | 2 000+ | moyenne | - | - | `blog/cadeau-moins-de-10-euros.html` |
-| 10 | idée cadeau jeu de cartes | 20 000+ | moyenne | - | - | à créer : `blog/idees-cadeaux-jeu-de-cartes.html` |
-| 11 | jeux pour noël | 50 000+ | forte | - | - | `blog/cadeau-noel.html` |
-| 12 | jeu de cartes noël 2026 | 500+ | faible | - | 1,0 | `blog/cadeau-noel.html` |
-| 13 | jeux apéro | 5 000+ | moyenne | - | - | `blog/meilleurs-jeux-apero.html` |
-| 14 | jeu de cartes apéro | 3 000+ | moyenne | - | 1,0 | `blog/meilleurs-jeux-apero.html` |
-| 15 | jeux ado | 5 000+ | moyenne | - | - | `blog/jeux-cartes-ados.html` |
-| 16 | jeu de cartes ado | 2 000+ | moyenne | - | 2,0 | `blog/jeux-cartes-ados.html` |
-| 17 | jeu de cartes famille | 3 000+ | moyenne | - | - | `blog/jeux-famille.html` |
-| 18 | jeu de cartes enfant 8 ans | 2 000+ | moyenne | - | - | à créer : `blog/jeux-cartes-enfants-8-ans.html` |
-| 19 | jeu de cartes entre amis | 2 000+ | moyenne | - | - | `blog/jeux-soiree-amis.html` |
-| 20 | jeux de société soirée entre amis | 3 000+ | moyenne | 15 | - | `blog/jeux-soiree-amis.html` |
-| 21 | jeu de cartes 4 joueurs | 1 000+ | moyenne | 8 | - | `blog/jeux-cartes-4-joueurs.html` |
-| 22 | jeu de cartes 6 joueurs | 1 000+ | moyenne | 12 | - | `blog/jeux-cartes-6-joueurs.html` |
-| 23 | jeu de cartes original | 2 000+ | moyenne | - | - | à créer : `blog/jeux-cartes-originaux.html` |
-| 24 | jeu de cartes stratégie | 2 000+ | moyenne | - | - | `blog/jeux-strategie-legere.html` |
-| 25 | jeu de cartes rapide | 1 000+ | moyenne | - | - | `blog/jeux-30-minutes.html` |
-| 26 | jeu de cartes simple à apprendre | 500+ | faible | - | - | `blog/jeux-debutants-adultes.html` |
-| 27 | jeu de cartes voyage | 500+ | faible | - | - | `blog/jeux-vacances-voyage.html` |
-| 28 | jeu de plis | 500+ | faible | 28,3 | - | `blog/guide-jeux-de-plis.html` |
-| 29 | jeu de cartes comme uno | 500+ | faible | 7 | 2,0 | `blog/alternatives-uno.html` |
-| 30 | jeu comme skyjo | 500+ | faible | 12,8 | 2,3 | `blog/jeux-comme-skyjo.html` |
+| 1 | jeux de cartes | 50 000+ | forte | absent | - | `/` (maillage interne) |
+| 2 | jeu de cartes | 20 000+ | forte | absent | - | `/` (maillage interne) |
+| 3 | jeux de cartes 2026 | 1 000+ | faible | absent | - | à créer : `blog/meilleurs-jeux-de-cartes-2026.html` |
+| 4 | meilleur jeu de cartes 2026 | 1 000+ | faible | absent | - | à créer : `blog/meilleurs-jeux-de-cartes-2026.html` |
+| 5 | jeux de cartes 2027 | 500+ | faible | 3 | `/blog/marche-jeux-de-cartes-2026-2027.html` | à créer : `blog/nouveaux-jeux-de-cartes-2027.html` |
+| 6 | nouveau jeu de cartes | 2 000+ | moyenne | absent | - | à créer : `blog/nouveaux-jeux-de-cartes-2027.html` |
+| 7 | jeux de société pas cher | 30 000+ | moyenne | absent | - | à créer : `blog/jeux-de-societe-pas-chers.html` |
+| 8 | jeu de cartes pas cher | 20 000+ | forte | absent | - | `blog/jeux-cartes-moins-de-15-euros.html` |
+| 9 | petit cadeau jeu de société | 2 000+ | moyenne | absent | - | `blog/cadeau-moins-de-10-euros.html` |
+| 10 | idée cadeau jeu de cartes | 20 000+ | moyenne | 9 | `/blog/cadeau-anniversaire.html` | à créer : `blog/idees-cadeaux-jeu-de-cartes.html` |
+| 11 | jeux pour noël | 50 000+ | forte | absent | - | `blog/cadeau-noel.html` |
+| 12 | jeu de cartes noël 2026 | 500+ | faible | 1 | `/blog/cadeau-noel.html` | `blog/cadeau-noel.html` |
+| 13 | jeux apéro | 5 000+ | moyenne | absent | - | `blog/meilleurs-jeux-apero.html` |
+| 14 | jeu de cartes apéro | 3 000+ | moyenne | 4 | `/blog/meilleurs-jeux-apero.html` | `blog/meilleurs-jeux-apero.html` |
+| 15 | jeux ado | 5 000+ | moyenne | absent | - | `blog/jeux-cartes-ados.html` |
+| 16 | jeu de cartes ado | 2 000+ | moyenne | 2 | `/blog/jeux-cartes-ados.html` | `blog/jeux-cartes-ados.html` |
+| 17 | jeu de cartes famille | 3 000+ | moyenne | absent | - | `blog/jeux-famille.html` |
+| 18 | jeu de cartes enfant 8 ans | 2 000+ | moyenne | absent | - | à créer : `blog/jeux-cartes-enfants-8-ans.html` |
+| 19 | jeu de cartes entre amis | 2 000+ | moyenne | absent | - | `blog/jeux-soiree-amis.html` |
+| 20 | jeux de société soirée entre amis | 3 000+ | moyenne | absent | - | `blog/jeux-soiree-amis.html` |
+| 21 | jeu de cartes 4 joueurs | 1 000+ | moyenne | 3 | `/blog/jeux-cartes-4-joueurs.html` | `blog/jeux-cartes-4-joueurs.html` |
+| 22 | jeu de cartes 6 joueurs | 1 000+ | moyenne | 6 | `/blog/jeux-cartes-6-joueurs.html` | `blog/jeux-cartes-6-joueurs.html` |
+| 23 | jeu de cartes original | 2 000+ | moyenne | absent | - | à créer : `blog/jeux-cartes-originaux.html` |
+| 24 | jeu de cartes stratégie | 2 000+ | moyenne | absent | - | `blog/jeux-strategie-legere.html` |
+| 25 | jeu de cartes rapide | 1 000+ | moyenne | 5 | `/blog/jeux-30-minutes.html` | `blog/jeux-30-minutes.html` |
+| 26 | jeu de cartes simple à apprendre | 500+ | faible | absent | - | `blog/jeux-debutants-adultes.html` |
+| 27 | jeu de cartes voyage | 500+ | faible | absent | - | `blog/jeux-vacances-voyage.html` |
+| 28 | jeu de plis | 500+ | faible | absent | - | `blog/guide-jeux-de-plis.html` |
+| 29 | jeu de cartes comme uno | 500+ | faible | 4 | `/blog/alternatives-uno.html` | `blog/alternatives-uno.html` |
+| 30 | jeu comme skyjo | 500+ | faible | 3 | `/blog/jeux-comme-skyjo.html` | `blog/jeux-comme-skyjo.html` |
 
 ## Pages à créer (rédactrice, 3 par semaine au moins)
 
@@ -65,9 +68,13 @@ des blogs et médias pour y faire entrer KYRAN, sans jeu promis ni offert.
 
 ## Constat au départ (26/11)
 
-- Longue traîne déjà bien placée sur Bing : « jeu de carte apéro » 1, « jeu de carte noel 2026 » 1,
-  « jeu de carte ado » 2, « jeux comme skyjo » 2,3, « meilleurs jeux de cartes rapides en moins de 30 minutes » 2,2.
-- Aucune impression sur les têtes « jeux de cartes », « jeu de cartes », « jeux de société pas cher »,
-  « jeux pour noël » chez Google et Bing.
-- Google : nos articles sortent surtout entre la 7e et la 45e place (« jeu de carte a 3 » 32,7 ;
-  « jeu de bluff » 41,9 ; « jeu comme dixit » 6,4 ; « jeu comme le uno » 9,1).
+- DuckDuckGo (neutre) : top 3 sur 5 requêtes larges (« jeu de cartes noël 2026 » 1, « jeu de cartes ado » 2,
+  « jeux de cartes 2027 » 3, « jeu de cartes 4 joueurs » 3, « jeu comme skyjo » 3), 4e à 10e sur 5 autres,
+  absent sur 20, dont toutes les têtes (« jeux de cartes », « jeu de cartes », « jeux pour noël »,
+  « jeux de société pas cher »).
+- Mesure du PDG le même soir (DuckDuckGo) : « jeu de carte apéro » 8e, « jeu de carte noel 2026 » 1er,
+  « jeu de carte ado » 3e ; les « 1,0 » de Bing Webmaster ne reposaient que sur 2 à 5 impressions.
+- Réponse IA de Google à « meilleurs jeux de cartes Noël 2026 » (relevé de Corentin, 26/11) : KYRAN absent ;
+  jeux cités Flip 7, Trio, Skyjo, Ipso, Faraway, Dnup, Carnival of Sins, Wingspan Pocket ; sources Ludum,
+  Marie Claire, Monsieur Dé, Playin, Cosmopolitan, Ludiquement, Asmodee France, Règles de jeux. Notre page
+  `cadeau-noel` est 1re sur DuckDuckGo mais n'est pas citée : l'IA reprend les sélections des autres sites.

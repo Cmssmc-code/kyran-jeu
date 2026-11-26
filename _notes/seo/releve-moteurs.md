@@ -24,25 +24,36 @@ Relevé refait chaque lundi par la routine « Kyran · Relevé des 3 moteurs » 
 | 9 | jeu de cartes annoncer ses plis | jeu de plis |
 | 10 | jeu de plis et paris | jeu de plis |
 
+Règle du relevé (PDG, 26/11) : position mesurée sans compte ni historique, publicités exclues ; une moyenne
+Search Console ou Bing Webmaster n'est citée qu'à partir de 20 impressions sur 28 jours.
+
 Méthode, pour chaque moteur :
 
-- Google : position moyenne Search Console sur 28 jours (requête exacte, toutes pages), plus la page qui sort.
-- Bing : position en direct dans le navigateur de Trio (`https://www.bing.com/search?q=…&setmkt=fr-FR`,
-  rang du premier résultat kyran-jeu.fr parmi les `li.b_algo`), et position moyenne Bing Webmaster si la requête y figure.
+- Google : moyenne Search Console sur 28 jours si 20 impressions ou plus, sinon « moins de 20 impressions ».
+- Bing : DuckDuckGo version HTML (index Bing), par `python scripts/seo-releve-moteurs.py --fichier _notes/seo/releve-requetes.txt` (les 40 requêtes),
+  sans cookie, annonces exclues. bing.com interrogé sans cookie renvoie des résultats sans rapport, et le
+  navigateur de Trio porte un compte : ni l'un ni l'autre ne compte comme mesure.
 - Brave : position en direct (`https://search.brave.com/search?q=…`), rang du premier domaine kyran-jeu.fr
-  dans la liste des résultats ; « absent » au-delà de la 1re page.
+  hors annonces ; « absent » au-delà de la 1re page. Brave ne personnalise pas ses résultats et aucun compte
+  n'y est connecté ; curl est refusé (captcha), on passe donc par le navigateur.
+- Réponses des IA (GEO), chaque lundi, sans compte : question « meilleurs jeux de cartes Noël 2026 » (puis
+  « meilleurs jeux de cartes 2026 » après Noël) en mode IA de Google, sur Bing Copilot, dans la réponse IA de
+  Brave et sur ChatGPT. Noter : KYRAN cité ou non, jeux cités, sources citées.
 
 ## Relevé de départ (26/11/2026, soir)
 
-- Google (Search Console, 29/10 → 25/11) : « kyran » 2,4 (accueil, 74 impressions) ; « kyran paris » 1 ;
-  « tarot africain » 9,2 (401 impressions, notre plus grosse requête) ; « tarot africain règle » 5,0 ;
-  « tarot africain en ligne » 9,6 ; « jeu de carte pari nombre de plis » 4,6 (`regle.html`).
-- Bing en direct : « kyran jeu de pli » 1er (`regle.html`, l'accueil 2e) ; « kyran » 6e (`jouer-en-ligne.html`,
-  l'accueil 8e, derrière 5 sites de prénoms).
-- Bing Webmaster (moyennes) : « kyran jeu » 1,5 ; « kyran » 4,2 ; « kyran jeu de pli » 9,0 (une seule semaine,
-  20 impressions, vers le 19/11 ; le direct du 26/11 donne 1er, donc rien à corriger) ; « tarot africain » 8,6.
-- Brave en direct : « kyran jeu de pli » 1er ; « kyran » 7e (1re page, après des sites de prénoms et kyran.com) ;
-  « tarot africain » 7e ; « kyran jeu de cartes » 1er (relevé du PDG).
+- Google (Search Console, 29/10 → 25/11, 20 impressions ou plus) : « kyran » 2,4 (accueil, 74 impressions) ;
+  « tarot africain » 9,2 (401) ; « tarot africain règle » 5,0 (214) ; « tarot africain en ligne » 9,6 (100) ;
+  « jeu de carte pari nombre de plis » 4,6 (27, `regle.html`).
+- DuckDuckGo, index Bing (neutre) : « kyran jeu », « kyran jeu de cartes », « kyran jeu de pli » 1ers ; « kyran » 2e
+  (`jouer-en-ligne.html`) ; « kyran maître des mystiques » 5e ; « tarot africain règle » 2e ; « tarot africain » 10e ;
+  « tarot africain en ligne » absent ; « jeu de cartes annoncer ses plis » 2e ; « jeu de plis et paris » 8e.
+- Bing Webmaster (20 impressions ou plus) : « kyran » 4,2 (23) ; « kyran jeu de pli » 9,0 (20, une seule semaine
+  vers le 19/11) ; « tarot africain » 8,6 (81).
+- Brave en direct : « kyran jeu de pli » 1er ; « kyran » 7e (1re page) ; « tarot africain » 7e ;
+  « kyran jeu de cartes » 1er (relevé du PDG).
+- Réponse IA de Google à « meilleurs jeux de cartes Noël 2026 » (Corentin) : KYRAN absent. Détail dans
+  [`requetes-larges.md`](requetes-larges.md).
 
 ## Brave : index et leviers sans argent
 

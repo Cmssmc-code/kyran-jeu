@@ -3,10 +3,86 @@ date,moteur,requete,position,page,source
 2026-11-26,google,tarot africain,9.2,/tarot-africain.html,gsc-28j
 2026-11-26,google,tarot africain règle,5.0,/tarot-africain.html,gsc-28j
 2026-11-26,google,tarot africain en ligne,9.6,/tarot-africain.html,gsc-28j
-2026-11-26,bing,kyran,6,/jouer-en-ligne.html,direct
-2026-11-26,bing,kyran jeu de pli,1,/regle.html,direct
-2026-11-26,bing,kyran jeu,1.5,,bwt-moyenne
-2026-11-26,bing,tarot africain,8.6,,bwt-moyenne
 2026-11-26,brave,kyran,7,/,direct
 2026-11-26,brave,kyran jeu de pli,1,/,direct
 2026-11-26,brave,tarot africain,7,,direct
+2026-11-26,bing,kyran,absent,,curl-neutre
+2026-11-26,duckduckgo,kyran,2,/jouer-en-ligne.html,curl-neutre
+2026-11-26,bing,kyran jeu,absent,,curl-neutre
+2026-11-26,duckduckgo,kyran jeu,1,/,curl-neutre
+2026-11-26,bing,kyran jeu de cartes,absent,,curl-neutre
+2026-11-26,duckduckgo,kyran jeu de cartes,1,/jouer-en-ligne.html,curl-neutre
+2026-11-26,bing,kyran jeu de pli,absent,,curl-neutre
+2026-11-26,duckduckgo,kyran jeu de pli,1,/,curl-neutre
+2026-11-26,bing,kyran maître des mystiques,absent,,curl-neutre
+2026-11-26,duckduckgo,kyran maître des mystiques,5,/regle-kyran.pdf,curl-neutre
+2026-11-26,bing,tarot africain,absent,,curl-neutre
+2026-11-26,duckduckgo,tarot africain,10,/regle-tarot-africain.pdf,curl-neutre
+2026-11-26,bing,tarot africain règle,absent,,curl-neutre
+2026-11-26,duckduckgo,tarot africain règle,2,/regle-tarot-africain.pdf,curl-neutre
+2026-11-26,bing,tarot africain en ligne,absent,,curl-neutre
+2026-11-26,duckduckgo,tarot africain en ligne,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes annoncer ses plis,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes annoncer ses plis,2,/regle.html,curl-neutre
+2026-11-26,bing,jeu de plis et paris,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de plis et paris,8,/,curl-neutre
+2026-11-26,bing,jeux de cartes,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux de cartes,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes,absent,,curl-neutre
+2026-11-26,bing,jeux de cartes 2026,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux de cartes 2026,absent,,curl-neutre
+2026-11-26,bing,meilleur jeu de cartes 2026,absent,,curl-neutre
+2026-11-26,duckduckgo,meilleur jeu de cartes 2026,absent,,curl-neutre
+2026-11-26,bing,jeux de cartes 2027,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux de cartes 2027,3,/blog/marche-jeux-de-cartes-2026-2027.html,curl-neutre
+2026-11-26,bing,nouveau jeu de cartes,absent,,curl-neutre
+2026-11-26,duckduckgo,nouveau jeu de cartes,absent,,curl-neutre
+2026-11-26,bing,jeux de société pas cher,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux de société pas cher,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes pas cher,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes pas cher,absent,,curl-neutre
+2026-11-26,bing,petit cadeau jeu de société,absent,,curl-neutre
+2026-11-26,duckduckgo,petit cadeau jeu de société,absent,,curl-neutre
+2026-11-26,bing,idée cadeau jeu de cartes,absent,,curl-neutre
+2026-11-26,duckduckgo,idée cadeau jeu de cartes,9,/blog/cadeau-anniversaire.html,curl-neutre
+2026-11-26,bing,jeux pour noël,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux pour noël,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes noël 2026,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes noël 2026,1,/blog/cadeau-noel.html,curl-neutre
+2026-11-26,bing,jeux apéro,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux apéro,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes apéro,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes apéro,4,/blog/meilleurs-jeux-apero.html,curl-neutre
+2026-11-26,bing,jeux ado,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux ado,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes ado,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes ado,2,/blog/jeux-cartes-ados.html,curl-neutre
+2026-11-26,bing,jeu de cartes famille,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes famille,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes enfant 8 ans,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes enfant 8 ans,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes entre amis,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes entre amis,absent,,curl-neutre
+2026-11-26,bing,jeux de société soirée entre amis,absent,,curl-neutre
+2026-11-26,duckduckgo,jeux de société soirée entre amis,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes 4 joueurs,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes 4 joueurs,3,/blog/jeux-cartes-4-joueurs.html,curl-neutre
+2026-11-26,bing,jeu de cartes 6 joueurs,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes 6 joueurs,6,/blog/jeux-cartes-6-joueurs.html,curl-neutre
+2026-11-26,bing,jeu de cartes original,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes original,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes stratégie,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes stratégie,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes rapide,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes rapide,5,/blog/jeux-30-minutes.html,curl-neutre
+2026-11-26,bing,jeu de cartes simple à apprendre,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes simple à apprendre,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes voyage,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes voyage,absent,,curl-neutre
+2026-11-26,bing,jeu de plis,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de plis,absent,,curl-neutre
+2026-11-26,bing,jeu de cartes comme uno,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu de cartes comme uno,4,/blog/alternatives-uno.html,curl-neutre
+2026-11-26,bing,jeu comme skyjo,absent,,curl-neutre
+2026-11-26,duckduckgo,jeu comme skyjo,3,/blog/jeux-comme-skyjo.html,curl-neutre

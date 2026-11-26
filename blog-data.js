@@ -9,8 +9,8 @@ const BLOG_ITEMS = [
     "date": "2026-11-26",
     "readMinutes": 8,
     "excerpt": "Comment arriver au repas de Noël en connaissant déjà les règles de KYRAN : les sept rites de l’Initiation en ligne, dans l’ordre, avec ce que chacun apprend.",
-    "image": "/blog/images/cadeau-noel.jpg",
-    "webp": "/blog/images/cadeau-noel.webp",
+    "image": "/blog/images/initiation-kyran-fetes.jpg",
+    "webp": "/blog/images/initiation-kyran-fetes.webp",
     "gameCount": 0,
     "related": [
       "apprendre-jeu-cartes-fetes",
@@ -25,8 +25,8 @@ const BLOG_ITEMS = [
     "date": "2026-11-25",
     "readMinutes": 7,
     "excerpt": "Comment faire découvrir un nouveau jeu de cartes à toute la famille à Noël : cinq jeux faciles à expliquer et une méthode en quatre temps pour les règles.",
-    "image": "/blog/images/cadeau-noel.jpg",
-    "webp": "/blog/images/cadeau-noel.webp",
+    "image": "/blog/images/apprendre-jeu-cartes-fetes.jpg",
+    "webp": "/blog/images/apprendre-jeu-cartes-fetes.webp",
     "gameCount": 5,
     "related": [
       "cadeau-noel",
@@ -57,8 +57,8 @@ const BLOG_ITEMS = [
     "date": "2026-11-18",
     "readMinutes": 11,
     "excerpt": "Quel jeu de cartes sortir au réveillon de Noël ou du Nouvel An ? Sept jeux rangés par moment de la soirée, avec nombre de joueurs, durée et âge.",
-    "image": "/blog/images/cadeau-noel.jpg",
-    "webp": "/blog/images/cadeau-noel.webp",
+    "image": "/blog/images/jeux-cartes-reveillon.jpg",
+    "webp": "/blog/images/jeux-cartes-reveillon.webp",
     "gameCount": 7,
     "related": [
       "cadeau-noel",

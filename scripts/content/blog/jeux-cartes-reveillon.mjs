@@ -8,8 +8,8 @@ export default {
   date: `2026-11-18`,
   heroTitle: `Jeux de cartes pour <span class="accent">le réveillon</span>`,
   heroSubtitle: `Sept jeux, trois moments de la soirée : l’apéritif qui s’étire, l’attente de minuit, la table qui déborde.`,
-  heroImage: "/blog/images/cadeau-noel.jpg",
-  heroCaption: "Illustration créée pour KYRAN : une cheminée de Noël, six bas suspendus et des boîtes de jeux près du sapin (visuels officiels de Codenames, The Crew, Hanabi, Dixit, Timeline et Lost Cities, © Iello / Czech Games Edition, Iello / Kosmos, Cocktail Games / Abacusspiele, Libellud, Asmodee).",
+  heroImage: '/blog/images/jeux-cartes-reveillon.jpg',
+  heroCaption: "Illustration créée pour KYRAN : l'horloge à minuit au milieu des feux d'artifice, avec un éventail de cartes et quatre flûtes posés sur la table du réveillon.",
   layout: {
     shopLinks: true,
     compare: false,

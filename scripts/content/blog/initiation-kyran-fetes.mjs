@@ -20,8 +20,8 @@ export default {
   date: '2026-11-26',
   heroTitle: 'S’entraîner à KYRAN <span class="accent">avant le repas de Noël</span>',
   heroSubtitle: 'Sept rites en ligne pour connaître le pli, le pari et les cartes Pouvoir avant d’ouvrir la boîte devant toute la famille.',
-  heroImage: '/blog/images/cadeau-noel.jpg',
-  heroCaption: 'Illustration créée pour KYRAN : une cheminée de Noël, six bas suspendus et des boîtes de jeux près du sapin.',
+  heroImage: '/blog/images/initiation-kyran-fetes.jpg',
+  heroCaption: "Illustration créée pour KYRAN : un escalier de sept marches, marquées de un à sept points, avec une carte de couleur sur chacune et un éventail de cartes au sommet, devant un soleil levant.",
   intro: `<p><strong>Le plus gênant, le soir de Noël, c’est d’être celui qui doit expliquer un jeu qu’il n’a jamais essayé.</strong> Pour KYRAN, il existe un moyen simple de s’en dispenser : l’Initiation, une série de sept courts rites jouables dans le navigateur, guidés par un devin du Fa, qui mènent d’un premier pli à une vraie partie contre trois adversaires pilotés par l’ordinateur. Cette page détaille ce que chaque rite apprend, dans quel ordre les passer, et comment s’y prendre pour que la tablée suive dès la première partie. Tout ce qui est décrit ici a été relevé sur la page de l’Initiation et dans la règle publiée sur ce site.</p>`,
   keyPoints: {
     html: `<ul><li>L’Initiation compte sept rites : le pli, le pari, la règle d’or, la carte Mystique, les cartes Pouvoir, la manche Mystique et l’épreuve des Anciens (${a(MINIJEU, 'page de l’Initiation')}).</li><li>Elle se termine par une vraie partie contre trois adversaires, avec toutes les règles.</li><li>Le principe du pari se vérifie en un quart d’heure environ, d’après la page de l’Initiation.</li><li>KYRAN se joue de 3 à 6 joueurs, dès 8 ans, avec des parties de 30 minutes au plus, à 9,99 € (${a(COMMANDER, 'page d’achat')}).</li><li>Pour une livraison avant Noël, la commande en ligne doit partir avant le 16 décembre (${a(CADEAU, 'idée cadeau')}).</li></ul>`

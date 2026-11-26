@@ -8,8 +8,8 @@ export default {
   date: `2026-11-25`,
   heroTitle: `Apprendre un jeu de cartes <span class="accent">en famille</span> pendant les fêtes`,
   heroSubtitle: `Cinq jeux qui s’expliquent vite, et une méthode pour que les enfants comme les grands-parents suivent dès la première partie.`,
-  heroImage: "/blog/images/cadeau-noel.jpg",
-  heroCaption: "Illustration créée pour KYRAN : une cheminée de Noël, six bas suspendus et des boîtes de jeux près du sapin (visuels officiels de Codenames, The Crew, Hanabi, Dixit, Timeline et Lost Cities, © Iello / Czech Games Edition, Iello / Kosmos, Cocktail Games / Abacusspiele, Libellud, Asmodee).",
+  heroImage: '/blog/images/apprendre-jeu-cartes-fetes.jpg',
+  heroCaption: "Illustration créée pour KYRAN : une tablée de six personnes vue de dessus autour d'une table ronde, avec cinq paquets de cartes de couleurs différentes au centre, sous une guirlande de fanions et près des sapins de Noël.",
   layout: {
     shopLinks: true,
     compare: false,

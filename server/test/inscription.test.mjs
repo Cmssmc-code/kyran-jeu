@@ -15,7 +15,11 @@ import {
   createBrevoClient,
   inscriptionToken,
   CONSENT_TEXT,
-  RETENTION_MS
+  RETENTION_MS,
+  CONCOURS,
+  CONCOURS_CONSENT_TEXT,
+  concoursEtat,
+  cleanPrenom
 } from '../inscriptions.js';
 import { renderInscriptionEmail, INSCRIPTION_LINKS } from '../templates.js';
 
@@ -103,6 +107,45 @@ test('mail de confirmation : règle en PDF, liens kyran-jeu.fr en clair, désins
   assert.ok(fs.existsSync(path.resolve(__dirname, '../../regle-kyran.pdf')), 'le PDF de la règle existe dans le dépôt');
 });
 
+test('concours : dates de Paris, prénom, une participation par adresse, accord facultatif, désinscription', () => {
+  assert.equal(CONCOURS.debut, Date.parse('2026-12-04T18:30:00+01:00'));
+  assert.equal(CONCOURS.fin, Date.parse('2026-12-14T00:00:00+01:00'));
+  assert.equal(concoursEtat(CONCOURS.debut - 1), 'avant');
+  assert.equal(concoursEtat(CONCOURS.debut), 'ouvert');
+  assert.equal(concoursEtat(Date.parse('2026-12-13T23:59:59+01:00')), 'ouvert');
+  assert.equal(concoursEtat(CONCOURS.fin), 'ferme');
+  assert.equal(cleanPrenom('  Anne-Sophie  '), 'Anne-Sophie');
+  assert.equal(cleanPrenom("Zoé d'Arc"), "Zoé d'Arc");
+  for (const bad of ['', '   ', '<b>', 'x'.repeat(41), '1abc', 'a@b', null, 3]) assert.equal(cleanPrenom(bad), null, String(bad));
+
+  const store = createInscriptionStore({ secret: 's' });
+  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Léa', accord: true }, 1000), 'created');
+  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Autre', accord: false }, 2000), 'deja');
+  assert.equal(store.upsert({ email: 'b@example.com', source: 'concours-noel', prenom: 'Tom', accord: false }, 3000), 'created');
+  store.upsert({ email: 'a@example.com', source: 'site' }, 4000);
+  const [a, b] = store.list().filter(e => e.source === 'concours-noel');
+  assert.deepEqual([a.prenom, a.accord, a.consentement, a.date], ['Léa', true, CONCOURS_CONSENT_TEXT, new Date(1000).toISOString()]);
+  assert.deepEqual([b.prenom, b.accord, b.consentement], ['Tom', false, '']);
+  // Désinscription : l'inscription « site » part, la participation reste, sans accord.
+  assert.deepEqual(store.unsubscribe(inscriptionToken('s', 'a@example.com')), ['a@example.com']);
+  assert.deepEqual(store.list().map(e => [e.email, e.source, e.accord]), [['a@example.com', 'concours-noel', false], ['b@example.com', 'concours-noel', false]]);
+  // Après le 31/12, les participations sans accord sont effacées.
+  assert.equal(store.purge(CONCOURS.effacement - 1), 0);
+  assert.equal(store.purge(CONCOURS.effacement), 2);
+});
+
+test('mail du concours : prénom échappé, règlement, désinscription, mots interdits absents', () => {
+  const unsub = 'https://kyran-webhook-production.up.railway.app/inscription/desinscription?t=abc';
+  for (const accord of [true, false]) {
+    const { html, text } = renderInscriptionEmail({ source: 'concours-noel', prenom: 'Léa<b>', accord, unsubscribeUrl: unsub });
+    assert.ok(html.includes(unsub) && text.includes(unsub));
+    assert.ok(html.includes(INSCRIPTION_LINKS.concours) && text.includes(INSCRIPTION_LINKS.concours));
+    assert.ok(html.includes('Léa&lt;b&gt;') && !html.includes('Léa<b>'));
+    assert.equal(text.includes('nouvelles de KYRAN'), accord);
+    assert.doesNotMatch(html + text, /gratuit|offert|démo|bit\.ly|tinyurl|sur place/i);
+  }
+});
+
 // --- Serveur complet, Brevo simulé ---
 let child;
 let brevoServer;
@@ -126,6 +169,7 @@ before(async () => {
         PATH: process.env.PATH, PORT, ADMIN_SECRET: ADMIN, INSCRIPTION_SECRET: SECRET, INSCRIPTIONS_FILE: FILE,
         REVIEW_REQUESTS_FILE: path.join(tmp, 'avis.json'), INCIDENTS_FILE: path.join(tmp, 'incidents.json'),
         STRIPE_EVENTS_FILE: path.join(tmp, 'events.json'),
+        CONCOURS_DEBUT: '2020-01-01T00:00:00Z', CONCOURS_FIN: '2099-01-01T00:00:00Z',
         BREVO_API_KEY: 'cle-brevo-test', BREVO_LIST_ID: '12', BREVO_API_BASE: `http://127.0.0.1:${BREVO_PORT}`
       },
       stdio: ['ignore', 'pipe', 'pipe']
@@ -247,4 +291,35 @@ test('serveur : limite de 10 inscriptions par IP et par heure', async () => {
   let last;
   for (let i = 0; i < 11; i++) last = await inscrire({ ...valid, email: `rafale${i}@example.com` }, { ip: '10.9.9.9' });
   assert.equal(last.status, 429);
+});
+
+test('serveur : concours (prénom obligatoire, accord facultatif, doublon ignoré, Brevo seulement avec accord, export CSV)', async () => {
+  const base = { email: 'gagnant@example.com', source: 'concours-noel', prenom: 'Léa' };
+  assert.equal((await inscrire({ ...base, prenom: '' })).status, 400);
+  assert.equal((await inscrire({ ...base, prenom: '<script>' })).status, 400);
+  const before = brevoCalls.length;
+  const r1 = await inscrire(base);
+  assert.deepEqual(await r1.json(), { ok: true, statut: 'created' });
+  assert.deepEqual(await (await inscrire({ ...base, consentement: true, prenom: 'Autre' })).json(), { ok: true, statut: 'deja' });
+  await inscrire({ email: 'ami@example.com', source: 'concours-noel', prenom: 'Tom', consentement: true });
+  await wait(150);
+  const rows = readFile().filter(e => e.source === 'concours-noel');
+  assert.deepEqual(rows.map(e => [e.email, e.prenom, e.accord]), [['gagnant@example.com', 'Léa', false], ['ami@example.com', 'Tom', true]]);
+  const adds = brevoCalls.slice(before).filter(c => c.url === '/v3/contacts');
+  assert.deepEqual(adds.map(c => c.body.email), ['ami@example.com']);
+  assert.equal(adds[0].body.attributes.PRENOM, 'Tom');
+  assert.match(logs, /Votre participation au concours de Noël KYRAN/);
+
+  const auth = { headers: { Authorization: `Bearer ${ADMIN}` } };
+  assert.equal((await fetch(BASE + '/api/inscriptions?source=concours-noel')).status, 401);
+  assert.equal((await fetch(BASE + '/api/inscriptions?source=autre', auth)).status, 400);
+  const json = await (await fetch(BASE + '/api/inscriptions?source=concours-noel', auth)).json();
+  assert.equal(json.total, 2);
+  assert.equal(json.avecAccord, 1);
+  const csv = await fetch(BASE + '/api/inscriptions?source=concours-noel&format=csv', auth);
+  assert.match(csv.headers.get('content-type'), /text\/csv/);
+  const lines = (await csv.text()).replace(/^\ufeff/, '').trim().split('\r\n');
+  assert.equal(lines[0], 'prenom;email;accord;date');
+  assert.match(lines[1], /^"Léa";"gagnant@example\.com";"non";"\d{4}-/);
+  assert.equal(lines.length, 3);
 });

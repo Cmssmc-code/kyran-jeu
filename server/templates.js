@@ -558,10 +558,49 @@ ${unsubHref ? `\nVous recevez ce mail une seule fois. Ne plus recevoir de demand
 export const INSCRIPTION_LINKS = Object.freeze({
   regle: 'https://kyran-jeu.fr/regle-kyran.pdf',
   avent: 'https://kyran-jeu.fr/avent.html',
-  confidentialite: 'https://kyran-jeu.fr/confidentialite.html'
+  confidentialite: 'https://kyran-jeu.fr/confidentialite.html',
+  concours: 'https://kyran-jeu.fr/concours-noel.html'
 });
 
-export function renderInscriptionEmail({ source = 'site', unsubscribeUrl = '' }) {
+/** Confirmation de participation au concours de Noël (lien de désinscription dans tous les cas). */
+function renderConcoursEmail({ prenom = '', accord = false, unsubscribeUrl = '' }) {
+  const unsubHref = safeUrl(unsubscribeUrl);
+  const bonjour = prenom ? `Bonjour ${prenom},` : 'Bonjour,';
+  const p = txt => `<p style="margin: 0 0 14px 0; font-size: 14px; color: #475569; line-height: 1.6;">${txt}</p>`;
+  const nouvelles = accord
+    ? 'Vous recevrez aussi les nouvelles de KYRAN, un mail par semaine au plus.'
+    : 'Vous ne recevrez pas d’autre mail de notre part, sauf si vous êtes tiré au sort.';
+  const contentHtml = `
+    <h1 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: #0f172a; line-height: 1.3;">
+      Votre participation est enregistrée
+    </h1>
+    ${p(`${esc(bonjour)} merci pour votre participation au concours de Noël KYRAN. Le tirage au sort a lieu le 14 décembre 2026&nbsp;; si vous gagnez, nous vous écrivons le jour même depuis kyran.jeu@gmail.com.`)}
+    ${p(esc(nouvelles))}
+    ${p(`Le règlement&nbsp;: <a href="${esc(INSCRIPTION_LINKS.concours)}" style="color: #0f172a; text-decoration: underline;" target="_blank">${esc(INSCRIPTION_LINKS.concours)}</a>`)}
+    <p style="margin: 0; font-size: 14px; color: #0f172a;">Corentin, auteur de KYRAN</p>
+
+    ${unsubHref ? `<div style="margin-top: 24px; font-size: 11px; color: #94a3b8;">Vous recevez ce mail parce que cette adresse a été inscrite au concours sur kyran-jeu.fr. <a href="${esc(unsubHref)}" style="color: #94a3b8; text-decoration: underline;">Se désinscrire en un clic</a> (la participation au tirage reste valable).</div>` : ''}
+  `;
+  const html = baseLayout({
+    title: 'Concours de Noël KYRAN',
+    previewText: 'Votre participation au concours de Noël KYRAN est enregistrée. Tirage le 14 décembre.',
+    contentHtml
+  });
+  const text = `${bonjour}
+
+Merci pour votre participation au concours de Noël KYRAN. Le tirage au sort a lieu le 14 décembre 2026 ; si vous gagnez, nous vous écrivons le jour même depuis kyran.jeu@gmail.com.
+
+${nouvelles}
+
+Le règlement : ${INSCRIPTION_LINKS.concours}
+
+Corentin, auteur de KYRAN
+${unsubHref ? `\nSe désinscrire en un clic (la participation au tirage reste valable) : ${unsubHref}\n` : ''}`;
+  return { html, text };
+}
+
+export function renderInscriptionEmail({ source = 'site', unsubscribeUrl = '', prenom = '', accord = false }) {
+  if (source === 'concours-noel') return renderConcoursEmail({ prenom, accord, unsubscribeUrl });
   const unsubHref = safeUrl(unsubscribeUrl);
   const avent = source === 'avent';
   const link = href => `<a href="${esc(href)}" style="color: #0f172a; text-decoration: underline; word-break: break-all;" target="_blank">${esc(href)}</a>`;

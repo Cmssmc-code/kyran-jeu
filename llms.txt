@@ -104,7 +104,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 46 guides
+## Blog — 49 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -131,12 +131,15 @@
 
 ## Blog : Cadeaux
 
+- [Idées cadeaux jeu de cartes : 7 jeux selon la personne à qui l’offrir](https://kyran-jeu.fr/blog/idees-cadeaux-jeu-de-cartes.html): 7 jeux comparés
 - [Idée cadeau à moins de 10 euros : 6 jeux de cartes qui tiennent le budget](https://kyran-jeu.fr/blog/cadeau-moins-de-10-euros.html): 6 jeux comparés
 - [Jeux de cartes à offrir à Noël : 7 idées selon le destinataire](https://kyran-jeu.fr/blog/cadeau-noel.html): 7 jeux comparés
 - [Jeux de cartes à offrir pour un anniversaire : 9 idées, du petit prix au cadeau marquant](https://kyran-jeu.fr/blog/cadeau-anniversaire.html): 9 jeux comparés
 
 ## Blog : Cartes
 
+- [Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre](https://kyran-jeu.fr/blog/meilleurs-jeux-de-cartes-2026.html): 8 jeux comparés
+- [Jeux de société pas chers : 6 jeux de cartes à moins de 15 euros, le coût par joueur calculé](https://kyran-jeu.fr/blog/jeux-de-societe-pas-chers.html): 6 jeux comparés
 - [Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources](https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html)
 - [Prix des jeux de cartes : 22 jeux relevés dans 4 boutiques avant le Black Friday 2026](https://kyran-jeu.fr/blog/prix-jeux-de-cartes-releve.html)
 - [Jeux de cartes à jouer seul : 5 jeux solo et la patience, prix du 2 novembre 2026](https://kyran-jeu.fr/blog/jeux-cartes-solo.html): 5 jeux comparés

@@ -3,7 +3,7 @@ export default {
   "title": "Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche",
   "shortTitle": "Jeux de cartes enfants 8 ans",
   "metaTitle": "Jeux de cartes pour enfants de 8 ans : 7 idées en famille",
-  "description": "Sept jeux de cartes jouables par un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.",
+  "description": "Sept jeux de cartes pour un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.",
   "category": "Famille",
   "date": "2026-11-26",
   "heroTitle": "<span class=\"accent\">Jeux de cartes pour enfants de 8 ans</span> : sept boîtes à partager",

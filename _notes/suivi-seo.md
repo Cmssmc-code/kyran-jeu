@@ -10,6 +10,20 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-27 : run quotidien n° 34 (vendredi)
+
+**Verdict : En progrès.**
+
+- **Google** (19 → 24/11, 6 jours complets ; 25 et 26/11 provisoires) : 90 clics, 2 474 impressions, contre 52 clics et 2 490 impressions du 12 au 18/11 (7 jours) : environ 15 clics par jour contre 7. Position moyenne autour de 7,5. Hausses nettes : `alternatives-uno` (8 clics, position 6,7), `jeux-comme-6-qui-prend`, `jeux-comme-codenames`, `jeux-coop-cartes` (position 8,3 → 4,5). `kpi-quotidiens.csv` et `mouvements.json` mis à jour.
+- **Bing** (25/11) : 1 clic, 65 impressions, 72 pages indexées, 0 erreur de crawl.
+- **Santé** (`seo-health.py --inspect 30 --psi`) : 76 URL au sitemap, 68 en 200 sur l'échantillon contrôlé, 0 `noindex`, 0 canonical faux, JSON-LD valide, TTFB médian 141 ms, PageSpeed mobile accueil 96, 27 pages indexées sur 30 inspectées. 3 anomalies de longueur : titre de 66 caractères sur `blog/jeux-cartes-adultes` (verrouillé jusqu'au 07/12), et deux descriptions trop longues, corrigées (voir Action).
+- **Indexation** : indexeur passé, rapport du 26/11 lu ; 3 pages nouvellement indexées, 7 encore hors index. Demandes Google faites à la main dans la Search Console (profil kyran) : `ou-acheter`, `blog/meilleurs-jeux-de-cartes-2026`, `blog/nouveaux-jeux-de-cartes-2027`, `blog/idees-cadeaux-jeu-de-cartes` (confirmées et enregistrées par `mark-requested`). `blog/jeux-cartes-enfants-8-ans` : le test d'URL active est resté bloqué plus de six minutes chez Google, demande annulée sans réessai ; `jeux-cartes-originaux` et `jeux-de-societe-pas-chers` non tentées. À refaire demain (l'indexeur les remontera).
+- **GEO** : vendredi, pas de mesure (dernière : 26/11). Questions à 0 sur les deux dernières mesures : 1, 3, 13, 15, 16, 17, 19, 20 ; action dédiée à planifier lundi.
+- **Action** (piste 4, correctif technique) : deux descriptions de pages créées les 25 et 26/11 dépassaient les 160 caractères (risque de coupure dans les résultats) : `quel-pli-gagne.html` (164 → 160) et `blog/jeux-cartes-enfants-8-ans` (163 → 155). Pages jamais indexées, sans historique de classement : la règle des 28 jours n'a rien à protéger ici, mais elle est notée au journal des titres (réévaluation le 25/12). Aucun titre touché.
+- **Écarté, avec preuve** : `regle.html` (section `#annonce-nombre-de-plis` et titre déjà alignés), `jeux-comme-dixit` (FAQ contient déjà « jeu comme Dixit »), `jeux-cartes-solo` et `jeux-cartes-4-joueurs` (réponse directe et FAQ de 6 questions déjà là).
+- **À surveiller** : « tarot africain règle » (1 387 impressions, 2 clics, position 6,0), description verrouillée jusqu'au 08/12 ; mesures P2 du backlog aux 01, 02, 03, 14 et 15/12.
+- **Doc partagé** : voir `rev` indiqué en fin de passage (mise à jour légère).
+
 ### 2026-11-26 (nuit) : contrôle technique des 24 pages cibles t101 (directeur technique)
 
 - Contrôlé : vitesse (images, scripts), JSON-LD (BlogPosting, FAQPage, ItemList), liens internes et 98 liens externes, lien vers l'accueil.

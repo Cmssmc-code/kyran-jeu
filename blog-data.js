@@ -24,7 +24,7 @@ const BLOG_ITEMS = [
     "category": "Famille",
     "date": "2026-11-26",
     "readMinutes": 9,
-    "excerpt": "Sept jeux de cartes jouables par un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.",
+    "excerpt": "Sept jeux de cartes pour un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.",
     "image": "/blog/images/jeux-cartes-enfants-8-ans.jpg",
     "webp": "/blog/images/jeux-cartes-enfants-8-ans.webp",
     "gameCount": 7,

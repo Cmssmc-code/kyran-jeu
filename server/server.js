@@ -25,7 +25,9 @@ import {
   normalizeEmail,
   cleanUtm,
   isTokenShape,
-  SOURCES as INSCRIPTION_SOURCES
+  SOURCES as INSCRIPTION_SOURCES,
+  CONCOURS,
+  cleanPrenom
 } from './inscriptions.js';
 
 const PORT = process.env.PORT || 3000;
@@ -52,6 +54,9 @@ const inscriptions = createInscriptionStore({
   secret: process.env.INSCRIPTION_SECRET || process.env.REVIEW_UNSUB_SECRET || STRIPE_WEBHOOK_SECRET || ADMIN_SECRET
 });
 const brevo = createBrevoClient(process.env);
+// Fenêtre d'inscription au concours de Noël ; CONCOURS_DEBUT / CONCOURS_FIN (ISO) servent aux tests.
+const CONCOURS_DEBUT = Date.parse(process.env.CONCOURS_DEBUT || '') || CONCOURS.debut;
+const CONCOURS_FIN = Date.parse(process.env.CONCOURS_FIN || '') || CONCOURS.fin;
 
 // Tolérance sur l'horodatage de signature Stripe (valeur par défaut des SDK Stripe)
 const STRIPE_TOLERANCE_SECONDS = 300;
@@ -648,6 +653,19 @@ const server = http.createServer((req, res) => {
     const parSource = Object.fromEntries(INSCRIPTION_SOURCES.map(s => [s, list.filter(e => e.source === s).length]));
     const adresses = new Set(list.map(e => e.email)).size;
     if (url.searchParams.get('compte') === '1') return sendJson(res, 200, { total: list.length, adresses, parSource });
+    // Concours de Noël : ?source=concours-noel (JSON) et &format=csv (prénom, email, accord, date).
+    const source = url.searchParams.get('source');
+    if (source) {
+      if (!INSCRIPTION_SOURCES.includes(source)) return sendJson(res, 400, { error: 'Source inconnue' });
+      const rows = list.filter(e => e.source === source);
+      if (url.searchParams.get('format') === 'csv') {
+        const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+        const csv = ['prenom;email;accord;date', ...rows.map(e => [e.prenom, e.email, e.accord ? 'oui' : 'non', e.date].map(cell).join(';'))].join('\r\n');
+        res.writeHead(200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="${source}.csv"` });
+        return res.end('\ufeff' + csv + '\r\n');
+      }
+      return sendJson(res, 200, { source, total: rows.length, avecAccord: rows.filter(e => e.accord).length, inscriptions: rows });
+    }
     return sendJson(res, 200, { total: list.length, adresses, parSource, inscriptions: list });
   }
 
@@ -831,15 +849,27 @@ async function handleInscription(req, res) {
   if (!email) return sendJson(res, 400, { error: 'Adresse e-mail invalide' });
   const source = typeof data.source === 'string' ? data.source : '';
   if (!INSCRIPTION_SOURCES.includes(source)) return sendJson(res, 400, { error: 'Source inconnue' });
-  if (data.consentement !== true) return sendJson(res, 400, { error: 'Accord obligatoire' });
+  const concours = source === CONCOURS.source;
+  let prenom = '';
+  if (concours) {
+    const now = Date.now();
+    if (now < CONCOURS_DEBUT) return sendJson(res, 403, { error: 'Les inscriptions ouvrent le 4 décembre à 18h30.' });
+    if (now >= CONCOURS_FIN) return sendJson(res, 403, { error: 'Le concours est terminé depuis le 13 décembre à 23h59.' });
+    prenom = cleanPrenom(data.prenom);
+    if (!prenom) return sendJson(res, 400, { error: 'Prénom invalide' });
+  } else if (data.consentement !== true) {
+    return sendJson(res, 400, { error: 'Accord obligatoire' });
+  }
+  const accord = concours ? data.consentement === true : true;
 
   inscriptions.purge();
-  const statut = inscriptions.upsert({ email, source, utm: cleanUtm(data.utm) });
+  const statut = inscriptions.upsert({ email, source, utm: cleanUtm(data.utm), prenom, accord });
+  if (statut === 'deja') return sendJson(res, 200, { ok: true, statut });
   console.log(`[Inscription] ${statut === 'created' ? 'Nouvelle inscription' : 'Inscription mise à jour'} (source ${source}).`);
 
-  if (brevo) {
+  if (brevo && accord) {
     try {
-      await brevo.addContact(email, source);
+      await brevo.addContact(email, source, prenom);
     } catch (err) {
       console.error('[Inscription] Brevo en échec (le fichier suffit) :', err.message);
       recordServerIncident(err, { path: '/api/inscription', errorCode: 'BREVO_CONTACT', httpStatus: 502 });
@@ -851,9 +881,12 @@ async function handleInscription(req, res) {
     try {
       const { html, text } = renderInscriptionEmail({
         source,
+        prenom,
+        accord,
         unsubscribeUrl: `${PUBLIC_BASE_URL}/inscription/desinscription?t=${inscriptions.tokenFor(email)}`
       });
-      await sendEmail({ to: email, subject: 'La règle du jeu KYRAN en PDF', html, text });
+      const subject = concours ? 'Votre participation au concours de Noël KYRAN' : 'La règle du jeu KYRAN en PDF';
+      await sendEmail({ to: email, subject, html, text });
     } catch (err) {
       console.error('[Inscription] Mail de confirmation non envoyé :', err.message);
       recordServerIncident(err, { path: '/api/inscription', errorCode: 'INSCRIPTION_MAIL', httpStatus: 502 });

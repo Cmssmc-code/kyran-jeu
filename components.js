@@ -250,12 +250,19 @@ function whenParsed(callback) {
 // (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre) ; du 17 au 24 décembre,
 // il propose la remise en main propre, puis reprend son texte normal. Fait au chargement,
 // car le HTML prérendu ne doit pas dépendre de la date du build.
+var CONCOURS_BANDEAU = { debut: Date.parse('2026-12-04T17:30:00Z'), fin: Date.parse('2026-12-14T23:00:00Z') };
+
 function initNoelAnnouncement() {
   var now = new Date();
   var y = now.getFullYear();
   if (now < new Date(y, 10, 1) || now >= new Date(y, 11, 25)) return;
   var text = document.querySelector('.announcement-text');
   if (!text) return;
+  // Concours de Noël (04/12 18h30 → 14/12 inclus) : le bandeau mène au règlement et à l'inscription.
+  if (now.getTime() >= CONCOURS_BANDEAU.debut && now.getTime() < CONCOURS_BANDEAU.fin) {
+    text.innerHTML = '<a href="/concours-noel.html" style="color:inherit"><strong>5 jeux KYRAN à gagner</strong> sur Instagram, TikTok et par mail<span class="announcement-extra">, jusqu’au 13&nbsp;décembre</span></a>';
+    return;
+  }
   if (now <= new Date(y, 11, 16, 23, 59)) {
     text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
   } else {
@@ -1132,9 +1139,10 @@ if (typeof document !== 'undefined') whenParsed(initPurchaseChoice);
 // les robots. Avec festival-only, le bloc n'apparaît qu'aux visiteurs venus du QR (repère kyranFestival).
 // Événement GA4 : inscription_mail (paramètre source). Défini ici, après FESTIVAL_KEY (initialisé plus haut).
 const INSCRIPTION_API = 'https://kyran-webhook-production.up.railway.app/api/inscription';
-const INSCRIPTION_SOURCES = ['festival-qr', 'avent', 'site'];
+const INSCRIPTION_SOURCES = ['festival-qr', 'avent', 'site', 'concours-noel'];
 const UTM_KEY = 'kyranUtm';
 const INSCRIPTION_ACCORD = "J'accepte de recevoir par mail la règle et les nouvelles de KYRAN (un mail par semaine au plus). Désinscription en un clic.";
+const CONCOURS_ACCORD = 'Je veux recevoir les nouvelles de KYRAN par mail (un mail par semaine au plus). Désinscription en un clic.';
 
 function visitUtm() {
   const utm = {};
@@ -1160,6 +1168,7 @@ function styleInscription() {
     '.inscription-mail h2{font-size:1.2rem;margin:0 0 6px;line-height:1.25;}',
     '.inscription-mail p{margin:0 0 10px;}',
     '.inscription-mail__ligne{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;}',
+    '.inscription-mail__ligne input[type=text]{flex:1 1 220px;min-height:46px;border:2px solid var(--k-ink);border-radius:12px;padding:0 12px;font:inherit;background:#fff;color:var(--k-ink);}',
     '.inscription-mail__ligne input[type=email]{flex:1 1 220px;min-height:46px;border:2px solid var(--k-ink);border-radius:12px;padding:0 12px;font:inherit;background:#fff;color:var(--k-ink);}',
     '.inscription-mail__ligne .btn{flex:0 0 auto;min-height:46px;}',
     '.inscription-mail__accord{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;line-height:1.4;margin:0 0 6px;}',
@@ -1179,20 +1188,28 @@ class KyranInscription extends HTMLElement {
     this.dataset.rendu = '1';
     styleInscription();
     const uid = 'inscription-' + source;
+    const concours = source === 'concours-noel';
     const titre = this.getAttribute('titre') || 'Recevez la règle du jeu en PDF par mail';
     const texte = this.getAttribute('texte') || '';
     this.innerHTML =
       '<form class="inscription-mail" novalidate>' +
       '<h2>' + titre + '</h2>' +
       (texte ? '<p>' + texte + '</p>' : '') +
+      (concours
+        ? '<div class="inscription-mail__ligne">' +
+          '<label class="sr-only" for="' + uid + '-prenom">Votre prénom</label>' +
+          '<input id="' + uid + '-prenom" type="text" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required maxlength="40">' +
+          '</div>'
+        : '') +
       '<div class="inscription-mail__ligne">' +
       '<label class="sr-only" for="' + uid + '-email">Votre adresse mail</label>' +
       '<input id="' + uid + '-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Votre adresse mail" required maxlength="254">' +
-      '<button type="submit" class="btn btn-primary">Recevoir</button>' +
+      '<button type="submit" class="btn btn-primary">' + (concours ? 'Participer' : 'Recevoir') + '</button>' +
       '</div>' +
       '<div class="inscription-mail__piege" aria-hidden="true"><label>Site web <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>' +
-      '<label class="inscription-mail__accord"><input type="checkbox" name="accord" required>' +
-      '<span>' + INSCRIPTION_ACCORD + ' <a href="/confidentialite.html#inscription-mail">Politique de confidentialité</a></span></label>' +
+      '<label class="inscription-mail__accord"><input type="checkbox" name="accord"' + (concours ? '' : ' required') + '>' +
+      '<span>' + (concours ? CONCOURS_ACCORD + ' Facultatif&nbsp;: la participation compte sans.' : INSCRIPTION_ACCORD) +
+      ' <a href="/confidentialite.html#inscription-mail">Politique de confidentialité</a></span></label>' +
       '<p class="inscription-mail__etat" role="status" aria-live="polite"></p>' +
       '</form>';
     const form = this.querySelector('form');
@@ -1205,22 +1222,35 @@ class KyranInscription extends HTMLElement {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const email = form.elements.email.value.trim();
+      const prenom = concours ? form.elements.prenom.value.trim() : '';
+      if (concours && !prenom) return dire('Indiquez votre prénom.', true);
       if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) return dire('Vérifiez votre adresse mail.', true);
-      if (!form.elements.accord.checked) return dire('Cochez la case d’accord pour recevoir les mails.', true);
+      if (!concours && !form.elements.accord.checked) return dire('Cochez la case d’accord pour recevoir les mails.', true);
       bouton.disabled = true;
       dire('Envoi…');
+      const corps = { email: email, source: source, consentement: form.elements.accord.checked, utm: visitUtm(), site_web: form.elements.site_web.value };
+      if (concours) corps.prenom = prenom;
       fetch(INSCRIPTION_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, source: source, consentement: true, utm: visitUtm(), site_web: form.elements.site_web.value })
+        body: JSON.stringify(corps)
       }).then(function (res) {
-        if (!res.ok) throw new Error(String(res.status));
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          // Concours : le serveur explique les refus (dates, prénom) ; on affiche son message.
+          if (!res.ok) throw new Error(concours && res.status < 500 && data.error ? data.error : '');
+          return data;
+        });
+      }).then(function (data) {
         trackAchat('inscription_mail', { source: source, festival: isFestivalVisitor() ? '1' : '0' });
-        form.innerHTML = '<h2>C’est noté&nbsp;!</h2><p>Un mail de confirmation part vers ' +
-          email.replace(/[<>&"]/g, '') + ', avec la règle du jeu KYRAN en PDF.</p>';
-      }).catch(function () {
+        const adresse = email.replace(/[<>&"]/g, '');
+        form.innerHTML = concours
+          ? (data.statut === 'deja'
+            ? '<h2>Vous participez déjà&nbsp;!</h2><p>Cette adresse est déjà inscrite au concours. Une seule participation par adresse&nbsp;: rendez-vous au tirage du 14&nbsp;décembre.</p>'
+            : '<h2>C’est noté&nbsp;!</h2><p>Votre participation est enregistrée. Un mail de confirmation part vers ' + adresse + '. Tirage au sort le 14&nbsp;décembre.</p>')
+          : '<h2>C’est noté&nbsp;!</h2><p>Un mail de confirmation part vers ' + adresse + ', avec la règle du jeu KYRAN en PDF.</p>';
+      }).catch(function (err) {
         bouton.disabled = false;
-        dire('L’inscription n’a pas abouti. Réessayez dans un instant.', true);
+        dire(err && err.message ? err.message : 'L’inscription n’a pas abouti. Réessayez dans un instant.', true);
       });
     });
   }

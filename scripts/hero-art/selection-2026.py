@@ -162,8 +162,89 @@ def tirelire():
     return svg(b, seed=14)
 
 
+# ---------------------------------------------------------------- Nouveaux jeux : le calendrier ouvert
+def calendrier():
+    rnd = random.Random(2027)
+    b = f'<rect width="1920" height="1080" fill="{BLUE}"/>'
+    b += f'<rect width="1920" height="1080" fill="{INK}" opacity=".12"/>'
+    b += arcs(960, 600, 200, 1150, 70, stroke=CREAM, sw=4, op=.33)
+    for _ in range(60):
+        x, y = rnd.randint(30, 1890), rnd.randint(30, 1040)
+        c = rnd.choice([SAFH, CREAM, RED, ORANGE, GREEN])
+        if rnd.random() < .5:
+            b += f'<rect x="{x}" y="{y}" width="24" height="11" rx="3" fill="{c}" transform="rotate({rnd.randint(0, 180)} {x} {y})"/>'
+        else:
+            b += star(x, y, rnd.choice([9, 13, 17]), c, .95)
+    # cadre du calendrier
+    b += f'<rect x="380" y="150" width="1160" height="820" rx="24" fill="{TERRA}" stroke="{INK}" stroke-width="10"/>'
+    cols = [RED, GREEN, VIOLET, ORANGE, SAF, BLUE]
+    k = 0
+    for row in range(3):
+        for col in range(4):
+            x = 440 + col * 270
+            y = 210 + row * 250
+            b += f'<rect x="{x}" y="{y}" width="240" height="220" rx="12" fill="{CREAM}" stroke="{INK}" stroke-width="6"/>'
+            if (row + col) % 2 == 0:
+                # case ouverte : une carte en sort
+                b += f'<polygon points="{x},{y} {x + 70},{y + 20} {x + 70},{y + 200} {x},{y + 220}" fill="{cols[k % 6]}" stroke="{INK}" stroke-width="5"/>'
+                b += f'<g transform="translate({x + 150},{y + 120}) rotate({(-12, 8, -6, 14)[col]})">{card_back(110, 160, cols[(k + 2) % 6])}</g>'
+            else:
+                b += f'<rect x="{x + 20}" y="{y + 20}" width="200" height="180" rx="8" fill="{cols[k % 6]}" stroke="{INK}" stroke-width="5"/>'
+                b += star(x + 120, y + 110, 44, CREAM, .9)
+            k += 1
+    b += fan_flat(250, 1000, -8, 7, 12, 130, 190, cols)
+    b += fan_flat(1670, 1000, 8, 7, 12, 130, 190, cols[::-1])
+    return svg(b, seed=17)
+
+
+# ---------------------------------------------------------------- Enfants 8 ans : la table vue de dessus
+def table_famille():
+    rnd = random.Random(88)
+    b = f'<rect width="1920" height="1080" fill="{ORANGE}"/>'
+    b += f'<rect width="1920" height="1080" fill="{INK}" opacity=".08"/>'
+    b += arcs(960, 540, 200, 1150, 70, stroke=CREAM, sw=4, op=.35)
+    b += f'<circle cx="960" cy="540" r="410" fill="{TERRA}" stroke="{INK}" stroke-width="10"/>'
+    b += zig(960, 530, 410, 330, 28, fill=SAFH, stroke=INK, sw=5)
+    b += f'<circle cx="960" cy="530" r="260" fill="{CREAM}" stroke="{INK}" stroke-width="8"/>'
+    # pile centrale
+    for i in range(4):
+        b += f'<g transform="translate({940 + i * 10},{470 - i * 6}) rotate({-14 + i * 9})">{card_back(150, 220, [RED, BLUE, GREEN, VIOLET][i])}</g>'
+    # trois joueurs (tête vue de dessus + éventail), enfant plus petit en bas
+    people = [(960, 940, 0, 40, GREEN), (390, 530, 90, 56, BLUE), (1530, 530, -90, 56, VIOLET)]
+    for x, y, rot, r, c in people:
+        b += f'<g transform="translate({x},{y}) rotate({rot})">'
+        b += f'<ellipse cx="0" cy="40" rx="{r + 40}" ry="{r + 10}" fill="{c}" stroke="{INK}" stroke-width="7"/>'
+        b += f'<circle cx="0" cy="40" r="{r}" fill="{SAFH}" stroke="{INK}" stroke-width="7"/>'
+        b += f'<circle cx="-{r * 0.35:.0f}" cy="30" r="6" fill="{INK}"/><circle cx="{r * 0.35:.0f}" cy="30" r="6" fill="{INK}"/>'
+        b += f'<path d="M-{r * 0.4:.0f},58 q{r * 0.4:.0f},{r * 0.35:.0f} {r * 0.8:.0f},0" fill="none" stroke="{INK}" stroke-width="5" stroke-linecap="round"/>'
+        b += '</g>'
+    b += fan_flat(960, 740, 0, 5, 11, 100, 150, [RED, BLUE, GREEN, VIOLET, ORANGE])
+    b += f'<g transform="translate(640,530) rotate(90)">{fan_flat(0, 0, 0, 5, 11, 100, 150, [BLUE, SAF, RED, GREEN, VIOLET])}</g>'
+    b += f'<g transform="translate(1280,530) rotate(-90)">{fan_flat(0, 0, 0, 5, 11, 100, 150, [VIOLET, RED, SAF, BLUE, GREEN])}</g>'
+    for _ in range(18):
+        b += star(rnd.randint(40, 1880), rnd.choice([rnd.randint(40, 120), rnd.randint(980, 1040)]), rnd.choice([9, 13]), CREAM, .9)
+    return svg(b, seed=23)
+
+
+# ---------------------------------------------------------------- Jeux originaux : la carte retournée
+def retournee():
+    b = f'<rect width="1920" height="1080" fill="{TERRA}"/>'
+    b += f'<rect width="1920" height="1080" fill="{INK}" opacity=".12"/>'
+    b += arcs(960, 700, 220, 1150, 70, stroke=CREAM, sw=4, op=.33)
+    b += zig(960, 560, 520, 420, 26, fill=SAF, stroke=INK, sw=5)
+    cols = [RED, BLUE, GREEN, VIOLET, ORANGE, SAF, RED, BLUE, GREEN]
+    b += fan_flat(960, 900, 0, 9, 13, 190, 280, cols)
+    # carte retournée au centre : face visible, tête en bas
+    b += f'<g transform="translate(960,470) rotate(180)">{card_face_spade(230, 340)}</g>'
+    b += f'<circle cx="960" cy="470" r="250" fill="none" stroke="{CREAM}" stroke-width="8" stroke-dasharray="6 18" stroke-linecap="round"/>'
+    for sx, sy, sz in [(420, 260, 40), (1500, 240, 46), (330, 760, 30), (1600, 700, 34), (700, 150, 24), (1250, 140, 26)]:
+        b += star(sx, sy, sz, SAFH, .95)
+    return svg(b, seed=29)
+
+
 if __name__ == '__main__':
-    for name, fn in [('meilleurs-jeux-2026-podium', podium), ('idees-cadeaux-boite', cadeaux), ('jeux-pas-chers-tirelire', tirelire)]:
+    for name, fn in [('meilleurs-jeux-2026-podium', podium), ('idees-cadeaux-boite', cadeaux), ('jeux-pas-chers-tirelire', tirelire),
+                     ('nouveaux-jeux-de-cartes-2027', calendrier), ('jeux-cartes-enfants-8-ans', table_famille), ('jeux-cartes-originaux', retournee)]:
         with open(os.path.join(HERE, name + '.svg'), 'w', encoding='utf-8') as f:
             f.write(fn())
         print('écrit', name + '.svg')

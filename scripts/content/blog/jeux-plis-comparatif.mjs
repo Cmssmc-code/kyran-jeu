@@ -148,7 +148,7 @@ export default {
     heading: 'Notre avis tranché',
     html: `<p>Pour découvrir le genre sans rien dépenser, Oh Hell avec un jeu de cartes ordinaire est la solution la plus économique. Si vous voulez une boîte prête à jouer, Wizard est un choix naturel pour 3 à 6 joueurs, et KYRAN celui qui tient en trente minutes. The Crew convient si votre table n'aime pas perdre entre amis. Parade et 6 qui prend ! sont de bons jeux, mais n'en faites pas votre premier achat si ce que vous cherchez, ce sont de vrais plis : ils n'en ont pas.</p>`
   },
-  conclusion: `<p>Un jeu de plis se choisit moins sur sa réputation que sur trois paramètres : l'annonce, la taille de la table et la durée. Commencez par celui qui colle à votre groupe habituel, puis alternez avec une famille voisine pour changer de rythme. Pour aller plus loin dans le bluff, voyez les <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de bluff et de pari</a>.</p>`,
+  conclusion: `<p>Un jeu de plis se choisit moins sur sa réputation que sur trois paramètres : l'annonce, la taille de la table et la durée. Commencez par celui qui colle à votre groupe habituel, puis alternez avec une famille voisine pour changer de rythme. Pour aller plus loin dans le bluff, voyez les <a class="text-link" href="/blog/jeux-bluff-pari.html">jeux de bluff et de pari</a>. Notre propre <a class="text-link" href="/">jeu de cartes de plis et de paris</a>, KYRAN, est présenté sur l’accueil du site.</p>`,
   faq: [
     {
       q: 'Quel jeu de cartes permet d\'annoncer son nombre de plis ?',

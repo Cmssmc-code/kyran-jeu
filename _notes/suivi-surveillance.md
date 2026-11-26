@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-26 — passage planifié (04:07 UTC)
+
+État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas
+de gros problème. Rapport complet :
+[`docs/rapports/surveillance/2026-11-26.md`](../docs/rapports/surveillance/2026-11-26.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Achat | OK | parcours réel jusqu'à Stripe : 9,99 € + 2,99 € = 12,98 € |
+| Site | OK | 69 URL × 1280/390 px sans erreur ; bandeau de Noël juste du 10/12 au 26/12 |
+| Liens | réparé | 506 liens ; règle d'Odin (Helvetiq) 404 → copie Wayback (PR #347) ; Facebook, leboncoin, gusandco.net : bruit |
+| Serveur | OK | v1.12.0 ; 1 × 503 `/salle/statut` (voulu) |
+| Incidents | 0 | aucun en attente, aucun nouveau |
+| Workflows, code | OK | `main` vert ; 0 faille ; test de charge des salles vert |
+| Versions | à jour | `compatibility_date` 2026-11-26 |
+
+Réparation : PR #347. Aucun point ouvert.
+
 ## 2026-11-25 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

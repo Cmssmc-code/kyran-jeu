@@ -492,5 +492,14 @@
     "image": "/blog/images/panda-spin.jpg",
     "designer": "Carl Chudyk",
     "year": 2024
+  },
+  "faraway": {
+    "name": "Faraway",
+    "players": "2 à 6",
+    "duration": "~20 min",
+    "age": "10+",
+    "price": "~18 €",
+    "designer": "Johannes Goupy et Corentin Lebrat",
+    "year": 2023
   }
 }

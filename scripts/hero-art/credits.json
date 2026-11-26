@@ -492,5 +492,17 @@
  "initiation-kyran-fetes": {
   "assets": [],
   "legende": "Illustration créée pour KYRAN, sans visuel officiel : un escalier de sept marches, une carte de couleur sur chacune et un éventail de cartes au sommet. Source : fetes-2026.py."
+ },
+ "meilleurs-jeux-de-cartes-2026": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : un podium à trois marches surmonté d'un trophée, entre deux éventails de cartes aux dos colorés. Source : selection-2026.py."
+ },
+ "idees-cadeaux-jeu-de-cartes": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : une boîte-cadeau à ruban doré d'où jaillit un éventail de cartes, entourée de confettis et de petits paquets. Source : selection-2026.py."
+ },
+ "jeux-de-societe-pas-chers": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : un cochon tirelire posé sur un éventail de cartes, avec des pièces qui tombent par la fente. Source : selection-2026.py."
  }
 }

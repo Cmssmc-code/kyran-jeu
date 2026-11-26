@@ -4,6 +4,8 @@ Objectif (tâche t100, ordre du 26/11/2026) : au 31/12/2026, n°1 sur « kyran j
 et « kyran jeu de pli » sur les trois moteurs ; « kyran » dans le top 3 Google et Bing, 1re page Brave ;
 « tarot africain » de la position 9 à 5 ou mieux sur Google.
 
+Les 30 requêtes larges de la tâche t101 sont dans [`requetes-larges.md`](requetes-larges.md) et relevées par la même routine.
+
 Relevé refait chaque lundi par la routine « Kyran · Relevé des 3 moteurs » (Haiku), lignes ajoutées dans
 [`releve-moteurs.csv`](releve-moteurs.csv). Aucun titre de page retouché avant 28 jours (règle de Corentin).
 

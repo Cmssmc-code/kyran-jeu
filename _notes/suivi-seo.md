@@ -22,7 +22,7 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 - **Action** (piste 4, correctif technique) : deux descriptions de pages créées les 25 et 26/11 dépassaient les 160 caractères (risque de coupure dans les résultats) : `quel-pli-gagne.html` (164 → 160) et `blog/jeux-cartes-enfants-8-ans` (163 → 155). Pages jamais indexées, sans historique de classement : la règle des 28 jours n'a rien à protéger ici, mais elle est notée au journal des titres (réévaluation le 25/12). Aucun titre touché.
 - **Écarté, avec preuve** : `regle.html` (section `#annonce-nombre-de-plis` et titre déjà alignés), `jeux-comme-dixit` (FAQ contient déjà « jeu comme Dixit »), `jeux-cartes-solo` et `jeux-cartes-4-joueurs` (réponse directe et FAQ de 6 questions déjà là).
 - **À surveiller** : « tarot africain règle » (1 387 impressions, 2 clics, position 6,0), description verrouillée jusqu'au 08/12 ; mesures P2 du backlog aux 01, 02, 03, 14 et 15/12.
-- **Doc partagé** : voir `rev` indiqué en fin de passage (mise à jour légère).
+- **Doc partagé** : non mis à jour (lecture du document trop lourde pour une passe sans personne, comme le 26/11) ; le journal et la base du dépôt font foi. À reprendre au prochain run par ids.
 
 ### 2026-11-26 (nuit) : contrôle technique des 24 pages cibles t101 (directeur technique)
 

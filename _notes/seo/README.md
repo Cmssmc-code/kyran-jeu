@@ -14,6 +14,7 @@ personne qui doit comprendre ou améliorer le référencement du site.
 | Voir ce qui a été fait, nuit après nuit, et l'effet mesuré | [`../suivi-seo.md`](../suivi-seo.md) |
 | Lire les chiffres jour par jour (Google, Bing) | [`kpi-quotidiens.csv`](kpi-quotidiens.csv) |
 | Suivre les positions sur Google, Bing et Brave (10 requêtes, chaque lundi) | [`releve-moteurs.md`](releve-moteurs.md), [`releve-moteurs.csv`](releve-moteurs.csv) |
+| Viser les 30 requêtes larges (jeux de cartes 2026, Noël, apéro, pas cher…) et leur page cible | [`requetes-larges.md`](requetes-larges.md) |
 | Lire l'état technique du site en ligne, run après run | [`kpi-technique.csv`](kpi-technique.csv), détail du dernier relevé dans [`derniere-sante.json`](derniere-sante.json) |
 | Voir les pages et requêtes qui montent ou baissent (7 jours contre 7 jours) | [`mouvements.json`](mouvements.json) |
 | Suivre les liens entrants et les prises de contact | [`../outreach/cibles.md`](../outreach/cibles.md) (modèles : [`../outreach/modeles-mails.md`](../outreach/modeles-mails.md)) |

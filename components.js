@@ -45,6 +45,7 @@ function instagramLinkHtml(className, label) {
 const ACTIVE_BY_PATH = {
   'index.html': 'home',
   'commander.html': 'order',
+  'ou-acheter.html': 'order',
   'idee-cadeau.html': 'discover',
   'merci.html': 'order',
   'regle.html': 'rules',
@@ -404,7 +405,7 @@ function renderFooterHtml() {
             <p class="footer-heading">Contact</p>
             <p><a href="${ROOT}regle.html">R&egrave;gles du jeu</a></p>
             <p><a href="${ROOT}minijeu.html">Jouer à KYRAN</a></p>
-            <p><a href="${ROOT}commander.html#ou-acheter">Où acheter KYRAN</a></p>
+            <p><a href="${ROOT}ou-acheter.html">Où acheter KYRAN</a></p>
             <p><a href="${ROOT}ressources-gratuites.html">Ressources gratuites</a></p>
             <p><a href="${ROOT}dossier-presse.html">Espace Presse</a></p>
             <p><a href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a></p>
@@ -985,8 +986,8 @@ function initPurchaseChoice() {
     '<span class="achat-choix__titre">Main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
     '<span class="achat-choix__info">Sans frais de port</span></label>' +
     '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
-    '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ + port</span>' +
-    '<span class="achat-choix__info">Port dès 2,99&nbsp;€</span></label>' +
+    '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
+    '<span class="achat-choix__info">Port calculé selon l’adresse</span></label>' +
     '</fieldset>' +
     '<div class="achat-choix__qte">' +
     '<label for="achat-qte">Nombre de boîtes</label>' +

@@ -131,7 +131,7 @@ function buildLlmsTxt() {
 - Livraison : France métropolitaine, Belgique, Luxembourg, Suisse, Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement ; expédition sous 24 à 48 h ouvrées, puis 2 à 4 jours ouvrés en France et 3 à 6 jours ouvrés dans les autres pays
 - Retour : 14 jours après réception, frais de retour à la charge du vendeur (CGV, article 6 : ${SITE}/cgv.html)
 - Boîte : ${PRODUCT.dimensions.label}, ${PRODUCT.weight.value} g
-- Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 € + 2,99 € de livraison, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
+- Autre point de vente : Etsy, boutique KyranJeu (https://www.etsy.com/fr/shop/KyranJeu), 9,99 €, annonce : https://www.etsy.com/fr/listing/4585329666/kyran-le-jeu-de-bluff-et-de-strategie
 - Présence externe : chaîne YouTube officielle (https://www.youtube.com/@Kyran-jeu) ; fiche BoardGameGeek (https://boardgamegeek.com/boardgame/480678/kyran) ; élément Wikidata Q141623753 (https://www.wikidata.org/wiki/Q141623753) ; fiche BoardGamesFlix (https://boardgamesflix.com/boardgames/kyran) ; fiche Tric Trac (https://trictrac.net/jeu-de-societe/kyran) ; fiche Myludo (https://www.myludo.fr/#!/game/kyran-95533) ; fiche Okkazeo (https://www.okkazeo.com/jeux/94411/kyran-maitre-des-mystiques) ; Ludochrono Ludovox, publié le 31 janvier 2026 (https://ludovox.fr/ludochrono-kyran/) ; vidéo de la chaîne Le Pirate Ludique (https://www.youtube.com/watch?v=5W0KNuoPUt4) ; Initiation jouable dans le navigateur sur itch.io (https://kyranjeu.itch.io/kyran-initiation)
 - Note sur Amazon.fr : ${PRODUCT.amazon.rating} / 5 sur ${PRODUCT.amazon.ratingCount} évaluations (relevé du ${PRODUCT.amazon.checkedLabel})
 - Règles : ${SITE}/regle.html ; règles en PDF (une page A4) : ${SITE}/regle-kyran.pdf ; vidéo des règles (Ludochrono de Ludovox, 5 minutes) : ${SITE}/video-regles.html
@@ -249,7 +249,7 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - Combien de joueurs ? De 3 à 6.
 - Quelle durée ? Environ 30 minutes.
 - Quel âge ? Dès 8 ans.
-- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html (port à partir de ${PRODUCT.shipping.rates[0].label} en France selon le nombre de boîtes, soit ${totalFr} pour une boîte), ${PRODUCT.amazon.price} sur Amazon.fr, ou sur Etsy (boutique KyranJeu).
+- Où acheter ? ${PRODUCT.price.label} sur ${SITE}/commander.html, ${PRODUCT.amazon.price} sur Amazon.fr, ou sur Etsy (boutique KyranJeu).
 - Dans quels pays est-il livré ? France métropolitaine, Belgique, Luxembourg, Suisse et Monaco ; hors de France, le port est calculé selon l'adresse et affiché avant le paiement.
 - Se joue-t-il à deux ? Non, KYRAN se joue de 3 à 6 joueurs.
 - Que contient la boîte ? 45 cartes de jeu (36 cartes Nombre, 8 cartes Pouvoir, 1 carte Mystique), 30 cartes Vie et 7 cartes de règles, dans une boîte rigide de ${PRODUCT.dimensions.label} (${PRODUCT.weight.value} g).

@@ -117,7 +117,7 @@ export default {
     {
       id: 'kyran-solo',
       heading: 'Et KYRAN, se joue-t-il seul ?',
-      html: `<p>Non. KYRAN, notre jeu de cartes, se joue de 3 à 6 joueurs, dès 8 ans, pour environ 30 minutes : il ne se joue ni seul ni à deux, parce que chaque manche repose sur les annonces de plis de tous les joueurs. Pour l’apprendre sans tablée, l’<a class="text-link" href="/minijeu.html">Initiation en ligne</a> est gratuite : sept rites présentent la règle, puis on affronte des adversaires virtuels dans le navigateur. Le jeu complet est vendu 9,99 € sur la <a class="text-link" href="/commander.html">boutique officielle</a>, plus 2,99 € de port par commande.</p>`
+      html: `<p>Non. KYRAN, notre jeu de cartes, se joue de 3 à 6 joueurs, dès 8 ans, pour environ 30 minutes : il ne se joue ni seul ni à deux, parce que chaque manche repose sur les annonces de plis de tous les joueurs. Pour l’apprendre sans tablée, l’<a class="text-link" href="/minijeu.html">Initiation en ligne</a> est gratuite : sept rites présentent la règle, puis on affronte des adversaires virtuels dans le navigateur. Le jeu complet est vendu 9,99 € sur la <a class="text-link" href="/commander.html">boutique officielle</a>.</p>`
     }
   ],
   verdict: {

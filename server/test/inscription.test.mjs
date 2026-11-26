@@ -119,12 +119,13 @@ test('concours : dates de Paris, prénom, une participation par adresse, accord 
   for (const bad of ['', '   ', '<b>', 'x'.repeat(41), '1abc', 'a@b', null, 3]) assert.equal(cleanPrenom(bad), null, String(bad));
 
   const store = createInscriptionStore({ secret: 's' });
-  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Léa', accord: true }, 1000), 'created');
-  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Autre', accord: false }, 2000), 'deja');
-  assert.equal(store.upsert({ email: 'b@example.com', source: 'concours-noel', prenom: 'Tom', accord: false }, 3000), 'created');
-  store.upsert({ email: 'a@example.com', source: 'site' }, 4000);
+  const T = CONCOURS.debut;
+  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Léa', accord: true }, T + 1000), 'created');
+  assert.equal(store.upsert({ email: 'a@example.com', source: 'concours-noel', prenom: 'Autre', accord: false }, T + 2000), 'deja');
+  assert.equal(store.upsert({ email: 'b@example.com', source: 'concours-noel', prenom: 'Tom', accord: false }, T + 3000), 'created');
+  store.upsert({ email: 'a@example.com', source: 'site' }, T + 4000);
   const [a, b] = store.list().filter(e => e.source === 'concours-noel');
-  assert.deepEqual([a.prenom, a.accord, a.consentement, a.date], ['Léa', true, CONCOURS_CONSENT_TEXT, new Date(1000).toISOString()]);
+  assert.deepEqual([a.prenom, a.accord, a.consentement, a.date], ['Léa', true, CONCOURS_CONSENT_TEXT, new Date(T + 1000).toISOString()]);
   assert.deepEqual([b.prenom, b.accord, b.consentement], ['Tom', false, '']);
   // Désinscription : l'inscription « site » part, la participation reste, sans accord.
   assert.deepEqual(store.unsubscribe(inscriptionToken('s', 'a@example.com')), ['a@example.com']);
@@ -308,7 +309,7 @@ test('serveur : concours (prénom obligatoire, accord facultatif, doublon ignor�
   const adds = brevoCalls.slice(before).filter(c => c.url === '/v3/contacts');
   assert.deepEqual(adds.map(c => c.body.email), ['ami@example.com']);
   assert.equal(adds[0].body.attributes.PRENOM, 'Tom');
-  assert.match(logs, /Votre participation au concours de Noël KYRAN/);
+  assert.equal(logs.split("simulation envoi à : [ 'gagnant@example.com' ]").length - 1, 1, 'un seul mail pour le doublon');
 
   const auth = { headers: { Authorization: `Bearer ${ADMIN}` } };
   assert.equal((await fetch(BASE + '/api/inscriptions?source=concours-noel')).status, 401);

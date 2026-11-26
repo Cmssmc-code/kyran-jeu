@@ -65,6 +65,7 @@ export const STATIC_PAGES = [
   { path: '/avent.html', title: "Calendrier de l'Avent KYRAN : 24 défis de cartes en décembre", section: 'KYRAN' },
   { path: '/quel-pli-gagne.html', title: 'Quel pli gagne ? Le défi de cartes KYRAN en 3 plis', section: 'KYRAN' },
   { path: '/commander.html', title: 'Commander KYRAN — boutique en ligne', section: 'Boutique' },
+  { path: '/ou-acheter.html', title: 'Où acheter KYRAN : site officiel, Amazon, Philibert, Etsy', section: 'Boutique' },
   { path: '/idee-cadeau.html', title: 'Idée cadeau de Noël : offrir le jeu de cartes KYRAN', section: 'Boutique' },
   {
     path: '/secret-santa.html',

@@ -47,7 +47,14 @@ function webpOf(src) {
 
 function pictureHtml(src, imgTag) {
   const w = webpOf(src);
-  return w ? `<picture><source srcset="${w}" type="image/webp" />${imgTag}</picture>` : imgTag;
+  if (!w) return imgTag;
+  // Variantes réduites (-360, -740) : la fiche s'affiche dans une colonne de 300 px au plus ;
+  // la boîte KYRAN pleine taille (1048 px, 144 Ko) était chargée sur chaque article.
+  const small = [360, 740].map(n => w.replace(/\.webp$/, `-${n}.webp`));
+  if (small.every(s => existsSync(join(ROOT, s)))) {
+    return `<picture><source srcset="${small[0]} 360w, ${small[1]} 740w" sizes="300px" type="image/webp" />${imgTag}</picture>`;
+  }
+  return `<picture><source srcset="${w}" type="image/webp" />${imgTag}</picture>`;
 }
 
 function compactHtml(html) {

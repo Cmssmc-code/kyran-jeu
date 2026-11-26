@@ -58,7 +58,7 @@ export default {
       "type": "Plis, pari obligatoire",
       "pick": "Le moins cher, de 3 à 6 joueurs",
       "paragraphs": [
-        "KYRAN coûte 9,99 € sur la boutique officielle, soit environ 3,33 € par joueur à trois. C’est un jeu de plis dans lequel on annonce à chaque manche le nombre exact de plis que l’on gagnera ; la somme des paris ne peut pas tomber juste, donc quelqu’un se trompe toujours. Une erreur coûte des cartes Vie.",
+        "KYRAN coûte 9,99 € sur la boutique officielle, soit environ 3,33 € par joueur à trois. C’est un <a class=\"text-link\" href=\"/\">jeu de cartes de plis à petit prix</a> dans lequel on annonce à chaque manche le nombre exact de plis que l’on gagnera ; la somme des paris ne peut pas tomber juste, donc quelqu’un se trompe toujours. Une erreur coûte des cartes Vie.",
         "La fiche annonce 3 à 6 joueurs, dès 8 ans, pour une demi-heure environ, sans partie à deux. Il demande de lire le jeu des autres : ce n’est pas le plus simple de la liste. Lisez la <a class=\"text-link\" href=\"/regle.html\">règle en ligne</a> avant d’acheter, puis commandez sur <a class=\"text-link\" href=\"/commander.html\">la boutique</a>."
       ]
     },

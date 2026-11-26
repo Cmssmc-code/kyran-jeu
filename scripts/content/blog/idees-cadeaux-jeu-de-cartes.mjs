@@ -101,7 +101,7 @@ export default {
       "type": "Plis, pari obligatoire",
       "pick": "Pour 3 à 6 amis qui aiment réfléchir",
       "paragraphs": [
-        "KYRAN, notre jeu, s’adresse à des amis qui aiment annoncer exactement combien de plis ils vont gagner, sachant que la somme des paris ne peut jamais tomber juste : quelqu’un se trompe forcément. Une erreur coûte des cartes Vie, la dernière perdue élimine son propriétaire. Le jeu demande de lire les autres autant que de bien jouer ses cartes.",
+        "KYRAN, notre <a class=\"text-link\" href=\"/\">jeu de cartes d’annonces</a>, s’adresse à des amis qui aiment annoncer exactement combien de plis ils vont gagner, sachant que la somme des paris ne peut jamais tomber juste : quelqu’un se trompe forcément. Une erreur coûte des cartes Vie, la dernière perdue élimine son propriétaire. Le jeu demande de lire les autres autant que de bien jouer ses cartes.",
         "Prix : 9,99 €, le plus bas de cette page. Il faut de 3 à 6 joueurs, dès 8 ans, environ une demi-heure, et pas de partie à deux. Pour qu’il arrive à temps, <a class=\"text-link\" href=\"/commander.html\">commandez avant le 16 décembre</a> ; la <a class=\"text-link\" href=\"/regle.html\">règle est lisible en ligne</a> avant l’achat."
       ]
     },

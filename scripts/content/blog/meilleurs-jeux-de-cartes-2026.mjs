@@ -111,7 +111,7 @@ export default {
       "type": "Plis, pari obligatoire",
       "pick": "Pour 3 à 6 joueurs qui aiment réfléchir",
       "paragraphs": [
-        "KYRAN, notre jeu, est un jeu de plis où l’on annonce à chaque manche le nombre exact de plis que l’on va gagner. La somme des paris ne peut jamais tomber juste : quelqu’un se trompe forcément, ce qui crée la tension du jeu. Un pari raté coûte des cartes Vie, et un joueur qui perd sa dernière est éliminé.",
+        "KYRAN, notre jeu, est un <a class=\"text-link\" href=\"/\">jeu de cartes de plis et de pronostics</a> où l’on annonce à chaque manche le nombre exact de plis que l’on va gagner. La somme des paris ne peut jamais tomber juste : quelqu’un se trompe forcément, ce qui crée la tension du jeu. Un pari raté coûte des cartes Vie, et un joueur qui perd sa dernière est éliminé.",
         "Il se joue de 3 à 6 joueurs, dès 8 ans, en une demi-heure environ, et pas à deux. Il coûte 9,99 € sur la boutique officielle. Il demande plus de réflexion que Flip 7 ou Trio : lisez d’abord la <a class=\"text-link\" href=\"/regle.html\">règle en ligne</a>, puis commandez sur <a class=\"text-link\" href=\"/commander.html\">la boutique</a>."
       ]
     },

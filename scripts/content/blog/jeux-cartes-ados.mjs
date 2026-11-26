@@ -126,7 +126,7 @@ export default {
     heading: `Notre avis tranché`,
     html: `<p>Pour une soirée d’ados, le meilleur choix dépend moins de l’âge que de la bande. <strong>Skull</strong> si le groupe aime se chambrer et compte entre trois et six personnes ; <strong>Saboteur</strong> dès que l’on dépasse six, puisqu’il accueille jusqu’à dix joueurs ; <strong>Jungle Speed</strong> pour une bande qui s’agite et préfère les mains aux discours. Pour des joueurs qui aiment calculer, <strong>Skyjo</strong> est plus accessible, et <strong>KYRAN</strong> plus exigeant, avec ses paris à tenir sur les plis. Un seul jeu pour tous les cas n’existe pas : tenez-en deux de styles différents.</p>`
   },
-  conclusion: `<p>Commencez par un jeu court dont la règle tient en une phrase, puis gardez le plus exigeant pour la deuxième partie. Posez la boîte sur la table avant l’arrivée du groupe plutôt que de la proposer au milieu de la soirée : un jeu déjà sorti se lance plus facilement qu’un jeu qu’il faut convaincre. Laissez les adolescents choisir entre deux options plutôt que de décider pour eux.</p>`,
+  conclusion: `<p>Commencez par un jeu court dont la règle tient en une phrase, puis gardez le plus exigeant pour la deuxième partie. Posez la boîte sur la table avant l’arrivée du groupe plutôt que de la proposer au milieu de la soirée : un jeu déjà sorti se lance plus facilement qu’un jeu qu’il faut convaincre. Laissez les adolescents choisir entre deux options plutôt que de décider pour eux. Pour des adolescents qui aiment annoncer leurs plis, voyez aussi ce <a class="text-link" href="/">jeu de cartes à paris dès 8 ans</a>.</p>`,
   faq: [
     {
       q: `Quel jeu de société (de cartes) pour des ados en soirée ?`,

@@ -3,6 +3,54 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "meilleurs-jeux-de-cartes-2026",
+    "title": "Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre",
+    "category": "Cartes",
+    "date": "2026-11-26",
+    "readMinutes": 9,
+    "excerpt": "Flip 7, Trio, Skyjo, Faraway, Hanabi, The Mind, Skull King et KYRAN : huit jeux de cartes de 2026, avec joueurs, durée et prix relevés le 26 novembre.",
+    "image": "/blog/images/meilleurs-jeux-de-cartes-2026.jpg",
+    "webp": "/blog/images/meilleurs-jeux-de-cartes-2026.webp",
+    "gameCount": 8,
+    "related": [
+      "jeux-cartes-moins-de-15-euros",
+      "cadeau-noel",
+      "jeux-plis-comparatif"
+    ]
+  },
+  {
+    "slug": "idees-cadeaux-jeu-de-cartes",
+    "title": "Idées cadeaux jeu de cartes : 7 jeux selon la personne à qui l’offrir",
+    "category": "Cadeaux",
+    "date": "2026-11-26",
+    "readMinutes": 8,
+    "excerpt": "Quel jeu de cartes offrir ? Sept idées selon le profil (famille, ados, couple, amis, joueurs initiés), avec joueurs, âge et prix relevés le 26 novembre 2026.",
+    "image": "/blog/images/idees-cadeaux-jeu-de-cartes.jpg",
+    "webp": "/blog/images/idees-cadeaux-jeu-de-cartes.webp",
+    "gameCount": 7,
+    "related": [
+      "meilleurs-jeux-de-cartes-2026",
+      "cadeau-noel",
+      "cadeau-moins-de-10-euros"
+    ]
+  },
+  {
+    "slug": "jeux-de-societe-pas-chers",
+    "title": "Jeux de société pas chers : 6 jeux de cartes à moins de 15 euros, le coût par joueur calculé",
+    "category": "Cartes",
+    "date": "2026-11-26",
+    "readMinutes": 8,
+    "excerpt": "Six jeux de société en boîte de cartes à petit prix, de 9,99 € à 14,90 € : joueurs, âge, durée et coût par joueur, avec la date de chaque relevé de prix.",
+    "image": "/blog/images/jeux-de-societe-pas-chers.jpg",
+    "webp": "/blog/images/jeux-de-societe-pas-chers.webp",
+    "gameCount": 6,
+    "related": [
+      "jeux-cartes-moins-de-15-euros",
+      "meilleurs-jeux-de-cartes-2026",
+      "cadeau-moins-de-10-euros"
+    ]
+  },
+  {
     "slug": "initiation-kyran-fetes",
     "title": "S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites",
     "category": "Famille",
@@ -518,7 +566,7 @@ const BLOG_ITEMS = [
     "title": "Jeux de plis : le comparatif et le guide pour bien choisir",
     "category": "Alternatives",
     "date": "2026-05-29",
-    "readMinutes": 13,
+    "readMinutes": 14,
     "excerpt": "Un jeu de cartes où l'on annonce son nombre de plis ? Comparatif des jeux de plis (Wizard, Skull King, Oh Hell, KYRAN, The Crew…) et guide du vocabulaire.",
     "image": "/blog/images/jeux-plis-comparatif.jpg",
     "webp": "/blog/images/jeux-plis-comparatif.webp",

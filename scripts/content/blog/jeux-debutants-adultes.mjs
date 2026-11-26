@@ -101,7 +101,7 @@ export default {
 <li>Réunir trop de monde. À six ou huit, les tours s’allongent et la règle se perd ; à trois ou quatre, chacun voit vite l’effet de ses choix.</li>
 </ul>`
   },
-  conclusion: `<p>Une marche par soirée suffit. Quand la table réclame une nouvelle partie du même jeu, vous pouvez monter d’un cran ; quand elle regarde son téléphone, redescendez plutôt. Les adultes qui débutent ne manquent pas de capacités, seulement de repères, et le jeu qui les leur donne en quinze minutes vaut mieux que le plus réputé. Une fois l’escalier gravi, l’étape suivante est celle des <a class="text-link" href="/blog/jeux-strategie-legere.html">jeux de stratégie légère</a>, où chaque partie demande de vrais choix sans règle épaisse.</p>`,
+  conclusion: `<p>Une marche par soirée suffit. Quand la table réclame une nouvelle partie du même jeu, vous pouvez monter d’un cran ; quand elle regarde son téléphone, redescendez plutôt. Les adultes qui débutent ne manquent pas de capacités, seulement de repères, et le jeu qui les leur donne en quinze minutes vaut mieux que le plus réputé. Une fois l’escalier gravi, l’étape suivante est celle des <a class="text-link" href="/blog/jeux-strategie-legere.html">jeux de stratégie légère</a>, où chaque partie demande de vrais choix sans règle épaisse. Quand la table est prête pour la marche suivante, un <a class="text-link" href="/">jeu de cartes de paris</a> comme KYRAN peut venir ensuite.</p>`,
   faq: [
     {
       q: 'Par quel jeu de cartes commencer quand on est adulte et débutant ?',

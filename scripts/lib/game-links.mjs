@@ -395,6 +395,12 @@ export const GAME_LINKS = {
     designer: 'Carl Chudyk',
     year: 2024,
     imageCredit: 'Visuel de la boîte — © Matagot'
+  },
+  faraway: {
+    shop: 'https://www.ludum.fr/jeux-de-strategie-inities/faraway-4224',
+    designer: 'Johannes Goupy et Corentin Lebrat',
+    year: 2023,
+    imageCredit: 'Visuel de la boîte — © Catch Up Games'
   }
 };
 

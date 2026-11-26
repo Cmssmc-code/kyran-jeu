@@ -163,7 +163,7 @@ export default {
     heading: `Le cadeau le plus sûr, selon nous`,
     html: `<p>Si vous ne deviez en retenir qu’un : Skyjo. Il tient dans une enveloppe d’environ 15 €, convient dès huit ans et accepte de deux à huit joueurs, donc le nombre d’invités ne le gêne presque jamais. Pour marquer le coup avec un budget plus large, Dixit reste le plus sûr auprès d’un public mélangé. À éviter : Bang! pour l’invité d’honneur, Colt Express si le gâteau doit se couper dans l’heure. KYRAN est le bon cadeau pour un joueur de plis, pas pour un duo.</p>`
   },
-  conclusion: `<p>Quelle que soit la boîte, soignez le moment de la remise : ouvrez-la avant le gâteau plutôt qu’après, glissez la règle résumée sur un papier et ne promettez pas une partie complète si vous n’avez qu’une demi-heure. Pour prolonger la soirée avec d’autres idées autour des mêmes jeux, parcourez notre sélection de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux de soirée entre amis</a>.</p>`,
+  conclusion: `<p>Quelle que soit la boîte, soignez le moment de la remise : ouvrez-la avant le gâteau plutôt qu’après, glissez la règle résumée sur un papier et ne promettez pas une partie complète si vous n’avez qu’une demi-heure. Pour prolonger la soirée avec d’autres idées autour des mêmes jeux, parcourez notre sélection de <a class="text-link" href="/blog/jeux-soiree-amis.html">jeux de soirée entre amis</a>. Pour un anniversaire entre amis, un <a class="text-link" href="/">jeu de cartes à offrir</a> comme KYRAN coûte 9,99 €.</p>`,
   faq: [
     {
       q: `Quel jeu offrir pour un anniversaire quand on ne connaît pas les goûts de la personne ?`,

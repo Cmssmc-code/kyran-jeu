@@ -3,6 +3,54 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "nouveaux-jeux-de-cartes-2027",
+    "title": "Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027",
+    "category": "Cartes",
+    "date": "2026-11-26",
+    "readMinutes": 9,
+    "excerpt": "Sept jeux de cartes parus entre 2023 et 2026, dont KYRAN : joueurs, âge, prix relevés le 26 novembre 2026 et ce que chaque nouveauté change à la table.",
+    "image": "/blog/images/nouveaux-jeux-de-cartes-2027.jpg",
+    "webp": "/blog/images/nouveaux-jeux-de-cartes-2027.webp",
+    "gameCount": 7,
+    "related": [
+      "marche-jeux-de-cartes-2026-2027",
+      "meilleurs-jeux-de-cartes-2026",
+      "idees-cadeaux-jeu-de-cartes"
+    ]
+  },
+  {
+    "slug": "jeux-cartes-enfants-8-ans",
+    "title": "Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche",
+    "category": "Famille",
+    "date": "2026-11-26",
+    "readMinutes": 9,
+    "excerpt": "Sept jeux de cartes jouables par un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.",
+    "image": "/blog/images/jeux-cartes-enfants-8-ans.jpg",
+    "webp": "/blog/images/jeux-cartes-enfants-8-ans.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-famille",
+      "jeux-cartes-ados",
+      "idees-cadeaux-jeu-de-cartes"
+    ]
+  },
+  {
+    "slug": "jeux-cartes-originaux",
+    "title": "Jeux de cartes originaux : 7 boîtes qui changent les habitudes de la table",
+    "category": "Cartes",
+    "date": "2026-11-26",
+    "readMinutes": 8,
+    "excerpt": "Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge et prix du 26 novembre 2026.",
+    "image": "/blog/images/jeux-cartes-originaux.jpg",
+    "webp": "/blog/images/jeux-cartes-originaux.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-bluff-pari",
+      "nouveaux-jeux-de-cartes-2027",
+      "idees-cadeaux-jeu-de-cartes"
+    ]
+  },
+  {
     "slug": "meilleurs-jeux-de-cartes-2026",
     "title": "Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre",
     "category": "Cartes",

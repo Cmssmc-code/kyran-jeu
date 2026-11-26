@@ -104,7 +104,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 49 guides
+## Blog — 52 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -138,6 +138,8 @@
 
 ## Blog : Cartes
 
+- [Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027](https://kyran-jeu.fr/blog/nouveaux-jeux-de-cartes-2027.html): 7 jeux comparés
+- [Jeux de cartes originaux : 7 boîtes qui changent les habitudes de la table](https://kyran-jeu.fr/blog/jeux-cartes-originaux.html): 7 jeux comparés
 - [Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre](https://kyran-jeu.fr/blog/meilleurs-jeux-de-cartes-2026.html): 8 jeux comparés
 - [Jeux de société pas chers : 6 jeux de cartes à moins de 15 euros, le coût par joueur calculé](https://kyran-jeu.fr/blog/jeux-de-societe-pas-chers.html): 6 jeux comparés
 - [Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources](https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html)
@@ -157,6 +159,7 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche](https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html): 7 jeux comparés
 - [S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites](https://kyran-jeu.fr/blog/initiation-kyran-fetes.html)
 - [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés
 - [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés

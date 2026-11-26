@@ -104,7 +104,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 49 guides
+## Blog — 52 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -138,6 +138,8 @@
 
 ## Blog : Cartes
 
+- [Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027](https://kyran-jeu.fr/blog/nouveaux-jeux-de-cartes-2027.html): 7 jeux comparés
+- [Jeux de cartes originaux : 7 boîtes qui changent les habitudes de la table](https://kyran-jeu.fr/blog/jeux-cartes-originaux.html): 7 jeux comparés
 - [Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre](https://kyran-jeu.fr/blog/meilleurs-jeux-de-cartes-2026.html): 8 jeux comparés
 - [Jeux de société pas chers : 6 jeux de cartes à moins de 15 euros, le coût par joueur calculé](https://kyran-jeu.fr/blog/jeux-de-societe-pas-chers.html): 6 jeux comparés
 - [Skyjo et Magilano : dates, ventes et règle exacte, vérifiées dans les sources](https://kyran-jeu.fr/blog/skyjo-magilano-chiffres-reference.html)
@@ -157,6 +159,7 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche](https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html): 7 jeux comparés
 - [S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites](https://kyran-jeu.fr/blog/initiation-kyran-fetes.html)
 - [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés
 - [Jeux de cartes pour seniors : 6 jeux à jouer sans écran](https://kyran-jeu.fr/blog/jeux-cartes-seniors.html): 6 jeux comparés
@@ -229,7 +232,25 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - KYRAN est-il un jeu de hasard ? Non, surtout de stratégie : sur 10 000 parties simulées, un joueur de niveau maître gagne 7,6 fois plus souvent qu'un novice, et aucune place à table ne donne d'avantage notable : https://kyran-jeu.fr/simulation.html
 - Comment gagner à KYRAN ? Parier juste plutôt que gros (3 grosses cartes en main : 42 à 50 % de paris exacts, aucune : 71 à 74 %), garder petites cartes et Mystique pour la fin, prendre la tête tôt et ne jamais laisser filer deux Vies : https://kyran-jeu.fr/simulation.html
 
-## Résumé des 49 guides du blog
+## Résumé des 52 guides du blog
+
+### Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027
+
+- URL : https://kyran-jeu.fr/blog/nouveaux-jeux-de-cartes-2027.html
+- Résumé : Sept jeux de cartes parus entre 2023 et 2026, dont KYRAN : joueurs, âge, prix relevés le 26 novembre 2026 et ce que chaque nouveauté change à la table.
+- Jeux comparés : KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire) ; Pili Pili (2 à 8 joueurs, ~20 min, Plis, règle qui change) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; Dékal (2 à 6 joueurs, ~15 min, Grille et décalage) ; Cabanga (3 à 6 joueurs, ~20 min, Réflexes et écarts) ; Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Faraway (2 à 6 joueurs, ~20 min, Voyage et ordre de pose)
+
+### Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html
+- Résumé : Sept jeux de cartes jouables par un enfant de 8 ans : âge de la fiche, joueurs, durée, prix relevés le 26 novembre 2026 et ce que chaque règle demande à un enfant.
+- Jeux comparés : Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; The Mind (2 à 4 joueurs, ~20 min, Coopératif en silence) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif) ; Pili Pili (2 à 8 joueurs, ~20 min, Plis, règle qui change) ; Skull King (2 à 8 joueurs, ~30 min, Plis et paris) ; KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire)
+
+### Jeux de cartes originaux : 7 boîtes qui changent les habitudes de la table
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-originaux.html
+- Résumé : Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge et prix du 26 novembre 2026.
+- Jeux comparés : The Mind (2 à 4 joueurs, ~20 min, Coopératif en silence) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif, main cachée) ; Faraway (2 à 6 joueurs, ~20 min, Voyage, score à l’envers) ; KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire) ; Pili Pili (2 à 8 joueurs, ~20 min, Plis, règle qui change) ; Dékal (2 à 6 joueurs, ~15 min, Grille qui glisse) ; Cabanga (3 à 6 joueurs, ~20 min, Totems et écarts)
 
 ### Meilleurs jeux de cartes 2026 : 8 jeux selon la table, avec prix relevés le 26 novembre
 

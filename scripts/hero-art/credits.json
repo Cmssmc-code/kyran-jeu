@@ -480,5 +480,17 @@
    "megalopolis"
   ],
   "legende": "Illustration créée pour KYRAN, avec les visuels officiels de KYRAN, Love Letter, Timeline, Monopoly Deal, Dobble et Megalopolis (© KYRAN, Z-Man Games / Asmodee, Asmodee, Hasbro, Asmodee / Zygomatic, Matagot / Button Shy) : une luge en bois chargée de six boîtes de jeu debout côte à côte, sa corde rouge traînant dans la neige, devant un village enneigé au soleil couchant."
+ },
+ "jeux-cartes-reveillon": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : l'horloge à minuit au milieu des feux d'artifice, avec un éventail de cartes et quatre flûtes posés sur la table du réveillon. Source : fetes-2026.py."
+ },
+ "apprendre-jeu-cartes-fetes": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : une tablée de six personnes vue de dessus autour d'une table ronde, avec cinq paquets de cartes au centre. Source : fetes-2026.py."
+ },
+ "initiation-kyran-fetes": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : un escalier de sept marches, une carte de couleur sur chacune et un éventail de cartes au sommet. Source : fetes-2026.py."
  }
 }

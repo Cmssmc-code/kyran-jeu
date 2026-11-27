@@ -204,7 +204,18 @@ avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH
     CHROMIUM_PATH=/opt/pw-browsers/chromium node scripts/smoke-initiation.mjs` joue une manche complète en
     suivant `#dojo[data-state]` (aucun 404 sur `/dojo/`, aucune erreur JS, jamais `crash`). Sortie 1 → lire
     les états affichés (`États : …`) pour savoir où la partie s'est bloquée ;
-  - blog : `/blog/`, l'article le plus récent (200, dans `sitemap.xml` et `blog/feed.xml`).
+  - blog : `/blog/`, l'article le plus récent (200, dans `sitemap.xml` et `blog/feed.xml`) ;
+  - **liens d'achat** (ordre du PDG du 27/11/2026, après la fiche Philibert passée en brouillon sans qu'on le voie) :
+    `node scripts/surveillance/liens-achat.mjs` (avec `PLAYWRIGHT_CORE` et `CHROMIUM_PATH`) relève chaque lien visible
+    vers une boutique sur l'accueil, `/ou-acheter.html` et `/commander.html` (Amazon de chaque pays, Philibert, Etsy,
+    leboncoin, Payment Link Stripe) et vérifie bon produit, prix affiché et bouton d'achat. `casse` (fiche absente,
+    redirigée, indisponible, sans bouton) : message « Urgent : » au PDG (`ceo`) et au responsable des ventes externes
+    (`responsable-amazon`) par `mcp__mondes__monde_message` (de `gardien`), puis **retrait du lien du site dans
+    l'heure** par PR (mettre le `<li>` en commentaire HTML avec la date, comme Philibert le 27/11 ; ne toucher à aucun
+    titre). Sur le Payment Link Stripe, ne rien retirer : réparer. `prix` : corriger le prix affiché sur le site.
+    `illisible` (Etsy et leboncoin bloquent souvent les robots, DataDome) : bruit, rien à faire. Une fiche à remettre
+    se teste d'abord avec `node scripts/surveillance/liens-achat.mjs <url> <prix>` (sortie 0). La routine Trio
+    « Kyran · Liens d'achat » refait ce contrôle toutes les 3 heures de 8 h à 20 h.
 - TLS : **pas `openssl s_client`** (le proxy de la session présente son propre certificat, échéance = J+30) ;
   lire les journaux Certificate Transparency :
   `curl -s "https://api.certspotter.com/v1/issuances?domain=kyran-jeu.fr&include_subdomains=true&expand=dns_names"`

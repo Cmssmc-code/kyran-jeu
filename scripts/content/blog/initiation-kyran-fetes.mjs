@@ -6,6 +6,7 @@ const COMMANDER = `${SITE}/commander.html`;
 const PLI = `${SITE}/quel-pli-gagne.html`;
 const R = (u) => u.replace(SITE, '');
 const WD = 'https://www.wikidata.org/wiki/Q141623753';
+// Fiche Philibert masquée (vide le 27/11/2026). Pour la remettre : source ci-dessous et, dans le paragraphe « 3 à 6 joueurs », « et la fiche ${a(PH, 'Philibert')} (3 à 6 joueurs, dès 8 ans, moins de 30 minutes, 9,99 €) ».
 const PH = 'https://www.philibertnet.com/fr/kyran/186794-kyran-3770040368015.html';
 const a = (href, t) => `<a class="text-link" href="${href}">${t}</a>`;
 
@@ -55,7 +56,7 @@ export default {
     {
       id: 'organiser-la-soiree',
       heading: 'Comment arriver au repas avec une partie déjà prête',
-      html: `<p>Pour que l’entraînement serve vraiment, il vaut mieux le placer au bon endroit dans le calendrier. La commande de KYRAN doit partir avant le 16 décembre pour arriver avant Noël ; l’Initiation, elle, ne dépend d’aucune livraison et peut se faire dès maintenant. Si vous offrez la boîte, vous pouvez même indiquer son adresse au destinataire dans la carte, pour qu’il s’y exerce avant de l’ouvrir.</p><p>Le jour même, une méthode simple suffit. Annoncez d’abord le but en une phrase : on annonce le nombre de plis qu’on va gagner, puis on essaie de tomber juste. Jouez ensuite une donne à cartes découvertes, en commentant à voix haute chaque pli, comme dans l’Initiation. N’introduisez les cartes Pouvoir qu’à la deuxième manche, une à la fois, quand les joueurs ont compris le pari. La boîte annonce 30 minutes au plus par partie, ce qui laisse de la place à une seconde manche avant le dessert.</p><p>KYRAN se joue de 3 à 6 joueurs, dès 8 ans, et coûte 9,99 € sur ce site, des chiffres que recoupent la fiche ${a(WD, 'Wikidata')} (3 à 6 joueurs, 8 ans minimum, 30 minutes) et la fiche ${a(PH, 'Philibert')} (3 à 6 joueurs, dès 8 ans, moins de 30 minutes, 9,99 €). Pour les autres jeux à sortir pendant les fêtes, voyez ${a('/blog/jeux-cartes-reveillon.html', 'notre sélection pour le réveillon')} et ${a('/blog/cadeau-noel.html', 'les idées de jeux à offrir à Noël')}.</p>`
+      html: `<p>Pour que l’entraînement serve vraiment, il vaut mieux le placer au bon endroit dans le calendrier. La commande de KYRAN doit partir avant le 16 décembre pour arriver avant Noël ; l’Initiation, elle, ne dépend d’aucune livraison et peut se faire dès maintenant. Si vous offrez la boîte, vous pouvez même indiquer son adresse au destinataire dans la carte, pour qu’il s’y exerce avant de l’ouvrir.</p><p>Le jour même, une méthode simple suffit. Annoncez d’abord le but en une phrase : on annonce le nombre de plis qu’on va gagner, puis on essaie de tomber juste. Jouez ensuite une donne à cartes découvertes, en commentant à voix haute chaque pli, comme dans l’Initiation. N’introduisez les cartes Pouvoir qu’à la deuxième manche, une à la fois, quand les joueurs ont compris le pari. La boîte annonce 30 minutes au plus par partie, ce qui laisse de la place à une seconde manche avant le dessert.</p><p>KYRAN se joue de 3 à 6 joueurs, dès 8 ans, et coûte 9,99 € sur ce site, des chiffres que recoupe la fiche ${a(WD, 'Wikidata')} (3 à 6 joueurs, 8 ans minimum, 30 minutes). Pour les autres jeux à sortir pendant les fêtes, voyez ${a('/blog/jeux-cartes-reveillon.html', 'notre sélection pour le réveillon')} et ${a('/blog/cadeau-noel.html', 'les idées de jeux à offrir à Noël')}.</p>`
     }
   ],
   sources: [
@@ -64,7 +65,8 @@ export default {
     { label: 'KYRAN, idée cadeau et dates de livraison', url: CADEAU, note: 'commande avant le 16 décembre, délais de livraison' },
     { label: 'KYRAN, page d’achat', url: COMMANDER, note: '9,99 €, nombre de joueurs, âge' },
     { label: 'Wikidata, fiche de KYRAN (Q141623753)', url: WD, note: '3 à 6 joueurs, 8 ans minimum, 30 minutes, publication le 31 janvier 2026' },
-    { label: 'Philibert, fiche de KYRAN', url: PH, note: '3 à 6 joueurs, dès 8 ans, moins de 30 minutes, 9,99 €' },
+    // Philibert masqué le 27/11/2026 (fiche vide) ; à remettre quand la fiche revient :
+    // { label: 'Philibert, fiche de KYRAN', url: PH, note: '3 à 6 joueurs, dès 8 ans, moins de 30 minutes, 9,99 €' },
     { label: 'KYRAN, mini-jeu « Quel pli gagne ? »', url: PLI, note: 'situations de pli à résoudre' }
   ],
   conclusion: `<p>Un jeu bien appris se rejoue, et c’est ce qui compte une fois les fêtes passées. Commencez par ${a(MINIJEU, 'l’Initiation')}, lisez ${a(REGLE, 'la règle complète')} si un détail vous échappe, puis vérifiez les dates sur la page ${a(CADEAU, 'idée cadeau')}. Côté commande, ${a(COMMANDER, 'la boîte à 9,99 €')} s’ajoute au panier jusqu’au 16 décembre.</p>`,

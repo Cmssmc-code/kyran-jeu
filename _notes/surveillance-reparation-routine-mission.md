@@ -181,7 +181,9 @@ avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH
   une copie par l'API `https://archive.org/wayback/available?url=…` (`"status":"200"`) : bruit si l'API répond.
   `www.agorajeux.com` : 403 « Accès refusé » par intermittence, même dans Chromium (18/11 et 21/11 ; 200 le 19/11) :
   anti-robot, bruit.
-  `www.magilano.com` : 429 (limite de requêtes) par moments (2026-11-24) : bruit.
+  `www.magilano.com` : 429 (limite de requêtes) par moments (2026-11-24), 403 pour `curl` (2026-11-27) : bruit.
+  Boutiques Shopify (`magilano.com`, `www.64ouncegames.com`, `www.grandpabecksgames.com`) : 403 pour `curl`, 200 dans
+  Chromium (2026-11-27) : bruit si Chromium passe.
   `www.facebook.com/profile.php?id=…` : 400 pour `curl`, 200 « KYRAN | Facebook » dans Chromium (2026-11-26) : bruit si
   Chromium passe. `www.leboncoin.fr` : 403 avec captcha DataDome (2026-11-26) : bruit. `gusandco.net` : 429 (2026-11-26) :
   bruit.

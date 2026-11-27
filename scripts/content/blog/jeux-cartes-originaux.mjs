@@ -3,7 +3,7 @@ export default {
   "title": "Jeux de cartes originaux : 7 boîtes qui changent les habitudes de la table",
   "shortTitle": "Jeux de cartes originaux",
   "metaTitle": "Jeux de cartes originaux : 7 idées qui changent la donne",
-  "description": "Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge et prix du 26 novembre 2026.",
+  "description": "Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge, prix au 26 novembre 2026.",
   "category": "Cartes",
   "date": "2026-11-26",
   "heroTitle": "<span class=\"accent\">Jeux de cartes originaux</span> : sept idées qui sortent de l’ordinaire",

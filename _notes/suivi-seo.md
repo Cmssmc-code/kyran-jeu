@@ -10,6 +10,21 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-28 : run quotidien n° 35 (samedi)
+
+**Verdict : En progrès.**
+
+- **Contexte** : le worktree `wt-routine-seo` était cassé (son dépôt `.git/worktrees/wt-routine-seo` avait disparu, dossier verrouillé) ; le run a travaillé dans un worktree neuf `wt-seo-2026-11-28` (secrets recopiés). À supprimer ou remettre en état par la prochaine passe.
+- **Google** (21 → 27/11, 27/11 provisoire) : 92 clics (+35 %), 2 822 impressions (+10 %). 28 jours : 247 clics, 9 546 impressions, CTR 2,59 %, position 8,6. Hausses : `alternatives-uno` (1 → 8 clics), `jeux-comme-6-qui-prend` (3 → 8), `jeux-comme-exploding-kittens` (0 → 5), `jeux-coop-cartes` (0 → 4), requête « kyran » (2 → 6 clics, position 1,4). `tarot-africain` : 12 clics, 489 impressions (631 la semaine d'avant), position 5,7.
+- **Bing** (19 → 25/11) : 9 clics (-18 %), 359 impressions (+53 %), 76 pages dans l'index (26/11).
+- **Santé** (`seo-health.py --inspect 30 --psi`) : 0 noindex, 0 canonical faux, TTFB médian 157 ms, PageSpeed mobile accueil 96, 30 pages inspectées sur 30 indexées. 1 anomalie : description de `blog/jeux-cartes-originaux` à 162 caractères.
+- **Indexation** : indexeur passé (18 pages envoyées à Bing et IndexNow, sitemap renvoyé à Google, 43 inspectées). 6 pages nouvellement indexées par Google : `ou-acheter`, `jeux-cartes-enfants-8-ans`, `nouveaux-jeux-de-cartes-2027`, `jeux-cartes-originaux`, `meilleurs-jeux-de-cartes-2026`, `idees-cadeaux-jeu-de-cartes`. 3 hors index : `jeux-cartes-10-12-ans`, `jeux-cartes-noel-en-famille`, `jeux-de-societe-pas-chers` ; les 3 demandes Google faites, « Indexation demandée » lue, enregistrées par `mark-requested`. Aucune page à pousser (liste `a-pousser-kyran.md` vide).
+- **GEO** : samedi, pas de mesure (jeudi). Dernière : 26/11.
+- **Action** (piste 4, correctif technique) : description de `blog/jeux-cartes-originaux` ramenée de 162 à 160 caractères (« âge et prix du » devient « âge, prix au »), page créée le 26/11, aucune mesure de position avant ; journal des titres mis à jour (réévaluation 26/12). PR #373.
+- **Écarté, avec preuve** : « whist variante » (arrive sur la redirection `whist-moderne` vers `whist-22`, dont la FAQ « Quelles sont les variantes du Whist ? » répond déjà), « skyjo variante » (titre, section et FAQ dédiés), « jeu de carte à 5 » (`jeux-cartes-5-joueurs` redirige vers la page « à 5 ou 6 joueurs »).
+- **Vers le blog** : `sujets-kyran.md` réécrit (aucun sujet ne passe le critère ; 3 pistes à priorité basse).
+- **Doc partagé** : non mis à jour (lecture trop lourde pour une passe sans personne) ; le journal et la base du dépôt font foi.
+
 ### 2026-11-27 (après-midi) : alerte « Métadonnées d'image » (t111) et plan marque (spécialiste SEO et GEO)
 
 - **Alerte Search Console du 27/11** (non critique) : champs `license` et `acquireLicensePage` manquants sur

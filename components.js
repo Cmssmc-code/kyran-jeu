@@ -248,7 +248,7 @@ function whenParsed(callback) {
 
 // Du 1er novembre au 16 décembre, le bandeau d'annonce rappelle la date limite de commande pour Noël
 // (même règle que js/livraison.js : 16 décembre + 6 jours ouvrés = 24 décembre) ; du 17 au 24 décembre,
-// il propose la remise en main propre, puis reprend son texte normal. Fait au chargement,
+// il reprend son texte normal (plus de remise en main propre : règle du 19/11/2026). Fait au chargement,
 // car le HTML prérendu ne doit pas dépendre de la date du build.
 var CONCOURS_BANDEAU = { debut: Date.parse('2026-12-04T17:30:00Z'), fin: Date.parse('2026-12-14T23:00:00Z') };
 
@@ -265,8 +265,6 @@ function initNoelAnnouncement() {
   }
   if (now <= new Date(y, 11, 16, 23, 59)) {
     text.innerHTML = '<strong>9,99&nbsp;&euro;</strong> &middot; Noël&nbsp;: commandez avant le 16&nbsp;décembre<span class="announcement-extra"> pour l’avoir sous le sapin</span>';
-  } else {
-    text.innerHTML = 'Noël &middot; remise en main propre jusqu’au 24&nbsp;décembre à Fontenay-aux-Roses<span class="announcement-extra">, écrivez-nous à kyran.jeu@gmail.com</span>';
   }
 }
 
@@ -731,7 +729,7 @@ function renderCtaBandHtml(attr) {
           <a class="btn btn-secondary" href="${secondaryHref}">${secondaryLabel}</a>
           ${showDojo ? '<a class="btn btn-secondary" href="' + ROOT + 'minijeu.html">Jouer à KYRAN</a>' : ''}
         </div>
-        <p class="cta-band-gift">Une boîte de 205&nbsp;g, expédiée sous 24 à 48&nbsp;h avec suivi.</p>
+        <p class="cta-band-gift">Un jeu KYRAN de 205&nbsp;g, expédié sous 24 à 48&nbsp;h avec suivi.</p>
       </div>
     `;
 }
@@ -881,15 +879,14 @@ function initVideoFacades() {
 if (typeof document !== 'undefined') whenParsed(initVideoFacades);
 
 // Panneau d'achat (décisions de Corentin et du PDG du 20/11/2026, pour tous les visiteurs) : chaque bouton
-// d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un panneau unique : deux gros choix
-// (« En main propre », port 0 € ; « Livraison », port selon la grille), la quantité avec + et − (1 à 99,
+// d'achat (liens vers /commander.html et lien Stripe habituel) ouvre un panneau unique : livraison seule
+// (port selon la grille ; plus de remise en main propre depuis la règle du 19/11/2026), la quantité avec + et − (1 à 99,
 // alerte rouge dès 11), le total qui se met à jour et le bouton « Payer ». Les prix et la grille sont lus
 // dans /js/tarifs.js, la même source que le serveur, qui crée la session Stripe (/api/commande) : le total
 // affiché est celui de Stripe, au centime. Serveur injoignable : repli sur les liens de paiement habituels.
 // Le repère festival=1, posé par /bienvenue.html (QR des festivals) et gardé en sessionStorage, ne sert
 // qu'aux statistiques.
 const FESTIVAL_KEY = 'kyranFestival';
-const MAIN_PROPRE_STRIPE_URL = 'https://buy.stripe.com/6oU00laWzg2IflK42yaEE01';
 const COMMANDE_API = 'https://kyran-webhook-production.up.railway.app/api/commande';
 
 // Source d'arrivée (ref, utm_*) : gardée au premier passage sur le site, en sessionStorage, pour
@@ -956,16 +953,6 @@ function initPurchaseChoice() {
     '.achat-choix__tete{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 14px;}',
     '.achat-choix h2{font-size:1.25rem;margin:0;line-height:1.2;}',
     '.achat-choix__close{flex:none;width:40px;height:40px;border:2px solid var(--k-ink);border-radius:50%;background:#fff;color:var(--k-ink);font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}',
-    '.achat-choix fieldset{border:0;margin:0 0 14px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}',
-    '.achat-choix legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}',
-    '.achat-choix__option{position:relative;display:flex;flex-direction:column;gap:2px;padding:12px 12px 10px;border:2px solid var(--k-ink);border-radius:14px;background:#fff;cursor:pointer;line-height:1.25;}',
-    '.achat-choix__titre{font-weight:800;font-size:1.02rem;}',
-    '.achat-choix__prix{font-weight:700;font-size:.95rem;}',
-    '.achat-choix__info{font-size:.8rem;opacity:.75;}',
-    '.achat-choix__option input{position:absolute;opacity:0;width:1px;height:1px;}',
-    '.achat-choix__option.est-choisi{background:var(--k-saffron-hi);box-shadow:0 4px 0 var(--k-ink);}',
-    '.achat-choix__option.est-choisi::after{content:"✓";position:absolute;top:-10px;right:-10px;width:24px;height:24px;border-radius:50%;background:var(--k-ink);color:#fff;font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}',
-    '.achat-choix__option:focus-within{outline:3px solid var(--k-blue);outline-offset:2px;}',
     '.achat-choix__qte{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;}',
     '.achat-choix__qte label{font-weight:700;white-space:nowrap;}',
     '.achat-choix__stepper{display:inline-flex;align-items:stretch;border:2px solid var(--k-ink);border-radius:12px;overflow:hidden;background:#fff;}',
@@ -990,20 +977,12 @@ function initPurchaseChoice() {
     '<form class="achat-choix__body" method="dialog">' +
     '<div class="achat-choix__tete"><h2 id="achat-choix-title">Votre commande KYRAN</h2>' +
     '<button type="button" class="achat-choix__close" aria-label="Fermer">×</button></div>' +
-    '<fieldset><legend>Comment voulez-vous votre jeu ?</legend>' +
-    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="main-propre">' +
-    '<span class="achat-choix__titre">Main propre</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
-    '<span class="achat-choix__info">Sans frais de port</span></label>' +
-    '<label class="achat-choix__option"><input type="radio" name="achat-mode" value="livraison">' +
-    '<span class="achat-choix__titre">Livraison</span><span class="achat-choix__prix">9,99&nbsp;€ la boîte</span>' +
-    '<span class="achat-choix__info">Port ajouté au paiement</span></label>' +
-    '</fieldset>' +
     '<div class="achat-choix__qte">' +
-    '<label for="achat-qte">Nombre de boîtes</label>' +
+    '<label for="achat-qte">Nombre de jeux KYRAN</label>' +
     '<div class="achat-choix__stepper">' +
-    '<button type="button" class="achat-choix__moins" aria-label="Une boîte de moins">−</button>' +
+    '<button type="button" class="achat-choix__moins" aria-label="Un jeu de moins">−</button>' +
     '<input id="achat-qte" type="number" inputmode="numeric" min="1" max="99" step="1" value="1">' +
-    '<button type="button" class="achat-choix__plus" aria-label="Une boîte de plus">+</button>' +
+    '<button type="button" class="achat-choix__plus" aria-label="Un jeu de plus">+</button>' +
     '</div></div>' +
     '<p class="achat-choix__alerte" aria-live="polite"></p>' +
     '<div class="achat-choix__recap" aria-live="polite"></div>' +
@@ -1023,9 +1002,9 @@ function initPurchaseChoice() {
   let livraisonHref = STRIPE_CHECKOUT_URL;
   tarifsPromise.then(function (t) { tarifs = t; maj(); });
 
+  // Livraison seule : le serveur garde le mode dans le corps de /api/commande.
   function mode() {
-    const checked = form.querySelector('input[name="achat-mode"]:checked');
-    return checked ? checked.value : '';
+    return 'livraison';
   }
 
   function quantite() {
@@ -1040,28 +1019,22 @@ function initPurchaseChoice() {
     moins.disabled = q <= 1;
     plus.disabled = q >= max;
     const seuil = tarifs ? tarifs.SEUIL_ALERTE : 10;
-    alerte.textContent = q > seuil ? 'Êtes-vous sûr de commander ' + q + ' boîtes ?' : '';
-    const m = mode();
-    form.querySelectorAll('.achat-choix__option').forEach(function (label) {
-      label.classList.toggle('est-choisi', label.querySelector('input').checked);
-    });
-    payer.disabled = !m;
-    if (!tarifs || !m) {
-      total.textContent = m ? '' : 'Choisissez la remise en main propre ou la livraison.';
+    alerte.textContent = q > seuil ? 'Êtes-vous sûr de commander ' + q + ' jeux KYRAN ?' : '';
+    if (!payer.dataset.envoi) payer.disabled = false;
+    if (!tarifs) {
+      total.textContent = '';
       if (!payer.dataset.envoi) payer.textContent = 'Payer';
       return;
     }
-    const t = tarifs.totalCommande(q, m);
+    const t = tarifs.totalCommande(q, mode());
     const ligne = function (libelle, montant, classe) {
       return '<p class="achat-choix__ligne' + (classe || '') + '"><span>' + libelle + '</span><span>' + montant + '</span></p>';
     };
-    const livraison = m !== 'main-propre';
-    total.innerHTML = ligne(q + (q > 1 ? ' boîtes' : ' boîte') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
-      ligne(livraison ? 'Livraison' : 'Main propre', livraison ? 'à l’étape suivante' : 'sans frais') +
-      ligne(livraison ? 'Sous-total' : 'Total', tarifs.euros(livraison ? t.boites : t.total), ' achat-choix__ligne--total');
-    if (livraison) total.innerHTML += '<p class="achat-choix__mp">Le port s’ajoute sur la page de paiement Stripe, une fois l’adresse saisie.</p>';
-    else total.innerHTML += '<p class="achat-choix__mp">On convient de la remise par mail.</p>';
-    if (!payer.dataset.envoi) payer.textContent = livraison ? 'Continuer vers le paiement' : 'Payer ' + tarifs.euros(t.total);
+    total.innerHTML = ligne(q + (q > 1 ? ' jeux KYRAN' : ' jeu KYRAN') + ' × 9,99&nbsp;€', tarifs.euros(t.boites)) +
+      ligne('Livraison', 'à l’étape suivante') +
+      ligne('Sous-total', tarifs.euros(t.boites), ' achat-choix__ligne--total') +
+      '<p class="achat-choix__mp">Le port s’ajoute sur la page de paiement Stripe, une fois l’adresse saisie.</p>';
+    if (!payer.dataset.envoi) payer.textContent = 'Continuer vers le paiement';
   }
 
   function regler(n) {
@@ -1073,27 +1046,19 @@ function initPurchaseChoice() {
   plus.addEventListener('click', function () { regler(quantite() + 1); });
   qte.addEventListener('input', maj);
   qte.addEventListener('change', function () { regler(quantite()); });
-  // Événements GA4 nommés : choix de l'option, puis paiement.
-  form.querySelectorAll('input[name="achat-mode"]').forEach(function (radio) {
-    radio.addEventListener('change', function () {
-      trackAchat(radio.value === 'main-propre' ? 'achat_choix_main_propre' : 'achat_choix_livraison', { festival: festival });
-      maj();
-    });
-  });
   dialog.querySelector('.achat-choix__close').addEventListener('click', function () { dialog.close(); });
   dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     const m = mode();
-    if (!m) return;
     const q = quantite();
     trackAchat('achat_payer', { festival: festival, mode: m, quantite: q });
     payer.disabled = true;
     payer.dataset.envoi = '1';
     payer.textContent = 'Ouverture du paiement…';
     const ref = new URLSearchParams(location.search).get('ref') || (festival === '1' ? 'festival' : '');
-    const repli = m === 'main-propre' ? MAIN_PROPRE_STRIPE_URL : livraisonHref;
+    const repli = livraisonHref;
     fetch(COMMANDE_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1116,10 +1081,6 @@ function initPurchaseChoice() {
     const href = link.getAttribute('href');
     livraisonHref = href.indexOf(STRIPE_CHECKOUT_URL) === 0 ? href : STRIPE_CHECKOUT_URL;
     delete payer.dataset.envoi;
-    if (!mode()) {
-      const defaut = form.querySelector('input[value="' + (festival === '1' ? 'main-propre' : 'livraison') + '"]');
-      if (defaut) defaut.checked = true;
-    }
     maj();
     dialog.showModal();
   }, true);

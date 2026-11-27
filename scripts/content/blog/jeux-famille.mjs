@@ -132,5 +132,5 @@ export default {
       a: 'Oui dès 8 ans, en commençant par la variante d’initiation sans cartes Pouvoir ni Mystique, avec au moins trois joueurs puisqu’il ne se joue pas à deux. Comptez environ 30 minutes, et regardez la vidéo de règles de la page <a class="text-link" href="/regle.html#video">règles de KYRAN</a>.'
     }
   ],
-  related: ['jeux-debutants-adultes', 'jeux-30-minutes', 'jeux-coop-cartes']
+  related: ['jeux-debutants-adultes', 'jeux-30-minutes', 'jeux-coop-cartes', 'jeux-cartes-noel-en-famille']
 };

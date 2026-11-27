@@ -516,5 +516,13 @@
  "jeux-cartes-originaux": {
   "assets": [],
   "legende": "Illustration créée pour KYRAN, sans visuel officiel : un éventail de cartes aux dos de couleurs différentes, avec une carte retournée au centre. Source : selection-2026.py."
+ },
+ "jeux-cartes-noel-en-famille": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : un sapin étoilé sur fond vert, au-dessus d'une nappe où sont posées des cartes colorées. Source : selection-famille-2026.py."
+ },
+ "jeux-cartes-10-12-ans": {
+  "assets": [],
+  "legende": "Illustration créée pour KYRAN, sans visuel officiel : un château de cartes de trois étages sur fond bleu, couronné d'une carte à pique. Source : selection-famille-2026.py."
  }
 }

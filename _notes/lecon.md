@@ -49,6 +49,7 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - **Cause :** `const VERSION` de `server/server.js` n'est monté par aucun outil ; il faut y penser à la main.
 - **Correctif :** `VERSION` 1.7.0 (PR #197), vérifié en ligne (`/health` et ligne de démarrage Railway « v1.7.0 »).
 - **Règle :** toute PR qui change le comportement de `server/` monte `VERSION` (correctif : dernier chiffre ; fonction : chiffre du milieu), pour que `/health` et le log de démarrage disent quel code tourne.
+- **Récidives :** 19/11, 21/11, 24/11, 26/11 (concours de Noël, PR #352, monté en 1.13.0 le 27/11). Garde-fou automatique possible : un test qui compare `server/` à `main` et exige une `VERSION` différente.
 
 ### 2026-11-05 — Surveillance : `npx stripe-mcp` a lancé un paquet tiers homonyme
 

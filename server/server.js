@@ -395,7 +395,7 @@ async function handleChargeRefunded(charge) {
   }
 }
 
-const VERSION = '1.12.0';
+const VERSION = '1.13.0';
 const MAX_BODY_BYTES = 1048576;
 
 function applyCors(req, res, pathname) {
@@ -659,7 +659,12 @@ const server = http.createServer((req, res) => {
       if (!INSCRIPTION_SOURCES.includes(source)) return sendJson(res, 400, { error: 'Source inconnue' });
       const rows = list.filter(e => e.source === source);
       if (url.searchParams.get('format') === 'csv') {
-        const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+        // Une cellule qui commence par = + - @ (ou tabulation, retour) serait lue comme une formule par
+        // Excel ou LibreOffice : une adresse comme « =cmd|… @exemple.fr » est valide. Apostrophe devant.
+        const cell = v => {
+          const s = String(v ?? '');
+          return `"${(/^[=+\-@\t\r]/.test(s) ? "'" + s : s).replace(/"/g, '""')}"`;
+        };
         const csv = ['prenom;email;accord;date', ...rows.map(e => [e.prenom, e.email, e.accord ? 'oui' : 'non', e.date].map(cell).join(';'))].join('\r\n');
         res.writeHead(200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="${source}.csv"` });
         return res.end('\ufeff' + csv + '\r\n');

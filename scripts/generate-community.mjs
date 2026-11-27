@@ -138,6 +138,9 @@ function mediaSchema(post, m, i) {
     creditText: '@' + post.credit,
     copyrightNotice: `© @${post.credit}`,
     ...(post.permalink ? { isBasedOn: post.permalink } : {}),
+    // Droits : la photo reste à son auteur (section #droits) ; pour la réutiliser, s'adresser à lui.
+    license: URL + '#droits',
+    acquireLicensePage: post.permalink || profileUrl(post.credit),
     about: { '@id': SITE + '/#game' },
     inLanguage: 'fr-FR'
   };
@@ -329,8 +332,8 @@ const html = `<!DOCTYPE html>
         <div class="prose">
           <h2>Apparaître sur cette page</h2>
           <p>Vous jouez à KYRAN à l'apéro, en famille ou en soirée jeux&nbsp;? Identifiez <strong>@${OWN_HANDLE}</strong> dans votre publication, votre reel ou votre story Instagram, ou invitez-le comme collaborateur. Si nous republions votre photo ou votre vidéo, elle apparaît ici avec votre pseudo et un lien vers votre publication.</p>
-          <p>Chaque photo et chaque vidéo reste la propriété de son auteur. Vous figurez sur cette page et préférez ne plus y être&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: nous retirons la publication du site.</p>
-          <p>Pas encore de boîte&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a> ou entraînez-vous gratuitement dans l’<a class="text-link" href="/minijeu.html">Initiation</a>.</p>
+          <p id="droits">Chaque photo et chaque vidéo reste la propriété de son auteur. Pour la réutiliser, demandez-lui directement, depuis sa publication d'origine. Vous figurez sur cette page et préférez ne plus y être&nbsp;? Écrivez à <a class="text-link" href="mailto:contact@kyran-jeu.fr">contact@kyran-jeu.fr</a>&nbsp;: nous retirons la publication du site.</p>
+          <p>Pas encore le jeu KYRAN&nbsp;? Lisez les <a class="text-link" href="/regle.html">règles du jeu</a> ou entraînez-vous gratuitement dans l’<a class="text-link" href="/minijeu.html">Initiation</a>.</p>
           <p class="ugc-buy"><a class="btn btn-primary" href="/commander.html">Commander KYRAN · 9,99&nbsp;€</a></p>
         </div>
       </div>

@@ -10,6 +10,19 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 
 ## Entrées
 
+### 2026-11-27 (après-midi) : alerte « Métadonnées d'image » (t111) et plan marque (spécialiste SEO et GEO)
+
+- **Alerte Search Console du 27/11** (non critique) : champs `license` et `acquireLicensePage` manquants sur
+  2 images, toutes deux sur `/communaute.html` (`kyran-2026-11-24-kev-clz-aimelesjeux-581148-1.jpg` et `-2.jpg`).
+- **Correctif** : PR #362 (fusionnée le 27/11, CI verte) : `scripts/generate-community.mjs` pose `license`
+  (`/communaute.html#droits`) et `acquireLicensePage` (publication Instagram d'origine) sur chaque ImageObject.
+  En ligne vérifié par `curl` ; test des résultats enrichis du 27/11 : « Métadonnées d'image », 2 éléments
+  valides, sans avertissement. « Valider la correction » : commencée le 27/11 pour les 2 problèmes.
+- **Reste non critique** : « Articles » (9 SocialMediaPosting de la même page) : champ `image` manquant
+  (facultatif). Publications intégrées par iframe, aucun fichier hébergé : laissé tel quel.
+- **Plan marque** : [`seo/plan-marque-2026-12.md`](seo/plan-marque-2026-12.md). Départ : n°1 sur Google et Bing
+  pour les 3 requêtes (relevé direct). Le relevé `curl-neutre` donne Bing « absent » à tort.
+
 ### 2026-11-27 : run quotidien n° 34 (vendredi)
 
 **Verdict : En progrès.**

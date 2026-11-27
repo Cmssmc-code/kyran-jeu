@@ -201,7 +201,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
 test('serveur : /health indique Brevo branché', async () => {
   const health = await (await fetch(BASE + '/health')).json();
-  assert.equal(health.version, '1.12.0');
+  assert.equal(health.version, '1.13.0');
   assert.equal(health.brevo, true);
 });
 
@@ -314,13 +314,17 @@ test('serveur : concours (prénom obligatoire, accord facultatif, doublon ignor�
   const auth = { headers: { Authorization: `Bearer ${ADMIN}` } };
   assert.equal((await fetch(BASE + '/api/inscriptions?source=concours-noel')).status, 401);
   assert.equal((await fetch(BASE + '/api/inscriptions?source=autre', auth)).status, 400);
+  // Adresse valide qui commence par « = » : elle ne doit pas devenir une formule dans le tableur.
+  await inscrire({ email: "=cmd|'calc'!a0@example.com", source: 'concours-noel', prenom: 'Zoé' }, { ip: '10.7.7.7' });
+  await wait(150);
   const json = await (await fetch(BASE + '/api/inscriptions?source=concours-noel', auth)).json();
-  assert.equal(json.total, 2);
+  assert.equal(json.total, 3);
   assert.equal(json.avecAccord, 1);
   const csv = await fetch(BASE + '/api/inscriptions?source=concours-noel&format=csv', auth);
   assert.match(csv.headers.get('content-type'), /text\/csv/);
   const lines = (await csv.text()).replace(/^\ufeff/, '').trim().split('\r\n');
   assert.equal(lines[0], 'prenom;email;accord;date');
   assert.match(lines[1], /^"Léa";"gagnant@example\.com";"non";"\d{4}-/);
-  assert.equal(lines.length, 3);
+  assert.equal(lines[3].split(';')[1], `"'=cmd|'calc'!a0@example.com"`);
+  assert.equal(lines.length, 4);
 });

@@ -29,7 +29,7 @@ test('le flux a les attributs obligatoires de Merchant Center', () => {
 test('les valeurs du flux correspondent aux pages du site', () => {
   const cgv = readFileSync(join(ROOT, 'cgv.html'), 'utf8');
   assert.equal(g('price').text(), '9.99 EUR');
-  assert.match(cgv, /9,99 € TTC par boîte/);
+  assert.match(cgv, /9,99 € TTC par jeu KYRAN/);
   assert.equal($('g\\:shipping > g\\:price').text(), `${PRODUCT.shipping.rates[0].price} EUR`);
   assert.match(cgv, new RegExp(`TTC : 1 boîte : ${PRODUCT.shipping.rates[0].label} ;`));
   assert.match(cgv, /24 à 48 heures ouvrées/);

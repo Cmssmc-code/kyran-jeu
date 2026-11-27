@@ -7,9 +7,9 @@ export default {
   category: "Famille",
   date: "2026-11-27",
   heroTitle: "<span class=\"accent\">Jeux de cartes pour 10 à 12 ans</span> : sept jeux qui demandent de réfléchir",
-  heroSubtitle: "Entre la bataille et les jeux d’adultes, sept boîtes avec l’âge de la fiche, les joueurs, la durée et un prix daté.",
+  heroSubtitle: "Entre la bataille et les jeux d’adultes, sept jeux avec l’âge de la fiche, les joueurs, la durée et un prix daté.",
   heroImage: "/blog/images/jeux-cartes-10-12-ans.jpg",
-  heroCaption: "Illustration créée pour KYRAN, sans visuel de boîte : un château de cartes de trois étages sur fond bleu, couronné d’une carte à pique.",
+  heroCaption: "Illustration créée pour KYRAN, sans visuel officiel du jeu : un château de cartes de trois étages sur fond bleu, couronné d’une carte à pique.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,
@@ -42,10 +42,10 @@ export default {
     faq: "Les questions sur les jeux de cartes à 10-12 ans",
     related: "Pour aller plus loin"
   },
-  intro: "<p>Entre dix et douze ans, un enfant a assez de patience pour une règle d’une page, mais il refuse les jeux « de petits ». Ce qui l’intéresse : gagner à la loyale contre des adultes, réfléchir un peu plus que ses parents, et rire aux dépens de ses voisins. Cette page présente sept jeux de cartes, dont KYRAN, rangés du coopératif au jeu de paris. Pour chacun : le nombre de joueurs, l’âge indiqué sur la fiche, la durée annoncée et un prix relevé à une date précise. Tous les prix sont des relevés de fin novembre 2026 : Ludum le 26 (Cabanga le 27), Philibert pour Pili Pili, et la boutique officielle pour KYRAN. L’âge d’une boîte est un repère de l’éditeur, pas une garantie : il dépend de l’enfant et des habitudes de la famille.</p>",
+  intro: "<p>Entre dix et douze ans, un enfant a assez de patience pour une règle d’une page, mais il refuse les jeux « de petits ». Ce qui l’intéresse : gagner à la loyale contre des adultes, réfléchir un peu plus que ses parents, et rire aux dépens de ses voisins. Cette page présente sept jeux de cartes, dont KYRAN, rangés du coopératif au jeu de paris. Pour chacun : le nombre de joueurs, l’âge indiqué sur la fiche, la durée annoncée et un prix relevé à une date précise. Tous les prix sont des relevés de fin novembre 2026 : Ludum le 26 (Cabanga le 27), Philibert pour Pili Pili, et la boutique officielle pour KYRAN. L’âge d’un jeu est un repère de l’éditeur, pas une garantie : il dépend de l’enfant et des habitudes de la famille.</p>",
   criteria: {
     heading: "Comment nous choisissons pour 10 à 12 ans",
-    html: "<p>À onze ans, personne ne veut du jeu de son petit frère. Ce qui compte n’est donc pas le chiffre imprimé sur la boîte, mais ce que le jeu demande à la tête et à la table. Nous avons posé quatre repères, tous contrôlables sur les fiches des éditeurs et des boutiques.</p><h3>Un vrai jeu, pas un jeu de petits</h3><p>Nous retenons des boîtes annoncées dès 8 ou 10 ans, avec une règle qui laisse de la place à la réflexion, à l’anticipation ou au bluff. Aucun jeu de pure mémoire pour tout-petits n’a sa place ici.</p><h3>Le bon rapport de force avec les adultes</h3><p>Un préadolescent adore battre un parent, mais déteste qu’on le laisse gagner. Nous précisons donc quand le hasard égalise les chances et quand l’expérience pèse assez pour que l’adulte doive se retenir un peu.</p><h3>Une tablée réaliste</h3><p>Entre frères, sœurs, cousins et parents, la table varie : à deux le mercredi après-midi, à cinq le dimanche. Nous indiquons pour chaque jeu le minimum et le maximum de joueurs, et nous prévenons quand une boîte plafonne tôt.</p><h3>Le plaisir de la revanche</h3><p>À cet âge, une partie perdue donne envie de rejouer, à condition que la manche soit courte. Nous préférons donc des parties de vingt à quarante minutes, qui laissent la place à une revanche avant le dîner ou le coucher, plutôt que des soirées entières de règles.</p><h3>Un jeu que l’enfant peut expliquer</h3><p>Un préado est fier d’enseigner un jeu à ses grands-parents ou à ses cousins. Nous retenons donc des règles que l’on peut résumer en une minute, avec quelques cartes dans la main, sans livret de dix pages à relire.</p><h3>Un tarif daté</h3><p>Chaque prix renvoie à une boutique et à un jour de relevé. Ni promotion ni stock garantis : les remises de fin d’année se vérifient directement chez le vendeur.</p>"
+    html: "<p>À onze ans, personne ne veut du jeu de son petit frère. Ce qui compte n’est donc pas le chiffre imprimé sur l’emballage, mais ce que le jeu demande à la tête et à la table. Nous avons posé quatre repères, tous contrôlables sur les fiches des éditeurs et des boutiques.</p><h3>Un vrai jeu, pas un jeu de petits</h3><p>Nous retenons des jeux annoncés dès 8 ou 10 ans, avec une règle qui laisse de la place à la réflexion, à l’anticipation ou au bluff. Aucun jeu de pure mémoire pour tout-petits n’a sa place ici.</p><h3>Le bon rapport de force avec les adultes</h3><p>Un préadolescent adore battre un parent, mais déteste qu’on le laisse gagner. Nous précisons donc quand le hasard égalise les chances et quand l’expérience pèse assez pour que l’adulte doive se retenir un peu.</p><h3>Une tablée réaliste</h3><p>Entre frères, sœurs, cousins et parents, la table varie : à deux le mercredi après-midi, à cinq le dimanche. Nous indiquons pour chaque jeu le minimum et le maximum de joueurs, et nous prévenons quand un jeu plafonne tôt.</p><h3>Le plaisir de la revanche</h3><p>À cet âge, une partie perdue donne envie de rejouer, à condition que la manche soit courte. Nous préférons donc des parties de vingt à quarante minutes, qui laissent la place à une revanche avant le dîner ou le coucher, plutôt que des soirées entières de règles.</p><h3>Un jeu que l’enfant peut expliquer</h3><p>Un préado est fier d’enseigner un jeu à ses grands-parents ou à ses cousins. Nous retenons donc des règles que l’on peut résumer en une minute, avec quelques cartes dans la main, sans livret de dix pages à relire.</p><h3>Un tarif daté</h3><p>Chaque prix renvoie à une boutique et à un jour de relevé. Ni remise ni stock garanti : les remises de fin d’année se vérifient directement chez le vendeur.</p>"
   },
   games: [
     {
@@ -143,7 +143,7 @@ export default {
     },
     {
       q: "Ces prix sont-ils garantis ?",
-      a: "Non : ce sont des relevés du 26 et du 27 novembre 2026 faits sur Ludum, Philibert et la boutique officielle de KYRAN. Une promotion de décembre ou des frais de port peuvent changer le total."
+      a: "Non : ce sont des relevés du 26 et du 27 novembre 2026 faits sur Ludum, Philibert et la boutique officielle de KYRAN. Une remise de décembre peut changer le prix."
     }
   ],
   related: [

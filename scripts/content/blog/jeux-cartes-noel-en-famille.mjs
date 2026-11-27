@@ -6,10 +6,10 @@ export default {
   description: "Sept jeux de cartes pour la table de Noël, du grand-parent au petit cousin : joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.",
   category: "Famille",
   date: "2026-11-27",
-  heroTitle: "<span class=\"accent\">Jeux de cartes pour Noël en famille</span> : sept boîtes pour l’après-repas",
-  heroSubtitle: "Des règles qui se disent en une minute, des parties de moins d’une demi-heure et un prix daté pour chaque boîte.",
+  heroTitle: "<span class=\"accent\">Jeux de cartes pour Noël en famille</span> : sept jeux pour l’après-repas",
+  heroSubtitle: "Des règles qui se disent en une minute, des parties de moins d’une demi-heure et un prix daté pour chaque jeu.",
   heroImage: "/blog/images/jeux-cartes-noel-en-famille.jpg",
-  heroCaption: "Illustration créée pour KYRAN, sans visuel de boîte : un sapin étoilé sur fond vert, au-dessus d’une nappe où sont posées des cartes colorées.",
+  heroCaption: "Illustration créée pour KYRAN, sans visuel officiel du jeu : un sapin étoilé sur fond vert, au-dessus d’une nappe où sont posées des cartes colorées.",
   layout: {
     answerFirst: true,
     criteriaAfter: true,
@@ -45,7 +45,7 @@ export default {
   intro: "<p>À Noël, la table réunit des gens qui n’ont pas le même âge ni les mêmes habitudes de jeu, et le repas a duré longtemps. Il faut donc un jeu dont la règle tient en quelques phrases, qui supporte les allées et venues et dont la partie ne dépasse pas une demi-heure. Cette page présente sept jeux de cartes, dont KYRAN, que nous plaçons volontairement parmi d’autres et pas en tête. Chaque jeu est accompagné du nombre de joueurs, de l’âge indiqué sur la fiche, de la durée annoncée et d’un prix relevé à une date précise : le 26 novembre 2026 chez Ludum, sauf Pili Pili chez Philibert le même jour ; Dékal et Cabanga ont été relevés chez Ludum le 27 novembre 2026 ; KYRAN est au tarif de sa boutique officielle. Les prix de fin d’année bougent : revérifiez avant d’acheter.</p>",
   criteria: {
     heading: "Comment nous choisissons pour une table de Noël",
-    html: "<p>Le jeu du réveillon n’est pas celui que l’on préfère un mardi soir à deux. Il doit fonctionner avec des joueurs de tous âges, avec ceux qui se lèvent pour surveiller le four et avec le cousin qui débarque à la deuxième manche. Nous nous sommes donc imposé quatre règles, toutes vérifiables sur les fiches des éditeurs ou des boutiques.</p><h3>Une règle qui se dit en une minute</h3><p>Si l’explication dépasse deux minutes, la moitié de la table décroche avant la première carte. Nous retenons des jeux annoncés dès 7 ou 8 ans, et nous prévenons quand une règle suppose d’avoir déjà joué aux plis, comme à la belote ou au tarot.</p><h3>Une table de la bonne taille</h3><p>Un repas de fête réunit rarement trois personnes. Nous regardons le maximum de joueurs aussi bien que le minimum, et nous le signalons dès qu’une boîte plafonne à quatre ou cinq places.</p><h3>Une partie qui laisse du temps au dessert</h3><p>De quinze à quarante minutes, de façon à enchaîner deux parties sans que personne ne regarde sa montre ni ne s’endorme sur le canapé.</p><h3>Une place pour les moins joueurs</h3><p>Un grand-parent, un beau-frère ou un adolescent qui préférerait son téléphone ne sont pas des experts. Nous écartons les jeux où il faut déjà connaître dix règles pour ne pas être humilié dès la deuxième manche, et nous plaçons les jeux de plis en dernier pour cette raison.</p><h3>De la place pour quelqu’un qui arrive en cours</h3><p>Un jeu qui supporte qu’un joueur parte éplucher les pommes de terre ou qu’un invité s’installe à mi-chemin garde la table unie. Nous préférons des manches courtes, que l’on peut interrompre ou rejoindre sans tout recommencer.</p><h3>Un prix que l’on peut contrôler</h3><p>Chaque tarif est rattaché à une boutique et à un jour de relevé. Nous n’annonçons ni promotion ni disponibilité garantie : en décembre, les stocks et les remises changent vite, et le site du vendeur fait foi.</p>"
+    html: "<p>Le jeu du réveillon n’est pas celui que l’on préfère un mardi soir à deux. Il doit fonctionner avec des joueurs de tous âges, avec ceux qui se lèvent pour surveiller le four et avec le cousin qui débarque à la deuxième manche. Nous nous sommes donc imposé quatre règles, toutes vérifiables sur les fiches des éditeurs ou des boutiques.</p><h3>Une règle qui se dit en une minute</h3><p>Si l’explication dépasse deux minutes, la moitié de la table décroche avant la première carte. Nous retenons des jeux annoncés dès 7 ou 8 ans, et nous prévenons quand une règle suppose d’avoir déjà joué aux plis, comme à la belote ou au tarot.</p><h3>Une table de la bonne taille</h3><p>Un repas de fête réunit rarement trois personnes. Nous regardons le maximum de joueurs aussi bien que le minimum, et nous le signalons dès qu’un jeu plafonne à quatre ou cinq places.</p><h3>Une partie qui laisse du temps au dessert</h3><p>De quinze à quarante minutes, de façon à enchaîner deux parties sans que personne ne regarde sa montre ni ne s’endorme sur le canapé.</p><h3>Une place pour les moins joueurs</h3><p>Un grand-parent, un beau-frère ou un adolescent qui préférerait son téléphone ne sont pas des experts. Nous écartons les jeux où il faut déjà connaître dix règles pour ne pas être humilié dès la deuxième manche, et nous plaçons les jeux de plis en dernier pour cette raison.</p><h3>De la place pour quelqu’un qui arrive en cours</h3><p>Un jeu qui supporte qu’un joueur parte éplucher les pommes de terre ou qu’un invité s’installe à mi-chemin garde la table unie. Nous préférons des manches courtes, que l’on peut interrompre ou rejoindre sans tout recommencer.</p><h3>Un prix que l’on peut contrôler</h3><p>Chaque tarif est rattaché à une boutique et à un jour de relevé. Nous n’annonçons ni remise ni disponibilité garantie : en décembre, les stocks et les remises changent vite, et le site du vendeur fait foi.</p>"
   },
   games: [
     {
@@ -54,7 +54,7 @@ export default {
       pick: "Le plus simple à lancer, dès 7 ans",
       paragraphs: [
         `Chez Ludum, Trio se trouvait à 11,90 € le 26 novembre 2026, en stock. Chacun retourne une carte chez lui ou chez un voisin, dans l’espoir de réunir trois valeurs identiques ; un essai raté n’est jamais perdu, puisqu’il révèle à toute la table l’emplacement d’un chiffre. As d’Or du Festival de Cannes 2024.`,
-        `La fiche indique 3 à 6 joueurs, dès 7 ans, pour environ quinze minutes. On peut l’ouvrir devant quelqu’un qui n’a jamais touché une carte à jouer. Il ne se joue pas à deux : prévoyez au moins trois personnes autour de la boîte.`
+        `La fiche indique 3 à 6 joueurs, dès 7 ans, pour environ quinze minutes. On peut l’ouvrir devant quelqu’un qui n’a jamais touché une carte à jouer. Il ne se joue pas à deux : prévoyez au moins trois personnes autour du jeu.`
       ]
     },
     {
@@ -108,7 +108,7 @@ export default {
       pick: "Pour une tablée de trois à six qui aime parier",
       paragraphs: [
         `KYRAN se vend 9,99 € sur sa boutique officielle. Chaque manche commence par une annonce du nombre de plis que l’on compte gagner ; la somme des annonces ne peut jamais tomber juste, donc au moins un joueur se trompe et perd des cartes Vie.`,
-        `Il se joue de trois à six, dès 8 ans, une demi-heure environ, jamais à deux. Il suppose d’avoir déjà pratiqué un jeu de plis (belote, tarot) ou d’accepter une première partie cartes visibles. La <a class="text-link" href="/regle.html">règle en ligne</a> se lit en quelques minutes avant l’achat.`
+        `Il se joue de trois à six, dès 8 ans, une demi-heure environ, jamais à deux. Il suppose d’avoir déjà pratiqué un jeu de plis (belote, tarot) ou d’accepter une première partie cartes visibles. La <a class="text-link" href="/regle.html">règle en ligne</a> se lit en quelques minutes avant l’achat. Pour qu’il arrive avant Noël, il faut commander avant le 16/12.`
       ]
     }
   ],
@@ -143,7 +143,7 @@ export default {
     },
     {
       q: "Ces prix sont-ils garantis ?",
-      a: "Non : ce sont des relevés des 26 et 27 novembre 2026, chez Ludum et Philibert pour les jeux tiers, sur la boutique officielle pour KYRAN. Les remises de décembre et les frais de livraison peuvent les faire bouger."
+      a: "Non : ce sont des relevés des 26 et 27 novembre 2026, chez Ludum et Philibert pour les jeux tiers, sur la boutique officielle pour KYRAN. Les remises de décembre peuvent les faire bouger."
     }
   ],
   related: [

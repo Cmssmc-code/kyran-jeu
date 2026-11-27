@@ -13,7 +13,7 @@ règle des 28 jours).
 | kyran jeu de cartes | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : aucune impr. récente |
 | kyran jeu de pli | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : 9 sur 20 impr. (semaine du 20/11) |
 
-- « Direct » : recherche réelle dans le navigateur de Trio le 27/11 vers 15h45, `hl=fr`, `gl=fr`, `pws=0` pour
+- « Direct » : recherche réelle dans le navigateur de Trio le 27/11 après-midi, `hl=fr`, `gl=fr`, `pws=0` pour
   Google, `cc=FR` pour Bing ; résultat organique n°1 = `https://kyran-jeu.fr/` (Bing « kyran jeu de cartes » :
   `/jouer-en-ligne.html` en 1, l'accueil en 2).
 - Search Console (28 j au 26/11) : seule la requête « kyran » ressort (78 impressions, 7 clics, position 2,3) ;

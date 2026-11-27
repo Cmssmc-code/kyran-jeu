@@ -16,7 +16,7 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
   2 images, toutes deux sur `/communaute.html` (`kyran-2026-11-24-kev-clz-aimelesjeux-581148-1.jpg` et `-2.jpg`).
 - **Correctif** : PR #362 (fusionnée le 27/11, CI verte) : `scripts/generate-community.mjs` pose `license`
   (`/communaute.html#droits`) et `acquireLicensePage` (publication Instagram d'origine) sur chaque ImageObject.
-  En ligne vérifié par `curl` ; test des résultats enrichis du 27/11 15h38 : « Métadonnées d'image », 2 éléments
+  En ligne vérifié par `curl` ; test des résultats enrichis du 27/11 : « Métadonnées d'image », 2 éléments
   valides, sans avertissement. « Valider la correction » : commencée le 27/11 pour les 2 problèmes.
 - **Reste non critique** : « Articles » (9 SocialMediaPosting de la même page) : champ `image` manquant
   (facultatif). Publications intégrées par iframe, aucun fichier hébergé : laissé tel quel.

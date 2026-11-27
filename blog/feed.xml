@@ -5,13 +5,27 @@
     <link>https://kyran-jeu.fr/blog/</link>
     <description>Sélections de jeux de cartes et de société, idées cadeaux et conseils pour vos soirées.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Thu, 26 Nov 2026 08:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 08:00:00 +0200</lastBuildDate>
     <atom:link href="https://kyran-jeu.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://kyran-jeu.fr/logo.png</url>
       <title>Blog KYRAN</title>
       <link>https://kyran-jeu.fr/blog/</link>
     </image>
+    <item>
+      <title>Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html</guid>
+      <pubDate>Fri, 27 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Sept jeux de cartes pour la table de Noël, du grand-parent au petit cousin : joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.</description>
+    </item>
+    <item>
+      <title>Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés</title>
+      <link>https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html</link>
+      <guid isPermaLink="true">https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html</guid>
+      <pubDate>Fri, 27 Nov 2026 08:00:00 +0200</pubDate>
+      <description>Sept jeux de cartes pour 10 à 12 ans : coopératifs, défausse ou plis, avec joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.</description>
+    </item>
     <item>
       <title>Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027</title>
       <link>https://kyran-jeu.fr/blog/nouveaux-jeux-de-cartes-2027.html</link>

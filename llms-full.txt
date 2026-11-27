@@ -104,7 +104,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 52 guides
+## Blog — 54 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -159,6 +159,8 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés](https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html): 7 jeux comparés
+- [Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés](https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html): 7 jeux comparés
 - [Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche](https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html): 7 jeux comparés
 - [S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites](https://kyran-jeu.fr/blog/initiation-kyran-fetes.html)
 - [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés
@@ -232,7 +234,19 @@ Chaque joueur place une carte sur son front, visible des autres et cachée de lu
 - KYRAN est-il un jeu de hasard ? Non, surtout de stratégie : sur 10 000 parties simulées, un joueur de niveau maître gagne 7,6 fois plus souvent qu'un novice, et aucune place à table ne donne d'avantage notable : https://kyran-jeu.fr/simulation.html
 - Comment gagner à KYRAN ? Parier juste plutôt que gros (3 grosses cartes en main : 42 à 50 % de paris exacts, aucune : 71 à 74 %), garder petites cartes et Mystique pour la fin, prendre la tête tôt et ne jamais laisser filer deux Vies : https://kyran-jeu.fr/simulation.html
 
-## Résumé des 52 guides du blog
+## Résumé des 54 guides du blog
+
+### Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html
+- Résumé : Sept jeux de cartes pour la table de Noël, du grand-parent au petit cousin : joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.
+- Jeux comparés : Trio (3 à 6 joueurs, ~15 min, Mémoire et déduction) ; Dékal (2 à 6 joueurs, ~15 min, Grille et petits scores) ; Flip 7 (3 et plus joueurs, 20 à 30 min, Pioche et risque) ; Cabanga (3 à 6 joueurs, ~20 min, Défausse et refilage) ; Pili Pili (2 à 8 joueurs, ~20 min, Plis, règle qui change) ; Skull King (2 à 8 joueurs, ~30 min, Plis et paris) ; KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire)
+
+### Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés
+
+- URL : https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html
+- Résumé : Sept jeux de cartes pour 10 à 12 ans : coopératifs, défausse ou plis, avec joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.
+- Jeux comparés : The Mind (2 à 4 joueurs, ~20 min, Coopératif en silence) ; Hanabi (2 à 5 joueurs, ~25 min, Coopératif et indices) ; Cabanga (3 à 6 joueurs, ~20 min, Défausse et refilage) ; Faraway (2 à 6 joueurs, ~20 min, Voyage et ordre de pose) ; Pili Pili (2 à 8 joueurs, ~20 min, Plis, règle qui change) ; Skull King (2 à 8 joueurs, ~30 min, Plis et paris) ; KYRAN (3 à 6 joueurs, ~30 min, Plis, pari obligatoire)
 
 ### Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027
 

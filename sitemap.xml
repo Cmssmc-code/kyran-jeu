@@ -175,9 +175,25 @@
 
   <url>
     <loc>https://kyran-jeu.fr/blog/</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-noel-en-famille.jpg</image:loc>
+      <image:title>Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <image:image>
+      <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-10-12-ans.jpg</image:loc>
+      <image:title>Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés</image:title>
+    </image:image>
+  </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/nouveaux-jeux-de-cartes-2027.html</loc>
     <lastmod>2026-11-26</lastmod>
@@ -188,7 +204,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-enfants-8-ans.jpg</image:loc>
       <image:title>Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche</image:title>
@@ -340,7 +356,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-cartes-ados.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-cartes-ados.jpg</image:loc>
       <image:title>Jeux de cartes pour ados : 6 jeux qui tiennent une soirée entre amis</image:title>
@@ -548,7 +564,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/cadeau-noel.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/cadeau-noel.jpg</image:loc>
       <image:title>Jeux de cartes à offrir à Noël : 7 idées selon le destinataire</image:title>
@@ -564,7 +580,7 @@
   </url>
   <url>
     <loc>https://kyran-jeu.fr/blog/jeux-famille.html</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image>
       <image:loc>https://kyran-jeu.fr/blog/images/jeux-famille.jpg</image:loc>
       <image:title>Jeux de société en famille : 8 jeux de cartes dès 6 ans</image:title>

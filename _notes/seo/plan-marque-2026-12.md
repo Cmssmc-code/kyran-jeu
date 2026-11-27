@@ -9,9 +9,9 @@ règle des 28 jours).
 
 | Requête | Google | Bing |
 |---|---|---|
-| kyran jeu | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : 1,5 sur 8 impr. |
+| kyran jeu | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API, depuis 09/2025 : 8 impr., position 1,5 |
 | kyran jeu de cartes | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : aucune impr. récente |
-| kyran jeu de pli | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : 9 sur 20 impr. (semaine du 20/11) |
+| kyran jeu de pli | 1 (direct) ; GSC : pas de ligne | 1 (direct) ; API : 20 impr., position 9 (semaine du 20/11) |
 
 - « Direct » : recherche réelle dans le navigateur de Trio le 27/11 après-midi, `hl=fr`, `gl=fr`, `pws=0` pour
   Google, `cc=FR` pour Bing ; résultat organique n°1 = `https://kyran-jeu.fr/` (Bing « kyran jeu de cartes » :

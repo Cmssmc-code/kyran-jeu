@@ -205,3 +205,5 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - Demande de numéro ou d'appel : aucune réponse, prévenir le PDG le jour même (nom, mail, demande) ; Corentin seul répond.
 - Formulaires d'inscription et codes SMS : permis.
 - Les trois pages légales (mentions, CGV, confidentialité) le gardent pour la vente à distance, en attente du choix de Corentin.
+
+- 2026-11-27 — Prix Amazon hors euro (Suède kr, Pologne zł) : le prix suit le taux de change, l'écart est normal (moins de 1 %). Le site écrit « environ 198 kr » (arrondi) et `scripts/surveillance/liens-achat.mjs` tolère 3 % hors euro ; l'euro reste exact au centime. Ne plus corriger ces prix chaque semaine ni lever d'« Urgent » pour un écart de change sous 1 % : le noter au bilan.

@@ -73,7 +73,7 @@ const BLOG_ITEMS = [
     "category": "Cartes",
     "date": "2026-11-26",
     "readMinutes": 8,
-    "excerpt": "Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge et prix du 26 novembre 2026.",
+    "excerpt": "Sept jeux de cartes à la mécanique inhabituelle, dont KYRAN : silence, main cachée, score à l’envers, grille qui glisse. Joueurs, âge, prix au 26 novembre 2026.",
     "image": "/blog/images/jeux-cartes-originaux.jpg",
     "webp": "/blog/images/jeux-cartes-originaux.webp",
     "gameCount": 7,

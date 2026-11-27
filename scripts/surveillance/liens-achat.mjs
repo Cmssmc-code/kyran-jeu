@@ -27,6 +27,9 @@ const BOUTIQUE = /^https:\/\/(?:www\.)?(amazon\.[a-z.]+|philibertnet\.com|etsy\.
 
 const sansCommentaires = h => h.replace(/<!--[\s\S]*?-->/g, '');
 const normPrix = s => (s || '').replace(/\s|&nbsp;| | /g, '').replace('.', ',');
+// Hors euro (kr, zł), le prix Amazon bouge avec le taux de change : le site affiche « environ X » et on tolère 3 %.
+const TOLERANCE_CHANGE = 0.03;
+const num = s => parseFloat(String(s).replace(',', '.'));
 const decode = s => s.replace(/&amp;/g, '&');
 
 /** Liens d'achat visibles sur les pages, avec le prix affiché juste après le lien. */
@@ -42,7 +45,8 @@ async function relever() {
       const cle = url.replace(/[?#].*$/, '');
       const nom = m[2].replace(/<[^>]+>/g, '').trim().slice(0, 40);
       const apres = m[3].replace(/<[^>]+>/g, ' ');
-      const prix = (apres.match(/^\s*(\d+(?:[,.]\d{2})?)\s*(?:&nbsp;|\s)*(€|kr|zł)/) || [])[1];
+      const mp = apres.match(/^\s*(?:environ\s+)?(\d+(?:[,.]\d{2})?)\s*(?:&nbsp;|\s)*(€|kr|zł)/);
+      const prix = mp && mp[1];
       const e = liens.get(cle) || { url, nom, pages: [], prixSite: null };
       if (!e.pages.includes(p)) e.pages.push(p);
       if (prix && !e.prixSite) e.prixSite = normPrix(prix);
@@ -68,7 +72,12 @@ function amazon({ status, html }, lien) {
   if (!html.includes('id="add-to-cart-button"')) return ['casse', `plus de bouton « Ajouter au panier »${prix ? ` (prix lu ${prix})` : ''}`];
   const chiffre = (prix.match(/\d+,\d{2}/) || [])[0];
   if (!chiffre) return ['illisible', 'prix introuvable sur la fiche'];
-  if (lien.prixSite && chiffre !== lien.prixSite.match(/\d+,\d{2}/)?.[0]) return ['prix', `prix Amazon ${prix}, site ${lien.prixSite}`];
+  const prixSite = lien.prixSite && lien.prixSite.match(/\d+(?:,\d{2})?/)?.[0];
+  if (prixSite) {
+    const horsEuro = /kr|zł/i.test(prix);
+    const ecart = Math.abs(num(chiffre) - num(prixSite)) / num(prixSite);
+    if (horsEuro ? ecart > TOLERANCE_CHANGE : chiffre !== prixSite) return ['prix', `prix Amazon ${prix}, site ${lien.prixSite}${horsEuro ? ` (écart ${(ecart * 100).toFixed(1)} %)` : ''}`];
+  }
   return ['ok', `KYRAN, ${prix}, bouton panier présent`];
 }
 

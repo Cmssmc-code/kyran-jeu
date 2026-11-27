@@ -497,9 +497,9 @@
       if (!livraison || !text) return;
       var noel = livraison.noelPhase(new Date(), [9, 1]);
       if (noel === 'avant') {
-        text.textContent = 'commandez en ligne avant le 16 décembre. ' + livraison.estimate() + ' Ensuite, remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com.';
+        text.textContent = 'commandez en ligne avant le 16 décembre. ' + livraison.estimate();
       } else if (noel === 'apres') {
-        text.textContent = 'après le 16 décembre, la livraison par colis avant Noël n’est plus garantie. Il reste la remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com. ' + livraison.estimate();
+        text.textContent = 'après le 16 décembre, la livraison par colis avant Noël n’est plus garantie. ' + livraison.estimate();
       }
     })();
   </script>

@@ -1943,10 +1943,10 @@
       var xmasNote = document.getElementById('xmas-note');
       var noel = livraison ? livraison.noelPhase(new Date(), [10, 1]) : '';
       if (xmasNote && noel === 'avant') {
-        xmasNote.textContent = 'Pour Noël, commandez en ligne avant le 16 décembre. Le colis part sous 24 à 48 h ouvrées et arrive en 2 à 4 jours ouvrés en France. Ensuite, remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com.';
+        xmasNote.textContent = 'Pour Noël, commandez en ligne avant le 16 décembre. Le colis part sous 24 à 48 h ouvrées et arrive en 2 à 4 jours ouvrés en France.';
         xmasNote.hidden = false;
       } else if (xmasNote && noel === 'apres') {
-        xmasNote.textContent = 'Après le 16 décembre, la livraison par colis avant Noël n’est plus garantie. Il reste la remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com.';
+        xmasNote.textContent = 'Après le 16 décembre, la livraison par colis avant Noël n’est plus garantie.';
         xmasNote.hidden = false;
       }
 

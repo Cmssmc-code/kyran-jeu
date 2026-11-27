@@ -153,5 +153,5 @@ export default {
       a: `Le plus tôt possible. Pour KYRAN, le site recommande de commander avant le 16 décembre : le colis part sous 24 à 48 heures ouvrées et met 2 à 4 jours ouvrés à arriver en France ; passé cette date, la livraison avant Noël n’est plus garantie, mais il reste la remise en main propre jusqu’au 24 décembre à Fontenay-aux-Roses et alentours, écrivez-nous à kyran.jeu@gmail.com. Pour les autres boîtes, vérifiez le délai annoncé par le vendeur, ou achetez en magasin avant le dernier week-end pour avoir le choix.`
     }
   ],
-  related: [`cadeau-anniversaire`, `jeux-duo-couples`, `jeux-famille`]
+  related: [`cadeau-anniversaire`, `jeux-duo-couples`, `jeux-famille`, `jeux-cartes-noel-en-famille`]
 };

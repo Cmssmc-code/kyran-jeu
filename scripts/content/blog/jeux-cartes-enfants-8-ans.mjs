@@ -161,6 +161,7 @@ export default {
   "related": [
     "jeux-famille",
     "jeux-cartes-ados",
-    "idees-cadeaux-jeu-de-cartes"
+    "idees-cadeaux-jeu-de-cartes",
+    "jeux-cartes-10-12-ans"
   ]
 };

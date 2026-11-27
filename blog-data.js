@@ -3,6 +3,38 @@ const BLOG_CATEGORIES = ["Tous","Apéro","Famille","Cadeaux","Alternatives","Car
 
 const BLOG_ITEMS = [
   {
+    "slug": "jeux-cartes-noel-en-famille",
+    "title": "Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés",
+    "category": "Famille",
+    "date": "2026-11-27",
+    "readMinutes": 8,
+    "excerpt": "Sept jeux de cartes pour la table de Noël, du grand-parent au petit cousin : joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.",
+    "image": "/blog/images/jeux-cartes-noel-en-famille.jpg",
+    "webp": "/blog/images/jeux-cartes-noel-en-famille.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-famille",
+      "jeux-cartes-enfants-8-ans",
+      "idees-cadeaux-jeu-de-cartes"
+    ]
+  },
+  {
+    "slug": "jeux-cartes-10-12-ans",
+    "title": "Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés",
+    "category": "Famille",
+    "date": "2026-11-27",
+    "readMinutes": 8,
+    "excerpt": "Sept jeux de cartes pour 10 à 12 ans : coopératifs, défausse ou plis, avec joueurs, durée, âge de la fiche et prix relevés fin novembre 2026.",
+    "image": "/blog/images/jeux-cartes-10-12-ans.jpg",
+    "webp": "/blog/images/jeux-cartes-10-12-ans.webp",
+    "gameCount": 7,
+    "related": [
+      "jeux-cartes-ados",
+      "jeux-cartes-enfants-8-ans",
+      "jeux-famille"
+    ]
+  },
+  {
     "slug": "nouveaux-jeux-de-cartes-2027",
     "title": "Nouveaux jeux de cartes : 7 sorties récentes (2023 à 2026) à connaître pour 2027",
     "category": "Cartes",
@@ -31,7 +63,8 @@ const BLOG_ITEMS = [
     "related": [
       "jeux-famille",
       "jeux-cartes-ados",
-      "idees-cadeaux-jeu-de-cartes"
+      "idees-cadeaux-jeu-de-cartes",
+      "jeux-cartes-10-12-ans"
     ]
   },
   {
@@ -335,7 +368,8 @@ const BLOG_ITEMS = [
     "related": [
       "jeux-famille",
       "jeux-soiree-amis",
-      "jeux-grands-groupes"
+      "jeux-grands-groupes",
+      "jeux-cartes-10-12-ans"
     ]
   },
   {
@@ -750,7 +784,8 @@ const BLOG_ITEMS = [
     "related": [
       "cadeau-anniversaire",
       "jeux-duo-couples",
-      "jeux-famille"
+      "jeux-famille",
+      "jeux-cartes-noel-en-famille"
     ]
   },
   {
@@ -782,7 +817,8 @@ const BLOG_ITEMS = [
     "related": [
       "jeux-debutants-adultes",
       "jeux-30-minutes",
-      "jeux-coop-cartes"
+      "jeux-coop-cartes",
+      "jeux-cartes-noel-en-famille"
     ]
   },
   {

@@ -104,7 +104,7 @@
 - [Conditions générales de vente (CGV)](https://kyran-jeu.fr/cgv.html)
 - [Politique de confidentialité (RGPD)](https://kyran-jeu.fr/confidentialite.html)
 
-## Blog — 52 guides
+## Blog — 54 guides
 
 - [Index du blog](https://kyran-jeu.fr/blog/)
 - [Flux RSS](https://kyran-jeu.fr/blog/feed.xml)
@@ -159,6 +159,8 @@
 
 ## Blog : Famille
 
+- [Jeux de cartes pour Noël en famille : 7 jeux à sortir après le repas, avec prix datés](https://kyran-jeu.fr/blog/jeux-cartes-noel-en-famille.html): 7 jeux comparés
+- [Jeux de cartes pour 10 à 12 ans : 7 jeux qui ne font pas bébé, avec prix datés](https://kyran-jeu.fr/blog/jeux-cartes-10-12-ans.html): 7 jeux comparés
 - [Jeux de cartes pour enfants de 8 ans : 7 boîtes à jouer en famille, avec l’âge de chaque fiche](https://kyran-jeu.fr/blog/jeux-cartes-enfants-8-ans.html): 7 jeux comparés
 - [S’entraîner à KYRAN avant le repas de Noël : l’Initiation en sept rites](https://kyran-jeu.fr/blog/initiation-kyran-fetes.html)
 - [Apprendre un nouveau jeu de cartes en famille pendant les fêtes, 5 jeux et la méthode](https://kyran-jeu.fr/blog/apprendre-jeu-cartes-fetes.html): 5 jeux comparés

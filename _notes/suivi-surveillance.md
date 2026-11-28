@@ -6,6 +6,24 @@ Historique de l'ancienne routine santé (jusqu'au 2026-10-21) : [`suivi-sante.md
 
 ---
 
+## 2026-11-28 — passage planifié (04:07 UTC)
+
+État : 🟠 ventes externes · 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport
+e-mail **envoyé** (stock Amazon à refaire). Rapport complet :
+[`docs/rapports/surveillance/2026-11-28.md`](../docs/rapports/surveillance/2026-11-28.md).
+
+| Domaine | État | Constat (preuve) |
+|---|---|---|
+| Liens d'achat | réparé | Amazon.fr « Actuellement indisponible », Amazon.es « No disponible » → liens retirés (PR #376, #377) |
+| Achat | OK | Stripe : 9,99 € + 2,99 € = 12,98 € ; `achat.mjs` adapté au panneau sans choix de livraison (PR #378) |
+| Ventes | 1 | 27/11 15:09 UTC, 1 jeu, livraison |
+| Site | OK | 76 URL × 1280/390 px sans erreur ; 548 liens |
+| Serveur | OK | v1.13.0 ; 2 × 503 `/salle/statut` (voulu) |
+| Incidents | 1 classé | JS-D9AB2B `<img> /undefined` : robot (Firefox 59), non reproductible → ignore |
+| Versions | 1 mise à jour | wrangler 4.169.0, `compatibility_date` 2026-11-28 |
+
+Point ouvert : réapprovisionner Amazon.fr et Amazon.es, puis remettre les liens (procédure dans le rapport).
+
 ## 2026-11-27 — passage planifié (04:07 UTC)
 
 État : 🟢 site et paiement · 🟢 serveur et incidents · 🟢 workflows, code et veille. Rapport e-mail non envoyé : pas

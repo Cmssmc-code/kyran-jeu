@@ -28,7 +28,9 @@ await page.goto('https://kyran-jeu.fr/commander.html', { waitUntil: 'load', time
 const lien = page.locator('a[href*="buy.stripe.com"], a[href$="/commander.html"], a[href$="/commander"]').first();
 await lien.click();
 await page.waitForSelector('dialog.achat-choix[open]', { timeout: 10000 });
-await page.check('dialog.achat-choix input[value="livraison"]');
+// Choix livraison / main propre : retiré le 28/11 (p27), il peut revenir (Noël) ; le cocher s'il existe.
+const radio = page.locator('dialog.achat-choix input[value="livraison"]');
+if (await radio.count()) await radio.check();
 await page.fill('#achat-qte', String(quantite));
 await page.locator('#achat-qte').dispatchEvent('input');
 const recap = (await page.innerText('dialog.achat-choix .achat-choix__recap')).replace(/\s+/g, ' ').trim();

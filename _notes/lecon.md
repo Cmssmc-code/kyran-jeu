@@ -207,3 +207,5 @@ Format : `### AAAA-MM-JJ — [Auto-Heal] <référence> — <résumé>` puis troi
 - Les trois pages légales (mentions, CGV, confidentialité) le gardent pour la vente à distance, en attente du choix de Corentin.
 
 - 2026-11-27 — Prix Amazon hors euro (Suède kr, Pologne zł) : le prix suit le taux de change, l'écart est normal (moins de 1 %). Le site écrit « environ 198 kr » (arrondi) et `scripts/surveillance/liens-achat.mjs` tolère 3 % hors euro ; l'euro reste exact au centime. Ne plus corriger ces prix chaque semaine ni lever d'« Urgent » pour un écart de change sous 1 % : le noter au bilan.
+
+- 2026-11-28 — Liens Amazon.fr et Amazon.es retirés à tort (PR 376 et 377) : `scripts/surveillance/liens-achat.mjs` a lu « indisponible » depuis une session cloud alors que les deux fiches étaient en stock (relu à 09 h dans Chromium de Trio, profil kyran : « En stock », bouton panier, 14,90 € et 17,74 €). Liens remis le jour même. Règle : avant tout retrait d'un lien de vente, 2e lecture dans Chromium de Trio, profil `kyran` ; sans elle, aucun retrait.

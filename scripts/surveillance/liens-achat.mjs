@@ -10,7 +10,8 @@
  *
  * Variables : PLAYWRIGHT_CORE, CHROMIUM_PATH (comme scripts/smoke-initiation.mjs) ; SITE (défaut https://kyran-jeu.fr).
  * Dernière ligne : JSON {"liens":[{url, nom, pages, prixSite, etat, detail}]}, etat = ok | casse | prix | illisible.
- *   casse     : page absente, autre produit, plus de bouton d'achat ou produit indisponible → retirer le lien ;
+ *   casse     : page absente, autre produit, plus de bouton d'achat ou produit indisponible → retirer le lien,
+ *               SEULEMENT après une 2e lecture dans Chromium de Trio (profil kyran) qui le confirme ;
  *   prix      : le prix de la boutique diffère de celui affiché sur le site → corriger le prix affiché ;
  *   illisible : anti-robot ou réseau, rien de prouvé (à revoir dans un vrai navigateur).
  * Sortie 0 tout bon, 1 au moins un lien cassé ou un prix faux, 2 seulement des liens illisibles.

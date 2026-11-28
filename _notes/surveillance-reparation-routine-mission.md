@@ -210,8 +210,13 @@ avec `PLAYWRIGHT_CORE=/opt/node-tools/node_modules/playwright-core CHROMIUM_PATH
     vers une boutique sur l'accueil, `/ou-acheter.html` et `/commander.html` (Amazon de chaque pays, Philibert, Etsy,
     leboncoin, Payment Link Stripe) et vérifie bon produit, prix affiché et bouton d'achat. `casse` (fiche absente,
     redirigée, indisponible, sans bouton) : message « Urgent : » au PDG (`ceo`) et au responsable des ventes externes
-    (`responsable-amazon`) par `mcp__mondes__monde_message` (de `gardien`), puis **retrait du lien du site dans
-    l'heure** par PR (mettre le `<li>` en commentaire HTML avec la date, comme Philibert le 27/11 ; ne toucher à aucun
+    (`responsable-amazon`) par `mcp__mondes__monde_message` (de `gardien`), puis, **seulement après une 2e lecture
+    dans Chromium de Trio, profil `kyran`** (`mcp__navigateur__browser_navigate(url, profil='kyran')` : mention
+    « En stock » ou équivalent, bouton « Ajouter au panier », bon vendeur, prix), **retrait du lien du site dans
+    l'heure** par PR. Sans cette 2e lecture (navigateur absent, session cloud), aucun retrait : le noter au bilan et
+    laisser la routine Trio « Kyran · Liens d'achat » (sur le PC) faire la 2e lecture. Le 28/11/2026, Amazon.fr et
+    Amazon.es ont été retirés à tort sur la seule lecture du script (PR 376 et 377) alors que les deux fiches étaient
+    en stock. Retrait (mettre le `<li>` en commentaire HTML avec la date, comme Philibert le 27/11 ; ne toucher à aucun
     titre). Sur le Payment Link Stripe, ne rien retirer : réparer. `prix` : corriger le prix affiché sur le site.
     `illisible` (Etsy et leboncoin bloquent souvent les robots, DataDome) : bruit, rien à faire. Une fiche à remettre
     se teste d'abord avec `node scripts/surveillance/liens-achat.mjs <url> <prix>` (sortie 0). La routine Trio

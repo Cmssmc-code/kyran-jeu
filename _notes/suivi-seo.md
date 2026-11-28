@@ -483,3 +483,4 @@ Journal des titres (règle des 28 jours) : [`../docs/SUIVI-BLOG-SEO.md`](../docs
 - **Premier run** : 2026-10-20 à 00:00 ; priorité aux pages hors index et aux `sameAs` Wikidata.
 - 18/11/2026 : itch.io publié (kyranjeu.itch.io/kyran-initiation, public, embed=1). Ajouté à llms.txt et llms-full.txt (PR 251, en ligne).
 - 18/11/2026 : page vitrine `/jouer-en-ligne.html` en ligne (t22, PR 255). Titre « Jouer à KYRAN en ligne : jeu de cartes contre l'ordinateur », bouton vers `/minijeu.html#jouer`, menu Découvrir, sitemap, llms.txt, liens depuis jeu-apero, regle, tarot-africain. Titre verrouillé jusqu'au 16/12/2026. Mesure : impressions Search Console à J+28, `dojo_direct_link` dans GA.
+- 28/11/2026 : `priceValidUntil` prolongé au 2027-12-31 (index, commander, secret-santa) : le prix 9,99 € reste valide (specialiste-seo-et-geo). Contrôle Rich Results après fusion.
